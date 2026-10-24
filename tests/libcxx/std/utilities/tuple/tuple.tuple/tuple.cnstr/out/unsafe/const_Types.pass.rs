@@ -115,10 +115,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut t: () = {
-            let mut __tmp_0: *mut () = std::ptr::null_mut();
-            std_tuple_int_ptr_::new({ &mut __tmp_0 })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -134,11 +131,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::get<0>(t) == 0");;
     }
     {
-        let mut t: () = {
-            let mut __tmp_1: () = 2_();
-            let mut __tmp_2: *mut () = std::ptr::null_mut();
-            std_tuple_int__char_ptr_::new_1({ &mut __tmp_1 }, { &mut __tmp_2 })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

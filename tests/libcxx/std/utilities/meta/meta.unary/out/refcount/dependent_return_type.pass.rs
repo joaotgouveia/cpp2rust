@@ -22,58 +22,58 @@ pub fn add_pointer_4() -> Ptr<()> {
     return Ptr::<()>::null();
 }
 pub fn add_rvalue_reference_5() -> Ptr<()> {
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 thread_local!(
     static i_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub fn add_volatile_7() -> () {
-    return ((unimplemented!().read()) as ());
+    return (unimplemented!().read());
 }
 thread_local!(
     static i_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub fn decay_9() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn enable_if_10() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn make_signed_11() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn make_unsigned_12() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn remove_all_extents_13() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn remove_const_14() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn remove_cv_15() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn remove_cvref_16() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn remove_extent_17() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn remove_pointer_18() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn remove_reference_19() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn remove_volatile_20() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn type_identity_21() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub fn underlying_type_22() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub type E = ();
 pub fn void_t_23() {}

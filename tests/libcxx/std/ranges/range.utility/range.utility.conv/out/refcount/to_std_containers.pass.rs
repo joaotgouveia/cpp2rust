@@ -941,7 +941,7 @@ pub fn iter_move_25(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -5284,13 +5284,13 @@ pub fn test_is_equal_for_adaptors_488(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         let unwrap_to: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         unimplemented!();
@@ -5305,13 +5305,13 @@ pub fn test_is_equal_for_adaptors_489(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         let unwrap_to: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         unimplemented!();
@@ -5326,10 +5326,10 @@ pub fn test_is_equal_for_adaptors_490(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
-        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
         unimplemented!();
     }
 }
@@ -5342,13 +5342,13 @@ pub fn test_is_equal_for_adaptors_491(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         let unwrap_to: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         unimplemented!();
@@ -5363,13 +5363,13 @@ pub fn test_is_equal_for_adaptors_492(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         let unwrap_to: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         unimplemented!();
@@ -5384,10 +5384,10 @@ pub fn test_is_equal_for_adaptors_493(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
-        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
         unimplemented!();
     }
 }
@@ -5397,11 +5397,11 @@ pub fn test_is_equal_for_adaptors_494(inputs: ()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
         let unwrap_to: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         unimplemented!();
@@ -5413,11 +5413,11 @@ pub fn test_is_equal_for_adaptors_495(inputs: ()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
         let unwrap_to: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         unimplemented!();
@@ -5429,8 +5429,8 @@ pub fn test_is_equal_for_adaptors_496(inputs: ()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
-        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
         unimplemented!();
     }
 }
@@ -5443,14 +5443,14 @@ pub fn test_is_equal_for_adaptors_497(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         let unwrap_to: Value<
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____,
         > = Rc::new(RefCell::new(
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____::new_1({
-                (unimplemented!()).reinterpret_cast::<()>()
+                unimplemented!()
             }),
         ));
         unimplemented!();
@@ -5465,14 +5465,14 @@ pub fn test_is_equal_for_adaptors_498(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         let unwrap_to: Value<
             UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____,
         > = Rc::new(RefCell::new(
             UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____::new_1({
-                (unimplemented!()).reinterpret_cast::<()>()
+                unimplemented!()
             }),
         ));
         unimplemented!();
@@ -5487,10 +5487,10 @@ pub fn test_is_equal_for_adaptors_499(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
-        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { unimplemented!()   } , )  )) ;
         unimplemented!();
     }
 }
@@ -5503,14 +5503,14 @@ pub fn test_is_equal_for_adaptors_500(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         let unwrap_to: Value<
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____,
         > = Rc::new(RefCell::new(
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____::new_1({
-                (unimplemented!()).reinterpret_cast::<()>()
+                unimplemented!()
             }),
         ));
         unimplemented!();
@@ -5525,14 +5525,14 @@ pub fn test_is_equal_for_adaptors_501(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
         let unwrap_to: Value<
             UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____,
         > = Rc::new(RefCell::new(
             UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____::new_1({
-                (unimplemented!()).reinterpret_cast::<()>()
+                unimplemented!()
             }),
         ));
         unimplemented!();
@@ -5547,10 +5547,10 @@ pub fn test_is_equal_for_adaptors_502(inputs: ()) {
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (unimplemented!()).reinterpret_cast::<()>()
+                    unimplemented!()
                 }),
             ));
-        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { unimplemented!()   } , )  )) ;
         unimplemented!();
     }
 }
@@ -5560,12 +5560,12 @@ pub fn test_is_equal_for_adaptors_503(inputs: ()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
         let unwrap_to: Value<
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____,
         > = Rc::new(RefCell::new(
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____::new_1({
-                (unimplemented!()).reinterpret_cast::<()>()
+                unimplemented!()
             }),
         ));
         unimplemented!();
@@ -5577,12 +5577,12 @@ pub fn test_is_equal_for_adaptors_504(inputs: ()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
         let unwrap_to: Value<
             UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____,
         > = Rc::new(RefCell::new(
             UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____::new_1({
-                (unimplemented!()).reinterpret_cast::<()>()
+                unimplemented!()
             }),
         ));
         unimplemented!();
@@ -5594,8 +5594,8 @@ pub fn test_is_equal_for_adaptors_505(inputs: ()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
-        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { (unimplemented!()  ).reinterpret_cast::<()  >()  } , )  )) ;
+        let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { unimplemented!()   } , )  )) ;
         unimplemented!();
     }
 }

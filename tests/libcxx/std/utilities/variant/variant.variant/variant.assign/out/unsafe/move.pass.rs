@@ -374,7 +374,7 @@ impl anon_11 {
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: ((*(unsafe { get_12(&mut v) })) as ()),
+            value: (*(unsafe { get_12(&mut v) })),
         };
     }
 }
@@ -388,7 +388,7 @@ impl anon_13 {
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: ((*(unsafe { get_14(&mut v) })) as ()),
+            value: (*(unsafe { get_14(&mut v) })),
         };
     }
 }
@@ -450,7 +450,7 @@ impl anon_18 {
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: ((*(unsafe { get_14(&mut v) })) as ()),
+            value: (*(unsafe { get_14(&mut v) })),
         };
     }
 }
@@ -470,43 +470,43 @@ impl anon_19 {
 }
 pub unsafe fn test_assignment_throw_20() {}
 pub unsafe fn test_constexpr_assign_imp_21(v: *mut (), new_value: *mut ()) {
-    let mut v2: std_variant_long__void_ptr__int_ = (*new_value);
-    let cp: std_variant_long__void_ptr__int_ = unimplemented!();
+    let mut v2: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_22(v: *mut (), new_value: *mut ()) {
-    let mut v2: std_variant_long__void_ptr__int_ = (*new_value);
-    let cp: std_variant_long__void_ptr__int_ = unimplemented!();
+    let mut v2: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_23(v: *mut (), new_value: *mut ()) {
-    let mut v2: std_variant_long__void_ptr__int_ = (*new_value);
-    let cp: std_variant_long__void_ptr__int_ = unimplemented!();
+    let mut v2: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_24(v: *mut (), new_value: *mut ()) {
-    let mut v2: std_variant_long__void_ptr__NonTrivialMoveAssign_ = (*new_value);
-    let cp: std_variant_long__void_ptr__NonTrivialMoveAssign_ = unimplemented!();
+    let mut v2: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_25(v: *mut (), new_value: *mut ()) {
-    let mut v2: std_variant_long__void_ptr__NonTrivialMoveAssign_ = (*new_value);
-    let cp: std_variant_long__void_ptr__NonTrivialMoveAssign_ = unimplemented!();
+    let mut v2: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_26(v: *mut (), new_value: *mut NonTrivialMoveAssign) {
-    let mut v2: std_variant_long__void_ptr__NonTrivialMoveAssign_ = (*new_value);
-    let cp: std_variant_long__void_ptr__NonTrivialMoveAssign_ = unimplemented!();
+    let mut v2: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

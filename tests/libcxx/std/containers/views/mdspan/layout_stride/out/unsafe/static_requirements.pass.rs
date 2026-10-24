@@ -285,16 +285,16 @@ pub unsafe fn test_mapping_requirements_13(mut _a0: ()) {
     );;
 }
 pub unsafe fn test_layout_mapping_requirements_14() {
-    (unsafe { test_mapping_requirements_10(unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_mapping_requirements_10(unimplemented!()) });
 }
 pub unsafe fn test_layout_mapping_requirements_15() {
-    (unsafe { test_mapping_requirements_11(unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_mapping_requirements_11(unimplemented!()) });
 }
 pub unsafe fn test_layout_mapping_requirements_16() {
-    (unsafe { test_mapping_requirements_12(unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_mapping_requirements_12(unimplemented!()) });
 }
 pub unsafe fn test_layout_mapping_requirements_17() {
-    (unsafe { test_mapping_requirements_13(unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_mapping_requirements_13(unimplemented!()) });
 }
 pub unsafe fn test_layout_mapping_stride_18() {
     (unsafe { test_layout_mapping_requirements_14() });

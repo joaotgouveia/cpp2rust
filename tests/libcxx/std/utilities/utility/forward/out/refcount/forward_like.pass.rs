@@ -214,7 +214,7 @@ pub fn test_2() -> () {
     }
     {
         let val: Value<()> = Rc::new(RefCell::new(1729_()));
-        let result: Ptr<()> = (val.as_pointer()).reinterpret_cast::<()>();
+        let result: Ptr<()> = val.as_pointer();
         const _: () = assert!(true, "std::is_same_v<decltype(result), const int&&>");;
         unimplemented!();
     }

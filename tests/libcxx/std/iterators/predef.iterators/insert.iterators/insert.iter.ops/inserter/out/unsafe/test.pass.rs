@@ -109,7 +109,7 @@ impl ConstexprFixedCapacityDeque_int__10_ {
         if ((i) != (self.size_)) {
             unimplemented!();
         }
-        self.data_[(i) as usize] = ((*unimplemented!()) as ());
+        self.data_[(i) as usize] = (*unimplemented!());
         self.size_ += 1_();
         return self.data_.as_mut_ptr().offset((i) as isize);
     }

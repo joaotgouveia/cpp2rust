@@ -38,7 +38,7 @@ pub fn call_pred_1(pred: unary_counting_predicate_bool__ptr__int___int_) -> () {
 }
 pub fn call_pred_2(pred: ()) -> () {
     let pred: Value<()> = Rc::new(RefCell::new(pred));
-    return (unimplemented!() as ());
+    return unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]

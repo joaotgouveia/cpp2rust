@@ -338,7 +338,7 @@ pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1289,13 +1289,13 @@ pub unsafe fn test_ctor_under_alloc_31() {
             let mut G: ExpectConstructGuard_int_ref_ = ExpectConstructGuard_int_ref_::new({ 1_() });
             let _dtor_G =
                 ScopedDestructorUnsafe::new(&raw mut G, ExpectConstructGuard_int_ref_::destructor);
-            let mut v : std_list_CopyInsertable_1___ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1___ = unimplemented!() ;
+            let mut v: () = unimplemented!();
         }
         {
             let mut G: ExpectConstructGuard_int_ref_ = ExpectConstructGuard_int_ref_::new({ 3_() });
             let _dtor_G =
                 ScopedDestructorUnsafe::new(&raw mut G, ExpectConstructGuard_int_ref_::destructor);
-            let mut v : std_list_CopyInsertable_1___ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1___ = unimplemented!() ;
+            let mut v: () = unimplemented!();
         }
     }
     {
@@ -1303,13 +1303,13 @@ pub unsafe fn test_ctor_under_alloc_31() {
             let mut G: ExpectConstructGuard_int_ref_ = ExpectConstructGuard_int_ref_::new({ 1_() });
             let _dtor_G =
                 ScopedDestructorUnsafe::new(&raw mut G, ExpectConstructGuard_int_ref_::destructor);
-            let mut v : std_list_CopyInsertable_1___ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1___ = unimplemented!() ;
+            let mut v: () = unimplemented!();
         }
         {
             let mut G: ExpectConstructGuard_int_ref_ = ExpectConstructGuard_int_ref_::new({ 3_() });
             let _dtor_G =
                 ScopedDestructorUnsafe::new(&raw mut G, ExpectConstructGuard_int_ref_::destructor);
-            let mut v : std_list_CopyInsertable_1___ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1___ = unimplemented!() ;
+            let mut v: () = unimplemented!();
         }
     }
 }
@@ -1323,13 +1323,13 @@ pub unsafe fn test_ctor_under_alloc_with_alloc_32() {
             let mut G: ExpectConstructGuard_int_ref_ = ExpectConstructGuard_int_ref_::new({ 1_() });
             let _dtor_G =
                 ScopedDestructorUnsafe::new(&raw mut G, ExpectConstructGuard_int_ref_::destructor);
-            let mut v : std_list_CopyInsertable_1___ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1___ = unimplemented!() ;
+            let mut v: () = unimplemented!();
         }
         {
             let mut G: ExpectConstructGuard_int_ref_ = ExpectConstructGuard_int_ref_::new({ 3_() });
             let _dtor_G =
                 ScopedDestructorUnsafe::new(&raw mut G, ExpectConstructGuard_int_ref_::destructor);
-            let mut v : std_list_CopyInsertable_1___ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1___ = unimplemented!() ;
+            let mut v: () = unimplemented!();
         }
     }
     {
@@ -1339,13 +1339,13 @@ pub unsafe fn test_ctor_under_alloc_with_alloc_32() {
             let mut G: ExpectConstructGuard_int_ref_ = ExpectConstructGuard_int_ref_::new({ 1_() });
             let _dtor_G =
                 ScopedDestructorUnsafe::new(&raw mut G, ExpectConstructGuard_int_ref_::destructor);
-            let mut v : std_list_CopyInsertable_1___ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1___ = unimplemented!() ;
+            let mut v: () = unimplemented!();
         }
         {
             let mut G: ExpectConstructGuard_int_ref_ = ExpectConstructGuard_int_ref_::new({ 3_() });
             let _dtor_G =
                 ScopedDestructorUnsafe::new(&raw mut G, ExpectConstructGuard_int_ref_::destructor);
-            let mut v : std_list_CopyInsertable_1___ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1___ = unimplemented!() ;
+            let mut v: () = unimplemented!();
         }
     }
 }

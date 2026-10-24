@@ -290,54 +290,50 @@ pub unsafe fn test_concat_message_21(
 pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         check
-            .spec::<fn((), std_basic_format_string_char_)>(0)
+            .spec::<fn((), ())>(0)
             .call(unimplemented!(), unimplemented!())
     });
     (unsafe {
         check
-            .spec::<fn((), std_basic_format_string_char_)>(0)
-            .call(unimplemented!(), unimplemented!())
-    });
-    (unsafe {
-        let mut _args: () = (' ' as ());
-        check
-            .spec::<fn((), std_basic_format_string_char__char_, *mut ())>(1)
-            .call(unimplemented!(), unimplemented!(), &mut _args)
-    });
-    (unsafe {
-        check
-            .spec::<fn((), std_basic_format_string_char_)>(0)
+            .spec::<fn((), ())>(0)
             .call(unimplemented!(), unimplemented!())
     });
     (unsafe {
         let mut _args: () = (' ' as ());
         check
-            .spec::<fn((), std_basic_format_string_char__char_, *mut ())>(1)
+            .spec::<fn((), (), *mut ())>(1)
+            .call(unimplemented!(), unimplemented!(), &mut _args)
+    });
+    (unsafe {
+        check
+            .spec::<fn((), ())>(0)
+            .call(unimplemented!(), unimplemented!())
+    });
+    (unsafe {
+        let mut _args: () = (' ' as ());
+        check
+            .spec::<fn((), (), *mut ())>(1)
             .call(unimplemented!(), unimplemented!(), &mut _args)
     });
     (unsafe {
         let mut _args_2: () = false;
         let mut _args_3: () = true;
-        check
-            .spec::<fn((), std_basic_format_string_char__bool__bool_, *mut (), *mut ())>(2)
-            .call(
-                unimplemented!(),
-                unimplemented!(),
-                &mut _args_2,
-                &mut _args_3,
-            )
+        check.spec::<fn((), (), *mut (), *mut ())>(2).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let mut _args_2: () = false;
         let mut _args_3: () = true;
-        check
-            .spec::<fn((), std_basic_format_string_char__bool__bool_, *mut (), *mut ())>(2)
-            .call(
-                unimplemented!(),
-                unimplemented!(),
-                &mut _args_2,
-                &mut _args_3,
-            )
+        check.spec::<fn((), (), *mut (), *mut ())>(2).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let mut _args_2: () = 1_();
@@ -360,42 +356,83 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut _args_19: () = 8_();
         let mut _args_20: () = 9_();
         let mut _args_21: () = 0_();
-        check  .spec::<fn(() ,std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,)>(3) .call ( unimplemented!() , unimplemented!() , & mut _args_2 , & mut _args_3 , & mut _args_4 , & mut _args_5 , & mut _args_6 , & mut _args_7 , & mut _args_8 , & mut _args_9 , & mut _args_10 , & mut _args_11 , & mut _args_12 , & mut _args_13 , & mut _args_14 , & mut _args_15 , & mut _args_16 , & mut _args_17 , & mut _args_18 , & mut _args_19 , & mut _args_20 , & mut _args_21 , )
-    });
-    (unsafe {
-        let mut _args_2: () = ('\0' as ());
         check
             .spec::<fn(
                 (),
-                std_basic_format_string_char__char__const_char__ref_arr6arr_,
+                (),
                 *mut (),
-                *const [(); 6],
-            )>(4)
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+                *mut (),
+            )>(3)
             .call(
-                (unsafe {
-                    operator_literal_sv_23(
-                        (&[
-                            (104 as libc::c_char),
-                            (101 as libc::c_char),
-                            (108 as libc::c_char),
-                            (108 as libc::c_char),
-                            (111 as libc::c_char),
-                            (0 as libc::c_char),
-                            (119 as libc::c_char),
-                            (111 as libc::c_char),
-                            (114 as libc::c_char),
-                            (108 as libc::c_char),
-                            (100 as libc::c_char),
-                            (0 as libc::c_char),
-                        ])
-                            .as_ptr(),
-                        11_(),
-                    )
-                }),
+                unimplemented!(),
                 unimplemented!(),
                 &mut _args_2,
-                &std::mem::transmute(*b"world\0"),
+                &mut _args_3,
+                &mut _args_4,
+                &mut _args_5,
+                &mut _args_6,
+                &mut _args_7,
+                &mut _args_8,
+                &mut _args_9,
+                &mut _args_10,
+                &mut _args_11,
+                &mut _args_12,
+                &mut _args_13,
+                &mut _args_14,
+                &mut _args_15,
+                &mut _args_16,
+                &mut _args_17,
+                &mut _args_18,
+                &mut _args_19,
+                &mut _args_20,
+                &mut _args_21,
             )
+    });
+    (unsafe {
+        let mut _args_2: () = ('\0' as ());
+        check.spec::<fn((), (), *mut (), *const [(); 6])>(4).call(
+            (unsafe {
+                operator_literal_sv_23(
+                    (&[
+                        (104 as libc::c_char),
+                        (101 as libc::c_char),
+                        (108 as libc::c_char),
+                        (108 as libc::c_char),
+                        (111 as libc::c_char),
+                        (0 as libc::c_char),
+                        (119 as libc::c_char),
+                        (111 as libc::c_char),
+                        (114 as libc::c_char),
+                        (108 as libc::c_char),
+                        (100 as libc::c_char),
+                        (0 as libc::c_char),
+                    ])
+                        .as_ptr(),
+                    11_(),
+                )
+            }),
+            unimplemented!(),
+            &mut _args_2,
+            &std::mem::transmute(*b"world\0"),
+        )
     });
     (unsafe {
         let _e: () = (unsafe {
@@ -418,12 +455,12 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
                 11_(),
             )
         });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr6arr_ = unimplemented!();
-        check
-            .spec::<fn((), std_basic_format_string_char__const_char__ref_arr6arr_, *const [(); 6])>(
-                5,
-            )
-            .call(_e, _fmt, &std::mem::transmute(*b"world\0"))
+        let _fmt: () = unimplemented!();
+        check.spec::<fn((), (), *const [(); 6])>(5).call(
+            _e,
+            _fmt,
+            &std::mem::transmute(*b"world\0"),
+        )
     });
     (unsafe {
         let _e: () = (unsafe {
@@ -462,62 +499,62 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
             )
         });
         check
-            .spec::<fn((), std_basic_format_string_char__std_string_view_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_e, unimplemented!(), &mut _args)
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xc2\xa1".as_ptr(), 2_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr3arr_ = unimplemented!();
-        check
-            .spec::<fn((), std_basic_format_string_char__const_char__ref_arr3arr_, *const [(); 3])>(
-                7,
-            )
-            .call(_e, _fmt, &std::mem::transmute(*b"\xc2\xa1\0"))
+        let _fmt: () = unimplemented!();
+        check.spec::<fn((), (), *const [(); 3])>(7).call(
+            _e,
+            _fmt,
+            &std::mem::transmute(*b"\xc2\xa1\0"),
+        )
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xdf\xbf".as_ptr(), 2_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr3arr_ = unimplemented!();
-        check
-            .spec::<fn((), std_basic_format_string_char__const_char__ref_arr3arr_, *const [(); 3])>(
-                7,
-            )
-            .call(_e, _fmt, &std::mem::transmute(*b"\xdf\xbf\0"))
+        let _fmt: () = unimplemented!();
+        check.spec::<fn((), (), *const [(); 3])>(7).call(
+            _e,
+            _fmt,
+            &std::mem::transmute(*b"\xdf\xbf\0"),
+        )
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xe0\xa0\x80".as_ptr(), 3_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr4arr_ = unimplemented!();
-        check
-            .spec::<fn((), std_basic_format_string_char__const_char__ref_arr4arr_, *const [(); 4])>(
-                8,
-            )
-            .call(_e, _fmt, &std::mem::transmute(*b"\xe0\xa0\x80\0"))
+        let _fmt: () = unimplemented!();
+        check.spec::<fn((), (), *const [(); 4])>(8).call(
+            _e,
+            _fmt,
+            &std::mem::transmute(*b"\xe0\xa0\x80\0"),
+        )
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xef\xbf\xbd".as_ptr(), 3_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr4arr_ = unimplemented!();
-        check
-            .spec::<fn((), std_basic_format_string_char__const_char__ref_arr4arr_, *const [(); 4])>(
-                8,
-            )
-            .call(_e, _fmt, &std::mem::transmute(*b"\xef\xbf\xbd\0"))
+        let _fmt: () = unimplemented!();
+        check.spec::<fn((), (), *const [(); 4])>(8).call(
+            _e,
+            _fmt,
+            &std::mem::transmute(*b"\xef\xbf\xbd\0"),
+        )
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xf0\x90\x80\x80".as_ptr(), 4_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr5arr_ = unimplemented!();
-        check
-            .spec::<fn((), std_basic_format_string_char__const_char__ref_arr5arr_, *const [(); 5])>(
-                9,
-            )
-            .call(_e, _fmt, &std::mem::transmute(*b"\xf0\x90\x80\x80\0"))
+        let _fmt: () = unimplemented!();
+        check.spec::<fn((), (), *const [(); 5])>(9).call(
+            _e,
+            _fmt,
+            &std::mem::transmute(*b"\xf0\x90\x80\x80\0"),
+        )
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xf4\x8f\xbf\xbf".as_ptr(), 4_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr5arr_ = unimplemented!();
-        check
-            .spec::<fn((), std_basic_format_string_char__const_char__ref_arr5arr_, *const [(); 5])>(
-                9,
-            )
-            .call(_e, _fmt, &std::mem::transmute(*b"\xf4\x8f\xbf\xbf\0"))
+        let _fmt: () = unimplemented!();
+        check.spec::<fn((), (), *const [(); 5])>(9).call(
+            _e,
+            _fmt,
+            &std::mem::transmute(*b"\xf4\x8f\xbf\xbf\0"),
+        )
     });
     (unsafe {
         check_exception
@@ -577,161 +614,324 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
         )
     });
 }
-pub static mut test_file_24: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCell::new(
-    || unsafe {
-        lambda_unsafe! ( Generic , { } , | mut e : () , mut fmt : std_basic_format_string_char_ , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_7 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__char_ , args : *mut () , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__char_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_25 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__bool__bool_ , args_2 : *mut () , args_3 : *mut () , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__bool__bool_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_26 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , args_9 : *mut () , args_10 : *mut () , args_11 : *mut () , args_12 : *mut () , args_13 : *mut () , args_14 : *mut () , args_15 : *mut () , args_16 : *mut () , args_17 : *mut () , args_18 : *mut () , args_19 : *mut () , args_20 : *mut () , args_21 : *mut () , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_27 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__char__const_char__ref_arr6arr_ , args_2 : *mut () , args_3 : *const [ () ; 6] , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__char__const_char__ref_arr6arr_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_28 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__const_char__ref_arr6arr_ , args : *const [ () ; 6] , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_char__ref_arr6arr_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_29 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__std_string_view_ , args : *mut () , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_string_view_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_30 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__const_char__ref_arr3arr_ , args : *const [ () ; 3] , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_char__ref_arr3arr_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_31 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__const_char__ref_arr4arr_ , args : *const [ () ; 4] , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_char__ref_arr4arr_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_32 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } , | mut e : () , mut fmt : std_basic_format_string_char__const_char__ref_arr5arr_ , args : *const [ () ; 5] , | { let mut expected : () = unimplemented!()  ;
-  ;
- ;
- let mut sstr : () = unimplemented!() ;
-  ;
- ;
- unimplemented!()  ;
- let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_char__ref_arr5arr_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_2 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_33 ( _condition , c"out == expected" .as_ptr() , c"println.pass.cpp" .as_ptr() , 50_() , & mut _arg , ) } )  ;
- } )
-    },
-);
+pub static mut test_file_24: std::cell::LazyCell<FnPtr<Generic>> =
+    std::cell::LazyCell::new(|| unsafe {
+        lambda_unsafe!(
+            Generic,
+            {},
+            |mut e: (), mut fmt: ()| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_7(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (), mut fmt: (), args: *mut ()| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_25(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_26(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (),
+             mut fmt: (),
+             args_2: *mut (),
+             args_3: *mut (),
+             args_4: *mut (),
+             args_5: *mut (),
+             args_6: *mut (),
+             args_7: *mut (),
+             args_8: *mut (),
+             args_9: *mut (),
+             args_10: *mut (),
+             args_11: *mut (),
+             args_12: *mut (),
+             args_13: *mut (),
+             args_14: *mut (),
+             args_15: *mut (),
+             args_16: *mut (),
+             args_17: *mut (),
+             args_18: *mut (),
+             args_19: *mut (),
+             args_20: *mut (),
+             args_21: *mut ()| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_27(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (), mut fmt: (), args_2: *mut (), args_3: *const [(); 6]| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_28(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (), mut fmt: (), args: *const [(); 6]| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_29(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (), mut fmt: (), args: *mut ()| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_30(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (), mut fmt: (), args: *const [(); 3]| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_31(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (), mut fmt: (), args: *const [(); 4]| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_32(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut e: (), mut fmt: (), args: *const [(); 5]| {
+                let mut expected: () = unimplemented!();
+                let mut sstr: () = unimplemented!();
+                unimplemented!();
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_2(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_33(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"println.pass.cpp".as_ptr(),
+                        50_(),
+                        &mut _arg,
+                    )
+                });
+            }
+        )
+    });
 pub static mut test_exception_34: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(Generic, {}, |mut _a0: (), mut _a1: ()| {}, |mut _a0: (),

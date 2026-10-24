@@ -24,7 +24,7 @@ impl Error {
 }
 pub unsafe fn test_0() -> () {
     let mut unex: () = unimplemented!();
-    let mut unex2: std_unexpected_Error_ = unimplemented!();
+    let mut unex2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

@@ -260,11 +260,11 @@ impl __gnu_test_semaphore {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {}
 pub unsafe fn test01_10() -> () {
-    let mut pair_like: std_array_A__2_ = unsafe { std::mem::zeroed::<()>() };
+    let mut pair_like: () = unimplemented!();
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_array_A__2_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -295,7 +295,7 @@ pub unsafe fn test01_10() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_array_A__2_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -326,7 +326,7 @@ pub unsafe fn test01_10() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_array_A__2_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -357,7 +357,7 @@ pub unsafe fn test01_10() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_array_A__2_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -396,11 +396,11 @@ pub unsafe fn test01_10() -> () {
     return true;
 }
 pub unsafe fn test01_13() -> () {
-    let mut pair_like: std_tuple_A__A_ = unimplemented!();
+    let mut pair_like: () = unimplemented!();
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_tuple_A__A_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -431,7 +431,7 @@ pub unsafe fn test01_13() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_tuple_A__A_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -462,7 +462,7 @@ pub unsafe fn test01_13() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_tuple_A__A_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -493,7 +493,7 @@ pub unsafe fn test01_13() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_tuple_A__A_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -579,11 +579,11 @@ impl B_14 {
 }
 pub unsafe fn test02_15() -> () {
     const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
-    let mut pair_like: std_array_A__2_ = unsafe { std::mem::zeroed::<()>() };
+    let mut pair_like: () = unimplemented!();
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_array_A__2_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -614,7 +614,7 @@ pub unsafe fn test02_15() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_array_A__2_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -645,7 +645,7 @@ pub unsafe fn test02_15() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_array_A__2_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -676,7 +676,7 @@ pub unsafe fn test02_15() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_array_A__2_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -708,11 +708,11 @@ pub unsafe fn test02_15() -> () {
 }
 pub unsafe fn test02_17() -> () {
     const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
-    let mut pair_like: std_tuple_A__A_ = unimplemented!();
+    let mut pair_like: () = unimplemented!();
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_tuple_A__A_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -743,7 +743,7 @@ pub unsafe fn test02_17() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_tuple_A__A_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -774,7 +774,7 @@ pub unsafe fn test02_17() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_tuple_A__A_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -805,7 +805,7 @@ pub unsafe fn test02_17() -> () {
     (unsafe {
         lambda_unsafe!(
             {
-                let pair_like: *mut std_tuple_A__A_ = &mut pair_like;
+                let pair_like: *mut () = &mut pair_like;
             },
             || {
                 let mut p2b: () = unimplemented!();
@@ -882,7 +882,7 @@ impl B_18 {
     }
 }
 pub unsafe fn test03_19() -> () {
-    let mut pair_like: std_array_A__2_ = unsafe { std::mem::zeroed::<()>() };
+    let mut pair_like: () = unimplemented!();
     let mut p2b: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -967,7 +967,7 @@ pub unsafe fn test03_19() -> () {
     return true;
 }
 pub unsafe fn test03_21() -> () {
-    let mut pair_like: std_tuple_A__A_ = unimplemented!();
+    let mut pair_like: () = unimplemented!();
     let mut p2b: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -1098,7 +1098,7 @@ impl B_22 {
     }
 }
 pub unsafe fn test04_23() -> () {
-    let mut pair_like: std_array_A__2_ = unsafe { std::mem::zeroed::<()>() };
+    let mut pair_like: () = unimplemented!();
     let p2b: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -1183,7 +1183,7 @@ pub unsafe fn test04_23() -> () {
     return true;
 }
 pub unsafe fn test04_25() -> () {
-    let mut pair_like: std_tuple_A__A_ = unimplemented!();
+    let mut pair_like: () = unimplemented!();
     let p2b: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;

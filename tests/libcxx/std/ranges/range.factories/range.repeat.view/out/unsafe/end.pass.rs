@@ -25,8 +25,8 @@ pub unsafe fn test_0() -> () {
             "std::same_as<decltype(rv.end()), std::unreachable_sentinel_t>"
         );;
         const _: () = assert!(true, "noexcept(rv.end())");;
-        let mut __tmp_0: std_ranges_repeat_view_int__long_ = unimplemented!();
-        let __range1: *mut std_ranges_repeat_view_int__long_ = &mut __tmp_0;
+        let mut __tmp_0: () = unimplemented!();
+        let __range1: *mut () = &mut __tmp_0;
         'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
             let i: *const () = &(*unimplemented!());
             unimplemented!();

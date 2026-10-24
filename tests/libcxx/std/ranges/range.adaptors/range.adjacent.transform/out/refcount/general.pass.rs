@@ -11,7 +11,7 @@ pub fn test_0() -> () {
     let mut expected: () = unimplemented!();
     {
         let mut expected_index: () = 0_();
-        let __tmp_0 : Value<std_ranges_adjacent_transform_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____std_multiplies_void___2_ > = Rc::new(RefCell::new(unimplemented!()  ));
+        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __range1: Ptr<()> = __tmp_0.as_pointer();
         'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut x: () = unimplemented!();
@@ -20,7 +20,7 @@ pub fn test_0() -> () {
     }
     {
         let mut expected_index: () = 0_();
-        let __tmp_1 : Value<std_ranges_adjacent_transform_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____std_multiplies_void___2_ > = Rc::new(RefCell::new(unimplemented!()  ));
+        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __range1: Ptr<()> = __tmp_1.as_pointer();
         'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut x: () = unimplemented!();

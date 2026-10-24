@@ -594,7 +594,7 @@ pub unsafe fn iter_move_18(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1350,7 +1350,13 @@ pub unsafe fn test_one_21(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1401,7 +1407,13 @@ pub unsafe fn test_one_23(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1452,7 +1464,13 @@ pub unsafe fn test_one_24(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1503,7 +1521,13 @@ pub unsafe fn test_one_25(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1554,7 +1578,13 @@ pub unsafe fn test_one_26(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1605,7 +1635,13 @@ pub unsafe fn test_one_27(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1656,7 +1692,13 @@ pub unsafe fn test_one_28(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1715,7 +1757,13 @@ pub unsafe fn test_one_29(
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_1 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1774,7 +1822,13 @@ pub unsafe fn test_one_30(
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_3 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1833,7 +1887,13 @@ pub unsafe fn test_one_31(
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_5 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1892,7 +1952,13 @@ pub unsafe fn test_one_32(
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_7 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1951,7 +2017,13 @@ pub unsafe fn test_one_33(
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_9 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2010,7 +2082,13 @@ pub unsafe fn test_one_34(
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_11 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2069,7 +2147,13 @@ pub unsafe fn test_one_35(
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_13 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2120,7 +2204,13 @@ pub unsafe fn test_one_36(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2171,7 +2261,13 @@ pub unsafe fn test_one_37(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2222,7 +2318,13 @@ pub unsafe fn test_one_38(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2273,7 +2375,13 @@ pub unsafe fn test_one_39(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2324,7 +2432,13 @@ pub unsafe fn test_one_40(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2375,7 +2489,13 @@ pub unsafe fn test_one_41(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2426,7 +2546,13 @@ pub unsafe fn test_one_42(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2485,7 +2611,13 @@ pub unsafe fn test_one_43(
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_15 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2544,7 +2676,13 @@ pub unsafe fn test_one_44(
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_17 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2603,7 +2741,13 @@ pub unsafe fn test_one_45(
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_19 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2662,7 +2806,13 @@ pub unsafe fn test_one_46(
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_21 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2721,7 +2871,13 @@ pub unsafe fn test_one_47(
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_23 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2780,7 +2936,13 @@ pub unsafe fn test_one_48(
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_25 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2839,7 +3001,13 @@ pub unsafe fn test_one_49(
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_27 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2890,7 +3058,13 @@ pub unsafe fn test_one_50(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2941,7 +3115,13 @@ pub unsafe fn test_one_51(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2992,7 +3172,13 @@ pub unsafe fn test_one_52(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3043,7 +3229,13 @@ pub unsafe fn test_one_53(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3094,7 +3286,13 @@ pub unsafe fn test_one_54(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3145,7 +3343,13 @@ pub unsafe fn test_one_55(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3196,7 +3400,13 @@ pub unsafe fn test_one_56(
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3253,7 +3463,13 @@ pub unsafe fn test_one_57(
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_29 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3310,7 +3526,13 @@ pub unsafe fn test_one_58(
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_31 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3367,7 +3589,13 @@ pub unsafe fn test_one_59(
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_33 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3424,7 +3652,13 @@ pub unsafe fn test_one_60(
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_35 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3481,7 +3715,13 @@ pub unsafe fn test_one_61(
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_37 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3538,7 +3778,13 @@ pub unsafe fn test_one_62(
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_39 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3595,7 +3841,13 @@ pub unsafe fn test_one_63(
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_41 })
         };
         let mut range: () = unimplemented!();
-        let mut result : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22)) ( & mut range , pred .copy_from() , None , ) } ) ;
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
+                &mut range,
+                pred.copy_from(),
+                None,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -3640,7 +3892,7 @@ pub unsafe fn test_one_64(
         let mut b: *mut () = unimplemented!();
         let mut e: *mut () = unimplemented!().offset((unimplemented!()) as isize);
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -3691,7 +3943,7 @@ pub unsafe fn test_one_65(
         let mut b: *mut () = unimplemented!();
         let mut e: *mut () = unimplemented!().offset((unimplemented!()) as isize);
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -3742,7 +3994,7 @@ pub unsafe fn test_one_66(
         let mut b: *mut () = unimplemented!();
         let mut e: *mut () = unimplemented!().offset((unimplemented!()) as isize);
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -3793,7 +4045,7 @@ pub unsafe fn test_one_67(
         let mut b: *mut () = unimplemented!();
         let mut e: *mut () = unimplemented!().offset((unimplemented!()) as isize);
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -3844,7 +4096,7 @@ pub unsafe fn test_one_68(
         let mut b: *mut () = unimplemented!();
         let mut e: *mut () = unimplemented!().offset((unimplemented!()) as isize);
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -3895,7 +4147,7 @@ pub unsafe fn test_one_69(
         let mut b: *mut () = unimplemented!();
         let mut e: *mut () = unimplemented!().offset((unimplemented!()) as isize);
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -3946,7 +4198,7 @@ pub unsafe fn test_one_70(
         let mut b: *mut () = unimplemented!();
         let mut e: *mut () = unimplemented!().offset((unimplemented!()) as isize);
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -4003,7 +4255,7 @@ pub unsafe fn test_one_71(
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_43 })
         };
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -4060,7 +4312,7 @@ pub unsafe fn test_one_72(
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_45 })
         };
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -4117,7 +4369,7 @@ pub unsafe fn test_one_73(
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_47 })
         };
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -4174,7 +4426,7 @@ pub unsafe fn test_one_74(
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_49 })
         };
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -4231,7 +4483,7 @@ pub unsafe fn test_one_75(
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_51 })
         };
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -4288,7 +4540,7 @@ pub unsafe fn test_one_76(
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_53 })
         };
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),
@@ -4345,7 +4597,7 @@ pub unsafe fn test_one_77(
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_55 })
         };
         let mut range: () = unimplemented!();
-        let mut result: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ = (unsafe {
+        let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut stable_partition_22))(
                 &mut range,
                 pred.copy_from(),

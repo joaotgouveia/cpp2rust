@@ -320,7 +320,7 @@ pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -494,7 +494,7 @@ pub unsafe fn test_9(mut i: random_access_iterator_const_char_ptr_, mut n: (), m
 }
 pub unsafe fn test_10(mut i: cpp20_random_access_iterator_const_char_ptr_, mut n: (), mut x: ()) {
     let r: () = unimplemented!();
-    let mut rr: () = ((*unimplemented!()) as ());
+    let mut rr: () = (*unimplemented!());
     unimplemented!();
 }
 pub unsafe fn test_11(mut i: *const (), mut n: (), mut x: ()) {
@@ -517,12 +517,12 @@ pub unsafe fn tests_12() -> () {
     (unsafe {
         let _i: cpp20_random_access_iterator_const_char_ptr_ =
             cpp20_random_access_iterator_const_char_ptr_::new_1({ s.offset((5_()) as isize) });
-        test_10(_i, 4_(), (('1' as ()) as ()))
+        test_10(_i, 4_(), ('1' as ()))
     });
     (unsafe {
         let _i: cpp20_random_access_iterator_const_char_ptr_ =
             cpp20_random_access_iterator_const_char_ptr_::new_1({ s.offset((5_()) as isize) });
-        test_10(_i, 0_(), (('5' as ()) as ()))
+        test_10(_i, 0_(), ('5' as ()))
     });
     (unsafe {
         let _i: *const () = s.offset((5_()) as isize);

@@ -713,10 +713,10 @@ pub trait __gnu_test_SimpleAllocator_wchar_t_Impl {
 }
 impl __gnu_test_SimpleAllocator_wchar_t_Impl for Ptr<__gnu_test_SimpleAllocator_wchar_t_> {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
-        return ({ (unimplemented!() as std___new_allocator_wchar_t_).allocate(n, None) });
+        return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
-        ({ (unimplemented!() as std___new_allocator_wchar_t_).deallocate((p).clone(), n) });
+        unimplemented!();
     }
 }
 pub trait __gnu_test_copy_trackerImpl {

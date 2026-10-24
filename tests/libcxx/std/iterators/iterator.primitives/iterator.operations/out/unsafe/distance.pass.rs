@@ -329,7 +329,7 @@ pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -549,7 +549,7 @@ pub unsafe fn check_distance_15(mut first: *const (), mut last: *const (), mut d
 }
 pub unsafe fn test_deque_16() {
     let mut c: () = unimplemented!();
-    let mut view : std_ranges_join_view_std_ranges_ref_view_std_deque_std_deque_double__std_allocator_double____std_allocator_std_deque_double__std_allocator_double______ = unimplemented!()  ;
+    let mut view: () = unimplemented!();
     let mut n: () = 0_();
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
@@ -598,7 +598,7 @@ pub unsafe fn tests_17() -> () {
     });
     {
         let mut c: () = unimplemented!();
-        let mut view : std_ranges_join_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ = unimplemented!()  ;
+        let mut view: () = unimplemented!();
         let mut n: () = 0_();
         let mut i: () = 0_();
         'loop_: while ((i) < (10_())) {
@@ -610,8 +610,7 @@ pub unsafe fn tests_17() -> () {
     }
     {
         let mut c: () = unimplemented!();
-        let mut view: std_ranges_join_view_std_ranges_ref_view_std_array_std_array_char__3___10___ =
-            unimplemented!();
+        let mut view: () = unimplemented!();
         unimplemented!();
     }
     {

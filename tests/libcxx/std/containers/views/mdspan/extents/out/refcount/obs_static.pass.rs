@@ -967,229 +967,229 @@ pub fn test_static_observers_75(_a0: (), _a1: ()) {
     }
 }
 pub fn test_static_observers_76() {
-    ({ test_static_observers_1(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_1(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_77() {
-    ({ test_static_observers_2(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_2(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_78() {
-    ({ test_static_observers_3(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_3(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_79() {
-    ({ test_static_observers_4(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_4(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_80() {
-    ({ test_static_observers_5(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_5(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_81() {
-    ({ test_static_observers_6(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_6(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_82() {
-    ({ test_static_observers_7(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_7(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_83() {
-    ({ test_static_observers_8(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_8(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_84() {
-    ({ test_static_observers_9(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_9(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_85() {
-    ({ test_static_observers_10(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_10(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_86() {
-    ({ test_static_observers_11(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_11(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_87() {
-    ({ test_static_observers_12(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_12(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_88() {
-    ({ test_static_observers_13(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_13(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_89() {
-    ({ test_static_observers_14(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_14(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_90() {
-    ({ test_static_observers_15(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_15(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_91() {
-    ({ test_static_observers_16(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_16(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_92() {
-    ({ test_static_observers_17(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_17(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_93() {
-    ({ test_static_observers_18(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_18(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_94() {
-    ({ test_static_observers_19(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_19(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_95() {
-    ({ test_static_observers_20(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_20(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_96() {
-    ({ test_static_observers_21(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_21(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_97() {
-    ({ test_static_observers_22(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_22(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_98() {
-    ({ test_static_observers_23(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_23(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_99() {
-    ({ test_static_observers_24(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_24(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_100() {
-    ({ test_static_observers_25(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_25(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_101() {
-    ({ test_static_observers_26(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_26(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_102() {
-    ({ test_static_observers_27(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_27(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_103() {
-    ({ test_static_observers_28(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_28(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_104() {
-    ({ test_static_observers_29(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_29(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_105() {
-    ({ test_static_observers_30(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_30(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_106() {
-    ({ test_static_observers_31(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_31(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_107() {
-    ({ test_static_observers_32(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_32(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_108() {
-    ({ test_static_observers_33(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_33(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_109() {
-    ({ test_static_observers_34(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_34(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_110() {
-    ({ test_static_observers_35(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_35(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_111() {
-    ({ test_static_observers_36(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_36(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_112() {
-    ({ test_static_observers_37(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_37(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_113() {
-    ({ test_static_observers_38(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_38(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_114() {
-    ({ test_static_observers_39(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_39(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_115() {
-    ({ test_static_observers_40(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_40(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_116() {
-    ({ test_static_observers_41(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_41(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_117() {
-    ({ test_static_observers_42(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_42(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_118() {
-    ({ test_static_observers_43(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_43(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_119() {
-    ({ test_static_observers_44(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_44(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_120() {
-    ({ test_static_observers_45(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_45(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_121() {
-    ({ test_static_observers_46(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_46(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_122() {
-    ({ test_static_observers_47(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_47(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_123() {
-    ({ test_static_observers_48(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_48(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_124() {
-    ({ test_static_observers_49(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_49(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_125() {
-    ({ test_static_observers_50(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_50(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_126() {
-    ({ test_static_observers_51(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_51(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_127() {
-    ({ test_static_observers_52(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_52(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_128() {
-    ({ test_static_observers_53(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_53(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_129() {
-    ({ test_static_observers_54(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_54(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_130() {
-    ({ test_static_observers_55(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_55(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_131() {
-    ({ test_static_observers_56(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_56(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_132() {
-    ({ test_static_observers_57(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_57(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_133() {
-    ({ test_static_observers_58(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_58(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_134() {
-    ({ test_static_observers_59(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_59(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_135() {
-    ({ test_static_observers_60(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_60(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_136() {
-    ({ test_static_observers_61(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_61(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_137() {
-    ({ test_static_observers_62(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_62(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_138() {
-    ({ test_static_observers_63(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_63(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_139() {
-    ({ test_static_observers_64(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_64(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_140() {
-    ({ test_static_observers_65(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_65(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_141() {
-    ({ test_static_observers_66(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_66(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_142() {
-    ({ test_static_observers_67(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_67(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_143() {
-    ({ test_static_observers_68(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_68(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_144() {
-    ({ test_static_observers_69(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_69(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_145() {
-    ({ test_static_observers_70(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_70(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_146() {
-    ({ test_static_observers_71(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_71(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_147() {
-    ({ test_static_observers_72(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_72(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_148() {
-    ({ test_static_observers_73(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_73(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_149() {
-    ({ test_static_observers_74(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_74(unimplemented!(), unimplemented!()) });
 }
 pub fn test_static_observers_150() {
-    ({ test_static_observers_75(unimplemented!(), <()>::default()) });
+    ({ test_static_observers_75(unimplemented!(), unimplemented!()) });
 }
 pub fn test_151() {
     let D: Value<()> = Rc::new(RefCell::new(dynamic_extent_152.with(|rc| *rc.borrow())));

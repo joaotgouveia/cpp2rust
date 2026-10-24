@@ -539,9 +539,7 @@ pub unsafe fn test_4() -> () {
     }
     {
         let mut p: () = unimplemented!();
-        let mut ret: () = (unsafe {
-            make_obj_using_allocator_14(&a, &mut *(&raw mut (*unimplemented!())).cast::<()>())
-        });
+        let mut ret: () = (unsafe { make_obj_using_allocator_14(&a, &mut (*unimplemented!())) });
         unimplemented!();
         unimplemented!();
         unimplemented!();

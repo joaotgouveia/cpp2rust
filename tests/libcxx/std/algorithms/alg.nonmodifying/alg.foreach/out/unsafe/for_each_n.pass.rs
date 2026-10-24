@@ -270,7 +270,7 @@ pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -493,7 +493,7 @@ pub unsafe fn test_deque_and_join_view_iterators_8() {
     }
     {
         let mut lst: () = unimplemented!();
-        let mut v : std_ranges_join_view_std_ranges_ref_view_std_list_std_list_int__std_allocator_int____std_allocator_std_list_int__std_allocator_int______ = unimplemented!()  ;
+        let mut v: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -543,7 +543,7 @@ pub unsafe fn test_9() -> () {
     }
     {
         let mut vec_: () = unimplemented!();
-        let mut v : std_ranges_join_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______ = unimplemented!()  ;
+        let mut v: () = unimplemented!();
         unimplemented!();
     }
     return true;

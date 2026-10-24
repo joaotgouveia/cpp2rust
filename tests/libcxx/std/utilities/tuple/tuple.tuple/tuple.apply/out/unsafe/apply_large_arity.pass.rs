@@ -1282,10 +1282,7 @@ pub unsafe fn test_apply_fn_20(
     return true;
 }
 pub unsafe fn test_all_21() {
-    let mut val_fn: Option<unsafe fn(()) -> ()> = std::mem::transmute::<
-        Option<unsafe fn(()) -> ()>,
-        Option<unsafe fn(()) -> ()>,
-    >((Some(test_apply_fn_0)));
+    let mut val_fn: Option<unsafe fn(()) -> ()> = (Some(test_apply_fn_0));
     let mut ref_fn: Option<unsafe fn(*mut ()) -> ()> = (Some(test_apply_fn_1));
     let mut cref_fn: Option<unsafe fn(*const ()) -> ()> = (Some(test_apply_fn_2));
     let mut rref_fn: Option<unsafe fn(*mut ()) -> ()> = (Some(test_apply_fn_3));
@@ -1302,23 +1299,20 @@ pub unsafe fn test_all_21() {
         unimplemented!();
     }
     {
-        let mut a: std_tuple_int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: std_tuple_const_int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn test_all_22() {
-    let mut val_fn: Option<unsafe fn((), ()) -> ()> = std::mem::transmute::<
-        Option<unsafe fn((), ()) -> ()>,
-        Option<unsafe fn((), ()) -> ()>,
-    >((Some(test_apply_fn_4)));
+    let mut val_fn: Option<unsafe fn((), ()) -> ()> = (Some(test_apply_fn_4));
     let mut ref_fn: Option<unsafe fn(*mut (), *mut ()) -> ()> = (Some(test_apply_fn_5));
     let mut cref_fn: Option<unsafe fn(*const (), *const ()) -> ()> = (Some(test_apply_fn_6));
     let mut rref_fn: Option<unsafe fn(*mut (), *mut ()) -> ()> = (Some(test_apply_fn_7));
@@ -1335,23 +1329,20 @@ pub unsafe fn test_all_22() {
         unimplemented!();
     }
     {
-        let mut a: std_tuple_int__int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: std_tuple_const_int__const_int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn test_all_23() {
-    let mut val_fn: Option<unsafe fn((), (), ()) -> ()> = std::mem::transmute::<
-        Option<unsafe fn((), (), ()) -> ()>,
-        Option<unsafe fn((), (), ()) -> ()>,
-    >((Some(test_apply_fn_8)));
+    let mut val_fn: Option<unsafe fn((), (), ()) -> ()> = (Some(test_apply_fn_8));
     let mut ref_fn: Option<unsafe fn(*mut (), *mut (), *mut ()) -> ()> = (Some(test_apply_fn_9));
     let mut cref_fn: Option<unsafe fn(*const (), *const (), *const ()) -> ()> =
         (Some(test_apply_fn_10));
@@ -1369,23 +1360,20 @@ pub unsafe fn test_all_23() {
         unimplemented!();
     }
     {
-        let mut a: std_tuple_int__int__int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: std_tuple_const_int__const_int__const_int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn test_all_24() {
-    let mut val_fn: Option<unsafe fn((), (), (), ()) -> ()> = std::mem::transmute::<
-        Option<unsafe fn((), (), (), ()) -> ()>,
-        Option<unsafe fn((), (), (), ()) -> ()>,
-    >((Some(test_apply_fn_12)));
+    let mut val_fn: Option<unsafe fn((), (), (), ()) -> ()> = (Some(test_apply_fn_12));
     let mut ref_fn: Option<unsafe fn(*mut (), *mut (), *mut (), *mut ()) -> ()> =
         (Some(test_apply_fn_13));
     let mut cref_fn: Option<unsafe fn(*const (), *const (), *const (), *const ()) -> ()> =
@@ -1405,23 +1393,20 @@ pub unsafe fn test_all_24() {
         unimplemented!();
     }
     {
-        let mut a: std_tuple_int__int__int__int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: std_tuple_const_int__const_int__const_int__const_int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn test_all_25() {
-    let mut val_fn: Option<unsafe fn((), (), (), (), ()) -> ()> = std::mem::transmute::<
-        Option<unsafe fn((), (), (), (), ()) -> ()>,
-        Option<unsafe fn((), (), (), (), ()) -> ()>,
-    >((Some(test_apply_fn_16)));
+    let mut val_fn: Option<unsafe fn((), (), (), (), ()) -> ()> = (Some(test_apply_fn_16));
     let mut ref_fn: Option<unsafe fn(*mut (), *mut (), *mut (), *mut (), *mut ()) -> ()> =
         (Some(test_apply_fn_17));
     let mut cref_fn: Option<
@@ -1442,15 +1427,14 @@ pub unsafe fn test_all_25() {
         unimplemented!();
     }
     {
-        let mut a: std_tuple_int__int__int__int__int_ = <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: std_tuple_const_int__const_int__const_int__const_int__const_int_ =
-            <()>::default();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1715,534 +1699,13 @@ pub unsafe fn test_one_26() {
             (),
             (),
         ) -> (),
-    > = std::mem::transmute::<
-        Option<
-            unsafe fn(
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-            ) -> (),
-        >,
-        Option<
-            unsafe fn(
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-                (),
-            ) -> (),
-        >,
-    >((Some(test_apply_fn_20)));
+    > = (Some(test_apply_fn_20));
     {
         let mut a: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut a : std_tuple_int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ = <() >::default() ;
+        let mut a: () = unimplemented!();
         unimplemented!();
     }
 }

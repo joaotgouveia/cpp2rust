@@ -85,7 +85,7 @@ pub struct cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocato
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn operator_deref ( &self , ) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_ { return unimplemented!()   ;
+ this } pub unsafe fn operator_deref ( &self , ) -> () { return unimplemented!()   ;
  } pub unsafe fn operator_inc_5 ( &mut self , ) -> *mut cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { unimplemented!()  ;
  return & mut ( * ( self as *mut cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  )  )  ;
  } }
@@ -138,9 +138,7 @@ impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____
         };
         this
     }
-    pub unsafe fn operator_deref(
-        &self,
-    ) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_ {
+    pub unsafe fn operator_deref(&self) -> () {
         return unimplemented!();
     }
     pub unsafe fn operator_inc_6(
@@ -354,7 +352,7 @@ pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));

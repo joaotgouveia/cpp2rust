@@ -297,10 +297,10 @@ pub fn test01_14() {
         __do_while = false;
         if !({
             let _val: Value<()> = Rc::new(RefCell::new(
-                (({
+                ({
                     let ___args: Value<()> = Rc::new(RefCell::new(3_()));
                     __invoke_r_17(FnPtr::<fn(()) -> ()>::new(sq_10), ___args.as_pointer())
-                }) as ()),
+                }),
             ));
             let _exp: Value<()> = Rc::new(RefCell::new(9_()));
             chk_11(_val.as_pointer(), _exp.as_pointer())
@@ -326,10 +326,10 @@ pub fn test01_14() {
         __do_while = false;
         if !({
             let _val: Value<()> = Rc::new(RefCell::new(
-                (({
+                ({
                     let ___args: Value<()> = Rc::new(RefCell::new(4_()));
                     __invoke_r_18(FnPtr::<fn(()) -> ()>::new(sq_10), ___args.as_pointer())
-                }) as ()),
+                }),
             ));
             let _exp: Value<()> = Rc::new(RefCell::new(('\x10' as ())));
             chk_13(_val.as_pointer(), _exp.as_pointer())

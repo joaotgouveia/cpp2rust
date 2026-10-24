@@ -537,7 +537,7 @@ pub fn iter_move_13(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -698,7 +698,7 @@ impl util_iterator_error {
     }
 }
 pub fn check_16(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
-    let mut M: () = (((expected).clone() - (first).clone()) as ());
+    let mut M: () = ((((expected).clone() - (first).clone()) as ()) as ());
     let abs: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
     {
         let it: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -712,7 +712,7 @@ pub fn check_16(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
     {}
 }
 pub fn check_18(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
-    let mut M: () = (((expected).clone() - (first).clone()) as ());
+    let mut M: () = ((((expected).clone() - (first).clone()) as ()) as ());
     let abs: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
     {
         let it: Value<cpp20_input_iterator_int_ptr_> =
@@ -726,7 +726,7 @@ pub fn check_18(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
     {}
 }
 pub fn check_19(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
-    let mut M: () = (((expected).clone() - (first).clone()) as ());
+    let mut M: () = ((((expected).clone() - (first).clone()) as ()) as ());
     let abs: Value<FnPtr<Generic>> =
         Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
             return if (x < 0_()) { -x } else { x };
@@ -763,7 +763,7 @@ pub fn check_19(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
     }
 }
 pub fn check_20(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
-    let mut M: () = (((expected).clone() - (first).clone()) as ());
+    let mut M: () = ((((expected).clone() - (first).clone()) as ()) as ());
     let abs: Value<FnPtr<Generic>> =
         Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
             return if (x < 0_()) { -x } else { x };
@@ -800,7 +800,7 @@ pub fn check_20(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
     }
 }
 pub fn check_21(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
-    let mut M: () = (((expected).clone() - (first).clone()) as ());
+    let mut M: () = ((((expected).clone() - (first).clone()) as ()) as ());
     let abs: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
     {
         let it: Value<random_access_iterator_int_ptr_> =
@@ -831,7 +831,7 @@ pub fn check_21(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
     }
 }
 pub fn check_22(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
-    let mut M: () = (((expected).clone() - (first).clone()) as ());
+    let mut M: () = ((((expected).clone() - (first).clone()) as ()) as ());
     let abs: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
     {
         let it: Value<contiguous_iterator_int_ptr_> =
@@ -862,7 +862,7 @@ pub fn check_22(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
     }
 }
 pub fn check_23(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
-    let mut M: () = (((expected).clone() - (first).clone()) as ());
+    let mut M: () = ((((expected).clone() - (first).clone()) as ()) as ());
     let abs: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
     {
         let it: Value<Ptr<()>> = Rc::new(RefCell::new((first).clone()));
@@ -885,7 +885,7 @@ pub fn check_23(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
     }
 }
 pub fn check_24(mut first: Ptr<()>, mut n: (), mut expected: Ptr<()>) {
-    let mut M: () = (((expected).clone() - (first).clone()) as ());
+    let mut M: () = ((((expected).clone() - (first).clone()) as ()) as ());
     let abs: Value<FnPtr<Generic>> =
         Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
             return if (x < 0_()) { -x } else { x };
@@ -1512,7 +1512,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__Impl
                     (*self).with(|__s| __s.base_.clone())
                 })))
                 .as_pointer(),
-                (n as ()),
+                n,
             )
         });
     }
@@ -1528,10 +1528,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__Impl
             ({
                 base_6(
                     ({
-                        contiguous_iterator_int_ptr_Impl::operator_add_assign(
-                            &tmp.as_pointer(),
-                            (n as ()),
-                        )
+                        contiguous_iterator_int_ptr_Impl::operator_add_assign(&tmp.as_pointer(), n)
                     }),
                 )
             }),
@@ -1880,7 +1877,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__Impl
                     (*self).with(|__s| __s.base_.clone())
                 })))
                 .as_pointer(),
-                (n as ()),
+                n,
             )
         });
     }
@@ -1898,7 +1895,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__Impl
                     ({
                         random_access_iterator_int_ptr_Impl::operator_add_assign(
                             &tmp.as_pointer(),
-                            (n as ()),
+                            n,
                         )
                     }),
                 )

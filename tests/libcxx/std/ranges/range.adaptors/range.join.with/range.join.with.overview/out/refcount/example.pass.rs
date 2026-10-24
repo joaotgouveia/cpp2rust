@@ -9,7 +9,7 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
-    let __tmp_0 : Value<std_ranges_join_with_view_std_ranges_ref_view_std_vector_std_string__std_allocator_std_string_____std_ranges_single_view_char__ > = Rc::new(RefCell::new(unimplemented!()  ));
+    let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __range1: Ptr<()> = __tmp_0.as_pointer();
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (unimplemented!().read());

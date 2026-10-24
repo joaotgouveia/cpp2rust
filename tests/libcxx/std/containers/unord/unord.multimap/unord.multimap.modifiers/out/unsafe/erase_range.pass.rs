@@ -235,7 +235,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut erase: () = unimplemented!();
         unimplemented!();
         'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-            let v: *const std_pair_const_unsigned_long__unsigned_long_ = &(*unimplemented!());
+            let v: *const () = &(*unimplemented!());
             unimplemented!();
         }
     }

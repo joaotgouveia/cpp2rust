@@ -25,8 +25,7 @@ pub fn test_0() -> () {
             "std::same_as<decltype(rv.end()), std::unreachable_sentinel_t>"
         );;
         const _: () = assert!(true, "noexcept(rv.end())");;
-        let __tmp_0: Value<std_ranges_repeat_view_int__long_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __range1: Ptr<()> = __tmp_0.as_pointer();
         'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
             let i: Ptr<()> = unimplemented!();

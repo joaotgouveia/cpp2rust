@@ -881,7 +881,7 @@ pub unsafe fn iter_move_23(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_24(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1265,8 +1265,7 @@ pub unsafe fn test_range_26() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy: std_ranges_elements_of_Range_int_ptr__refref__std_allocator_std_byte__ =
-            (*unimplemented!());
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_int_ptr_ = unimplemented!();
         let copy_range: *mut Range_int_ptr_ = unimplemented!();
         unimplemented!();
@@ -1304,7 +1303,7 @@ pub unsafe fn test_range_27() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_contiguous_iterator_int_ptr___refref__std_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_contiguous_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_contiguous_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1342,7 +1341,7 @@ pub unsafe fn test_range_28() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_random_access_iterator_int_ptr___refref__std_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_random_access_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_random_access_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1380,7 +1379,7 @@ pub unsafe fn test_range_29() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_bidirectional_iterator_int_ptr___refref__std_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_bidirectional_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_bidirectional_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1417,7 +1416,7 @@ pub unsafe fn test_range_30() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_forward_iterator_int_ptr___refref__std_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_forward_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_forward_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1455,7 +1454,7 @@ pub unsafe fn test_range_31() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_cpp20_input_iterator_int_ptr___refref__std_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_cpp20_input_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_cpp20_input_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1493,7 +1492,7 @@ pub unsafe fn test_range_32() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_cpp17_input_iterator_int_ptr__int_ptr___refref__std_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_cpp17_input_iterator_int_ptr__int_ptr__ = unimplemented!();
         let copy_range: *mut Range_cpp17_input_iterator_int_ptr__int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1530,8 +1529,7 @@ pub unsafe fn test_range_33() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy: std_ranges_elements_of_Range_int_ptr__refref__min_allocator_std_byte__ =
-            (*unimplemented!());
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_int_ptr_ = unimplemented!();
         let copy_range: *mut Range_int_ptr_ = unimplemented!();
         unimplemented!();
@@ -1569,7 +1567,7 @@ pub unsafe fn test_range_34() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_contiguous_iterator_int_ptr___refref__min_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_contiguous_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_contiguous_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1607,7 +1605,7 @@ pub unsafe fn test_range_35() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_random_access_iterator_int_ptr___refref__min_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_random_access_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_random_access_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1645,7 +1643,7 @@ pub unsafe fn test_range_36() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_bidirectional_iterator_int_ptr___refref__min_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_bidirectional_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_bidirectional_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1682,7 +1680,7 @@ pub unsafe fn test_range_37() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_forward_iterator_int_ptr___refref__min_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_forward_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_forward_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1720,7 +1718,7 @@ pub unsafe fn test_range_38() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_cpp20_input_iterator_int_ptr___refref__min_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_cpp20_input_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_cpp20_input_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1758,7 +1756,7 @@ pub unsafe fn test_range_39() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_cpp17_input_iterator_int_ptr__int_ptr___refref__min_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_cpp17_input_iterator_int_ptr__int_ptr__ = unimplemented!();
         let copy_range: *mut Range_cpp17_input_iterator_int_ptr__int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1806,8 +1804,7 @@ pub unsafe fn test_range_40() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy: std_ranges_elements_of_Range_int_ptr__refref__test_allocator_std_byte__ =
-            (*unimplemented!());
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_int_ptr_ = unimplemented!();
         let copy_range: *mut Range_int_ptr_ = unimplemented!();
         unimplemented!();
@@ -1861,7 +1858,7 @@ pub unsafe fn test_range_41() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_contiguous_iterator_int_ptr___refref__test_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_contiguous_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_contiguous_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1915,7 +1912,7 @@ pub unsafe fn test_range_42() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_random_access_iterator_int_ptr___refref__test_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_random_access_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_random_access_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -1969,7 +1966,7 @@ pub unsafe fn test_range_43() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_bidirectional_iterator_int_ptr___refref__test_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_bidirectional_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_bidirectional_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -2022,7 +2019,7 @@ pub unsafe fn test_range_44() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_forward_iterator_int_ptr___refref__test_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_forward_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_forward_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -2076,7 +2073,7 @@ pub unsafe fn test_range_45() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_cpp20_input_iterator_int_ptr___refref__test_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_cpp20_input_iterator_int_ptr__ = unimplemented!();
         let copy_range: *mut Range_cpp20_input_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
@@ -2130,7 +2127,7 @@ pub unsafe fn test_range_46() -> () {
     };
     {
         let mut e: () = (*unimplemented!());
-        let mut copy : std_ranges_elements_of_Range_cpp17_input_iterator_int_ptr__int_ptr___refref__test_allocator_std_byte__ = ( * unimplemented!()  )  ;
+        let mut copy: () = (*unimplemented!());
         let range: *mut Range_cpp17_input_iterator_int_ptr__int_ptr__ = unimplemented!();
         let copy_range: *mut Range_cpp17_input_iterator_int_ptr__int_ptr__ = unimplemented!();
         unimplemented!();

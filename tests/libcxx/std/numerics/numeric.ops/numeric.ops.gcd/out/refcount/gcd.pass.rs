@@ -861,7 +861,7 @@ pub fn basic_gcd_58(mut m: (), mut n: ()) -> () {
             n = { -n };
         }
     }
-    return ({ basic_gcd__54((m as ()), (n as ())) });
+    return ({ basic_gcd__54(m, n) });
 }
 pub fn basic_gcd_59(mut m: (), mut n: ()) -> () {
     {
@@ -872,7 +872,7 @@ pub fn basic_gcd_59(mut m: (), mut n: ()) -> () {
             n = { -n };
         }
     }
-    return ({ basic_gcd__55((m as ()), (n as ())) });
+    return ({ basic_gcd__55(m, n) });
 }
 pub fn basic_gcd_60(mut m: (), mut n: ()) -> () {
     {
@@ -883,7 +883,7 @@ pub fn basic_gcd_60(mut m: (), mut n: ()) -> () {
             n = { -n };
         }
     }
-    return ({ basic_gcd__56((m as ()), (n as ())) });
+    return ({ basic_gcd__56(m, n) });
 }
 pub fn basic_gcd_61(mut m: (), mut n: ()) -> () {
     {
@@ -894,23 +894,23 @@ pub fn basic_gcd_61(mut m: (), mut n: ()) -> () {
             n = { -n };
         }
     }
-    return ({ basic_gcd__57((m as ()), (n as ())) });
+    return ({ basic_gcd__57(m, n) });
 }
 pub fn basic_gcd_62(mut m: (), mut n: ()) -> () {
     {}
-    return ({ basic_gcd__54(((m as ()) as ()), ((n as ()) as ())) });
+    return ({ basic_gcd__54((m as ()), (n as ())) });
 }
 pub fn basic_gcd_63(mut m: (), mut n: ()) -> () {
     {}
-    return ({ basic_gcd__55(((m as ()) as ()), ((n as ()) as ())) });
+    return ({ basic_gcd__55((m as ()), (n as ())) });
 }
 pub fn basic_gcd_64(mut m: (), mut n: ()) -> () {
     {}
-    return ({ basic_gcd__56(((m as ()) as ()), ((n as ()) as ())) });
+    return ({ basic_gcd__56((m as ()), (n as ())) });
 }
 pub fn basic_gcd_65(mut m: (), mut n: ()) -> () {
     {}
-    return ({ basic_gcd__57(((m as ()) as ()), ((n as ()) as ())) });
+    return ({ basic_gcd__57((m as ()), (n as ())) });
 }
 pub fn do_fuzzy_tests_66() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));

@@ -312,7 +312,7 @@ pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -499,7 +499,7 @@ impl EmplaceConstructibleMoveableAndAssignable_int_ {
         let mut this = Self {
             copied: (((*Other).copied) + (1_())),
             assigned: 0_(),
-            value: ((*unimplemented!()) as ()),
+            value: (*unimplemented!()),
         };
         this
     }
@@ -507,7 +507,7 @@ impl EmplaceConstructibleMoveableAndAssignable_int_ {
         &mut self,
         mut xvalue: (),
     ) -> *mut EmplaceConstructibleMoveableAndAssignable_int_ {
-        self.value = ((*unimplemented!()) as ());
+        self.value = (*unimplemented!());
         self.assigned.prefix_inc();
         return &mut (*(self as *mut EmplaceConstructibleMoveableAndAssignable_int_));
     }

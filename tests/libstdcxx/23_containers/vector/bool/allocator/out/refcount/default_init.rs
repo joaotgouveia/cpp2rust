@@ -775,11 +775,7 @@ impl __gnu_test_default_init_allocator_unsigned_long_Impl
     for Ptr<__gnu_test_default_init_allocator_unsigned_long_>
 {
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
-        ({
-            let ___p: Ptr<()> = (p).clone();
-            let ___n: () = n;
-            (unimplemented!() as std___new_allocator_unsigned_long_).deallocate(___p, ___n)
-        });
+        unimplemented!();
     }
 }
 pub trait __gnu_test_default_resource_mgrImpl {

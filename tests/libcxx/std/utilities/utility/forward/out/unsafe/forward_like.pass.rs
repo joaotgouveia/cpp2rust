@@ -211,7 +211,7 @@ pub unsafe fn test_2() -> () {
     }
     {
         let mut val: () = 1729_();
-        let result: *const () = &*(&raw const val).cast::<()>();
+        let result: *const () = &val;
         const _: () = assert!(true, "std::is_same_v<decltype(result), const int&&>");;
         unimplemented!();
     }

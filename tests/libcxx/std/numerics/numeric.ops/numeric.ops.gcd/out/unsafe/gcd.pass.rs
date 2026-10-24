@@ -858,7 +858,7 @@ pub unsafe fn basic_gcd_58(mut m: (), mut n: ()) -> () {
             n = -n;
         }
     }
-    return (unsafe { basic_gcd__54((m as ()), (n as ())) });
+    return (unsafe { basic_gcd__54(m, n) });
 }
 pub unsafe fn basic_gcd_59(mut m: (), mut n: ()) -> () {
     {
@@ -869,7 +869,7 @@ pub unsafe fn basic_gcd_59(mut m: (), mut n: ()) -> () {
             n = -n;
         }
     }
-    return (unsafe { basic_gcd__55((m as ()), (n as ())) });
+    return (unsafe { basic_gcd__55(m, n) });
 }
 pub unsafe fn basic_gcd_60(mut m: (), mut n: ()) -> () {
     {
@@ -880,7 +880,7 @@ pub unsafe fn basic_gcd_60(mut m: (), mut n: ()) -> () {
             n = -n;
         }
     }
-    return (unsafe { basic_gcd__56((m as ()), (n as ())) });
+    return (unsafe { basic_gcd__56(m, n) });
 }
 pub unsafe fn basic_gcd_61(mut m: (), mut n: ()) -> () {
     {
@@ -891,23 +891,23 @@ pub unsafe fn basic_gcd_61(mut m: (), mut n: ()) -> () {
             n = -n;
         }
     }
-    return (unsafe { basic_gcd__57((m as ()), (n as ())) });
+    return (unsafe { basic_gcd__57(m, n) });
 }
 pub unsafe fn basic_gcd_62(mut m: (), mut n: ()) -> () {
     {}
-    return (unsafe { basic_gcd__54(((m as ()) as ()), ((n as ()) as ())) });
+    return (unsafe { basic_gcd__54((m as ()), (n as ())) });
 }
 pub unsafe fn basic_gcd_63(mut m: (), mut n: ()) -> () {
     {}
-    return (unsafe { basic_gcd__55(((m as ()) as ()), ((n as ()) as ())) });
+    return (unsafe { basic_gcd__55((m as ()), (n as ())) });
 }
 pub unsafe fn basic_gcd_64(mut m: (), mut n: ()) -> () {
     {}
-    return (unsafe { basic_gcd__56(((m as ()) as ()), ((n as ()) as ())) });
+    return (unsafe { basic_gcd__56((m as ()), (n as ())) });
 }
 pub unsafe fn basic_gcd_65(mut m: (), mut n: ()) -> () {
     {}
-    return (unsafe { basic_gcd__57(((m as ()) as ()), ((n as ()) as ())) });
+    return (unsafe { basic_gcd__57((m as ()), (n as ())) });
 }
 pub unsafe fn do_fuzzy_tests_66() {
     let mut gen_: () = unimplemented!();

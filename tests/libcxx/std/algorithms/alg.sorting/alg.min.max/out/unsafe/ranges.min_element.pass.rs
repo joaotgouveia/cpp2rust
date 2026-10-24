@@ -467,7 +467,7 @@ pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1041,7 +1041,7 @@ pub unsafe fn test_dangling_33() {
             return a;
         }
     );
-    let mut ret: std_ranges_dangling = (unsafe {
+    let mut ret: () = (unsafe {
         let mut ___r: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut min_element_18))(
             &mut ___r,

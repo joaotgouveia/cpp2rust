@@ -445,22 +445,22 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe {
             let _pos: () = unimplemented!();
             let _end: () = unimplemented!();
-            CheckConsecutiveValues_0(_pos, _end, (1_() as ()), 2_())
+            CheckConsecutiveValues_0(_pos, _end, 1_(), 2_())
         });
         (unsafe {
             let _pos: () = unimplemented!();
             let _end: () = unimplemented!();
-            CheckConsecutiveValues_0(_pos, _end, (2_() as ()), 2_())
+            CheckConsecutiveValues_0(_pos, _end, 2_(), 2_())
         });
         (unsafe {
             let _pos: () = unimplemented!();
             let _end: () = unimplemented!();
-            CheckConsecutiveValues_0(_pos, _end, (3_() as ()), 1_())
+            CheckConsecutiveValues_0(_pos, _end, 3_(), 1_())
         });
         (unsafe {
             let _pos: () = unimplemented!();
             let _end: () = unimplemented!();
-            CheckConsecutiveValues_0(_pos, _end, (4_() as ()), 1_())
+            CheckConsecutiveValues_0(_pos, _end, 4_(), 1_())
         });
         unimplemented!();
         unimplemented!();

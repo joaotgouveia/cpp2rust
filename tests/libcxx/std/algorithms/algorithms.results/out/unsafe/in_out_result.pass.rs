@@ -280,7 +280,7 @@ pub unsafe fn test_14() -> () {
         let mut res: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut res2: std_ranges_in_out_result_MoveOnly__int_ = (*unimplemented!());
+        let mut res2: () = (*unimplemented!());
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -278,7 +278,7 @@ pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -547,10 +547,10 @@ pub unsafe fn operator_sub_18(
     mut lhs: random_access_iterator_int_ptr_,
     mut rhs: IntSentinelWith_random_access_iterator_int_ptr__,
 ) -> () {
-    return ((unsafe {
+    return (unsafe {
         let _x: random_access_iterator_int_ptr_ = lhs;
         operator_sub_0(_x, rhs.value_)
-    }) as ());
+    });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]

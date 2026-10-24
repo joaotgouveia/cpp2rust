@@ -459,7 +459,7 @@ pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -922,7 +922,7 @@ pub unsafe fn test_14() -> () {
     let mut v: () = unimplemented!();
     let mut i: () =
         std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false_::new_1({
-            &mut *(&raw mut v).cast::<std_ranges_lazy_split_view_InputView__ForwardTinyView_>()
+            &mut v
         });
     return true;
 }

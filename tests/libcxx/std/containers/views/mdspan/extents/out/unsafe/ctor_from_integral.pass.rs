@@ -1545,7 +1545,7 @@ pub unsafe fn test_construction_167(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_int__0__struct_std_array_int__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_int__0__struct_std_array_int__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1560,14 +1560,14 @@ pub unsafe fn test_construction_167(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_int__0__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_int__0__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_169(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1582,14 +1582,14 @@ pub unsafe fn test_construction_169(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_int__1__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_int__1__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_170(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1604,14 +1604,14 @@ pub unsafe fn test_construction_170(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_171(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1626,14 +1626,14 @@ pub unsafe fn test_construction_171(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_int__2__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_int__2__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_172(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1648,14 +1648,14 @@ pub unsafe fn test_construction_172(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_173(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1670,14 +1670,14 @@ pub unsafe fn test_construction_173(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_174(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1692,14 +1692,14 @@ pub unsafe fn test_construction_174(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_175(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1714,14 +1714,14 @@ pub unsafe fn test_construction_175(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_int__3__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_int__3__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_176(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1736,14 +1736,14 @@ pub unsafe fn test_construction_176(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_177(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1758,14 +1758,14 @@ pub unsafe fn test_construction_177(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_178(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1780,14 +1780,14 @@ pub unsafe fn test_construction_178(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_179(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1802,14 +1802,14 @@ pub unsafe fn test_construction_179(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_180(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1824,14 +1824,14 @@ pub unsafe fn test_construction_180(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_181(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1846,14 +1846,14 @@ pub unsafe fn test_construction_181(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_182(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1868,14 +1868,14 @@ pub unsafe fn test_construction_182(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_183(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1890,14 +1890,14 @@ pub unsafe fn test_construction_183(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_184(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1912,14 +1912,14 @@ pub unsafe fn test_construction_184(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_185(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1934,14 +1934,14 @@ pub unsafe fn test_construction_185(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_186(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1956,14 +1956,14 @@ pub unsafe fn test_construction_186(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_187(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -1978,14 +1978,14 @@ pub unsafe fn test_construction_187(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_188(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2000,14 +2000,14 @@ pub unsafe fn test_construction_188(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_189(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2022,14 +2022,14 @@ pub unsafe fn test_construction_189(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_190(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2044,14 +2044,14 @@ pub unsafe fn test_construction_190(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_191(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2066,14 +2066,14 @@ pub unsafe fn test_construction_191(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_192(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2088,14 +2088,14 @@ pub unsafe fn test_construction_192(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_193(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2110,14 +2110,14 @@ pub unsafe fn test_construction_193(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_194(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2132,14 +2132,14 @@ pub unsafe fn test_construction_194(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_195(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2154,14 +2154,14 @@ pub unsafe fn test_construction_195(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_196(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2176,14 +2176,14 @@ pub unsafe fn test_construction_196(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_197(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2198,14 +2198,14 @@ pub unsafe fn test_construction_197(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_198(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2220,14 +2220,14 @@ pub unsafe fn test_construction_198(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_199(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2242,14 +2242,14 @@ pub unsafe fn test_construction_199(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_200(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2264,14 +2264,14 @@ pub unsafe fn test_construction_200(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_201(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2286,14 +2286,14 @@ pub unsafe fn test_construction_201(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_202(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2308,14 +2308,14 @@ pub unsafe fn test_construction_202(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_203(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2330,14 +2330,14 @@ pub unsafe fn test_construction_203(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_204(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__struct_std_array_int__0__struct_std_array_int__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__struct_std_array_int__0__struct_std_array_int__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2352,14 +2352,14 @@ pub unsafe fn test_construction_204(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__struct_std_array_int__0__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__struct_std_array_int__0__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_205(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2374,14 +2374,14 @@ pub unsafe fn test_construction_205(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__struct_std_array_int__1__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__struct_std_array_int__1__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_206(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2396,14 +2396,14 @@ pub unsafe fn test_construction_206(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_207(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2418,14 +2418,14 @@ pub unsafe fn test_construction_207(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__struct_std_array_int__2__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__struct_std_array_int__2__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_208(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2440,14 +2440,14 @@ pub unsafe fn test_construction_208(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_209(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2462,14 +2462,14 @@ pub unsafe fn test_construction_209(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_210(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2484,14 +2484,14 @@ pub unsafe fn test_construction_210(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_211(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2506,14 +2506,14 @@ pub unsafe fn test_construction_211(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__9__struct_std_array_int__3__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__9__struct_std_array_int__3__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_212(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2528,14 +2528,14 @@ pub unsafe fn test_construction_212(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_213(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2550,14 +2550,14 @@ pub unsafe fn test_construction_213(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_214(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2572,14 +2572,14 @@ pub unsafe fn test_construction_214(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_215(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2594,14 +2594,14 @@ pub unsafe fn test_construction_215(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_216(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2616,14 +2616,14 @@ pub unsafe fn test_construction_216(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_217(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2638,14 +2638,14 @@ pub unsafe fn test_construction_217(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_218(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2660,14 +2660,14 @@ pub unsafe fn test_construction_218(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_219(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2682,14 +2682,14 @@ pub unsafe fn test_construction_219(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_220(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2704,14 +2704,14 @@ pub unsafe fn test_construction_220(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_221(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2726,14 +2726,14 @@ pub unsafe fn test_construction_221(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_222(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2748,14 +2748,14 @@ pub unsafe fn test_construction_222(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_223(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2770,14 +2770,14 @@ pub unsafe fn test_construction_223(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_224(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2792,14 +2792,14 @@ pub unsafe fn test_construction_224(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_225(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2814,14 +2814,14 @@ pub unsafe fn test_construction_225(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_226(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2836,14 +2836,14 @@ pub unsafe fn test_construction_226(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_227(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2858,14 +2858,14 @@ pub unsafe fn test_construction_227(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_228(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2880,14 +2880,14 @@ pub unsafe fn test_construction_228(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_229(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2902,14 +2902,14 @@ pub unsafe fn test_construction_229(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_230(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2924,14 +2924,14 @@ pub unsafe fn test_construction_230(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_231(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2946,14 +2946,14 @@ pub unsafe fn test_construction_231(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_232(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2968,14 +2968,14 @@ pub unsafe fn test_construction_232(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_233(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -2990,14 +2990,14 @@ pub unsafe fn test_construction_233(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_234(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3012,14 +3012,14 @@ pub unsafe fn test_construction_234(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_235(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3034,14 +3034,14 @@ pub unsafe fn test_construction_235(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_236(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3056,14 +3056,14 @@ pub unsafe fn test_construction_236(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_237(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3078,14 +3078,14 @@ pub unsafe fn test_construction_237(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_238(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3100,14 +3100,14 @@ pub unsafe fn test_construction_238(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_239(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3122,14 +3122,14 @@ pub unsafe fn test_construction_239(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_240(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__struct_std_array_unsigned_int__0__struct_std_array_unsigned_int__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__struct_std_array_unsigned_int__0__struct_std_array_unsigned_int__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3144,14 +3144,14 @@ pub unsafe fn test_construction_240(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__struct_std_array_unsigned_int__0__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__struct_std_array_unsigned_int__0__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_241(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__struct_std_array_unsigned_int__1__struct_std_array_unsigned_int__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__struct_std_array_unsigned_int__1__struct_std_array_unsigned_int__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3166,14 +3166,14 @@ pub unsafe fn test_construction_241(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__struct_std_array_unsigned_int__1__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__struct_std_array_unsigned_int__1__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_242(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__struct_std_array_unsigned_int__1__struct_std_array_unsigned_int__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__struct_std_array_unsigned_int__1__struct_std_array_unsigned_int__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3188,14 +3188,14 @@ pub unsafe fn test_construction_242(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__struct_std_array_unsigned_int__1__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__struct_std_array_unsigned_int__1__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_243(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3210,14 +3210,14 @@ pub unsafe fn test_construction_243(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_244(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3232,14 +3232,14 @@ pub unsafe fn test_construction_244(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_245(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3254,14 +3254,14 @@ pub unsafe fn test_construction_245(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_246(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3276,14 +3276,14 @@ pub unsafe fn test_construction_246(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__2__struct_std_array_unsigned_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_247(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3298,14 +3298,14 @@ pub unsafe fn test_construction_247(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_248(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3320,14 +3320,14 @@ pub unsafe fn test_construction_248(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__7__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_249(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3342,14 +3342,14 @@ pub unsafe fn test_construction_249(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_250(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3364,14 +3364,14 @@ pub unsafe fn test_construction_250(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_251(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3386,14 +3386,14 @@ pub unsafe fn test_construction_251(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_252(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3408,14 +3408,14 @@ pub unsafe fn test_construction_252(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__3__18446744073709551615__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_253(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3430,14 +3430,14 @@ pub unsafe fn test_construction_253(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_254(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3452,14 +3452,14 @@ pub unsafe fn test_construction_254(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__7__9__struct_std_array_unsigned_int__3__struct_std_array_unsigned_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_255(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3474,14 +3474,14 @@ pub unsafe fn test_construction_255(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_256(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3496,14 +3496,14 @@ pub unsafe fn test_construction_256(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_257(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3518,14 +3518,14 @@ pub unsafe fn test_construction_257(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_long_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_int__9__struct_std_array_unsigned_int__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_258(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__struct_std_array_int__0__struct_std_array_int__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__struct_std_array_int__0__struct_std_array_int__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3540,14 +3540,14 @@ pub unsafe fn test_construction_258(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__struct_std_array_int__0__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__struct_std_array_int__0__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_259(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3562,14 +3562,14 @@ pub unsafe fn test_construction_259(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__struct_std_array_int__1__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__struct_std_array_int__1__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_260(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3584,14 +3584,14 @@ pub unsafe fn test_construction_260(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__struct_std_array_int__1__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_261(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3606,14 +3606,14 @@ pub unsafe fn test_construction_261(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__struct_std_array_int__2__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__struct_std_array_int__2__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_262(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3628,14 +3628,14 @@ pub unsafe fn test_construction_262(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_263(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3650,14 +3650,14 @@ pub unsafe fn test_construction_263(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__struct_std_array_int__2__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_264(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3672,14 +3672,14 @@ pub unsafe fn test_construction_264(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__struct_std_array_int__2__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_265(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3694,14 +3694,14 @@ pub unsafe fn test_construction_265(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__9__struct_std_array_int__3__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__9__struct_std_array_int__3__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_266(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3716,14 +3716,14 @@ pub unsafe fn test_construction_266(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_267(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3738,14 +3738,14 @@ pub unsafe fn test_construction_267(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_268(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3760,14 +3760,14 @@ pub unsafe fn test_construction_268(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__18446744073709551615__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_269(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3782,14 +3782,14 @@ pub unsafe fn test_construction_269(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_270(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3804,14 +3804,14 @@ pub unsafe fn test_construction_270(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_271(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3826,14 +3826,14 @@ pub unsafe fn test_construction_271(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__9__struct_std_array_int__3__struct_std_array_int__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_272(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3848,14 +3848,14 @@ pub unsafe fn test_construction_272(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__9__struct_std_array_int__3__struct_std_array_int__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_273(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3870,14 +3870,14 @@ pub unsafe fn test_construction_273(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__1__2__3__4__5__6__7__8__9__struct_std_array_int__9__struct_std_array_int__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_274(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3892,14 +3892,14 @@ pub unsafe fn test_construction_274(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_int__9__struct_std_array_int__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_275(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3914,14 +3914,14 @@ pub unsafe fn test_construction_275(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_int__9__struct_std_array_int__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_276(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3936,14 +3936,14 @@ pub unsafe fn test_construction_276(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__struct_std_array_unsigned_long__0__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_277(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3958,14 +3958,14 @@ pub unsafe fn test_construction_277(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_278(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -3980,14 +3980,14 @@ pub unsafe fn test_construction_278(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__struct_std_array_unsigned_long__1__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_279(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4002,14 +4002,14 @@ pub unsafe fn test_construction_279(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_280(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4024,14 +4024,14 @@ pub unsafe fn test_construction_280(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_281(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4046,14 +4046,14 @@ pub unsafe fn test_construction_281(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_282(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4068,14 +4068,14 @@ pub unsafe fn test_construction_282(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__2__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_283(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4090,14 +4090,14 @@ pub unsafe fn test_construction_283(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_284(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4112,14 +4112,14 @@ pub unsafe fn test_construction_284(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_285(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4134,14 +4134,14 @@ pub unsafe fn test_construction_285(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_286(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4156,14 +4156,14 @@ pub unsafe fn test_construction_286(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_287(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4178,14 +4178,14 @@ pub unsafe fn test_construction_287(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_288(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4200,14 +4200,14 @@ pub unsafe fn test_construction_288(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__3__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_289(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4222,14 +4222,14 @@ pub unsafe fn test_construction_289(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_290(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4244,14 +4244,14 @@ pub unsafe fn test_construction_290(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__7__9__struct_std_array_unsigned_long__3__struct_std_array_unsigned_long__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_291(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4266,14 +4266,14 @@ pub unsafe fn test_construction_291(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__1__2__3__4__5__6__7__8__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_292(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4288,14 +4288,14 @@ pub unsafe fn test_construction_292(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_293(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4310,14 +4310,14 @@ pub unsafe fn test_construction_293(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_unsigned_long__9__struct_std_array_unsigned_long__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_294(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_struct_IntType__0__struct_std_array_struct_IntType__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_struct_IntType__0__struct_std_array_struct_IntType__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4332,14 +4332,14 @@ pub unsafe fn test_construction_294(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_struct_IntType__0__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__struct_std_array_struct_IntType__0__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_295(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4354,14 +4354,14 @@ pub unsafe fn test_construction_295(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_296(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4376,14 +4376,14 @@ pub unsafe fn test_construction_296(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_297(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4398,14 +4398,14 @@ pub unsafe fn test_construction_297(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_298(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4420,14 +4420,14 @@ pub unsafe fn test_construction_298(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_299(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4442,14 +4442,14 @@ pub unsafe fn test_construction_299(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_300(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4464,14 +4464,14 @@ pub unsafe fn test_construction_300(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_301(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4486,14 +4486,14 @@ pub unsafe fn test_construction_301(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_302(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4508,14 +4508,14 @@ pub unsafe fn test_construction_302(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_303(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4530,14 +4530,14 @@ pub unsafe fn test_construction_303(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_304(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4552,14 +4552,14 @@ pub unsafe fn test_construction_304(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_305(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4574,14 +4574,14 @@ pub unsafe fn test_construction_305(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_306(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4596,14 +4596,14 @@ pub unsafe fn test_construction_306(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__3__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_307(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4618,14 +4618,14 @@ pub unsafe fn test_construction_307(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_308(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4640,14 +4640,14 @@ pub unsafe fn test_construction_308(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_309(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4662,14 +4662,14 @@ pub unsafe fn test_construction_309(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__1__2__3__4__5__6__7__8__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_310(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4684,14 +4684,14 @@ pub unsafe fn test_construction_310(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_311(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4706,14 +4706,14 @@ pub unsafe fn test_construction_311(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_312(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__struct_std_array_struct_IntType__0__struct_std_array_struct_IntType__0_ ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__struct_std_array_struct_IntType__0__struct_std_array_struct_IntType__0_ ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4728,14 +4728,14 @@ pub unsafe fn test_construction_312(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__struct_std_array_struct_IntType__0__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__struct_std_array_struct_IntType__0__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_313(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4750,14 +4750,14 @@ pub unsafe fn test_construction_313(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_314(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4772,14 +4772,14 @@ pub unsafe fn test_construction_314(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__struct_std_array_struct_IntType__1__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_315(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4794,14 +4794,14 @@ pub unsafe fn test_construction_315(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_316(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4816,14 +4816,14 @@ pub unsafe fn test_construction_316(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_317(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4838,14 +4838,14 @@ pub unsafe fn test_construction_317(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_318(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4860,14 +4860,14 @@ pub unsafe fn test_construction_318(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__2__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_319(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4882,14 +4882,14 @@ pub unsafe fn test_construction_319(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_320(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4904,14 +4904,14 @@ pub unsafe fn test_construction_320(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_321(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4926,14 +4926,14 @@ pub unsafe fn test_construction_321(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_322(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4948,14 +4948,14 @@ pub unsafe fn test_construction_322(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_323(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4970,14 +4970,14 @@ pub unsafe fn test_construction_323(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_324(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -4992,14 +4992,14 @@ pub unsafe fn test_construction_324(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__3__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_325(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -5014,14 +5014,14 @@ pub unsafe fn test_construction_325(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__2__0_1 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_326(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__3__0_1_2 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -5036,14 +5036,14 @@ pub unsafe fn test_construction_326(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__7__9__struct_std_array_struct_IntType__3__struct_std_array_struct_IntType__1__0 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_327(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__1__2__3__4__5__6__7__8__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__1__2__3__4__5__6__7__8__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -5058,14 +5058,14 @@ pub unsafe fn test_construction_327(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__1__2__3__4__5__6__7__8__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__1__2__3__4__5__6__7__8__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__0_ ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_328(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -5080,14 +5080,14 @@ pub unsafe fn test_construction_328(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__2__3__18446744073709551615__5__18446744073709551615__7__18446744073709551615__9__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__4__0_1_2_3 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_construction_329(mut all_ext: ()) {
     (unsafe {
         let _all_ext: () = all_ext.clone();
         let _ext: () = all_ext.clone();
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( _all_ext , _ext , unimplemented!() , )
     });
     let mut dyn_ext: () = unimplemented!();
     let mut dynamic_idx: () = 0_();
@@ -5102,7 +5102,7 @@ pub unsafe fn test_construction_329(mut all_ext: ()) {
         r.postfix_inc();
     }
     (unsafe {
-        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unsafe { std::mem::zeroed::<() >() } , )
+        IntegralCtorTest::test_construction_1_class_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__struct_std_array_struct_IntType__9__struct_std_array_struct_IntType__9__0_1_2_3_4_5_6_7_8 ( all_ext .clone() , dyn_ext .clone() , unimplemented!() , )
     });
 }
 pub unsafe fn test_330() {

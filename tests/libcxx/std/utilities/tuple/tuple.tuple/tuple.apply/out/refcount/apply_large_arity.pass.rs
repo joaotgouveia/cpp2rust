@@ -1271,8 +1271,7 @@ pub fn test_apply_fn_20(
     return true;
 }
 pub fn test_all_21() {
-    let mut val_fn: FnPtr<fn(()) -> ()> =
-        (FnPtr::<fn(()) -> ()>::new(test_apply_fn_0)).cast::<fn(()) -> ()>();
+    let mut val_fn: FnPtr<fn(()) -> ()> = (FnPtr::<fn(()) -> ()>::new(test_apply_fn_0));
     let mut ref_fn: FnPtr<fn(Ptr<()>) -> ()> = (FnPtr::<fn(Ptr<()>) -> ()>::new(test_apply_fn_1));
     let mut cref_fn: FnPtr<fn(Ptr<()>) -> ()> = (FnPtr::<fn(Ptr<()>) -> ()>::new(test_apply_fn_2));
     let mut rref_fn: FnPtr<fn(Ptr<()>) -> ()> = (FnPtr::<fn(Ptr<()>) -> ()>::new(test_apply_fn_3));
@@ -1289,21 +1288,20 @@ pub fn test_all_21() {
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
 }
 pub fn test_all_22() {
-    let mut val_fn: FnPtr<fn((), ()) -> ()> =
-        (FnPtr::<fn((), ()) -> ()>::new(test_apply_fn_4)).cast::<fn((), ()) -> ()>();
+    let mut val_fn: FnPtr<fn((), ()) -> ()> = (FnPtr::<fn((), ()) -> ()>::new(test_apply_fn_4));
     let mut ref_fn: FnPtr<fn(Ptr<()>, Ptr<()>) -> ()> =
         (FnPtr::<fn(Ptr<()>, Ptr<()>) -> ()>::new(test_apply_fn_5));
     let mut cref_fn: FnPtr<fn(Ptr<()>, Ptr<()>) -> ()> =
@@ -1323,21 +1321,21 @@ pub fn test_all_22() {
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
 }
 pub fn test_all_23() {
     let mut val_fn: FnPtr<fn((), (), ()) -> ()> =
-        (FnPtr::<fn((), (), ()) -> ()>::new(test_apply_fn_8)).cast::<fn((), (), ()) -> ()>();
+        (FnPtr::<fn((), (), ()) -> ()>::new(test_apply_fn_8));
     let mut ref_fn: FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>) -> ()> =
         (FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>) -> ()>::new(test_apply_fn_9));
     let mut cref_fn: FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>) -> ()> =
@@ -1357,22 +1355,21 @@ pub fn test_all_23() {
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
 }
 pub fn test_all_24() {
     let mut val_fn: FnPtr<fn((), (), (), ()) -> ()> =
-        (FnPtr::<fn((), (), (), ()) -> ()>::new(test_apply_fn_12))
-            .cast::<fn((), (), (), ()) -> ()>();
+        (FnPtr::<fn((), (), (), ()) -> ()>::new(test_apply_fn_12));
     let mut ref_fn: FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>) -> ()> =
         (FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>) -> ()>::new(test_apply_fn_13));
     let mut cref_fn: FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>) -> ()> =
@@ -1392,22 +1389,21 @@ pub fn test_all_24() {
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
 }
 pub fn test_all_25() {
     let mut val_fn: FnPtr<fn((), (), (), (), ()) -> ()> =
-        (FnPtr::<fn((), (), (), (), ()) -> ()>::new(test_apply_fn_16))
-            .cast::<fn((), (), (), (), ()) -> ()>();
+        (FnPtr::<fn((), (), (), (), ()) -> ()>::new(test_apply_fn_16));
     let mut ref_fn: FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>) -> ()> =
         (FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>) -> ()>::new(test_apply_fn_17));
     let mut cref_fn: FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>, Ptr<()>) -> ()> =
@@ -1427,14 +1423,14 @@ pub fn test_all_25() {
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
@@ -1958,271 +1954,13 @@ pub fn test_one_26() {
             (),
             (),
         ) -> (),
-    >::new(test_apply_fn_20))
-    .cast::<fn(
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-        (),
-    ) -> ()>();
+    >::new(test_apply_fn_20));
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(<()>::default()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }

@@ -29,7 +29,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     let mut p: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
-            let u: std_unique_ptr_int__std_default_delete_int__ = unimplemented!();
+            let u: () = unimplemented!();
         },
         || -> () {
             return if !(unimplemented!()).is_null() {

@@ -540,7 +540,7 @@ pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -4549,7 +4549,7 @@ pub unsafe fn test_105() -> () {
             unimplemented!();
         }
         {
-            let mut result_no_proj: *const () = (unsafe {
+            let mut result_no_proj: () = (unsafe {
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut partition_point_19))(
                     &in_,
                     is_odd.copy_from(),
@@ -4557,7 +4557,7 @@ pub unsafe fn test_105() -> () {
                 )
             });
             unimplemented!();
-            let mut result_with_proj: *const () = (unsafe {
+            let mut result_with_proj: () = (unsafe {
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut partition_point_19))(
                     &in_,
                     is_odd.copy_from(),

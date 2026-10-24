@@ -224,11 +224,7 @@ pub fn test_14() -> () {
     {
         let mut x: () = 42_();
         let v: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*single_15.with(Value::clone).borrow_mut())(
-                    (unimplemented!()).reinterpret_cast::<()>(),
-                )
-            }),
+            ({ (*single_15.with(Value::clone).borrow_mut())(unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();

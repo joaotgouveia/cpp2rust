@@ -288,8 +288,8 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let i: () = 42_();
-    let mut o: std_any = (unsafe { make_any_10(&i) });
-    let i2: *mut () = (unsafe { any_cast_11(&mut *(&raw mut o).cast::<()>()) });
+    let mut o: () = (unsafe { make_any_10(&i) });
+    let i2: *mut () = (unsafe { any_cast_11(&mut o) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -328,12 +328,12 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut o2: std_any = (unsafe {
+    let mut o2: () = (unsafe {
         let mut ___args_0: () = 1_();
         let mut ___args_1: () = 2_();
         make_any_13(&mut ___args_0, &mut ___args_1)
     });
-    let t: *mut () = (unsafe { any_cast_14(&mut *(&raw mut o2).cast::<()>()) });
+    let t: *mut () = (unsafe { any_cast_14(&mut o2) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -353,8 +353,8 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut o3: std_any = (unsafe { make_any_17(unimplemented!()) });
-    let v: *mut () = (unsafe { any_cast_18(&mut *(&raw mut o3).cast::<()>()) });
+    let mut o3: () = (unsafe { make_any_17(unimplemented!()) });
+    let v: *mut () = (unsafe { any_cast_18(&mut o3) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -374,8 +374,8 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut o4: std_any = (unsafe { make_any_19(unimplemented!()) });
-    let c: *mut combined = (unsafe { any_cast_20(&mut *(&raw mut o4).cast::<()>()) });
+    let mut o4: () = (unsafe { make_any_19(unimplemented!()) });
+    let c: *mut combined = (unsafe { any_cast_20(&mut o4) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -389,12 +389,12 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut o5: std_any = (unsafe {
+    let mut o5: () = (unsafe {
         let mut ___args_1: () = 3_();
         let mut ___args_2: () = 4_();
         make_any_21(unimplemented!(), &mut ___args_1, &mut ___args_2)
     });
-    let c2: *mut combined = (unsafe { any_cast_20(&mut *(&raw mut o5).cast::<()>()) });
+    let c2: *mut combined = (unsafe { any_cast_20(&mut o5) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -1081,15 +1081,15 @@ impl TestIncrementDecrement_int_ptr_Impl for Ptr<TestIncrementDecrement_int_ptr_
         {
             {
                 let t: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
                 ])));
                 let mut p: Ptr<()> = ((t.as_pointer() as Ptr<()>).offset(1_()));
                 let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));

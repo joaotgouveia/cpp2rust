@@ -514,7 +514,7 @@ pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -767,7 +767,7 @@ pub unsafe fn test_18() -> () {
             true,
             "std::three_way_comparable<std::ranges::iterator_t<R>>"
         );;
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_three_way_contiguous_iterator_std_tuple_int__ptr___three_way_contiguous_iterator_std_tuple_int__ptr___std_ranges_subrange_kind_sized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
         (unsafe { compareOperatorTest_14(&iter1, &iter2) });
@@ -781,7 +781,7 @@ pub unsafe fn test_18() -> () {
             !(false),
             "!std::three_way_comparable<std::ranges::iterator_t<R>>"
         );;
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_random_access_iterator_std_tuple_int__ptr___random_access_iterator_std_tuple_int__ptr___std_ranges_subrange_kind_sized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
         (unsafe { compareOperatorTest_15(&iter1, &iter2) });
@@ -792,7 +792,7 @@ pub unsafe fn test_18() -> () {
             !(false),
             "!std::three_way_comparable<std::ranges::iterator_t<R>>"
         );;
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_bidirectional_iterator_std_tuple_int__ptr___bidirectional_iterator_std_tuple_int__ptr___std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut it1: () = unimplemented!();
         let mut it2: () = unimplemented!();
         unimplemented!();
@@ -809,7 +809,7 @@ pub unsafe fn test_18() -> () {
             !(false),
             "!std::three_way_comparable<std::ranges::iterator_t<R>>"
         );;
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_cpp20_input_iterator_std_tuple_int__ptr___sentinel_wrapper_cpp20_input_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut it: () = unimplemented!();
         const _: () = assert!(
             !(false),

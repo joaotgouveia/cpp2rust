@@ -6916,7 +6916,7 @@ impl always_convertible_layout_mapping_std_extents_int__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 })));
     }
 }
@@ -6970,7 +6970,7 @@ impl always_convertible_layout_mapping_std_extents_int__18446744073709551615__Im
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
                 })));
     }
 }
@@ -7018,7 +7018,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__Impl
 {
@@ -7077,7 +7077,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_int__18446744073709551615__18446744073709551615__8__9__1__Impl
 {
@@ -7136,7 +7136,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_int__18446744073709551615__4__Impl {
     fn copy_assign(
@@ -7211,7 +7211,7 @@ impl always_convertible_layout_mapping_std_extents_int__18446744073709551615__7_
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
                 })));
     }
 }
@@ -7291,7 +7291,7 @@ impl always_convertible_layout_mapping_std_extents_int__18446744073709551615__7_
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
                 })));
     }
 }
@@ -7395,7 +7395,7 @@ impl always_convertible_layout_mapping_std_extents_int__5__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 })));
     }
 }
@@ -7461,7 +7461,7 @@ impl always_convertible_layout_mapping_std_extents_int__5__7__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 })));
     }
 }
@@ -7537,7 +7537,7 @@ impl always_convertible_layout_mapping_std_extents_int__5__7__8__9__1__Impl
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
                 })));
     }
 }
@@ -7584,7 +7584,7 @@ impl always_convertible_layout_mapping_std_extents_long__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 })));
     }
 }
@@ -7638,7 +7638,7 @@ impl always_convertible_layout_mapping_std_extents_long__18446744073709551615__I
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
                 })));
     }
 }
@@ -7686,7 +7686,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__Impl
 {
@@ -7745,7 +7745,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_long__18446744073709551615__18446744073709551615__8__9__1__Impl
 {
@@ -7804,7 +7804,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_long__18446744073709551615__7__Impl {
     fn copy_assign(
@@ -7858,7 +7858,7 @@ impl always_convertible_layout_mapping_std_extents_long__18446744073709551615__7
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
                 })));
     }
 }
@@ -7938,7 +7938,7 @@ impl always_convertible_layout_mapping_std_extents_long__18446744073709551615__7
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
                 })));
     }
 }
@@ -8000,7 +8000,7 @@ impl always_convertible_layout_mapping_std_extents_long__5__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 })));
     }
 }
@@ -8066,7 +8066,7 @@ impl always_convertible_layout_mapping_std_extents_long__5__7__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 })));
     }
 }
@@ -8142,7 +8142,7 @@ impl always_convertible_layout_mapping_std_extents_long__5__7__8__9__1__Impl
  let __rhs = ( (unimplemented!() .read()) + ( unimplemented!()  * res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
                 })));
     }
 }
@@ -8189,7 +8189,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 }),
             ),
         );
@@ -8251,7 +8251,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = __rhs ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
     }
 }
 pub trait always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__Impl
@@ -8300,7 +8300,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__Impl
 {
@@ -8361,7 +8361,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__1__Impl
 {
@@ -8422,7 +8422,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__7__Impl
 {
@@ -8483,7 +8483,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
     }
 }
 pub trait always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__7__8__9__1__Impl
@@ -8545,7 +8545,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_unsigned_long__5__Impl {
     fn copy_assign(
@@ -8612,7 +8612,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__5__Impl
                     }
                 )
                 .spec::<fn(()) -> ()>(0)
-                .call(<()>::default())
+                .call(unimplemented!())
             }),
         ));
     }
@@ -8689,7 +8689,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__5__7__Impl
                     }
                 )
                 .spec::<fn(()) -> ()>(0)
-                .call(<()>::default())
+                .call(unimplemented!())
             }),
         ));
     }
@@ -8769,7 +8769,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__5__7__8__9__1_
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = __rhs } } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
     }
 }
 pub fn __cpp2rust_init_globals() {}

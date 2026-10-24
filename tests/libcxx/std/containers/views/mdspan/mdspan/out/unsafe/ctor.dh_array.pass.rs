@@ -79,7 +79,7 @@ impl ElementPool_int__1024_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (1024_())) {
             unimplemented!();
@@ -88,7 +88,7 @@ impl ElementPool_int__1024_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *mut () {
-        return (self.ptr_ as *mut ()).cast::<()>();
+        return self.ptr_;
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();
@@ -114,7 +114,7 @@ impl ElementPool_const_int__1024_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (1024_())) {
             unimplemented!();
@@ -123,7 +123,7 @@ impl ElementPool_const_int__1024_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *const () {
-        return ((self.ptr_).cast_const() as *const ()).cast::<()>();
+        return (self.ptr_).cast_const();
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();
@@ -149,7 +149,7 @@ impl ElementPool_double__1024_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (1024_())) {
             unimplemented!();
@@ -158,7 +158,7 @@ impl ElementPool_double__1024_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *mut () {
-        return (self.ptr_ as *mut ()).cast::<()>();
+        return self.ptr_;
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();
@@ -184,7 +184,7 @@ impl ElementPool_const_double__1024_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (1024_())) {
             unimplemented!();
@@ -193,7 +193,7 @@ impl ElementPool_const_double__1024_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *const () {
-        return ((self.ptr_).cast_const() as *const ()).cast::<()>();
+        return (self.ptr_).cast_const();
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();
@@ -6831,9 +6831,7 @@ pub unsafe fn test_mdspan_ctor_264(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -6868,9 +6866,7 @@ pub unsafe fn test_mdspan_ctor_266(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -6905,9 +6901,7 @@ pub unsafe fn test_mdspan_ctor_267(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -6942,9 +6936,7 @@ pub unsafe fn test_mdspan_ctor_268(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -6979,9 +6971,7 @@ pub unsafe fn test_mdspan_ctor_269(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -7016,9 +7006,7 @@ pub unsafe fn test_mdspan_ctor_270(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -7053,9 +7041,7 @@ pub unsafe fn test_mdspan_ctor_271(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -7090,9 +7076,7 @@ pub unsafe fn test_mdspan_ctor_272(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -7127,9 +7111,7 @@ pub unsafe fn test_mdspan_ctor_273(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -7164,9 +7146,7 @@ pub unsafe fn test_mdspan_ctor_274(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -7201,9 +7181,7 @@ pub unsafe fn test_mdspan_ctor_275(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -7238,9 +7216,7 @@ pub unsafe fn test_mdspan_ctor_276(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -7284,7 +7260,7 @@ pub unsafe fn test_mdspan_ctor_277(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_int__::extents(&(*map))
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -7330,7 +7306,7 @@ pub unsafe fn test_mdspan_ctor_278(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -7378,7 +7354,7 @@ pub unsafe fn test_mdspan_ctor_279(
                         &(*map),
                     )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -7426,7 +7402,7 @@ pub unsafe fn test_mdspan_ctor_280(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -7472,7 +7448,7 @@ pub unsafe fn test_mdspan_ctor_281(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -7518,7 +7494,7 @@ pub unsafe fn test_mdspan_ctor_282(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -8065,9 +8041,7 @@ pub unsafe fn test_mdspan_ctor_313(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8102,9 +8076,7 @@ pub unsafe fn test_mdspan_ctor_314(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8139,9 +8111,7 @@ pub unsafe fn test_mdspan_ctor_315(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8176,9 +8146,7 @@ pub unsafe fn test_mdspan_ctor_316(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8213,9 +8181,7 @@ pub unsafe fn test_mdspan_ctor_317(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8250,9 +8216,7 @@ pub unsafe fn test_mdspan_ctor_318(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8287,9 +8251,7 @@ pub unsafe fn test_mdspan_ctor_319(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8324,9 +8286,7 @@ pub unsafe fn test_mdspan_ctor_320(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8361,9 +8321,7 @@ pub unsafe fn test_mdspan_ctor_321(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8398,9 +8356,7 @@ pub unsafe fn test_mdspan_ctor_322(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8435,9 +8391,7 @@ pub unsafe fn test_mdspan_ctor_323(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8472,9 +8426,7 @@ pub unsafe fn test_mdspan_ctor_324(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -8518,7 +8470,7 @@ pub unsafe fn test_mdspan_ctor_325(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_int__::extents(&(*map))
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -8564,7 +8516,7 @@ pub unsafe fn test_mdspan_ctor_326(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -8612,7 +8564,7 @@ pub unsafe fn test_mdspan_ctor_327(
                         &(*map),
                     )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -8660,7 +8612,7 @@ pub unsafe fn test_mdspan_ctor_328(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -8706,7 +8658,7 @@ pub unsafe fn test_mdspan_ctor_329(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -8752,7 +8704,7 @@ pub unsafe fn test_mdspan_ctor_330(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -9299,9 +9251,7 @@ pub unsafe fn test_mdspan_ctor_361(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9336,9 +9286,7 @@ pub unsafe fn test_mdspan_ctor_362(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9373,9 +9321,7 @@ pub unsafe fn test_mdspan_ctor_363(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9410,9 +9356,7 @@ pub unsafe fn test_mdspan_ctor_364(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9447,9 +9391,7 @@ pub unsafe fn test_mdspan_ctor_365(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9484,9 +9426,7 @@ pub unsafe fn test_mdspan_ctor_366(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9521,9 +9461,7 @@ pub unsafe fn test_mdspan_ctor_367(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9558,9 +9496,7 @@ pub unsafe fn test_mdspan_ctor_368(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9595,9 +9531,7 @@ pub unsafe fn test_mdspan_ctor_369(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9632,9 +9566,7 @@ pub unsafe fn test_mdspan_ctor_370(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9669,9 +9601,7 @@ pub unsafe fn test_mdspan_ctor_371(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9706,9 +9636,7 @@ pub unsafe fn test_mdspan_ctor_372(handle: *const *mut (), map: *const (), acc: 
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut () = handle;
             let _map: *const () = map;
@@ -9752,7 +9680,7 @@ pub unsafe fn test_mdspan_ctor_373(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_int__::extents(&(*map))
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -9798,7 +9726,7 @@ pub unsafe fn test_mdspan_ctor_374(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -9846,7 +9774,7 @@ pub unsafe fn test_mdspan_ctor_375(
                         &(*map),
                     )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -9894,7 +9822,7 @@ pub unsafe fn test_mdspan_ctor_376(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -9940,7 +9868,7 @@ pub unsafe fn test_mdspan_ctor_377(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -9986,7 +9914,7 @@ pub unsafe fn test_mdspan_ctor_378(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -10533,9 +10461,7 @@ pub unsafe fn test_mdspan_ctor_409(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10570,9 +10496,7 @@ pub unsafe fn test_mdspan_ctor_410(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10607,9 +10531,7 @@ pub unsafe fn test_mdspan_ctor_411(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10644,9 +10566,7 @@ pub unsafe fn test_mdspan_ctor_412(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10681,9 +10601,7 @@ pub unsafe fn test_mdspan_ctor_413(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10718,9 +10636,7 @@ pub unsafe fn test_mdspan_ctor_414(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10755,9 +10671,7 @@ pub unsafe fn test_mdspan_ctor_415(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10792,9 +10706,7 @@ pub unsafe fn test_mdspan_ctor_416(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10829,9 +10741,7 @@ pub unsafe fn test_mdspan_ctor_417(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10866,9 +10776,7 @@ pub unsafe fn test_mdspan_ctor_418(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10903,9 +10811,7 @@ pub unsafe fn test_mdspan_ctor_419(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10940,9 +10846,7 @@ pub unsafe fn test_mdspan_ctor_420(handle: *const *const (), map: *const (), acc
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const () = handle;
             let _map: *const () = map;
@@ -10986,7 +10890,7 @@ pub unsafe fn test_mdspan_ctor_421(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_int__::extents(&(*map))
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -11032,7 +10936,7 @@ pub unsafe fn test_mdspan_ctor_422(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -11080,7 +10984,7 @@ pub unsafe fn test_mdspan_ctor_423(
                         &(*map),
                     )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -11128,7 +11032,7 @@ pub unsafe fn test_mdspan_ctor_424(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -11174,7 +11078,7 @@ pub unsafe fn test_mdspan_ctor_425(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -11220,7 +11124,7 @@ pub unsafe fn test_mdspan_ctor_426(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -11363,9 +11267,7 @@ pub unsafe fn test_mdspan_ctor_433(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11404,9 +11306,7 @@ pub unsafe fn test_mdspan_ctor_434(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11445,9 +11345,7 @@ pub unsafe fn test_mdspan_ctor_435(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11486,9 +11384,7 @@ pub unsafe fn test_mdspan_ctor_436(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11527,9 +11423,7 @@ pub unsafe fn test_mdspan_ctor_437(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11568,9 +11462,7 @@ pub unsafe fn test_mdspan_ctor_438(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11609,9 +11501,7 @@ pub unsafe fn test_mdspan_ctor_439(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11650,9 +11540,7 @@ pub unsafe fn test_mdspan_ctor_440(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11691,9 +11579,7 @@ pub unsafe fn test_mdspan_ctor_441(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11732,9 +11618,7 @@ pub unsafe fn test_mdspan_ctor_442(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11773,9 +11657,7 @@ pub unsafe fn test_mdspan_ctor_443(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11814,9 +11696,7 @@ pub unsafe fn test_mdspan_ctor_444(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const move_counted_handle_const_double_ = handle;
             let _map: *const () = map;
@@ -11860,7 +11740,7 @@ pub unsafe fn test_mdspan_ctor_445(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_int__::extents(&(*map))
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -11906,7 +11786,7 @@ pub unsafe fn test_mdspan_ctor_446(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -11954,7 +11834,7 @@ pub unsafe fn test_mdspan_ctor_447(
                         &(*map),
                     )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12002,7 +11882,7 @@ pub unsafe fn test_mdspan_ctor_448(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12048,7 +11928,7 @@ pub unsafe fn test_mdspan_ctor_449(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12094,7 +11974,7 @@ pub unsafe fn test_mdspan_ctor_450(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12237,9 +12117,7 @@ pub unsafe fn test_mdspan_ctor_457(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12278,9 +12156,7 @@ pub unsafe fn test_mdspan_ctor_458(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12319,9 +12195,7 @@ pub unsafe fn test_mdspan_ctor_459(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12360,9 +12234,7 @@ pub unsafe fn test_mdspan_ctor_460(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12401,9 +12273,7 @@ pub unsafe fn test_mdspan_ctor_461(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12442,9 +12312,7 @@ pub unsafe fn test_mdspan_ctor_462(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12483,9 +12351,7 @@ pub unsafe fn test_mdspan_ctor_463(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12524,9 +12390,7 @@ pub unsafe fn test_mdspan_ctor_464(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12565,9 +12429,7 @@ pub unsafe fn test_mdspan_ctor_465(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12606,9 +12468,7 @@ pub unsafe fn test_mdspan_ctor_466(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12647,9 +12507,7 @@ pub unsafe fn test_mdspan_ctor_467(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12688,9 +12546,7 @@ pub unsafe fn test_mdspan_ctor_468(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *mut MinimalElementType = handle;
             let _map: *const () = map;
@@ -12734,7 +12590,7 @@ pub unsafe fn test_mdspan_ctor_469(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_int__::extents(&(*map))
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12780,7 +12636,7 @@ pub unsafe fn test_mdspan_ctor_470(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12828,7 +12684,7 @@ pub unsafe fn test_mdspan_ctor_471(
                         &(*map),
                     )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12876,7 +12732,7 @@ pub unsafe fn test_mdspan_ctor_472(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12922,7 +12778,7 @@ pub unsafe fn test_mdspan_ctor_473(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -12968,7 +12824,7 @@ pub unsafe fn test_mdspan_ctor_474(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -13519,9 +13375,7 @@ pub unsafe fn test_mdspan_ctor_505(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13560,9 +13414,7 @@ pub unsafe fn test_mdspan_ctor_506(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13601,9 +13453,7 @@ pub unsafe fn test_mdspan_ctor_507(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13642,9 +13492,7 @@ pub unsafe fn test_mdspan_ctor_508(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13683,9 +13531,7 @@ pub unsafe fn test_mdspan_ctor_509(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13724,9 +13570,7 @@ pub unsafe fn test_mdspan_ctor_510(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13765,9 +13609,7 @@ pub unsafe fn test_mdspan_ctor_511(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_48(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13806,9 +13648,7 @@ pub unsafe fn test_mdspan_ctor_512(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_49(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13847,9 +13687,7 @@ pub unsafe fn test_mdspan_ctor_513(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_50(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13888,9 +13726,7 @@ pub unsafe fn test_mdspan_ctor_514(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_51(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13929,9 +13765,7 @@ pub unsafe fn test_mdspan_ctor_515(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_52(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -13970,9 +13804,7 @@ pub unsafe fn test_mdspan_ctor_516(
     );;
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
-        let mut exts: () = (unsafe {
-            array_from_extents_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() })
-        });
+        let mut exts: () = (unsafe { array_from_extents_53(unimplemented!(), unimplemented!()) });
         (unsafe {
             let _handle: *const *const MinimalElementType = handle;
             let _map: *const () = map;
@@ -14016,7 +13848,7 @@ pub unsafe fn test_mdspan_ctor_517(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_int__::extents(&(*map))
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -14062,7 +13894,7 @@ pub unsafe fn test_mdspan_ctor_518(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -14110,7 +13942,7 @@ pub unsafe fn test_mdspan_ctor_519(
                         &(*map),
                     )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -14158,7 +13990,7 @@ pub unsafe fn test_mdspan_ctor_520(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -14204,7 +14036,7 @@ pub unsafe fn test_mdspan_ctor_521(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {
@@ -14250,7 +14082,7 @@ pub unsafe fn test_mdspan_ctor_522(
                 (unsafe {
                     layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__ :: extents ( & ( * map )  , )
                 }),
-                unsafe { std::mem::zeroed::<()>() },
+                unimplemented!(),
             )
         });
         (unsafe {

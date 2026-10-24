@@ -708,7 +708,7 @@ pub fn iter_move_28(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_29(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -1184,7 +1184,7 @@ pub fn test_49() {
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let k : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_multimap_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char_____std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____true_ :: new_1 ( { ((*i.borrow()) ).clone()  } , )  )) ;
+    let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1226,7 +1226,7 @@ pub fn test_50() {
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let k : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_multimap_int__char__std_less_int___std_deque_int__std_allocator_int____std_vector_char__std_allocator_char_____std_deque_int__std_allocator_int____std_vector_char__std_allocator_char____true_ :: new_1 ( { ((*i.borrow()) ).clone()  } , )  )) ;
+    let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1268,7 +1268,7 @@ pub fn test_51() {
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let k : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_multimap_int__char__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_char__three_way_random_access_iterator_char_ptr___three_way_random_access_iterator_const_char_ptr_____MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_char__three_way_random_access_iterator_char_ptr___three_way_random_access_iterator_const_char_ptr____true_ :: new_1 ( { ((*i.borrow()) ).clone()  } , )  )) ;
+    let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1310,7 +1310,7 @@ pub fn test_52() {
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let k : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_multimap_int__char__std_less_int___std_vector_int__min_allocator_int____std_vector_char__min_allocator_char_____std_vector_int__min_allocator_int____std_vector_char__min_allocator_char____true_ :: new_1 ( { ((*i.borrow()) ).clone()  } , )  )) ;
+    let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

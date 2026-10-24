@@ -67,7 +67,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "sizemix::size () == 5");;
     let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t3: Value<()> = Rc::new(RefCell::new(
-        ({ extract_0(tup.as_pointer(), <()>::default()) }),
+        ({ extract_0(tup.as_pointer(), unimplemented!()) }),
     ));
     const _: () = assert!(
         true,
@@ -75,7 +75,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );;
     unimplemented!();
     let t7: Value<()> = Rc::new(RefCell::new(
-        ({ extract_1(tup.as_pointer(), <()>::default()) }),
+        ({ extract_1(tup.as_pointer(), unimplemented!()) }),
     ));
     const _: () = assert!(
         true,
@@ -83,7 +83,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );;
     unimplemented!();
     let t4: Value<()> = Rc::new(RefCell::new(
-        ({ extract_2(tup.as_pointer(), <()>::default()) }),
+        ({ extract_2(tup.as_pointer(), unimplemented!()) }),
     ));
     const _: () = assert!(
         true,

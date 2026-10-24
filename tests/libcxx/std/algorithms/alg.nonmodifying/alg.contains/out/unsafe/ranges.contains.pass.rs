@@ -1727,7 +1727,7 @@ pub unsafe fn iter_move_71(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_72(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -2499,9 +2499,8 @@ pub unsafe fn test_iterators_80() {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((6_()) as isize);
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -2529,9 +2528,8 @@ pub unsafe fn test_iterators_80() {
         let mut a: [(); 1] = [32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((1_()) as isize);
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -2599,9 +2597,8 @@ pub unsafe fn test_iterators_80() {
         ];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((10_()) as isize);
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -2629,9 +2626,8 @@ pub unsafe fn test_iterators_80() {
         let mut a: [(); 9] = [3_(), 22_(), 1_(), 43_(), 99_(), 0_(), 56_(), 100_(), 32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((9_()) as isize);
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -2659,9 +2655,8 @@ pub unsafe fn test_iterators_80() {
         let mut a: [(); 5] = [13_(), 1_(), 21_(), 4_(), 5_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -2728,10 +2723,9 @@ pub unsafe fn test_iterators_82() {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_char_ptr_ = {
-                    let mut __tmp_0: *mut () =
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_0: *mut () = a.as_mut_ptr().offset((6_()) as isize);
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_0 })
                 };
                 let mut ___value: () = 3_();
@@ -2761,10 +2755,9 @@ pub unsafe fn test_iterators_82() {
         let mut a: [(); 1] = [32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_char_ptr_ = {
-                    let mut __tmp_1: *mut () =
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_1: *mut () = a.as_mut_ptr().offset((1_()) as isize);
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_1 })
                 };
                 let mut ___value: () = 32_();
@@ -2837,10 +2830,9 @@ pub unsafe fn test_iterators_82() {
         ];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_char_ptr_ = {
-                    let mut __tmp_3: *mut () =
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_3: *mut () = a.as_mut_ptr().offset((10_()) as isize);
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_3 })
                 };
                 let mut ___value: () = 32_();
@@ -2870,10 +2862,9 @@ pub unsafe fn test_iterators_82() {
         let mut a: [(); 9] = [3_(), 22_(), 1_(), 43_(), 99_(), 0_(), 56_(), 100_(), 32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_char_ptr_ = {
-                    let mut __tmp_4: *mut () =
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_4: *mut () = a.as_mut_ptr().offset((9_()) as isize);
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_4 })
                 };
                 let mut ___value: () = 32_();
@@ -2903,10 +2894,9 @@ pub unsafe fn test_iterators_82() {
         let mut a: [(); 5] = [13_(), 1_(), 21_(), 4_(), 5_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_char_ptr_ = {
-                    let mut __tmp_5: *mut () =
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_5: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_5 })
                 };
                 let mut ___value: () = 10_();
@@ -2975,10 +2965,9 @@ pub unsafe fn test_iterators_83() {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_char_ptr_ = {
-                    let mut __tmp_6: *mut () =
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_6: *mut () = a.as_mut_ptr().offset((6_()) as isize);
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_6 })
                 };
                 let mut ___value: () = 3_();
@@ -3008,10 +2997,9 @@ pub unsafe fn test_iterators_83() {
         let mut a: [(); 1] = [32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_char_ptr_ = {
-                    let mut __tmp_7: *mut () =
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_7: *mut () = a.as_mut_ptr().offset((1_()) as isize);
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_7 })
                 };
                 let mut ___value: () = 32_();
@@ -3084,10 +3072,9 @@ pub unsafe fn test_iterators_83() {
         ];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_char_ptr_ = {
-                    let mut __tmp_9: *mut () =
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_9: *mut () = a.as_mut_ptr().offset((10_()) as isize);
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_9 })
                 };
                 let mut ___value: () = 32_();
@@ -3117,10 +3104,9 @@ pub unsafe fn test_iterators_83() {
         let mut a: [(); 9] = [3_(), 22_(), 1_(), 43_(), 99_(), 0_(), 56_(), 100_(), 32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_char_ptr_ = {
-                    let mut __tmp_10: *mut () =
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_10: *mut () = a.as_mut_ptr().offset((9_()) as isize);
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_10 })
                 };
                 let mut ___value: () = 32_();
@@ -3150,10 +3136,9 @@ pub unsafe fn test_iterators_83() {
         let mut a: [(); 5] = [13_(), 1_(), 21_(), 4_(), 5_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_char_ptr_ = {
-                    let mut __tmp_11: *mut () =
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_11: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_11 })
                 };
                 let mut ___value: () = 10_();
@@ -3223,12 +3208,10 @@ pub unsafe fn test_iterators_84() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_char_ptr_ =
                     contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((6_()) as isize)
                     });
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -3258,12 +3241,10 @@ pub unsafe fn test_iterators_84() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_char_ptr_ =
                     contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((1_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -3335,12 +3316,10 @@ pub unsafe fn test_iterators_84() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_char_ptr_ =
                     contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((10_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -3370,12 +3349,10 @@ pub unsafe fn test_iterators_84() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_char_ptr_ =
                     contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((9_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -3405,12 +3382,10 @@ pub unsafe fn test_iterators_84() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_char_ptr_ =
                     contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((5_()) as isize)
                     });
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -3479,13 +3454,11 @@ pub unsafe fn test_iterators_85() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_12: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_12 })
                 };
@@ -3517,13 +3490,11 @@ pub unsafe fn test_iterators_85() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_13: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_13 })
                 };
@@ -3600,13 +3571,11 @@ pub unsafe fn test_iterators_85() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_15: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_15 })
                 };
@@ -3638,13 +3607,11 @@ pub unsafe fn test_iterators_85() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_16: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_16 })
                 };
@@ -3676,13 +3643,11 @@ pub unsafe fn test_iterators_85() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_17: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_17 })
                 };
@@ -3753,13 +3718,11 @@ pub unsafe fn test_iterators_86() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_18: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_18 })
                 };
@@ -3791,13 +3754,11 @@ pub unsafe fn test_iterators_86() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_19: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_19 })
                 };
@@ -3874,13 +3835,11 @@ pub unsafe fn test_iterators_86() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_21: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_21 })
                 };
@@ -3912,13 +3871,11 @@ pub unsafe fn test_iterators_86() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_22: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_22 })
                 };
@@ -3950,13 +3907,11 @@ pub unsafe fn test_iterators_86() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_char_ptr_ =
-                    contiguous_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_char_ptr__ = {
                     let mut __tmp_23: contiguous_iterator_char_ptr_ =
                         contiguous_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_23 })
                 };
@@ -4027,12 +3982,10 @@ pub unsafe fn test_iterators_87() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_char_ptr_ =
                     random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((6_()) as isize)
                     });
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -4062,12 +4015,10 @@ pub unsafe fn test_iterators_87() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_char_ptr_ =
                     random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((1_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -4139,12 +4090,10 @@ pub unsafe fn test_iterators_87() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_char_ptr_ =
                     random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((10_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -4174,12 +4123,10 @@ pub unsafe fn test_iterators_87() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_char_ptr_ =
                     random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((9_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -4209,12 +4156,10 @@ pub unsafe fn test_iterators_87() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_char_ptr_ =
                     random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((5_()) as isize)
                     });
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -4283,13 +4228,11 @@ pub unsafe fn test_iterators_88() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_char_ptr__ = {
                     let mut __tmp_24: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_24 })
                 };
@@ -4321,13 +4264,11 @@ pub unsafe fn test_iterators_88() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_char_ptr__ = {
                     let mut __tmp_25: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_25 })
                 };
@@ -4404,13 +4345,11 @@ pub unsafe fn test_iterators_88() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_char_ptr__ = {
                     let mut __tmp_27: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_27 })
                 };
@@ -4442,13 +4381,11 @@ pub unsafe fn test_iterators_88() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_char_ptr__ = {
                     let mut __tmp_28: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_28 })
                 };
@@ -4480,13 +4417,11 @@ pub unsafe fn test_iterators_88() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_char_ptr__ = {
                     let mut __tmp_29: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_29 })
                 };
@@ -4557,13 +4492,11 @@ pub unsafe fn test_iterators_89() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_char_ptr__ = {
                     let mut __tmp_30: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_30 })
                 };
@@ -4595,13 +4528,11 @@ pub unsafe fn test_iterators_89() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_char_ptr__ = {
                     let mut __tmp_31: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_31 })
                 };
@@ -4678,13 +4609,11 @@ pub unsafe fn test_iterators_89() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_char_ptr__ = {
                     let mut __tmp_33: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_33 })
                 };
@@ -4716,13 +4645,11 @@ pub unsafe fn test_iterators_89() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_char_ptr__ = {
                     let mut __tmp_34: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_34 })
                 };
@@ -4754,13 +4681,11 @@ pub unsafe fn test_iterators_89() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_char_ptr_ =
-                    random_access_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_char_ptr__ = {
                     let mut __tmp_35: random_access_iterator_char_ptr_ =
                         random_access_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_35 })
                 };
@@ -4831,12 +4756,10 @@ pub unsafe fn test_iterators_90() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_char_ptr_ =
                     bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((6_()) as isize)
                     });
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -4866,12 +4789,10 @@ pub unsafe fn test_iterators_90() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_char_ptr_ =
                     bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((1_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -4943,12 +4864,10 @@ pub unsafe fn test_iterators_90() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_char_ptr_ =
                     bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((10_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -4978,12 +4897,10 @@ pub unsafe fn test_iterators_90() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_char_ptr_ =
                     bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((9_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -5013,12 +4930,10 @@ pub unsafe fn test_iterators_90() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_char_ptr_ =
                     bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((5_()) as isize)
                     });
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -5087,13 +5002,11 @@ pub unsafe fn test_iterators_91() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_36: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_36 })
                 };
@@ -5125,13 +5038,11 @@ pub unsafe fn test_iterators_91() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_37: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_37 })
                 };
@@ -5208,13 +5119,11 @@ pub unsafe fn test_iterators_91() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_39: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_39 })
                 };
@@ -5246,13 +5155,11 @@ pub unsafe fn test_iterators_91() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_40: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_40 })
                 };
@@ -5284,13 +5191,11 @@ pub unsafe fn test_iterators_91() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_41: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_41 })
                 };
@@ -5361,13 +5266,11 @@ pub unsafe fn test_iterators_92() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_42: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_42 })
                 };
@@ -5399,13 +5302,11 @@ pub unsafe fn test_iterators_92() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_43: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_43 })
                 };
@@ -5482,13 +5383,11 @@ pub unsafe fn test_iterators_92() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_45: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_45 })
                 };
@@ -5520,13 +5419,11 @@ pub unsafe fn test_iterators_92() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_46: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_46 })
                 };
@@ -5558,13 +5455,11 @@ pub unsafe fn test_iterators_92() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_char_ptr_ =
-                    bidirectional_iterator_char_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_char_ptr__ = {
                     let mut __tmp_47: bidirectional_iterator_char_ptr_ =
                         bidirectional_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_47 })
                 };
@@ -5635,10 +5530,9 @@ pub unsafe fn test_iterators_93() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
-                let ___last: forward_iterator_char_ptr_ = forward_iterator_char_ptr_::new_1({
-                    (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
-                });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
+                let ___last: forward_iterator_char_ptr_ =
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr().offset((6_()) as isize) });
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -5667,10 +5561,9 @@ pub unsafe fn test_iterators_93() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
-                let ___last: forward_iterator_char_ptr_ = forward_iterator_char_ptr_::new_1({
-                    (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
-                });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
+                let ___last: forward_iterator_char_ptr_ =
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr().offset((1_()) as isize) });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -5741,10 +5634,9 @@ pub unsafe fn test_iterators_93() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
-                let ___last: forward_iterator_char_ptr_ = forward_iterator_char_ptr_::new_1({
-                    (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
-                });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
+                let ___last: forward_iterator_char_ptr_ =
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr().offset((10_()) as isize) });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -5773,10 +5665,9 @@ pub unsafe fn test_iterators_93() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
-                let ___last: forward_iterator_char_ptr_ = forward_iterator_char_ptr_::new_1({
-                    (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
-                });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
+                let ___last: forward_iterator_char_ptr_ =
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr().offset((9_()) as isize) });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -5805,10 +5696,9 @@ pub unsafe fn test_iterators_93() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
-                let ___last: forward_iterator_char_ptr_ = forward_iterator_char_ptr_::new_1({
-                    (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
-                });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
+                let ___last: forward_iterator_char_ptr_ =
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr().offset((5_()) as isize) });
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -5876,11 +5766,11 @@ pub unsafe fn test_iterators_94() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_char_ptr__ = {
                     let mut __tmp_48: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_48 })
                 };
@@ -5912,11 +5802,11 @@ pub unsafe fn test_iterators_94() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_char_ptr__ = {
                     let mut __tmp_49: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_49 })
                 };
@@ -5993,11 +5883,11 @@ pub unsafe fn test_iterators_94() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_char_ptr__ = {
                     let mut __tmp_51: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_51 })
                 };
@@ -6029,11 +5919,11 @@ pub unsafe fn test_iterators_94() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_char_ptr__ = {
                     let mut __tmp_52: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_52 })
                 };
@@ -6065,11 +5955,11 @@ pub unsafe fn test_iterators_94() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_char_ptr__ = {
                     let mut __tmp_53: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_53 })
                 };
@@ -6140,11 +6030,11 @@ pub unsafe fn test_iterators_95() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_char_ptr__ = {
                     let mut __tmp_54: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_54 })
                 };
@@ -6176,11 +6066,11 @@ pub unsafe fn test_iterators_95() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_char_ptr__ = {
                     let mut __tmp_55: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_55 })
                 };
@@ -6257,11 +6147,11 @@ pub unsafe fn test_iterators_95() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_char_ptr__ = {
                     let mut __tmp_57: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_57 })
                 };
@@ -6293,11 +6183,11 @@ pub unsafe fn test_iterators_95() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_char_ptr__ = {
                     let mut __tmp_58: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_58 })
                 };
@@ -6329,11 +6219,11 @@ pub unsafe fn test_iterators_95() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_char_ptr_ =
-                    forward_iterator_char_ptr_::new_1({ (a.as_mut_ptr() as *mut ()).cast::<()>() });
+                    forward_iterator_char_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_char_ptr__ = {
                     let mut __tmp_59: forward_iterator_char_ptr_ =
                         forward_iterator_char_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_59 })
                 };
@@ -6404,13 +6294,11 @@ pub unsafe fn test_iterators_96() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_60: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_60 })
                 };
@@ -6425,7 +6313,7 @@ pub unsafe fn test_iterators_96() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_61 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 6_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_61 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_61 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 6_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_61 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6442,13 +6330,11 @@ pub unsafe fn test_iterators_96() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_62: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_62 })
                 };
@@ -6463,7 +6349,7 @@ pub unsafe fn test_iterators_96() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_63 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 1_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_63 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_63 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 1_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_63 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6525,13 +6411,11 @@ pub unsafe fn test_iterators_96() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_66: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_66 })
                 };
@@ -6546,7 +6430,7 @@ pub unsafe fn test_iterators_96() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_67 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 10_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_67 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_67 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 10_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_67 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6563,13 +6447,11 @@ pub unsafe fn test_iterators_96() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_68: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_68 })
                 };
@@ -6584,7 +6466,7 @@ pub unsafe fn test_iterators_96() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_69 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 9_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_69 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_69 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 9_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_69 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6601,13 +6483,11 @@ pub unsafe fn test_iterators_96() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_70: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_70 })
                 };
@@ -6622,7 +6502,7 @@ pub unsafe fn test_iterators_96() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_71 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 5_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_71 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_71 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 5_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_71 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6678,13 +6558,11 @@ pub unsafe fn test_iterators_97() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_72: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_72 })
                 };
@@ -6699,7 +6577,7 @@ pub unsafe fn test_iterators_97() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_73 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 6_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_73 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_73 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 6_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_73 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6716,13 +6594,11 @@ pub unsafe fn test_iterators_97() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_74: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_74 })
                 };
@@ -6737,7 +6613,7 @@ pub unsafe fn test_iterators_97() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_75 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 1_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_75 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_75 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 1_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_75 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6799,13 +6675,11 @@ pub unsafe fn test_iterators_97() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_78: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_78 })
                 };
@@ -6820,7 +6694,7 @@ pub unsafe fn test_iterators_97() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_79 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 10_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_79 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_79 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 10_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_79 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6837,13 +6711,11 @@ pub unsafe fn test_iterators_97() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_80: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_80 })
                 };
@@ -6858,7 +6730,7 @@ pub unsafe fn test_iterators_97() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_81 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 9_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_81 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_81 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 9_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_81 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6875,13 +6747,11 @@ pub unsafe fn test_iterators_97() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_char_ptr_ =
-                    cpp20_input_iterator_char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_char_ptr__ = {
                     let mut __tmp_82: cpp20_input_iterator_char_ptr_ =
                         cpp20_input_iterator_char_ptr_::new({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_82 })
                 };
@@ -6896,7 +6766,7 @@ pub unsafe fn test_iterators_97() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_83 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 5_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_83 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_83 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 5_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_83 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -6952,13 +6822,11 @@ pub unsafe fn test_iterators_98() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_84: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_84
@@ -6992,13 +6860,11 @@ pub unsafe fn test_iterators_98() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_85: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_85
@@ -7079,13 +6945,11 @@ pub unsafe fn test_iterators_98() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_87: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_87
@@ -7119,13 +6983,11 @@ pub unsafe fn test_iterators_98() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_88: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_88
@@ -7159,13 +7021,11 @@ pub unsafe fn test_iterators_98() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_89: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_89
@@ -7238,13 +7098,11 @@ pub unsafe fn test_iterators_99() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_90: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_90
@@ -7278,13 +7136,11 @@ pub unsafe fn test_iterators_99() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_91: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_91
@@ -7365,13 +7221,11 @@ pub unsafe fn test_iterators_99() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_93: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_93
@@ -7405,13 +7259,11 @@ pub unsafe fn test_iterators_99() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_94: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_94
@@ -7445,13 +7297,11 @@ pub unsafe fn test_iterators_99() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_char_ptr__char_ptr_ =
-                    cpp17_input_iterator_char_ptr__char_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_char_ptr__char_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__ = {
                     let mut __tmp_95: cpp17_input_iterator_char_ptr__char_ptr_ =
                         cpp17_input_iterator_char_ptr__char_ptr_::new({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_char_ptr__char_ptr__::new_1({
                         &mut __tmp_95
@@ -7523,9 +7373,8 @@ pub unsafe fn test_iterators_100() {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((6_()) as isize);
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -7553,9 +7402,8 @@ pub unsafe fn test_iterators_100() {
         let mut a: [(); 1] = [32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((1_()) as isize);
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -7623,9 +7471,8 @@ pub unsafe fn test_iterators_100() {
         ];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((10_()) as isize);
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -7653,9 +7500,8 @@ pub unsafe fn test_iterators_100() {
         let mut a: [(); 9] = [3_(), 22_(), 1_(), 43_(), 99_(), 0_(), 56_(), 100_(), 32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((9_()) as isize);
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -7683,9 +7529,8 @@ pub unsafe fn test_iterators_100() {
         let mut a: [(); 5] = [13_(), 1_(), 21_(), 4_(), 5_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
-                let ___last: *mut () =
-                    (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
+                let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
@@ -7752,10 +7597,9 @@ pub unsafe fn test_iterators_101() {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_long_long_ptr_ = {
-                    let mut __tmp_96: *mut () =
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_96: *mut () = a.as_mut_ptr().offset((6_()) as isize);
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_96 })
                 };
                 let mut ___value: () = 3_();
@@ -7785,10 +7629,9 @@ pub unsafe fn test_iterators_101() {
         let mut a: [(); 1] = [32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_long_long_ptr_ = {
-                    let mut __tmp_97: *mut () =
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_97: *mut () = a.as_mut_ptr().offset((1_()) as isize);
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_97 })
                 };
                 let mut ___value: () = 32_();
@@ -7861,10 +7704,9 @@ pub unsafe fn test_iterators_101() {
         ];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_long_long_ptr_ = {
-                    let mut __tmp_99: *mut () =
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_99: *mut () = a.as_mut_ptr().offset((10_()) as isize);
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_99 })
                 };
                 let mut ___value: () = 32_();
@@ -7894,10 +7736,9 @@ pub unsafe fn test_iterators_101() {
         let mut a: [(); 9] = [3_(), 22_(), 1_(), 43_(), 99_(), 0_(), 56_(), 100_(), 32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_long_long_ptr_ = {
-                    let mut __tmp_100: *mut () =
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_100: *mut () = a.as_mut_ptr().offset((9_()) as isize);
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_100 })
                 };
                 let mut ___value: () = 32_();
@@ -7927,10 +7768,9 @@ pub unsafe fn test_iterators_101() {
         let mut a: [(); 5] = [13_(), 1_(), 21_(), 4_(), 5_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sentinel_wrapper_long_long_ptr_ = {
-                    let mut __tmp_101: *mut () =
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_101: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_101 })
                 };
                 let mut ___value: () = 10_();
@@ -7999,10 +7839,9 @@ pub unsafe fn test_iterators_102() {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_long_long_ptr_ = {
-                    let mut __tmp_102: *mut () =
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_102: *mut () = a.as_mut_ptr().offset((6_()) as isize);
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_102 })
                 };
                 let mut ___value: () = 3_();
@@ -8032,10 +7871,9 @@ pub unsafe fn test_iterators_102() {
         let mut a: [(); 1] = [32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_long_long_ptr_ = {
-                    let mut __tmp_103: *mut () =
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_103: *mut () = a.as_mut_ptr().offset((1_()) as isize);
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_103 })
                 };
                 let mut ___value: () = 32_();
@@ -8108,10 +7946,9 @@ pub unsafe fn test_iterators_102() {
         ];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_long_long_ptr_ = {
-                    let mut __tmp_105: *mut () =
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_105: *mut () = a.as_mut_ptr().offset((10_()) as isize);
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_105 })
                 };
                 let mut ___value: () = 32_();
@@ -8141,10 +7978,9 @@ pub unsafe fn test_iterators_102() {
         let mut a: [(); 9] = [3_(), 22_(), 1_(), 43_(), 99_(), 0_(), 56_(), 100_(), 32_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_long_long_ptr_ = {
-                    let mut __tmp_106: *mut () =
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_106: *mut () = a.as_mut_ptr().offset((9_()) as isize);
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_106 })
                 };
                 let mut ___value: () = 32_();
@@ -8174,10 +8010,9 @@ pub unsafe fn test_iterators_102() {
         let mut a: [(); 5] = [13_(), 1_(), 21_(), 4_(), 5_()];
         {
             let mut ret: () = (unsafe {
-                let ___first: *mut () = (a.as_mut_ptr() as *mut ()).cast::<()>();
+                let ___first: *mut () = a.as_mut_ptr();
                 let ___last: sized_sentinel_long_long_ptr_ = {
-                    let mut __tmp_107: *mut () =
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>();
+                    let mut __tmp_107: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_107 })
                 };
                 let mut ___value: () = 10_();
@@ -8247,12 +8082,10 @@ pub unsafe fn test_iterators_103() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_long_long_ptr_ =
                     contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((6_()) as isize)
                     });
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -8282,12 +8115,10 @@ pub unsafe fn test_iterators_103() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_long_long_ptr_ =
                     contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((1_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -8359,12 +8190,10 @@ pub unsafe fn test_iterators_103() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_long_long_ptr_ =
                     contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((10_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -8394,12 +8223,10 @@ pub unsafe fn test_iterators_103() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_long_long_ptr_ =
                     contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((9_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -8429,12 +8256,10 @@ pub unsafe fn test_iterators_103() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: contiguous_iterator_long_long_ptr_ =
                     contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((5_()) as isize)
                     });
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -8503,13 +8328,11 @@ pub unsafe fn test_iterators_104() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_108: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_108 })
                 };
@@ -8541,13 +8364,11 @@ pub unsafe fn test_iterators_104() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_109: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_109 })
                 };
@@ -8624,13 +8445,11 @@ pub unsafe fn test_iterators_104() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_111: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_111 })
                 };
@@ -8662,13 +8481,11 @@ pub unsafe fn test_iterators_104() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_112: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_112 })
                 };
@@ -8700,13 +8517,11 @@ pub unsafe fn test_iterators_104() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_113: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_113 })
                 };
@@ -8777,13 +8592,11 @@ pub unsafe fn test_iterators_105() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_114: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_114 })
                 };
@@ -8815,13 +8628,11 @@ pub unsafe fn test_iterators_105() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_115: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_115 })
                 };
@@ -8898,13 +8709,11 @@ pub unsafe fn test_iterators_105() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_117: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_117 })
                 };
@@ -8936,13 +8745,11 @@ pub unsafe fn test_iterators_105() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_118: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_118 })
                 };
@@ -8974,13 +8781,11 @@ pub unsafe fn test_iterators_105() {
         {
             let mut ret: () = (unsafe {
                 let ___first: contiguous_iterator_long_long_ptr_ =
-                    contiguous_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    contiguous_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_contiguous_iterator_long_long_ptr__ = {
                     let mut __tmp_119: contiguous_iterator_long_long_ptr_ =
                         contiguous_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_119 })
                 };
@@ -9051,12 +8856,10 @@ pub unsafe fn test_iterators_106() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_long_long_ptr_ =
                     random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((6_()) as isize)
                     });
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -9086,12 +8889,10 @@ pub unsafe fn test_iterators_106() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_long_long_ptr_ =
                     random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((1_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -9163,12 +8964,10 @@ pub unsafe fn test_iterators_106() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_long_long_ptr_ =
                     random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((10_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -9198,12 +8997,10 @@ pub unsafe fn test_iterators_106() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_long_long_ptr_ =
                     random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((9_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -9233,12 +9030,10 @@ pub unsafe fn test_iterators_106() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: random_access_iterator_long_long_ptr_ =
                     random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((5_()) as isize)
                     });
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -9307,13 +9102,11 @@ pub unsafe fn test_iterators_107() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_120: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_long_long_ptr__::new_1({
                         &mut __tmp_120
@@ -9347,13 +9140,11 @@ pub unsafe fn test_iterators_107() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_121: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_long_long_ptr__::new_1({
                         &mut __tmp_121
@@ -9434,13 +9225,11 @@ pub unsafe fn test_iterators_107() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_123: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_long_long_ptr__::new_1({
                         &mut __tmp_123
@@ -9474,13 +9263,11 @@ pub unsafe fn test_iterators_107() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_124: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_long_long_ptr__::new_1({
                         &mut __tmp_124
@@ -9514,13 +9301,11 @@ pub unsafe fn test_iterators_107() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_125: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_random_access_iterator_long_long_ptr__::new_1({
                         &mut __tmp_125
@@ -9593,13 +9378,11 @@ pub unsafe fn test_iterators_108() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_126: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_126 })
                 };
@@ -9631,13 +9414,11 @@ pub unsafe fn test_iterators_108() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_127: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_127 })
                 };
@@ -9714,13 +9495,11 @@ pub unsafe fn test_iterators_108() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_129: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_129 })
                 };
@@ -9752,13 +9531,11 @@ pub unsafe fn test_iterators_108() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_130: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_130 })
                 };
@@ -9790,13 +9567,11 @@ pub unsafe fn test_iterators_108() {
         {
             let mut ret: () = (unsafe {
                 let ___first: random_access_iterator_long_long_ptr_ =
-                    random_access_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    random_access_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_random_access_iterator_long_long_ptr__ = {
                     let mut __tmp_131: random_access_iterator_long_long_ptr_ =
                         random_access_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_131 })
                 };
@@ -9867,12 +9642,10 @@ pub unsafe fn test_iterators_109() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_long_long_ptr_ =
                     bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((6_()) as isize)
                     });
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -9902,12 +9675,10 @@ pub unsafe fn test_iterators_109() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_long_long_ptr_ =
                     bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((1_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -9979,12 +9750,10 @@ pub unsafe fn test_iterators_109() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_long_long_ptr_ =
                     bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((10_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -10014,12 +9783,10 @@ pub unsafe fn test_iterators_109() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_long_long_ptr_ =
                     bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((9_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -10049,12 +9816,10 @@ pub unsafe fn test_iterators_109() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: bidirectional_iterator_long_long_ptr_ =
                     bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((5_()) as isize)
                     });
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -10123,13 +9888,11 @@ pub unsafe fn test_iterators_110() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_132: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_long_long_ptr__::new_1({
                         &mut __tmp_132
@@ -10163,13 +9926,11 @@ pub unsafe fn test_iterators_110() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_133: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_long_long_ptr__::new_1({
                         &mut __tmp_133
@@ -10250,13 +10011,11 @@ pub unsafe fn test_iterators_110() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_135: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_long_long_ptr__::new_1({
                         &mut __tmp_135
@@ -10290,13 +10049,11 @@ pub unsafe fn test_iterators_110() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_136: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_long_long_ptr__::new_1({
                         &mut __tmp_136
@@ -10330,13 +10087,11 @@ pub unsafe fn test_iterators_110() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_137: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_bidirectional_iterator_long_long_ptr__::new_1({
                         &mut __tmp_137
@@ -10409,13 +10164,11 @@ pub unsafe fn test_iterators_111() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_138: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_138 })
                 };
@@ -10447,13 +10200,11 @@ pub unsafe fn test_iterators_111() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_139: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_139 })
                 };
@@ -10530,13 +10281,11 @@ pub unsafe fn test_iterators_111() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_141: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_141 })
                 };
@@ -10568,13 +10317,11 @@ pub unsafe fn test_iterators_111() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_142: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_142 })
                 };
@@ -10606,13 +10353,11 @@ pub unsafe fn test_iterators_111() {
         {
             let mut ret: () = (unsafe {
                 let ___first: bidirectional_iterator_long_long_ptr_ =
-                    bidirectional_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    bidirectional_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_bidirectional_iterator_long_long_ptr__ = {
                     let mut __tmp_143: bidirectional_iterator_long_long_ptr_ =
                         bidirectional_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_143 })
                 };
@@ -10683,12 +10428,10 @@ pub unsafe fn test_iterators_112() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: forward_iterator_long_long_ptr_ =
                     forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((6_()) as isize)
                     });
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -10718,12 +10461,10 @@ pub unsafe fn test_iterators_112() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: forward_iterator_long_long_ptr_ =
                     forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((1_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -10795,12 +10536,10 @@ pub unsafe fn test_iterators_112() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: forward_iterator_long_long_ptr_ =
                     forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((10_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -10830,12 +10569,10 @@ pub unsafe fn test_iterators_112() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: forward_iterator_long_long_ptr_ =
                     forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((9_()) as isize)
                     });
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -10865,12 +10602,10 @@ pub unsafe fn test_iterators_112() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: forward_iterator_long_long_ptr_ =
                     forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                        a.as_mut_ptr().offset((5_()) as isize)
                     });
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -10939,13 +10674,11 @@ pub unsafe fn test_iterators_113() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_144: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_144 })
                 };
@@ -10977,13 +10710,11 @@ pub unsafe fn test_iterators_113() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_145: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_145 })
                 };
@@ -11060,13 +10791,11 @@ pub unsafe fn test_iterators_113() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_147: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_147 })
                 };
@@ -11098,13 +10827,11 @@ pub unsafe fn test_iterators_113() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_148: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_148 })
                 };
@@ -11136,13 +10863,11 @@ pub unsafe fn test_iterators_113() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_149: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_149 })
                 };
@@ -11213,13 +10938,11 @@ pub unsafe fn test_iterators_114() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_150: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_150 })
                 };
@@ -11251,13 +10974,11 @@ pub unsafe fn test_iterators_114() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_151: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_151 })
                 };
@@ -11334,13 +11055,11 @@ pub unsafe fn test_iterators_114() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_153: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_153 })
                 };
@@ -11372,13 +11091,11 @@ pub unsafe fn test_iterators_114() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_154: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_154 })
                 };
@@ -11410,13 +11127,11 @@ pub unsafe fn test_iterators_114() {
         {
             let mut ret: () = (unsafe {
                 let ___first: forward_iterator_long_long_ptr_ =
-                    forward_iterator_long_long_ptr_::new_1({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    forward_iterator_long_long_ptr_::new_1({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_forward_iterator_long_long_ptr__ = {
                     let mut __tmp_155: forward_iterator_long_long_ptr_ =
                         forward_iterator_long_long_ptr_::new_1({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_155 })
                 };
@@ -11487,13 +11202,11 @@ pub unsafe fn test_iterators_115() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_156: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_156 })
                 };
@@ -11508,7 +11221,7 @@ pub unsafe fn test_iterators_115() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_157 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 6_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_157 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_157 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 6_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_157 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11525,13 +11238,11 @@ pub unsafe fn test_iterators_115() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_158: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_158 })
                 };
@@ -11546,7 +11257,7 @@ pub unsafe fn test_iterators_115() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_159 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 1_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_159 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_159 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 1_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_159 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11608,13 +11319,11 @@ pub unsafe fn test_iterators_115() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_162: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_162 })
                 };
@@ -11629,7 +11338,7 @@ pub unsafe fn test_iterators_115() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_163 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 10_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_163 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_163 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 10_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_163 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11646,13 +11355,11 @@ pub unsafe fn test_iterators_115() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_164: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_164 })
                 };
@@ -11667,7 +11374,7 @@ pub unsafe fn test_iterators_115() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_165 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 9_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_165 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_165 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 9_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_165 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11684,13 +11391,11 @@ pub unsafe fn test_iterators_115() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_166: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_166 })
                 };
@@ -11705,7 +11410,7 @@ pub unsafe fn test_iterators_115() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_167 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 5_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_167 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_167 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 5_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_167 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11761,13 +11466,11 @@ pub unsafe fn test_iterators_116() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_168: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_168 })
                 };
@@ -11782,7 +11485,7 @@ pub unsafe fn test_iterators_116() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_169 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 6_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_169 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_169 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 6_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_169 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11799,13 +11502,11 @@ pub unsafe fn test_iterators_116() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_170: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_170 })
                 };
@@ -11820,7 +11521,7 @@ pub unsafe fn test_iterators_116() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_171 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 1_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_171 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_171 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 1_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_171 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11882,13 +11583,11 @@ pub unsafe fn test_iterators_116() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_174: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_174 })
                 };
@@ -11903,7 +11602,7 @@ pub unsafe fn test_iterators_116() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_175 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 10_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_175 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_175 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 10_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_175 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11920,13 +11619,11 @@ pub unsafe fn test_iterators_116() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_176: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_176 })
                 };
@@ -11941,7 +11638,7 @@ pub unsafe fn test_iterators_116() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_177 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 9_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_177 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_177 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 9_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_177 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -11958,13 +11655,11 @@ pub unsafe fn test_iterators_116() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp20_input_iterator_long_long_ptr_ =
-                    cpp20_input_iterator_long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp20_input_iterator_long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp20_input_iterator_long_long_ptr__ = {
                     let mut __tmp_178: cpp20_input_iterator_long_long_ptr_ =
                         cpp20_input_iterator_long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_178 })
                 };
@@ -11979,7 +11674,7 @@ pub unsafe fn test_iterators_116() {
             unimplemented!();
         }
         {
-            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_179 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 5_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_179 } , )  } } , )  ;
+            let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_179 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 5_() ) as isize ) } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_179 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
@@ -12035,13 +11730,11 @@ pub unsafe fn test_iterators_117() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_180: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_180
@@ -12075,13 +11768,11 @@ pub unsafe fn test_iterators_117() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_181: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_181
@@ -12164,13 +11855,11 @@ pub unsafe fn test_iterators_117() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_183: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_183
@@ -12204,13 +11893,11 @@ pub unsafe fn test_iterators_117() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_184: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_184
@@ -12244,13 +11931,11 @@ pub unsafe fn test_iterators_117() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_185: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sentinel_wrapper_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_185
@@ -12323,13 +12008,11 @@ pub unsafe fn test_iterators_118() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_186: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((6_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_186
@@ -12363,13 +12046,11 @@ pub unsafe fn test_iterators_118() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_187: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((1_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_187
@@ -12452,13 +12133,11 @@ pub unsafe fn test_iterators_118() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_189: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((10_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_189
@@ -12492,13 +12171,11 @@ pub unsafe fn test_iterators_118() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_190: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((9_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_190
@@ -12532,13 +12209,11 @@ pub unsafe fn test_iterators_118() {
         {
             let mut ret: () = (unsafe {
                 let ___first: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
-                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                        (a.as_mut_ptr() as *mut ()).cast::<()>()
-                    });
+                    cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({ a.as_mut_ptr() });
                 let ___last: sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__ = {
                     let mut __tmp_191: cpp17_input_iterator_long_long_ptr__long_long_ptr_ =
                         cpp17_input_iterator_long_long_ptr__long_long_ptr_::new({
-                            (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
+                            a.as_mut_ptr().offset((5_()) as isize)
                         });
                     sized_sentinel_cpp17_input_iterator_long_long_ptr__long_long_ptr__::new_1({
                         &mut __tmp_191
@@ -12828,7 +12503,7 @@ pub unsafe fn test_119() -> () {
     {
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         let mut projection_count: () = 0_();
-        let mut square_number : std_ranges_transform_view_std_ranges_ref_view_intarr5arr____lambda_at_ranges_contains_pass_cpp_245_54__ = unimplemented!()  ;
+        let mut square_number: () = unimplemented!();
         {
             let mut ret: () = (unsafe {
                 let ___first: () = unimplemented!();
@@ -12857,7 +12532,7 @@ pub unsafe fn test_119() -> () {
             let mut ret: () = (unsafe {
                 let mut ___value: () = 16_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
-                    &mut *(&raw mut square_number).cast::<()>(),
+                    &mut square_number,
                     &mut ___value,
                     lambda_unsafe!(
                         {

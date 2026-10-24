@@ -21,18 +21,9 @@ pub unsafe fn test_to_ullong_0() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -58,7 +49,7 @@ pub unsafe fn test_to_ullong_0() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ullong_2() {
+pub unsafe fn test_to_ullong_1() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (1_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -73,18 +64,9 @@ pub unsafe fn test_to_ullong_2() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -110,7 +92,7 @@ pub unsafe fn test_to_ullong_2() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ullong_3() {
+pub unsafe fn test_to_ullong_2() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (31_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -125,18 +107,9 @@ pub unsafe fn test_to_ullong_3() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -162,7 +135,7 @@ pub unsafe fn test_to_ullong_3() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ullong_4() {
+pub unsafe fn test_to_ullong_3() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (32_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -177,18 +150,9 @@ pub unsafe fn test_to_ullong_4() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -214,7 +178,7 @@ pub unsafe fn test_to_ullong_4() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ullong_5() {
+pub unsafe fn test_to_ullong_4() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (33_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -229,18 +193,9 @@ pub unsafe fn test_to_ullong_5() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -266,7 +221,7 @@ pub unsafe fn test_to_ullong_5() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ullong_6() {
+pub unsafe fn test_to_ullong_5() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (63_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -281,18 +236,9 @@ pub unsafe fn test_to_ullong_6() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -318,7 +264,7 @@ pub unsafe fn test_to_ullong_6() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ullong_7() {
+pub unsafe fn test_to_ullong_6() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (64_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -333,18 +279,9 @@ pub unsafe fn test_to_ullong_7() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -370,7 +307,7 @@ pub unsafe fn test_to_ullong_7() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ullong_8() {
+pub unsafe fn test_to_ullong_7() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (65_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -385,18 +322,9 @@ pub unsafe fn test_to_ullong_8() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -422,7 +350,7 @@ pub unsafe fn test_to_ullong_8() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ullong_9() {
+pub unsafe fn test_to_ullong_8() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (1000_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -437,18 +365,9 @@ pub unsafe fn test_to_ullong_9() {
     let max: () = if is_M_zero { 0_() } else { ((-1_()) >> (X)) };
     let mut tests: [(); 8] = [
         0_(),
-        (*(unsafe {
-            let mut ___a: () = 1_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 2_();
-            min_1(&mut ___a, &max)
-        })),
-        (*(unsafe {
-            let mut ___a: () = 3_();
-            min_1(&mut ___a, &max)
-        })),
+        (*unimplemented!()),
+        (*unimplemented!()),
+        (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -474,8 +393,9 @@ pub unsafe fn test_to_ullong_9() {
         unimplemented!();
     }
 }
-pub unsafe fn test_10() -> () {
+pub unsafe fn test_9() -> () {
     (unsafe { test_to_ullong_0() });
+    (unsafe { test_to_ullong_1() });
     (unsafe { test_to_ullong_2() });
     (unsafe { test_to_ullong_3() });
     (unsafe { test_to_ullong_4() });
@@ -483,7 +403,6 @@ pub unsafe fn test_10() -> () {
     (unsafe { test_to_ullong_6() });
     (unsafe { test_to_ullong_7() });
     (unsafe { test_to_ullong_8() });
-    (unsafe { test_to_ullong_9() });
     return true;
 }
 pub fn main() {
@@ -502,7 +421,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_10() });
+    (unsafe { test_9() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

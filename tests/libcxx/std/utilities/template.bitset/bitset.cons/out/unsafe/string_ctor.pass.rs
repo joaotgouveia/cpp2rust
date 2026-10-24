@@ -18,11 +18,7 @@ pub unsafe fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -37,11 +33,7 @@ pub unsafe fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -56,11 +48,7 @@ pub unsafe fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -75,11 +63,7 @@ pub unsafe fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -94,11 +78,92 @@ pub unsafe fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+}
+pub unsafe fn test_string_ctor_1() {
+    const _: () = assert!(
+        true,
+        "!std::is_convertible<std::string, std::bitset<N> >::value"
+    );;
+    const _: () = assert!(
+        true,
+        "std::is_constructible<std::bitset<N>, std::string>::value"
+    );;
+    {
+        let mut s: () = unimplemented!();
+        let mut v: () = unimplemented!();
+        let mut M: () = (*unimplemented!());
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut s: () = unimplemented!();
+        let mut v: () = unimplemented!();
+        let mut M: () = (*unimplemented!());
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut s: () = unimplemented!();
+        let mut v: () = unimplemented!();
+        let mut M: () = (*unimplemented!());
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut s: () = unimplemented!();
+        let mut v: () = unimplemented!();
+        let mut M: () = (*unimplemented!());
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut s: () = unimplemented!();
+        let mut v: () = unimplemented!();
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -123,11 +188,7 @@ pub unsafe fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -142,11 +203,7 @@ pub unsafe fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -161,11 +218,7 @@ pub unsafe fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -180,11 +233,7 @@ pub unsafe fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -199,11 +248,7 @@ pub unsafe fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -228,11 +273,7 @@ pub unsafe fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -247,11 +288,7 @@ pub unsafe fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -266,11 +303,7 @@ pub unsafe fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -285,11 +318,7 @@ pub unsafe fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -304,11 +333,7 @@ pub unsafe fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -333,11 +358,7 @@ pub unsafe fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -352,11 +373,7 @@ pub unsafe fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -371,11 +388,7 @@ pub unsafe fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -390,11 +403,7 @@ pub unsafe fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -409,11 +418,7 @@ pub unsafe fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -438,11 +443,7 @@ pub unsafe fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -457,11 +458,7 @@ pub unsafe fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -476,11 +473,7 @@ pub unsafe fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -495,11 +488,7 @@ pub unsafe fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -514,11 +503,7 @@ pub unsafe fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -543,11 +528,7 @@ pub unsafe fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -562,11 +543,7 @@ pub unsafe fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -581,11 +558,7 @@ pub unsafe fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -600,11 +573,7 @@ pub unsafe fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -619,11 +588,7 @@ pub unsafe fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -648,11 +613,7 @@ pub unsafe fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -667,11 +628,7 @@ pub unsafe fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -686,11 +643,7 @@ pub unsafe fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -705,11 +658,7 @@ pub unsafe fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -724,11 +673,7 @@ pub unsafe fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -753,11 +698,7 @@ pub unsafe fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -772,11 +713,7 @@ pub unsafe fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -791,11 +728,7 @@ pub unsafe fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -810,11 +743,7 @@ pub unsafe fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -829,116 +758,7 @@ pub unsafe fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-}
-pub unsafe fn test_string_ctor_9() {
-    const _: () = assert!(
-        true,
-        "!std::is_convertible<std::string, std::bitset<N> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_constructible<std::bitset<N>, std::string>::value"
-    );;
-    {
-        let mut s: () = unimplemented!();
-        let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut s: () = unimplemented!();
-        let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut s: () = unimplemented!();
-        let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut s: () = unimplemented!();
-        let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut s: () = unimplemented!();
-        let mut v: () = unimplemented!();
-        let mut M: () = (*(unsafe {
-            let mut ___a: () = unimplemented!();
-            let mut ___b: () = 10_();
-            min_1(&mut ___a, &mut ___b)
-        }));
+        let mut M: () = (*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -957,7 +777,7 @@ pub struct Nonsense {}
 impl Nonsense {
     unsafe fn destructor(&mut self) {}
 }
-pub unsafe fn test_for_non_eager_instantiation_10() {
+pub unsafe fn test_for_non_eager_instantiation_9() {
     const _: () = assert!(
         true,
         "!std::is_constructible<std::bitset<3>, Nonsense*>::value"
@@ -967,8 +787,9 @@ pub unsafe fn test_for_non_eager_instantiation_10() {
         "!std::is_constructible<std::bitset<3>, Nonsense*, std::size_t, Nonsense&, Nonsense&>::value"
     );;
 }
-pub unsafe fn test_11() -> () {
+pub unsafe fn test_10() -> () {
     (unsafe { test_string_ctor_0() });
+    (unsafe { test_string_ctor_1() });
     (unsafe { test_string_ctor_2() });
     (unsafe { test_string_ctor_3() });
     (unsafe { test_string_ctor_4() });
@@ -976,8 +797,7 @@ pub unsafe fn test_11() -> () {
     (unsafe { test_string_ctor_6() });
     (unsafe { test_string_ctor_7() });
     (unsafe { test_string_ctor_8() });
-    (unsafe { test_string_ctor_9() });
-    (unsafe { test_for_non_eager_instantiation_10() });
+    (unsafe { test_for_non_eager_instantiation_9() });
     return true;
 }
 pub fn main() {
@@ -996,7 +816,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_11() });
+    (unsafe { test_10() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

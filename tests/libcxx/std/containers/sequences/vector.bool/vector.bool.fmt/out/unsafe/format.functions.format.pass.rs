@@ -215,153 +215,94 @@ pub unsafe fn format_test_vector_bool_19(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -429,15 +370,10 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -475,114 +411,70 @@ pub unsafe fn format_test_vector_bool_19(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -622,41 +514,26 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -668,15 +545,10 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -688,15 +560,10 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -720,47 +587,34 @@ pub unsafe fn format_test_vector_bool_19(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 32_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(1)
+            .spec::<fn((), (), *mut (), *mut ())>(1)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 32_();
         let mut _args_4: () = 7_();
-        check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int__int_,
-                *mut (),
-                *mut (),
-                *mut (),
-            )>(2)
-            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+        check.spec::<fn((), (), *mut (), *mut (), *mut ())>(2).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+            &mut _args_4,
+        )
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -785,149 +639,94 @@ pub unsafe fn format_test_vector_bool_20(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -995,15 +794,10 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -1041,110 +835,70 @@ pub unsafe fn format_test_vector_bool_20(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -1184,41 +938,26 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -1230,15 +969,10 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -1250,15 +984,10 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -1282,38 +1011,30 @@ pub unsafe fn format_test_vector_bool_20(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(3)
+            .spec::<fn((), (), *const ())>(3)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 32_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_,
-                *const (),
-                *mut (),
-            )>(4)
+            .spec::<fn((), (), *const (), *mut ())>(4)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 32_();
         let mut _args_4: () = 7_();
-        check  .spec::<fn(() ,std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int__int_ ,*const () ,*mut () ,*mut () ,)>(5) .call ( _expected , _fmt , _args_2 , & mut _args_3 , & mut _args_4 , )
+        check
+            .spec::<fn((), (), *const (), *mut (), *mut ())>(5)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -1338,153 +1059,94 @@ pub unsafe fn format_test_vector_bool_21(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -1552,15 +1214,10 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -1598,114 +1255,70 @@ pub unsafe fn format_test_vector_bool_21(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -1745,41 +1358,26 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -1791,15 +1389,10 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -1811,15 +1404,10 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -1843,39 +1431,34 @@ pub unsafe fn format_test_vector_bool_21(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_,
-                *mut (),
-            )>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 32_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_,
-                *mut (),
-                *mut (),
-            )>(7)
+            .spec::<fn((), (), *mut (), *mut ())>(7)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 32_();
         let mut _args_4: () = 7_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(8) .call ( _expected , _fmt , _args_2 , & mut _args_3 , & mut _args_4 , )
+        check.spec::<fn((), (), *mut (), *mut (), *mut ())>(8).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+            &mut _args_4,
+        )
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -1900,115 +1483,107 @@ pub unsafe fn format_test_vector_bool_22(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -2075,14 +1650,10 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -2120,79 +1691,83 @@ pub unsafe fn format_test_vector_bool_22(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -2231,38 +1806,26 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -2274,14 +1837,10 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -2293,14 +1852,10 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
@@ -2324,30 +1879,33 @@ pub unsafe fn format_test_vector_bool_22(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *const () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_,
-                *const (),
-            )>(9)
+            .spec::<fn((), (), *const ())>(9)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 32_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check.spec::<fn((), (), *const (), *mut ())>(10).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *const () = input;
         let mut _args_3: () = 32_();
         let mut _args_4: () = 7_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int__int_ ,*const () ,*mut () ,*mut () ,)>(11) .call ( _expected , _fmt , _args_2 , & mut _args_3 , & mut _args_4 , )
+        check
+            .spec::<fn((), (), *const (), *mut (), *mut ())>(11)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -2673,103 +2231,322 @@ pub unsafe fn test_concat_message_49(
     panic!("ub: non-void function does not return a value")
 }
 pub static mut test_50: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCell::new(|| unsafe {
-    lambda_unsafe! ( Generic , { } , | mut expected : () , mut fmt : std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_30 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_51 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int__int_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_52 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ , args : *const () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_53 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ , args_2 : *const () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_54 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int__int_ , args_2 : *const () , args_3 : *mut () , args_4 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_55 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_56 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_57 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int__int_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_58 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ , args : *const () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_59 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ , args_2 : *const () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_60 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int__int_ , args_2 : *const () , args_3 : *mut () , args_4 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_27 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_61 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 41_() , & mut _arg , ) } )  ;
- } )
+    lambda_unsafe!(
+        Generic,
+        {},
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_30(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_51(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_52(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *const ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_53(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *const (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_54(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *const (), args_3: *mut (), args_4: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_55(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_56(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_57(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_58(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *const ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_59(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *const (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_60(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *const (), args_3: *mut (), args_4: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_27(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_61(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    41_(),
+                    &mut _arg,
+                )
+            });
+        }
+    )
 });
 pub static mut test_exception_62: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {

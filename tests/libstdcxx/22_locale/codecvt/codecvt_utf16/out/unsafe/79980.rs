@@ -261,7 +261,7 @@ pub unsafe fn mode_10(mut m: ()) -> () {
 }
 pub unsafe fn test01_11() {
     let src: [(); 5] = std::mem::transmute(*b"\xfe\xff\xab\xcd\0");
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char16_t__1114111__std_consume_header___char16_t__std_allocator_char16_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let mut dst: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -285,7 +285,7 @@ pub unsafe fn test01_11() {
 }
 pub unsafe fn test02_13() {
     let src: [(); 5] = std::mem::transmute(*b"\xff\xfe\xab\xcd\0");
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char16_t__1114111__std_consume_header___char16_t__std_allocator_char16_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let mut dst: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -309,7 +309,7 @@ pub unsafe fn test02_13() {
 }
 pub unsafe fn test03_14() {
     let src: [(); 5] = std::mem::transmute(*b"\xfe\xff\xab\xcd\0");
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char16_t__1114111__5___char16_t__std_allocator_char16_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let mut dst: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -333,7 +333,7 @@ pub unsafe fn test03_14() {
 }
 pub unsafe fn test04_15() {
     let src: [(); 5] = std::mem::transmute(*b"\xff\xfe\xab\xcd\0");
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char16_t__1114111__5___char16_t__std_allocator_char16_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let mut dst: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -357,7 +357,7 @@ pub unsafe fn test04_15() {
 }
 pub unsafe fn test05_16() {
     let src: [(); 5] = std::mem::transmute(*b"\0a\xab\xcd\0");
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char16_t__255__std_consume_header___char16_t__std_allocator_char16_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -400,7 +400,7 @@ pub unsafe fn test05_16() {
 }
 pub unsafe fn test06_17() {
     let src: [(); 5] = std::mem::transmute(*b"\0a\xab\xcd\0");
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char16_t__1114111__std_consume_header___char16_t__std_allocator_char16_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -442,7 +442,7 @@ pub unsafe fn test06_17() {
     }
 }
 pub unsafe fn test07_18() {
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char16_t__1114111__std_consume_header___char16_t__std_allocator_char16_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let mut utf16: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut __do_while = true;
@@ -524,7 +524,7 @@ pub unsafe fn test07_18() {
     }
 }
 pub unsafe fn test08_19() {
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char16_t__1114111__6___char16_t__std_allocator_char16_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let src: [(); 8] = std::mem::transmute(*b"-\xfe\xff\0a\xab\xcd\0");
     let mut out: () = unimplemented!();
     let mut __do_while = true;
@@ -587,7 +587,7 @@ pub unsafe fn test08_19() {
     }
 }
 pub unsafe fn test09_20() {
-    let mut conv : std_wstring_convert_std_codecvt_utf16_char32_t__1114111__6___char32_t__std_allocator_char32_t___std_allocator_char__ = unimplemented!() ;
+    let mut conv: () = unimplemented!();
     let src: [(); 8] = std::mem::transmute(*b"-\xfe\xff\xd8\x08\xdfE\0");
     let mut out: () = unimplemented!();
     let mut __do_while = true;

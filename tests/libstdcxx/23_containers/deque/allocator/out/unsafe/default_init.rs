@@ -310,10 +310,10 @@ pub struct __gnu_test_default_init_allocator_int_ {
 }
 impl __gnu_test_default_init_allocator_int_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
-        return (unsafe { (unimplemented!() as std___new_allocator_int_).allocate(n, None) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_int_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl __gnu_test_default_init_allocator_int_ptr_ {
@@ -329,10 +329,10 @@ pub struct __gnu_test_default_init_allocator_int_ptr_ {
 }
 impl __gnu_test_default_init_allocator_int_ptr_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut *mut () {
-        return (unsafe { (unimplemented!() as std___new_allocator_int_ptr_).allocate(n, None) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut (), mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_int_ptr_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 pub unsafe fn operator_eq_15(

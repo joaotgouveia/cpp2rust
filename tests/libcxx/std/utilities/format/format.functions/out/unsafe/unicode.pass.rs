@@ -93,11 +93,7 @@ impl MultiStringType {
         return self.u32_;
     }
 }
-pub unsafe fn check_0(
-    mut expected: (),
-    mut fmt: std_basic_format_string_char__std_string_view_,
-    args: *mut (),
-) {
+pub unsafe fn check_0(mut expected: (), mut fmt: (), args: *mut ()) {
     let mut out: () = unimplemented!();
     {
         if !(unimplemented!()) {
@@ -106,11 +102,7 @@ pub unsafe fn check_0(
     }
     unimplemented!();
 }
-pub unsafe fn check_1(
-    mut expected: (),
-    mut fmt: std_basic_format_string_wchar_t__std_wstring_view_,
-    args: *mut (),
-) {
+pub unsafe fn check_1(mut expected: (), mut fmt: (), args: *mut ()) {
     let mut out: () = unimplemented!();
     {}
     unimplemented!();
@@ -118,217 +110,217 @@ pub unsafe fn check_1(
 pub unsafe fn test_single_code_point_fill_2() {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
@@ -336,217 +328,217 @@ pub unsafe fn test_single_code_point_fill_2() {
 pub unsafe fn test_single_code_point_fill_3() {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
@@ -554,217 +546,217 @@ pub unsafe fn test_single_code_point_fill_3() {
 pub unsafe fn test_single_code_point_truncate_4() {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
@@ -772,217 +764,217 @@ pub unsafe fn test_single_code_point_truncate_4() {
 pub unsafe fn test_single_code_point_truncate_5() {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
@@ -990,217 +982,217 @@ pub unsafe fn test_single_code_point_truncate_5() {
 pub unsafe fn test_P1868_6() {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_0(_expected, _fmt, &mut _args)
     });
@@ -1208,217 +1200,217 @@ pub unsafe fn test_P1868_6() {
 pub unsafe fn test_P1868_7() {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check_1(_expected, _fmt, &mut _args)
     });
@@ -1427,253 +1419,253 @@ pub unsafe fn test_malformed_code_point_8() {
     {
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+            let _fmt: () = unimplemented!();
             let mut _args: () = unimplemented!();
             check_0(_expected, _fmt, &mut _args)
         });

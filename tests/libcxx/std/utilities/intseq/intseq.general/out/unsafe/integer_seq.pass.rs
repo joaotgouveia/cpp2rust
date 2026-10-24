@@ -56,19 +56,19 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     const _: () = assert!(true, "sizemix::size () == 5");;
     let mut tup: () = unimplemented!();
-    let mut t3: () = (unsafe { extract_0(&tup, unsafe { std::mem::zeroed::<()>() }) });
+    let mut t3: () = (unsafe { extract_0(&tup, unimplemented!()) });
     const _: () = assert!(
         true,
         "std::tuple_size<decltype(t3)>::value == int3::size ()"
     );;
     unimplemented!();
-    let mut t7: () = (unsafe { extract_1(&tup, unsafe { std::mem::zeroed::<()>() }) });
+    let mut t7: () = (unsafe { extract_1(&tup, unimplemented!()) });
     const _: () = assert!(
         true,
         "std::tuple_size<decltype(t7)>::value == size7::size ()"
     );;
     unimplemented!();
-    let mut t4: () = (unsafe { extract_2(&tup, unsafe { std::mem::zeroed::<()>() }) });
+    let mut t4: () = (unsafe { extract_2(&tup, unimplemented!()) });
     const _: () = assert!(
         true,
         "std::tuple_size<decltype(t4)>::value == size4::size ()"

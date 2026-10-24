@@ -520,7 +520,7 @@ pub unsafe fn iter_move_20(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_21(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1159,7 +1159,7 @@ pub unsafe fn testBase_with_CommonRange_23() {
             { forward_iterator_int_ptr_::new_1({ arr.as_mut_ptr() }) },
             { forward_iterator_int_ptr_::new_1({ arr.as_mut_ptr().offset((4_()) as isize) }) },
         );
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_forward_iterator_int_ptr___forward_iterator_int_ptr____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const forward_iterator_int_ptr_ = (unsafe { (*unimplemented!()).base_5() });
@@ -1184,7 +1184,7 @@ pub unsafe fn testBase_with_CommonRange_24() {
                 bidirectional_iterator_int_ptr_::new_1({ arr.as_mut_ptr().offset((4_()) as isize) })
             },
         );
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const bidirectional_iterator_int_ptr_ =
@@ -1211,7 +1211,7 @@ pub unsafe fn testBase_with_CommonRange_25() {
                 random_access_iterator_int_ptr_::new_1({ arr.as_mut_ptr().offset((4_()) as isize) })
             },
         );
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_random_access_iterator_int_ptr___random_access_iterator_int_ptr____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const random_access_iterator_int_ptr_ =
@@ -1236,7 +1236,7 @@ pub unsafe fn testBase_with_CommonRange_26() {
             { contiguous_iterator_int_ptr_::new_1({ arr.as_mut_ptr() }) },
             { contiguous_iterator_int_ptr_::new_1({ arr.as_mut_ptr().offset((4_()) as isize) }) },
         );
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const contiguous_iterator_int_ptr_ =
@@ -1259,8 +1259,7 @@ pub unsafe fn testBase_with_CommonRange_27() {
         MinimalRange_int_ptr__int_ptr_::new({ arr.as_mut_ptr() }, {
             arr.as_mut_ptr().offset((4_()) as isize)
         });
-    let mut ev: std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_int_ptr__int_ptr___ =
-        unimplemented!();
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const *mut () = (unsafe { (*unimplemented!()).base_5() });
@@ -1282,7 +1281,7 @@ pub unsafe fn testBase_with_CommonRange_28() {
         MinimalRange_const_int_ptr__const_int_ptr_::new({ (arr.as_mut_ptr()).cast_const() }, {
             (arr.as_mut_ptr().offset((4_()) as isize)).cast_const()
         });
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_const_int_ptr__const_int_ptr___ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const *const () = (unsafe { (*unimplemented!()).base_5() });
@@ -1300,7 +1299,7 @@ pub unsafe fn testBase_with_NonCommonRange_29() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut range : MinimalRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr___ = MinimalRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr___ :: new ( { cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { arr .as_mut_ptr() } , )  } , { { let mut __tmp_0 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { arr .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  ; sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ :: new_1 ( { & mut __tmp_0 } , )  } } , )  ;
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr_____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const cpp17_input_iterator_int_ptr__int_ptr_ =
@@ -1320,7 +1319,7 @@ pub unsafe fn testBase_with_NonCommonRange_30() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut range : MinimalRange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr___ = MinimalRange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr___ :: new ( { cpp20_input_iterator_int_ptr_ :: new ( { arr .as_mut_ptr() } , )  } , { { let mut __tmp_1 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { arr .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_1 } , )  } } , )  ;
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const cpp20_input_iterator_int_ptr_ =
@@ -1339,7 +1338,7 @@ pub unsafe fn testBase_with_NonCommonRange_31() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut range : MinimalRange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___ = MinimalRange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___ :: new ( { forward_iterator_int_ptr_ :: new_1 ( { arr .as_mut_ptr() } , )  } , { { let mut __tmp_2 : forward_iterator_int_ptr_  = forward_iterator_int_ptr_ :: new_1 ( { arr .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  ; sentinel_wrapper_forward_iterator_int_ptr__ :: new_1 ( { & mut __tmp_2 } , )  } } , )  ;
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const forward_iterator_int_ptr_ = (unsafe { (*unimplemented!()).base_5() });
@@ -1357,7 +1356,7 @@ pub unsafe fn testBase_with_NonCommonRange_32() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut range : MinimalRange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___ = MinimalRange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___ :: new ( { bidirectional_iterator_int_ptr_ :: new_1 ( { arr .as_mut_ptr() } , )  } , { { let mut __tmp_3 : bidirectional_iterator_int_ptr_  = bidirectional_iterator_int_ptr_ :: new_1 ( { arr .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  ; sentinel_wrapper_bidirectional_iterator_int_ptr__ :: new_1 ( { & mut __tmp_3 } , )  } } , )  ;
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const bidirectional_iterator_int_ptr_ =
@@ -1377,7 +1376,7 @@ pub unsafe fn testBase_with_NonCommonRange_33() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut range : MinimalRange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___ = MinimalRange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___ :: new ( { random_access_iterator_int_ptr_ :: new_1 ( { arr .as_mut_ptr() } , )  } , { { let mut __tmp_4 : random_access_iterator_int_ptr_  = random_access_iterator_int_ptr_ :: new_1 ( { arr .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  ; sentinel_wrapper_random_access_iterator_int_ptr__ :: new_1 ( { & mut __tmp_4 } , )  } } , )  ;
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const random_access_iterator_int_ptr_ =
@@ -1397,7 +1396,7 @@ pub unsafe fn testBase_with_NonCommonRange_34() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut range : MinimalRange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___ = MinimalRange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___ :: new ( { contiguous_iterator_int_ptr_ :: new_1 ( { arr .as_mut_ptr() } , )  } , { { let mut __tmp_5 : contiguous_iterator_int_ptr_  = contiguous_iterator_int_ptr_ :: new_1 ( { arr .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  ; sentinel_wrapper_contiguous_iterator_int_ptr__ :: new_1 ( { & mut __tmp_5 } , )  } } , )  ;
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const contiguous_iterator_int_ptr_ =
@@ -1422,7 +1421,7 @@ pub unsafe fn testBase_with_NonCommonRange_35() {
                 sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_6 })
             }
         });
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_int_ptr__sentinel_wrapper_int_ptr____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const *mut () = (unsafe { (*unimplemented!()).base_5() });
@@ -1450,7 +1449,7 @@ pub unsafe fn testBase_with_NonCommonRange_36() {
                 }
             },
         );
-    let mut ev : std_ranges_enumerate_view_std_ranges_ref_view_MinimalRange_const_int_ptr__sentinel_wrapper_const_int_ptr____ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     {
         let resultIt: *const *const () = (unsafe { (*unimplemented!()).base_5() });

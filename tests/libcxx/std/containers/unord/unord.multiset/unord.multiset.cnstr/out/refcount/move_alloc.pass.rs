@@ -417,22 +417,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let _pos: () = unimplemented!();
             let _end: () = unimplemented!();
-            CheckConsecutiveValues_0(_pos, _end, (1_() as ()), 2_())
+            CheckConsecutiveValues_0(_pos, _end, 1_(), 2_())
         });
         ({
             let _pos: () = unimplemented!();
             let _end: () = unimplemented!();
-            CheckConsecutiveValues_0(_pos, _end, (2_() as ()), 2_())
+            CheckConsecutiveValues_0(_pos, _end, 2_(), 2_())
         });
         ({
             let _pos: () = unimplemented!();
             let _end: () = unimplemented!();
-            CheckConsecutiveValues_0(_pos, _end, (3_() as ()), 1_())
+            CheckConsecutiveValues_0(_pos, _end, 3_(), 1_())
         });
         ({
             let _pos: () = unimplemented!();
             let _end: () = unimplemented!();
-            CheckConsecutiveValues_0(_pos, _end, (4_() as ()), 1_())
+            CheckConsecutiveValues_0(_pos, _end, 4_(), 1_())
         });
         unimplemented!();
         unimplemented!();

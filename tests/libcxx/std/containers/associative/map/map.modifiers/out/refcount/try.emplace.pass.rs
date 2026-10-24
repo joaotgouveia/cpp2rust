@@ -177,7 +177,7 @@ pub fn test_0() -> () {
             i += 2_();
         }
         unimplemented!();
-        let it : Value<() > = Rc::new(RefCell::new(std___map_const_iterator_std___tree_const_iterator_std___value_type_int__Moveable___std___tree_node_std___value_type_int__Moveable___void_ptr__ptr__long__ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
         let mut i: () = 0_();
         'loop_: while (i < 20_()) {

@@ -261,7 +261,7 @@ pub unsafe fn iter_move_4(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_5(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -439,8 +439,7 @@ const _: () = assert!(
 pub unsafe fn test_7() -> () {
     {
         let mut ts: () = unimplemented!();
-        let mut view: std_ranges_enumerate_view_std_ranges_ref_view_std_array_int__4___ =
-            unimplemented!();
+        let mut view: () = unimplemented!();
         let mut it: () = unimplemented!();
         const _: () = assert!(
             true,
@@ -452,7 +451,7 @@ pub unsafe fn test_7() -> () {
         unimplemented!();
     }
     {
-        let mut view: std_ranges_enumerate_view_std_ranges_iota_view_int__int__ = unimplemented!();
+        let mut view: () = unimplemented!();
         let mut it: () = unimplemented!();
         const _: () = assert!(
             true,

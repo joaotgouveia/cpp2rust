@@ -9,14 +9,12 @@ use std::rc::{Rc, Weak};
 pub fn test_adjacent_pairs_0() {
     let mut v: () = unimplemented!();
     let expected_index: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let __tmp_0: Value<
-        std_ranges_adjacent_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____2_,
-    > = Rc::new(RefCell::new(unimplemented!()));
+    let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __range1: Ptr<()> = __tmp_0.as_pointer();
     'loop_: for __decomp_1 in IterRange::new(unimplemented!(), unimplemented!()) {
         let __decomp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<()> = ({ get_2((__decomp_1.as_pointer()).reinterpret_cast::<()>()) });
-        let y: Ptr<()> = ({ get_3((__decomp_1.as_pointer()).reinterpret_cast::<()>()) });
+        let x: Ptr<()> = ({ get_2(__decomp_1.as_pointer()) });
+        let y: Ptr<()> = ({ get_3(__decomp_1.as_pointer()) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -29,9 +27,9 @@ pub fn test_string_view_4() {
     let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __decomp_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let a: Ptr<()> = ({ get_6((__decomp_5.as_pointer()).reinterpret_cast::<()>()) });
-    let b: Ptr<()> = ({ get_7((__decomp_5.as_pointer()).reinterpret_cast::<()>()) });
-    let c: Ptr<()> = ({ get_8((__decomp_5.as_pointer()).reinterpret_cast::<()>()) });
+    let a: Ptr<()> = ({ get_6(__decomp_5.as_pointer()) });
+    let b: Ptr<()> = ({ get_7(__decomp_5.as_pointer()) });
+    let c: Ptr<()> = ({ get_8(__decomp_5.as_pointer()) });
     unimplemented!();
     unimplemented!();
     unimplemented!();

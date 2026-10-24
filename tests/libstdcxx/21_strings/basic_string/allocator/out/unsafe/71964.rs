@@ -279,7 +279,7 @@ impl mv_allocator_char_ {
         this
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_char_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl Default for mv_allocator_char_ {

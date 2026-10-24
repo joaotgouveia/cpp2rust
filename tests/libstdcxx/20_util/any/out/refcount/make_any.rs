@@ -289,7 +289,7 @@ pub fn main() {
 fn main_0() -> () {
     let i: Value<()> = Rc::new(RefCell::new(42_()));
     let o: Value<()> = Rc::new(RefCell::new(({ make_any_10(i.as_pointer()) })));
-    let i2: Ptr<()> = ({ any_cast_11((o.as_pointer()).reinterpret_cast::<()>()) });
+    let i2: Ptr<()> = ({ any_cast_11(o.as_pointer()) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -335,7 +335,7 @@ fn main_0() -> () {
             make_any_13(___args_0.as_pointer(), ___args_1.as_pointer())
         }),
     ));
-    let t: Ptr<()> = ({ any_cast_14((o2.as_pointer()).reinterpret_cast::<()>()) });
+    let t: Ptr<()> = ({ any_cast_14(o2.as_pointer()) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -361,7 +361,7 @@ fn main_0() -> () {
         }
     }
     let o3: Value<()> = Rc::new(RefCell::new(({ make_any_17(unimplemented!()) })));
-    let v: Ptr<()> = ({ any_cast_18((o3.as_pointer()).reinterpret_cast::<()>()) });
+    let v: Ptr<()> = ({ any_cast_18(o3.as_pointer()) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -382,7 +382,7 @@ fn main_0() -> () {
         }
     }
     let o4: Value<()> = Rc::new(RefCell::new(({ make_any_19(unimplemented!()) })));
-    let c: Ptr<combined> = ({ any_cast_20((o4.as_pointer()).reinterpret_cast::<()>()) });
+    let c: Ptr<combined> = ({ any_cast_20(o4.as_pointer()) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -407,7 +407,7 @@ fn main_0() -> () {
             )
         }),
     ));
-    let c2: Ptr<combined> = ({ any_cast_20((o5.as_pointer()).reinterpret_cast::<()>()) });
+    let c2: Ptr<combined> = ({ any_cast_20(o5.as_pointer()) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

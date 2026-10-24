@@ -19,10 +19,10 @@ pub fn return_const_lvalue_3(mut _a0: ()) -> Ptr<()> {
     return dummy_0.with(|v| v.as_pointer());
 }
 pub fn return_rvalue_4(mut _a0: ()) -> Ptr<()> {
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn return_const_rvalue_5(mut _a0: ()) -> Ptr<()> {
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn CheckCall_6() -> () {
     return unimplemented!();
@@ -166,8 +166,8 @@ pub fn do_test_51(mut func: FnPtr<fn(()) -> ()>) {
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
-    let exp2: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
+    let exp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let exp2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let exp_r: Value<()> = Rc::new(RefCell::new(
         ({
             let ___args: Value<()> = Rc::new(RefCell::new(100_()));

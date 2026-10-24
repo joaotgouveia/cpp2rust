@@ -114,10 +114,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-            std_tuple_int_ptr_::new({ __tmp_0.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -133,11 +130,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::get<0>(t) == 0");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_2: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-            std_tuple_int__char_ptr_::new_1({ __tmp_1.as_pointer() }, { __tmp_2.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

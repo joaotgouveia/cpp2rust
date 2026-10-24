@@ -280,9 +280,9 @@ pub unsafe fn test01_10() {
         __do_while = false;
         {}
     }
-    unsafe { std::mem::zeroed::<()>() };
+    unimplemented!();
     let m3: i64 = (((unimplemented!()) - (1_())) as i64);
-    unsafe { std::mem::zeroed::<()>() };
+    unimplemented!();
     let m4: i64 = (((unimplemented!()) / (2_())) as i64);
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

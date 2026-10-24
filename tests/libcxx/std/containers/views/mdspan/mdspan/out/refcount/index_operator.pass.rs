@@ -2235,7 +2235,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_int__Impl
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
     }
 }
@@ -2279,7 +2279,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_int__18446744073709551615__
  let __rhs = ( (unimplemented!() .read()) + ( ( if ( unimplemented!()  < Wrap_5 .with(|rc| *rc.borrow()) ) { unimplemented!()   } else { Wrap_5 .with(|rc| *rc.borrow())  } ) * res ) )  ;
  res  = __rhs ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
         });
     }
 }
@@ -2319,7 +2319,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( ( if ( unimplemented!()  < Wrap_8 .with(|rc| *rc.borrow()) ) { unimplemented!()   } else { Wrap_8 .with(|rc| *rc.borrow())  } ) * res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } )   ;
  } }
 pub trait layout_wrapping_integral_4__mapping_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__Impl
 {
@@ -2367,7 +2367,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( ( if ( unimplemented!()  < Wrap_4 .with(|rc| *rc.borrow()) ) { unimplemented!()   } else { Wrap_4 .with(|rc| *rc.borrow())  } ) * res ) )  ;
  res  = __rhs } } } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } )   ;
  } }
 pub trait layout_wrapping_integral_4__mapping_std_extents_unsigned_char__18446744073709551615__Impl
 {
@@ -2437,7 +2437,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) + ( ( if ( unimplemented!()  < Wrap_7 .with(|rc| *rc.borrow()) ) { unimplemented!()   } else { Wrap_7 .with(|rc| *rc.borrow())  } ) * res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } )   ;
  } }
 pub trait layout_wrapping_integral_4__mapping_std_extents_unsigned_int__18446744073709551615__Impl {
     fn copy_assign(
@@ -2482,7 +2482,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_unsigned_int__1844674407370
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( ( if ( unimplemented!()  < Wrap_1 .with(|rc| *rc.borrow()) ) { unimplemented!()   } else { Wrap_1 .with(|rc| *rc.borrow())  } ) ) . wrapping_mul ( res ) )  ;
  res  = __rhs ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , )
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , )
         });
     }
 }
@@ -2541,7 +2541,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_unsigned_int__7__Impl
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
     }
 }
@@ -2611,7 +2611,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_unsigned_int__7__8__Impl
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
     }
 }

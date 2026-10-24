@@ -321,11 +321,7 @@ pub struct __gnu_test_default_init_allocator_unsigned_long_ {
 }
 impl __gnu_test_default_init_allocator_unsigned_long_ {
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (unsafe {
-            let ___p: *mut () = p;
-            let ___n: () = n;
-            (unimplemented!() as std___new_allocator_unsigned_long_).deallocate(___p, ___n)
-        });
+        unimplemented!();
     }
 }
 pub unsafe fn operator_eq_15(

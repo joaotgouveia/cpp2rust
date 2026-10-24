@@ -476,7 +476,7 @@ pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -2465,7 +2465,7 @@ pub unsafe fn test_77() -> () {
             unimplemented!();
         }
         {
-            let mut result_default_comp: *mut () = (unsafe {
+            let mut result_default_comp: () = (unsafe {
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut is_heap_until_16))(
                     &mut in_,
                     unimplemented!(),
@@ -2473,7 +2473,7 @@ pub unsafe fn test_77() -> () {
                 )
             });
             unimplemented!();
-            let mut result_custom_comp: *mut () = (unsafe {
+            let mut result_custom_comp: () = (unsafe {
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut is_heap_until_16))(
                     &mut in_,
                     unimplemented!(),
@@ -2515,7 +2515,7 @@ pub unsafe fn test_77() -> () {
             unimplemented!();
         }
         {
-            let mut result_default_comp: *mut A_78 = (unsafe {
+            let mut result_default_comp: () = (unsafe {
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut is_heap_until_16))(
                     &mut in_,
                     unimplemented!(),
@@ -2523,7 +2523,7 @@ pub unsafe fn test_77() -> () {
                 )
             });
             unimplemented!();
-            let mut result_custom_comp: *mut A_78 = (unsafe {
+            let mut result_custom_comp: () = (unsafe {
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut is_heap_until_16))(
                     &mut in_,
                     unimplemented!(),

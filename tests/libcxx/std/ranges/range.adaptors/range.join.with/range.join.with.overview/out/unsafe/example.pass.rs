@@ -9,8 +9,8 @@ use std::rc::Rc;
 pub unsafe fn test_0() -> () {
     let mut vs: () = unimplemented!();
     let mut result: () = unimplemented!();
-    let mut __tmp_0 : std_ranges_join_with_view_std_ranges_ref_view_std_vector_std_string__std_allocator_std_string_____std_ranges_single_view_char__  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_join_with_view_std_ranges_ref_view_std_vector_std_string__std_allocator_std_string_____std_ranges_single_view_char__ = & mut __tmp_0 ;
+    let mut __tmp_0: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_0;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*unimplemented!());
         unimplemented!();

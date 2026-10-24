@@ -769,7 +769,7 @@ pub trait __gnu_test_default_init_allocator_int_Impl {
 }
 impl __gnu_test_default_init_allocator_int_Impl for Ptr<__gnu_test_default_init_allocator_int_> {
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
-        ({ (unimplemented!() as std___new_allocator_int_).deallocate((p).clone(), n) });
+        unimplemented!();
     }
 }
 pub trait __gnu_test_default_resource_mgrImpl {

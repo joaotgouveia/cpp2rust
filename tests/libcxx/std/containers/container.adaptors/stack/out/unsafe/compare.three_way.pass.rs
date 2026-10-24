@@ -288,34 +288,31 @@ pub unsafe fn operator_eq_9(
 ) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_cmp_0(
-    x: *const nasty_vector_int_,
-    y: *const nasty_vector_int_,
-) -> std_strong_ordering {
+pub unsafe fn operator_cmp_0(x: *const nasty_vector_int_, y: *const nasty_vector_int_) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_2(
     x: *const nasty_vector_StrongOrder_,
     y: *const nasty_vector_StrongOrder_,
-) -> std_strong_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_4(
     x: *const nasty_vector_WeakOrder_,
     y: *const nasty_vector_WeakOrder_,
-) -> std_weak_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_6(
     x: *const nasty_vector_PartialOrder_,
     y: *const nasty_vector_PartialOrder_,
-) -> std_partial_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_8(
     x: *const nasty_vector_LessAndEqComp_,
     y: *const nasty_vector_LessAndEqComp_,
-) -> std_weak_ordering {
+) -> () {
     return unimplemented!();
 }
 #[repr(C)]
@@ -600,34 +597,31 @@ pub unsafe fn operator_eq_19(
 ) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_cmp_10(
-    x: *const nasty_list_int_,
-    y: *const nasty_list_int_,
-) -> std_strong_ordering {
+pub unsafe fn operator_cmp_10(x: *const nasty_list_int_, y: *const nasty_list_int_) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_12(
     x: *const nasty_list_StrongOrder_,
     y: *const nasty_list_StrongOrder_,
-) -> std_strong_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_14(
     x: *const nasty_list_WeakOrder_,
     y: *const nasty_list_WeakOrder_,
-) -> std_weak_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_16(
     x: *const nasty_list_PartialOrder_,
     y: *const nasty_list_PartialOrder_,
-) -> std_partial_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_18(
     x: *const nasty_list_LessAndEqComp_,
     y: *const nasty_list_LessAndEqComp_,
-) -> std_weak_ordering {
+) -> () {
     return unimplemented!();
 }
 #[repr(C)]

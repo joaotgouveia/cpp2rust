@@ -405,7 +405,7 @@ const _: () = assert!(
 pub unsafe fn test_5() -> () {
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_MovableNonTrivial__int_ = unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -413,7 +413,7 @@ pub unsafe fn test_5() -> () {
     }
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_int__MovableNonTrivial_ = unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -421,29 +421,27 @@ pub unsafe fn test_5() -> () {
     }
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_int__int_ = unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_int__int_ = unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_TailClobbererNonTrivialMove_0__true__false___bool_ =
-            unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_bool__TailClobbererNonTrivialMove_1__true__false__ =
-            unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -177,7 +177,7 @@ pub fn test_7(c: Ptr<()>, mut first: Ptr<()>, mut last: Ptr<()>) {
         sz.prefix_dec();
         {
             unimplemented!();
-            let __rhs = ((first.read()) as ());
+            let __rhs = (first.read());
             unimplemented!().write(__rhs);
             unimplemented!();
         }
@@ -231,7 +231,7 @@ pub fn test_9(c: Ptr<()>, mut first: Ptr<()>, mut last: Ptr<()>) {
         sz.prefix_dec();
         {
             unimplemented!();
-            let __rhs = ((first.read()) as ());
+            let __rhs = (first.read());
             unimplemented!().write(__rhs);
             unimplemented!();
         }

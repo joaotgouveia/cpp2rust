@@ -285,13 +285,7 @@ pub unsafe fn tests_22() -> () {
         unimplemented!();
     }
     {
-        let mut arr: () = (unsafe {
-            let mut ___arr: [A_23; 1] = [A_23 {
-                a: 3_(),
-                b: 0.1_f64,
-            }];
-            to_array_24(&mut ___arr)
-        });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

@@ -25,7 +25,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let text: [(); 6] = std::mem::transmute(*b"Hello\0");
     let mut regex: () = unimplemented!();
-    let mut lower : std_ranges_transform_view_std_ranges_join_view_std_ranges_subrange_std_cregex_iterator__std_cregex_iterator__std_ranges_subrange_kind_unsized_____lambda_at_lwg3698_pass_cpp_28_48__ = unimplemented!()  ;
+    let mut lower: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

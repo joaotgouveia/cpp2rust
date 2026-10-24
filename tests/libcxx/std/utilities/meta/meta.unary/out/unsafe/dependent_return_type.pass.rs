@@ -20,54 +20,54 @@ pub unsafe fn add_pointer_4() -> *mut () {
     return std::ptr::null_mut();
 }
 pub unsafe fn add_rvalue_reference_5() -> *mut () {
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 static mut i_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn add_volatile_7() -> () {
-    return ((*unimplemented!()) as ());
+    return (*unimplemented!());
 }
 static mut i_8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn decay_9() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn enable_if_10() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn make_signed_11() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn make_unsigned_12() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn remove_all_extents_13() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn remove_const_14() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn remove_cv_15() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn remove_cvref_16() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn remove_extent_17() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn remove_pointer_18() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn remove_reference_19() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn remove_volatile_20() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn type_identity_21() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub unsafe fn underlying_type_22() -> () {
-    return <()>::default();
+    return unimplemented!();
 }
 pub type E = ();
 pub unsafe fn void_t_23() {}

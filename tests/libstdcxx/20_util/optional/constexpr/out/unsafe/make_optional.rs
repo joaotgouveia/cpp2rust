@@ -264,7 +264,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let i: () = 42_();
-    let o: std_optional_int_ = unimplemented!();
+    let o: () = unimplemented!();
     const _: () = assert!(
         true,
         "std::is_same<decltype(o), const std::optional<int>>()"

@@ -189,7 +189,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let e : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__Emplaceable___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -205,7 +205,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let e : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__Emplaceable___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

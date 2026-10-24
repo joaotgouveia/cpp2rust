@@ -281,36 +281,35 @@ pub unsafe fn test_14() -> () {
         "std::same_as<decltype(std::views::repeat), decltype(std::ranges::views::repeat)>"
     );;
     {
-        let mut r: std_ranges_repeat_view_int__std_unreachable_sentinel_t_ = unimplemented!();
+        let mut r: () = unimplemented!();
         const _: () = assert!(!(false), "!std::ranges::sized_range<decltype(r)>");;
         unimplemented!();
     }
     {
-        let mut r: std_ranges_repeat_view_int__int_ = unimplemented!();
+        let mut r: () = unimplemented!();
         const _: () = assert!(true, "std::ranges::sized_range<decltype(r)>");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut r: std_ranges_repeat_view_int__long_ = unimplemented!();
+        let mut r: () = unimplemented!();
         const _: () = assert!(true, "std::ranges::sized_range<decltype(r)>");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut r: std_ranges_repeat_view_int__int_ = unimplemented!();
+        let mut r: () = unimplemented!();
         const _: () = assert!(true, "std::ranges::sized_range<decltype(r)>");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut r: std_ranges_transform_view_std_ranges_repeat_view_int__int___Add3_ =
-            unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut r : std_ranges_transform_view_std_ranges_repeat_view_int__std_unreachable_sentinel_t___Add3_ = unimplemented!()  ;
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     return true;

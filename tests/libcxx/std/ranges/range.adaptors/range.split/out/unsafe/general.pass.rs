@@ -462,8 +462,8 @@ pub unsafe fn test_with_piping_58(
     mut expected: (),
 ) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_0 : std_ranges_split_view_std_ranges_ref_view_const_chararr8arr___std_ranges_single_view_char__  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_split_view_std_ranges_ref_view_const_chararr8arr___std_ranges_single_view_char__ = & mut __tmp_0 ;
+    let mut __tmp_0: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_0;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -488,8 +488,8 @@ pub unsafe fn test_with_piping_59(
     mut expected: (),
 ) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_1 : std_ranges_split_view_std_ranges_ref_view_const_chararr9arr___std_string_view_  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_split_view_std_ranges_ref_view_const_chararr9arr___std_string_view_ = & mut __tmp_1 ;
+    let mut __tmp_1: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_1;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -514,8 +514,8 @@ pub unsafe fn test_with_piping_60(
     mut expected: (),
 ) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_2 : std_ranges_split_view_std_ranges_ref_view_const_chararr1arr___std_ranges_single_view_char__  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_split_view_std_ranges_ref_view_const_chararr1arr___std_ranges_single_view_char__ = & mut __tmp_2 ;
+    let mut __tmp_2: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_2;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -540,8 +540,8 @@ pub unsafe fn test_with_piping_61(
     mut expected: (),
 ) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_3 : std_ranges_split_view_std_ranges_ref_view_const_chararr1arr___std_string_view_  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_split_view_std_ranges_ref_view_const_chararr1arr___std_string_view_ = & mut __tmp_3 ;
+    let mut __tmp_3: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_3;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -566,8 +566,8 @@ pub unsafe fn test_with_piping_62(
     mut expected: (),
 ) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_4 : std_ranges_split_view_std_ranges_ref_view_const_chararr4arr___std_string_view_  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_split_view_std_ranges_ref_view_const_chararr4arr___std_string_view_ = & mut __tmp_4 ;
+    let mut __tmp_4: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_4;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -588,10 +588,8 @@ pub unsafe fn test_with_piping_62(
 }
 pub unsafe fn test_with_piping_63(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_5: std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        &mut __tmp_5;
+    let mut __tmp_5: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_5;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -612,8 +610,8 @@ pub unsafe fn test_with_piping_63(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_64(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_6: std_ranges_split_view_std_string_view__std_string_view_ = unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_string_view_ = &mut __tmp_6;
+    let mut __tmp_6: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_6;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -634,10 +632,8 @@ pub unsafe fn test_with_piping_64(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_65(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_7: std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        &mut __tmp_7;
+    let mut __tmp_7: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_7;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -658,8 +654,8 @@ pub unsafe fn test_with_piping_65(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_66(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_8: std_ranges_split_view_std_string_view__std_string_view_ = unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_string_view_ = &mut __tmp_8;
+    let mut __tmp_8: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_8;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -680,10 +676,8 @@ pub unsafe fn test_with_piping_66(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_67(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_9: std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        &mut __tmp_9;
+    let mut __tmp_9: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_9;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -704,8 +698,8 @@ pub unsafe fn test_with_piping_67(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_68(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_10: std_ranges_split_view_std_string_view__std_string_view_ = unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_string_view_ = &mut __tmp_10;
+    let mut __tmp_10: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_10;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -726,10 +720,8 @@ pub unsafe fn test_with_piping_68(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_69(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_11: std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        &mut __tmp_11;
+    let mut __tmp_11: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_11;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -750,8 +742,8 @@ pub unsafe fn test_with_piping_69(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_70(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_12: std_ranges_split_view_std_string_view__std_string_view_ = unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_string_view_ = &mut __tmp_12;
+    let mut __tmp_12: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_12;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -772,10 +764,8 @@ pub unsafe fn test_with_piping_70(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_71(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_13: std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        &mut __tmp_13;
+    let mut __tmp_13: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_13;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -796,8 +786,8 @@ pub unsafe fn test_with_piping_71(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_72(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_14: std_ranges_split_view_std_string_view__std_string_view_ = unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_string_view_ = &mut __tmp_14;
+    let mut __tmp_14: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_14;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -818,10 +808,8 @@ pub unsafe fn test_with_piping_72(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_73(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_15: std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        &mut __tmp_15;
+    let mut __tmp_15: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_15;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -842,8 +830,8 @@ pub unsafe fn test_with_piping_73(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_74(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_16: std_ranges_split_view_std_string_view__std_string_view_ = unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_string_view_ = &mut __tmp_16;
+    let mut __tmp_16: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_16;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -864,10 +852,8 @@ pub unsafe fn test_with_piping_74(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_75(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_17: std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_ranges_single_view_char__ =
-        &mut __tmp_17;
+    let mut __tmp_17: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_17;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -888,8 +874,8 @@ pub unsafe fn test_with_piping_75(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_76(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_18: std_ranges_split_view_std_string_view__std_string_view_ = unimplemented!();
-    let __range1: *mut std_ranges_split_view_std_string_view__std_string_view_ = &mut __tmp_18;
+    let mut __tmp_18: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_18;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -910,8 +896,8 @@ pub unsafe fn test_with_piping_76(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_77(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_19 : std_ranges_split_view_std_ranges_ref_view_std_array_int__7____std_ranges_single_view_int__  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_split_view_std_ranges_ref_view_std_array_int__7____std_ranges_single_view_int__ = & mut __tmp_19 ;
+    let mut __tmp_19: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_19;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -932,8 +918,8 @@ pub unsafe fn test_with_piping_77(input: *mut (), separator: *mut (), mut expect
 }
 pub unsafe fn test_with_piping_78(input: *mut (), separator: *mut (), mut expected: ()) -> () {
     let mut expected_it: () = unimplemented!();
-    let mut __tmp_20 : std_ranges_split_view_std_ranges_ref_view_std_array_int__9____std_ranges_owning_view_std_array_int__3___  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_split_view_std_ranges_ref_view_std_array_int__9____std_ranges_owning_view_std_array_int__3___ = & mut __tmp_20 ;
+    let mut __tmp_20: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_20;
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut e: () = unimplemented!();
         if ((expected_it) == (unimplemented!())) {
@@ -983,7 +969,7 @@ pub unsafe fn test_string_literal_separator_81() -> () {
             let mut __tmp_21: () = (unsafe { operator_literal_sv_80(c"abc def".as_ptr(), 7_()) });
             std_ranges_split_view_std_string_view__std_ranges_single_view_char__::new_1(
                 { &mut __tmp_21 },
-                { ((' ' as ()) as ()) },
+                { (' ' as ()) },
             )
         };
         unimplemented!();

@@ -14,7 +14,7 @@ fn main_0() -> () {
     let mut v: () = unimplemented!();
     unimplemented!();
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let copy: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+    let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return 0_();
 }

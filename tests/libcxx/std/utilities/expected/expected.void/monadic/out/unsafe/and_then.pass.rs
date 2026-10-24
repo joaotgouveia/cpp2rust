@@ -81,7 +81,7 @@ pub unsafe fn test_val_types_3() {
             }
         });
         let mut v: () = unimplemented!();
-        let mut val: std_expected_int__int_ = unimplemented!();
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -104,7 +104,7 @@ pub unsafe fn test_val_types_3() {
             }
         });
         let mut v: () = unimplemented!();
-        let mut val: std_expected_int__int_ = (unsafe { (*unimplemented!()).and_then(&mut l) });
+        let mut val: () = (unsafe { (*unimplemented!()).and_then(&mut l) });
         unimplemented!();
     }
     {
@@ -114,7 +114,7 @@ pub unsafe fn test_val_types_3() {
             }
         });
         let v: () = unimplemented!();
-        let mut val: std_expected_int__int_ = (unsafe { (*unimplemented!()).and_then(&mut l) });
+        let mut val: () = (unsafe { (*unimplemented!()).and_then(&mut l) });
         unimplemented!();
     }
 }
@@ -127,7 +127,7 @@ pub unsafe fn test_fail_4() {
             }
         });
         let mut v: () = unimplemented!();
-        let mut val: std_expected_int__int_ = unimplemented!();
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -138,7 +138,7 @@ pub unsafe fn test_fail_4() {
             }
         });
         let v: () = unimplemented!();
-        let mut val: std_expected_int__int_ = unimplemented!();
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -149,7 +149,7 @@ pub unsafe fn test_fail_4() {
             }
         });
         let mut v: () = unimplemented!();
-        let mut val: std_expected_int__int_ = (unsafe { (*unimplemented!()).and_then(&mut f) });
+        let mut val: () = (unsafe { (*unimplemented!()).and_then(&mut f) });
         unimplemented!();
     }
     {
@@ -160,7 +160,7 @@ pub unsafe fn test_fail_4() {
             }
         });
         let v: () = unimplemented!();
-        let mut val: std_expected_int__int_ = (unsafe { (*unimplemented!()).and_then(&mut f) });
+        let mut val: () = (unsafe { (*unimplemented!()).and_then(&mut f) });
         unimplemented!();
     }
 }

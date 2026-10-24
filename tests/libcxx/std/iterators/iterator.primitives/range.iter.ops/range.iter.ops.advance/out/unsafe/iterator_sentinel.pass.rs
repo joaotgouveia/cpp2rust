@@ -687,7 +687,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__ {
         return &mut (*(unsafe {
             random_access_iterator_int_ptr_::operator_index(
                 &random_access_iterator_int_ptr_::new_1({ self.base_ }),
-                (n as ()),
+                n,
             )
         }));
     }
@@ -712,9 +712,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__ {
             random_access_iterator_int_ptr_::new_1({ self.base_ });
         self.base_ = (unsafe {
             base_7(
-                &(*(unsafe {
-                    random_access_iterator_int_ptr_::operator_add_assign(&mut tmp, (n as ()))
-                })),
+                &(*(unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut tmp, n) })),
             )
         });
         (unsafe {
@@ -795,7 +793,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__ {
         return &mut (*(unsafe {
             contiguous_iterator_int_ptr_::operator_index(
                 &contiguous_iterator_int_ptr_::new_1({ self.base_ }),
-                (n as ()),
+                n,
             )
         }));
     }
@@ -819,11 +817,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__ {
         let mut tmp: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ self.base_ });
         self.base_ = (unsafe {
-            base_9(
-                &(*(unsafe {
-                    contiguous_iterator_int_ptr_::operator_add_assign(&mut tmp, (n as ()))
-                })),
-            )
+            base_9(&(*(unsafe { contiguous_iterator_int_ptr_::operator_add_assign(&mut tmp, n) })))
         });
         (unsafe { operation_counting_iterator_contiguous_iterator_int_ptr__::moved_by(self, n) });
         return &mut (*(self as *mut operation_counting_iterator_contiguous_iterator_int_ptr__));
@@ -1256,7 +1250,7 @@ pub unsafe fn iter_move_21(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_22(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));

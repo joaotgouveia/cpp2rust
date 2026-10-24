@@ -312,10 +312,10 @@ impl __gnu_test_SimpleAllocator_T_ {
         this
     }
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut T {
-        return (unsafe { (unimplemented!() as std___new_allocator_T_).allocate(n, None) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut T, mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_T_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl std::cmp::PartialEq for __gnu_test_SimpleAllocator_T_ {
@@ -345,10 +345,10 @@ impl __gnu_test_SimpleAllocator_T_ptr_ {
 pub struct __gnu_test_SimpleAllocator_T_ptr_ {}
 impl __gnu_test_SimpleAllocator_T_ptr_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut *mut T {
-        return (unsafe { (unimplemented!() as std___new_allocator_T_ptr_).allocate(n, None) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut T, mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_T_ptr_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 pub unsafe fn operator_eq_15(

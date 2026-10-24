@@ -297,7 +297,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c" azAZ09,./<>?".as_ptr() },
                     { (::std::mem::size_of::<[(); 14]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -365,7 +365,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -427,7 +427,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -489,7 +489,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -551,7 +551,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -613,7 +613,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -675,7 +675,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -737,7 +737,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -803,7 +803,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"universe".as_ptr() },
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -865,7 +865,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -931,7 +931,7 @@ pub unsafe fn test_char_pointer_16() {
                     { c"universe".as_ptr() },
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_8(_expected, _f, _arg)
@@ -1001,7 +1001,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c" azAZ09,./<>?".as_ptr() },
                     { (::std::mem::size_of::<[(); 14]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1069,7 +1069,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1131,7 +1131,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1193,7 +1193,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1255,7 +1255,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1317,7 +1317,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1379,7 +1379,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1441,7 +1441,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1507,7 +1507,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"universe".as_ptr() },
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1569,7 +1569,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1635,7 +1635,7 @@ pub unsafe fn test_char_pointer_17() {
                     { c"universe".as_ptr() },
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_9(_expected, _f, _arg)
@@ -1705,7 +1705,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c" azAZ09,./<>?".as_ptr() },
                     { (::std::mem::size_of::<[(); 14]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -1773,7 +1773,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -1835,7 +1835,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -1897,7 +1897,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -1959,7 +1959,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -2021,7 +2021,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -2083,7 +2083,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -2145,7 +2145,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -2211,7 +2211,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"universe".as_ptr() },
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -2273,7 +2273,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -2339,7 +2339,7 @@ pub unsafe fn test_char_pointer_18() {
                     { c"universe".as_ptr() },
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_10(_expected, _f, _arg)
@@ -2409,7 +2409,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c" azAZ09,./<>?".as_ptr() },
                     { (::std::mem::size_of::<[(); 14]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2477,7 +2477,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2539,7 +2539,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2601,7 +2601,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2663,7 +2663,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2725,7 +2725,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2787,7 +2787,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2849,7 +2849,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2915,7 +2915,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"universe".as_ptr() },
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -2977,7 +2977,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"world".as_ptr() },
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)
@@ -3043,7 +3043,7 @@ pub unsafe fn test_char_pointer_19() {
                     { c"universe".as_ptr() },
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 ),
-                (std::ptr::null() as *const ()).cast::<()>(),
+                std::ptr::null(),
             )
         });
         test_termination_condition_11(_expected, _f, _arg)

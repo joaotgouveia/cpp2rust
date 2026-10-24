@@ -258,7 +258,7 @@ impl __gnu_test_semaphore {}
 #[byte_size(1)]
 pub struct A {}
 pub fn test01_10() -> () {
-    let pair_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let pair_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         lambda!(
             {
@@ -643,7 +643,7 @@ impl B_14 {
 }
 pub fn test02_15() -> () {
     const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
-    let pair_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let pair_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         lambda!(
             {
@@ -1012,7 +1012,7 @@ impl B_18 {
     }
 }
 pub fn test03_19() -> () {
-    let pair_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let pair_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p2b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;
@@ -1226,7 +1226,7 @@ pub struct B_22 {
     pub m: (),
 }
 pub fn test04_23() -> () {
-    let pair_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let pair_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p2b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;

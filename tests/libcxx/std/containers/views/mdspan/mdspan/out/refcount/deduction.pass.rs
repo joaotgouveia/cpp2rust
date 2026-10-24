@@ -1554,7 +1554,7 @@ impl ElementPool_int__1024_ {
             ptr_: Ptr::<()>::null(),
         }));
         let this: Ptr<ElementPool_int__1024_> = __this.as_pointer();
-        field!(this, ptr_).write((unimplemented!()).reinterpret_cast::<()>());
+        field!(this, ptr_).write(unimplemented!());
         let mut i: () = 0_();
         'loop_: while (i != 1024_()) {
             unimplemented!();
@@ -1581,7 +1581,7 @@ impl ElementPool_const_int__1024_ {
             ptr_: Ptr::<()>::null(),
         }));
         let this: Ptr<ElementPool_const_int__1024_> = __this.as_pointer();
-        field!(this, ptr_).write((unimplemented!()).reinterpret_cast::<()>());
+        field!(this, ptr_).write(unimplemented!());
         let mut i: () = 0_();
         'loop_: while (i != 1024_()) {
             unimplemented!();
@@ -1608,7 +1608,7 @@ impl ElementPool_double__1024_ {
             ptr_: Ptr::<()>::null(),
         }));
         let this: Ptr<ElementPool_double__1024_> = __this.as_pointer();
-        field!(this, ptr_).write((unimplemented!()).reinterpret_cast::<()>());
+        field!(this, ptr_).write(unimplemented!());
         let mut i: () = 0_();
         'loop_: while (i != 1024_()) {
             unimplemented!();
@@ -1635,7 +1635,7 @@ impl ElementPool_const_double__1024_ {
             ptr_: Ptr::<()>::null(),
         }));
         let this: Ptr<ElementPool_const_double__1024_> = __this.as_pointer();
-        field!(this, ptr_).write((unimplemented!()).reinterpret_cast::<()>());
+        field!(this, ptr_).write(unimplemented!());
         let mut i: () = 0_();
         'loop_: while (i != 1024_()) {
             unimplemented!();
@@ -6652,7 +6652,7 @@ pub trait ElementPool_const_double__1024_Impl {
 }
 impl ElementPool_const_double__1024_Impl for Ptr<ElementPool_const_double__1024_> {
     fn get_ptr(&self) -> Ptr<()> {
-        return ((*self).with(|__s| __s.ptr_.clone())).reinterpret_cast::<()>();
+        return (*self).with(|__s| __s.ptr_.clone());
     }
     fn destructor(&self) {
         let mut i: () = 0_();
@@ -6669,7 +6669,7 @@ pub trait ElementPool_const_int__1024_Impl {
 }
 impl ElementPool_const_int__1024_Impl for Ptr<ElementPool_const_int__1024_> {
     fn get_ptr(&self) -> Ptr<()> {
-        return ((*self).with(|__s| __s.ptr_.clone())).reinterpret_cast::<()>();
+        return (*self).with(|__s| __s.ptr_.clone());
     }
     fn destructor(&self) {
         let mut i: () = 0_();
@@ -6686,7 +6686,7 @@ pub trait ElementPool_double__1024_Impl {
 }
 impl ElementPool_double__1024_Impl for Ptr<ElementPool_double__1024_> {
     fn get_ptr(&self) -> Ptr<()> {
-        return ((*self).with(|__s| __s.ptr_.clone())).reinterpret_cast::<()>();
+        return (*self).with(|__s| __s.ptr_.clone());
     }
     fn destructor(&self) {
         let mut i: () = 0_();
@@ -6703,7 +6703,7 @@ pub trait ElementPool_int__1024_Impl {
 }
 impl ElementPool_int__1024_Impl for Ptr<ElementPool_int__1024_> {
     fn get_ptr(&self) -> Ptr<()> {
-        return ((*self).with(|__s| __s.ptr_.clone())).reinterpret_cast::<()>();
+        return (*self).with(|__s| __s.ptr_.clone());
     }
     fn destructor(&self) {
         let mut i: () = 0_();

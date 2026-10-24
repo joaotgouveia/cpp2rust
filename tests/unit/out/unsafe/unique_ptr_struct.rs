@@ -22,7 +22,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut p: std_unique_ptr_Point__std_default_delete_Point__ = unimplemented!();
+    let mut p: () = unimplemented!();
     (*unimplemented!()).x += 10_();
     (*unimplemented!()).y = (((*unimplemented!()).x) + ((*unimplemented!()).y));
     let mut s: () = (unsafe { sum_0((*unimplemented!())) });

@@ -762,10 +762,10 @@ pub trait __gnu_test_default_init_allocator_int_Impl {
 }
 impl __gnu_test_default_init_allocator_int_Impl for Ptr<__gnu_test_default_init_allocator_int_> {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
-        return ({ (unimplemented!() as std___new_allocator_int_).allocate(n, None) });
+        return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
-        ({ (unimplemented!() as std___new_allocator_int_).deallocate((p).clone(), n) });
+        unimplemented!();
     }
 }
 pub trait __gnu_test_default_init_allocator_int_ptr_Impl {
@@ -776,10 +776,10 @@ impl __gnu_test_default_init_allocator_int_ptr_Impl
     for Ptr<__gnu_test_default_init_allocator_int_ptr_>
 {
     fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        return ({ (unimplemented!() as std___new_allocator_int_ptr_).allocate(n, None) });
+        return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        ({ (unimplemented!() as std___new_allocator_int_ptr_).deallocate((p).clone(), n) });
+        unimplemented!();
     }
 }
 pub trait __gnu_test_default_resource_mgrImpl {

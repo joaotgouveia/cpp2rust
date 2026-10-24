@@ -244,7 +244,7 @@ pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -906,8 +906,8 @@ pub fn test_22(alloc: Ptr<test_allocator_std_pair_const_int__std_string__>) {
     unimplemented!();
     unimplemented!();
     ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
+        let _pos: () = unimplemented!();
+        let _end: () = unimplemented!();
         CheckConsecutiveKeys_8(_pos, _end, 1_(), s.as_pointer())
     });
     unimplemented!();
@@ -915,8 +915,8 @@ pub fn test_22(alloc: Ptr<test_allocator_std_pair_const_int__std_string__>) {
     unimplemented!();
     unimplemented!();
     ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
+        let _pos: () = unimplemented!();
+        let _end: () = unimplemented!();
         CheckConsecutiveKeys_8(_pos, _end, 2_(), s.as_pointer())
     });
     unimplemented!();
@@ -954,8 +954,8 @@ pub fn test_23(alloc: Ptr<min_allocator_std_pair_const_int__std_string__>) {
     unimplemented!();
     unimplemented!();
     ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
+        let _pos: () = unimplemented!();
+        let _end: () = unimplemented!();
         CheckConsecutiveKeys_9(_pos, _end, 1_(), s.as_pointer())
     });
     unimplemented!();
@@ -963,8 +963,8 @@ pub fn test_23(alloc: Ptr<min_allocator_std_pair_const_int__std_string__>) {
     unimplemented!();
     unimplemented!();
     ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
+        let _pos: () = unimplemented!();
+        let _end: () = unimplemented!();
         CheckConsecutiveKeys_9(_pos, _end, 2_(), s.as_pointer())
     });
     unimplemented!();
@@ -1002,8 +1002,8 @@ pub fn test_24(alloc: Ptr<explicit_allocator_std_pair_const_int__std_string__>) 
     unimplemented!();
     unimplemented!();
     ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
+        let _pos: () = unimplemented!();
+        let _end: () = unimplemented!();
         CheckConsecutiveKeys_8(_pos, _end, 1_(), s.as_pointer())
     });
     unimplemented!();
@@ -1011,8 +1011,8 @@ pub fn test_24(alloc: Ptr<explicit_allocator_std_pair_const_int__std_string__>) 
     unimplemented!();
     unimplemented!();
     ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
+        let _pos: () = unimplemented!();
+        let _end: () = unimplemented!();
         CheckConsecutiveKeys_8(_pos, _end, 2_(), s.as_pointer())
     });
     unimplemented!();

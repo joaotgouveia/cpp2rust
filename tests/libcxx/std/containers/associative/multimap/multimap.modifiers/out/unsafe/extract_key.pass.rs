@@ -146,7 +146,7 @@ pub unsafe fn test_7(c: *mut (), mut first: *mut (), mut last: *mut ()) {
         sz.prefix_dec();
         {
             unimplemented!();
-            (*unimplemented!()) = ((*first) as ());
+            (*unimplemented!()) = (*first);
             unimplemented!();
         }
         unimplemented!();
@@ -199,7 +199,7 @@ pub unsafe fn test_9(c: *mut (), mut first: *mut (), mut last: *mut ()) {
         sz.prefix_dec();
         {
             unimplemented!();
-            (*unimplemented!()) = ((*first) as ());
+            (*unimplemented!()) = (*first);
             unimplemented!();
         }
         unimplemented!();

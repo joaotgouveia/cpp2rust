@@ -495,13 +495,13 @@ pub static mut check_29: std::cell::LazyCell<FnPtr<Generic>> =
         lambda_unsafe!(
             Generic,
             {},
-            |mut expected: (), mut fmt: std_basic_format_string_char__int_, args: *mut ()| {
+            |mut expected: (), mut fmt: (), args: *mut ()| {
                 let mut out: () = unimplemented!();
                 (unsafe {
                     let _condition: () = unimplemented!();
                     let mut _arg: FnPtr<fn()> = lambda_unsafe!(
                         {
-                            let fmt: *mut std_basic_format_string_char__int_ = &mut fmt;
+                            let fmt: *mut () = &mut fmt;
                             let expected: *mut () = &mut expected;
                             let out: *mut () = &mut out;
                         },
@@ -521,15 +521,13 @@ pub static mut check_29: std::cell::LazyCell<FnPtr<Generic>> =
                     )
                 });
             },
-            |mut expected: (),
-             mut fmt: std_basic_format_string_char__std_string_view_,
-             args: *mut ()| {
+            |mut expected: (), mut fmt: (), args: *mut ()| {
                 let mut out: () = unimplemented!();
                 (unsafe {
                     let _condition: () = unimplemented!();
                     let mut _arg: FnPtr<fn()> = lambda_unsafe!(
                         {
-                            let fmt: *mut std_basic_format_string_char__std_string_view_ = &mut fmt;
+                            let fmt: *mut () = &mut fmt;
                             let expected: *mut () = &mut expected;
                             let out: *mut () = &mut out;
                         },
@@ -549,13 +547,13 @@ pub static mut check_29: std::cell::LazyCell<FnPtr<Generic>> =
                     )
                 });
             },
-            |mut expected: (), mut fmt: std_basic_format_string_wchar_t__int_, args: *mut ()| {
+            |mut expected: (), mut fmt: (), args: *mut ()| {
                 let mut out: () = unimplemented!();
                 (unsafe {
                     let _condition: () = unimplemented!();
                     let mut _arg: FnPtr<fn()> = lambda_unsafe!(
                         {
-                            let fmt: *mut std_basic_format_string_wchar_t__int_ = &mut fmt;
+                            let fmt: *mut () = &mut fmt;
                             let expected: *mut () = &mut expected;
                             let out: *mut () = &mut out;
                         },
@@ -575,16 +573,13 @@ pub static mut check_29: std::cell::LazyCell<FnPtr<Generic>> =
                     )
                 });
             },
-            |mut expected: (),
-             mut fmt: std_basic_format_string_wchar_t__std_wstring_view_,
-             args: *mut ()| {
+            |mut expected: (), mut fmt: (), args: *mut ()| {
                 let mut out: () = unimplemented!();
                 (unsafe {
                     let _condition: () = unimplemented!();
                     let mut _arg: FnPtr<fn()> = lambda_unsafe!(
                         {
-                            let fmt: *mut std_basic_format_string_wchar_t__std_wstring_view_ =
-                                &mut fmt;
+                            let fmt: *mut () = &mut fmt;
                             let expected: *mut () = &mut expected;
                             let out: *mut () = &mut out;
                         },
@@ -618,90 +613,90 @@ pub static mut check_exception_33: std::cell::LazyCell<FnPtr<Generic>> =
 pub unsafe fn test_34() {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__std_string_view_, *mut ())>(1)
+            .spec::<fn((), (), *mut ())>(1)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__std_string_view_, *mut ())>(1)
+            .spec::<fn((), (), *mut ())>(1)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_string_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_char__std_string_view_, *mut ())>(1)
+            .spec::<fn((), (), *mut ())>(1)
             .call(_expected, _fmt, &mut _args)
     });
     {
@@ -776,90 +771,90 @@ pub unsafe fn test_34() {
 pub unsafe fn test_35() {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = 42_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__std_wstring_view_, *mut ())>(3)
+            .spec::<fn((), (), *mut ())>(3)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__std_wstring_view_, *mut ())>(3)
+            .spec::<fn((), (), *mut ())>(3)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut check_29))
-            .spec::<fn((), std_basic_format_string_wchar_t__std_wstring_view_, *mut ())>(3)
+            .spec::<fn((), (), *mut ())>(3)
             .call(_expected, _fmt, &mut _args)
     });
     {

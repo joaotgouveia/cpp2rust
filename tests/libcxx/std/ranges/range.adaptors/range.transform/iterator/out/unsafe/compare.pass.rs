@@ -484,7 +484,7 @@ pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -906,7 +906,7 @@ impl Increment {
 pub struct IncrementRvalueRef {}
 impl IncrementRvalueRef {
     pub unsafe fn operator_call(&mut self, x: *mut ()) -> *mut () {
-        return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+        return &mut (*unimplemented!());
     }
 }
 #[repr(C)]
@@ -925,7 +925,7 @@ pub unsafe fn test_25() -> () {
             "std::three_way_comparable<std::ranges::iterator_t<R>>"
         );;
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut r : std_ranges_transform_view_std_ranges_subrange_three_way_contiguous_iterator_int_ptr___three_way_contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___PlusOne_ = unimplemented!()  ;
+        let mut r: () = unimplemented!();
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
         unimplemented!();
@@ -957,7 +957,7 @@ pub unsafe fn test_25() -> () {
             "!std::three_way_comparable<std::ranges::iterator_t<R>>"
         );;
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut r : std_ranges_transform_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___PlusOne_ = unimplemented!()  ;
+        let mut r: () = unimplemented!();
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
         unimplemented!();

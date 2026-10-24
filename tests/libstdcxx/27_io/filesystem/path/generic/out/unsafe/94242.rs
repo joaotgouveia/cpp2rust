@@ -318,10 +318,10 @@ impl __gnu_test_SimpleAllocator_char_ {
         this
     }
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
-        return (unsafe { (unimplemented!() as std___new_allocator_char_).allocate(n, None) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_char_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl Default for __gnu_test_SimpleAllocator_char_ {
@@ -338,10 +338,10 @@ impl __gnu_test_SimpleAllocator_char16_t_ {
         this
     }
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
-        return (unsafe { (unimplemented!() as std___new_allocator_char16_t_).allocate(n, None) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_char16_t_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl Default for __gnu_test_SimpleAllocator_char16_t_ {

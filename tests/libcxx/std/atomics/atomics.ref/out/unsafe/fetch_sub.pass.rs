@@ -1881,15 +1881,15 @@ impl TestFetchSub_int_ptr_ {
         {
             {
                 let mut t: [(); 9] = [
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
                 ];
                 let mut p: *mut () = (&mut t[(7_()) as usize] as *mut ());
                 let a: () = unimplemented!();

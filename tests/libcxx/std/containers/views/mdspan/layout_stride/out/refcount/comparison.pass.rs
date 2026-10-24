@@ -2192,7 +2192,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_int__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 }),
             ),
         );
@@ -2244,7 +2244,7 @@ fn extents ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , extents_) 
  let __rhs = ( (unimplemented!() .read()) ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = __rhs } ;
  return res   ;
- } )  .spec::<fn(()  ,) -> ()  >(0) .call ( <()  >::default()  , ) } ) ) ) )   ;
+ } )  .spec::<fn(()  ,) -> ()  >(0) .call ( unimplemented!()  , ) } ) ) ) )   ;
  } }
 pub trait always_convertible_layout_mapping_std_extents_unsigned_int__5__Impl {
     fn copy_assign(
@@ -2313,7 +2313,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_int__5__Impl
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(<()>::default())
+                    .call(unimplemented!())
                 }),
             ),
         );

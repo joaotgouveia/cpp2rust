@@ -1326,8 +1326,8 @@ pub fn testOne_136() {
         let val: Value<()> = Rc::new(RefCell::new(0_()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let _args_1: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
-                let _args_2: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+                let _args_1: Ptr<()> = unimplemented!();
+                let _args_2: Ptr<()> = unimplemented!();
                 test_uses_allocator_construction_args_28(a.as_pointer(), _args_1, _args_2)
             }),
         ));
@@ -1359,12 +1359,7 @@ pub fn testOne_136() {
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                test_uses_allocator_construction_args_34(
-                    a.as_pointer(),
-                    (unimplemented!()).reinterpret_cast::<()>(),
-                )
-            }),
+            ({ test_uses_allocator_construction_args_34(a.as_pointer(), unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();
@@ -1389,8 +1384,8 @@ pub fn testOne_136() {
             let mut vp: () = 2_();
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({
-                    let _args_1: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
-                    let _args_2: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+                    let _args_1: Ptr<()> = unimplemented!();
+                    let _args_2: Ptr<()> = unimplemented!();
                     test_uses_allocator_construction_args_8(a.as_pointer(), _args_1, _args_2)
                 }),
             ));
@@ -1406,12 +1401,7 @@ pub fn testOne_136() {
         {
             let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
-                ({
-                    test_uses_allocator_construction_args_12(
-                        a.as_pointer(),
-                        (unimplemented!()).reinterpret_cast::<()>(),
-                    )
-                }),
+                ({ test_uses_allocator_construction_args_12(a.as_pointer(), unimplemented!()) }),
             ));
             &(*ret.borrow_mut());
         }
@@ -1537,8 +1527,8 @@ pub fn testOne_142() {
         let val: Value<()> = Rc::new(RefCell::new(0_()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let _args_1: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
-                let _args_2: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+                let _args_1: Ptr<()> = unimplemented!();
+                let _args_2: Ptr<()> = unimplemented!();
                 test_uses_allocator_construction_args_58(a.as_pointer(), _args_1, _args_2)
             }),
         ));
@@ -1570,12 +1560,7 @@ pub fn testOne_142() {
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                test_uses_allocator_construction_args_64(
-                    a.as_pointer(),
-                    (unimplemented!()).reinterpret_cast::<()>(),
-                )
-            }),
+            ({ test_uses_allocator_construction_args_64(a.as_pointer(), unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();
@@ -1600,8 +1585,8 @@ pub fn testOne_142() {
             let mut vp: () = 2_();
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({
-                    let _args_1: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
-                    let _args_2: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+                    let _args_1: Ptr<()> = unimplemented!();
+                    let _args_2: Ptr<()> = unimplemented!();
                     test_uses_allocator_construction_args_8(a.as_pointer(), _args_1, _args_2)
                 }),
             ));
@@ -1617,12 +1602,7 @@ pub fn testOne_142() {
         {
             let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
-                ({
-                    test_uses_allocator_construction_args_12(
-                        a.as_pointer(),
-                        (unimplemented!()).reinterpret_cast::<()>(),
-                    )
-                }),
+                ({ test_uses_allocator_construction_args_12(a.as_pointer(), unimplemented!()) }),
             ));
             &(*ret.borrow_mut());
         }
@@ -1748,8 +1728,8 @@ pub fn testOne_147() {
         let val: Value<()> = Rc::new(RefCell::new(0_()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let _args_1: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
-                let _args_2: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+                let _args_1: Ptr<()> = unimplemented!();
+                let _args_2: Ptr<()> = unimplemented!();
                 test_uses_allocator_construction_args_88(a.as_pointer(), _args_1, _args_2)
             }),
         ));
@@ -1781,12 +1761,7 @@ pub fn testOne_147() {
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                test_uses_allocator_construction_args_94(
-                    a.as_pointer(),
-                    (unimplemented!()).reinterpret_cast::<()>(),
-                )
-            }),
+            ({ test_uses_allocator_construction_args_94(a.as_pointer(), unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();
@@ -1811,8 +1786,8 @@ pub fn testOne_147() {
             let mut vp: () = 2_();
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({
-                    let _args_1: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
-                    let _args_2: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+                    let _args_1: Ptr<()> = unimplemented!();
+                    let _args_2: Ptr<()> = unimplemented!();
                     test_uses_allocator_construction_args_8(a.as_pointer(), _args_1, _args_2)
                 }),
             ));
@@ -1828,12 +1803,7 @@ pub fn testOne_147() {
         {
             let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
-                ({
-                    test_uses_allocator_construction_args_12(
-                        a.as_pointer(),
-                        (unimplemented!()).reinterpret_cast::<()>(),
-                    )
-                }),
+                ({ test_uses_allocator_construction_args_12(a.as_pointer(), unimplemented!()) }),
             ));
             &(*ret.borrow_mut());
         }
@@ -1959,8 +1929,8 @@ pub fn testOne_152() {
         let val: Value<()> = Rc::new(RefCell::new(0_()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let _args_1: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
-                let _args_2: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+                let _args_1: Ptr<()> = unimplemented!();
+                let _args_2: Ptr<()> = unimplemented!();
                 test_uses_allocator_construction_args_118(a.as_pointer(), _args_1, _args_2)
             }),
         ));
@@ -1992,12 +1962,7 @@ pub fn testOne_152() {
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                test_uses_allocator_construction_args_124(
-                    a.as_pointer(),
-                    (unimplemented!()).reinterpret_cast::<()>(),
-                )
-            }),
+            ({ test_uses_allocator_construction_args_124(a.as_pointer(), unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();
@@ -2022,8 +1987,8 @@ pub fn testOne_152() {
             let mut vp: () = 2_();
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({
-                    let _args_1: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
-                    let _args_2: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+                    let _args_1: Ptr<()> = unimplemented!();
+                    let _args_2: Ptr<()> = unimplemented!();
                     test_uses_allocator_construction_args_8(a.as_pointer(), _args_1, _args_2)
                 }),
             ));
@@ -2039,12 +2004,7 @@ pub fn testOne_152() {
         {
             let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
-                ({
-                    test_uses_allocator_construction_args_12(
-                        a.as_pointer(),
-                        (unimplemented!()).reinterpret_cast::<()>(),
-                    )
-                }),
+                ({ test_uses_allocator_construction_args_12(a.as_pointer(), unimplemented!()) }),
             ));
             &(*ret.borrow_mut());
         }

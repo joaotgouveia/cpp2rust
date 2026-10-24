@@ -745,10 +745,10 @@ pub trait __gnu_test_SimpleAllocator_T_Impl {
 }
 impl __gnu_test_SimpleAllocator_T_Impl for Ptr<__gnu_test_SimpleAllocator_T_> {
     fn allocate(&self, mut n: ()) -> Ptr<T> {
-        return ({ (unimplemented!() as std___new_allocator_T_).allocate(n, None) });
+        return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<T>, mut n: ()) {
-        ({ (unimplemented!() as std___new_allocator_T_).deallocate((p).clone(), n) });
+        unimplemented!();
     }
 }
 pub trait __gnu_test_SimpleAllocator_T_ptr_Impl {
@@ -757,10 +757,10 @@ pub trait __gnu_test_SimpleAllocator_T_ptr_Impl {
 }
 impl __gnu_test_SimpleAllocator_T_ptr_Impl for Ptr<__gnu_test_SimpleAllocator_T_ptr_> {
     fn allocate(&self, mut n: ()) -> Ptr<Ptr<T>> {
-        return ({ (unimplemented!() as std___new_allocator_T_ptr_).allocate(n, None) });
+        return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<Ptr<T>>, mut n: ()) {
-        ({ (unimplemented!() as std___new_allocator_T_ptr_).deallocate((p).clone(), n) });
+        unimplemented!();
     }
 }
 pub trait __gnu_test_copy_trackerImpl {

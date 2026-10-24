@@ -9,12 +9,12 @@ use std::rc::Rc;
 pub unsafe fn test_adjacent_pairs_0() {
     let mut v: () = unimplemented!();
     let mut expected_index: () = unimplemented!();
-    let mut __tmp_0 : std_ranges_adjacent_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____2_  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_adjacent_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____2_ = & mut __tmp_0 ;
+    let mut __tmp_0: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_0;
     'loop_: for __decomp_1 in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut __decomp_1: std_tuple_int_ref__int_ref_ = unimplemented!();
-        let x: *mut () = (unsafe { get_2(&mut *(&raw mut __decomp_1).cast::<()>()) });
-        let y: *mut () = (unsafe { get_3(&mut *(&raw mut __decomp_1).cast::<()>()) });
+        let mut __decomp_1: () = unimplemented!();
+        let x: *mut () = (unsafe { get_2(&mut __decomp_1) });
+        let y: *mut () = (unsafe { get_3(&mut __decomp_1) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -25,12 +25,11 @@ pub unsafe fn test_adjacent_pairs_0() {
 }
 pub unsafe fn test_string_view_4() {
     let mut sv: () = unimplemented!();
-    let mut v: std_ranges_adjacent_view_std_string_view__3_ = unimplemented!();
-    let mut __decomp_5: std_tuple_const_char_ref__const_char_ref__const_char_ref_ =
-        unimplemented!();
-    let a: *const () = (unsafe { get_6(&mut *(&raw mut __decomp_5).cast::<()>()) });
-    let b: *const () = (unsafe { get_7(&mut *(&raw mut __decomp_5).cast::<()>()) });
-    let c: *const () = (unsafe { get_8(&mut *(&raw mut __decomp_5).cast::<()>()) });
+    let mut v: () = unimplemented!();
+    let mut __decomp_5: () = unimplemented!();
+    let a: *const () = (unsafe { get_6(&mut __decomp_5) });
+    let b: *const () = (unsafe { get_7(&mut __decomp_5) });
+    let c: *const () = (unsafe { get_8(&mut __decomp_5) });
     unimplemented!();
     unimplemented!();
     unimplemented!();

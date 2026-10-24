@@ -312,10 +312,10 @@ impl __gnu_test_SimpleAllocator_wchar_t_ {
         this
     }
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
-        return (unsafe { (unimplemented!() as std___new_allocator_wchar_t_).allocate(n, None) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_wchar_t_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl std::cmp::PartialEq for __gnu_test_SimpleAllocator_wchar_t_ {

@@ -429,14 +429,14 @@ pub unsafe fn test_val_types_3() {
     {
         {
             let mut e: () = unimplemented!();
-            let mut val: std_expected_int__int_ = unimplemented!();
+            let mut val: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut e: () = unimplemented!();
             let mut l: RefQual = <RefQual>::default();
-            let mut val: std_expected_int__int_ = unimplemented!();
+            let mut val: () = unimplemented!();
             unimplemented!();
             let mut nl: UnexpectedRefQual = <UnexpectedRefQual>::default();
             unimplemented!();
@@ -445,14 +445,14 @@ pub unsafe fn test_val_types_3() {
     {
         {
             let e: () = unimplemented!();
-            let mut val: std_expected_int__int_ = unimplemented!();
+            let mut val: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let e: () = unimplemented!();
             let l: CRefQual = <CRefQual>::default();
-            let mut val: std_expected_int__int_ = unimplemented!();
+            let mut val: () = unimplemented!();
             unimplemented!();
             let nl: UnexpectedCRefQual = <UnexpectedCRefQual>::default();
             unimplemented!();

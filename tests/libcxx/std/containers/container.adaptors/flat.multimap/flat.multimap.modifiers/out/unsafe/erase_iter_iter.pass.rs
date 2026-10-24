@@ -655,7 +655,7 @@ pub unsafe fn iter_move_20(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_21(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1197,14 +1197,10 @@ pub unsafe fn check_possible_values_31(actual: *const (), expected: *const ()) {
     });
     let __range1: *mut () = &mut __tmp_0;
     'loop_: for __decomp_33 in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut __tmp_1 : std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_  = unimplemented!()  ;
-        let __decomp_33 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_1 ;
-        let actual_value: *const () = (unsafe {
-            get_34 ( (__decomp_33  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
-        });
-        let possible_values: *const () = (unsafe {
-            get_35 ( (__decomp_33  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
-        });
+        let mut __tmp_1: () = unimplemented!();
+        let __decomp_33: *const () = &mut __tmp_1;
+        let actual_value: *const () = (unsafe { get_34(__decomp_33) });
+        let possible_values: *const () = (unsafe { get_35(__decomp_33) });
         unimplemented!();
     }
 }
@@ -1220,14 +1216,10 @@ pub unsafe fn check_possible_values_36(
     });
     let __range1: *mut () = &mut __tmp_2;
     'loop_: for __decomp_37 in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut __tmp_3 : std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_  = unimplemented!()  ;
-        let __decomp_37 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_3 ;
-        let actual_value: *const () = (unsafe {
-            get_34 ( (__decomp_37  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
-        });
-        let possible_values: *const () = (unsafe {
-            get_35 ( (__decomp_37  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
-        });
+        let mut __tmp_3: () = unimplemented!();
+        let __decomp_37: *const () = &mut __tmp_3;
+        let actual_value: *const () = (unsafe { get_34(__decomp_37) });
+        let possible_values: *const () = (unsafe { get_35(__decomp_37) });
         unimplemented!();
     }
 }
@@ -1240,14 +1232,10 @@ pub unsafe fn check_possible_values_38(actual: *const (), expected: *const ()) {
     });
     let __range1: *mut () = &mut __tmp_4;
     'loop_: for __decomp_39 in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut __tmp_5 : std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_  = unimplemented!()  ;
-        let __decomp_39 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_5 ;
-        let actual_value: *const () = (unsafe {
-            get_34 ( (__decomp_39  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
-        });
-        let possible_values: *const () = (unsafe {
-            get_35 ( (__decomp_39  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
-        });
+        let mut __tmp_5: () = unimplemented!();
+        let __decomp_39: *const () = &mut __tmp_5;
+        let actual_value: *const () = (unsafe { get_34(__decomp_39) });
+        let possible_values: *const () = (unsafe { get_35(__decomp_39) });
         unimplemented!();
     }
 }

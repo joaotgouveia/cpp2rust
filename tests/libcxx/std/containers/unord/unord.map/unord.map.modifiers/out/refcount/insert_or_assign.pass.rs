@@ -202,7 +202,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             i += 2_();
         }
         unimplemented!();
-        let it : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__Moveable___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
         unimplemented!();
         unimplemented!();

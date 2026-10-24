@@ -309,7 +309,7 @@ fn main_0() -> () {
     let tf: Value<()> = Rc::new(RefCell::new(std_tuple_const_int_ref_::new({
         tc.as_pointer()
     })));
-    ({ get_10(tc.as_pointer()) }).write((2_() as ()));
+    ({ get_10(tc.as_pointer()) }).write(2_());
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

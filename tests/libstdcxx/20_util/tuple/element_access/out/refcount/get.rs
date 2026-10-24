@@ -298,7 +298,7 @@ fn main_0() -> () {
             unimplemented!();
         }
     }
-    ({ get_10(a.as_pointer()) }).write((3_() as ()));
+    ({ get_10(a.as_pointer()) }).write(3_());
     ({ get_11(a.as_pointer()) }).write(4_());
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

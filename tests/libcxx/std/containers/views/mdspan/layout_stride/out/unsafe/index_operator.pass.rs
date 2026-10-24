@@ -90,7 +90,7 @@ pub unsafe fn iterate_stride_5(mut m: (), strides: *const ()) {
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(unsafe { std::mem::zeroed::<()>() })
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -126,7 +126,7 @@ pub unsafe fn iterate_stride_7(mut m: (), strides: *const (), mut args: ()) {
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(unsafe { std::mem::zeroed::<()>() })
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -162,7 +162,7 @@ pub unsafe fn iterate_stride_9(mut m: (), strides: *const (), mut args: ()) {
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(unsafe { std::mem::zeroed::<()>() })
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -217,7 +217,7 @@ pub unsafe fn iterate_stride_12(mut m: (), strides: *const (), mut args_2: (), m
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(unsafe { std::mem::zeroed::<()>() })
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -323,7 +323,7 @@ pub unsafe fn iterate_stride_17(
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(unsafe { std::mem::zeroed::<()>() })
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -429,7 +429,7 @@ pub unsafe fn iterate_stride_22(
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(unsafe { std::mem::zeroed::<()>() })
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -535,7 +535,7 @@ pub unsafe fn iterate_stride_27(
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(unsafe { std::mem::zeroed::<()>() })
+            .call(unimplemented!())
         });
         unimplemented!();
     }

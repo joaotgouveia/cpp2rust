@@ -94,7 +94,7 @@ impl ConstexprFixedCapacityDeque_int__10_ {
         if ((i) != (self.size_)) {
             unimplemented!();
         }
-        self.data_[(i) as usize] = ((*unimplemented!()) as ());
+        self.data_[(i) as usize] = (*unimplemented!());
         self.size_ += 1_();
         return self.data_.as_mut_ptr().offset((i) as isize);
     }
@@ -102,7 +102,7 @@ impl ConstexprFixedCapacityDeque_int__10_ {
         (unsafe {
             let _pos: *const () =
                 (unsafe { ConstexprFixedCapacityDeque_int__10_::begin_2(self) }).cast_const();
-            ConstexprFixedCapacityDeque_int__10_::insert(self, _pos, ((*unimplemented!()) as ()))
+            ConstexprFixedCapacityDeque_int__10_::insert(self, _pos, (*unimplemented!()))
         });
     }
 }

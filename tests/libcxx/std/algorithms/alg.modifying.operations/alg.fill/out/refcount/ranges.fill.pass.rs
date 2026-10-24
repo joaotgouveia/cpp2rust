@@ -642,7 +642,7 @@ pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -1973,7 +1973,7 @@ pub fn test_28() -> () {
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ret: Ptr<()> = ({
+        let mut ret: () = ({
             let ___range: Value<()> = Rc::new(RefCell::new(
                 ({ (*all_30.with(Value::clone).borrow_mut())(a.as_pointer()) }),
             ));
@@ -2000,7 +2000,7 @@ pub fn test_28() -> () {
         }
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut ret: Ptr<()> = ({
+            let mut ret: () = ({
                 (*fill_19.with(Value::clone).borrow_mut())(
                     a.as_pointer(),
                     Ptr::<()>::from_string_literal(b"long long string so no SSO"),

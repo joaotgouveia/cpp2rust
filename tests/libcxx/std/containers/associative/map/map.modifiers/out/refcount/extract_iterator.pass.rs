@@ -202,7 +202,7 @@ pub fn test_7(c: Ptr<()>) -> () {
         sz.prefix_dec();
         {
             unimplemented!();
-            unimplemented!().write((some_key as ()));
+            unimplemented!().write(some_key);
             unimplemented!();
         }
         unimplemented!();
@@ -221,7 +221,7 @@ pub fn test_8(c: Ptr<()>) -> () {
         sz.prefix_dec();
         {
             unimplemented!();
-            unimplemented!().write((some_key as ()));
+            unimplemented!().write(some_key);
             unimplemented!();
         }
         unimplemented!();

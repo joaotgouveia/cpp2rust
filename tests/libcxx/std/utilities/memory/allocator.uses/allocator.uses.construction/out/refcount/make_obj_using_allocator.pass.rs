@@ -531,12 +531,7 @@ pub fn test_4() -> () {
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                make_obj_using_allocator_14(
-                    a.as_pointer(),
-                    (unimplemented!()).reinterpret_cast::<()>(),
-                )
-            }),
+            ({ make_obj_using_allocator_14(a.as_pointer(), unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();

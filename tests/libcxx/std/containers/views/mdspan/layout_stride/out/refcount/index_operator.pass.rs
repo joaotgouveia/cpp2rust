@@ -84,7 +84,7 @@ pub fn iterate_stride_5(m: (), strides: Ptr<()>) {
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -125,7 +125,7 @@ pub fn iterate_stride_7(m: (), strides: Ptr<()>, args: ()) {
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -166,7 +166,7 @@ pub fn iterate_stride_9(m: (), strides: Ptr<()>, args: ()) {
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -228,7 +228,7 @@ pub fn iterate_stride_12(m: (), strides: Ptr<()>, args_2: (), args_3: ()) {
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -334,7 +334,7 @@ pub fn iterate_stride_17(m: (), strides: Ptr<()>, args_2: (), args_3: (), args_4
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -440,7 +440,7 @@ pub fn iterate_stride_22(m: (), strides: Ptr<()>, args_2: (), args_3: (), args_4
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
         unimplemented!();
     }
@@ -546,7 +546,7 @@ pub fn iterate_stride_27(m: (), strides: Ptr<()>, args_2: (), args_3: (), args_4
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(<()>::default())
+            .call(unimplemented!())
         });
         unimplemented!();
     }

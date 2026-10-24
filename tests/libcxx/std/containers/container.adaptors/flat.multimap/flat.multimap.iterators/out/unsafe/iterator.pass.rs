@@ -737,7 +737,7 @@ pub unsafe fn iter_move_28(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_29(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1413,7 +1413,7 @@ pub unsafe fn test_49() {
     unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
-    let mut k : () = std___key_value_iterator_std_flat_multimap_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char_____std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____true_ :: new_1 ( { i .clone() } , )  ;
+    let mut k: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1455,7 +1455,7 @@ pub unsafe fn test_50() {
     unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
-    let mut k : () = std___key_value_iterator_std_flat_multimap_int__char__std_less_int___std_deque_int__std_allocator_int____std_vector_char__std_allocator_char_____std_deque_int__std_allocator_int____std_vector_char__std_allocator_char____true_ :: new_1 ( { i .clone() } , )  ;
+    let mut k: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1497,7 +1497,7 @@ pub unsafe fn test_51() {
     unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
-    let mut k : () = std___key_value_iterator_std_flat_multimap_int__char__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_char__three_way_random_access_iterator_char_ptr___three_way_random_access_iterator_const_char_ptr_____MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_char__three_way_random_access_iterator_char_ptr___three_way_random_access_iterator_const_char_ptr____true_ :: new_1 ( { i .clone() } , )  ;
+    let mut k: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1539,7 +1539,7 @@ pub unsafe fn test_52() {
     unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
-    let mut k : () = std___key_value_iterator_std_flat_multimap_int__char__std_less_int___std_vector_int__min_allocator_int____std_vector_char__min_allocator_char_____std_vector_int__min_allocator_int____std_vector_char__min_allocator_char____true_ :: new_1 ( { i .clone() } , )  ;
+    let mut k: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

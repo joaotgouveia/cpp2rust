@@ -517,7 +517,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__ {
         return &mut (*(unsafe {
             random_access_iterator_int_ptr_::operator_index(
                 &random_access_iterator_int_ptr_::new_1({ self.base_ }),
-                (n as ()),
+                n,
             )
         }));
     }
@@ -529,9 +529,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__ {
             random_access_iterator_int_ptr_::new_1({ self.base_ });
         self.base_ = (unsafe {
             base_5(
-                &(*(unsafe {
-                    random_access_iterator_int_ptr_::operator_add_assign(&mut tmp, (n as ()))
-                })),
+                &(*(unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut tmp, n) })),
             )
         });
         (unsafe {
@@ -590,7 +588,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__ {
         return &mut (*(unsafe {
             contiguous_iterator_int_ptr_::operator_index(
                 &contiguous_iterator_int_ptr_::new_1({ self.base_ }),
-                (n as ()),
+                n,
             )
         }));
     }
@@ -601,11 +599,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__ {
         let mut tmp: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ self.base_ });
         self.base_ = (unsafe {
-            base_6(
-                &(*(unsafe {
-                    contiguous_iterator_int_ptr_::operator_add_assign(&mut tmp, (n as ()))
-                })),
-            )
+            base_6(&(*(unsafe { contiguous_iterator_int_ptr_::operator_add_assign(&mut tmp, n) })))
         });
         (unsafe { operation_counting_iterator_contiguous_iterator_int_ptr__::moved_by(self, n) });
         return &mut (*(self as *mut operation_counting_iterator_contiguous_iterator_int_ptr__));
@@ -808,7 +802,7 @@ pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -976,7 +970,8 @@ impl util_iterator_error {
     }
 }
 pub unsafe fn check_16(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: cpp17_input_iterator_int_ptr__int_ptr_ =
@@ -988,7 +983,8 @@ pub unsafe fn check_16(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     {}
 }
 pub unsafe fn check_18(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: cpp20_input_iterator_int_ptr_ = cpp20_input_iterator_int_ptr_::new({ first });
@@ -999,7 +995,8 @@ pub unsafe fn check_18(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     {}
 }
 pub unsafe fn check_19(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
         return if ((x) < (0_())) { -x } else { x };
     });
@@ -1028,7 +1025,8 @@ pub unsafe fn check_19(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     }
 }
 pub unsafe fn check_20(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
         return if ((x) < (0_())) { -x } else { x };
     });
@@ -1058,7 +1056,8 @@ pub unsafe fn check_20(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     }
 }
 pub unsafe fn check_21(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: random_access_iterator_int_ptr_ =
@@ -1083,7 +1082,8 @@ pub unsafe fn check_21(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     }
 }
 pub unsafe fn check_22(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ first });
@@ -1107,7 +1107,8 @@ pub unsafe fn check_22(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     }
 }
 pub unsafe fn check_23(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: *mut () = first;
@@ -1130,7 +1131,8 @@ pub unsafe fn check_23(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     }
 }
 pub unsafe fn check_24(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
         return if ((x) < (0_())) { -x } else { x };
     });

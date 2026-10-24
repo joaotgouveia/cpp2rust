@@ -270,7 +270,7 @@ pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -439,12 +439,12 @@ impl util_iterator_error {
 }
 pub unsafe fn test_8(mut i: random_access_iterator_char_ptr_, mut n: (), mut x: ()) {
     let r: () = unimplemented!();
-    let mut rr: () = ((*unimplemented!()) as ());
+    let mut rr: () = (*unimplemented!());
     unimplemented!();
 }
 pub unsafe fn test_9(mut i: *mut (), mut n: (), mut x: ()) {
     let r: () = unimplemented!();
-    let mut rr: () = ((*unimplemented!()) as ());
+    let mut rr: () = (*unimplemented!());
     unimplemented!();
 }
 pub unsafe fn test_10(mut i: *mut (), mut n: (), mut x: ()) {

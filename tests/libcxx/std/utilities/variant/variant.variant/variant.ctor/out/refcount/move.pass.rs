@@ -461,9 +461,7 @@ impl anon_11Impl for Ptr<anon_11> {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         return Result_TMoveNTCopy_ {
             index: unimplemented!(),
-            value: TMoveNTCopy::move_from({
-                ({ get_12((unimplemented!()).reinterpret_cast::<()>()) })
-            }),
+            value: TMoveNTCopy::move_from({ ({ get_12(unimplemented!()) }) }),
         };
     }
 }
@@ -476,9 +474,7 @@ impl anon_13Impl for Ptr<anon_13> {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         return Result_TMoveNTCopy_ {
             index: unimplemented!(),
-            value: TMoveNTCopy::move_from({
-                ({ get_14((unimplemented!()).reinterpret_cast::<()>()) })
-            }),
+            value: TMoveNTCopy::move_from({ ({ get_14(unimplemented!()) }) }),
         };
     }
 }
@@ -491,7 +487,7 @@ impl anon_3Impl for Ptr<anon_3> {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         return Result_int_ {
             index: unimplemented!(),
-            value: ((({ get_4((unimplemented!()).reinterpret_cast::<()>()) }).read()) as ()),
+            value: (({ get_4(unimplemented!()) }).read()),
         };
     }
 }
@@ -504,7 +500,7 @@ impl anon_5Impl for Ptr<anon_5> {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         return Result_long_ {
             index: unimplemented!(),
-            value: ((({ get_6((unimplemented!()).reinterpret_cast::<()>()) }).read()) as ()),
+            value: (({ get_6(unimplemented!()) }).read()),
         };
     }
 }
@@ -517,7 +513,7 @@ impl anon_7Impl for Ptr<anon_7> {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         return Result_TMove_ {
             index: unimplemented!(),
-            value: TMove::move_from({ ({ get_8((unimplemented!()).reinterpret_cast::<()>()) }) }),
+            value: TMove::move_from({ ({ get_8(unimplemented!()) }) }),
         };
     }
 }
@@ -530,7 +526,7 @@ impl anon_9Impl for Ptr<anon_9> {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         return Result_TMove_ {
             index: unimplemented!(),
-            value: TMove::move_from({ ({ get_10((unimplemented!()).reinterpret_cast::<()>()) }) }),
+            value: TMove::move_from({ ({ get_10(unimplemented!()) }) }),
         };
     }
 }

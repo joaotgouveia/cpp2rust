@@ -296,7 +296,7 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    (*(unsafe { get_14(&mut a) })) = (3_() as ());
+    (*(unsafe { get_14(&mut a) })) = 3_();
     (*(unsafe { get_15(&mut a) })) = 4_();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

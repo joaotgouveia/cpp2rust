@@ -941,11 +941,7 @@ pub unsafe fn test02_13() {
 }
 pub unsafe fn test03_14() {
     let mut m: () = unimplemented!();
-    let mut res1: () = (unsafe {
-        let mut ___k: Val = Val::new({ Some(0_()) });
-        let mut ___args: Val = Val::new({ Some(5_()) });
-        m.try_emplace(&mut ___k, &mut ___args)
-    });
+    let mut res1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1353,12 +1349,7 @@ pub unsafe fn test03_14() {
 }
 pub unsafe fn test04_15() {
     let mut m: () = unimplemented!();
-    let mut res1: () = (unsafe {
-        let ___hint: () = unimplemented!();
-        let mut ___k: Val = Val::new({ Some(0_()) });
-        let mut ___args: Val = Val::new({ Some(5_()) });
-        m.try_emplace(___hint, &mut ___k, &mut ___args)
-    });
+    let mut res1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -2312,11 +2303,7 @@ pub unsafe fn test06_17() {
 }
 pub unsafe fn test07_18() {
     let mut m: () = unimplemented!();
-    let mut res1: () = (unsafe {
-        let mut ___k: Val = Val::new({ Some(0_()) });
-        let mut ___args: Val = Val::new({ Some(5_()) });
-        m.try_emplace(&mut ___k, &mut ___args)
-    });
+    let mut res1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -2724,12 +2711,7 @@ pub unsafe fn test07_18() {
 }
 pub unsafe fn test08_19() {
     let mut m: () = unimplemented!();
-    let mut res1: () = (unsafe {
-        let ___hint: () = unimplemented!();
-        let mut ___k: Val = Val::new({ Some(0_()) });
-        let mut ___args: Val = Val::new({ Some(5_()) });
-        m.try_emplace(___hint, &mut ___k, &mut ___args)
-    });
+    let mut res1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

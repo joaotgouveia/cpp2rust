@@ -27,7 +27,7 @@ impl ElementPool_int__10_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (10_())) {
             unimplemented!();
@@ -36,7 +36,7 @@ impl ElementPool_int__10_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *mut () {
-        return (self.ptr_ as *mut ()).cast::<()>();
+        return self.ptr_;
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();

@@ -382,11 +382,11 @@ const _: () = assert!(
     "streamable<std::wostream, Unique_ptr<deleter<wchar_t>>>"
 );
 pub unsafe fn test02_15() {
-    let mut p: std_unique_ptr_deleter_char__pointer__deleter_char__ = unimplemented!();
+    let mut p: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unsafe { check_11(&*(&raw const p).cast::<()>()) }) {
+        if !(unsafe { check_11(&p) }) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),

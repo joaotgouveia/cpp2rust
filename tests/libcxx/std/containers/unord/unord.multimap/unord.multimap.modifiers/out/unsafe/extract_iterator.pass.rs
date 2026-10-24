@@ -155,7 +155,7 @@ pub unsafe fn test_6(c: *mut ()) {
         let mut t: () = unimplemented!();
         sz.prefix_dec();
         unimplemented!();
-        (*unimplemented!()) = (some_key as ());
+        (*unimplemented!()) = some_key;
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -190,7 +190,7 @@ pub unsafe fn test_8(c: *mut ()) {
         let mut t: () = unimplemented!();
         sz.prefix_dec();
         unimplemented!();
-        (*unimplemented!()) = (some_key as ());
+        (*unimplemented!()) = some_key;
         unimplemented!();
         unimplemented!();
         unimplemented!();

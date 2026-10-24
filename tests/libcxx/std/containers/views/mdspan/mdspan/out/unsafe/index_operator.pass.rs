@@ -191,7 +191,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_int__ {
                 }
             )
             .spec::<fn(()) -> ()>(0)
-            .call(unsafe { std::mem::zeroed::<()>() })
+            .call(unimplemented!())
         });
     }
 }
@@ -247,7 +247,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_unsigned_int__1844674407370
  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_1)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_1)) } ) ) . wrapping_mul ( res ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
         });
     }
 }
@@ -305,7 +305,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_unsigned_int__7__ {
  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_2)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_2)) } ) ) . wrapping_mul ( res ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
         });
     }
 }
@@ -366,7 +366,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_unsigned_int__7__8__ {
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_3)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_3)) } ) ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_3)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_3)) } ) ) . wrapping_mul ( res ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
         });
     }
 }
@@ -411,7 +411,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_signed_char__18446744073709
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_4)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_4)) } ) ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_4)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_4)) } ) ) * ( res ) ) ) )  } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } )  ;
  } }
 impl Clone for layout_wrapping_integral_4__mapping_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { fn clone(&self) -> Self { unsafe { layout_wrapping_integral_4__mapping_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__::copy_from(self as *const layout_wrapping_integral_4__mapping_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__) } } }
 impl Default for layout_wrapping_integral_4__mapping_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { fn default() -> Self { unsafe { layout_wrapping_integral_4__mapping_std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { extents_ : unimplemented!() , } } } }
@@ -449,7 +449,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_int__18446744073709551615__
  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_5)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_5)) } ) ) * ( res ) ) ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
         });
     }
 }
@@ -535,7 +535,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_unsigned_char__184467440737
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_7)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_7)) } ) ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_7)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_7)) } ) ) * ( res ) ) ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } )  ;
  } }
 impl Clone for layout_wrapping_integral_4__mapping_std_extents_unsigned_char__18446744073709551615__18446744073709551615__ { fn clone(&self) -> Self { unsafe { layout_wrapping_integral_4__mapping_std_extents_unsigned_char__18446744073709551615__18446744073709551615__::copy_from(self as *const layout_wrapping_integral_4__mapping_std_extents_unsigned_char__18446744073709551615__18446744073709551615__) } } }
 impl Default for layout_wrapping_integral_4__mapping_std_extents_unsigned_char__18446744073709551615__18446744073709551615__ { fn default() -> Self { unsafe { layout_wrapping_integral_4__mapping_std_extents_unsigned_char__18446744073709551615__18446744073709551615__ { extents_ : unimplemented!() , } } } }
@@ -560,7 +560,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_int__18446744073709551615__
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_8)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_8)) } ) ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( ( if ( ( unimplemented!()  ) < ( (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_8)) ) ) { unimplemented!()  } else { (*std::cell::LazyCell::force_mut(&mut *&raw mut Wrap_8)) } ) ) * ( res ) ) ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } )  ;
  } }
 impl Clone for layout_wrapping_integral_4__mapping_std_extents_int__18446744073709551615__18446744073709551615__ { fn clone(&self) -> Self { unsafe { layout_wrapping_integral_4__mapping_std_extents_int__18446744073709551615__18446744073709551615__::copy_from(self as *const layout_wrapping_integral_4__mapping_std_extents_int__18446744073709551615__18446744073709551615__) } } }
 impl Default for layout_wrapping_integral_4__mapping_std_extents_int__18446744073709551615__18446744073709551615__ { fn default() -> Self { unsafe { layout_wrapping_integral_4__mapping_std_extents_int__18446744073709551615__18446744073709551615__ { extents_ : unimplemented!() , } } } }

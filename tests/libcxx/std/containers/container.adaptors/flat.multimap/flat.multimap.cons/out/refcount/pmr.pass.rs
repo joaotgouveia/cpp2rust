@@ -327,7 +327,7 @@ pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -760,14 +760,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let __tmp_2: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_2({ 5_() })));
-            let __tmp_3: Value<Ptr<()>> = Rc::new(RefCell::new((mr1.as_pointer())));
-            std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_1 ( { __tmp_0.as_pointer() } , { __tmp_1.as_pointer() } , { __tmp_2.as_pointer() } , { __tmp_3.as_pointer() } , )
-        }));
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

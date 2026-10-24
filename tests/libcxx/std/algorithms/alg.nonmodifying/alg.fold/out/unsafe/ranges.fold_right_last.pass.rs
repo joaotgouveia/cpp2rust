@@ -231,7 +231,7 @@ pub unsafe fn iter_move_4(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_5(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1478,7 +1478,7 @@ pub unsafe fn check_rvalue_range_38(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 unimplemented!(),
             )
         });
@@ -1491,7 +1491,7 @@ pub unsafe fn check_rvalue_range_38(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 invocable_with_telemetry_std_plus_void__::copy_from({ &f2 }),
             )
         });
@@ -1508,7 +1508,7 @@ pub unsafe fn check_rvalue_range_39(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 unimplemented!(),
             )
         });
@@ -1523,7 +1523,7 @@ pub unsafe fn check_rvalue_range_39(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 invocable_with_telemetry_std_multiplies_void__::copy_from({ &f2 }),
             )
         });
@@ -1540,7 +1540,7 @@ pub unsafe fn check_rvalue_range_40(r: *mut (), mut f: FnPtr<Generic>, expected:
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 f.copy_from(),
             )
         });
@@ -1555,7 +1555,7 @@ pub unsafe fn check_rvalue_range_40(r: *mut (), mut f: FnPtr<Generic>, expected:
             );
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22)) ( & mut *(&raw mut ( * unimplemented!()  )  ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_right_last_pass_cpp_128_29__ :: copy_from ( { & f2 } , )  , )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22)) ( & mut ( * unimplemented!()  )  , invocable_with_telemetry__lambda_at_ranges_fold_right_last_pass_cpp_128_29__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
         if unimplemented!() {
@@ -1570,7 +1570,7 @@ pub unsafe fn check_rvalue_range_41(r: *mut (), mut f: FnPtr<Generic>, expected:
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 f.copy_from(),
             )
         });
@@ -1585,7 +1585,7 @@ pub unsafe fn check_rvalue_range_41(r: *mut (), mut f: FnPtr<Generic>, expected:
             );
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22)) ( & mut *(&raw mut ( * unimplemented!()  )  ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_right_last_pass_cpp_135_14__ :: copy_from ( { & f2 } , )  , )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22)) ( & mut ( * unimplemented!()  )  , invocable_with_telemetry__lambda_at_ranges_fold_right_last_pass_cpp_135_14__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
         if unimplemented!() {
@@ -1600,7 +1600,7 @@ pub unsafe fn check_rvalue_range_42(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = (*r).clone();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 unimplemented!(),
             )
         });
@@ -1613,7 +1613,7 @@ pub unsafe fn check_rvalue_range_42(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = (*r).clone();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 invocable_with_telemetry_std_plus_void__::copy_from({ &f2 }),
             )
         });
@@ -1630,7 +1630,7 @@ pub unsafe fn check_rvalue_range_43(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 f.clone(),
             )
         });
@@ -1643,7 +1643,7 @@ pub unsafe fn check_rvalue_range_43(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 invocable_with_telemetry_std_plus_long__::copy_from({ &f2 }),
             )
         });
@@ -1664,7 +1664,7 @@ pub unsafe fn check_rvalue_range_44(
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 f.copy_from(),
             )
         });
@@ -1679,7 +1679,7 @@ pub unsafe fn check_rvalue_range_44(
             );
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22)) ( & mut *(&raw mut ( * unimplemented!()  )  ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_right_last_pass_cpp_183_27__ :: copy_from ( { & f2 } , )  , )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22)) ( & mut ( * unimplemented!()  )  , invocable_with_telemetry__lambda_at_ranges_fold_right_last_pass_cpp_183_27__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
         if unimplemented!() {
@@ -1694,7 +1694,7 @@ pub unsafe fn check_rvalue_range_45(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 f.clone(),
             )
         });
@@ -1707,7 +1707,7 @@ pub unsafe fn check_rvalue_range_45(r: *mut (), mut f: (), expected: *const ()) 
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_last_22))(
-                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                &mut (*unimplemented!()),
                 invocable_with_telemetry_std_plus_long__::copy_from({ &f2 }),
             )
         });
@@ -1992,7 +1992,7 @@ pub unsafe fn non_common_range_test_case_56() {
     });
     {
         let mut data: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_string__std_allocator_std_string______lambda_at_ranges_fold_right_last_pass_cpp_145_16__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         (unsafe {
             let _r: () = range.clone();
             let mut _expected: () = unimplemented!();

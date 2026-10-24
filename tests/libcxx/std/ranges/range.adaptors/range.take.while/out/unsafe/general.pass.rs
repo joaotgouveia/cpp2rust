@@ -28,7 +28,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut small: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |x: ()| -> () {
             return ((x) < (5_()));
         });
-        let mut small_ints : std_ranges_take_while_view_std_ranges_ref_view_std_initializer_list_int_____lambda_at_general_pass_cpp_22_23__ = unimplemented!()  ;
+        let mut small_ints: () = unimplemented!();
         let mut expected: () = unimplemented!();
         unimplemented!();
     }

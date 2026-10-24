@@ -699,7 +699,7 @@ pub unsafe fn test_call_quals_and_arg_types_29() {
     let ct: *const () = &t;
     (unsafe { check_apply_quals_and_types_25(&mut t) });
     (unsafe { check_apply_quals_and_types_26(ct) });
-    (unsafe { check_apply_quals_and_types_27(&mut *(&raw mut (*unimplemented!())).cast::<()>()) });
+    (unsafe { check_apply_quals_and_types_27(&mut (*unimplemented!())) });
     (unsafe { check_apply_quals_and_types_28(unimplemented!()) });
 }
 #[repr(C)]

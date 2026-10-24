@@ -51,7 +51,7 @@ impl always_convertible_layout_mapping_std_extents_int__ {
  ;
  unimplemented!() ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -126,7 +126,7 @@ impl always_convertible_layout_mapping_std_extents_int__18446744073709551615__ {
  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -201,7 +201,7 @@ impl always_convertible_layout_mapping_std_extents_int__5__ {
  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -280,7 +280,7 @@ impl
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -346,7 +346,7 @@ impl always_convertible_layout_mapping_std_extents_int__18446744073709551615__7_
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -422,7 +422,7 @@ impl always_convertible_layout_mapping_std_extents_int__5__7__ {
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -484,7 +484,7 @@ impl always_convertible_layout_mapping_std_extents_int__18446744073709551615__18
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) ) ) )  ;
  } }
 impl Default for always_convertible_layout_mapping_std_extents_int__18446744073709551615__18446744073709551615__8__9__1__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_int__18446744073709551615__18446744073709551615__8__9__1__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
 #[repr(C)]
@@ -534,7 +534,7 @@ impl always_convertible_layout_mapping_std_extents_int__18446744073709551615__18
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) ) ) )  ;
  } }
 impl Default for always_convertible_layout_mapping_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
 #[repr(C)]
@@ -608,7 +608,7 @@ impl always_convertible_layout_mapping_std_extents_int__18446744073709551615__7_
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -696,7 +696,7 @@ impl always_convertible_layout_mapping_std_extents_int__5__7__8__9__1__ {
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -750,7 +750,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__ {
  ;
  unimplemented!() ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_long__ {
@@ -821,7 +821,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709
  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default
@@ -894,7 +894,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__5__ {
  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_long__5__ {
@@ -952,7 +952,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
  } }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
 #[repr(C)]
@@ -1013,7 +1013,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default
@@ -1087,7 +1087,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__5__7__ {
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_long__5__7__ {
@@ -1148,7 +1148,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
  } }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__1__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__1__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
 #[repr(C)]
@@ -1198,7 +1198,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
  } }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
 #[repr(C)]
@@ -1272,7 +1272,7 @@ impl
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__7__8__9__1__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_unsigned_long__18446744073709551615__7__8__9__1__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
@@ -1344,7 +1344,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_long__5__7__8__9__1_
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_long__5__7__8__9__1__ {
@@ -1408,7 +1408,7 @@ impl always_convertible_layout_mapping_std_extents_long__ {
                         }
                     )
                     .spec::<fn(()) -> ()>(0)
-                    .call(unsafe { std::mem::zeroed::<()>() })
+                    .call(unimplemented!())
                 })));
     }
 }
@@ -1483,7 +1483,7 @@ impl always_convertible_layout_mapping_std_extents_long__18446744073709551615__ 
  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -1558,7 +1558,7 @@ impl always_convertible_layout_mapping_std_extents_long__5__ {
  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -1637,7 +1637,7 @@ impl
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -1703,7 +1703,7 @@ impl always_convertible_layout_mapping_std_extents_long__18446744073709551615__7
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -1779,7 +1779,7 @@ impl always_convertible_layout_mapping_std_extents_long__5__7__ {
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -1841,7 +1841,7 @@ impl always_convertible_layout_mapping_std_extents_long__18446744073709551615__1
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) ) ) )  ;
  } }
 impl Default for always_convertible_layout_mapping_std_extents_long__18446744073709551615__18446744073709551615__8__9__1__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_long__18446744073709551615__18446744073709551615__8__9__1__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
 #[repr(C)]
@@ -1891,7 +1891,7 @@ impl always_convertible_layout_mapping_std_extents_long__18446744073709551615__1
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) ) ) )  ;
  } }
 impl Default for always_convertible_layout_mapping_std_extents_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
 #[repr(C)]
@@ -1965,7 +1965,7 @@ impl always_convertible_layout_mapping_std_extents_long__18446744073709551615__7
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }
@@ -2053,7 +2053,7 @@ impl always_convertible_layout_mapping_std_extents_long__5__7__8__9__1__ {
  { res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  ;
  res  = ( ( ( * unimplemented!()  )  ) + ( ( ( unimplemented!()  ) * ( res ) ) ) )  } } } } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , )
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , )
                 })));
     }
 }

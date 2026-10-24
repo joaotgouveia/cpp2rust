@@ -256,27 +256,27 @@ pub struct __gnu_test_semaphore {
     pid_: ::libc::pid_t,
 }
 impl __gnu_test_semaphore {}
-pub unsafe fn cmp_array_10(mut t: ()) -> std_strong_ordering {
+pub unsafe fn cmp_array_10(mut t: ()) -> () {
     let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn cmp_array_11(mut t: ()) -> std_strong_ordering {
+pub unsafe fn cmp_array_11(mut t: ()) -> () {
     let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn cmp_array_12(mut t: ()) -> std_strong_ordering {
+pub unsafe fn cmp_array_12(mut t: ()) -> () {
     let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn cmp_array_13(mut t: ()) -> std_strong_ordering {
+pub unsafe fn cmp_array_13(mut t: ()) -> () {
     let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn cmp_array_14(mut t: ()) -> std_strong_ordering {
+pub unsafe fn cmp_array_14(mut t: ()) -> () {
     let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
     return unimplemented!();

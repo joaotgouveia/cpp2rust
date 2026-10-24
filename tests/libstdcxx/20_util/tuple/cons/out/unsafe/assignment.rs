@@ -311,7 +311,7 @@ unsafe fn main_0() -> () {
         }
     }
     let mut tf: () = std_tuple_const_int_ref_::new({ &tc });
-    (*(unsafe { get_10(&mut tc) })) = (2_() as ());
+    (*(unsafe { get_10(&mut tc) })) = 2_();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

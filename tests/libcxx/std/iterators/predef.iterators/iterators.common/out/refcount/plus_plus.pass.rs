@@ -395,7 +395,7 @@ pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -1307,7 +1307,7 @@ pub trait value_iterator_int_ptr_Impl {
 }
 impl value_iterator_int_ptr_Impl for Ptr<value_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
-        return ((unimplemented!().read()) as ());
+        return (unimplemented!().read());
     }
     fn operator_inc_4(&self) -> Ptr<value_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
@@ -1328,7 +1328,7 @@ impl value_type_not_move_constructible_iterator_int_ptr_Impl
     for Ptr<value_type_not_move_constructible_iterator_int_ptr_>
 {
     fn operator_deref(&self) -> () {
-        return ((unimplemented!().read()) as ());
+        return (unimplemented!().read());
     }
     fn operator_inc_4(&self) -> Ptr<value_type_not_move_constructible_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
@@ -1347,7 +1347,7 @@ pub trait void_plus_plus_iterator_int_ptr_Impl {
 }
 impl void_plus_plus_iterator_int_ptr_Impl for Ptr<void_plus_plus_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
-        return ((unimplemented!().read()) as ());
+        return (unimplemented!().read());
     }
     fn operator_inc_4(&self) -> Ptr<void_plus_plus_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());

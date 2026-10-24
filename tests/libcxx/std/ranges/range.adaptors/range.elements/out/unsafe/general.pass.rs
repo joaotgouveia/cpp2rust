@@ -274,7 +274,7 @@ pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -460,14 +460,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut historicalFigures: () = unimplemented!();
     let mut expectedYears: () = unimplemented!();
     {
-        let mut names : std_ranges_elements_view_std_ranges_ref_view_std_map_std_string_view__int__std_less_std_string_view___std_allocator_std_pair_const_std_string_view__int______0_ = unimplemented!()  ;
+        let mut names: () = unimplemented!();
         let mut expectedNames: () = unimplemented!();
         unimplemented!();
-        let mut birth_years : std_ranges_elements_view_std_ranges_ref_view_std_map_std_string_view__int__std_less_std_string_view___std_allocator_std_pair_const_std_string_view__int______1_ = unimplemented!()  ;
+        let mut birth_years: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut names : std_ranges_elements_view_std_ranges_ref_view_std_map_std_string_view__int__std_less_std_string_view___std_allocator_std_pair_const_std_string_view__int______0_ = unimplemented!()  ;
+        let mut names: () = unimplemented!();
         let mut expectedNames: () = unimplemented!();
         unimplemented!();
     }
@@ -479,36 +479,33 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut arrs: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_array_int__3_arr3arr___2_ =
-            unimplemented!();
+        let mut ev: () = unimplemented!();
         let mut expected: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut ps: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_pair_double__int_arr3arr___1_ =
-            unimplemented!();
+        let mut ev: () = unimplemented!();
         let mut expected: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut tps: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_tuple_short_arr3arr___0_ =
-            unimplemented!();
+        let mut ev: () = unimplemented!();
         let mut expected: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut is: [(); 9] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
         let mut sr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut iters : std_ranges_elements_view_std_ranges_ref_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr____std_ranges_subrange_kind_unsized_arr3arr___0_ = unimplemented!()  ;
+        let mut iters: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same_v<Iter, std::ranges::range_reference_t<decltype(iters)>>"
         );;
         let mut expectedIters: () = unimplemented!();
         unimplemented!();
-        let mut sentinels : std_ranges_elements_view_std_ranges_ref_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr____std_ranges_subrange_kind_unsized_arr3arr___1_ = unimplemented!()  ;
+        let mut sentinels: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same_v<Sent, std::ranges::range_reference_t<decltype(sentinels)>>"

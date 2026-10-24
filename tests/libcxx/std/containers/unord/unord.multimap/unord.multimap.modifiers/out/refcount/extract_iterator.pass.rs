@@ -161,7 +161,7 @@ pub fn test_6(c: Ptr<()>) {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         sz.prefix_dec();
         unimplemented!();
-        unimplemented!().write((some_key as ()));
+        unimplemented!().write(some_key);
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -199,7 +199,7 @@ pub fn test_8(c: Ptr<()>) {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         sz.prefix_dec();
         unimplemented!();
-        unimplemented!().write((some_key as ()));
+        unimplemented!().write(some_key);
         unimplemented!();
         unimplemented!();
         unimplemented!();

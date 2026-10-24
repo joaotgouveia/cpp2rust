@@ -86,11 +86,11 @@ impl Z {
 pub fn test_4() -> () {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_0((unimplemented!()).reinterpret_cast::<()>(), None) });
+        ({ test_0(unimplemented!(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_0((unimplemented!()).reinterpret_cast::<()>(), None) });
+        ({ test_0(unimplemented!(), None) });
     }
     return true;
 }
@@ -118,11 +118,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_4() });
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_1((unimplemented!()).reinterpret_cast::<()>(), None) });
+        ({ test_1(unimplemented!(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_1((unimplemented!()).reinterpret_cast::<()>(), Some(true)) });
+        ({ test_1(unimplemented!(), Some(true)) });
     }
     return 0_();
 }

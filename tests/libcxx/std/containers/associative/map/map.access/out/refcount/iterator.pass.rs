@@ -122,7 +122,7 @@ pub fn test_4() -> () {
         unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let k : Value<() > = Rc::new(RefCell::new(std___map_const_iterator_std___tree_const_iterator_std___value_type_int__double___std___tree_node_std___value_type_int__double___void_ptr__ptr__long__ :: new_1 ( { ((*i.borrow()) ).clone()  } , )  )) ;
+        let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut j: () = 1_();
         'loop_: while (j <= unimplemented!()) {
@@ -232,7 +232,7 @@ pub fn test_4() -> () {
         unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let k : Value<() > = Rc::new(RefCell::new(std___map_const_iterator_std___tree_const_iterator_std___value_type_int__double___min_pointer_std___tree_node_std___value_type_int__double___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____long__ :: new_1 ( { ((*i.borrow()) ).clone()  } , )  )) ;
+        let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut j: () = 1_();
         'loop_: while (j <= unimplemented!()) {

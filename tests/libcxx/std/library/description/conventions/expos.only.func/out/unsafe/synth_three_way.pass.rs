@@ -21,52 +21,40 @@ pub const anon_2_value: anon_2 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {}
-pub unsafe fn synth_three_way_3(t: *const (), u: *const ()) -> std_strong_ordering {
+pub unsafe fn synth_three_way_3(t: *const (), u: *const ()) -> () {
     return unimplemented!();
 }
-pub unsafe fn synth_three_way_4(t: *const (), u: *const ()) -> std_partial_ordering {
+pub unsafe fn synth_three_way_4(t: *const (), u: *const ()) -> () {
     return unimplemented!();
 }
-pub unsafe fn synth_three_way_5(
-    t: *const StrongSpaceship_6,
-    u: *const StrongSpaceship_6,
-) -> std_strong_ordering {
+pub unsafe fn synth_three_way_5(t: *const StrongSpaceship_6, u: *const StrongSpaceship_6) -> () {
     return unimplemented!();
 }
-pub unsafe fn synth_three_way_7(
-    t: *const WeakSpaceship_8,
-    u: *const WeakSpaceship_8,
-) -> std_weak_ordering {
+pub unsafe fn synth_three_way_7(t: *const WeakSpaceship_8, u: *const WeakSpaceship_8) -> () {
     return unimplemented!();
 }
 pub unsafe fn synth_three_way_9(
     t: *const PartialSpaceship_10,
     u: *const PartialSpaceship_10,
-) -> std_partial_ordering {
+) -> () {
     return unimplemented!();
 }
-pub unsafe fn synth_three_way_11(
-    t: *const NoSpaceship_12,
-    u: *const NoSpaceship_12,
-) -> std_weak_ordering {
+pub unsafe fn synth_three_way_11(t: *const NoSpaceship_12, u: *const NoSpaceship_12) -> () {
     return unimplemented!();
 }
 pub unsafe fn synth_three_way_13(
     t: *const SpaceshipNoEquals_14,
     u: *const SpaceshipNoEquals_14,
-) -> std_weak_ordering {
+) -> () {
     return unimplemented!();
 }
-pub unsafe fn synth_three_way_15(
-    t: *const CustomSpaceship_16,
-    u: *const CustomSpaceship_16,
-) -> std_weak_ordering {
+pub unsafe fn synth_three_way_15(t: *const CustomSpaceship_16, u: *const CustomSpaceship_16) -> () {
     return unimplemented!();
 }
-pub unsafe fn synth_three_way_17(t: *const (), u: *const ()) -> std_weak_ordering {
+pub unsafe fn synth_three_way_17(t: *const (), u: *const ()) -> () {
     return unimplemented!();
 }
-pub unsafe fn synth_three_way_18(t: *const (), u: *const ()) -> std_strong_ordering {
+pub unsafe fn synth_three_way_18(t: *const (), u: *const ()) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_eq_19(_a0: *const CustomEquality, mut _a1: ()) -> () {

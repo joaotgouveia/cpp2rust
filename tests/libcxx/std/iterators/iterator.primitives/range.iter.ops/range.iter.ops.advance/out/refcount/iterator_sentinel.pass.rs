@@ -813,7 +813,7 @@ pub fn iter_move_21(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_22(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -2811,7 +2811,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__Impl
                     (*self).with(|__s| __s.base_.clone())
                 })))
                 .as_pointer(),
-                (n as ()),
+                n,
             )
         });
     }
@@ -2838,10 +2838,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__Impl
             ({
                 base_9(
                     ({
-                        contiguous_iterator_int_ptr_Impl::operator_add_assign(
-                            &tmp.as_pointer(),
-                            (n as ()),
-                        )
+                        contiguous_iterator_int_ptr_Impl::operator_add_assign(&tmp.as_pointer(), n)
                     }),
                 )
             }),
@@ -3124,7 +3121,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__Impl
                     (*self).with(|__s| __s.base_.clone())
                 })))
                 .as_pointer(),
-                (n as ()),
+                n,
             )
         });
     }
@@ -3157,7 +3154,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__Impl
                     ({
                         random_access_iterator_int_ptr_Impl::operator_add_assign(
                             &tmp.as_pointer(),
-                            (n as ()),
+                            n,
                         )
                     }),
                 )

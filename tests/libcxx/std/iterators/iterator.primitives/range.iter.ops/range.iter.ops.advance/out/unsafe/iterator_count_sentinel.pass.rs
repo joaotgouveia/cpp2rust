@@ -678,11 +678,11 @@ pub unsafe fn operator_sub_17(
     x: *const operation_counting_iterator_random_access_iterator_int_ptr__,
     y: *const operation_counting_iterator_random_access_iterator_int_ptr__,
 ) -> () {
-    return ((unsafe {
+    return (unsafe {
         let _x: random_access_iterator_int_ptr_ = (unsafe { base_16(x) });
         let _y: random_access_iterator_int_ptr_ = (unsafe { base_16(y) });
         operator_sub_6(_x, _y)
-    }) as ());
+    });
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe)]
@@ -748,7 +748,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__ {
         return &mut (*(unsafe {
             random_access_iterator_int_ptr_::operator_index(
                 &random_access_iterator_int_ptr_::new_1({ self.base_ }),
-                (n as ()),
+                n,
             )
         }));
     }
@@ -773,9 +773,7 @@ impl operation_counting_iterator_random_access_iterator_int_ptr__ {
             random_access_iterator_int_ptr_::new_1({ self.base_ });
         self.base_ = (unsafe {
             base_8(
-                &(*(unsafe {
-                    random_access_iterator_int_ptr_::operator_add_assign(&mut tmp, (n as ()))
-                })),
+                &(*(unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut tmp, n) })),
             )
         });
         (unsafe {
@@ -829,11 +827,11 @@ pub unsafe fn operator_sub_19(
     x: *const operation_counting_iterator_contiguous_iterator_int_ptr__,
     y: *const operation_counting_iterator_contiguous_iterator_int_ptr__,
 ) -> () {
-    return ((unsafe {
+    return (unsafe {
         let _x: contiguous_iterator_int_ptr_ = (unsafe { base_18(x) });
         let _y: contiguous_iterator_int_ptr_ = (unsafe { base_18(y) });
         operator_sub_9(_x, _y)
-    }) as ());
+    });
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe)]
@@ -899,7 +897,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__ {
         return &mut (*(unsafe {
             contiguous_iterator_int_ptr_::operator_index(
                 &contiguous_iterator_int_ptr_::new_1({ self.base_ }),
-                (n as ()),
+                n,
             )
         }));
     }
@@ -923,11 +921,7 @@ impl operation_counting_iterator_contiguous_iterator_int_ptr__ {
         let mut tmp: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::new_1({ self.base_ });
         self.base_ = (unsafe {
-            base_11(
-                &(*(unsafe {
-                    contiguous_iterator_int_ptr_::operator_add_assign(&mut tmp, (n as ()))
-                })),
-            )
+            base_11(&(*(unsafe { contiguous_iterator_int_ptr_::operator_add_assign(&mut tmp, n) })))
         });
         (unsafe { operation_counting_iterator_contiguous_iterator_int_ptr__::moved_by(self, n) });
         return &mut (*(self as *mut operation_counting_iterator_contiguous_iterator_int_ptr__));
@@ -976,8 +970,8 @@ pub unsafe fn operator_sub_21(
     x: *const operation_counting_iterator_int_ptr_,
     y: *const operation_counting_iterator_int_ptr_,
 ) -> () {
-    return (((unsafe { base_20(x) }) as usize - (unsafe { base_20(y) }) as usize)
-        / ::std::mem::size_of::<()>()) as ();
+    return ((((unsafe { base_20(x) }) as usize - (unsafe { base_20(y) }) as usize)
+        / ::std::mem::size_of::<()>()) as () as ());
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe)]
@@ -1531,7 +1525,7 @@ pub unsafe fn iter_move_26(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_27(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1803,7 +1797,8 @@ pub unsafe fn check_forward_43(
     mut expected_equals_count: Option<()>,
 ) {
     let mut expected_equals_count: () = expected_equals_count.unwrap_or_else(|| unsafe { -1_() });
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     unimplemented!();
     {
         let mut it: cpp17_input_iterator_int_ptr__int_ptr_ =
@@ -1829,7 +1824,8 @@ pub unsafe fn check_forward_45(
     mut expected_equals_count: Option<()>,
 ) {
     let mut expected_equals_count: () = expected_equals_count.unwrap_or_else(|| unsafe { -1_() });
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     unimplemented!();
     {
         let mut it: cpp20_input_iterator_int_ptr_ = cpp20_input_iterator_int_ptr_::new({ first });
@@ -1853,7 +1849,8 @@ pub unsafe fn check_forward_46(
     mut expected: *mut (),
     mut expected_equals_count: (),
 ) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     unimplemented!();
     {
         let mut it: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({ first });
@@ -1904,7 +1901,8 @@ pub unsafe fn check_forward_47(
     mut expected: *mut (),
     mut expected_equals_count: (),
 ) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     unimplemented!();
     {
         let mut it: bidirectional_iterator_int_ptr_ =
@@ -1946,7 +1944,8 @@ pub unsafe fn check_forward_48(
     mut expected: *mut (),
     mut expected_equals_count: (),
 ) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     unimplemented!();
     {
         let mut it: random_access_iterator_int_ptr_ =
@@ -1989,7 +1988,8 @@ pub unsafe fn check_forward_49(
     mut expected: *mut (),
     mut expected_equals_count: (),
 ) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     unimplemented!();
     {
         let mut it: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ first });
@@ -2042,7 +2042,8 @@ pub unsafe fn check_forward_50(
     mut expected: *mut (),
     mut expected_equals_count: (),
 ) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     unimplemented!();
     {
         let mut it: *mut () = first;
@@ -2088,13 +2089,13 @@ pub unsafe fn check_forward_sized_sentinel_51(
     mut n: (),
     mut expected: *mut (),
 ) {
-    let size: () = (((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let size: () = ((((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: cpp17_input_iterator_int_ptr__int_ptr_ =
             cpp17_input_iterator_int_ptr__int_ptr_::new({ first });
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2111,8 +2112,7 @@ pub unsafe fn check_forward_sized_sentinel_51(
                 { (&mut ops as *mut IteratorOpCounts) },
             )
         };
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         &(unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2129,12 +2129,12 @@ pub unsafe fn check_forward_sized_sentinel_52(
     mut n: (),
     mut expected: *mut (),
 ) {
-    let size: () = (((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let size: () = ((((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: cpp20_input_iterator_int_ptr_ = cpp20_input_iterator_int_ptr_::new({ first });
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2150,8 +2150,7 @@ pub unsafe fn check_forward_sized_sentinel_52(
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         &(unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2168,12 +2167,12 @@ pub unsafe fn check_forward_sized_sentinel_53(
     mut n: (),
     mut expected: *mut (),
 ) {
-    let size: () = (((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let size: () = ((((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({ first });
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2189,8 +2188,7 @@ pub unsafe fn check_forward_sized_sentinel_53(
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         &(unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2207,13 +2205,13 @@ pub unsafe fn check_forward_sized_sentinel_54(
     mut n: (),
     mut expected: *mut (),
 ) {
-    let size: () = (((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let size: () = ((((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ first });
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2230,8 +2228,7 @@ pub unsafe fn check_forward_sized_sentinel_54(
                 { (&mut ops as *mut IteratorOpCounts) },
             )
         };
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         &(unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2248,13 +2245,13 @@ pub unsafe fn check_forward_sized_sentinel_55(
     mut n: (),
     mut expected: *mut (),
 ) {
-    let size: () = (((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let size: () = ((((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ first });
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2271,8 +2268,7 @@ pub unsafe fn check_forward_sized_sentinel_55(
                 { (&mut ops as *mut IteratorOpCounts) },
             )
         };
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         &(unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2288,12 +2284,12 @@ pub unsafe fn check_forward_sized_sentinel_56(
     mut n: (),
     mut expected: *mut (),
 ) {
-    let size: () = (((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let size: () = ((((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ first });
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2309,8 +2305,7 @@ pub unsafe fn check_forward_sized_sentinel_56(
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         &(unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2326,12 +2321,12 @@ pub unsafe fn check_forward_sized_sentinel_57(
     mut n: (),
     mut expected: *mut (),
 ) {
-    let size: () = (((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let size: () = ((((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
+    let M: () =
+        ((((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: *mut () = first;
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2346,8 +2341,7 @@ pub unsafe fn check_forward_sized_sentinel_57(
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
+        let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ size });
         &(unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_44))(&mut it, n, sent)
         });
@@ -2366,7 +2360,7 @@ pub unsafe fn check_backward_58(
 ) {
     unimplemented!();
     const _: () = assert!(true, "std::bidirectional_iterator<It>");;
-    let M: () = (((expected as usize - last as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () = ((((expected as usize - last as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ last });
@@ -2423,7 +2417,7 @@ pub unsafe fn check_backward_59(
 ) {
     unimplemented!();
     const _: () = assert!(true, "std::bidirectional_iterator<It>");;
-    let M: () = (((expected as usize - last as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () = ((((expected as usize - last as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ last });
@@ -2480,7 +2474,7 @@ pub unsafe fn check_backward_60(
 ) {
     unimplemented!();
     const _: () = assert!(true, "std::bidirectional_iterator<It>");;
-    let M: () = (((expected as usize - last as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () = ((((expected as usize - last as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ last });
         let mut sent: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ first });
@@ -2533,7 +2527,7 @@ pub unsafe fn check_backward_61(
 ) {
     unimplemented!();
     const _: () = assert!(true, "std::bidirectional_iterator<It>");;
-    let M: () = (((expected as usize - last as usize) / ::std::mem::size_of::<()>()) as ());
+    let M: () = ((((expected as usize - last as usize) / ::std::mem::size_of::<()>()) as ()) as ());
     {
         let mut it: *mut () = last;
         let mut sent: *mut () = first;

@@ -578,7 +578,7 @@ pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1522,16 +1522,16 @@ pub unsafe fn test_42() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v1: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v2: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v3: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v3: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v4: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v4: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -1541,16 +1541,16 @@ pub unsafe fn test_43() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v1: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v2: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v3: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v3: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v4: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v4: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -1560,16 +1560,16 @@ pub unsafe fn test_44() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v1: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v2: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v3: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v3: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v4: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v4: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -1579,16 +1579,16 @@ pub unsafe fn test_45() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v1: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v2: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v3: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v3: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v4: std_pair_const_int_ref__double_ref_ = unimplemented!();
+    let mut v4: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }

@@ -204,30 +204,30 @@ pub struct Unconstrained {
 pub unsafe fn test_tuple_cat_with_unconstrained_constructor_16() -> () {
     {
         let mut tup_src: () = unimplemented!();
-        let mut tup: std_tuple_Unconstrained_ = unimplemented!();
+        let mut tup: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut tup: std_tuple_Unconstrained_ = unimplemented!();
+        let mut tup: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut tup: std_tuple_Unconstrained_ = unimplemented!();
+        let mut tup: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut tup_src: () = unimplemented!();
-        let mut tup: std_tuple_Unconstrained_ = unimplemented!();
+        let mut tup: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut tup: std_tuple_Unconstrained_ = unimplemented!();
+        let mut tup: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut tup: std_tuple_Unconstrained_ = unimplemented!();
+        let mut tup: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -428,9 +428,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut t1: std_tuple_std_tuple_int__ = unimplemented!();
+        let mut t1: () = unimplemented!();
         unimplemented!();
-        let mut t2: std_tuple_std_tuple_int___std_tuple_int__ = unimplemented!();
+        let mut t2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -439,7 +439,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let ct: *const () = &t;
         let mut t2: () = unimplemented!();
         let ct2: *const () = &t2;
-        let mut r : std_tuple_int__const_int__int_ref__const_int_ref__int_refref__int__const_int__int_ref__const_int_ref__int_refref__int__const_int__int_ref__const_int_ref__int__const_int__int_ref__const_int_ref_ = unimplemented!()  ;
+        let mut r: () = unimplemented!();
         const _: () = assert!(true, "");;
         (&(r));
     }

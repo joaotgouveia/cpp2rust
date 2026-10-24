@@ -351,7 +351,7 @@ pub unsafe fn test_format_12() {
             unimplemented!();
         }
     }
-    let mut st : std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_1__1___ = ( unsafe { time_point_cast_13 ( & t , ) } )  ;
+    let mut st: () = (unsafe { time_point_cast_13(&t) });
     let mut loc: () = unimplemented!();
     let mut smod: () = unimplemented!();
     unimplemented!();

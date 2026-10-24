@@ -367,7 +367,7 @@ pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -559,7 +559,7 @@ impl value_iterator_int_ptr_ {
         this
     }
     pub unsafe fn operator_deref(&self) -> () {
-        return ((*unimplemented!()) as ());
+        return (*unimplemented!());
     }
 }
 #[repr(C)]
@@ -573,7 +573,7 @@ impl void_plus_plus_iterator_int_ptr_ {
         this
     }
     pub unsafe fn operator_deref(&self) -> () {
-        return ((*unimplemented!()) as ());
+        return (*unimplemented!());
     }
 }
 #[repr(C)]

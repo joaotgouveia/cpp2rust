@@ -34,7 +34,7 @@ pub fn CreateTuple_0(_a0: ()) {
     unimplemented!();
 }
 pub fn test_3() -> () {
-    ({ CreateTuple_0(<()>::default()) });
+    ({ CreateTuple_0(unimplemented!()) });
     return true;
 }
 pub fn main() {

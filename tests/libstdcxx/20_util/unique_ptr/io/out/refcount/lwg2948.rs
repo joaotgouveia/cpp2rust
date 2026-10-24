@@ -381,7 +381,7 @@ pub fn test02_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ check_11((p.as_pointer()).reinterpret_cast::<()>()) }) {
+        if !({ check_11(p.as_pointer()) }) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),

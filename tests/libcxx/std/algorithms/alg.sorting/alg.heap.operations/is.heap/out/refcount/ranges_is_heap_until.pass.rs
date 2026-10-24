@@ -427,7 +427,7 @@ pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -2587,7 +2587,7 @@ pub fn test_77() -> () {
             unimplemented!();
         }
         {
-            let mut result_default_comp: Ptr<()> = ({
+            let mut result_default_comp: () = ({
                 (*is_heap_until_16.with(Value::clone).borrow_mut())(
                     in_.as_pointer(),
                     unimplemented!(),
@@ -2595,7 +2595,7 @@ pub fn test_77() -> () {
                 )
             });
             unimplemented!();
-            let mut result_custom_comp: Ptr<()> = ({
+            let mut result_custom_comp: () = ({
                 (*is_heap_until_16.with(Value::clone).borrow_mut())(
                     in_.as_pointer(),
                     unimplemented!(),
@@ -2639,7 +2639,7 @@ pub fn test_77() -> () {
             unimplemented!();
         }
         {
-            let mut result_default_comp: Ptr<A_78> = ({
+            let mut result_default_comp: () = ({
                 (*is_heap_until_16.with(Value::clone).borrow_mut())(
                     in_.as_pointer(),
                     unimplemented!(),
@@ -2647,7 +2647,7 @@ pub fn test_77() -> () {
                 )
             });
             unimplemented!();
-            let mut result_custom_comp: Ptr<A_78> = ({
+            let mut result_custom_comp: () = ({
                 (*is_heap_until_16.with(Value::clone).borrow_mut())(
                     in_.as_pointer(),
                     unimplemented!(),

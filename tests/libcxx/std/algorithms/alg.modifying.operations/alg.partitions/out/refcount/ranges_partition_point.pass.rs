@@ -491,7 +491,7 @@ pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -4885,7 +4885,7 @@ pub fn test_105() -> () {
             unimplemented!();
         }
         {
-            let mut result_no_proj: Ptr<()> = ({
+            let mut result_no_proj: () = ({
                 (*partition_point_19.with(Value::clone).borrow_mut())(
                     in_.as_pointer(),
                     (*is_odd.borrow()).copy_from(),
@@ -4893,7 +4893,7 @@ pub fn test_105() -> () {
                 )
             });
             unimplemented!();
-            let mut result_with_proj: Ptr<()> = ({
+            let mut result_with_proj: () = ({
                 (*partition_point_19.with(Value::clone).borrow_mut())(
                     in_.as_pointer(),
                     (*is_odd.borrow()).copy_from(),

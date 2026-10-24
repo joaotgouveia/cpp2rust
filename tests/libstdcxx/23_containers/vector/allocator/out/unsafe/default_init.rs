@@ -310,7 +310,7 @@ pub struct __gnu_test_default_init_allocator_int_ {
 }
 impl __gnu_test_default_init_allocator_int_ {
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_int_).deallocate(p, n) });
+        unimplemented!();
     }
 }
 pub unsafe fn operator_eq_15(

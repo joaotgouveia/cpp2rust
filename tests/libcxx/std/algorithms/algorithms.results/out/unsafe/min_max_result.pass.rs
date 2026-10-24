@@ -265,7 +265,7 @@ pub unsafe fn test_14() -> () {
         let mut res: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut res2: std_ranges_min_max_result_MoveOnly_ = (*unimplemented!());
+        let mut res2: () = (*unimplemented!());
         unimplemented!();
         unimplemented!();
         unimplemented!();

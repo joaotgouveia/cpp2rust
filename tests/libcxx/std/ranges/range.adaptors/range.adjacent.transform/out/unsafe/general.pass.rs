@@ -11,8 +11,8 @@ pub unsafe fn test_0() -> () {
     let mut expected: () = unimplemented!();
     {
         let mut expected_index: () = 0_();
-        let mut __tmp_0 : std_ranges_adjacent_transform_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____std_multiplies_void___2_  = unimplemented!()  ;
-        let __range1 : *mut std_ranges_adjacent_transform_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____std_multiplies_void___2_ = & mut __tmp_0 ;
+        let mut __tmp_0: () = unimplemented!();
+        let __range1: *mut () = &mut __tmp_0;
         'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut x: () = unimplemented!();
             unimplemented!();
@@ -20,8 +20,8 @@ pub unsafe fn test_0() -> () {
     }
     {
         let mut expected_index: () = 0_();
-        let mut __tmp_1 : std_ranges_adjacent_transform_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____std_multiplies_void___2_  = unimplemented!()  ;
-        let __range1 : *mut std_ranges_adjacent_transform_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____std_multiplies_void___2_ = & mut __tmp_1 ;
+        let mut __tmp_1: () = unimplemented!();
+        let __range1: *mut () = &mut __tmp_1;
         'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut x: () = unimplemented!();
             unimplemented!();

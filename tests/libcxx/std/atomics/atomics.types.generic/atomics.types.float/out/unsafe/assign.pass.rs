@@ -7,8 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_seq_cst_0(
-    mut store_op: FnPtr<fn(*mut std_atomic_float_, (), ())>,
-    mut load_op: FnPtr<fn(*mut std_atomic_float_) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), (), ())>,
+    mut load_op: FnPtr<fn(*mut ()) -> ()>,
 ) {
     &(store_op);
     &(load_op);
@@ -21,8 +21,8 @@ pub unsafe fn test_seq_cst_1(
     &(load_op);
 }
 pub unsafe fn test_seq_cst_2(
-    mut store_op: FnPtr<fn(*mut std_atomic_double_, (), ())>,
-    mut load_op: FnPtr<fn(*mut std_atomic_double_) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), (), ())>,
+    mut load_op: FnPtr<fn(*mut ()) -> ()>,
 ) {
     &(store_op);
     &(load_op);
@@ -44,20 +44,18 @@ pub unsafe fn test_impl_4() {
         "noexcept(std::declval<MaybeVolatile<std::atomic<T>>&>() = (T(0)))"
     );;
     {
-        let mut a: std_atomic_float_ = unimplemented!();
+        let mut a: () = unimplemented!();
         let mut r: () = (unimplemented!());
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut assign: FnPtr<fn(*mut std_atomic_float_, (), ())> =
-            FnPtr::<fn(*mut std_atomic_float_, (), ())>::new(
-                |x: *mut std_atomic_float_, mut _a1: (), mut new_val: ()| unsafe {
-                    unimplemented!();
-                },
-            );
-        let mut load: FnPtr<fn(*mut std_atomic_float_) -> ()> =
-            FnPtr::<fn(*mut std_atomic_float_) -> ()>::new(|x: *mut std_atomic_float_| -> () {
+        let mut assign: FnPtr<fn(*mut (), (), ())> =
+            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+                unimplemented!();
+            });
+        let mut load: FnPtr<fn(*mut ()) -> ()> =
+            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
                     return (unsafe { ((*x) as std___atomic_base_float__false_).load_6(None) });
                 }
@@ -107,20 +105,18 @@ pub unsafe fn test_impl_6() {
         "noexcept(std::declval<MaybeVolatile<std::atomic<T>>&>() = (T(0)))"
     );;
     {
-        let mut a: std_atomic_double_ = unimplemented!();
+        let mut a: () = unimplemented!();
         let mut r: () = (unimplemented!());
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut assign: FnPtr<fn(*mut std_atomic_double_, (), ())> =
-            FnPtr::<fn(*mut std_atomic_double_, (), ())>::new(
-                |x: *mut std_atomic_double_, mut _a1: (), mut new_val: ()| unsafe {
-                    unimplemented!();
-                },
-            );
-        let mut load: FnPtr<fn(*mut std_atomic_double_) -> ()> =
-            FnPtr::<fn(*mut std_atomic_double_) -> ()>::new(|x: *mut std_atomic_double_| -> () {
+        let mut assign: FnPtr<fn(*mut (), (), ())> =
+            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+                unimplemented!();
+            });
+        let mut load: FnPtr<fn(*mut ()) -> ()> =
+            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
                     return (unsafe { ((*x) as std___atomic_base_double__false_).load_6(None) });
                 }

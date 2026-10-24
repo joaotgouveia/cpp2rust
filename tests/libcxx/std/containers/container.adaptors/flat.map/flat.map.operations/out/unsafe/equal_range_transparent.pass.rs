@@ -697,7 +697,7 @@ pub unsafe fn iter_move_27(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_28(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1743,9 +1743,9 @@ pub unsafe fn test_52() {
             let first: *mut () = (unsafe { get_54(&mut __decomp_53) });
             let last: *mut () = (unsafe { get_55(&mut __decomp_53) });
             unimplemented!();
-            let mut __decomp_56: std_pair_const_std_string_ref__int_ref_ = unimplemented!();
-            let key: *const () = (unsafe { get_57(&mut *(&raw mut __decomp_56).cast::<()>()) });
-            let value: *mut () = (unsafe { get_58(&mut *(&raw mut __decomp_56).cast::<()>()) });
+            let mut __decomp_56: () = unimplemented!();
+            let key: *const () = (unsafe { get_57(&mut __decomp_56) });
+            let value: *mut () = (unsafe { get_58(&mut __decomp_56) });
             unimplemented!();
             unimplemented!();
         },
@@ -1754,9 +1754,9 @@ pub unsafe fn test_52() {
             let first: *mut () = (unsafe { get_60(&mut __decomp_59) });
             let last: *mut () = (unsafe { get_61(&mut __decomp_59) });
             unimplemented!();
-            let mut __decomp_62: std_pair_const_std_string_ref__const_int_ref_ = unimplemented!();
-            let key: *const () = (unsafe { get_63(&mut *(&raw mut __decomp_62).cast::<()>()) });
-            let value: *const () = (unsafe { get_64(&mut *(&raw mut __decomp_62).cast::<()>()) });
+            let mut __decomp_62: () = unimplemented!();
+            let key: *const () = (unsafe { get_63(&mut __decomp_62) });
+            let value: *const () = (unsafe { get_64(&mut __decomp_62) });
             unimplemented!();
             unimplemented!();
         }
@@ -1899,9 +1899,9 @@ pub unsafe fn test_67() {
             let first: *mut () = (unsafe { get_69(&mut __decomp_68) });
             let last: *mut () = (unsafe { get_70(&mut __decomp_68) });
             unimplemented!();
-            let mut __decomp_71: std_pair_const_std_string_ref__int_ref_ = unimplemented!();
-            let key: *const () = (unsafe { get_57(&mut *(&raw mut __decomp_71).cast::<()>()) });
-            let value: *mut () = (unsafe { get_58(&mut *(&raw mut __decomp_71).cast::<()>()) });
+            let mut __decomp_71: () = unimplemented!();
+            let key: *const () = (unsafe { get_57(&mut __decomp_71) });
+            let value: *mut () = (unsafe { get_58(&mut __decomp_71) });
             unimplemented!();
             unimplemented!();
         },
@@ -1910,9 +1910,9 @@ pub unsafe fn test_67() {
             let first: *mut () = (unsafe { get_73(&mut __decomp_72) });
             let last: *mut () = (unsafe { get_74(&mut __decomp_72) });
             unimplemented!();
-            let mut __decomp_75: std_pair_const_std_string_ref__const_int_ref_ = unimplemented!();
-            let key: *const () = (unsafe { get_63(&mut *(&raw mut __decomp_75).cast::<()>()) });
-            let value: *const () = (unsafe { get_64(&mut *(&raw mut __decomp_75).cast::<()>()) });
+            let mut __decomp_75: () = unimplemented!();
+            let key: *const () = (unsafe { get_63(&mut __decomp_75) });
+            let value: *const () = (unsafe { get_64(&mut __decomp_75) });
             unimplemented!();
             unimplemented!();
         }
@@ -2055,9 +2055,9 @@ pub unsafe fn test_78() {
             let first: *mut () = (unsafe { get_80(&mut __decomp_79) });
             let last: *mut () = (unsafe { get_81(&mut __decomp_79) });
             unimplemented!();
-            let mut __decomp_82: std_pair_const_std_string_ref__int_ref_ = unimplemented!();
-            let key: *const () = (unsafe { get_57(&mut *(&raw mut __decomp_82).cast::<()>()) });
-            let value: *mut () = (unsafe { get_58(&mut *(&raw mut __decomp_82).cast::<()>()) });
+            let mut __decomp_82: () = unimplemented!();
+            let key: *const () = (unsafe { get_57(&mut __decomp_82) });
+            let value: *mut () = (unsafe { get_58(&mut __decomp_82) });
             unimplemented!();
             unimplemented!();
         },
@@ -2066,9 +2066,9 @@ pub unsafe fn test_78() {
             let first: *mut () = (unsafe { get_84(&mut __decomp_83) });
             let last: *mut () = (unsafe { get_85(&mut __decomp_83) });
             unimplemented!();
-            let mut __decomp_86: std_pair_const_std_string_ref__const_int_ref_ = unimplemented!();
-            let key: *const () = (unsafe { get_63(&mut *(&raw mut __decomp_86).cast::<()>()) });
-            let value: *const () = (unsafe { get_64(&mut *(&raw mut __decomp_86).cast::<()>()) });
+            let mut __decomp_86: () = unimplemented!();
+            let key: *const () = (unsafe { get_63(&mut __decomp_86) });
+            let value: *const () = (unsafe { get_64(&mut __decomp_86) });
             unimplemented!();
             unimplemented!();
         }
@@ -2211,9 +2211,9 @@ pub unsafe fn test_89() {
             let first: *mut () = (unsafe { get_91(&mut __decomp_90) });
             let last: *mut () = (unsafe { get_92(&mut __decomp_90) });
             unimplemented!();
-            let mut __decomp_93: std_pair_const_std_string_ref__int_ref_ = unimplemented!();
-            let key: *const () = (unsafe { get_57(&mut *(&raw mut __decomp_93).cast::<()>()) });
-            let value: *mut () = (unsafe { get_58(&mut *(&raw mut __decomp_93).cast::<()>()) });
+            let mut __decomp_93: () = unimplemented!();
+            let key: *const () = (unsafe { get_57(&mut __decomp_93) });
+            let value: *mut () = (unsafe { get_58(&mut __decomp_93) });
             unimplemented!();
             unimplemented!();
         },
@@ -2222,9 +2222,9 @@ pub unsafe fn test_89() {
             let first: *mut () = (unsafe { get_95(&mut __decomp_94) });
             let last: *mut () = (unsafe { get_96(&mut __decomp_94) });
             unimplemented!();
-            let mut __decomp_97: std_pair_const_std_string_ref__const_int_ref_ = unimplemented!();
-            let key: *const () = (unsafe { get_63(&mut *(&raw mut __decomp_97).cast::<()>()) });
-            let value: *const () = (unsafe { get_64(&mut *(&raw mut __decomp_97).cast::<()>()) });
+            let mut __decomp_97: () = unimplemented!();
+            let key: *const () = (unsafe { get_63(&mut __decomp_97) });
+            let value: *const () = (unsafe { get_64(&mut __decomp_97) });
             unimplemented!();
             unimplemented!();
         }

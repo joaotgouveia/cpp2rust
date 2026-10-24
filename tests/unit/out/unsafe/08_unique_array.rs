@@ -13,8 +13,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut g: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
-        (unsafe { make_unique_0(2_()) });
+    let mut g: () = (unsafe { make_unique_0(2_()) });
     (*unimplemented!()) = 11_();
     (*unimplemented!()) = 12_();
     let mut g_ptr: *mut () = unimplemented!();

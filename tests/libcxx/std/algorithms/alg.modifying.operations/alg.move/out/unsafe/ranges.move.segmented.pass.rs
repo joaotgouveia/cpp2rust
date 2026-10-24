@@ -832,7 +832,7 @@ pub unsafe fn iter_move_33(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_34(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1110,7 +1110,7 @@ pub unsafe fn test_join_view_41() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1124,7 +1124,7 @@ pub unsafe fn test_join_view_41() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1138,7 +1138,7 @@ pub unsafe fn test_join_view_41() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1148,10 +1148,10 @@ pub unsafe fn test_join_view_41() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1166,7 +1166,7 @@ pub unsafe fn test_join_view_43() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1180,7 +1180,7 @@ pub unsafe fn test_join_view_43() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1194,7 +1194,7 @@ pub unsafe fn test_join_view_43() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1204,10 +1204,10 @@ pub unsafe fn test_join_view_43() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1222,7 +1222,7 @@ pub unsafe fn test_join_view_44() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1236,7 +1236,7 @@ pub unsafe fn test_join_view_44() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1250,7 +1250,7 @@ pub unsafe fn test_join_view_44() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1260,10 +1260,10 @@ pub unsafe fn test_join_view_44() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1278,7 +1278,7 @@ pub unsafe fn test_join_view_45() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1292,7 +1292,7 @@ pub unsafe fn test_join_view_45() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1306,7 +1306,7 @@ pub unsafe fn test_join_view_45() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1316,10 +1316,10 @@ pub unsafe fn test_join_view_45() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1334,7 +1334,7 @@ pub unsafe fn test_join_view_46() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1348,7 +1348,7 @@ pub unsafe fn test_join_view_46() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1362,7 +1362,7 @@ pub unsafe fn test_join_view_46() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1372,10 +1372,10 @@ pub unsafe fn test_join_view_46() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1390,7 +1390,7 @@ pub unsafe fn test_join_view_47() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1404,7 +1404,7 @@ pub unsafe fn test_join_view_47() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1418,7 +1418,7 @@ pub unsafe fn test_join_view_47() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1428,10 +1428,10 @@ pub unsafe fn test_join_view_47() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1446,7 +1446,7 @@ pub unsafe fn test_join_view_48() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1460,7 +1460,7 @@ pub unsafe fn test_join_view_48() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1474,7 +1474,7 @@ pub unsafe fn test_join_view_48() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1484,10 +1484,10 @@ pub unsafe fn test_join_view_48() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1502,7 +1502,7 @@ pub unsafe fn test_join_view_49() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1516,7 +1516,7 @@ pub unsafe fn test_join_view_49() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1530,7 +1530,7 @@ pub unsafe fn test_join_view_49() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1540,10 +1540,10 @@ pub unsafe fn test_join_view_49() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1558,7 +1558,7 @@ pub unsafe fn test_join_view_50() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1572,7 +1572,7 @@ pub unsafe fn test_join_view_50() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1586,7 +1586,7 @@ pub unsafe fn test_join_view_50() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1596,10 +1596,10 @@ pub unsafe fn test_join_view_50() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1614,7 +1614,7 @@ pub unsafe fn test_join_view_51() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1628,7 +1628,7 @@ pub unsafe fn test_join_view_51() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1642,7 +1642,7 @@ pub unsafe fn test_join_view_51() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1652,10 +1652,10 @@ pub unsafe fn test_join_view_51() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1670,7 +1670,7 @@ pub unsafe fn test_join_view_52() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1684,7 +1684,7 @@ pub unsafe fn test_join_view_52() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1698,7 +1698,7 @@ pub unsafe fn test_join_view_52() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1708,10 +1708,10 @@ pub unsafe fn test_join_view_52() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1726,7 +1726,7 @@ pub unsafe fn test_join_view_53() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1740,7 +1740,7 @@ pub unsafe fn test_join_view_53() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1754,7 +1754,7 @@ pub unsafe fn test_join_view_53() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1764,10 +1764,10 @@ pub unsafe fn test_join_view_53() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1782,7 +1782,7 @@ pub unsafe fn test_join_view_54() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1796,7 +1796,7 @@ pub unsafe fn test_join_view_54() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1810,7 +1810,7 @@ pub unsafe fn test_join_view_54() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1820,10 +1820,10 @@ pub unsafe fn test_join_view_54() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1838,7 +1838,7 @@ pub unsafe fn test_join_view_55() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1852,7 +1852,7 @@ pub unsafe fn test_join_view_55() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1866,7 +1866,7 @@ pub unsafe fn test_join_view_55() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1876,10 +1876,10 @@ pub unsafe fn test_join_view_55() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();
@@ -1894,7 +1894,7 @@ pub unsafe fn test_join_view_56() {
  } ) ; (*std::cell::LazyCell::force_mut(&mut *&raw mut transform_42)) ( & mut ___f , ) } ) ;
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1908,7 +1908,7 @@ pub unsafe fn test_join_view_56() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1922,7 +1922,7 @@ pub unsafe fn test_join_view_56() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut arr: () = unimplemented!();
         (unsafe {
@@ -1932,10 +1932,10 @@ pub unsafe fn test_join_view_56() {
     }
     {
         let mut vectors: () = unimplemented!();
-        let mut range1 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range1: () = unimplemented!();
         let mut subrange_vector: () = unimplemented!();
         let mut to_vectors: () = unimplemented!();
-        let mut range2 : std_ranges_transform_view_std_ranges_ref_view_std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int________lambda_at_ranges_move_segmented_pass_cpp_49_45__ = unimplemented!()  ;
+        let mut range2: () = unimplemented!();
         let mut to_subrange_vector: () = unimplemented!();
         (unsafe {
             let mut ___range: () = unimplemented!();

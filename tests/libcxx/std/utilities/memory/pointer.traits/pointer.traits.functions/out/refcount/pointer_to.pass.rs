@@ -59,11 +59,7 @@ pub fn test_0() -> () {
         true,
         "std::is_same<Pointer, decltype(std::pointer_traits<Pointer>::pointer_to(obj))>::value"
     );;
-    let mut p: A_int_ = ({
-        std___pointer_traits_impl_A_int___void_::pointer_to(
-            (obj.as_pointer()).reinterpret_cast::<()>(),
-        )
-    });
+    let mut p: A_int_ = ({ std___pointer_traits_impl_A_int___void_::pointer_to(obj.as_pointer()) });
     unimplemented!();
     return true;
 }
@@ -73,11 +69,8 @@ pub fn test_1() -> () {
         true,
         "std::is_same<Pointer, decltype(std::pointer_traits<Pointer>::pointer_to(obj))>::value"
     );;
-    let mut p: A_long_ = ({
-        std___pointer_traits_impl_A_long___void_::pointer_to(
-            (obj.as_pointer()).reinterpret_cast::<()>(),
-        )
-    });
+    let mut p: A_long_ =
+        ({ std___pointer_traits_impl_A_long___void_::pointer_to(obj.as_pointer()) });
     unimplemented!();
     return true;
 }

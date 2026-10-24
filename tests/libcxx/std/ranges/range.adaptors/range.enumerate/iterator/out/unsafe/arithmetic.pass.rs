@@ -433,7 +433,7 @@ pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -707,7 +707,7 @@ pub unsafe fn test_with_common_range_13() {
     let mut baseSt: random_access_iterator_int_ptr_ =
         random_access_iterator_int_ptr_::new_2({ arr.as_mut_ptr().offset((4_()) as isize) });
     let mut range: () = unimplemented!();
-    let mut ev : std_ranges_enumerate_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized__ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it: () = unimplemented!();
         let diff: () = 3_();
@@ -762,7 +762,7 @@ pub unsafe fn test_with_common_range_14() {
     let mut baseSt: contiguous_iterator_int_ptr_ =
         contiguous_iterator_int_ptr_::new_2({ arr.as_mut_ptr().offset((4_()) as isize) });
     let mut range: () = unimplemented!();
-    let mut ev : std_ranges_enumerate_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized__ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it: () = unimplemented!();
         let diff: () = 3_();
@@ -815,7 +815,7 @@ pub unsafe fn test_with_common_range_15() {
     let mut baseIt: *mut () = arr.as_mut_ptr();
     let mut baseSt: *mut () = arr.as_mut_ptr().offset((4_()) as isize);
     let mut range: () = unimplemented!();
-    let mut ev : std_ranges_enumerate_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized__ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it: () = unimplemented!();
         let diff: () = 3_();
@@ -868,7 +868,7 @@ pub unsafe fn test_with_common_range_16() {
     let mut baseIt: *const () = (arr.as_mut_ptr()).cast_const();
     let mut baseSt: *const () = (arr.as_mut_ptr().offset((4_()) as isize)).cast_const();
     let mut range: () = unimplemented!();
-    let mut ev : std_ranges_enumerate_view_std_ranges_subrange_const_int_ptr__const_int_ptr__std_ranges_subrange_kind_sized__ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it: () = unimplemented!();
         let diff: () = 3_();
@@ -926,7 +926,7 @@ pub unsafe fn test_with_noncommon_range_17() {
         sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_0 })
     };
     let mut range: () = unimplemented!();
-    let mut ev : std_ranges_enumerate_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr____std_ranges_subrange_kind_unsized__ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it: () = unimplemented!();
         let diff: () = 3_();
@@ -976,7 +976,7 @@ pub unsafe fn test_with_noncommon_range_18() {
         sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_1 })
     };
     let mut range: () = unimplemented!();
-    let mut ev : std_ranges_enumerate_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr____std_ranges_subrange_kind_unsized__ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it: () = unimplemented!();
         let diff: () = 3_();
@@ -1024,7 +1024,7 @@ pub unsafe fn test_with_noncommon_range_19() {
         sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_2 })
     };
     let mut range: () = unimplemented!();
-    let mut ev : std_ranges_enumerate_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized__ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it: () = unimplemented!();
         let diff: () = 3_();
@@ -1072,7 +1072,7 @@ pub unsafe fn test_with_noncommon_range_20() {
         sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_3 })
     };
     let mut range: () = unimplemented!();
-    let mut ev : std_ranges_enumerate_view_std_ranges_subrange_const_int_ptr__sentinel_wrapper_const_int_ptr___std_ranges_subrange_kind_unsized__ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it: () = unimplemented!();
         let diff: () = 3_();

@@ -261,7 +261,7 @@ pub unsafe fn iter_move_4(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_5(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -464,7 +464,7 @@ pub unsafe fn test_7() -> () {
         unimplemented!(),
     ];
     let mut r: () = unimplemented!();
-    let mut ev : std_ranges_elements_view_std_ranges_subrange_std_tuple_int__ptr__std_tuple_int__ptr__std_ranges_subrange_kind_sized___0_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     {
         let mut it1: () = unimplemented!();
         let mut it2: () = unimplemented!();

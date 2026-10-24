@@ -17,7 +17,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut f: std_unique_ptr_int__std_default_delete_int__ = unimplemented!();
+    let mut f: () = unimplemented!();
     (*unimplemented!()) = 9_();
     let mut f_ptr1: *mut () = unimplemented!();
     (*f_ptr1) = 10_();

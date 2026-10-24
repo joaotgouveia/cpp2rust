@@ -289,16 +289,16 @@ pub fn test_mapping_requirements_13(_a0: ()) {
     );;
 }
 pub fn test_layout_mapping_requirements_14() {
-    ({ test_mapping_requirements_10(<()>::default()) });
+    ({ test_mapping_requirements_10(unimplemented!()) });
 }
 pub fn test_layout_mapping_requirements_15() {
-    ({ test_mapping_requirements_11(<()>::default()) });
+    ({ test_mapping_requirements_11(unimplemented!()) });
 }
 pub fn test_layout_mapping_requirements_16() {
-    ({ test_mapping_requirements_12(<()>::default()) });
+    ({ test_mapping_requirements_12(unimplemented!()) });
 }
 pub fn test_layout_mapping_requirements_17() {
-    ({ test_mapping_requirements_13(<()>::default()) });
+    ({ test_mapping_requirements_13(unimplemented!()) });
 }
 pub fn test_layout_mapping_stride_18() {
     ({ test_layout_mapping_requirements_14() });

@@ -259,8 +259,8 @@ pub fn functionAcceptingStringView_10(_a0: ()) {
 }
 pub fn test01_11() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let fs : Value<std__Bind_front_void__ptr__std_basic_string_view_char__std_char_traits_char_____std_basic_string_view_char__std_char_traits_char___ > = Rc::new(RefCell::new(unimplemented!()  )) ;
-    ({ (*fs.borrow_mut())() });
+    let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
@@ -597,7 +597,10 @@ thread_local!(
 );
 pub trait PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl
 {
-    fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : Ptr< ()  > , ) -> std__Bind_front_PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15____std_reference_wrapper_std_unique_ptr_Thingy__std_default_delete_Thingy____  ;
+    fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___(
+        &self,
+        a: Ptr<()>,
+    ) -> ();
     fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int(
         &self,
         a_0: Ptr<()>,
@@ -605,14 +608,17 @@ pub trait PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function
     );
 }
 impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl for Ptr<PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__> {
-fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : Ptr< ()  > , ) -> std__Bind_front_PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15____std_reference_wrapper_std_unique_ptr_Thingy__std_default_delete_Thingy____  { { return unimplemented!()    ;
+fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : Ptr< ()  > , ) -> ()  { { return unimplemented!()    ;
  } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int ( &self , a_0 : Ptr< ()  > , a_1 : Ptr< ()  > , ) { { ( { let _arg0: Ptr< ()  >  = ( { (*a_0.upgrade().deref()) ( ) } )   ; let _arg1: ()   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _arg0 , _arg1 , ) } ) ;
  return ;
  ;
  } } }
 pub trait PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl
 {
-    fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : Ptr< ()  > , ) -> std__Bind_front_PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15____std_reference_wrapper_std_basic_string_char__std_char_traits_char___std_allocator_char____  ;
+    fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___(
+        &self,
+        a: Ptr<()>,
+    ) -> ();
     fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int(
         &self,
         a_0: Ptr<()>,
@@ -620,7 +626,7 @@ pub trait PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function
     ) -> Ptr<()>;
 }
 impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl for Ptr<PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__> {
-fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : Ptr< ()  > , ) -> std__Bind_front_PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15____std_reference_wrapper_std_basic_string_char__std_char_traits_char___std_allocator_char____  { { return unimplemented!()    ;
+fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : Ptr< ()  > , ) -> ()  { { return unimplemented!()    ;
  } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int ( &self , a_0 : Ptr< ()  > , a_1 : Ptr< ()  > , ) -> Ptr< ()  > { { return (( { let _s: Ptr< ()  >  = ( { (*a_0.upgrade().deref()) ( ) } )   ; let _arg1: ()   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _s , _arg1 , ) } ) ).clone()  ;
  } panic!("ub: non-void function does not return a value") } }
 pub trait __gnu_test_copy_trackerImpl {

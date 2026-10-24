@@ -1187,15 +1187,15 @@ impl TestOperatorMinusEquals_int_ptr_Impl for Ptr<TestOperatorMinusEquals_int_pt
         {
             {
                 let t: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
-                    <()>::default(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
+                    unimplemented!(),
                 ])));
                 let mut p: Ptr<()> = ((t.as_pointer() as Ptr<()>).offset(3_()));
                 let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));

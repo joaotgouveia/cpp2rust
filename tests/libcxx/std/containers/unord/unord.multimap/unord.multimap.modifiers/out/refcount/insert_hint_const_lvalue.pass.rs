@@ -73,7 +73,7 @@ pub struct min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash
 {}
 pub fn do_insert_const_lvalue_test_4() {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_double__int___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )  )) ;
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -97,7 +97,7 @@ pub fn do_insert_const_lvalue_test_4() {
 }
 pub fn do_insert_const_lvalue_test_5() {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_double__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )  )) ;
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

@@ -17,10 +17,10 @@ pub unsafe fn return_const_lvalue_3(mut _a0: ()) -> *const () {
     return &(*std::cell::LazyCell::force_mut(&mut *&raw mut dummy_0));
 }
 pub unsafe fn return_rvalue_4(mut _a0: ()) -> *mut () {
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn return_const_rvalue_5(mut _a0: ()) -> *const () {
-    return &*(&raw const (*unimplemented!())).cast::<()>();
+    return &(*unimplemented!());
 }
 pub unsafe fn CheckCall_6() -> () {
     return unimplemented!();
@@ -164,8 +164,8 @@ pub unsafe fn do_test_51(mut func: Option<unsafe fn(()) -> ()>) {
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let mut exp: () = (unimplemented!() as ());
-    let mut exp2: () = (unimplemented!() as ());
+    let mut exp: () = unimplemented!();
+    let mut exp2: () = unimplemented!();
     let mut exp_r: () = (unsafe {
         let mut ___args: () = 100_();
         ret_r(&mut ___args)

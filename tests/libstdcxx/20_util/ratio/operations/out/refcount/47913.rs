@@ -278,9 +278,9 @@ pub fn test01_10() {
         __do_while = false;
         {}
     }
-    <()>::default();
+    unimplemented!();
     let mut m3: i64 = ((unimplemented!() - 1_()) as i64);
-    <()>::default();
+    unimplemented!();
     let mut m4: i64 = ((unimplemented!() / 2_()) as i64);
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

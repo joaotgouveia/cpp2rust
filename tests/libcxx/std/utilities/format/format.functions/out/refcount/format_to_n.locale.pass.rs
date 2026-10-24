@@ -1637,7 +1637,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1645,7 +1645,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1653,7 +1653,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1682,7 +1682,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1690,7 +1690,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1698,7 +1698,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1727,7 +1727,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1735,7 +1735,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1743,7 +1743,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1793,7 +1793,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1801,7 +1801,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1809,7 +1809,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1846,7 +1846,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1854,7 +1854,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1862,52 +1862,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                const _: () = assert!(true, "std::is_signed_v<std::iter_difference_t<CharT*>>");;
-                let mut buffer: [(); 1] = [0_()];
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-        },
-        |expected: (), fmt: (), args: Ptr<Ptr<()>>| {
-            let expected: Value<()> = Rc::new(RefCell::new(expected));
-            let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-            {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1936,7 +1891,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1944,7 +1899,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1952,7 +1907,52 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                const _: () = assert!(true, "std::is_signed_v<std::iter_difference_t<CharT*>>");;
+                let mut buffer: [(); 1] = [0_()];
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+        },
+        |expected: (), fmt: (), args: Ptr<Ptr<()>>| {
+            let expected: Value<()> = Rc::new(RefCell::new(expected));
+            let fmt: Value<()> = Rc::new(RefCell::new(fmt));
+            {
+                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1981,7 +1981,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1989,7 +1989,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -1997,52 +1997,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                const _: () = assert!(true, "std::is_signed_v<std::iter_difference_t<CharT*>>");;
-                let mut buffer: [(); 1] = [0_()];
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-        },
-        |expected: (), fmt: (), args: Ptr<()>| {
-            let expected: Value<()> = Rc::new(RefCell::new(expected));
-            let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-            {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2071,7 +2026,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2079,7 +2034,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2087,7 +2042,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2116,7 +2071,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2124,7 +2079,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2132,7 +2087,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2161,7 +2116,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2169,7 +2124,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2177,7 +2132,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2206,7 +2161,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2214,7 +2169,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2222,7 +2177,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2251,7 +2206,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2259,7 +2214,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2267,7 +2222,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2296,7 +2251,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2304,7 +2259,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2312,7 +2267,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2341,7 +2296,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2349,7 +2304,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2357,7 +2312,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2386,7 +2341,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2394,7 +2349,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2402,7 +2357,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2431,7 +2386,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2439,7 +2394,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2447,7 +2402,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2476,7 +2431,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2484,7 +2439,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2492,7 +2447,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2521,7 +2476,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2529,7 +2484,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2537,7 +2492,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2566,7 +2521,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2574,7 +2529,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2582,7 +2537,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2611,7 +2566,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2619,7 +2574,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2627,7 +2582,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2656,7 +2611,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2664,7 +2619,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2672,7 +2627,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2701,7 +2656,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2709,7 +2664,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2717,7 +2672,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2746,7 +2701,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2754,7 +2709,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2762,7 +2717,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2791,7 +2746,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2799,7 +2754,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2807,7 +2762,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2836,7 +2791,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2844,7 +2799,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2852,7 +2807,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2881,7 +2836,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2889,7 +2844,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2897,7 +2852,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2926,7 +2881,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2934,7 +2889,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2942,7 +2897,52 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                const _: () = assert!(true, "std::is_signed_v<std::iter_difference_t<CharT*>>");;
+                let mut buffer: [(); 1] = [0_()];
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+        },
+        |expected: (), fmt: (), args: Ptr<()>| {
+            let expected: Value<()> = Rc::new(RefCell::new(expected));
+            let fmt: Value<()> = Rc::new(RefCell::new(fmt));
+            {
+                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2971,7 +2971,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2979,7 +2979,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -2987,7 +2987,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3022,7 +3022,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3030,7 +3030,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3038,7 +3038,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3067,7 +3067,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3075,7 +3075,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3083,7 +3083,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3112,7 +3112,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3120,7 +3120,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3128,7 +3128,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3157,7 +3157,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3165,7 +3165,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3173,7 +3173,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3223,7 +3223,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3231,7 +3231,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3239,7 +3239,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3276,7 +3276,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3284,7 +3284,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3292,52 +3292,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                const _: () = assert!(true, "std::is_signed_v<std::iter_difference_t<CharT*>>");;
-                let mut buffer: [(); 1] = [0_()];
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-        },
-        |expected: (), fmt: (), args: Ptr<Ptr<()>>| {
-            let expected: Value<()> = Rc::new(RefCell::new(expected));
-            let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-            {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3366,7 +3321,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3374,7 +3329,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3382,7 +3337,52 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                const _: () = assert!(true, "std::is_signed_v<std::iter_difference_t<CharT*>>");;
+                let mut buffer: [(); 1] = [0_()];
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+        },
+        |expected: (), fmt: (), args: Ptr<Ptr<()>>| {
+            let expected: Value<()> = Rc::new(RefCell::new(expected));
+            let fmt: Value<()> = Rc::new(RefCell::new(fmt));
+            {
+                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3411,7 +3411,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3419,7 +3419,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3427,52 +3427,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                const _: () = assert!(true, "std::is_signed_v<std::iter_difference_t<CharT*>>");;
-                let mut buffer: [(); 1] = [0_()];
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-        },
-        |expected: (), fmt: (), args: Ptr<()>| {
-            let expected: Value<()> = Rc::new(RefCell::new(expected));
-            let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-            {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
-                unimplemented!();
-                unimplemented!();
-            }
-            {
-                let mut out: () = unimplemented!();
-                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3501,7 +3456,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3509,7 +3464,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3517,7 +3472,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3546,7 +3501,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3554,7 +3509,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3562,7 +3517,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3591,7 +3546,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3599,7 +3554,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3607,7 +3562,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3636,7 +3591,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3644,7 +3599,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3652,7 +3607,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3681,7 +3636,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3689,7 +3644,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3697,7 +3652,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3726,7 +3681,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3734,7 +3689,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3742,7 +3697,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3771,7 +3726,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3779,7 +3734,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3787,7 +3742,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3816,7 +3771,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3824,7 +3779,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3832,7 +3787,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3861,7 +3816,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3869,7 +3824,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3877,7 +3832,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3906,7 +3861,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3914,7 +3869,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3922,7 +3877,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3951,7 +3906,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3959,7 +3914,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -3967,7 +3922,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3996,7 +3951,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4004,7 +3959,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4012,7 +3967,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4041,7 +3996,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4049,7 +4004,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4057,7 +4012,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4086,7 +4041,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4094,7 +4049,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4102,7 +4057,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4131,7 +4086,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4139,7 +4094,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4147,7 +4102,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4176,7 +4131,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4184,7 +4139,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4192,7 +4147,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4221,7 +4176,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4229,7 +4184,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4237,7 +4192,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4266,7 +4221,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4274,7 +4229,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4282,7 +4237,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4311,7 +4266,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4319,7 +4274,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4327,7 +4282,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4356,7 +4311,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4364,7 +4319,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4372,7 +4327,52 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                const _: () = assert!(true, "std::is_signed_v<std::iter_difference_t<CharT*>>");;
+                let mut buffer: [(); 1] = [0_()];
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+        },
+        |expected: (), fmt: (), args: Ptr<()>| {
+            let expected: Value<()> = Rc::new(RefCell::new(expected));
+            let fmt: Value<()> = Rc::new(RefCell::new(fmt));
+            {
+                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut out: () = unimplemented!();
+                let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut formatted_size: () = unimplemented!();
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -4401,7 +4401,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4409,7 +4409,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
             }
@@ -4417,7 +4417,7 @@ thread_local!(
                 let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
-                let mut size: () = ((unimplemented!().read()) as ());
+                let mut size: () = (unimplemented!().read());
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();

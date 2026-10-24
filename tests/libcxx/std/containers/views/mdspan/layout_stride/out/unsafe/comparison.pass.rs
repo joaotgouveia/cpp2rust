@@ -45,7 +45,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_int__ {
  ;
  unimplemented!() ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_int__ {
@@ -116,7 +116,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_int__5__ {
  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
     }
 }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_int__5__ {
@@ -174,7 +174,7 @@ impl always_convertible_layout_mapping_std_extents_unsigned_int__184467440737095
  { res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  ;
  res  = ( ( * unimplemented!()  )  ) . wrapping_add ( ( unimplemented!()  ) . wrapping_mul ( res ) )  } ;
  return res  ;
- } )  .spec::<fn(() ,) -> () >(0) .call ( unsafe { std::mem::zeroed::<() >() } , ) } ) ) ) )  ;
+ } )  .spec::<fn(() ,) -> () >(0) .call ( unimplemented!() , ) } ) ) ) )  ;
  } }
 impl Default for always_convertible_layout_mapping_std_extents_unsigned_int__18446744073709551615__18446744073709551615__ { fn default() -> Self { unsafe { always_convertible_layout_mapping_std_extents_unsigned_int__18446744073709551615__18446744073709551615__ { extents_ : unimplemented!() , offset_ : unimplemented!() , scaling_ : unimplemented!() , } } } }
 #[repr(C)]

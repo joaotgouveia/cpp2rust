@@ -357,7 +357,7 @@ const _: () = assert!(
 pub unsafe fn test_5() -> () {
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_void__MovableNonTrivial_ = unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -365,15 +365,14 @@ pub unsafe fn test_5() -> () {
     }
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_void__int_ = unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut e1: () = unimplemented!();
-        let mut e2: std_expected_void__TailClobbererNonTrivialMove_1__true__false__ =
-            unimplemented!();
+        let mut e2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

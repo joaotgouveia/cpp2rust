@@ -268,7 +268,7 @@ impl ElementPool_int__1024_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (1024_())) {
             unimplemented!();
@@ -277,7 +277,7 @@ impl ElementPool_int__1024_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *mut () {
-        return (self.ptr_ as *mut ()).cast::<()>();
+        return self.ptr_;
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();
@@ -303,7 +303,7 @@ impl ElementPool_const_int__1024_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (1024_())) {
             unimplemented!();
@@ -312,7 +312,7 @@ impl ElementPool_const_int__1024_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *const () {
-        return ((self.ptr_).cast_const() as *const ()).cast::<()>();
+        return (self.ptr_).cast_const();
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();
@@ -338,7 +338,7 @@ impl ElementPool_double__1024_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (1024_())) {
             unimplemented!();
@@ -347,7 +347,7 @@ impl ElementPool_double__1024_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *mut () {
-        return (self.ptr_ as *mut ()).cast::<()>();
+        return self.ptr_;
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();
@@ -373,7 +373,7 @@ impl ElementPool_const_double__1024_ {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
-        this.ptr_ = (unimplemented!() as *mut ()).cast::<()>();
+        this.ptr_ = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (1024_())) {
             unimplemented!();
@@ -382,7 +382,7 @@ impl ElementPool_const_double__1024_ {
         this
     }
     pub unsafe fn get_ptr(&mut self) -> *const () {
-        return ((self.ptr_).cast_const() as *const ()).cast::<()>();
+        return (self.ptr_).cast_const();
     }
     pub unsafe fn destructor(&mut self) {
         let mut i: () = 0_();

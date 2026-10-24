@@ -155,87 +155,95 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(7)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(7)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(7)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(7)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -302,18 +310,18 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
+            .spec::<fn((), (), *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_0: () = unimplemented!();
@@ -336,87 +344,95 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(17) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(17) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(17) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(17) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -483,18 +499,18 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
+            .spec::<fn((), (), *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_1: () = unimplemented!();
@@ -517,87 +533,95 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(43) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(43)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(43) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(43)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(43) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(43)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(43) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(43)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -664,18 +688,18 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
+            .spec::<fn((), (), *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_2: () = unimplemented!();
@@ -698,87 +722,95 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(53) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(53) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(53) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(53) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -845,18 +877,18 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
+            .spec::<fn((), (), *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_3: () = unimplemented!();
@@ -879,111 +911,94 @@ pub unsafe fn test_tuple_or_pair_int_string_6(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_string_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(9)
+            .spec::<fn((), (), *mut (), *mut ())>(9)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_string_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(9)
+            .spec::<fn((), (), *mut (), *mut ())>(9)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_string_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(9)
+            .spec::<fn((), (), *mut (), *mut ())>(9)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_string_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(9)
+            .spec::<fn((), (), *mut (), *mut ())>(9)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -1051,17 +1066,19 @@ pub unsafe fn test_tuple_or_pair_int_string_6(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(8)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_4: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_4;
@@ -1083,132 +1100,94 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_string__ref__int_,
-                *mut (),
-                *mut (),
-            )>(11)
+            .spec::<fn((), (), *mut (), *mut ())>(11)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_string__ref__int_,
-                *mut (),
-                *mut (),
-            )>(11)
+            .spec::<fn((), (), *mut (), *mut ())>(11)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_string__ref__int_,
-                *mut (),
-                *mut (),
-            )>(11)
+            .spec::<fn((), (), *mut (), *mut ())>(11)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_string__ref__int_,
-                *mut (),
-                *mut (),
-            )>(11)
+            .spec::<fn((), (), *mut (), *mut ())>(11)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -1276,22 +1255,18 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
-                10,
-            )
+            .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_5: () = unimplemented!();
@@ -1314,111 +1289,94 @@ pub unsafe fn test_tuple_or_pair_int_string_8(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(13)
+            .spec::<fn((), (), *mut (), *mut ())>(13)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(13)
+            .spec::<fn((), (), *mut (), *mut ())>(13)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(13)
+            .spec::<fn((), (), *mut (), *mut ())>(13)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(13)
+            .spec::<fn((), (), *mut (), *mut ())>(13)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -1486,17 +1444,19 @@ pub unsafe fn test_tuple_or_pair_int_string_8(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(12)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_6: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_6;
@@ -1518,111 +1478,94 @@ pub unsafe fn test_tuple_or_pair_int_string_9(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(19)
+            .spec::<fn((), (), *mut (), *mut ())>(19)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(19)
+            .spec::<fn((), (), *mut (), *mut ())>(19)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(19)
+            .spec::<fn((), (), *mut (), *mut ())>(19)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(19)
+            .spec::<fn((), (), *mut (), *mut ())>(19)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -1690,17 +1633,19 @@ pub unsafe fn test_tuple_or_pair_int_string_9(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(18)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_7: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_7;
@@ -1722,132 +1667,94 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_string__ref__int_,
-                *mut (),
-                *mut (),
-            )>(21)
+            .spec::<fn((), (), *mut (), *mut ())>(21)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_string__ref__int_,
-                *mut (),
-                *mut (),
-            )>(21)
+            .spec::<fn((), (), *mut (), *mut ())>(21)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_string__ref__int_,
-                *mut (),
-                *mut (),
-            )>(21)
+            .spec::<fn((), (), *mut (), *mut ())>(21)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_string__ref__int_,
-                *mut (),
-                *mut (),
-            )>(21)
+            .spec::<fn((), (), *mut (), *mut ())>(21)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -1915,22 +1822,18 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
-                20,
-            )
+            .spec::<fn((), (), *mut ())>(20)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_8: () = unimplemented!();
@@ -1953,111 +1856,94 @@ pub unsafe fn test_tuple_or_pair_int_string_11(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(23)
+            .spec::<fn((), (), *mut (), *mut ())>(23)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(23)
+            .spec::<fn((), (), *mut (), *mut ())>(23)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(23)
+            .spec::<fn((), (), *mut (), *mut ())>(23)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(23)
+            .spec::<fn((), (), *mut (), *mut ())>(23)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -2125,17 +2011,19 @@ pub unsafe fn test_tuple_or_pair_int_string_11(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_9: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_9;
@@ -2157,111 +2045,94 @@ pub unsafe fn test_tuple_or_pair_int_string_12(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(45)
+            .spec::<fn((), (), *mut (), *mut ())>(45)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(45)
+            .spec::<fn((), (), *mut (), *mut ())>(45)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(45)
+            .spec::<fn((), (), *mut (), *mut ())>(45)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(45)
+            .spec::<fn((), (), *mut (), *mut ())>(45)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -2329,17 +2200,19 @@ pub unsafe fn test_tuple_or_pair_int_string_12(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(44)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_10: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_10;
@@ -2361,111 +2234,94 @@ pub unsafe fn test_tuple_or_pair_int_string_13(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_,
-                *mut (),
-                *mut (),
-            )>(47)
+            .spec::<fn((), (), *mut (), *mut ())>(47)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_,
-                *mut (),
-                *mut (),
-            )>(47)
+            .spec::<fn((), (), *mut (), *mut ())>(47)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_,
-                *mut (),
-                *mut (),
-            )>(47)
+            .spec::<fn((), (), *mut (), *mut ())>(47)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_,
-                *mut (),
-                *mut (),
-            )>(47)
+            .spec::<fn((), (), *mut (), *mut ())>(47)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -2533,17 +2389,19 @@ pub unsafe fn test_tuple_or_pair_int_string_13(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_11: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_11;
@@ -2565,111 +2423,94 @@ pub unsafe fn test_tuple_or_pair_int_string_14(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(49)
+            .spec::<fn((), (), *mut (), *mut ())>(49)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(49)
+            .spec::<fn((), (), *mut (), *mut ())>(49)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(49)
+            .spec::<fn((), (), *mut (), *mut ())>(49)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(49)
+            .spec::<fn((), (), *mut (), *mut ())>(49)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -2737,17 +2578,19 @@ pub unsafe fn test_tuple_or_pair_int_string_14(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(48)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_12: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_12;
@@ -2769,111 +2612,94 @@ pub unsafe fn test_tuple_or_pair_int_string_15(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(55)
+            .spec::<fn((), (), *mut (), *mut ())>(55)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(55)
+            .spec::<fn((), (), *mut (), *mut ())>(55)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(55)
+            .spec::<fn((), (), *mut (), *mut ())>(55)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_,
-                *mut (),
-                *mut (),
-            )>(55)
+            .spec::<fn((), (), *mut (), *mut ())>(55)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -2941,17 +2767,19 @@ pub unsafe fn test_tuple_or_pair_int_string_15(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(54)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_13: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_13;
@@ -2973,111 +2801,94 @@ pub unsafe fn test_tuple_or_pair_int_string_16(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_,
-                *mut (),
-                *mut (),
-            )>(57)
+            .spec::<fn((), (), *mut (), *mut ())>(57)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_,
-                *mut (),
-                *mut (),
-            )>(57)
+            .spec::<fn((), (), *mut (), *mut ())>(57)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_,
-                *mut (),
-                *mut (),
-            )>(57)
+            .spec::<fn((), (), *mut (), *mut ())>(57)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_,
-                *mut (),
-                *mut (),
-            )>(57)
+            .spec::<fn((), (), *mut (), *mut ())>(57)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -3145,17 +2956,19 @@ pub unsafe fn test_tuple_or_pair_int_string_16(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(56)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_14: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_14;
@@ -3177,111 +2990,94 @@ pub unsafe fn test_tuple_or_pair_int_string_17(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(59)
+            .spec::<fn((), (), *mut (), *mut ())>(59)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(59)
+            .spec::<fn((), (), *mut (), *mut ())>(59)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(59)
+            .spec::<fn((), (), *mut (), *mut ())>(59)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_,
-                *mut (),
-                *mut (),
-            )>(59)
+            .spec::<fn((), (), *mut (), *mut ())>(59)
             .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
@@ -3349,17 +3145,19 @@ pub unsafe fn test_tuple_or_pair_int_string_17(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(58)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_15: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_15;
@@ -3385,57 +3183,47 @@ pub unsafe fn test_escaping_18(mut check: FnPtr<Generic>, input: *mut ()) {
     );;
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
-                34,
-            )
+            .spec::<fn((), (), *mut ())>(34)
             .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_19(input) })) = ('\t' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
-                34,
-            )
+            .spec::<fn((), (), *mut ())>(34)
             .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_19(input) })) = ('\n' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
-                34,
-            )
+            .spec::<fn((), (), *mut ())>(34)
             .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_19(input) })) = ('\0' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
-                34,
-            )
+            .spec::<fn((), (), *mut ())>(34)
             .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_19(input) })) = ('*' as ());
     unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
-                34,
-            )
+            .spec::<fn((), (), *mut ())>(34)
             .call(_expected, _fmt, _args)
     });
 }
@@ -3450,38 +3238,48 @@ pub unsafe fn test_escaping_20(mut check: FnPtr<Generic>, input: *mut ()) {
     );;
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(35)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_21(input) })) = ('\t' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(35)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_21(input) })) = ('\n' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(35)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_21(input) })) = ('\0' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(35)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_21(input) })) = ('*' as ());
     unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(35)
+            .call(_expected, _fmt, _args)
     });
 }
 pub unsafe fn test_escaping_22(mut check: FnPtr<Generic>, input: *mut ()) {
@@ -3495,43 +3293,48 @@ pub unsafe fn test_escaping_22(mut check: FnPtr<Generic>, input: *mut ()) {
     );;
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(70)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_23(input) })) = ('\t' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(70)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_23(input) })) = ('\n' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(70)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_23(input) })) = ('\0' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(70)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_23(input) })) = ('*' as ());
     unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(70)
+            .call(_expected, _fmt, _args)
     });
 }
 pub unsafe fn test_escaping_24(mut check: FnPtr<Generic>, input: *mut ()) {
@@ -3545,43 +3348,48 @@ pub unsafe fn test_escaping_24(mut check: FnPtr<Generic>, input: *mut ()) {
     );;
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(71)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_25(input) })) = ('\t' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(71)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_25(input) })) = ('\n' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(71)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_25(input) })) = ('\0' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(71)
+            .call(_expected, _fmt, _args)
     });
     (*(unsafe { get_25(input) })) = ('*' as ());
     unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(71)
+            .call(_expected, _fmt, _args)
     });
 }
 pub unsafe fn test_pair_int_int_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
@@ -3646,76 +3454,96 @@ pub unsafe fn test_tuple_int_30(mut check: FnPtr<Generic>, mut check_exception: 
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
+            .spec::<fn((), (), *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
+            .spec::<fn((), (), *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
+            .spec::<fn((), (), *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
+            .spec::<fn((), (), *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
+            .spec::<fn((), (), *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
+            .spec::<fn((), (), *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
+            .spec::<fn((), (), *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 9_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(15) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
+        check.spec::<fn((), (), *mut (), *mut ())>(15).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 9_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(15) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
+        check.spec::<fn((), (), *mut (), *mut ())>(15).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 9_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(15) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
+        check.spec::<fn((), (), *mut (), *mut ())>(15).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 9_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(15) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
+        check.spec::<fn((), (), *mut (), *mut ())>(15).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
     });
     (unsafe {
         check_exception.spec::<fn((), (), *mut ())>(4).call(
@@ -3789,9 +3617,9 @@ pub unsafe fn test_tuple_int_30(mut check: FnPtr<Generic>, mut check_exception: 
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
+            .spec::<fn((), (), *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     let mut __tmp_16: () = unimplemented!();
@@ -3811,76 +3639,96 @@ pub unsafe fn test_tuple_int_31(mut check: FnPtr<Generic>, mut check_exception: 
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
+            .spec::<fn((), (), *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
+            .spec::<fn((), (), *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
+            .spec::<fn((), (), *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
+            .spec::<fn((), (), *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
+            .spec::<fn((), (), *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
+            .spec::<fn((), (), *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
+            .spec::<fn((), (), *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 9_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
+        check.spec::<fn((), (), *mut (), *mut ())>(51).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 9_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
+        check.spec::<fn((), (), *mut (), *mut ())>(51).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 9_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
+        check.spec::<fn((), (), *mut (), *mut ())>(51).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 9_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
+        check.spec::<fn((), (), *mut (), *mut ())>(51).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
     });
     (unsafe {
         check_exception.spec::<fn((), (), *mut ())>(18).call(
@@ -3954,9 +3802,9 @@ pub unsafe fn test_tuple_int_31(mut check: FnPtr<Generic>, mut check_exception: 
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
+            .spec::<fn((), (), *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     let mut __tmp_17: () = unimplemented!();
@@ -3979,192 +3827,160 @@ pub unsafe fn test_tuple_int_string_color_32(
     let input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_,
-                *const (),
-            )>(24)
+            .spec::<fn((), (), *const ())>(24)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_,
-                *const (),
-            )>(24)
+            .spec::<fn((), (), *const ())>(24)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_,
-                *const (),
-            )>(24)
+            .spec::<fn((), (), *const ())>(24)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_,
-                *const (),
-            )>(24)
+            .spec::<fn((), (), *const ())>(24)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_,
-                *const (),
-            )>(24)
+            .spec::<fn((), (), *const ())>(24)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_,
-                *const (),
-            )>(24)
+            .spec::<fn((), (), *const ())>(24)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
-            unimplemented!();
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_,
-                *const (),
-            )>(24)
+            .spec::<fn((), (), *const ())>(24)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 25_();
-        check  .spec::<fn(() ,std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ ,*const () ,*mut () ,)>(25) .call ( _expected , _fmt , & input , & mut _args_3 , )
-    });
-    (unsafe {
-        let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = unimplemented!() ;
-        let mut _args_3: () = 25_();
-        check  .spec::<fn(() ,std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ ,*const () ,*mut () ,)>(25) .call ( _expected , _fmt , & input , & mut _args_3 , )
-    });
-    (unsafe {
-        let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = unimplemented!() ;
-        let mut _args_3: () = 25_();
-        check  .spec::<fn(() ,std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ ,*const () ,*mut () ,)>(25) .call ( _expected , _fmt , & input , & mut _args_3 , )
-    });
-    (unsafe {
-        let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = unimplemented!() ;
-        let mut _args_3: () = 25_();
-        check  .spec::<fn(() ,std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ ,*const () ,*mut () ,)>(25) .call ( _expected , _fmt , & input , & mut _args_3 , )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(9).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
-            unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_,
-                *const (),
-            )>(24)
+            .spec::<fn((), (), *const (), *mut ())>(25)
+            .call(_expected, _fmt, &input, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *const (), *mut ())>(25)
+            .call(_expected, _fmt, &input, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *const (), *mut ())>(25)
+            .call(_expected, _fmt, &input, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *const (), *mut ())>(25)
+            .call(_expected, _fmt, &input, &mut _args_3)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(9).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *const ())>(24)
             .call(_expected, _fmt, &input)
     });
     let mut __tmp_18: () = unimplemented!();
@@ -4187,184 +4003,160 @@ pub unsafe fn test_tuple_int_string_color_33(
     let input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_,
-                *const (),
-            )>(60)
+            .spec::<fn((), (), *const ())>(60)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_,
-                *const (),
-            )>(60)
+            .spec::<fn((), (), *const ())>(60)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_,
-                *const (),
-            )>(60)
+            .spec::<fn((), (), *const ())>(60)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_,
-                *const (),
-            )>(60)
+            .spec::<fn((), (), *const ())>(60)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_,
-                *const (),
-            )>(60)
+            .spec::<fn((), (), *const ())>(60)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_,
-                *const (),
-            )>(60)
+            .spec::<fn((), (), *const ())>(60)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_,
-                *const (),
-            )>(60)
+            .spec::<fn((), (), *const ())>(60)
             .call(_expected, _fmt, &input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let mut _args_3: () = 25_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ ,*const () ,*mut () ,)>(61) .call ( _expected , _fmt , & input , & mut _args_3 , )
-    });
-    (unsafe {
-        let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = unimplemented!() ;
-        let mut _args_3: () = 25_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ ,*const () ,*mut () ,)>(61) .call ( _expected , _fmt , & input , & mut _args_3 , )
-    });
-    (unsafe {
-        let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = unimplemented!() ;
-        let mut _args_3: () = 25_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ ,*const () ,*mut () ,)>(61) .call ( _expected , _fmt , & input , & mut _args_3 , )
-    });
-    (unsafe {
-        let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = unimplemented!() ;
-        let mut _args_3: () = 25_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ ,*const () ,*mut () ,)>(61) .call ( _expected , _fmt , & input , & mut _args_3 , )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        check_exception.spec::<fn((), (), *const ())>(23).call(
-            unimplemented!(),
-            unimplemented!(),
-            &input,
-        )
-    });
-    (unsafe {
-        let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_,
-                *const (),
-            )>(60)
+            .spec::<fn((), (), *const (), *mut ())>(61)
+            .call(_expected, _fmt, &input, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *const (), *mut ())>(61)
+            .call(_expected, _fmt, &input, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *const (), *mut ())>(61)
+            .call(_expected, _fmt, &input, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *const (), *mut ())>(61)
+            .call(_expected, _fmt, &input, &mut _args_3)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *const ())>(23).call(
+            unimplemented!(),
+            unimplemented!(),
+            &input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *const ())>(60)
             .call(_expected, _fmt, &input)
     });
     let mut __tmp_19: () = unimplemented!();
@@ -4459,115 +4251,95 @@ pub unsafe fn test_nested_38(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(27) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(27)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(27) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(27)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(27) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(27)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(27) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(27)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -4634,26 +4406,18 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(26)
+            .spec::<fn((), (), *mut ())>(26)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_20: () = unimplemented!();
@@ -4676,115 +4440,95 @@ pub unsafe fn test_nested_39(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(29) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(29)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(29) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(29)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(29) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(29)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(29) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(29)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -4851,26 +4595,18 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_,
-                *mut (),
-            )>(28)
+            .spec::<fn((), (), *mut ())>(28)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_21: () = unimplemented!();
@@ -4893,115 +4629,95 @@ pub unsafe fn test_nested_40(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(31) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(31)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(31) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(31)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(31) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(31)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(31) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(31)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -5068,26 +4784,18 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
         check
-            .spec::<fn(
-                (),
-                std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_,
-                *mut (),
-            )>(30)
+            .spec::<fn((), (), *mut ())>(30)
             .call(_expected, _fmt, _args)
     });
     let mut __tmp_22: () = unimplemented!();
@@ -5110,73 +4818,95 @@ pub unsafe fn test_nested_41(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(33)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(33)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(33)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(33)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -5243,15 +4973,19 @@ pub unsafe fn test_nested_41(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(32)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_23: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_23;
@@ -5273,73 +5007,95 @@ pub unsafe fn test_nested_42(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(63) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(63)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(63) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(63)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(63) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(63)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(63) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(63)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -5406,15 +5162,19 @@ pub unsafe fn test_nested_42(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(62)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_24: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_24;
@@ -5436,73 +5196,95 @@ pub unsafe fn test_nested_43(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(65) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(65)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(65) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(65)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(65) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(65)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(65) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(65)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -5569,15 +5351,19 @@ pub unsafe fn test_nested_43(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(64)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_25: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_25;
@@ -5599,73 +5385,95 @@ pub unsafe fn test_nested_44(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(67) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(67)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(67) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(67)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(67) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(67)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(67) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(67)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -5732,15 +5540,19 @@ pub unsafe fn test_nested_44(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_26: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_26;
@@ -5762,73 +5574,95 @@ pub unsafe fn test_nested_45(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(69) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(69)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(69) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(69)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(69) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(69)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(69) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(69)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
     });
     (unsafe {
         let _arg1: () = unimplemented!();
@@ -5895,15 +5729,19 @@ pub unsafe fn test_nested_45(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
+        let _fmt: () = unimplemented!();
         let _args: *mut () = input;
-        check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
+        check
+            .spec::<fn((), (), *mut ())>(68)
+            .call(_expected, _fmt, _args)
     });
     let mut __tmp_27: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_27;
@@ -5951,51 +5789,51 @@ pub unsafe fn run_tests_46(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int__, *mut ())>(0)
+            .spec::<fn((), (), *mut ())>(0)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_const_int__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_const_int__, *mut ())>(1)
+            .spec::<fn((), (), *mut ())>(1)
             .call(_expected, _fmt, &mut _args)
     });
     let mut answer: () = 42_();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int_ref__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int_ref__, *mut ())>(2)
+            .spec::<fn((), (), *mut ())>(2)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_const_int_ref__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_const_int_ref__, *mut ())>(3)
+            .spec::<fn((), (), *mut ())>(3)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int_refref__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_int_refref__, *mut ())>(4)
+            .spec::<fn((), (), *mut ())>(4)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_const_int_refref__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_char__std_tuple_const_int_refref__, *mut ())>(5)
+            .spec::<fn((), (), *mut ())>(5)
             .call(_expected, _fmt, &mut _args)
     });
 }
@@ -6032,53 +5870,51 @@ pub unsafe fn run_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__, *mut ())>(36)
+            .spec::<fn((), (), *mut ())>(36)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_const_int__, *mut ())>(37)
+            .spec::<fn((), (), *mut ())>(37)
             .call(_expected, _fmt, &mut _args)
     });
     let mut answer: () = 42_();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int_ref__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int_ref__, *mut ())>(38)
+            .spec::<fn((), (), *mut ())>(38)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int_ref__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_const_int_ref__, *mut ())>(39)
+            .spec::<fn((), (), *mut ())>(39)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int_refref__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int_refref__, *mut ())>(40)
+            .spec::<fn((), (), *mut ())>(40)
             .call(_expected, _fmt, &mut _args)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int_refref__ = unimplemented!();
+        let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
         check
-            .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_const_int_refref__, *mut ())>(
-                41,
-            )
+            .spec::<fn((), (), *mut ())>(41)
             .call(_expected, _fmt, &mut _args)
     });
 }
@@ -6430,583 +6266,1882 @@ pub unsafe fn test_concat_message_75(
     panic!("ub: non-void function does not return a value")
 }
 pub static mut test_76: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCell::new(|| unsafe {
-    lambda_unsafe! ( Generic , { } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_53 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_const_int__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_const_int__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_77 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int_ref__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int_ref__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_78 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_const_int_ref__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_const_int_ref__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_79 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int_refref__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int_refref__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_80 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_const_int_refref__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_const_int_refref__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_81 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__int__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__int__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_82 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__int__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__int__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_83 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__std_string_view__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__std_string_view__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_84 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_85 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__std_string__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__std_string__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_86 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__std_string__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__std_string__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_87 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_88 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_89 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_90 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_91 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__int__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__int__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_92 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__int__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__int__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_93 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__std_string_view__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_94 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_95 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__std_string__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__std_string__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_96 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__std_string__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__std_string__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_97 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_98 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_99 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ , args : *const () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_100 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ , args_2 : *const () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_101 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_102 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_103 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_104 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_105 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_106 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_107 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_108 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_109 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_pair_char__std_string__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_pair_char__std_string__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_110 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_char__std_tuple_char__std_string__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_char__std_tuple_char__std_string__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_111 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_112 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_const_int__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_const_int__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_113 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int_ref__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int_ref__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_114 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_const_int_ref__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_const_int_ref__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_115 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int_refref__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int_refref__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_116 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_const_int_refref__ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_const_int_refref__ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_117 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__int__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__int__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_118 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_119 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_120 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_121 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_122 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_123 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_124 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_125 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_126 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_127 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__int__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_128 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_129 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_130 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_131 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_132 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_133 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_134 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_135 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ , args : *const () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_136 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ , args_2 : *const () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_137 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_138 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_139 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_140 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_141 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_142 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_143 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_144 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ , args_2 : *mut () , args_3 : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_145 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_146 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ , args : *mut () , | { let mut out : () = unimplemented!()  ;
-  ;
- ;
- ( unsafe { let _condition: ()  = unimplemented!()  ; let mut _arg : FnPtr<fn()>  = lambda_unsafe! ( { let fmt : *mut std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ = & mut fmt ;
- let expected : *mut () = & mut expected ;
- let out : *mut () = & mut out ;
- } , | | { ( unsafe { let mut _args : *const ()  = ( unimplemented!()  as *const () ) ; test_eprintf_50 ( c"%s" .as_ptr() , & mut _args , ) } )  ;
- } ) ; test_require_147 ( _condition , c"out == expected" .as_ptr() , c"format.functions.format.pass.cpp" .as_ptr() , 42_() , & mut _arg , ) } )  ;
- } )
+    lambda_unsafe!(
+        Generic,
+        {},
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_53(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_77(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_78(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_79(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_80(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_81(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_82(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_83(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_84(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_85(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_86(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_87(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_88(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_89(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_90(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_91(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_92(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_93(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_94(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_95(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_96(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_97(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_98(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_99(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *const ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_100(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *const (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_101(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_102(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_103(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_104(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_105(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_106(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_107(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_108(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_109(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_110(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_111(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_112(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_113(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_114(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_115(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_116(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_117(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_118(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_119(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_120(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_121(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_122(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_123(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_124(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_125(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_126(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_127(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_128(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_129(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_130(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_131(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_132(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_133(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_134(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_135(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *const ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_136(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *const (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_137(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_138(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_139(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_140(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_141(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_142(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_143(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_144(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_145(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_146(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        },
+        |mut expected: (), mut fmt: (), args: *mut ()| {
+            let mut out: () = unimplemented!();
+            (unsafe {
+                let _condition: () = unimplemented!();
+                let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                    {
+                        let fmt: *mut () = &mut fmt;
+                        let expected: *mut () = &mut expected;
+                        let out: *mut () = &mut out;
+                    },
+                    || {
+                        (unsafe {
+                            let mut _args: *const () = (unimplemented!() as *const ());
+                            test_eprintf_50(c"%s".as_ptr(), &mut _args)
+                        });
+                    }
+                );
+                test_require_147(
+                    _condition,
+                    c"out == expected".as_ptr(),
+                    c"format.functions.format.pass.cpp".as_ptr(),
+                    42_(),
+                    &mut _arg,
+                )
+            });
+        }
+    )
 });
 pub static mut test_exception_148: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {

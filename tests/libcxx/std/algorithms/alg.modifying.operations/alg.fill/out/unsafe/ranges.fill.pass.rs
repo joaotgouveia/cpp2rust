@@ -652,7 +652,7 @@ pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1881,7 +1881,7 @@ pub unsafe fn test_28() -> () {
         }
     }
     {
-        let mut ret: std_ranges_dangling = (unsafe {
+        let mut ret: () = (unsafe {
             let mut ___range: () = unimplemented!();
             let mut ___value: () = 1_();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fill_19))(&mut ___range, &mut ___value)
@@ -1889,7 +1889,7 @@ pub unsafe fn test_28() -> () {
     }
     {
         let mut a: () = unimplemented!();
-        let mut ret: *mut () = (unsafe {
+        let mut ret: () = (unsafe {
             let mut ___range: () =
                 (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut all_30))(&mut a) });
             let mut ___value: () = 1_();
@@ -1914,7 +1914,7 @@ pub unsafe fn test_28() -> () {
         }
         {
             let mut a: () = unimplemented!();
-            let mut ret: *mut () = (unsafe {
+            let mut ret: () = (unsafe {
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut fill_19))(
                     &mut a,
                     &std::mem::transmute(*b"long long string so no SSO\0"),

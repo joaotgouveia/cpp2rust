@@ -29,7 +29,7 @@ pub unsafe fn CreateTuple_0(mut _a0: ()) {
     unimplemented!();
 }
 pub unsafe fn test_3() -> () {
-    (unsafe { CreateTuple_0(unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { CreateTuple_0(unimplemented!()) });
     return true;
 }
 pub fn main() {

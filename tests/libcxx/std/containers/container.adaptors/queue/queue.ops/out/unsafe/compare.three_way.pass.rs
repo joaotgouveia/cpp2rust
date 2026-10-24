@@ -288,34 +288,31 @@ pub unsafe fn operator_eq_9(
 ) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_cmp_0(
-    x: *const nasty_list_int_,
-    y: *const nasty_list_int_,
-) -> std_strong_ordering {
+pub unsafe fn operator_cmp_0(x: *const nasty_list_int_, y: *const nasty_list_int_) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_2(
     x: *const nasty_list_StrongOrder_,
     y: *const nasty_list_StrongOrder_,
-) -> std_strong_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_4(
     x: *const nasty_list_WeakOrder_,
     y: *const nasty_list_WeakOrder_,
-) -> std_weak_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_6(
     x: *const nasty_list_PartialOrder_,
     y: *const nasty_list_PartialOrder_,
-) -> std_partial_ordering {
+) -> () {
     return unimplemented!();
 }
 pub unsafe fn operator_cmp_8(
     x: *const nasty_list_LessAndEqComp_,
     y: *const nasty_list_LessAndEqComp_,
-) -> std_weak_ordering {
+) -> () {
     return unimplemented!();
 }
 #[repr(C)]

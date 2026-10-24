@@ -686,7 +686,7 @@ pub trait mv_allocator_char_Impl {
 }
 impl mv_allocator_char_Impl for Ptr<mv_allocator_char_> {
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
-        ({ (unimplemented!() as std___new_allocator_char_).deallocate((p).clone(), n) });
+        unimplemented!();
     }
 }
 pub fn __cpp2rust_init_globals() {

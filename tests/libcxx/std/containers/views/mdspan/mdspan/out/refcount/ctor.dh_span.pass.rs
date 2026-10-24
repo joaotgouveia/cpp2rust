@@ -69,7 +69,7 @@ impl ElementPool_int__1024_ {
             ptr_: Ptr::<()>::null(),
         }));
         let this: Ptr<ElementPool_int__1024_> = __this.as_pointer();
-        field!(this, ptr_).write((unimplemented!()).reinterpret_cast::<()>());
+        field!(this, ptr_).write(unimplemented!());
         let mut i: () = 0_();
         'loop_: while (i != 1024_()) {
             unimplemented!();
@@ -96,7 +96,7 @@ impl ElementPool_const_int__1024_ {
             ptr_: Ptr::<()>::null(),
         }));
         let this: Ptr<ElementPool_const_int__1024_> = __this.as_pointer();
-        field!(this, ptr_).write((unimplemented!()).reinterpret_cast::<()>());
+        field!(this, ptr_).write(unimplemented!());
         let mut i: () = 0_();
         'loop_: while (i != 1024_()) {
             unimplemented!();
@@ -123,7 +123,7 @@ impl ElementPool_double__1024_ {
             ptr_: Ptr::<()>::null(),
         }));
         let this: Ptr<ElementPool_double__1024_> = __this.as_pointer();
-        field!(this, ptr_).write((unimplemented!()).reinterpret_cast::<()>());
+        field!(this, ptr_).write(unimplemented!());
         let mut i: () = 0_();
         'loop_: while (i != 1024_()) {
             unimplemented!();
@@ -150,7 +150,7 @@ impl ElementPool_const_double__1024_ {
             ptr_: Ptr::<()>::null(),
         }));
         let this: Ptr<ElementPool_const_double__1024_> = __this.as_pointer();
-        field!(this, ptr_).write((unimplemented!()).reinterpret_cast::<()>());
+        field!(this, ptr_).write(unimplemented!());
         let mut i: () = 0_();
         'loop_: while (i != 1024_()) {
             unimplemented!();
@@ -6601,7 +6601,7 @@ pub fn test_mdspan_ctor_264(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6637,7 +6637,7 @@ pub fn test_mdspan_ctor_266(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6673,7 +6673,7 @@ pub fn test_mdspan_ctor_267(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6708,7 +6708,7 @@ pub fn test_mdspan_ctor_268(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6743,7 +6743,7 @@ pub fn test_mdspan_ctor_269(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6778,7 +6778,7 @@ pub fn test_mdspan_ctor_270(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6813,7 +6813,7 @@ pub fn test_mdspan_ctor_271(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6849,7 +6849,7 @@ pub fn test_mdspan_ctor_272(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6885,7 +6885,7 @@ pub fn test_mdspan_ctor_273(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6920,7 +6920,7 @@ pub fn test_mdspan_ctor_274(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6955,7 +6955,7 @@ pub fn test_mdspan_ctor_275(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -6990,7 +6990,7 @@ pub fn test_mdspan_ctor_276(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -7032,7 +7032,7 @@ pub fn test_mdspan_ctor_277(
             ({
                 array_from_extents_48(
                     ({ layout_wrapping_integral_8__mapping_std_extents_int__Impl::extents(&map) }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -7079,7 +7079,7 @@ pub fn test_mdspan_ctor_278(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -7130,7 +7130,7 @@ pub fn test_mdspan_ctor_279(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_int__7__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -7178,7 +7178,7 @@ pub fn test_mdspan_ctor_280(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -7224,7 +7224,7 @@ pub fn test_mdspan_ctor_281(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -7270,7 +7270,7 @@ pub fn test_mdspan_ctor_282(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -7817,7 +7817,7 @@ pub fn test_mdspan_ctor_313(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -7853,7 +7853,7 @@ pub fn test_mdspan_ctor_314(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -7889,7 +7889,7 @@ pub fn test_mdspan_ctor_315(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -7924,7 +7924,7 @@ pub fn test_mdspan_ctor_316(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -7959,7 +7959,7 @@ pub fn test_mdspan_ctor_317(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -7994,7 +7994,7 @@ pub fn test_mdspan_ctor_318(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -8029,7 +8029,7 @@ pub fn test_mdspan_ctor_319(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -8065,7 +8065,7 @@ pub fn test_mdspan_ctor_320(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -8101,7 +8101,7 @@ pub fn test_mdspan_ctor_321(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -8136,7 +8136,7 @@ pub fn test_mdspan_ctor_322(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -8171,7 +8171,7 @@ pub fn test_mdspan_ctor_323(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -8206,7 +8206,7 @@ pub fn test_mdspan_ctor_324(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -8248,7 +8248,7 @@ pub fn test_mdspan_ctor_325(
             ({
                 array_from_extents_48(
                     ({ layout_wrapping_integral_8__mapping_std_extents_int__Impl::extents(&map) }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -8295,7 +8295,7 @@ pub fn test_mdspan_ctor_326(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -8346,7 +8346,7 @@ pub fn test_mdspan_ctor_327(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_int__7__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -8394,7 +8394,7 @@ pub fn test_mdspan_ctor_328(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -8440,7 +8440,7 @@ pub fn test_mdspan_ctor_329(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -8486,7 +8486,7 @@ pub fn test_mdspan_ctor_330(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -9033,7 +9033,7 @@ pub fn test_mdspan_ctor_361(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9069,7 +9069,7 @@ pub fn test_mdspan_ctor_362(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9105,7 +9105,7 @@ pub fn test_mdspan_ctor_363(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9140,7 +9140,7 @@ pub fn test_mdspan_ctor_364(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9175,7 +9175,7 @@ pub fn test_mdspan_ctor_365(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9210,7 +9210,7 @@ pub fn test_mdspan_ctor_366(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9245,7 +9245,7 @@ pub fn test_mdspan_ctor_367(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9281,7 +9281,7 @@ pub fn test_mdspan_ctor_368(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9317,7 +9317,7 @@ pub fn test_mdspan_ctor_369(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9352,7 +9352,7 @@ pub fn test_mdspan_ctor_370(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9387,7 +9387,7 @@ pub fn test_mdspan_ctor_371(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9422,7 +9422,7 @@ pub fn test_mdspan_ctor_372(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -9464,7 +9464,7 @@ pub fn test_mdspan_ctor_373(
             ({
                 array_from_extents_48(
                     ({ layout_wrapping_integral_8__mapping_std_extents_int__Impl::extents(&map) }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -9511,7 +9511,7 @@ pub fn test_mdspan_ctor_374(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -9562,7 +9562,7 @@ pub fn test_mdspan_ctor_375(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_int__7__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -9610,7 +9610,7 @@ pub fn test_mdspan_ctor_376(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -9656,7 +9656,7 @@ pub fn test_mdspan_ctor_377(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -9702,7 +9702,7 @@ pub fn test_mdspan_ctor_378(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -10249,7 +10249,7 @@ pub fn test_mdspan_ctor_409(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10285,7 +10285,7 @@ pub fn test_mdspan_ctor_410(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10321,7 +10321,7 @@ pub fn test_mdspan_ctor_411(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10356,7 +10356,7 @@ pub fn test_mdspan_ctor_412(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10391,7 +10391,7 @@ pub fn test_mdspan_ctor_413(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10426,7 +10426,7 @@ pub fn test_mdspan_ctor_414(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10461,7 +10461,7 @@ pub fn test_mdspan_ctor_415(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10497,7 +10497,7 @@ pub fn test_mdspan_ctor_416(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10533,7 +10533,7 @@ pub fn test_mdspan_ctor_417(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10568,7 +10568,7 @@ pub fn test_mdspan_ctor_418(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10603,7 +10603,7 @@ pub fn test_mdspan_ctor_419(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10638,7 +10638,7 @@ pub fn test_mdspan_ctor_420(handle: Ptr<Ptr<()>>, map: Ptr<()>, acc: Ptr<()>) {
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<()>> = (handle).clone();
@@ -10680,7 +10680,7 @@ pub fn test_mdspan_ctor_421(
             ({
                 array_from_extents_48(
                     ({ layout_wrapping_integral_8__mapping_std_extents_int__Impl::extents(&map) }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -10727,7 +10727,7 @@ pub fn test_mdspan_ctor_422(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -10778,7 +10778,7 @@ pub fn test_mdspan_ctor_423(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_int__7__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -10826,7 +10826,7 @@ pub fn test_mdspan_ctor_424(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -10872,7 +10872,7 @@ pub fn test_mdspan_ctor_425(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -10918,7 +10918,7 @@ pub fn test_mdspan_ctor_426(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -11061,7 +11061,7 @@ pub fn test_mdspan_ctor_433(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11101,7 +11101,7 @@ pub fn test_mdspan_ctor_434(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11141,7 +11141,7 @@ pub fn test_mdspan_ctor_435(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11180,7 +11180,7 @@ pub fn test_mdspan_ctor_436(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11219,7 +11219,7 @@ pub fn test_mdspan_ctor_437(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11258,7 +11258,7 @@ pub fn test_mdspan_ctor_438(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11297,7 +11297,7 @@ pub fn test_mdspan_ctor_439(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11337,7 +11337,7 @@ pub fn test_mdspan_ctor_440(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11377,7 +11377,7 @@ pub fn test_mdspan_ctor_441(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11416,7 +11416,7 @@ pub fn test_mdspan_ctor_442(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11455,7 +11455,7 @@ pub fn test_mdspan_ctor_443(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11494,7 +11494,7 @@ pub fn test_mdspan_ctor_444(
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<move_counted_handle_const_double_> = (handle).clone();
@@ -11536,7 +11536,7 @@ pub fn test_mdspan_ctor_445(
             ({
                 array_from_extents_48(
                     ({ layout_wrapping_integral_8__mapping_std_extents_int__Impl::extents(&map) }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -11583,7 +11583,7 @@ pub fn test_mdspan_ctor_446(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -11634,7 +11634,7 @@ pub fn test_mdspan_ctor_447(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_int__7__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -11682,7 +11682,7 @@ pub fn test_mdspan_ctor_448(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -11728,7 +11728,7 @@ pub fn test_mdspan_ctor_449(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -11774,7 +11774,7 @@ pub fn test_mdspan_ctor_450(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -11913,7 +11913,7 @@ pub fn test_mdspan_ctor_457(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -11949,7 +11949,7 @@ pub fn test_mdspan_ctor_458(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -11985,7 +11985,7 @@ pub fn test_mdspan_ctor_459(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12020,7 +12020,7 @@ pub fn test_mdspan_ctor_460(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12055,7 +12055,7 @@ pub fn test_mdspan_ctor_461(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12090,7 +12090,7 @@ pub fn test_mdspan_ctor_462(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12125,7 +12125,7 @@ pub fn test_mdspan_ctor_463(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12161,7 +12161,7 @@ pub fn test_mdspan_ctor_464(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12197,7 +12197,7 @@ pub fn test_mdspan_ctor_465(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12232,7 +12232,7 @@ pub fn test_mdspan_ctor_466(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12267,7 +12267,7 @@ pub fn test_mdspan_ctor_467(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12302,7 +12302,7 @@ pub fn test_mdspan_ctor_468(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -12344,7 +12344,7 @@ pub fn test_mdspan_ctor_469(
             ({
                 array_from_extents_48(
                     ({ layout_wrapping_integral_8__mapping_std_extents_int__Impl::extents(&map) }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -12391,7 +12391,7 @@ pub fn test_mdspan_ctor_470(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -12442,7 +12442,7 @@ pub fn test_mdspan_ctor_471(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_int__7__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -12490,7 +12490,7 @@ pub fn test_mdspan_ctor_472(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -12536,7 +12536,7 @@ pub fn test_mdspan_ctor_473(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -12582,7 +12582,7 @@ pub fn test_mdspan_ctor_474(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -13129,7 +13129,7 @@ pub fn test_mdspan_ctor_505(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13165,7 +13165,7 @@ pub fn test_mdspan_ctor_506(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13201,7 +13201,7 @@ pub fn test_mdspan_ctor_507(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13236,7 +13236,7 @@ pub fn test_mdspan_ctor_508(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13271,7 +13271,7 @@ pub fn test_mdspan_ctor_509(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13306,7 +13306,7 @@ pub fn test_mdspan_ctor_510(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13341,7 +13341,7 @@ pub fn test_mdspan_ctor_511(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_48(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_48(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13377,7 +13377,7 @@ pub fn test_mdspan_ctor_512(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_49(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_49(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13413,7 +13413,7 @@ pub fn test_mdspan_ctor_513(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_50(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_50(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13448,7 +13448,7 @@ pub fn test_mdspan_ctor_514(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_51(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_51(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13483,7 +13483,7 @@ pub fn test_mdspan_ctor_515(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_52(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_52(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13518,7 +13518,7 @@ pub fn test_mdspan_ctor_516(handle: Ptr<Ptr<MinimalElementType>>, map: Ptr<()>, 
     const _: () = assert!(true, "ac == std::is_default_constructible_v<A>");;
     {
         let exts: Value<()> = Rc::new(RefCell::new(
-            ({ array_from_extents_53(unimplemented!(), <()>::default()) }),
+            ({ array_from_extents_53(unimplemented!(), unimplemented!()) }),
         ));
         ({
             let _handle: Ptr<Ptr<MinimalElementType>> = (handle).clone();
@@ -13560,7 +13560,7 @@ pub fn test_mdspan_ctor_517(
             ({
                 array_from_extents_48(
                     ({ layout_wrapping_integral_8__mapping_std_extents_int__Impl::extents(&map) }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -13607,7 +13607,7 @@ pub fn test_mdspan_ctor_518(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -13658,7 +13658,7 @@ pub fn test_mdspan_ctor_519(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_int__7__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -13706,7 +13706,7 @@ pub fn test_mdspan_ctor_520(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_unsigned_long__18446744073709551615__4__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -13752,7 +13752,7 @@ pub fn test_mdspan_ctor_521(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_signed_char__18446744073709551615__7__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -13798,7 +13798,7 @@ pub fn test_mdspan_ctor_522(
                     ({
                         layout_wrapping_integral_8__mapping_std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615__Impl :: extents ( &map  , )
                     }),
-                    <()>::default(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -17706,7 +17706,7 @@ pub trait ElementPool_const_double__1024_Impl {
 }
 impl ElementPool_const_double__1024_Impl for Ptr<ElementPool_const_double__1024_> {
     fn get_ptr(&self) -> Ptr<()> {
-        return ((*self).with(|__s| __s.ptr_.clone())).reinterpret_cast::<()>();
+        return (*self).with(|__s| __s.ptr_.clone());
     }
     fn destructor(&self) {
         let mut i: () = 0_();
@@ -17723,7 +17723,7 @@ pub trait ElementPool_const_int__1024_Impl {
 }
 impl ElementPool_const_int__1024_Impl for Ptr<ElementPool_const_int__1024_> {
     fn get_ptr(&self) -> Ptr<()> {
-        return ((*self).with(|__s| __s.ptr_.clone())).reinterpret_cast::<()>();
+        return (*self).with(|__s| __s.ptr_.clone());
     }
     fn destructor(&self) {
         let mut i: () = 0_();
@@ -17740,7 +17740,7 @@ pub trait ElementPool_double__1024_Impl {
 }
 impl ElementPool_double__1024_Impl for Ptr<ElementPool_double__1024_> {
     fn get_ptr(&self) -> Ptr<()> {
-        return ((*self).with(|__s| __s.ptr_.clone())).reinterpret_cast::<()>();
+        return (*self).with(|__s| __s.ptr_.clone());
     }
     fn destructor(&self) {
         let mut i: () = 0_();
@@ -17757,7 +17757,7 @@ pub trait ElementPool_int__1024_Impl {
 }
 impl ElementPool_int__1024_Impl for Ptr<ElementPool_int__1024_> {
     fn get_ptr(&self) -> Ptr<()> {
-        return ((*self).with(|__s| __s.ptr_.clone())).reinterpret_cast::<()>();
+        return (*self).with(|__s| __s.ptr_.clone());
     }
     fn destructor(&self) {
         let mut i: () = 0_();

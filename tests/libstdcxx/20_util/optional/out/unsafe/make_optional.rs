@@ -288,7 +288,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let i: () = 42_();
-    let mut o: std_optional_int_ = unimplemented!();
+    let mut o: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<decltype(o), std::optional<int>>()");;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -328,7 +328,7 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut o2: std_optional_std_tuple_int__int__ = (unsafe {
+    let mut o2: () = (unsafe {
         let mut ___args_0: () = 1_();
         let mut ___args_1: () = 2_();
         make_optional_11(&mut ___args_0, &mut ___args_1)
@@ -358,8 +358,7 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut o3: std_optional_std_vector_int__std_allocator_int___ =
-        (unsafe { make_optional_14(unimplemented!()) });
+    let mut o3: () = (unsafe { make_optional_14(unimplemented!()) });
     const _: () = assert!(
         true,
         "std::is_same<decltype(o3),\n\t\t std::optional<std::vector<int>>>()"
@@ -385,7 +384,7 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut o4: std_optional_combined_ = (unsafe { make_optional_15(unimplemented!()) });
+    let mut o4: () = (unsafe { make_optional_15(unimplemented!()) });
     const _: () = assert!(
         true,
         "std::is_same<decltype(o4),\n\t\t std::optional<combined>>()"
@@ -404,7 +403,7 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut o5: std_optional_combined_ = (unsafe {
+    let mut o5: () = (unsafe {
         let mut ___args_1: () = 3_();
         let mut ___args_2: () = 4_();
         make_optional_16(unimplemented!(), &mut ___args_1, &mut ___args_2)

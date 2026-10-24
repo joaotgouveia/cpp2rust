@@ -7,15 +7,15 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_seq_cst_0(
-    mut store_op: FnPtr<fn(*mut std_atomic_float_, (), ())>,
-    mut load_op: FnPtr<fn(*mut std_atomic_float_) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), (), ())>,
+    mut load_op: FnPtr<fn(*mut ()) -> ()>,
 ) {
     &(store_op);
     &(load_op);
 }
 pub unsafe fn test_seq_cst_1(
-    mut store_op: FnPtr<fn(*mut std_atomic_float_, (), ())>,
-    mut load_op: FnPtr<fn(*mut std_atomic_float_) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), (), ())>,
+    mut load_op: FnPtr<fn(*mut ()) -> ()>,
 ) {
     &(store_op);
     &(load_op);
@@ -35,15 +35,15 @@ pub unsafe fn test_seq_cst_3(
     &(load_op);
 }
 pub unsafe fn test_seq_cst_4(
-    mut store_op: FnPtr<fn(*mut std_atomic_double_, (), ())>,
-    mut load_op: FnPtr<fn(*mut std_atomic_double_) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), (), ())>,
+    mut load_op: FnPtr<fn(*mut ()) -> ()>,
 ) {
     &(store_op);
     &(load_op);
 }
 pub unsafe fn test_seq_cst_5(
-    mut store_op: FnPtr<fn(*mut std_atomic_double_, (), ())>,
-    mut load_op: FnPtr<fn(*mut std_atomic_double_) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), (), ())>,
+    mut load_op: FnPtr<fn(*mut ()) -> ()>,
 ) {
     &(store_op);
     &(load_op);
@@ -63,8 +63,8 @@ pub unsafe fn test_seq_cst_7(
     &(load_op);
 }
 pub unsafe fn test_acquire_release_8(
-    mut store_op: FnPtr<fn(*mut std_atomic_float_, (), ())>,
-    mut load_op: FnPtr<fn(*mut std_atomic_float_) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), (), ())>,
+    mut load_op: FnPtr<fn(*mut ()) -> ()>,
 ) {
     &(store_op);
     &(load_op);
@@ -77,8 +77,8 @@ pub unsafe fn test_acquire_release_9(
     &(load_op);
 }
 pub unsafe fn test_acquire_release_10(
-    mut store_op: FnPtr<fn(*mut std_atomic_double_, (), ())>,
-    mut load_op: FnPtr<fn(*mut std_atomic_double_) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), (), ())>,
+    mut load_op: FnPtr<fn(*mut ()) -> ()>,
 ) {
     &(store_op);
     &(load_op);
@@ -96,24 +96,22 @@ pub unsafe fn test_impl_12() {
         "noexcept(std::declval<MaybeVolatile<std::atomic<T>>&>().load())"
     );;
     {
-        let mut a: std_atomic_float_ = unimplemented!();
+        let mut a: () = unimplemented!();
         (unsafe { (a as std___atomic_base_float__false_).store_4(1.2_f64, None) });
         let mut r: () =
             (unsafe { (a as std___atomic_base_float__false_).load_6(Some(unimplemented!())) });
         unimplemented!();
     }
     {
-        let mut store: FnPtr<fn(*mut std_atomic_float_, (), ())> =
-            FnPtr::<fn(*mut std_atomic_float_, (), ())>::new(
-                |x: *mut std_atomic_float_, mut _a1: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        ((*x) as std___atomic_base_float__false_)
-                            .store_4(new_val, Some(unimplemented!()))
-                    });
-                },
-            );
-        let mut load: FnPtr<fn(*mut std_atomic_float_) -> ()> =
-            FnPtr::<fn(*mut std_atomic_float_) -> ()>::new(|x: *mut std_atomic_float_| -> () {
+        let mut store: FnPtr<fn(*mut (), (), ())> =
+            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+                (unsafe {
+                    ((*x) as std___atomic_base_float__false_)
+                        .store_4(new_val, Some(unimplemented!()))
+                });
+            });
+        let mut load: FnPtr<fn(*mut ()) -> ()> =
+            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
                     return (unsafe {
                         ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
@@ -123,20 +121,18 @@ pub unsafe fn test_impl_12() {
         (unsafe { test_acquire_release_8(store.copy_from(), load.copy_from()) });
     }
     {
-        let mut store: FnPtr<fn(*mut std_atomic_float_, (), ())> =
-            FnPtr::<fn(*mut std_atomic_float_, (), ())>::new(
-                |x: *mut std_atomic_float_, mut _a1: (), mut new_val: ()| unsafe {
-                    (unsafe { ((*x) as std___atomic_base_float__false_).store_4(new_val, None) });
-                },
-            );
-        let mut load_no_arg: FnPtr<fn(*mut std_atomic_float_) -> ()> =
-            FnPtr::<fn(*mut std_atomic_float_) -> ()>::new(|x: *mut std_atomic_float_| -> () {
+        let mut store: FnPtr<fn(*mut (), (), ())> =
+            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+                (unsafe { ((*x) as std___atomic_base_float__false_).store_4(new_val, None) });
+            });
+        let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
+            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
                     return (unsafe { ((*x) as std___atomic_base_float__false_).load_6(None) });
                 }
             });
-        let mut load_with_order: FnPtr<fn(*mut std_atomic_float_) -> ()> =
-            FnPtr::<fn(*mut std_atomic_float_) -> ()>::new(|x: *mut std_atomic_float_| -> () {
+        let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
+            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
                     return (unsafe {
                         ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
@@ -206,24 +202,22 @@ pub unsafe fn test_impl_14() {
         "noexcept(std::declval<MaybeVolatile<std::atomic<T>>&>().load())"
     );;
     {
-        let mut a: std_atomic_double_ = unimplemented!();
+        let mut a: () = unimplemented!();
         (unsafe { (a as std___atomic_base_double__false_).store_4(1.2_f64, None) });
         let mut r: () =
             (unsafe { (a as std___atomic_base_double__false_).load_6(Some(unimplemented!())) });
         unimplemented!();
     }
     {
-        let mut store: FnPtr<fn(*mut std_atomic_double_, (), ())> =
-            FnPtr::<fn(*mut std_atomic_double_, (), ())>::new(
-                |x: *mut std_atomic_double_, mut _a1: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        ((*x) as std___atomic_base_double__false_)
-                            .store_4(new_val, Some(unimplemented!()))
-                    });
-                },
-            );
-        let mut load: FnPtr<fn(*mut std_atomic_double_) -> ()> =
-            FnPtr::<fn(*mut std_atomic_double_) -> ()>::new(|x: *mut std_atomic_double_| -> () {
+        let mut store: FnPtr<fn(*mut (), (), ())> =
+            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+                (unsafe {
+                    ((*x) as std___atomic_base_double__false_)
+                        .store_4(new_val, Some(unimplemented!()))
+                });
+            });
+        let mut load: FnPtr<fn(*mut ()) -> ()> =
+            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
                     return (unsafe {
                         ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
@@ -233,20 +227,18 @@ pub unsafe fn test_impl_14() {
         (unsafe { test_acquire_release_10(store.copy_from(), load.copy_from()) });
     }
     {
-        let mut store: FnPtr<fn(*mut std_atomic_double_, (), ())> =
-            FnPtr::<fn(*mut std_atomic_double_, (), ())>::new(
-                |x: *mut std_atomic_double_, mut _a1: (), mut new_val: ()| unsafe {
-                    (unsafe { ((*x) as std___atomic_base_double__false_).store_4(new_val, None) });
-                },
-            );
-        let mut load_no_arg: FnPtr<fn(*mut std_atomic_double_) -> ()> =
-            FnPtr::<fn(*mut std_atomic_double_) -> ()>::new(|x: *mut std_atomic_double_| -> () {
+        let mut store: FnPtr<fn(*mut (), (), ())> =
+            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+                (unsafe { ((*x) as std___atomic_base_double__false_).store_4(new_val, None) });
+            });
+        let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
+            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
                     return (unsafe { ((*x) as std___atomic_base_double__false_).load_6(None) });
                 }
             });
-        let mut load_with_order: FnPtr<fn(*mut std_atomic_double_) -> ()> =
-            FnPtr::<fn(*mut std_atomic_double_) -> ()>::new(|x: *mut std_atomic_double_| -> () {
+        let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
+            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
                     return (unsafe {
                         ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))

@@ -817,229 +817,229 @@ pub unsafe fn test_static_observers_75(mut _a0: (), mut _a1: ()) {
     }
 }
 pub unsafe fn test_static_observers_76() {
-    (unsafe { test_static_observers_1(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_1(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_77() {
-    (unsafe { test_static_observers_2(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_2(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_78() {
-    (unsafe { test_static_observers_3(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_3(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_79() {
-    (unsafe { test_static_observers_4(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_4(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_80() {
-    (unsafe { test_static_observers_5(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_5(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_81() {
-    (unsafe { test_static_observers_6(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_6(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_82() {
-    (unsafe { test_static_observers_7(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_7(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_83() {
-    (unsafe { test_static_observers_8(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_8(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_84() {
-    (unsafe { test_static_observers_9(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_9(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_85() {
-    (unsafe { test_static_observers_10(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_10(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_86() {
-    (unsafe { test_static_observers_11(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_11(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_87() {
-    (unsafe { test_static_observers_12(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_12(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_88() {
-    (unsafe { test_static_observers_13(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_13(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_89() {
-    (unsafe { test_static_observers_14(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_14(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_90() {
-    (unsafe { test_static_observers_15(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_15(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_91() {
-    (unsafe { test_static_observers_16(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_16(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_92() {
-    (unsafe { test_static_observers_17(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_17(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_93() {
-    (unsafe { test_static_observers_18(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_18(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_94() {
-    (unsafe { test_static_observers_19(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_19(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_95() {
-    (unsafe { test_static_observers_20(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_20(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_96() {
-    (unsafe { test_static_observers_21(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_21(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_97() {
-    (unsafe { test_static_observers_22(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_22(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_98() {
-    (unsafe { test_static_observers_23(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_23(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_99() {
-    (unsafe { test_static_observers_24(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_24(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_100() {
-    (unsafe { test_static_observers_25(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_25(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_101() {
-    (unsafe { test_static_observers_26(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_26(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_102() {
-    (unsafe { test_static_observers_27(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_27(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_103() {
-    (unsafe { test_static_observers_28(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_28(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_104() {
-    (unsafe { test_static_observers_29(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_29(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_105() {
-    (unsafe { test_static_observers_30(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_30(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_106() {
-    (unsafe { test_static_observers_31(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_31(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_107() {
-    (unsafe { test_static_observers_32(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_32(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_108() {
-    (unsafe { test_static_observers_33(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_33(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_109() {
-    (unsafe { test_static_observers_34(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_34(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_110() {
-    (unsafe { test_static_observers_35(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_35(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_111() {
-    (unsafe { test_static_observers_36(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_36(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_112() {
-    (unsafe { test_static_observers_37(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_37(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_113() {
-    (unsafe { test_static_observers_38(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_38(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_114() {
-    (unsafe { test_static_observers_39(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_39(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_115() {
-    (unsafe { test_static_observers_40(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_40(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_116() {
-    (unsafe { test_static_observers_41(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_41(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_117() {
-    (unsafe { test_static_observers_42(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_42(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_118() {
-    (unsafe { test_static_observers_43(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_43(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_119() {
-    (unsafe { test_static_observers_44(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_44(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_120() {
-    (unsafe { test_static_observers_45(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_45(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_121() {
-    (unsafe { test_static_observers_46(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_46(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_122() {
-    (unsafe { test_static_observers_47(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_47(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_123() {
-    (unsafe { test_static_observers_48(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_48(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_124() {
-    (unsafe { test_static_observers_49(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_49(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_125() {
-    (unsafe { test_static_observers_50(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_50(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_126() {
-    (unsafe { test_static_observers_51(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_51(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_127() {
-    (unsafe { test_static_observers_52(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_52(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_128() {
-    (unsafe { test_static_observers_53(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_53(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_129() {
-    (unsafe { test_static_observers_54(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_54(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_130() {
-    (unsafe { test_static_observers_55(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_55(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_131() {
-    (unsafe { test_static_observers_56(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_56(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_132() {
-    (unsafe { test_static_observers_57(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_57(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_133() {
-    (unsafe { test_static_observers_58(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_58(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_134() {
-    (unsafe { test_static_observers_59(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_59(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_135() {
-    (unsafe { test_static_observers_60(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_60(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_136() {
-    (unsafe { test_static_observers_61(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_61(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_137() {
-    (unsafe { test_static_observers_62(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_62(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_138() {
-    (unsafe { test_static_observers_63(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_63(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_139() {
-    (unsafe { test_static_observers_64(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_64(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_140() {
-    (unsafe { test_static_observers_65(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_65(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_141() {
-    (unsafe { test_static_observers_66(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_66(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_142() {
-    (unsafe { test_static_observers_67(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_67(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_143() {
-    (unsafe { test_static_observers_68(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_68(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_144() {
-    (unsafe { test_static_observers_69(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_69(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_145() {
-    (unsafe { test_static_observers_70(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_70(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_146() {
-    (unsafe { test_static_observers_71(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_71(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_147() {
-    (unsafe { test_static_observers_72(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_72(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_148() {
-    (unsafe { test_static_observers_73(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_73(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_149() {
-    (unsafe { test_static_observers_74(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_74(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_static_observers_150() {
-    (unsafe { test_static_observers_75(unimplemented!(), unsafe { std::mem::zeroed::<()>() }) });
+    (unsafe { test_static_observers_75(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_151() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_152));

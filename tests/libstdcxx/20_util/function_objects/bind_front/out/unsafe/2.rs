@@ -259,8 +259,8 @@ impl __gnu_test_semaphore {}
 pub unsafe fn functionAcceptingStringView_10(mut _a0: ()) {}
 pub unsafe fn test01_11() {
     let mut s: () = unimplemented!();
-    let mut fs : std__Bind_front_void__ptr__std_basic_string_view_char__std_char_traits_char_____std_basic_string_view_char__std_char_traits_char___ = unimplemented!()  ;
-    (unsafe { fs() });
+    let mut fs: () = unimplemented!();
+    unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg)]
@@ -269,7 +269,7 @@ pub struct PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_functio
     pub f: FnPtr<fn(*const (), ())>,
 }
 impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { pub unsafe fn new ( mut f : FnPtr<fn(*const () ,() ,)> , ) -> Self { let mut this = Self { f : f .copy_from() , } ;
- this } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : *const () , ) -> std__Bind_front_PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15____std_reference_wrapper_std_unique_ptr_Thingy__std_default_delete_Thingy____ { { return unimplemented!()   ;
+ this } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : *const () , ) -> () { { return unimplemented!()   ;
  } panic!("ub: non-void function does not return a value") } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int ( &self , a_0 : *const () , a_1 : *const () , ) { { ( unsafe { let _arg0: *const ()  = ( unsafe { ( * a_0 )  ( ) } )  ; let _arg1: ()  = ( * a_1 ) ; self . f   .call ( _arg0 , _arg1 , ) } ) ;
  return ;
  ;
@@ -282,7 +282,7 @@ pub struct PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_functio
     pub f: FnPtr<fn(*const (), ()) -> *const ()>,
 }
 impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { pub unsafe fn new ( mut f : FnPtr<fn(*const () ,() ,) -> *const () > , ) -> Self { let mut this = Self { f : f .copy_from() , } ;
- this } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : *const () , ) -> std__Bind_front_PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15____std_reference_wrapper_std_basic_string_char__std_char_traits_char___std_allocator_char____ { { return unimplemented!()   ;
+ this } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : *const () , ) -> () { { return unimplemented!()   ;
  } panic!("ub: non-void function does not return a value") } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int ( &self , a_0 : *const () , a_1 : *const () , ) -> *const () { { return & ( unsafe { let _s: *const ()  = ( unsafe { ( * a_0 )  ( ) } )  ; let _arg1: ()  = ( * a_1 ) ; self . f   .call ( _s , _arg1 , ) } )  ;
  } panic!("ub: non-void function does not return a value") } }
 impl Default for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn default() -> Self { unsafe { PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { f : FnPtr::<fn(*const () ,() ,) -> *const () >::new ( | s : *const () , mut _a1 : () , | -> *const () { unsafe { return s  ;

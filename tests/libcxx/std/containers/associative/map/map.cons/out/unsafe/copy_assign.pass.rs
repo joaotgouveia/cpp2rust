@@ -530,7 +530,7 @@ pub unsafe fn test_alloc_11(
         unimplemented!();
         let mut i: () = 0_();
         'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut v: std_pair_const_int__int_ = unimplemented!();
+            let mut v: () = unimplemented!();
             unimplemented!();
             i.prefix_inc();
         }
@@ -687,7 +687,7 @@ pub unsafe fn test_alloc_12(
         unimplemented!();
         let mut i: () = 0_();
         'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut v: std_pair_const_int__int_ = unimplemented!();
+            let mut v: () = unimplemented!();
             unimplemented!();
             i.prefix_inc();
         }
@@ -830,7 +830,7 @@ pub unsafe fn test_alloc_13(
         unimplemented!();
         let mut i: () = 0_();
         'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut v: std_pair_const_int__int_ = unimplemented!();
+            let mut v: () = unimplemented!();
             unimplemented!();
             i.prefix_inc();
         }

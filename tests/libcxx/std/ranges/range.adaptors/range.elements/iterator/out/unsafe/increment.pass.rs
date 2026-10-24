@@ -531,7 +531,7 @@ pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
+    return &mut (*unimplemented!());
 }
 pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -701,7 +701,7 @@ impl util_iterator_error {
 pub unsafe fn testOne_13() {
     let mut ts: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_cpp20_input_iterator_std_tuple_int__ptr___sentinel_wrapper_cpp20_input_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut it: () = unimplemented!();
         let result: *mut () = &mut (*unimplemented!());
         const _: () = assert!(true, "std::is_same_v<decltype(result), ElementIter&>");;
@@ -709,7 +709,7 @@ pub unsafe fn testOne_13() {
         unimplemented!();
     }
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_cpp20_input_iterator_std_tuple_int__ptr___sentinel_wrapper_cpp20_input_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             unimplemented!();
@@ -721,7 +721,7 @@ pub unsafe fn testOne_13() {
 pub unsafe fn testOne_14() {
     let mut ts: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_forward_iterator_std_tuple_int__ptr___sentinel_wrapper_forward_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut it: () = unimplemented!();
         let result: *mut () = &mut (*unimplemented!());
         const _: () = assert!(true, "std::is_same_v<decltype(result), ElementIter&>");;
@@ -729,7 +729,7 @@ pub unsafe fn testOne_14() {
         unimplemented!();
     }
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_forward_iterator_std_tuple_int__ptr___sentinel_wrapper_forward_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let mut result: () = unimplemented!();
@@ -742,7 +742,7 @@ pub unsafe fn testOne_14() {
 pub unsafe fn testOne_15() {
     let mut ts: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_bidirectional_iterator_std_tuple_int__ptr___sentinel_wrapper_bidirectional_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut it: () = unimplemented!();
         let result: *mut () = &mut (*unimplemented!());
         const _: () = assert!(true, "std::is_same_v<decltype(result), ElementIter&>");;
@@ -750,7 +750,7 @@ pub unsafe fn testOne_15() {
         unimplemented!();
     }
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_bidirectional_iterator_std_tuple_int__ptr___sentinel_wrapper_bidirectional_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let mut result: () = unimplemented!();
@@ -763,7 +763,7 @@ pub unsafe fn testOne_15() {
 pub unsafe fn testOne_16() {
     let mut ts: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_random_access_iterator_std_tuple_int__ptr___sentinel_wrapper_random_access_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut it: () = unimplemented!();
         let result: *mut () = &mut (*unimplemented!());
         const _: () = assert!(true, "std::is_same_v<decltype(result), ElementIter&>");;
@@ -771,7 +771,7 @@ pub unsafe fn testOne_16() {
         unimplemented!();
     }
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_random_access_iterator_std_tuple_int__ptr___sentinel_wrapper_random_access_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let mut result: () = unimplemented!();
@@ -784,7 +784,7 @@ pub unsafe fn testOne_16() {
 pub unsafe fn testOne_17() {
     let mut ts: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_contiguous_iterator_std_tuple_int__ptr___sentinel_wrapper_contiguous_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut it: () = unimplemented!();
         let result: *mut () = &mut (*unimplemented!());
         const _: () = assert!(true, "std::is_same_v<decltype(result), ElementIter&>");;
@@ -792,7 +792,7 @@ pub unsafe fn testOne_17() {
         unimplemented!();
     }
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_contiguous_iterator_std_tuple_int__ptr___sentinel_wrapper_contiguous_iterator_std_tuple_int__ptr____std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let mut result: () = unimplemented!();
@@ -805,7 +805,7 @@ pub unsafe fn testOne_17() {
 pub unsafe fn testOne_18() {
     let mut ts: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_std_tuple_int__ptr__sentinel_wrapper_std_tuple_int__ptr___std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         let mut it: () = unimplemented!();
         let result: *mut () = &mut (*unimplemented!());
         const _: () = assert!(true, "std::is_same_v<decltype(result), ElementIter&>");;
@@ -813,7 +813,7 @@ pub unsafe fn testOne_18() {
         unimplemented!();
     }
     {
-        let mut ev : std_ranges_elements_view_std_ranges_subrange_std_tuple_int__ptr__sentinel_wrapper_std_tuple_int__ptr___std_ranges_subrange_kind_unsized___0_ = unimplemented!()  ;
+        let mut ev: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let mut result: () = unimplemented!();

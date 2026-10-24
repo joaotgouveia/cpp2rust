@@ -220,7 +220,7 @@ pub fn iter_move_4(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_5(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -1447,7 +1447,7 @@ pub fn check_rvalue_range_38(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
     {
         let mut r2: () = unimplemented!();
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: () = unimplemented!();
             (*fold_right_22.with(Value::clone).borrow_mut())(___range, ___init, ___func)
@@ -1465,7 +1465,7 @@ pub fn check_rvalue_range_38(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
         ));
         let mut r2: () = unimplemented!();
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry_std_plus_void__ =
                 invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
@@ -1483,7 +1483,7 @@ pub fn check_rvalue_range_39(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
     {
         let mut r2: () = unimplemented!();
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: () = unimplemented!();
             (*fold_right_22.with(Value::clone).borrow_mut())(___range, ___init, ___func)
@@ -1501,7 +1501,7 @@ pub fn check_rvalue_range_39(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
         ));
         let mut r2: () = unimplemented!();
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry_std_multiplies_void__ =
                 invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() });
@@ -1519,7 +1519,7 @@ pub fn check_rvalue_range_40(r: Ptr<()>, init: Ptr<()>, f: FnPtr<Generic>, expec
     {
         let mut r2: () = unimplemented!();
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: FnPtr<Generic> = (*f.borrow()).copy_from();
             (*fold_right_22.with(Value::clone).borrow_mut())(___range, ___init, ___func)
@@ -1539,7 +1539,7 @@ pub fn check_rvalue_range_40(r: Ptr<()>, init: Ptr<()>, f: FnPtr<Generic>, expec
             ));
         let mut r2: () = unimplemented!();
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::copy_from(
@@ -1559,7 +1559,7 @@ pub fn check_rvalue_range_41(r: Ptr<()>, init: Ptr<()>, f: FnPtr<Generic>, expec
     {
         let mut r2: () = unimplemented!();
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: FnPtr<Generic> = (*f.borrow()).copy_from();
             (*fold_right_22.with(Value::clone).borrow_mut())(___range, ___init, ___func)
@@ -1579,7 +1579,7 @@ pub fn check_rvalue_range_41(r: Ptr<()>, init: Ptr<()>, f: FnPtr<Generic>, expec
             ));
         let mut r2: () = unimplemented!();
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_126_14__ =
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_126_14__::copy_from(
@@ -1599,7 +1599,7 @@ pub fn check_rvalue_range_42(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
     {
         let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: () = unimplemented!();
             (*fold_right_22.with(Value::clone).borrow_mut())(___range, ___init, ___func)
@@ -1617,7 +1617,7 @@ pub fn check_rvalue_range_42(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
         ));
         let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry_std_plus_void__ =
                 invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
@@ -1635,7 +1635,7 @@ pub fn check_rvalue_range_43(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
     {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: () = (*f.borrow()).clone();
             (*fold_right_22.with(Value::clone).borrow_mut())(___range, ___init, ___func)
@@ -1653,7 +1653,7 @@ pub fn check_rvalue_range_43(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
         ));
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry_std_plus_long__ =
                 invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() });
@@ -1676,7 +1676,7 @@ pub fn check_rvalue_range_44(
     {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
             (*fold_right_22.with(Value::clone).borrow_mut())(___range, ___init, ___func)
@@ -1696,7 +1696,7 @@ pub fn check_rvalue_range_44(
             ));
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_174_27__ =
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_174_27__::copy_from(
@@ -1716,7 +1716,7 @@ pub fn check_rvalue_range_45(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
     {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: () = (*f.borrow()).clone();
             (*fold_right_22.with(Value::clone).borrow_mut())(___range, ___init, ___func)
@@ -1734,7 +1734,7 @@ pub fn check_rvalue_range_45(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>
         ));
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut result: () = ({
-            let ___range: Ptr<()> = (unimplemented!()).reinterpret_cast::<()>();
+            let ___range: Ptr<()> = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry_std_plus_long__ =
                 invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() });
@@ -1975,9 +1975,7 @@ pub fn common_range_test_case_55() {
     ({
         let _r: () = unimplemented!();
         let _init: Value<()> = Rc::new(RefCell::new(0_()));
-        let _expected: Value<()> = Rc::new(RefCell::new(
-            (({ triangular_sum_8(data.as_pointer()) }) as ()),
-        ));
+        let _expected: Value<()> = Rc::new(RefCell::new(({ triangular_sum_8(data.as_pointer()) })));
         check_46(
             _r,
             _init.as_pointer(),
@@ -2108,9 +2106,8 @@ pub fn non_common_range_test_case_56() {
         ({
             let _r: () = (*range.borrow()).clone();
             let _init: Value<()> = Rc::new(RefCell::new(0_()));
-            let _expected: Value<()> = Rc::new(RefCell::new(
-                ({ triangular_sum_12((range.as_pointer()).reinterpret_cast::<()>()) }),
-            ));
+            let _expected: Value<()> =
+                Rc::new(RefCell::new(({ triangular_sum_12(range.as_pointer()) })));
             check_50(
                 _r,
                 _init.as_pointer(),

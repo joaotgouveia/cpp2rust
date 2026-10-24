@@ -284,7 +284,7 @@ pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -451,7 +451,7 @@ pub fn test_9(mut i: random_access_iterator_const_char_ptr_, mut n: (), mut x: (
 }
 pub fn test_10(mut i: cpp20_random_access_iterator_const_char_ptr_, mut n: (), mut x: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rr: () = ((unimplemented!().read()) as ());
+    let mut rr: () = (unimplemented!().read());
     unimplemented!();
 }
 pub fn test_11(mut i: Ptr<()>, mut n: (), mut x: ()) {
@@ -474,12 +474,12 @@ pub fn tests_12() -> () {
     ({
         let _i: cpp20_random_access_iterator_const_char_ptr_ =
             cpp20_random_access_iterator_const_char_ptr_::new_1({ s.offset((5_()) as isize) });
-        test_10(_i, 4_(), (('1' as ()) as ()))
+        test_10(_i, 4_(), ('1' as ()))
     });
     ({
         let _i: cpp20_random_access_iterator_const_char_ptr_ =
             cpp20_random_access_iterator_const_char_ptr_::new_1({ s.offset((5_()) as isize) });
-        test_10(_i, 0_(), (('5' as ()) as ()))
+        test_10(_i, 0_(), ('5' as ()))
     });
     ({
         let _i: Ptr<()> = s.offset((5_()) as isize);

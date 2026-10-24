@@ -261,7 +261,7 @@ pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -526,10 +526,10 @@ pub fn operator_sub_18(
     mut lhs: random_access_iterator_int_ptr_,
     mut rhs: IntSentinelWith_random_access_iterator_int_ptr__,
 ) -> () {
-    return (({
+    return ({
         let _x: random_access_iterator_int_ptr_ = lhs;
         operator_sub_0(_x, rhs.value_.clone())
-    }) as ());
+    });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
 #[byte_size(16)]

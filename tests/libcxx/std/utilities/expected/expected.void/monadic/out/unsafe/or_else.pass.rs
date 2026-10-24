@@ -12,7 +12,7 @@ pub unsafe fn test_val_types_0() {
             return unimplemented!();
         });
         let mut v: () = unimplemented!();
-        let mut val: std_expected_void__long_ = unimplemented!();
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -20,7 +20,7 @@ pub unsafe fn test_val_types_0() {
             return unimplemented!();
         });
         let v: () = unimplemented!();
-        let mut val: std_expected_void__long_ = unimplemented!();
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -47,12 +47,12 @@ pub unsafe fn test_fail_1() {
     });
     {
         let mut v: () = unimplemented!();
-        let mut val: std_expected_void__long_ = unimplemented!();
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {
         let v: () = unimplemented!();
-        let mut val: std_expected_void__long_ = unimplemented!();
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {

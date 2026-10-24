@@ -289,7 +289,7 @@ pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return (unimplemented!()).reinterpret_cast::<()>();
+    return unimplemented!();
 }
 pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -471,7 +471,7 @@ impl EmplaceConstructibleMoveableAndAssignable_int_ {
         Self {
             copied: (Other.with(|__s| __s.copied) + 1_()),
             assigned: 0_(),
-            value: ((unimplemented!().read()) as ()),
+            value: (unimplemented!().read()),
         }
     }
 }
@@ -854,7 +854,7 @@ impl EmplaceConstructibleMoveableAndAssignable_int_Impl
         &self,
         mut xvalue: (),
     ) -> Ptr<EmplaceConstructibleMoveableAndAssignable_int_> {
-        field!((*self), value).write(((unimplemented!().read()) as ()));
+        field!((*self), value).write((unimplemented!().read()));
         field!((*self), assigned).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }

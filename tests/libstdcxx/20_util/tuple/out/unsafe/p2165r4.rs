@@ -260,10 +260,10 @@ impl __gnu_test_semaphore {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {}
 pub unsafe fn test01_10() -> () {
-    let mut tuple_like: std_array_A__3_ = unsafe { std::mem::zeroed::<()>() };
+    let mut tuple_like: () = unimplemented!();
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
- } , | | { let mut t3b : () = std_tuple_B__B__B_ :: new_1 ( { (tuple_like  as *mut std_array_A__3_).cast::<()>() } , )  ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
+ } , | | { let mut t3b : () = std_tuple_B__B__B_ :: new_1 ( { tuple_like } , )  ;
   ;
  ;
  let mut __do_while = true ;
@@ -273,7 +273,7 @@ pub unsafe fn test01_10() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = ( * unimplemented!()  )  ;
   ;
  ;
@@ -284,7 +284,7 @@ pub unsafe fn test01_10() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = std_tuple_B__B__B_ :: new_2 ( { unimplemented!()  } , )  ;
   ;
  ;
@@ -295,7 +295,7 @@ pub unsafe fn test01_10() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = ( * unimplemented!()  )  ;
   ;
  ;
@@ -366,9 +366,9 @@ impl alloc_B01 {
     }
 }
 pub unsafe fn test01_16() -> () {
-    let mut tuple_like: std_array_A__3_ = unsafe { std::mem::zeroed::<()>() };
+    let mut tuple_like: () = unimplemented!();
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = unimplemented!() ;
   ;
  ;
@@ -379,7 +379,7 @@ pub unsafe fn test01_16() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = unimplemented!() ;
   ;
  ;
@@ -390,7 +390,7 @@ pub unsafe fn test01_16() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = unimplemented!() ;
   ;
  ;
@@ -401,7 +401,7 @@ pub unsafe fn test01_16() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = unimplemented!() ;
   ;
  ;
@@ -430,10 +430,10 @@ pub unsafe fn test02_20() -> () {
         true,
         "!std::is_convertible_v<tuple_like_t<A>, tuple<B, B, B>>"
     );;
-    let mut tuple_like: std_array_A__3_ = unsafe { std::mem::zeroed::<()>() };
+    let mut tuple_like: () = unimplemented!();
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
- } , | | { let mut t3b : () = std_tuple_B__B__B_ :: new_1 ( { (tuple_like  as *mut std_array_A__3_).cast::<()>() } , )  ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
+ } , | | { let mut t3b : () = std_tuple_B__B__B_ :: new_1 ( { tuple_like } , )  ;
   ;
  ;
  let mut __do_while = true ;
@@ -443,7 +443,7 @@ pub unsafe fn test02_20() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = std_tuple_B__B__B_ :: new_2 ( { unimplemented!()  } , )  ;
   ;
  ;
@@ -454,7 +454,7 @@ pub unsafe fn test02_20() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = std_tuple_B__B__B_ :: new_3 ( { unimplemented!()  } , )  ;
   ;
  ;
@@ -465,7 +465,7 @@ pub unsafe fn test02_20() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = std_tuple_B__B__B_ :: new_4 ( { unimplemented!()  } , )  ;
   ;
  ;
@@ -528,9 +528,9 @@ pub unsafe fn test02_25() -> () {
         true,
         "!std::is_convertible_v<tuple_like_t<A>, tuple<B, B, B>>"
     );;
-    let mut tuple_like: std_array_A__3_ = unsafe { std::mem::zeroed::<()>() };
+    let mut tuple_like: () = unimplemented!();
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = unimplemented!() ;
   ;
  ;
@@ -541,7 +541,7 @@ pub unsafe fn test02_25() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = unimplemented!() ;
   ;
  ;
@@ -552,7 +552,7 @@ pub unsafe fn test02_25() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = unimplemented!() ;
   ;
  ;
@@ -563,7 +563,7 @@ pub unsafe fn test02_25() -> () {
  } } } )  .call ( )
     });
     (unsafe {
-        lambda_unsafe! ( { let tuple_like : *mut std_array_A__3_ = & mut tuple_like ;
+        lambda_unsafe! ( { let tuple_like : *mut () = & mut tuple_like ;
  } , | | { let mut t3b : () = unimplemented!() ;
   ;
  ;
@@ -576,7 +576,7 @@ pub unsafe fn test02_25() -> () {
     return true;
 }
 pub unsafe fn test03_29() -> () {
-    let mut tuple_like: std_array_A__3_ = unsafe { std::mem::zeroed::<()>() };
+    let mut tuple_like: () = unimplemented!();
     let mut t3b: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -660,7 +660,7 @@ impl B_30 {
     }
 }
 pub unsafe fn test04_34() -> () {
-    let mut tuple_like: std_array_A__3_ = unsafe { std::mem::zeroed::<()>() };
+    let mut tuple_like: () = unimplemented!();
     let t3b: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;

@@ -36,11 +36,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut o: std_unique_ptr_Outer__std_default_delete_Outer__ = unimplemented!();
+    let mut o: () = unimplemented!();
     (*unimplemented!()).x += 5_();
     let mut sum: () = (((*unimplemented!()).x) + ((*unimplemented!()).y));
-    let mut a: std_unique_ptr_int__std_default_delete_int__ = unimplemented!();
-    let mut b: std_unique_ptr_int__std_default_delete_int__ = unimplemented!();
+    let mut a: () = unimplemented!();
+    let mut b: () = unimplemented!();
     (*unimplemented!()) = (*unimplemented!());
     unimplemented!();
     return 0_();

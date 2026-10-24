@@ -296,10 +296,10 @@ pub unsafe fn test01_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _val: () = ((unsafe {
+            let mut _val: () = (unsafe {
                 let mut ___args: () = 3_();
                 __invoke_r_17(Some(sq_10), &mut ___args)
-            }) as ());
+            });
             let mut _exp: () = 9_();
             chk_11(&mut _val, &mut _exp)
         }) {
@@ -322,10 +322,10 @@ pub unsafe fn test01_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _val: () = ((unsafe {
+            let mut _val: () = (unsafe {
                 let mut ___args: () = 4_();
                 __invoke_r_18(Some(sq_10), &mut ___args)
-            }) as ());
+            });
             let mut _exp: () = ('\x10' as ());
             chk_13(&mut _val, &mut _exp)
         }) {
