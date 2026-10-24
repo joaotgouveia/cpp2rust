@@ -23,6 +23,9 @@ std::unreachable_sentinel_t &f5(std::unreachable_sentinel_t &a0,
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1> bool f6(std::unreachable_sentinel_t a0, const T1 &a1) {
+template <typename T1>
+bool f6(std::unreachable_sentinel_t a0, const T1 &a1)
+  requires(std::weakly_incrementable<T1>)
+{
   return operator==(std::move(a0), a1);
 }

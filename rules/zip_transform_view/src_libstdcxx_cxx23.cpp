@@ -404,6 +404,7 @@ decltype(auto) f25(std::ranges::zip_transform_view<T1, T2...> &a0,
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
                std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
            std::is_object_v<T1> &&
            std::regular_invocable<T1 &,
@@ -421,6 +422,7 @@ decltype(auto) f26(const std::ranges::zip_transform_view<T1, T2...> &a0,
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
                std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
            std::is_object_v<T1> &&
            std::regular_invocable<T1 &,

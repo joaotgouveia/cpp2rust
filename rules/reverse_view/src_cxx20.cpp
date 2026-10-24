@@ -89,6 +89,7 @@ decltype(auto) f11(std::ranges::reverse_view<T1> &a0,
   requires(std::is_class_v<std::ranges::reverse_view<T1>> &&
            std::same_as<std::ranges::reverse_view<T1>,
                         std::remove_cv_t<std::ranges::reverse_view<T1>>>) &&
+          (std::ranges::random_access_range<T2>) &&
           (std::ranges::bidirectional_range<T1>)
 {
   return a0.template operator[]<T2>(a1);
@@ -100,6 +101,7 @@ decltype(auto) f12(const std::ranges::reverse_view<T1> &a0,
   requires(std::is_class_v<std::ranges::reverse_view<T1>> &&
            std::same_as<std::ranges::reverse_view<T1>,
                         std::remove_cv_t<std::ranges::reverse_view<T1>>>) &&
+          (std::ranges::random_access_range<T2>) &&
           (std::ranges::bidirectional_range<T1>)
 {
   return a0.template operator[]<T2>(a1);

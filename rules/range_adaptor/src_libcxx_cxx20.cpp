@@ -3,7 +3,8 @@
 
 template <typename T1, typename T2>
 decltype(auto) f1(T1 &&a0, T2 &&a1)
-  requires(std::invocable<T2, T1>)
+  requires(std::invocable<T2, T1>) && (std::ranges::range<T1>) &&
+          (std::ranges::_RangeAdaptorClosure<T2>)
 {
   return std::ranges::operator|
       <T1, T2>(std::forward<T1>(a0), std::forward<T2>(a1));

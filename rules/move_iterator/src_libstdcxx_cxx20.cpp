@@ -25,6 +25,8 @@ std::move_iterator<T1> &f31(std::move_iterator<T1> &a0,
 }
 
 template <typename T1, typename T2>
-bool f32(const std::move_iterator<T1> &a0, const std::move_sentinel<T2> &a1) {
+bool f32(const std::move_iterator<T1> &a0, const std::move_sentinel<T2> &a1)
+  requires(std::sentinel_for<T2, T1>)
+{
   return operator==(a0, a1);
 }

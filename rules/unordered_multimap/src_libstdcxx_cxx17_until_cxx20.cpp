@@ -22,7 +22,7 @@ std::__enable_if_t<
         typename std::__ummap_hashtable<T1, T2, T3, T4, T5>::value_type,
         T6 &&>::value,
     typename std::__ummap_hashtable<T1, T2, T3, T4, T5>::iterator>
-f76(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
+f75(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
   return a0.template insert<T6>(std::forward<T6>(a1));
 }
 
@@ -42,7 +42,7 @@ std::__enable_if_t<
         typename std::__ummap_hashtable<T1, T2, T3, T4, T5>::value_type,
         T6 &&>::value,
     typename std::__ummap_hashtable<T1, T2, T3, T4, T5>::iterator>
-f77(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f76(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     T6 &&a2) {
   return a0.template insert<T6>(a1, std::forward<T6>(a2));

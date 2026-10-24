@@ -55,6 +55,7 @@ std::sub_match<T1> &f21(std::sub_match<T1> &a0, T2 &&a1)
                                  decltype(std::get<0>(std::declval<T2>()))> &&
             std::is_assignable_v<typename std::pair<T1, T1>::second_type &,
                                  decltype(std::get<1>(std::declval<T2>()))>)) &&
+          (std::__pair_like_no_subrange<T2>) &&
           (!(std::is_same<
                T2, const std::__conditional_t<
                        std::is_copy_assignable<
@@ -81,6 +82,7 @@ const std::sub_match<T1> &f22(const std::sub_match<T1> &a0, T2 &&a1)
             std::is_assignable_v<
                 const typename std::pair<T1, T1>::second_type &,
                 decltype(std::get<1>(std::declval<T2>()))>)) &&
+          (std::__pair_like_no_subrange<T2>) &&
           (!(std::is_same<T2, const std::pair<T1, T1> &>::value) &&
            !(std::is_same<T2, std::pair<T1, T1>>::value))
 {

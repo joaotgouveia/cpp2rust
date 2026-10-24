@@ -3,14 +3,14 @@
 #include <utility>
 
 template <typename T1, typename T2>
-T1 f134(T2 &&a0)
+T1 f137(T2 &&a0)
   requires(std::__can_make_from_tuple<T1, T2>)
 {
   return std::make_from_tuple<T1, T2>(std::forward<T2>(a0));
 }
 
 template <typename... T1, typename... T2>
-auto f135(const std::tuple<T1...> &a0, const std::tuple<T2...> &a1)
+auto f138(const std::tuple<T1...> &a0, const std::tuple<T2...> &a1)
   requires((sizeof...(T1) == sizeof...(T2)))
 {
   return std::operator<=> <T1...>(a0, a1);

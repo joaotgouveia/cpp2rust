@@ -239,6 +239,7 @@ decltype(auto) f18(std::ranges::basic_istream_view<T1, T2, T3> &a0,
            std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
                         std::remove_cv_t<
                             std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::ranges::random_access_range<T4>) &&
           (std::default_initializable<T1> &&
            std::ranges::__detail::__stream_extractable<T1, T2, T3>)
 {
@@ -252,6 +253,7 @@ decltype(auto) f19(const std::ranges::basic_istream_view<T1, T2, T3> &a0,
            std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
                         std::remove_cv_t<
                             std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::ranges::random_access_range<T4>) &&
           (std::default_initializable<T1> &&
            std::ranges::__detail::__stream_extractable<T1, T2, T3>)
 {

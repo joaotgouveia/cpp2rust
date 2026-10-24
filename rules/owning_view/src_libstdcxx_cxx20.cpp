@@ -222,6 +222,7 @@ decltype(auto) f25(std::ranges::owning_view<T1> &a0,
   requires(std::is_class_v<std::ranges::owning_view<T1>> &&
            std::same_as<std::ranges::owning_view<T1>,
                         std::remove_cv_t<std::ranges::owning_view<T1>>>) &&
+          (std::ranges::random_access_range<T2>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
 {
@@ -234,6 +235,7 @@ decltype(auto) f26(const std::ranges::owning_view<T1> &a0,
   requires(std::is_class_v<std::ranges::owning_view<T1>> &&
            std::same_as<std::ranges::owning_view<T1>,
                         std::remove_cv_t<std::ranges::owning_view<T1>>>) &&
+          (std::ranges::random_access_range<T2>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
 {

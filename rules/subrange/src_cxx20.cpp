@@ -92,6 +92,7 @@ decltype(auto) f10(std::ranges::subrange<T1, T2, T3> &a0,
   requires(std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
                         std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          (std::ranges::random_access_range<T4>) &&
           ((T3 == std::ranges::subrange_kind::sized ||
             !std::sized_sentinel_for<T2, T1>))
 {
@@ -104,6 +105,7 @@ decltype(auto) f11(const std::ranges::subrange<T1, T2, T3> &a0,
   requires(std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
                         std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          (std::ranges::random_access_range<T4>) &&
           ((T3 == std::ranges::subrange_kind::sized ||
             !std::sized_sentinel_for<T2, T1>))
 {

@@ -15,14 +15,14 @@ std::optional<T1> f628(T2 a0, T3 &&a1, T4 &&...a2) {
 
 template <typename T1, typename T2>
 std::optional<T1> f629(const std::optional<T1> &a0, T2 &&a1)
-  requires(std::is_copy_constructible_v<T1>)
+  requires(std::is_copy_constructible_v<T1>) && (std::invocable<T2>)
 {
   return a0.template or_else<T2>(std::forward<T2>(a1));
 }
 
 template <typename T1, typename T2>
 std::optional<T1> f630(std::optional<T1> &&a0, T2 &&a1)
-  requires(std::is_move_constructible_v<T1>)
+  requires(std::is_move_constructible_v<T1>) && (std::invocable<T2>)
 {
   return std::move(a0).template or_else<T2>(std::forward<T2>(a1));
 }

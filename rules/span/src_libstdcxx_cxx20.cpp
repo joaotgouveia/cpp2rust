@@ -7,24 +7,38 @@
 template <typename T1, std::size_t T2>
 std::span<const std::byte,
           T2 == std::dynamic_extent ? std::dynamic_extent : T2 * sizeof(T1)>
-f23(std::span<T1, T2> a0) {
+f21(std::span<T1, T2> a0) {
   return std::as_bytes<T1, T2>(a0);
 }
 
 template <typename T1, std::size_t T2>
 std::span<std::byte,
           T2 == std::dynamic_extent ? std::dynamic_extent : T2 * sizeof(T1)>
-f24(std::span<T1, T2> a0)
+f22(std::span<T1, T2> a0)
   requires((!std::is_const_v<T1>))
 {
   return std::as_writable_bytes<T1, T2>(a0);
 }
 
 template <typename T1, std::size_t T2>
-std::span<T1, T2> f25()
+std::span<T1, T2> f23()
   requires((T2 == std::dynamic_extent || T2 == 0))
 {
   return std::span<T1, T2>();
+}
+
+template <typename T1, std::size_t T2, typename T3>
+std::span<T1, T2> f24(T3 a0, std::size_t a1)
+  requires(std::contiguous_iterator<T3>)
+{
+  return std::span<T1, T2>(a0, a1);
+}
+
+template <typename T1, std::size_t T2, typename T3, typename T4>
+std::span<T1, T2> f25(T3 a0, T4 a1)
+  requires(std::contiguous_iterator<T3>) && (std::sized_sentinel_for<T4, T3>)
+{
+  return std::span<T1, T2>(a0, a1);
 }
 
 template <typename T1, std::size_t T2, std::size_t T3>

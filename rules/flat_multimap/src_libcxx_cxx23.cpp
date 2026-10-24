@@ -450,7 +450,10 @@ std::flat_multimap<T1, T2, T3, T4, T5> f66(T6 a0, T6 a1, const T7 &a2)
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-std::flat_multimap<T1, T2, T3, T4, T5> f67(std::from_range_t a0, T6 &&a1) {
+std::flat_multimap<T1, T2, T3, T4, T5> f67(std::from_range_t a0, T6 &&a1)
+  requires(std::_ContainerCompatibleRange<
+           T6, typename std::flat_multimap<T1, T2, T3, T4, T5>::value_type>)
+{
   return std::flat_multimap<T1, T2, T3, T4, T5>(std::move(a0),
                                                 std::forward<T6>(a1));
 }
@@ -460,7 +463,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 std::flat_multimap<T1, T2, T3, T4, T5> f68(std::from_range_t a0, T6 &&a1,
                                            const T7 &a2)
   requires(std::flat_multimap<T1, T2, T3, T4,
-                              T5>::template __allocator_ctor_constraint<T7>)
+                              T5>::template __allocator_ctor_constraint<T7>) &&
+          (std::_ContainerCompatibleRange<
+              T6, typename std::flat_multimap<T1, T2, T3, T4, T5>::value_type>)
 {
   return std::flat_multimap<T1, T2, T3, T4, T5>(std::move(a0),
                                                 std::forward<T6>(a1), a2);
@@ -469,7 +474,10 @@ std::flat_multimap<T1, T2, T3, T4, T5> f68(std::from_range_t a0, T6 &&a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::flat_multimap<T1, T2, T3, T4, T5> f69(std::from_range_t a0, T6 &&a1,
-                                           const T3 &a2) {
+                                           const T3 &a2)
+  requires(std::_ContainerCompatibleRange<
+           T6, typename std::flat_multimap<T1, T2, T3, T4, T5>::value_type>)
+{
   return std::flat_multimap<T1, T2, T3, T4, T5>(std::move(a0),
                                                 std::forward<T6>(a1), a2);
 }
@@ -479,7 +487,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 std::flat_multimap<T1, T2, T3, T4, T5> f70(std::from_range_t a0, T6 &&a1,
                                            const T3 &a2, const T7 &a3)
   requires(std::flat_multimap<T1, T2, T3, T4,
-                              T5>::template __allocator_ctor_constraint<T7>)
+                              T5>::template __allocator_ctor_constraint<T7>) &&
+          (std::_ContainerCompatibleRange<
+              T6, typename std::flat_multimap<T1, T2, T3, T4, T5>::value_type>)
 {
   return std::flat_multimap<T1, T2, T3, T4, T5>(std::move(a0),
                                                 std::forward<T6>(a1), a2, a3);
@@ -651,14 +661,20 @@ void f83(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-void f84(std::flat_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
+void f84(std::flat_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1)
+  requires(std::_ContainerCompatibleRange<
+           T6, typename std::flat_multimap<T1, T2, T3, T4, T5>::value_type>)
+{
   return a0.template insert_range<T6>(std::forward<T6>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 void f85(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
-         std::sorted_equivalent_t a1, T6 &&a2) {
+         std::sorted_equivalent_t a1, T6 &&a2)
+  requires(std::_ContainerCompatibleRange<
+           T6, typename std::flat_multimap<T1, T2, T3, T4, T5>::value_type>)
+{
   return a0.template insert_range<T6>(std::move(a1), std::forward<T6>(a2));
 }
 

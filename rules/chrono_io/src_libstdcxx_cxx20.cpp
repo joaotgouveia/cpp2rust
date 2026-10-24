@@ -281,45 +281,66 @@ std::basic_ostream<T1, T2> &f42(std::basic_ostream<T1, T2> &a0,
   return std::chrono::operator<< <T1, T2, T3, T4>(a0, a1);
 }
 
-template <typename T1, typename T2> auto f43(const T1 *a0, T2 &a1) {
+template <typename T1, typename T2>
+auto f43(const T1 *a0, T2 &a1)
+  requires(std::chrono::__detail::__parsable<T2, T1>)
+{
   return std::chrono::parse<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-auto f44(const std::basic_string<T1, T2, T3> &a0, T4 &a1) {
+auto f44(const std::basic_string<T1, T2, T3> &a0, T4 &a1)
+  requires(std::chrono::__detail::__parsable<T4, T1, T2>)
+{
   return std::chrono::parse<T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-auto f45(const T1 *a0, T4 &a1, std::chrono::minutes &a2) {
+auto f45(const T1 *a0, T4 &a1, std::chrono::minutes &a2)
+  requires(
+      std::chrono::__detail::__parsable<T4, T1, T2, T3, std::chrono::minutes>)
+{
   return std::chrono::parse<T1, T2, T3, T4>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 auto f46(const std::basic_string<T1, T2, T3> &a0, T5 &a1,
-         std::chrono::minutes &a2) {
+         std::chrono::minutes &a2)
+  requires(
+      std::chrono::__detail::__parsable<T5, T1, T2, T4, std::chrono::minutes>)
+{
   return std::chrono::parse<T1, T2, T3, T4, T5>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 auto f47(const std::basic_string<T1, T2, T3> &a0, T5 &a1,
-         std::basic_string<T1, T2, T3> &a2) {
+         std::basic_string<T1, T2, T3> &a2)
+  requires(std::chrono::__detail::__parsable<T5, T1, T2, T4>)
+{
   return std::chrono::parse<T1, T2, T3, T4, T5>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 auto f48(const std::basic_string<T1, T2, T3> &a0, T5 &a1,
-         std::basic_string<T1, T2, T3> &a2, std::chrono::minutes &a3) {
+         std::basic_string<T1, T2, T3> &a2, std::chrono::minutes &a3)
+  requires(
+      std::chrono::__detail::__parsable<T5, T1, T2, T4, std::chrono::minutes>)
+{
   return std::chrono::parse<T1, T2, T3, T4, T5>(a0, a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-auto f49(const T1 *a0, T5 &a1, std::basic_string<T1, T2, T3> &a2) {
+auto f49(const T1 *a0, T5 &a1, std::basic_string<T1, T2, T3> &a2)
+  requires(std::chrono::__detail::__parsable<T5, T1, T2, T4>)
+{
   return std::chrono::parse<T1, T2, T3, T4, T5>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 auto f50(const T1 *a0, T5 &a1, std::basic_string<T1, T2, T3> &a2,
-         std::chrono::minutes &a3) {
+         std::chrono::minutes &a3)
+  requires(
+      std::chrono::__detail::__parsable<T5, T1, T2, T4, std::chrono::minutes>)
+{
   return std::chrono::parse<T1, T2, T3, T4, T5>(a0, a1, a2, a3);
 }

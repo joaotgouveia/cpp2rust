@@ -382,6 +382,7 @@ decltype(auto) f53(std::ranges::elements_view<T1, T2> &a0,
            std::same_as<
                std::ranges::elements_view<T1, T2>,
                std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> &&
            std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
                                             T2> &&
@@ -401,6 +402,7 @@ decltype(auto) f54(const std::ranges::elements_view<T1, T2> &a0,
            std::same_as<
                std::ranges::elements_view<T1, T2>,
                std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> &&
            std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
                                             T2> &&

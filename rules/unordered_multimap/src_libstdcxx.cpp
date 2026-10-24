@@ -5,7 +5,7 @@
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f45(typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a0,
+f44(typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::hasher &a1,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_equal &a2,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
@@ -15,14 +15,14 @@ f45(typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f46(const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
+f45(const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
         &a0) {
   return std::unordered_multimap<T1, T2, T3, T4, T5>(a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f47(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f46(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
         &a1) {
   return std::unordered_multimap<T1, T2, T3, T4, T5>(a0, a1);
@@ -30,7 +30,7 @@ f47(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f48(std::unordered_multimap<T1, T2, T3, T4, T5> &&a0,
+f47(std::unordered_multimap<T1, T2, T3, T4, T5> &&a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
         &a1) {
   return std::unordered_multimap<T1, T2, T3, T4, T5>(std::move(a0), a1);
@@ -38,7 +38,7 @@ f48(std::unordered_multimap<T1, T2, T3, T4, T5> &&a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f49(std::initializer_list<
+f48(std::initializer_list<
         typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type>
         a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1,
@@ -51,7 +51,7 @@ f49(std::initializer_list<
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f50(typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a0,
+f49(typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
         &a1) {
   return std::unordered_multimap<T1, T2, T3, T4, T5>(a0, a1);
@@ -59,8 +59,19 @@ f50(typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f51(typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a0,
+f50(typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::hasher &a1,
+    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
+        &a2) {
+  return std::unordered_multimap<T1, T2, T3, T4, T5>(a0, a1, a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::unordered_multimap<T1, T2, T3, T4, T5>
+f51(std::initializer_list<
+        typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type>
+        a0,
+    typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
         &a2) {
   return std::unordered_multimap<T1, T2, T3, T4, T5>(a0, a1, a2);
@@ -72,17 +83,6 @@ f52(std::initializer_list<
         typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type>
         a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1,
-    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
-        &a2) {
-  return std::unordered_multimap<T1, T2, T3, T4, T5>(a0, a1, a2);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::unordered_multimap<T1, T2, T3, T4, T5>
-f53(std::initializer_list<
-        typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type>
-        a0,
-    typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::hasher &a2,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
         &a3) {
@@ -91,7 +91,7 @@ f53(std::initializer_list<
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multimap<T1, T2, T3, T4, T5> &
-f54(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f53(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     std::initializer_list<
         typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type>
         a1) {
@@ -100,13 +100,13 @@ f54(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
-f55(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0) {
+f54(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0) {
   return a0.get_allocator();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
-f56(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f55(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type
         &a1) {
   return a0.insert(a1);
@@ -114,14 +114,14 @@ f56(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
-f57(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f56(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type &&a1) {
   return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
-f58(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f57(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type
         &a2) {
@@ -130,14 +130,14 @@ f58(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
-f59(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f58(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type &&a2) {
   return a0.insert(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f60(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+void f59(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
          std::initializer_list<
              typename std::unordered_multimap<T1, T2, T3, T4, T5>::value_type>
              a1) {
@@ -146,40 +146,40 @@ void f60(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type
-f61(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f60(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_type &a1) {
   return a0.erase(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::hasher
-f62(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0) {
+f61(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0) {
   return a0.hash_function();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_equal
-f63(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0) {
+f62(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0) {
   return a0.key_eq();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
-f64(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f63(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_type &a1) {
   return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator
-f65(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f64(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_type &a1) {
   return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type
-f66(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f65(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_type &a1) {
   return a0.count(a1);
 }
@@ -187,7 +187,7 @@ f66(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::pair<typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator,
           typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator>
-f67(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f66(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_type &a1) {
   return a0.equal_range(a1);
 }
@@ -195,14 +195,14 @@ f67(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::pair<typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator,
           typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator>
-f68(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f67(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_type &a1) {
   return a0.equal_range(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type
-f69(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f68(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_type &a1) {
   return a0.bucket(a1);
 }
@@ -210,7 +210,7 @@ f69(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f70(T6 a0, T6 a1,
+f69(T6 a0, T6 a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::hasher &a3,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_equal &a4,
@@ -222,7 +222,7 @@ f70(T6 a0, T6 a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f71(T6 a0, T6 a1,
+f70(T6 a0, T6 a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
         &a3) {
@@ -232,7 +232,7 @@ f71(T6 a0, T6 a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f72(T6 a0, T6 a1,
+f71(T6 a0, T6 a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::hasher &a3,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type

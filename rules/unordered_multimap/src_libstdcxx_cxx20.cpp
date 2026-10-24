@@ -4,7 +4,7 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-bool f78(
+bool f77(
     const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_type &a1) {
   return a0.contains(a1);
@@ -17,7 +17,7 @@ std::__enable_if_t<
         typename std::__ummap_hashtable<T1, T2, T3, T4, T5>::value_type,
         T6 &&>::value,
     typename std::__ummap_hashtable<T1, T2, T3, T4, T5>::iterator>
-f79(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1)
+f78(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1)
   requires(
       !(std::is_same<T6, const typename std::unordered_multimap<
                              T1, T2, T3, T4, T5>::value_type &>::value) &&
@@ -38,7 +38,7 @@ std::__enable_if_t<
         typename std::__ummap_hashtable<T1, T2, T3, T4, T5>::value_type,
         T6 &&>::value,
     typename std::__ummap_hashtable<T1, T2, T3, T4, T5>::iterator>
-f80(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
+f79(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     T6 &&a2)
   requires(!(std::is_same<T6, const typename std::unordered_multimap<
@@ -53,7 +53,16 @@ f80(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-auto f81(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
+auto f80(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
+  requires(!(std::is_same<T6, typename std::unordered_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
+{
+  return a0.template find<T6>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+auto f81(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
   requires(!(std::is_same<T6, typename std::unordered_multimap<
                                   T1, T2, T3, T4, T5>::key_type>::value))
 {
@@ -66,7 +75,7 @@ auto f82(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
   requires(!(std::is_same<T6, typename std::unordered_multimap<
                                   T1, T2, T3, T4, T5>::key_type>::value))
 {
-  return a0.template find<T6>(a1);
+  return a0.template count<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -75,21 +84,12 @@ auto f83(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
   requires(!(std::is_same<T6, typename std::unordered_multimap<
                                   T1, T2, T3, T4, T5>::key_type>::value))
 {
-  return a0.template count<T6>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6>
-auto f84(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(!(std::is_same<T6, typename std::unordered_multimap<
-                                  T1, T2, T3, T4, T5>::key_type>::value))
-{
   return a0.template contains<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-auto f85(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
+auto f84(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
   requires(!(std::is_same<T6, typename std::unordered_multimap<
                                   T1, T2, T3, T4, T5>::key_type>::value))
 {
@@ -98,7 +98,7 @@ auto f85(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-auto f86(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
+auto f85(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
   requires(!(std::is_same<T6, typename std::unordered_multimap<
                                   T1, T2, T3, T4, T5>::key_type>::value))
 {

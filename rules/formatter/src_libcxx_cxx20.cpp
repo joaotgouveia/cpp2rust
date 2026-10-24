@@ -287,7 +287,9 @@ typename T2::iterator f172(std::formatter<long double, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f173(const std::formatter<long double, T1> &a0, T2 a1,
-                           T3 &a2) {
+                           T3 &a2)
+  requires(std::floating_point<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -299,7 +301,9 @@ typename T2::iterator f174(std::formatter<int, T1> &a0, T2 &a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f175(const std::formatter<int, T1> &a0, T2 a1, T3 &a2) {
+typename T3::iterator f175(const std::formatter<int, T1> &a0, T2 a1, T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -312,7 +316,9 @@ typename T2::iterator f176(std::formatter<long long, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f177(const std::formatter<long long, T1> &a0, T2 a1,
-                           T3 &a2) {
+                           T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -324,7 +330,9 @@ typename T2::iterator f178(std::formatter<long, T1> &a0, T2 &a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f179(const std::formatter<long, T1> &a0, T2 a1, T3 &a2) {
+typename T3::iterator f179(const std::formatter<long, T1> &a0, T2 a1, T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -336,7 +344,9 @@ typename T2::iterator f180(std::formatter<short, T1> &a0, T2 &a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f181(const std::formatter<short, T1> &a0, T2 a1, T3 &a2) {
+typename T3::iterator f181(const std::formatter<short, T1> &a0, T2 a1, T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -362,7 +372,9 @@ typename T2::iterator f184(std::formatter<unsigned char, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f185(const std::formatter<unsigned char, T1> &a0, T2 a1,
-                           T3 &a2) {
+                           T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -374,8 +386,9 @@ typename T2::iterator f186(std::formatter<double, T1> &a0, T2 &a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f187(const std::formatter<double, T1> &a0, T2 a1,
-                           T3 &a2) {
+typename T3::iterator f187(const std::formatter<double, T1> &a0, T2 a1, T3 &a2)
+  requires(std::floating_point<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -387,7 +400,9 @@ typename T2::iterator f188(std::formatter<float, T1> &a0, T2 &a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f189(const std::formatter<float, T1> &a0, T2 a1, T3 &a2) {
+typename T3::iterator f189(const std::formatter<float, T1> &a0, T2 a1, T3 &a2)
+  requires(std::floating_point<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -400,7 +415,9 @@ typename T2::iterator f190(std::formatter<unsigned int, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f191(const std::formatter<unsigned int, T1> &a0, T2 a1,
-                           T3 &a2) {
+                           T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -413,7 +430,9 @@ typename T2::iterator f192(std::formatter<__uint128_t, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f193(const std::formatter<__uint128_t, T1> &a0, T2 a1,
-                           T3 &a2) {
+                           T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -426,7 +445,9 @@ typename T2::iterator f194(std::formatter<unsigned long long, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f195(const std::formatter<unsigned long long, T1> &a0,
-                           T2 a1, T3 &a2) {
+                           T2 a1, T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -439,7 +460,9 @@ typename T2::iterator f196(std::formatter<unsigned long, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f197(const std::formatter<unsigned long, T1> &a0, T2 a1,
-                           T3 &a2) {
+                           T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -463,7 +486,9 @@ typename T2::iterator f200(std::formatter<signed char, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f201(const std::formatter<signed char, T1> &a0, T2 a1,
-                           T3 &a2) {
+                           T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 
@@ -476,7 +501,9 @@ typename T2::iterator f202(std::formatter<unsigned short, T1> &a0, T2 &a1) {
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f203(const std::formatter<unsigned short, T1> &a0, T2 a1,
-                           T3 &a2) {
+                           T3 &a2)
+  requires(std::integral<T2>)
+{
   return a0.template format<T2, T3>(a1, a2);
 }
 

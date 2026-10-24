@@ -43,28 +43,24 @@ auto f6(const std::ranges::ref_view<T1> &a0)
   return a0.data();
 }
 
-template <typename T1, typename T2> std::ranges::ref_view<T1> f7(T2 &&a0) {
-  return std::ranges::ref_view<T1>(std::forward<T2>(a0));
-}
-
 template <typename T1, typename T2>
-decltype(auto) f8(std::ranges::ref_view<T1> &a0,
+decltype(auto) f7(std::ranges::ref_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::ref_view<T1>> &&
            std::same_as<std::ranges::ref_view<T1>,
                         std::remove_cv_t<std::ranges::ref_view<T1>>>) &&
-          (std::is_object_v<T1>)
+          (std::ranges::random_access_range<T2>) && (std::is_object_v<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }
 
 template <typename T1, typename T2>
-decltype(auto) f9(const std::ranges::ref_view<T1> &a0,
+decltype(auto) f8(const std::ranges::ref_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::ref_view<T1>> &&
            std::same_as<std::ranges::ref_view<T1>,
                         std::remove_cv_t<std::ranges::ref_view<T1>>>) &&
-          (std::is_object_v<T1>)
+          (std::ranges::random_access_range<T2>) && (std::is_object_v<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }

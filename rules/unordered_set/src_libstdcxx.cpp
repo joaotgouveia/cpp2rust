@@ -5,7 +5,7 @@
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4>
-f52(typename std::unordered_set<T1, T2, T3, T4>::size_type a0,
+f51(typename std::unordered_set<T1, T2, T3, T4>::size_type a0,
     const typename std::unordered_set<T1, T2, T3, T4>::hasher &a1,
     const typename std::unordered_set<T1, T2, T3, T4>::key_equal &a2,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a3) {
@@ -14,27 +14,27 @@ f52(typename std::unordered_set<T1, T2, T3, T4>::size_type a0,
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4>
-f53(const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a0) {
+f52(const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a0) {
   return std::unordered_set<T1, T2, T3, T4>(a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4>
-f54(const std::unordered_set<T1, T2, T3, T4> &a0,
+f53(const std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a1) {
   return std::unordered_set<T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4>
-f55(std::unordered_set<T1, T2, T3, T4> &&a0,
+f54(std::unordered_set<T1, T2, T3, T4> &&a0,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a1) {
   return std::unordered_set<T1, T2, T3, T4>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4>
-f56(std::initializer_list<
+f55(std::initializer_list<
         typename std::unordered_set<T1, T2, T3, T4>::value_type>
         a0,
     typename std::unordered_set<T1, T2, T3, T4>::size_type a1,
@@ -46,15 +46,25 @@ f56(std::initializer_list<
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4>
-f57(typename std::unordered_set<T1, T2, T3, T4>::size_type a0,
+f56(typename std::unordered_set<T1, T2, T3, T4>::size_type a0,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a1) {
   return std::unordered_set<T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4>
-f58(typename std::unordered_set<T1, T2, T3, T4>::size_type a0,
+f57(typename std::unordered_set<T1, T2, T3, T4>::size_type a0,
     const typename std::unordered_set<T1, T2, T3, T4>::hasher &a1,
+    const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a2) {
+  return std::unordered_set<T1, T2, T3, T4>(a0, a1, a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+std::unordered_set<T1, T2, T3, T4>
+f58(std::initializer_list<
+        typename std::unordered_set<T1, T2, T3, T4>::value_type>
+        a0,
+    typename std::unordered_set<T1, T2, T3, T4>::size_type a1,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a2) {
   return std::unordered_set<T1, T2, T3, T4>(a0, a1, a2);
 }
@@ -65,16 +75,6 @@ f59(std::initializer_list<
         typename std::unordered_set<T1, T2, T3, T4>::value_type>
         a0,
     typename std::unordered_set<T1, T2, T3, T4>::size_type a1,
-    const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a2) {
-  return std::unordered_set<T1, T2, T3, T4>(a0, a1, a2);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::unordered_set<T1, T2, T3, T4>
-f60(std::initializer_list<
-        typename std::unordered_set<T1, T2, T3, T4>::value_type>
-        a0,
-    typename std::unordered_set<T1, T2, T3, T4>::size_type a1,
     const typename std::unordered_set<T1, T2, T3, T4>::hasher &a2,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a3) {
   return std::unordered_set<T1, T2, T3, T4>(a0, a1, a2, a3);
@@ -82,7 +82,7 @@ f60(std::initializer_list<
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4> &
-f61(std::unordered_set<T1, T2, T3, T4> &a0,
+f60(std::unordered_set<T1, T2, T3, T4> &a0,
     std::initializer_list<
         typename std::unordered_set<T1, T2, T3, T4>::value_type>
         a1) {
@@ -91,27 +91,27 @@ f61(std::unordered_set<T1, T2, T3, T4> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::allocator_type
-f62(const std::unordered_set<T1, T2, T3, T4> &a0) {
+f61(const std::unordered_set<T1, T2, T3, T4> &a0) {
   return a0.get_allocator();
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::pair<typename std::unordered_set<T1, T2, T3, T4>::iterator, bool>
-f63(std::unordered_set<T1, T2, T3, T4> &a0,
+f62(std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::value_type &a1) {
   return a0.insert(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::pair<typename std::unordered_set<T1, T2, T3, T4>::iterator, bool>
-f64(std::unordered_set<T1, T2, T3, T4> &a0,
+f63(std::unordered_set<T1, T2, T3, T4> &a0,
     typename std::unordered_set<T1, T2, T3, T4>::value_type &&a1) {
   return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::iterator
-f65(std::unordered_set<T1, T2, T3, T4> &a0,
+f64(std::unordered_set<T1, T2, T3, T4> &a0,
     typename std::unordered_set<T1, T2, T3, T4>::const_iterator a1,
     const typename std::unordered_set<T1, T2, T3, T4>::value_type &a2) {
   return a0.insert(a1, a2);
@@ -119,14 +119,14 @@ f65(std::unordered_set<T1, T2, T3, T4> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::iterator
-f66(std::unordered_set<T1, T2, T3, T4> &a0,
+f65(std::unordered_set<T1, T2, T3, T4> &a0,
     typename std::unordered_set<T1, T2, T3, T4>::const_iterator a1,
     typename std::unordered_set<T1, T2, T3, T4>::value_type &&a2) {
   return a0.insert(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-void f67(std::unordered_set<T1, T2, T3, T4> &a0,
+void f66(std::unordered_set<T1, T2, T3, T4> &a0,
          std::initializer_list<
              typename std::unordered_set<T1, T2, T3, T4>::value_type>
              a1) {
@@ -135,47 +135,47 @@ void f67(std::unordered_set<T1, T2, T3, T4> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::iterator
-f68(std::unordered_set<T1, T2, T3, T4> &a0,
+f67(std::unordered_set<T1, T2, T3, T4> &a0,
     typename std::unordered_set<T1, T2, T3, T4>::iterator a1) {
   return a0.erase(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::size_type
-f69(std::unordered_set<T1, T2, T3, T4> &a0,
+f68(std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::key_type &a1) {
   return a0.erase(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::hasher
-f70(const std::unordered_set<T1, T2, T3, T4> &a0) {
+f69(const std::unordered_set<T1, T2, T3, T4> &a0) {
   return a0.hash_function();
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::key_equal
-f71(const std::unordered_set<T1, T2, T3, T4> &a0) {
+f70(const std::unordered_set<T1, T2, T3, T4> &a0) {
   return a0.key_eq();
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::iterator
-f72(std::unordered_set<T1, T2, T3, T4> &a0,
+f71(std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::key_type &a1) {
   return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::const_iterator
-f73(const std::unordered_set<T1, T2, T3, T4> &a0,
+f72(const std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::key_type &a1) {
   return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::size_type
-f74(const std::unordered_set<T1, T2, T3, T4> &a0,
+f73(const std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::key_type &a1) {
   return a0.count(a1);
 }
@@ -183,7 +183,7 @@ f74(const std::unordered_set<T1, T2, T3, T4> &a0,
 template <typename T1, typename T2, typename T3, typename T4>
 std::pair<typename std::unordered_set<T1, T2, T3, T4>::iterator,
           typename std::unordered_set<T1, T2, T3, T4>::iterator>
-f75(std::unordered_set<T1, T2, T3, T4> &a0,
+f74(std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::key_type &a1) {
   return a0.equal_range(a1);
 }
@@ -191,21 +191,21 @@ f75(std::unordered_set<T1, T2, T3, T4> &a0,
 template <typename T1, typename T2, typename T3, typename T4>
 std::pair<typename std::unordered_set<T1, T2, T3, T4>::const_iterator,
           typename std::unordered_set<T1, T2, T3, T4>::const_iterator>
-f76(const std::unordered_set<T1, T2, T3, T4> &a0,
+f75(const std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::key_type &a1) {
   return a0.equal_range(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::size_type
-f77(const std::unordered_set<T1, T2, T3, T4> &a0,
+f76(const std::unordered_set<T1, T2, T3, T4> &a0,
     const typename std::unordered_set<T1, T2, T3, T4>::key_type &a1) {
   return a0.bucket(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_set<T1, T2, T3, T4>
-f78(T5 a0, T5 a1, typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
+f77(T5 a0, T5 a1, typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
     const typename std::unordered_set<T1, T2, T3, T4>::hasher &a3,
     const typename std::unordered_set<T1, T2, T3, T4>::key_equal &a4,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a5) {
@@ -214,14 +214,14 @@ f78(T5 a0, T5 a1, typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_set<T1, T2, T3, T4>
-f79(T5 a0, T5 a1, typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
+f78(T5 a0, T5 a1, typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a3) {
   return std::unordered_set<T1, T2, T3, T4>(a0, a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_set<T1, T2, T3, T4>
-f80(T5 a0, T5 a1, typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
+f79(T5 a0, T5 a1, typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
     const typename std::unordered_set<T1, T2, T3, T4>::hasher &a3,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a4) {
   return std::unordered_set<T1, T2, T3, T4>(a0, a1, a2, a3, a4);

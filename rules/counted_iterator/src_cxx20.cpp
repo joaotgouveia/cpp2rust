@@ -135,13 +135,17 @@ std::counted_iterator<T1> &f19(std::counted_iterator<T1> &a0,
 
 template <typename T1, typename T2>
 void f20(const std::counted_iterator<T1> &a0,
-         const std::counted_iterator<T2> &a1) {
+         const std::counted_iterator<T2> &a1)
+  requires(std::indirectly_swappable<T2, T1>)
+{
   return iter_swap(a0, a1);
 }
 
 template <typename T1, typename T2>
 std::strong_ordering f21(const std::counted_iterator<T1> &a0,
-                         const std::counted_iterator<T2> &a1) {
+                         const std::counted_iterator<T2> &a1)
+  requires(std::common_with<T2, T1>)
+{
   return operator<=>(a0, a1);
 }
 
@@ -152,7 +156,9 @@ bool f22(const std::counted_iterator<T1> &a0, std::default_sentinel_t a1) {
 
 template <typename T1, typename T2>
 bool f23(const std::counted_iterator<T1> &a0,
-         const std::counted_iterator<T2> &a1) {
+         const std::counted_iterator<T2> &a1)
+  requires(std::common_with<T2, T1>)
+{
   return operator==(a0, a1);
 }
 
@@ -170,7 +176,9 @@ std::iter_difference_t<T1> f25(const std::counted_iterator<T1> &a0,
 
 template <typename T1, typename T2>
 std::iter_difference_t<T2> f26(const std::counted_iterator<T1> &a0,
-                               const std::counted_iterator<T2> &a1) {
+                               const std::counted_iterator<T2> &a1)
+  requires(std::common_with<T2, T1>)
+{
   return operator-(a0, a1);
 }
 

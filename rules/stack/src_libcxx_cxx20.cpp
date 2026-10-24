@@ -4,6 +4,8 @@
 
 template <typename T1, typename T2>
 std::compare_three_way_result_t<T2> f42(const std::stack<T1, T2> &a0,
-                                        const std::stack<T1, T2> &a1) {
+                                        const std::stack<T1, T2> &a1)
+  requires(std::three_way_comparable<T2>)
+{
   return std::operator<=> <T1, T2>(a0, a1);
 }

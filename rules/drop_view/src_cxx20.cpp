@@ -61,7 +61,8 @@ decltype(auto) f9(std::ranges::drop_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::drop_view<T1>> &&
            std::same_as<std::ranges::drop_view<T1>,
-                        std::remove_cv_t<std::ranges::drop_view<T1>>>)
+                        std::remove_cv_t<std::ranges::drop_view<T1>>>) &&
+          (std::ranges::random_access_range<T2>)
 {
   return a0.template operator[]<T2>(a1);
 }
@@ -71,7 +72,8 @@ decltype(auto) f10(const std::ranges::drop_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::drop_view<T1>> &&
            std::same_as<std::ranges::drop_view<T1>,
-                        std::remove_cv_t<std::ranges::drop_view<T1>>>)
+                        std::remove_cv_t<std::ranges::drop_view<T1>>>) &&
+          (std::ranges::random_access_range<T2>)
 {
   return a0.template operator[]<T2>(a1);
 }

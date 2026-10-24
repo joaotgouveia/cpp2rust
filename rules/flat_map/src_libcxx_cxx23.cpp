@@ -462,7 +462,10 @@ std::flat_map<T1, T2, T3, T4, T5> f90(T6 a0, T6 a1, const T7 &a2)
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-std::flat_map<T1, T2, T3, T4, T5> f91(std::from_range_t a0, T6 &&a1) {
+std::flat_map<T1, T2, T3, T4, T5> f91(std::from_range_t a0, T6 &&a1)
+  requires(std::_ContainerCompatibleRange<
+           T6, typename std::flat_map<T1, T2, T3, T4, T5>::value_type>)
+{
   return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::forward<T6>(a1));
 }
 
@@ -471,7 +474,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 std::flat_map<T1, T2, T3, T4, T5> f92(std::from_range_t a0, T6 &&a1,
                                       const T7 &a2)
   requires(std::flat_map<T1, T2, T3, T4,
-                         T5>::template __allocator_ctor_constraint<T7>)
+                         T5>::template __allocator_ctor_constraint<T7>) &&
+          (std::_ContainerCompatibleRange<
+              T6, typename std::flat_map<T1, T2, T3, T4, T5>::value_type>)
 {
   return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::forward<T6>(a1),
                                            a2);
@@ -480,7 +485,10 @@ std::flat_map<T1, T2, T3, T4, T5> f92(std::from_range_t a0, T6 &&a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::flat_map<T1, T2, T3, T4, T5> f93(std::from_range_t a0, T6 &&a1,
-                                      const T3 &a2) {
+                                      const T3 &a2)
+  requires(std::_ContainerCompatibleRange<
+           T6, typename std::flat_map<T1, T2, T3, T4, T5>::value_type>)
+{
   return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::forward<T6>(a1),
                                            a2);
 }
@@ -490,7 +498,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 std::flat_map<T1, T2, T3, T4, T5> f94(std::from_range_t a0, T6 &&a1,
                                       const T3 &a2, const T7 &a3)
   requires(std::flat_map<T1, T2, T3, T4,
-                         T5>::template __allocator_ctor_constraint<T7>)
+                         T5>::template __allocator_ctor_constraint<T7>) &&
+          (std::_ContainerCompatibleRange<
+              T6, typename std::flat_map<T1, T2, T3, T4, T5>::value_type>)
 {
   return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::forward<T6>(a1),
                                            a2, a3);
@@ -696,14 +706,20 @@ void f110(std::flat_map<T1, T2, T3, T4, T5> &a0, std::sorted_unique_t a1, T6 a2,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-void f111(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
+void f111(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1)
+  requires(std::_ContainerCompatibleRange<
+           T6, typename std::flat_map<T1, T2, T3, T4, T5>::value_type>)
+{
   return a0.template insert_range<T6>(std::forward<T6>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 void f112(std::flat_map<T1, T2, T3, T4, T5> &a0, std::sorted_unique_t a1,
-          T6 &&a2) {
+          T6 &&a2)
+  requires(std::_ContainerCompatibleRange<
+           T6, typename std::flat_map<T1, T2, T3, T4, T5>::value_type>)
+{
   return a0.template insert_range<T6>(std::move(a1), std::forward<T6>(a2));
 }
 

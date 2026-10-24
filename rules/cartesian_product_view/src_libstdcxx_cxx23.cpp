@@ -294,6 +294,7 @@ decltype(auto) f26(std::ranges::cartesian_product_view<T1, T2...> &a0,
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
                             std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.template operator[]<T3>(a1);
@@ -306,6 +307,7 @@ decltype(auto) f27(const std::ranges::cartesian_product_view<T1, T2...> &a0,
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
                             std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.template operator[]<T3>(a1);

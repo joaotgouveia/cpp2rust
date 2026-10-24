@@ -236,7 +236,9 @@ std::chrono::seconds f93(const std::chrono::leap_second &a0) {
 
 template <typename T1>
 auto f94(const std::chrono::leap_second &a0,
-         const std::chrono::sys_time<T1> &a1) {
+         const std::chrono::sys_time<T1> &a1)
+  requires(std::three_way_comparable_with<T1, std::chrono::seconds>)
+{
   return operator<=>(a0, a1);
 }
 
@@ -755,7 +757,9 @@ const char *f207(const std::chrono::nonexistent_local_time &a0) {
 
 template <typename T1, typename T2, typename T3>
 auto f208(const std::chrono::time_point<T1, T2> &a0,
-          const std::chrono::time_point<T1, T3> &a1) {
+          const std::chrono::time_point<T1, T3> &a1)
+  requires(std::three_way_comparable_with<T3, T2>)
+{
   return std::chrono::operator<=> <T1, T2, T3>(a0, a1);
 }
 

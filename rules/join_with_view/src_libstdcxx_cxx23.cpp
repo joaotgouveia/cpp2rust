@@ -107,7 +107,7 @@ f9(T3 &&a0, std::ranges::range_value_t<std::ranges::range_reference_t<T1>> a1)
            std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
            std::ranges::__detail::__compatible_joinable_ranges<
                std::ranges::range_reference_t<T1>, T2>) &&
-          (!(std::is_same<T3, T1>::value))
+          (std::ranges::input_range<T3>) && (!(std::is_same<T3, T1>::value))
 {
   return std::ranges::join_with_view<T1, T2>(std::forward<T3>(a0), a1);
 }
@@ -404,6 +404,7 @@ decltype(auto) f28(std::ranges::join_with_view<T1, T2> &a0,
            std::same_as<
                std::ranges::join_with_view<T1, T2>,
                std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::ranges::view<T2> &&
            std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
            std::ranges::__detail::__compatible_joinable_ranges<
@@ -419,6 +420,7 @@ decltype(auto) f29(const std::ranges::join_with_view<T1, T2> &a0,
            std::same_as<
                std::ranges::join_with_view<T1, T2>,
                std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::ranges::view<T2> &&
            std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
            std::ranges::__detail::__compatible_joinable_ranges<

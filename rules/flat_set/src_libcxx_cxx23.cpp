@@ -317,12 +317,18 @@ std::flat_set<T1, T2, T3> f55(std::sorted_unique_t a0, T4 a1, T4 a2,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_set<T1, T2, T3> f56(std::from_range_t a0, T4 &&a1) {
+std::flat_set<T1, T2, T3> f56(std::from_range_t a0, T4 &&a1)
+  requires(std::_ContainerCompatibleRange<
+           T4, typename std::flat_set<T1, T2, T3>::value_type>)
+{
   return std::flat_set<T1, T2, T3>(std::move(a0), std::forward<T4>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_set<T1, T2, T3> f57(std::from_range_t a0, T4 &&a1, const T2 &a2) {
+std::flat_set<T1, T2, T3> f57(std::from_range_t a0, T4 &&a1, const T2 &a2)
+  requires(std::_ContainerCompatibleRange<
+           T4, typename std::flat_set<T1, T2, T3>::value_type>)
+{
   return std::flat_set<T1, T2, T3>(std::move(a0), std::forward<T4>(a1), a2);
 }
 
@@ -436,7 +442,9 @@ std::flat_set<T1, T2, T3> f69(std::sorted_unique_t a0, T4 a1, T4 a2,
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::flat_set<T1, T2, T3> f70(std::from_range_t a0, T4 &&a1, const T5 &a2)
   requires(std::uses_allocator<
-           typename std::flat_set<T1, T2, T3>::container_type, T5>::value)
+              typename std::flat_set<T1, T2, T3>::container_type, T5>::value) &&
+          (std::_ContainerCompatibleRange<
+              T4, typename std::flat_set<T1, T2, T3>::value_type>)
 {
   return std::flat_set<T1, T2, T3>(std::move(a0), std::forward<T4>(a1), a2);
 }
@@ -445,7 +453,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::flat_set<T1, T2, T3> f71(std::from_range_t a0, T4 &&a1, const T2 &a2,
                               const T5 &a3)
   requires(std::uses_allocator<
-           typename std::flat_set<T1, T2, T3>::container_type, T5>::value)
+              typename std::flat_set<T1, T2, T3>::container_type, T5>::value) &&
+          (std::_ContainerCompatibleRange<
+              T4, typename std::flat_set<T1, T2, T3>::value_type>)
 {
   return std::flat_set<T1, T2, T3>(std::move(a0), std::forward<T4>(a1), a2, a3);
 }
@@ -549,12 +559,18 @@ void f81(std::flat_set<T1, T2, T3> &a0, std::sorted_unique_t a1, T4 a2, T4 a3)
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-void f82(std::flat_set<T1, T2, T3> &a0, T4 &&a1) {
+void f82(std::flat_set<T1, T2, T3> &a0, T4 &&a1)
+  requires(std::_ContainerCompatibleRange<
+           T4, typename std::flat_set<T1, T2, T3>::value_type>)
+{
   return a0.template insert_range<T4>(std::forward<T4>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-void f83(std::flat_set<T1, T2, T3> &a0, std::sorted_unique_t a1, T4 &&a2) {
+void f83(std::flat_set<T1, T2, T3> &a0, std::sorted_unique_t a1, T4 &&a2)
+  requires(std::_ContainerCompatibleRange<
+           T4, typename std::flat_set<T1, T2, T3>::value_type>)
+{
   return a0.template insert_range<T4>(std::move(a1), std::forward<T4>(a2));
 }
 

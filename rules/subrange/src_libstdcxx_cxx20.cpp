@@ -14,7 +14,8 @@ template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
 std::ranges::subrange<T1, T2, T3> f13(T4 a0, T2 a1)
   requires((!std::ranges::subrange<T1, T2, T3>::_S_store_size)) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::ranges::__detail::__convertible_to_non_slicing<T4, T1>)
 {
   return std::ranges::subrange<T1, T2, T3>(a0, a1);
 }
@@ -28,7 +29,9 @@ std::ranges::subrange<T1, T2, T3> f14(T4 &&a0)
           (std::ranges::subrange<T1, T2, T3>::_S_store_size &&
            std::ranges::sized_range<T4>) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::__detail::__different_from<T4,
+                                           std::ranges::subrange<T1, T2, T3>>)
 {
   return std::ranges::subrange<T1, T2, T3>(std::forward<T4>(a0));
 }
@@ -41,7 +44,9 @@ std::ranges::subrange<T1, T2, T3> f15(T4 &&a0)
            std::convertible_to<std::ranges::sentinel_t<T4>, T2>) &&
           ((!std::ranges::subrange<T1, T2, T3>::_S_store_size)) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::__detail::__different_from<T4,
+                                           std::ranges::subrange<T1, T2, T3>>)
 {
   return std::ranges::subrange<T1, T2, T3>(std::forward<T4>(a0));
 }
@@ -51,7 +56,9 @@ T4 f16(const std::ranges::subrange<T1, T2, T3> &a0)
   requires(std::ranges::__detail::__pair_like_convertible_from<T4, const T1 &,
                                                                const T2 &>) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::__detail::__different_from<T4,
+                                           std::ranges::subrange<T1, T2, T3>>)
 {
   return static_cast<T4>(a0);
 }

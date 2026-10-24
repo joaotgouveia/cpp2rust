@@ -297,6 +297,7 @@ decltype(auto) f25(std::ranges::repeat_view<T1, T2> &a0,
   requires(std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
                         std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
            (std::ranges::__detail::__is_integer_like<T2> ||
             std::same_as<T2, std::unreachable_sentinel_t>))
@@ -310,6 +311,7 @@ decltype(auto) f26(const std::ranges::repeat_view<T1, T2> &a0,
   requires(std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
                         std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
            (std::ranges::__detail::__is_integer_like<T2> ||
             std::same_as<T2, std::unreachable_sentinel_t>))

@@ -2,6 +2,13 @@
 #include <ranges>
 #include <utility>
 
+template <typename T1, typename T2>
+std::ranges::ref_view<T1> f9(T2 &&a0)
+  requires(std::__detail::__different_from<T2, std::ranges::ref_view<T1>>)
+{
+  return std::ranges::ref_view<T1>(std::forward<T2>(a0));
+}
+
 template <typename T1>
 bool f10(std::ranges::ref_view<T1> &a0)
   requires(std::is_object_v<T1>)

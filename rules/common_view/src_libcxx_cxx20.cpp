@@ -213,6 +213,7 @@ decltype(auto) f49(std::ranges::common_view<T1> &a0,
   requires(std::is_class_v<std::ranges::common_view<T1>> &&
            std::same_as<std::ranges::common_view<T1>,
                         std::remove_cv_t<std::ranges::common_view<T1>>>) &&
+          (std::ranges::random_access_range<T2>) &&
           ((!std::ranges::common_range<T1> &&
             std::copyable<std::ranges::iterator_t<T1>>))
 {
@@ -225,6 +226,7 @@ decltype(auto) f50(const std::ranges::common_view<T1> &a0,
   requires(std::is_class_v<std::ranges::common_view<T1>> &&
            std::same_as<std::ranges::common_view<T1>,
                         std::remove_cv_t<std::ranges::common_view<T1>>>) &&
+          (std::ranges::random_access_range<T2>) &&
           ((!std::ranges::common_range<T1> &&
             std::copyable<std::ranges::iterator_t<T1>>))
 {

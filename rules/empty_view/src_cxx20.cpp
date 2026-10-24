@@ -46,7 +46,7 @@ decltype(auto) f6(std::ranges::empty_view<T1> &a0,
   requires(std::is_class_v<std::ranges::empty_view<T1>> &&
            std::same_as<std::ranges::empty_view<T1>,
                         std::remove_cv_t<std::ranges::empty_view<T1>>>) &&
-          (std::is_object_v<T1>)
+          (std::ranges::random_access_range<T2>) && (std::is_object_v<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }
@@ -57,7 +57,7 @@ decltype(auto) f7(const std::ranges::empty_view<T1> &a0,
   requires(std::is_class_v<std::ranges::empty_view<T1>> &&
            std::same_as<std::ranges::empty_view<T1>,
                         std::remove_cv_t<std::ranges::empty_view<T1>>>) &&
-          (std::is_object_v<T1>)
+          (std::ranges::random_access_range<T2>) && (std::is_object_v<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }

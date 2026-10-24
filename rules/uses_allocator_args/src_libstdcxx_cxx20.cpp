@@ -14,7 +14,10 @@ T1 *f2(T1 *a0, const T2 &a1, T3 &&...a2) {
       a0, a1, std::forward<T3>(a2)...);
 }
 
-template <typename T1, typename T2> auto f3(const T2 &a0) {
+template <typename T1, typename T2>
+auto f3(const T2 &a0)
+  requires(std::_Std_pair<T1>)
+{
   return std::uses_allocator_construction_args<T1, T2>(a0);
 }
 
@@ -27,24 +30,32 @@ auto f4(const T2 &a0, T3 &&...a1)
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-auto f5(const T2 &a0, std::piecewise_construct_t a1, T3 &&a2, T4 &&a3) {
+auto f5(const T2 &a0, std::piecewise_construct_t a1, T3 &&a2, T4 &&a3)
+  requires(std::_Std_pair<T1>)
+{
   return std::uses_allocator_construction_args<T1, T2, T3, T4>(
       a0, std::move(a1), std::forward<T3>(a2), std::forward<T4>(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-auto f6(const T2 &a0, std::pair<T3, T4> &&a1) {
+auto f6(const T2 &a0, std::pair<T3, T4> &&a1)
+  requires(std::_Std_pair<T1>)
+{
   return std::uses_allocator_construction_args<T1, T2, T3, T4>(a0,
                                                                std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-auto f7(const T2 &a0, T3 &&a1, T4 &&a2) {
+auto f7(const T2 &a0, T3 &&a1, T4 &&a2)
+  requires(std::_Std_pair<T1>)
+{
   return std::uses_allocator_construction_args<T1, T2, T3, T4>(
       a0, std::forward<T3>(a1), std::forward<T4>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-auto f8(const T2 &a0, const std::pair<T3, T4> &a1) {
+auto f8(const T2 &a0, const std::pair<T3, T4> &a1)
+  requires(std::_Std_pair<T1>)
+{
   return std::uses_allocator_construction_args<T1, T2, T3, T4>(a0, a1);
 }

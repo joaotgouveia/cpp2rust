@@ -4,7 +4,9 @@
 
 template <typename T1, typename T2>
 std::compare_three_way_result_t<T2> f45(const std::queue<T1, T2> &a0,
-                                        const std::queue<T1, T2> &a1) {
+                                        const std::queue<T1, T2> &a1)
+  requires(std::three_way_comparable<T2>)
+{
   return std::operator<=> <T1, T2>(a0, a1);
 }
 

@@ -40,6 +40,7 @@ std::pair<T1, T2> f81(T3 &&a0)
             std::is_constructible_v<
                 typename std::pair<T1, T2>::second_type,
                 decltype(std::get<1>(std::declval<T3 &&>()))>)) &&
+          (std::__pair_like_no_subrange<T3>) &&
           (!(std::is_same<T3, const std::pair<T1, T2> &>::value) &&
            !(std::is_same<T3, std::pair<T1, T2>>::value))
 {
@@ -100,6 +101,7 @@ std::pair<T1, T2> &f86(std::pair<T1, T2> &a0, T3 &&a1)
                                  decltype(std::get<0>(std::declval<T3>()))> &&
             std::is_assignable_v<typename std::pair<T1, T2>::second_type &,
                                  decltype(std::get<1>(std::declval<T3>()))>)) &&
+          (std::__pair_like_no_subrange<T3>) &&
           (!(std::is_same<
                T3, const std::__conditional_t<
                        std::is_copy_assignable<
@@ -126,6 +128,7 @@ const std::pair<T1, T2> &f87(const std::pair<T1, T2> &a0, T3 &&a1)
             std::is_assignable_v<
                 const typename std::pair<T1, T2>::second_type &,
                 decltype(std::get<1>(std::declval<T3>()))>)) &&
+          (std::__pair_like_no_subrange<T3>) &&
           (!(std::is_same<T3, const std::pair<T1, T2> &>::value) &&
            !(std::is_same<T3, std::pair<T1, T2>>::value))
 {

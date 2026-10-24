@@ -55,6 +55,7 @@ decltype(auto) f7(std::ranges::chunk_by_view<T1, T2> &a0,
            std::same_as<
                std::ranges::chunk_by_view<T1, T2>,
                std::remove_cv_t<std::ranges::chunk_by_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.template operator[]<T3>(a1);
@@ -67,6 +68,7 @@ decltype(auto) f8(const std::ranges::chunk_by_view<T1, T2> &a0,
            std::same_as<
                std::ranges::chunk_by_view<T1, T2>,
                std::remove_cv_t<std::ranges::chunk_by_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.template operator[]<T3>(a1);

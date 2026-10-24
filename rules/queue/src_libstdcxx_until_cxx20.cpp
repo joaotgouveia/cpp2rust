@@ -6,6 +6,6 @@ template <
     typename T4 =
         typename std::enable_if<std::uses_allocator<T2, T3>::value>::type,
     typename std::enable_if<(!(std::is_same<T3, T2>::value)), int>::type T5 = 0>
-std::queue<T1, T2> f22(const T3 &a0) {
+std::queue<T1, T2> f20(const T3 &a0) {
   return std::queue<T1, T2>(a0);
 }

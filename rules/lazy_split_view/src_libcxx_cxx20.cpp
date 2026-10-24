@@ -105,7 +105,7 @@ std::ranges::lazy_split_view<T1, T2> f38(T3 &&a0,
                                       std::ranges::iterator_t<T2>,
                                       std::ranges::equal_to> &&
            (std::ranges::forward_range<T1> || std::ranges::__tiny_range<T2>)) &&
-          (!(std::is_same<T3, T1>::value))
+          (std::ranges::input_range<T3>) && (!(std::is_same<T3, T1>::value))
 {
   return std::ranges::lazy_split_view<T1, T2>(std::forward<T3>(a0), a1);
 }
@@ -334,6 +334,7 @@ decltype(auto) f51(std::ranges::lazy_split_view<T1, T2> &a0,
            std::same_as<
                std::ranges::lazy_split_view<T1, T2>,
                std::remove_cv_t<std::ranges::lazy_split_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::ranges::view<T2> &&
            std::indirectly_comparable<std::ranges::iterator_t<T1>,
                                       std::ranges::iterator_t<T2>,
@@ -350,6 +351,7 @@ decltype(auto) f52(const std::ranges::lazy_split_view<T1, T2> &a0,
            std::same_as<
                std::ranges::lazy_split_view<T1, T2>,
                std::remove_cv_t<std::ranges::lazy_split_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::ranges::view<T2> &&
            std::indirectly_comparable<std::ranges::iterator_t<T1>,
                                       std::ranges::iterator_t<T2>,

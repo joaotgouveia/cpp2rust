@@ -454,6 +454,8 @@ auto f69(const std::expected<T1, T2> &a0, T3 &&a1)
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f70(const std::expected<T4, T2> &a0, const T3 &a1) {
+bool f70(const std::expected<T4, T2> &a0, const T3 &a1)
+  requires(std::same_as<T4, T1>)
+{
   return operator==(a0, a1);
 }

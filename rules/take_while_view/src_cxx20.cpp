@@ -67,6 +67,7 @@ decltype(auto) f7(std::ranges::take_while_view<T1, T2> &a0,
            std::same_as<
                std::ranges::take_while_view<T1, T2>,
                std::remove_cv_t<std::ranges::take_while_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::input_range<T1> && std::is_object_v<T2> &&
            std::indirect_unary_predicate<const T2, std::ranges::iterator_t<T1>>)
 {
@@ -80,6 +81,7 @@ decltype(auto) f8(const std::ranges::take_while_view<T1, T2> &a0,
            std::same_as<
                std::ranges::take_while_view<T1, T2>,
                std::remove_cv_t<std::ranges::take_while_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::input_range<T1> && std::is_object_v<T2> &&
            std::indirect_unary_predicate<const T2, std::ranges::iterator_t<T1>>)
 {

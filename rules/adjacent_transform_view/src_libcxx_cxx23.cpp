@@ -333,6 +333,7 @@ decltype(auto) f49(std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
                         std::remove_cv_t<std::ranges::adjacent_transform_view<
                             T1, T2, T3>>>) &&
+          (std::ranges::random_access_range<T4>) &&
           (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
            std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
                                   std::ranges::range_reference_t<T1>> &&
@@ -350,6 +351,7 @@ decltype(auto) f50(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
                         std::remove_cv_t<std::ranges::adjacent_transform_view<
                             T1, T2, T3>>>) &&
+          (std::ranges::random_access_range<T4>) &&
           (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
            std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
                                   std::ranges::range_reference_t<T1>> &&

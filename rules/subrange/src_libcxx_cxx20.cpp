@@ -36,7 +36,8 @@ template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
 std::ranges::subrange<T1, T2, T3> f32(T4 a0, T2 a1)
   requires(std::ranges::subrange<T1, T2, T3>::_MustProvideSizeAtConstruction) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::ranges::__convertible_to_non_slicing<T4, T1>)
 {
   return std::ranges::subrange<T1, T2, T3>(a0, a1);
 }
@@ -46,7 +47,8 @@ std::ranges::subrange<T1, T2, T3>
 f33(T4 a0, T2 a1, std::make_unsigned_t<std::iter_difference_t<T1>> a2)
   requires((T3 == std::ranges::subrange_kind::sized)) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::ranges::__convertible_to_non_slicing<T4, T1>)
 {
   return std::ranges::subrange<T1, T2, T3>(a0, a1, a2);
 }
@@ -59,7 +61,8 @@ std::ranges::subrange<T1, T2, T3> f34(T4 &&a0)
            std::convertible_to<std::ranges::sentinel_t<T4>, T2>) &&
           ((!std::ranges::subrange<T1, T2, T3>::_StoreSize)) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::__different_from<T4, std::ranges::subrange<T1, T2, T3>>)
 {
   return std::ranges::subrange<T1, T2, T3>(std::forward<T4>(a0));
 }
@@ -73,7 +76,8 @@ std::ranges::subrange<T1, T2, T3> f35(T4 &&a0)
           (std::ranges::subrange<T1, T2, T3>::_StoreSize &&
            std::ranges::sized_range<T4>) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::__different_from<T4, std::ranges::subrange<T1, T2, T3>>)
 {
   return std::ranges::subrange<T1, T2, T3>(std::forward<T4>(a0));
 }
@@ -86,7 +90,8 @@ f36(T4 &&a0, std::make_unsigned_t<std::iter_difference_t<T1>> a1)
            std::convertible_to<std::ranges::sentinel_t<T4>, T2>) &&
           ((T3 == std::ranges::subrange_kind::sized)) &&
           ((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::ranges::borrowed_range<T4>)
 {
   return std::ranges::subrange<T1, T2, T3>(std::forward<T4>(a0), a1);
 }
@@ -94,7 +99,9 @@ f36(T4 &&a0, std::make_unsigned_t<std::iter_difference_t<T1>> a1)
 template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
 T4 f37(const std::ranges::subrange<T1, T2, T3> &a0)
   requires((T3 == std::ranges::subrange_kind::sized ||
-            !std::sized_sentinel_for<T2, T1>))
+            !std::sized_sentinel_for<T2, T1>)) &&
+          (std::ranges::__pair_like_convertible_from<T4, const T1 &,
+                                                     const T2 &>)
 {
   return static_cast<T4>(a0);
 }

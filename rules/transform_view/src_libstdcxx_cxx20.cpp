@@ -328,6 +328,7 @@ decltype(auto) f25(std::ranges::transform_view<T1, T2> &a0,
            std::same_as<
                std::ranges::transform_view<T1, T2>,
                std::remove_cv_t<std::ranges::transform_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::is_object_v<T2> &&
            std::regular_invocable<T2 &, std::ranges::range_reference_t<T1>> &&
            std::__detail::__can_reference<
@@ -343,6 +344,7 @@ decltype(auto) f26(const std::ranges::transform_view<T1, T2> &a0,
            std::same_as<
                std::ranges::transform_view<T1, T2>,
                std::remove_cv_t<std::ranges::transform_view<T1, T2>>>) &&
+          (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::is_object_v<T2> &&
            std::regular_invocable<T2 &, std::ranges::range_reference_t<T1>> &&
            std::__detail::__can_reference<

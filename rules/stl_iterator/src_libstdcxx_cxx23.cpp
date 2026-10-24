@@ -7,10 +7,16 @@ template <typename T1> using t2 = std::const_sentinel<T1>;
 
 template <typename T1> using t3 = std::iter_const_reference_t<T1>;
 
-template <typename T1> std::const_iterator<T1> f38(T1 a0) {
+template <typename T1>
+std::const_iterator<T1> f38(T1 a0)
+  requires(std::input_iterator<T1>)
+{
   return std::make_const_iterator<T1>(a0);
 }
 
-template <typename T1> std::const_sentinel<T1> f39(T1 a0) {
+template <typename T1>
+std::const_sentinel<T1> f39(T1 a0)
+  requires(std::semiregular<T1>)
+{
   return std::make_const_sentinel<T1>(a0);
 }
