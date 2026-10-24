@@ -30,7 +30,7 @@ f2(const std::basic_format_parse_context<T1> &a0) {
 template <typename T1>
 void f3(std::basic_format_parse_context<T1> &a0,
         typename std::basic_format_parse_context<T1>::const_iterator a1) {
-  return a0.advance_to(a1);
+  return a0.advance_to(std::move(a1));
 }
 
 template <typename T1> std::size_t f4(std::basic_format_parse_context<T1> &a0) {
@@ -45,5 +45,5 @@ void f5(std::basic_format_parse_context<T1> &a0, std::size_t a1) {
 template <typename T1>
 std::basic_format_parse_context<T1> f6(std::basic_string_view<T1> a0,
                                        std::size_t a1) {
-  return std::basic_format_parse_context<T1>(a0, a1);
+  return std::basic_format_parse_context<T1>(std::move(a0), a1);
 }

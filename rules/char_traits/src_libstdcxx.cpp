@@ -314,7 +314,7 @@ template <typename T1> T1 *f89(T1 *a0, T1 const *a1, std::size_t a2) {
 }
 
 template <typename T1> T1 *f90(T1 *a0, std::size_t a1, T1 a2) {
-  return std::char_traits<T1>::assign(a0, a1, a2);
+  return std::char_traits<T1>::assign(a0, a1, std::move(a2));
 }
 
 template <typename T1> T1 f91(const unsigned long &a0) {

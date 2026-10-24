@@ -13,7 +13,7 @@ std::basic_istream<T1, T2> &f12(std::basic_istream<T1, T2> &&a0,
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f13(std::basic_istream<T1, T2> &&a0,
                                 std::basic_string<T1, T2, T3> &a1, T1 a2) {
-  return std::getline<T1, T2, T3>(std::move(a0), a1, a2);
+  return std::getline<T1, T2, T3>(std::move(a0), a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -25,7 +25,7 @@ std::basic_istream<T1, T2> &f14(std::basic_istream<T1, T2> &a0,
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f15(std::basic_istream<T1, T2> &a0,
                                 std::basic_string<T1, T2, T3> &a1, T1 a2) {
-  return std::getline<T1, T2, T3>(a0, a1, a2);
+  return std::getline<T1, T2, T3>(a0, a1, std::move(a2));
 }
 
 using t1 = std::iostream;

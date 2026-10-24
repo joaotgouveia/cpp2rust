@@ -25,13 +25,13 @@ using t25 = std::formatter<std::tuple<T2...>, T1>;
 template <typename T1, typename... T2>
 void f8(std::formatter<std::tuple<T2...>, T1> &a0,
         std::basic_string_view<T1> a1) {
-  return a0.set_separator(a1);
+  return a0.set_separator(std::move(a1));
 }
 
 template <typename T1, typename... T2>
 void f9(std::formatter<std::tuple<T2...>, T1> &a0,
         std::basic_string_view<T1> a1, std::basic_string_view<T1> a2) {
-  return a0.set_brackets(a1, a2);
+  return a0.set_brackets(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>

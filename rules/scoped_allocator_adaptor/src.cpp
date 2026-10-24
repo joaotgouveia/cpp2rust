@@ -80,7 +80,7 @@ template <typename T1, typename... T2>
 typename std::scoped_allocator_adaptor<T1, T2...>::pointer
 f6(std::scoped_allocator_adaptor<T1, T2...> &a0,
    typename std::scoped_allocator_adaptor<T1, T2...>::size_type a1) {
-  return a0.allocate(a1);
+  return a0.allocate(std::move(a1));
 }
 
 template <typename T1, typename... T2>
@@ -88,14 +88,14 @@ typename std::scoped_allocator_adaptor<T1, T2...>::pointer
 f7(std::scoped_allocator_adaptor<T1, T2...> &a0,
    typename std::scoped_allocator_adaptor<T1, T2...>::size_type a1,
    typename std::scoped_allocator_adaptor<T1, T2...>::const_void_pointer a2) {
-  return a0.allocate(a1, a2);
+  return a0.allocate(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename... T2>
 void f8(std::scoped_allocator_adaptor<T1, T2...> &a0,
         typename std::scoped_allocator_adaptor<T1, T2...>::pointer a1,
         typename std::scoped_allocator_adaptor<T1, T2...>::size_type a2) {
-  return a0.deallocate(a1, a2);
+  return a0.deallocate(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename... T2>

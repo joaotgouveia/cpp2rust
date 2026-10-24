@@ -16,7 +16,7 @@ template <typename T1,
               (!(std::is_same<T1, const std::error_code &>::value)), int>::type
               T3 = 0>
 std::error_code f48(T1 a0) {
-  return std::error_code(a0);
+  return std::error_code(std::move(a0));
 }
 
 template <
@@ -26,7 +26,7 @@ template <
         (!(std::is_same<T1, const std::error_condition &>::value)), int>::type
         T3 = 0>
 std::error_condition f49(T1 a0) {
-  return std::error_condition(a0);
+  return std::error_condition(std::move(a0));
 }
 
 bool f50(const std::error_code &a0, const std::error_condition &a1) {

@@ -188,11 +188,11 @@ template <typename T1> T1 f38(const volatile std::atomic<T1> &a0) {
 }
 
 template <typename T1> T1 f39(std::atomic<T1> &a0, T1 a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1> T1 f40(volatile std::atomic<T1> &a0, T1 a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1> bool f41(const std::atomic<T1> &a0) {
@@ -205,12 +205,12 @@ template <typename T1> bool f42(const volatile std::atomic<T1> &a0) {
 
 template <typename T1>
 void f43(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.store(a1, a2);
+  return a0.store(std::move(a1), a2);
 }
 
 template <typename T1>
 void f44(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.store(a1, a2);
+  return a0.store(std::move(a1), a2);
 }
 
 template <typename T1> T1 f45(const std::atomic<T1> &a0, std::memory_order a1) {
@@ -224,102 +224,102 @@ T1 f46(const volatile std::atomic<T1> &a0, std::memory_order a1) {
 
 template <typename T1>
 T1 f47(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.exchange(a1, a2);
+  return a0.exchange(std::move(a1), a2);
 }
 
 template <typename T1>
 T1 f48(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.exchange(a1, a2);
+  return a0.exchange(std::move(a1), a2);
 }
 
 template <typename T1>
 bool f49(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
          std::memory_order a4) {
-  return a0.compare_exchange_weak(a1, a2, a3, a4);
+  return a0.compare_exchange_weak(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1>
 bool f50(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
          std::memory_order a4) {
-  return a0.compare_exchange_weak(a1, a2, a3, a4);
+  return a0.compare_exchange_weak(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1>
 bool f51(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
-  return a0.compare_exchange_weak(a1, a2, a3);
+  return a0.compare_exchange_weak(a1, std::move(a2), a3);
 }
 
 template <typename T1>
 bool f52(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
-  return a0.compare_exchange_weak(a1, a2, a3);
+  return a0.compare_exchange_weak(a1, std::move(a2), a3);
 }
 
 template <typename T1>
 bool f53(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
          std::memory_order a4) {
-  return a0.compare_exchange_strong(a1, a2, a3, a4);
+  return a0.compare_exchange_strong(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1>
 bool f54(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
          std::memory_order a4) {
-  return a0.compare_exchange_strong(a1, a2, a3, a4);
+  return a0.compare_exchange_strong(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1>
 bool f55(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
-  return a0.compare_exchange_strong(a1, a2, a3);
+  return a0.compare_exchange_strong(a1, std::move(a2), a3);
 }
 
 template <typename T1>
 bool f56(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
-  return a0.compare_exchange_strong(a1, a2, a3);
+  return a0.compare_exchange_strong(a1, std::move(a2), a3);
 }
 
 template <typename T1>
 T1 f57(volatile std::atomic<T1> *a0,
        typename std::atomic<T1>::difference_type a1) {
-  return std::atomic_fetch_add<T1>(a0, a1);
+  return std::atomic_fetch_add<T1>(a0, std::move(a1));
 }
 
 template <typename T1>
 T1 f58(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1) {
-  return std::atomic_fetch_add<T1>(a0, a1);
+  return std::atomic_fetch_add<T1>(a0, std::move(a1));
 }
 
 template <typename T1>
 T1 f59(volatile std::atomic<T1> *a0,
        typename std::atomic<T1>::difference_type a1, std::memory_order a2) {
-  return std::atomic_fetch_add_explicit<T1>(a0, a1, a2);
+  return std::atomic_fetch_add_explicit<T1>(a0, std::move(a1), a2);
 }
 
 template <typename T1>
 T1 f60(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1,
        std::memory_order a2) {
-  return std::atomic_fetch_add_explicit<T1>(a0, a1, a2);
+  return std::atomic_fetch_add_explicit<T1>(a0, std::move(a1), a2);
 }
 
 template <typename T1>
 T1 f61(volatile std::atomic<T1> *a0,
        typename std::atomic<T1>::difference_type a1) {
-  return std::atomic_fetch_sub<T1>(a0, a1);
+  return std::atomic_fetch_sub<T1>(a0, std::move(a1));
 }
 
 template <typename T1>
 T1 f62(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1) {
-  return std::atomic_fetch_sub<T1>(a0, a1);
+  return std::atomic_fetch_sub<T1>(a0, std::move(a1));
 }
 
 template <typename T1>
 T1 f63(volatile std::atomic<T1> *a0,
        typename std::atomic<T1>::difference_type a1, std::memory_order a2) {
-  return std::atomic_fetch_sub_explicit<T1>(a0, a1, a2);
+  return std::atomic_fetch_sub_explicit<T1>(a0, std::move(a1), a2);
 }
 
 template <typename T1>
 T1 f64(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1,
        std::memory_order a2) {
-  return std::atomic_fetch_sub_explicit<T1>(a0, a1, a2);
+  return std::atomic_fetch_sub_explicit<T1>(a0, std::move(a1), a2);
 }
 
 template <typename T1> bool f65(const std::atomic<T1> *a0) {

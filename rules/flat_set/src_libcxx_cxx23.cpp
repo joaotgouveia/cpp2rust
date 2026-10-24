@@ -26,29 +26,29 @@ std::flat_set<T1, T2, T3> f60(const T2 &a0) {
 
 template <typename T1, typename T2, typename T3>
 std::flat_set<T1, T2, T3> f61(T3 a0, const T2 &a1) {
-  return std::flat_set<T1, T2, T3>(a0, a1);
+  return std::flat_set<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::flat_set<T1, T2, T3> f62(std::sorted_unique_t a0, T3 a1, const T2 &a2) {
-  return std::flat_set<T1, T2, T3>(std::move(a0), a1, a2);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
 std::flat_set<T1, T2, T3> f63(std::initializer_list<T1> a0, const T2 &a1) {
-  return std::flat_set<T1, T2, T3>(a0, a1);
+  return std::flat_set<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::flat_set<T1, T2, T3> f64(std::sorted_unique_t a0,
                               std::initializer_list<T1> a1, const T2 &a2) {
-  return std::flat_set<T1, T2, T3>(std::move(a0), a1, a2);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
 std::flat_set<T1, T2, T3> &f65(std::flat_set<T1, T2, T3> &a0,
                                std::initializer_list<T1> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -103,14 +103,14 @@ template <typename T1, typename T2, typename T3>
 typename std::flat_set<T1, T2, T3>::iterator
 f74(std::flat_set<T1, T2, T3> &a0,
     typename std::flat_set<T1, T2, T3>::const_iterator a1, const T1 &a2) {
-  return a0.insert(a1, a2);
+  return a0.insert(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_set<T1, T2, T3>::iterator
 f75(std::flat_set<T1, T2, T3> &a0,
     typename std::flat_set<T1, T2, T3>::iterator a1) {
-  return a0.erase(a1);
+  return a0.erase(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -184,7 +184,7 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::flat_set<T1, T2, T3> f87(T4 a0, T4 a1, const T2 &a2)
   requires(std::__has_input_iterator_category<T4>::value)
 {
-  return std::flat_set<T1, T2, T3>(a0, a1, a2);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -192,7 +192,8 @@ std::flat_set<T1, T2, T3> f88(std::sorted_unique_t a0, T4 a1, T4 a2,
                               const T2 &a3)
   requires(std::__has_input_iterator_category<T4>::value)
 {
-  return std::flat_set<T1, T2, T3>(std::move(a0), a1, a2, a3);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), std::move(a2),
+                                   a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -286,7 +287,7 @@ std::flat_set<T1, T2, T3> f99(T4 a0, T4 a1, const T5 &a2)
             std::uses_allocator<
                 typename std::flat_set<T1, T2, T3>::container_type, T5>::value))
 {
-  return std::flat_set<T1, T2, T3>(a0, a1, a2);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -295,7 +296,7 @@ std::flat_set<T1, T2, T3> f100(T4 a0, T4 a1, const T2 &a2, const T5 &a3)
             std::uses_allocator<
                 typename std::flat_set<T1, T2, T3>::container_type, T5>::value))
 {
-  return std::flat_set<T1, T2, T3>(a0, a1, a2, a3);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -305,7 +306,8 @@ std::flat_set<T1, T2, T3> f101(std::sorted_unique_t a0, T4 a1, T4 a2,
             std::uses_allocator<
                 typename std::flat_set<T1, T2, T3>::container_type, T5>::value))
 {
-  return std::flat_set<T1, T2, T3>(std::move(a0), a1, a2, a3);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), std::move(a2),
+                                   a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -315,7 +317,8 @@ std::flat_set<T1, T2, T3> f102(std::sorted_unique_t a0, T4 a1, T4 a2,
             std::uses_allocator<
                 typename std::flat_set<T1, T2, T3>::container_type, T5>::value))
 {
-  return std::flat_set<T1, T2, T3>(std::move(a0), a1, a2, a3, a4);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), std::move(a2),
+                                   a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -346,7 +349,7 @@ std::flat_set<T1, T2, T3> f105(std::initializer_list<T1> a0, const T4 &a1)
           (!(std::is_same<
               T4, typename std::flat_set<T1, T2, T3>::key_compare>::value))
 {
-  return std::flat_set<T1, T2, T3>(a0, a1);
+  return std::flat_set<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -355,7 +358,7 @@ std::flat_set<T1, T2, T3> f106(std::initializer_list<T1> a0, const T2 &a1,
   requires(std::uses_allocator<
            typename std::flat_set<T1, T2, T3>::container_type, T4>::value)
 {
-  return std::flat_set<T1, T2, T3>(a0, a1, a2);
+  return std::flat_set<T1, T2, T3>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -366,7 +369,7 @@ std::flat_set<T1, T2, T3> f107(std::sorted_unique_t a0,
           (!(std::is_same<
               T4, typename std::flat_set<T1, T2, T3>::key_compare>::value))
 {
-  return std::flat_set<T1, T2, T3>(std::move(a0), a1, a2);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -376,7 +379,7 @@ std::flat_set<T1, T2, T3> f108(std::sorted_unique_t a0,
   requires(std::uses_allocator<
            typename std::flat_set<T1, T2, T3>::container_type, T4>::value)
 {
-  return std::flat_set<T1, T2, T3>(std::move(a0), a1, a2, a3);
+  return std::flat_set<T1, T2, T3>(std::move(a0), std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
@@ -413,21 +416,21 @@ f111(std::flat_set<T1, T2, T3> &a0,
            !(std::is_same<
                T4, typename std::flat_set<T1, T2, T3>::value_type>::value))
 {
-  return a0.template insert<T4>(a1, std::forward<T4>(a2));
+  return a0.template insert<T4>(std::move(a1), std::forward<T4>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 void f112(std::flat_set<T1, T2, T3> &a0, T4 a1, T4 a2)
   requires(std::__has_input_iterator_category<T4>::value)
 {
-  return a0.template insert<T4>(a1, a2);
+  return a0.template insert<T4>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 void f113(std::flat_set<T1, T2, T3> &a0, std::sorted_unique_t a1, T4 a2, T4 a3)
   requires(std::__has_input_iterator_category<T4>::value)
 {
-  return a0.template insert<T4>(std::move(a1), a2, a3);
+  return a0.template insert<T4>(std::move(a1), std::move(a2), std::move(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

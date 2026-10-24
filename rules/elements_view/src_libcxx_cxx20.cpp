@@ -25,7 +25,7 @@ std::ranges::elements_view<T1, T2> f32(T1 a0)
           std::remove_reference_t<std::ranges::range_reference_t<T1>>, T2> &&
       std::ranges::__returnable_element<std::ranges::range_reference_t<T1>, T2>)
 {
-  return std::ranges::elements_view<T1, T2>(a0);
+  return std::ranges::elements_view<T1, T2>(std::move(a0));
 }
 
 template <typename T1, std::size_t T2>
@@ -392,7 +392,7 @@ decltype(auto) f53(std::ranges::elements_view<T1, T2> &a0,
            std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
                                              T2>)
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }
 
 template <typename T1, std::size_t T2, typename T3>
@@ -412,7 +412,7 @@ decltype(auto) f54(const std::ranges::elements_view<T1, T2> &a0,
            std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
                                              T2>)
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }
 
 template <typename T1> using t2 = std::ranges::keys_view<T1>;

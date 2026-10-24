@@ -9,7 +9,7 @@ template <typename T1> std::move_sentinel<T1> f1() {
 }
 
 template <typename T1> std::move_sentinel<T1> f2(T1 a0) {
-  return std::move_sentinel<T1>(a0);
+  return std::move_sentinel<T1>(std::move(a0));
 }
 
 template <typename T1> T1 f3(const std::move_sentinel<T1> &a0) {

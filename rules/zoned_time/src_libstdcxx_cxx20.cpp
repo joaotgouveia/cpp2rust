@@ -29,7 +29,7 @@ std::chrono::zoned_time<T1, T2> f4(const std::chrono::sys_time<T1> &a0) {
 }
 
 template <typename T1, typename T2> std::chrono::zoned_time<T1, T2> f5(T2 a0) {
-  return std::chrono::zoned_time<T1, T2>(a0);
+  return std::chrono::zoned_time<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>
@@ -39,7 +39,7 @@ std::chrono::zoned_time<T1, T2> f6(std::string_view a0) {
 
 template <typename T1, typename T2>
 std::chrono::zoned_time<T1, T2> f7(T2 a0, const std::chrono::sys_time<T1> &a1) {
-  return std::chrono::zoned_time<T1, T2>(a0, a1);
+  return std::chrono::zoned_time<T1, T2>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2>
@@ -51,7 +51,7 @@ std::chrono::zoned_time<T1, T2> f8(std::string_view a0,
 template <typename T1, typename T2>
 std::chrono::zoned_time<T1, T2> f9(T2 a0,
                                    const std::chrono::local_time<T1> &a1) {
-  return std::chrono::zoned_time<T1, T2>(a0, a1);
+  return std::chrono::zoned_time<T1, T2>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2>
@@ -63,7 +63,7 @@ std::chrono::zoned_time<T1, T2> f10(std::string_view a0,
 template <typename T1, typename T2>
 std::chrono::zoned_time<T1, T2>
 f11(T2 a0, const std::chrono::local_time<T1> &a1, std::chrono::choose a2) {
-  return std::chrono::zoned_time<T1, T2>(a0, a1, a2);
+  return std::chrono::zoned_time<T1, T2>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2>
@@ -137,7 +137,7 @@ std::chrono::zoned_time<T1, T2> f22(T2 a0,
   requires(std::is_convertible_v<std::chrono::sys_time<T3>,
                                  std::chrono::sys_time<T1>>)
 {
-  return std::chrono::zoned_time<T1, T2>(a0, a1);
+  return std::chrono::zoned_time<T1, T2>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -146,7 +146,7 @@ f23(T2 a0, const std::chrono::zoned_time<T3, T4> &a1, std::chrono::choose a2)
   requires(std::is_convertible_v<std::chrono::sys_time<T3>,
                                  std::chrono::sys_time<T1>>)
 {
-  return std::chrono::zoned_time<T1, T2>(a0, a1, a2);
+  return std::chrono::zoned_time<T1, T2>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

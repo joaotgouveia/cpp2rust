@@ -39,7 +39,7 @@ std::auto_ptr<T1> &f28(std::auto_ptr<T1> &a0, std::auto_ptr<T1> &a1) {
 
 template <typename T1>
 std::auto_ptr<T1> &f29(std::auto_ptr<T1> &a0, std::auto_ptr_ref<T1> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1> T1 &f30(const std::auto_ptr<T1> &a0) {
@@ -59,7 +59,7 @@ template <typename T1> void f34(std::auto_ptr<T1> &a0, T1 *a1) {
 }
 
 template <typename T1> std::auto_ptr<T1> f35(std::auto_ptr_ref<T1> a0) {
-  return {a0};
+  return {std::move(a0)};
 }
 
 template <

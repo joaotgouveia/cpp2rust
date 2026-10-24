@@ -20,5 +20,5 @@ template <
         T4 = 0>
 std::unique_ptr<T1, T2> &f92(std::unique_ptr<T1, T2> &a0,
                              std::auto_ptr<T3> a1) {
-  return a0.template operator= <T3>(a1);
+  return a0.template operator= <T3>(std::move(a1));
 }

@@ -13,5 +13,5 @@ std::basic_string_view<T1, T2> f128(T3 a0, T4 a1)
              std::is_same<T4, typename std::basic_string_view<
                                   T1, T2>::size_type>::value))
 {
-  return std::basic_string_view<T1, T2>(a0, a1);
+  return std::basic_string_view<T1, T2>(std::move(a0), std::move(a1));
 }

@@ -7,7 +7,7 @@
 
 template <typename... T1>
 void f11(std::ostream &a0, std::format_string<T1...> a1, T1 &&...a2) {
-  return std::print<T1...>(a0, a1, std::forward<T1>(a2)...);
+  return std::print<T1...>(a0, std::move(a1), std::forward<T1>(a2)...);
 }
 
 template <typename T1 = void> void f12(std::ostream &a0) {
@@ -22,7 +22,7 @@ template <typename T1 = void> void f14() { return std::println(); }
 
 template <typename... T1>
 void f15(std::ostream &a0, std::format_string<T1...> a1, T1 &&...a2) {
-  return std::println<T1...>(a0, a1, std::forward<T1>(a2)...);
+  return std::println<T1...>(a0, std::move(a1), std::forward<T1>(a2)...);
 }
 
 template <typename T1 = void>

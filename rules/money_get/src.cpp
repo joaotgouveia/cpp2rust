@@ -24,14 +24,14 @@ template <typename T1, typename T2> std::money_get<T1, T2> f1(std::size_t a0) {
 template <typename T1, typename T2>
 T2 f2(const std::money_get<T1, T2> &a0, T2 a1, T2 a2, bool a3,
       std::ios_base &a4, std::ios_base::iostate &a5, long double &a6) {
-  return a0.get(a1, a2, a3, a4, a5, a6);
+  return a0.get(std::move(a1), std::move(a2), a3, a4, a5, a6);
 }
 
 template <typename T1, typename T2>
 T2 f3(const std::money_get<T1, T2> &a0, T2 a1, T2 a2, bool a3,
       std::ios_base &a4, std::ios_base::iostate &a5,
       std::basic_string<T1> &a6) {
-  return a0.get(a1, a2, a3, a4, a5, a6);
+  return a0.get(std::move(a1), std::move(a2), a3, a4, a5, a6);
 }
 
 template <typename T1, typename T2> const std::locale::id &f4() {

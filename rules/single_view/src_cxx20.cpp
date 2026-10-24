@@ -90,7 +90,7 @@ decltype(auto) f12(std::ranges::single_view<T1> &a0,
                         std::remove_cv_t<std::ranges::single_view<T1>>>) &&
           (std::ranges::random_access_range<T2>) && (std::is_object_v<T1>)
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -101,5 +101,5 @@ decltype(auto) f13(const std::ranges::single_view<T1> &a0,
                         std::remove_cv_t<std::ranges::single_view<T1>>>) &&
           (std::ranges::random_access_range<T2>) && (std::is_object_v<T1>)
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }

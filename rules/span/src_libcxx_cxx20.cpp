@@ -8,14 +8,14 @@ template <typename T1, std::size_t T2>
 auto f35(std::span<T1, T2> a0)
   requires((!std::is_volatile_v<T1>))
 {
-  return std::as_bytes<T1, T2>(a0);
+  return std::as_bytes<T1, T2>(std::move(a0));
 }
 
 template <typename T1, std::size_t T2>
 auto f36(std::span<T1, T2> a0)
   requires((!std::is_const_v<T1> && !std::is_volatile_v<T1>))
 {
-  return std::as_writable_bytes<T1, T2>(a0);
+  return std::as_writable_bytes<T1, T2>(std::move(a0));
 }
 
 template <typename T1> using t14 = std::span<T1, std::dynamic_extent>;
@@ -144,7 +144,7 @@ std::span<T1, std::dynamic_extent> f54(T2 a0, std::size_t a1)
   requires(std::__span_compatible_iterator<
            T2, typename std::span<T1, std::dynamic_extent>::element_type>)
 {
-  return std::span<T1, std::dynamic_extent>(a0, a1);
+  return std::span<T1, std::dynamic_extent>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -153,7 +153,7 @@ std::span<T1, std::dynamic_extent> f55(T2 a0, T3 a1)
               T2, typename std::span<T1, std::dynamic_extent>::element_type>) &&
           (std::__span_compatible_sentinel_for<T3, T2>)
 {
-  return std::span<T1, std::dynamic_extent>(a0, a1);
+  return std::span<T1, std::dynamic_extent>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, std::size_t T2>
@@ -274,7 +274,7 @@ std::span<T1, T2> f71(T3 a0, std::size_t a1)
   requires(std::__span_compatible_iterator<
            T3, typename std::span<T1, T2>::element_type>)
 {
-  return std::span<T1, T2>(a0, a1);
+  return std::span<T1, T2>(std::move(a0), a1);
 }
 
 template <typename T1, std::size_t T2, typename T3, typename T4>
@@ -283,7 +283,7 @@ std::span<T1, T2> f72(T3 a0, T4 a1)
               T3, typename std::span<T1, T2>::element_type>) &&
           (std::__span_compatible_sentinel_for<T4, T3>)
 {
-  return std::span<T1, T2>(a0, a1);
+  return std::span<T1, T2>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, std::size_t T2, typename T3>

@@ -10,7 +10,7 @@ std::error_condition f19(T1 a0)
   requires(!(std::is_same<T1, const std::error_condition &>::value) &&
            !(std::is_same<T1, std::error_condition &&>::value))
 {
-  return std::error_condition(a0);
+  return std::error_condition(std::move(a0));
 }
 
 template <
@@ -20,7 +20,7 @@ std::error_condition &f20(std::error_condition &a0, T1 a1)
   requires(!(std::is_same<T1, const std::error_condition &>::value) &&
            !(std::is_same<T1, std::error_condition &&>::value))
 {
-  return a0.template operator= <T1>(a1);
+  return a0.template operator= <T1>(std::move(a1));
 }
 
 std::strong_ordering f21(const std::error_condition &a0,

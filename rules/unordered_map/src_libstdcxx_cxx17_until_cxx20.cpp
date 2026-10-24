@@ -44,5 +44,5 @@ std::__enable_if_t<std::is_constructible<typename std::__umap_hashtable<
 f96(std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
     T6 &&a2) {
-  return a0.template insert<T6>(a1, std::forward<T6>(a2));
+  return a0.template insert<T6>(std::move(a1), std::forward<T6>(a2));
 }

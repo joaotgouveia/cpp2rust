@@ -13,7 +13,7 @@ std::function<T1(T2...)> f36(T3 a0)
            !(std::is_same<T3, const std::function<T1(T2...)> &>::value) &&
            !(std::is_same<T3, std::function<T1(T2...)> &&>::value))
 {
-  return std::function<T1(T2...)>(a0);
+  return std::function<T1(T2...)>(std::move(a0));
 }
 
 template <typename T1, typename... T2, typename T3,

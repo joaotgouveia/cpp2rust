@@ -94,7 +94,7 @@ template <typename T1> std::ctype<T1> f30(std::size_t a0) {
 
 template <typename T1>
 bool f31(const std::ctype<T1> &a0, unsigned short a1, T1 a2) {
-  return a0.is(a1, a2);
+  return a0.is(a1, std::move(a2));
 }
 
 template <typename T1>
@@ -116,7 +116,7 @@ T1 const *f34(const std::ctype<T1> &a0, unsigned short a1, T1 const *a2,
 }
 
 template <typename T1> T1 f35(const std::ctype<T1> &a0, T1 a1) {
-  return a0.toupper(a1);
+  return a0.toupper(std::move(a1));
 }
 
 template <typename T1>
@@ -125,7 +125,7 @@ T1 const *f36(const std::ctype<T1> &a0, T1 *a1, T1 const *a2) {
 }
 
 template <typename T1> T1 f37(const std::ctype<T1> &a0, T1 a1) {
-  return a0.tolower(a1);
+  return a0.tolower(std::move(a1));
 }
 
 template <typename T1>
@@ -144,7 +144,7 @@ const char *f40(const std::ctype<T1> &a0, const char *a1, const char *a2,
 }
 
 template <typename T1> char f41(const std::ctype<T1> &a0, T1 a1, char a2) {
-  return a0.narrow(a1, a2);
+  return a0.narrow(std::move(a1), a2);
 }
 
 template <typename T1>

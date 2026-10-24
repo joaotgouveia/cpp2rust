@@ -30,7 +30,7 @@ template <
          !(std::is_same<T3, std::function<T1(T2...)> &&>::value)),
         int>::type T5 = 0>
 std::function<T1(T2...)> f22(T3 a0) {
-  return std::function<T1(T2...)>(a0);
+  return std::function<T1(T2...)>(std::move(a0));
 }
 
 template <typename T1, typename... T2, typename T3,

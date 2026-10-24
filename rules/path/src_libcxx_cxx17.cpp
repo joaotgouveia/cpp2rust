@@ -249,7 +249,7 @@ std::filesystem::path f61(const T1 &a0, std::filesystem::path::format a1) {
 
 template <typename T1>
 std::filesystem::path f62(T1 a0, T1 a1, std::filesystem::path::format a2) {
-  return std::filesystem::path(a0, a1, a2);
+  return std::filesystem::path(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1>
@@ -261,7 +261,7 @@ f63(std::filesystem::path &a0, const T1 &a1) {
 
 template <typename T1>
 std::filesystem::path &f64(std::filesystem::path &a0, T1 a1, T1 a2) {
-  return a0.template assign<T1>(a1, a2);
+  return a0.template assign<T1>(std::move(a1), std::move(a2));
 }
 
 template <typename T1>
@@ -273,7 +273,7 @@ f65(std::filesystem::path &a0, const T1 &a1) {
 
 template <typename T1>
 std::filesystem::path &f66(std::filesystem::path &a0, T1 a1, T1 a2) {
-  return a0.template append<T1>(a1, a2);
+  return a0.template append<T1>(std::move(a1), std::move(a2));
 }
 
 template <typename T1>
@@ -285,7 +285,7 @@ f67(std::filesystem::path &a0, const T1 &a1) {
 
 template <typename T1>
 std::filesystem::path &f68(std::filesystem::path &a0, T1 a1, T1 a2) {
-  return a0.template concat<T1>(a1, a2);
+  return a0.template concat<T1>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>

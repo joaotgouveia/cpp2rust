@@ -24,7 +24,7 @@ std::__ra_iterator<T1, T2> f1()
 }
 
 template <typename T1, typename T2> std::__ra_iterator<T1, T2> f2(T2 a0) {
-  return std::__ra_iterator<T1, T2>(a0);
+  return std::__ra_iterator<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>
@@ -60,19 +60,19 @@ std::__ra_iterator<T1, T2> f8(std::__ra_iterator<T1, T2> &a0, int a1) {
 template <typename T1, typename T2>
 std::__ra_iterator<T1, T2> &f9(std::__ra_iterator<T1, T2> &a0,
                                std::iter_difference_t<T2> a1) {
-  return a0.operator+=(a1);
+  return a0.operator+=(std::move(a1));
 }
 
 template <typename T1, typename T2>
 std::__ra_iterator<T1, T2> &f10(std::__ra_iterator<T1, T2> &a0,
                                 std::iter_difference_t<T2> a1) {
-  return a0.operator-=(a1);
+  return a0.operator-=(std::move(a1));
 }
 
 template <typename T1, typename T2>
 decltype(auto) f11(const std::__ra_iterator<T1, T2> &a0,
                    std::iter_difference_t<T2> a1) {
-  return a0.operator[](a1);
+  return a0.operator[](std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -84,19 +84,19 @@ std::iter_difference_t<T2> f12(const std::__ra_iterator<T1, T2> &a0,
 template <typename T1, typename T2>
 std::__ra_iterator<T1, T2> f13(const std::__ra_iterator<T1, T2> &a0,
                                std::iter_difference_t<T2> a1) {
-  return operator-(a0, a1);
+  return operator-(a0, std::move(a1));
 }
 
 template <typename T1, typename T2>
 std::__ra_iterator<T1, T2> f14(std::iter_difference_t<T2> a0,
                                const std::__ra_iterator<T1, T2> &a1) {
-  return operator+(a0, a1);
+  return operator+(std::move(a0), a1);
 }
 
 template <typename T1, typename T2>
 std::__ra_iterator<T1, T2> f15(const std::__ra_iterator<T1, T2> &a0,
                                std::iter_difference_t<T2> a1) {
-  return operator+(a0, a1);
+  return operator+(a0, std::move(a1));
 }
 
 template <typename T1, typename T2>

@@ -77,13 +77,13 @@ std::size_t f3(const std::flat_multimap<T1, T2, T3, T4, T5> &a0) {
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f4(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
         std::initializer_list<std::pair<T1, T2>> a1) {
-  return a0.insert(a1);
+  return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f5(std::flat_multimap<T1, T2, T3, T4, T5> &a0, std::sorted_equivalent_t a1,
         std::initializer_list<std::pair<T1, T2>> a2) {
-  return a0.insert(std::move(a1), a2);
+  return a0.insert(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>

@@ -25,15 +25,15 @@ template <typename T1> std::size_t f2(const T1 *a0) {
 }
 
 template <typename T1> T1 f3(const std::regex_traits<T1> &a0, T1 a1) {
-  return a0.translate(a1);
+  return a0.translate(std::move(a1));
 }
 
 template <typename T1> T1 f4(const std::regex_traits<T1> &a0, T1 a1) {
-  return a0.translate_nocase(a1);
+  return a0.translate_nocase(std::move(a1));
 }
 
 template <typename T1> int f5(const std::regex_traits<T1> &a0, T1 a1, int a2) {
-  return a0.value(a1, a2);
+  return a0.value(std::move(a1), a2);
 }
 
 template <typename T1>
@@ -47,15 +47,15 @@ template <typename T1> std::locale f7(const std::regex_traits<T1> &a0) {
 
 template <typename T1, typename T2>
 std::basic_string<T1> f8(const std::regex_traits<T1> &a0, T2 a1, T2 a2) {
-  return a0.template transform<T2>(a1, a2);
+  return a0.template transform<T2>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 std::basic_string<T1> f9(const std::regex_traits<T1> &a0, T2 a1, T2 a2) {
-  return a0.template transform_primary<T2>(a1, a2);
+  return a0.template transform_primary<T2>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 std::basic_string<T1> f10(const std::regex_traits<T1> &a0, T2 a1, T2 a2) {
-  return a0.template lookup_collatename<T2>(a1, a2);
+  return a0.template lookup_collatename<T2>(std::move(a1), std::move(a2));
 }

@@ -12,7 +12,7 @@ typename std::forward_list<T1, T2>::size_type f62(std::forward_list<T1, T2> &a0,
 template <typename T1, typename T2, typename T3>
 typename std::forward_list<T1, T2>::size_type f63(std::forward_list<T1, T2> &a0,
                                                   T3 a1) {
-  return std::erase_if<T1, T2, T3>(a0, a1);
+  return std::erase_if<T1, T2, T3>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2>

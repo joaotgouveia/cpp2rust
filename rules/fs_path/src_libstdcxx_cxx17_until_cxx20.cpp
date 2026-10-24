@@ -52,7 +52,7 @@ template <
         int>::type T2 = 0>
 std::filesystem::__detail::_Path2<T1 *> &f100(std::filesystem::path &a0,
                                               T1 a1) {
-  return a0.template operator+= <T1>(a1);
+  return a0.template operator+= <T1>(std::move(a1));
 }
 
 bool f101(const std::filesystem::path &a0, const std::filesystem::path &a1) {

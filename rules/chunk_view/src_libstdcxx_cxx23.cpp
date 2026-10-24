@@ -8,7 +8,7 @@ template <typename T1>
 std::ranges::chunk_view<T1> f1(T1 a0, std::ranges::range_difference_t<T1> a1)
   requires(std::ranges::input_range<T1>)
 {
-  return std::ranges::chunk_view<T1>(a0, a1);
+  return std::ranges::chunk_view<T1>(std::move(a0), std::move(a1));
 }
 
 template <typename T1>
@@ -238,7 +238,7 @@ decltype(auto) f24(std::ranges::chunk_view<T1> &a0,
           (std::ranges::random_access_range<T2>) &&
           (std::ranges::input_range<T1>)
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -250,5 +250,5 @@ decltype(auto) f25(const std::ranges::chunk_view<T1> &a0,
           (std::ranges::random_access_range<T2>) &&
           (std::ranges::input_range<T1>)
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }

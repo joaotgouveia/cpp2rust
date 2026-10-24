@@ -26,7 +26,7 @@ std::independent_bits_engine<T1, T2, T3> f3(T1 &&a0) {
 
 template <typename T1, std::size_t T2, typename T3>
 std::independent_bits_engine<T1, T2, T3> f4(T3 a0) {
-  return std::independent_bits_engine<T1, T2, T3>(a0);
+  return std::independent_bits_engine<T1, T2, T3>(std::move(a0));
 }
 
 template <typename T1, std::size_t T2, typename T3>
@@ -36,7 +36,7 @@ void f5(std::independent_bits_engine<T1, T2, T3> &a0) {
 
 template <typename T1, std::size_t T2, typename T3>
 void f6(std::independent_bits_engine<T1, T2, T3> &a0, T3 a1) {
-  return a0.seed(a1);
+  return a0.seed(std::move(a1));
 }
 
 template <typename T1, std::size_t T2, typename T3>

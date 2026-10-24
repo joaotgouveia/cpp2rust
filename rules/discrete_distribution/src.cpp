@@ -61,13 +61,13 @@ template <typename T1> T1 f9(const std::discrete_distribution<T1> &a0) {
 
 template <typename T1, typename T2>
 std::discrete_distribution<T1> f10(T2 a0, T2 a1) {
-  return std::discrete_distribution<T1>(a0, a1);
+  return std::discrete_distribution<T1>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
 std::discrete_distribution<T1> f11(std::size_t a0, double a1, double a2,
                                    T2 a3) {
-  return std::discrete_distribution<T1>(a0, a1, a2, a3);
+  return std::discrete_distribution<T1>(a0, a1, a2, std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -110,13 +110,15 @@ f17(const typename std::discrete_distribution<T1>::param_type &a0) {
 
 template <typename T1, typename T2>
 typename std::discrete_distribution<T1>::param_type f18(T2 a0, T2 a1) {
-  return typename std::discrete_distribution<T1>::param_type(a0, a1);
+  return typename std::discrete_distribution<T1>::param_type(std::move(a0),
+                                                             std::move(a1));
 }
 
 template <typename T1, typename T2>
 typename std::discrete_distribution<T1>::param_type
 f19(std::size_t a0, double a1, double a2, T2 a3) {
-  return typename std::discrete_distribution<T1>::param_type(a0, a1, a2, a3);
+  return typename std::discrete_distribution<T1>::param_type(a0, a1, a2,
+                                                             std::move(a3));
 }
 
 template <typename T1>

@@ -12,7 +12,7 @@ f126(std::from_range_t a0, T5 &&a1,
            T5, typename std::unordered_multiset<T1, T2, T3, T4>::value_type>)
 {
   return std::unordered_multiset<T1, T2, T3, T4>(
-      std::move(a0), std::forward<T5>(a1), a2, a3, a4, a5);
+      std::move(a0), std::forward<T5>(a1), std::move(a2), a3, a4, a5);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -23,8 +23,8 @@ f127(std::from_range_t a0, T5 &&a1,
   requires(std::_ContainerCompatibleRange<
            T5, typename std::unordered_multiset<T1, T2, T3, T4>::value_type>)
 {
-  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0),
-                                                 std::forward<T5>(a1), a2, a3);
+  return std::unordered_multiset<T1, T2, T3, T4>(
+      std::move(a0), std::forward<T5>(a1), std::move(a2), a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -36,7 +36,7 @@ f128(std::from_range_t a0, T5 &&a1,
            T5, typename std::unordered_multiset<T1, T2, T3, T4>::value_type>)
 {
   return std::unordered_multiset<T1, T2, T3, T4>(
-      std::move(a0), std::forward<T5>(a1), a2, a3, a4);
+      std::move(a0), std::forward<T5>(a1), std::move(a2), a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>

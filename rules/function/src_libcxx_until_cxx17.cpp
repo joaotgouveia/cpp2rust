@@ -33,7 +33,7 @@ template <
         std::_IsNotSame<std::__remove_cvref_t<T3>, std::function<T1(T2...)>>,
         std::__is_invocable_r<T1, T3 &, T2...>>::value>>
 std::function<T1(T2...)> f34(std::allocator_arg_t a0, const T4 &a1, T3 a2) {
-  return std::function<T1(T2...)>(std::move(a0), a1, a2);
+  return std::function<T1(T2...)>(std::move(a0), a1, std::move(a2));
 }
 
 template <typename T1, typename... T2, typename T3, typename T4>

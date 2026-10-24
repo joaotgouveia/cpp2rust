@@ -50,7 +50,8 @@ std::unexpected<T1> f10(std::in_place_t a0, std::initializer_list<T2> a1,
                         T3 &&...a2)
   requires(std::is_constructible_v<T1, std::initializer_list<T2> &, T3...>)
 {
-  return std::unexpected<T1>(std::move(a0), a1, std::forward<T3>(a2)...);
+  return std::unexpected<T1>(std::move(a0), std::move(a1),
+                             std::forward<T3>(a2)...);
 }
 
 template <typename T1>

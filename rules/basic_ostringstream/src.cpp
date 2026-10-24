@@ -120,7 +120,7 @@ T1 f17(const std::basic_ostringstream<T1, T2, T3> &a0) {
 
 template <typename T1, typename T2, typename T3>
 T1 f18(std::basic_ostringstream<T1, T2, T3> &a0, T1 a1) {
-  return a0.fill(a1);
+  return a0.fill(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -131,7 +131,7 @@ std::locale f19(std::basic_ostringstream<T1, T2, T3> &a0,
 
 template <typename T1, typename T2, typename T3>
 char f20(const std::basic_ostringstream<T1, T2, T3> &a0, T1 a1, char a2) {
-  return a0.narrow(a1, a2);
+  return a0.narrow(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>

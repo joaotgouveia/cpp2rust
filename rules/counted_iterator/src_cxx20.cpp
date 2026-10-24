@@ -20,7 +20,7 @@ std::counted_iterator<T1> f1()
 
 template <typename T1>
 std::counted_iterator<T1> f2(T1 a0, std::iter_difference_t<T1> a1) {
-  return std::counted_iterator<T1>(a0, a1);
+  return std::counted_iterator<T1>(std::move(a0), std::move(a1));
 }
 
 template <typename T1> const T1 &f3(const std::counted_iterator<T1> &a0) {
@@ -83,7 +83,7 @@ std::counted_iterator<T1> f13(const std::counted_iterator<T1> &a0,
                               std::iter_difference_t<T1> a1)
   requires(std::random_access_iterator<T1>)
 {
-  return a0.operator+(a1);
+  return a0.operator+(std::move(a1));
 }
 
 template <typename T1>
@@ -91,7 +91,7 @@ std::counted_iterator<T1> &f14(std::counted_iterator<T1> &a0,
                                std::iter_difference_t<T1> a1)
   requires(std::random_access_iterator<T1>)
 {
-  return a0.operator+=(a1);
+  return a0.operator+=(std::move(a1));
 }
 
 template <typename T1>
@@ -99,7 +99,7 @@ std::counted_iterator<T1> f15(const std::counted_iterator<T1> &a0,
                               std::iter_difference_t<T1> a1)
   requires(std::random_access_iterator<T1>)
 {
-  return a0.operator-(a1);
+  return a0.operator-(std::move(a1));
 }
 
 template <typename T1>
@@ -107,7 +107,7 @@ std::counted_iterator<T1> &f16(std::counted_iterator<T1> &a0,
                                std::iter_difference_t<T1> a1)
   requires(std::random_access_iterator<T1>)
 {
-  return a0.operator-=(a1);
+  return a0.operator-=(std::move(a1));
 }
 
 template <typename T1>
@@ -115,7 +115,7 @@ decltype(auto) f17(const std::counted_iterator<T1> &a0,
                    std::iter_difference_t<T1> a1)
   requires(std::random_access_iterator<T1>)
 {
-  return a0.operator[](a1);
+  return a0.operator[](std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -185,5 +185,5 @@ std::iter_difference_t<T2> f26(const std::counted_iterator<T1> &a0,
 template <typename T1>
 std::counted_iterator<T1> f27(std::iter_difference_t<T1> a0,
                               const std::counted_iterator<T1> &a1) {
-  return operator+(a0, a1);
+  return operator+(std::move(a0), a1);
 }

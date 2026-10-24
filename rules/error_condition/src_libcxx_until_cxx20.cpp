@@ -14,7 +14,7 @@ template <
          !(std::is_same<T1, std::error_condition &&>::value)),
         int>::type T3 = 0>
 std::error_condition f2(T1 a0) {
-  return std::error_condition(a0);
+  return std::error_condition(std::move(a0));
 }
 
 template <
@@ -25,7 +25,7 @@ template <
          !(std::is_same<T1, std::error_condition &&>::value)),
         int>::type T3 = 0>
 std::error_condition &f3(std::error_condition &a0, T1 a1) {
-  return a0.template operator= <T1>(a1);
+  return a0.template operator= <T1>(std::move(a1));
 }
 
 bool f4(const std::error_condition &a0, const std::error_condition &a1) {

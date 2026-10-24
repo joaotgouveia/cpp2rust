@@ -14,10 +14,10 @@ template <typename T1, typename T2> void f54(std::list<T1, T2> &a0) {
 
 template <typename T1, typename T2, typename T3>
 void f55(std::list<T1, T2> &a0, T3 a1) {
-  return a0.template remove_if<T3>(a1);
+  return a0.template remove_if<T3>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 void f56(std::list<T1, T2> &a0, T3 a1) {
-  return a0.template unique<T3>(a1);
+  return a0.template unique<T3>(std::move(a1));
 }

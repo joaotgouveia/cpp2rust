@@ -74,7 +74,7 @@ std::multiset<T1, T2, T3> f4(std::multiset<T1, T2, T3> &&a0) {
 template <typename T1, typename T2, typename T3>
 std::multiset<T1, T2, T3> f5(std::initializer_list<T1> a0, const T2 &a1,
                              const T3 &a2) {
-  return std::multiset<T1, T2, T3>(a0, a1, a2);
+  return std::multiset<T1, T2, T3>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -95,7 +95,7 @@ std::multiset<T1, T2, T3> f8(std::multiset<T1, T2, T3> &&a0, const T3 &a1) {
 
 template <typename T1, typename T2, typename T3>
 std::multiset<T1, T2, T3> f9(std::initializer_list<T1> a0, const T3 &a1) {
-  return std::multiset<T1, T2, T3>(a0, a1);
+  return std::multiset<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -113,7 +113,7 @@ std::multiset<T1, T2, T3> &f11(std::multiset<T1, T2, T3> &a0,
 template <typename T1, typename T2, typename T3>
 std::multiset<T1, T2, T3> &f12(std::multiset<T1, T2, T3> &a0,
                                std::initializer_list<T1> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -169,26 +169,26 @@ template <typename T1, typename T2, typename T3>
 typename std::multiset<T1, T2, T3>::iterator
 f22(std::multiset<T1, T2, T3> &a0,
     typename std::multiset<T1, T2, T3>::const_iterator a1, const T1 &a2) {
-  return a0.insert(a1, a2);
+  return a0.insert(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::multiset<T1, T2, T3>::iterator
 f23(std::multiset<T1, T2, T3> &a0,
     typename std::multiset<T1, T2, T3>::const_iterator a1, T1 &&a2) {
-  return a0.insert(a1, std::move(a2));
+  return a0.insert(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
 void f24(std::multiset<T1, T2, T3> &a0, std::initializer_list<T1> a1) {
-  return a0.insert(a1);
+  return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::multiset<T1, T2, T3>::iterator
 f25(std::multiset<T1, T2, T3> &a0,
     typename std::multiset<T1, T2, T3>::const_iterator a1) {
-  return a0.erase(a1);
+  return a0.erase(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -202,7 +202,7 @@ typename std::multiset<T1, T2, T3>::iterator
 f27(std::multiset<T1, T2, T3> &a0,
     typename std::multiset<T1, T2, T3>::const_iterator a1,
     typename std::multiset<T1, T2, T3>::const_iterator a2) {
-  return a0.erase(a1, a2);
+  return a0.erase(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -268,12 +268,12 @@ f37(const std::multiset<T1, T2, T3> &a0, const T1 &a1) {
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::multiset<T1, T2, T3> f38(T4 a0, T4 a1, const T2 &a2, const T3 &a3) {
-  return std::multiset<T1, T2, T3>(a0, a1, a2, a3);
+  return std::multiset<T1, T2, T3>(std::move(a0), std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::multiset<T1, T2, T3> f39(T4 a0, T4 a1, const T3 &a2) {
-  return std::multiset<T1, T2, T3>(a0, a1, a2);
+  return std::multiset<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
@@ -286,10 +286,11 @@ template <typename T1, typename T2, typename T3, typename... T4>
 typename std::multiset<T1, T2, T3>::iterator
 f41(std::multiset<T1, T2, T3> &a0,
     typename std::multiset<T1, T2, T3>::const_iterator a1, T4 &&...a2) {
-  return a0.template emplace_hint<T4...>(a1, std::forward<T4>(a2)...);
+  return a0.template emplace_hint<T4...>(std::move(a1),
+                                         std::forward<T4>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 void f42(std::multiset<T1, T2, T3> &a0, T4 a1, T4 a2) {
-  return a0.template insert<T4>(a1, a2);
+  return a0.template insert<T4>(std::move(a1), std::move(a2));
 }

@@ -13,14 +13,14 @@ template <typename T1, typename T2>
 std::ranges::iota_view<T1, T2> f27(T1 a0)
   requires(std::__weakly_equality_comparable_with<T1, T2> && std::copyable<T1>)
 {
-  return std::ranges::iota_view<T1, T2>(a0);
+  return std::ranges::iota_view<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>
 std::ranges::iota_view<T1, T2> f28(T1 a0, T2 a1)
   requires(std::__weakly_equality_comparable_with<T1, T2> && std::copyable<T1>)
 {
-  return std::ranges::iota_view<T1, T2>(a0, a1);
+  return std::ranges::iota_view<T1, T2>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -30,7 +30,7 @@ f29(typename std::ranges::iota_view<T1, T2>::__iterator a0,
   requires(std::same_as<T1, T2>) &&
           (std::__weakly_equality_comparable_with<T1, T2> && std::copyable<T1>)
 {
-  return std::ranges::iota_view<T1, T2>(a0, a1);
+  return std::ranges::iota_view<T1, T2>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -39,7 +39,7 @@ f30(typename std::ranges::iota_view<T1, T2>::__iterator a0, T2 a1)
   requires(std::same_as<T2, std::unreachable_sentinel_t>) &&
           (std::__weakly_equality_comparable_with<T1, T2> && std::copyable<T1>)
 {
-  return std::ranges::iota_view<T1, T2>(a0, a1);
+  return std::ranges::iota_view<T1, T2>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -50,7 +50,7 @@ f31(typename std::ranges::iota_view<T1, T2>::__iterator a0,
             !std::same_as<T2, std::unreachable_sentinel_t>)) &&
           (std::__weakly_equality_comparable_with<T1, T2> && std::copyable<T1>)
 {
-  return std::ranges::iota_view<T1, T2>(a0, a1);
+  return std::ranges::iota_view<T1, T2>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -195,7 +195,7 @@ decltype(auto) f45(std::ranges::iota_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::__weakly_equality_comparable_with<T1, T2> && std::copyable<T1>)
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -207,5 +207,5 @@ decltype(auto) f46(const std::ranges::iota_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::__weakly_equality_comparable_with<T1, T2> && std::copyable<T1>)
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }

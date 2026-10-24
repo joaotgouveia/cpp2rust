@@ -359,7 +359,7 @@ typename std::basic_format_context<T2, char>::iterator
 f60(const std::formatter<std::basic_string_view<char, T1>, char> &a0,
     std::basic_string_view<char, T1> a1,
     std::basic_format_context<T2, char> &a2) {
-  return a0.template format<T2>(a1, a2);
+  return a0.template format<T2>(std::move(a1), a2);
 }
 
 template <typename T1>
@@ -382,7 +382,7 @@ typename std::basic_format_context<T2, wchar_t>::iterator
 f63(const std::formatter<std::basic_string_view<wchar_t, T1>, wchar_t> &a0,
     std::basic_string_view<wchar_t, T1> a1,
     std::basic_format_context<T2, wchar_t> &a2) {
-  return a0.template format<T2>(a1, a2);
+  return a0.template format<T2>(std::move(a1), a2);
 }
 
 template <typename T1> std::formatter<std::nullptr_t, T1> f64() {
@@ -419,7 +419,7 @@ template <typename T1, typename T2>
 typename std::basic_format_context<T2, T1>::iterator
 f69(const std::formatter<T1, T1> &a0, T1 a1,
     std::basic_format_context<T2, T1> &a2) {
-  return a0.template format<T2>(a1, a2);
+  return a0.template format<T2>(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -566,7 +566,7 @@ template <typename T1, typename T2, typename T3>
 typename std::basic_format_context<T3, T2>::iterator
 f88(const std::formatter<T1, T2> &a0, T1 a1,
     std::basic_format_context<T3, T2> &a2) {
-  return a0.template format<T3>(a1, a2);
+  return a0.template format<T3>(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -594,7 +594,7 @@ f91(const std::formatter<T1, T2> &a0, T1 a1,
     std::basic_format_context<T3, T2> &a2)
   requires(std::__format::__is_formattable_integer<T1>)
 {
-  return a0.template format<T3>(a1, a2);
+  return a0.template format<T3>(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>

@@ -16,7 +16,7 @@ template <typename T1, typename... T2>
 std::ranges::cartesian_product_view<T1, T2...> f2(T1 a0, T2... a1)
   requires((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
-  return std::ranges::cartesian_product_view<T1, T2...>(a0, a1...);
+  return std::ranges::cartesian_product_view<T1, T2...>(std::move(a0), a1...);
 }
 
 template <typename T1, typename... T2>
@@ -297,7 +297,7 @@ decltype(auto) f26(std::ranges::cartesian_product_view<T1, T2...> &a0,
           (std::ranges::random_access_range<T3>) &&
           ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }
 
 template <typename T1, typename... T2, typename T3>
@@ -310,5 +310,5 @@ decltype(auto) f27(const std::ranges::cartesian_product_view<T1, T2...> &a0,
           (std::ranges::random_access_range<T3>) &&
           ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }

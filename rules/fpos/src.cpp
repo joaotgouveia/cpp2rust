@@ -14,7 +14,7 @@ template <typename T1> std::streamoff f2(const std::fpos<T1> &a0) {
 }
 
 template <typename T1> void f3(std::fpos<T1> &a0, T1 a1) {
-  return a0.state(a1);
+  return a0.state(std::move(a1));
 }
 
 template <typename T1> T1 f4(const std::fpos<T1> &a0) { return a0.state(); }

@@ -197,7 +197,7 @@ std::basic_osyncstream<T1, T2, T3> &f27(std::basic_osyncstream<T1, T2, T3> &a0,
 template <typename T1, typename T2, typename T3>
 std::basic_osyncstream<T1, T2, T3> &f28(std::basic_osyncstream<T1, T2, T3> &a0,
                                         T1 a1) {
-  return a0.put(a1);
+  return a0.put(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -222,7 +222,7 @@ template <typename T1, typename T2, typename T3>
 std::basic_osyncstream<T1, T2, T3> &
 f32(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::pos_type a1) {
-  return a0.seekp(a1);
+  return a0.seekp(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -230,7 +230,7 @@ std::basic_osyncstream<T1, T2, T3> &
 f33(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::off_type a1,
     typename std::basic_osyncstream<T1, T2, T3>::seekdir a2) {
-  return a0.seekp(a1, a2);
+  return a0.seekp(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -252,13 +252,13 @@ f36(const std::basic_osyncstream<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 void f37(std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::iostate a1) {
-  return a0.clear(a1);
+  return a0.clear(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 void f38(std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::iostate a1) {
-  return a0.setstate(a1);
+  return a0.setstate(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -290,7 +290,7 @@ f43(const std::basic_osyncstream<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 void f44(std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::iostate a1) {
-  return a0.exceptions(a1);
+  return a0.exceptions(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -311,7 +311,7 @@ T1 f47(const std::basic_osyncstream<T1, T2, T3> &a0) {
 
 template <typename T1, typename T2, typename T3>
 T1 f48(std::basic_osyncstream<T1, T2, T3> &a0, T1 a1) {
-  return a0.fill(a1);
+  return a0.fill(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -321,7 +321,7 @@ std::locale f49(std::basic_osyncstream<T1, T2, T3> &a0, const std::locale &a1) {
 
 template <typename T1, typename T2, typename T3>
 char f50(const std::basic_osyncstream<T1, T2, T3> &a0, T1 a1, char a2) {
-  return a0.narrow(a1, a2);
+  return a0.narrow(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -346,14 +346,14 @@ template <typename T1, typename T2, typename T3>
 std::ios_base::fmtflags
 f54(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::fmtflags a1) {
-  return a0.flags(a1);
+  return a0.flags(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::ios_base::fmtflags
 f55(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::fmtflags a1) {
-  return a0.setf(a1);
+  return a0.setf(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -361,13 +361,13 @@ std::ios_base::fmtflags
 f56(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::fmtflags a1,
     typename std::basic_osyncstream<T1, T2, T3>::fmtflags a2) {
-  return a0.setf(a1, a2);
+  return a0.setf(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
 void f57(std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::fmtflags a1) {
-  return a0.unsetf(a1);
+  return a0.unsetf(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>

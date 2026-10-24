@@ -147,14 +147,14 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
 f15(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1) {
-  return a0.erase(a1);
+  return a0.erase(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
 f16(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator a1) {
-  return a0.erase(a1);
+  return a0.erase(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -162,7 +162,7 @@ typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
 f17(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a2) {
-  return a0.erase(a1, a2);
+  return a0.erase(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -192,49 +192,49 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type
 f22(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.bucket_size(a1);
+  return a0.bucket_size(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator
 f23(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.begin(a1);
+  return a0.begin(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator
 f24(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.begin(a1);
+  return a0.begin(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator
 f25(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.cbegin(a1);
+  return a0.cbegin(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator
 f26(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.end(a1);
+  return a0.end(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator
 f27(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.end(a1);
+  return a0.end(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator
 f28(const std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.cend(a1);
+  return a0.cend(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -255,13 +255,13 @@ void f31(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, float a1) {
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f32(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
          typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.rehash(a1);
+  return a0.rehash(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f33(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
          typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.reserve(a1);
+  return a0.reserve(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -277,11 +277,12 @@ typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
 f35(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     T6 &&...a2) {
-  return a0.template emplace_hint<T6...>(a1, std::forward<T6>(a2)...);
+  return a0.template emplace_hint<T6...>(std::move(a1),
+                                         std::forward<T6>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 void f36(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, T6 a1, T6 a2) {
-  return a0.template insert<T6>(a1, a2);
+  return a0.template insert<T6>(std::move(a1), std::move(a2));
 }

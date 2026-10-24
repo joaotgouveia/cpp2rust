@@ -17,7 +17,7 @@ template <
          !(std::is_same<T3, std::unique_ptr<T1[], T2> &&>::value)),
         int>::type T7 = 0>
 std::unique_ptr<T1[], T2> f83(T3 a0) {
-  return std::unique_ptr<T1[], T2>(a0);
+  return std::unique_ptr<T1[], T2>(std::move(a0));
 }
 
 template <
@@ -30,7 +30,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, std::nullptr_t>::value)),
                             int>::type T7 = 0>
 std::unique_ptr<T1[], T2> f84(T3 a0, const T2 &a1) {
-  return std::unique_ptr<T1[], T2>(a0, a1);
+  return std::unique_ptr<T1[], T2>(std::move(a0), a1);
 }
 
 template <
@@ -46,7 +46,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, std::nullptr_t>::value)),
                             int>::type T7 = 0>
 std::unique_ptr<T1[], T2> f85(T3 a0, T2 &&a1) {
-  return std::unique_ptr<T1[], T2>(a0, std::move(a1));
+  return std::unique_ptr<T1[], T2>(std::move(a0), std::move(a1));
 }
 
 template <
@@ -97,7 +97,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, std::nullptr_t>::value)),
                             int>::type T5 = 0>
 void f88(std::unique_ptr<T1[], T2> &a0, T3 a1) {
-  return a0.template reset<T3>(a1);
+  return a0.template reset<T3>(std::move(a1));
 }
 
 template <

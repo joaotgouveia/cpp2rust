@@ -22,7 +22,7 @@ std::generator<T1, T2, T3> f1(std::generator<T1, T2, T3> &&a0) {
 template <typename T1, typename T2, typename T3>
 std::generator<T1, T2, T3> &f2(std::generator<T1, T2, T3> &a0,
                                std::generator<T1, T2, T3> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -226,7 +226,7 @@ decltype(auto) f23(std::generator<T1, T2, T3> &a0,
                         std::remove_cv_t<std::generator<T1, T2, T3>>>) &&
           (std::ranges::random_access_range<T4>)
 {
-  return a0.template operator[]<T4>(a1);
+  return a0.template operator[]<T4>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -237,7 +237,7 @@ decltype(auto) f24(const std::generator<T1, T2, T3> &a0,
                         std::remove_cv_t<std::generator<T1, T2, T3>>>) &&
           (std::ranges::random_access_range<T4>)
 {
-  return a0.template operator[]<T4>(a1);
+  return a0.template operator[]<T4>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -270,7 +270,7 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6, typename T7>
 auto f30(typename std::generator<T1, T2, T3>::promise_type &a0,
          std::ranges::elements_of<std::generator<T4, T5, T6> &&, T7> a1) {
-  return a0.template yield_value<T4, T5, T6, T7>(a1);
+  return a0.template yield_value<T4, T5, T6, T7>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -278,7 +278,7 @@ auto f31(typename std::generator<T1, T2, T3>::promise_type &a0,
          std::ranges::elements_of<T4, T5> a1)
   requires(std::ranges::input_range<T4>)
 {
-  return a0.template yield_value<T4, T5>(a1);
+  return a0.template yield_value<T4, T5>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>

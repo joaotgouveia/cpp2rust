@@ -15,12 +15,12 @@ typename std::list<T1, T2>::size_type f116(std::list<T1, T2> &a0) {
 
 template <typename T1, typename T2, typename T3>
 typename std::list<T1, T2>::size_type f117(std::list<T1, T2> &a0, T3 a1) {
-  return a0.template remove_if<T3>(a1);
+  return a0.template remove_if<T3>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::list<T1, T2>::size_type f118(std::list<T1, T2> &a0, T3 a1) {
-  return a0.template unique<T3>(a1);
+  return a0.template unique<T3>(std::move(a1));
 }
 
 template <typename T1, typename T2>

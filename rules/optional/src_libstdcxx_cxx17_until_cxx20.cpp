@@ -167,7 +167,8 @@ template <typename T1, typename T2, typename... T3,
               T4 = false>
 std::optional<T1> f82(std::in_place_t a0, std::initializer_list<T2> a1,
                       T3 &&...a2) {
-  return std::optional<T1>(std::move(a0), a1, std::forward<T3>(a2)...);
+  return std::optional<T1>(std::move(a0), std::move(a1),
+                           std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename T2,

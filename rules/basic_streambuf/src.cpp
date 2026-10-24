@@ -41,7 +41,7 @@ typename std::basic_streambuf<T1, T2>::pos_type
 f4(std::basic_streambuf<T1, T2> &a0,
    typename std::basic_streambuf<T1, T2>::off_type a1,
    std::ios_base::seekdir a2, std::ios_base::openmode a3) {
-  return a0.pubseekoff(a1, a2, a3);
+  return a0.pubseekoff(std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2>
@@ -49,7 +49,7 @@ typename std::basic_streambuf<T1, T2>::pos_type
 f5(std::basic_streambuf<T1, T2> &a0,
    typename std::basic_streambuf<T1, T2>::pos_type a1,
    std::ios_base::openmode a2) {
-  return a0.pubseekpos(a1, a2);
+  return a0.pubseekpos(std::move(a1), a2);
 }
 
 template <typename T1, typename T2> int f6(std::basic_streambuf<T1, T2> &a0) {
@@ -88,7 +88,7 @@ std::streamsize f11(std::basic_streambuf<T1, T2> &a0, T1 *a1,
 template <typename T1, typename T2>
 typename std::basic_streambuf<T1, T2>::int_type
 f12(std::basic_streambuf<T1, T2> &a0, T1 a1) {
-  return a0.sputbackc(a1);
+  return a0.sputbackc(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -100,7 +100,7 @@ f13(std::basic_streambuf<T1, T2> &a0) {
 template <typename T1, typename T2>
 typename std::basic_streambuf<T1, T2>::int_type
 f14(std::basic_streambuf<T1, T2> &a0, T1 a1) {
-  return a0.sputc(a1);
+  return a0.sputc(std::move(a1));
 }
 
 template <typename T1, typename T2>

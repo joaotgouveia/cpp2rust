@@ -13,7 +13,7 @@ template <typename T1, typename T2>
 std::ranges::transform_view<T1, T2> f32(T1 a0, T2 a1)
   requires(std::ranges::__transform_view_constraints<T1, T2>)
 {
-  return std::ranges::transform_view<T1, T2>(a0, a1);
+  return std::ranges::transform_view<T1, T2>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -242,7 +242,7 @@ decltype(auto) f53(std::ranges::transform_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::ranges::__transform_view_constraints<T1, T2>)
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -255,5 +255,5 @@ decltype(auto) f54(const std::ranges::transform_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::ranges::__transform_view_constraints<T1, T2>)
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }

@@ -17,12 +17,12 @@ std::linear_congruential_engine<T1, T2, T3, T4> f1() {
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
 std::linear_congruential_engine<T1, T2, T3, T4> f2(T1 a0) {
-  return std::linear_congruential_engine<T1, T2, T3, T4>(a0);
+  return std::linear_congruential_engine<T1, T2, T3, T4>(std::move(a0));
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
 void f3(std::linear_congruential_engine<T1, T2, T3, T4> &a0, T1 a1) {
-  return a0.seed(a1);
+  return a0.seed(std::move(a1));
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4> T1 f4() {

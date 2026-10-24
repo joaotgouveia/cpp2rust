@@ -7,5 +7,5 @@
 
 template <typename T1, typename T2>
 auto f55(std::basic_string_view<T1, T2> a0, T1 a1, T1 a2) {
-  return std::quoted<T1, T2>(a0, a1, a2);
+  return std::quoted<T1, T2>(std::move(a0), std::move(a1), std::move(a2));
 }

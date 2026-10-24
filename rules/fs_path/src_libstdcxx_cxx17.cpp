@@ -7,7 +7,7 @@
 #include <utility>
 
 template <typename T1> void f1(std::filesystem::path::iterator &a0, T1 a1) {
-  return std::advance<T1>(a0, a1);
+  return std::advance<T1>(a0, std::move(a1));
 }
 
 std::ptrdiff_t f2(std::filesystem::path::iterator a0,
@@ -301,7 +301,7 @@ std::filesystem::path f72(const T1 &a0, std::filesystem::path::format a1) {
 
 template <typename T1, typename T2 = std::filesystem::__detail::_Path2<T1>>
 std::filesystem::path f73(T1 a0, T1 a1, std::filesystem::path::format a2) {
-  return std::filesystem::path(a0, a1, a2);
+  return std::filesystem::path(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2 = std::filesystem::__detail::_Path<T1>,
@@ -315,7 +315,7 @@ template <typename T1, typename T2 = std::filesystem::__detail::_Path2<T1>,
           typename T3 = std::filesystem::__detail::__value_type_is_char<T1>>
 std::filesystem::path f75(T1 a0, T1 a1, const std::locale &a2,
                           std::filesystem::path::format a3) {
-  return std::filesystem::path(a0, a1, a2, a3);
+  return std::filesystem::path(std::move(a0), std::move(a1), a2, a3);
 }
 
 template <typename T1>
@@ -327,7 +327,7 @@ std::filesystem::__detail::_Path<T1> &f76(std::filesystem::path &a0,
 template <typename T1>
 std::filesystem::__detail::_Path2<T1> &f77(std::filesystem::path &a0, T1 a1,
                                            T1 a2) {
-  return a0.template assign<T1>(a1, a2);
+  return a0.template assign<T1>(std::move(a1), std::move(a2));
 }
 
 template <typename T1>
@@ -339,7 +339,7 @@ std::filesystem::__detail::_Path<T1> &f78(std::filesystem::path &a0,
 template <typename T1>
 std::filesystem::__detail::_Path2<T1> &f79(std::filesystem::path &a0, T1 a1,
                                            T1 a2) {
-  return a0.template append<T1>(a1, a2);
+  return a0.template append<T1>(std::move(a1), std::move(a2));
 }
 
 template <typename T1>
@@ -351,7 +351,7 @@ std::filesystem::__detail::_Path<T1> &f80(std::filesystem::path &a0,
 template <typename T1>
 std::filesystem::__detail::_Path2<T1> &f81(std::filesystem::path &a0, T1 a1,
                                            T1 a2) {
-  return a0.template concat<T1>(a1, a2);
+  return a0.template concat<T1>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -418,5 +418,5 @@ template <typename T1, typename T2 = std::filesystem::__detail::_Path2<T1>,
           typename T3 =
               std::filesystem::__detail::__value_type_is_char_or_char8_t<T1>>
 std::filesystem::path f94(T1 a0, T1 a1) {
-  return std::filesystem::u8path<T1>(a0, a1);
+  return std::filesystem::u8path<T1>(std::move(a0), std::move(a1));
 }

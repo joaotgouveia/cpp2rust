@@ -13,5 +13,5 @@ std::enable_if_t<
                  std::__not_<std::is_same<T1, bool>>>,
     T1>
 f18(T1 a0, T1 a1) {
-  return std::midpoint<T1>(a0, a1);
+  return std::midpoint<T1>(std::move(a0), std::move(a1));
 }

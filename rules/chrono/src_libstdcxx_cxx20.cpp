@@ -2114,3 +2114,51 @@ bool f493(const std::chrono::year_month_weekday_last &a0,
 using t84 = std::chrono::years;
 
 using t85 = std::chrono::zoned_seconds;
+
+using t86 = std::filesystem::__file_clock;
+
+using t87 = std::filesystem::__file_clock::duration;
+
+using t88 = std::filesystem::__file_clock::rep;
+
+using t89 = std::filesystem::__file_clock::period;
+
+using t90 = std::filesystem::__file_clock::time_point;
+
+std::filesystem::__file_clock::time_point f494() {
+  return std::filesystem::__file_clock::now();
+}
+
+std::filesystem::__file_clock f495() { return std::filesystem::__file_clock(); }
+
+std::filesystem::__file_clock f496(const std::filesystem::__file_clock &a0) {
+  return std::filesystem::__file_clock(a0);
+}
+
+std::filesystem::__file_clock f497(std::filesystem::__file_clock &&a0) {
+  return std::filesystem::__file_clock(std::move(a0));
+}
+
+std::filesystem::__file_clock &f498(std::filesystem::__file_clock &a0,
+                                    const std::filesystem::__file_clock &a1) {
+  return a0.operator=(a1);
+}
+
+std::filesystem::__file_clock &f499(std::filesystem::__file_clock &a0,
+                                    std::filesystem::__file_clock &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1>
+std::chrono::file_time<std::common_type_t<T1, std::chrono::seconds>>
+f500(const std::chrono::sys_time<T1> &a0) {
+  return std::filesystem::__file_clock::from_sys(a0);
+}
+
+template <typename T1>
+std::chrono::sys_time<std::common_type_t<T1, std::chrono::seconds>>
+f501(const std::chrono::file_time<T1> &a0) {
+  return std::filesystem::__file_clock::to_sys(a0);
+}
+
+bool f502() { return std::filesystem::__file_clock::is_steady; }

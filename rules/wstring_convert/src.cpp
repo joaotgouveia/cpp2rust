@@ -47,7 +47,7 @@ f4(std::wstring_convert<T1, T2, T3, T4> &a0, const char *a1, const char *a2) {
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_string<char, std::char_traits<char>, T4>
 f5(std::wstring_convert<T1, T2, T3, T4> &a0, T2 a1) {
-  return a0.to_bytes(a1);
+  return a0.to_bytes(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

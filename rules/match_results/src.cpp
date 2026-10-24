@@ -69,28 +69,28 @@ template <typename T1, typename T2>
 typename std::match_results<T1, T2>::difference_type
 f7(const std::match_results<T1, T2> &a0,
    typename std::match_results<T1, T2>::size_type a1) {
-  return a0.length(a1);
+  return a0.length(std::move(a1));
 }
 
 template <typename T1, typename T2>
 typename std::match_results<T1, T2>::difference_type
 f8(const std::match_results<T1, T2> &a0,
    typename std::match_results<T1, T2>::size_type a1) {
-  return a0.position(a1);
+  return a0.position(std::move(a1));
 }
 
 template <typename T1, typename T2>
 typename std::match_results<T1, T2>::string_type
 f9(const std::match_results<T1, T2> &a0,
    typename std::match_results<T1, T2>::size_type a1) {
-  return a0.str(a1);
+  return a0.str(std::move(a1));
 }
 
 template <typename T1, typename T2>
 const std::sub_match<T1> &
 f10(const std::match_results<T1, T2> &a0,
     typename std::match_results<T1, T2>::size_type a1) {
-  return a0.operator[](a1);
+  return a0.operator[](std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -150,7 +150,7 @@ T3 f20(const std::match_results<T1, T2> &a0, T3 a1,
        const typename std::match_results<T1, T2>::char_type *a2,
        const typename std::match_results<T1, T2>::char_type *a3,
        std::regex_constants::match_flag_type a4) {
-  return a0.template format<T3>(a1, a2, a3, a4);
+  return a0.template format<T3>(std::move(a1), a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -158,7 +158,7 @@ T3 f21(const std::match_results<T1, T2> &a0, T3 a1,
        const std::basic_string<typename std::match_results<T1, T2>::char_type,
                                T4, T5> &a2,
        std::regex_constants::match_flag_type a3) {
-  return a0.template format<T3, T4, T5>(a1, a2, a3);
+  return a0.template format<T3, T4, T5>(std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

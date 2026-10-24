@@ -8,7 +8,7 @@ const char *f1(const std::bad_expected_access<void> &a0) { return a0.what(); }
 template <typename T1> using t2 = std::bad_expected_access<T1>;
 
 template <typename T1> std::bad_expected_access<T1> f2(T1 a0) {
-  return std::bad_expected_access<T1>(a0);
+  return std::bad_expected_access<T1>(std::move(a0));
 }
 
 template <typename T1> T1 &f3(std::bad_expected_access<T1> &a0) {

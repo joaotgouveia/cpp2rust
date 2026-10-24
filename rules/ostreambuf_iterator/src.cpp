@@ -32,7 +32,7 @@ std::ostreambuf_iterator<T1, T2> f2(std::basic_streambuf<T1, T2> *a0) {
 template <typename T1, typename T2>
 std::ostreambuf_iterator<T1, T2> &f3(std::ostreambuf_iterator<T1, T2> &a0,
                                      T1 a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2>

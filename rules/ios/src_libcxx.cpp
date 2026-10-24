@@ -296,51 +296,51 @@ std::ios_base::event f103() { return std::ios_base::copyfmt_event; }
 const std::error_category &f104() { return std::iostream_category(); }
 
 template <typename T1> bool f105(T1 a0, const std::locale &a1) {
-  return std::isalnum<T1>(a0, a1);
+  return std::isalnum<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f106(T1 a0, const std::locale &a1) {
-  return std::isalpha<T1>(a0, a1);
+  return std::isalpha<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f107(T1 a0, const std::locale &a1) {
-  return std::isblank<T1>(a0, a1);
+  return std::isblank<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f108(T1 a0, const std::locale &a1) {
-  return std::iscntrl<T1>(a0, a1);
+  return std::iscntrl<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f109(T1 a0, const std::locale &a1) {
-  return std::isdigit<T1>(a0, a1);
+  return std::isdigit<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f110(T1 a0, const std::locale &a1) {
-  return std::isgraph<T1>(a0, a1);
+  return std::isgraph<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f111(T1 a0, const std::locale &a1) {
-  return std::islower<T1>(a0, a1);
+  return std::islower<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f112(T1 a0, const std::locale &a1) {
-  return std::isprint<T1>(a0, a1);
+  return std::isprint<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f113(T1 a0, const std::locale &a1) {
-  return std::ispunct<T1>(a0, a1);
+  return std::ispunct<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f114(T1 a0, const std::locale &a1) {
-  return std::isspace<T1>(a0, a1);
+  return std::isspace<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f115(T1 a0, const std::locale &a1) {
-  return std::isupper<T1>(a0, a1);
+  return std::isupper<T1>(std::move(a0), a1);
 }
 
 template <typename T1> bool f116(T1 a0, const std::locale &a1) {
-  return std::isxdigit<T1>(a0, a1);
+  return std::isxdigit<T1>(std::move(a0), a1);
 }
 
 std::ios_base &f117(std::ios_base &a0) { return std::left(a0); }
@@ -464,11 +464,11 @@ using t20 = std::streamoff;
 using t21 = std::streamsize;
 
 template <typename T1> T1 f159(T1 a0, const std::locale &a1) {
-  return std::tolower<T1>(a0, a1);
+  return std::tolower<T1>(std::move(a0), a1);
 }
 
 template <typename T1> T1 f160(T1 a0, const std::locale &a1) {
-  return std::toupper<T1>(a0, a1);
+  return std::toupper<T1>(std::move(a0), a1);
 }
 
 std::ios_base &f161(std::ios_base &a0) { return std::unitbuf(a0); }

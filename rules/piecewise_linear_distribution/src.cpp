@@ -56,19 +56,21 @@ template <typename T1> T1 f8(const std::piecewise_linear_distribution<T1> &a0) {
 
 template <typename T1, typename T2, typename T3>
 std::piecewise_linear_distribution<T1> f9(T2 a0, T2 a1, T3 a2) {
-  return std::piecewise_linear_distribution<T1>(a0, a1, a2);
+  return std::piecewise_linear_distribution<T1>(std::move(a0), std::move(a1),
+                                                std::move(a2));
 }
 
 template <typename T1, typename T2>
 std::piecewise_linear_distribution<T1> f10(std::initializer_list<T1> a0,
                                            T2 a1) {
-  return std::piecewise_linear_distribution<T1>(a0, a1);
+  return std::piecewise_linear_distribution<T1>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
 std::piecewise_linear_distribution<T1> f11(std::size_t a0, T1 a1, T1 a2,
                                            T2 a3) {
-  return std::piecewise_linear_distribution<T1>(a0, a1, a2, a3);
+  return std::piecewise_linear_distribution<T1>(a0, std::move(a1),
+                                                std::move(a2), std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -119,21 +121,22 @@ f18(const typename std::piecewise_linear_distribution<T1>::param_type &a0) {
 template <typename T1, typename T2, typename T3>
 typename std::piecewise_linear_distribution<T1>::param_type f19(T2 a0, T2 a1,
                                                                 T3 a2) {
-  return
-      typename std::piecewise_linear_distribution<T1>::param_type(a0, a1, a2);
+  return typename std::piecewise_linear_distribution<T1>::param_type(
+      std::move(a0), std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 typename std::piecewise_linear_distribution<T1>::param_type
 f20(std::initializer_list<T1> a0, T2 a1) {
-  return typename std::piecewise_linear_distribution<T1>::param_type(a0, a1);
+  return typename std::piecewise_linear_distribution<T1>::param_type(
+      std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
 typename std::piecewise_linear_distribution<T1>::param_type
 f21(std::size_t a0, T1 a1, T1 a2, T2 a3) {
-  return typename std::piecewise_linear_distribution<T1>::param_type(a0, a1, a2,
-                                                                     a3);
+  return typename std::piecewise_linear_distribution<T1>::param_type(
+      a0, std::move(a1), std::move(a2), std::move(a3));
 }
 
 template <typename T1>

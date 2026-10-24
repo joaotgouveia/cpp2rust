@@ -10,7 +10,7 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type
 f37(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1) {
-  return a0.extract(a1);
+  return a0.extract(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -25,7 +25,7 @@ typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
 f39(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &&a2) {
-  return a0.insert(a1, std::move(a2));
+  return a0.insert(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,

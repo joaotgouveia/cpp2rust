@@ -50,32 +50,32 @@ std::__wrap_iter<T1> f7(std::__wrap_iter<T1> &a0, int a1) {
 template <typename T1>
 std::__wrap_iter<T1> f8(const std::__wrap_iter<T1> &a0,
                         typename std::__wrap_iter<T1>::difference_type a1) {
-  return a0.operator+(a1);
+  return a0.operator+(std::move(a1));
 }
 
 template <typename T1>
 std::__wrap_iter<T1> &f9(std::__wrap_iter<T1> &a0,
                          typename std::__wrap_iter<T1>::difference_type a1) {
-  return a0.operator+=(a1);
+  return a0.operator+=(std::move(a1));
 }
 
 template <typename T1>
 std::__wrap_iter<T1> f10(const std::__wrap_iter<T1> &a0,
                          typename std::__wrap_iter<T1>::difference_type a1) {
-  return a0.operator-(a1);
+  return a0.operator-(std::move(a1));
 }
 
 template <typename T1>
 std::__wrap_iter<T1> &f11(std::__wrap_iter<T1> &a0,
                           typename std::__wrap_iter<T1>::difference_type a1) {
-  return a0.operator-=(a1);
+  return a0.operator-=(std::move(a1));
 }
 
 template <typename T1>
 typename std::__wrap_iter<T1>::reference
 f12(const std::__wrap_iter<T1> &a0,
     typename std::__wrap_iter<T1>::difference_type a1) {
-  return a0.operator[](a1);
+  return a0.operator[](std::move(a1));
 }
 
 template <
@@ -97,7 +97,7 @@ std::__wrap_iter<T1> f13(const std::__wrap_iter<T2> &a0) {
 template <typename T1>
 std::__wrap_iter<T1> f14(typename std::__wrap_iter<T1>::difference_type a0,
                          std::__wrap_iter<T1> a1) {
-  return operator+(a0, a1);
+  return operator+(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>

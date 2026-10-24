@@ -66,7 +66,7 @@ std::forward_list<T1, T2> f6(std::forward_list<T1, T2> &&a0) {
 
 template <typename T1, typename T2>
 std::forward_list<T1, T2> f7(std::initializer_list<T1> a0, const T2 &a1) {
-  return std::forward_list<T1, T2>(a0, a1);
+  return std::forward_list<T1, T2>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2>
@@ -84,12 +84,12 @@ std::forward_list<T1, T2> &f9(std::forward_list<T1, T2> &a0,
 template <typename T1, typename T2>
 std::forward_list<T1, T2> &f10(std::forward_list<T1, T2> &a0,
                                std::initializer_list<T1> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2>
 void f11(std::forward_list<T1, T2> &a0, std::initializer_list<T1> a1) {
-  return a0.assign(a1);
+  return a0.assign(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -183,14 +183,14 @@ template <typename T1, typename T2>
 typename std::forward_list<T1, T2>::iterator
 f28(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1, const T1 &a2) {
-  return a0.insert_after(a1, a2);
+  return a0.insert_after(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>
 typename std::forward_list<T1, T2>::iterator
 f29(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1, T1 &&a2) {
-  return a0.insert_after(a1, std::move(a2));
+  return a0.insert_after(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -198,14 +198,14 @@ typename std::forward_list<T1, T2>::iterator
 f30(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1,
     std::initializer_list<T1> a2) {
-  return a0.insert_after(a1, a2);
+  return a0.insert_after(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 typename std::forward_list<T1, T2>::iterator
 f31(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1) {
-  return a0.erase_after(a1);
+  return a0.erase_after(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -213,7 +213,7 @@ typename std::forward_list<T1, T2>::iterator
 f32(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1,
     typename std::forward_list<T1, T2>::const_iterator a2) {
-  return a0.erase_after(a1, a2);
+  return a0.erase_after(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -229,14 +229,14 @@ template <typename T1, typename T2>
 void f35(std::forward_list<T1, T2> &a0,
          typename std::forward_list<T1, T2>::const_iterator a1,
          std::forward_list<T1, T2> &&a2) {
-  return a0.splice_after(a1, std::move(a2));
+  return a0.splice_after(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 void f36(std::forward_list<T1, T2> &a0,
          typename std::forward_list<T1, T2>::const_iterator a1,
          std::forward_list<T1, T2> &a2) {
-  return a0.splice_after(a1, a2);
+  return a0.splice_after(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -244,7 +244,7 @@ void f37(std::forward_list<T1, T2> &a0,
          typename std::forward_list<T1, T2>::const_iterator a1,
          std::forward_list<T1, T2> &&a2,
          typename std::forward_list<T1, T2>::const_iterator a3) {
-  return a0.splice_after(a1, std::move(a2), a3);
+  return a0.splice_after(std::move(a1), std::move(a2), std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -252,7 +252,7 @@ void f38(std::forward_list<T1, T2> &a0,
          typename std::forward_list<T1, T2>::const_iterator a1,
          std::forward_list<T1, T2> &a2,
          typename std::forward_list<T1, T2>::const_iterator a3) {
-  return a0.splice_after(a1, a2, a3);
+  return a0.splice_after(std::move(a1), a2, std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -261,7 +261,8 @@ void f39(std::forward_list<T1, T2> &a0,
          std::forward_list<T1, T2> &&a2,
          typename std::forward_list<T1, T2>::const_iterator a3,
          typename std::forward_list<T1, T2>::const_iterator a4) {
-  return a0.splice_after(a1, std::move(a2), a3, a4);
+  return a0.splice_after(std::move(a1), std::move(a2), std::move(a3),
+                         std::move(a4));
 }
 
 template <typename T1, typename T2>
@@ -270,7 +271,7 @@ void f40(std::forward_list<T1, T2> &a0,
          std::forward_list<T1, T2> &a2,
          typename std::forward_list<T1, T2>::const_iterator a3,
          typename std::forward_list<T1, T2>::const_iterator a4) {
-  return a0.splice_after(a1, a2, a3, a4);
+  return a0.splice_after(std::move(a1), a2, std::move(a3), std::move(a4));
 }
 
 template <typename T1, typename T2>
@@ -295,22 +296,23 @@ template <typename T1, typename T2, typename... T3>
 typename std::forward_list<T1, T2>::iterator
 f45(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1, T3 &&...a2) {
-  return a0.template emplace_after<T3...>(a1, std::forward<T3>(a2)...);
+  return a0.template emplace_after<T3...>(std::move(a1),
+                                          std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3>
 void f46(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &&a1, T3 a2) {
-  return a0.template merge<T3>(std::move(a1), a2);
+  return a0.template merge<T3>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
 void f47(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1, T3 a2) {
-  return a0.template merge<T3>(a1, a2);
+  return a0.template merge<T3>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
 void f48(std::forward_list<T1, T2> &a0, T3 a1) {
-  return a0.template sort<T3>(a1);
+  return a0.template sort<T3>(std::move(a1));
 }
 
 template <typename T1, typename T2>

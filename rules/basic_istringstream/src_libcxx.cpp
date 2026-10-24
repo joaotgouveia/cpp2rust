@@ -20,7 +20,7 @@ template <typename T1, typename T2, typename T3, typename T4 = T1,
           std::__enable_if_t<std::is_same<T1, char>::value, int> T5 = 0>
 std::basic_istringstream<T1, T2, T3> &
 f93(std::basic_istringstream<T1, T2, T3> &a0, std::streamsize a1, T1 a2) {
-  return a0.ignore(a1, a2);
+  return a0.ignore(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>

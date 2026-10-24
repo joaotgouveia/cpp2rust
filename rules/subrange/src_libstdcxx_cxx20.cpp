@@ -17,7 +17,7 @@ std::ranges::subrange<T1, T2, T3> f13(T4 a0, T2 a1)
             !std::sized_sentinel_for<T2, T1>)) &&
           (std::ranges::__detail::__convertible_to_non_slicing<T4, T1>)
 {
-  return std::ranges::subrange<T1, T2, T3>(a0, a1);
+  return std::ranges::subrange<T1, T2, T3>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>

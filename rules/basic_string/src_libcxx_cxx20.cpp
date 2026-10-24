@@ -15,7 +15,7 @@ f324(const T4 &a0, typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T3 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return std::basic_string<T1, T2, T3>(a0, a1, a2, a3);
+  return std::basic_string<T1, T2, T3>(a0, std::move(a1), std::move(a2), a3);
 }
 
 template <
@@ -86,7 +86,7 @@ f329(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template append<T4>(a1, a2, a3);
+  return a0.template append<T4>(a1, std::move(a2), std::move(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -113,7 +113,7 @@ f331(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template assign<T4>(a1, a2, a3);
+  return a0.template assign<T4>(a1, std::move(a2), std::move(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -125,7 +125,7 @@ f332(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1, const T4 &a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template insert<T4>(a1, a2);
+  return a0.template insert<T4>(std::move(a1), a2);
 }
 
 template <
@@ -142,7 +142,8 @@ f333(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a4)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template insert<T4>(a1, a2, a3, a4);
+  return a0.template insert<T4>(std::move(a1), a2, std::move(a3),
+                                std::move(a4));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -155,7 +156,7 @@ f334(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template replace<T4>(a1, a2, a3);
+  return a0.template replace<T4>(std::move(a1), std::move(a2), a3);
 }
 
 template <
@@ -173,7 +174,8 @@ f335(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a5)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template replace<T4>(a1, a2, a3, a4, a5);
+  return a0.template replace<T4>(std::move(a1), std::move(a2), a3,
+                                 std::move(a4), std::move(a5));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -186,7 +188,7 @@ f336(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template replace<T4>(a1, a2, a3);
+  return a0.template replace<T4>(std::move(a1), std::move(a2), a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -198,7 +200,7 @@ f337(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find<T4>(a1, a2);
+  return a0.template find<T4>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -210,7 +212,7 @@ f338(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template rfind<T4>(a1, a2);
+  return a0.template rfind<T4>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -222,7 +224,7 @@ f339(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find_first_of<T4>(a1, a2);
+  return a0.template find_first_of<T4>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -234,7 +236,7 @@ f340(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find_last_of<T4>(a1, a2);
+  return a0.template find_last_of<T4>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -246,7 +248,7 @@ f341(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find_first_not_of<T4>(a1, a2);
+  return a0.template find_first_not_of<T4>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -258,7 +260,7 @@ f342(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find_last_not_of<T4>(a1, a2);
+  return a0.template find_last_not_of<T4>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -280,7 +282,7 @@ int f344(const std::basic_string<T1, T2, T3> &a0,
          typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template compare<T4>(a1, a2, a3);
+  return a0.template compare<T4>(std::move(a1), std::move(a2), a3);
 }
 
 template <
@@ -297,5 +299,6 @@ int f345(const std::basic_string<T1, T2, T3> &a0,
          typename std::basic_string<T1, T2, T3>::size_type a5)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template compare<T4>(a1, a2, a3, a4, a5);
+  return a0.template compare<T4>(std::move(a1), std::move(a2), a3,
+                                 std::move(a4), std::move(a5));
 }

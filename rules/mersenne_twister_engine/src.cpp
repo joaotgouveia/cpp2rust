@@ -35,7 +35,7 @@ std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12,
                              T13, T14>
 f2(T1 a0) {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>(a0);
+                                      T11, T12, T13, T14>(std::move(a0));
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
@@ -44,7 +44,7 @@ template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
 void f3(std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                      T11, T12, T13, T14> &a0,
         T1 a1) {
-  return a0.seed(a1);
+  return a0.seed(std::move(a1));
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,

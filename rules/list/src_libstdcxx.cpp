@@ -61,19 +61,19 @@ template <typename T1, typename T2>
 typename std::list<T1, T2>::iterator
 f72(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
     std::size_t a2, const T1 &a3) {
-  return a0.insert(a1, a2, a3);
+  return a0.insert(std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3,
           typename T4 = std::_RequireInputIter<T3>>
 std::list<T1, T2> f73(T3 a0, T3 a1, const T2 &a2) {
-  return std::list<T1, T2>(a0, a1, a2);
+  return std::list<T1, T2>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3,
           typename T4 = std::_RequireInputIter<T3>>
 void f74(std::list<T1, T2> &a0, T3 a1, T3 a2) {
-  return a0.template assign<T3>(a1, a2);
+  return a0.template assign<T3>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3,
@@ -81,5 +81,5 @@ template <typename T1, typename T2, typename T3,
 typename std::list<T1, T2>::iterator
 f75(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1, T3 a2,
     T3 a3) {
-  return a0.template insert<T3>(a1, a2, a3);
+  return a0.template insert<T3>(std::move(a1), std::move(a2), std::move(a3));
 }

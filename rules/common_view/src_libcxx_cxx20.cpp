@@ -15,7 +15,7 @@ std::ranges::common_view<T1> f30(T1 a0)
   requires((!std::ranges::common_range<T1> &&
             std::copyable<std::ranges::iterator_t<T1>>))
 {
-  return std::ranges::common_view<T1>(a0);
+  return std::ranges::common_view<T1>(std::move(a0));
 }
 
 template <typename T1>
@@ -217,7 +217,7 @@ decltype(auto) f49(std::ranges::common_view<T1> &a0,
           ((!std::ranges::common_range<T1> &&
             std::copyable<std::ranges::iterator_t<T1>>))
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -230,5 +230,5 @@ decltype(auto) f50(const std::ranges::common_view<T1> &a0,
           ((!std::ranges::common_range<T1> &&
             std::copyable<std::ranges::iterator_t<T1>>))
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }

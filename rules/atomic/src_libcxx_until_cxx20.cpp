@@ -256,7 +256,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1119(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_add(a1, a2);
+  return a0.fetch_add(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -267,7 +267,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1120(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_add(a1, a2);
+  return a0.fetch_add(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -278,7 +278,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1121(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_sub(a1, a2);
+  return a0.fetch_sub(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -289,7 +289,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1122(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_sub(a1, a2);
+  return a0.fetch_sub(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -300,7 +300,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1123(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_and(a1, a2);
+  return a0.fetch_and(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -311,7 +311,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1124(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_and(a1, a2);
+  return a0.fetch_and(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -322,7 +322,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1125(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_or(a1, a2);
+  return a0.fetch_or(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -333,7 +333,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1126(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_or(a1, a2);
+  return a0.fetch_or(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -344,7 +344,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1127(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_xor(a1, a2);
+  return a0.fetch_xor(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -355,7 +355,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1128(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.fetch_xor(a1, a2);
+  return a0.fetch_xor(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -454,7 +454,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1137(volatile std::atomic<T1> &a0, T1 a1) {
-  return a0.operator+=(a1);
+  return a0.operator+=(std::move(a1));
 }
 
 template <typename T1,
@@ -465,7 +465,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1138(std::atomic<T1> &a0, T1 a1) {
-  return a0.operator+=(a1);
+  return a0.operator+=(std::move(a1));
 }
 
 template <typename T1,
@@ -476,7 +476,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1139(volatile std::atomic<T1> &a0, T1 a1) {
-  return a0.operator-=(a1);
+  return a0.operator-=(std::move(a1));
 }
 
 template <typename T1,
@@ -487,7 +487,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1140(std::atomic<T1> &a0, T1 a1) {
-  return a0.operator-=(a1);
+  return a0.operator-=(std::move(a1));
 }
 
 template <typename T1,
@@ -498,7 +498,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1141(volatile std::atomic<T1> &a0, T1 a1) {
-  return a0.operator&=(a1);
+  return a0.operator&=(std::move(a1));
 }
 
 template <typename T1,
@@ -509,7 +509,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1142(std::atomic<T1> &a0, T1 a1) {
-  return a0.operator&=(a1);
+  return a0.operator&=(std::move(a1));
 }
 
 template <typename T1,
@@ -520,7 +520,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1143(volatile std::atomic<T1> &a0, T1 a1) {
-  return a0.operator|=(a1);
+  return a0.operator|=(std::move(a1));
 }
 
 template <typename T1,
@@ -531,7 +531,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1144(std::atomic<T1> &a0, T1 a1) {
-  return a0.operator|=(a1);
+  return a0.operator|=(std::move(a1));
 }
 
 template <typename T1,
@@ -542,7 +542,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1145(volatile std::atomic<T1> &a0, T1 a1) {
-  return a0.operator^=(a1);
+  return a0.operator^=(std::move(a1));
 }
 
 template <typename T1,
@@ -553,7 +553,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1146(std::atomic<T1> &a0, T1 a1) {
-  return a0.operator^=(a1);
+  return a0.operator^=(std::move(a1));
 }
 
 template <typename T1,
@@ -586,7 +586,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 void f1149(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.store(a1, a2);
+  return a0.store(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -597,7 +597,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 void f1150(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.store(a1, a2);
+  return a0.store(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -652,7 +652,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1155(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.exchange(a1, a2);
+  return a0.exchange(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -663,7 +663,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 T1 f1156(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.exchange(a1, a2);
+  return a0.exchange(std::move(a1), a2);
 }
 
 template <typename T1,
@@ -675,7 +675,7 @@ template <typename T1,
               int>::type T2 = 0>
 bool f1157(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
            std::memory_order a4) {
-  return a0.compare_exchange_weak(a1, a2, a3, a4);
+  return a0.compare_exchange_weak(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1,
@@ -687,7 +687,7 @@ template <typename T1,
               int>::type T2 = 0>
 bool f1158(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
            std::memory_order a4) {
-  return a0.compare_exchange_weak(a1, a2, a3, a4);
+  return a0.compare_exchange_weak(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1,
@@ -699,7 +699,7 @@ template <typename T1,
               int>::type T2 = 0>
 bool f1159(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
            std::memory_order a4) {
-  return a0.compare_exchange_strong(a1, a2, a3, a4);
+  return a0.compare_exchange_strong(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1,
@@ -711,7 +711,7 @@ template <typename T1,
               int>::type T2 = 0>
 bool f1160(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
            std::memory_order a4) {
-  return a0.compare_exchange_strong(a1, a2, a3, a4);
+  return a0.compare_exchange_strong(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1,
@@ -722,7 +722,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 bool f1161(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
-  return a0.compare_exchange_weak(a1, a2, a3);
+  return a0.compare_exchange_weak(a1, std::move(a2), a3);
 }
 
 template <typename T1,
@@ -733,7 +733,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 bool f1162(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
-  return a0.compare_exchange_weak(a1, a2, a3);
+  return a0.compare_exchange_weak(a1, std::move(a2), a3);
 }
 
 template <typename T1,
@@ -744,7 +744,7 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 bool f1163(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
-  return a0.compare_exchange_strong(a1, a2, a3);
+  return a0.compare_exchange_strong(a1, std::move(a2), a3);
 }
 
 template <typename T1,
@@ -755,5 +755,5 @@ template <typename T1,
                              bool>::value == true),
               int>::type T2 = 0>
 bool f1164(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
-  return a0.compare_exchange_strong(a1, a2, a3);
+  return a0.compare_exchange_strong(a1, std::move(a2), a3);
 }

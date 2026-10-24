@@ -13,5 +13,5 @@ T1 f2(T1 a0, T1 a1)
   requires((std::is_integral_v<T1> &&
             !std::is_same_v<std::remove_cv_t<T1>, bool>))
 {
-  return std::midpoint<T1>(a0, a1);
+  return std::midpoint<T1>(std::move(a0), std::move(a1));
 }

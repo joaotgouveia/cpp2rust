@@ -73,5 +73,5 @@ std::basic_ostream<T1, T2> &f13(std::basic_ostream<T1, T2> &a0, char a1) {
 
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f14(std::basic_ostream<T1, T2> &a0, T1 a1) {
-  return std::operator<< <T1, T2>(a0, a1);
+  return std::operator<< <T1, T2>(a0, std::move(a1));
 }

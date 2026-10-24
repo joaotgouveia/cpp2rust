@@ -77,7 +77,7 @@ f13(const std::layout_right::mapping<T1> &a0,
     typename std::layout_right::mapping<T1>::rank_type a1)
   requires((std::layout_right::mapping<T1>::extents_type::rank() > 0))
 {
-  return a0.stride(a1);
+  return a0.stride(std::move(a1));
 }
 
 template <typename T1, typename T2>

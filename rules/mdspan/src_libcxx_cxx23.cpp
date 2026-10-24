@@ -109,14 +109,14 @@ typename std::mdspan<T1, T2, T3, T4>::rank_type f17() {
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::size_t f18(typename std::mdspan<T1, T2, T3, T4>::rank_type a0) {
-  return std::mdspan<T1, T2, T3, T4>::static_extent(a0);
+  return std::mdspan<T1, T2, T3, T4>::static_extent(std::move(a0));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::mdspan<T1, T2, T3, T4>::index_type
 f19(const std::mdspan<T1, T2, T3, T4> &a0,
     typename std::mdspan<T1, T2, T3, T4>::rank_type a1) {
-  return a0.extent(a1);
+  return a0.extent(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -151,7 +151,7 @@ f23(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0, const T2 &a1)
                 typename std::mdspan<T1, T2, T3, T4>::mapping_type,
                 const typename std::mdspan<T1, T2, T3, T4>::extents_type &>))
 {
-  return std::mdspan<T1, T2, T3, T4>(a0, a1);
+  return std::mdspan<T1, T2, T3, T4>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -161,7 +161,7 @@ f24(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
   requires((std::is_default_constructible_v<
             typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
 {
-  return std::mdspan<T1, T2, T3, T4>(a0, a1);
+  return std::mdspan<T1, T2, T3, T4>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -169,7 +169,7 @@ std::mdspan<T1, T2, T3, T4>
 f25(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
     const typename std::mdspan<T1, T2, T3, T4>::mapping_type &a1,
     const T4 &a2) {
-  return std::mdspan<T1, T2, T3, T4>(a0, a1, a2);
+  return std::mdspan<T1, T2, T3, T4>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -248,7 +248,7 @@ template <typename T1, typename T2, typename T3, typename T4>
 typename std::mdspan<T1, T2, T3, T4>::index_type
 f40(const std::mdspan<T1, T2, T3, T4> &a0,
     typename std::mdspan<T1, T2, T3, T4>::rank_type a1) {
-  return a0.stride(a1);
+  return a0.stride(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename... T5>
@@ -268,7 +268,7 @@ f41(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0, T5... a1)
             std::is_default_constructible_v<
                 typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
 {
-  return std::mdspan<T1, T2, T3, T4>(a0, a1...);
+  return std::mdspan<T1, T2, T3, T4>(std::move(a0), a1...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -288,7 +288,7 @@ f42(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
             std::is_default_constructible_v<
                 typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
 {
-  return std::mdspan<T1, T2, T3, T4>(a0, a1);
+  return std::mdspan<T1, T2, T3, T4>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -308,7 +308,7 @@ f43(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
             std::is_default_constructible_v<
                 typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
 {
-  return std::mdspan<T1, T2, T3, T4>(a0, a1);
+  return std::mdspan<T1, T2, T3, T4>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -361,7 +361,7 @@ f47(const std::mdspan<T1, T2, T3, T4> &a0,
             std::is_nothrow_constructible_v<
                 typename std::mdspan<T1, T2, T3, T4>::index_type, const T5 &>))
 {
-  return a0.template operator[]<T5>(a1);
+  return a0.template operator[]<T5>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

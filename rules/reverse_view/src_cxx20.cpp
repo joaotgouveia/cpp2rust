@@ -17,7 +17,7 @@ template <typename T1>
 std::ranges::reverse_view<T1> f2(T1 a0)
   requires(std::ranges::bidirectional_range<T1>)
 {
-  return std::ranges::reverse_view<T1>(a0);
+  return std::ranges::reverse_view<T1>(std::move(a0));
 }
 
 template <typename T1>
@@ -92,7 +92,7 @@ decltype(auto) f11(std::ranges::reverse_view<T1> &a0,
           (std::ranges::random_access_range<T2>) &&
           (std::ranges::bidirectional_range<T1>)
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -104,5 +104,5 @@ decltype(auto) f12(const std::ranges::reverse_view<T1> &a0,
           (std::ranges::random_access_range<T2>) &&
           (std::ranges::bidirectional_range<T1>)
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }

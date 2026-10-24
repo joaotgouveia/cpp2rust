@@ -34,7 +34,7 @@ f2(std::__key_value_iterator<T1, T2, T3, !T4> a0)
                           typename std::__key_value_iterator<
                               T1, T2, T3, T4>::__mapped_iterator>)
 {
-  return std::__key_value_iterator<T1, T2, T3, T4>(a0);
+  return std::__key_value_iterator<T1, T2, T3, T4>(std::move(a0));
 }
 
 template <typename T1, typename T2, typename T3, bool T4>
@@ -75,21 +75,21 @@ template <typename T1, typename T2, typename T3, bool T4>
 std::__key_value_iterator<T1, T2, T3, T4> &
 f9(std::__key_value_iterator<T1, T2, T3, T4> &a0,
    typename std::__key_value_iterator<T1, T2, T3, T4>::difference_type a1) {
-  return a0.operator+=(a1);
+  return a0.operator+=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, bool T4>
 std::__key_value_iterator<T1, T2, T3, T4> &
 f10(std::__key_value_iterator<T1, T2, T3, T4> &a0,
     typename std::__key_value_iterator<T1, T2, T3, T4>::difference_type a1) {
-  return a0.operator-=(a1);
+  return a0.operator-=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, bool T4>
 auto f11(
     const std::__key_value_iterator<T1, T2, T3, T4> &a0,
     typename std::__key_value_iterator<T1, T2, T3, T4>::difference_type a1) {
-  return a0.operator[](a1);
+  return a0.operator[](std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, bool T4>
@@ -103,21 +103,21 @@ template <typename T1, typename T2, typename T3, bool T4>
 std::__key_value_iterator<T1, T2, T3, T4>
 f13(const std::__key_value_iterator<T1, T2, T3, T4> &a0,
     typename std::__key_value_iterator<T1, T2, T3, T4>::difference_type a1) {
-  return operator-(a0, a1);
+  return operator-(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, bool T4>
 std::__key_value_iterator<T1, T2, T3, T4>
 f14(typename std::__key_value_iterator<T1, T2, T3, T4>::difference_type a0,
     const std::__key_value_iterator<T1, T2, T3, T4> &a1) {
-  return operator+(a0, a1);
+  return operator+(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, bool T4>
 std::__key_value_iterator<T1, T2, T3, T4>
 f15(const std::__key_value_iterator<T1, T2, T3, T4> &a0,
     typename std::__key_value_iterator<T1, T2, T3, T4>::difference_type a1) {
-  return operator+(a0, a1);
+  return operator+(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, bool T4>

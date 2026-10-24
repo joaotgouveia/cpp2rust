@@ -48,7 +48,7 @@ f79(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
            !(std::is_same<T6, typename std::unordered_multimap<
                                   T1, T2, T3, T4, T5>::node_type>::value))
 {
-  return a0.template insert<T6>(a1, std::forward<T6>(a2));
+  return a0.template insert<T6>(std::move(a1), std::forward<T6>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,

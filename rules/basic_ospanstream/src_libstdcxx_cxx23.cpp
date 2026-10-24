@@ -25,7 +25,7 @@ using t6 = typename std::basic_ospanstream<T1, T2>::traits_type;
 template <typename T1, typename T2>
 std::basic_ospanstream<T1, T2>
 f1(std::span<T1> a0, typename std::basic_ospanstream<T1, T2>::openmode a1) {
-  return std::basic_ospanstream<T1, T2>(a0, a1);
+  return std::basic_ospanstream<T1, T2>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -57,7 +57,7 @@ std::span<T1> f6(const std::basic_ospanstream<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 void f7(std::basic_ospanstream<T1, T2> &a0, std::span<T1> a1) {
-  return a0.span(a1);
+  return a0.span(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -178,7 +178,7 @@ std::basic_ospanstream<T1, T2> &f26(std::basic_ospanstream<T1, T2> &a0,
 
 template <typename T1, typename T2>
 std::basic_ospanstream<T1, T2> &f27(std::basic_ospanstream<T1, T2> &a0, T1 a1) {
-  return a0.put(a1);
+  return a0.put(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -202,7 +202,7 @@ template <typename T1, typename T2>
 std::basic_ospanstream<T1, T2> &
 f31(std::basic_ospanstream<T1, T2> &a0,
     typename std::basic_ospanstream<T1, T2>::pos_type a1) {
-  return a0.seekp(a1);
+  return a0.seekp(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -210,7 +210,7 @@ std::basic_ospanstream<T1, T2> &
 f32(std::basic_ospanstream<T1, T2> &a0,
     typename std::basic_ospanstream<T1, T2>::off_type a1,
     typename std::basic_ospanstream<T1, T2>::seekdir a2) {
-  return a0.seekp(a1, a2);
+  return a0.seekp(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -232,13 +232,13 @@ f35(const std::basic_ospanstream<T1, T2> &a0) {
 template <typename T1, typename T2>
 void f36(std::basic_ospanstream<T1, T2> &a0,
          typename std::basic_ospanstream<T1, T2>::iostate a1) {
-  return a0.clear(a1);
+  return a0.clear(std::move(a1));
 }
 
 template <typename T1, typename T2>
 void f37(std::basic_ospanstream<T1, T2> &a0,
          typename std::basic_ospanstream<T1, T2>::iostate a1) {
-  return a0.setstate(a1);
+  return a0.setstate(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -270,7 +270,7 @@ f42(const std::basic_ospanstream<T1, T2> &a0) {
 template <typename T1, typename T2>
 void f43(std::basic_ospanstream<T1, T2> &a0,
          typename std::basic_ospanstream<T1, T2>::iostate a1) {
-  return a0.exceptions(a1);
+  return a0.exceptions(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -291,7 +291,7 @@ T1 f46(const std::basic_ospanstream<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 T1 f47(std::basic_ospanstream<T1, T2> &a0, T1 a1) {
-  return a0.fill(a1);
+  return a0.fill(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -301,7 +301,7 @@ std::locale f48(std::basic_ospanstream<T1, T2> &a0, const std::locale &a1) {
 
 template <typename T1, typename T2>
 char f49(const std::basic_ospanstream<T1, T2> &a0, T1 a1, char a2) {
-  return a0.narrow(a1, a2);
+  return a0.narrow(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -326,14 +326,14 @@ template <typename T1, typename T2>
 std::ios_base::fmtflags
 f53(std::basic_ospanstream<T1, T2> &a0,
     typename std::basic_ospanstream<T1, T2>::fmtflags a1) {
-  return a0.flags(a1);
+  return a0.flags(std::move(a1));
 }
 
 template <typename T1, typename T2>
 std::ios_base::fmtflags
 f54(std::basic_ospanstream<T1, T2> &a0,
     typename std::basic_ospanstream<T1, T2>::fmtflags a1) {
-  return a0.setf(a1);
+  return a0.setf(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -341,13 +341,13 @@ std::ios_base::fmtflags
 f55(std::basic_ospanstream<T1, T2> &a0,
     typename std::basic_ospanstream<T1, T2>::fmtflags a1,
     typename std::basic_ospanstream<T1, T2>::fmtflags a2) {
-  return a0.setf(a1, a2);
+  return a0.setf(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 void f56(std::basic_ospanstream<T1, T2> &a0,
          typename std::basic_ospanstream<T1, T2>::fmtflags a1) {
-  return a0.unsetf(a1);
+  return a0.unsetf(std::move(a1));
 }
 
 template <typename T1, typename T2>

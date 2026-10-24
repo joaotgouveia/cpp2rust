@@ -28,3 +28,22 @@ auto f4(T2 &&a0, T3 &&...a1)
   return std::ranges::to<T1, T2, T3...>(std::forward<T2>(a0),
                                         std::forward<T3>(a1)...);
 }
+
+template <typename T1, typename... T2>
+using t6 = std::ranges::views::__adaptor::_Partial<T1, T2...>;
+
+template <typename T1, typename... T2, typename... T3>
+std::ranges::views::__adaptor::_Partial<T1, T2...> f5(int a0, T3 &&...a1) {
+  return std::ranges::views::__adaptor::_Partial<T1, T2...>(
+      a0, std::forward<T3>(a1)...);
+}
+
+template <typename T1, typename... T2, typename T3, typename T4>
+auto f6(std::ranges::views::__adaptor::_Partial<T1, T2...> &a0, T3 &&a1,
+        T4 &&a2)
+  requires(std::ranges::views::__adaptor::__adaptor_invocable<
+           T1, T4, std::__like_t<T3, T2>...>)
+{
+  return a0.template operator()<T3, T4>(std::forward<T3>(a1),
+                                        std::forward<T4>(a2));
+}

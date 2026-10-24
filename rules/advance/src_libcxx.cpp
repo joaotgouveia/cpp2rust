@@ -9,5 +9,5 @@ template <
                        int>
         T4 = 0>
 void f1(T1 &a0, T2 a1) {
-  return std::advance<T1, T2>(a0, a1);
+  return std::advance<T1, T2>(a0, std::move(a1));
 }

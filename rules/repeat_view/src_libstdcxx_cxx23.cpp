@@ -19,7 +19,7 @@ std::ranges::repeat_view<T1, T2> f2(const T1 &a0, T2 a1)
            (std::ranges::__detail::__is_integer_like<T2> ||
             std::same_as<T2, std::unreachable_sentinel_t>))
 {
-  return std::ranges::repeat_view<T1, T2>(a0, a1);
+  return std::ranges::repeat_view<T1, T2>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -28,7 +28,7 @@ std::ranges::repeat_view<T1, T2> f3(T1 &&a0, T2 a1)
            (std::ranges::__detail::__is_integer_like<T2> ||
             std::same_as<T2, std::unreachable_sentinel_t>))
 {
-  return std::ranges::repeat_view<T1, T2>(std::move(a0), a1);
+  return std::ranges::repeat_view<T1, T2>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -78,7 +78,8 @@ std::ranges::repeat_view<T1, T2> f8(std::piecewise_construct_t a0,
            (std::ranges::__detail::__is_integer_like<T2> ||
             std::same_as<T2, std::unreachable_sentinel_t>))
 {
-  return std::ranges::repeat_view<T1, T2>(std::move(a0), a1, a2);
+  return std::ranges::repeat_view<T1, T2>(std::move(a0), std::move(a1),
+                                          std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -302,7 +303,7 @@ decltype(auto) f25(std::ranges::repeat_view<T1, T2> &a0,
            (std::ranges::__detail::__is_integer_like<T2> ||
             std::same_as<T2, std::unreachable_sentinel_t>))
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -316,5 +317,5 @@ decltype(auto) f26(const std::ranges::repeat_view<T1, T2> &a0,
            (std::ranges::__detail::__is_integer_like<T2> ||
             std::same_as<T2, std::unreachable_sentinel_t>))
 {
-  return a0.template operator[]<T3>(a1);
+  return a0.template operator[]<T3>(std::move(a1));
 }

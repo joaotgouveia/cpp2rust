@@ -26,7 +26,7 @@ template <
                     typename std::remove_pointer<T3>::type (*)[], T1 (*)[]>>>>,
         std::is_copy_constructible<T2>>>
 std::unique_ptr<T1[], T2> f45(T3 a0, const T2 &a1) {
-  return std::unique_ptr<T1[], T2>(a0, a1);
+  return std::unique_ptr<T1[], T2>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3 = T2,

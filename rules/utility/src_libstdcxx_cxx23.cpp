@@ -46,7 +46,7 @@ std::sorted_unique_t &f24(std::sorted_unique_t &a0, std::sorted_unique_t &&a1) {
 }
 
 template <typename T1> std::underlying_type_t<T1> f25(T1 a0) {
-  return std::to_underlying<T1>(a0);
+  return std::to_underlying<T1>(std::move(a0));
 }
 
 void f26() { return std::unreachable(); }

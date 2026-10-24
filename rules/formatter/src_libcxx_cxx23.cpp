@@ -30,7 +30,7 @@ void f227(std::formatter<T1, T2> &a0, std::basic_string_view<T2> a1)
             std::formattable<std::ranges::range_reference_t<T1>, T2>)) &&
           (std::format_kind<T1> == (std::range_format)3)
 {
-  return a0.set_separator(a1);
+  return a0.set_separator(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -40,7 +40,7 @@ void f228(std::formatter<T1, T2> &a0, std::basic_string_view<T2> a1,
             std::formattable<std::ranges::range_reference_t<T1>, T2>)) &&
           (std::format_kind<T1> == (std::range_format)3)
 {
-  return a0.set_brackets(a1, a2);
+  return a0.set_brackets(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -146,7 +146,7 @@ f238(const std::formatter<std::tuple<T2...>, T1> &a0,
                         const std::tuple<T2...> &, std::tuple<T2...> &>
          a1,
      T3 &a2) {
-  return a0.template format<T3>(a1, a2);
+  return a0.template format<T3>(std::move(a1), a2);
 }
 
 template <typename T1, typename... T2>
@@ -155,13 +155,13 @@ using t75 = std::formatter<std::pair<T2...>, T1>;
 template <typename T1, typename... T2>
 void f239(std::formatter<std::pair<T2...>, T1> &a0,
           std::basic_string_view<T1> a1) {
-  return a0.set_separator(a1);
+  return a0.set_separator(std::move(a1));
 }
 
 template <typename T1, typename... T2>
 void f240(std::formatter<std::pair<T2...>, T1> &a0,
           std::basic_string_view<T1> a1, std::basic_string_view<T1> a2) {
-  return a0.set_brackets(a1, a2);
+  return a0.set_brackets(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename... T2, typename T3>
@@ -176,7 +176,7 @@ f242(const std::formatter<std::pair<T2...>, T1> &a0,
                         const std::pair<T2...> &, std::pair<T2...> &>
          a1,
      T3 &a2) {
-  return a0.template format<T3>(a1, a2);
+  return a0.template format<T3>(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

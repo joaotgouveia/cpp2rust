@@ -11,7 +11,7 @@ std::pointer_to_unary_function<T1, T2> f4(T2 (*a0)(T1)) {
 
 template <typename T1, typename T2>
 T2 f5(const std::pointer_to_unary_function<T1, T2> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1, typename T2>

@@ -16,7 +16,7 @@ template <typename T1> auto f12(T1 &a0) { return std::rbegin<T1>(a0); }
 
 template <typename T1>
 std::reverse_iterator<const T1 *> f13(std::initializer_list<T1> a0) {
-  return std::rbegin<T1>(a0);
+  return std::rbegin<T1>(std::move(a0));
 }
 
 template <typename T1, std::size_t T2>
@@ -30,7 +30,7 @@ template <typename T1> auto f16(T1 &a0) { return std::rend<T1>(a0); }
 
 template <typename T1>
 std::reverse_iterator<const T1 *> f17(std::initializer_list<T1> a0) {
-  return std::rend<T1>(a0);
+  return std::rend<T1>(std::move(a0));
 }
 
 template <typename T1, std::size_t T2>

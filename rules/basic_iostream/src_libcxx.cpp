@@ -13,7 +13,7 @@ template <typename T1, typename T2, typename T3 = T1,
           std::__enable_if_t<std::is_same<T1, char>::value, int> T4 = 0>
 std::basic_iostream<T1, T2> &f101(std::basic_iostream<T1, T2> &a0,
                                   std::streamsize a1, T1 a2) {
-  return a0.ignore(a1, a2);
+  return a0.ignore(a1, std::move(a2));
 }
 
 template <typename T1, typename T2>

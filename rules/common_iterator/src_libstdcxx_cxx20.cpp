@@ -13,14 +13,14 @@ template <typename T1, typename T2>
 std::common_iterator<T1, T2> f6(T1 a0)
   requires((!std::same_as<T1, T2>) && std::copyable<T1>)
 {
-  return std::common_iterator<T1, T2>(a0);
+  return std::common_iterator<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>
 std::common_iterator<T1, T2> f7(T2 a0)
   requires((!std::same_as<T1, T2>) && std::copyable<T1>)
 {
-  return std::common_iterator<T1, T2>(a0);
+  return std::common_iterator<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>

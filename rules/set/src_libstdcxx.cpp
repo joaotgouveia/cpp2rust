@@ -49,7 +49,7 @@ f61(const std::set<T1, T2, T3> &a0) {
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::set<T1, T2, T3> f62(T4 a0, T4 a1) {
-  return std::set<T1, T2, T3>(a0, a1);
+  return std::set<T1, T2, T3>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>

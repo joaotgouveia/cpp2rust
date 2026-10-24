@@ -7,12 +7,12 @@
 template <typename T1, typename T2>
 bool f7(const std::basic_string_view<T1, T2> &a0,
         std::basic_string_view<T1, T2> a1) {
-  return a0.contains(a1);
+  return a0.contains(std::move(a1));
 }
 
 template <typename T1, typename T2>
 bool f8(const std::basic_string_view<T1, T2> &a0, T1 a1) {
-  return a0.contains(a1);
+  return a0.contains(std::move(a1));
 }
 
 template <typename T1, typename T2>

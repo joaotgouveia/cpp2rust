@@ -11,7 +11,7 @@ std::pointer_to_binary_function<T1, T2, T3> f4(T3 (*a0)(T1, T2)) {
 
 template <typename T1, typename T2, typename T3>
 T3 f5(const std::pointer_to_binary_function<T1, T2, T3> &a0, T1 a1, T2 a2) {
-  return a0.operator()(a1, a2);
+  return a0.operator()(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>

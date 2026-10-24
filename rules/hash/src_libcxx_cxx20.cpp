@@ -65,7 +65,7 @@ std::size_t f263(const std::hash<T1> &a0, T1 a1)
                                             (sizeof(T1) <= sizeof(std::size_t)),
                                         void>::type>::value)
 {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1>
@@ -75,7 +75,7 @@ std::size_t f264(const std::hash<T1> &a0, T1 a1)
                                                     std::__is_unqualified_v<T1>,
                                                 void>::type>::value)
 {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1>
@@ -87,7 +87,7 @@ std::size_t f265(const std::hash<T1> &a0, T1 a1)
                                       (sizeof(T1) > sizeof(std::size_t)),
                                   void>::type>::value)
 {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1>
@@ -99,7 +99,7 @@ std::size_t f266(const std::hash<T1> &a0, T1 a1)
                                       (sizeof(T1) > sizeof(std::size_t)),
                                   void>::type>::value)
 {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1>
@@ -111,7 +111,7 @@ std::size_t f267(const std::hash<T1> &a0, T1 a1)
                                       (sizeof(T1) > sizeof(std::size_t)),
                                   void>::type>::value)
 {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1>
@@ -123,7 +123,7 @@ std::size_t f268(const std::hash<T1> &a0, T1 a1)
                                       (sizeof(T1) > sizeof(std::size_t)),
                                   void>::type>::value)
 {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1>
@@ -135,7 +135,7 @@ std::size_t f269(const std::hash<T1> &a0, T1 a1)
                                       (sizeof(T1) > sizeof(std::size_t)),
                                   void>::type>::value)
 {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1>
@@ -145,5 +145,5 @@ std::size_t f270(const std::hash<T1> &a0, T1 a1)
                                              std::__is_unqualified_v<T1>,
                                          void>::type>::value)
 {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }

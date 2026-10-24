@@ -126,7 +126,7 @@ std::basic_ostream<T1, T2> &f17(std::basic_ostream<T1, T2> &a0,
 
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f18(std::basic_ostream<T1, T2> &a0, T1 a1) {
-  return a0.put(a1);
+  return a0.put(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -150,7 +150,7 @@ template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &
 f22(std::basic_ostream<T1, T2> &a0,
     typename std::basic_ostream<T1, T2>::pos_type a1) {
-  return a0.seekp(a1);
+  return a0.seekp(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -158,7 +158,7 @@ std::basic_ostream<T1, T2> &
 f23(std::basic_ostream<T1, T2> &a0,
     typename std::basic_ostream<T1, T2>::off_type a1,
     typename std::basic_ostream<T1, T2>::seekdir a2) {
-  return a0.seekp(a1, a2);
+  return a0.seekp(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -220,7 +220,7 @@ T1 f34(const std::basic_ostream<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 T1 f35(std::basic_ostream<T1, T2> &a0, T1 a1) {
-  return a0.fill(a1);
+  return a0.fill(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -230,7 +230,7 @@ std::locale f36(std::basic_ostream<T1, T2> &a0, const std::locale &a1) {
 
 template <typename T1, typename T2>
 char f37(const std::basic_ostream<T1, T2> &a0, T1 a1, char a2) {
-  return a0.narrow(a1, a2);
+  return a0.narrow(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>

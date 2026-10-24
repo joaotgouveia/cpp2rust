@@ -237,11 +237,11 @@ template <typename T1> T1 f52(const std::complex<T1> &a0) { return a0.real(); }
 template <typename T1> T1 f53(const std::complex<T1> &a0) { return a0.imag(); }
 
 template <typename T1> void f54(std::complex<T1> &a0, T1 a1) {
-  return a0.real(a1);
+  return a0.real(std::move(a1));
 }
 
 template <typename T1> void f55(std::complex<T1> &a0, T1 a1) {
-  return a0.imag(a1);
+  return a0.imag(std::move(a1));
 }
 
 template <typename T1>
@@ -293,8 +293,9 @@ template <typename T1> std::complex<T1> f65(const std::complex<T1> &a0) {
   return std::conj<T1>(a0);
 }
 
-template <typename T1> auto f66(T1 a0) -> decltype(std::conj<T1>(a0)) {
-  return std::conj<T1>(a0);
+template <typename T1>
+auto f66(T1 a0) -> decltype(std::conj<T1>(std::move(a0))) {
+  return std::conj<T1>(std::move(a0));
 }
 
 template <typename T1> std::complex<T1> f67(const std::complex<T1> &a0) {

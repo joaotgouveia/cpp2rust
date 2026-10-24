@@ -49,7 +49,7 @@ std::filesystem::__detail::_Path2<T1 *> &f111(std::filesystem::path &a0, T1 a1)
       !(std::is_same<T1, std::basic_string_view<
                              std::filesystem::path::value_type>>::value))
 {
-  return a0.template operator+= <T1>(a1);
+  return a0.template operator+= <T1>(std::move(a1));
 }
 
 std::strong_ordering f112(const std::filesystem::path &a0,

@@ -99,7 +99,8 @@ template <
         int>
         T4 = 0>
 std::optional<T1> f122(std::initializer_list<T2> a0, T3 &&...a1) {
-  return std::make_optional<T1, T2, T3...>(a0, std::forward<T3>(a1)...);
+  return std::make_optional<T1, T2, T3...>(std::move(a0),
+                                           std::forward<T3>(a1)...);
 }
 
 template <typename T1, typename T2> std::nullopt_t f123(T1 &&a0, T2 &&a1) {
@@ -264,7 +265,7 @@ template <typename T1, typename T2, typename... T3,
                            int>
               T4 = 0>
 std::optional<T1> f141(T2 a0, T3 &&...a1) {
-  return std::optional<T1>(a0, std::forward<T3>(a1)...);
+  return std::optional<T1>(std::move(a0), std::forward<T3>(a1)...);
 }
 
 template <
@@ -274,7 +275,8 @@ template <
         T4 = 0>
 std::optional<T1> f142(std::in_place_t a0, std::initializer_list<T2> a1,
                        T3 &&...a2) {
-  return std::optional<T1>(std::move(a0), a1, std::forward<T3>(a2)...);
+  return std::optional<T1>(std::move(a0), std::move(a1),
+                           std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename... T2,
@@ -289,7 +291,7 @@ template <
         std::is_constructible_v<T1, std::initializer_list<T2> &, T3...>, int>
         T4 = 0>
 T1 &f144(std::optional<T1> &a0, std::initializer_list<T2> a1, T3 &&...a2) {
-  return a0.template emplace<T2, T3...>(a1, std::forward<T3>(a2)...);
+  return a0.template emplace<T2, T3...>(std::move(a1), std::forward<T3>(a2)...);
 }
 
 template <typename T1>

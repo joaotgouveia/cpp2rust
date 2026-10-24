@@ -60,7 +60,7 @@ std::valarray<T1> f13(const std::indirect_array<T1> &a0) {
 }
 
 template <typename T1> std::valarray<T1> f14(std::initializer_list<T1> a0) {
-  return std::valarray<T1>(a0);
+  return std::valarray<T1>(std::move(a0));
 }
 
 template <typename T1>
@@ -101,7 +101,7 @@ std::valarray<T1> &f21(std::valarray<T1> &a0,
 
 template <typename T1>
 std::valarray<T1> &f22(std::valarray<T1> &a0, std::initializer_list<T1> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1> T1 &f23(std::valarray<T1> &a0, std::size_t a1) {
@@ -247,5 +247,5 @@ std::valarray<T1> f52(const std::valarray<T1> &a0, int a1) {
 }
 
 template <typename T1> void f53(std::valarray<T1> &a0, std::size_t a1, T1 a2) {
-  return a0.resize(a1, a2);
+  return a0.resize(a1, std::move(a2));
 }

@@ -22,7 +22,7 @@ pthread_cond_t *f5(std::condition_variable &a0) { return a0.native_handle(); }
 
 template <typename T1>
 void f6(std::condition_variable &a0, std::unique_lock<std::mutex> &a1, T1 a2) {
-  return a0.template wait<T1>(a1, a2);
+  return a0.template wait<T1>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -34,7 +34,7 @@ std::cv_status f7(std::condition_variable &a0, std::unique_lock<std::mutex> &a1,
 template <typename T1, typename T2, typename T3>
 bool f8(std::condition_variable &a0, std::unique_lock<std::mutex> &a1,
         const std::chrono::time_point<T1, T2> &a2, T3 a3) {
-  return a0.template wait_until<T1, T2, T3>(a1, a2, a3);
+  return a0.template wait_until<T1, T2, T3>(a1, a2, std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -46,7 +46,7 @@ std::cv_status f9(std::condition_variable &a0, std::unique_lock<std::mutex> &a1,
 template <typename T1, typename T2, typename T3>
 bool f10(std::condition_variable &a0, std::unique_lock<std::mutex> &a1,
          const std::chrono::duration<T1, T2> &a2, T3 a3) {
-  return a0.template wait_for<T1, T2, T3>(a1, a2, a3);
+  return a0.template wait_for<T1, T2, T3>(a1, a2, std::move(a3));
 }
 
 using t3 = std::condition_variable_any;
@@ -63,7 +63,7 @@ template <typename T1> void f14(std::condition_variable_any &a0, T1 &a1) {
 
 template <typename T1, typename T2>
 void f15(std::condition_variable_any &a0, T1 &a1, T2 a2) {
-  return a0.template wait<T1, T2>(a1, a2);
+  return a0.template wait<T1, T2>(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -75,7 +75,7 @@ std::cv_status f16(std::condition_variable_any &a0, T1 &a1,
 template <typename T1, typename T2, typename T3, typename T4>
 bool f17(std::condition_variable_any &a0, T1 &a1,
          const std::chrono::time_point<T2, T3> &a2, T4 a3) {
-  return a0.template wait_until<T1, T2, T3, T4>(a1, a2, a3);
+  return a0.template wait_until<T1, T2, T3, T4>(a1, a2, std::move(a3));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -87,7 +87,7 @@ std::cv_status f18(std::condition_variable_any &a0, T1 &a1,
 template <typename T1, typename T2, typename T3, typename T4>
 bool f19(std::condition_variable_any &a0, T1 &a1,
          const std::chrono::duration<T2, T3> &a2, T4 a3) {
-  return a0.template wait_for<T1, T2, T3, T4>(a1, a2, a3);
+  return a0.template wait_for<T1, T2, T3, T4>(a1, a2, std::move(a3));
 }
 
 using t4 = std::cv_status;

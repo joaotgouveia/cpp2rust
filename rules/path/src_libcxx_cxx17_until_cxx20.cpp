@@ -46,7 +46,7 @@ template <
          !(std::is_same<T1, std::filesystem::path::value_type>::value)),
         int>::type T3 = 0>
 std::filesystem::path &f84(std::filesystem::path &a0, T1 a1) {
-  return a0.template operator+= <T1>(a1);
+  return a0.template operator+= <T1>(std::move(a1));
 }
 
 template <typename T1,

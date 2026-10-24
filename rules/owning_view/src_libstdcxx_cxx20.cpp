@@ -226,7 +226,7 @@ decltype(auto) f25(std::ranges::owning_view<T1> &a0,
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -239,5 +239,5 @@ decltype(auto) f26(const std::ranges::owning_view<T1> &a0,
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }

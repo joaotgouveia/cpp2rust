@@ -39,7 +39,7 @@ std::basic_string<T1, T2, T3> f24(std::basic_string<T1, T2, T3> &&a0,
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f25(std::basic_string<T1, T2, T3> &&a0, T1 a1) {
-  return std::operator+ <T1, T2, T3>(std::move(a0), a1);
+  return std::operator+ <T1, T2, T3>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -63,7 +63,7 @@ std::basic_string<T1, T2, T3> f28(const std::basic_string<T1, T2, T3> &a0,
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f29(const std::basic_string<T1, T2, T3> &a0,
                                   T1 a1) {
-  return std::operator+ <T1, T2, T3>(a0, a1);
+  return std::operator+ <T1, T2, T3>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -80,13 +80,13 @@ std::basic_string<T1, T2, T3> f31(const T1 *a0,
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f32(T1 a0, std::basic_string<T1, T2, T3> &&a1) {
-  return std::operator+ <T1, T2, T3>(a0, std::move(a1));
+  return std::operator+ <T1, T2, T3>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f33(T1 a0,
                                   const std::basic_string<T1, T2, T3> &a1) {
-  return std::operator+ <T1, T2, T3>(a0, a1);
+  return std::operator+ <T1, T2, T3>(std::move(a0), a1);
 }
 
 double f34(const std::string &a0, std::size_t *a1) { return std::stod(a0, a1); }

@@ -20,7 +20,7 @@ template <typename T1> void f73(std::atomic<T1 *> &a0) {
 
 template <typename T1>
 void f74(const std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
-  return a0.wait(a1, a2);
+  return a0.wait(std::move(a1), a2);
 }
 
 template <typename T1> void f75(std::atomic<T1> &a0) { return a0.notify_one(); }
@@ -37,11 +37,11 @@ template <typename T1> void f78(std::atomic<T1> *a0) {
 
 template <typename T1>
 void f79(const std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1) {
-  return std::atomic_wait<T1>(a0, a1);
+  return std::atomic_wait<T1>(a0, std::move(a1));
 }
 
 template <typename T1>
 void f80(const std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1,
          std::memory_order a2) {
-  return std::atomic_wait_explicit<T1>(a0, a1, a2);
+  return std::atomic_wait_explicit<T1>(a0, std::move(a1), a2);
 }

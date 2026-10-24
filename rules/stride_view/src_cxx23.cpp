@@ -8,7 +8,7 @@ template <typename T1>
 std::ranges::stride_view<T1> f1(T1 a0, std::ranges::range_difference_t<T1> a1)
   requires(std::ranges::view<T1>)
 {
-  return std::ranges::stride_view<T1>(a0, a1);
+  return std::ranges::stride_view<T1>(std::move(a0), std::move(a1));
 }
 
 template <typename T1>
@@ -61,7 +61,7 @@ decltype(auto) f8(std::ranges::stride_view<T1> &a0,
                         std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
           (std::ranges::random_access_range<T2>) && (std::ranges::view<T1>)
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -72,5 +72,5 @@ decltype(auto) f9(const std::ranges::stride_view<T1> &a0,
                         std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
           (std::ranges::random_access_range<T2>) && (std::ranges::view<T1>)
 {
-  return a0.template operator[]<T2>(a1);
+  return a0.template operator[]<T2>(std::move(a1));
 }

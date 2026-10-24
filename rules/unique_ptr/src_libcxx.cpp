@@ -31,7 +31,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               std::is_same<T3, std::__private_constructor_tag>::value, int>
               T5 = 0>
 std::unique_ptr<T1[], T2> f74(T3 a0, T4 a1, std::size_t a2) {
-  return std::unique_ptr<T1[], T2>(a0, a1, a2);
+  return std::unique_ptr<T1[], T2>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3 = T2,

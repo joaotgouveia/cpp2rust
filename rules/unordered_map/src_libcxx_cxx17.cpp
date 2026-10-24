@@ -82,7 +82,8 @@ typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
 f178(std::unordered_map<T1, T2, T3, T4, T5> &a0,
      typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
      const T1 &a2, T6 &&...a3) {
-  return a0.template try_emplace<T6...>(a1, a2, std::forward<T6>(a3)...);
+  return a0.template try_emplace<T6...>(std::move(a1), a2,
+                                        std::forward<T6>(a3)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -91,7 +92,7 @@ typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
 f179(std::unordered_map<T1, T2, T3, T4, T5> &a0,
      typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
      T1 &&a2, T6 &&...a3) {
-  return a0.template try_emplace<T6...>(a1, std::move(a2),
+  return a0.template try_emplace<T6...>(std::move(a1), std::move(a2),
                                         std::forward<T6>(a3)...);
 }
 
@@ -115,7 +116,8 @@ typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
 f182(std::unordered_map<T1, T2, T3, T4, T5> &a0,
      typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
      const T1 &a2, T6 &&a3) {
-  return a0.template insert_or_assign<T6>(a1, a2, std::forward<T6>(a3));
+  return a0.template insert_or_assign<T6>(std::move(a1), a2,
+                                          std::forward<T6>(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -124,6 +126,6 @@ typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
 f183(std::unordered_map<T1, T2, T3, T4, T5> &a0,
      typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
      T1 &&a2, T6 &&a3) {
-  return a0.template insert_or_assign<T6>(a1, std::move(a2),
+  return a0.template insert_or_assign<T6>(std::move(a1), std::move(a2),
                                           std::forward<T6>(a3));
 }

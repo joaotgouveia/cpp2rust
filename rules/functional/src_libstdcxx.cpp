@@ -17,6 +17,6 @@ auto f2(T2 &&a0, T3 &&...a1)
 }
 
 template <typename T1, typename T2>
-auto f3(T1 T2::*a0) -> decltype(std::mem_fn<T1, T2>(a0)) {
-  return std::mem_fn<T1, T2>(a0);
+auto f3(T1 T2::*a0) -> decltype(std::mem_fn<T1, T2>(std::move(a0))) {
+  return std::mem_fn<T1, T2>(std::move(a0));
 }

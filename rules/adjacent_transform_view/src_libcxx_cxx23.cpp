@@ -22,7 +22,8 @@ std::ranges::adjacent_transform_view<T1, T2, T3> f30(T1 a0, T2 a1)
                std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
                                     std::ranges::range_reference_t<T1>>>)
 {
-  return std::ranges::adjacent_transform_view<T1, T2, T3>(a0, a1);
+  return std::ranges::adjacent_transform_view<T1, T2, T3>(std::move(a0),
+                                                          std::move(a1));
 }
 
 template <typename T1, typename T2, std::size_t T3>
@@ -341,7 +342,7 @@ decltype(auto) f49(std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
                std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
                                     std::ranges::range_reference_t<T1>>>)
 {
-  return a0.template operator[]<T4>(a1);
+  return a0.template operator[]<T4>(std::move(a1));
 }
 
 template <typename T1, typename T2, std::size_t T3, typename T4>
@@ -359,5 +360,5 @@ decltype(auto) f50(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
                std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
                                     std::ranges::range_reference_t<T1>>>)
 {
-  return a0.template operator[]<T4>(a1);
+  return a0.template operator[]<T4>(std::move(a1));
 }

@@ -112,19 +112,19 @@ std::basic_ostream<T1, T2> &f39(std::basic_ostream<T1, T2> &a0,
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f40(std::basic_ostream<T1, T2> &a0,
                                 const std::chrono::hh_mm_ss<T3> a1) {
-  return std::chrono::operator<< <T1, T2, T3>(a0, a1);
+  return std::chrono::operator<< <T1, T2, T3>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f41(std::basic_ostream<T1, T2> &a0,
                                 const std::chrono::file_time<T3> a1) {
-  return std::chrono::operator<< <T1, T2, T3>(a0, a1);
+  return std::chrono::operator<< <T1, T2, T3>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f42(std::basic_ostream<T1, T2> &a0,
                                 const std::chrono::local_time<T3> a1) {
-  return std::chrono::operator<< <T1, T2, T3>(a0, a1);
+  return std::chrono::operator<< <T1, T2, T3>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

@@ -76,7 +76,7 @@ bool f49(const T1 *a0, std::match_results<const T1 *, T2> &a1,
 template <typename T1, typename T2, typename T3>
 bool f50(T1 a0, T1 a1, const std::basic_regex<T2, T3> &a2,
          std::regex_constants::match_flag_type a3) {
-  return std::regex_match<T1, T2, T3>(a0, a1, a2, a3);
+  return std::regex_match<T1, T2, T3>(std::move(a0), std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -90,7 +90,8 @@ template <typename T1, typename T2, typename T3, typename T4>
 bool f52(T1 a0, T1 a1, std::match_results<T1, T2> &a2,
          const std::basic_regex<T3, T4> &a3,
          std::regex_constants::match_flag_type a4) {
-  return std::regex_match<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
+  return std::regex_match<T1, T2, T3, T4>(std::move(a0), std::move(a1), a2, a3,
+                                          a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -126,7 +127,8 @@ std::basic_string<T2> f56(const T2 *a0, const std::basic_regex<T2, T1> &a1,
 template <typename T1, typename T2, typename T3, typename T4>
 T1 f57(T1 a0, T2 a1, T2 a2, const std::basic_regex<T4, T3> &a3, const T4 *a4,
        std::regex_constants::match_flag_type a5) {
-  return std::regex_replace<T1, T2, T3, T4>(a0, a1, a2, a3, a4, a5);
+  return std::regex_replace<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                            std::move(a2), a3, a4, a5);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -143,7 +145,8 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 T1 f59(T1 a0, T2 a1, T2 a2, const std::basic_regex<T4, T3> &a3,
        const std::basic_string<T4, T5, T6> &a4,
        std::regex_constants::match_flag_type a5) {
-  return std::regex_replace<T1, T2, T3, T4, T5, T6>(a0, a1, a2, a3, a4, a5);
+  return std::regex_replace<T1, T2, T3, T4, T5, T6>(
+      std::move(a0), std::move(a1), std::move(a2), a3, a4, a5);
 }
 
 template <typename T1, typename T2>
@@ -162,7 +165,7 @@ bool f61(const T1 *a0, std::match_results<const T1 *, T2> &a1,
 template <typename T1, typename T2, typename T3>
 bool f62(T1 a0, T1 a1, const std::basic_regex<T2, T3> &a2,
          std::regex_constants::match_flag_type a3) {
-  return std::regex_search<T1, T2, T3>(a0, a1, a2, a3);
+  return std::regex_search<T1, T2, T3>(std::move(a0), std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -176,7 +179,8 @@ template <typename T1, typename T2, typename T3, typename T4>
 bool f64(T1 a0, T1 a1, std::match_results<T1, T2> &a2,
          const std::basic_regex<T3, T4> &a3,
          std::regex_constants::match_flag_type a4) {
-  return std::regex_search<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
+  return std::regex_search<T1, T2, T3, T4>(std::move(a0), std::move(a1), a2, a3,
+                                           a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>

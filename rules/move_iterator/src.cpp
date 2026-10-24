@@ -17,7 +17,7 @@ template <typename T1> using t5 = typename std::move_iterator<T1>::pointer;
 template <typename T1> using t6 = typename std::move_iterator<T1>::reference;
 
 template <typename T1> std::move_iterator<T1> f1(T1 a0) {
-  return std::move_iterator<T1>(a0);
+  return std::move_iterator<T1>(std::move(a0));
 }
 
 template <typename T1> T1 f2(const std::move_iterator<T1> &a0) {

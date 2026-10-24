@@ -132,13 +132,13 @@ std::bitset<T1> f28(const std::bitset<T1> &a0, std::size_t a1) {
 
 template <std::size_t T1, typename T2, typename T3, typename T4>
 std::basic_string<T2, T3, T4> f29(const std::bitset<T1> &a0, T2 a1, T2 a2) {
-  return a0.template to_string<T2, T3, T4>(a1, a2);
+  return a0.template to_string<T2, T3, T4>(std::move(a1), std::move(a2));
 }
 
 template <std::size_t T1, typename T2, typename T3>
 std::basic_string<T2, T3, std::allocator<T2>> f30(const std::bitset<T1> &a0,
                                                   T2 a1, T2 a2) {
-  return a0.template to_string<T2, T3>(a1, a2);
+  return a0.template to_string<T2, T3>(std::move(a1), std::move(a2));
 }
 
 template <std::size_t T1>

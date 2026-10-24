@@ -22,13 +22,13 @@ std::bitset<T1> f39(const std::basic_string<T2, T3, T4> &a0, std::size_t a1,
 template <std::size_t T1, typename T2, typename T3, typename T4>
 std::bitset<T1> f40(const std::basic_string<T2, T3, T4> &a0, std::size_t a1,
                     std::size_t a2, T2 a3, T2 a4) {
-  return std::bitset<T1>(a0, a1, a2, a3, a4);
+  return std::bitset<T1>(a0, a1, a2, std::move(a3), std::move(a4));
 }
 
 template <std::size_t T1, typename T2>
 std::bitset<T1> f41(const T2 *a0, typename std::basic_string<T2>::size_type a1,
                     T2 a2, T2 a3) {
-  return std::bitset<T1>(a0, a1, a2, a3);
+  return std::bitset<T1>(a0, std::move(a1), std::move(a2), std::move(a3));
 }
 
 template <std::size_t T1, typename T2, typename T3, typename T4>

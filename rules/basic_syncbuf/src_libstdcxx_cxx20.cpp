@@ -96,7 +96,7 @@ typename std::basic_syncbuf<T1, T2, T3>::pos_type
 f13(std::basic_syncbuf<T1, T2, T3> &a0,
     typename std::basic_syncbuf<T1, T2, T3>::off_type a1,
     std::ios_base::seekdir a2, std::ios_base::openmode a3) {
-  return a0.pubseekoff(a1, a2, a3);
+  return a0.pubseekoff(std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -104,7 +104,7 @@ typename std::basic_syncbuf<T1, T2, T3>::pos_type
 f14(std::basic_syncbuf<T1, T2, T3> &a0,
     typename std::basic_syncbuf<T1, T2, T3>::pos_type a1,
     std::ios_base::openmode a2) {
-  return a0.pubseekpos(a1, a2);
+  return a0.pubseekpos(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -144,7 +144,7 @@ std::streamsize f20(std::basic_syncbuf<T1, T2, T3> &a0, T1 *a1,
 template <typename T1, typename T2, typename T3>
 typename std::basic_syncbuf<T1, T2, T3>::int_type
 f21(std::basic_syncbuf<T1, T2, T3> &a0, T1 a1) {
-  return a0.sputbackc(a1);
+  return a0.sputbackc(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -156,7 +156,7 @@ f22(std::basic_syncbuf<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 typename std::basic_syncbuf<T1, T2, T3>::int_type
 f23(std::basic_syncbuf<T1, T2, T3> &a0, T1 a1) {
-  return a0.sputc(a1);
+  return a0.sputc(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>

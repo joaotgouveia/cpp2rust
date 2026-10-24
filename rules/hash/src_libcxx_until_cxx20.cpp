@@ -34,7 +34,7 @@ template <typename T1,
                                       void>::type>::value),
               int>::type T2 = 0>
 std::size_t f247(const std::hash<T1> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1,
@@ -45,7 +45,7 @@ template <typename T1,
                                                 void>::type>::value),
               int>::type T2 = 0>
 std::size_t f248(const std::hash<T1> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1,
@@ -59,7 +59,7 @@ template <typename T1,
                                       void>::type>::value),
               int>::type T3 = 0>
 std::size_t f249(const std::hash<T1> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1,
@@ -73,7 +73,7 @@ template <typename T1,
                                       void>::type>::value),
               int>::type T3 = 0>
 std::size_t f250(const std::hash<T1> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1,
@@ -87,7 +87,7 @@ template <typename T1,
                                       void>::type>::value),
               int>::type T3 = 0>
 std::size_t f251(const std::hash<T1> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1,
@@ -101,7 +101,7 @@ template <typename T1,
                                       void>::type>::value),
               int>::type T3 = 0>
 std::size_t f252(const std::hash<T1> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1,
@@ -115,7 +115,7 @@ template <typename T1,
                                       void>::type>::value),
               int>::type T3 = 0>
 std::size_t f253(const std::hash<T1> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }
 
 template <typename T1,
@@ -126,5 +126,5 @@ template <typename T1,
                                       void>::type>::value),
               int>::type T2 = 0>
 std::size_t f254(const std::hash<T1> &a0, T1 a1) {
-  return a0.operator()(a1);
+  return a0.operator()(std::move(a1));
 }

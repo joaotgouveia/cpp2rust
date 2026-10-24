@@ -1,7 +1,9 @@
 #include <complex>
 #include <utility>
 
-template <typename T1> double f109(T1 a0) { return std::arg<T1>(a0); }
+template <typename T1> double f109(T1 a0) {
+  return std::arg<T1>(std::move(a0));
+}
 
 std::complex<long double> f110(_Complex long double a0) {
   return std::complex<long double>(a0);
@@ -38,9 +40,13 @@ template <typename T1> T1 f121(const std::complex<T1> &a0) {
   return std::fabs<T1>(a0);
 }
 
-template <typename T1> double f122(T1 a0) { return std::imag<T1>(a0); }
+template <typename T1> double f122(T1 a0) {
+  return std::imag<T1>(std::move(a0));
+}
 
-template <typename T1> double f123(T1 a0) { return std::norm<T1>(a0); }
+template <typename T1> double f123(T1 a0) {
+  return std::norm<T1>(std::move(a0));
+}
 
 template <typename T1>
 std::complex<T1> f124(const std::complex<T1> &a0, const std::complex<T1> &a1) {
@@ -85,8 +91,11 @@ auto f131(const T1 &a0, const std::complex<T2> &a1)
   return std::pow<T1, T2>(a0, a1);
 }
 
-template <typename T1> auto f132(T1 a0) -> decltype(std::proj<T1>(a0)) {
-  return std::proj<T1>(a0);
+template <typename T1>
+auto f132(T1 a0) -> decltype(std::proj<T1>(std::move(a0))) {
+  return std::proj<T1>(std::move(a0));
 }
 
-template <typename T1> double f133(T1 a0) { return std::real<T1>(a0); }
+template <typename T1> double f133(T1 a0) {
+  return std::real<T1>(std::move(a0));
+}

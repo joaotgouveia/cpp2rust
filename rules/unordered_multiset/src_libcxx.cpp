@@ -6,28 +6,28 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_multiset<T1, T2, T3, T4>
 f85(typename std::unordered_multiset<T1, T2, T3, T4>::size_type a0,
     const T2 &a1, const T3 &a2) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_multiset<T1, T2, T3, T4>
 f86(typename std::unordered_multiset<T1, T2, T3, T4>::size_type a0,
     const T2 &a1, const T3 &a2, const T4 &a3) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2, a3);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_multiset<T1, T2, T3, T4>
 f87(typename std::unordered_multiset<T1, T2, T3, T4>::size_type a0,
     const T4 &a1) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_multiset<T1, T2, T3, T4>
 f88(typename std::unordered_multiset<T1, T2, T3, T4>::size_type a0,
     const T2 &a1, const T4 &a2) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -49,7 +49,7 @@ f91(std::unordered_multiset<T1, T2, T3, T4> &&a0, const T4 &a1) {
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_multiset<T1, T2, T3, T4> f92(std::initializer_list<T1> a0) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -57,7 +57,8 @@ std::unordered_multiset<T1, T2, T3, T4>
 f93(std::initializer_list<T1> a0,
     typename std::unordered_multiset<T1, T2, T3, T4>::size_type a1,
     const T2 &a2, const T3 &a3) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2, a3);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                                 a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -65,7 +66,8 @@ std::unordered_multiset<T1, T2, T3, T4>
 f94(std::initializer_list<T1> a0,
     typename std::unordered_multiset<T1, T2, T3, T4>::size_type a1,
     const T2 &a2, const T3 &a3, const T4 &a4) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                                 a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -73,7 +75,8 @@ std::unordered_multiset<T1, T2, T3, T4>
 f95(std::initializer_list<T1> a0,
     typename std::unordered_multiset<T1, T2, T3, T4>::size_type a1,
     const T4 &a2) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                                 a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -81,13 +84,14 @@ std::unordered_multiset<T1, T2, T3, T4>
 f96(std::initializer_list<T1> a0,
     typename std::unordered_multiset<T1, T2, T3, T4>::size_type a1,
     const T2 &a2, const T4 &a3) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2, a3);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                                 a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_multiset<T1, T2, T3, T4> &
 f97(std::unordered_multiset<T1, T2, T3, T4> &a0, std::initializer_list<T1> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -106,13 +110,13 @@ typename std::unordered_multiset<T1, T2, T3, T4>::iterator
 f100(std::unordered_multiset<T1, T2, T3, T4> &a0,
      typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator a1,
      T1 &&a2) {
-  return a0.insert(a1, std::move(a2));
+  return a0.insert(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 void f101(std::unordered_multiset<T1, T2, T3, T4> &a0,
           std::initializer_list<T1> a1) {
-  return a0.insert(a1);
+  return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -126,7 +130,7 @@ typename std::unordered_multiset<T1, T2, T3, T4>::iterator
 f103(std::unordered_multiset<T1, T2, T3, T4> &a0,
      typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator a1,
      const T1 &a2) {
-  return a0.insert(a1, a2);
+  return a0.insert(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -185,7 +189,7 @@ f112(const std::unordered_multiset<T1, T2, T3, T4> &a0, const T1 &a1) {
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_multiset<T1, T2, T3, T4> f113(T5 a0, T5 a1) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -193,7 +197,8 @@ std::unordered_multiset<T1, T2, T3, T4>
 f114(T5 a0, T5 a1,
      typename std::unordered_multiset<T1, T2, T3, T4>::size_type a2,
      const T2 &a3, const T3 &a4) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                                 std::move(a2), a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -201,7 +206,8 @@ std::unordered_multiset<T1, T2, T3, T4>
 f115(T5 a0, T5 a1,
      typename std::unordered_multiset<T1, T2, T3, T4>::size_type a2,
      const T2 &a3, const T3 &a4, const T4 &a5) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2, a3, a4, a5);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                                 std::move(a2), a3, a4, a5);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -209,7 +215,8 @@ std::unordered_multiset<T1, T2, T3, T4>
 f116(T5 a0, T5 a1,
      typename std::unordered_multiset<T1, T2, T3, T4>::size_type a2,
      const T4 &a3) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2, a3);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                                 std::move(a2), a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -217,5 +224,6 @@ std::unordered_multiset<T1, T2, T3, T4>
 f117(T5 a0, T5 a1,
      typename std::unordered_multiset<T1, T2, T3, T4>::size_type a2,
      const T2 &a3, const T4 &a4) {
-  return std::unordered_multiset<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
+  return std::unordered_multiset<T1, T2, T3, T4>(std::move(a0), std::move(a1),
+                                                 std::move(a2), a3, a4);
 }

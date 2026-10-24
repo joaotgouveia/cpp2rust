@@ -416,14 +416,15 @@ std::valarray<T1> &f119(std::valarray<T1> &a0, const std::valarray<T1> &a1) {
 }
 
 template <typename T1>
-auto f120(const std::valarray<T1> &a0, T1(a1)(T1)) -> decltype(a0.apply(a1)) {
-  return a0.apply(a1);
+auto f120(const std::valarray<T1> &a0, T1(a1)(T1))
+    -> decltype(a0.apply(std::move(a1))) {
+  return a0.apply(std::move(a1));
 }
 
 template <typename T1>
 auto f121(const std::valarray<T1> &a0, T1(a1)(const T1 &))
-    -> decltype(a0.apply(a1)) {
-  return a0.apply(a1);
+    -> decltype(a0.apply(std::move(a1))) {
+  return a0.apply(std::move(a1));
 }
 
 template <typename T1, typename T2>

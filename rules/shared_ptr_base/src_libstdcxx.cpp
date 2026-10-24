@@ -81,7 +81,7 @@ template <typename T1, std::_Lock_policy T2, typename T3, typename T4,
           typename T5 = typename std::enable_if<
               std::__sp_is_constructible<T1, T3>::value>::type>
 std::__shared_ptr<T1, T2> f14(T3 *a0, T4 a1) {
-  return std::__shared_ptr<T1, T2>(a0, a1);
+  return std::__shared_ptr<T1, T2>(a0, std::move(a1));
 }
 
 template <typename T1, std::_Lock_policy T2, typename T3, typename T4,
@@ -89,17 +89,17 @@ template <typename T1, std::_Lock_policy T2, typename T3, typename T4,
           typename T6 = typename std::enable_if<
               std::__sp_is_constructible<T1, T3>::value>::type>
 std::__shared_ptr<T1, T2> f15(T3 *a0, T4 a1, T5 a2) {
-  return std::__shared_ptr<T1, T2>(a0, a1, a2);
+  return std::__shared_ptr<T1, T2>(a0, std::move(a1), std::move(a2));
 }
 
 template <typename T1, std::_Lock_policy T2, typename T3>
 std::__shared_ptr<T1, T2> f16(std::nullptr_t a0, T3 a1) {
-  return std::__shared_ptr<T1, T2>(a0, a1);
+  return std::__shared_ptr<T1, T2>(a0, std::move(a1));
 }
 
 template <typename T1, std::_Lock_policy T2, typename T3, typename T4>
 std::__shared_ptr<T1, T2> f17(std::nullptr_t a0, T3 a1, T4 a2) {
-  return std::__shared_ptr<T1, T2>(a0, a1, a2);
+  return std::__shared_ptr<T1, T2>(a0, std::move(a1), std::move(a2));
 }
 
 template <typename T1, std::_Lock_policy T2, typename T3>
@@ -162,14 +162,14 @@ f24(std::__shared_ptr<T1, T2> &a0, T3 *a1) {
 template <typename T1, std::_Lock_policy T2, typename T3, typename T4>
 typename std::enable_if<std::__sp_is_constructible<T1, T3>::value>::type
 f25(std::__shared_ptr<T1, T2> &a0, T3 *a1, T4 a2) {
-  return a0.template reset<T3, T4>(a1, a2);
+  return a0.template reset<T3, T4>(a1, std::move(a2));
 }
 
 template <typename T1, std::_Lock_policy T2, typename T3, typename T4,
           typename T5>
 typename std::enable_if<std::__sp_is_constructible<T1, T3>::value>::type
 f26(std::__shared_ptr<T1, T2> &a0, T3 *a1, T4 a2, T5 a3) {
-  return a0.template reset<T3, T4, T5>(a1, a2, a3);
+  return a0.template reset<T3, T4, T5>(a1, std::move(a2), std::move(a3));
 }
 
 template <typename T1, std::_Lock_policy T2, typename T3>

@@ -140,7 +140,7 @@ std::basic_istream<T1, T2> &f20(std::basic_istream<T1, T2> &a0, T1 &a1) {
 template <typename T1, typename T2>
 std::basic_istream<T1, T2> &f21(std::basic_istream<T1, T2> &a0, T1 *a1,
                                 std::streamsize a2, T1 a3) {
-  return a0.get(a1, a2, a3);
+  return a0.get(a1, a2, std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -152,7 +152,7 @@ std::basic_istream<T1, T2> &f22(std::basic_istream<T1, T2> &a0, T1 *a1,
 template <typename T1, typename T2>
 std::basic_istream<T1, T2> &f23(std::basic_istream<T1, T2> &a0,
                                 std::basic_streambuf<T1, T2> &a1, T1 a2) {
-  return a0.get(a1, a2);
+  return a0.get(a1, std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -164,7 +164,7 @@ std::basic_istream<T1, T2> &f24(std::basic_istream<T1, T2> &a0,
 template <typename T1, typename T2>
 std::basic_istream<T1, T2> &f25(std::basic_istream<T1, T2> &a0, T1 *a1,
                                 std::streamsize a2, T1 a3) {
-  return a0.getline(a1, a2, a3);
+  return a0.getline(a1, a2, std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -177,7 +177,7 @@ template <typename T1, typename T2>
 std::basic_istream<T1, T2> &
 f27(std::basic_istream<T1, T2> &a0, std::streamsize a1,
     typename std::basic_istream<T1, T2>::int_type a2) {
-  return a0.ignore(a1, a2);
+  return a0.ignore(a1, std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -200,7 +200,7 @@ std::streamsize f30(std::basic_istream<T1, T2> &a0, T1 *a1,
 
 template <typename T1, typename T2>
 std::basic_istream<T1, T2> &f31(std::basic_istream<T1, T2> &a0, T1 a1) {
-  return a0.putback(a1);
+  return a0.putback(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -222,7 +222,7 @@ template <typename T1, typename T2>
 std::basic_istream<T1, T2> &
 f35(std::basic_istream<T1, T2> &a0,
     typename std::basic_istream<T1, T2>::pos_type a1) {
-  return a0.seekg(a1);
+  return a0.seekg(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -230,7 +230,7 @@ std::basic_istream<T1, T2> &
 f36(std::basic_istream<T1, T2> &a0,
     typename std::basic_istream<T1, T2>::off_type a1,
     typename std::basic_istream<T1, T2>::seekdir a2) {
-  return a0.seekg(a1, a2);
+  return a0.seekg(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -292,7 +292,7 @@ T1 f47(const std::basic_istream<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 T1 f48(std::basic_istream<T1, T2> &a0, T1 a1) {
-  return a0.fill(a1);
+  return a0.fill(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -302,7 +302,7 @@ std::locale f49(std::basic_istream<T1, T2> &a0, const std::locale &a1) {
 
 template <typename T1, typename T2>
 char f50(const std::basic_istream<T1, T2> &a0, T1 a1, char a2) {
-  return a0.narrow(a1, a2);
+  return a0.narrow(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>

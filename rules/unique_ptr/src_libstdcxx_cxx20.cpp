@@ -40,7 +40,7 @@ std::unique_ptr<T1[], T2> f65(T3 a0)
            !(std::is_same<T3, std::nullptr_t>::value) &&
            !(std::is_same<T3, const std::unique_ptr<T1[], T2> &>::value))
 {
-  return std::unique_ptr<T1[], T2>(a0);
+  return std::unique_ptr<T1[], T2>(std::move(a0));
 }
 
 template <
@@ -93,7 +93,7 @@ template <
 void f68(std::unique_ptr<T1[], T2> &a0, T3 a1)
   requires(!(std::is_same<T3, std::nullptr_t>::value))
 {
-  return a0.template reset<T3>(a1);
+  return a0.template reset<T3>(std::move(a1));
 }
 
 template <

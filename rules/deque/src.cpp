@@ -71,7 +71,7 @@ std::deque<T1, T2> f6(std::deque<T1, T2> &&a0, const T2 &a1) {
 
 template <typename T1, typename T2>
 std::deque<T1, T2> f7(std::initializer_list<T1> a0, const T2 &a1) {
-  return std::deque<T1, T2>(a0, a1);
+  return std::deque<T1, T2>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2>
@@ -86,12 +86,12 @@ std::deque<T1, T2> &f9(std::deque<T1, T2> &a0, std::deque<T1, T2> &&a1) {
 
 template <typename T1, typename T2>
 std::deque<T1, T2> &f10(std::deque<T1, T2> &a0, std::initializer_list<T1> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2>
 void f11(std::deque<T1, T2> &a0, std::initializer_list<T1> a1) {
-  return a0.assign(a1);
+  return a0.assign(std::move(a1));
 }
 
 template <typename T1, typename T2> T2 f12(const std::deque<T1, T2> &a0) {
@@ -200,34 +200,34 @@ template <typename T1, typename T2>
 typename std::deque<T1, T2>::iterator
 f33(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     const T1 &a2) {
-  return a0.insert(a1, a2);
+  return a0.insert(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>
 typename std::deque<T1, T2>::iterator
 f34(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     T1 &&a2) {
-  return a0.insert(a1, std::move(a2));
+  return a0.insert(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 typename std::deque<T1, T2>::iterator
 f35(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     std::initializer_list<T1> a2) {
-  return a0.insert(a1, a2);
+  return a0.insert(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 typename std::deque<T1, T2>::iterator
 f36(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1) {
-  return a0.erase(a1);
+  return a0.erase(std::move(a1));
 }
 
 template <typename T1, typename T2>
 typename std::deque<T1, T2>::iterator
 f37(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     typename std::deque<T1, T2>::const_iterator a2) {
-  return a0.erase(a1, a2);
+  return a0.erase(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -243,7 +243,7 @@ template <typename T1, typename T2, typename... T3>
 typename std::deque<T1, T2>::iterator
 f40(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     T3 &&...a2) {
-  return a0.template emplace<T3...>(a1, std::forward<T3>(a2)...);
+  return a0.template emplace<T3...>(std::move(a1), std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename T2>

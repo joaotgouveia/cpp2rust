@@ -79,7 +79,7 @@ template <typename T1, typename T2> T1 f12(const std::basic_ios<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2> T1 f13(std::basic_ios<T1, T2> &a0, T1 a1) {
-  return a0.fill(a1);
+  return a0.fill(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -89,7 +89,7 @@ std::locale f14(std::basic_ios<T1, T2> &a0, const std::locale &a1) {
 
 template <typename T1, typename T2>
 char f15(const std::basic_ios<T1, T2> &a0, T1 a1, char a2) {
-  return a0.narrow(a1, a2);
+  return a0.narrow(std::move(a1), a2);
 }
 
 template <typename T1, typename T2>

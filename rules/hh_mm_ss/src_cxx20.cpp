@@ -10,7 +10,7 @@ template <typename T1> std::chrono::hh_mm_ss<T1> f1() {
 }
 
 template <typename T1> std::chrono::hh_mm_ss<T1> f2(T1 a0) {
-  return std::chrono::hh_mm_ss<T1>(a0);
+  return std::chrono::hh_mm_ss<T1>(std::move(a0));
 }
 
 template <typename T1> bool f3(const std::chrono::hh_mm_ss<T1> &a0) {

@@ -6,19 +6,19 @@ template <typename T1, std::__enable_if_t<std::is_integral<T1>::value ||
                                           int>
                            T2 = 0>
 double f147(T1 a0) {
-  return std::arg<T1>(a0);
+  return std::arg<T1>(std::move(a0));
 }
 
 template <typename T1,
           std::__enable_if_t<std::is_same<T1, float>::value, int> T2 = 0>
 float f148(T1 a0) {
-  return std::arg<T1>(a0);
+  return std::arg<T1>(std::move(a0));
 }
 
 template <typename T1,
           std::__enable_if_t<std::is_same<T1, long double>::value, int> T2 = 0>
 long double f149(T1 a0) {
-  return std::arg<T1>(a0);
+  return std::arg<T1>(std::move(a0));
 }
 
 std::complex<long double> f150(const std::complex<float> &a0) {
@@ -53,7 +53,7 @@ template <
     std::__enable_if_t<std::_IsSame<T1, std::__from_builtin_tag>::value, int>
         T2 = 0>
 std::complex<long double> f156(T1 a0, _Complex long double a1) {
-  return std::complex<long double>(a0, a1);
+  return std::complex<long double>(std::move(a0), a1);
 }
 
 std::complex<double> f157(const std::complex<float> &a0) {
@@ -86,7 +86,7 @@ template <
     std::__enable_if_t<std::_IsSame<T1, std::__from_builtin_tag>::value, int>
         T2 = 0>
 std::complex<double> f163(T1 a0, _Complex double a1) {
-  return std::complex<double>(a0, a1);
+  return std::complex<double>(std::move(a0), a1);
 }
 
 std::complex<float> f164(const std::complex<double> &a0) {
@@ -118,7 +118,7 @@ template <
     std::__enable_if_t<std::_IsSame<T1, std::__from_builtin_tag>::value, int>
         T2 = 0>
 std::complex<float> f170(T1 a0, _Complex float a1) {
-  return std::complex<float>(a0, a1);
+  return std::complex<float>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2>
@@ -131,12 +131,14 @@ std::complex<T1> &f172(std::complex<T1> &a0, const std::complex<T2> &a1) {
   return a0.template operator= <T2>(a1);
 }
 
-template <typename T1> auto f173(T1 a0) -> decltype(std::imag<T1>(a0)) {
-  return std::imag<T1>(a0);
+template <typename T1>
+auto f173(T1 a0) -> decltype(std::imag<T1>(std::move(a0))) {
+  return std::imag<T1>(std::move(a0));
 }
 
-template <typename T1> auto f174(T1 a0) -> decltype(std::norm<T1>(a0)) {
-  return std::norm<T1>(a0);
+template <typename T1>
+auto f174(T1 a0) -> decltype(std::norm<T1>(std::move(a0))) {
+  return std::norm<T1>(std::move(a0));
 }
 
 template <typename T1,
@@ -195,16 +197,17 @@ std::complex<std::__promote_t<T1, T2>> f181(const std::complex<T1> &a0,
 
 template <typename T1,
           std::__enable_if_t<std::is_floating_point<T1>::value, int> T2 = 0>
-auto f182(T1 a0) -> decltype(std::proj<T1>(a0)) {
-  return std::proj<T1>(a0);
+auto f182(T1 a0) -> decltype(std::proj<T1>(std::move(a0))) {
+  return std::proj<T1>(std::move(a0));
 }
 
 template <typename T1,
           std::__enable_if_t<std::is_integral<T1>::value, int> T2 = 0>
-auto f183(T1 a0) -> decltype(std::proj<T1>(a0)) {
-  return std::proj<T1>(a0);
+auto f183(T1 a0) -> decltype(std::proj<T1>(std::move(a0))) {
+  return std::proj<T1>(std::move(a0));
 }
 
-template <typename T1> auto f184(T1 a0) -> decltype(std::real<T1>(a0)) {
-  return std::real<T1>(a0);
+template <typename T1>
+auto f184(T1 a0) -> decltype(std::real<T1>(std::move(a0))) {
+  return std::real<T1>(std::move(a0));
 }

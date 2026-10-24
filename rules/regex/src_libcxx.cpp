@@ -278,5 +278,6 @@ bool f128(std::__wrap_iter<T1> a0, std::__wrap_iter<T1> a1,
           std::match_results<std::__wrap_iter<T1>, T2> &a2,
           const std::basic_regex<T3, T4> &a3,
           std::regex_constants::match_flag_type a4) {
-  return std::regex_search<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
+  return std::regex_search<T1, T2, T3, T4>(std::move(a0), std::move(a1), a2, a3,
+                                           a4);
 }

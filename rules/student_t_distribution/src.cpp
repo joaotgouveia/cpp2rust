@@ -16,7 +16,7 @@ template <typename T1> std::student_t_distribution<T1> f1() {
 }
 
 template <typename T1> std::student_t_distribution<T1> f2(T1 a0) {
-  return std::student_t_distribution<T1>(a0);
+  return std::student_t_distribution<T1>(std::move(a0));
 }
 
 template <typename T1>
@@ -76,7 +76,7 @@ using t4 =
 
 template <typename T1>
 typename std::student_t_distribution<T1>::param_type f13(T1 a0) {
-  return typename std::student_t_distribution<T1>::param_type(a0);
+  return typename std::student_t_distribution<T1>::param_type(std::move(a0));
 }
 
 template <typename T1>

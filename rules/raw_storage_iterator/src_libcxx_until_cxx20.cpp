@@ -21,7 +21,7 @@ using t7 = typename std::raw_storage_iterator<T1, T2>::reference;
 
 template <typename T1, typename T2>
 std::raw_storage_iterator<T1, T2> f8(T1 a0) {
-  return std::raw_storage_iterator<T1, T2>(a0);
+  return std::raw_storage_iterator<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>

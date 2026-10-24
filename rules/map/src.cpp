@@ -77,7 +77,7 @@ std::map<T1, T2, T3, T4> f4(std::map<T1, T2, T3, T4> &&a0) {
 template <typename T1, typename T2, typename T3, typename T4>
 std::map<T1, T2, T3, T4> f5(std::initializer_list<std::pair<const T1, T2>> a0,
                             const T3 &a1, const T4 &a2) {
-  return std::map<T1, T2, T3, T4>(a0, a1, a2);
+  return std::map<T1, T2, T3, T4>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -98,7 +98,7 @@ std::map<T1, T2, T3, T4> f8(std::map<T1, T2, T3, T4> &&a0, const T4 &a1) {
 template <typename T1, typename T2, typename T3, typename T4>
 std::map<T1, T2, T3, T4> f9(std::initializer_list<std::pair<const T1, T2>> a0,
                             const T4 &a1) {
-  return std::map<T1, T2, T3, T4>(a0, a1);
+  return std::map<T1, T2, T3, T4>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -117,7 +117,7 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::map<T1, T2, T3, T4> &
 f12(std::map<T1, T2, T3, T4> &a0,
     std::initializer_list<std::pair<const T1, T2>> a1) {
-  return a0.operator=(a1);
+  return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -247,7 +247,7 @@ f34(std::map<T1, T2, T3, T4> &a0, std::pair<const T1, T2> &&a1) {
 template <typename T1, typename T2, typename T3, typename T4>
 void f35(std::map<T1, T2, T3, T4> &a0,
          std::initializer_list<std::pair<const T1, T2>> a1) {
-  return a0.insert(a1);
+  return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -255,7 +255,7 @@ typename std::map<T1, T2, T3, T4>::iterator
 f36(std::map<T1, T2, T3, T4> &a0,
     typename std::map<T1, T2, T3, T4>::const_iterator a1,
     const std::pair<const T1, T2> &a2) {
-  return a0.insert(a1, a2);
+  return a0.insert(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -263,21 +263,21 @@ typename std::map<T1, T2, T3, T4>::iterator
 f37(std::map<T1, T2, T3, T4> &a0,
     typename std::map<T1, T2, T3, T4>::const_iterator a1,
     std::pair<const T1, T2> &&a2) {
-  return a0.insert(a1, std::move(a2));
+  return a0.insert(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::map<T1, T2, T3, T4>::iterator
 f38(std::map<T1, T2, T3, T4> &a0,
     typename std::map<T1, T2, T3, T4>::const_iterator a1) {
-  return a0.erase(a1);
+  return a0.erase(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::map<T1, T2, T3, T4>::iterator
 f39(std::map<T1, T2, T3, T4> &a0,
     typename std::map<T1, T2, T3, T4>::iterator a1) {
-  return a0.erase(a1);
+  return a0.erase(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -291,7 +291,7 @@ typename std::map<T1, T2, T3, T4>::iterator
 f41(std::map<T1, T2, T3, T4> &a0,
     typename std::map<T1, T2, T3, T4>::const_iterator a1,
     typename std::map<T1, T2, T3, T4>::const_iterator a2) {
-  return a0.erase(a1, a2);
+  return a0.erase(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -373,12 +373,12 @@ f54(const std::map<T1, T2, T3, T4> &a0, const T1 &a1) {
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::map<T1, T2, T3, T4> f55(T5 a0, T5 a1, const T4 &a2) {
-  return std::map<T1, T2, T3, T4>(a0, a1, a2);
+  return std::map<T1, T2, T3, T4>(std::move(a0), std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::map<T1, T2, T3, T4> f56(T5 a0, T5 a1, const T3 &a2, const T4 &a3) {
-  return std::map<T1, T2, T3, T4>(a0, a1, a2, a3);
+  return std::map<T1, T2, T3, T4>(std::move(a0), std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename... T5>
@@ -391,12 +391,13 @@ template <typename T1, typename T2, typename T3, typename T4, typename... T5>
 typename std::map<T1, T2, T3, T4>::iterator
 f58(std::map<T1, T2, T3, T4> &a0,
     typename std::map<T1, T2, T3, T4>::const_iterator a1, T5 &&...a2) {
-  return a0.template emplace_hint<T5...>(a1, std::forward<T5>(a2)...);
+  return a0.template emplace_hint<T5...>(std::move(a1),
+                                         std::forward<T5>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f59(std::map<T1, T2, T3, T4> &a0, T5 a1, T5 a2) {
-  return a0.template insert<T5>(a1, a2);
+  return a0.template insert<T5>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

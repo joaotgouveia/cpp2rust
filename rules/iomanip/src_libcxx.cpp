@@ -97,7 +97,7 @@ std::basic_istream<T1, T2> &f77(std::basic_istream<T1, T2> &a0,
 template <typename T1> using t15 = std::__iom_t4<T1>;
 
 template <typename T1> std::__iom_t4<T1> f78(T1 a0) {
-  return std::__iom_t4<T1>(a0);
+  return std::__iom_t4<T1>(std::move(a0));
 }
 
 template <typename T1, typename T2>
@@ -228,7 +228,7 @@ std::__iom_t1 f105(std::ios_base::fmtflags a0) {
 std::__iom_t3 f106(int a0) { return std::setbase(a0); }
 
 template <typename T1> std::__iom_t4<T1> f107(T1 a0) {
-  return std::setfill<T1>(a0);
+  return std::setfill<T1>(std::move(a0));
 }
 
 std::__iom_t2 f108(std::ios_base::fmtflags a0) { return std::setiosflags(a0); }

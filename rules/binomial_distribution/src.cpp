@@ -16,7 +16,7 @@ template <typename T1> std::binomial_distribution<T1> f1() {
 }
 
 template <typename T1> std::binomial_distribution<T1> f2(T1 a0, double a1) {
-  return std::binomial_distribution<T1>(a0, a1);
+  return std::binomial_distribution<T1>(std::move(a0), a1);
 }
 
 template <typename T1>
@@ -80,7 +80,7 @@ using t4 =
 
 template <typename T1>
 typename std::binomial_distribution<T1>::param_type f14(T1 a0, double a1) {
-  return typename std::binomial_distribution<T1>::param_type(a0, a1);
+  return typename std::binomial_distribution<T1>::param_type(std::move(a0), a1);
 }
 
 template <typename T1>

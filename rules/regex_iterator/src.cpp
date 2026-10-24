@@ -31,7 +31,7 @@ template <typename T1, typename T2, typename T3>
 std::regex_iterator<T1, T2, T3> f2(T1 a0, T1 a1,
                                    const std::basic_regex<T2, T3> &a2,
                                    std::regex_constants::match_flag_type a3) {
-  return std::regex_iterator<T1, T2, T3>(a0, a1, a2, a3);
+  return std::regex_iterator<T1, T2, T3>(std::move(a0), std::move(a1), a2, a3);
 }
 
 template <typename T1, typename T2, typename T3>

@@ -7,7 +7,7 @@ bool f39(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
 }
 
 template <typename T1> std::move_iterator<T1> f40(T1 a0) {
-  return std::make_move_iterator<T1>(a0);
+  return std::make_move_iterator<T1>(std::move(a0));
 }
 
 template <typename T1, typename T2>

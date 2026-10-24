@@ -14,10 +14,10 @@ std::size_t f76(std::forward_list<T1, T2> &a0) {
 
 template <typename T1, typename T2, typename T3>
 std::size_t f77(std::forward_list<T1, T2> &a0, T3 a1) {
-  return a0.template remove_if<T3>(a1);
+  return a0.template remove_if<T3>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::size_t f78(std::forward_list<T1, T2> &a0, T3 a1) {
-  return a0.template unique<T3>(a1);
+  return a0.template unique<T3>(std::move(a1));
 }

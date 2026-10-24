@@ -107,7 +107,7 @@ std::basic_iostream<T1, T2> &f50(std::basic_iostream<T1, T2> &a0, T1 &a1) {
 template <typename T1, typename T2>
 std::basic_iostream<T1, T2> &f51(std::basic_iostream<T1, T2> &a0, T1 *a1,
                                  std::streamsize a2, T1 a3) {
-  return a0.get(a1, a2, a3);
+  return a0.get(a1, a2, std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -119,7 +119,7 @@ std::basic_iostream<T1, T2> &f52(std::basic_iostream<T1, T2> &a0, T1 *a1,
 template <typename T1, typename T2>
 std::basic_iostream<T1, T2> &f53(std::basic_iostream<T1, T2> &a0,
                                  std::basic_streambuf<T1, T2> &a1, T1 a2) {
-  return a0.get(a1, a2);
+  return a0.get(a1, std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -131,7 +131,7 @@ std::basic_iostream<T1, T2> &f54(std::basic_iostream<T1, T2> &a0,
 template <typename T1, typename T2>
 std::basic_iostream<T1, T2> &f55(std::basic_iostream<T1, T2> &a0, T1 *a1,
                                  std::streamsize a2, T1 a3) {
-  return a0.getline(a1, a2, a3);
+  return a0.getline(a1, a2, std::move(a3));
 }
 
 template <typename T1, typename T2>
@@ -144,7 +144,7 @@ template <typename T1, typename T2>
 std::basic_iostream<T1, T2> &
 f57(std::basic_iostream<T1, T2> &a0, std::streamsize a1,
     typename std::basic_iostream<T1, T2>::int_type a2) {
-  return a0.ignore(a1, a2);
+  return a0.ignore(a1, std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -166,7 +166,7 @@ std::basic_iostream<T1, T2> &f60(std::basic_iostream<T1, T2> &a0, T1 *a1,
 
 template <typename T1, typename T2>
 std::basic_iostream<T1, T2> &f61(std::basic_iostream<T1, T2> &a0, T1 a1) {
-  return a0.putback(a1);
+  return a0.putback(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -178,7 +178,7 @@ template <typename T1, typename T2>
 std::basic_iostream<T1, T2> &
 f63(std::basic_iostream<T1, T2> &a0,
     typename std::basic_iostream<T1, T2>::pos_type a1) {
-  return a0.seekg(a1);
+  return a0.seekg(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -186,7 +186,7 @@ std::basic_iostream<T1, T2> &
 f64(std::basic_iostream<T1, T2> &a0,
     typename std::basic_iostream<T1, T2>::off_type a1,
     typename std::basic_iostream<T1, T2>::seekdir a2) {
-  return a0.seekg(a1, a2);
+  return a0.seekg(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
@@ -198,13 +198,13 @@ f65(const std::basic_iostream<T1, T2> &a0) {
 template <typename T1, typename T2>
 void f66(std::basic_iostream<T1, T2> &a0,
          typename std::basic_iostream<T1, T2>::iostate a1) {
-  return a0.clear(a1);
+  return a0.clear(std::move(a1));
 }
 
 template <typename T1, typename T2>
 void f67(std::basic_iostream<T1, T2> &a0,
          typename std::basic_iostream<T1, T2>::iostate a1) {
-  return a0.setstate(a1);
+  return a0.setstate(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -216,7 +216,7 @@ f68(const std::basic_iostream<T1, T2> &a0) {
 template <typename T1, typename T2>
 void f69(std::basic_iostream<T1, T2> &a0,
          typename std::basic_iostream<T1, T2>::iostate a1) {
-  return a0.exceptions(a1);
+  return a0.exceptions(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -227,26 +227,26 @@ std::ios_base::fmtflags f70(const std::basic_iostream<T1, T2> &a0) {
 template <typename T1, typename T2>
 std::ios_base::fmtflags f71(std::basic_iostream<T1, T2> &a0,
                             typename std::basic_iostream<T1, T2>::fmtflags a1) {
-  return a0.flags(a1);
+  return a0.flags(std::move(a1));
 }
 
 template <typename T1, typename T2>
 std::ios_base::fmtflags f72(std::basic_iostream<T1, T2> &a0,
                             typename std::basic_iostream<T1, T2>::fmtflags a1) {
-  return a0.setf(a1);
+  return a0.setf(std::move(a1));
 }
 
 template <typename T1, typename T2>
 std::ios_base::fmtflags f73(std::basic_iostream<T1, T2> &a0,
                             typename std::basic_iostream<T1, T2>::fmtflags a1,
                             typename std::basic_iostream<T1, T2>::fmtflags a2) {
-  return a0.setf(a1, a2);
+  return a0.setf(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2>
 void f74(std::basic_iostream<T1, T2> &a0,
          typename std::basic_iostream<T1, T2>::fmtflags a1) {
-  return a0.unsetf(a1);
+  return a0.unsetf(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -349,7 +349,7 @@ std::basic_iostream<T1, T2> &f91(std::basic_iostream<T1, T2> &a0,
 
 template <typename T1, typename T2>
 std::basic_iostream<T1, T2> &f92(std::basic_iostream<T1, T2> &a0, T1 a1) {
-  return a0.put(a1);
+  return a0.put(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -367,7 +367,7 @@ template <typename T1, typename T2>
 std::basic_iostream<T1, T2> &
 f95(std::basic_iostream<T1, T2> &a0,
     typename std::basic_iostream<T1, T2>::pos_type a1) {
-  return a0.seekp(a1);
+  return a0.seekp(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -375,5 +375,5 @@ std::basic_iostream<T1, T2> &
 f96(std::basic_iostream<T1, T2> &a0,
     typename std::basic_iostream<T1, T2>::off_type a1,
     typename std::basic_iostream<T1, T2>::seekdir a2) {
-  return a0.seekp(a1, a2);
+  return a0.seekp(std::move(a1), std::move(a2));
 }

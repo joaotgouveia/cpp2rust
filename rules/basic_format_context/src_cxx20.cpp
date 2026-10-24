@@ -31,5 +31,5 @@ T1 f3(std::basic_format_context<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 void f4(std::basic_format_context<T1, T2> &a0, T1 a1) {
-  return a0.advance_to(a1);
+  return a0.advance_to(std::move(a1));
 }

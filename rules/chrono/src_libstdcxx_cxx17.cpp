@@ -7,7 +7,7 @@ template <typename T1, typename T2>
 std::enable_if_t<std::numeric_limits<T1>::is_signed,
                  std::chrono::duration<T1, T2>>
 f43(std::chrono::duration<T1, T2> a0) {
-  return std::chrono::abs<T1, T2>(a0);
+  return std::chrono::abs<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2, typename T3>

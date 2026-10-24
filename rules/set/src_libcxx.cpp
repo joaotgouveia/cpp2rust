@@ -30,7 +30,7 @@ std::set<T1, T2, T3> f99(const T2 &a0) {
 
 template <typename T1, typename T2, typename T3>
 std::set<T1, T2, T3> f100(std::initializer_list<T1> a0, const T2 &a1) {
-  return std::set<T1, T2, T3>(a0, a1);
+  return std::set<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -103,5 +103,5 @@ f112(const std::set<T1, T2, T3> &a0) {
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::set<T1, T2, T3> f113(T4 a0, T4 a1, const T2 &a2) {
-  return std::set<T1, T2, T3>(a0, a1, a2);
+  return std::set<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }

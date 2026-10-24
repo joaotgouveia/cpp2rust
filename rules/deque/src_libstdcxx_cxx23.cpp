@@ -22,7 +22,7 @@ f68(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     T3 &&a2)
   requires(std::__detail::__container_compatible_range<T3, T1>)
 {
-  return a0.template insert_range<T3>(a1, std::forward<T3>(a2));
+  return a0.template insert_range<T3>(std::move(a1), std::forward<T3>(a2));
 }
 
 template <typename T1, typename T2, typename T3>

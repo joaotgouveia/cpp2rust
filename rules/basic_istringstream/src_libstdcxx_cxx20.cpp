@@ -7,21 +7,21 @@
 template <typename T1, typename T2, typename T3>
 std::basic_istringstream<T1, T2, T3>
 f85(typename std::basic_istringstream<T1, T2, T3>::openmode a0, const T3 &a1) {
-  return std::basic_istringstream<T1, T2, T3>(a0, a1);
+  return std::basic_istringstream<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istringstream<T1, T2, T3>
 f86(std::basic_string<T1, T2, T3> &&a0,
     typename std::basic_istringstream<T1, T2, T3>::openmode a1) {
-  return std::basic_istringstream<T1, T2, T3>(std::move(a0), a1);
+  return std::basic_istringstream<T1, T2, T3>(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_istringstream<T1, T2, T3>
 f87(const std::basic_string<T1, T2, T4> &a0,
     typename std::basic_istringstream<T1, T2, T3>::openmode a1, const T3 &a2) {
-  return std::basic_istringstream<T1, T2, T3>(a0, a1, a2);
+  return std::basic_istringstream<T1, T2, T3>(a0, std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -30,7 +30,7 @@ f88(const std::basic_string<T1, T2, T4> &a0,
     typename std::basic_istringstream<T1, T2, T3>::openmode a1)
   requires(!(std::is_same<T4, T3>::value))
 {
-  return std::basic_istringstream<T1, T2, T3>(a0, a1);
+  return std::basic_istringstream<T1, T2, T3>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

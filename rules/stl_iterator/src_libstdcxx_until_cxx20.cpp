@@ -10,7 +10,7 @@ f35(const __gnu_cxx::__normal_iterator<T3, T2> &a0) {
 
 template <typename T1>
 std::insert_iterator<T1> f36(T1 &a0, typename T1::iterator a1) {
-  return std::inserter<T1>(a0, a1);
+  return std::inserter<T1>(a0, std::move(a1));
 }
 
 template <typename T1>
