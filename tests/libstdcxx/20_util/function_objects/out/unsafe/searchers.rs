@@ -968,7 +968,7 @@ impl anon_15 {
         return ((unsafe { anon_15::norm(l) }) == (unsafe { anon_15::norm(r) }));
     }
     pub unsafe fn operator_call_3(&self, mut c: ()) -> () {
-        return (unsafe { unimplemented!()((unsafe { anon_15::norm(c) })) });
+        return unimplemented!();
     }
 }
 pub fn main() {

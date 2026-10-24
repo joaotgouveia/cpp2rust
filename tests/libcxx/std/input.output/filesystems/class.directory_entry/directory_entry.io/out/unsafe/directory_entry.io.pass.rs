@@ -248,7 +248,7 @@ pub unsafe fn TestOutput_2() {
     }) as *const ());
     let dir: () = unimplemented!();
     let mut stream: () = unimplemented!();
-    let result: *mut () = &mut write!(stream, "{:}", dir,);
+    let result: *mut () = &mut (*unimplemented!());
     unimplemented!();
     unimplemented!();
 }
@@ -261,7 +261,7 @@ pub unsafe fn TestOutput_3() {
     }) as *const ());
     let dir: () = unimplemented!();
     let mut stream: () = unimplemented!();
-    let result: *mut () = &mut write!(stream, "{:}", dir,);
+    let result: *mut () = &mut (*unimplemented!());
     unimplemented!();
     unimplemented!();
 }

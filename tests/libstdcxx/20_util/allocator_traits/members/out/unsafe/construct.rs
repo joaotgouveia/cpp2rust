@@ -346,7 +346,7 @@ impl Default for fake_allocator_X_ {
 pub unsafe fn test01_11() {
     let mut a: fake_allocator_X_ = fake_allocator_X_::new();
     let mut p: *mut X = unimplemented!();
-    (unsafe { std_allocator_traits_fake_allocator_X__::construct(&mut a, p) });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -366,10 +366,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___args: () = 1_();
-        std_allocator_traits_fake_allocator_X__::construct(&mut a, p, &mut ___args)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -409,16 +406,7 @@ pub unsafe fn test01_11() {
         }
     }
     unimplemented!();
-    (unsafe {
-        let mut ___args_2: () = 1_();
-        let mut ___args_3: () = 1_();
-        std_allocator_traits_fake_allocator_X__::construct(
-            &mut a,
-            p,
-            &mut ___args_2,
-            &mut ___args_3,
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -457,18 +445,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___args_2: () = 1_();
-        let mut ___args_3: () = 1_();
-        let mut ___args_4: () = 1_();
-        std_allocator_traits_fake_allocator_X__::construct(
-            &mut a,
-            p,
-            &mut ___args_2,
-            &mut ___args_3,
-            &mut ___args_4,
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

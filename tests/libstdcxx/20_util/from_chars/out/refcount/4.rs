@@ -261,7 +261,7 @@ pub fn test01_10() {
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (fmt.read());
         unimplemented!();
-        (*res.borrow_mut()) = unimplemented!();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -322,7 +322,7 @@ pub fn test01_10() {
             }
         }
         unimplemented!();
-        (*res.borrow_mut()) = unimplemented!();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -402,7 +402,7 @@ pub fn test01_10() {
             }
         }
         unimplemented!();
-        (*res.borrow_mut()) = unimplemented!();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -463,7 +463,7 @@ pub fn test01_10() {
             }
         }
         unimplemented!();
-        (*res.borrow_mut()) = unimplemented!();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -524,7 +524,7 @@ pub fn test01_10() {
             }
         }
         unimplemented!();
-        (*res.borrow_mut()) = unimplemented!();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -592,7 +592,7 @@ pub fn test02_12() {
     let mut d: () = 1_f64;
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -651,7 +651,7 @@ pub fn test02_12() {
         }
     }
     d = 1_f64;
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -710,7 +710,7 @@ pub fn test02_12() {
         }
     }
     d = 1_f64;
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -770,7 +770,7 @@ pub fn test02_12() {
         }
     }
     d = 1_f64;
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -829,7 +829,7 @@ pub fn test02_12() {
         }
     }
     d = 1_f64;
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -893,7 +893,7 @@ pub fn test03_13() {
     let mut d: () = 1_f64;
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -959,7 +959,7 @@ pub fn test03_13() {
             unimplemented!();
         }
     }
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1018,7 +1018,7 @@ pub fn test03_13() {
         }
     }
     d = 1_f64;
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1085,7 +1085,7 @@ pub fn test03_13() {
         }
     }
     d = 1_f64;
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1152,7 +1152,7 @@ pub fn test03_13() {
         }
     }
     d = 1_f64;
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1211,7 +1211,7 @@ pub fn test03_13() {
         }
     }
     unimplemented!();
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1283,7 +1283,7 @@ pub fn test04_14() {
     );
     let mut d: () = 1_f64;
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1345,7 +1345,7 @@ pub fn test04_14() {
         }
     }
     unimplemented!();
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1409,7 +1409,7 @@ pub fn test04_14() {
     unimplemented!();
     let mut len: () = unimplemented!();
     unimplemented!();
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1498,7 +1498,7 @@ pub fn test05_16() {
             if (fmt == unimplemented!()) && (i > 9_()) {
                 continue 'loop_;
             }
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -1562,7 +1562,7 @@ pub fn test05_16() {
                     unimplemented!();
                 }
             }
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -1626,7 +1626,7 @@ pub fn test05_16() {
                     unimplemented!();
                 }
             }
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -1719,7 +1719,7 @@ pub fn test05_16() {
             (s3.as_pointer() as Ptr<()>).offset((::std::mem::size_of::<[(); 7]>()) as isize);
         'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut fmt: () = (fmt.read());
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -1783,7 +1783,7 @@ pub fn test05_16() {
                     unimplemented!();
                 }
             }
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -1847,7 +1847,7 @@ pub fn test05_16() {
                     unimplemented!();
                 }
             }
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -1911,7 +1911,7 @@ pub fn test05_16() {
                     unimplemented!();
                 }
             }
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -1975,7 +1975,7 @@ pub fn test05_16() {
                     unimplemented!();
                 }
             }
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -2039,7 +2039,7 @@ pub fn test05_16() {
                     unimplemented!();
                 }
             }
-            (*res.borrow_mut()) = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -2111,7 +2111,7 @@ pub fn test_max_mantissa_17() {
     {
         println!(
             "Testing {}-bit float, using {}-bit integer",
-            ((unimplemented!() + ({ log2_18(unimplemented!(),) })) + 1_()),
+            ((unimplemented!() + unimplemented!()) + 1_()),
             (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
         );
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2125,7 +2125,7 @@ pub fn test_max_mantissa_17() {
             unimplemented!();
             'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut fmt: () = (fmt.read());
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2166,7 +2166,7 @@ pub fn test_max_mantissa_17() {
             unimplemented!();
             'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut fmt: () = (fmt.read());
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2202,7 +2202,7 @@ pub fn test_max_mantissa_17() {
                 let mut s2: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2240,11 +2240,11 @@ pub fn test_max_mantissa_17() {
         }
     }
 }
-pub fn test_max_mantissa_19() {
+pub fn test_max_mantissa_18() {
     {
         println!(
             "Testing {}-bit float, using {}-bit integer",
-            ((unimplemented!() + ({ log2_18(unimplemented!(),) })) + 1_()),
+            ((unimplemented!() + unimplemented!()) + 1_()),
             (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
         );
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2258,7 +2258,7 @@ pub fn test_max_mantissa_19() {
             unimplemented!();
             'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut fmt: () = (fmt.read());
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2299,7 +2299,7 @@ pub fn test_max_mantissa_19() {
             unimplemented!();
             'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut fmt: () = (fmt.read());
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2335,7 +2335,7 @@ pub fn test_max_mantissa_19() {
                 let mut s2: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2373,11 +2373,11 @@ pub fn test_max_mantissa_19() {
         }
     }
 }
-pub fn test_max_mantissa_20() {
+pub fn test_max_mantissa_19() {
     {
         println!(
             "Testing {}-bit float, using {}-bit integer",
-            ((unimplemented!() + ({ log2_18(unimplemented!(),) })) + 1_()),
+            ((unimplemented!() + unimplemented!()) + 1_()),
             (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
         );
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2391,7 +2391,7 @@ pub fn test_max_mantissa_20() {
             unimplemented!();
             'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut fmt: () = (fmt.read());
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2432,7 +2432,7 @@ pub fn test_max_mantissa_20() {
             unimplemented!();
             'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut fmt: () = (fmt.read());
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2468,7 +2468,7 @@ pub fn test_max_mantissa_20() {
                 let mut s2: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                (*res.borrow_mut()) = unimplemented!();
+                unimplemented!();
                 let mut __do_while = true;
                 'loop_: while __do_while || (false) {
                     __do_while = false;
@@ -2506,10 +2506,10 @@ pub fn test_max_mantissa_20() {
         }
     }
 }
-pub fn test06_21() {
+pub fn test06_20() {
     ({ test_max_mantissa_17() });
+    ({ test_max_mantissa_18() });
     ({ test_max_mantissa_19() });
-    ({ test_max_mantissa_20() });
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -2521,7 +2521,7 @@ fn main_0() -> () {
     ({ test03_13() });
     ({ test04_14() });
     ({ test05_16() });
-    ({ test06_21() });
+    ({ test06_20() });
     0
 }
 impl __gnu_test_semaphore {
@@ -2531,9 +2531,9 @@ impl __gnu_test_semaphore {
             pid_: 0 as ::libc::pid_t,
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_22() }) as ::libc::pid_t));
+        field!(this, pid_).write((({ getpid_21() }) as ::libc::pid_t));
         field!(this, sem_set_)
-            .write(({ semget_23(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+            .write(({ semget_22(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
         if (this.with(|__s| __s.sem_set_) == -1_()) {
             ({
                 __throw_runtime_error_3(Ptr::<()>::from_string_literal(
@@ -2544,7 +2544,7 @@ impl __gnu_test_semaphore {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
         if (({
-            semctl_24(
+            semctl_23(
                 this.with(|__s| __s.sem_set_),
                 0_(),
                 16_(),
@@ -2561,35 +2561,35 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_25(size: Option<()>) {
+pub fn set_memory_limits_24(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_26((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    ({ getrlimit_25((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_27((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_26((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    ({ setrlimit_26((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    ({ getrlimit_25((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_27((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    ({ setrlimit_26((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_26((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    ({ getrlimit_25((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_27((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    ({ setrlimit_26((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
 }
-pub fn set_file_limit_28(mut size: ()) {
+pub fn set_file_limit_27(mut size: ()) {
     let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_26((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    ({ getrlimit_25((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_27((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    ({ setrlimit_26((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
 }
-pub fn verify_demangle_29(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_28(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = ({
-        __cxa_demangle_30(
+        __cxa_demangle_29(
             (mangled).clone(),
             Ptr::<()>::null(),
             Ptr::<()>::null(),
@@ -2627,7 +2627,7 @@ pub fn verify_demangle_29(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_31(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_30(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -2656,7 +2656,7 @@ pub fn run_tests_wrapped_locale_31(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
 }
-pub fn run_tests_wrapped_env_32(
+pub fn run_tests_wrapped_env_31(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -2726,7 +2726,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_34(
+pub fn test_tm_33(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -2737,19 +2737,19 @@ pub fn test_tm_34(
     mut yday: (),
     mut isdst: (),
 ) -> ::libc::tm {
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_35.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_35.with(|rc| *rc.borrow());
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_34.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return tmp_34.with(|rc| *rc.borrow());
 }
 thread_local!(
-    static tmp_35: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_34: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -2823,9 +2823,9 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_22() })) {
+        if ((*self).with(|__s| __s.pid_) == ({ getpid_21() })) {
             ({
-                semctl_24(
+                semctl_23(
                     (*self).with(|__s| __s.sem_set_),
                     0_(),
                     0_(),
@@ -2837,7 +2837,7 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn signal(&self) {
         let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         if (({
-            semop_33(
+            semop_32(
                 (*self).with(|__s| __s.sem_set_),
                 (op.as_pointer() as Ptr<sembuf>),
                 1_(),
@@ -2854,7 +2854,7 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn wait(&self) {
         let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         if (({
-            semop_33(
+            semop_32(
                 (*self).with(|__s| __s.sem_set_),
                 (op.as_pointer() as Ptr<sembuf>),
                 1_(),

@@ -419,7 +419,7 @@ pub unsafe fn test_8() -> () {
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(iter_swap(b, e)), void>");;
-        (unsafe { iter_swap_9(&b, &e) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -431,9 +431,9 @@ pub unsafe fn test_8() -> () {
             (unsafe { adl_Iterator::TrackSwaps_4(&mut iter_swap_invocations) });
         let mut i1: () = unimplemented!();
         let mut i2: () = unimplemented!();
-        (unsafe { iter_swap_10(&i1, &i2) });
         unimplemented!();
-        (unsafe { iter_swap_10(&i2, &i1) });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {

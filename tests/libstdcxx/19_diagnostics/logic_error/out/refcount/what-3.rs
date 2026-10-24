@@ -276,7 +276,7 @@ pub fn test04_11() {
     {
         let mut s2: () = unimplemented!();
         let obj2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*obj1.borrow_mut()) = (*obj2.borrow()).clone();
+        unimplemented!();
     }
     ({ allocate_on_stack_10() });
     let mut __do_while = true;
@@ -302,7 +302,7 @@ pub fn test04_11() {
     {
         let mut s3: () = unimplemented!();
         let obj3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*obj1.borrow_mut()) = (*obj3.borrow()).clone();
+        unimplemented!();
     }
     ({ allocate_on_stack_10() });
     let mut __do_while = true;

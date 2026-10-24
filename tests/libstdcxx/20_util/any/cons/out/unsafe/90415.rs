@@ -269,7 +269,7 @@ pub struct wrapper {
 }
 impl wrapper {
     pub unsafe fn copy_assign(&mut self, w: *const wrapper) -> *mut wrapper {
-        self.value = ((*w).value).clone();
+        unimplemented!();
         return &mut (*(self as *mut wrapper));
     }
 }

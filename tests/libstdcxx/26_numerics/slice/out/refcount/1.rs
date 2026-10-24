@@ -268,7 +268,7 @@ pub fn copy_11(mut start: (), mut size: (), mut stride: ()) -> () {
 pub fn assignment_12(mut start: (), mut size: (), mut stride: ()) -> () {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*t.borrow_mut()) = (*s.borrow()).clone();
+    unimplemented!();
     return ((unimplemented!() == start) && (unimplemented!() == size))
         && (unimplemented!() == stride);
 }

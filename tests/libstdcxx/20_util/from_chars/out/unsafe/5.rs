@@ -265,7 +265,7 @@ pub unsafe fn test01_10() {
         unimplemented!();
         'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut fmt: () = (*fmt);
-            r = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -330,7 +330,7 @@ pub unsafe fn test01_10() {
         unimplemented!();
         'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut fmt: () = (*fmt);
-            r = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -393,7 +393,7 @@ pub unsafe fn test01_10() {
     'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut p: *const () = (*p);
         unimplemented!();
-        r = unimplemented!();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -457,7 +457,7 @@ pub unsafe fn test01_10() {
         unimplemented!();
         'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut fmt: () = (*fmt);
-            r = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -523,7 +523,7 @@ pub unsafe fn test02_12() {
     let mut s: () = unimplemented!();
     let mut f: () = 0.5_f64;
     unimplemented!();
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -582,7 +582,7 @@ pub unsafe fn test02_12() {
         }
     }
     unimplemented!();
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -646,7 +646,7 @@ pub unsafe fn test02_12() {
         }
     }
     unimplemented!();
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -714,7 +714,7 @@ pub unsafe fn test03_13() {
     let mut d: () = 0.5_f64;
     let mut s: () = unimplemented!();
     let mut res: () = unimplemented!();
-    res = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -777,7 +777,7 @@ pub unsafe fn test03_13() {
             unimplemented!();
         }
     }
-    res = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -854,7 +854,7 @@ pub unsafe fn test04_14() {
             let mut len: () = (*len);
             let mut str: () = unimplemented!();
             let mut d: () = 99_f64;
-            res = unimplemented!();
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;

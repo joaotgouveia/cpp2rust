@@ -30,7 +30,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::is_polymorphic<std::exception>::value");;
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*b2.borrow_mut()) = (*b.borrow()).clone();
+    unimplemented!();
     let mut w: Ptr<()> = unimplemented!();
     unimplemented!();
     return 0_();

@@ -632,7 +632,7 @@ pub trait wrapperImpl {
 }
 impl wrapperImpl for Ptr<wrapper> {
     fn copy_assign(&self, w: Ptr<wrapper>) -> Ptr<wrapper> {
-        field!((*self), value).write({ w.with(|__s| __s.value.clone()) });
+        unimplemented!();
         return (*self).clone();
     }
 }

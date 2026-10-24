@@ -288,7 +288,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { unimplemented!()(x) })
+        if !((unimplemented!())
             == (unsafe { (unimplemented!() as std___optional_hash_int__int_)(&x2) }))
         {
             (unsafe {
@@ -311,7 +311,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { unimplemented!()(x) })
+        if !((unimplemented!())
             == (unsafe { (unimplemented!() as std___optional_hash_const_int__int_)(&x3) }))
         {
             (unsafe {

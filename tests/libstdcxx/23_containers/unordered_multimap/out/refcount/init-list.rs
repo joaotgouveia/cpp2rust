@@ -341,7 +341,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    (*ip.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

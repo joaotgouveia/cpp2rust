@@ -75,11 +75,7 @@ impl simple_string_ranged_hash_fnImpl for Ptr<simple_string_ranged_hash_fn> {
         return (hash).wrapping_rem((*self).with(|__s| __s.m_container_size));
     }
     fn swap(&self, other: Ptr<simple_string_ranged_hash_fn>) {
-        ({
-            let ___a: Ptr<()> = field_ptr!((*self), m_container_size);
-            let ___b: Ptr<()> = field_ptr!(other, m_container_size);
-            swap_0(___a, ___b)
-        });
+        unimplemented!();
     }
 }
 pub fn __cpp2rust_init_globals() {}

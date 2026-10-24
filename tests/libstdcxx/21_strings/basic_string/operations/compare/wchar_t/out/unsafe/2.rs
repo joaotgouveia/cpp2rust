@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test03_10() {
     let mut str1: () = unimplemented!();
     let mut str2: () = unimplemented!();
-    let mut x: () = (unsafe { str2.compare_193_class_std_basic_string_view_wchar_t_(&str1) });
+    let mut x: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -280,7 +280,7 @@ pub unsafe fn test03_10() {
         }
     }
     unimplemented!();
-    x = (unsafe { str2.compare_193_class_std_basic_string_view_wchar_t_(&str1) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -302,7 +302,7 @@ pub unsafe fn test03_10() {
     }
     unimplemented!();
     unimplemented!();
-    x = (unsafe { str2.compare_193_class_std_basic_string_view_wchar_t_(&str1) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -322,9 +322,7 @@ pub unsafe fn test03_10() {
             unimplemented!();
         }
     }
-    x = (unsafe {
-        str2.compare_195_class_std_basic_string_view_wchar_t_(0_(), 3_(), &str1, 3_(), 3_())
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -346,7 +344,7 @@ pub unsafe fn test03_10() {
     }
     unimplemented!();
     unimplemented!();
-    x = (unsafe { str2.compare_194_class_std_basic_string_view_wchar_t_(3_(), 3_(), &str1) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

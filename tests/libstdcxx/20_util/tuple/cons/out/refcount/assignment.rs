@@ -261,7 +261,7 @@ pub fn main() {
 fn main_0() -> () {
     let ta: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ta.borrow_mut()) = (*tb.borrow()).clone();
+    unimplemented!();
     let tc: Value<()> = Rc::new(RefCell::new(1_()));
     let td: Value<()> = Rc::new(RefCell::new(0_()));
     (*td.borrow_mut()) = (*tc.borrow()).clone();
@@ -286,7 +286,7 @@ fn main_0() -> () {
     }
     let i: Value<()> = Rc::new(RefCell::new(0_()));
     let te: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref_::new({ i.as_pointer() })));
-    (*te.borrow_mut()) = (*tc.borrow()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -330,7 +330,7 @@ fn main_0() -> () {
         }
     }
     let tg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*tg.borrow_mut()) = (*tc.borrow()).clone();
+    unimplemented!();
     0
 }
 impl __gnu_test_semaphore {

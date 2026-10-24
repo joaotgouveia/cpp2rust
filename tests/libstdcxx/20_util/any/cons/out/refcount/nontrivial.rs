@@ -314,8 +314,8 @@ pub fn test02_12() {
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let tmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*a.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
-        (*b.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+        unimplemented!();
+        unimplemented!();
     }
 }
 pub fn test03_13() {

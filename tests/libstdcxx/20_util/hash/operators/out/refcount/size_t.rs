@@ -257,9 +257,9 @@ impl __gnu_test_semaphore {}
 pub fn do_test_10() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let h1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut r1: () = ({ (*h1.borrow_mut())(v.as_pointer()) });
+    let mut r1: () = unimplemented!();
     let h2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut r2: () = ({ (*h2.borrow_mut())(v.as_pointer()) });
+    let mut r2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -284,9 +284,9 @@ pub fn do_test_10() {
 pub fn do_test_12() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let h1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut r1: () = ({ (*h1.borrow_mut())(v.as_pointer()) });
+    let mut r1: () = unimplemented!();
     let h2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut r2: () = ({ (*h2.borrow_mut())(v.as_pointer()) });
+    let mut r2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

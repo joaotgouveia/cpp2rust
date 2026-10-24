@@ -150,7 +150,7 @@ pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
     }
     unimplemented!();
     unimplemented!();
-    p = (*unimplemented!()).clone();
+    unimplemented!();
     return unimplemented!();
 }
 pub type __gnu_test_scoped_file_adopt_file_t = ();
@@ -214,7 +214,7 @@ pub unsafe fn permissions_are_testable_7(mut print_msg: Option<()>) -> () {
     return testable;
 }
 static mut counter_5: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { (unsafe { unimplemented!()() }) });
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct __gnu_test_func_callback {
@@ -548,7 +548,7 @@ pub unsafe fn test03_21() {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { h(&p) }) == (unimplemented!())) {
+            if !((unimplemented!()) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_19(
                         libcc2rs::stderr_unsafe(),

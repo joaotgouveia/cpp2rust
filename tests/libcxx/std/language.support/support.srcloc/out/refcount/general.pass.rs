@@ -80,7 +80,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*local.borrow_mut()) = (*cur_5.with(Value::clone).borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -269,28 +269,10 @@ pub fn copy_13(x: Ptr<()>) -> () {
 pub fn check_tuple_cat_14(t1: (), t2: ()) {
     let t1: Value<()> = Rc::new(RefCell::new(t1));
     let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_15(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_10(t1.as_pointer()) })));
-            tuple_cat_16(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_10(t2.as_pointer()) })));
-            tuple_cat_17(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_10(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_10(t2.as_pointer()) })));
-            tuple_cat_18(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
     const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
     const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
@@ -311,31 +293,13 @@ pub fn check_tuple_cat_14(t1: (), t2: ()) {
         {}
     }
 }
-pub fn check_tuple_cat_19(t1: (), t2: ()) {
+pub fn check_tuple_cat_15(t1: (), t2: ()) {
     let t1: Value<()> = Rc::new(RefCell::new(t1));
     let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_20(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_10(t1.as_pointer()) })));
-            tuple_cat_21(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_11(t2.as_pointer()) })));
-            tuple_cat_22(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_10(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_11(t2.as_pointer()) })));
-            tuple_cat_23(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
     const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
     const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
@@ -345,7 +309,7 @@ pub fn check_tuple_cat_19(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -355,7 +319,7 @@ pub fn check_tuple_cat_19(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -365,7 +329,343 @@ pub fn check_tuple_cat_19(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_17(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_18(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_19(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_20(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_21(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_22(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_23(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_24(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -374,28 +674,10 @@ pub fn check_tuple_cat_19(t1: (), t2: ()) {
 pub fn check_tuple_cat_25(t1: (), t2: ()) {
     let t1: Value<()> = Rc::new(RefCell::new(t1));
     let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_26(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_10(t1.as_pointer()) })));
-            tuple_cat_27(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_12(t2.as_pointer()) })));
-            tuple_cat_28(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_10(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_12(t2.as_pointer()) })));
-            tuple_cat_29(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
     const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
     const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
@@ -405,7 +687,7 @@ pub fn check_tuple_cat_25(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -415,7 +697,7 @@ pub fn check_tuple_cat_25(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -425,7 +707,175 @@ pub fn check_tuple_cat_25(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_26(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_27(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_28(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+}
+pub fn check_tuple_cat_29(t1: (), t2: ()) {
+    let t1: Value<()> = Rc::new(RefCell::new(t1));
+    let t2: Value<()> = Rc::new(RefCell::new(t2));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
+    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(unimplemented!()) {
+            ({
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -434,28 +884,10 @@ pub fn check_tuple_cat_25(t1: (), t2: ()) {
 pub fn check_tuple_cat_30(t1: (), t2: ()) {
     let t1: Value<()> = Rc::new(RefCell::new(t1));
     let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_31(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_10(t1.as_pointer()) })));
-            tuple_cat_32(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_13(t2.as_pointer()) })));
-            tuple_cat_33(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_10(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_13(t2.as_pointer()) })));
-            tuple_cat_34(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
+    let cat1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cat4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
     const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
     const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
@@ -465,7 +897,7 @@ pub fn check_tuple_cat_30(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -475,7 +907,7 @@ pub fn check_tuple_cat_30(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -485,747 +917,24 @@ pub fn check_tuple_cat_30(t1: (), t2: ()) {
         __do_while = false;
         if !(unimplemented!()) {
             ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
+                __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
             });
             unimplemented!();
         }
     }
 }
-pub fn check_tuple_cat_35(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_36(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_11(t1.as_pointer()) })));
-            tuple_cat_37(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_10(t2.as_pointer()) })));
-            tuple_cat_38(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_11(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_10(t2.as_pointer()) })));
-            tuple_cat_39(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_40(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_41(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_11(t1.as_pointer()) })));
-            tuple_cat_42(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_11(t2.as_pointer()) })));
-            tuple_cat_43(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_11(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_11(t2.as_pointer()) })));
-            tuple_cat_44(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_45(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_46(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_11(t1.as_pointer()) })));
-            tuple_cat_47(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_12(t2.as_pointer()) })));
-            tuple_cat_48(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_11(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_12(t2.as_pointer()) })));
-            tuple_cat_49(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_50(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_51(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_11(t1.as_pointer()) })));
-            tuple_cat_52(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_13(t2.as_pointer()) })));
-            tuple_cat_53(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_11(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_13(t2.as_pointer()) })));
-            tuple_cat_54(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_55(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_56(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_12(t1.as_pointer()) })));
-            tuple_cat_57(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_10(t2.as_pointer()) })));
-            tuple_cat_58(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_12(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_10(t2.as_pointer()) })));
-            tuple_cat_59(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_60(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_61(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_12(t1.as_pointer()) })));
-            tuple_cat_62(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_11(t2.as_pointer()) })));
-            tuple_cat_63(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_12(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_11(t2.as_pointer()) })));
-            tuple_cat_64(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_65(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_66(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_12(t1.as_pointer()) })));
-            tuple_cat_67(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_12(t2.as_pointer()) })));
-            tuple_cat_68(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_12(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_12(t2.as_pointer()) })));
-            tuple_cat_69(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_70(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_71(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_12(t1.as_pointer()) })));
-            tuple_cat_72(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_13(t2.as_pointer()) })));
-            tuple_cat_73(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_12(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_13(t2.as_pointer()) })));
-            tuple_cat_74(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <int &, int>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_75(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_76(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_13(t1.as_pointer()) })));
-            tuple_cat_77(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_10(t2.as_pointer()) })));
-            tuple_cat_78(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_13(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_10(t2.as_pointer()) })));
-            tuple_cat_79(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_80(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_81(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_13(t1.as_pointer()) })));
-            tuple_cat_82(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_11(t2.as_pointer()) })));
-            tuple_cat_83(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_13(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_11(t2.as_pointer()) })));
-            tuple_cat_84(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_85(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_86(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_13(t1.as_pointer()) })));
-            tuple_cat_87(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_12(t2.as_pointer()) })));
-            tuple_cat_88(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_13(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_12(t2.as_pointer()) })));
-            tuple_cat_89(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <int &, int>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn check_tuple_cat_90(t1: (), t2: ()) {
-    let t1: Value<()> = Rc::new(RefCell::new(t1));
-    let t2: Value<()> = Rc::new(RefCell::new(t2));
-    let cat1: Value<()> = Rc::new(RefCell::new(
-        ({ tuple_cat_91(t1.as_pointer(), t2.as_pointer()) }),
-    ));
-    let cat2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_13(t1.as_pointer()) })));
-            tuple_cat_92(___tpls_0.as_pointer(), t2.as_pointer())
-        }),
-    ));
-    let cat3: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_13(t2.as_pointer()) })));
-            tuple_cat_93(t1.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    let cat4: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___tpls_0: Value<()> = Rc::new(RefCell::new(({ copy_13(t1.as_pointer()) })));
-            let ___tpls_1: Value<()> = Rc::new(RefCell::new(({ copy_13(t2.as_pointer()) })));
-            tuple_cat_94(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-        }),
-    ));
-    const _: () = assert!(true, "std::is_same<decltype(cat1), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat2), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat3), concatenated>::value");;
-    const _: () = assert!(true, "std::is_same<decltype(cat4), concatenated>::value");;
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 44_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat2" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 45_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat3" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!()) {
-            ({
-                __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"48476.cc" )  ) .into() , ( 46_() ) .into() , ( Ptr::<() >::from_string_literal(b"void check_tuple_cat(std::tuple<Args1...>, std::tuple<Args2...>) [Args1 = <const int &, int, double>, Args2 = <const int &, int, double>]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"cat1 == cat4" )  ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub fn test01_95() {
+pub fn test01_31() {
     let i: Value<()> = Rc::new(RefCell::new(0_()));
     let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t1: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref_::new({ i.as_pointer() })));
-    let t2: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
-        std_tuple_int_ref__int_::new_1({ i.as_pointer() }, { __tmp_0.as_pointer() })
-    }));
+    let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t3: Value<()> = Rc::new(RefCell::new({
+        let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_1: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(0_()));
         std_tuple_const_int_ref__int__double_::new_1(
             { i.as_pointer() },
+            { __tmp_0.as_pointer() },
             { __tmp_1.as_pointer() },
-            { __tmp_2.as_pointer() },
         )
     }));
     ({
@@ -1233,32 +942,32 @@ pub fn test01_95() {
         let _t2: () = unimplemented!();
         check_tuple_cat_14(_t1, _t2)
     });
+    ({ check_tuple_cat_15(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_17(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_18(unimplemented!(), unimplemented!()) });
     ({ check_tuple_cat_19(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_25(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_30(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_35(unimplemented!(), unimplemented!()) });
     ({
         let _t1: () = unimplemented!();
         let _t2: () = unimplemented!();
-        check_tuple_cat_40(_t1, _t2)
+        check_tuple_cat_20(_t1, _t2)
     });
-    ({ check_tuple_cat_45(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_50(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_55(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_60(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_21(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_22(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_23(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_24(unimplemented!(), unimplemented!()) });
     ({
         let _t1: () = unimplemented!();
         let _t2: () = unimplemented!();
-        check_tuple_cat_65(_t1, _t2)
+        check_tuple_cat_25(_t1, _t2)
     });
-    ({ check_tuple_cat_70(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_75(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_80(unimplemented!(), unimplemented!()) });
-    ({ check_tuple_cat_85(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_26(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_27(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_28(unimplemented!(), unimplemented!()) });
+    ({ check_tuple_cat_29(unimplemented!(), unimplemented!()) });
     ({
         let _t1: () = unimplemented!();
         let _t2: () = unimplemented!();
-        check_tuple_cat_90(_t1, _t2)
+        check_tuple_cat_30(_t1, _t2)
     });
 }
 pub fn main() {
@@ -1266,7 +975,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_95() });
+    ({ test01_31() });
     return 0_();
 }
 impl __gnu_test_semaphore {
@@ -1276,9 +985,9 @@ impl __gnu_test_semaphore {
             pid_: 0 as ::libc::pid_t,
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_96() }) as ::libc::pid_t));
+        field!(this, pid_).write((({ getpid_32() }) as ::libc::pid_t));
         field!(this, sem_set_)
-            .write(({ semget_97(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+            .write(({ semget_33(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
         if (this.with(|__s| __s.sem_set_) == -1_()) {
             ({
                 __throw_runtime_error_3(Ptr::<()>::from_string_literal(
@@ -1289,7 +998,7 @@ impl __gnu_test_semaphore {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
         if (({
-            semctl_98(
+            semctl_34(
                 this.with(|__s| __s.sem_set_),
                 0_(),
                 16_(),
@@ -1306,35 +1015,35 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_99(size: Option<()>) {
+pub fn set_memory_limits_35(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_100((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    ({ getrlimit_36((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_101((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_100((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    ({ setrlimit_37((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    ({ getrlimit_36((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_101((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    ({ setrlimit_37((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_100((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    ({ getrlimit_36((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_101((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    ({ setrlimit_37((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
 }
-pub fn set_file_limit_102(mut size: ()) {
+pub fn set_file_limit_38(mut size: ()) {
     let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_100((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    ({ getrlimit_36((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_101((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    ({ setrlimit_37((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
 }
-pub fn verify_demangle_103(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_39(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = ({
-        __cxa_demangle_104(
+        __cxa_demangle_40(
             (mangled).clone(),
             Ptr::<()>::null(),
             Ptr::<()>::null(),
@@ -1366,56 +1075,42 @@ pub fn verify_demangle_103(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_105(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_41(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 ({
-                    __builtin_fprintf_24 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
+                    __builtin_fprintf_16 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
                 });
                 unimplemented!();
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
 }
-pub fn run_tests_wrapped_env_106(
+pub fn run_tests_wrapped_env_42(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -1432,10 +1127,7 @@ pub fn run_tests_wrapped_env_106(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
@@ -1488,7 +1180,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_108(
+pub fn test_tm_44(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1499,19 +1191,19 @@ pub fn test_tm_108(
     mut yday: (),
     mut isdst: (),
 ) -> ::libc::tm {
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_109.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_109.with(|rc| *rc.borrow());
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_45.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return tmp_45.with(|rc| *rc.borrow());
 }
 thread_local!(
-    static tmp_109: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_45: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -1585,9 +1277,9 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_96() })) {
+        if ((*self).with(|__s| __s.pid_) == ({ getpid_32() })) {
             ({
-                semctl_98(
+                semctl_34(
                     (*self).with(|__s| __s.sem_set_),
                     0_(),
                     0_(),
@@ -1599,7 +1291,7 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn signal(&self) {
         let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         if (({
-            semop_107(
+            semop_43(
                 (*self).with(|__s| __s.sem_set_),
                 (op.as_pointer() as Ptr<sembuf>),
                 1_(),
@@ -1616,7 +1308,7 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn wait(&self) {
         let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         if (({
-            semop_107(
+            semop_43(
                 (*self).with(|__s| __s.sem_set_),
                 (op.as_pointer() as Ptr<sembuf>),
                 1_(),

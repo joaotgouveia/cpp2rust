@@ -395,7 +395,7 @@ pub fn test_8() -> () {
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(iter_swap(rb, re)), void>");;
-        ({ iter_swap_9(rb.as_pointer(), re.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -416,9 +416,9 @@ pub fn test_8() -> () {
         });
         let ri1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ri2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ iter_swap_10(ri1.as_pointer(), ri2.as_pointer()) });
         unimplemented!();
-        ({ iter_swap_10(ri2.as_pointer(), ri1.as_pointer()) });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -468,59 +468,59 @@ pub fn test_8() -> () {
     return true;
 }
 thread_local!(
-    static x_12: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static x_10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct ThrowingCopyNoexceptDecrement_11 {}
-impl ThrowingCopyNoexceptDecrement_11 {}
-impl std::cmp::PartialEq for ThrowingCopyNoexceptDecrement_11 {
+pub struct ThrowingCopyNoexceptDecrement_9 {}
+impl ThrowingCopyNoexceptDecrement_9 {}
+impl std::cmp::PartialEq for ThrowingCopyNoexceptDecrement_9 {
     fn eq(&self, other: &Self) -> bool {
         {
-            ThrowingCopyNoexceptDecrement_11Impl::operator_eq(
-                &Rc::new(RefCell::new(ThrowingCopyNoexceptDecrement_11 {})).as_pointer(),
-                Rc::new(RefCell::new(ThrowingCopyNoexceptDecrement_11 {})).as_pointer(),
+            ThrowingCopyNoexceptDecrement_9Impl::operator_eq(
+                &Rc::new(RefCell::new(ThrowingCopyNoexceptDecrement_9 {})).as_pointer(),
+                Rc::new(RefCell::new(ThrowingCopyNoexceptDecrement_9 {})).as_pointer(),
             )
         }
     }
 }
-impl std::cmp::Eq for ThrowingCopyNoexceptDecrement_11 {}
+impl std::cmp::Eq for ThrowingCopyNoexceptDecrement_9 {}
+thread_local!(
+    static x_12: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+);
+#[derive(Record, ByteRepr, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct NoexceptCopyThrowingDecrement_11 {}
+impl NoexceptCopyThrowingDecrement_11 {}
+impl std::cmp::PartialEq for NoexceptCopyThrowingDecrement_11 {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            NoexceptCopyThrowingDecrement_11Impl::operator_eq(
+                &Rc::new(RefCell::new(NoexceptCopyThrowingDecrement_11 {})).as_pointer(),
+                Rc::new(RefCell::new(NoexceptCopyThrowingDecrement_11 {})).as_pointer(),
+            )
+        }
+    }
+}
+impl std::cmp::Eq for NoexceptCopyThrowingDecrement_11 {}
 thread_local!(
     static x_14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct NoexceptCopyThrowingDecrement_13 {}
-impl NoexceptCopyThrowingDecrement_13 {}
-impl std::cmp::PartialEq for NoexceptCopyThrowingDecrement_13 {
+pub struct NoexceptCopyAndDecrement_13 {}
+impl NoexceptCopyAndDecrement_13 {}
+impl std::cmp::PartialEq for NoexceptCopyAndDecrement_13 {
     fn eq(&self, other: &Self) -> bool {
         {
-            NoexceptCopyThrowingDecrement_13Impl::operator_eq(
-                &Rc::new(RefCell::new(NoexceptCopyThrowingDecrement_13 {})).as_pointer(),
-                Rc::new(RefCell::new(NoexceptCopyThrowingDecrement_13 {})).as_pointer(),
+            NoexceptCopyAndDecrement_13Impl::operator_eq(
+                &Rc::new(RefCell::new(NoexceptCopyAndDecrement_13 {})).as_pointer(),
+                Rc::new(RefCell::new(NoexceptCopyAndDecrement_13 {})).as_pointer(),
             )
         }
     }
 }
-impl std::cmp::Eq for NoexceptCopyThrowingDecrement_13 {}
-thread_local!(
-    static x_16: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-);
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct NoexceptCopyAndDecrement_15 {}
-impl NoexceptCopyAndDecrement_15 {}
-impl std::cmp::PartialEq for NoexceptCopyAndDecrement_15 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            NoexceptCopyAndDecrement_15Impl::operator_eq(
-                &Rc::new(RefCell::new(NoexceptCopyAndDecrement_15 {})).as_pointer(),
-                Rc::new(RefCell::new(NoexceptCopyAndDecrement_15 {})).as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for NoexceptCopyAndDecrement_15 {}
+impl std::cmp::Eq for NoexceptCopyAndDecrement_13 {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -545,75 +545,75 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test()");;
     return 0_();
 }
-pub trait NoexceptCopyAndDecrement_15Impl {
+pub trait NoexceptCopyAndDecrement_13Impl {
     fn operator_deref(&self) -> Ptr<()>;
-    fn operator_inc_4(&self) -> Ptr<NoexceptCopyAndDecrement_15> {
+    fn operator_inc_4(&self) -> Ptr<NoexceptCopyAndDecrement_13> {
         unimplemented!()
     }
-    fn operator_post_inc_5(&self, mut _a0: ()) -> NoexceptCopyAndDecrement_15 {
+    fn operator_post_inc_5(&self, mut _a0: ()) -> NoexceptCopyAndDecrement_13 {
         unimplemented!()
     }
-    fn operator_dec_6(&self) -> Ptr<NoexceptCopyAndDecrement_15> {
+    fn operator_dec_6(&self) -> Ptr<NoexceptCopyAndDecrement_13> {
         unimplemented!()
     }
-    fn operator_post_dec_7(&self, mut _a0: ()) -> NoexceptCopyAndDecrement_15 {
+    fn operator_post_dec_7(&self, mut _a0: ()) -> NoexceptCopyAndDecrement_13 {
         unimplemented!()
     }
-    fn operator_eq(&self, _a0: Ptr<NoexceptCopyAndDecrement_15>) -> ();
+    fn operator_eq(&self, _a0: Ptr<NoexceptCopyAndDecrement_13>) -> ();
 }
-impl NoexceptCopyAndDecrement_15Impl for Ptr<NoexceptCopyAndDecrement_15> {
-    fn operator_deref(&self) -> Ptr<()> {
-        return x_16.with(|v| v.as_pointer());
-    }
-    fn operator_eq(&self, _a0: Ptr<NoexceptCopyAndDecrement_15>) -> () {
-        return true;
-    }
-}
-pub trait NoexceptCopyThrowingDecrement_13Impl {
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_inc_4(&self) -> Ptr<NoexceptCopyThrowingDecrement_13> {
-        unimplemented!()
-    }
-    fn operator_post_inc_5(&self, mut _a0: ()) -> NoexceptCopyThrowingDecrement_13 {
-        unimplemented!()
-    }
-    fn operator_dec_6(&self) -> Ptr<NoexceptCopyThrowingDecrement_13> {
-        unimplemented!()
-    }
-    fn operator_post_dec_7(&self, mut _a0: ()) -> NoexceptCopyThrowingDecrement_13 {
-        unimplemented!()
-    }
-    fn operator_eq(&self, _a0: Ptr<NoexceptCopyThrowingDecrement_13>) -> ();
-}
-impl NoexceptCopyThrowingDecrement_13Impl for Ptr<NoexceptCopyThrowingDecrement_13> {
+impl NoexceptCopyAndDecrement_13Impl for Ptr<NoexceptCopyAndDecrement_13> {
     fn operator_deref(&self) -> Ptr<()> {
         return x_14.with(|v| v.as_pointer());
     }
-    fn operator_eq(&self, _a0: Ptr<NoexceptCopyThrowingDecrement_13>) -> () {
+    fn operator_eq(&self, _a0: Ptr<NoexceptCopyAndDecrement_13>) -> () {
         return true;
     }
 }
-pub trait ThrowingCopyNoexceptDecrement_11Impl {
+pub trait NoexceptCopyThrowingDecrement_11Impl {
     fn operator_deref(&self) -> Ptr<()>;
-    fn operator_inc_4(&self) -> Ptr<ThrowingCopyNoexceptDecrement_11> {
+    fn operator_inc_4(&self) -> Ptr<NoexceptCopyThrowingDecrement_11> {
         unimplemented!()
     }
-    fn operator_post_inc_5(&self, mut _a0: ()) -> ThrowingCopyNoexceptDecrement_11 {
+    fn operator_post_inc_5(&self, mut _a0: ()) -> NoexceptCopyThrowingDecrement_11 {
         unimplemented!()
     }
-    fn operator_dec_6(&self) -> Ptr<ThrowingCopyNoexceptDecrement_11> {
+    fn operator_dec_6(&self) -> Ptr<NoexceptCopyThrowingDecrement_11> {
         unimplemented!()
     }
-    fn operator_post_dec_7(&self, mut _a0: ()) -> ThrowingCopyNoexceptDecrement_11 {
+    fn operator_post_dec_7(&self, mut _a0: ()) -> NoexceptCopyThrowingDecrement_11 {
         unimplemented!()
     }
-    fn operator_eq(&self, _a0: Ptr<ThrowingCopyNoexceptDecrement_11>) -> ();
+    fn operator_eq(&self, _a0: Ptr<NoexceptCopyThrowingDecrement_11>) -> ();
 }
-impl ThrowingCopyNoexceptDecrement_11Impl for Ptr<ThrowingCopyNoexceptDecrement_11> {
+impl NoexceptCopyThrowingDecrement_11Impl for Ptr<NoexceptCopyThrowingDecrement_11> {
     fn operator_deref(&self) -> Ptr<()> {
         return x_12.with(|v| v.as_pointer());
     }
-    fn operator_eq(&self, _a0: Ptr<ThrowingCopyNoexceptDecrement_11>) -> () {
+    fn operator_eq(&self, _a0: Ptr<NoexceptCopyThrowingDecrement_11>) -> () {
+        return true;
+    }
+}
+pub trait ThrowingCopyNoexceptDecrement_9Impl {
+    fn operator_deref(&self) -> Ptr<()>;
+    fn operator_inc_4(&self) -> Ptr<ThrowingCopyNoexceptDecrement_9> {
+        unimplemented!()
+    }
+    fn operator_post_inc_5(&self, mut _a0: ()) -> ThrowingCopyNoexceptDecrement_9 {
+        unimplemented!()
+    }
+    fn operator_dec_6(&self) -> Ptr<ThrowingCopyNoexceptDecrement_9> {
+        unimplemented!()
+    }
+    fn operator_post_dec_7(&self, mut _a0: ()) -> ThrowingCopyNoexceptDecrement_9 {
+        unimplemented!()
+    }
+    fn operator_eq(&self, _a0: Ptr<ThrowingCopyNoexceptDecrement_9>) -> ();
+}
+impl ThrowingCopyNoexceptDecrement_9Impl for Ptr<ThrowingCopyNoexceptDecrement_9> {
+    fn operator_deref(&self) -> Ptr<()> {
+        return x_10.with(|v| v.as_pointer());
+    }
+    fn operator_eq(&self, _a0: Ptr<ThrowingCopyNoexceptDecrement_9>) -> () {
         return true;
     }
 }

@@ -10,7 +10,7 @@ pub fn test_0(mut i: ()) {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = ({ (*h.borrow_mut())(ec.as_pointer()) });
+    let mut result: () = unimplemented!();
     unimplemented!();
     (&(result));
 }

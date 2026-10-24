@@ -126,12 +126,12 @@ pub unsafe fn test_format_6(mut expected: (), mut arg: ()) {
     unimplemented!();
 }
 pub unsafe fn test_fmt_8() {
-    (unsafe { test_format_4(unimplemented!(), unimplemented!()[(0_()) as usize]) });
-    (unsafe { test_format_4(unimplemented!(), unimplemented!()[(0_()) as usize]) });
+    (unsafe { test_format_4(unimplemented!(), unimplemented!()) });
+    (unsafe { test_format_4(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_fmt_9() {
-    (unsafe { test_format_6(unimplemented!(), unimplemented!()[(0_()) as usize]) });
-    (unsafe { test_format_6(unimplemented!(), unimplemented!()[(0_()) as usize]) });
+    (unsafe { test_format_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_format_6(unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_10() {
     (unsafe { test_fmt_8() });

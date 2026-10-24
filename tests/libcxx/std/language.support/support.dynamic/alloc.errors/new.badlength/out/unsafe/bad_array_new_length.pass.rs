@@ -33,7 +33,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     let mut b: () = unimplemented!();
     let mut b2: () = unimplemented!();
-    b2 = (b).clone();
+    unimplemented!();
     let mut w: *const () = unimplemented!();
     unimplemented!();
     return 0_();

@@ -50,13 +50,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let mut j: () = 0_();
             'loop_: while (j <= 6_()) {
                 let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let wdi: Value<()> = Rc::new(RefCell::new(
-                    elem!(
-                        Rc::new(RefCell::new(unimplemented!())).as_pointer(),
-                        unimplemented!()
-                    )
-                    .read(),
-                ));
+                let wdi: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mwd1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mwd2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
@@ -83,13 +77,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         'loop_: while (i <= 12_()) {
             let mut j: () = 0_();
             'loop_: while (j <= 6_()) {
-                let wdi: Value<()> = Rc::new(RefCell::new(
-                    elem!(
-                        Rc::new(RefCell::new(unimplemented!())).as_pointer(),
-                        unimplemented!()
-                    )
-                    .read(),
-                ));
+                let wdi: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mwd1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mwd2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();

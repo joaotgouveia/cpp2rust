@@ -454,88 +454,40 @@ impl __gnu_test_default_resource_mgr {
 static mut alloc_map_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn test_17(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___str: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___str)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_18(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_19(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_20(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_21(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___str: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___str)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_22(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_23(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_24(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_25(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___str: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___str)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_26(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_27(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test_28(s: *const ()) -> () {
-    return ((unimplemented!())
-        == (unsafe {
-            let mut ___s: () = (unsafe { (*s)() });
-            unimplemented!()(&mut ___s)
-        }));
+    return ((unimplemented!()) == (unimplemented!()));
 }
 pub unsafe fn test01_29() {
     let mut __do_while = true;

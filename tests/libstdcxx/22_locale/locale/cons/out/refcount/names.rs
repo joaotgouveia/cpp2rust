@@ -353,7 +353,7 @@ pub fn test_lwg3676_13() {
         }),
     ));
     let combo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*combo.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -373,7 +373,7 @@ pub fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    (*combo.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -393,7 +393,7 @@ pub fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    (*combo.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -413,7 +413,7 @@ pub fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    (*combo.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -433,7 +433,7 @@ pub fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    (*combo.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -453,7 +453,7 @@ pub fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    (*combo.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -473,7 +473,7 @@ pub fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    (*combo.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -493,7 +493,7 @@ pub fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    (*combo.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

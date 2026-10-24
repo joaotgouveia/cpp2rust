@@ -400,7 +400,7 @@ pub unsafe fn nonexistent_path_13(mut file: Option<()>) -> () {
     }
     unimplemented!();
     unimplemented!();
-    p = (*unimplemented!()).clone();
+    unimplemented!();
     return unimplemented!();
 }
 pub type __gnu_test_scoped_file_adopt_file_t = ();
@@ -464,7 +464,7 @@ pub unsafe fn permissions_are_testable_17(mut print_msg: Option<()>) -> () {
     return testable;
 }
 static mut counter_15: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { (unsafe { unimplemented!()() }) });
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

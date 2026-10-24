@@ -258,7 +258,7 @@ pub fn test01_10() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut x: () = 0_();
     let y: Value<()> = Rc::new(RefCell::new(0_()));
-    unimplemented!() = (*p.borrow()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

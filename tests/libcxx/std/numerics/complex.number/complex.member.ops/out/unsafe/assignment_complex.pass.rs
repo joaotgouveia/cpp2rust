@@ -11,11 +11,11 @@ pub unsafe fn test_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
-    c = (c3).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
@@ -25,7 +25,7 @@ pub unsafe fn test_1() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
@@ -39,7 +39,7 @@ pub unsafe fn test_2() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
@@ -53,7 +53,7 @@ pub unsafe fn test_3() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
@@ -67,11 +67,11 @@ pub unsafe fn test_4() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
-    c = (c3).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
@@ -81,7 +81,7 @@ pub unsafe fn test_5() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
@@ -95,7 +95,7 @@ pub unsafe fn test_6() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
@@ -109,7 +109,7 @@ pub unsafe fn test_7() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
@@ -123,11 +123,11 @@ pub unsafe fn test_8() -> () {
     unimplemented!();
     unimplemented!();
     let mut c2: () = unimplemented!();
-    c = (c2).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut c3: () = unimplemented!();
-    c = (c3).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

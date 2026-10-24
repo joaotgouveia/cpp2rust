@@ -398,7 +398,7 @@ pub fn nonexistent_path_13(file: Option<()>) -> () {
     }
     unimplemented!();
     unimplemented!();
-    (*p.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     return unimplemented!();
 }
 pub type __gnu_test_scoped_file_adopt_file_t = ();
@@ -455,7 +455,7 @@ pub fn permissions_are_testable_17(print_msg: Option<()>) -> () {
     return testable;
 }
 thread_local!(
-    static counter_15: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    static counter_15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub fn test01_18() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));

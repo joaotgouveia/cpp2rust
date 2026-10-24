@@ -285,7 +285,7 @@ pub fn test01_11() {
                 let mut last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let mut n: () = 0_();
                 'loop_: while (n < unimplemented!()) {
-                    (*res.borrow_mut()) = unimplemented!();
+                    unimplemented!();
                     let mut __do_while = true;
                     'loop_: while __do_while || (false) {
                         __do_while = false;

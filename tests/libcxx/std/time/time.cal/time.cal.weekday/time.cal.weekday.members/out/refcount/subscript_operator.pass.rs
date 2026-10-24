@@ -46,7 +46,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let mut i: () = 0_();
     'loop_: while (i <= 6_()) {
         let wd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wdl: Value<()> = Rc::new(RefCell::new(((*wd.borrow())[unimplemented!()]).clone()));
+        let wdl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         i.prefix_inc();
@@ -56,7 +56,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut j: () = 1_();
         'loop_: while (j <= 5_()) {
             let wd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let wdi: Value<()> = Rc::new(RefCell::new(((*wd.borrow())[j]).clone()));
+            let wdi: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();

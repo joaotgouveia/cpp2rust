@@ -269,7 +269,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()[(0_()) as usize]) == ('-' as ())) {
+        if !((*unimplemented!()) == ('-' as ())) {
             (unsafe {
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),

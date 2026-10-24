@@ -150,7 +150,7 @@ pub fn nonexistent_path_3(file: Option<()>) -> () {
     }
     unimplemented!();
     unimplemented!();
-    (*p.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     return unimplemented!();
 }
 pub type __gnu_test_scoped_file_adopt_file_t = ();
@@ -207,7 +207,7 @@ pub fn permissions_are_testable_7(print_msg: Option<()>) -> () {
     return testable;
 }
 thread_local!(
-    static counter_5: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    static counter_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(128)]
@@ -464,7 +464,7 @@ pub fn test01_18() {
     ) {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*copy.borrow_mut()) = (*p.borrow()).clone();
+        unimplemented!();
         ({ compare_paths_0(p.as_pointer(), copy.as_pointer()) });
     }
 }
@@ -476,7 +476,7 @@ pub fn test02_19() {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let move_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*move_.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+        unimplemented!();
         ({ compare_paths_0(p.as_pointer(), move_.as_pointer()) });
     }
 }
@@ -485,9 +485,9 @@ pub fn test03_20() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut ptr1: Ptr<()> = unimplemented!();
     let mut ptr2: Ptr<()> = unimplemented!();
-    (*p.borrow_mut()) = { (*unimplemented!().upgrade().deref()).clone() };
+    unimplemented!();
     ({ compare_paths_0(p.as_pointer(), orig.as_pointer()) });
-    (*p.borrow_mut()) = { (*p.borrow()).clone() };
+    unimplemented!();
     ({ compare_paths_0(p.as_pointer(), orig.as_pointer()) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -533,7 +533,7 @@ pub fn test04_22() {
     let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*p1.borrow_mut()) = (*p2.borrow()).clone();
+    unimplemented!();
     ({ compare_paths_0(p1.as_pointer(), p2.as_pointer()) });
     ({ compare_paths_0(p1.as_pointer(), p3.as_pointer()) });
     ({ compare_paths_0(p2.as_pointer(), p3.as_pointer()) });

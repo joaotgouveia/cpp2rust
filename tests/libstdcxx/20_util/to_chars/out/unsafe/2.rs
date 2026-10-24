@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut buf: [(); 9] = std::mem::transmute(*b"********\0");
     let mut r: () = unimplemented!();
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -317,7 +317,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -375,7 +375,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -433,7 +433,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -491,7 +491,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -549,7 +549,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -607,7 +607,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -665,7 +665,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -723,7 +723,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    r = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

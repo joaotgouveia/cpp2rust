@@ -411,7 +411,7 @@ pub unsafe fn test_8() -> () {
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(iter_swap(rb, re)), void>");;
-        (unsafe { iter_swap_9(&rb, &re) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -432,9 +432,9 @@ pub unsafe fn test_8() -> () {
         });
         let mut ri1: () = unimplemented!();
         let mut ri2: () = unimplemented!();
-        (unsafe { iter_swap_10(&ri1, &ri2) });
         unimplemented!();
-        (unsafe { iter_swap_10(&ri2, &ri1) });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -483,75 +483,75 @@ pub unsafe fn test_8() -> () {
     }
     return true;
 }
+static mut x_10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+#[repr(C)]
+#[derive(FnPtrArg, Default)]
+pub struct ThrowingCopyNoexceptDecrement_9 {}
+impl ThrowingCopyNoexceptDecrement_9 {
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut x_10));
+    }
+    pub unsafe fn operator_eq(&self, _a0: *const ThrowingCopyNoexceptDecrement_9) -> () {
+        return true;
+    }
+}
+impl std::cmp::PartialEq for ThrowingCopyNoexceptDecrement_9 {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            ThrowingCopyNoexceptDecrement_9::operator_eq(
+                self,
+                other as *const ThrowingCopyNoexceptDecrement_9,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for ThrowingCopyNoexceptDecrement_9 {}
 static mut x_12: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
-pub struct ThrowingCopyNoexceptDecrement_11 {}
-impl ThrowingCopyNoexceptDecrement_11 {
+pub struct NoexceptCopyThrowingDecrement_11 {}
+impl NoexceptCopyThrowingDecrement_11 {
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut x_12));
     }
-    pub unsafe fn operator_eq(&self, _a0: *const ThrowingCopyNoexceptDecrement_11) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const NoexceptCopyThrowingDecrement_11) -> () {
         return true;
     }
 }
-impl std::cmp::PartialEq for ThrowingCopyNoexceptDecrement_11 {
+impl std::cmp::PartialEq for NoexceptCopyThrowingDecrement_11 {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            ThrowingCopyNoexceptDecrement_11::operator_eq(
+            NoexceptCopyThrowingDecrement_11::operator_eq(
                 self,
-                other as *const ThrowingCopyNoexceptDecrement_11,
+                other as *const NoexceptCopyThrowingDecrement_11,
             )
         }
     }
 }
-impl std::cmp::Eq for ThrowingCopyNoexceptDecrement_11 {}
+impl std::cmp::Eq for NoexceptCopyThrowingDecrement_11 {}
 static mut x_14: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
-pub struct NoexceptCopyThrowingDecrement_13 {}
-impl NoexceptCopyThrowingDecrement_13 {
+pub struct NoexceptCopyAndDecrement_13 {}
+impl NoexceptCopyAndDecrement_13 {
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut x_14));
     }
-    pub unsafe fn operator_eq(&self, _a0: *const NoexceptCopyThrowingDecrement_13) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const NoexceptCopyAndDecrement_13) -> () {
         return true;
     }
 }
-impl std::cmp::PartialEq for NoexceptCopyThrowingDecrement_13 {
+impl std::cmp::PartialEq for NoexceptCopyAndDecrement_13 {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            NoexceptCopyThrowingDecrement_13::operator_eq(
+            NoexceptCopyAndDecrement_13::operator_eq(
                 self,
-                other as *const NoexceptCopyThrowingDecrement_13,
+                other as *const NoexceptCopyAndDecrement_13,
             )
         }
     }
 }
-impl std::cmp::Eq for NoexceptCopyThrowingDecrement_13 {}
-static mut x_16: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct NoexceptCopyAndDecrement_15 {}
-impl NoexceptCopyAndDecrement_15 {
-    pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut x_16));
-    }
-    pub unsafe fn operator_eq(&self, _a0: *const NoexceptCopyAndDecrement_15) -> () {
-        return true;
-    }
-}
-impl std::cmp::PartialEq for NoexceptCopyAndDecrement_15 {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            NoexceptCopyAndDecrement_15::operator_eq(
-                self,
-                other as *const NoexceptCopyAndDecrement_15,
-            )
-        }
-    }
-}
-impl std::cmp::Eq for NoexceptCopyAndDecrement_15 {}
+impl std::cmp::Eq for NoexceptCopyAndDecrement_13 {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

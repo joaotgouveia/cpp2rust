@@ -259,9 +259,9 @@ impl __gnu_test_semaphore {}
 pub unsafe fn do_test_10() {
     let mut v: () = unimplemented!();
     let mut h1: () = unimplemented!();
-    let mut r1: () = (unsafe { h1(&v) });
+    let mut r1: () = unimplemented!();
     let mut h2: () = unimplemented!();
-    let mut r2: () = (unsafe { h2(&v) });
+    let mut r2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -285,9 +285,9 @@ pub unsafe fn do_test_10() {
 pub unsafe fn do_test_12() {
     let mut v: () = unimplemented!();
     let mut h1: () = unimplemented!();
-    let mut r1: () = (unsafe { h1(&v) });
+    let mut r1: () = unimplemented!();
     let mut h2: () = unimplemented!();
-    let mut r2: () = (unsafe { h2(&v) });
+    let mut r2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

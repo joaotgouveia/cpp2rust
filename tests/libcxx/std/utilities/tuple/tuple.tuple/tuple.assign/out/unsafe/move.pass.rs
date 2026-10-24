@@ -236,7 +236,7 @@ pub unsafe fn test_16() -> () {
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
-        t = (t0).clone();
+        unimplemented!();
     }
     {
         let mut t0: () = unimplemented!();

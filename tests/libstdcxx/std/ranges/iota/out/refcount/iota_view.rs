@@ -741,7 +741,7 @@ pub fn test06_20() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!().read()) == 0_()) {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

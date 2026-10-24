@@ -424,100 +424,40 @@ thread_local!(
     static alloc_map_14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub fn test_17(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___str: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___str.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_18(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_19(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_20(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_21(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___str: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___str.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_22(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_23(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_24(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_25(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___str: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___str.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_26(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_27(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test_28(s: Ptr<()>) -> () {
-    return ({ unimplemented!() } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
+    return ({ unimplemented!() } == { unimplemented!() });
 }
 pub fn test01_29() {
     let mut __do_while = true;

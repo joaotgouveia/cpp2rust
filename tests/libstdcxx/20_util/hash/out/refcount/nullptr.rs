@@ -255,9 +255,9 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
-    let h1: Value<()> = Rc::new(RefCell::new(({ unimplemented!()(Default::default()) })));
+    let h1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same_v<decltype(h1), std::size_t>");;
-    let mut h2: () = ({ unimplemented!()(Default::default()) });
+    let mut h2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

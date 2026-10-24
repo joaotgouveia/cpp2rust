@@ -72,7 +72,7 @@ pub fn test_22() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let nan: Value<()> = Rc::new(RefCell::new(({ std_numeric_limits_double_::quiet_NaN() })));
+        let nan: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -95,7 +95,7 @@ pub fn test_22() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut nan: () = ({ std_numeric_limits_double_::quiet_NaN() });
+        let mut nan: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -133,7 +133,7 @@ pub fn test_22() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let nan: Value<()> = Rc::new(RefCell::new(({ std_numeric_limits_double_::quiet_NaN() })));
+        let nan: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;

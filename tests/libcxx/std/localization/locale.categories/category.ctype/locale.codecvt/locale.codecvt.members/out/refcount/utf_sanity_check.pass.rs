@@ -34,10 +34,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let mbs32_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mbs16_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mbs32_16: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut c32p: Ptr<()> = Ptr::<()>::null();
+    let c32p: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
     let mut c16p: Ptr<()> = Ptr::<()>::null();
     let mut c8p: Ptr<()> = Ptr::<()>::null();
-    let mut c_c32p: Ptr<()> = Ptr::<()>::null();
+    let c_c32p: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
     let mut c_c16p: Ptr<()> = Ptr::<()>::null();
     let mut c_c8p: Ptr<()> = Ptr::<()>::null();
     let c32: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -47,7 +47,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let c16c: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut c16cp: Ptr<()> = Ptr::<()>::null();
+    let c16cp: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
     let c8: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
@@ -78,7 +78,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             }
             let mut i: () = 0_();
             'loop_: while ({ i } < {
-                ((((c16cp).clone() - (c16c.as_pointer() as Ptr<()>)) as ()) / 2_())
+                ((((*c16cp.borrow()).clone() - (c16c.as_pointer() as Ptr<()>)) as ()) / 2_())
             }) {
                 (*c16.borrow_mut())[(i) as usize] = {
                     (((*c16c.borrow())[(2_() * i) as usize] << 8_())
@@ -87,7 +87,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 i.prefix_inc();
             }
             c_c16p = (c16.as_pointer() as Ptr<()>).offset(
-                ((((c16cp).clone() - (c16c.as_pointer() as Ptr<()>)) as ()) / 2_()) as isize,
+                ((((*c16cp.borrow()).clone() - (c16c.as_pointer() as Ptr<()>)) as ()) / 2_())
+                    as isize,
             );
             unimplemented!();
             if ((*c32x.borrow()) < 65536_()) {
@@ -152,8 +153,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                     { (*c16.borrow())[(i) as usize] };
                 i.prefix_inc();
             }
-            let mut c_c16cp: Ptr<()> = (c16c.as_pointer() as Ptr<()>)
-                .offset(((((c16p).clone() - (c16.as_pointer() as Ptr<()>)) as ()) * 2_()) as isize);
+            let c_c16cp: Value<Ptr<()>> =
+                Rc::new(RefCell::new((c16c.as_pointer() as Ptr<()>).offset(
+                    ((((c16p).clone() - (c16.as_pointer() as Ptr<()>)) as ()) * 2_()) as isize,
+                )));
             unimplemented!();
             if ((*c32x.borrow()) < 65536_()) {
                 unimplemented!();

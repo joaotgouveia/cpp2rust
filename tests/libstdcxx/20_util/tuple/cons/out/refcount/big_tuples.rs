@@ -259,23 +259,17 @@ impl __gnu_test_semaphore {}
 pub struct foo {}
 pub fn test_constructors_10() {
     let x1: Value<()> = Rc::new(RefCell::new(0_()));
-    let x2: Value<()> = Rc::new(RefCell::new(0_()));
+    let mut x2: () = 0_();
     let z1: Ptr<()> = x1.as_pointer();
     let ta: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let tc: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_::new_1(
-        { x1.as_pointer() },
-        { x2.as_pointer() },
-    )));
-    let td: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_ref_::new(
-        { x1.as_pointer() },
-        { x2.as_pointer() },
-    )));
+    let tc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let td: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let te: Value<()> = Rc::new(RefCell::new(std_tuple_const_int_ref_::new({
         (z1).clone()
     })));
     (*x1.borrow_mut()) = 1_();
-    (*x2.borrow_mut()) = 1_();
+    x2 = 1_();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -302,34 +296,16 @@ pub fn test_constructors_10() {
         }
     }
     let tf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let tg: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_::new_2({
-        td.as_pointer()
-    })));
+    let tg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let th: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ti: Value<()> = Rc::new(RefCell::new(std_tuple_int__double_::new_1({
-        tc.as_pointer()
-    })));
-    let tj: Value<()> = Rc::new(RefCell::new(std_tuple_int__double_::new_2({
-        td.as_pointer()
-    })));
-    let pair1: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-        std_pair_int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let ti: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let pair1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pair2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let tl: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_::new_3({
-        pair1.as_pointer()
-    })));
-    let tm: Value<()> = Rc::new(RefCell::new(std_tuple_int__const_int_ref_::new({
-        pair1.as_pointer()
-    })));
-    let tn: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_::new_3({
-        pair2.as_pointer()
-    })));
-    let to: Value<()> = Rc::new(RefCell::new(std_tuple_int__const_int_ref_::new({
-        pair2.as_pointer()
-    })));
+    let tl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tn: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let to: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -337,6 +313,8 @@ pub fn main() {
 }
 fn main_0() -> () {
     let a: Value<()> = Rc::new(RefCell::new({
+        let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
+        let __tmp_1: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_2: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_3: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_4: Value<()> = Rc::new(RefCell::new(0_()));
@@ -344,10 +322,10 @@ fn main_0() -> () {
         let __tmp_6: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_7: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_8: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_9: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_10: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_11: Value<()> = Rc::new(RefCell::new(1_()));
+        let __tmp_9: Value<()> = Rc::new(RefCell::new(1_()));
         std_tuple_int__int__int__int__int__int__int__int__int__int_::new_1(
+            { __tmp_0.as_pointer() },
+            { __tmp_1.as_pointer() },
             { __tmp_2.as_pointer() },
             { __tmp_3.as_pointer() },
             { __tmp_4.as_pointer() },
@@ -356,11 +334,11 @@ fn main_0() -> () {
             { __tmp_7.as_pointer() },
             { __tmp_8.as_pointer() },
             { __tmp_9.as_pointer() },
-            { __tmp_10.as_pointer() },
-            { __tmp_11.as_pointer() },
         )
     }));
     let b: Value<()> = Rc::new(RefCell::new({
+        let __tmp_10: Value<()> = Rc::new(RefCell::new(0_()));
+        let __tmp_11: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_12: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_13: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_14: Value<()> = Rc::new(RefCell::new(0_()));
@@ -368,10 +346,10 @@ fn main_0() -> () {
         let __tmp_16: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_17: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_18: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_19: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_20: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_21: Value<()> = Rc::new(RefCell::new(2_()));
+        let __tmp_19: Value<()> = Rc::new(RefCell::new(2_()));
         std_tuple_int__int__int__int__int__int__int__int__int__int_::new_1(
+            { __tmp_10.as_pointer() },
+            { __tmp_11.as_pointer() },
             { __tmp_12.as_pointer() },
             { __tmp_13.as_pointer() },
             { __tmp_14.as_pointer() },
@@ -380,12 +358,12 @@ fn main_0() -> () {
             { __tmp_17.as_pointer() },
             { __tmp_18.as_pointer() },
             { __tmp_19.as_pointer() },
-            { __tmp_20.as_pointer() },
-            { __tmp_21.as_pointer() },
         )
     }));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let d: Value<()> = Rc::new(RefCell::new({
+        let __tmp_20: Value<()> = Rc::new(RefCell::new(0_()));
+        let __tmp_21: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_22: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_23: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_24: Value<()> = Rc::new(RefCell::new(0_()));
@@ -393,10 +371,10 @@ fn main_0() -> () {
         let __tmp_26: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_27: Value<()> = Rc::new(RefCell::new(0_()));
         let __tmp_28: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_29: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_30: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_31: Value<()> = Rc::new(RefCell::new(3_()));
+        let __tmp_29: Value<()> = Rc::new(RefCell::new(3_()));
         std_tuple_int__int__int__int__int__int__int__int__int__char_::new(
+            { __tmp_20.as_pointer() },
+            { __tmp_21.as_pointer() },
             { __tmp_22.as_pointer() },
             { __tmp_23.as_pointer() },
             { __tmp_24.as_pointer() },
@@ -405,8 +383,6 @@ fn main_0() -> () {
             { __tmp_27.as_pointer() },
             { __tmp_28.as_pointer() },
             { __tmp_29.as_pointer() },
-            { __tmp_30.as_pointer() },
-            { __tmp_31.as_pointer() },
         )
     }));
     let e: Value<()> = Rc::new(RefCell::new(
@@ -487,7 +463,7 @@ fn main_0() -> () {
     }
     {
         let i: Value<()> = Rc::new(RefCell::new(0_()));
-        unimplemented!() = (*a.borrow()).clone();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -508,7 +484,7 @@ fn main_0() -> () {
             }
         }
     }
-    (*a.borrow_mut()) = (*d.borrow()).clone();
+    unimplemented!();
     (*a.borrow_mut()) = (*b.borrow()).clone();
     unimplemented!();
     let mut __do_while = true;
@@ -620,10 +596,7 @@ pub fn verify_demangle_23(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -634,22 +607,14 @@ pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -661,10 +626,7 @@ pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -686,10 +648,7 @@ pub fn run_tests_wrapped_env_26(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

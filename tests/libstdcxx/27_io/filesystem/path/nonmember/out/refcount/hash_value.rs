@@ -150,7 +150,7 @@ pub fn nonexistent_path_3(file: Option<()>) -> () {
     }
     unimplemented!();
     unimplemented!();
-    (*p.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     return unimplemented!();
 }
 pub type __gnu_test_scoped_file_adopt_file_t = ();
@@ -207,7 +207,7 @@ pub fn permissions_are_testable_7(print_msg: Option<()>) -> () {
     return testable;
 }
 thread_local!(
-    static counter_5: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    static counter_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(128)]
@@ -542,7 +542,7 @@ pub fn test03_21() {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(({ (*h.borrow_mut())(p.as_pointer()) }) == unimplemented!()) {
+            if !(unimplemented!() == unimplemented!()) {
                 ({
                     __builtin_fprintf_19(
                         libcc2rs::stderr_unsafe(),

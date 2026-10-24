@@ -203,7 +203,7 @@ pub fn TestOutput_2() {
             .reinterpret_cast::<()>();
     let dir: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let stream: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Ptr<()> = write!(stream.as_pointer(), "{:}", dir.as_pointer(),);
+    let result: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -216,7 +216,7 @@ pub fn TestOutput_3() {
             .reinterpret_cast::<()>();
     let dir: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let stream: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Ptr<()> = write!(stream.as_pointer(), "{:}", dir.as_pointer(),);
+    let result: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
 }

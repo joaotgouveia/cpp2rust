@@ -265,7 +265,7 @@ fn main_0() -> () {
     let y2: Value<()> = Rc::new(RefCell::new(0_()));
     let ta: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!() = (*ta.borrow()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -285,7 +285,7 @@ fn main_0() -> () {
             unimplemented!();
         }
     }
-    unimplemented!() = (*tc.borrow()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

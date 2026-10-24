@@ -128,7 +128,7 @@ pub unsafe fn test_constexpr_7() -> () {
     {
         let mut res: () = (unimplemented!());
         (&(res));
-        res = (unimplemented!());
+        unimplemented!();
         (&(res));
     };
     let mut SpaceshipTestCases: [anon_10; 3] = [

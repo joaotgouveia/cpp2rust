@@ -90,7 +90,8 @@ pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
+    let mut it: () =
+        ({ ((*formatter.borrow()) as std___formatter_char_char_).parse(parse_ctx.as_pointer()) });
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -102,7 +103,10 @@ pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    unimplemented!();
+    ({
+        ((*formatter.borrow()) as std___formatter_char_char_)
+            .format((*arg.borrow()), format_ctx.as_pointer())
+    });
     unimplemented!();
 }
 pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -111,7 +115,9 @@ pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
+    let mut it: () = ({
+        ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer())
+    });
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -123,7 +129,10 @@ pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    unimplemented!();
+    ({
+        ((*formatter.borrow()) as std___formatter_char_wchar_t_)
+            .format((*arg.borrow()), format_ctx.as_pointer())
+    });
     unimplemented!();
 }
 pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -132,7 +141,9 @@ pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
+    let mut it: () = ({
+        ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer())
+    });
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -144,7 +155,10 @@ pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    unimplemented!();
+    ({
+        ((*formatter.borrow()) as std___formatter_char_wchar_t_)
+            .format((*arg.borrow()), format_ctx.as_pointer())
+    });
     unimplemented!();
 }
 pub fn test_termination_condition_10(mut expected: (), f: (), mut arg: ()) {
@@ -174,39 +188,39 @@ pub fn test_termination_condition_12(mut expected: (), f: (), mut arg: ()) {
 pub fn test_set_debug_format_13() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ ((*formatter.borrow()) as std___formatter_char_char_).set_debug_format() });
+    unimplemented!();
     unimplemented!();
     let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ ((*formatter.borrow()) as std___formatter_char_char_).parse(parse_ctx.as_pointer()) });
     unimplemented!();
     unimplemented!();
-    ({ ((*formatter.borrow()) as std___formatter_char_char_).set_debug_format() });
     unimplemented!();
     return true;
 }
 pub fn test_set_debug_format_14() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).set_debug_format() });
+    unimplemented!();
     unimplemented!();
     let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer()) });
     unimplemented!();
     unimplemented!();
-    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).set_debug_format() });
     unimplemented!();
     return true;
 }
 pub fn test_set_debug_format_15() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).set_debug_format() });
+    unimplemented!();
     unimplemented!();
     let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer()) });
     unimplemented!();
     unimplemented!();
-    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).set_debug_format() });
     unimplemented!();
     return true;
 }

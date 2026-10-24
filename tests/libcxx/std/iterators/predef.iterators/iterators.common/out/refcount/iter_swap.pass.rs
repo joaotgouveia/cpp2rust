@@ -502,7 +502,7 @@ pub fn test_11() -> () {
         let jt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        ({ iter_swap_12(it.as_pointer(), jt.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -517,17 +517,13 @@ pub fn test_11() -> () {
         let jt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        ({ iter_swap_13(it.as_pointer(), jt.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ___y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            iter_swap_13(___x.as_pointer(), ___y.as_pointer())
-        });
         unimplemented!();
         unimplemented!();
-        ({ (*iter_swap_14.with(Value::clone).borrow_mut())(it.as_pointer(), jt.as_pointer()) });
+        unimplemented!();
+        unimplemented!();
+        ({ (*iter_swap_12.with(Value::clone).borrow_mut())(it.as_pointer(), jt.as_pointer()) });
         unimplemented!();
         unimplemented!();
     }
@@ -540,17 +536,13 @@ pub fn test_11() -> () {
         let jt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        ({ iter_swap_15(it.as_pointer(), jt.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ___y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            iter_swap_15(___x.as_pointer(), ___y.as_pointer())
-        });
         unimplemented!();
         unimplemented!();
-        ({ (*iter_swap_14.with(Value::clone).borrow_mut())(it.as_pointer(), jt.as_pointer()) });
+        unimplemented!();
+        unimplemented!();
+        ({ (*iter_swap_12.with(Value::clone).borrow_mut())(it.as_pointer(), jt.as_pointer()) });
         unimplemented!();
         unimplemented!();
     }

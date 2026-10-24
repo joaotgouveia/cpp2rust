@@ -335,8 +335,8 @@ pub unsafe fn test02_12() {
     let mut b: () = unimplemented!();
     {
         let mut tmp: () = unimplemented!();
-        a = (*unimplemented!()).clone();
-        b = (*unimplemented!()).clone();
+        unimplemented!();
+        unimplemented!();
     }
 }
 pub unsafe fn test03_13() {

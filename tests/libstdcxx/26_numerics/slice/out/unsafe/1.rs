@@ -270,7 +270,7 @@ pub unsafe fn copy_11(mut start: (), mut size: (), mut stride: ()) -> () {
 pub unsafe fn assignment_12(mut start: (), mut size: (), mut stride: ()) -> () {
     let mut s: () = unimplemented!();
     let mut t: () = unimplemented!();
-    t = (s).clone();
+    unimplemented!();
     return (((unimplemented!()) == (start)) && ((unimplemented!()) == (size)))
         && ((unimplemented!()) == (stride));
 }

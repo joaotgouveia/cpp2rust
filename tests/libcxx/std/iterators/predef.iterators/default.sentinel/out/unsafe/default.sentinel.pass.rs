@@ -31,7 +31,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    s2 = (s1).clone();
+    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

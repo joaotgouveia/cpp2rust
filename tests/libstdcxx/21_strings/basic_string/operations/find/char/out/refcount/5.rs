@@ -256,9 +256,8 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test03_10() {
     let str1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let str2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut x: () =
-        ({ (*str2.borrow()).find_163_class_std_basic_string_view_char_(str1.as_pointer(), None) });
+    let mut str2: () = unimplemented!();
+    let mut x: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -278,9 +277,7 @@ pub fn test03_10() {
             unimplemented!();
         }
     }
-    x = ({
-        (*str2.borrow()).find_163_class_std_basic_string_view_char_(str1.as_pointer(), Some(1_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -301,7 +298,7 @@ pub fn test03_10() {
         }
     }
     unimplemented!();
-    x = ({ (*str2.borrow()).rfind_167_class_std_basic_string_view_char_(str1.as_pointer(), None) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -321,9 +318,7 @@ pub fn test03_10() {
             unimplemented!();
         }
     }
-    x = ({
-        (*str2.borrow()).rfind_167_class_std_basic_string_view_char_(str1.as_pointer(), Some(0_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -343,9 +338,7 @@ pub fn test03_10() {
             unimplemented!();
         }
     }
-    x = ({
-        (*str2.borrow()).rfind_167_class_std_basic_string_view_char_(str1.as_pointer(), Some(3_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -367,10 +360,7 @@ pub fn test03_10() {
     }
     unimplemented!();
     unimplemented!();
-    x = ({
-        (*str2.borrow())
-            .find_first_of_172_class_std_basic_string_view_char_(str1.as_pointer(), None)
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -391,10 +381,7 @@ pub fn test03_10() {
         }
     }
     unimplemented!();
-    x = ({
-        (*str2.borrow())
-            .find_first_of_172_class_std_basic_string_view_char_(str1.as_pointer(), None)
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -414,10 +401,7 @@ pub fn test03_10() {
             unimplemented!();
         }
     }
-    x = ({
-        (*str2.borrow())
-            .find_first_of_172_class_std_basic_string_view_char_(str1.as_pointer(), Some(9_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -437,9 +421,7 @@ pub fn test03_10() {
             unimplemented!();
         }
     }
-    x = ({
-        (*str2.borrow()).find_last_of_177_class_std_basic_string_view_char_(str1.as_pointer(), None)
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -459,10 +441,7 @@ pub fn test03_10() {
             unimplemented!();
         }
     }
-    x = ({
-        (*str2.borrow())
-            .find_last_of_177_class_std_basic_string_view_char_(str1.as_pointer(), Some(10_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -484,10 +463,7 @@ pub fn test03_10() {
     }
     unimplemented!();
     unimplemented!();
-    x = ({
-        (*str2.borrow())
-            .find_first_not_of_182_class_std_basic_string_view_char_(str1.as_pointer(), None)
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -508,10 +484,7 @@ pub fn test03_10() {
         }
     }
     unimplemented!();
-    x = ({
-        (*str2.borrow())
-            .find_first_not_of_182_class_std_basic_string_view_char_(str1.as_pointer(), Some(12_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -532,10 +505,7 @@ pub fn test03_10() {
         }
     }
     unimplemented!();
-    x = ({
-        (*str2.borrow())
-            .find_last_not_of_187_class_std_basic_string_view_char_(str1.as_pointer(), None)
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -555,10 +525,7 @@ pub fn test03_10() {
             unimplemented!();
         }
     }
-    x = ({
-        (*str2.borrow())
-            .find_last_not_of_187_class_std_basic_string_view_char_(str1.as_pointer(), Some(11_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

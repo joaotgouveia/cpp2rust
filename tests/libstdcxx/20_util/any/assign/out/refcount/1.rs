@@ -257,7 +257,7 @@ impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*y.borrow_mut()) = (*x.borrow()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -296,7 +296,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    (*y.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -339,7 +339,7 @@ pub fn test01_10() {
 pub fn test02_12() {
     let x: Value<()> = Rc::new(RefCell::new(1_()));
     let y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*y.borrow_mut()) = (*x.borrow()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -378,7 +378,7 @@ pub fn test02_12() {
             unimplemented!();
         }
     }
-    (*x.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -417,7 +417,7 @@ pub fn test02_12() {
             unimplemented!();
         }
     }
-    (*x.borrow_mut()) = (*y.borrow()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

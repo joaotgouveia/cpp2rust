@@ -282,8 +282,7 @@ fn main_0() -> () {
     let val_f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let val_g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let slc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let __rhs = unimplemented!();
-    unimplemented!() = __rhs;
+    unimplemented!();
     let ans1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         10_(),
         1_(),
@@ -322,8 +321,7 @@ fn main_0() -> () {
     unimplemented!().write(4_());
     unimplemented!().write(1_());
     let gslc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let __rhs = unimplemented!();
-    unimplemented!() = __rhs;
+    unimplemented!();
     let ans2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         10_(),
         1_(),
@@ -365,8 +363,7 @@ fn main_0() -> () {
         (unimplemented!().read())
     };
     unimplemented!().write(__rhs);
-    let __rhs = unimplemented!();
-    unimplemented!() = __rhs;
+    unimplemented!();
     let ans3: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         10_(),
         10_(),
@@ -402,8 +399,7 @@ fn main_0() -> () {
     let addr1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([2_(), 7_(), 1_(), 9_(), 4_()])));
     let val_indirect: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let val_indirect1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let __rhs = unimplemented!();
-    unimplemented!() = __rhs;
+    unimplemented!();
     let ans4: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         10_(),
         2_(),

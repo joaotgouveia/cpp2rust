@@ -390,7 +390,7 @@ pub unsafe fn test02_14() {
     }
     let mut a2: () = unimplemented!();
     (*std::cell::LazyCell::force_mut(&mut *&raw mut copied_11)) = false;
-    a2 = (*unimplemented!()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -459,7 +459,7 @@ pub unsafe fn test03_15() {
     let mut a2: () = unimplemented!();
     (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_10)) = false;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut copied_11)) = false;
-    a2 = (*unimplemented!()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

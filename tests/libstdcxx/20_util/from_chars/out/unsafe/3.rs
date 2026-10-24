@@ -280,7 +280,7 @@ pub unsafe fn test01_11() {
                 let mut last: *const () = unimplemented!().offset((unimplemented!()) as isize);
                 let mut n: () = 0_();
                 'loop_: while ((n) < (unimplemented!())) {
-                    res = unimplemented!();
+                    unimplemented!();
                     let mut __do_while = true;
                     'loop_: while __do_while || (false) {
                         __do_while = false;

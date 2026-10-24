@@ -33,7 +33,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );;
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*e2.borrow_mut()) = (*e.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     return 0_();
 }

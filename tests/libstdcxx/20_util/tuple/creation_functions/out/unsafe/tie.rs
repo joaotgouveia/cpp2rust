@@ -269,7 +269,7 @@ unsafe fn main_0() -> () {
     let mut y2: () = 0_();
     let mut ta: () = unimplemented!();
     let mut tc: () = unimplemented!();
-    unimplemented!() = (ta).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -289,7 +289,7 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    unimplemented!() = (tc).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

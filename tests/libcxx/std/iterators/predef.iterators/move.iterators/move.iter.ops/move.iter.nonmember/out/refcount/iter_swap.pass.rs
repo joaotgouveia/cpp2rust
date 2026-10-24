@@ -403,7 +403,7 @@ pub fn test_8() -> () {
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(iter_swap(b, e)), void>");;
-        ({ iter_swap_9(b.as_pointer(), e.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -415,9 +415,9 @@ pub fn test_8() -> () {
             ({ adl_Iterator::TrackSwaps_4(iter_swap_invocations.as_pointer()) });
         let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ iter_swap_10(i1.as_pointer(), i2.as_pointer()) });
         unimplemented!();
-        ({ iter_swap_10(i2.as_pointer(), i1.as_pointer()) });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {

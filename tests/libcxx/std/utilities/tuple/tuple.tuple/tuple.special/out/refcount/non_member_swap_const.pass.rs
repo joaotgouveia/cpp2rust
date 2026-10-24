@@ -63,7 +63,7 @@ pub fn test_2() -> () {
     }));
     let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ swap_3(t1.as_pointer(), t2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

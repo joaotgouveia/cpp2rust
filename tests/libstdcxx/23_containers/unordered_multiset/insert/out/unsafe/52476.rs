@@ -261,7 +261,7 @@ impl __gnu_test_semaphore {}
 pub struct pair_hash {}
 impl pair_hash {
     pub unsafe fn operator_call(&self, p: *const ()) -> () {
-        return (unsafe { unimplemented!()((*p).first) });
+        return unimplemented!();
     }
 }
 #[repr(C)]

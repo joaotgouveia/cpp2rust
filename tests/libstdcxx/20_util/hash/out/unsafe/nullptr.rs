@@ -257,9 +257,9 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
-    let mut h1: () = (unsafe { unimplemented!()(Default::default()) });
+    let mut h1: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(h1), std::size_t>");;
-    let mut h2: () = (unsafe { unimplemented!()(Default::default()) });
+    let mut h2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

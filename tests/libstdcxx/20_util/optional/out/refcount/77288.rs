@@ -257,7 +257,7 @@ impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let nested_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*nested_element.borrow_mut()) = (*element.borrow()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -454,7 +454,7 @@ impl Widget {
 }
 pub fn test03_13() {
     let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*w.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -478,7 +478,7 @@ pub fn test03_13() {
         true,
         "!std::is_assignable_v<optional<Widget>&,\n\t\toptional<short>>"
     );;
-    (*w.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -746,7 +746,7 @@ impl Widget2 {
 }
 pub fn test04_14() {
     let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*w.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -766,7 +766,7 @@ pub fn test04_14() {
             unimplemented!();
         }
     }
-    (*w.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -786,7 +786,7 @@ pub fn test04_14() {
             unimplemented!();
         }
     }
-    (*w.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -806,7 +806,7 @@ pub fn test04_14() {
             unimplemented!();
         }
     }
-    (*w.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -826,7 +826,7 @@ pub fn test04_14() {
             unimplemented!();
         }
     }
-    (*w.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let w2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -934,7 +934,7 @@ pub fn test05_15() {
         true,
         "!std::is_assignable_v<optional<Thingy>&,\n\t\toptional<optional<int>>>"
     );;
-    (*ot.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1194,7 +1194,7 @@ pub fn test06_16() {
         true,
         "!std::is_assignable_v<optional<RvalueConstructible>&,\n\t\toptional<int>&>"
     );;
-    (*ori.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1219,7 +1219,7 @@ pub fn test06_16() {
         true,
         "!std::is_assignable_v<optional<RvalueConstructible>&,\n\t\toptional<optional<int>>&>"
     );;
-    (*ori.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1586,7 +1586,7 @@ pub fn test07_17() {
         "!std::is_assignable_v<optional<Thingy2>&,\n\t\toptional<optional<short>>>"
     );;
     let ot7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ot.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1863,7 +1863,7 @@ pub fn test08_18() {
         "!std::is_assignable_v<optional<Thingy3>&,\n\t\toptional<optional<short>>>"
     );;
     let ot7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ot.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -2248,8 +2248,8 @@ pub fn test10_20() {
         }
     }
     let oi2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let si: Value<()> = Rc::new(RefCell::new(6_()));
-    (*oi2.borrow_mut()) = (*si.borrow());
+    let mut si: () = 6_();
+    unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]

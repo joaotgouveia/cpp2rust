@@ -160,8 +160,7 @@ pub fn test_constexpr_7() -> () {
     {
         let res: Value<()> = Rc::new(RefCell::new((unimplemented!())));
         (&(*res.borrow_mut()));
-        let __rhs = (unimplemented!());
-        (*res.borrow_mut()) = __rhs;
+        unimplemented!();
         (&(*res.borrow_mut()));
     };
     let SpaceshipTestCases: Value<Box<[anon_10]>> = Rc::new(RefCell::new(Box::new([

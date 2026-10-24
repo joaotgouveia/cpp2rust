@@ -47,7 +47,7 @@ pub unsafe fn test_2() -> () {
     };
     let t1: () = unimplemented!();
     let t2: () = unimplemented!();
-    (unsafe { swap_3(&t1, &t2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

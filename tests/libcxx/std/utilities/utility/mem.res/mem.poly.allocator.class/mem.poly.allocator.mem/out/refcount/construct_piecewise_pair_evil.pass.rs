@@ -149,11 +149,7 @@ pub fn test_evil_0() {
             (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -166,11 +162,7 @@ pub fn test_evil_1() {
             (0..24).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -183,11 +175,7 @@ pub fn test_evil_2() {
             (0..24).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -200,11 +188,7 @@ pub fn test_evil_3() {
             (0..24).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -217,11 +201,7 @@ pub fn test_evil_4() {
             (0..24).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -234,11 +214,7 @@ pub fn test_evil_5() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -251,11 +227,7 @@ pub fn test_evil_6() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -268,11 +240,7 @@ pub fn test_evil_7() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -285,11 +253,7 @@ pub fn test_evil_8() {
             (0..24).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -302,11 +266,7 @@ pub fn test_evil_9() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -319,11 +279,7 @@ pub fn test_evil_10() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -336,11 +292,7 @@ pub fn test_evil_11() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -353,11 +305,7 @@ pub fn test_evil_12() {
             (0..24).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -370,11 +318,7 @@ pub fn test_evil_13() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -387,11 +331,7 @@ pub fn test_evil_14() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -404,11 +344,7 @@ pub fn test_evil_15() {
             (0..32).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         let mut p: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
-        ({
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            (*pma.borrow()).construct((p).clone(), unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

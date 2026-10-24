@@ -265,7 +265,7 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut ta: () = unimplemented!();
     let mut tb: () = unimplemented!();
-    ta = (tb).clone();
+    unimplemented!();
     let mut tc: () = 1_();
     let mut td: () = 0_();
     td = (tc).clone();
@@ -290,7 +290,7 @@ unsafe fn main_0() -> () {
     }
     let mut i: () = 0_();
     let mut te: () = std_tuple_int_ref_::new({ &mut i });
-    te = (tc).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -332,7 +332,7 @@ unsafe fn main_0() -> () {
         }
     }
     let mut tg: () = unimplemented!();
-    tg = (tc).clone();
+    unimplemented!();
     0
 }
 impl __gnu_test_semaphore {

@@ -319,7 +319,7 @@ impl scoped_test_env {
         let mut cmd: () = unimplemented!();
         let mut ret: () = (unsafe { system_21(unimplemented!()) });
         unimplemented!();
-        this.test_root = unimplemented!();
+        unimplemented!();
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -490,16 +490,13 @@ impl scoped_test_env {
         let cwd: () = unimplemented!();
         let tmp: () = unimplemented!();
         let mut base: () = unimplemented!();
-        let mut i: () = (unsafe {
-            let mut ___val: () = unimplemented!();
-            (unimplemented!() as std___string_hash_char__std_allocator_char__)(&mut ___val)
-        });
+        let mut i: () = unimplemented!();
         let mut p: () = unimplemented!();
         'loop_: while (unsafe {
             let mut _path: () = unimplemented!();
             exists_20(&mut _path)
         }) {
-            p = unimplemented!();
+            unimplemented!();
         }
         return unimplemented!();
     }
@@ -537,13 +534,8 @@ impl static_test_env {
         let mut this = Self {
             env_: scoped_test_env::new(),
             Root: unimplemented!(),
-            TestFileList:
-                std_vector_std_filesystem_path__std_allocator_std_filesystem_path__::new_1({
-                    unimplemented!()
-                }),
-            TestDirList: std_vector_std_filesystem_path__std_allocator_std_filesystem_path__::new_1(
-                { unimplemented!() },
-            ),
+            TestFileList: unimplemented!(),
+            TestDirList: unimplemented!(),
             File: unimplemented!(),
             Dir: unimplemented!(),
             Dir2: unimplemented!(),
@@ -567,22 +559,10 @@ impl static_test_env {
             EmptyFile: unimplemented!(),
             NonEmptyFile: unimplemented!(),
             CharFile: unimplemented!(),
-            DirIterationList:
-                std_vector_std_filesystem_path__std_allocator_std_filesystem_path__::new_1({
-                    unimplemented!()
-                }),
-            DirIterationListDepth1:
-                std_vector_std_filesystem_path__std_allocator_std_filesystem_path__::new_1({
-                    unimplemented!()
-                }),
-            RecDirIterationList:
-                std_vector_std_filesystem_path__std_allocator_std_filesystem_path__::new_1({
-                    unimplemented!()
-                }),
-            RecDirFollowSymlinksIterationList:
-                std_vector_std_filesystem_path__std_allocator_std_filesystem_path__::new_1({
-                    unimplemented!()
-                }),
+            DirIterationList: unimplemented!(),
+            DirIterationListDepth1: unimplemented!(),
+            RecDirIterationList: unimplemented!(),
+            RecDirFollowSymlinksIterationList: unimplemented!(),
         };
         (unsafe {
             scoped_test_env::create_symlink(

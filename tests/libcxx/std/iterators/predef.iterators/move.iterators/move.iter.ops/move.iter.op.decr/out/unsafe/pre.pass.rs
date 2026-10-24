@@ -553,7 +553,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let it1: () = unimplemented!();
         let it2: () = unimplemented!();
         const _: () = assert!(true, "it1 != it2");;
-        let it3: () = unimplemented!();
+        let it3: () = (*unimplemented!()).clone();
         const _: () = assert!(true, "it1 == it3");;
         const _: () = assert!(true, "it2 != it3");;
     }

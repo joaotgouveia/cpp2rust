@@ -663,7 +663,7 @@ pub trait pair_hashImpl {
 }
 impl pair_hashImpl for Ptr<pair_hash> {
     fn operator_call(&self, p: Ptr<()>) -> () {
-        return ({ unimplemented!()(p.with(|__s| __s.first)) });
+        return unimplemented!();
     }
 }
 pub fn __cpp2rust_init_globals() {

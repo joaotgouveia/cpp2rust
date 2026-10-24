@@ -9,7 +9,7 @@ use std::rc::Rc;
 pub unsafe fn test01_0() {
     let mut b0: () = unimplemented!();
     let mut h0: () = unimplemented!();
-    (unsafe { h0(&b0) });
+    unimplemented!();
     let mut b1: () = unimplemented!();
     let mut h1: () = unimplemented!();
     (unsafe { h1(&b1) });

@@ -193,7 +193,7 @@ pub unsafe fn test_14() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    id = (idc).clone();
+    unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(id(i)), int&>");;
     const _: () = assert!(
         true,

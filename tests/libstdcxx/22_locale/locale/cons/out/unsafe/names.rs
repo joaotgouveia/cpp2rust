@@ -351,7 +351,7 @@ pub unsafe fn test_lwg3676_13() {
         named.combine(___other)
     });
     let mut combo: () = unimplemented!();
-    combo = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -371,7 +371,7 @@ pub unsafe fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    combo = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -391,7 +391,7 @@ pub unsafe fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    combo = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -411,7 +411,7 @@ pub unsafe fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    combo = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -431,7 +431,7 @@ pub unsafe fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    combo = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -451,7 +451,7 @@ pub unsafe fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    combo = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -471,7 +471,7 @@ pub unsafe fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    combo = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -491,7 +491,7 @@ pub unsafe fn test_lwg3676_13() {
             unimplemented!();
         }
     }
-    combo = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

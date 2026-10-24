@@ -37,11 +37,7 @@ impl simple_string_ranged_hash_fn {
         return (hash).wrapping_rem(self.m_container_size);
     }
     pub unsafe fn swap(&mut self, other: *mut simple_string_ranged_hash_fn) {
-        (unsafe {
-            let ___a: *mut () = &mut self.m_container_size;
-            let ___b: *mut () = &mut (*other).m_container_size;
-            swap_0(___a, ___b)
-        });
+        unimplemented!();
     }
 }
 impl Default for simple_string_ranged_hash_fn {

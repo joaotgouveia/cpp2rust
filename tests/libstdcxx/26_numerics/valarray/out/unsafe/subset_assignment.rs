@@ -285,7 +285,7 @@ unsafe fn main_0() -> () {
     let mut val_f: () = unimplemented!();
     let mut val_g: () = unimplemented!();
     let mut slc: () = unimplemented!();
-    unimplemented!() = unimplemented!();
+    unimplemented!();
     let mut ans1: [(); 10] = [
         10_(),
         1_(),
@@ -324,7 +324,7 @@ unsafe fn main_0() -> () {
     (*unimplemented!()) = 4_();
     (*unimplemented!()) = 1_();
     let mut gslc: () = unimplemented!();
-    unimplemented!() = unimplemented!();
+    unimplemented!();
     let mut ans2: [(); 10] = [
         10_(),
         1_(),
@@ -364,7 +364,7 @@ unsafe fn main_0() -> () {
         };
         (*unimplemented!())
     };
-    unimplemented!() = unimplemented!();
+    unimplemented!();
     let mut ans3: [(); 10] = [
         10_(),
         10_(),
@@ -400,7 +400,7 @@ unsafe fn main_0() -> () {
     let mut addr1: [(); 5] = [2_(), 7_(), 1_(), 9_(), 4_()];
     let mut val_indirect: () = unimplemented!();
     let mut val_indirect1: () = unimplemented!();
-    unimplemented!() = unimplemented!();
+    unimplemented!();
     let mut ans4: [(); 10] = [
         10_(),
         2_(),

@@ -1449,7 +1449,7 @@ impl anon_15Impl for Ptr<anon_15> {
         return (({ anon_15::norm(l) }) == ({ anon_15::norm(r) }));
     }
     fn operator_call_3(&self, mut c: ()) -> () {
-        return ({ unimplemented!()(({ anon_15::norm(c) })) });
+        return unimplemented!();
     }
 }
 pub fn __cpp2rust_init_globals() {

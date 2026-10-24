@@ -256,9 +256,8 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test03_10() {
     let str1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let str2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut x: () =
-        ({ (*str2.borrow()).compare_193_class_std_basic_string_view_wchar_t_(str1.as_pointer()) });
+    let mut str2: () = unimplemented!();
+    let mut x: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -279,7 +278,7 @@ pub fn test03_10() {
         }
     }
     unimplemented!();
-    x = ({ (*str2.borrow()).compare_193_class_std_basic_string_view_wchar_t_(str1.as_pointer()) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -301,7 +300,7 @@ pub fn test03_10() {
     }
     unimplemented!();
     unimplemented!();
-    x = ({ (*str2.borrow()).compare_193_class_std_basic_string_view_wchar_t_(str1.as_pointer()) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -321,15 +320,7 @@ pub fn test03_10() {
             unimplemented!();
         }
     }
-    x = ({
-        (*str2.borrow()).compare_195_class_std_basic_string_view_wchar_t_(
-            0_(),
-            3_(),
-            str1.as_pointer(),
-            3_(),
-            3_(),
-        )
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -351,13 +342,7 @@ pub fn test03_10() {
     }
     unimplemented!();
     unimplemented!();
-    x = ({
-        (*str2.borrow()).compare_194_class_std_basic_string_view_wchar_t_(
-            3_(),
-            3_(),
-            str1.as_pointer(),
-        )
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

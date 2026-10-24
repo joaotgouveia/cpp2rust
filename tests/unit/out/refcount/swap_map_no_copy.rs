@@ -217,9 +217,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let a: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_2({ 1_() })));
-    let b: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_2({ 2_() })));
-    ({ swap_7(a.as_pointer(), b.as_pointer()) });
+    let mut a: Tracked = Tracked::new_2({ 1_() });
+    let mut b: Tracked = Tracked::new_2({ 2_() });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -237,46 +237,30 @@ fn main_0() -> () {
         TrackedImpl::move_assign(&unimplemented!(), _o.as_pointer())
     });
     unimplemented!();
-    ({
-        let ___a: Ptr<Tracked> = unimplemented!();
-        let ___b: Ptr<Tracked> = unimplemented!();
-        swap_7(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let arr: Value<Box<[Tracked]>> = Rc::new(RefCell::new(Box::new([
+    unimplemented!();
+    let mut arr: [Tracked; 3] = [
         Tracked::new_2({ 1_() }),
         Tracked::new_2({ 2_() }),
         Tracked::new_2({ 3_() }),
-    ])));
-    ({
-        let ___a: Ptr<Tracked> = (arr.as_pointer() as Ptr<Tracked>).offset(0_());
-        let ___b: Ptr<Tracked> = (arr.as_pointer() as Ptr<Tracked>).offset(2_());
-        swap_7(___a, ___b)
-    });
+    ];
     unimplemented!();
-    ({
-        let ___a: Ptr<Tracked> = (arr.as_pointer() as Ptr<Tracked>).offset(1_());
-        let ___b: Ptr<Tracked> = (arr.as_pointer() as Ptr<Tracked>).offset(1_());
-        swap_7(___a, ___b)
-    });
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut vec_: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({
-        let ___a: Ptr<Tracked> = unimplemented!();
-        let ___b: Ptr<Tracked> = unimplemented!();
-        swap_7(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
-    let pairs: Value<Box<[Pair]>> = Rc::new(RefCell::new(Box::new([
+    unimplemented!();
+    let mut pairs: [Pair; 2] = [
         Pair {
             x: Tracked::new_2({ 6_() }),
             y: Tracked::new_2({ 7_() }),
@@ -285,67 +269,34 @@ fn main_0() -> () {
             x: Tracked::new_2({ 8_() }),
             y: Tracked::new_2({ 9_() }),
         },
-    ])));
-    let p: Value<Pair> = Rc::new(RefCell::new(Pair {
+    ];
+    let mut p: Pair = Pair {
         x: Tracked::new_2({ 10_() }),
         y: Tracked::new_2({ 11_() }),
-    }));
-    ({
-        swap_7(
-            field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(0_()), x),
-            field_ptr!(p.as_pointer(), y),
-        )
-    });
-    unimplemented!();
-    ({
-        let ___a: Ptr<Pair> = (pairs.as_pointer() as Ptr<Pair>).offset(0_());
-        let ___b: Ptr<Pair> = (pairs.as_pointer() as Ptr<Pair>).offset(1_());
-        swap_8(___a, ___b)
-    });
+    };
     unimplemented!();
     unimplemented!();
-    ({
-        let ___a: Ptr<Tracked> = field_ptr!(p.as_pointer(), x);
-        let ___b: Ptr<Tracked> = field_ptr!(p.as_pointer(), y);
-        swap_7(___a, ___b)
-    });
-    unimplemented!();
-    ({
-        let ___a: Ptr<Tracked> = field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(0_()), x);
-        let ___b: Ptr<Tracked> = field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(1_()), y);
-        swap_7(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
-    let arrays: Value<Arrays> = Rc::new(RefCell::new(<Arrays>::default()));
-    field!(array_elem!(arrays.as_pointer(), a, 0_()), v).write(1_());
-    field!(array_elem!(arrays.as_pointer(), b, 1_()), v).write(2_());
-    ({
-        let ___a: Ptr<Tracked> =
-            (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((0_()) as isize);
-        let ___b: Ptr<Tracked> =
-            (array_field_ptr!(arrays.as_pointer(), b) as Ptr<Tracked>).offset((1_()) as isize);
-        swap_7(___a, ___b)
-    });
     unimplemented!();
-    ({
-        let ___a: Ptr<Tracked> =
-            (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((0_()) as isize);
-        let ___b: Ptr<Tracked> =
-            (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((1_()) as isize);
-        swap_7(___a, ___b)
-    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut arrays: Arrays = <Arrays>::default();
+    arrays.a[(0_()) as usize].v = 1_();
+    arrays.b[(1_()) as usize].v = 2_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let grid: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({
-        let ___a: Ptr<Tracked> = unimplemented!();
-        let ___b: Ptr<Tracked> = unimplemented!();
-        swap_7(___a, ___b)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -367,7 +318,7 @@ fn main_0() -> () {
     let _dtor_c1 = ScopedDestructor::new(&c1, |__p| __p.destructor());
     let c2: Value<CopyOnly> = Rc::new(RefCell::new(CopyOnly::new({ 2_() })));
     let _dtor_c2 = ScopedDestructor::new(&c2, |__p| __p.destructor());
-    ({ swap_9(c1.as_pointer(), c2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let cp: Value<CopyOnlyPair> = Rc::new(RefCell::new(CopyOnlyPair {
@@ -375,29 +326,18 @@ fn main_0() -> () {
         y: CopyOnly::new({ 4_() }),
     }));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
-    ({
-        let ___a: Ptr<CopyOnly> = field_ptr!(cp.as_pointer(), x);
-        let ___b: Ptr<CopyOnly> = field_ptr!(cp.as_pointer(), y);
-        swap_9(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
-    let carr: Value<Box<[CopyOnly]>> = Rc::new(RefCell::new(Box::new([
-        CopyOnly::new({ 5_() }),
-        CopyOnly::new({ 6_() }),
-    ])));
-    ({
-        let ___a: Ptr<CopyOnly> = (carr.as_pointer() as Ptr<CopyOnly>).offset(0_());
-        let ___b: Ptr<CopyOnly> = (carr.as_pointer() as Ptr<CopyOnly>).offset(1_());
-        swap_9(___a, ___b)
-    });
+    unimplemented!();
+    let mut carr: [CopyOnly; 2] = [CopyOnly::new({ 5_() }), CopyOnly::new({ 6_() })];
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mv1: Value<Moved> = Rc::new(RefCell::new(Moved::new({ 1_() })));
     let _dtor_mv1 = ScopedDestructor::new(&mv1, |__p| __p.destructor());
     let mv2: Value<Moved> = Rc::new(RefCell::new(Moved::new({ 2_() })));
     let _dtor_mv2 = ScopedDestructor::new(&mv2, |__p| __p.destructor());
-    ({ swap_10(mv1.as_pointer(), mv2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mp: Value<MovedPair> = Rc::new(RefCell::new(MovedPair {
@@ -405,39 +345,24 @@ fn main_0() -> () {
         y: Moved::new({ 4_() }),
     }));
     let _dtor_mp = ScopedDestructor::new(&mp, |__p| __p.destructor());
-    ({
-        let ___a: Ptr<Moved> = field_ptr!(mp.as_pointer(), x);
-        let ___b: Ptr<Moved> = field_ptr!(mp.as_pointer(), y);
-        swap_10(___a, ___b)
-    });
-    unimplemented!();
-    unimplemented!();
-    let marr: Value<Box<[Moved]>> = Rc::new(RefCell::new(Box::new([
-        Moved::new({ 5_() }),
-        Moved::new({ 6_() }),
-    ])));
-    ({
-        let ___a: Ptr<Moved> = (marr.as_pointer() as Ptr<Moved>).offset(0_());
-        let ___b: Ptr<Moved> = (marr.as_pointer() as Ptr<Moved>).offset(1_());
-        swap_10(___a, ___b)
-    });
-    unimplemented!();
-    unimplemented!();
-    ({
-        let ___a: Ptr<Moved> = mv1.as_pointer();
-        let ___b: Ptr<Moved> = mv1.as_pointer();
-        swap_10(___a, ___b)
-    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let o1: Value<Owner> = Rc::new(RefCell::new(Owner {
+    let mut marr: [Moved; 2] = [Moved::new({ 5_() }), Moved::new({ 6_() })];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut o1: Owner = Owner {
         p: unimplemented!(),
-    }));
-    let o2: Value<Owner> = Rc::new(RefCell::new(Owner {
+    };
+    let mut o2: Owner = Owner {
         p: unimplemented!(),
-    }));
-    ({ swap_11(o1.as_pointer(), o2.as_pointer()) });
+    };
+    unimplemented!();
     unimplemented!();
     return copies_0.with(|rc| *rc.borrow());
 }

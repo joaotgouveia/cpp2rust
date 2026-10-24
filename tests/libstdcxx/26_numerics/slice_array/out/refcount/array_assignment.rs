@@ -261,8 +261,7 @@ pub fn main() {
 fn main_0() -> () {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let __rhs = unimplemented!();
-    unimplemented!() = __rhs;
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

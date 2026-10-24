@@ -272,7 +272,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { unimplemented!()(1_()) })
+        if !((unimplemented!())
             == (unsafe { (unimplemented!() as std___hash_enum_E1__true_)(E1_FIRST) }))
         {
             (unsafe {
@@ -293,7 +293,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { unimplemented!()(2_()) })
+        if !((unimplemented!())
             == (unsafe { (unimplemented!() as std___hash_enum_E1__true_)(E1_SECOND) }))
         {
             (unsafe {
@@ -314,7 +314,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { unimplemented!()(42_()) })
+        if !((unimplemented!())
             == (unsafe { (unimplemented!() as std___hash_enum_E2__true_)(E2_THIRD) }))
         {
             (unsafe {
@@ -335,7 +335,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { unimplemented!()(666_()) })
+        if !((unimplemented!())
             == (unsafe { (unimplemented!() as std___hash_enum_E2__true_)(E2_FOURTH) }))
         {
             (unsafe {

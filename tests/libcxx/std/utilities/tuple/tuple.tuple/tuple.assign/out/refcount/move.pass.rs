@@ -227,7 +227,7 @@ pub fn test_16() -> () {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*t.borrow_mut()) = (*t0.borrow()).clone();
+        unimplemented!();
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));

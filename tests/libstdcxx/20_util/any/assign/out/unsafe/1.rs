@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut x: () = unimplemented!();
     let mut y: () = unimplemented!();
-    y = (x).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -298,7 +298,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    y = (*unimplemented!()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -341,7 +341,7 @@ pub unsafe fn test01_10() {
 pub unsafe fn test02_12() {
     let mut x: () = 1_();
     let mut y: () = unimplemented!();
-    y = (x).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -380,7 +380,7 @@ pub unsafe fn test02_12() {
             unimplemented!();
         }
     }
-    x = (*unimplemented!()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -419,7 +419,7 @@ pub unsafe fn test02_12() {
             unimplemented!();
         }
     }
-    x = (y).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

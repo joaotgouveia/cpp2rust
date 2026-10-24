@@ -150,7 +150,7 @@ pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
     }
     unimplemented!();
     unimplemented!();
-    p = (*unimplemented!()).clone();
+    unimplemented!();
     return unimplemented!();
 }
 pub type __gnu_test_scoped_file_adopt_file_t = ();
@@ -214,7 +214,7 @@ pub unsafe fn permissions_are_testable_7(mut print_msg: Option<()>) -> () {
     return testable;
 }
 static mut counter_5: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { (unsafe { unimplemented!()() }) });
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct __gnu_test_func_callback {
@@ -474,7 +474,7 @@ pub unsafe fn test01_18() {
     ) {
         let p: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        copy = (p).clone();
+        unimplemented!();
         (unsafe { compare_paths_0(&p, &copy) });
     }
 }
@@ -488,7 +488,7 @@ pub unsafe fn test02_19() {
         let p: () = unimplemented!();
         let mut copy: () = unimplemented!();
         let mut move_: () = unimplemented!();
-        move_ = (*unimplemented!()).clone();
+        unimplemented!();
         (unsafe { compare_paths_0(&p, &move_) });
     }
 }
@@ -497,9 +497,9 @@ pub unsafe fn test03_20() {
     let mut p: () = unimplemented!();
     let ptr1: *const () = unimplemented!();
     let ptr2: *const () = unimplemented!();
-    p = (*unimplemented!()).clone();
+    unimplemented!();
     (unsafe { compare_paths_0(&p, &orig) });
-    p = (p).clone();
+    unimplemented!();
     (unsafe { compare_paths_0(&p, &orig) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -545,7 +545,7 @@ pub unsafe fn test04_22() {
     let p2: () = unimplemented!();
     let p3: () = unimplemented!();
     unimplemented!();
-    p1 = (p2).clone();
+    unimplemented!();
     (unsafe { compare_paths_0(&p1, &p2) });
     (unsafe { compare_paths_0(&p1, &p3) });
     (unsafe { compare_paths_0(&p2, &p3) });

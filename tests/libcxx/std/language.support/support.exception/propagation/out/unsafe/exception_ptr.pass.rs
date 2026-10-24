@@ -29,12 +29,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    p2 = (p).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut p3: () = unimplemented!();
     unimplemented!();
-    p3 = unimplemented!();
+    unimplemented!();
     unimplemented!();
     return 0_();
 }

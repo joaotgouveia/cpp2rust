@@ -11,11 +11,11 @@ pub fn test_0() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
@@ -25,7 +25,7 @@ pub fn test_1() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -39,7 +39,7 @@ pub fn test_2() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -53,7 +53,7 @@ pub fn test_3() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -67,11 +67,11 @@ pub fn test_4() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
@@ -81,7 +81,7 @@ pub fn test_5() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -95,7 +95,7 @@ pub fn test_6() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -109,7 +109,7 @@ pub fn test_7() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -123,11 +123,11 @@ pub fn test_8() -> () {
     unimplemented!();
     unimplemented!();
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

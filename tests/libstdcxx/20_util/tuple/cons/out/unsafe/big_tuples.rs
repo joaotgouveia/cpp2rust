@@ -265,8 +265,8 @@ pub unsafe fn test_constructors_10() {
     let z1: *const () = &x1;
     let mut ta: () = unimplemented!();
     let mut tb: () = unimplemented!();
-    let mut tc: () = std_tuple_int__int_::new_1({ &mut x1 }, { &mut x2 });
-    let mut td: () = std_tuple_int__int_ref_::new({ &mut x1 }, { &mut x2 });
+    let mut tc: () = unimplemented!();
+    let mut td: () = unimplemented!();
     let mut te: () = std_tuple_const_int_ref_::new({ z1 });
     x1 = 1_();
     x2 = 1_();
@@ -293,20 +293,16 @@ pub unsafe fn test_constructors_10() {
         }
     }
     let mut tf: () = unimplemented!();
-    let mut tg: () = std_tuple_int__int_::new_2({ &td });
+    let mut tg: () = unimplemented!();
     let mut th: () = unimplemented!();
-    let mut ti: () = std_tuple_int__double_::new_1({ &tc });
-    let mut tj: () = std_tuple_int__double_::new_2({ &td });
-    let mut pair1: () = {
-        let mut __tmp_0: () = 1_();
-        let mut __tmp_1: () = 1_();
-        std_pair_int__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let mut ti: () = unimplemented!();
+    let mut tj: () = unimplemented!();
+    let mut pair1: () = unimplemented!();
     let pair2: () = unimplemented!();
-    let mut tl: () = std_tuple_int__int_::new_3({ &pair1 });
-    let mut tm: () = std_tuple_int__const_int_ref_::new({ &pair1 });
-    let mut tn: () = std_tuple_int__int_::new_3({ &pair2 });
-    let mut to: () = std_tuple_int__const_int_ref_::new({ &pair2 });
+    let mut tl: () = unimplemented!();
+    let mut tm: () = unimplemented!();
+    let mut tn: () = unimplemented!();
+    let mut to: () = unimplemented!();
 }
 pub fn main() {
     unsafe {
@@ -316,6 +312,8 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut a: () = {
+        let mut __tmp_0: () = 0_();
+        let mut __tmp_1: () = 0_();
         let mut __tmp_2: () = 0_();
         let mut __tmp_3: () = 0_();
         let mut __tmp_4: () = 0_();
@@ -323,10 +321,10 @@ unsafe fn main_0() -> () {
         let mut __tmp_6: () = 0_();
         let mut __tmp_7: () = 0_();
         let mut __tmp_8: () = 0_();
-        let mut __tmp_9: () = 0_();
-        let mut __tmp_10: () = 0_();
-        let mut __tmp_11: () = 1_();
+        let mut __tmp_9: () = 1_();
         std_tuple_int__int__int__int__int__int__int__int__int__int_::new_1(
+            { &mut __tmp_0 },
+            { &mut __tmp_1 },
             { &mut __tmp_2 },
             { &mut __tmp_3 },
             { &mut __tmp_4 },
@@ -335,11 +333,11 @@ unsafe fn main_0() -> () {
             { &mut __tmp_7 },
             { &mut __tmp_8 },
             { &mut __tmp_9 },
-            { &mut __tmp_10 },
-            { &mut __tmp_11 },
         )
     };
     let mut b: () = {
+        let mut __tmp_10: () = 0_();
+        let mut __tmp_11: () = 0_();
         let mut __tmp_12: () = 0_();
         let mut __tmp_13: () = 0_();
         let mut __tmp_14: () = 0_();
@@ -347,10 +345,10 @@ unsafe fn main_0() -> () {
         let mut __tmp_16: () = 0_();
         let mut __tmp_17: () = 0_();
         let mut __tmp_18: () = 0_();
-        let mut __tmp_19: () = 0_();
-        let mut __tmp_20: () = 0_();
-        let mut __tmp_21: () = 2_();
+        let mut __tmp_19: () = 2_();
         std_tuple_int__int__int__int__int__int__int__int__int__int_::new_1(
+            { &mut __tmp_10 },
+            { &mut __tmp_11 },
             { &mut __tmp_12 },
             { &mut __tmp_13 },
             { &mut __tmp_14 },
@@ -359,12 +357,12 @@ unsafe fn main_0() -> () {
             { &mut __tmp_17 },
             { &mut __tmp_18 },
             { &mut __tmp_19 },
-            { &mut __tmp_20 },
-            { &mut __tmp_21 },
         )
     };
     let mut c: () = unimplemented!();
     let mut d: () = {
+        let mut __tmp_20: () = 0_();
+        let mut __tmp_21: () = 0_();
         let mut __tmp_22: () = 0_();
         let mut __tmp_23: () = 0_();
         let mut __tmp_24: () = 0_();
@@ -372,10 +370,10 @@ unsafe fn main_0() -> () {
         let mut __tmp_26: () = 0_();
         let mut __tmp_27: () = 0_();
         let mut __tmp_28: () = 0_();
-        let mut __tmp_29: () = 0_();
-        let mut __tmp_30: () = 0_();
-        let mut __tmp_31: () = 3_();
+        let mut __tmp_29: () = 3_();
         std_tuple_int__int__int__int__int__int__int__int__int__char_::new(
+            { &mut __tmp_20 },
+            { &mut __tmp_21 },
             { &mut __tmp_22 },
             { &mut __tmp_23 },
             { &mut __tmp_24 },
@@ -384,8 +382,6 @@ unsafe fn main_0() -> () {
             { &mut __tmp_27 },
             { &mut __tmp_28 },
             { &mut __tmp_29 },
-            { &mut __tmp_30 },
-            { &mut __tmp_31 },
         )
     };
     let mut e: () = std_tuple_int__int__int__int__int__int__int__int__int__int_::new_2({ &d });
@@ -458,7 +454,7 @@ unsafe fn main_0() -> () {
     }
     {
         let mut i: () = 0_();
-        unimplemented!() = (a).clone();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -479,7 +475,7 @@ unsafe fn main_0() -> () {
             }
         }
     }
-    a = (d).clone();
+    unimplemented!();
     a = (b).clone();
     unimplemented!();
     let mut __do_while = true;
@@ -610,8 +606,7 @@ pub unsafe fn verify_demangle_23(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -622,11 +617,7 @@ pub unsafe fn run_tests_wrapped_locale_25(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -634,11 +625,7 @@ pub unsafe fn run_tests_wrapped_locale_25(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -650,10 +637,7 @@ pub unsafe fn run_tests_wrapped_locale_25(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -676,10 +660,7 @@ pub unsafe fn run_tests_wrapped_env_26(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

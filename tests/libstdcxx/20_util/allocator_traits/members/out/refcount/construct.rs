@@ -315,13 +315,13 @@ impl Default for fake_allocator_X_ {
     }
 }
 pub fn test01_11() {
-    let a: Value<fake_allocator_X_> = Rc::new(RefCell::new(fake_allocator_X_::new()));
+    let mut a: fake_allocator_X_ = fake_allocator_X_::new();
     let mut p: Ptr<X> = unimplemented!();
-    ({ std_allocator_traits_fake_allocator_X__::construct(a.as_pointer(), (p).clone()) });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*a.borrow()).counter } == 1_()) {
+        if !(a.counter == 1_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -337,18 +337,11 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___args: Value<()> = Rc::new(RefCell::new(1_()));
-        std_allocator_traits_fake_allocator_X__::construct(
-            a.as_pointer(),
-            (p).clone(),
-            ___args.as_pointer(),
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*a.borrow()).counter } == 1_()) {
+        if !(a.counter == 1_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -384,20 +377,11 @@ pub fn test01_11() {
         }
     }
     unimplemented!();
-    ({
-        let ___args_2: Value<()> = Rc::new(RefCell::new(1_()));
-        let ___args_3: Value<()> = Rc::new(RefCell::new(1_()));
-        std_allocator_traits_fake_allocator_X__::construct(
-            a.as_pointer(),
-            (p).clone(),
-            ___args_2.as_pointer(),
-            ___args_3.as_pointer(),
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*a.borrow()).counter } == 2_()) {
+        if !(a.counter == 2_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -432,22 +416,11 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___args_2: Value<()> = Rc::new(RefCell::new(1_()));
-        let ___args_3: Value<()> = Rc::new(RefCell::new(1_()));
-        let ___args_4: Value<()> = Rc::new(RefCell::new(1_()));
-        std_allocator_traits_fake_allocator_X__::construct(
-            a.as_pointer(),
-            (p).clone(),
-            ___args_2.as_pointer(),
-            ___args_3.as_pointer(),
-            ___args_4.as_pointer(),
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*a.borrow()).counter } == 2_()) {
+        if !(a.counter == 2_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

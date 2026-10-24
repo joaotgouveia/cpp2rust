@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test03_10() {
     let mut str1: () = unimplemented!();
     let mut str2: () = unimplemented!();
-    let mut x: () = (unsafe { str2.find_163_class_std_basic_string_view_wchar_t_(&str1, None) });
+    let mut x: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -279,7 +279,7 @@ pub unsafe fn test03_10() {
             unimplemented!();
         }
     }
-    x = (unsafe { str2.find_163_class_std_basic_string_view_wchar_t_(&str1, Some(1_())) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -300,7 +300,7 @@ pub unsafe fn test03_10() {
         }
     }
     unimplemented!();
-    x = (unsafe { str2.rfind_167_class_std_basic_string_view_wchar_t_(&str1, None) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -320,7 +320,7 @@ pub unsafe fn test03_10() {
             unimplemented!();
         }
     }
-    x = (unsafe { str2.rfind_167_class_std_basic_string_view_wchar_t_(&str1, Some(0_())) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -340,7 +340,7 @@ pub unsafe fn test03_10() {
             unimplemented!();
         }
     }
-    x = (unsafe { str2.rfind_167_class_std_basic_string_view_wchar_t_(&str1, Some(3_())) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -362,7 +362,7 @@ pub unsafe fn test03_10() {
     }
     unimplemented!();
     unimplemented!();
-    x = (unsafe { str2.find_first_of_172_class_std_basic_string_view_wchar_t_(&str1, None) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -383,7 +383,7 @@ pub unsafe fn test03_10() {
         }
     }
     unimplemented!();
-    x = (unsafe { str2.find_first_of_172_class_std_basic_string_view_wchar_t_(&str1, None) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -403,7 +403,7 @@ pub unsafe fn test03_10() {
             unimplemented!();
         }
     }
-    x = (unsafe { str2.find_first_of_172_class_std_basic_string_view_wchar_t_(&str1, Some(9_())) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -423,7 +423,7 @@ pub unsafe fn test03_10() {
             unimplemented!();
         }
     }
-    x = (unsafe { str2.find_last_of_177_class_std_basic_string_view_wchar_t_(&str1, None) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -443,7 +443,7 @@ pub unsafe fn test03_10() {
             unimplemented!();
         }
     }
-    x = (unsafe { str2.find_last_of_177_class_std_basic_string_view_wchar_t_(&str1, Some(10_())) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -465,7 +465,7 @@ pub unsafe fn test03_10() {
     }
     unimplemented!();
     unimplemented!();
-    x = (unsafe { str2.find_first_not_of_182_class_std_basic_string_view_wchar_t_(&str1, None) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -486,9 +486,7 @@ pub unsafe fn test03_10() {
         }
     }
     unimplemented!();
-    x = (unsafe {
-        str2.find_first_not_of_182_class_std_basic_string_view_wchar_t_(&str1, Some(12_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -509,7 +507,7 @@ pub unsafe fn test03_10() {
         }
     }
     unimplemented!();
-    x = (unsafe { str2.find_last_not_of_187_class_std_basic_string_view_wchar_t_(&str1, None) });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -529,9 +527,7 @@ pub unsafe fn test03_10() {
             unimplemented!();
         }
     }
-    x = (unsafe {
-        str2.find_last_not_of_187_class_std_basic_string_view_wchar_t_(&str1, Some(11_()))
-    });
+    x = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

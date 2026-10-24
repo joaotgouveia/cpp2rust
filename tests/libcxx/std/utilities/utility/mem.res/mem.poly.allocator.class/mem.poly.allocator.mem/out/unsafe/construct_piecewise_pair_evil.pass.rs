@@ -155,11 +155,7 @@ pub unsafe fn test_evil_0() {
     {
         let mut buffer: [(); 8] = [unimplemented!(); 8];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -170,11 +166,7 @@ pub unsafe fn test_evil_1() {
     {
         let mut buffer: [(); 24] = [unimplemented!(); 24];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -185,11 +177,7 @@ pub unsafe fn test_evil_2() {
     {
         let mut buffer: [(); 24] = [unimplemented!(); 24];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -200,11 +188,7 @@ pub unsafe fn test_evil_3() {
     {
         let mut buffer: [(); 24] = [unimplemented!(); 24];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -215,11 +199,7 @@ pub unsafe fn test_evil_4() {
     {
         let mut buffer: [(); 24] = [unimplemented!(); 24];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -230,11 +210,7 @@ pub unsafe fn test_evil_5() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -245,11 +221,7 @@ pub unsafe fn test_evil_6() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -260,11 +232,7 @@ pub unsafe fn test_evil_7() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -275,11 +243,7 @@ pub unsafe fn test_evil_8() {
     {
         let mut buffer: [(); 24] = [unimplemented!(); 24];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -290,11 +254,7 @@ pub unsafe fn test_evil_9() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -305,11 +265,7 @@ pub unsafe fn test_evil_10() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -320,11 +276,7 @@ pub unsafe fn test_evil_11() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -335,11 +287,7 @@ pub unsafe fn test_evil_12() {
     {
         let mut buffer: [(); 24] = [unimplemented!(); 24];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -350,11 +298,7 @@ pub unsafe fn test_evil_13() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -365,11 +309,7 @@ pub unsafe fn test_evil_14() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -380,11 +320,7 @@ pub unsafe fn test_evil_15() {
     {
         let mut buffer: [(); 32] = [unimplemented!(); 32];
         let mut p: *mut () = (buffer.as_mut_ptr() as *mut ());
-        (unsafe {
-            let ___x: () = unimplemented!();
-            let ___y: () = unimplemented!();
-            pma.construct(p, unimplemented!(), ___x, ___y)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

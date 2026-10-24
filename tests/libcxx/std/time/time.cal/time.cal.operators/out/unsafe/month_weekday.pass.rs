@@ -46,7 +46,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 let mut k: () = 1_();
                 'loop_: while ((k) <= (5_())) {
                     let mut m: () = unimplemented!();
-                    let mut wdi: () = unimplemented!()[(k) as usize];
+                    let mut wdi: () = unimplemented!();
                     let mut mwd1: () = unimplemented!();
                     let mut mwd2: () = unimplemented!();
                     unimplemented!();
@@ -77,7 +77,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             'loop_: while ((j) <= (6_())) {
                 let mut k: () = 1_();
                 'loop_: while ((k) <= (5_())) {
-                    let mut wdi: () = unimplemented!()[(k) as usize];
+                    let mut wdi: () = unimplemented!();
                     let mut mwd1: () = unimplemented!();
                     let mut mwd2: () = unimplemented!();
                     unimplemented!();

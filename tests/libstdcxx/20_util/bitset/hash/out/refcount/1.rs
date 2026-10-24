@@ -9,7 +9,7 @@ use std::rc::{Rc, Weak};
 pub fn test01_0() {
     let b0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let h0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ (*h0.borrow_mut())(b0.as_pointer()) });
+    unimplemented!();
     let b1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let h1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ (*h1.borrow_mut())(b1.as_pointer()) });

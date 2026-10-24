@@ -355,22 +355,22 @@ impl test_basics_char_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -388,22 +388,22 @@ impl test_basics_signed_char_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -421,22 +421,22 @@ impl test_basics_short_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -454,22 +454,22 @@ impl test_basics_int_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -487,22 +487,22 @@ impl test_basics_long_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -520,22 +520,22 @@ impl test_basics_long_long_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -553,22 +553,22 @@ impl test_basics___int128_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -586,22 +586,22 @@ impl test_basics_unsigned_char_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -619,22 +619,22 @@ impl test_basics_unsigned_short_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -652,22 +652,22 @@ impl test_basics_unsigned_int_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -685,22 +685,22 @@ impl test_basics_unsigned_long_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -718,22 +718,22 @@ impl test_basics_unsigned_long_long_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -751,22 +751,22 @@ impl test_basics_unsigned___int128_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -784,28 +784,28 @@ impl test_signed_char_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -821,28 +821,28 @@ impl test_signed_signed_char_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -858,28 +858,28 @@ impl test_signed_short_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -895,28 +895,28 @@ impl test_signed_int_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -932,28 +932,28 @@ impl test_signed_long_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -969,28 +969,28 @@ impl test_signed_long_long_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1006,28 +1006,28 @@ impl test_signed___int128_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

@@ -119,32 +119,12 @@ pub fn test_format_6(expected: (), arg: ()) {
     unimplemented!();
 }
 pub fn test_fmt_8() {
-    ({
-        test_format_4(
-            unimplemented!(),
-            elem!(Rc::new(RefCell::new(unimplemented!())).as_pointer(), 0_()).read(),
-        )
-    });
-    ({
-        test_format_4(
-            unimplemented!(),
-            elem!(Rc::new(RefCell::new(unimplemented!())).as_pointer(), 0_()).read(),
-        )
-    });
+    ({ test_format_4(unimplemented!(), unimplemented!()) });
+    ({ test_format_4(unimplemented!(), unimplemented!()) });
 }
 pub fn test_fmt_9() {
-    ({
-        test_format_6(
-            unimplemented!(),
-            elem!(Rc::new(RefCell::new(unimplemented!())).as_pointer(), 0_()).read(),
-        )
-    });
-    ({
-        test_format_6(
-            unimplemented!(),
-            elem!(Rc::new(RefCell::new(unimplemented!())).as_pointer(), 0_()).read(),
-        )
-    });
+    ({ test_format_6(unimplemented!(), unimplemented!()) });
+    ({ test_format_6(unimplemented!(), unimplemented!()) });
 }
 pub fn test_10() {
     ({ test_fmt_8() });

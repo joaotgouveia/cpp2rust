@@ -394,7 +394,7 @@ pub fn test02_14() {
     }
     let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     copied_11.with(|rc| *rc.borrow_mut() = false);
-    (*a2.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -461,7 +461,7 @@ pub fn test03_15() {
     let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     moved_10.with(|rc| *rc.borrow_mut() = false);
     copied_11.with(|rc| *rc.borrow_mut() = false);
-    (*a2.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

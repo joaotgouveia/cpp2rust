@@ -35,7 +35,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );;
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*s2.borrow_mut()) = (*s1.borrow()).clone();
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -498,7 +498,7 @@ pub unsafe fn test_11() -> () {
         let mut jt: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        (unsafe { iter_swap_12(&it, &jt) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -513,18 +513,14 @@ pub unsafe fn test_11() -> () {
         let mut jt: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        (unsafe { iter_swap_13(&it, &jt) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe {
-            let mut ___x: () = unimplemented!();
-            let mut ___y: () = unimplemented!();
-            iter_swap_13(&mut ___x, &mut ___y)
-        });
-        unimplemented!();
-        unimplemented!();
-        (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_14))(&mut it, &mut jt)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_12))(&mut it, &mut jt)
         });
         unimplemented!();
         unimplemented!();
@@ -538,18 +534,14 @@ pub unsafe fn test_11() -> () {
         let mut jt: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        (unsafe { iter_swap_15(&it, &jt) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe {
-            let mut ___x: () = unimplemented!();
-            let mut ___y: () = unimplemented!();
-            iter_swap_15(&mut ___x, &mut ___y)
-        });
-        unimplemented!();
-        unimplemented!();
-        (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_14))(&mut it, &mut jt)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_12))(&mut it, &mut jt)
         });
         unimplemented!();
         unimplemented!();

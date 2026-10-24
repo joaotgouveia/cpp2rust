@@ -70,7 +70,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    local = (*std::cell::LazyCell::force_mut(&mut *&raw mut cur_5)).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

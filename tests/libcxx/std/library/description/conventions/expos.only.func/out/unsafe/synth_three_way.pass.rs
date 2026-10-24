@@ -90,7 +90,7 @@ pub unsafe fn test_22() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+        let nan: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -113,7 +113,7 @@ pub unsafe fn test_22() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+        let nan: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -151,7 +151,7 @@ pub unsafe fn test_22() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+        let nan: () = unimplemented!();
         unimplemented!();
     }
     return true;

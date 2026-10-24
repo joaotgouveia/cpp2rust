@@ -278,7 +278,7 @@ pub unsafe fn test04_11() {
     {
         let s2: () = unimplemented!();
         let mut obj2: () = unimplemented!();
-        obj1 = (obj2).clone();
+        unimplemented!();
     }
     (unsafe { allocate_on_stack_10() });
     let mut __do_while = true;
@@ -304,7 +304,7 @@ pub unsafe fn test04_11() {
     {
         let s3: () = unimplemented!();
         let mut obj3: () = unimplemented!();
-        obj1 = (obj3).clone();
+        unimplemented!();
     }
     (unsafe { allocate_on_stack_10() });
     let mut __do_while = true;

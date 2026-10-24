@@ -103,7 +103,7 @@ pub unsafe fn test_4(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
+    let mut it: () = (unsafe { (formatter as std___formatter_char_char_).parse(&mut parse_ctx) });
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -113,14 +113,15 @@ pub unsafe fn test_4(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & mut __tmp_0 } , )
         })
     });
-    unimplemented!();
+    (unsafe { (formatter as std___formatter_char_char_).format(arg, &mut format_ctx) });
     unimplemented!();
 }
 pub unsafe fn test_6(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
+    let mut it: () =
+        (unsafe { (formatter as std___formatter_char_wchar_t_).parse(&mut parse_ctx) });
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -130,14 +131,15 @@ pub unsafe fn test_6(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_1 } , )
         })
     });
-    unimplemented!();
+    (unsafe { (formatter as std___formatter_char_wchar_t_).format(arg, &mut format_ctx) });
     unimplemented!();
 }
 pub unsafe fn test_8(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
+    let mut it: () =
+        (unsafe { (formatter as std___formatter_char_wchar_t_).parse(&mut parse_ctx) });
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -147,7 +149,7 @@ pub unsafe fn test_8(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { & mut __tmp_2 } , )
         })
     });
-    unimplemented!();
+    (unsafe { (formatter as std___formatter_char_wchar_t_).format(arg, &mut format_ctx) });
     unimplemented!();
 }
 pub unsafe fn test_termination_condition_10(mut expected: (), mut f: (), mut arg: ()) {
@@ -174,39 +176,39 @@ pub unsafe fn test_termination_condition_12(mut expected: (), mut f: (), mut arg
 pub unsafe fn test_set_debug_format_13() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
-    (unsafe { (formatter as std___formatter_char_char_).set_debug_format() });
+    unimplemented!();
     unimplemented!();
     let mut fmt: () = unimplemented!();
     let mut parse_ctx: () = unimplemented!();
+    (unsafe { (formatter as std___formatter_char_char_).parse(&mut parse_ctx) });
     unimplemented!();
     unimplemented!();
-    (unsafe { (formatter as std___formatter_char_char_).set_debug_format() });
     unimplemented!();
     return true;
 }
 pub unsafe fn test_set_debug_format_14() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
-    (unsafe { (formatter as std___formatter_char_wchar_t_).set_debug_format() });
+    unimplemented!();
     unimplemented!();
     let mut fmt: () = unimplemented!();
     let mut parse_ctx: () = unimplemented!();
+    (unsafe { (formatter as std___formatter_char_wchar_t_).parse(&mut parse_ctx) });
     unimplemented!();
     unimplemented!();
-    (unsafe { (formatter as std___formatter_char_wchar_t_).set_debug_format() });
     unimplemented!();
     return true;
 }
 pub unsafe fn test_set_debug_format_15() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
-    (unsafe { (formatter as std___formatter_char_wchar_t_).set_debug_format() });
+    unimplemented!();
     unimplemented!();
     let mut fmt: () = unimplemented!();
     let mut parse_ctx: () = unimplemented!();
+    (unsafe { (formatter as std___formatter_char_wchar_t_).parse(&mut parse_ctx) });
     unimplemented!();
     unimplemented!();
-    (unsafe { (formatter as std___formatter_char_wchar_t_).set_debug_format() });
     unimplemented!();
     return true;
 }
