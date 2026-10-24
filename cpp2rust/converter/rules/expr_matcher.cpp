@@ -420,16 +420,14 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
 }
 
 void checkCallable(clang::Sema &sema, const clang::Expr *use,
-                   clang::FunctionDecl *rule) {
+                   clang::FunctionDecl *rule,
+                   llvm::ArrayRef<clang::Expr *> operands) {
   auto ref = llvm::dyn_cast<clang::DeclRefExpr>(RuleDecls::SkipImplicit(use));
   if (ref && llvm::isa<clang::FunctionDecl>(ref->getDecl())) {
     return;
   }
   RuleDecls::Trial trial(sema);
   auto loc = use->getBeginLoc();
-  auto operands = rule->getDescribedFunctionTemplate()
-                      ? deducedOperands(sema.Context, use, rule->getNumParams())
-                      : getOperands(sema.Context, use, rule->getNumParams());
   clang::OverloadCandidateSet set(loc, clang::OverloadCandidateSet::CSK_Normal);
   auto found = clang::DeclAccessPair::make(rule, clang::AS_public);
   if (auto tmpl = rule->getDescribedFunctionTemplate()) {
@@ -502,7 +500,8 @@ MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
       !sameNamingClass(ctx, use, returned)) {
     return std::nullopt;
   }
-  checkCallable(sema, use, rule);
+  checkCallable(sema, use, rule,
+                getOperands(ctx, use, rule->getNumParams()));
   return llvm::ArrayRef<clang::TemplateArgument>();
 }
 
@@ -533,9 +532,16 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
                           clang::FunctionTemplateDecl *rule) {
   auto &ctx = sema.Context;
   auto explicit_args = getResultArgs(sema, rule, use);
-  auto specialization = deduce(
-      sema, rule, explicit_args,
-      deducedOperands(ctx, use, rule->getTemplatedDecl()->getNumParams()));
+  auto arity = rule->getTemplatedDecl()->getNumParams();
+  // as the callee deduced, or, where the use converts an argument the callee
+  // did not deduce from (std::string to the string_view of operator==), as
+  // converted
+  auto operands = deducedOperands(ctx, use, arity);
+  auto specialization = deduce(sema, rule, explicit_args, operands);
+  if (!specialization) {
+    operands = getOperands(ctx, use, arity);
+    specialization = deduce(sema, rule, explicit_args, operands);
+  }
   if (!specialization) {
     return std::nullopt;
   }
@@ -546,7 +552,7 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
                               usage_decl)) {
       return std::nullopt;
     }
-    checkCallable(sema, use, rule->getTemplatedDecl());
+    checkCallable(sema, use, rule->getTemplatedDecl(), operands);
     return specialization->getTemplateSpecializationArgs()->asArray();
   }
   auto returned =
@@ -556,14 +562,14 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
   }
   if (constructsReturnType(returned, specialization->getReturnType(),
                            usage_decl)) {
-    checkCallable(sema, use, rule->getTemplatedDecl());
+    checkCallable(sema, use, rule->getTemplatedDecl(), operands);
     return specialization->getTemplateSpecializationArgs()->asArray();
   }
   if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl ||
       !sameNamingClass(ctx, use, returned)) {
     return std::nullopt;
   }
-  checkCallable(sema, use, rule->getTemplatedDecl());
+  checkCallable(sema, use, rule->getTemplatedDecl(), operands);
   return specialization->getTemplateSpecializationArgs()->asArray();
 }
 
