@@ -83,11 +83,8 @@ void AddRequiredClasses(clang::QualType type,
     return AddRequiredClasses(array->getElementType(), required, declared);
   }
   if (auto fn = type->getAs<clang::FunctionType>()) {
-    if (declared) {
-      DeclareNames(fn->getReturnType(), *declared);
-    } else {
-      AddRequiredClasses(fn->getReturnType(), required);
-    }
+    // the use has the rule's return type
+    AddRequiredClasses(fn->getReturnType(), required, declared);
     if (auto proto = llvm::dyn_cast<clang::FunctionProtoType>(fn)) {
       for (auto param : proto->param_types()) {
         AddRequiredClasses(param, required, declared);
