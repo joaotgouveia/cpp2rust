@@ -143,6 +143,12 @@ private:
 
   void AddReferencedDecl(const clang::ValueDecl *decl) {
     AddType(decl->getType());
+    // a member uses the class declaring it, also when named through a derived
+    // class (std::ios::xalloc of ios_base)
+    if (const auto *record =
+            llvm::dyn_cast<clang::RecordDecl>(decl->getDeclContext())) {
+      AddKey(ClassKey(record));
+    }
     if (const auto *fn = llvm::dyn_cast<clang::FunctionDecl>(decl)) {
       for (const auto *redecl : fn->redecls()) {
         AddType(redecl->getReturnType());
