@@ -5,6 +5,8 @@
 #include <string>
 #include <utility>
 
+template <typename T1> using t1 = std::chrono::__detail::__local_time_fmt<T1>;
+
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &
 f1(std::basic_istream<T1, T2> &a0, const T1 *a1, std::chrono::day &a2,
@@ -108,8 +110,9 @@ std::basic_istream<T1, T2> &f14(std::basic_istream<T1, T2> &a0, const T1 *a1,
 }
 
 template <typename T1>
-auto f15(std::chrono::local_time<T1> a0, const std::string *a1,
-         const std::chrono::seconds *a2) {
+std::chrono::__detail::__local_time_fmt<T1>
+f15(std::chrono::local_time<T1> a0, const std::string *a1,
+    const std::chrono::seconds *a2) {
   return std::chrono::local_time_format<T1>(a0, a1, a2);
 }
 

@@ -10,6 +10,6 @@ template <typename T1, typename T2,
                !(std::is_same<T2, std::valarray<typename std::slice_array<
                                       T1>::value_type>>::value)),
               int>::type T4 = 0>
-void f36(const std::slice_array<T1> &a0, const T2 &a1) {
+void f47(const std::slice_array<T1> &a0, const T2 &a1) {
   return a0.template operator= <T2>(a1);
 }

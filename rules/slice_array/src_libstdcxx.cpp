@@ -83,3 +83,58 @@ template <typename T1>
 void f23(const std::slice_array<T1> &a0, const std::valarray<T1> &a1) {
   return a0.operator>>=(a1);
 }
+
+template <typename T1, typename T2>
+void f24(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f25(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator*= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f26(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator/= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f27(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator%= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f28(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator+= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f29(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator-= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f30(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator^= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f31(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator&= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f32(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator|= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f33(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator<<= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f34(const std::slice_array<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator>>= <T2>(a1);
+}

@@ -7,24 +7,44 @@
 template <typename T1, std::size_t T2>
 std::span<const std::byte,
           T2 == std::dynamic_extent ? std::dynamic_extent : T2 * sizeof(T1)>
-f21(std::span<T1, T2> a0) {
+f17(std::span<T1, T2> a0) {
   return std::as_bytes<T1, T2>(a0);
 }
 
 template <typename T1, std::size_t T2>
 std::span<std::byte,
           T2 == std::dynamic_extent ? std::dynamic_extent : T2 * sizeof(T1)>
-f22(std::span<T1, T2> a0)
+f18(std::span<T1, T2> a0)
   requires((!std::is_const_v<T1>))
 {
   return std::as_writable_bytes<T1, T2>(a0);
 }
 
 template <typename T1, std::size_t T2>
-std::span<T1, T2> f23()
+std::span<T1, T2> f19()
   requires((T2 == std::dynamic_extent || T2 == 0))
 {
   return std::span<T1, T2>();
+}
+
+template <typename T1, std::size_t T2>
+typename std::span<T1, T2>::iterator f20(const std::span<T1, T2> &a0) {
+  return a0.begin();
+}
+
+template <typename T1, std::size_t T2>
+typename std::span<T1, T2>::iterator f21(const std::span<T1, T2> &a0) {
+  return a0.end();
+}
+
+template <typename T1, std::size_t T2>
+typename std::span<T1, T2>::reverse_iterator f22(const std::span<T1, T2> &a0) {
+  return a0.rbegin();
+}
+
+template <typename T1, std::size_t T2>
+typename std::span<T1, T2>::reverse_iterator f23(const std::span<T1, T2> &a0) {
+  return a0.rend();
 }
 
 template <typename T1, std::size_t T2, typename T3>

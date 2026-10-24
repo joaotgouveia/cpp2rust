@@ -8,7 +8,7 @@ template <
                            std::is_same<T2, std::default_delete<T1>>::value,
                        int>
         T4 = 0>
-std::unique_ptr<T1, T2> f89(std::auto_ptr<T3> &&a0) {
+std::unique_ptr<T1, T2> f91(std::auto_ptr<T3> &&a0) {
   return std::unique_ptr<T1, T2>(std::move(a0));
 }
 
@@ -18,7 +18,7 @@ template <
                            std::is_same<T2, std::default_delete<T1>>::value,
                        int>
         T4 = 0>
-std::unique_ptr<T1, T2> &f90(std::unique_ptr<T1, T2> &a0,
+std::unique_ptr<T1, T2> &f92(std::unique_ptr<T1, T2> &a0,
                              std::auto_ptr<T3> a1) {
   return a0.template operator= <T3>(a1);
 }

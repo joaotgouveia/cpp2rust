@@ -1,67 +1,74 @@
 #include <algorithm>
 #include <utility>
 
+template <typename T1, typename T2, typename T3,
+          typename T4 = std::__enable_if_t<std::is_convertible<T3, T1>::value>>
+__gnu_cxx::__normal_iterator<T1, T2>
+f35(const __gnu_cxx::__normal_iterator<T3, T2> &a0) {
+  return __gnu_cxx::__normal_iterator<T1, T2>(a0);
+}
+
 template <typename T1>
-std::insert_iterator<T1> f21(T1 &a0, typename T1::iterator a1) {
+std::insert_iterator<T1> f36(T1 &a0, typename T1::iterator a1) {
   return std::inserter<T1>(a0, a1);
 }
 
 template <typename T1>
-bool f22(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
+bool f37(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
   return std::operator!= <T1>(a0, a1);
 }
 
 template <typename T1>
-bool f23(const std::reverse_iterator<T1> &a0,
+bool f38(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T1> &a1) {
   return std::operator!= <T1>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f24(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
+bool f39(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
   return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1>
-bool f25(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
+bool f40(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
   return std::operator< <T1>(a0, a1);
 }
 
 template <typename T1>
-bool f26(const std::reverse_iterator<T1> &a0,
+bool f41(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T1> &a1) {
   return std::operator< <T1>(a0, a1);
 }
 
 template <typename T1>
-bool f27(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
+bool f42(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
   return std::operator<= <T1>(a0, a1);
 }
 
 template <typename T1>
-bool f28(const std::reverse_iterator<T1> &a0,
+bool f43(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T1> &a1) {
   return std::operator<= <T1>(a0, a1);
 }
 
 template <typename T1>
-bool f29(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
+bool f44(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
   return std::operator><T1>(a0, a1);
 }
 
 template <typename T1>
-bool f30(const std::reverse_iterator<T1> &a0,
+bool f45(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T1> &a1) {
   return std::operator><T1>(a0, a1);
 }
 
 template <typename T1>
-bool f31(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
+bool f46(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
   return std::operator>= <T1>(a0, a1);
 }
 
 template <typename T1>
-bool f32(const std::reverse_iterator<T1> &a0,
+bool f47(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T1> &a1) {
   return std::operator>= <T1>(a0, a1);
 }

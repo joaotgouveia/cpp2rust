@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <condition_variable>
+#include <ostream>
 #include <utility>
 
 template <typename T1, typename T2, typename... T3>

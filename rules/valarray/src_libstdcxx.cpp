@@ -425,3 +425,63 @@ auto f121(const std::valarray<T1> &a0, T1(a1)(const T1 &))
     -> decltype(a0.apply(a1)) {
   return a0.apply(a1);
 }
+
+template <typename T1, typename T2>
+std::valarray<T1> f122(const std::_Expr<T2, T1> &a0) {
+  return std::valarray<T1>(a0);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f123(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f124(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator*= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f125(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator/= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f126(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator%= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f127(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator+= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f128(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator-= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f129(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator^= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f130(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator|= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f131(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator&= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f132(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator<<= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::valarray<T1> &f133(std::valarray<T1> &a0, const std::_Expr<T2, T1> &a1) {
+  return a0.template operator>>= <T2>(a1);
+}

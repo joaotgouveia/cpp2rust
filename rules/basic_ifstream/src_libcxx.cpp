@@ -25,53 +25,60 @@ void f91(std::basic_ifstream<T1, T2> &a0, const std::string &a1,
   return a0.open(a1, a2);
 }
 
+template <typename T1, typename T2, typename T3 = T1,
+          std::__enable_if_t<std::is_same<T1, char>::value, int> T4 = 0>
+std::basic_ifstream<T1, T2> &f92(std::basic_ifstream<T1, T2> &a0,
+                                 std::streamsize a1, T1 a2) {
+  return a0.ignore(a1, a2);
+}
+
 template <typename T1, typename T2>
-unsigned int f92(const std::basic_ifstream<T1, T2> &a0) {
+unsigned int f93(const std::basic_ifstream<T1, T2> &a0) {
   return a0.rdstate();
 }
 
 template <typename T1, typename T2>
-void f93(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
+void f94(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
   return a0.clear(a1);
 }
 
 template <typename T1, typename T2>
-void f94(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
+void f95(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
   return a0.setstate(a1);
 }
 
 template <typename T1, typename T2>
-unsigned int f95(const std::basic_ifstream<T1, T2> &a0) {
+unsigned int f96(const std::basic_ifstream<T1, T2> &a0) {
   return a0.exceptions();
 }
 
 template <typename T1, typename T2>
-void f96(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
+void f97(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
   return a0.exceptions(a1);
 }
 
 template <typename T1, typename T2>
-unsigned int f97(const std::basic_ifstream<T1, T2> &a0) {
+unsigned int f98(const std::basic_ifstream<T1, T2> &a0) {
   return a0.flags();
 }
 
 template <typename T1, typename T2>
-unsigned int f98(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
+unsigned int f99(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
   return a0.flags(a1);
 }
 
 template <typename T1, typename T2>
-unsigned int f99(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
+unsigned int f100(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
   return a0.setf(a1);
 }
 
 template <typename T1, typename T2>
-unsigned int f100(std::basic_ifstream<T1, T2> &a0, unsigned int a1,
+unsigned int f101(std::basic_ifstream<T1, T2> &a0, unsigned int a1,
                   unsigned int a2) {
   return a0.setf(a1, a2);
 }
 
 template <typename T1, typename T2>
-void f101(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
+void f102(std::basic_ifstream<T1, T2> &a0, unsigned int a1) {
   return a0.unsetf(a1);
 }

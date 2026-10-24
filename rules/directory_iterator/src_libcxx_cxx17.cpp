@@ -79,22 +79,27 @@ f13(std::filesystem::directory_iterator &a0) {
   return a0.operator++();
 }
 
+std::filesystem::__dir_element_proxy
+f14(std::filesystem::directory_iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
 std::filesystem::directory_iterator &
-f14(std::filesystem::directory_iterator &a0, std::error_code &a1) {
+f15(std::filesystem::directory_iterator &a0, std::error_code &a1) {
   return a0.increment(a1);
 }
 
 std::filesystem::directory_iterator
-f15(std::filesystem::directory_iterator a0) {
+f16(std::filesystem::directory_iterator a0) {
   return std::filesystem::end(std::move(a0));
 }
 
-bool f16(const std::filesystem::directory_iterator &a0,
+bool f17(const std::filesystem::directory_iterator &a0,
          const std::filesystem::directory_iterator &a1) {
   return std::filesystem::operator!=(a0, a1);
 }
 
-bool f17(const std::filesystem::directory_iterator &a0,
+bool f18(const std::filesystem::directory_iterator &a0,
          const std::filesystem::directory_iterator &a1) {
   return std::filesystem::operator==(a0, a1);
 }

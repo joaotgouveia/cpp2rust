@@ -26,7 +26,7 @@ template <
          !(std::is_same<T3, std::nullptr_t>::value) &&
          !(std::is_same<T3, const std::unique_ptr<T1[], T2> &>::value)),
         int>::type T7 = 0>
-std::unique_ptr<T1[], T2> f52(T3 a0) {
+std::unique_ptr<T1[], T2> f53(T3 a0) {
   return std::unique_ptr<T1[], T2>(a0);
 }
 
@@ -46,7 +46,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, T1[]>::value &&
                                std::is_same<T4, T2>::value)),
                             int>::type T6 = 0>
-std::unique_ptr<T1[], T2> f53(std::unique_ptr<T3, T4> &&a0) {
+std::unique_ptr<T1[], T2> f54(std::unique_ptr<T3, T4> &&a0) {
   return std::unique_ptr<T1[], T2>(std::move(a0));
 }
 
@@ -66,7 +66,7 @@ typename std::enable_if<
                 T1 (*)[]>>,
         std::is_assignable<T2 &, T4 &&>>::value,
     std::unique_ptr<T1[], T2> &>::type
-f54(std::unique_ptr<T1[], T2> &a0, std::unique_ptr<T3, T4> &&a1) {
+f55(std::unique_ptr<T1[], T2> &a0, std::unique_ptr<T3, T4> &&a1) {
   return a0.template operator= <T3, T4>(std::move(a1));
 }
 
@@ -81,7 +81,7 @@ template <
                                 T1 (*)[]>>>>,
     typename std::enable_if<(!(std::is_same<T3, std::nullptr_t>::value)),
                             int>::type T5 = 0>
-void f55(std::unique_ptr<T1[], T2> &a0, T3 a1) {
+void f56(std::unique_ptr<T1[], T2> &a0, T3 a1) {
   return a0.template reset<T3>(a1);
 }
 
@@ -97,7 +97,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, T1>::value &&
                                std::is_same<T4, T2>::value)),
                             int>::type T6 = 0>
-std::unique_ptr<T1, T2> f56(std::unique_ptr<T3, T4> &&a0) {
+std::unique_ptr<T1, T2> f57(std::unique_ptr<T3, T4> &&a0) {
   return std::unique_ptr<T1, T2>(std::move(a0));
 }
 
@@ -112,6 +112,6 @@ typename std::enable_if<
                             std::__not_<std::is_array<T3>>>,
                 std::is_assignable<T2 &, T4 &&>>::value,
     std::unique_ptr<T1, T2> &>::type
-f57(std::unique_ptr<T1, T2> &a0, std::unique_ptr<T3, T4> &&a1) {
+f58(std::unique_ptr<T1, T2> &a0, std::unique_ptr<T3, T4> &&a1) {
   return a0.template operator= <T3, T4>(std::move(a1));
 }

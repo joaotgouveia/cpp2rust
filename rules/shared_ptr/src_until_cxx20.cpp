@@ -3,6 +3,7 @@
 #include <condition_variable>
 #include <cstddef>
 #include <memory>
+#include <ostream>
 #include <utility>
 
 template <typename T1>

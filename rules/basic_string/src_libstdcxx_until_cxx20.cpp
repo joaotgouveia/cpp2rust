@@ -31,87 +31,104 @@ f127(std::basic_string<T1, T2, T3> &a0,
   return a0.template replace<T4>(a1, a2, a3, a4);
 }
 
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = std::__enable_if_t<std::is_convertible<
+              T4, typename std::basic_string<T1, T2, T3>::pointer>::value>>
+typename std::basic_string<T1, T2, T3>::iterator f128(
+    const __gnu_cxx::__normal_iterator<T4, std::basic_string<T1, T2, T3>> &a0) {
+  return typename std::basic_string<T1, T2, T3>::iterator(a0);
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4,
+    typename T5 = std::__enable_if_t<std::is_convertible<
+        T4, typename std::basic_string<T1, T2, T3>::const_pointer>::value>>
+typename std::basic_string<T1, T2, T3>::const_iterator f129(
+    const __gnu_cxx::__normal_iterator<T4, std::basic_string<T1, T2, T3>> &a0) {
+  return typename std::basic_string<T1, T2, T3>::const_iterator(a0);
+}
+
 template <typename T1, typename T2, typename T3>
-bool f128(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
+bool f130(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
   return std::operator!= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f129(const std::basic_string<T1, T2, T3> &a0,
+bool f131(const std::basic_string<T1, T2, T3> &a0,
           const std::basic_string<T1, T2, T3> &a1) {
   return std::operator!= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f130(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
+bool f132(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
   return std::operator!= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f131(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
+bool f133(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
   return std::operator< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f132(const std::basic_string<T1, T2, T3> &a0,
+bool f134(const std::basic_string<T1, T2, T3> &a0,
           const std::basic_string<T1, T2, T3> &a1) {
   return std::operator< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f133(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
+bool f135(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
   return std::operator< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f134(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
+bool f136(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
   return std::operator<= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f135(const std::basic_string<T1, T2, T3> &a0,
+bool f137(const std::basic_string<T1, T2, T3> &a0,
           const std::basic_string<T1, T2, T3> &a1) {
   return std::operator<= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f136(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
+bool f138(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
   return std::operator<= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f137(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
+bool f139(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
   return std::operator== <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f138(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
+bool f140(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
   return std::operator><T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f139(const std::basic_string<T1, T2, T3> &a0,
+bool f141(const std::basic_string<T1, T2, T3> &a0,
           const std::basic_string<T1, T2, T3> &a1) {
   return std::operator><T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f140(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
+bool f142(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
   return std::operator><T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f141(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
+bool f143(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
   return std::operator>= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f142(const std::basic_string<T1, T2, T3> &a0,
+bool f144(const std::basic_string<T1, T2, T3> &a0,
           const std::basic_string<T1, T2, T3> &a1) {
   return std::operator>= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f143(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
+bool f145(const T1 *a0, const std::basic_string<T1, T2, T3> &a1) {
   return std::operator>= <T1, T2, T3>(a0, a1);
 }

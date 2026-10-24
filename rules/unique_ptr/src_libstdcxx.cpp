@@ -54,8 +54,17 @@ std::unique_ptr<T1, T2> f48() {
 }
 
 template <typename T1, typename T2, typename T3 = T2,
+          typename T4 = typename std::enable_if<std::integral_constant<
+              bool, std::integral_constant<
+                        bool, !std::is_pointer<T2>::value>::value &&
+                        std::is_default_constructible<T2>::value>::value>::type>
+std::unique_ptr<T1, T2> f49(T1 *a0) {
+  return std::unique_ptr<T1, T2>(a0);
+}
+
+template <typename T1, typename T2, typename T3 = T2,
           typename T4 = std::_Require<std::is_copy_constructible<T2>>>
-std::unique_ptr<T1, T2> f49(T1 *a0, const T2 &a1) {
+std::unique_ptr<T1, T2> f50(T1 *a0, const T2 &a1) {
   return std::unique_ptr<T1, T2>(a0, a1);
 }
 
@@ -64,7 +73,7 @@ template <typename T1, typename T2, typename T3 = T2,
               bool, std::integral_constant<
                         bool, !std::is_pointer<T2>::value>::value &&
                         std::is_default_constructible<T2>::value>::value>::type>
-std::unique_ptr<T1, T2> f50(std::nullptr_t a0) {
+std::unique_ptr<T1, T2> f51(std::nullptr_t a0) {
   return std::unique_ptr<T1, T2>(a0);
 }
 
@@ -73,6 +82,6 @@ template <typename T1, typename T2, typename T3,
               std::is_convertible<
                   T3 *, typename std::__uniq_ptr_impl<T1, T2>::pointer>,
               std::is_same<T2, std::default_delete<T1>>>>
-std::unique_ptr<T1, T2> f51(std::auto_ptr<T3> &&a0) {
+std::unique_ptr<T1, T2> f52(std::auto_ptr<T3> &&a0) {
   return std::unique_ptr<T1, T2>(std::move(a0));
 }

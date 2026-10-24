@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <compare>
 #include <deque>
 #include <initializer_list>
 #include <utility>

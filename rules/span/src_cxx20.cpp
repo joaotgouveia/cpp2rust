@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <array>
 #include <cstddef>
+#include <iterator>
 #include <span>
 #include <utility>
 
@@ -72,59 +73,39 @@ template <typename T1, std::size_t T2> T1 *f9(const std::span<T1, T2> &a0) {
 }
 
 template <typename T1, std::size_t T2>
-typename std::span<T1, T2>::iterator f10(const std::span<T1, T2> &a0) {
-  return a0.begin();
-}
-
-template <typename T1, std::size_t T2>
-typename std::span<T1, T2>::iterator f11(const std::span<T1, T2> &a0) {
-  return a0.end();
-}
-
-template <typename T1, std::size_t T2>
-typename std::span<T1, T2>::reverse_iterator f12(const std::span<T1, T2> &a0) {
-  return a0.rbegin();
-}
-
-template <typename T1, std::size_t T2>
-typename std::span<T1, T2>::reverse_iterator f13(const std::span<T1, T2> &a0) {
-  return a0.rend();
-}
-
-template <typename T1, std::size_t T2>
-std::span<T1, std::dynamic_extent> f14(const std::span<T1, T2> &a0,
+std::span<T1, std::dynamic_extent> f10(const std::span<T1, T2> &a0,
                                        std::size_t a1) {
   return a0.first(a1);
 }
 
 template <typename T1, std::size_t T2>
-std::span<T1, std::dynamic_extent> f15(const std::span<T1, T2> &a0,
+std::span<T1, std::dynamic_extent> f11(const std::span<T1, T2> &a0,
                                        std::size_t a1) {
   return a0.last(a1);
 }
 
 template <typename T1, std::size_t T2>
-std::span<T1, std::dynamic_extent> f16(const std::span<T1, T2> &a0,
+std::span<T1, std::dynamic_extent> f12(const std::span<T1, T2> &a0,
                                        std::size_t a1, std::size_t a2) {
   return a0.subspan(a1, a2);
 }
 
 template <typename T1, std::size_t T2, std::size_t T3>
-std::span<T1, T3> f17(const std::span<T1, T2> &a0) {
+std::span<T1, T3> f13(const std::span<T1, T2> &a0) {
   return a0.template first<T3>();
 }
 
 template <typename T1, std::size_t T2, std::size_t T3>
-std::span<T1, T3> f18(const std::span<T1, T2> &a0) {
+std::span<T1, T3> f14(const std::span<T1, T2> &a0) {
   return a0.template last<T3>();
 }
 
 template <typename T1, std::size_t T2, std::size_t T3,
           std::size_t T4 = std::dynamic_extent>
-auto f19(const std::span<T1, T2> &a0) {
+auto f15(const std::span<T1, T2> &a0) {
   return a0.template subspan<T3>();
 }
 
-template <typename T1, std::size_t T2> std::size_t f20() {
+template <typename T1, std::size_t T2> std::size_t f16() {
   return std::span<T1, T2>::extent;
 }

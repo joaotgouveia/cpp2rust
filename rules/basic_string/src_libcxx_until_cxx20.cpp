@@ -14,7 +14,7 @@ template <
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
 std::basic_string<T1, T2, T3>
-f296(const T4 &a0, typename std::basic_string<T1, T2, T3>::size_type a1,
+f302(const T4 &a0, typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T3 &a3) {
   return std::basic_string<T1, T2, T3>(a0, a1, a2, a3);
 }
@@ -29,7 +29,7 @@ template <
     typename std::enable_if<
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
-std::basic_string<T1, T2, T3> f297(const T4 &a0, const T3 &a1) {
+std::basic_string<T1, T2, T3> f303(const T4 &a0, const T3 &a1) {
   return std::basic_string<T1, T2, T3>(a0, a1);
 }
 
@@ -43,7 +43,7 @@ template <
     typename std::enable_if<
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
-std::basic_string<T1, T2, T3> &f298(std::basic_string<T1, T2, T3> &a0,
+std::basic_string<T1, T2, T3> &f304(std::basic_string<T1, T2, T3> &a0,
                                     const T4 &a1) {
   return a0.template operator= <T4>(a1);
 }
@@ -58,7 +58,7 @@ template <
     typename std::enable_if<
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
-std::basic_string<T1, T2, T3> &f299(std::basic_string<T1, T2, T3> &a0,
+std::basic_string<T1, T2, T3> &f305(std::basic_string<T1, T2, T3> &a0,
                                     const T4 &a1) {
   return a0.template operator+= <T4>(a1);
 }
@@ -73,7 +73,7 @@ template <
     typename std::enable_if<
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
-std::basic_string<T1, T2, T3> &f300(std::basic_string<T1, T2, T3> &a0,
+std::basic_string<T1, T2, T3> &f306(std::basic_string<T1, T2, T3> &a0,
                                     const T4 &a1) {
   return a0.template append<T4>(a1);
 }
@@ -89,7 +89,7 @@ template <
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
 std::basic_string<T1, T2, T3> &
-f301(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f307(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2,
      typename std::basic_string<T1, T2, T3>::size_type a3) {
   return a0.template append<T4>(a1, a2, a3);
@@ -102,7 +102,7 @@ template <typename T1, typename T2, typename T3, typename T4,
           typename std::enable_if<
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
-std::basic_string<T1, T2, T3> &f302(std::basic_string<T1, T2, T3> &a0,
+std::basic_string<T1, T2, T3> &f308(std::basic_string<T1, T2, T3> &a0,
                                     const T4 &a1) {
   return a0.template assign<T4>(a1);
 }
@@ -118,7 +118,7 @@ template <
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
 std::basic_string<T1, T2, T3> &
-f303(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f309(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2,
      typename std::basic_string<T1, T2, T3>::size_type a3) {
   return a0.template assign<T4>(a1, a2, a3);
@@ -132,7 +132,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 std::basic_string<T1, T2, T3> &
-f304(std::basic_string<T1, T2, T3> &a0,
+f310(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1, const T4 &a2) {
   return a0.template insert<T4>(a1, a2);
 }
@@ -148,7 +148,7 @@ template <
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
 std::basic_string<T1, T2, T3> &
-f305(std::basic_string<T1, T2, T3> &a0,
+f311(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1, const T4 &a2,
      typename std::basic_string<T1, T2, T3>::size_type a3,
      typename std::basic_string<T1, T2, T3>::size_type a4) {
@@ -163,7 +163,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 std::basic_string<T1, T2, T3> &
-f306(std::basic_string<T1, T2, T3> &a0,
+f312(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3) {
   return a0.template replace<T4>(a1, a2, a3);
@@ -180,7 +180,7 @@ template <
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
 std::basic_string<T1, T2, T3> &
-f307(std::basic_string<T1, T2, T3> &a0,
+f313(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3,
      typename std::basic_string<T1, T2, T3>::size_type a4,
@@ -196,7 +196,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 std::basic_string<T1, T2, T3> &
-f308(std::basic_string<T1, T2, T3> &a0,
+f314(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1,
      typename std::basic_string<T1, T2, T3>::const_iterator a2, const T4 &a3) {
   return a0.template replace<T4>(a1, a2, a3);
@@ -210,7 +210,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 typename std::basic_string<T1, T2, T3>::size_type
-f309(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f315(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2) {
   return a0.template find<T4>(a1, a2);
 }
@@ -223,7 +223,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 typename std::basic_string<T1, T2, T3>::size_type
-f310(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f316(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2) {
   return a0.template rfind<T4>(a1, a2);
 }
@@ -236,7 +236,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 typename std::basic_string<T1, T2, T3>::size_type
-f311(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f317(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2) {
   return a0.template find_first_of<T4>(a1, a2);
 }
@@ -249,7 +249,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 typename std::basic_string<T1, T2, T3>::size_type
-f312(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f318(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2) {
   return a0.template find_last_of<T4>(a1, a2);
 }
@@ -262,7 +262,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 typename std::basic_string<T1, T2, T3>::size_type
-f313(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f319(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2) {
   return a0.template find_first_not_of<T4>(a1, a2);
 }
@@ -275,7 +275,7 @@ template <typename T1, typename T2, typename T3, typename T4,
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
 typename std::basic_string<T1, T2, T3>::size_type
-f314(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f320(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2) {
   return a0.template find_last_not_of<T4>(a1, a2);
 }
@@ -287,7 +287,7 @@ template <typename T1, typename T2, typename T3, typename T4,
           typename std::enable_if<
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
-int f315(const std::basic_string<T1, T2, T3> &a0, const T4 &a1) {
+int f321(const std::basic_string<T1, T2, T3> &a0, const T4 &a1) {
   return a0.template compare<T4>(a1);
 }
 
@@ -298,7 +298,7 @@ template <typename T1, typename T2, typename T3, typename T4,
           typename std::enable_if<
               (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)),
               int>::type T6 = 0>
-int f316(const std::basic_string<T1, T2, T3> &a0,
+int f322(const std::basic_string<T1, T2, T3> &a0,
          typename std::basic_string<T1, T2, T3>::size_type a1,
          typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3) {
   return a0.template compare<T4>(a1, a2, a3);
@@ -314,7 +314,7 @@ template <
     typename std::enable_if<
         (!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value)), int>::type
         T6 = 0>
-int f317(const std::basic_string<T1, T2, T3> &a0,
+int f323(const std::basic_string<T1, T2, T3> &a0,
          typename std::basic_string<T1, T2, T3>::size_type a1,
          typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3,
          typename std::basic_string<T1, T2, T3>::size_type a4,

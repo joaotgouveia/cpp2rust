@@ -91,31 +91,36 @@ f15(std::filesystem::recursive_directory_iterator &a0) {
   return a0.operator++();
 }
 
+std::filesystem::__dir_element_proxy
+f16(std::filesystem::recursive_directory_iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
 std::filesystem::recursive_directory_iterator &
-f16(std::filesystem::recursive_directory_iterator &a0, std::error_code &a1) {
+f17(std::filesystem::recursive_directory_iterator &a0, std::error_code &a1) {
   return a0.increment(a1);
 }
 
 std::filesystem::directory_options
-f17(const std::filesystem::recursive_directory_iterator &a0) {
+f18(const std::filesystem::recursive_directory_iterator &a0) {
   return a0.options();
 }
 
-int f18(const std::filesystem::recursive_directory_iterator &a0) {
+int f19(const std::filesystem::recursive_directory_iterator &a0) {
   return a0.depth();
 }
 
-void f19(std::filesystem::recursive_directory_iterator &a0) { return a0.pop(); }
+void f20(std::filesystem::recursive_directory_iterator &a0) { return a0.pop(); }
 
-void f20(std::filesystem::recursive_directory_iterator &a0,
+void f21(std::filesystem::recursive_directory_iterator &a0,
          std::error_code &a1) {
   return a0.pop(a1);
 }
 
-bool f21(const std::filesystem::recursive_directory_iterator &a0) {
+bool f22(const std::filesystem::recursive_directory_iterator &a0) {
   return a0.recursion_pending();
 }
 
-void f22(std::filesystem::recursive_directory_iterator &a0) {
+void f23(std::filesystem::recursive_directory_iterator &a0) {
   return a0.disable_recursion_pending();
 }

@@ -1,3 +1,4 @@
+#include <iterator>
 #include <ostream>
 #include <regex>
 #include <string>
@@ -270,4 +271,12 @@ bool f127(const T2 *a0, const T2 *a1, std::match_results<const T2 *, T1> &a2,
           const std::basic_regex<T2, T3> &a3,
           std::regex_constants::match_flag_type a4) {
   return std::regex_search<T1, T2, T3>(a0, a1, a2, a3, a4);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f128(std::__wrap_iter<T1> a0, std::__wrap_iter<T1> a1,
+          std::match_results<std::__wrap_iter<T1>, T2> &a2,
+          const std::basic_regex<T3, T4> &a3,
+          std::regex_constants::match_flag_type a4) {
+  return std::regex_search<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
 }
