@@ -315,6 +315,27 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
     return std::nullopt;
   }
   returned = RuleDecls::SkipImplicit(returned);
+  // a class nested in the rule's class
+  // (typename discrete_distribution<T1>::param_type(a0, a1))
+  if (auto construct =
+          llvm::dyn_cast<clang::CXXUnresolvedConstructExpr>(returned)) {
+    auto member =
+        construct->getTypeAsWritten()->getAs<clang::DependentNameType>();
+    auto qualifier = member ? member->getQualifier().getAsType() : nullptr;
+    auto record = RuleDecls::SkipImplicit(use)
+                      ->getType()
+                      .getCanonicalType()
+                      ->getAsCXXRecordDecl();
+    auto owner = record ? llvm::dyn_cast<clang::CXXRecordDecl>(
+                              record->getDeclContext())
+                        : nullptr;
+    if (!qualifier || !owner) {
+      return std::nullopt;
+    }
+    return RuleDecls::DeduceFromType(sema, rule->getTemplateParameters(),
+                                     clang::QualType(qualifier, 0),
+                                     sema.Context.getCanonicalTagType(owner));
+  }
   if (auto call = llvm::dyn_cast<clang::CallExpr>(returned)) {
     returned = call->getCallee()->IgnoreParenImpCasts();
   }
