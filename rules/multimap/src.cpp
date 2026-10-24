@@ -383,3 +383,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f55(std::multimap<T1, T2, T3, T4> &a0, T5 a1, T5 a2) {
   return a0.template insert<T5>(a1, a2);
 }
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f56(const typename std::multimap<T1, T2, T3, T4>::value_compare &a0,
+         const std::pair<const T1, T2> &a1, const std::pair<const T1, T2> &a2) {
+  return a0.operator()(a1, a2);
+}

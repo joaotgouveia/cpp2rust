@@ -87,3 +87,58 @@ bool f14(const std::piecewise_linear_distribution<T1> &a0,
          const std::piecewise_linear_distribution<T1> &a1) {
   return operator==(a0, a1);
 }
+
+template <typename T1>
+using t4 = typename std::piecewise_linear_distribution<
+    T1>::param_type::distribution_type;
+
+template <typename T1>
+typename std::piecewise_linear_distribution<T1>::param_type f15() {
+  return typename std::piecewise_linear_distribution<T1>::param_type();
+}
+
+template <typename T1>
+typename std::piecewise_linear_distribution<T1>::param_type
+f16(const typename std::piecewise_linear_distribution<T1>::param_type &a0) {
+  return typename std::piecewise_linear_distribution<T1>::param_type(a0);
+}
+
+template <typename T1>
+typename std::piecewise_linear_distribution<T1>::param_type &
+f17(typename std::piecewise_linear_distribution<T1>::param_type &a0,
+    const typename std::piecewise_linear_distribution<T1>::param_type &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1>
+std::vector<T1>
+f18(const typename std::piecewise_linear_distribution<T1>::param_type &a0) {
+  return a0.intervals();
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::piecewise_linear_distribution<T1>::param_type f19(T2 a0, T2 a1,
+                                                                T3 a2) {
+  return
+      typename std::piecewise_linear_distribution<T1>::param_type(a0, a1, a2);
+}
+
+template <typename T1, typename T2>
+typename std::piecewise_linear_distribution<T1>::param_type
+f20(std::initializer_list<T1> a0, T2 a1) {
+  return typename std::piecewise_linear_distribution<T1>::param_type(a0, a1);
+}
+
+template <typename T1, typename T2>
+typename std::piecewise_linear_distribution<T1>::param_type
+f21(std::size_t a0, T1 a1, T1 a2, T2 a3) {
+  return typename std::piecewise_linear_distribution<T1>::param_type(a0, a1, a2,
+                                                                     a3);
+}
+
+template <typename T1>
+bool f22(
+    const typename std::piecewise_linear_distribution<T1>::param_type &a0,
+    const typename std::piecewise_linear_distribution<T1>::param_type &a1) {
+  return operator==(a0, a1);
+}

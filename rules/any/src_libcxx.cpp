@@ -3,22 +3,22 @@
 
 using t3 = std::bad_any_cast;
 
-const char *f28(const std::bad_any_cast &a0) { return a0.what(); }
+const char *f32(const std::bad_any_cast &a0) { return a0.what(); }
 
-std::bad_any_cast f29() { return std::bad_any_cast(); }
+std::bad_any_cast f33() { return std::bad_any_cast(); }
 
-std::bad_any_cast f30(const std::bad_any_cast &a0) {
+std::bad_any_cast f34(const std::bad_any_cast &a0) {
   return std::bad_any_cast(a0);
 }
 
-std::bad_any_cast f31(std::bad_any_cast &&a0) {
+std::bad_any_cast f35(std::bad_any_cast &&a0) {
   return std::bad_any_cast(std::move(a0));
 }
 
-std::bad_any_cast &f32(std::bad_any_cast &a0, const std::bad_any_cast &a1) {
+std::bad_any_cast &f36(std::bad_any_cast &a0, const std::bad_any_cast &a1) {
   return a0.operator=(a1);
 }
 
-std::bad_any_cast &f33(std::bad_any_cast &a0, std::bad_any_cast &&a1) {
+std::bad_any_cast &f37(std::bad_any_cast &a0, std::bad_any_cast &&a1) {
   return a0.operator=(std::move(a1));
 }

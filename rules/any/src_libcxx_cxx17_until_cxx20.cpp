@@ -14,7 +14,7 @@ template <
     typename std::enable_if<(!(std::is_same<T1, const std::any &>::value) &&
                              !(std::is_same<T1, std::any>::value)),
                             int>::type T4 = 0>
-std::any f34(T1 &&a0) {
+std::any f38(T1 &&a0) {
   return std::any(std::forward<T1>(a0));
 }
 
@@ -27,6 +27,6 @@ template <
     typename std::enable_if<(!(std::is_same<T1, const std::any &>::value) &&
                              !(std::is_same<T1, std::any>::value)),
                             int>::type T4 = 0>
-std::any &f35(std::any &a0, T1 &&a1) {
+std::any &f39(std::any &a0, T1 &&a1) {
   return a0.template operator= <T1>(std::forward<T1>(a1));
 }

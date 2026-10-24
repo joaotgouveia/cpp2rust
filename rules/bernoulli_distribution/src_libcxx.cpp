@@ -82,14 +82,54 @@ bool f17(const std::bernoulli_distribution &a0,
   return operator==(a0, a1);
 }
 
+using t4 = std::bernoulli_distribution::param_type::distribution_type;
+
+std::bernoulli_distribution::param_type f18(double a0) {
+  return std::bernoulli_distribution::param_type(a0);
+}
+
+double f19(const std::bernoulli_distribution::param_type &a0) { return a0.p(); }
+
+std::bernoulli_distribution::param_type
+f20(const std::bernoulli_distribution::param_type &a0) {
+  return std::bernoulli_distribution::param_type(a0);
+}
+
+std::bernoulli_distribution::param_type
+f21(std::bernoulli_distribution::param_type &&a0) {
+  return std::bernoulli_distribution::param_type(std::move(a0));
+}
+
+std::bernoulli_distribution::param_type &
+f22(std::bernoulli_distribution::param_type &a0,
+    const std::bernoulli_distribution::param_type &a1) {
+  return a0.operator=(a1);
+}
+
+std::bernoulli_distribution::param_type &
+f23(std::bernoulli_distribution::param_type &a0,
+    std::bernoulli_distribution::param_type &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+bool f24(const std::bernoulli_distribution::param_type &a0,
+         const std::bernoulli_distribution::param_type &a1) {
+  return operator!=(a0, a1);
+}
+
+bool f25(const std::bernoulli_distribution::param_type &a0,
+         const std::bernoulli_distribution::param_type &a1) {
+  return operator==(a0, a1);
+}
+
 template <typename T1, typename T2>
-std::basic_ostream<T1, T2> &f18(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f26(std::basic_ostream<T1, T2> &a0,
                                 const std::bernoulli_distribution &a1) {
   return std::operator<< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::basic_istream<T1, T2> &f19(std::basic_istream<T1, T2> &a0,
+std::basic_istream<T1, T2> &f27(std::basic_istream<T1, T2> &a0,
                                 std::bernoulli_distribution &a1) {
   return std::operator>> <T1, T2>(a0, a1);
 }

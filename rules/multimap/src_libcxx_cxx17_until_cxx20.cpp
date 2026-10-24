@@ -18,7 +18,7 @@ template <
              T5, typename std::multimap<T1, T2, T3, T4>::node_type>::value)),
         int>::type T7 = 0>
 typename std::multimap<T1, T2, T3, T4>::iterator
-f108(std::multimap<T1, T2, T3, T4> &a0, T5 &&a1) {
+f109(std::multimap<T1, T2, T3, T4> &a0, T5 &&a1) {
   return a0.template insert<T5>(std::forward<T5>(a1));
 }
 
@@ -36,7 +36,7 @@ template <
              T5, typename std::multimap<T1, T2, T3, T4>::node_type>::value)),
         int>::type T7 = 0>
 typename std::multimap<T1, T2, T3, T4>::iterator
-f109(std::multimap<T1, T2, T3, T4> &a0,
+f110(std::multimap<T1, T2, T3, T4> &a0,
      typename std::multimap<T1, T2, T3, T4>::const_iterator a1, T5 &&a2) {
   return a0.template insert<T5>(a1, std::forward<T5>(a2));
 }

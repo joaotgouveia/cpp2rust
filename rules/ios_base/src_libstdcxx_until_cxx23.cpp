@@ -3,104 +3,104 @@
 #include <string>
 #include <utility>
 
-std::ios_base::fmtflags f76(std::ios_base::fmtflags a0,
+std::ios_base::fmtflags f86(std::ios_base::fmtflags a0,
                             std::ios_base::fmtflags a1) {
   return std::operator&(a0, a1);
 }
 
-std::ios_base::iostate f77(std::ios_base::iostate a0,
+std::ios_base::iostate f87(std::ios_base::iostate a0,
                            std::ios_base::iostate a1) {
   return std::operator&(a0, a1);
 }
 
-std::ios_base::openmode f78(std::ios_base::openmode a0,
+std::ios_base::openmode f88(std::ios_base::openmode a0,
                             std::ios_base::openmode a1) {
   return std::operator&(a0, a1);
 }
 
-const std::ios_base::fmtflags &f79(std::ios_base::fmtflags &a0,
+const std::ios_base::fmtflags &f89(std::ios_base::fmtflags &a0,
                                    std::ios_base::fmtflags a1) {
   return std::operator&=(a0, a1);
 }
 
-const std::ios_base::iostate &f80(std::ios_base::iostate &a0,
+const std::ios_base::iostate &f90(std::ios_base::iostate &a0,
                                   std::ios_base::iostate a1) {
   return std::operator&=(a0, a1);
 }
 
-const std::ios_base::openmode &f81(std::ios_base::openmode &a0,
+const std::ios_base::openmode &f91(std::ios_base::openmode &a0,
                                    std::ios_base::openmode a1) {
   return std::operator&=(a0, a1);
 }
 
-std::ios_base::fmtflags f82(std::ios_base::fmtflags a0,
+std::ios_base::fmtflags f92(std::ios_base::fmtflags a0,
                             std::ios_base::fmtflags a1) {
   return std::operator^(a0, a1);
 }
 
-std::ios_base::iostate f83(std::ios_base::iostate a0,
+std::ios_base::iostate f93(std::ios_base::iostate a0,
                            std::ios_base::iostate a1) {
   return std::operator^(a0, a1);
 }
 
-std::ios_base::openmode f84(std::ios_base::openmode a0,
+std::ios_base::openmode f94(std::ios_base::openmode a0,
                             std::ios_base::openmode a1) {
   return std::operator^(a0, a1);
 }
 
-const std::ios_base::fmtflags &f85(std::ios_base::fmtflags &a0,
+const std::ios_base::fmtflags &f95(std::ios_base::fmtflags &a0,
                                    std::ios_base::fmtflags a1) {
   return std::operator^=(a0, a1);
 }
 
-const std::ios_base::iostate &f86(std::ios_base::iostate &a0,
+const std::ios_base::iostate &f96(std::ios_base::iostate &a0,
                                   std::ios_base::iostate a1) {
   return std::operator^=(a0, a1);
 }
 
-const std::ios_base::openmode &f87(std::ios_base::openmode &a0,
+const std::ios_base::openmode &f97(std::ios_base::openmode &a0,
                                    std::ios_base::openmode a1) {
   return std::operator^=(a0, a1);
 }
 
-std::ios_base::fmtflags f88(std::ios_base::fmtflags a0,
+std::ios_base::fmtflags f98(std::ios_base::fmtflags a0,
                             std::ios_base::fmtflags a1) {
   return std::operator|(a0, a1);
 }
 
-std::ios_base::iostate f89(std::ios_base::iostate a0,
+std::ios_base::iostate f99(std::ios_base::iostate a0,
                            std::ios_base::iostate a1) {
   return std::operator|(a0, a1);
 }
 
-std::ios_base::openmode f90(std::ios_base::openmode a0,
-                            std::ios_base::openmode a1) {
+std::ios_base::openmode f100(std::ios_base::openmode a0,
+                             std::ios_base::openmode a1) {
   return std::operator|(a0, a1);
 }
 
-const std::ios_base::fmtflags &f91(std::ios_base::fmtflags &a0,
-                                   std::ios_base::fmtflags a1) {
+const std::ios_base::fmtflags &f101(std::ios_base::fmtflags &a0,
+                                    std::ios_base::fmtflags a1) {
   return std::operator|=(a0, a1);
 }
 
-const std::ios_base::iostate &f92(std::ios_base::iostate &a0,
-                                  std::ios_base::iostate a1) {
+const std::ios_base::iostate &f102(std::ios_base::iostate &a0,
+                                   std::ios_base::iostate a1) {
   return std::operator|=(a0, a1);
 }
 
-const std::ios_base::openmode &f93(std::ios_base::openmode &a0,
-                                   std::ios_base::openmode a1) {
+const std::ios_base::openmode &f103(std::ios_base::openmode &a0,
+                                    std::ios_base::openmode a1) {
   return std::operator|=(a0, a1);
 }
 
-std::ios_base::fmtflags f94(std::ios_base::fmtflags a0) {
+std::ios_base::fmtflags f104(std::ios_base::fmtflags a0) {
   return std::operator~(a0);
 }
 
-std::ios_base::iostate f95(std::ios_base::iostate a0) {
+std::ios_base::iostate f105(std::ios_base::iostate a0) {
   return std::operator~(a0);
 }
 
-std::ios_base::openmode f96(std::ios_base::openmode a0) {
+std::ios_base::openmode f106(std::ios_base::openmode a0) {
   return std::operator~(a0);
 }

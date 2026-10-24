@@ -3,13 +3,13 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f108(const std::map<T1, T2, T3, T4> &a0,
+bool f109(const std::map<T1, T2, T3, T4> &a0,
           const std::map<T1, T2, T3, T4> &a1) {
   return std::operator!= <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f109(const std::multimap<T1, T2, T3, T4> &a0,
+bool f110(const std::multimap<T1, T2, T3, T4> &a0,
           const std::multimap<T1, T2, T3, T4> &a1) {
   return std::operator!= <T1, T2, T3, T4>(a0, a1);
 }
@@ -24,7 +24,7 @@ template <
         (!(std::is_same<
             T5, const typename std::map<T1, T2, T3, T4>::key_type &>::value)),
         int>::type T7 = 0>
-T2 &f110(std::map<T1, T2, T3, T4> &a0, T5 &&a1) {
+T2 &f111(std::map<T1, T2, T3, T4> &a0, T5 &&a1) {
   return a0.template at<T5>(std::forward<T5>(a1));
 }
 
@@ -38,54 +38,54 @@ template <
         (!(std::is_same<
             T5, const typename std::map<T1, T2, T3, T4>::key_type &>::value)),
         int>::type T7 = 0>
-const T2 &f111(const std::map<T1, T2, T3, T4> &a0, T5 &&a1) {
+const T2 &f112(const std::map<T1, T2, T3, T4> &a0, T5 &&a1) {
   return a0.template at<T5>(std::forward<T5>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f112(const std::map<T1, T2, T3, T4> &a0,
+bool f113(const std::map<T1, T2, T3, T4> &a0,
           const std::map<T1, T2, T3, T4> &a1) {
   return std::operator< <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f113(const std::multimap<T1, T2, T3, T4> &a0,
+bool f114(const std::multimap<T1, T2, T3, T4> &a0,
           const std::multimap<T1, T2, T3, T4> &a1) {
   return std::operator< <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f114(const std::map<T1, T2, T3, T4> &a0,
+bool f115(const std::map<T1, T2, T3, T4> &a0,
           const std::map<T1, T2, T3, T4> &a1) {
   return std::operator<= <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f115(const std::multimap<T1, T2, T3, T4> &a0,
+bool f116(const std::multimap<T1, T2, T3, T4> &a0,
           const std::multimap<T1, T2, T3, T4> &a1) {
   return std::operator<= <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f116(const std::map<T1, T2, T3, T4> &a0,
+bool f117(const std::map<T1, T2, T3, T4> &a0,
           const std::map<T1, T2, T3, T4> &a1) {
   return std::operator><T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f117(const std::multimap<T1, T2, T3, T4> &a0,
+bool f118(const std::multimap<T1, T2, T3, T4> &a0,
           const std::multimap<T1, T2, T3, T4> &a1) {
   return std::operator><T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f118(const std::map<T1, T2, T3, T4> &a0,
+bool f119(const std::map<T1, T2, T3, T4> &a0,
           const std::map<T1, T2, T3, T4> &a1) {
   return std::operator>= <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f119(const std::multimap<T1, T2, T3, T4> &a0,
+bool f120(const std::multimap<T1, T2, T3, T4> &a0,
           const std::multimap<T1, T2, T3, T4> &a1) {
   return std::operator>= <T1, T2, T3, T4>(a0, a1);
 }

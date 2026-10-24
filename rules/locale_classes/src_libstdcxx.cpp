@@ -82,6 +82,8 @@ std::locale::category f23() { return std::locale::messages; }
 
 std::locale::category f24() { return std::locale::all; }
 
-template <typename T1> const T1 &f25(const std::locale &a0) {
+std::locale::id f25() { return {}; }
+
+template <typename T1> const T1 &f26(const std::locale &a0) {
   return std::use_facet<T1>(a0);
 }

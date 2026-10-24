@@ -288,3 +288,8 @@ template <typename T1, typename T2>
 void *&f48(std::basic_ostream<T1, T2> &a0, int a1) {
   return a0.pword(a1);
 }
+
+template <typename T1, typename T2>
+bool f49(const typename std::basic_ostream<T1, T2>::sentry &a0) {
+  return static_cast<bool>(a0);
+}

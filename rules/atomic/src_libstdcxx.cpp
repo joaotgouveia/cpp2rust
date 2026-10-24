@@ -4,185 +4,342 @@
 
 using t4 = std::atomic<char>;
 
-std::atomic<char> f44() { return {}; }
+std::atomic<char> f64() { return {}; }
 
-std::atomic<char> f45(char a0) { return {a0}; }
+std::atomic<char> f65(char a0) { return {a0}; }
 
-bool f46(const std::atomic<char> &a0) { return a0.is_lock_free(); }
+bool f66(const std::atomic<char> &a0) { return a0.is_lock_free(); }
 
-void f47(std::atomic<char> &a0, char a1, std::memory_order a2) {
+bool f67(const volatile std::atomic<char> &a0) { return a0.is_lock_free(); }
+
+void f68(std::atomic<char> &a0, char a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f48(std::atomic<char> &a0, char &a1, char a2, std::memory_order a3,
+void f69(volatile std::atomic<char> &a0, char a1, std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f70(std::atomic<char> &a0, char &a1, char a2, std::memory_order a3,
          std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f49(std::atomic<char> &a0, char &a1, char a2, std::memory_order a3) {
+bool f71(volatile std::atomic<char> &a0, char &a1, char a2,
+         std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f72(std::atomic<char> &a0, char &a1, char a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f50(std::atomic<char> &a0, char &a1, char a2, std::memory_order a3,
+bool f73(volatile std::atomic<char> &a0, char &a1, char a2,
+         std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f74(std::atomic<char> &a0, char &a1, char a2, std::memory_order a3,
          std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f51(std::atomic<char> &a0, char &a1, char a2, std::memory_order a3) {
+bool f75(volatile std::atomic<char> &a0, char &a1, char a2,
+         std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f76(std::atomic<char> &a0, char &a1, char a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f77(volatile std::atomic<char> &a0, char &a1, char a2,
+         std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t5 = std::atomic<int>;
 
-std::atomic<int> f52() { return {}; }
+std::atomic<int> f78() { return {}; }
 
-std::atomic<int> f53(int a0) { return {a0}; }
+std::atomic<int> f79(int a0) { return {a0}; }
 
-bool f54(const std::atomic<int> &a0) { return a0.is_lock_free(); }
+bool f80(const std::atomic<int> &a0) { return a0.is_lock_free(); }
 
-void f55(std::atomic<int> &a0, int a1, std::memory_order a2) {
+bool f81(const volatile std::atomic<int> &a0) { return a0.is_lock_free(); }
+
+void f82(std::atomic<int> &a0, int a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f56(std::atomic<int> &a0, int &a1, int a2, std::memory_order a3,
+void f83(volatile std::atomic<int> &a0, int a1, std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f84(std::atomic<int> &a0, int &a1, int a2, std::memory_order a3,
          std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f57(std::atomic<int> &a0, int &a1, int a2, std::memory_order a3) {
+bool f85(volatile std::atomic<int> &a0, int &a1, int a2, std::memory_order a3,
+         std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f86(std::atomic<int> &a0, int &a1, int a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f58(std::atomic<int> &a0, int &a1, int a2, std::memory_order a3,
+bool f87(volatile std::atomic<int> &a0, int &a1, int a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f88(std::atomic<int> &a0, int &a1, int a2, std::memory_order a3,
          std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f59(std::atomic<int> &a0, int &a1, int a2, std::memory_order a3) {
+bool f89(volatile std::atomic<int> &a0, int &a1, int a2, std::memory_order a3,
+         std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f90(std::atomic<int> &a0, int &a1, int a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f91(volatile std::atomic<int> &a0, int &a1, int a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t6 = std::atomic<long long>;
 
-std::atomic<long long> f60() { return {}; }
+std::atomic<long long> f92() { return {}; }
 
-std::atomic<long long> f61(long long a0) { return {a0}; }
+std::atomic<long long> f93(long long a0) { return {a0}; }
 
-bool f62(const std::atomic<long long> &a0) { return a0.is_lock_free(); }
+bool f94(const std::atomic<long long> &a0) { return a0.is_lock_free(); }
 
-void f63(std::atomic<long long> &a0, long long a1, std::memory_order a2) {
+bool f95(const volatile std::atomic<long long> &a0) {
+  return a0.is_lock_free();
+}
+
+void f96(std::atomic<long long> &a0, long long a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f64(std::atomic<long long> &a0, long long &a1, long long a2,
+void f97(volatile std::atomic<long long> &a0, long long a1,
+         std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f98(std::atomic<long long> &a0, long long &a1, long long a2,
          std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f65(std::atomic<long long> &a0, long long &a1, long long a2,
-         std::memory_order a3) {
+bool f99(volatile std::atomic<long long> &a0, long long &a1, long long a2,
+         std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f100(std::atomic<long long> &a0, long long &a1, long long a2,
+          std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f66(std::atomic<long long> &a0, long long &a1, long long a2,
-         std::memory_order a3, std::memory_order a4) {
+bool f101(volatile std::atomic<long long> &a0, long long &a1, long long a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f102(std::atomic<long long> &a0, long long &a1, long long a2,
+          std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f67(std::atomic<long long> &a0, long long &a1, long long a2,
-         std::memory_order a3) {
+bool f103(volatile std::atomic<long long> &a0, long long &a1, long long a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f104(std::atomic<long long> &a0, long long &a1, long long a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f105(volatile std::atomic<long long> &a0, long long &a1, long long a2,
+          std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t7 = std::atomic<long>;
 
-std::atomic<long> f68() { return {}; }
+std::atomic<long> f106() { return {}; }
 
-std::atomic<long> f69(long a0) { return {a0}; }
+std::atomic<long> f107(long a0) { return {a0}; }
 
-bool f70(const std::atomic<long> &a0) { return a0.is_lock_free(); }
+bool f108(const std::atomic<long> &a0) { return a0.is_lock_free(); }
 
-void f71(std::atomic<long> &a0, long a1, std::memory_order a2) {
+bool f109(const volatile std::atomic<long> &a0) { return a0.is_lock_free(); }
+
+void f110(std::atomic<long> &a0, long a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f72(std::atomic<long> &a0, long &a1, long a2, std::memory_order a3,
-         std::memory_order a4) {
+void f111(volatile std::atomic<long> &a0, long a1, std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f112(std::atomic<long> &a0, long &a1, long a2, std::memory_order a3,
+          std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f73(std::atomic<long> &a0, long &a1, long a2, std::memory_order a3) {
+bool f113(volatile std::atomic<long> &a0, long &a1, long a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f114(std::atomic<long> &a0, long &a1, long a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f74(std::atomic<long> &a0, long &a1, long a2, std::memory_order a3,
-         std::memory_order a4) {
+bool f115(volatile std::atomic<long> &a0, long &a1, long a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f116(std::atomic<long> &a0, long &a1, long a2, std::memory_order a3,
+          std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f75(std::atomic<long> &a0, long &a1, long a2, std::memory_order a3) {
+bool f117(volatile std::atomic<long> &a0, long &a1, long a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f118(std::atomic<long> &a0, long &a1, long a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f119(volatile std::atomic<long> &a0, long &a1, long a2,
+          std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t8 = std::atomic<short>;
 
-std::atomic<short> f76() { return {}; }
+std::atomic<short> f120() { return {}; }
 
-std::atomic<short> f77(short a0) { return {a0}; }
+std::atomic<short> f121(short a0) { return {a0}; }
 
-bool f78(const std::atomic<short> &a0) { return a0.is_lock_free(); }
+bool f122(const std::atomic<short> &a0) { return a0.is_lock_free(); }
 
-void f79(std::atomic<short> &a0, short a1, std::memory_order a2) {
+bool f123(const volatile std::atomic<short> &a0) { return a0.is_lock_free(); }
+
+void f124(std::atomic<short> &a0, short a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f80(std::atomic<short> &a0, short &a1, short a2, std::memory_order a3,
-         std::memory_order a4) {
+void f125(volatile std::atomic<short> &a0, short a1, std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f126(std::atomic<short> &a0, short &a1, short a2, std::memory_order a3,
+          std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f81(std::atomic<short> &a0, short &a1, short a2, std::memory_order a3) {
+bool f127(volatile std::atomic<short> &a0, short &a1, short a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f128(std::atomic<short> &a0, short &a1, short a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f82(std::atomic<short> &a0, short &a1, short a2, std::memory_order a3,
-         std::memory_order a4) {
+bool f129(volatile std::atomic<short> &a0, short &a1, short a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f130(std::atomic<short> &a0, short &a1, short a2, std::memory_order a3,
+          std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f83(std::atomic<short> &a0, short &a1, short a2, std::memory_order a3) {
+bool f131(volatile std::atomic<short> &a0, short &a1, short a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f132(std::atomic<short> &a0, short &a1, short a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f133(volatile std::atomic<short> &a0, short &a1, short a2,
+          std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t9 = std::atomic<wchar_t>;
 
-std::atomic<wchar_t> f84() { return {}; }
+std::atomic<wchar_t> f134() { return {}; }
 
-std::atomic<wchar_t> f85(wchar_t a0) { return {a0}; }
+std::atomic<wchar_t> f135(wchar_t a0) { return {a0}; }
 
-bool f86(const std::atomic<wchar_t> &a0) { return a0.is_lock_free(); }
+bool f136(const std::atomic<wchar_t> &a0) { return a0.is_lock_free(); }
 
-void f87(std::atomic<wchar_t> &a0, wchar_t a1, std::memory_order a2) {
+bool f137(const volatile std::atomic<wchar_t> &a0) { return a0.is_lock_free(); }
+
+void f138(std::atomic<wchar_t> &a0, wchar_t a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f88(std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
-         std::memory_order a3, std::memory_order a4) {
+void f139(volatile std::atomic<wchar_t> &a0, wchar_t a1, std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f140(std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
+          std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f89(std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
-         std::memory_order a3) {
+bool f141(volatile std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f142(std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
+          std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f90(std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
-         std::memory_order a3, std::memory_order a4) {
+bool f143(volatile std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f144(std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
+          std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f91(std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
-         std::memory_order a3) {
+bool f145(volatile std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f146(std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f147(volatile std::atomic<wchar_t> &a0, wchar_t &a1, wchar_t a2,
+          std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
@@ -190,357 +347,670 @@ using t10 = std::atomic<bool>;
 
 using t11 = std::atomic<bool>::value_type;
 
-std::atomic<bool> f92() { return {}; }
+std::atomic<bool> f148() { return {}; }
 
-std::atomic<bool> f93(bool a0) { return {a0}; }
+std::atomic<bool> f149(bool a0) { return {a0}; }
 
-bool f94(std::atomic<bool> &a0, bool a1) { return a0.operator=(a1); }
+bool f150(std::atomic<bool> &a0, bool a1) { return a0.operator=(a1); }
 
-bool f95(const std::atomic<bool> &a0) { return static_cast<bool>(a0); }
+bool f151(volatile std::atomic<bool> &a0, bool a1) { return a0.operator=(a1); }
 
-bool f96(const std::atomic<bool> &a0) { return a0.is_lock_free(); }
+bool f152(const std::atomic<bool> &a0) { return static_cast<bool>(a0); }
 
-void f97(std::atomic<bool> &a0, bool a1, std::memory_order a2) {
+bool f153(const volatile std::atomic<bool> &a0) {
+  return static_cast<bool>(a0);
+}
+
+bool f154(const std::atomic<bool> &a0) { return a0.is_lock_free(); }
+
+bool f155(const volatile std::atomic<bool> &a0) { return a0.is_lock_free(); }
+
+void f156(std::atomic<bool> &a0, bool a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f98(const std::atomic<bool> &a0, std::memory_order a1) {
+void f157(volatile std::atomic<bool> &a0, bool a1, std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f158(const std::atomic<bool> &a0, std::memory_order a1) {
   return a0.load(a1);
 }
 
-bool f99(std::atomic<bool> &a0, bool a1, std::memory_order a2) {
+bool f159(const volatile std::atomic<bool> &a0, std::memory_order a1) {
+  return a0.load(a1);
+}
+
+bool f160(std::atomic<bool> &a0, bool a1, std::memory_order a2) {
   return a0.exchange(a1, a2);
 }
 
-bool f100(std::atomic<bool> &a0, bool &a1, bool a2, std::memory_order a3,
+bool f161(volatile std::atomic<bool> &a0, bool a1, std::memory_order a2) {
+  return a0.exchange(a1, a2);
+}
+
+bool f162(std::atomic<bool> &a0, bool &a1, bool a2, std::memory_order a3,
           std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f101(std::atomic<bool> &a0, bool &a1, bool a2, std::memory_order a3) {
+bool f163(volatile std::atomic<bool> &a0, bool &a1, bool a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f164(std::atomic<bool> &a0, bool &a1, bool a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f102(std::atomic<bool> &a0, bool &a1, bool a2, std::memory_order a3,
+bool f165(volatile std::atomic<bool> &a0, bool &a1, bool a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f166(std::atomic<bool> &a0, bool &a1, bool a2, std::memory_order a3,
           std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f103(std::atomic<bool> &a0, bool &a1, bool a2, std::memory_order a3) {
+bool f167(volatile std::atomic<bool> &a0, bool &a1, bool a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f168(std::atomic<bool> &a0, bool &a1, bool a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f169(volatile std::atomic<bool> &a0, bool &a1, bool a2,
+          std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t12 = std::atomic<unsigned char>;
 
-std::atomic<unsigned char> f104() { return {}; }
+std::atomic<unsigned char> f170() { return {}; }
 
-std::atomic<unsigned char> f105(unsigned char a0) { return {a0}; }
+std::atomic<unsigned char> f171(unsigned char a0) { return {a0}; }
 
-bool f106(const std::atomic<unsigned char> &a0) { return a0.is_lock_free(); }
+bool f172(const std::atomic<unsigned char> &a0) { return a0.is_lock_free(); }
 
-void f107(std::atomic<unsigned char> &a0, unsigned char a1,
+bool f173(const volatile std::atomic<unsigned char> &a0) {
+  return a0.is_lock_free();
+}
+
+void f174(std::atomic<unsigned char> &a0, unsigned char a1,
           std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f108(std::atomic<unsigned char> &a0, unsigned char &a1, unsigned char a2,
+void f175(volatile std::atomic<unsigned char> &a0, unsigned char a1,
+          std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f176(std::atomic<unsigned char> &a0, unsigned char &a1, unsigned char a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f109(std::atomic<unsigned char> &a0, unsigned char &a1, unsigned char a2,
+bool f177(volatile std::atomic<unsigned char> &a0, unsigned char &a1,
+          unsigned char a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f178(std::atomic<unsigned char> &a0, unsigned char &a1, unsigned char a2,
           std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f110(std::atomic<unsigned char> &a0, unsigned char &a1, unsigned char a2,
+bool f179(volatile std::atomic<unsigned char> &a0, unsigned char &a1,
+          unsigned char a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f180(std::atomic<unsigned char> &a0, unsigned char &a1, unsigned char a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f111(std::atomic<unsigned char> &a0, unsigned char &a1, unsigned char a2,
+bool f181(volatile std::atomic<unsigned char> &a0, unsigned char &a1,
+          unsigned char a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f182(std::atomic<unsigned char> &a0, unsigned char &a1, unsigned char a2,
           std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f183(volatile std::atomic<unsigned char> &a0, unsigned char &a1,
+          unsigned char a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t13 = std::atomic<unsigned int>;
 
-std::atomic<unsigned int> f112() { return {}; }
+std::atomic<unsigned int> f184() { return {}; }
 
-std::atomic<unsigned int> f113(unsigned int a0) { return {a0}; }
+std::atomic<unsigned int> f185(unsigned int a0) { return {a0}; }
 
-bool f114(const std::atomic<unsigned int> &a0) { return a0.is_lock_free(); }
+bool f186(const std::atomic<unsigned int> &a0) { return a0.is_lock_free(); }
 
-void f115(std::atomic<unsigned int> &a0, unsigned int a1,
+bool f187(const volatile std::atomic<unsigned int> &a0) {
+  return a0.is_lock_free();
+}
+
+void f188(std::atomic<unsigned int> &a0, unsigned int a1,
           std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f116(std::atomic<unsigned int> &a0, unsigned int &a1, unsigned int a2,
+void f189(volatile std::atomic<unsigned int> &a0, unsigned int a1,
+          std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f190(std::atomic<unsigned int> &a0, unsigned int &a1, unsigned int a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f117(std::atomic<unsigned int> &a0, unsigned int &a1, unsigned int a2,
+bool f191(volatile std::atomic<unsigned int> &a0, unsigned int &a1,
+          unsigned int a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f192(std::atomic<unsigned int> &a0, unsigned int &a1, unsigned int a2,
           std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f118(std::atomic<unsigned int> &a0, unsigned int &a1, unsigned int a2,
+bool f193(volatile std::atomic<unsigned int> &a0, unsigned int &a1,
+          unsigned int a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f194(std::atomic<unsigned int> &a0, unsigned int &a1, unsigned int a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f119(std::atomic<unsigned int> &a0, unsigned int &a1, unsigned int a2,
+bool f195(volatile std::atomic<unsigned int> &a0, unsigned int &a1,
+          unsigned int a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f196(std::atomic<unsigned int> &a0, unsigned int &a1, unsigned int a2,
           std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f197(volatile std::atomic<unsigned int> &a0, unsigned int &a1,
+          unsigned int a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t14 = std::atomic<unsigned long long>;
 
-std::atomic<unsigned long long> f120() { return {}; }
+std::atomic<unsigned long long> f198() { return {}; }
 
-std::atomic<unsigned long long> f121(unsigned long long a0) { return {a0}; }
+std::atomic<unsigned long long> f199(unsigned long long a0) { return {a0}; }
 
-bool f122(const std::atomic<unsigned long long> &a0) {
+bool f200(const std::atomic<unsigned long long> &a0) {
   return a0.is_lock_free();
 }
 
-void f123(std::atomic<unsigned long long> &a0, unsigned long long a1,
+bool f201(const volatile std::atomic<unsigned long long> &a0) {
+  return a0.is_lock_free();
+}
+
+void f202(std::atomic<unsigned long long> &a0, unsigned long long a1,
           std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f124(std::atomic<unsigned long long> &a0, unsigned long long &a1,
+void f203(volatile std::atomic<unsigned long long> &a0, unsigned long long a1,
+          std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f204(std::atomic<unsigned long long> &a0, unsigned long long &a1,
           unsigned long long a2, std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f125(std::atomic<unsigned long long> &a0, unsigned long long &a1,
+bool f205(volatile std::atomic<unsigned long long> &a0, unsigned long long &a1,
+          unsigned long long a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f206(std::atomic<unsigned long long> &a0, unsigned long long &a1,
           unsigned long long a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f126(std::atomic<unsigned long long> &a0, unsigned long long &a1,
+bool f207(volatile std::atomic<unsigned long long> &a0, unsigned long long &a1,
+          unsigned long long a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f208(std::atomic<unsigned long long> &a0, unsigned long long &a1,
           unsigned long long a2, std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f127(std::atomic<unsigned long long> &a0, unsigned long long &a1,
+bool f209(volatile std::atomic<unsigned long long> &a0, unsigned long long &a1,
+          unsigned long long a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f210(std::atomic<unsigned long long> &a0, unsigned long long &a1,
+          unsigned long long a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f211(volatile std::atomic<unsigned long long> &a0, unsigned long long &a1,
           unsigned long long a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t15 = std::atomic<unsigned long>;
 
-std::atomic<unsigned long> f128() { return {}; }
+std::atomic<unsigned long> f212() { return {}; }
 
-std::atomic<unsigned long> f129(unsigned long a0) { return {a0}; }
+std::atomic<unsigned long> f213(unsigned long a0) { return {a0}; }
 
-bool f130(const std::atomic<unsigned long> &a0) { return a0.is_lock_free(); }
+bool f214(const std::atomic<unsigned long> &a0) { return a0.is_lock_free(); }
 
-void f131(std::atomic<unsigned long> &a0, unsigned long a1,
+bool f215(const volatile std::atomic<unsigned long> &a0) {
+  return a0.is_lock_free();
+}
+
+void f216(std::atomic<unsigned long> &a0, unsigned long a1,
           std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f132(std::atomic<unsigned long> &a0, unsigned long &a1, unsigned long a2,
+void f217(volatile std::atomic<unsigned long> &a0, unsigned long a1,
+          std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f218(std::atomic<unsigned long> &a0, unsigned long &a1, unsigned long a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f133(std::atomic<unsigned long> &a0, unsigned long &a1, unsigned long a2,
+bool f219(volatile std::atomic<unsigned long> &a0, unsigned long &a1,
+          unsigned long a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f220(std::atomic<unsigned long> &a0, unsigned long &a1, unsigned long a2,
           std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f134(std::atomic<unsigned long> &a0, unsigned long &a1, unsigned long a2,
+bool f221(volatile std::atomic<unsigned long> &a0, unsigned long &a1,
+          unsigned long a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f222(std::atomic<unsigned long> &a0, unsigned long &a1, unsigned long a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f135(std::atomic<unsigned long> &a0, unsigned long &a1, unsigned long a2,
+bool f223(volatile std::atomic<unsigned long> &a0, unsigned long &a1,
+          unsigned long a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f224(std::atomic<unsigned long> &a0, unsigned long &a1, unsigned long a2,
           std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f225(volatile std::atomic<unsigned long> &a0, unsigned long &a1,
+          unsigned long a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t16 = std::atomic<char16_t>;
 
-std::atomic<char16_t> f136() { return {}; }
+std::atomic<char16_t> f226() { return {}; }
 
-std::atomic<char16_t> f137(char16_t a0) { return {a0}; }
+std::atomic<char16_t> f227(char16_t a0) { return {a0}; }
 
-bool f138(const std::atomic<char16_t> &a0) { return a0.is_lock_free(); }
+bool f228(const std::atomic<char16_t> &a0) { return a0.is_lock_free(); }
 
-void f139(std::atomic<char16_t> &a0, char16_t a1, std::memory_order a2) {
+bool f229(const volatile std::atomic<char16_t> &a0) {
+  return a0.is_lock_free();
+}
+
+void f230(std::atomic<char16_t> &a0, char16_t a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f140(std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
+void f231(volatile std::atomic<char16_t> &a0, char16_t a1,
+          std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f232(std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f141(std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
+bool f233(volatile std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f234(std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
           std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f142(std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
+bool f235(volatile std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f236(std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f143(std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
+bool f237(volatile std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f238(std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f239(volatile std::atomic<char16_t> &a0, char16_t &a1, char16_t a2,
           std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t17 = std::atomic<signed char>;
 
-std::atomic<signed char> f144() { return {}; }
+std::atomic<signed char> f240() { return {}; }
 
-std::atomic<signed char> f145(signed char a0) { return {a0}; }
+std::atomic<signed char> f241(signed char a0) { return {a0}; }
 
-bool f146(const std::atomic<signed char> &a0) { return a0.is_lock_free(); }
+bool f242(const std::atomic<signed char> &a0) { return a0.is_lock_free(); }
 
-void f147(std::atomic<signed char> &a0, signed char a1, std::memory_order a2) {
+bool f243(const volatile std::atomic<signed char> &a0) {
+  return a0.is_lock_free();
+}
+
+void f244(std::atomic<signed char> &a0, signed char a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f148(std::atomic<signed char> &a0, signed char &a1, signed char a2,
+void f245(volatile std::atomic<signed char> &a0, signed char a1,
+          std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f246(std::atomic<signed char> &a0, signed char &a1, signed char a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f149(std::atomic<signed char> &a0, signed char &a1, signed char a2,
+bool f247(volatile std::atomic<signed char> &a0, signed char &a1,
+          signed char a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f248(std::atomic<signed char> &a0, signed char &a1, signed char a2,
           std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f150(std::atomic<signed char> &a0, signed char &a1, signed char a2,
+bool f249(volatile std::atomic<signed char> &a0, signed char &a1,
+          signed char a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f250(std::atomic<signed char> &a0, signed char &a1, signed char a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f151(std::atomic<signed char> &a0, signed char &a1, signed char a2,
+bool f251(volatile std::atomic<signed char> &a0, signed char &a1,
+          signed char a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f252(std::atomic<signed char> &a0, signed char &a1, signed char a2,
           std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f253(volatile std::atomic<signed char> &a0, signed char &a1,
+          signed char a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t18 = std::atomic<unsigned short>;
 
-std::atomic<unsigned short> f152() { return {}; }
+std::atomic<unsigned short> f254() { return {}; }
 
-std::atomic<unsigned short> f153(unsigned short a0) { return {a0}; }
+std::atomic<unsigned short> f255(unsigned short a0) { return {a0}; }
 
-bool f154(const std::atomic<unsigned short> &a0) { return a0.is_lock_free(); }
+bool f256(const std::atomic<unsigned short> &a0) { return a0.is_lock_free(); }
 
-void f155(std::atomic<unsigned short> &a0, unsigned short a1,
+bool f257(const volatile std::atomic<unsigned short> &a0) {
+  return a0.is_lock_free();
+}
+
+void f258(std::atomic<unsigned short> &a0, unsigned short a1,
           std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f156(std::atomic<unsigned short> &a0, unsigned short &a1,
+void f259(volatile std::atomic<unsigned short> &a0, unsigned short a1,
+          std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f260(std::atomic<unsigned short> &a0, unsigned short &a1,
           unsigned short a2, std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f157(std::atomic<unsigned short> &a0, unsigned short &a1,
+bool f261(volatile std::atomic<unsigned short> &a0, unsigned short &a1,
+          unsigned short a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f262(std::atomic<unsigned short> &a0, unsigned short &a1,
           unsigned short a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f158(std::atomic<unsigned short> &a0, unsigned short &a1,
+bool f263(volatile std::atomic<unsigned short> &a0, unsigned short &a1,
+          unsigned short a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f264(std::atomic<unsigned short> &a0, unsigned short &a1,
           unsigned short a2, std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f159(std::atomic<unsigned short> &a0, unsigned short &a1,
+bool f265(volatile std::atomic<unsigned short> &a0, unsigned short &a1,
+          unsigned short a2, std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f266(std::atomic<unsigned short> &a0, unsigned short &a1,
+          unsigned short a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f267(volatile std::atomic<unsigned short> &a0, unsigned short &a1,
           unsigned short a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 using t19 = std::atomic<char32_t>;
 
-std::atomic<char32_t> f160() { return {}; }
+std::atomic<char32_t> f268() { return {}; }
 
-std::atomic<char32_t> f161(char32_t a0) { return {a0}; }
+std::atomic<char32_t> f269(char32_t a0) { return {a0}; }
 
-bool f162(const std::atomic<char32_t> &a0) { return a0.is_lock_free(); }
+bool f270(const std::atomic<char32_t> &a0) { return a0.is_lock_free(); }
 
-void f163(std::atomic<char32_t> &a0, char32_t a1, std::memory_order a2) {
+bool f271(const volatile std::atomic<char32_t> &a0) {
+  return a0.is_lock_free();
+}
+
+void f272(std::atomic<char32_t> &a0, char32_t a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
-bool f164(std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
+void f273(volatile std::atomic<char32_t> &a0, char32_t a1,
+          std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+bool f274(std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
-bool f165(std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
+bool f275(volatile std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+bool f276(std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
           std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
-bool f166(std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
+bool f277(volatile std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+bool f278(std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
           std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
-bool f167(std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
+bool f279(volatile std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
+          std::memory_order a3, std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+bool f280(std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
+          std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+bool f281(volatile std::atomic<char32_t> &a0, char32_t &a1, char32_t a2,
           std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 template <typename T1> using t20 = typename std::atomic<T1 *>::value_type;
 
-template <typename T1> std::atomic<T1 *> f168() { return {}; }
+template <typename T1> std::atomic<T1 *> f282() { return {}; }
 
-template <typename T1> std::atomic<T1 *> f169(T1 *a0) { return {a0}; }
+template <typename T1> std::atomic<T1 *> f283(T1 *a0) { return {a0}; }
 
 template <typename T1> using t21 = typename std::atomic<T1>::value_type;
 
-template <typename T1> std::atomic<T1> f170(T1 a0) { return {a0}; }
+template <typename T1> std::atomic<T1> f284(T1 a0) { return {a0}; }
 
-template <typename T1> T1 f171(const std::atomic<T1> &a0) {
+template <typename T1> T1 f285(const std::atomic<T1> &a0) {
+  return static_cast<T1>(a0);
+}
+
+template <typename T1> T1 f286(const volatile std::atomic<T1> &a0) {
   return static_cast<T1>(a0);
 }
 
 template <typename T1>
-void f172(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
+void f287(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
 template <typename T1>
-T1 f173(const std::atomic<T1> &a0, std::memory_order a1) {
+void f288(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+template <typename T1>
+T1 f289(const std::atomic<T1> &a0, std::memory_order a1) {
   return a0.load(a1);
 }
 
 template <typename T1>
-T1 f174(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
+T1 f290(const volatile std::atomic<T1> &a0, std::memory_order a1) {
+  return a0.load(a1);
+}
+
+template <typename T1>
+T1 f291(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
   return a0.exchange(a1, a2);
 }
 
 template <typename T1>
-bool f175(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+T1 f292(volatile std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
+  return a0.exchange(a1, a2);
+}
+
+template <typename T1>
+bool f293(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f176(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+bool f294(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+          std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+template <typename T1>
+bool f295(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
 template <typename T1>
-bool f177(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+bool f296(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+template <typename T1>
+bool f297(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f178(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+bool f298(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+          std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+template <typename T1>
+bool f299(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+template <typename T1>
+bool f300(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
@@ -552,95 +1022,95 @@ using t24 = std::atomic_char16_t;
 
 using t25 = std::atomic_char32_t;
 
-template <typename T1> bool f179(volatile std::atomic<T1> *a0, T1 *a1, T1 a2) {
+template <typename T1> bool f301(volatile std::atomic<T1> *a0, T1 *a1, T1 a2) {
   return std::atomic_compare_exchange_strong<T1>(a0, a1, a2);
 }
 
-template <typename T1> bool f180(std::atomic<T1> *a0, T1 *a1, T1 a2) {
+template <typename T1> bool f302(std::atomic<T1> *a0, T1 *a1, T1 a2) {
   return std::atomic_compare_exchange_strong<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-bool f181(volatile std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
+bool f303(volatile std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return std::atomic_compare_exchange_strong_explicit<T1>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f182(std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
+bool f304(std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return std::atomic_compare_exchange_strong_explicit<T1>(a0, a1, a2, a3, a4);
 }
 
-template <typename T1> bool f183(volatile std::atomic<T1> *a0, T1 *a1, T1 a2) {
+template <typename T1> bool f305(volatile std::atomic<T1> *a0, T1 *a1, T1 a2) {
   return std::atomic_compare_exchange_weak<T1>(a0, a1, a2);
 }
 
-template <typename T1> bool f184(std::atomic<T1> *a0, T1 *a1, T1 a2) {
+template <typename T1> bool f306(std::atomic<T1> *a0, T1 *a1, T1 a2) {
   return std::atomic_compare_exchange_weak<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-bool f185(volatile std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
+bool f307(volatile std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return std::atomic_compare_exchange_weak_explicit<T1>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f186(std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
+bool f308(std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return std::atomic_compare_exchange_weak_explicit<T1>(a0, a1, a2, a3, a4);
 }
 
-template <typename T1> T1 f187(volatile std::atomic<T1> *a0, T1 a1) {
+template <typename T1> T1 f309(volatile std::atomic<T1> *a0, T1 a1) {
   return std::atomic_exchange<T1>(a0, a1);
 }
 
-template <typename T1> T1 f188(std::atomic<T1> *a0, T1 a1) {
+template <typename T1> T1 f310(std::atomic<T1> *a0, T1 a1) {
   return std::atomic_exchange<T1>(a0, a1);
 }
 
 template <typename T1>
-T1 f189(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+T1 f311(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_exchange_explicit<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-T1 f190(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+T1 f312(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_exchange_explicit<T1>(a0, a1, a2);
 }
 
-void f191(std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
+void f313(std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
 
-void f192(volatile std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
+void f314(volatile std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
 
-void f193(std::atomic_flag *a0, std::memory_order a1) {
+void f315(std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_clear_explicit(a0, a1);
 }
 
-void f194(volatile std::atomic_flag *a0, std::memory_order a1) {
+void f316(volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_clear_explicit(a0, a1);
 }
 
-bool f195(std::atomic_flag *a0) { return std::atomic_flag_test_and_set(a0); }
+bool f317(std::atomic_flag *a0) { return std::atomic_flag_test_and_set(a0); }
 
-bool f196(volatile std::atomic_flag *a0) {
+bool f318(volatile std::atomic_flag *a0) {
   return std::atomic_flag_test_and_set(a0);
 }
 
-bool f197(std::atomic_flag *a0, std::memory_order a1) {
+bool f319(std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_and_set_explicit(a0, a1);
 }
 
-bool f198(volatile std::atomic_flag *a0, std::memory_order a1) {
+bool f320(volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_and_set_explicit(a0, a1);
 }
 
-template <typename T1> void f199(volatile std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f321(volatile std::atomic<T1> *a0, T1 a1) {
   return std::atomic_init<T1>(a0, a1);
 }
 
-template <typename T1> void f200(std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f322(std::atomic<T1> *a0, T1 a1) {
   return std::atomic_init<T1>(a0, a1);
 }
 
@@ -686,21 +1156,21 @@ using t45 = std::atomic_short;
 
 using t46 = std::atomic_size_t;
 
-template <typename T1> void f201(volatile std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f323(volatile std::atomic<T1> *a0, T1 a1) {
   return std::atomic_store<T1>(a0, a1);
 }
 
-template <typename T1> void f202(std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f324(std::atomic<T1> *a0, T1 a1) {
   return std::atomic_store<T1>(a0, a1);
 }
 
 template <typename T1>
-void f203(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+void f325(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_store_explicit<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-void f204(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+void f326(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_store_explicit<T1>(a0, a1, a2);
 }
 

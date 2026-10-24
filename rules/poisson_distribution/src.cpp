@@ -69,3 +69,23 @@ bool f12(const std::poisson_distribution<T1> &a0,
          const std::poisson_distribution<T1> &a1) {
   return operator==(a0, a1);
 }
+
+template <typename T1>
+using t4 =
+    typename std::poisson_distribution<T1>::param_type::distribution_type;
+
+template <typename T1>
+typename std::poisson_distribution<T1>::param_type f13(double a0) {
+  return typename std::poisson_distribution<T1>::param_type(a0);
+}
+
+template <typename T1>
+double f14(const typename std::poisson_distribution<T1>::param_type &a0) {
+  return a0.mean();
+}
+
+template <typename T1>
+bool f15(const typename std::poisson_distribution<T1>::param_type &a0,
+         const typename std::poisson_distribution<T1>::param_type &a1) {
+  return operator==(a0, a1);
+}

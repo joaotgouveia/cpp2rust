@@ -2,4 +2,4 @@
 #include <atomic>
 #include <utility>
 
-template <typename T1> std::atomic<T1> f205() { return {}; }
+template <typename T1> std::atomic<T1> f327() { return {}; }

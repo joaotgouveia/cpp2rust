@@ -73,3 +73,28 @@ bool f13(const std::weibull_distribution<T1> &a0,
          const std::weibull_distribution<T1> &a1) {
   return operator==(a0, a1);
 }
+
+template <typename T1>
+using t4 =
+    typename std::weibull_distribution<T1>::param_type::distribution_type;
+
+template <typename T1>
+typename std::weibull_distribution<T1>::param_type f14(T1 a0, T1 a1) {
+  return typename std::weibull_distribution<T1>::param_type(a0, a1);
+}
+
+template <typename T1>
+T1 f15(const typename std::weibull_distribution<T1>::param_type &a0) {
+  return a0.a();
+}
+
+template <typename T1>
+T1 f16(const typename std::weibull_distribution<T1>::param_type &a0) {
+  return a0.b();
+}
+
+template <typename T1>
+bool f17(const typename std::weibull_distribution<T1>::param_type &a0,
+         const typename std::weibull_distribution<T1>::param_type &a1) {
+  return operator==(a0, a1);
+}

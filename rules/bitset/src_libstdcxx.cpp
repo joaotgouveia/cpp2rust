@@ -47,14 +47,49 @@ f44(const std::bitset<T1> &a0) {
   return a0.template to_string<T2>();
 }
 
+template <std::size_t T1>
+typename std::bitset<T1>::reference
+f45(const typename std::bitset<T1>::reference &a0) {
+  return typename std::bitset<T1>::reference(a0);
+}
+
+template <std::size_t T1>
+typename std::bitset<T1>::reference &
+f46(typename std::bitset<T1>::reference &a0, bool a1) {
+  return a0.operator=(a1);
+}
+
+template <std::size_t T1>
+typename std::bitset<T1>::reference &
+f47(typename std::bitset<T1>::reference &a0,
+    const typename std::bitset<T1>::reference &a1) {
+  return a0.operator=(a1);
+}
+
+template <std::size_t T1>
+bool f48(const typename std::bitset<T1>::reference &a0) {
+  return a0.operator~();
+}
+
+template <std::size_t T1>
+bool f49(const typename std::bitset<T1>::reference &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <std::size_t T1>
+typename std::bitset<T1>::reference &
+f50(typename std::bitset<T1>::reference &a0) {
+  return a0.flip();
+}
+
 template <typename T1, typename T2, std::size_t T3>
-std::basic_ostream<T1, T2> &f45(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f51(std::basic_ostream<T1, T2> &a0,
                                 const std::bitset<T3> &a1) {
   return std::operator<< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, std::size_t T3>
-std::basic_istream<T1, T2> &f46(std::basic_istream<T1, T2> &a0,
+std::basic_istream<T1, T2> &f52(std::basic_istream<T1, T2> &a0,
                                 std::bitset<T3> &a1) {
   return std::operator>> <T1, T2, T3>(a0, a1);
 }

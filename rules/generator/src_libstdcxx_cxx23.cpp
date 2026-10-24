@@ -1,5 +1,8 @@
 #include <algorithm>
+#include <coroutine>
 #include <generator>
+#include <ranges>
+#include <tuple>
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
@@ -235,6 +238,75 @@ decltype(auto) f24(const std::generator<T1, T2, T3> &a0,
           (std::ranges::random_access_range<T4>)
 {
   return a0.template operator[]<T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+auto f25(typename std::generator<T1, T2, T3>::promise_type &a0) {
+  return a0.get_return_object();
+}
+
+template <typename T1, typename T2, typename T3>
+std::suspend_always
+f26(const typename std::generator<T1, T2, T3>::promise_type &a0) {
+  return a0.initial_suspend();
+}
+
+template <typename T1, typename T2, typename T3>
+auto f27(typename std::generator<T1, T2, T3>::promise_type &a0) {
+  return a0.final_suspend();
+}
+
+template <typename T1, typename T2, typename T3>
+void f28(typename std::generator<T1, T2, T3>::promise_type &a0) {
+  return a0.unhandled_exception();
+}
+
+template <typename T1, typename T2, typename T3>
+void f29(const typename std::generator<T1, T2, T3>::promise_type &a0) {
+  return a0.return_void();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6, typename T7>
+auto f30(typename std::generator<T1, T2, T3>::promise_type &a0,
+         std::ranges::elements_of<std::generator<T4, T5, T6> &&, T7> a1) {
+  return a0.template yield_value<T4, T5, T6, T7>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+auto f31(typename std::generator<T1, T2, T3>::promise_type &a0,
+         std::ranges::elements_of<T4, T5> a1)
+  requires(std::ranges::input_range<T4>)
+{
+  return a0.template yield_value<T4, T5>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+void *f32(std::size_t a0)
+  requires(std::default_initializable<
+           typename std::__gen::_Promise_alloc<T3>::_Rebound>)
+{
+  return std::generator<T1, T2, T3>::promise_type::operator new(a0);
+}
+
+template <typename T1, typename T2, typename T3>
+void f33(void *a0, std::size_t a1) {
+  return std::generator<T1, T2, T3>::promise_type::operator delete(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename... T5>
+void *f34(std::size_t a0, std::allocator_arg_t a1, const T4 &a2,
+          const T5 &...a3) {
+  return std::generator<T1, T2, T3>::promise_type::operator new(
+      a0, std::move(a1), a2, a3...);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename... T6>
+void *f35(std::size_t a0, const T4 &a1, std::allocator_arg_t a2, const T5 &a3,
+          const T6 &...a4) {
+  return std::generator<T1, T2, T3>::promise_type::operator new(
+      a0, a1, std::move(a2), a3, a4...);
 }
 
 template <typename T1, typename T2> using t4 = std::pmr::generator<T1, T2>;

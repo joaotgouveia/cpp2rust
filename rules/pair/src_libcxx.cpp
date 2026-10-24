@@ -46,12 +46,32 @@ auto f50(T1 &&a0, T2 &&a1)
   return std::make_pair<T1, T2>(std::forward<T1>(a0), std::forward<T2>(a1));
 }
 
+template <typename T1, typename T2,
+          typename T3 = std::__check_pair_construction<T1, T2>,
+          std::__enable_if_t<
+              std::__check_pair_construction<T1, T2>::__enable_default(), int>
+              T4 = 0>
+std::pair<T1, T2> f51() {
+  return std::pair<T1, T2>();
+}
+
+template <typename T1, typename T2,
+          typename T3 = std::__check_pair_construction<T1, T2>,
+          std::__enable_if_t<
+              std::__check_pair_construction<T1, T2>::
+                  template __is_pair_constructible<const T1 &, const T2 &>(),
+              int>
+              T4 = 0>
+std::pair<T1, T2> f52(const T1 &a0, const T2 &a1) {
+  return std::pair<T1, T2>(a0, a1);
+}
+
 template <typename T1, typename T2, typename T3, typename T4,
           std::__enable_if_t<std::is_assignable<T1 &, const T3 &>::value &&
                                  std::is_assignable<T2 &, const T4 &>::value,
                              int>
               T5 = 0>
-std::pair<T1, T2> &f51(std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+std::pair<T1, T2> &f53(std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
   return a0.template operator= <T3, T4>(a1);
 }
 
@@ -60,6 +80,6 @@ template <typename T1, typename T2, typename T3, typename T4,
                                  std::is_assignable<T2 &, T4>::value,
                              int>
               T5 = 0>
-std::pair<T1, T2> &f52(std::pair<T1, T2> &a0, std::pair<T3, T4> &&a1) {
+std::pair<T1, T2> &f54(std::pair<T1, T2> &a0, std::pair<T3, T4> &&a1) {
   return a0.template operator= <T3, T4>(std::move(a1));
 }

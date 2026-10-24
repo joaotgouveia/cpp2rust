@@ -56,11 +56,29 @@ std::variant<T1...> f36(std::in_place_type_t<T2> a0,
   return std::variant<T1...>(a0, a1, std::forward<T4>(a2)...);
 }
 
+template <typename... T1, std::size_t T2, typename... T3,
+          typename T4 = typename std::_Nth_type<T2, T1...>::type,
+          typename T5 = std::enable_if_t<std::is_constructible_v<
+              typename std::_Nth_type<T2, T1...>::type, T3...>>>
+std::variant<T1...> f37(std::in_place_index_t<T2> a0, T3 &&...a1) {
+  return std::variant<T1...>(a0, std::forward<T3>(a1)...);
+}
+
+template <typename... T1, std::size_t T2, typename T3, typename... T4,
+          typename T5 = typename std::_Nth_type<T2, T1...>::type,
+          typename T6 = std::enable_if_t<
+              std::is_constructible_v<typename std::_Nth_type<T2, T1...>::type,
+                                      std::initializer_list<T3> &, T4...>>>
+std::variant<T1...> f38(std::in_place_index_t<T2> a0,
+                        std::initializer_list<T3> a1, T4 &&...a2) {
+  return std::variant<T1...>(a0, a1, std::forward<T4>(a2)...);
+}
+
 template <typename... T1, typename T2, typename... T3>
 std::enable_if_t<std::is_constructible_v<T2, T3...> &&
                      std::variant<T1...>::template __exactly_once<T2>,
                  T2 &>
-f37(std::variant<T1...> &a0, T3 &&...a1) {
+f39(std::variant<T1...> &a0, T3 &&...a1) {
   return a0.template emplace<T2, T3...>(std::forward<T3>(a1)...);
 }
 
@@ -69,7 +87,7 @@ std::enable_if_t<
     std::is_constructible_v<T2, std::initializer_list<T3> &, T4...> &&
         std::variant<T1...>::template __exactly_once<T2>,
     T2 &>
-f38(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
+f40(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
   return a0.template emplace<T2, T3, T4...>(a1, std::forward<T4>(a2)...);
 }
 
@@ -77,7 +95,7 @@ template <typename... T1, std::size_t T2, typename... T3>
 std::enable_if_t<
     std::is_constructible_v<typename std::_Nth_type<T2, T1...>::type, T3...>,
     typename std::_Nth_type<T2, T1...>::type &>
-f39(std::variant<T1...> &a0, T3 &&...a1) {
+f41(std::variant<T1...> &a0, T3 &&...a1) {
   return a0.template emplace<T2, T3...>(std::forward<T3>(a1)...);
 }
 
@@ -86,10 +104,10 @@ std::enable_if_t<
     std::is_constructible_v<typename std::_Nth_type<T2, T1...>::type,
                             std::initializer_list<T3> &, T4...>,
     typename std::_Nth_type<T2, T1...>::type &>
-f40(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
+f42(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
   return a0.template emplace<T2, T3, T4...>(a1, std::forward<T4>(a2)...);
 }
 
-template <typename T1, typename... T2> auto f41(T1 &&a0, T2 &&...a1) {
+template <typename T1, typename... T2> auto f43(T1 &&a0, T2 &&...a1) {
   return std::visit<T1, T2...>(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }

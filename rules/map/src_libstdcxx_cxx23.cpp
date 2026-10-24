@@ -4,7 +4,7 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::map<T1, T2, T3, T4> f105(std::from_range_t a0, T5 &&a1, const T3 &a2,
+std::map<T1, T2, T3, T4> f106(std::from_range_t a0, T5 &&a1, const T3 &a2,
                               const T4 &a3)
   requires(std::__detail::__container_compatible_range<
            T5, typename std::map<T1, T2, T3, T4>::value_type>)
@@ -13,7 +13,7 @@ std::map<T1, T2, T3, T4> f105(std::from_range_t a0, T5 &&a1, const T3 &a2,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::map<T1, T2, T3, T4> f106(std::from_range_t a0, T5 &&a1, const T4 &a2)
+std::map<T1, T2, T3, T4> f107(std::from_range_t a0, T5 &&a1, const T4 &a2)
   requires(std::__detail::__container_compatible_range<
            T5, typename std::map<T1, T2, T3, T4>::value_type>)
 {
@@ -21,7 +21,7 @@ std::map<T1, T2, T3, T4> f106(std::from_range_t a0, T5 &&a1, const T4 &a2)
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f107(std::map<T1, T2, T3, T4> &a0, T5 &&a1)
+void f108(std::map<T1, T2, T3, T4> &a0, T5 &&a1)
   requires(std::__detail::__container_compatible_range<
            T5, typename std::map<T1, T2, T3, T4>::value_type>)
 {

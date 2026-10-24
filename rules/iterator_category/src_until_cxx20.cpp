@@ -336,27 +336,6 @@ bool f23(const T1 &a0, const T1 &a1) {
 }
 
 template <
-    typename T1, typename T2,
-    typename = typename std::enable_if<
-        (std::is_base_of<
-             std::input_iterator_tag,
-             typename std::iterator_traits<T1>::iterator_category>::value ||
-         std::is_base_of<
-             std::output_iterator_tag,
-             typename std::iterator_traits<T1>::iterator_category>::value) &&
-        (std::is_base_of<
-             std::input_iterator_tag,
-             typename std::iterator_traits<T2>::iterator_category>::value ||
-         std::is_base_of<
-             std::output_iterator_tag,
-             typename std::iterator_traits<T2>::iterator_category>::value) &&
-        !std::is_same<T1, T2>::value && std::is_convertible<T2, T1>::value &&
-        !std::is_pointer<T1>::value && !std::is_pointer<T2>::value>::type>
-T1 f24(const T2 &a0) {
-  return T1(a0);
-}
-
-template <
     typename T3, typename T1 = typename std::remove_reference<T3>::type,
     typename T2 = typename std::iterator_traits<T1>::value_type,
     typename = typename std::enable_if<
@@ -367,7 +346,7 @@ template <
              std::output_iterator_tag,
              typename std::iterator_traits<T1>::iterator_category>::value) &&
         !std::is_reference<T3>::value && !std::is_pointer<T1>::value>::type>
-T1 &f25(T3 &&a0) {
+T1 &f24(T3 &&a0) {
   return ++a0;
 }
 
@@ -379,7 +358,7 @@ template <
             std::bidirectional_iterator_tag,
             typename std::iterator_traits<T1>::iterator_category>::value &&
         !std::is_reference<T3>::value && !std::is_pointer<T1>::value>::type>
-T1 &f26(T3 &&a0) {
+T1 &f25(T3 &&a0) {
   return --a0;
 }
 
@@ -394,7 +373,7 @@ template <
             typename std::iterator_traits<T2>::iterator_category>::value &&
         !std::is_same<T1, T2>::value && !std::is_pointer<T1>::value &&
         !std::is_pointer<T2>::value>::type>
-auto f27(const T1 &a0, const T2 &a1) -> decltype(a0 == a1) {
+auto f26(const T1 &a0, const T2 &a1) -> decltype(a0 == a1) {
   return a0 == a1;
 }
 
@@ -409,7 +388,7 @@ template <
             typename std::iterator_traits<T2>::iterator_category>::value &&
         !std::is_same<T1, T2>::value && !std::is_pointer<T1>::value &&
         !std::is_pointer<T2>::value>::type>
-auto f28(const T1 &a0, const T2 &a1) -> decltype(a0 != a1) {
+auto f27(const T1 &a0, const T2 &a1) -> decltype(a0 != a1) {
   return a0 != a1;
 }
 
@@ -424,7 +403,7 @@ template <
             typename std::iterator_traits<T2>::iterator_category>::value &&
         !std::is_same<T1, T2>::value && !std::is_pointer<T1>::value &&
         !std::is_pointer<T2>::value>::type>
-auto f29(const T1 &a0, const T2 &a1) -> decltype(a0 < a1) {
+auto f28(const T1 &a0, const T2 &a1) -> decltype(a0 < a1) {
   return a0 < a1;
 }
 
@@ -439,7 +418,7 @@ template <
             typename std::iterator_traits<T2>::iterator_category>::value &&
         !std::is_same<T1, T2>::value && !std::is_pointer<T1>::value &&
         !std::is_pointer<T2>::value>::type>
-auto f30(const T1 &a0, const T2 &a1) -> decltype(a0 > a1) {
+auto f29(const T1 &a0, const T2 &a1) -> decltype(a0 > a1) {
   return a0 > a1;
 }
 
@@ -454,7 +433,7 @@ template <
             typename std::iterator_traits<T2>::iterator_category>::value &&
         !std::is_same<T1, T2>::value && !std::is_pointer<T1>::value &&
         !std::is_pointer<T2>::value>::type>
-auto f31(const T1 &a0, const T2 &a1) -> decltype(a0 <= a1) {
+auto f30(const T1 &a0, const T2 &a1) -> decltype(a0 <= a1) {
   return a0 <= a1;
 }
 
@@ -469,7 +448,7 @@ template <
             typename std::iterator_traits<T2>::iterator_category>::value &&
         !std::is_same<T1, T2>::value && !std::is_pointer<T1>::value &&
         !std::is_pointer<T2>::value>::type>
-auto f32(const T1 &a0, const T2 &a1) -> decltype(a0 >= a1) {
+auto f31(const T1 &a0, const T2 &a1) -> decltype(a0 >= a1) {
   return a0 >= a1;
 }
 
@@ -484,6 +463,6 @@ template <
             typename std::iterator_traits<T2>::iterator_category>::value &&
         !std::is_same<T1, T2>::value && !std::is_pointer<T1>::value &&
         !std::is_pointer<T2>::value>::type>
-auto f33(const T1 &a0, const T2 &a1) -> decltype(a0 - a1) {
+auto f32(const T1 &a0, const T2 &a1) -> decltype(a0 - a1) {
   return a0 - a1;
 }

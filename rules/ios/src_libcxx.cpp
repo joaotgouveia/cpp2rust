@@ -239,57 +239,91 @@ std::ios_base::openmode f83() { return std::ios_base::out; }
 
 std::ios_base::openmode f84() { return std::ios_base::trunc; }
 
-const std::error_category &f85() { return std::iostream_category(); }
+std::ios_base::failure f85(const std::string &a0, const std::error_code &a1) {
+  return std::ios_base::failure(a0, a1);
+}
 
-template <typename T1> bool f86(T1 a0, const std::locale &a1) {
+std::ios_base::failure f86(const char *a0, const std::error_code &a1) {
+  return std::ios_base::failure(a0, a1);
+}
+
+std::ios_base::failure f87(const std::ios_base::failure &a0) {
+  return std::ios_base::failure(a0);
+}
+
+std::ios_base::failure &f88(std::ios_base::failure &a0,
+                            const std::ios_base::failure &a1) {
+  return a0.operator=(a1);
+}
+
+const std::error_code &f89(const std::ios_base::failure &a0) {
+  return a0.code();
+}
+
+const char *f90(const std::ios_base::failure &a0) { return a0.what(); }
+
+std::ios_base::Init f91() { return std::ios_base::Init(); }
+
+std::ios_base::Init f92(const std::ios_base::Init &a0) {
+  return std::ios_base::Init(a0);
+}
+
+std::ios_base::Init &f93(std::ios_base::Init &a0,
+                         const std::ios_base::Init &a1) {
+  return a0.operator=(a1);
+}
+
+const std::error_category &f94() { return std::iostream_category(); }
+
+template <typename T1> bool f95(T1 a0, const std::locale &a1) {
   return std::isalnum<T1>(a0, a1);
 }
 
-template <typename T1> bool f87(T1 a0, const std::locale &a1) {
+template <typename T1> bool f96(T1 a0, const std::locale &a1) {
   return std::isalpha<T1>(a0, a1);
 }
 
-template <typename T1> bool f88(T1 a0, const std::locale &a1) {
+template <typename T1> bool f97(T1 a0, const std::locale &a1) {
   return std::isblank<T1>(a0, a1);
 }
 
-template <typename T1> bool f89(T1 a0, const std::locale &a1) {
+template <typename T1> bool f98(T1 a0, const std::locale &a1) {
   return std::iscntrl<T1>(a0, a1);
 }
 
-template <typename T1> bool f90(T1 a0, const std::locale &a1) {
+template <typename T1> bool f99(T1 a0, const std::locale &a1) {
   return std::isdigit<T1>(a0, a1);
 }
 
-template <typename T1> bool f91(T1 a0, const std::locale &a1) {
+template <typename T1> bool f100(T1 a0, const std::locale &a1) {
   return std::isgraph<T1>(a0, a1);
 }
 
-template <typename T1> bool f92(T1 a0, const std::locale &a1) {
+template <typename T1> bool f101(T1 a0, const std::locale &a1) {
   return std::islower<T1>(a0, a1);
 }
 
-template <typename T1> bool f93(T1 a0, const std::locale &a1) {
+template <typename T1> bool f102(T1 a0, const std::locale &a1) {
   return std::isprint<T1>(a0, a1);
 }
 
-template <typename T1> bool f94(T1 a0, const std::locale &a1) {
+template <typename T1> bool f103(T1 a0, const std::locale &a1) {
   return std::ispunct<T1>(a0, a1);
 }
 
-template <typename T1> bool f95(T1 a0, const std::locale &a1) {
+template <typename T1> bool f104(T1 a0, const std::locale &a1) {
   return std::isspace<T1>(a0, a1);
 }
 
-template <typename T1> bool f96(T1 a0, const std::locale &a1) {
+template <typename T1> bool f105(T1 a0, const std::locale &a1) {
   return std::isupper<T1>(a0, a1);
 }
 
-template <typename T1> bool f97(T1 a0, const std::locale &a1) {
+template <typename T1> bool f106(T1 a0, const std::locale &a1) {
   return std::isxdigit<T1>(a0, a1);
 }
 
-std::ios_base &f98(std::ios_base &a0) { return std::left(a0); }
+std::ios_base &f107(std::ios_base &a0) { return std::left(a0); }
 
 using t16 = std::locale;
 
@@ -299,125 +333,129 @@ using t18 = std::locale::id;
 
 using t19 = std::locale::category;
 
-std::locale f99() { return std::locale(); }
+std::locale f108() { return std::locale(); }
 
-std::locale f100(const std::locale &a0) { return std::locale(a0); }
+std::locale f109(const std::locale &a0) { return std::locale(a0); }
 
-std::locale f101(const char *a0) { return std::locale(a0); }
+std::locale f110(const char *a0) { return std::locale(a0); }
 
-std::locale f102(const std::string &a0) { return std::locale(a0); }
+std::locale f111(const std::string &a0) { return std::locale(a0); }
 
-std::locale f103(const std::locale &a0, const char *a1,
+std::locale f112(const std::locale &a0, const char *a1,
                  std::locale::category a2) {
   return std::locale(a0, a1, a2);
 }
 
-std::locale f104(const std::locale &a0, const std::string &a1,
+std::locale f113(const std::locale &a0, const std::string &a1,
                  std::locale::category a2) {
   return std::locale(a0, a1, a2);
 }
 
-std::locale f105(const std::locale &a0, const std::locale &a1,
+std::locale f114(const std::locale &a0, const std::locale &a1,
                  std::locale::category a2) {
   return std::locale(a0, a1, a2);
 }
 
-const std::locale &f106(std::locale &a0, const std::locale &a1) {
+const std::locale &f115(std::locale &a0, const std::locale &a1) {
   return a0.operator=(a1);
 }
 
-std::string f107(const std::locale &a0) { return a0.name(); }
+std::string f116(const std::locale &a0) { return a0.name(); }
 
-bool f108(const std::locale &a0, const std::locale &a1) {
+bool f117(const std::locale &a0, const std::locale &a1) {
   return a0.operator==(a1);
 }
 
-std::locale f109(const std::locale &a0) { return std::locale::global(a0); }
+std::locale f118(const std::locale &a0) { return std::locale::global(a0); }
 
-const std::locale &f110() { return std::locale::classic(); }
+const std::locale &f119() { return std::locale::classic(); }
 
-template <typename T1> std::locale f111(const std::locale &a0, T1 *a1) {
+template <typename T1> std::locale f120(const std::locale &a0, T1 *a1) {
   return std::locale(a0, a1);
 }
 
 template <typename T1>
-std::locale f112(const std::locale &a0, const std::locale &a1) {
+std::locale f121(const std::locale &a0, const std::locale &a1) {
   return a0.template combine<T1>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f113(const std::locale &a0, const std::basic_string<T1, T2, T3> &a1,
+bool f122(const std::locale &a0, const std::basic_string<T1, T2, T3> &a1,
           const std::basic_string<T1, T2, T3> &a2) {
   return a0.template operator()<T1, T2, T3>(a1, a2);
 }
 
-std::locale::category f114() { return std::locale::none; }
+std::locale::category f123() { return std::locale::none; }
 
-std::locale::category f115() { return std::locale::collate; }
+std::locale::category f124() { return std::locale::collate; }
 
-std::locale::category f116() { return std::locale::ctype; }
+std::locale::category f125() { return std::locale::ctype; }
 
-std::locale::category f117() { return std::locale::monetary; }
+std::locale::category f126() { return std::locale::monetary; }
 
-std::locale::category f118() { return std::locale::numeric; }
+std::locale::category f127() { return std::locale::numeric; }
 
-std::locale::category f119() { return std::locale::time; }
+std::locale::category f128() { return std::locale::time; }
 
-std::locale::category f120() { return std::locale::messages; }
+std::locale::category f129() { return std::locale::messages; }
 
-std::locale::category f121() { return std::locale::all; }
+std::locale::category f130() { return std::locale::all; }
 
-std::error_code f122(std::io_errc a0) { return std::make_error_code(a0); }
+long f131(const std::locale::facet &a0) { return a0.use_count(); }
 
-std::error_condition f123(std::io_errc a0) {
+std::locale::id f132() { return {}; }
+
+std::error_code f133(std::io_errc a0) { return std::make_error_code(a0); }
+
+std::error_condition f134(std::io_errc a0) {
   return std::make_error_condition(a0);
 }
 
-std::ios_base &f124(std::ios_base &a0) { return std::noboolalpha(a0); }
+std::ios_base &f135(std::ios_base &a0) { return std::noboolalpha(a0); }
 
-std::ios_base &f125(std::ios_base &a0) { return std::noshowbase(a0); }
+std::ios_base &f136(std::ios_base &a0) { return std::noshowbase(a0); }
 
-std::ios_base &f126(std::ios_base &a0) { return std::noshowpoint(a0); }
+std::ios_base &f137(std::ios_base &a0) { return std::noshowpoint(a0); }
 
-std::ios_base &f127(std::ios_base &a0) { return std::noshowpos(a0); }
+std::ios_base &f138(std::ios_base &a0) { return std::noshowpos(a0); }
 
-std::ios_base &f128(std::ios_base &a0) { return std::noskipws(a0); }
+std::ios_base &f139(std::ios_base &a0) { return std::noskipws(a0); }
 
-std::ios_base &f129(std::ios_base &a0) { return std::nounitbuf(a0); }
+std::ios_base &f140(std::ios_base &a0) { return std::nounitbuf(a0); }
 
-std::ios_base &f130(std::ios_base &a0) { return std::nouppercase(a0); }
+std::ios_base &f141(std::ios_base &a0) { return std::nouppercase(a0); }
 
-std::ios_base &f131(std::ios_base &a0) { return std::oct(a0); }
+std::ios_base &f142(std::ios_base &a0) { return std::oct(a0); }
 
-std::ios_base &f132(std::ios_base &a0) { return std::right(a0); }
+std::ios_base &f143(std::ios_base &a0) { return std::right(a0); }
 
-std::ios_base &f133(std::ios_base &a0) { return std::scientific(a0); }
+std::ios_base &f144(std::ios_base &a0) { return std::scientific(a0); }
 
-std::ios_base &f134(std::ios_base &a0) { return std::showbase(a0); }
+std::ios_base &f145(std::ios_base &a0) { return std::showbase(a0); }
 
-std::ios_base &f135(std::ios_base &a0) { return std::showpoint(a0); }
+std::ios_base &f146(std::ios_base &a0) { return std::showpoint(a0); }
 
-std::ios_base &f136(std::ios_base &a0) { return std::showpos(a0); }
+std::ios_base &f147(std::ios_base &a0) { return std::showpos(a0); }
 
-std::ios_base &f137(std::ios_base &a0) { return std::skipws(a0); }
+std::ios_base &f148(std::ios_base &a0) { return std::skipws(a0); }
 
 using t20 = std::streamoff;
 
 using t21 = std::streamsize;
 
-template <typename T1> T1 f138(T1 a0, const std::locale &a1) {
+template <typename T1> T1 f149(T1 a0, const std::locale &a1) {
   return std::tolower<T1>(a0, a1);
 }
 
-template <typename T1> T1 f139(T1 a0, const std::locale &a1) {
+template <typename T1> T1 f150(T1 a0, const std::locale &a1) {
   return std::toupper<T1>(a0, a1);
 }
 
-std::ios_base &f140(std::ios_base &a0) { return std::unitbuf(a0); }
+std::ios_base &f151(std::ios_base &a0) { return std::unitbuf(a0); }
 
-std::ios_base &f141(std::ios_base &a0) { return std::uppercase(a0); }
+std::ios_base &f152(std::ios_base &a0) { return std::uppercase(a0); }
 
-template <typename T1> const T1 &f142(const std::locale &a0) {
+template <typename T1> const T1 &f153(const std::locale &a0) {
   return std::use_facet<T1>(a0);
 }
 

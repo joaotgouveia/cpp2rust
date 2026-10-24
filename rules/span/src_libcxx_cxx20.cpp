@@ -207,7 +207,8 @@ std::span<T1, T2> f62(const std::span<T1, std::dynamic_extent> &a0) {
 }
 
 template <typename T1, std::size_t T2, std::size_t T3 = std::dynamic_extent>
-auto f63(const std::span<T1, std::dynamic_extent> &a0) {
+std::span<T1, std::dynamic_extent>
+f63(const std::span<T1, std::dynamic_extent> &a0) {
   return a0.template subspan<T2>();
 }
 
@@ -262,7 +263,9 @@ std::reverse_iterator<std::__wrap_iter<T1 *>> f69(const std::span<T1, T2> &a0) {
 }
 
 template <typename T1, std::size_t T2, std::size_t T3 = T2>
-std::span<T1, T2> f70() {
+std::span<T1, T2> f70()
+  requires((T2 == 0))
+{
   return std::span<T1, T2>();
 }
 
@@ -325,6 +328,14 @@ std::span<T1, T2> f77(const std::span<T3, std::dynamic_extent> &a0)
            T3, typename std::span<T1, T2>::element_type>)
 {
   return std::span<T1, T2>(a0);
+}
+
+template <typename T1, std::size_t T2, std::size_t T3,
+          std::size_t T4 = std::dynamic_extent>
+std::span<T1, std::dynamic_extent != std::dynamic_extent ? std::dynamic_extent
+                                                         : T2 - T3>
+f78(const std::span<T1, T2> &a0) {
+  return a0.template subspan<T3>();
 }
 
 template <typename T1, std::size_t T2>

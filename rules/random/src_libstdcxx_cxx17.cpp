@@ -5,6 +5,6 @@
 #include <string>
 #include <utility>
 
-std::random_device f107(const std::string &a0) {
+std::random_device f116(const std::string &a0) {
   return std::random_device(a0);
 }

@@ -3,7 +3,7 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
-auto f73(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+auto f75(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
   return std::operator<=> <T1, T2, T3, T4>(a0, a1);
 }
 
@@ -12,7 +12,7 @@ template <typename T1, typename T2, typename T3, typename T4,
                                  template __is_pair_constructible<T3, T4>(),
                              int>
               T5 = 0>
-std::pair<T1, T2> f74(T3 &&a0, T4 &&a1)
+std::pair<T1, T2> f76(T3 &&a0, T4 &&a1)
   requires(!(std::is_same<T3, const T1 &>::value &&
              std::is_same<T4, const T2 &>::value))
 {
@@ -25,7 +25,7 @@ template <typename T1, typename T2, typename T3, typename T4,
                   template __is_pair_constructible<const T3 &, const T4 &>(),
               int>
               T5 = 0>
-std::pair<T1, T2> f75(const std::pair<T3, T4> &a0)
+std::pair<T1, T2> f77(const std::pair<T3, T4> &a0)
   requires(!(std::is_same<T3, T1>::value && std::is_same<T4, T2>::value))
 {
   return std::pair<T1, T2>(a0);
@@ -36,7 +36,7 @@ template <typename T1, typename T2, typename T3, typename T4,
                                  template __is_pair_constructible<T3, T4>(),
                              int>
               T5 = 0>
-std::pair<T1, T2> f76(std::pair<T3, T4> &&a0)
+std::pair<T1, T2> f78(std::pair<T3, T4> &&a0)
   requires(!(std::is_same<T3, T1>::value && std::is_same<T4, T2>::value))
 {
   return std::pair<T1, T2>(std::move(a0));

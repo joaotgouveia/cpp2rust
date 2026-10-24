@@ -151,44 +151,82 @@ std::ios_base::seekdir f54() { return std::ios_base::cur; }
 
 std::ios_base::seekdir f55() { return std::ios_base::end; }
 
-const std::error_category &f56() { return std::iostream_category(); }
+std::ios_base::failure f56(const std::string &a0) {
+  return std::ios_base::failure(a0);
+}
 
-std::ios_base &f57(std::ios_base &a0) { return std::left(a0); }
+std::ios_base::failure f57(const std::string &a0, const std::error_code &a1) {
+  return std::ios_base::failure(a0, a1);
+}
 
-std::error_code f58(std::io_errc a0) { return std::make_error_code(a0); }
+std::ios_base::failure f58(const char *a0, const std::error_code &a1) {
+  return std::ios_base::failure(a0, a1);
+}
 
-std::error_condition f59(std::io_errc a0) {
+const char *f59(const std::ios_base::failure &a0) { return a0.what(); }
+
+std::ios_base::failure f60(const std::ios_base::failure &a0) {
+  return std::ios_base::failure(a0);
+}
+
+std::ios_base::failure &f61(std::ios_base::failure &a0,
+                            const std::ios_base::failure &a1) {
+  return a0.operator=(a1);
+}
+
+const std::error_code &f62(const std::ios_base::failure &a0) {
+  return a0.code();
+}
+
+std::ios_base::Init f63() { return std::ios_base::Init(); }
+
+std::ios_base::Init f64(const std::ios_base::Init &a0) {
+  return std::ios_base::Init(a0);
+}
+
+std::ios_base::Init &f65(std::ios_base::Init &a0,
+                         const std::ios_base::Init &a1) {
+  return a0.operator=(a1);
+}
+
+const std::error_category &f66() { return std::iostream_category(); }
+
+std::ios_base &f67(std::ios_base &a0) { return std::left(a0); }
+
+std::error_code f68(std::io_errc a0) { return std::make_error_code(a0); }
+
+std::error_condition f69(std::io_errc a0) {
   return std::make_error_condition(a0);
 }
 
-std::ios_base &f60(std::ios_base &a0) { return std::noboolalpha(a0); }
+std::ios_base &f70(std::ios_base &a0) { return std::noboolalpha(a0); }
 
-std::ios_base &f61(std::ios_base &a0) { return std::noshowbase(a0); }
+std::ios_base &f71(std::ios_base &a0) { return std::noshowbase(a0); }
 
-std::ios_base &f62(std::ios_base &a0) { return std::noshowpoint(a0); }
+std::ios_base &f72(std::ios_base &a0) { return std::noshowpoint(a0); }
 
-std::ios_base &f63(std::ios_base &a0) { return std::noshowpos(a0); }
+std::ios_base &f73(std::ios_base &a0) { return std::noshowpos(a0); }
 
-std::ios_base &f64(std::ios_base &a0) { return std::noskipws(a0); }
+std::ios_base &f74(std::ios_base &a0) { return std::noskipws(a0); }
 
-std::ios_base &f65(std::ios_base &a0) { return std::nounitbuf(a0); }
+std::ios_base &f75(std::ios_base &a0) { return std::nounitbuf(a0); }
 
-std::ios_base &f66(std::ios_base &a0) { return std::nouppercase(a0); }
+std::ios_base &f76(std::ios_base &a0) { return std::nouppercase(a0); }
 
-std::ios_base &f67(std::ios_base &a0) { return std::oct(a0); }
+std::ios_base &f77(std::ios_base &a0) { return std::oct(a0); }
 
-std::ios_base &f68(std::ios_base &a0) { return std::right(a0); }
+std::ios_base &f78(std::ios_base &a0) { return std::right(a0); }
 
-std::ios_base &f69(std::ios_base &a0) { return std::scientific(a0); }
+std::ios_base &f79(std::ios_base &a0) { return std::scientific(a0); }
 
-std::ios_base &f70(std::ios_base &a0) { return std::showbase(a0); }
+std::ios_base &f80(std::ios_base &a0) { return std::showbase(a0); }
 
-std::ios_base &f71(std::ios_base &a0) { return std::showpoint(a0); }
+std::ios_base &f81(std::ios_base &a0) { return std::showpoint(a0); }
 
-std::ios_base &f72(std::ios_base &a0) { return std::showpos(a0); }
+std::ios_base &f82(std::ios_base &a0) { return std::showpos(a0); }
 
-std::ios_base &f73(std::ios_base &a0) { return std::skipws(a0); }
+std::ios_base &f83(std::ios_base &a0) { return std::skipws(a0); }
 
-std::ios_base &f74(std::ios_base &a0) { return std::unitbuf(a0); }
+std::ios_base &f84(std::ios_base &a0) { return std::unitbuf(a0); }
 
-std::ios_base &f75(std::ios_base &a0) { return std::uppercase(a0); }
+std::ios_base &f85(std::ios_base &a0) { return std::uppercase(a0); }
