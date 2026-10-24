@@ -164,13 +164,21 @@ clang::QualType SkipInternalTypedefs(clang::ASTContext &ctx,
                                      clang::QualType use) {
   auto cvr = use.getLocalCVRQualifiers();
   auto type = PeelSugar(ctx, use);
-  while (auto typedef_type =
-             llvm::dyn_cast<clang::TypedefType>(type.getTypePtr())) {
-    auto decl = typedef_type->getDecl();
-    if (!IsInternal(decl) && !IsUserDefinedDecl(decl)) {
+  while (true) {
+    // a typedef or an alias template of the user or of the library internals
+    // (libc++'s test_format_string<CharT, Args...>)
+    const clang::NamedDecl *decl = nullptr;
+    auto typedef_type = llvm::dyn_cast<clang::TypedefType>(type.getTypePtr());
+    if (typedef_type) {
+      decl = typedef_type->getDecl();
+    } else {
+      decl = AliasTemplateOf(type);
+    }
+    if (!decl || (!IsInternal(decl) && !IsUserDefinedDecl(decl))) {
       break;
     }
-    type = PeelSugar(ctx, typedef_type->desugar());
+    type = PeelSugar(ctx, typedef_type ? typedef_type->desugar()
+                                       : type.getSingleStepDesugaredType(ctx));
     cvr |= type.getLocalCVRQualifiers();
   }
   return type.withCVRQualifiers(cvr);
