@@ -47,6 +47,11 @@ const clang::Decl *getParent(clang::QualType type) {
   if (auto tmpl = record->getDescribedClassTemplate()) {
     return tmpl->getCanonicalDecl();
   }
+  // a class nested in a specialization has the key of the nested class of
+  // the pattern (basic_ostream<char>::sentry)
+  if (auto pattern = record->getInstantiatedFromMemberClass()) {
+    return pattern->getCanonicalDecl();
+  }
   return record->getCanonicalDecl();
 }
 
@@ -112,6 +117,9 @@ std::vector<clang::QualType> resolveMemberType(clang::Sema &sema,
         if (auto alias = llvm::dyn_cast<clang::TypedefNameDecl>(decl)) {
           auto types = resolveMemberType(sema, alias->getUnderlyingType());
           resolved.insert(resolved.end(), types.begin(), types.end());
+        } else if (auto nested = llvm::dyn_cast<clang::CXXRecordDecl>(decl)) {
+          // a class nested in the class template (basic_ostream::sentry)
+          resolved.push_back(sema.Context.getCanonicalTagType(nested));
         }
       }
     }
