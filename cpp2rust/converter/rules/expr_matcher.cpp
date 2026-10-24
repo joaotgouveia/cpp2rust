@@ -213,6 +213,26 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
   return operands;
 }
 
+bool hasSameArgTypes(clang::ASTContext &ctx, const clang::Expr *use,
+                     const clang::Expr *returned, unsigned arity) {
+  if (!llvm::isa<clang::CallExpr>(RuleDecls::SkipImplicit(use)) ||
+      !llvm::isa<clang::CallExpr>(RuleDecls::SkipImplicit(returned))) {
+    return true;
+  }
+  auto use_operands = getOperands(ctx, use, arity);
+  auto rule_operands = getOperands(ctx, returned, arity);
+  if (use_operands.size() != rule_operands.size()) {
+    return false;
+  }
+  for (unsigned i = 0; i < use_operands.size(); ++i) {
+    if (!ctx.hasSameUnqualifiedType(use_operands[i]->getType(),
+                                    rule_operands[i]->getType())) {
+      return false;
+    }
+  }
+  return true;
+}
+
 clang::FunctionDecl *deduce(clang::Sema &sema,
                             clang::FunctionTemplateDecl *rule,
                             clang::TemplateArgumentListInfo &explicit_args,
@@ -456,7 +476,7 @@ MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
   auto &ctx = sema.Context;
   auto returned = RuleDecls::GetReturned(rule);
   if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl ||
-      !hasSameArgTypes(ctx, use, returned) ||
+      !hasSameArgTypes(ctx, use, returned, rule->getNumParams()) ||
       !sameNamingClass(ctx, use, returned)) {
     return std::nullopt;
   }
