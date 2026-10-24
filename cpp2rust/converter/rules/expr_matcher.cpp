@@ -654,6 +654,28 @@ const clang::NamedDecl *moreConstrained(clang::Sema &sema,
   return a_subsumes ? a : b;
 }
 
+// Whether the rule deduces template parameters from the operands once the
+// use's type binds those of the class (tuple(T2 &&...) does, as the forwarding
+// constructor of tuple<T1...>; tuple(const T1 &...) does not).
+bool deducesFromOperands(clang::Sema &sema, const clang::Expr *use,
+                         clang::FunctionTemplateDecl *rule) {
+  llvm::SmallBitVector deducible;
+  sema.MarkDeducedTemplateParameters(rule, deducible);
+  auto fixed = RuleDecls::DeduceFromType(
+      sema, rule->getTemplateParameters(),
+      rule->getTemplatedDecl()->getReturnType(),
+      RuleDecls::SkipImplicit(use)
+          ->getType()
+          .getCanonicalType()
+          .getUnqualifiedType());
+  for (unsigned i = 0; i < deducible.size(); ++i) {
+    if (deducible[i] && (!fixed || (*fixed)[i].isNull())) {
+      return true;
+    }
+  }
+  return false;
+}
+
 } // namespace
 
 MatchResult Match(clang::Sema &sema, const clang::Expr *use,
@@ -757,6 +779,14 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
   auto b_class = namesClass(b_function);
   if (a_class != b_class) {
     return a_class ? a : b;
+  }
+  // As C++ prefers a non-template: a rule that the use's type binds fully
+  // (tuple(const T1 &...)) beats one deducing from the operands
+  // (tuple(T2 &&...)).
+  auto a_deduces = deducesFromOperands(sema, use, a_tmpl);
+  auto b_deduces = deducesFromOperands(sema, use, b_tmpl);
+  if (a_deduces != b_deduces) {
+    return a_deduces ? b : a;
   }
   return nullptr;
 }
