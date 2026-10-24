@@ -78,6 +78,13 @@ public:
 
   bool VisitDeclRefExpr(clang::DeclRefExpr *expr) {
     AddReferencedDecl(expr->getDecl());
+    // a static member named through a derived class
+    if (llvm::isa<clang::CXXMethodDecl>(expr->getDecl()) &&
+        expr->getQualifier().getKind() ==
+            clang::NestedNameSpecifier::Kind::Type) {
+      AddMemberKey(clang::QualType(expr->getQualifier().getAsType(), 0),
+                   MemberName(expr->getDecl()->getDeclName()));
+    }
     return true;
   }
 

@@ -179,6 +179,19 @@ std::optional<ExprKey> GetObjectMemberKey(const clang::Expr *use) {
     return getMemberKey(getParent(object->getType()),
                         call->getDirectCallee()->getDeclName());
   }
+  // a static member named through a derived class
+  // (pointer_traits<A>::pointer_to of __pointer_traits_impl)
+  const clang::Expr *callee = use;
+  if (auto call = llvm::dyn_cast<clang::CallExpr>(use)) {
+    callee = call->getCallee()->IgnoreParenImpCasts();
+  }
+  if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(callee);
+      ref && llvm::isa<clang::CXXMethodDecl>(ref->getDecl()) &&
+      ref->getQualifier().getKind() == clang::NestedNameSpecifier::Kind::Type) {
+    return getMemberKey(
+        getParent(clang::QualType(ref->getQualifier().getAsType(), 0)),
+        ref->getDecl()->getDeclName());
+  }
   return std::nullopt;
 }
 
