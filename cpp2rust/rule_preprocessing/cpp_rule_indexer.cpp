@@ -396,6 +396,12 @@ std::string ExprKey(clang::ASTContext &ctx, const clang::Decl *rule) {
   if (!expr->isTypeDependent() && !expr->isValueDependent()) {
     return RulesLoader::ExprKey(ctx, expr);
   }
+  // an aggregate rule returns the braced list of its fields, which constructs
+  // the return type (std::array<T1, T2> f(const T1 (&a0)[T2]) { return {a0}; })
+  if (auto fn = rule->getAsFunction();
+      fn && llvm::isa<clang::InitListExpr>(expr)) {
+    return RulesLoader::ConstructorKey(ClassOf(fn->getReturnType()));
+  }
   return DependentExprKey(expr);
 }
 
