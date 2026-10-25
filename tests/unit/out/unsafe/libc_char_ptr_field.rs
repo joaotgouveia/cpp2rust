@@ -12,15 +12,15 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut pw: *mut passwd = unimplemented!();
+unsafe fn main_0() -> i32 {
+    let mut pw: *mut passwd = libc::getpwuid(libc::geteuid());
     if !(!(pw).is_null()) {
-        return 0_();
+        return 0;
     }
-    let mut home: *mut () = (*pw).pw_dir;
+    let mut home: *mut libc::c_char = (*pw).pw_dir;
     let mut d: *mut dirent =
         libc::readdir(libc::opendir((c"/tmp".as_ptr().cast_mut()).cast_const()));
-    let mut dname: *mut () = (*d).d_name.as_mut_ptr();
-    return 0_();
+    let mut dname: *mut libc::c_char = (*d).d_name.as_mut_ptr();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

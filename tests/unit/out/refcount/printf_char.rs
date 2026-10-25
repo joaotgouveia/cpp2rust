@@ -10,13 +10,18 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut c: () = ('a' as ());
-    let mut n: () = 3_();
-    println!("{}", c as u8 as char);
-    println!("{} {}", n, c as u8 as char);
-    println!("100% {}", c as u8 as char);
-    println!("{}{}{}", c as u8 as char, (c + 1_()) as u8 as char, n);
-    return 0_();
+fn main_0() -> i32 {
+    let mut c: i8 = (('a' as i32) as i8);
+    let mut n: i32 = 3;
+    println!("{}", (c as i32) as u8 as char);
+    println!("{} {}", n, (c as i32) as u8 as char);
+    println!("100% {}", (c as i32) as u8 as char);
+    println!(
+        "{}{}{}",
+        (c as i32) as u8 as char,
+        ((c as i32) + 1) as u8 as char,
+        n
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,24 +6,24 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type Choice_enum = ();
+pub type Choice_enum = u32;
 pub const Choice_enum_C_LIST: Choice_enum = 1;
 pub const Choice_enum_C_LETTERS: Choice_enum = 2;
 pub const Choice_enum_C_INTEGERS: Choice_enum = 3;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct anon_1 {
-    pub items: *mut *mut (),
+    pub items: *mut *mut libc::c_char,
     pub count: i64,
     pub cursor: i64,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct anon_2 {
-    pub lo: (),
-    pub hi: (),
-    pub curr: (),
-    pub step: (),
+    pub lo: i32,
+    pub hi: i32,
+    pub curr: i32,
+    pub step: u8,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -32,7 +32,7 @@ pub struct anon_3 {
     pub hi: i64,
     pub curr: i64,
     pub step: i64,
-    pub width: (),
+    pub width: i32,
 }
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
@@ -50,7 +50,7 @@ impl Default for anon_0 {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Branch {
     pub choice: Choice_enum,
-    pub index: (),
+    pub index: i32,
     pub v: anon_0,
 }
 pub fn main() {
@@ -59,40 +59,45 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut p_list: Branch = <Branch>::default();
     p_list.choice = Choice_enum_C_LIST;
-    p_list.index = 0_();
+    p_list.index = 0;
     p_list.v.list.items = (*std::cell::LazyCell::force_mut(&mut *&raw mut items_4)).as_mut_ptr();
     p_list.v.list.count = 3_i64;
     p_list.v.list.cursor = 1_i64;
-    unimplemented!();
-    unimplemented!();
+    assert!(((((p_list.v.list.count) == (3_i64)) as i32) != 0));
+    assert!(
+        (((((*(*p_list.v.list.items.offset((1) as isize)).offset((0) as isize)) as i32)
+            == ('b' as i32)) as i32)
+            != 0)
+    );
     let mut p_letters: Branch = <Branch>::default();
     p_letters.choice = Choice_enum_C_LETTERS;
-    p_letters.index = 1_();
-    p_letters.v.letters.lo = ('a' as ());
-    p_letters.v.letters.hi = ('z' as ());
-    p_letters.v.letters.curr = ('m' as ());
-    p_letters.v.letters.step = 1_();
-    unimplemented!();
+    p_letters.index = 1;
+    p_letters.v.letters.lo = ('a' as i32);
+    p_letters.v.letters.hi = ('z' as i32);
+    p_letters.v.letters.curr = ('m' as i32);
+    p_letters.v.letters.step = 1_u8;
+    assert!((((((p_letters.v.letters.hi) - (p_letters.v.letters.lo)) == (25)) as i32) != 0));
     let mut p_integers: Branch = <Branch>::default();
     p_integers.choice = Choice_enum_C_INTEGERS;
-    p_integers.index = 2_();
+    p_integers.index = 2;
     p_integers.v.integers.lo = 1_i64;
     p_integers.v.integers.hi = 100_i64;
     p_integers.v.integers.curr = 1_i64;
     p_integers.v.integers.step = 1_i64;
-    p_integers.v.integers.width = 3_();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    p_integers.v.integers.width = 3;
+    assert!(((((p_integers.v.integers.hi) == (100_i64)) as i32) != 0));
+    assert!(((((p_integers.v.integers.width) == (3)) as i32) != 0));
+    return 0;
 }
-static mut items_4: std::cell::LazyCell<[*mut (); 3]> = std::cell::LazyCell::new(|| unsafe {
-    [
-        c"a".as_ptr().cast_mut(),
-        c"b".as_ptr().cast_mut(),
-        c"c".as_ptr().cast_mut(),
-    ]
-});
+static mut items_4: std::cell::LazyCell<[*mut libc::c_char; 3]> =
+    std::cell::LazyCell::new(|| unsafe {
+        [
+            c"a".as_ptr().cast_mut(),
+            c"b".as_ptr().cast_mut(),
+            c"c".as_ptr().cast_mut(),
+        ]
+    });
 pub unsafe fn __cpp2rust_init_globals() {}

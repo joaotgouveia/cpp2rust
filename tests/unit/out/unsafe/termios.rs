@@ -12,15 +12,25 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut path: *const () = (c"cpp2rust_termios_test.tmp".as_ptr().cast_mut()).cast_const();
-    let mut fd: () = unimplemented!();
-    unimplemented!();
+unsafe fn main_0() -> i32 {
+    let mut path: *const libc::c_char =
+        (c"cpp2rust_termios_test.tmp".as_ptr().cast_mut()).cast_const();
+    let mut fd: i32 = (unsafe {
+        libc::open(
+            path as *const i8,
+            (((::libc::O_RDWR) | (::libc::O_CREAT)) | (::libc::O_TRUNC)) as i32,
+            (420),
+        )
+    });
+    assert!(((((fd) >= (0)) as i32) != 0));
     let mut tio: termios = unsafe { std::mem::zeroed::<termios>() };
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((((libc::tcgetattr(fd, (&mut tio as *mut termios))) == (-1_i32)) as i32) != 0));
+    assert!(
+        ((((libc::tcsetattr(fd, 0, (&mut tio as *mut termios).cast_const())) == (-1_i32)) as i32)
+            != 0)
+    );
+    assert!(((((libc::close(fd)) == (0)) as i32) != 0));
+    assert!(((((libc::unlink(path)) == (0)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

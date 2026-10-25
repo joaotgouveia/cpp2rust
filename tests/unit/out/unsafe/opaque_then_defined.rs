@@ -10,12 +10,12 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct list {
     pub head: *mut node,
-    pub size: (),
+    pub size: i32,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct node {
-    pub value: (),
+    pub value: i32,
     pub next: *mut node,
 }
 pub fn main() {
@@ -24,17 +24,17 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut n: node = node {
-        value: 42_(),
+        value: 42,
         next: std::ptr::null_mut(),
     };
     let mut l: list = list {
         head: (&mut n as *mut node),
-        size: 1_(),
+        size: 1,
     };
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((((((*l.head).value) == (42)) as i32) != 0));
+    assert!(((((l.size) == (1)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

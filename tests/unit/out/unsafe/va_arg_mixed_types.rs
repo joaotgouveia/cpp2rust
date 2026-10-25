@@ -9,26 +9,26 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct pair {
-    pub a: (),
-    pub b: (),
+    pub a: i32,
+    pub b: i32,
 }
-pub unsafe fn sum_mixed_0(mut count: (), __args: Box<[VaArg]>) -> () {
+pub unsafe fn sum_mixed_0(mut count: i32, __args: Box<[VaArg]>) -> i32 {
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
-    let mut total: () = 0_();
-    let mut i: () = 0_();
-    'loop_: while ((((i) < (count)) as ()) != 0) {
-        let mut tag: () = ap.arg::<()>();
-        if ((((tag) == (0_())) as ()) != 0) {
-            total += ap.arg::<()>();
-        } else if ((((tag) == (1_())) as ()) != 0) {
-            total += (ap.arg::<()>() as ());
-        } else if ((((tag) == (3_())) as ()) != 0) {
+    let mut total: i32 = 0;
+    let mut i: i32 = 0;
+    'loop_: while ((((i) < (count)) as i32) != 0) {
+        let mut tag: i32 = ap.arg::<i32>();
+        if ((((tag) == (0)) as i32) != 0) {
+            total += ap.arg::<i32>();
+        } else if ((((tag) == (1)) as i32) != 0) {
+            total += (ap.arg::<f64>() as i32);
+        } else if ((((tag) == (3)) as i32) != 0) {
             let mut p: pair = ap.arg::<pair>();
             total += ((p.a) * (p.b));
         } else {
-            let mut val: () = ap.arg::<()>();
-            total += (val as ());
+            let mut val: i64 = ap.arg::<i64>();
+            total += (val as i32);
         }
         i.postfix_inc();
     }
@@ -40,12 +40,45 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut p: pair = pair { a: 7_(), b: 8_() };
-    unimplemented!();
-    return 0_();
+unsafe fn main_0() -> i32 {
+    assert!(
+        ((((unsafe {
+            sum_mixed_0(
+                3,
+                Box::new([
+                    (0).into(),
+                    (10).into(),
+                    (1).into(),
+                    (20.5_f64).into(),
+                    (2).into(),
+                    (30_i64).into(),
+                ]),
+            )
+        }) == (60)) as i32)
+            != 0)
+    );
+    assert!(
+        ((((unsafe { sum_mixed_0(1, Box::new([(0).into(), (42).into(),])) }) == (42)) as i32) != 0)
+    );
+    assert!(
+        ((((unsafe {
+            sum_mixed_0(
+                2,
+                Box::new([(1).into(), (3.7_f64).into(), (2).into(), (100_i64).into()]),
+            )
+        }) == (103)) as i32)
+            != 0)
+    );
+    let mut p: pair = pair { a: 7, b: 8 };
+    assert!(
+        ((((unsafe {
+            sum_mixed_0(
+                2,
+                Box::new([(3).into(), (p).into(), (0).into(), (5).into()]),
+            )
+        }) == (61)) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,28 +10,28 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct widget {
     #[offset(0)]
-    pub id: (),
+    pub id: i32,
 }
-pub fn a_value_0() -> () {
+pub fn a_value_0() -> i32 {
     let mut w: widget = <widget>::default();
-    w.id = 11_();
+    w.id = 11;
     return w.id;
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+fn main_0() -> i32 {
+    assert!((((({ a_value_0() }) == 11) as i32) != 0));
+    assert!((((({ b_value_1() }) == 2) as i32) != 0));
+    return 0;
 }
-pub type widget_enum = ();
+pub type widget_enum = u32;
 pub const widget_enum_WIDGET_A: widget_enum = 0;
 pub const widget_enum_WIDGET_B: widget_enum = 1;
 pub const widget_enum_WIDGET_C: widget_enum = 2;
-pub fn b_value_1() -> () {
+pub fn b_value_1() -> i32 {
     let mut w: widget_enum = widget_enum_WIDGET_C;
-    return (w as ());
+    return (w as i32);
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,25 +6,25 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn sum_then_product_0(mut first: (), __args: Box<[VaArg]>) -> () {
+pub unsafe fn sum_then_product_0(mut first: i32, __args: Box<[VaArg]>) -> i32 {
     let mut ap: *const VaArg = ::std::ptr::null();
-    let mut sum: () = first;
-    let mut product: () = first;
+    let mut sum: i32 = first;
+    let mut product: i32 = first;
     ap = __args.as_ptr();
-    let mut val: () = unimplemented!();
+    let mut val: i32 = 0_i32;
     'loop_: while (((({
-        val = ap.arg::<()>();
+        val = ap.arg::<i32>();
         val
-    }) != (0_())) as ())
+    }) != (0)) as i32)
         != 0)
     {
         sum += val;
     }
     ap = __args.as_ptr();
     'loop_: while (((({
-        val = ap.arg::<()>();
+        val = ap.arg::<i32>();
         val
-    }) != (0_())) as ())
+    }) != (0)) as i32)
         != 0)
     {
         product *= val;
@@ -37,8 +37,12 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    unimplemented!();
-    return 0_();
+unsafe fn main_0() -> i32 {
+    assert!(
+        ((((unsafe { sum_then_product_0(2, Box::new([(3).into(), (4).into(), (0).into(),])) })
+            == (33)) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -12,34 +12,34 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut buf: [(); 2] = [unimplemented!(); 2];
-    let mut p: *mut () = buf.as_mut_ptr();
-    let mut q: *mut () = std::ptr::null_mut();
+unsafe fn main_0() -> i32 {
+    let mut buf: [libc::c_char; 2] = [(0 as libc::c_char); 2];
+    let mut p: *mut libc::c_char = buf.as_mut_ptr();
+    let mut q: *mut libc::c_char = std::ptr::null_mut();
     q = {
-        p = (p).wrapping_add((1_() as ()) as usize);
+        p = (p).wrapping_add((1 as i32) as usize);
         p
     };
-    unimplemented!();
-    let mut out: () = unimplemented!();
+    assert!(((((q) == (buf.as_mut_ptr().offset((1) as isize))) as i32) != 0));
+    let mut out: libc::c_char = (0 as libc::c_char);
     'switch: {
         match {
-            {
-                out = ('x' as ());
+            (({
+                out = (('x' as i32) as libc::c_char);
                 out
-            }
+            }) as i32)
         } {
-            __v if __v == ('x' as ()) => {
-                unimplemented!();
+            __v if __v == ('x' as i32) => {
+                assert!((1 != 0));
                 break 'switch;
             }
             _ => {
-                unimplemented!();
+                assert!((0 != 0));
                 break 'switch;
             }
         }
     };
-    unimplemented!();
-    return 0_();
+    assert!(((((out as i32) == ('x' as i32)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

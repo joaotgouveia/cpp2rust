@@ -6,18 +6,18 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn early_0(mut n: ()) -> () {
-    let mut ret: () = unimplemented!();
-    let mut intentionally_const_var: () = unimplemented!();
+pub unsafe fn early_0(mut n: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
+    let mut intentionally_const_var: i32 = 0_i32;
     goto_block!({
         '__entry: {
-            ret = 0_();
-            if ((((n) < (0_())) as ()) != 0) {
-                ret = -1_();
+            ret = 0;
+            if ((((n) < (0)) as i32) != 0) {
+                ret = -1_i32;
                 goto!('out);
             }
-            ret = 100_();
-            intentionally_const_var = 22_();
+            ret = 100;
+            intentionally_const_var = 22;
         }
         'out: {
             return (((ret) + (intentionally_const_var)) - (intentionally_const_var));
@@ -25,21 +25,21 @@ pub unsafe fn early_0(mut n: ()) -> () {
     });
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn from_loop_1(mut n: ()) -> () {
-    let mut ret: () = unimplemented!();
+pub unsafe fn from_loop_1(mut n: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
     goto_block!({
         '__entry: {
-            ret = 0_();
-            let mut i: () = 0_();
-            'loop_: while ((((i) < (n)) as ()) != 0) {
-                if ((((i) == (3_())) as ()) != 0) {
-                    ret = 7_();
+            ret = 0;
+            let mut i: i32 = 0;
+            'loop_: while ((((i) < (n)) as i32) != 0) {
+                if ((((i) == (3)) as i32) != 0) {
+                    ret = 7;
                     goto!('out);
                 }
                 ret += i;
                 i.postfix_inc();
             }
-            ret = 999_();
+            ret = 999;
         }
         'out: {
             return ret;
@@ -47,24 +47,24 @@ pub unsafe fn from_loop_1(mut n: ()) -> () {
     });
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn from_switch_2(mut n: ()) -> () {
-    let mut ret: () = unimplemented!();
+pub unsafe fn from_switch_2(mut n: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
     goto_block!({
         '__entry: {
-            ret = 0_();
+            ret = 0;
             'switch: {
                 match { n } {
-                    __v if __v == 1_() => {
-                        ret = 10_();
+                    __v if __v == 1 => {
+                        ret = 10;
                         goto!('out);
                     }
                     _ => {
-                        ret = 20_();
+                        ret = 20;
                         break 'switch;
                     }
                 }
             };
-            ret = 999_();
+            ret = 999;
         }
         'out: {
             return ret;
@@ -75,17 +75,17 @@ pub unsafe fn from_switch_2(mut n: ()) -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct wrapper {
-    pub item: *mut (),
+    pub item: *mut i32,
 }
-pub unsafe fn via_pointer_3(mut w: *mut wrapper, mut fail: ()) -> () {
-    let mut ret: () = unimplemented!();
-    let mut item: *mut () = std::ptr::null_mut();
+pub unsafe fn via_pointer_3(mut w: *mut wrapper, mut fail: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
+    let mut item: *mut i32 = std::ptr::null_mut();
     goto_block!({
         '__entry: {
-            ret = 0_();
+            ret = 0;
             item = (*w).item;
             if (fail != 0) {
-                ret = -1_();
+                ret = -1_i32;
                 goto!('out);
             }
             ret = (*item);
@@ -96,23 +96,23 @@ pub unsafe fn via_pointer_3(mut w: *mut wrapper, mut fail: ()) -> () {
     });
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn via_arrays_4(mut fail: ()) -> () {
-    let mut ret: () = unimplemented!();
-    let mut remain: [(); 4] = [unimplemented!(); 4];
-    let mut name: [(); 5] = [unimplemented!(); 5];
+pub unsafe fn via_arrays_4(mut fail: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
+    let mut remain: [u8; 4] = [0_u8; 4];
+    let mut name: [libc::c_char; 5] = [(0 as libc::c_char); 5];
     goto_block!({
         '__entry: {
-            ret = 0_();
-            remain = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
+            ret = 0;
+            remain = [0_u8, 0_u8, 0_u8, 0_u8];
             name = std::mem::transmute(*b"wxyz\0");
             if (fail != 0) {
-                ret = -1_();
+                ret = -1_i32;
                 goto!('out);
             }
-            remain[(1_()) as usize] = 9_();
-            ret = ((((remain[(0_()) as usize]) + (remain[(1_()) as usize]))
-                + (((name[(0_()) as usize]) == ('w' as ())) as ()))
-                + (((name[(4_()) as usize]) == ('\0' as ())) as ()));
+            remain[(1) as usize] = 9_u8;
+            ret = ((((remain[(0) as usize] as i32) + (remain[(1) as usize] as i32))
+                + (((name[(0) as usize] as i32) == ('w' as i32)) as i32))
+                + (((name[(4) as usize] as i32) == ('\0' as i32)) as i32));
         }
         'out: {
             return ret;
@@ -126,21 +126,21 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut value: () = 42_();
+unsafe fn main_0() -> i32 {
+    assert!(((((unsafe { early_0(-1_i32,) }) == (-1_i32)) as i32) != 0));
+    assert!(((((unsafe { early_0(5,) }) == (100)) as i32) != 0));
+    assert!(((((unsafe { from_loop_1(2,) }) == (999)) as i32) != 0));
+    assert!(((((unsafe { from_loop_1(10,) }) == (7)) as i32) != 0));
+    assert!(((((unsafe { from_switch_2(1,) }) == (10)) as i32) != 0));
+    assert!(((((unsafe { from_switch_2(2,) }) == (999)) as i32) != 0));
+    let mut value: i32 = 42;
     let mut w: wrapper = wrapper {
-        item: (&mut value as *mut ()),
+        item: (&mut value as *mut i32),
     };
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((((unsafe { via_pointer_3((&mut w as *mut wrapper), 0,) }) == (42)) as i32) != 0));
+    assert!(((((unsafe { via_pointer_3((&mut w as *mut wrapper), 1,) }) == (-1_i32)) as i32) != 0));
+    assert!(((((unsafe { via_arrays_4(0,) }) == (11)) as i32) != 0));
+    assert!(((((unsafe { via_arrays_4(1,) }) == (-1_i32)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

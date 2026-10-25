@@ -6,26 +6,26 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn for_switch_for_break_0(mut n: ()) -> () {
-    let mut r: () = 0_();
-    let mut i: () = 0_();
+pub fn for_switch_for_break_0(mut n: i32) -> i32 {
+    let mut r: i32 = 0;
+    let mut i: i32 = 0;
     'loop_: while (i < n) {
         'switch: {
             match { i } {
-                __v if __v == 1_() => {
-                    let mut j: () = 0_();
-                    'loop_: while (j < 10_()) {
-                        if (j == 2_()) {
+                __v if __v == 1 => {
+                    let mut j: i32 = 0;
+                    'loop_: while (j < 10) {
+                        if (j == 2) {
                             break;
                         }
-                        r += 1_();
+                        r += 1;
                         j.prefix_inc();
                     }
-                    r += 100_();
+                    r += 100;
                     break 'switch;
                 }
                 _ => {
-                    r += 10_();
+                    r += 10;
                     break 'switch;
                 }
             }
@@ -38,8 +38,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    unimplemented!();
-    return 0_();
+fn main_0() -> i32 {
+    assert!((({ for_switch_for_break_0(3,) }) == 122));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

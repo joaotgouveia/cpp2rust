@@ -10,13 +10,31 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut fd: () = unimplemented!();
-    unimplemented!();
-    return if (((unimplemented!() == -1_()) as ()) != 0) {
-        0_()
+fn main_0() -> i32 {
+    let mut fd: i32 = {
+        let __mode = match Box::<[VaArg]>::from([]).first() {
+            Some(__m) => nix::sys::stat::Mode::from_bits_truncate(i32::get(__m) as ::libc::mode_t),
+            None => nix::sys::stat::Mode::empty(),
+        };
+        match nix::fcntl::open(
+            Ptr::<i8>::from_string_literal(b"/dev/null")
+                .to_rust_string()
+                .as_str(),
+            nix::fcntl::OFlag::from_bits_retain(::libc::O_RDONLY),
+            __mode,
+        ) {
+            Ok(__ofd) => FdRegistry::register(__ofd),
+            Err(__e) => {
+                libcc2rs::cpp2rust_errno().write(__e as i32);
+                -1
+            }
+        }
+    };
+    FdRegistry::close(fd);
+    return if (((FdRegistry::close(fd) == -1_i32) as i32) != 0) {
+        0
     } else {
-        1_()
+        1
     };
 }
 pub fn __cpp2rust_init_globals() {}

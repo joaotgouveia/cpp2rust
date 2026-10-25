@@ -10,36 +10,37 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut p: Ptr<()> = (buf.as_pointer() as Ptr<()>);
-    let mut q: Ptr<()> = Ptr::<()>::null();
+fn main_0() -> i32 {
+    let buf: Value<Box<[i8]>> = Rc::new(RefCell::new((0..2).map(|_| 0_i8).collect::<Box<[i8]>>()));
+    let mut p: Ptr<i8> = (buf.as_pointer() as Ptr<i8>);
+    let mut q: Ptr<i8> = Ptr::<i8>::null();
     q = {
-        p += 1_();
+        p += 1;
         (p).clone()
     };
-    unimplemented!();
-    let mut out: () = unimplemented!();
+    assert!(
+        ((({ (q).clone() } == { (buf.as_pointer() as Ptr::<i8>).offset((1) as isize) }) as i32)
+            != 0)
+    );
+    let mut out: i8 = 0_i8;
     'switch: {
         match {
-            {
-                out = ('x' as ());
+            (({
+                out = (('x' as i32) as i8);
                 out
-            }
+            }) as i32)
         } {
-            __v if __v == ('x' as ()) => {
-                unimplemented!();
+            __v if __v == ('x' as i32) => {
+                assert!((1 != 0));
                 break 'switch;
             }
             _ => {
-                unimplemented!();
+                assert!((0 != 0));
                 break 'switch;
             }
         }
     };
-    unimplemented!();
-    return 0_();
+    assert!(((((out as i32) == ('x' as i32)) as i32) != 0));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

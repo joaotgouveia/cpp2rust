@@ -9,24 +9,24 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct label {
-    pub name: *const (),
-    pub probe: Option<unsafe fn() -> ()>,
-    pub mask: (),
+    pub name: *const libc::c_char,
+    pub probe: Option<unsafe fn() -> i32>,
+    pub mask: i32,
 }
-pub unsafe fn probe_two_0() -> () {
-    return 1_();
+pub unsafe fn probe_two_0() -> i32 {
+    return 1;
 }
 pub static mut table_1: std::cell::LazyCell<[label; 2]> = std::cell::LazyCell::new(|| unsafe {
     [
         label {
             name: ((c"first").as_ptr().cast_mut()).cast_const(),
             probe: None,
-            mask: ((1_()) << (4_())),
+            mask: ((1) << (4)),
         },
         label {
             name: ((c"second").as_ptr().cast_mut()).cast_const(),
             probe: (Some(probe_two_0)),
-            mask: ((1_()) << (5_())),
+            mask: ((1) << (5)),
         },
     ]
 });
@@ -36,34 +36,79 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut tail: *const () =
-        (&mut (*c"ab.cd".as_ptr().cast_mut().offset((2_()) as isize)) as *mut ()).cast_const();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut have: () = 0_();
-    let mut p: () = if (have != 0) {
-        ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0_()) as usize].name as ())
+unsafe fn main_0() -> i32 {
+    assert!(
+        (((((*(*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize]
+            .name
+            .offset((0) as isize)) as i32)
+            == ('f' as i32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*(*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize]
+            .name
+            .offset((4) as isize)) as i32)
+            == ('t' as i32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize].probe)
+            .is_none()) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize].mask) == (16))
+            as i32)
+            != 0)
+    );
+    assert!(
+        (((((*(*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(1) as usize]
+            .name
+            .offset((0) as isize)) as i32)
+            == ('s' as i32)) as i32)
+            != 0)
+    );
+    assert!(
+        ((((unsafe {
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(1) as usize].probe).unwrap()(
+            )
+        }) == (1)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(1) as usize].mask) == (32))
+            as i32)
+            != 0)
+    );
+    let mut tail: *const libc::c_char = (&mut (*c"ab.cd".as_ptr().cast_mut().offset((2) as isize))
+        as *mut libc::c_char)
+        .cast_const();
+    assert!((((((*tail.offset((0) as isize)) as i32) == ('.' as i32)) as i32) != 0));
+    assert!((((((*tail.offset((1) as isize)) as i32) == ('c' as i32)) as i32) != 0));
+    assert!((((((*tail.offset((2) as isize)) as i32) == ('d' as i32)) as i32) != 0));
+    let mut have: i32 = 0;
+    let mut p: *mut ::libc::c_void = if (have != 0) {
+        ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize].name
+            as *mut ::libc::c_void)
     } else {
-        (c"".as_ptr().cast_mut() as ())
+        (c"".as_ptr().cast_mut() as *mut ::libc::c_void)
     };
-    unimplemented!();
-    have = 1_();
+    assert!(
+        (((((*(p as *const libc::c_char).offset((0) as isize)) as i32) == ('\0' as i32)) as i32)
+            != 0)
+    );
+    have = 1;
     p = if (have != 0) {
-        ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0_()) as usize].name as ())
+        ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize].name
+            as *mut ::libc::c_void)
     } else {
-        (c"".as_ptr().cast_mut() as ())
+        (c"".as_ptr().cast_mut() as *mut ::libc::c_void)
     };
-    unimplemented!();
-    return 0_();
+    assert!(
+        (((((*(p as *const libc::c_char).offset((0) as isize)) as i32) == ('f' as i32)) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const table_1);

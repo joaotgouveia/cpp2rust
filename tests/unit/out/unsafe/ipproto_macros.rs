@@ -12,12 +12,12 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut tcp: () = (libc::IPPROTO_TCP as ());
-    let mut udp: () = (libc::IPPROTO_UDP as ());
-    let mut ip: () = (libc::IPPROTO_IP as ());
-    let mut ip6: () = (libc::IPPROTO_IPV6 as ());
-    unimplemented!();
-    return 0_();
+unsafe fn main_0() -> i32 {
+    let mut tcp: i32 = libc::IPPROTO_TCP;
+    let mut udp: i32 = libc::IPPROTO_UDP;
+    let mut ip: i32 = libc::IPPROTO_IP;
+    let mut ip6: i32 = libc::IPPROTO_IPV6;
+    assert!((((((tcp) + (udp)) + (ip)) + (ip6)) == (64)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

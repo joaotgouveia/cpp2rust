@@ -11,33 +11,33 @@ use std::rc::{Rc, Weak};
 pub struct registry {
     #[offset(0)]
     #[byte_size(8)]
-    pub slot: (),
+    pub slot: AnyPtr,
     #[offset(8)]
-    pub level: (),
+    pub level: i64,
 }
-pub type field = ();
+pub type field = u32;
 pub const field_FIELD_SLOT: field = 0;
 pub const field_FIELD_LEVEL: field = 1;
-pub fn registry_update_0(mut r: Ptr<registry>, field: field, __args: Box<[VaArg]>) -> () {
+pub fn registry_update_0(mut r: Ptr<registry>, field: field, __args: Box<[VaArg]>) -> i32 {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
     let field: Value<field> = Rc::new(RefCell::new(field));
-    let mut result: () = 0_();
+    let mut result: i32 = 0;
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
     (*ap.borrow_mut()) = __args.as_pointer();
     'switch: {
-        match { ((*field.borrow()) as ()) } {
-            __v if __v == (field_FIELD_SLOT as i32) => {
-                let __rhs = (*ap.borrow_mut()).arg::<()>();
+        match { ((*field.borrow()) as u32) } {
+            __v if __v == ((field_FIELD_SLOT as i32) as u32) => {
+                let __rhs = (*ap.borrow_mut()).arg::<AnyPtr>();
                 field!(r, slot).write(__rhs);
                 break 'switch;
             }
-            __v if __v == (field_FIELD_LEVEL as i32) => {
-                let __rhs = (*ap.borrow_mut()).arg::<()>();
+            __v if __v == ((field_FIELD_LEVEL as i32) as u32) => {
+                let __rhs = (*ap.borrow_mut()).arg::<i64>();
                 field!(r, level).write(__rhs);
                 break 'switch;
             }
             _ => {
-                result = 1_();
+                result = 1;
                 break 'switch;
             }
         }
@@ -48,17 +48,43 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let r: Value<registry> = Rc::new(RefCell::new(registry {
-        slot: unimplemented!(),
-        level: 0_(),
+        slot: AnyPtr::default(),
+        level: 0_i64,
     }));
-    let payload: Value<()> = Rc::new(RefCell::new(7_()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    let payload: Value<i32> = Rc::new(RefCell::new(7));
+    assert!(
+        (((({
+            registry_update_0(
+                (r.as_pointer()),
+                field_FIELD_SLOT,
+                Box::new([(payload.as_pointer()).into()]),
+            )
+        }) == 0) as i32)
+            != 0)
+    );
+    assert!(
+        (((({
+            registry_update_0(
+                (r.as_pointer()),
+                field_FIELD_LEVEL,
+                Box::new([(5_i64).into()]),
+            )
+        }) == 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({ { (*r.borrow()).slot.clone() } } == { (payload.as_pointer()).to_any() }) as i32) != 0)
+    );
+    assert!(
+        (((({ (*r.borrow()).slot.clone() }
+            .reinterpret_cast::<i32>()
+            .read())
+            == 7) as i32)
+            != 0)
+    );
+    assert!(((({ (*r.borrow()).level } == 5_i64) as i32) != 0));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

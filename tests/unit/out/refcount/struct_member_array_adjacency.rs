@@ -11,17 +11,17 @@ use std::rc::{Rc, Weak};
 pub struct pair {
     #[offset(0)]
     #[byte_size(16)]
-    pub a: Box<[()]>,
+    pub a: Box<[i32]>,
     #[offset(16)]
     #[byte_size(16)]
-    pub b: Box<[()]>,
+    pub b: Box<[i32]>,
 }
 impl Default for pair {
     fn default() -> Self {
         {
             pair {
-                a: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-                b: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+                a: (0..4).map(|_| 0_i32).collect::<Box<[i32]>>(),
+                b: (0..4).map(|_| 0_i32).collect::<Box<[i32]>>(),
             }
         }
     }
@@ -30,9 +30,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let s: Value<pair> = <Value<pair>>::default();
-    unimplemented!();
-    return 0_();
+    assert!(
+        ((((array_field_ptr!(s.as_pointer(), a) as Ptr::<i32>).offset((4) as isize)
+            == (array_field_ptr!(s.as_pointer(), b) as Ptr::<i32>)) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -10,11 +10,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut fp: *mut ::libc::FILE = libcc2rs::stdout_unsafe();
-    let mut p: () = (fp).to_any();
-    let mut fp2: *mut ::libc::FILE = p.reinterpret_cast::<*mut ::libc::FILE>();
-    unimplemented!();
-    return 0_();
+fn main_0() -> i32 {
+    let mut fp: Ptr<CFile> = libcc2rs::c_stdout();
+    let mut p: AnyPtr = (fp).to_any();
+    let mut fp2: Ptr<CFile> = p.reinterpret_cast::<CFile>();
+    assert!(((({ (fp).clone() } == { (fp2).clone() }) as i32) != 0));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

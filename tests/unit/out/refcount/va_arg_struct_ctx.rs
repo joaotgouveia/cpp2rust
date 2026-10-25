@@ -10,17 +10,17 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct context {
     #[offset(0)]
-    pub verbose: (),
+    pub verbose: i32,
     #[offset(4)]
-    pub last_error: (),
+    pub last_error: i32,
 }
-pub fn set_error_0(mut ctx: Ptr<context>, fmt: Ptr<()>, __args: Box<[VaArg]>) {
+pub fn set_error_0(mut ctx: Ptr<context>, fmt: Ptr<i8>, __args: Box<[VaArg]>) {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
-    let fmt: Value<Ptr<()>> = Rc::new(RefCell::new(fmt));
+    let fmt: Value<Ptr<i8>> = Rc::new(RefCell::new(fmt));
     if (ctx.with(|__s| __s.verbose) != 0) {
         let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
         (*ap.borrow_mut()) = __args.as_pointer();
-        let __rhs = (*ap.borrow_mut()).arg::<()>();
+        let __rhs = (*ap.borrow_mut()).arg::<i32>();
         field!(ctx, last_error).write(__rhs);
     }
 }
@@ -32,10 +32,10 @@ pub struct value {
     __bytes: Box<[u8]>,
 }
 impl value {
-    pub fn i(this: Ptr<Self>) -> Ptr<()> {
+    pub fn i(this: Ptr<Self>) -> Ptr<i32> {
         this.reinterpret_cast()
     }
-    pub fn l(this: Ptr<Self>) -> Ptr<()> {
+    pub fn l(this: Ptr<Self>) -> Ptr<i64> {
         this.reinterpret_cast()
     }
 }
@@ -46,47 +46,52 @@ impl Default for value {
         }
     }
 }
-pub fn pick_1(use_long: (), __args: Box<[VaArg]>) -> () {
+pub fn pick_1(use_long: i32, __args: Box<[VaArg]>) -> i64 {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
-    let use_long: Value<()> = Rc::new(RefCell::new(use_long));
+    let use_long: Value<i32> = Rc::new(RefCell::new(use_long));
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
     (*ap.borrow_mut()) = __args.as_pointer();
     let v: Value<value> = Rc::new(RefCell::new((*ap.borrow_mut()).arg::<value>()));
     if ((*use_long.borrow()) != 0) {
         return (value::l(v.as_pointer()).read());
     }
-    return (value::i(v.as_pointer()).read());
+    return ((value::i(v.as_pointer()).read()) as i64);
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let ctx: Value<context> = <Value<context>>::default();
-    (*ctx.borrow_mut()).verbose = 1_();
-    (*ctx.borrow_mut()).last_error = 0_();
+    (*ctx.borrow_mut()).verbose = 1;
+    (*ctx.borrow_mut()).last_error = 0;
     ({
         set_error_0(
             (ctx.as_pointer()),
-            Ptr::<()>::from_string_literal(b"error %d"),
-            Box::new([(42_()).into()]),
+            Ptr::<i8>::from_string_literal(b"error %d"),
+            Box::new([(42).into()]),
         )
     });
-    unimplemented!();
-    (*ctx.borrow_mut()).verbose = 0_();
+    assert!(((({ (*ctx.borrow()).last_error } == 42) as i32) != 0));
+    (*ctx.borrow_mut()).verbose = 0;
     ({
         set_error_0(
             (ctx.as_pointer()),
-            Ptr::<()>::from_string_literal(b"error %d"),
-            Box::new([(99_()).into()]),
+            Ptr::<i8>::from_string_literal(b"error %d"),
+            Box::new([(99).into()]),
         )
     });
-    unimplemented!();
+    assert!(((({ (*ctx.borrow()).last_error } == 42) as i32) != 0));
     let v: Value<value> = <Value<value>>::default();
-    value::l(v.as_pointer()).write((1_() << 40_()));
-    unimplemented!();
-    value::i(v.as_pointer()).write(7_());
-    unimplemented!();
-    return 0_();
+    value::l(v.as_pointer()).write((1_i64 << 40));
+    assert!(
+        (((({ pick_1(1, Box::new([((*v.borrow()).clone()).into(),])) }) == (1_i64 << 40)) as i32)
+            != 0)
+    );
+    value::i(v.as_pointer()).write(7);
+    assert!(
+        (((({ pick_1(0, Box::new([((*v.borrow()).clone()).into(),])) }) == 7_i64) as i32) != 0)
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

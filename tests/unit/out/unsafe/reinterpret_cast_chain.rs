@@ -12,23 +12,23 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut val: u64 = 578437695752307201_u64;
     let mut dwords: *mut u32 = ((&mut val as *mut u64) as *mut u32);
-    unimplemented!();
-    unimplemented!();
+    assert!(((*dwords.offset((0) as isize)) == (67305985_u32)));
+    assert!(((*dwords.offset((1) as isize)) == (134678021_u32)));
     let mut words: *mut u16 = (dwords as *mut u16);
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (*words.offset((1_()) as isize)) = 48042_u16;
-    unimplemented!();
-    unimplemented!();
-    (*dwords.offset((1_()) as isize)) = (4293844428_() as u32);
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((((*words.offset((0) as isize)) as i32) == (513)));
+    assert!((((*words.offset((1) as isize)) as i32) == (1027)));
+    assert!((((*words.offset((2) as isize)) as i32) == (1541)));
+    assert!((((*words.offset((3) as isize)) as i32) == (2055)));
+    (*words.offset((1) as isize)) = 48042_u16;
+    assert!(((*dwords.offset((0) as isize)) == (3148481025_u32)));
+    assert!(((val) == (578437698833482241_u64)));
+    (*dwords.offset((1) as isize)) = 4293844428_u32;
+    assert!(((val) == (18441921395520307713_u64)));
+    assert!((((*words.offset((2) as isize)) as i32) == (56780)));
+    assert!((((*words.offset((3) as isize)) as i32) == (65518)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

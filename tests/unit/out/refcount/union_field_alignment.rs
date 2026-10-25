@@ -17,7 +17,7 @@ impl anon_0 {
     pub fn bytes(this: Ptr<Self>) -> Ptr<u8> {
         this.reinterpret_cast()
     }
-    pub fn aligner(this: Ptr<Self>) -> Ptr<()> {
+    pub fn aligner(this: Ptr<Self>) -> Ptr<AnyPtr> {
         this.reinterpret_cast()
     }
 }
@@ -42,15 +42,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let n: Value<node> = <Value<node>>::default();
     (*n.borrow_mut()).next = Ptr::<node>::null();
     elem!(
         (anon_0::bytes(field_ptr!(n.as_pointer(), x)).reinterpret_cast::<u8>() as Ptr::<u8>),
-        0_()
+        0
     )
     .write(171_u8);
-    unimplemented!();
-    return 0_();
+    assert!(
+        (((((elem!(
+            (anon_0::bytes(field_ptr!(n.as_pointer(), x)).reinterpret_cast::<u8>() as Ptr::<u8>),
+            0
+        )
+        .read()) as i32)
+            == 171) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

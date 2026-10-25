@@ -6,28 +6,36 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_promotions_0(count: (), __args: Box<[VaArg]>) -> () {
+pub fn test_promotions_0(count: i32, __args: Box<[VaArg]>) -> i32 {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
-    let count: Value<()> = Rc::new(RefCell::new(count));
+    let count: Value<i32> = Rc::new(RefCell::new(count));
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
     (*ap.borrow_mut()) = __args.as_pointer();
-    let mut a: () = (*ap.borrow_mut()).arg::<()>();
-    let mut b: () = (*ap.borrow_mut()).arg::<()>();
-    let mut c: () = (*ap.borrow_mut()).arg::<()>();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return ((a + b) + (c as ()));
+    let mut a: i32 = (*ap.borrow_mut()).arg::<i32>();
+    let mut b: i32 = (*ap.borrow_mut()).arg::<i32>();
+    let mut c: f64 = (*ap.borrow_mut()).arg::<f64>();
+    assert!((((a == 65) as i32) != 0));
+    assert!((((b == 10) as i32) != 0));
+    assert!((((c == 3_f64) as i32) != 0));
+    return ((a + b) + (c as i32));
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut x: () = ('A' as ());
-    let mut y: () = 10_();
-    let mut z: () = 3_f32;
-    unimplemented!();
-    return 0_();
+fn main_0() -> i32 {
+    let mut x: i8 = (('A' as i32) as i8);
+    let mut y: i16 = 10_i16;
+    let mut z: f32 = 3_f32;
+    assert!(
+        (((({
+            test_promotions_0(
+                3,
+                Box::new([(x as i32).into(), (y as i32).into(), (z as f64).into()]),
+            )
+        }) == 78) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}
