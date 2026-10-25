@@ -10,10 +10,10 @@ pub unsafe fn yield_vector_0() -> () {
     {
         let mut foo: () = unimplemented!();
         let mut x: () = 123_();
-        (unsafe { (__promise as std___gen__Promise_erased_int_ref_).yield_value_2(&mut x) });
+        unimplemented!();
         unimplemented!();
         x = 456_();
-        (unsafe { (__promise as std___gen__Promise_erased_int_ref_).yield_value_2(&mut x) });
+        unimplemented!();
     };
 }
 pub fn main() {

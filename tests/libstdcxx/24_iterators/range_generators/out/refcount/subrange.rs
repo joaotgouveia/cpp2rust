@@ -9,17 +9,11 @@ use std::rc::{Rc, Weak};
 pub fn yield_vector_0() -> () {
     {
         let foo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Value<()> = Rc::new(RefCell::new(123_()));
-        ({
-            ((*__promise.borrow()) as std___gen__Promise_erased_int_ref_)
-                .yield_value_2(x.as_pointer())
-        });
+        let mut x: () = 123_();
         unimplemented!();
-        (*x.borrow_mut()) = 456_();
-        ({
-            ((*__promise.borrow()) as std___gen__Promise_erased_int_ref_)
-                .yield_value_2(x.as_pointer())
-        });
+        unimplemented!();
+        x = 456_();
+        unimplemented!();
     };
 }
 pub fn main() {
