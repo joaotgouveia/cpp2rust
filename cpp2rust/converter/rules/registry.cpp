@@ -312,6 +312,13 @@ ExprMatch findExpr(const clang::Expr *use) {
       matches.empty() && object && *object != *key) {
     consider(*object);
   }
+  // or on a class between them (formatter<color> : formatter<const char *>)
+  for (const auto &base : RuleKeys::GetBaseMemberKeys(use)) {
+    if (!matches.empty()) {
+      break;
+    }
+    consider(base);
+  }
   return most_specialized();
 }
 
