@@ -19,7 +19,7 @@ unsafe fn main_0() -> () {
     let mut __tmp_0: () = 5_();
     let i2: *mut () = &mut __tmp_0;
     unimplemented!();
-    let mut i3: () = (unsafe { foo_0(unimplemented!()) });
+    let mut i3: () = (unsafe { foo_0(i2) });
     unimplemented!();
     unimplemented!();
     return 0_();

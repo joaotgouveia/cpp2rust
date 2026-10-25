@@ -351,11 +351,10 @@ fn main_0() -> () {
     const _: () = assert!(!(false), "!std::copy_constructible<std::generator<int>>");;
     {
         let gen_: Value<()> = Rc::new(RefCell::new(({ foo_11() })));
-        let i: Value<std_generator_const_copy_max_1__ref___Iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
-        (*(*i.borrow_mut()).upgrade().deref());
-        (*(*i.borrow_mut()).upgrade().deref());
-        let mut is: copy_max_1_ = copy_max_1_::copy_from({ i.as_pointer() });
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        let mut is: copy_max_1_ = copy_max_1_::copy_from({ unimplemented!() });
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -378,19 +377,17 @@ fn main_0() -> () {
     }
     {
         let gen2: Value<()> = Rc::new(RefCell::new(({ foo_12() })));
-        let i: Value<std_generator_copy_max_0__refref___Iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
-        (*(*i.borrow_mut()).upgrade().deref());
-        (*(*i.borrow_mut()).upgrade().deref());
-        let mut is: copy_max_0_ = copy_max_0_::move_from({ i.as_pointer() });
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        let mut is: copy_max_0_ = copy_max_0_::move_from({ unimplemented!() });
     }
     {
         let gen_: Value<()> = Rc::new(RefCell::new(({ foo_13() })));
-        let i: Value<std_generator_copy_max_0____Iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
-        (*(*i.borrow_mut()).upgrade().deref());
-        (*(*i.borrow_mut()).upgrade().deref());
-        let mut is: copy_max_0_ = copy_max_0_::move_from({ i.as_pointer() });
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        let mut is: copy_max_0_ = copy_max_0_::move_from({ unimplemented!() });
     }
     0
 }

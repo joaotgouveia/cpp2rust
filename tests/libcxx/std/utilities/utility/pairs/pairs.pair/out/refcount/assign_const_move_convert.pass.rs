@@ -636,7 +636,7 @@ impl AssignableFrom_ConstMoveAssign_Impl for Ptr<AssignableFrom_ConstMoveAssign_
         t: Ptr<ConstMoveAssign>,
     ) -> Ptr<AssignableFrom_ConstMoveAssign_> {
         ({
-            let _other: Ptr<ConstMoveAssign> = unimplemented!();
+            let _other: Ptr<ConstMoveAssign> = (t).clone();
             ConstMoveAssignImpl::move_assign(&field_ptr!((*self), v), _other)
         });
         return (*self).clone();
@@ -666,7 +666,7 @@ impl AssignableFrom_TracedAssignment_Impl for Ptr<AssignableFrom_TracedAssignmen
         t: Ptr<TracedAssignment>,
     ) -> Ptr<AssignableFrom_TracedAssignment_> {
         ({
-            let _arg0: Ptr<TracedAssignment> = unimplemented!();
+            let _arg0: Ptr<TracedAssignment> = (t).clone();
             TracedAssignmentImpl::operator_assign_5(&field_ptr!((*self), v), _arg0)
         });
         return (*self).clone();

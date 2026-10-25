@@ -241,20 +241,20 @@ pub unsafe fn test_16() -> () {
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
-        t = (*unimplemented!()).clone();
+        t = (t0).clone();
         unimplemented!();
     }
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
-        t = (*unimplemented!()).clone();
+        t = (t0).clone();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
-        t = (*unimplemented!()).clone();
+        t = (t0).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -266,7 +266,7 @@ pub unsafe fn test_16() -> () {
         let mut y2: () = 500_();
         let mut t: () = unimplemented!();
         let mut t2: () = unimplemented!();
-        t = (*unimplemented!()).clone();
+        t = (t2).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -307,7 +307,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_move_assignable<T>::value");;
         let mut t1: () = unimplemented!();
         let mut t2: () = unimplemented!();
-        t1 = (*unimplemented!()).clone();
+        t1 = (t2).clone();
         unimplemented!();
         unimplemented!();
     }

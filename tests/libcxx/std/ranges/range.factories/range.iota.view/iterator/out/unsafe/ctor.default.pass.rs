@@ -250,7 +250,7 @@ impl Default for Int42_DefaultTo42_ {
     }
 }
 pub unsafe fn test_18() -> () {
-    let mut iter: std_ranges_iota_view_Int42_DefaultTo42_____iterator = unimplemented!();
+    let mut iter: () = unimplemented!();
     unimplemented!();
     return true;
 }

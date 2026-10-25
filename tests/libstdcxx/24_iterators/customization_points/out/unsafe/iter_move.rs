@@ -359,9 +359,8 @@ pub unsafe fn test_adl_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_move_11))(&mut (*unimplemented!()))
-        }) == (2_()))
+        if !((unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_move_11))(&mut it) })
+            == (2_()))
         {
             (unsafe {
                 __builtin_fprintf_19(
@@ -405,7 +404,7 @@ pub unsafe fn test_adl_18() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unsafe {
-            let ___e: *const Iter = unimplemented!();
+            let ___e: *const Iter = cit;
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_move_11))(___e)
         }) == (4_f32))
         {

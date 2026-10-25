@@ -1908,7 +1908,7 @@ pub struct should_throw_exception_t {}
 pub static mut should_throw_exception_53: std::cell::LazyCell<should_throw_exception_t> =
     std::cell::LazyCell::new(|| unsafe { <should_throw_exception_t>::default() });
 pub unsafe fn test_54(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1916,7 +1916,7 @@ pub unsafe fn test_54(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_55(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1924,7 +1924,7 @@ pub unsafe fn test_55(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_56(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1932,7 +1932,7 @@ pub unsafe fn test_56(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_57(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1940,7 +1940,7 @@ pub unsafe fn test_57(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_58(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1948,7 +1948,7 @@ pub unsafe fn test_58(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_59(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1956,7 +1956,7 @@ pub unsafe fn test_59(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_60(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1964,7 +1964,7 @@ pub unsafe fn test_60(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_61(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1972,7 +1972,7 @@ pub unsafe fn test_61(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_62(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1980,7 +1980,7 @@ pub unsafe fn test_62(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_63(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1988,7 +1988,7 @@ pub unsafe fn test_63(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_64(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1996,7 +1996,7 @@ pub unsafe fn test_64(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_65(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2004,7 +2004,7 @@ pub unsafe fn test_65(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_66(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2012,7 +2012,7 @@ pub unsafe fn test_66(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_67(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2020,7 +2020,7 @@ pub unsafe fn test_67(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_68(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2028,7 +2028,7 @@ pub unsafe fn test_68(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_69(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2036,7 +2036,7 @@ pub unsafe fn test_69(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_70(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2044,7 +2044,7 @@ pub unsafe fn test_70(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_71(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2052,7 +2052,7 @@ pub unsafe fn test_71(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_72(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2060,7 +2060,7 @@ pub unsafe fn test_72(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_73(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2068,7 +2068,7 @@ pub unsafe fn test_73(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_74(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2076,7 +2076,7 @@ pub unsafe fn test_74(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_75(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2084,7 +2084,7 @@ pub unsafe fn test_75(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_76(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2092,7 +2092,7 @@ pub unsafe fn test_76(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_77(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2100,7 +2100,7 @@ pub unsafe fn test_77(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_78(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2108,7 +2108,7 @@ pub unsafe fn test_78(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_79(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2116,7 +2116,7 @@ pub unsafe fn test_79(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_80(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2124,7 +2124,7 @@ pub unsafe fn test_80(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_81(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2132,7 +2132,7 @@ pub unsafe fn test_81(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_82(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2140,7 +2140,7 @@ pub unsafe fn test_82(mut orig: (), mut pos: (), mut n: (), expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_83(mut orig: (), mut pos: (), mut n: (), expected: ()) {
-    let mut str: () = (unsafe { (*unimplemented!()).substr_131(pos, n) });
+    let mut str: () = (unsafe { orig.substr_131(pos, n) });
     unimplemented!();
     unimplemented!();
     unimplemented!();

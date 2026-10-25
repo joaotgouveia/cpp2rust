@@ -519,11 +519,11 @@ pub fn test_6() {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let mut keys: () = ({ (*unimplemented!().upgrade().deref()).extract() });
+        let mut keys: () = ({ (*m.borrow()).extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = ({ (*unimplemented!().upgrade().deref()).extract() });
+        let mut keys2: () = ({ (*mo.borrow()).extract() });
         unimplemented!();
     }
 }
@@ -540,15 +540,11 @@ pub fn test_7() {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let keys: Value<()> = Rc::new(RefCell::new(
-            ({ (*unimplemented!().upgrade().deref()).extract() }),
-        ));
+        let keys: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).extract() })));
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let keys2: Value<()> = Rc::new(RefCell::new(
-            ({ (*unimplemented!().upgrade().deref()).extract() }),
-        ));
+        let keys2: Value<()> = Rc::new(RefCell::new(({ (*mo.borrow()).extract() })));
         unimplemented!();
     }
 }

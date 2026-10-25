@@ -368,7 +368,7 @@ pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -541,9 +541,9 @@ pub unsafe fn check_14(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
         bidirectional_iterator_int_ptr_::new_1({ first });
     let mut result: bidirectional_iterator_int_ptr_ = (unsafe {
         let ___x: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut it });
         let ___bound_iter: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut sent });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_15))(___x, n, ___bound_iter)
     });
     unimplemented!();
@@ -554,9 +554,9 @@ pub unsafe fn check_16(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
         random_access_iterator_int_ptr_::new_1({ first });
     let mut result: random_access_iterator_int_ptr_ = (unsafe {
         let ___x: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut it });
         let ___bound_iter: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut sent });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_15))(___x, n, ___bound_iter)
     });
     unimplemented!();
@@ -566,9 +566,9 @@ pub unsafe fn check_17(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
     let mut sent: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ first });
     let mut result: contiguous_iterator_int_ptr_ = (unsafe {
         let ___x: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut it });
         let ___bound_iter: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut sent });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_15))(___x, n, ___bound_iter)
     });
     unimplemented!();
@@ -577,8 +577,8 @@ pub unsafe fn check_18(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
     let mut it: *mut () = last;
     let mut sent: *mut () = first;
     let mut result: *mut () = (unsafe {
-        let ___x: *mut () = (*unimplemented!());
-        let ___bound_iter: *mut () = (*unimplemented!());
+        let ___x: *mut () = it;
+        let ___bound_iter: *mut () = sent;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_15))(___x, n, ___bound_iter)
     });
     unimplemented!();

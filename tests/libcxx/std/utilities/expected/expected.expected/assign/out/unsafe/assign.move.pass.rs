@@ -696,9 +696,7 @@ pub unsafe fn test_3() -> () {
                 CheckForInvalidWrites_true__false_::new_1({ unimplemented!() });
             let mut e2: CheckForInvalidWrites_true__false_ =
                 <CheckForInvalidWrites_true__false_>::default();
-            (unsafe {
-                CheckForInvalidWrites_true__false_::move_assign(&mut e1, &mut (*unimplemented!()))
-            });
+            (unsafe { CheckForInvalidWrites_true__false_::move_assign(&mut e1, &mut e2) });
             unimplemented!();
             unimplemented!();
         }
@@ -707,9 +705,7 @@ pub unsafe fn test_3() -> () {
                 CheckForInvalidWrites_false__false_::new_1({ unimplemented!() });
             let mut e2: CheckForInvalidWrites_false__false_ =
                 <CheckForInvalidWrites_false__false_>::default();
-            (unsafe {
-                CheckForInvalidWrites_false__false_::move_assign(&mut e1, &mut (*unimplemented!()))
-            });
+            (unsafe { CheckForInvalidWrites_false__false_::move_assign(&mut e1, &mut e2) });
             unimplemented!();
             unimplemented!();
         }

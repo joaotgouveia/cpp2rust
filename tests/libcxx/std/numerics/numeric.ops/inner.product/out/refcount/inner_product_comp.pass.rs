@@ -316,7 +316,7 @@ pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -500,7 +500,7 @@ pub fn operator_add_11(lhs: Ptr<rvalue_addable>, _a1: Ptr<rvalue_addable>) -> rv
 }
 pub fn operator_add_12(lhs: Ptr<rvalue_addable>, _a1: Ptr<rvalue_addable>) -> rvalue_addable {
     field!(lhs, correctOperatorUsed).write(true);
-    return (*unimplemented!().upgrade().deref()).clone();
+    return (*lhs.upgrade().deref()).clone();
 }
 pub fn test_use_move_13() {
     let arr: Value<Box<[rvalue_addable]>> = Rc::new(RefCell::new(
@@ -3993,7 +3993,7 @@ impl rvalue_addableImpl for Ptr<rvalue_addable> {
     }
     fn operator_call(&self, r: Ptr<rvalue_addable>, _a1: Ptr<rvalue_addable>) -> rvalue_addable {
         field!(r, correctOperatorUsed).write(true);
-        return (*unimplemented!().upgrade().deref()).clone();
+        return (*r.upgrade().deref()).clone();
     }
 }
 pub trait rvalue_iterator_int_ptr_Impl {

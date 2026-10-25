@@ -23,7 +23,7 @@ unsafe fn main_0() -> () {
         }
     );
     let mut g: FnPtr<fn() -> ()> = f.copy_from();
-    let mut h: () = (*unimplemented!()).move_from();
+    let mut h: () = f.move_from();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -39,7 +39,7 @@ unsafe fn main_0() -> () {
             };
         }
     );
-    let mut q: () = (*unimplemented!()).move_from();
+    let mut q: () = p.move_from();
     unimplemented!();
     unimplemented!();
     let mut n: () = 0_();
@@ -63,7 +63,7 @@ unsafe fn main_0() -> () {
     let mut outer2: FnPtr<fn() -> ()> = outer.copy_from();
     unimplemented!();
     unimplemented!();
-    let mut outer3: () = (*unimplemented!()).move_from();
+    let mut outer3: () = outer.move_from();
     unimplemented!();
     return 0_();
 }

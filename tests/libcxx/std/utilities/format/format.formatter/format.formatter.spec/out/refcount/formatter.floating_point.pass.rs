@@ -84,9 +84,8 @@ impl MultiStringType {
         }
     }
 }
-pub fn test_4(fmt: (), arg: (), mut expected: (), mut offset: ()) {
+pub fn test_4(fmt: (), mut arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -95,12 +94,7 @@ pub fn test_4(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___float_ > = Rc::new(RefCell::new(( { make_format_args_5 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     if unimplemented!() {
@@ -109,9 +103,8 @@ pub fn test_4(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     }
     unimplemented!();
 }
-pub fn test_6(fmt: (), arg: (), mut expected: (), mut offset: ()) {
+pub fn test_5(fmt: (), mut arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -120,12 +113,7 @@ pub fn test_6(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___double_ > = Rc::new(RefCell::new(( { make_format_args_7 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     if unimplemented!() {
@@ -134,9 +122,8 @@ pub fn test_6(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     }
     unimplemented!();
 }
-pub fn test_8(fmt: (), arg: (), mut expected: (), mut offset: ()) {
+pub fn test_6(fmt: (), mut arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -145,12 +132,7 @@ pub fn test_8(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_2 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___long_double_ > = Rc::new(RefCell::new(( { make_format_args_9 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_3 ( { __tmp_2.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     if unimplemented!() {
@@ -159,9 +141,8 @@ pub fn test_8(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     }
     unimplemented!();
 }
-pub fn test_10(fmt: (), arg: (), mut expected: (), mut offset: ()) {
+pub fn test_7(fmt: (), mut arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -170,12 +151,7 @@ pub fn test_10(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_3 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___float_ > = Rc::new(RefCell::new(( { make_format_args_11 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { __tmp_3.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     if unimplemented!() {
@@ -184,9 +160,8 @@ pub fn test_10(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     }
     unimplemented!();
 }
-pub fn test_12(fmt: (), arg: (), mut expected: (), mut offset: ()) {
+pub fn test_8(fmt: (), mut arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -195,12 +170,7 @@ pub fn test_12(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_4 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___double_ > = Rc::new(RefCell::new(( { make_format_args_13 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { __tmp_4.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     if unimplemented!() {
@@ -209,9 +179,8 @@ pub fn test_12(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     }
     unimplemented!();
 }
-pub fn test_14(fmt: (), arg: (), mut expected: (), mut offset: ()) {
+pub fn test_9(fmt: (), mut arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -220,12 +189,7 @@ pub fn test_14(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_5 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___long_double_ > = Rc::new(RefCell::new(( { make_format_args_15 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_3 ( { __tmp_5.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     if unimplemented!() {
@@ -234,337 +198,243 @@ pub fn test_14(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     }
     unimplemented!();
 }
-pub fn test_termination_condition_16(f: (), mut arg: (), expected: Option<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
+pub fn test_termination_condition_10(mut f: (), mut arg: (), expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unimplemented!());
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_4(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
     ({ test_4(unimplemented!(), arg, unimplemented!(), 0_()) });
 }
-pub fn test_termination_condition_17(f: (), mut arg: (), expected: Option<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
+pub fn test_termination_condition_11(mut f: (), mut arg: (), expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unimplemented!());
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_5(unimplemented!(), arg, unimplemented!(), 1_()) });
+    unimplemented!();
+    ({ test_5(unimplemented!(), arg, unimplemented!(), 0_()) });
+}
+pub fn test_termination_condition_12(mut f: (), mut arg: (), expected: Option<()>) {
+    let mut expected: () = expected.unwrap_or_else(|| unimplemented!());
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_6(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
     ({ test_6(unimplemented!(), arg, unimplemented!(), 0_()) });
 }
-pub fn test_termination_condition_18(f: (), mut arg: (), expected: Option<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
+pub fn test_termination_condition_13(mut f: (), mut arg: (), expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unimplemented!());
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_7(unimplemented!(), arg, unimplemented!(), 1_()) });
+    unimplemented!();
+    ({ test_7(unimplemented!(), arg, unimplemented!(), 0_()) });
+}
+pub fn test_termination_condition_14(mut f: (), mut arg: (), expected: Option<()>) {
+    let mut expected: () = expected.unwrap_or_else(|| unimplemented!());
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_8(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
     ({ test_8(unimplemented!(), arg, unimplemented!(), 0_()) });
 }
-pub fn test_termination_condition_19(f: (), mut arg: (), expected: Option<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
+pub fn test_termination_condition_15(mut f: (), mut arg: (), expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unimplemented!());
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ test_10(unimplemented!(), arg, unimplemented!(), 1_()) });
+    ({ test_9(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
-    ({ test_10(unimplemented!(), arg, unimplemented!(), 0_()) });
+    ({ test_9(unimplemented!(), arg, unimplemented!(), 0_()) });
 }
-pub fn test_termination_condition_20(f: (), mut arg: (), expected: Option<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let mut expected: () = expected.unwrap_or_else(|| unimplemented!());
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_12(unimplemented!(), arg, unimplemented!(), 1_()) });
-    unimplemented!();
-    ({ test_12(unimplemented!(), arg, unimplemented!(), 0_()) });
-}
-pub fn test_termination_condition_21(f: (), mut arg: (), expected: Option<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let mut expected: () = expected.unwrap_or_else(|| unimplemented!());
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_14(unimplemented!(), arg, unimplemented!(), 1_()) });
-    unimplemented!();
-    ({ test_14(unimplemented!(), arg, unimplemented!(), 0_()) });
-}
-pub fn test_hex_lower_case_precision_22(mut value: ()) {
+pub fn test_hex_lower_case_precision_16(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_hex_lower_case_precision_24(mut value: ()) {
+pub fn test_hex_lower_case_precision_18(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_hex_lower_case_precision_26(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_hex_lower_case_precision_27(mut value: ()) {
+pub fn test_hex_lower_case_precision_20(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_hex_upper_case_precision_28(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_hex_upper_case_precision_29(mut value: ()) {
+pub fn test_hex_lower_case_precision_21(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_hex_upper_case_precision_30(mut value: ()) {
+pub fn test_hex_upper_case_precision_22(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -572,255 +442,131 @@ pub fn test_hex_upper_case_precision_30(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_hex_upper_case_precision_31(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_scientific_lower_case_precision_32(mut value: ()) {
+pub fn test_hex_upper_case_precision_23(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_scientific_lower_case_precision_33(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_scientific_lower_case_precision_34(mut value: ()) {
+pub fn test_hex_upper_case_precision_24(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_scientific_lower_case_precision_35(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_scientific_upper_case_precision_36(mut value: ()) {
+pub fn test_hex_upper_case_precision_25(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -828,343 +574,211 @@ pub fn test_scientific_upper_case_precision_36(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_scientific_upper_case_precision_37(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_scientific_upper_case_precision_38(mut value: ()) {
+pub fn test_scientific_lower_case_precision_26(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_scientific_upper_case_precision_39(mut value: ()) {
+pub fn test_scientific_lower_case_precision_27(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_fixed_lower_case_precision_40(mut value: ()) {
+pub fn test_scientific_lower_case_precision_28(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_fixed_lower_case_precision_41(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_fixed_lower_case_precision_42(mut value: ()) {
+pub fn test_scientific_lower_case_precision_29(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_fixed_lower_case_precision_43(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_fixed_upper_case_precision_44(mut value: ()) {
+pub fn test_scientific_upper_case_precision_30(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1172,87 +786,43 @@ pub fn test_fixed_upper_case_precision_44(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_fixed_upper_case_precision_45(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_fixed_upper_case_precision_46(mut value: ()) {
+pub fn test_scientific_upper_case_precision_31(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1260,255 +830,43 @@ pub fn test_fixed_upper_case_precision_46(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_fixed_upper_case_precision_47(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_general_lower_case_precision_48(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_general_lower_case_precision_49(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_general_lower_case_precision_50(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_general_lower_case_precision_51(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_general_upper_case_precision_52(mut value: ()) {
+pub fn test_scientific_upper_case_precision_32(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1516,87 +874,43 @@ pub fn test_general_upper_case_precision_52(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_general_upper_case_precision_53(mut value: ()) {
+pub fn test_scientific_upper_case_precision_33(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_25(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
-    }
-}
-pub fn test_general_upper_case_precision_54(mut value: ()) {
-    {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
-        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
-        let mut end: () = unimplemented!().offset((size) as isize);
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        let mut unused: () = (unimplemented!() - (end).clone()) as ();
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
-        unimplemented!();
-        if ({ signbit_23(value) }) {
-            unimplemented!().write(('-' as ()));
-            unimplemented!().write(('0' as ()));
-        }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1604,43 +918,211 @@ pub fn test_general_upper_case_precision_54(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_23(value) }) {
+        if ({ signbit_19(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_general_upper_case_precision_55(mut value: ()) {
+pub fn test_fixed_lower_case_precision_34(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+    }
+}
+pub fn test_fixed_lower_case_precision_35(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+    }
+}
+pub fn test_fixed_lower_case_precision_36(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+    }
+}
+pub fn test_fixed_lower_case_precision_37(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+    }
+}
+pub fn test_fixed_upper_case_precision_38(mut value: ()) {
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1648,349 +1130,825 @@ pub fn test_general_upper_case_precision_55(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        if ({ signbit_25(value) }) {
+        if ({ signbit_17(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
-pub fn test_value_56(mut value: ()) {
-    ({ test_hex_lower_case_precision_22(value) });
-    ({ test_hex_upper_case_precision_28(value) });
-    ({ test_scientific_lower_case_precision_32(value) });
-    ({ test_scientific_upper_case_precision_36(value) });
-    ({ test_fixed_lower_case_precision_40(value) });
-    ({ test_fixed_upper_case_precision_44(value) });
-    ({ test_general_lower_case_precision_48(value) });
-    ({ test_general_upper_case_precision_52(value) });
+pub fn test_fixed_upper_case_precision_39(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+    }
 }
-pub fn test_value_57(mut value: ()) {
-    ({ test_hex_lower_case_precision_24(value) });
-    ({ test_hex_upper_case_precision_29(value) });
-    ({ test_scientific_lower_case_precision_33(value) });
-    ({ test_scientific_upper_case_precision_37(value) });
-    ({ test_fixed_lower_case_precision_41(value) });
-    ({ test_fixed_upper_case_precision_45(value) });
-    ({ test_general_lower_case_precision_49(value) });
-    ({ test_general_upper_case_precision_53(value) });
+pub fn test_fixed_upper_case_precision_40(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+    }
 }
-pub fn test_value_58(mut value: ()) {
-    ({ test_hex_lower_case_precision_26(value) });
-    ({ test_hex_upper_case_precision_30(value) });
-    ({ test_scientific_lower_case_precision_34(value) });
-    ({ test_scientific_upper_case_precision_38(value) });
-    ({ test_fixed_lower_case_precision_42(value) });
-    ({ test_fixed_upper_case_precision_46(value) });
-    ({ test_general_lower_case_precision_50(value) });
-    ({ test_general_upper_case_precision_54(value) });
+pub fn test_fixed_upper_case_precision_41(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+    }
 }
-pub fn test_value_59(mut value: ()) {
-    ({ test_hex_lower_case_precision_27(value) });
-    ({ test_hex_upper_case_precision_31(value) });
-    ({ test_scientific_lower_case_precision_35(value) });
-    ({ test_scientific_upper_case_precision_39(value) });
-    ({ test_fixed_lower_case_precision_43(value) });
-    ({ test_fixed_upper_case_precision_47(value) });
-    ({ test_general_lower_case_precision_51(value) });
-    ({ test_general_upper_case_precision_55(value) });
+pub fn test_general_lower_case_precision_42(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+    }
 }
-pub fn test_special_values_60() {
-    ({ test_value_56(-unimplemented!()) });
-    ({ test_value_56(-1_f64) });
-    ({ test_value_56(-unimplemented!()) });
-    ({ test_value_56(-unimplemented!()) });
-    ({ test_value_56(-0_f64) });
-    ({ test_value_56(0_f64) });
-    ({ test_value_56(unimplemented!()) });
-    ({ test_value_56(1_f64) });
-    ({ test_value_56(unimplemented!()) });
-    ({ test_value_56(unimplemented!()) });
+pub fn test_general_lower_case_precision_43(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+    }
 }
-pub fn test_special_values_61() {
-    ({ test_value_57(-unimplemented!()) });
-    ({ test_value_57(-1_f64) });
-    ({ test_value_57(-unimplemented!()) });
-    ({ test_value_57(-unimplemented!()) });
-    ({ test_value_57(-0_f64) });
-    ({ test_value_57(0_f64) });
-    ({ test_value_57(unimplemented!()) });
-    ({ test_value_57(1_f64) });
-    ({ test_value_57(unimplemented!()) });
-    ({ test_value_57(unimplemented!()) });
+pub fn test_general_lower_case_precision_44(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+    }
 }
-pub fn test_special_values_62() {
-    ({ test_value_58(-unimplemented!()) });
-    ({ test_value_58(-1_f64) });
-    ({ test_value_58(-unimplemented!()) });
-    ({ test_value_58(-unimplemented!()) });
-    ({ test_value_58(-0_f64) });
-    ({ test_value_58(0_f64) });
-    ({ test_value_58(unimplemented!()) });
-    ({ test_value_58(1_f64) });
-    ({ test_value_58(unimplemented!()) });
-    ({ test_value_58(unimplemented!()) });
+pub fn test_general_lower_case_precision_45(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+    }
 }
-pub fn test_special_values_63() {
-    ({ test_value_59(-unimplemented!()) });
-    ({ test_value_59(-1_f64) });
-    ({ test_value_59(-unimplemented!()) });
-    ({ test_value_59(-unimplemented!()) });
-    ({ test_value_59(-0_f64) });
-    ({ test_value_59(0_f64) });
-    ({ test_value_59(unimplemented!()) });
-    ({ test_value_59(1_f64) });
-    ({ test_value_59(unimplemented!()) });
-    ({ test_value_59(unimplemented!()) });
+pub fn test_general_upper_case_precision_46(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_10(unimplemented!(), value, Some(unimplemented!())) });
+    }
 }
-pub fn test_float_type_64() {
-    ({ test_termination_condition_16(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_16(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_16(unimplemented!(), -0_f64, None) });
-    ({ test_termination_condition_16(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_16(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_16(unimplemented!(), unimplemented!(), None) });
+pub fn test_general_upper_case_precision_47(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_11(unimplemented!(), value, Some(unimplemented!())) });
+    }
+}
+pub fn test_general_upper_case_precision_48(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_17(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_13(unimplemented!(), value, Some(unimplemented!())) });
+    }
+}
+pub fn test_general_upper_case_precision_49(mut value: ()) {
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+    }
+    {
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
+        let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
+        let mut end: () = unimplemented!().offset((size) as isize);
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        let mut unused: () = (unimplemented!() - (end).clone()) as ();
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+        unimplemented!();
+        if ({ signbit_19(value) }) {
+            unimplemented!().write(('-' as ()));
+            unimplemented!().write(('0' as ()));
+        }
+        ({ test_termination_condition_14(unimplemented!(), value, Some(unimplemented!())) });
+    }
+}
+pub fn test_value_50(mut value: ()) {
+    ({ test_hex_lower_case_precision_16(value) });
+    ({ test_hex_upper_case_precision_22(value) });
+    ({ test_scientific_lower_case_precision_26(value) });
+    ({ test_scientific_upper_case_precision_30(value) });
+    ({ test_fixed_lower_case_precision_34(value) });
+    ({ test_fixed_upper_case_precision_38(value) });
+    ({ test_general_lower_case_precision_42(value) });
+    ({ test_general_upper_case_precision_46(value) });
+}
+pub fn test_value_51(mut value: ()) {
+    ({ test_hex_lower_case_precision_18(value) });
+    ({ test_hex_upper_case_precision_23(value) });
+    ({ test_scientific_lower_case_precision_27(value) });
+    ({ test_scientific_upper_case_precision_31(value) });
+    ({ test_fixed_lower_case_precision_35(value) });
+    ({ test_fixed_upper_case_precision_39(value) });
+    ({ test_general_lower_case_precision_43(value) });
+    ({ test_general_upper_case_precision_47(value) });
+}
+pub fn test_value_52(mut value: ()) {
+    ({ test_hex_lower_case_precision_20(value) });
+    ({ test_hex_upper_case_precision_24(value) });
+    ({ test_scientific_lower_case_precision_28(value) });
+    ({ test_scientific_upper_case_precision_32(value) });
+    ({ test_fixed_lower_case_precision_36(value) });
+    ({ test_fixed_upper_case_precision_40(value) });
+    ({ test_general_lower_case_precision_44(value) });
+    ({ test_general_upper_case_precision_48(value) });
+}
+pub fn test_value_53(mut value: ()) {
+    ({ test_hex_lower_case_precision_21(value) });
+    ({ test_hex_upper_case_precision_25(value) });
+    ({ test_scientific_lower_case_precision_29(value) });
+    ({ test_scientific_upper_case_precision_33(value) });
+    ({ test_fixed_lower_case_precision_37(value) });
+    ({ test_fixed_upper_case_precision_41(value) });
+    ({ test_general_lower_case_precision_45(value) });
+    ({ test_general_upper_case_precision_49(value) });
+}
+pub fn test_special_values_54() {
+    ({ test_value_50(-unimplemented!()) });
+    ({ test_value_50(-1_f64) });
+    ({ test_value_50(-unimplemented!()) });
+    ({ test_value_50(-unimplemented!()) });
+    ({ test_value_50(-0_f64) });
+    ({ test_value_50(0_f64) });
+    ({ test_value_50(unimplemented!()) });
+    ({ test_value_50(1_f64) });
+    ({ test_value_50(unimplemented!()) });
+    ({ test_value_50(unimplemented!()) });
+}
+pub fn test_special_values_55() {
+    ({ test_value_51(-unimplemented!()) });
+    ({ test_value_51(-1_f64) });
+    ({ test_value_51(-unimplemented!()) });
+    ({ test_value_51(-unimplemented!()) });
+    ({ test_value_51(-0_f64) });
+    ({ test_value_51(0_f64) });
+    ({ test_value_51(unimplemented!()) });
+    ({ test_value_51(1_f64) });
+    ({ test_value_51(unimplemented!()) });
+    ({ test_value_51(unimplemented!()) });
+}
+pub fn test_special_values_56() {
+    ({ test_value_52(-unimplemented!()) });
+    ({ test_value_52(-1_f64) });
+    ({ test_value_52(-unimplemented!()) });
+    ({ test_value_52(-unimplemented!()) });
+    ({ test_value_52(-0_f64) });
+    ({ test_value_52(0_f64) });
+    ({ test_value_52(unimplemented!()) });
+    ({ test_value_52(1_f64) });
+    ({ test_value_52(unimplemented!()) });
+    ({ test_value_52(unimplemented!()) });
+}
+pub fn test_special_values_57() {
+    ({ test_value_53(-unimplemented!()) });
+    ({ test_value_53(-1_f64) });
+    ({ test_value_53(-unimplemented!()) });
+    ({ test_value_53(-unimplemented!()) });
+    ({ test_value_53(-0_f64) });
+    ({ test_value_53(0_f64) });
+    ({ test_value_53(unimplemented!()) });
+    ({ test_value_53(1_f64) });
+    ({ test_value_53(unimplemented!()) });
+    ({ test_value_53(unimplemented!()) });
+}
+pub fn test_float_type_58() {
+    ({ test_termination_condition_10(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_10(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_10(unimplemented!(), -0_f64, None) });
+    ({ test_termination_condition_10(unimplemented!(), 0_f64, None) });
+    ({ test_termination_condition_10(unimplemented!(), unimplemented!(), None) });
+    ({ test_termination_condition_10(unimplemented!(), unimplemented!(), None) });
     {}
     {}
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_16(_f, -unimplemented!(), Some(_expected))
+        test_termination_condition_10(_f, -unimplemented!(), Some(_expected))
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_16(_f, unimplemented!(), Some(_expected))
+        test_termination_condition_10(_f, unimplemented!(), Some(_expected))
     });
     let mut nan: () = unimplemented!();
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_17(_f, ({ copysign_65(nan, -1_f64) }), Some(_expected))
+        test_termination_condition_11(_f, ({ copysign_59(nan, -1_f64) }), Some(_expected))
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_16(_f, nan, Some(_expected))
+        test_termination_condition_10(_f, nan, Some(_expected))
     });
     {
-        ({ test_special_values_60() });
+        ({ test_special_values_54() });
+    }
+}
+pub fn test_float_type_60() {
+    ({ test_termination_condition_11(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_11(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_11(unimplemented!(), -0_f64, None) });
+    ({ test_termination_condition_11(unimplemented!(), 0_f64, None) });
+    ({ test_termination_condition_11(unimplemented!(), unimplemented!(), None) });
+    ({ test_termination_condition_11(unimplemented!(), unimplemented!(), None) });
+    {
+        ({ test_termination_condition_11(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_11(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_11(unimplemented!(), unimplemented!(), None) });
+        ({ test_termination_condition_11(unimplemented!(), unimplemented!(), None) });
+    }
+    {}
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_11(_f, -unimplemented!(), Some(_expected))
+    });
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_11(_f, unimplemented!(), Some(_expected))
+    });
+    let mut nan: () = unimplemented!();
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_11(_f, ({ copysign_61(nan, -1_f64) }), Some(_expected))
+    });
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_11(_f, nan, Some(_expected))
+    });
+    {
+        ({ test_special_values_55() });
+    }
+}
+pub fn test_float_type_62() {
+    ({ test_termination_condition_12(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_12(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_12(unimplemented!(), -0_f64, None) });
+    ({ test_termination_condition_12(unimplemented!(), 0_f64, None) });
+    ({ test_termination_condition_12(unimplemented!(), unimplemented!(), None) });
+    ({ test_termination_condition_12(unimplemented!(), unimplemented!(), None) });
+    {
+        ({ test_termination_condition_12(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_12(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_12(unimplemented!(), unimplemented!(), None) });
+        ({ test_termination_condition_12(unimplemented!(), unimplemented!(), None) });
+    }
+    {
+        ({ test_termination_condition_12(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_12(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_12(unimplemented!(), unimplemented!(), None) });
+        ({ test_termination_condition_12(unimplemented!(), unimplemented!(), None) });
+    }
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_12(_f, -unimplemented!(), Some(_expected))
+    });
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_12(_f, unimplemented!(), Some(_expected))
+    });
+    let mut nan: () = unimplemented!();
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_12(_f, ({ copysign_63(nan, -1_f64) }), Some(_expected))
+    });
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_12(_f, nan, Some(_expected))
+    });
+    {}
+}
+pub fn test_float_type_64() {
+    ({ test_termination_condition_13(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_13(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_13(unimplemented!(), -0_f64, None) });
+    ({ test_termination_condition_13(unimplemented!(), 0_f64, None) });
+    ({ test_termination_condition_13(unimplemented!(), unimplemented!(), None) });
+    ({ test_termination_condition_13(unimplemented!(), unimplemented!(), None) });
+    {}
+    {}
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_13(_f, -unimplemented!(), Some(_expected))
+    });
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_13(_f, unimplemented!(), Some(_expected))
+    });
+    let mut nan: () = unimplemented!();
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_14(_f, ({ copysign_59(nan, -1_f64) }), Some(_expected))
+    });
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_13(_f, nan, Some(_expected))
+    });
+    {
+        ({ test_special_values_56() });
+    }
+}
+pub fn test_float_type_65() {
+    ({ test_termination_condition_14(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_14(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_14(unimplemented!(), -0_f64, None) });
+    ({ test_termination_condition_14(unimplemented!(), 0_f64, None) });
+    ({ test_termination_condition_14(unimplemented!(), unimplemented!(), None) });
+    ({ test_termination_condition_14(unimplemented!(), unimplemented!(), None) });
+    {
+        ({ test_termination_condition_14(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_14(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_14(unimplemented!(), unimplemented!(), None) });
+        ({ test_termination_condition_14(unimplemented!(), unimplemented!(), None) });
+    }
+    {}
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_14(_f, -unimplemented!(), Some(_expected))
+    });
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_14(_f, unimplemented!(), Some(_expected))
+    });
+    let mut nan: () = unimplemented!();
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_14(_f, ({ copysign_61(nan, -1_f64) }), Some(_expected))
+    });
+    ({
+        let _f: () = unimplemented!();
+        let _expected: () = unimplemented!();
+        test_termination_condition_14(_f, nan, Some(_expected))
+    });
+    {
+        ({ test_special_values_57() });
     }
 }
 pub fn test_float_type_66() {
-    ({ test_termination_condition_17(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_17(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_17(unimplemented!(), -0_f64, None) });
-    ({ test_termination_condition_17(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_17(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_17(unimplemented!(), unimplemented!(), None) });
+    ({ test_termination_condition_15(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_15(unimplemented!(), -unimplemented!(), None) });
+    ({ test_termination_condition_15(unimplemented!(), -0_f64, None) });
+    ({ test_termination_condition_15(unimplemented!(), 0_f64, None) });
+    ({ test_termination_condition_15(unimplemented!(), unimplemented!(), None) });
+    ({ test_termination_condition_15(unimplemented!(), unimplemented!(), None) });
     {
-        ({ test_termination_condition_17(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_17(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_17(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_17(unimplemented!(), unimplemented!(), None) });
+        ({ test_termination_condition_15(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_15(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_15(unimplemented!(), unimplemented!(), None) });
+        ({ test_termination_condition_15(unimplemented!(), unimplemented!(), None) });
     }
-    {}
+    {
+        ({ test_termination_condition_15(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_15(unimplemented!(), -unimplemented!(), None) });
+        ({ test_termination_condition_15(unimplemented!(), unimplemented!(), None) });
+        ({ test_termination_condition_15(unimplemented!(), unimplemented!(), None) });
+    }
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_17(_f, -unimplemented!(), Some(_expected))
+        test_termination_condition_15(_f, -unimplemented!(), Some(_expected))
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_17(_f, unimplemented!(), Some(_expected))
+        test_termination_condition_15(_f, unimplemented!(), Some(_expected))
     });
     let mut nan: () = unimplemented!();
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_17(_f, ({ copysign_67(nan, -1_f64) }), Some(_expected))
+        test_termination_condition_15(_f, ({ copysign_63(nan, -1_f64) }), Some(_expected))
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_17(_f, nan, Some(_expected))
-    });
-    {
-        ({ test_special_values_61() });
-    }
-}
-pub fn test_float_type_68() {
-    ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_18(unimplemented!(), -0_f64, None) });
-    ({ test_termination_condition_18(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-    {
-        ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-    }
-    {
-        ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-    }
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_18(_f, -unimplemented!(), Some(_expected))
-    });
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_18(_f, unimplemented!(), Some(_expected))
-    });
-    let mut nan: () = unimplemented!();
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_18(_f, ({ copysign_69(nan, -1_f64) }), Some(_expected))
-    });
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_18(_f, nan, Some(_expected))
+        test_termination_condition_15(_f, nan, Some(_expected))
     });
     {}
 }
-pub fn test_float_type_70() {
-    ({ test_termination_condition_19(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_19(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_19(unimplemented!(), -0_f64, None) });
-    ({ test_termination_condition_19(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_19(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_19(unimplemented!(), unimplemented!(), None) });
-    {}
-    {}
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_19(_f, -unimplemented!(), Some(_expected))
-    });
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_19(_f, unimplemented!(), Some(_expected))
-    });
-    let mut nan: () = unimplemented!();
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_20(_f, ({ copysign_65(nan, -1_f64) }), Some(_expected))
-    });
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_19(_f, nan, Some(_expected))
-    });
-    {
-        ({ test_special_values_62() });
-    }
+pub fn test_all_float_types_67() {
+    ({ test_float_type_58() });
+    ({ test_float_type_60() });
+    ({ test_float_type_62() });
 }
-pub fn test_float_type_71() {
-    ({ test_termination_condition_20(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_20(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_20(unimplemented!(), -0_f64, None) });
-    ({ test_termination_condition_20(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_20(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_20(unimplemented!(), unimplemented!(), None) });
-    {
-        ({ test_termination_condition_20(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_20(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_20(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_20(unimplemented!(), unimplemented!(), None) });
-    }
-    {}
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_20(_f, -unimplemented!(), Some(_expected))
-    });
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_20(_f, unimplemented!(), Some(_expected))
-    });
-    let mut nan: () = unimplemented!();
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_20(_f, ({ copysign_67(nan, -1_f64) }), Some(_expected))
-    });
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_20(_f, nan, Some(_expected))
-    });
-    {
-        ({ test_special_values_63() });
-    }
-}
-pub fn test_float_type_72() {
-    ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_21(unimplemented!(), -0_f64, None) });
-    ({ test_termination_condition_21(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-    {
-        ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-    }
-    {
-        ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-    }
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_21(_f, -unimplemented!(), Some(_expected))
-    });
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_21(_f, unimplemented!(), Some(_expected))
-    });
-    let mut nan: () = unimplemented!();
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_21(_f, ({ copysign_69(nan, -1_f64) }), Some(_expected))
-    });
-    ({
-        let _f: () = unimplemented!();
-        let _expected: () = unimplemented!();
-        test_termination_condition_21(_f, nan, Some(_expected))
-    });
-    {}
-}
-pub fn test_all_float_types_73() {
+pub fn test_all_float_types_68() {
     ({ test_float_type_64() });
+    ({ test_float_type_65() });
     ({ test_float_type_66() });
-    ({ test_float_type_68() });
-}
-pub fn test_all_float_types_74() {
-    ({ test_float_type_70() });
-    ({ test_float_type_71() });
-    ({ test_float_type_72() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -2012,8 +1970,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_all_float_types_73() });
-    ({ test_all_float_types_74() });
+    ({ test_all_float_types_67() });
+    ({ test_all_float_types_68() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

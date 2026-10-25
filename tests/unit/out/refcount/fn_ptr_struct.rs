@@ -95,7 +95,7 @@ fn main_0() -> () {
     let mut sc: FnPtr<fn(MoveOnly) -> MoveOnly> =
         FnPtr::<fn(MoveOnly) -> MoveOnly>::new(scale_move_only_3);
     let n: Value<MoveOnly> = Rc::new(RefCell::new(
-        ({ sc.call(MoveOnly::move_from({ unimplemented!() })) }),
+        ({ sc.call(MoveOnly::move_from({ m.as_pointer() })) }),
     ));
     unimplemented!();
     unimplemented!();

@@ -932,7 +932,7 @@ pub fn test_3() -> () {
                 true,
                 "std::is_same_v<decltype(std::move(t)), MoveOnlyMulti&&>"
             );;
-            (*e1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+            unimplemented!();
             unimplemented!();
         }
         {

@@ -418,7 +418,7 @@ pub fn test_parse_14() {
     let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let offset: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let abbrev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut abbrev: () = unimplemented!();
     let is: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

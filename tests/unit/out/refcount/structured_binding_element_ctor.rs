@@ -89,7 +89,7 @@ fn main_0() -> () {
     unimplemented!();
     field!(field!(__decomp_4, a), v).write(50_());
     unimplemented!();
-    let __decomp_5: Value<Two> = Rc::new(RefCell::new(Two::move_from({ unimplemented!() })));
+    let __decomp_5: Value<Two> = Rc::new(RefCell::new(Two::move_from({ t.as_pointer() })));
     unimplemented!();
     unimplemented!();
     unimplemented!();

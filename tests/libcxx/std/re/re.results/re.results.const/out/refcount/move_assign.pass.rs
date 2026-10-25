@@ -460,7 +460,7 @@ impl Tag_X {
 pub fn test_10(a: Ptr<()>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*m1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*m1.borrow_mut()) = (*m0.borrow()).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -470,7 +470,7 @@ pub fn test_10(a: Ptr<()>) {
 pub fn test_11(a: Ptr<()>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*m1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*m1.borrow_mut()) = (*m0.borrow()).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -480,7 +480,7 @@ pub fn test_11(a: Ptr<()>) {
 pub fn test_12(a: Ptr<test_allocator_std_csub_match_>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*m1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*m1.borrow_mut()) = (*m0.borrow()).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -490,7 +490,7 @@ pub fn test_12(a: Ptr<test_allocator_std_csub_match_>) {
 pub fn test_13(a: Ptr<test_allocator_std_wcsub_match_>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*m1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*m1.borrow_mut()) = (*m0.borrow()).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -500,7 +500,7 @@ pub fn test_13(a: Ptr<test_allocator_std_wcsub_match_>) {
 pub fn test_14(a: Ptr<other_allocator_std_csub_match_>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*m1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*m1.borrow_mut()) = (*m0.borrow()).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -510,7 +510,7 @@ pub fn test_14(a: Ptr<other_allocator_std_csub_match_>) {
 pub fn test_15(a: Ptr<other_allocator_std_wcsub_match_>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*m1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*m1.borrow_mut()) = (*m0.borrow()).clone();
     unimplemented!();
     unimplemented!();
     {

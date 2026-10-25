@@ -27,46 +27,49 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool__float__double__long_double___types_type_list_Enum__EnumClass__void_ptr__const_void_ptr__Class_ptr__std_nullptr_t__
 {}
 pub fn can_hash_impl_0(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn can_hash_impl_1(mut _a0: ()) -> () {
+    return unimplemented!();
 }
 pub fn can_hash_impl_2(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_3(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_4(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_5(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_6(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_7(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_8(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_9(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_10(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_11(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_12(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
-pub fn can_hash_impl_13(mut _a0: ()) -> () {
-    return value_1.with(|rc| *rc.borrow());
+pub fn can_hash_13() -> () {
+    return ({ can_hash_impl_0(0_()) });
 }
 pub fn can_hash_14() -> () {
-    return ({ can_hash_impl_0(0_()) });
+    return ({ can_hash_impl_1(0_()) });
 }
 pub fn can_hash_15() -> () {
     return ({ can_hash_impl_2(0_()) });
@@ -101,9 +104,6 @@ pub fn can_hash_24() -> () {
 pub fn can_hash_25() -> () {
     return ({ can_hash_impl_12(0_()) });
 }
-pub fn can_hash_26() -> () {
-    return ({ can_hash_impl_13(0_()) });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ConvertibleToSimple_std_type_index_ {}
@@ -123,7 +123,7 @@ impl Default for ConvertibleTo_std_type_index_ {
         }
     }
 }
-pub fn test_hash_enabled_27(key: Ptr<()>) {
+pub fn test_hash_enabled_26(key: Ptr<()>) {
     const _: () = assert!(true, "std::is_destructible<Hash>::value");;
     const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
     const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
@@ -179,7 +179,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         ({
             let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_hash_enabled_27(_key.as_pointer())
+            test_hash_enabled_26(_key.as_pointer())
         });
     }
     return 0_();

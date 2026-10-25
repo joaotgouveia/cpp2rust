@@ -71,9 +71,7 @@ impl Default for A {
 pub unsafe fn test_constexpr_move_7() -> () {
     let mut y: () = 42_();
     let cy: () = y;
-    return ((((*unimplemented!()) == (42_())) && ((*unimplemented!()) == (42_())))
-        && ((*unimplemented!()) == (42_())))
-        && ((*unimplemented!()) == (42_()));
+    return ((((y) == (42_())) && ((cy) == (42_()))) && ((y) == (42_()))) && ((y) == (42_()));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -116,7 +114,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         &(a2);
         unimplemented!();
         unimplemented!();
-        let mut a3: A = A::move_from({ &mut (*unimplemented!()) });
+        let mut a3: A = A::move_from({ &mut a });
         &(a3);
         unimplemented!();
         unimplemented!();
@@ -124,14 +122,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         &(a4);
         unimplemented!();
         unimplemented!();
-        let mut a5: A = A::copy_from({ &(*unimplemented!()) });
+        let mut a5: A = A::copy_from({ &ca });
         &(a5);
         unimplemented!();
         unimplemented!();
     }
     {
         let mut mo: move_only = move_only::new();
-        (unsafe { test_2(move_only::move_from({ &mut (*unimplemented!()) })) });
+        (unsafe { test_2(move_only::move_from({ &mut mo })) });
         (unsafe { test_2((unsafe { source_0() })) });
     }
     {

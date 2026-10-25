@@ -165,7 +165,7 @@ impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDequ
         if (i != (*self).with(|__s| __s.size_)) {
             unimplemented!();
         }
-        array_elem!((*self), data_, i).write((unimplemented!().read()));
+        array_elem!((*self), data_, i).write(t);
         {
             field!((*self), size_).with_mut(|__v| *__v = *__v + 1_())
         };
@@ -174,7 +174,7 @@ impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDequ
     fn push_front(&self, mut t: ()) {
         ({
             let _pos: Ptr<()> = ({ ConstexprFixedCapacityDeque_int__10_Impl::begin_2(self) });
-            ConstexprFixedCapacityDeque_int__10_Impl::insert(self, _pos, (unimplemented!().read()))
+            ConstexprFixedCapacityDeque_int__10_Impl::insert(self, _pos, t)
         });
     }
 }

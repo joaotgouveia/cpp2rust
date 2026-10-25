@@ -377,7 +377,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe { get_20(&(*unimplemented!())) })) == (1_())) {
+        if !((*(unsafe { get_20(&b) })) == (1_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -396,7 +396,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe { get_21(&(*unimplemented!())) })) == (5_())) {
+        if !((*(unsafe { get_21(&b) })) == (5_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -415,7 +415,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe { get_22(&(*unimplemented!())) })) == (2_())) {
+        if !((*(unsafe { get_22(&b) })) == (2_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),

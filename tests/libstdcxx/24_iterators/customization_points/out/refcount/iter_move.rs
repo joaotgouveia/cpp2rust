@@ -352,7 +352,7 @@ pub fn test_adl_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*iter_move_11.with(Value::clone).borrow_mut())(unimplemented!()) }) == 2_()) {
+        if !(({ (*iter_move_11.with(Value::clone).borrow_mut())(it.as_pointer()) }) == 2_()) {
             ({
                 __builtin_fprintf_19(
                     libcc2rs::stderr_unsafe(),
@@ -399,7 +399,7 @@ pub fn test_adl_18() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(({
-            let ___e: Ptr<Iter> = unimplemented!();
+            let ___e: Ptr<Iter> = (cit).clone();
             (*iter_move_11.with(Value::clone).borrow_mut())(___e)
         }) == 4_f32)
         {

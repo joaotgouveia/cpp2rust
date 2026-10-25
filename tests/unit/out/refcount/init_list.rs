@@ -50,7 +50,7 @@ fn main_0() -> () {
     ({ f_0(unimplemented!()) });
     let p: Value<Pair> = Rc::new(RefCell::new(Pair { a: 1_(), b: 2_() }));
     let h: Value<Holder> = Rc::new(RefCell::new(<Holder>::default()));
-    ({ HolderImpl::operator_assign_1(&h.as_pointer(), unimplemented!()) });
+    ({ HolderImpl::operator_assign_1(&h.as_pointer(), p.as_pointer()) });
     unimplemented!();
     unimplemented!();
     return 0_();

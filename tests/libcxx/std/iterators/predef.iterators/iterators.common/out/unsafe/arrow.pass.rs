@@ -367,7 +367,7 @@ pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -559,7 +559,7 @@ impl value_iterator_int_ptr_ {
         this
     }
     pub unsafe fn operator_deref(&self) -> () {
-        return (*unimplemented!());
+        return (*self.it_);
     }
 }
 #[repr(C)]
@@ -573,7 +573,7 @@ impl void_plus_plus_iterator_int_ptr_ {
         this
     }
     pub unsafe fn operator_deref(&self) -> () {
-        return (*unimplemented!());
+        return (*self.it_);
     }
 }
 #[repr(C)]
@@ -686,13 +686,13 @@ pub unsafe fn test_9() {
                 let mut iter: value_iterator_int_ptr_ =
                     value_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() });
                 let mut common: () = unimplemented!();
-                let mut proxy : std_common_iterator_value_iterator_int_ptr___sentinel_type_int_ptr_____proxy = unimplemented!()  ;
-                let mut result: *const () = (unsafe { proxy() });
+                let mut proxy: () = unimplemented!();
+                let mut result: *const () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
                 let ccommon: () = unimplemented!();
-                let mut cproxy : std_common_iterator_value_iterator_int_ptr___sentinel_type_int_ptr_____proxy = unimplemented!()  ;
-                let mut cresult: *const () = (unsafe { cproxy() });
+                let mut cproxy: () = unimplemented!();
+                let mut cresult: *const () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             },
@@ -701,13 +701,13 @@ pub unsafe fn test_9() {
                 let mut iter: void_plus_plus_iterator_int_ptr_ =
                     void_plus_plus_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() });
                 let mut common: () = unimplemented!();
-                let mut proxy : std_common_iterator_void_plus_plus_iterator_int_ptr___sentinel_type_int_ptr_____proxy = unimplemented!()  ;
-                let mut result: *const () = (unsafe { proxy() });
+                let mut proxy: () = unimplemented!();
+                let mut result: *const () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
                 let ccommon: () = unimplemented!();
-                let mut cproxy : std_common_iterator_void_plus_plus_iterator_int_ptr___sentinel_type_int_ptr_____proxy = unimplemented!()  ;
-                let mut cresult: *const () = (unsafe { cproxy() });
+                let mut cproxy: () = unimplemented!();
+                let mut cresult: *const () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }

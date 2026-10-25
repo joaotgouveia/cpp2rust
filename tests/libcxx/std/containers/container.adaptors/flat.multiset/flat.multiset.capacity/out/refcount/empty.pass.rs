@@ -233,8 +233,8 @@ impl Default for three_way_random_access_iterator_int_ptr_ {
 impl three_way_random_access_iterator_const_int_ptr_ {
     pub fn new_1(u: Ptr<three_way_random_access_iterator_int_ptr_>) -> Self {
         let __this: three_way_random_access_iterator_const_int_ptr_ = Self {
-            it_: (unimplemented!().read()),
-            tracker_: support_double_move_tracker::move_from({ unimplemented!() }),
+            it_: u.with(|__s| __s.it_.clone()),
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(u, tracker_) }),
         };
         field!(u, it_).write(Ptr::<()>::null());
         __this
@@ -413,7 +413,7 @@ pub fn iter_move_13(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });

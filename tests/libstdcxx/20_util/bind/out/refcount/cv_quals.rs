@@ -258,7 +258,7 @@ impl __gnu_test_semaphore {}
 #[byte_size(1)]
 pub struct X {}
 pub fn test01_10() {
-    let b0: Value<std__Bind_X____> = Rc::new(RefCell::new(
+    let b0: Value<()> = Rc::new(RefCell::new(
         ({
             let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
             bind_11(___f.as_pointer())
@@ -283,7 +283,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let b1: Value<std__Bind_X____> = Rc::new(RefCell::new(
+    let b1: Value<()> = Rc::new(RefCell::new(
         ({
             let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
             bind_11(___f.as_pointer())
@@ -308,7 +308,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let b2: Value<std__Bind_X____> = Rc::new(RefCell::new(
+    let b2: Value<()> = Rc::new(RefCell::new(
         ({
             let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
             bind_11(___f.as_pointer())
@@ -333,7 +333,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let b3: Value<std__Bind_X____> = Rc::new(RefCell::new(
+    let b3: Value<()> = Rc::new(RefCell::new(
         ({
             let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
             bind_11(___f.as_pointer())
@@ -360,7 +360,7 @@ pub fn test01_10() {
     }
 }
 pub fn test02_13() {
-    let b0: Value<std__Bind_result_int__X____> = Rc::new(RefCell::new(
+    let b0: Value<()> = Rc::new(RefCell::new(
         ({
             let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
             bind_14(___f.as_pointer())
@@ -385,7 +385,7 @@ pub fn test02_13() {
             unimplemented!();
         }
     }
-    let b1: Value<std__Bind_result_int__X____> = Rc::new(RefCell::new(
+    let b1: Value<()> = Rc::new(RefCell::new(
         ({
             let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
             bind_14(___f.as_pointer())
@@ -410,7 +410,7 @@ pub fn test02_13() {
             unimplemented!();
         }
     }
-    let b2: Value<std__Bind_result_int__X____> = Rc::new(RefCell::new(
+    let b2: Value<()> = Rc::new(RefCell::new(
         ({
             let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
             bind_14(___f.as_pointer())
@@ -435,7 +435,7 @@ pub fn test02_13() {
             unimplemented!();
         }
     }
-    let b3: Value<std__Bind_result_int__X____> = Rc::new(RefCell::new(
+    let b3: Value<()> = Rc::new(RefCell::new(
         ({
             let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
             bind_14(___f.as_pointer())
@@ -462,8 +462,7 @@ pub fn test02_13() {
     }
 }
 pub fn test03_15() {
-    let b0: Value<std__Bind_X__int__std__Placeholder_1___std__Placeholder_2___> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let b0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -488,8 +487,7 @@ pub fn test03_15() {
             unimplemented!();
         }
     }
-    let b1: Value<std__Bind_X__std__Placeholder_1___int__std__Placeholder_2___> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let b1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -514,8 +512,7 @@ pub fn test03_15() {
             unimplemented!();
         }
     }
-    let b2: Value<std__Bind_X__std__Placeholder_1___std__Placeholder_2___int__> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -540,8 +537,7 @@ pub fn test03_15() {
             unimplemented!();
         }
     }
-    let b3: Value<std__Bind_X__std__Placeholder_1___int__std__Placeholder_2___> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let b3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -568,19 +564,18 @@ pub fn test03_15() {
     }
 }
 pub fn test04_16() {
-    let b0: Value<std__Bind_result_int__X__int__std__Placeholder_1___std__Placeholder_2___> =
-        Rc::new(RefCell::new(
-            ({
-                let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
-                let ___args_1: Value<()> = Rc::new(RefCell::new(0_()));
-                bind_17(
-                    ___f.as_pointer(),
-                    ___args_1.as_pointer(),
-                    _1_18.with(|v| v.as_pointer()),
-                    _2_19.with(|v| v.as_pointer()),
-                )
-            }),
-        ));
+    let b0: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
+            let ___args_1: Value<()> = Rc::new(RefCell::new(0_()));
+            bind_17(
+                ___f.as_pointer(),
+                ___args_1.as_pointer(),
+                _1_18.with(|v| v.as_pointer()),
+                _2_19.with(|v| v.as_pointer()),
+            )
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -605,19 +600,18 @@ pub fn test04_16() {
             unimplemented!();
         }
     }
-    let b1: Value<std__Bind_result_int__X__std__Placeholder_1___int__std__Placeholder_2___> =
-        Rc::new(RefCell::new(
-            ({
-                let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
-                let ___args_2: Value<()> = Rc::new(RefCell::new(0_()));
-                bind_20(
-                    ___f.as_pointer(),
-                    _1_18.with(|v| v.as_pointer()),
-                    ___args_2.as_pointer(),
-                    _2_19.with(|v| v.as_pointer()),
-                )
-            }),
-        ));
+    let b1: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
+            let ___args_2: Value<()> = Rc::new(RefCell::new(0_()));
+            bind_20(
+                ___f.as_pointer(),
+                _1_18.with(|v| v.as_pointer()),
+                ___args_2.as_pointer(),
+                _2_19.with(|v| v.as_pointer()),
+            )
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -642,19 +636,18 @@ pub fn test04_16() {
             unimplemented!();
         }
     }
-    let b2: Value<std__Bind_result_int__X__std__Placeholder_1___std__Placeholder_2___int__> =
-        Rc::new(RefCell::new(
-            ({
-                let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
-                let ___args_3: Value<()> = Rc::new(RefCell::new(0_()));
-                bind_21(
-                    ___f.as_pointer(),
-                    _1_18.with(|v| v.as_pointer()),
-                    _2_19.with(|v| v.as_pointer()),
-                    ___args_3.as_pointer(),
-                )
-            }),
-        ));
+    let b2: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
+            let ___args_3: Value<()> = Rc::new(RefCell::new(0_()));
+            bind_21(
+                ___f.as_pointer(),
+                _1_18.with(|v| v.as_pointer()),
+                _2_19.with(|v| v.as_pointer()),
+                ___args_3.as_pointer(),
+            )
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -679,19 +672,18 @@ pub fn test04_16() {
             unimplemented!();
         }
     }
-    let b3: Value<std__Bind_result_int__X__std__Placeholder_1___int__std__Placeholder_2___> =
-        Rc::new(RefCell::new(
-            ({
-                let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
-                let ___args_2: Value<()> = Rc::new(RefCell::new(0_()));
-                bind_20(
-                    ___f.as_pointer(),
-                    _1_18.with(|v| v.as_pointer()),
-                    ___args_2.as_pointer(),
-                    _2_19.with(|v| v.as_pointer()),
-                )
-            }),
-        ));
+    let b3: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
+            let ___args_2: Value<()> = Rc::new(RefCell::new(0_()));
+            bind_20(
+                ___f.as_pointer(),
+                _1_18.with(|v| v.as_pointer()),
+                ___args_2.as_pointer(),
+                _2_19.with(|v| v.as_pointer()),
+            )
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

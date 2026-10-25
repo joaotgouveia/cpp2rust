@@ -255,12 +255,12 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test02_10() {
-    let c1: Value<()> = Rc::new(RefCell::new(('z' as ())));
-    let c2: Value<()> = Rc::new(RefCell::new(('u' as ())));
+    let mut c1: () = ('z' as ());
+    let mut c2: () = ('u' as ());
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*c1.borrow()) != (*c2.borrow())) {
+        if !(c1 != c2) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -276,11 +276,11 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    ({ __gnu_cxx_char_traits_short_::assign_1(c1.as_pointer(), c2.as_pointer()) });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*c1.borrow()) == ('u' as ())) {
+        if !(c1 == ('u' as ())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -296,12 +296,12 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    (*c1.borrow_mut()) = ('z' as ());
-    (*c2.borrow_mut()) = ('u' as ());
+    c1 = ('z' as ());
+    c2 = ('u' as ());
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ __gnu_cxx_char_traits_short_::eq(c1.as_pointer(), c2.as_pointer()) })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -323,11 +323,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({
-            let ___c1: Ptr<()> = c1.as_pointer();
-            let ___c2: Ptr<()> = c1.as_pointer();
-            __gnu_cxx_char_traits_short_::eq(___c1, ___c2)
-        }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -349,11 +345,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({
-            let ___c1: Ptr<()> = c2.as_pointer();
-            let ___c2: Ptr<()> = c2.as_pointer();
-            __gnu_cxx_char_traits_short_::eq(___c1, ___c2)
-        }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -372,12 +364,12 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    (*c1.borrow_mut()) = ('z' as ());
-    (*c2.borrow_mut()) = ('u' as ());
+    c1 = ('z' as ());
+    c2 = ('u' as ());
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ __gnu_cxx_char_traits_short_::lt(c2.as_pointer(), c1.as_pointer()) }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -399,7 +391,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ __gnu_cxx_char_traits_short_::lt(c1.as_pointer(), c2.as_pointer()) })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -421,11 +413,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({
-            let ___c1: Ptr<()> = c1.as_pointer();
-            let ___c2: Ptr<()> = c1.as_pointer();
-            __gnu_cxx_char_traits_short_::lt(___c1, ___c2)
-        })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -447,11 +435,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({
-            let ___c1: Ptr<()> = c2.as_pointer();
-            let ___c2: Ptr<()> = c2.as_pointer();
-            __gnu_cxx_char_traits_short_::lt(___c1, ___c2)
-        })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -546,33 +530,21 @@ pub fn test02_10() {
         (0..34).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let mut len: () = (unimplemented!().read());
-    ({
-        __gnu_cxx_char_traits_short_::copy(
-            (array2.as_pointer() as Ptr<()>),
-            (array3.as_pointer() as Ptr<()>),
-            len,
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         {}
     }
-    (*c1.borrow_mut()) = (*array2.borrow())[(0_()) as usize];
-    (*c2.borrow_mut()) = (*str_lit1.borrow())[(0_()) as usize];
+    c1 = (*array2.borrow())[(0_()) as usize];
+    c2 = (*str_lit1.borrow())[(0_()) as usize];
     let mut c3: () = (*array2.borrow())[(1_()) as usize];
     let mut c4: () = (*str_lit1.borrow())[(1_()) as usize];
-    ({
-        __gnu_cxx_char_traits_short_::move_(
-            (array2.as_pointer() as Ptr<()>),
-            (str_lit1.as_pointer() as Ptr<()>),
-            0_(),
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*array2.borrow())[(0_()) as usize] == (*c1.borrow())) {
+        if !((*array2.borrow())[(0_()) as usize] == c1) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -591,7 +563,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*str_lit1.borrow())[(0_()) as usize] == (*c2.borrow())) {
+        if !((*str_lit1.borrow())[(0_()) as usize] == c2) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -607,17 +579,11 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    ({
-        __gnu_cxx_char_traits_short_::move_(
-            (array2.as_pointer() as Ptr<()>),
-            (str_lit1.as_pointer() as Ptr<()>),
-            1_(),
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*array2.borrow())[(0_()) as usize] == (*c2.borrow())) {
+        if !((*array2.borrow())[(0_()) as usize] == c2) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -636,7 +602,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*str_lit1.borrow())[(0_()) as usize] == (*c2.borrow())) {
+        if !((*str_lit1.borrow())[(0_()) as usize] == c2) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -690,17 +656,11 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    ({
-        __gnu_cxx_char_traits_short_::move_(
-            (array2.as_pointer() as Ptr<()>),
-            (str_lit1.as_pointer() as Ptr<()>),
-            2_(),
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*array2.borrow())[(0_()) as usize] == (*c2.borrow())) {
+        if !((*array2.borrow())[(0_()) as usize] == c2) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -719,7 +679,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*str_lit1.borrow())[(0_()) as usize] == (*c2.borrow())) {
+        if !((*str_lit1.borrow())[(0_()) as usize] == c2) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -774,12 +734,12 @@ pub fn test02_10() {
         }
     }
     let mut pc1: Ptr<()> = (array1.as_pointer() as Ptr<()>).offset((1_()) as isize);
-    (*c1.borrow_mut()) = { (elem!(pc1, 0_()).read()) };
-    (*c2.borrow_mut()) = (*array1.borrow())[(0_()) as usize];
+    c1 = { (elem!(pc1, 0_()).read()) };
+    c2 = (*array1.borrow())[(0_()) as usize];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*c1.borrow()) != (*c2.borrow())) {
+        if !(c1 != c2) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -795,15 +755,13 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    let mut pc2: Ptr<()> = ({
-        __gnu_cxx_char_traits_short_::move_((array1.as_pointer() as Ptr<()>), (pc1).clone(), 0_())
-    });
+    let mut pc2: Ptr<()> = unimplemented!();
     c3 = { (elem!(pc1, 0_()).read()) };
     c4 = (*array1.borrow())[(0_()) as usize];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*c1.borrow()) == c3) {
+        if !(c1 == c3) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -822,7 +780,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*c2.borrow()) == c4) {
+        if !(c2 == c4) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -857,18 +815,16 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    (*c1.borrow_mut()) = { (elem!(pc1, 0_()).read()) };
-    (*c2.borrow_mut()) = (*array1.borrow())[(0_()) as usize];
+    c1 = { (elem!(pc1, 0_()).read()) };
+    c2 = (*array1.borrow())[(0_()) as usize];
     let mut pc3: Ptr<()> = (pc1).clone();
-    pc2 = ({
-        __gnu_cxx_char_traits_short_::move_((array1.as_pointer() as Ptr<()>), (pc1).clone(), 10_())
-    });
+    pc2 = unimplemented!();
     c3 = { (elem!(pc1, 0_()).read()) };
     c4 = (*array1.borrow())[(0_()) as usize];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*c1.borrow()) != c3) {
+        if !(c1 != c3) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -941,12 +897,12 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    (*c1.borrow_mut()) = ((unimplemented!()).read());
-    (*c2.borrow_mut()) = (*array1.borrow())[(0_()) as usize];
+    c1 = ((unimplemented!()).read());
+    c2 = (*array1.borrow())[(0_()) as usize];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*c1.borrow()) != (*c2.borrow())) {
+        if !(c1 != c2) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -962,7 +918,7 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    len = ({ __gnu_cxx_char_traits_short_::length((str_lit1.as_pointer() as Ptr<()>)) });
+    len = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -991,14 +947,7 @@ pub fn test02_10() {
     }
     let mut N4: () =
         (::std::mem::size_of::<[(); 24]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut pc4: Ptr<()> = ({
-        let ___a: Value<()> = Rc::new(RefCell::new(('a' as ())));
-        __gnu_cxx_char_traits_short_::find(
-            (str_lit1.as_pointer() as Ptr<()>),
-            N4,
-            ___a.as_pointer(),
-        )
-    });
+    let mut pc4: Ptr<()> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1037,14 +986,7 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    pc4 = ({
-        let ___a: Value<()> = Rc::new(RefCell::new(2675_()));
-        __gnu_cxx_char_traits_short_::find(
-            (str_lit1.as_pointer() as Ptr<()>),
-            N4,
-            ___a.as_pointer(),
-        )
-    });
+    pc4 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1090,13 +1032,7 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    pc1 = ({
-        __gnu_cxx_char_traits_short_::assign_9(
-            (array2.as_pointer() as Ptr<()>),
-            (*array2_len.borrow()),
-            5544_(),
-        )
-    });
+    pc1 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1141,14 +1077,8 @@ pub fn test02_10() {
     }
     let mut n1: () =
         (::std::mem::size_of::<[(); 24]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    pc1 = ({
-        __gnu_cxx_char_traits_short_::copy(
-            (array2.as_pointer() as Ptr<()>),
-            (str_lit1.as_pointer() as Ptr<()>),
-            n1,
-        )
-    });
-    len = ({ __gnu_cxx_char_traits_short_::length((array2.as_pointer() as Ptr<()>)) });
+    pc1 = unimplemented!();
+    len = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1196,10 +1126,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            __gnu_cxx_char_traits_short_::compare((pconst1).clone(), (pconst2).clone(), 10_())
-        }) > 0_())
-        {
+        if !(unimplemented!() > 0_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1221,10 +1148,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            __gnu_cxx_char_traits_short_::compare((pconst2).clone(), (pconst1).clone(), 10_())
-        }) < 0_())
-        {
+        if !(unimplemented!() < 0_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1246,12 +1170,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            let ___s1: Ptr<()> = (pconst1).clone();
-            let ___s2: Ptr<()> = (pconst1).clone();
-            __gnu_cxx_char_traits_short_::compare(___s1, ___s2, 10_())
-        }) == 0_())
-        {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1273,12 +1192,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            let ___s1: Ptr<()> = (pconst2).clone();
-            let ___s2: Ptr<()> = (pconst2).clone();
-            __gnu_cxx_char_traits_short_::compare(___s1, ___s2, 10_())
-        }) == 0_())
-        {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

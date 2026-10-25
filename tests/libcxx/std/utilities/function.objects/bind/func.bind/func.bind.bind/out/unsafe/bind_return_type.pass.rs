@@ -17,10 +17,10 @@ pub unsafe fn return_const_lvalue_3(mut _a0: ()) -> *const () {
     return &(*std::cell::LazyCell::force_mut(&mut *&raw mut dummy_0));
 }
 pub unsafe fn return_rvalue_4(mut _a0: ()) -> *mut () {
-    return &mut (*unimplemented!());
+    return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut dummy_0));
 }
 pub unsafe fn return_const_rvalue_5(mut _a0: ()) -> *const () {
-    return &(*unimplemented!());
+    return &(*std::cell::LazyCell::force_mut(&mut *&raw mut dummy_0));
 }
 pub unsafe fn CheckCall_6() -> () {
     return unimplemented!();

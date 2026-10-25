@@ -327,7 +327,7 @@ pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -797,16 +797,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let __decomp_15: Value<()> = Rc::new(RefCell::new(
-            ({ (*unimplemented!().upgrade().deref()).extract() }),
-        ));
+        let __decomp_15: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).extract() })));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let __decomp_16: Value<()> = Rc::new(RefCell::new(
-            ({ (*unimplemented!().upgrade().deref()).extract() }),
-        ));
+        let __decomp_16: Value<()> = Rc::new(RefCell::new(({ (*mo.borrow()).extract() })));
         unimplemented!();
         unimplemented!();
     }

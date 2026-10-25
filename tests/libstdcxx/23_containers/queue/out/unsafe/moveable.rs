@@ -260,7 +260,7 @@ pub unsafe fn test01_10() {
     let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
     unimplemented!();
-    b = (*unimplemented!()).clone();
+    b = (a).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -282,7 +282,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut c: () = (*unimplemented!());
+    let mut c: () = b;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

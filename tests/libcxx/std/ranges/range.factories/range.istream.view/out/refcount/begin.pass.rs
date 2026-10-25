@@ -40,8 +40,7 @@ pub fn test_8() {
             ({ make_string_stream_4(Ptr::<()>::from_string_literal(b"12    3")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<std_ranges_basic_istream_view_int__char____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -49,8 +48,7 @@ pub fn test_8() {
             ({ make_string_stream_5(Ptr::<()>::from_string_literal(b"")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<std_ranges_basic_istream_view_int__char____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
@@ -60,8 +58,7 @@ pub fn test_9() {
             ({ make_string_stream_6(Ptr::<()>::from_string_literal(b"12    3")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -69,8 +66,7 @@ pub fn test_9() {
             ({ make_string_stream_7(Ptr::<()>::from_string_literal(b"")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }

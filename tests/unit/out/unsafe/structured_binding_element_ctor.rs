@@ -83,7 +83,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     (*__decomp_4).a.v = 50_();
     unimplemented!();
-    let mut __decomp_5: Two = Two::move_from({ &mut (*unimplemented!()) });
+    let mut __decomp_5: Two = Two::move_from({ &mut t });
     unimplemented!();
     unimplemented!();
     unimplemented!();

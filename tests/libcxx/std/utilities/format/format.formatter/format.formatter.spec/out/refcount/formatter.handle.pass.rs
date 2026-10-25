@@ -28,9 +28,8 @@ thread_local!(
         Ptr::<()>::from_string_literal(b"gold"),
     ])));
 );
-pub fn test_3(mut expected: (), fmt: (), arg: color, mut offset: ()) {
+pub fn test_3(mut expected: (), fmt: (), mut arg: color, mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<color> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<std_formatter_color__char_> =
         Rc::new(RefCell::new(<std_formatter_color__char_>::default()));
@@ -41,21 +40,15 @@ pub fn test_3(mut expected: (), fmt: (), arg: color, mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___color_ > = Rc::new(RefCell::new(( { make_format_args_4 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     ({
-        std_formatter_color__char_Impl :: format_1_class_std_basic_format_context_class_std_back_insert_iterator_std_string___char_ ( &formatter .as_pointer()  , (*arg.borrow())  , format_ctx .as_pointer()  , )
+        std_formatter_color__char_Impl :: format_1_class_std_basic_format_context_class_std_back_insert_iterator_std_string___char_ ( &formatter .as_pointer()  , arg  , format_ctx .as_pointer()  , )
     });
     unimplemented!();
 }
-pub fn test_termination_condition_5(mut expected: (), f: (), mut arg: color) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_4(mut expected: (), mut f: (), mut arg: color) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_3(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
@@ -81,9 +74,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_termination_condition_5(unimplemented!(), unimplemented!(), color_black) });
-    ({ test_termination_condition_5(unimplemented!(), unimplemented!(), color_red) });
-    ({ test_termination_condition_5(unimplemented!(), unimplemented!(), color_gold) });
+    ({ test_termination_condition_4(unimplemented!(), unimplemented!(), color_black) });
+    ({ test_termination_condition_4(unimplemented!(), unimplemented!(), color_red) });
+    ({ test_termination_condition_4(unimplemented!(), unimplemented!(), color_gold) });
     return 0_();
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]

@@ -100,11 +100,11 @@ unsafe fn main_0() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut d: Buffer = Buffer::copy_from({ &(*unimplemented!()) });
+        let mut d: Buffer = Buffer::copy_from({ &a });
         let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, Buffer::destructor);
         unimplemented!();
         unimplemented!();
-        (unsafe { Buffer::copy_assign(&mut d, &(*unimplemented!())) });
+        (unsafe { Buffer::copy_assign(&mut d, &b) });
         unimplemented!();
         unimplemented!();
     }

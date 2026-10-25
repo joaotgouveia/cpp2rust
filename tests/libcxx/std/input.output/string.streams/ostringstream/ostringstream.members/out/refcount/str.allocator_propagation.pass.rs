@@ -319,7 +319,7 @@ pub fn test_soccc_behavior_4() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = ({ (*unimplemented!().upgrade().deref()).str_16() });
+        let mut moved: () = ({ (*ss.borrow()).str_16() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -333,7 +333,7 @@ pub fn test_soccc_behavior_5() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = ({ (*unimplemented!().upgrade().deref()).str_16() });
+        let mut moved: () = ({ (*ss.borrow()).str_16() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -350,7 +350,7 @@ pub fn test_allocation_is_pilfered_6() {
         unimplemented!();
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = ({ (*unimplemented!().upgrade().deref()).str_16() });
+        let mut s: () = ({ (*ss.borrow()).str_16() });
         unimplemented!();
     }
 }
@@ -365,7 +365,7 @@ pub fn test_allocation_is_pilfered_7() {
         unimplemented!();
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = ({ (*unimplemented!().upgrade().deref()).str_16() });
+        let mut s: () = ({ (*ss.borrow()).str_16() });
         unimplemented!();
     }
 }
@@ -382,7 +382,7 @@ pub fn test_no_foreign_allocations_8() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = ({ (*unimplemented!().upgrade().deref()).str_16() });
+        let mut moved: () = ({ (*ss.borrow()).str_16() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -401,7 +401,7 @@ pub fn test_no_foreign_allocations_9() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = ({ (*unimplemented!().upgrade().deref()).str_16() });
+        let mut moved: () = ({ (*ss.borrow()).str_16() });
         unimplemented!();
         unimplemented!();
         unimplemented!();

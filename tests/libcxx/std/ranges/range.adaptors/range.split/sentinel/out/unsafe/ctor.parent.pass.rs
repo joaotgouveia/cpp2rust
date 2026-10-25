@@ -251,7 +251,7 @@ pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -426,7 +426,7 @@ pub unsafe fn test_8() -> () {
         let mut input: () = unimplemented!();
         let mut sv: () = unimplemented!();
         let mut it: () = unimplemented!();
-        let mut sent : std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel = unimplemented!() ;
+        let mut sent: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

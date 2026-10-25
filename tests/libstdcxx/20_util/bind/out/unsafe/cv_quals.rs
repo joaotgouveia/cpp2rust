@@ -286,7 +286,7 @@ impl X {
     }
 }
 pub unsafe fn test01_10() {
-    let mut b0: std__Bind_X____ = (unsafe {
+    let mut b0: () = (unsafe {
         let mut ___f: X = <X>::default();
         bind_11(&mut ___f)
     });
@@ -309,7 +309,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let b1: std__Bind_X____ = (unsafe {
+    let b1: () = (unsafe {
         let mut ___f: X = <X>::default();
         bind_11(&mut ___f)
     });
@@ -332,7 +332,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut b2: std__Bind_X____ = (unsafe {
+    let mut b2: () = (unsafe {
         let mut ___f: X = <X>::default();
         bind_11(&mut ___f)
     });
@@ -355,7 +355,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let b3: std__Bind_X____ = (unsafe {
+    let b3: () = (unsafe {
         let mut ___f: X = <X>::default();
         bind_11(&mut ___f)
     });
@@ -380,7 +380,7 @@ pub unsafe fn test01_10() {
     }
 }
 pub unsafe fn test02_13() {
-    let mut b0: std__Bind_result_int__X____ = (unsafe {
+    let mut b0: () = (unsafe {
         let mut ___f: X = <X>::default();
         bind_14(&mut ___f)
     });
@@ -403,7 +403,7 @@ pub unsafe fn test02_13() {
             unimplemented!();
         }
     }
-    let b1: std__Bind_result_int__X____ = (unsafe {
+    let b1: () = (unsafe {
         let mut ___f: X = <X>::default();
         bind_14(&mut ___f)
     });
@@ -426,7 +426,7 @@ pub unsafe fn test02_13() {
             unimplemented!();
         }
     }
-    let mut b2: std__Bind_result_int__X____ = (unsafe {
+    let mut b2: () = (unsafe {
         let mut ___f: X = <X>::default();
         bind_14(&mut ___f)
     });
@@ -449,7 +449,7 @@ pub unsafe fn test02_13() {
             unimplemented!();
         }
     }
-    let b3: std__Bind_result_int__X____ = (unsafe {
+    let b3: () = (unsafe {
         let mut ___f: X = <X>::default();
         bind_14(&mut ___f)
     });
@@ -474,7 +474,7 @@ pub unsafe fn test02_13() {
     }
 }
 pub unsafe fn test03_15() {
-    let mut b0: std__Bind_X__int__std__Placeholder_1___std__Placeholder_2___ = unimplemented!();
+    let mut b0: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -499,7 +499,7 @@ pub unsafe fn test03_15() {
             unimplemented!();
         }
     }
-    let b1: std__Bind_X__std__Placeholder_1___int__std__Placeholder_2___ = unimplemented!();
+    let b1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -524,7 +524,7 @@ pub unsafe fn test03_15() {
             unimplemented!();
         }
     }
-    let mut b2: std__Bind_X__std__Placeholder_1___std__Placeholder_2___int__ = unimplemented!();
+    let mut b2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -549,7 +549,7 @@ pub unsafe fn test03_15() {
             unimplemented!();
         }
     }
-    let b3: std__Bind_X__std__Placeholder_1___int__std__Placeholder_2___ = unimplemented!();
+    let b3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -576,7 +576,7 @@ pub unsafe fn test03_15() {
     }
 }
 pub unsafe fn test04_16() {
-    let mut b0: std__Bind_result_int__X__int__std__Placeholder_1___std__Placeholder_2___ = (unsafe {
+    let mut b0: () = (unsafe {
         let mut ___f: X = <X>::default();
         let mut ___args_1: () = 0_();
         bind_17(
@@ -610,7 +610,7 @@ pub unsafe fn test04_16() {
             unimplemented!();
         }
     }
-    let b1: std__Bind_result_int__X__std__Placeholder_1___int__std__Placeholder_2___ = (unsafe {
+    let b1: () = (unsafe {
         let mut ___f: X = <X>::default();
         let mut ___args_2: () = 0_();
         bind_20(
@@ -644,7 +644,7 @@ pub unsafe fn test04_16() {
             unimplemented!();
         }
     }
-    let mut b2: std__Bind_result_int__X__std__Placeholder_1___std__Placeholder_2___int__ = (unsafe {
+    let mut b2: () = (unsafe {
         let mut ___f: X = <X>::default();
         let mut ___args_3: () = 0_();
         bind_21(
@@ -678,7 +678,7 @@ pub unsafe fn test04_16() {
             unimplemented!();
         }
     }
-    let b3: std__Bind_result_int__X__std__Placeholder_1___int__std__Placeholder_2___ = (unsafe {
+    let b3: () = (unsafe {
         let mut ___f: X = <X>::default();
         let mut ___args_2: () = 0_();
         bind_20(

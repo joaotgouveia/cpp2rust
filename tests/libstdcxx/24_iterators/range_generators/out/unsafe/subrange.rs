@@ -11,12 +11,7 @@ pub unsafe fn yield_vector_0() -> () {
         let mut foo: () = unimplemented!();
         let mut x: () = 123_();
         (unsafe { (__promise as std___gen__Promise_erased_int_ref_).yield_value_2(&mut x) });
-        (unsafe {
-            (__promise as std___gen__Promise_erased_int_ref_)
-                .yield_value_5_class_std_vector_int__ref_class_std_allocator_enum_std_byte_(
-                    unimplemented!(),
-                )
-        });
+        unimplemented!();
         x = 456_();
         (unsafe { (__promise as std___gen__Promise_erased_int_ref_).yield_value_2(&mut x) });
     };
@@ -31,7 +26,7 @@ unsafe fn main_0() -> () {
     let mut __tmp_0: () = (unsafe { yield_vector_0() });
     let __range1: *mut () = &mut __tmp_0;
     'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut x: () = (*x);
+        let mut x: () = (*unimplemented!());
         unimplemented!();
     }
     0

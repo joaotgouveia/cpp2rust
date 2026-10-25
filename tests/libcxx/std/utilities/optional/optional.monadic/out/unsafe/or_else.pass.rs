@@ -231,7 +231,7 @@ pub unsafe fn test_16() -> () {
                     return unimplemented!();
                 }
             });
-            (*unimplemented!()).or_else(&mut ___f)
+            opt.or_else(&mut ___f)
         });
     }
     return true;

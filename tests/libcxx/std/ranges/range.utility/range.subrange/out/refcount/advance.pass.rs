@@ -333,7 +333,7 @@ pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -769,9 +769,7 @@ pub fn test_24() -> () {
     unimplemented!();
     unimplemented!();
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b1: Value<()> = Rc::new(RefCell::new(
-        ({ (*unimplemented!().upgrade().deref()).next_14(None) }),
-    ));
+    let b1: Value<()> = Rc::new(RefCell::new(({ (*b.borrow()).next_14(None) })));
     unimplemented!();
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));

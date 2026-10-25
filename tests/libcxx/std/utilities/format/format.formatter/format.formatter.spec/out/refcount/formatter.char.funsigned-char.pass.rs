@@ -263,13 +263,7 @@ pub fn test_concat_23(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if !(unimplemented!()) {
         {}
-        ({
-            test_transcode_18(
-                (*b.borrow()).clone(),
-                (*e.borrow()).clone(),
-                unimplemented!(),
-            )
-        });
+        ({ test_transcode_18(unimplemented!(), unimplemented!(), unimplemented!()) });
     }
     return (stream).clone();
 }
@@ -397,28 +391,19 @@ pub fn test_concat_message_25(
     }
     panic!("ub: non-void function does not return a value")
 }
-pub fn test_26(expected: (), fmt: (), arg: ()) {
+pub fn test_26(expected: (), fmt: (), mut arg: ()) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    ({ ((*formatter.borrow()) as std___formatter_char_char_).parse(parse_ctx.as_pointer()) });
+    unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___char_ > = Rc::new(RefCell::new(( { make_format_args_27 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_char_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     ({
         let _condition: () = unimplemented!();
         let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -443,28 +428,19 @@ pub fn test_26(expected: (), fmt: (), arg: ()) {
         )
     });
 }
-pub fn test_28(expected: (), fmt: (), arg: ()) {
+pub fn test_27(expected: (), fmt: (), mut arg: ()) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer()) });
+    unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___char_ > = Rc::new(RefCell::new(( { make_format_args_29 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_char_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     ({
         let _condition: () = unimplemented!();
         let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -480,7 +456,7 @@ pub fn test_28(expected: (), fmt: (), arg: ()) {
                 });
             }
         )));
-        test_require_30(
+        test_require_28(
             _condition,
             Ptr::<()>::from_string_literal(b"result == expected"),
             Ptr::<()>::from_string_literal(b"formatter.char.funsigned-char.pass.cpp"),
@@ -489,7 +465,7 @@ pub fn test_28(expected: (), fmt: (), arg: ()) {
         )
     });
 }
-pub fn test_31() {
+pub fn test_29() {
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -703,218 +679,218 @@ pub fn test_31() {
         test_26(_expected, _fmt, 127_())
     });
 }
-pub fn test_32() {
+pub fn test_30() {
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('\0' as ()))
+        test_27(_expected, _fmt, ('\0' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('a' as ()))
+        test_27(_expected, _fmt, ('a' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, (b'\x80' as ()))
+        test_27(_expected, _fmt, (b'\x80' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, (b'\xff' as ()))
+        test_27(_expected, _fmt, (b'\xff' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('\0' as ()))
+        test_27(_expected, _fmt, ('\0' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('a' as ()))
+        test_27(_expected, _fmt, ('a' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, (b'\x80' as ()))
+        test_27(_expected, _fmt, (b'\x80' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, (b'\xff' as ()))
+        test_27(_expected, _fmt, (b'\xff' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('\0' as ()))
+        test_27(_expected, _fmt, ('\0' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('a' as ()))
+        test_27(_expected, _fmt, ('a' as ()))
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            test_28(_expected, _fmt, (b'\x80' as ()))
+            test_27(_expected, _fmt, (b'\x80' as ()))
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            test_28(_expected, _fmt, (b'\xff' as ()))
+            test_27(_expected, _fmt, (b'\xff' as ()))
         });
     }
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
 }
 pub fn main() {
@@ -937,8 +913,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_31() });
-    ({ test_32() });
+    ({ test_29() });
+    ({ test_30() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

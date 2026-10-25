@@ -257,7 +257,7 @@ impl __gnu_test_semaphore {}
 pub fn test1_10() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*a.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*a.borrow_mut()) = (*b.borrow()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -318,7 +318,7 @@ pub fn test2_12() {
     unimplemented!();
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*p.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*p.borrow_mut()) = (*q.borrow()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

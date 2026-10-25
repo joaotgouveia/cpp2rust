@@ -57,7 +57,7 @@ impl Error {
         let l: Value<()> = Rc::new(RefCell::new(l));
         Self {
             list: (*l.borrow()).clone(),
-            arg: Arg::move_from({ unimplemented!() }),
+            arg: Arg::move_from({ (a).clone() }),
         }
     }
 }

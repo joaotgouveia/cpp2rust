@@ -725,7 +725,7 @@ pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -1113,7 +1113,7 @@ pub fn test_compare_alloc_27() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = ({ (*unimplemented!().upgrade().deref()).extract() });
+        let mut keys: () = ({ (*m.borrow()).extract() });
         unimplemented!();
     }
     {
@@ -1121,7 +1121,7 @@ pub fn test_compare_alloc_27() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = ({ (*unimplemented!().upgrade().deref()).extract() });
+        let mut keys: () = ({ (*m.borrow()).extract() });
         unimplemented!();
     }
 }
@@ -1131,9 +1131,7 @@ pub fn test_compare_alloc_28() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let keys: Value<()> = Rc::new(RefCell::new(
-            ({ (*unimplemented!().upgrade().deref()).extract() }),
-        ));
+        let keys: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).extract() })));
         unimplemented!();
     }
     {
@@ -1141,9 +1139,7 @@ pub fn test_compare_alloc_28() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let keys: Value<()> = Rc::new(RefCell::new(
-            ({ (*unimplemented!().upgrade().deref()).extract() }),
-        ));
+        let keys: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).extract() })));
         unimplemented!();
     }
 }

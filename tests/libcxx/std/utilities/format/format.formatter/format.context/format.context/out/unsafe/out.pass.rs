@@ -12,9 +12,7 @@ pub unsafe fn test_format_context_create_0(
 ) -> () {
     return (unsafe {
         __format_context_create_1(
-            cpp20_output_iterator_std___wrap_iter_char_ptr__::move_from({
-                &mut (*unimplemented!())
-            }),
+            cpp20_output_iterator_std___wrap_iter_char_ptr__::move_from({ &mut out_it }),
             args.clone(),
             None,
         )
@@ -26,9 +24,7 @@ pub unsafe fn test_format_context_create_2(
 ) -> () {
     return (unsafe {
         __format_context_create_3(
-            cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::move_from({
-                &mut (*unimplemented!())
-            }),
+            cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::move_from({ &mut out_it }),
             args.clone(),
             None,
         )
@@ -40,9 +36,7 @@ pub unsafe fn test_format_context_create_4(
 ) -> () {
     return (unsafe {
         __format_context_create_5(
-            cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::move_from({
-                &mut (*unimplemented!())
-            }),
+            cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::move_from({ &mut out_it }),
             args.clone(),
             None,
         )
@@ -54,9 +48,7 @@ pub unsafe fn test_format_context_create_6(
 ) -> () {
     return (unsafe {
         __format_context_create_7(
-            cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::move_from({
-                &mut (*unimplemented!())
-            }),
+            cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::move_from({ &mut out_it }),
             args.clone(),
             None,
         )
@@ -68,9 +60,7 @@ pub unsafe fn test_format_context_create_8(
 ) -> () {
     return (unsafe {
         __format_context_create_9(
-            cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::move_from({
-                &mut (*unimplemented!())
-            }),
+            cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::move_from({ &mut out_it }),
             args.clone(),
             None,
         )
@@ -515,7 +505,7 @@ pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));

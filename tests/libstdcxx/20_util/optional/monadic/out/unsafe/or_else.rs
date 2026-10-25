@@ -416,7 +416,7 @@ pub unsafe fn test_move_12() -> () {
                 return unimplemented!();
             }
         });
-        (*unimplemented!()).or_else(&mut ___f)
+        mo.or_else(&mut ___f)
     });
     return true;
 }
@@ -510,7 +510,7 @@ pub unsafe fn test_call_15() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe { (*unimplemented!()).or_else(&mut f) })) == (1_())) {
+        if !((*(unsafe { o.or_else(&mut f) })) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -548,7 +548,7 @@ pub unsafe fn test_call_15() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe { (*unimplemented!()).or_else(&mut (*unimplemented!())) })) == (2_())) {
+        if !((*(unsafe { o.or_else(&mut f) })) == (2_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -589,7 +589,7 @@ pub unsafe fn test_call_15() -> () {
         __do_while = false;
         if !((*(unsafe {
             let ___f: *const F_16 = cf;
-            (*unimplemented!()).or_else(___f)
+            o.or_else(___f)
         })) == (3_()))
         {
             (unsafe {
@@ -630,8 +630,8 @@ pub unsafe fn test_call_15() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((*(unsafe {
-            let ___f: *const F_16 = unimplemented!();
-            (*unimplemented!()).or_else(___f)
+            let ___f: *const F_16 = cf;
+            o.or_else(___f)
         })) == (4_()))
         {
             (unsafe {

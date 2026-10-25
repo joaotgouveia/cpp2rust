@@ -93,14 +93,25 @@ pub fn test_4(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let arg: Value<Ptr<()>> = Rc::new(RefCell::new((a).clone()));
+    let mut arg: Ptr<()> = (a).clone();
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___char_ptr_ > = Rc::new(RefCell::new(( { make_format_args_5 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
+    ));
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_5(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(fmt));
+    let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
+    let mut it: () = unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut arg: Ptr<()> = (a).clone();
+    let format_ctx: Value<()> = Rc::new(RefCell::new(
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
@@ -114,19 +125,14 @@ pub fn test_6(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let arg: Value<Ptr<()>> = Rc::new(RefCell::new((a).clone()));
+    let mut arg: Ptr<()> = (a).clone();
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___const_char_ptr_ > = Rc::new(RefCell::new(( { make_format_args_7 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_8(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
+pub fn test_7(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -135,72 +141,42 @@ pub fn test_8(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let arg: Value<Ptr<()>> = Rc::new(RefCell::new((a).clone()));
+    let mut arg: Ptr<()> = (a).clone();
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_2 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___wchar_t_ptr_ > = Rc::new(RefCell::new(( { make_format_args_9 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { __tmp_2.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_10(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
-    let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let arg: Value<Ptr<()>> = Rc::new(RefCell::new((a).clone()));
-    let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_3 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___const_wchar_t_ptr_ > = Rc::new(RefCell::new(( { make_format_args_11 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { __tmp_3.as_pointer() } , )
-            })
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_termination_condition_12(mut expected: (), f: (), mut arg: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_8(mut expected: (), mut f: (), mut arg: Ptr<()>) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_4(unimplemented!(), unimplemented!(), (arg).clone(), 1_()) });
     unimplemented!();
     ({ test_4(unimplemented!(), unimplemented!(), (arg).clone(), 0_()) });
 }
-pub fn test_termination_condition_13(mut expected: (), f: (), mut arg: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_9(mut expected: (), mut f: (), mut arg: Ptr<()>) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_5(unimplemented!(), unimplemented!(), (arg).clone(), 1_()) });
+    unimplemented!();
+    ({ test_5(unimplemented!(), unimplemented!(), (arg).clone(), 0_()) });
+}
+pub fn test_termination_condition_10(mut expected: (), mut f: (), mut arg: Ptr<()>) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_6(unimplemented!(), unimplemented!(), (arg).clone(), 1_()) });
     unimplemented!();
     ({ test_6(unimplemented!(), unimplemented!(), (arg).clone(), 0_()) });
 }
-pub fn test_termination_condition_14(mut expected: (), f: (), mut arg: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_11(mut expected: (), mut f: (), mut arg: Ptr<()>) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ test_8(unimplemented!(), unimplemented!(), (arg).clone(), 1_()) });
+    ({ test_7(unimplemented!(), unimplemented!(), (arg).clone(), 1_()) });
     unimplemented!();
-    ({ test_8(unimplemented!(), unimplemented!(), (arg).clone(), 0_()) });
+    ({ test_7(unimplemented!(), unimplemented!(), (arg).clone(), 0_()) });
 }
-pub fn test_termination_condition_15(mut expected: (), f: (), mut arg: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_10(unimplemented!(), unimplemented!(), (arg).clone(), 1_()) });
-    unimplemented!();
-    ({ test_10(unimplemented!(), unimplemented!(), (arg).clone(), 0_()) });
-}
-pub fn test_set_debug_format_16() -> () {
+pub fn test_set_debug_format_12() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -213,7 +189,7 @@ pub fn test_set_debug_format_16() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_set_debug_format_17() -> () {
+pub fn test_set_debug_format_13() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -226,7 +202,7 @@ pub fn test_set_debug_format_17() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_set_debug_format_18() -> () {
+pub fn test_set_debug_format_14() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -239,7 +215,7 @@ pub fn test_set_debug_format_18() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_set_debug_format_19() -> () {
+pub fn test_set_debug_format_15() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -252,7 +228,7 @@ pub fn test_set_debug_format_19() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_char_pointer_20() {
+pub fn test_char_pointer_16() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
@@ -311,16 +287,16 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 14]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     let mut s: () = unimplemented!();
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, unimplemented!())
+        test_termination_condition_8(_expected, _f, unimplemented!())
     });
     ({
         let _expected: () = unimplemented!();
@@ -376,10 +352,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -435,10 +411,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -494,10 +470,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -553,10 +529,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -612,10 +588,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -671,10 +647,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -730,10 +706,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -793,10 +769,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -852,10 +828,10 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -915,15 +891,15 @@ pub fn test_char_pointer_20() {
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
-    ({ test_set_debug_format_16() });
+    ({ test_set_debug_format_12() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub fn test_char_pointer_21() {
+pub fn test_char_pointer_17() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
@@ -982,16 +958,16 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 14]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     let mut s: () = unimplemented!();
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_13(_expected, _f, unimplemented!())
+        test_termination_condition_9(_expected, _f, unimplemented!())
     });
     ({
         let _expected: () = unimplemented!();
@@ -1047,10 +1023,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1106,10 +1082,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1165,10 +1141,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1224,10 +1200,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1283,10 +1259,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1342,10 +1318,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1401,10 +1377,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1464,10 +1440,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1523,10 +1499,10 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1586,15 +1562,15 @@ pub fn test_char_pointer_21() {
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
-    ({ test_set_debug_format_17() });
+    ({ test_set_debug_format_13() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub fn test_char_pointer_22() {
+pub fn test_char_pointer_18() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
@@ -1653,16 +1629,16 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 14]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     let mut s: () = unimplemented!();
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_14(_expected, _f, unimplemented!())
+        test_termination_condition_10(_expected, _f, unimplemented!())
     });
     ({
         let _expected: () = unimplemented!();
@@ -1718,10 +1694,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1777,10 +1753,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1836,10 +1812,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1895,10 +1871,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -1954,10 +1930,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2013,10 +1989,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2072,10 +2048,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2135,10 +2111,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2194,10 +2170,10 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2257,15 +2233,15 @@ pub fn test_char_pointer_22() {
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
-    ({ test_set_debug_format_18() });
+    ({ test_set_debug_format_14() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub fn test_char_pointer_23() {
+pub fn test_char_pointer_19() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
@@ -2324,16 +2300,16 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 14]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     let mut s: () = unimplemented!();
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_15(_expected, _f, unimplemented!())
+        test_termination_condition_11(_expected, _f, unimplemented!())
     });
     ({
         let _expected: () = unimplemented!();
@@ -2389,10 +2365,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2448,10 +2424,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2507,10 +2483,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2566,10 +2542,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2625,10 +2601,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2684,10 +2660,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2743,10 +2719,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2806,10 +2782,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2865,10 +2841,10 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 6]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     ({
         let _expected: () = unimplemented!();
@@ -2928,12 +2904,12 @@ pub fn test_char_pointer_23() {
                     { (::std::mem::size_of::<[(); 9]>() as ()).wrapping_sub(1_()) },
                 )))
                 .as_pointer(),
-                (Ptr::<()>::null()).reinterpret_cast::<()>(),
+                Ptr::<()>::null(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
-    ({ test_set_debug_format_19() });
+    ({ test_set_debug_format_15() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
 pub fn main() {
@@ -2956,10 +2932,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_char_pointer_20() });
-    ({ test_char_pointer_21() });
-    ({ test_char_pointer_22() });
-    ({ test_char_pointer_23() });
+    ({ test_char_pointer_16() });
+    ({ test_char_pointer_17() });
+    ({ test_char_pointer_18() });
+    ({ test_char_pointer_19() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

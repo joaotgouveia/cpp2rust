@@ -20,9 +20,7 @@ pub struct check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_
 }
 impl check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {
     pub unsafe fn new_1(mut i: *mut move_tracker) -> Self {
-        let mut this = Self {
-            base_: (*unimplemented!()),
-        };
+        let mut this = Self { base_: i };
         this
     }
     pub unsafe fn operator_deref(&self) -> *mut move_tracker {
@@ -129,16 +127,14 @@ pub struct iterator_wrapper_move_tracker_ptr_ {
 }
 impl iterator_wrapper_move_tracker_ptr_ {
     pub unsafe fn new_1(mut i: *mut move_tracker) -> Self {
-        let mut this = Self {
-            base_: (*unimplemented!()),
-        };
+        let mut this = Self { base_: i };
         this
     }
     pub unsafe fn operator_deref_3(&self) -> *mut move_tracker {
         return &mut (*self.base_);
     }
     pub unsafe fn operator_deref_4(&mut self) -> *mut move_tracker {
-        return &mut (*unimplemented!());
+        return &mut (*self.base_);
     }
     pub unsafe fn operator_inc_5(&mut self) -> *mut iterator_wrapper_move_tracker_ptr_ {
         self.base_.prefix_inc();
@@ -175,20 +171,16 @@ pub unsafe fn unqualified_lookup_move_5(
     mut result_last_: *mut move_tracker,
 ) {
     let mut first: check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ =
-        check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-            (*unimplemented!())
-        });
+        check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({ first_ });
     let mut last: check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ =
-        check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-            (*unimplemented!())
-        });
+        check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({ last_ });
     let mut result_first: check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ =
         check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-            (*unimplemented!())
+            result_first_
         });
     let mut result_last: check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ =
         check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-            (*unimplemented!())
+            result_last_
         });
     const _: () = assert!(true, "!noexcept(std::ranges::iter_move(first))");;
     'loop_: while (!(unsafe {
@@ -228,13 +220,13 @@ pub unsafe fn lvalue_move_6(
     mut result_last_: *mut move_tracker,
 ) {
     let mut first: iterator_wrapper_move_tracker_ptr_ =
-        iterator_wrapper_move_tracker_ptr_::new_1({ (*unimplemented!()) });
+        iterator_wrapper_move_tracker_ptr_::new_1({ first_ });
     let mut last: iterator_wrapper_move_tracker_ptr_ =
-        iterator_wrapper_move_tracker_ptr_::new_1({ (*unimplemented!()) });
+        iterator_wrapper_move_tracker_ptr_::new_1({ last_ });
     let mut result_first: iterator_wrapper_move_tracker_ptr_ =
-        iterator_wrapper_move_tracker_ptr_::new_1({ (*unimplemented!()) });
+        iterator_wrapper_move_tracker_ptr_::new_1({ result_first_ });
     let mut result_last: iterator_wrapper_move_tracker_ptr_ =
-        iterator_wrapper_move_tracker_ptr_::new_1({ (*unimplemented!()) });
+        iterator_wrapper_move_tracker_ptr_::new_1({ result_last_ });
     const _: () = assert!(true, "!noexcept(std::ranges::iter_move(first))");;
     'loop_: while (!(unsafe { iterator_wrapper_move_tracker_ptr_::operator_eq(&first, &last) }))
         && (!(unsafe {
@@ -264,13 +256,13 @@ pub unsafe fn rvalue_move_7(
     mut result_last_: *mut move_tracker,
 ) {
     let mut first: iterator_wrapper_move_tracker_ptr_ =
-        iterator_wrapper_move_tracker_ptr_::new_1({ (*unimplemented!()) });
+        iterator_wrapper_move_tracker_ptr_::new_1({ first_ });
     let mut last: iterator_wrapper_move_tracker_ptr_ =
-        iterator_wrapper_move_tracker_ptr_::new_1({ (*unimplemented!()) });
+        iterator_wrapper_move_tracker_ptr_::new_1({ last_ });
     let mut result_first: iterator_wrapper_move_tracker_ptr_ =
-        iterator_wrapper_move_tracker_ptr_::new_1({ (*unimplemented!()) });
+        iterator_wrapper_move_tracker_ptr_::new_1({ result_first_ });
     let mut result_last: iterator_wrapper_move_tracker_ptr_ =
-        iterator_wrapper_move_tracker_ptr_::new_1({ (*unimplemented!()) });
+        iterator_wrapper_move_tracker_ptr_::new_1({ result_last_ });
     const _: () = assert!(true, "noexcept(std::ranges::iter_move(std::move(first)))");;
     'loop_: while (!(unsafe { iterator_wrapper_move_tracker_ptr_::operator_eq(&first, &last) }))
         && (!(unsafe {
@@ -284,9 +276,7 @@ pub unsafe fn rvalue_move_7(
                     iterator_wrapper_move_tracker_ptr_::operator_deref_3(&result_first)
                 })),
                 &mut (unsafe {
-                    (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_move_1))(
-                        &mut (*unimplemented!()),
-                    )
+                    (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_move_1))(&mut i)
                 }),
             )
         });

@@ -41,7 +41,7 @@ thread_local!(
     pub static function_4: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static cur_5: Value<()> = Rc::new(RefCell::new(({ std_source_location::current(None) })));
+    pub static cur_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 const _: () = assert!(true, "cur.line() == 1000");
 const _: () = assert!(true, "cur.column() > 0");
@@ -70,7 +70,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let local: Value<()> = Rc::new(RefCell::new(({ std_source_location::current(None) })));
+    let local: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

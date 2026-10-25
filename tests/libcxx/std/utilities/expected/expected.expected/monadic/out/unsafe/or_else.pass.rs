@@ -343,7 +343,7 @@ pub unsafe fn test_val_types_3() {
             let mut e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: RVal = <RVal>::default();
-                (*unimplemented!()).or_else(&mut ___f)
+                e.or_else(&mut ___f)
             });
             unimplemented!();
         }
@@ -351,7 +351,7 @@ pub unsafe fn test_val_types_3() {
             let mut e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: RVRefQual = <RVRefQual>::default();
-                (*unimplemented!()).or_else(&mut ___f)
+                e.or_else(&mut ___f)
             });
             unimplemented!();
         }
@@ -361,14 +361,14 @@ pub unsafe fn test_val_types_3() {
             let e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: CRVal = <CRVal>::default();
-                (*unimplemented!()).or_else(&mut ___f)
+                e.or_else(&mut ___f)
             });
             unimplemented!();
         }
         {
             let e: () = unimplemented!();
             let l: RVCRefQual = <RVCRefQual>::default();
-            let mut val: () = (unsafe { (*unimplemented!()).or_else(&(*unimplemented!())) });
+            let mut val: () = (unsafe { e.or_else(&l) });
             unimplemented!();
         }
     }
@@ -394,7 +394,7 @@ pub unsafe fn test_sfinae_4() {
         }
     );
     &(unimplemented!());
-    &(unsafe { (*unimplemented!()).or_else(&mut l) });
+    &(unsafe { e.or_else(&mut l) });
 }
 pub unsafe fn test_move_only_error_type_5() {
     {
@@ -427,7 +427,7 @@ pub unsafe fn test_move_only_error_type_5() {
                     return unimplemented!();
                 }
             });
-        &(unsafe { (*unimplemented!()).or_else(&mut l) });
+        &(unsafe { e.or_else(&mut l) });
     }
     {
         let e: () = unimplemented!();
@@ -439,7 +439,7 @@ pub unsafe fn test_move_only_error_type_5() {
                     }
                 },
             );
-        &(unsafe { (*unimplemented!()).or_else(&mut l) });
+        &(unsafe { e.or_else(&mut l) });
     }
 }
 pub unsafe fn test_6() -> () {
@@ -455,11 +455,11 @@ pub unsafe fn test_6() -> () {
         }
     });
     &(unimplemented!());
-    &(unsafe { (*unimplemented!()).or_else(&never_called) });
+    &(unsafe { e.or_else(&never_called) });
     &(unimplemented!());
     &(unsafe {
         let ___f: *const FnPtr<fn(()) -> ()> = &never_called;
-        (*unimplemented!()).or_else(___f)
+        (*ce).or_else(___f)
     });
     return true;
 }

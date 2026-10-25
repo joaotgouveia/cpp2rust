@@ -117,9 +117,7 @@ pub struct Box_int_ {
 }
 impl Box_int_ {
     pub unsafe fn new(mut v: ()) -> Self {
-        let mut this = Self {
-            val: (*unimplemented!()),
-        };
+        let mut this = Self { val: v };
         this
     }
     pub unsafe fn copy_from(o: *const Box_int_) -> Self {
@@ -211,7 +209,7 @@ pub unsafe fn by_value_2(mut c: Counted) -> () {
 }
 pub unsafe fn make_3(mut v: ()) -> Counted {
     let mut c: Counted = Counted::new({ v });
-    return Counted::copy_from({ &(*unimplemented!()) });
+    return Counted::copy_from({ &c });
 }
 pub fn main() {
     unsafe {
@@ -256,7 +254,7 @@ unsafe fn main_0() -> () {
     let mut o: Owner = Owner {
         box_: Box_int_::new({ 3_() }),
     };
-    let mut o2: Owner = Owner::move_from({ &mut (*unimplemented!()) });
+    let mut o2: Owner = Owner::move_from({ &mut o });
     unimplemented!();
     let mut ol1: OutOfLine = OutOfLine::new({ 5_() });
     let mut ol2: OutOfLine = OutOfLine::copy_from({ &ol1 });

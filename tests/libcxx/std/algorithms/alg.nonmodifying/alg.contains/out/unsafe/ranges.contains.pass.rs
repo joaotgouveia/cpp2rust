@@ -1727,7 +1727,7 @@ pub unsafe fn iter_move_71(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_72(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -2402,7 +2402,7 @@ impl BooleanTestable {
     }
     pub unsafe fn operator_not(&mut self) -> *mut BooleanTestable {
         self.value_ = !(self.value_);
-        return &mut (*unimplemented!());
+        return &mut (*(self as *mut BooleanTestable));
     }
     pub unsafe fn new(mut value: ()) -> Self {
         let mut this = Self { value_: value };

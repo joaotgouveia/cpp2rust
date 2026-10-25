@@ -261,7 +261,7 @@ pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -704,7 +704,7 @@ pub fn test_27() -> () {
             random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) });
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sent : Value<std_ranges_iota_view_random_access_iterator_int_ptr___IntSentinelWith_random_access_iterator_int_ptr______sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
+        let sent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
@@ -713,7 +713,7 @@ pub fn test_27() -> () {
             random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) });
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sent : Value<std_ranges_iota_view_random_access_iterator_int_ptr___IntSentinelWith_random_access_iterator_int_ptr______sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
+        let sent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

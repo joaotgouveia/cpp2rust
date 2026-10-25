@@ -362,7 +362,7 @@ impl Default for except_move_no_copy {
 }
 pub unsafe fn test01_10() {
     let mut nemc1: noexcept_move_copy = noexcept_move_copy::new();
-    let mut nemc2: noexcept_move_copy = noexcept_move_copy::move_from({ &mut (*unimplemented!()) });
+    let mut nemc2: noexcept_move_copy = noexcept_move_copy::move_from({ &mut nemc1 });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -383,8 +383,7 @@ pub unsafe fn test01_10() {
         }
     }
     let mut nemnc1: noexcept_move_no_copy = noexcept_move_no_copy::new();
-    let mut nemnc2: noexcept_move_no_copy =
-        noexcept_move_no_copy::move_from({ &mut (*unimplemented!()) });
+    let mut nemnc2: noexcept_move_no_copy = noexcept_move_no_copy::move_from({ &mut nemnc1 });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -405,7 +404,7 @@ pub unsafe fn test01_10() {
         }
     }
     let mut emc1: except_move_copy = except_move_copy::new();
-    let mut emc2: except_move_copy = (*unimplemented!());
+    let mut emc2: except_move_copy = emc1;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -426,8 +425,7 @@ pub unsafe fn test01_10() {
         }
     }
     let mut emnc1: except_move_no_copy = except_move_no_copy::new();
-    let mut emnc2: except_move_no_copy =
-        except_move_no_copy::move_from({ &mut (*unimplemented!()) });
+    let mut emnc2: except_move_no_copy = except_move_no_copy::move_from({ &mut emnc1 });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -339,11 +339,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut d: move_deleter_int_ = move_deleter_int_::new_1({ 0_() });
         let mut p0: () = unimplemented!();
-        let mut p1: () = std_shared_ptr_int_::new_1(
-            { Default::default() },
-            { move_deleter_int_::move_from({ &mut (*unimplemented!()) }) },
-            None,
-        );
+        let mut p1: () = unimplemented!();
     }
     {
         let mut deleter: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut pointer: *mut ()| {
@@ -357,11 +353,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut p: () = unimplemented!();
     }
     {
-        let mut p: () = std_shared_ptr_int_::new_2(
-            { unimplemented!() },
-            { lambda_unsafe!(Generic, {}, |mut _a0: ()| {}) },
-            None,
-        );
+        let mut p: () = unimplemented!();
     }
     {
         let mut a: () = unimplemented!();

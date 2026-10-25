@@ -46,14 +46,14 @@ pub unsafe fn test_4() {
     let mut iss: () = (unsafe { make_string_stream_2(&std::mem::transmute(*b"12   3\0")) });
     let mut isv: () =
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut istream_5))(&mut iss) });
-    let mut it: std_ranges_basic_istream_view_int__char____iterator = unimplemented!();
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_6() {
     let mut iss: () = (unsafe { make_string_stream_3(&std::mem::transmute(*b"12   3\0")) });
     let mut isv: () =
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut istream_5))(&mut iss) });
-    let mut it: std_ranges_basic_istream_view_int__wchar_t____iterator = unimplemented!();
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn main() {

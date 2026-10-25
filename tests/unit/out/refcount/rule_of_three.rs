@@ -105,11 +105,11 @@ fn main_0() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let d: Value<Buffer> = Rc::new(RefCell::new(Buffer::copy_from({ unimplemented!() })));
+        let d: Value<Buffer> = Rc::new(RefCell::new(Buffer::copy_from({ a.as_pointer() })));
         let _dtor_d = ScopedDestructor::new(&d, |__p| __p.destructor());
         unimplemented!();
         unimplemented!();
-        ({ BufferImpl::copy_assign(&d.as_pointer(), unimplemented!()) });
+        ({ BufferImpl::copy_assign(&d.as_pointer(), b.as_pointer()) });
         unimplemented!();
         unimplemented!();
     }

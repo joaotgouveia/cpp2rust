@@ -415,7 +415,7 @@ pub fn test_move_12() -> () {
                     return unimplemented!();
                 }
             })));
-        (*unimplemented!().upgrade().deref()).or_else(___f.as_pointer())
+        (*mo.borrow()).or_else(___f.as_pointer())
     });
     return true;
 }
@@ -516,7 +516,7 @@ pub fn test_call_15() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ (*unimplemented!().upgrade().deref()).or_else(f.as_pointer()) }).read()) == 1_()) {
+        if !((({ (*o.borrow()).or_else(f.as_pointer()) }).read()) == 1_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -554,8 +554,7 @@ pub fn test_call_15() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ (*unimplemented!().upgrade().deref()).or_else(unimplemented!()) }).read()) == 2_())
-        {
+        if !((({ (*o.borrow()).or_else(f.as_pointer()) }).read()) == 2_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -599,7 +598,7 @@ pub fn test_call_15() -> () {
         __do_while = false;
         if !((({
             let ___f: Ptr<F_16> = (cf).clone();
-            (*unimplemented!().upgrade().deref()).or_else(___f)
+            (*o.borrow()).or_else(___f)
         })
         .read())
             == 3_())
@@ -642,8 +641,8 @@ pub fn test_call_15() -> () {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((({
-            let ___f: Ptr<F_16> = unimplemented!();
-            (*unimplemented!().upgrade().deref()).or_else(___f)
+            let ___f: Ptr<F_16> = (cf).clone();
+            (*o.borrow()).or_else(___f)
         })
         .read())
             == 4_())

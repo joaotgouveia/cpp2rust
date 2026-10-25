@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 impl C_const_A_ref_ {
     pub unsafe fn new(u: *mut Awrap) -> Self {
         let mut this = Self {
-            t_: (unsafe { Awrap::get_3(&mut (*unimplemented!())) }),
+            t_: (unsafe { Awrap::get_3(&mut (*u)) }),
         };
         this
     }

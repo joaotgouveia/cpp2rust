@@ -21,9 +21,7 @@ fn main_0() -> () {
         }
     )));
     let g: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*f.borrow()).copy_from()));
-    let h: Value<()> = Rc::new(RefCell::new(
-        (*unimplemented!().upgrade().deref()).move_from(),
-    ));
+    let h: Value<()> = Rc::new(RefCell::new((*f.borrow()).move_from()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -39,9 +37,7 @@ fn main_0() -> () {
             };
         }
     )));
-    let q: Value<()> = Rc::new(RefCell::new(
-        (*unimplemented!().upgrade().deref()).move_from(),
-    ));
+    let q: Value<()> = Rc::new(RefCell::new((*p.borrow()).move_from()));
     unimplemented!();
     unimplemented!();
     let n: Value<()> = Rc::new(RefCell::new(0_()));
@@ -66,9 +62,7 @@ fn main_0() -> () {
     let outer2: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new((*outer.borrow()).copy_from()));
     unimplemented!();
     unimplemented!();
-    let outer3: Value<()> = Rc::new(RefCell::new(
-        (*unimplemented!().upgrade().deref()).move_from(),
-    ));
+    let outer3: Value<()> = Rc::new(RefCell::new((*outer.borrow()).move_from()));
     unimplemented!();
     return 0_();
 }

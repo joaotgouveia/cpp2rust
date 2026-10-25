@@ -345,7 +345,7 @@ pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -539,7 +539,7 @@ impl rvalue_addable {
         _a1: *const rvalue_addable,
     ) -> rvalue_addable {
         (*r).correctOperatorUsed = true;
-        return (*unimplemented!());
+        return (*r);
     }
 }
 impl Default for rvalue_addable {
@@ -563,7 +563,7 @@ pub unsafe fn operator_add_12(
     _a1: *const rvalue_addable,
 ) -> rvalue_addable {
     (*lhs).correctOperatorUsed = true;
-    return (*unimplemented!());
+    return (*lhs);
 }
 pub unsafe fn test_use_move_13() {
     let mut arr: [rvalue_addable; 100] = [<rvalue_addable>::default(); 100];

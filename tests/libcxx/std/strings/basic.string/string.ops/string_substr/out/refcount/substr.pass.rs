@@ -1249,7 +1249,7 @@ pub fn test_alloc_21() -> () {
         {
             let mut str: () = unimplemented!();
             (*stats.borrow_mut()) = <test_allocator_statistics>::default();
-            &({ (*unimplemented!().upgrade().deref()).substr_131(None, None) });
+            &({ str.substr_131(None, None) });
             unimplemented!();
             unimplemented!();
         }

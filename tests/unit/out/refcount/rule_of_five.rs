@@ -94,7 +94,7 @@ impl Default for Buffer {
 pub fn make_3(mut size: ()) -> Buffer {
     let b: Value<Buffer> = Rc::new(RefCell::new(Buffer::new({ size })));
     let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
-    return Buffer::move_from({ unimplemented!() });
+    return Buffer::move_from({ b.as_pointer() });
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -109,7 +109,7 @@ fn main_0() -> () {
         unimplemented!();
         array_elem!(b.as_pointer(), data, 0_()).write(100_());
         unimplemented!();
-        let c: Value<Buffer> = Rc::new(RefCell::new(Buffer::move_from({ unimplemented!() })));
+        let c: Value<Buffer> = Rc::new(RefCell::new(Buffer::move_from({ a.as_pointer() })));
         let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
         unimplemented!();
         unimplemented!();
@@ -119,10 +119,10 @@ fn main_0() -> () {
         unimplemented!();
         ({ BufferImpl::copy_assign(&d.as_pointer(), b.as_pointer()) });
         unimplemented!();
-        ({ BufferImpl::move_assign(&d.as_pointer(), unimplemented!()) });
+        ({ BufferImpl::move_assign(&d.as_pointer(), c.as_pointer()) });
         unimplemented!();
         ({
-            let _o: Ptr<Buffer> = unimplemented!();
+            let _o: Ptr<Buffer> = d.as_pointer();
             BufferImpl::move_assign(&d.as_pointer(), _o)
         });
         unimplemented!();

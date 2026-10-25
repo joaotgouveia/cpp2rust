@@ -238,7 +238,7 @@ pub unsafe fn iter_move_4(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_5(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -924,7 +924,7 @@ pub unsafe fn test_11() {
         let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut v: () = (unsafe { (*unimplemented!()).extract() });
+        let mut v: () = (unsafe { m.extract() });
         unimplemented!();
     }
 }
@@ -943,7 +943,7 @@ pub unsafe fn test_12() {
         let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut v: () = (unsafe { (*unimplemented!()).extract() });
+        let mut v: () = (unsafe { m.extract() });
         unimplemented!();
     }
 }

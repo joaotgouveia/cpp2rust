@@ -84,246 +84,211 @@ impl MultiStringType {
         }
     }
 }
-pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_4(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        ({ ((*formatter.borrow()) as std___formatter_char_char_).parse(parse_ctx.as_pointer()) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___char_ > = Rc::new(RefCell::new(( { make_format_args_5 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_char_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
-pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_5(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___char_ > = Rc::new(RefCell::new(( { make_format_args_7 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_char_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
-pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_6(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_2 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___wchar_t_ > = Rc::new(RefCell::new(( { make_format_args_9 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { __tmp_2.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_char_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
-pub fn test_termination_condition_10(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_7(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_4(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_4(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_11(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_8(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_5(unimplemented!(), unimplemented!(), arg, 1_()) });
+    unimplemented!();
+    ({ test_5(unimplemented!(), unimplemented!(), arg, 0_()) });
+}
+pub fn test_termination_condition_9(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_6(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_6(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_12(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_8(unimplemented!(), unimplemented!(), arg, 1_()) });
-    unimplemented!();
-    ({ test_8(unimplemented!(), unimplemented!(), arg, 0_()) });
-}
-pub fn test_set_debug_format_13() -> () {
+pub fn test_set_debug_format_10() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ ((*formatter.borrow()) as std___formatter_char_char_).parse(parse_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_set_debug_format_14() -> () {
+pub fn test_set_debug_format_11() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_set_debug_format_15() -> () {
+pub fn test_set_debug_format_12() -> () {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ ((*formatter.borrow()) as std___formatter_char_wchar_t_).parse(parse_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_char_type_16() {
+pub fn test_char_type_13() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('a' as ()))
+        test_termination_condition_7(_expected, _f, ('a' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('z' as ()))
+        test_termination_condition_7(_expected, _f, ('z' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('A' as ()))
+        test_termination_condition_7(_expected, _f, ('A' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('Z' as ()))
+        test_termination_condition_7(_expected, _f, ('Z' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('0' as ()))
+        test_termination_condition_7(_expected, _f, ('0' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('9' as ()))
+        test_termination_condition_7(_expected, _f, ('9' as ()))
     });
-    ({ test_set_debug_format_13() });
+    ({ test_set_debug_format_10() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub fn test_char_type_17() {
+pub fn test_char_type_14() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('a' as ()))
+        test_termination_condition_8(_expected, _f, ('a' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('z' as ()))
+        test_termination_condition_8(_expected, _f, ('z' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('A' as ()))
+        test_termination_condition_8(_expected, _f, ('A' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('Z' as ()))
+        test_termination_condition_8(_expected, _f, ('Z' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('0' as ()))
+        test_termination_condition_8(_expected, _f, ('0' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('9' as ()))
+        test_termination_condition_8(_expected, _f, ('9' as ()))
     });
-    ({ test_set_debug_format_14() });
+    ({ test_set_debug_format_11() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub fn test_char_type_18() {
+pub fn test_char_type_15() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('a' as ()))
+        test_termination_condition_9(_expected, _f, ('a' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('z' as ()))
+        test_termination_condition_9(_expected, _f, ('z' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('A' as ()))
+        test_termination_condition_9(_expected, _f, ('A' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('Z' as ()))
+        test_termination_condition_9(_expected, _f, ('Z' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('0' as ()))
+        test_termination_condition_9(_expected, _f, ('0' as ()))
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('9' as ()))
+        test_termination_condition_9(_expected, _f, ('9' as ()))
     });
-    ({ test_set_debug_format_15() });
+    ({ test_set_debug_format_12() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
 pub fn main() {
@@ -346,9 +311,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_char_type_16() });
-    ({ test_char_type_17() });
-    ({ test_char_type_18() });
+    ({ test_char_type_13() });
+    ({ test_char_type_14() });
+    ({ test_char_type_15() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

@@ -94,10 +94,10 @@ impl MultiStringType {
     }
 }
 pub unsafe fn test_format_context_create_0(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_1((*unimplemented!()), args.clone(), None) });
+    return (unsafe { __format_context_create_1(out_it, args.clone(), None) });
 }
 pub unsafe fn test_format_context_create_2(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_3((*unimplemented!()), args.clone(), None) });
+    return (unsafe { __format_context_create_3(out_it, args.clone(), None) });
 }
 pub unsafe fn test_setter_4() {
     let mut formatter: () = unimplemented!();

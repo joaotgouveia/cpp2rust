@@ -286,7 +286,7 @@ impl anon_3 {
         let mut v2: () = unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_4(&mut (*unimplemented!())) })),
+            value: (*(unsafe { get_4(&mut v2) })),
         };
     }
 }
@@ -299,7 +299,7 @@ impl anon_5 {
         let mut v2: () = unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_6(&mut (*unimplemented!())) })),
+            value: (*(unsafe { get_6(&mut v2) })),
         };
     }
 }
@@ -312,7 +312,7 @@ impl anon_7 {
         let mut v2: () = unimplemented!();
         return Result_TMove_ {
             index: unimplemented!(),
-            value: TMove::move_from({ (unsafe { get_8(&mut (*unimplemented!())) }) }),
+            value: TMove::move_from({ (unsafe { get_8(&mut v2) }) }),
         };
     }
 }
@@ -325,7 +325,7 @@ impl anon_9 {
         let mut v2: () = unimplemented!();
         return Result_TMove_ {
             index: unimplemented!(),
-            value: TMove::move_from({ (unsafe { get_10(&mut (*unimplemented!())) }) }),
+            value: TMove::move_from({ (unsafe { get_10(&mut v2) }) }),
         };
     }
 }
@@ -338,7 +338,7 @@ impl anon_11 {
         let mut v2: () = unimplemented!();
         return Result_TMoveNTCopy_ {
             index: unimplemented!(),
-            value: TMoveNTCopy::move_from({ (unsafe { get_12(&mut (*unimplemented!())) }) }),
+            value: TMoveNTCopy::move_from({ (unsafe { get_12(&mut v2) }) }),
         };
     }
 }
@@ -351,7 +351,7 @@ impl anon_13 {
         let mut v2: () = unimplemented!();
         return Result_TMoveNTCopy_ {
             index: unimplemented!(),
-            value: TMoveNTCopy::move_from({ (unsafe { get_14(&mut (*unimplemented!())) }) }),
+            value: TMoveNTCopy::move_from({ (unsafe { get_14(&mut v2) }) }),
         };
     }
 }

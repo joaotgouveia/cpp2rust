@@ -274,14 +274,8 @@ pub struct A_Deleter {
 const _: () = assert!(true, "!std::is_move_assignable<Deleter>::value");
 const _: () = assert!(true, "std::is_swappable_v<Deleter>");
 pub fn test03_13() {
-    let mut p1: () = {
-        let __tmp_0: Value<A_Deleter> = Rc::new(RefCell::new(A_Deleter { id: -1_() }));
-        std_unique_ptr_int__A_Deleter_::new({ Ptr::alloc(1_()) }, { __tmp_0.as_pointer() })
-    };
-    let mut p2: () = {
-        let __tmp_1: Value<A_Deleter> = Rc::new(RefCell::new(A_Deleter { id: -2_() }));
-        std_unique_ptr_int__A_Deleter_::new({ Ptr::alloc(2_()) }, { __tmp_1.as_pointer() })
-    };
+    let mut p1: () = unimplemented!();
+    let mut p2: () = unimplemented!();
     let mut pi1: Ptr<()> = unimplemented!();
     let mut pi2: Ptr<()> = unimplemented!();
     unimplemented!();
@@ -363,18 +357,8 @@ pub fn test03_13() {
     }
 }
 pub fn test04_15() {
-    let mut p1: () = {
-        let __tmp_2: Value<A_Deleter> = Rc::new(RefCell::new(A_Deleter { id: -1_() }));
-        std_unique_ptr_intarrarr__A_Deleter_::new({ Ptr::alloc_array(Box::new([1_()])) }, {
-            __tmp_2.as_pointer()
-        })
-    };
-    let mut p2: () = {
-        let __tmp_3: Value<A_Deleter> = Rc::new(RefCell::new(A_Deleter { id: -2_() }));
-        std_unique_ptr_intarrarr__A_Deleter_::new({ Ptr::alloc_array(Box::new([2_(), 2_()])) }, {
-            __tmp_3.as_pointer()
-        })
-    };
+    let mut p1: () = unimplemented!();
+    let mut p2: () = unimplemented!();
     let mut pi1: Ptr<()> = unimplemented!();
     let mut pi2: Ptr<()> = unimplemented!();
     unimplemented!();

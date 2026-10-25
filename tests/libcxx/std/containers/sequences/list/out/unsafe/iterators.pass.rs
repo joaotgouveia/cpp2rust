@@ -190,7 +190,9 @@ pub unsafe fn test_4() -> () {
         let mut c: () = unimplemented!();
         let mut i: () = unimplemented!();
         (*(unsafe {
-            min_pointer_A__std_integral_constant_unsigned_long__0__::operator_arrow(&i)
+            min_pointer_A__std_integral_constant_unsigned_long__0__::operator_arrow(
+                &unimplemented!(),
+            )
         }))
         .first = 3_();
         let mut j: () = unimplemented!();

@@ -670,7 +670,7 @@ pub fn test_parse_14() {
         }
     }
     (*tp.borrow_mut()) = unimplemented!();
-    let abbrev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut abbrev: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;

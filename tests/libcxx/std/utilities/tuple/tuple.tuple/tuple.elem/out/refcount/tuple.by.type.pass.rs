@@ -59,7 +59,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Ptr<()> = ({ get_2(unimplemented!()) });
+        let p: Ptr<()> = ({ get_2(t.as_pointer()) });
         unimplemented!();
         unimplemented!();
     }

@@ -213,7 +213,7 @@ unsafe fn main_0() -> () {
     let _dtor_b = ScopedDestructorUnsafe::new(&raw mut b, Explicit::destructor);
     let mut c: Explicit = a.clone();
     let _dtor_c = ScopedDestructorUnsafe::new(&raw mut c, Explicit::destructor);
-    let mut d: Explicit = (*unimplemented!()).clone();
+    let mut d: Explicit = a.clone();
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, Explicit::destructor);
     unimplemented!();
     let mut e: Explicit = Explicit::new({ 2_() });
@@ -221,7 +221,7 @@ unsafe fn main_0() -> () {
     let mut f: Explicit = Explicit::new({ 3_() });
     let _dtor_f = ScopedDestructorUnsafe::new(&raw mut f, Explicit::destructor);
     e = (b).clone();
-    f = (*unimplemented!()).clone();
+    f = (c).clone();
     unimplemented!();
     let mut g: Explicit = Explicit::new({ 4_() });
     let _dtor_g = ScopedDestructorUnsafe::new(&raw mut g, Explicit::destructor);
@@ -236,7 +236,7 @@ unsafe fn main_0() -> () {
         arr: [5_(), 6_()],
     };
     let mut j: Implicit = i;
-    let mut k: Implicit = (*unimplemented!());
+    let mut k: Implicit = i;
     unimplemented!();
     unimplemented!();
     let mut l: Implicit = Implicit {
@@ -252,27 +252,27 @@ unsafe fn main_0() -> () {
     unimplemented!();
     let mut m: DefaultCopyUserMove = DefaultCopyUserMove::new({ 7_() });
     let mut m1: DefaultCopyUserMove = m;
-    let mut m2: DefaultCopyUserMove = DefaultCopyUserMove::move_from({ &mut (*unimplemented!()) });
+    let mut m2: DefaultCopyUserMove = DefaultCopyUserMove::move_from({ &mut m });
     unimplemented!();
     let mut m3: DefaultCopyUserMove = DefaultCopyUserMove::new({ 1_() });
     let mut m4: DefaultCopyUserMove = DefaultCopyUserMove::new({ 1_() });
     m3 = m1;
-    (unsafe { DefaultCopyUserMove::move_assign(&mut m4, &mut (*unimplemented!())) });
+    (unsafe { DefaultCopyUserMove::move_assign(&mut m4, &mut m1) });
     unimplemented!();
     let mut u: UserCopyDefaultMove = UserCopyDefaultMove::new({ 8_() });
     let mut u1: UserCopyDefaultMove = UserCopyDefaultMove::copy_from({ &u });
-    let mut u2: UserCopyDefaultMove = UserCopyDefaultMove::move_from({ &mut (*unimplemented!()) });
+    let mut u2: UserCopyDefaultMove = UserCopyDefaultMove::move_from({ &mut u });
     unimplemented!();
     let mut u3: UserCopyDefaultMove = UserCopyDefaultMove::new({ 1_() });
     let mut u4: UserCopyDefaultMove = UserCopyDefaultMove::new({ 1_() });
     (unsafe { UserCopyDefaultMove::copy_assign(&mut u3, &u2) });
-    (unsafe { UserCopyDefaultMove::move_assign(&mut u4, &mut (*unimplemented!())) });
+    (unsafe { UserCopyDefaultMove::move_assign(&mut u4, &mut u2) });
     unimplemented!();
     let mut p: Buffer = Buffer::new({ 3_() });
-    let mut q: Buffer = Buffer::move_from({ &mut (*unimplemented!()) });
+    let mut q: Buffer = Buffer::move_from({ &mut p });
     unimplemented!();
     let mut r: Buffer = Buffer::new({ 1_() });
-    (unsafe { Buffer::move_assign(&mut r, &mut (*unimplemented!())) });
+    (unsafe { Buffer::move_assign(&mut r, &mut q) });
     unimplemented!();
     unimplemented!();
     let mut bufs: () = unimplemented!();
@@ -285,22 +285,22 @@ unsafe fn main_0() -> () {
     o1.arr[(0_()) as usize] = 5_();
     o1.arr[(1_()) as usize] = 6_();
     unimplemented!();
-    let mut o2: Owner = Owner::move_from({ &mut (*unimplemented!()) });
+    let mut o2: Owner = Owner::move_from({ &mut o1 });
     unimplemented!();
     unimplemented!();
     let mut o3: Owner = <Owner>::default();
-    (unsafe { Owner::move_assign(&mut o3, &mut (*unimplemented!())) });
+    (unsafe { Owner::move_assign(&mut o3, &mut o2) });
     unimplemented!();
     unimplemented!();
     let mut h1: Holder = Holder::new({ 4_() });
     let _dtor_h1 = ScopedDestructorUnsafe::new(&raw mut h1, Holder::destructor);
     unimplemented!();
-    let mut h2: Holder = Holder::move_from({ &mut (*unimplemented!()) });
+    let mut h2: Holder = Holder::move_from({ &mut h1 });
     let _dtor_h2 = ScopedDestructorUnsafe::new(&raw mut h2, Holder::destructor);
     unimplemented!();
     let mut h3: Holder = Holder::new({ 1_() });
     let _dtor_h3 = ScopedDestructorUnsafe::new(&raw mut h3, Holder::destructor);
-    (unsafe { Holder::move_assign(&mut h3, &mut (*unimplemented!())) });
+    (unsafe { Holder::move_assign(&mut h3, &mut h2) });
     unimplemented!();
     return 0_();
 }

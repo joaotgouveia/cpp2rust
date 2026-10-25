@@ -13,7 +13,7 @@ pub unsafe fn test_0() -> () {
     let a: () = unimplemented!();
     let mut b: () = unimplemented!();
     b = (a).clone();
-    b = (*unimplemented!()).clone();
+    b = (a).clone();
     return true;
 }
 pub fn main() {

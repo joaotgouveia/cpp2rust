@@ -61,7 +61,7 @@ impl Error {
     }
     pub unsafe fn new_2(a: *mut Arg) -> Self {
         let mut this = Self {
-            arg: Arg::move_from({ unimplemented!() }),
+            arg: Arg::move_from({ a }),
         };
         this
     }

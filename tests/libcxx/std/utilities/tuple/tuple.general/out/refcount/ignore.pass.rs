@@ -19,36 +19,30 @@ pub fn test_nodiscard_0() -> () {
 }
 pub fn test_1() -> () {
     {
-        let ignore_v: Ptr<std___ignore_type> = ignore_2.with(|v| v.as_pointer());
+        let ignore_v: Ptr<()> = ignore_2.with(|v| v.as_pointer());
     }
     {
-        let res: Ptr<std___ignore_type> = (ignore_2.with(|rc| *rc.borrow_mut() = 42_()));
+        let res: Ptr<()> = (unimplemented!());
         const _: () = assert!(true, "noexcept(res = (std::ignore = 42))");;
         unimplemented!();
     }
     {
         let mut s: S_3 = S_3 { bf: 2_() };
-        let res: Ptr<std___ignore_type> = (ignore_2.with(|rc| *rc.borrow_mut() = s.bf));
+        let res: Ptr<()> = (unimplemented!());
         unimplemented!();
     }
     {
-        let copy: Value<std___ignore_type> = Rc::new(RefCell::new(
-            (*ignore_2.with(Value::clone).borrow()).clone(),
-        ));
-        let moved: Value<std___ignore_type> = Rc::new(RefCell::new((*copy.borrow_mut()).clone()));
+        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let moved: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
-        let copy: Value<std___ignore_type> = Rc::new(RefCell::new(
-            (*ignore_2.with(Value::clone).borrow()).clone(),
-        ));
-        (*copy.borrow_mut()) = (*ignore_2.with(Value::clone).borrow()).clone();
-        let moved: Value<std___ignore_type> = Rc::new(RefCell::new(
-            (*ignore_2.with(Value::clone).borrow()).clone(),
-        ));
-        (*moved.borrow_mut()) = (*copy.borrow()).clone();
+        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let moved: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
     }
     {
-        ignore_2.with(|rc| *rc.borrow_mut() = ({ test_nodiscard_0() }));
+        unimplemented!();
     }
     return true;
 }

@@ -312,7 +312,7 @@ pub unsafe fn test_14() -> () {
     {
         let mut res1: () = unimplemented!();
         unimplemented!();
-        let mut res2: () = (*unimplemented!());
+        let mut res2: () = res1;
         unimplemented!();
         unimplemented!();
     }

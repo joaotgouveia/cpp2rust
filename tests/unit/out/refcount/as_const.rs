@@ -34,7 +34,7 @@ fn main_0() -> () {
     ({ SImpl::value_ref_3(&s.as_pointer()) }).write(9_());
     unimplemented!();
     unimplemented!();
-    let cs: Ptr<S> = unimplemented!();
+    let cs: Ptr<S> = s.as_pointer();
     unimplemented!();
     unimplemented!();
     let mut p: Ptr<S> = unimplemented!();

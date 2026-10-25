@@ -935,7 +935,7 @@ pub unsafe fn iter_move_25(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_26(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -4844,12 +4844,10 @@ pub unsafe fn test_is_equal_for_adaptors_488(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
+            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
         let mut unwrap_to: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
+                &mut result
             });
         unimplemented!();
     }
@@ -4860,12 +4858,10 @@ pub unsafe fn test_is_equal_for_adaptors_489(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
+            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
         let mut unwrap_to: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
+                &mut result
             });
         unimplemented!();
     }
@@ -4876,10 +4872,8 @@ pub unsafe fn test_is_equal_for_adaptors_490(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
+        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -4889,12 +4883,10 @@ pub unsafe fn test_is_equal_for_adaptors_491(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
         let mut unwrap_to: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
+                &mut result
             });
         unimplemented!();
     }
@@ -4905,12 +4897,10 @@ pub unsafe fn test_is_equal_for_adaptors_492(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
         let mut unwrap_to: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
+                &mut result
             });
         unimplemented!();
     }
@@ -4921,10 +4911,8 @@ pub unsafe fn test_is_equal_for_adaptors_493(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
+        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -4933,10 +4921,10 @@ pub unsafe fn test_is_equal_for_adaptors_494(mut inputs: ()) {
         let in_: *const () = &(*unimplemented!());
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
-        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut from } , )  ;
         let mut unwrap_to: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
+                &mut result
             });
         unimplemented!();
     }
@@ -4946,10 +4934,10 @@ pub unsafe fn test_is_equal_for_adaptors_495(mut inputs: ()) {
         let in_: *const () = &(*unimplemented!());
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
-        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut from } , )  ;
         let mut unwrap_to: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
+                &mut result
             });
         unimplemented!();
     }
@@ -4959,8 +4947,8 @@ pub unsafe fn test_is_equal_for_adaptors_496(mut inputs: ()) {
         let in_: *const () = &(*unimplemented!());
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
-        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
-        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut from } , )  ;
+        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -4970,10 +4958,8 @@ pub unsafe fn test_is_equal_for_adaptors_497(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
+        let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -4983,10 +4969,8 @@ pub unsafe fn test_is_equal_for_adaptors_498(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
+        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -4996,10 +4980,8 @@ pub unsafe fn test_is_equal_for_adaptors_499(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ = UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
+        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ = UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -5009,10 +4991,8 @@ pub unsafe fn test_is_equal_for_adaptors_500(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
+        let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -5022,10 +5002,8 @@ pub unsafe fn test_is_equal_for_adaptors_501(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
+        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -5035,10 +5013,8 @@ pub unsafe fn test_is_equal_for_adaptors_502(mut inputs: ()) {
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut (*unimplemented!())
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ = UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({ &mut from });
+        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ = UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -5047,8 +5023,8 @@ pub unsafe fn test_is_equal_for_adaptors_503(mut inputs: ()) {
         let in_: *const () = &(*unimplemented!());
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
-        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
-        let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut from } , )  ;
+        let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -5057,8 +5033,8 @@ pub unsafe fn test_is_equal_for_adaptors_504(mut inputs: ()) {
         let in_: *const () = &(*unimplemented!());
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
-        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
-        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut from } , )  ;
+        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }
@@ -5067,8 +5043,8 @@ pub unsafe fn test_is_equal_for_adaptors_505(mut inputs: ()) {
         let in_: *const () = &(*unimplemented!());
         let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
-        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
-        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ = UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { & mut ( * unimplemented!()  )  } , )  ;
+        let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut from } , )  ;
+        let mut unwrap_to : UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ = UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { & mut result } , )  ;
         unimplemented!();
     }
 }

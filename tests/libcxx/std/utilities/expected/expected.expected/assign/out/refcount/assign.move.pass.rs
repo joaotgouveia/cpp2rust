@@ -641,7 +641,7 @@ pub fn test_3() -> () {
             ({
                 CheckForInvalidWrites_true__false_Impl::move_assign(
                     &e1.as_pointer(),
-                    unimplemented!(),
+                    e2.as_pointer(),
                 )
             });
             unimplemented!();
@@ -658,7 +658,7 @@ pub fn test_3() -> () {
             ({
                 CheckForInvalidWrites_false__false_Impl::move_assign(
                     &e1.as_pointer(),
-                    unimplemented!(),
+                    e2.as_pointer(),
                 )
             });
             unimplemented!();

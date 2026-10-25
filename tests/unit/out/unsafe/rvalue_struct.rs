@@ -26,7 +26,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut s1: S = S::new({ 1_() }, { 2_() });
-    let s2: *mut S = &mut (*unimplemented!());
+    let s2: *mut S = &mut s1;
     unimplemented!();
     unimplemented!();
     return 0_();

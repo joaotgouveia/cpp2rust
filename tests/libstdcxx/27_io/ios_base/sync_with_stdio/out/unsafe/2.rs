@@ -262,7 +262,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unsafe { std_ios_base::sync_with_stdio(None) }) {
+        if !(unimplemented!()) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -281,7 +281,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unsafe { std_ios_base::sync_with_stdio(Some(false)) }) {
+        if !(unimplemented!()) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -319,7 +319,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { std_ios_base::sync_with_stdio(Some((0_() != 0))) })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -357,7 +357,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { std_ios_base::sync_with_stdio(Some((0_() != 0))) })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

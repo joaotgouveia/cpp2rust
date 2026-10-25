@@ -27,26 +27,26 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

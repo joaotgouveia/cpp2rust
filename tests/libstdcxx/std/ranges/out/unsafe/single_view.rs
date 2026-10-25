@@ -436,9 +436,8 @@ pub unsafe fn test06_19() {
     let mut obj: S_20 = <S_20>::default();
     let mut x: () =
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut single_15))(&mut obj) });
-    let mut y: () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut single_15))(&mut (*unimplemented!()))
-    });
+    let mut y: () =
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut single_15))(&mut obj) });
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, Default)]

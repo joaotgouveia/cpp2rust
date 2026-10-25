@@ -280,7 +280,7 @@ pub unsafe fn test_14() -> () {
         let mut res: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut res2: () = (*unimplemented!());
+        let mut res2: () = res;
         unimplemented!();
         unimplemented!();
         unimplemented!();

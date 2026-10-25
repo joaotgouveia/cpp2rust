@@ -75,22 +75,22 @@ impl Z {
 pub unsafe fn test_all_4() -> () {
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_0(&mut (*unimplemented!()), None) });
+        (unsafe { test_0(&mut rhs, None) });
     }
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_0(&mut (*unimplemented!()), None) });
+        (unsafe { test_0(&mut rhs, None) });
     }
     return true;
 }
 pub unsafe fn test_all_5() -> () {
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_1(&mut (*unimplemented!()), None) });
+        (unsafe { test_1(&mut rhs, None) });
     }
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_1(&mut (*unimplemented!()), None) });
+        (unsafe { test_1(&mut rhs, None) });
     }
     return true;
 }
@@ -116,11 +116,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "test_all<int, X>()");;
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_2(&mut (*unimplemented!()), None) });
+        (unsafe { test_2(&mut rhs, None) });
     }
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_2(&mut (*unimplemented!()), Some(true)) });
+        (unsafe { test_2(&mut rhs, Some(true)) });
     }
     const _: () = assert!(
         true,

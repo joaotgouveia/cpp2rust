@@ -39,7 +39,7 @@ pub unsafe fn test2a_3(t: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test3_4(_a0: *const ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_5));
+    return unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

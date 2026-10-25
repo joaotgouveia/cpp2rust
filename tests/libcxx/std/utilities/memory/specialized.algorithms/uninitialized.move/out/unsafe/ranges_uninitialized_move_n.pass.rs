@@ -1415,7 +1415,7 @@ pub unsafe fn iter_move_32(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_33(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1812,7 +1812,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let ___ofirst: *mut () = (unsafe { Buffer_int__3_::begin(&mut out) });
             let ___olast: *mut () = (unsafe { Buffer_int__3_::end(&mut out) });
             (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
-                cpp20_input_iterator_const_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+                cpp20_input_iterator_const_int_ptr_::move_from({ &mut in_ }),
                 N,
                 ___ofirst,
                 ___olast,

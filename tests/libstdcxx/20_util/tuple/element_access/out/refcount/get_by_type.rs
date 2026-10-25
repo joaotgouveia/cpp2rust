@@ -379,7 +379,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ get_20(unimplemented!()) }).read()) == 1_()) {
+        if !((({ get_20(b.as_pointer()) }).read()) == 1_()) {
             ({
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -398,7 +398,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ get_21(unimplemented!()) }).read()) == 5_()) {
+        if !((({ get_21(b.as_pointer()) }).read()) == 5_()) {
             ({
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -417,7 +417,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ get_22(unimplemented!()) }).read()) == 2_()) {
+        if !((({ get_22(b.as_pointer()) }).read()) == 2_()) {
             ({
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),

@@ -84,9 +84,8 @@ impl MultiStringType {
         }
     }
 }
-pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_4(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -95,19 +94,13 @@ pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___unsigned_char_ > = Rc::new(RefCell::new(( { make_format_args_5 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_5(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -116,19 +109,13 @@ pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___unsigned_short_ > = Rc::new(RefCell::new(( { make_format_args_7 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_6(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -137,19 +124,13 @@ pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_2 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___unsigned_int_ > = Rc::new(RefCell::new(( { make_format_args_9 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_3 ( { __tmp_2.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_10(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_7(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -158,19 +139,13 @@ pub fn test_10(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_3 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___unsigned_long_ > = Rc::new(RefCell::new(( { make_format_args_11 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_4 ( { __tmp_3.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_12(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_8(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -179,19 +154,13 @@ pub fn test_12(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_4 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___unsigned_long_long_ > = Rc::new(RefCell::new(( { make_format_args_13 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_5 ( { __tmp_4.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_14(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_9(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -200,19 +169,13 @@ pub fn test_14(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_5 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___unsigned___int128_ > = Rc::new(RefCell::new(( { make_format_args_15 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_6 ( { __tmp_5.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_16(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_10(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -221,19 +184,13 @@ pub fn test_16(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_6 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___unsigned_char_ > = Rc::new(RefCell::new(( { make_format_args_17 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { __tmp_6.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_18(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_11(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -242,19 +199,13 @@ pub fn test_18(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_7 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___unsigned_short_ > = Rc::new(RefCell::new(( { make_format_args_19 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { __tmp_7.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_20(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_12(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -263,19 +214,13 @@ pub fn test_20(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_8 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___unsigned_int_ > = Rc::new(RefCell::new(( { make_format_args_21 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_3 ( { __tmp_8.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_22(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_13(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -284,19 +229,13 @@ pub fn test_22(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_9 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___unsigned_long_ > = Rc::new(RefCell::new(( { make_format_args_23 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_4 ( { __tmp_9.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_24(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_14(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -305,19 +244,13 @@ pub fn test_24(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_10 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___unsigned_long_long_ > = Rc::new(RefCell::new(( { make_format_args_25 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_5 ( { __tmp_10.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_26(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_15(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -326,122 +259,105 @@ pub fn test_26(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_11 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___unsigned___int128_ > = Rc::new(RefCell::new(( { make_format_args_27 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_6 ( { __tmp_11.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_termination_condition_28(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_16(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_4(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_4(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_29(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_17(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_5(unimplemented!(), unimplemented!(), arg, 1_()) });
+    unimplemented!();
+    ({ test_5(unimplemented!(), unimplemented!(), arg, 0_()) });
+}
+pub fn test_termination_condition_18(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_6(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_6(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_30(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_19(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_7(unimplemented!(), unimplemented!(), arg, 1_()) });
+    unimplemented!();
+    ({ test_7(unimplemented!(), unimplemented!(), arg, 0_()) });
+}
+pub fn test_termination_condition_20(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_8(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_8(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_31(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_21(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_9(unimplemented!(), unimplemented!(), arg, 1_()) });
+    unimplemented!();
+    ({ test_9(unimplemented!(), unimplemented!(), arg, 0_()) });
+}
+pub fn test_termination_condition_22(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_10(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_10(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_32(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_23(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_11(unimplemented!(), unimplemented!(), arg, 1_()) });
+    unimplemented!();
+    ({ test_11(unimplemented!(), unimplemented!(), arg, 0_()) });
+}
+pub fn test_termination_condition_24(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_12(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_12(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_33(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_25(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    ({ test_13(unimplemented!(), unimplemented!(), arg, 1_()) });
+    unimplemented!();
+    ({ test_13(unimplemented!(), unimplemented!(), arg, 0_()) });
+}
+pub fn test_termination_condition_26(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_14(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_14(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_34(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_27(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ test_16(unimplemented!(), unimplemented!(), arg, 1_()) });
+    ({ test_15(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
-    ({ test_16(unimplemented!(), unimplemented!(), arg, 0_()) });
+    ({ test_15(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_35(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_18(unimplemented!(), unimplemented!(), arg, 1_()) });
-    unimplemented!();
-    ({ test_18(unimplemented!(), unimplemented!(), arg, 0_()) });
-}
-pub fn test_termination_condition_36(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_20(unimplemented!(), unimplemented!(), arg, 1_()) });
-    unimplemented!();
-    ({ test_20(unimplemented!(), unimplemented!(), arg, 0_()) });
-}
-pub fn test_termination_condition_37(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_22(unimplemented!(), unimplemented!(), arg, 1_()) });
-    unimplemented!();
-    ({ test_22(unimplemented!(), unimplemented!(), arg, 0_()) });
-}
-pub fn test_termination_condition_38(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_24(unimplemented!(), unimplemented!(), arg, 1_()) });
-    unimplemented!();
-    ({ test_24(unimplemented!(), unimplemented!(), arg, 0_()) });
-}
-pub fn test_termination_condition_39(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
-    unimplemented!();
-    ({ test_26(unimplemented!(), unimplemented!(), arg, 1_()) });
-    unimplemented!();
-    ({ test_26(unimplemented!(), unimplemented!(), arg, 0_()) });
-}
-pub fn test_unsigned_integral_type_40() {
+pub fn test_unsigned_integral_type_28() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_28(_expected, _f, 0_())
+        test_termination_condition_16(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_28(_expected, _f, 255_())
+        test_termination_condition_16(_expected, _f, 255_())
     });
     {}
     {}
@@ -450,25 +366,25 @@ pub fn test_unsigned_integral_type_40() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_28(_expected, _f, 255_())
+        test_termination_condition_16(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_41() {
+pub fn test_unsigned_integral_type_29() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_29(_expected, _f, 0_())
+        test_termination_condition_17(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_29(_expected, _f, 255_())
+        test_termination_condition_17(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_29(_expected, _f, 65535_())
+            test_termination_condition_17(_expected, _f, 65535_())
         });
     }
     {}
@@ -477,32 +393,32 @@ pub fn test_unsigned_integral_type_41() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_29(_expected, _f, 255_())
+        test_termination_condition_17(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_42() {
+pub fn test_unsigned_integral_type_30() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_30(_expected, _f, 0_())
+        test_termination_condition_18(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_30(_expected, _f, 255_())
+        test_termination_condition_18(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_30(_expected, _f, 65535_())
+            test_termination_condition_18(_expected, _f, 65535_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_30(_expected, _f, 4294967295_())
+            test_termination_condition_18(_expected, _f, 4294967295_())
         });
     }
     {}
@@ -510,142 +426,142 @@ pub fn test_unsigned_integral_type_42() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_30(_expected, _f, 255_())
+        test_termination_condition_18(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_43() {
+pub fn test_unsigned_integral_type_31() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_31(_expected, _f, 0_())
+        test_termination_condition_19(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_31(_expected, _f, 255_())
+        test_termination_condition_19(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_31(_expected, _f, 65535_())
+            test_termination_condition_19(_expected, _f, 65535_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_31(_expected, _f, 4294967295_())
+            test_termination_condition_19(_expected, _f, 4294967295_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_31(_expected, _f, 8446744073709551615_())
+            test_termination_condition_19(_expected, _f, 8446744073709551615_())
         });
     }
     {}
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_31(_expected, _f, 255_())
+        test_termination_condition_19(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_44() {
+pub fn test_unsigned_integral_type_32() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_32(_expected, _f, 0_())
+        test_termination_condition_20(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_32(_expected, _f, 255_())
+        test_termination_condition_20(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_32(_expected, _f, 65535_())
+            test_termination_condition_20(_expected, _f, 65535_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_32(_expected, _f, 4294967295_())
+            test_termination_condition_20(_expected, _f, 4294967295_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_32(_expected, _f, 8446744073709551615_())
+            test_termination_condition_20(_expected, _f, 8446744073709551615_())
         });
     }
     {}
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_32(_expected, _f, 255_())
+        test_termination_condition_20(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_45() {
+pub fn test_unsigned_integral_type_33() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_33(_expected, _f, 0_())
+        test_termination_condition_21(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_33(_expected, _f, 255_())
+        test_termination_condition_21(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(_expected, _f, 65535_())
+            test_termination_condition_21(_expected, _f, 65535_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(_expected, _f, 4294967295_())
+            test_termination_condition_21(_expected, _f, 4294967295_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(_expected, _f, 8446744073709551615_())
+            test_termination_condition_21(_expected, _f, 8446744073709551615_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(_expected, _f, unimplemented!())
+            test_termination_condition_21(_expected, _f, unimplemented!())
         });
     }
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_33(_expected, _f, 255_())
+        test_termination_condition_21(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_46() {
+pub fn test_unsigned_integral_type_34() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_34(_expected, _f, 0_())
+        test_termination_condition_22(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_34(_expected, _f, 255_())
+        test_termination_condition_22(_expected, _f, 255_())
     });
     {}
     {}
@@ -654,25 +570,25 @@ pub fn test_unsigned_integral_type_46() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_34(_expected, _f, 255_())
+        test_termination_condition_22(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_47() {
+pub fn test_unsigned_integral_type_35() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_35(_expected, _f, 0_())
+        test_termination_condition_23(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_35(_expected, _f, 255_())
+        test_termination_condition_23(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_35(_expected, _f, 65535_())
+            test_termination_condition_23(_expected, _f, 65535_())
         });
     }
     {}
@@ -681,32 +597,32 @@ pub fn test_unsigned_integral_type_47() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_35(_expected, _f, 255_())
+        test_termination_condition_23(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_48() {
+pub fn test_unsigned_integral_type_36() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_36(_expected, _f, 0_())
+        test_termination_condition_24(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_36(_expected, _f, 255_())
+        test_termination_condition_24(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_36(_expected, _f, 65535_())
+            test_termination_condition_24(_expected, _f, 65535_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_36(_expected, _f, 4294967295_())
+            test_termination_condition_24(_expected, _f, 4294967295_())
         });
     }
     {}
@@ -714,147 +630,147 @@ pub fn test_unsigned_integral_type_48() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_36(_expected, _f, 255_())
+        test_termination_condition_24(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_49() {
+pub fn test_unsigned_integral_type_37() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_37(_expected, _f, 0_())
+        test_termination_condition_25(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_37(_expected, _f, 255_())
+        test_termination_condition_25(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_37(_expected, _f, 65535_())
+            test_termination_condition_25(_expected, _f, 65535_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_37(_expected, _f, 4294967295_())
+            test_termination_condition_25(_expected, _f, 4294967295_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_37(_expected, _f, 8446744073709551615_())
-        });
-    }
-    {}
-    ({
-        let _expected: () = unimplemented!();
-        let _f: () = unimplemented!();
-        test_termination_condition_37(_expected, _f, 255_())
-    });
-}
-pub fn test_unsigned_integral_type_50() {
-    ({
-        let _expected: () = unimplemented!();
-        let _f: () = unimplemented!();
-        test_termination_condition_38(_expected, _f, 0_())
-    });
-    ({
-        let _expected: () = unimplemented!();
-        let _f: () = unimplemented!();
-        test_termination_condition_38(_expected, _f, 255_())
-    });
-    {
-        ({
-            let _expected: () = unimplemented!();
-            let _f: () = unimplemented!();
-            test_termination_condition_38(_expected, _f, 65535_())
-        });
-    }
-    {
-        ({
-            let _expected: () = unimplemented!();
-            let _f: () = unimplemented!();
-            test_termination_condition_38(_expected, _f, 4294967295_())
-        });
-    }
-    {
-        ({
-            let _expected: () = unimplemented!();
-            let _f: () = unimplemented!();
-            test_termination_condition_38(_expected, _f, 8446744073709551615_())
+            test_termination_condition_25(_expected, _f, 8446744073709551615_())
         });
     }
     {}
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_38(_expected, _f, 255_())
+        test_termination_condition_25(_expected, _f, 255_())
     });
 }
-pub fn test_unsigned_integral_type_51() {
+pub fn test_unsigned_integral_type_38() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_39(_expected, _f, 0_())
+        test_termination_condition_26(_expected, _f, 0_())
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_39(_expected, _f, 255_())
+        test_termination_condition_26(_expected, _f, 255_())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(_expected, _f, 65535_())
+            test_termination_condition_26(_expected, _f, 65535_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(_expected, _f, 4294967295_())
+            test_termination_condition_26(_expected, _f, 4294967295_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(_expected, _f, 8446744073709551615_())
+            test_termination_condition_26(_expected, _f, 8446744073709551615_())
+        });
+    }
+    {}
+    ({
+        let _expected: () = unimplemented!();
+        let _f: () = unimplemented!();
+        test_termination_condition_26(_expected, _f, 255_())
+    });
+}
+pub fn test_unsigned_integral_type_39() {
+    ({
+        let _expected: () = unimplemented!();
+        let _f: () = unimplemented!();
+        test_termination_condition_27(_expected, _f, 0_())
+    });
+    ({
+        let _expected: () = unimplemented!();
+        let _f: () = unimplemented!();
+        test_termination_condition_27(_expected, _f, 255_())
+    });
+    {
+        ({
+            let _expected: () = unimplemented!();
+            let _f: () = unimplemented!();
+            test_termination_condition_27(_expected, _f, 65535_())
         });
     }
     {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(_expected, _f, unimplemented!())
+            test_termination_condition_27(_expected, _f, 4294967295_())
+        });
+    }
+    {
+        ({
+            let _expected: () = unimplemented!();
+            let _f: () = unimplemented!();
+            test_termination_condition_27(_expected, _f, 8446744073709551615_())
+        });
+    }
+    {
+        ({
+            let _expected: () = unimplemented!();
+            let _f: () = unimplemented!();
+            test_termination_condition_27(_expected, _f, unimplemented!())
         });
     }
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_39(_expected, _f, 255_())
+        test_termination_condition_27(_expected, _f, 255_())
     });
 }
-pub fn test_all_unsigned_integral_types_52() {
-    ({ test_unsigned_integral_type_40() });
-    ({ test_unsigned_integral_type_41() });
-    ({ test_unsigned_integral_type_42() });
-    ({ test_unsigned_integral_type_43() });
-    ({ test_unsigned_integral_type_44() });
-    ({ test_unsigned_integral_type_45() });
+pub fn test_all_unsigned_integral_types_40() {
+    ({ test_unsigned_integral_type_28() });
+    ({ test_unsigned_integral_type_29() });
+    ({ test_unsigned_integral_type_30() });
+    ({ test_unsigned_integral_type_31() });
+    ({ test_unsigned_integral_type_32() });
+    ({ test_unsigned_integral_type_33() });
 }
-pub fn test_all_unsigned_integral_types_53() {
-    ({ test_unsigned_integral_type_46() });
-    ({ test_unsigned_integral_type_47() });
-    ({ test_unsigned_integral_type_48() });
-    ({ test_unsigned_integral_type_49() });
-    ({ test_unsigned_integral_type_50() });
-    ({ test_unsigned_integral_type_51() });
+pub fn test_all_unsigned_integral_types_41() {
+    ({ test_unsigned_integral_type_34() });
+    ({ test_unsigned_integral_type_35() });
+    ({ test_unsigned_integral_type_36() });
+    ({ test_unsigned_integral_type_37() });
+    ({ test_unsigned_integral_type_38() });
+    ({ test_unsigned_integral_type_39() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -876,8 +792,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_all_unsigned_integral_types_52() });
-    ({ test_all_unsigned_integral_types_53() });
+    ({ test_all_unsigned_integral_types_40() });
+    ({ test_all_unsigned_integral_types_41() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

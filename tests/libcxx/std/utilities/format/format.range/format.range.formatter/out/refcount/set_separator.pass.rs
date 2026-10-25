@@ -92,21 +92,16 @@ pub fn test_setter_4() {
         "noexcept(formatter.set_separator(std::basic_string_view<CharT>{{}}))"
     );;
     {
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut result: () = unimplemented!();
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let format_ctx: Value<()> = Rc::new(RefCell::new(
-            ({
-                test_format_context_create_0((*out.borrow()).clone(), {
-                    let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char__ > = Rc::new(RefCell::new(( { make_format_args_5 ( ) } )  ));
-                    std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { __tmp_0.as_pointer() } , )
-                })
-            }),
+            ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_setter_6() {
+pub fn test_setter_5() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(
@@ -114,23 +109,18 @@ pub fn test_setter_6() {
         "noexcept(formatter.set_separator(std::basic_string_view<CharT>{{}}))"
     );;
     {
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut result: () = unimplemented!();
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let format_ctx: Value<()> = Rc::new(RefCell::new(
-            ({
-                test_format_context_create_2((*out.borrow()).clone(), {
-                    let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ > = Rc::new(RefCell::new(( { make_format_args_7 ( ) } )  ));
-                    std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { __tmp_1.as_pointer() } , )
-                })
-            }),
+            ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_8() -> () {
+pub fn test_6() -> () {
     ({ test_setter_4() });
-    ({ test_setter_6() });
+    ({ test_setter_5() });
     return true;
 }
 pub fn main() {
@@ -153,7 +143,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_8() });
+    ({ test_6() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

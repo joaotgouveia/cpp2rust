@@ -178,7 +178,7 @@ pub unsafe fn test_sfinae_2() {
         }
     );
     &(unimplemented!());
-    &(unsafe { (*unimplemented!()).transform(&mut l) });
+    &(unsafe { opt.transform(&mut l) });
 }
 pub unsafe fn test_3() -> () {
     (unsafe { test_sfinae_2() });
@@ -192,29 +192,29 @@ pub unsafe fn test_3() -> () {
         }
     });
     &(unimplemented!());
-    &(unsafe { (*unimplemented!()).transform(&never_called) });
+    &(unsafe { opt.transform(&never_called) });
     &(unimplemented!());
     &(unsafe {
         let ___f: *const FnPtr<fn(()) -> ()> = &never_called;
-        (*unimplemented!()).transform(___f)
+        (*copt).transform(___f)
     });
     let mut nc: () = unimplemented!();
     let cnc: *const () = &nc;
     &(unsafe {
         let mut ___f: NoCopy = <NoCopy>::default();
-        (*unimplemented!()).transform(&mut ___f)
+        nc.transform(&mut ___f)
     });
     &(unsafe {
         let mut ___f: NoCopy = <NoCopy>::default();
-        (*unimplemented!()).transform(&mut ___f)
+        (*cnc).transform(&mut ___f)
     });
     &(unsafe {
         let mut ___f: NoMove = <NoMove>::default();
-        (*unimplemented!()).transform(&mut ___f)
+        nc.transform(&mut ___f)
     });
     &(unsafe {
         let mut ___f: NoMove = <NoMove>::default();
-        (*unimplemented!()).transform(&mut ___f)
+        (*cnc).transform(&mut ___f)
     });
     return true;
 }

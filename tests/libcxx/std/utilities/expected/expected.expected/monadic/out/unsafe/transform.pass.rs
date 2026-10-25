@@ -354,7 +354,7 @@ pub unsafe fn test_val_types_3() {
             let mut e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: RVal = <RVal>::default();
-                (*unimplemented!()).transform(&mut ___f)
+                e.transform(&mut ___f)
             });
             unimplemented!();
         }
@@ -362,7 +362,7 @@ pub unsafe fn test_val_types_3() {
             let mut e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: RVRefQual = <RVRefQual>::default();
-                (*unimplemented!()).transform(&mut ___f)
+                e.transform(&mut ___f)
             });
             unimplemented!();
         }
@@ -372,7 +372,7 @@ pub unsafe fn test_val_types_3() {
             let e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: CRVal = <CRVal>::default();
-                (*unimplemented!()).transform(&mut ___f)
+                e.transform(&mut ___f)
             });
             unimplemented!();
         }
@@ -411,7 +411,7 @@ pub unsafe fn test_take_val_return_void_4() {
                 (*val) = 2_();
             }
         );
-        (*unimplemented!()).transform(&mut ___f)
+        e.transform(&mut ___f)
     });
     let ce: *const () = &e;
     unimplemented!();
@@ -434,7 +434,7 @@ pub unsafe fn test_take_val_return_void_4() {
                 (*val) = 4_();
             }
         );
-        (*unimplemented!()).transform(&mut ___f)
+        (*ce).transform(&mut ___f)
     });
     unimplemented!();
 }
@@ -462,7 +462,7 @@ pub unsafe fn test_sfinae_6() {
         }
     );
     &(unimplemented!());
-    &(unsafe { (*unimplemented!()).transform(&mut l) });
+    &(unsafe { e.transform(&mut l) });
     let mut e1: () = unimplemented!();
     let ce1: *const () = &e1;
     let never_called: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut _a0: ()| -> () {
@@ -472,11 +472,11 @@ pub unsafe fn test_sfinae_6() {
         }
     });
     &(unimplemented!());
-    &(unsafe { (*unimplemented!()).transform(&never_called) });
+    &(unsafe { e1.transform(&never_called) });
     &(unimplemented!());
     &(unsafe {
         let ___f: *const FnPtr<fn(()) -> ()> = &never_called;
-        (*unimplemented!()).transform(___f)
+        (*ce1).transform(___f)
     });
 }
 pub unsafe fn test_move_only_error_type_7() {
@@ -487,7 +487,7 @@ pub unsafe fn test_move_only_error_type_7() {
                 return 0_();
             }
         });
-        &(unsafe { (*unimplemented!()).transform(&mut l) });
+        &(unsafe { e.transform(&mut l) });
     }
     {
         let e: () = unimplemented!();
@@ -496,7 +496,7 @@ pub unsafe fn test_move_only_error_type_7() {
                 return 0_();
             }
         });
-        &(unsafe { (*unimplemented!()).transform(&mut l) });
+        &(unsafe { e.transform(&mut l) });
     }
 }
 pub unsafe fn test_8() -> () {

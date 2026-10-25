@@ -17,7 +17,7 @@ fn main_0() -> () {
     let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
     let i2: Ptr<()> = __tmp_0.as_pointer();
     unimplemented!();
-    let mut i3: () = ({ foo_0(unimplemented!()) });
+    let mut i3: () = ({ foo_0((i2).clone()) });
     unimplemented!();
     unimplemented!();
     return 0_();

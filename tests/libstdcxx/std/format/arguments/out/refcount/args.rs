@@ -494,20 +494,11 @@ pub fn test_empty_25() {
 pub type E = ();
 pub const E_ByGum: E = 0;
 pub fn test_args_27() {
-    let b: Value<()> = Rc::new(RefCell::new(false));
+    let mut b: () = false;
     let i: Value<()> = Rc::new(RefCell::new(1_()));
     let c: Value<()> = Rc::new(RefCell::new(('2' as ())));
     let d: Value<()> = Rc::new(RefCell::new(3.4_f64));
-    let store: Value<()> = Rc::new(RefCell::new(
-        ({
-            make_format_args_28(
-                b.as_pointer(),
-                i.as_pointer(),
-                c.as_pointer(),
-                d.as_pointer(),
-            )
-        }),
-    ));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -604,12 +595,10 @@ pub fn test_args_27() {
             unimplemented!();
         }
     }
-    let l: Value<()> = Rc::new(RefCell::new(5_()));
+    let mut l: () = 5_();
     let ull: Value<()> = Rc::new(RefCell::new(6_()));
     let f: Value<()> = Rc::new(RefCell::new(7.8_f32));
-    let cstore: Value<()> = Rc::new(RefCell::new(
-        ({ make_format_args_29(l.as_pointer(), ull.as_pointer(), f.as_pointer()) }),
-    ));
+    let cstore: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cargs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let mut __do_while = true;
@@ -689,7 +678,7 @@ pub fn test_args_27() {
             unimplemented!();
         }
     }
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -837,11 +826,9 @@ pub fn test_args_27() {
             unimplemented!();
         }
     }
-    let null: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut null: () = unimplemented!();
     let eebygum: Value<E> = Rc::new(RefCell::new(E_ByGum));
-    let another_store: Value<()> = Rc::new(RefCell::new(
-        ({ make_format_args_30(null.as_pointer(), eebygum.as_pointer()) }),
-    ));
+    let another_store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*args.borrow_mut()) = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -870,10 +857,19 @@ pub fn test_args_27() {
         {},
         |_a0: ()| -> () {
             let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-            return is_same_v_31.with(|rc| *rc.borrow());
+            return is_same_v_28.with(|rc| *rc.borrow());
         },
         |_a0: ()| -> () {
             let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+            return is_same_v_29.with(|rc| *rc.borrow());
+        },
+        |mut _a0: ()| -> () {
+            return is_same_v_30.with(|rc| *rc.borrow());
+        },
+        |mut _a0: ()| -> () {
+            return is_same_v_31.with(|rc| *rc.borrow());
+        },
+        |mut _a0: ()| -> () {
             return is_same_v_32.with(|rc| *rc.borrow());
         },
         |mut _a0: ()| -> () {
@@ -894,24 +890,15 @@ pub fn test_args_27() {
         |mut _a0: ()| -> () {
             return is_same_v_38.with(|rc| *rc.borrow());
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: Ptr<()>| -> () {
             return is_same_v_39.with(|rc| *rc.borrow());
         },
-        |mut _a0: ()| -> () {
+        |_a0: ()| -> () {
+            let _a0: Value<()> = Rc::new(RefCell::new(_a0));
             return is_same_v_40.with(|rc| *rc.borrow());
         },
         |mut _a0: ()| -> () {
             return is_same_v_41.with(|rc| *rc.borrow());
-        },
-        |mut _a0: Ptr<()>| -> () {
-            return is_same_v_42.with(|rc| *rc.borrow());
-        },
-        |_a0: ()| -> () {
-            let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-            return is_same_v_43.with(|rc| *rc.borrow());
-        },
-        |mut _a0: ()| -> () {
-            return is_same_v_44.with(|rc| *rc.borrow());
         }
     )));
     let mut __do_while = true;
@@ -937,20 +924,29 @@ pub fn test_args_27() {
         }
     }
 }
-pub fn test_member_visit_45() {}
-pub fn test_visited_as_handle_46() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_47(v.as_pointer()) })));
+pub fn test_member_visit_42() {}
+pub fn test_visited_as_handle_43() {
+    let mut v: () = unimplemented!();
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_handle: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_31.with(|rc| *rc.borrow());
+            return is_same_v_28.with(|rc| *rc.borrow());
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
+            return is_same_v_29.with(|rc| *rc.borrow());
+        },
+        |mut arg: ()| -> () {
+            return is_same_v_30.with(|rc| *rc.borrow());
+        },
+        |mut arg: ()| -> () {
+            return is_same_v_31.with(|rc| *rc.borrow());
+        },
+        |mut arg: ()| -> () {
             return is_same_v_32.with(|rc| *rc.borrow());
         },
         |mut arg: ()| -> () {
@@ -971,24 +967,15 @@ pub fn test_visited_as_handle_46() {
         |mut arg: ()| -> () {
             return is_same_v_38.with(|rc| *rc.borrow());
         },
-        |mut arg: ()| -> () {
+        |mut arg: Ptr<()>| -> () {
             return is_same_v_39.with(|rc| *rc.borrow());
         },
-        |mut arg: ()| -> () {
+        |arg: ()| -> () {
+            let arg: Value<()> = Rc::new(RefCell::new(arg));
             return is_same_v_40.with(|rc| *rc.borrow());
         },
         |mut arg: ()| -> () {
             return is_same_v_41.with(|rc| *rc.borrow());
-        },
-        |mut arg: Ptr<()>| -> () {
-            return is_same_v_42.with(|rc| *rc.borrow());
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_43.with(|rc| *rc.borrow());
-        },
-        |mut arg: ()| -> () {
-            return is_same_v_44.with(|rc| *rc.borrow());
         }
     )));
     let mut __do_while = true;
@@ -1017,19 +1004,28 @@ pub fn test_visited_as_handle_46() {
         }
     }
 }
-pub fn test_visited_as_handle_48() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_49(v.as_pointer()) })));
+pub fn test_visited_as_handle_44() {
+    let mut v: () = unimplemented!();
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_handle: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_31.with(|rc| *rc.borrow());
+            return is_same_v_28.with(|rc| *rc.borrow());
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
+            return is_same_v_29.with(|rc| *rc.borrow());
+        },
+        |mut arg: ()| -> () {
+            return is_same_v_30.with(|rc| *rc.borrow());
+        },
+        |mut arg: ()| -> () {
+            return is_same_v_31.with(|rc| *rc.borrow());
+        },
+        |mut arg: ()| -> () {
             return is_same_v_32.with(|rc| *rc.borrow());
         },
         |mut arg: ()| -> () {
@@ -1050,24 +1046,15 @@ pub fn test_visited_as_handle_48() {
         |mut arg: ()| -> () {
             return is_same_v_38.with(|rc| *rc.borrow());
         },
-        |mut arg: ()| -> () {
+        |mut arg: Ptr<()>| -> () {
             return is_same_v_39.with(|rc| *rc.borrow());
         },
-        |mut arg: ()| -> () {
+        |arg: ()| -> () {
+            let arg: Value<()> = Rc::new(RefCell::new(arg));
             return is_same_v_40.with(|rc| *rc.borrow());
         },
         |mut arg: ()| -> () {
             return is_same_v_41.with(|rc| *rc.borrow());
-        },
-        |mut arg: Ptr<()>| -> () {
-            return is_same_v_42.with(|rc| *rc.borrow());
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_43.with(|rc| *rc.borrow());
-        },
-        |mut arg: ()| -> () {
-            return is_same_v_44.with(|rc| *rc.borrow());
         }
     )));
     let mut __do_while = true;
@@ -1103,9 +1090,9 @@ pub fn main() {
 fn main_0() -> () {
     ({ test_empty_25() });
     ({ test_args_27() });
-    ({ test_member_visit_45() });
-    ({ test_visited_as_handle_46() });
-    ({ test_visited_as_handle_48() });
+    ({ test_member_visit_42() });
+    ({ test_visited_as_handle_43() });
+    ({ test_visited_as_handle_44() });
     0
 }
 impl __gnu_test_semaphore {
@@ -1115,9 +1102,9 @@ impl __gnu_test_semaphore {
             pid_: 0 as ::libc::pid_t,
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_50() }) as ::libc::pid_t));
+        field!(this, pid_).write((({ getpid_45() }) as ::libc::pid_t));
         field!(this, sem_set_)
-            .write(({ semget_51(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+            .write(({ semget_46(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
         if (this.with(|__s| __s.sem_set_) == -1_()) {
             ({
                 __throw_runtime_error_3(Ptr::<()>::from_string_literal(
@@ -1128,7 +1115,7 @@ impl __gnu_test_semaphore {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
         if (({
-            semctl_52(
+            semctl_47(
                 this.with(|__s| __s.sem_set_),
                 0_(),
                 16_(),
@@ -1145,35 +1132,35 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_53(size: Option<()>) {
+pub fn set_memory_limits_48(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_54((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    ({ getrlimit_49((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_55((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_54((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    ({ setrlimit_50((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    ({ getrlimit_49((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_55((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    ({ setrlimit_50((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_54((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    ({ getrlimit_49((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_55((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    ({ setrlimit_50((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
 }
-pub fn set_file_limit_56(mut size: ()) {
+pub fn set_file_limit_51(mut size: ()) {
     let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_54((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    ({ getrlimit_49((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_55((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    ({ setrlimit_50((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
 }
-pub fn verify_demangle_57(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_52(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = ({
-        __cxa_demangle_58(
+        __cxa_demangle_53(
             (mangled).clone(),
             Ptr::<()>::null(),
             Ptr::<()>::null(),
@@ -1211,7 +1198,7 @@ pub fn verify_demangle_57(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_59(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_54(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -1240,7 +1227,7 @@ pub fn run_tests_wrapped_locale_59(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
 }
-pub fn run_tests_wrapped_env_60(
+pub fn run_tests_wrapped_env_55(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -1310,7 +1297,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_62(
+pub fn test_tm_57(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1321,19 +1308,19 @@ pub fn test_tm_62(
     mut yday: (),
     mut isdst: (),
 ) -> ::libc::tm {
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_63.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_63.with(|rc| *rc.borrow());
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_58.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return tmp_58.with(|rc| *rc.borrow());
 }
 thread_local!(
-    static tmp_63: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_58: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -1407,9 +1394,9 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_50() })) {
+        if ((*self).with(|__s| __s.pid_) == ({ getpid_45() })) {
             ({
-                semctl_52(
+                semctl_47(
                     (*self).with(|__s| __s.sem_set_),
                     0_(),
                     0_(),
@@ -1421,7 +1408,7 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn signal(&self) {
         let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         if (({
-            semop_61(
+            semop_56(
                 (*self).with(|__s| __s.sem_set_),
                 (op.as_pointer() as Ptr<sembuf>),
                 1_(),
@@ -1438,7 +1425,7 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn wait(&self) {
         let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         if (({
-            semop_61(
+            semop_56(
                 (*self).with(|__s| __s.sem_set_),
                 (op.as_pointer() as Ptr<sembuf>),
                 1_(),

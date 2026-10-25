@@ -19,41 +19,30 @@ pub unsafe fn test_nodiscard_0() -> () {
 }
 pub unsafe fn test_1() -> () {
     {
-        let ignore_v: *const std___ignore_type =
-            &(*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
+        let ignore_v: *const () = &(*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
     }
     {
-        let res: *const std___ignore_type = &({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2)) = 42_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2))
-        });
+        let res: *const () = &(*unimplemented!());
         const _: () = assert!(true, "noexcept(res = (std::ignore = 42))");;
         unimplemented!();
     }
     {
         let mut s: S_3 = S_3 { bf: 2_() };
-        let res: *const std___ignore_type = &({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2)) = s.bf;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2))
-        });
+        let res: *const () = &(*unimplemented!());
         unimplemented!();
     }
     {
-        let mut copy: std___ignore_type =
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
-        let mut moved: std___ignore_type = (*unimplemented!());
+        let mut copy: () = unimplemented!();
+        let mut moved: () = unimplemented!();
     }
     {
-        let mut copy: std___ignore_type =
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
-        copy = (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
-        let mut moved: std___ignore_type =
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
-        moved = (*unimplemented!());
+        let mut copy: () = unimplemented!();
+        unimplemented!();
+        let mut moved: () = unimplemented!();
+        unimplemented!();
     }
     {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2)) =
-            (unsafe { test_nodiscard_0() });
+        unimplemented!();
     }
     return true;
 }

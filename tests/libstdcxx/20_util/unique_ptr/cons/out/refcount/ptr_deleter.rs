@@ -268,13 +268,7 @@ pub fn vdel_12(mut p: Ptr<()>) {
 pub fn test01_13() {
     count_10.with(|rc| *rc.borrow_mut() = 0_());
     {
-        let mut p: () = {
-            let __tmp_0: Value<FnPtr<fn(Ptr<()>)>> =
-                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>)>::new(del_11)));
-            std_unique_ptr_int__void__ptr__int_ptr__::new({ unimplemented!() }, {
-                __tmp_0.as_pointer()
-            })
-        };
+        let mut p: () = unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -296,13 +290,7 @@ pub fn test01_13() {
         }
     }
     {
-        let mut p: () = {
-            let __tmp_1: Value<FnPtr<fn(Ptr<()>)>> =
-                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>)>::new(del_11)));
-            std_unique_ptr_int__void__ptr__int_ptr__::new({ Ptr::alloc(Default::default()) }, {
-                __tmp_1.as_pointer()
-            })
-        };
+        let mut p: () = unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -327,13 +315,7 @@ pub fn test01_13() {
 pub fn test02_15() {
     count_10.with(|rc| *rc.borrow_mut() = 0_());
     {
-        let mut p: () = {
-            let __tmp_2: Value<FnPtr<fn(Ptr<()>)>> =
-                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>)>::new(vdel_12)));
-            std_unique_ptr_intarrarr__void__ptr__int_ptr__::new_1({ Default::default() }, {
-                __tmp_2.as_pointer()
-            })
-        };
+        let mut p: () = unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -355,14 +337,7 @@ pub fn test02_15() {
         }
     }
     {
-        let mut p: () = {
-            let __tmp_3: Value<FnPtr<fn(Ptr<()>)>> =
-                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>)>::new(vdel_12)));
-            std_unique_ptr_intarrarr__void__ptr__int_ptr__::new_2(
-                { Ptr::alloc_array((0..1_()).map(|_| unimplemented!()).collect::<Box<[()]>>()) },
-                { __tmp_3.as_pointer() },
-            )
-        };
+        let mut p: () = unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

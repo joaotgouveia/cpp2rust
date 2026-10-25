@@ -285,18 +285,8 @@ impl A_Deleter {
 const _: () = assert!(true, "!std::is_move_assignable<Deleter>::value");
 const _: () = assert!(true, "std::is_swappable_v<Deleter>");
 pub unsafe fn test03_13() {
-    let mut p1: () = {
-        let mut __tmp_0: A_Deleter = A_Deleter { id: -1_() };
-        std_unique_ptr_int__A_Deleter_::new({ (Box::leak(Box::new(1_())) as *mut ()) }, {
-            &mut __tmp_0
-        })
-    };
-    let mut p2: () = {
-        let mut __tmp_1: A_Deleter = A_Deleter { id: -2_() };
-        std_unique_ptr_int__A_Deleter_::new({ (Box::leak(Box::new(2_())) as *mut ()) }, {
-            &mut __tmp_1
-        })
-    };
+    let mut p1: () = unimplemented!();
+    let mut p2: () = unimplemented!();
     let pi1: *mut () = unimplemented!();
     let pi2: *mut () = unimplemented!();
     unimplemented!();
@@ -378,19 +368,8 @@ pub unsafe fn test03_13() {
     }
 }
 pub unsafe fn test04_15() {
-    let mut p1: () = {
-        let mut __tmp_2: A_Deleter = A_Deleter { id: -1_() };
-        std_unique_ptr_intarrarr__A_Deleter_::new({ Box::leak(Box::new([1_()])).as_mut_ptr() }, {
-            &mut __tmp_2
-        })
-    };
-    let mut p2: () = {
-        let mut __tmp_3: A_Deleter = A_Deleter { id: -2_() };
-        std_unique_ptr_intarrarr__A_Deleter_::new(
-            { Box::leak(Box::new([2_(), 2_()])).as_mut_ptr() },
-            { &mut __tmp_3 },
-        )
-    };
+    let mut p1: () = unimplemented!();
+    let mut p2: () = unimplemented!();
     let pi1: *mut () = unimplemented!();
     let pi2: *mut () = unimplemented!();
     unimplemented!();

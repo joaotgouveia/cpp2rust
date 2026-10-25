@@ -648,11 +648,11 @@ pub unsafe fn test_8() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys2: () = (unsafe { mo.extract() });
         unimplemented!();
     }
     {
@@ -663,11 +663,11 @@ pub unsafe fn test_8() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys2: () = (unsafe { mo.extract() });
         unimplemented!();
     }
     {
@@ -707,11 +707,11 @@ pub unsafe fn test_9() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys2: () = (unsafe { mo.extract() });
         unimplemented!();
     }
     {
@@ -722,11 +722,11 @@ pub unsafe fn test_9() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys2: () = (unsafe { mo.extract() });
         unimplemented!();
     }
     {

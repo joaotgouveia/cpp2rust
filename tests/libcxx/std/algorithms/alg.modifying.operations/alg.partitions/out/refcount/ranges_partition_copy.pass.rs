@@ -60,7 +60,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub fn new(mut it: Ptr<()>) -> Self {
         Self {
-            it_: (unimplemented!().read()),
+            it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -353,7 +353,7 @@ pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -964,7 +964,7 @@ impl counting_predicate__lambda_at_ranges_partition_copy_pass_cpp_273_26__ {
     pub fn new_1(pred: FnPtr<fn(()) -> ()>, count: Ptr<()>) -> Self {
         let pred: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(pred));
         Self {
-            pred_: (*unimplemented!().upgrade().deref()).move_from(),
+            pred_: (*pred.borrow()).move_from(),
             count_: (count).clone(),
         }
     }

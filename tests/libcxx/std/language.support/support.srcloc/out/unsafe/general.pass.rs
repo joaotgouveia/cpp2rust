@@ -36,7 +36,7 @@ pub static mut file_3: std::cell::LazyCell<*const ()> =
 pub static mut function_4: std::cell::LazyCell<*const ()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub static mut cur_5: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { (unsafe { std_source_location::current(None) }) });
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 const _: () = assert!(true, "cur.line() == 1000");
 const _: () = assert!(true, "cur.column() > 0");
 const _: () = assert!(
@@ -60,7 +60,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut local: () = (unsafe { std_source_location::current(None) });
+    let mut local: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

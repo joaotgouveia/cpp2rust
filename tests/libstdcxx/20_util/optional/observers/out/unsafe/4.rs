@@ -332,7 +332,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { (*unimplemented!()).value_or(&mut fallback) }).i) == (51_())) {
+        if !(((unsafe { o.value_or(&mut fallback) }).i) == (51_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -370,9 +370,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { (*unimplemented!()).value_or(&mut fallback) }).i)
-            == ((*unimplemented!()).i))
-        {
+        if !(((unsafe { o.value_or(&mut fallback) }).i) == ((*unimplemented!()).i)) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -395,7 +393,7 @@ pub unsafe fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { (*unimplemented!()).value_or(&mut fallback) }).i) == (3_())) {
+        if !(((unsafe { o.value_or(&mut fallback) }).i) == (3_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

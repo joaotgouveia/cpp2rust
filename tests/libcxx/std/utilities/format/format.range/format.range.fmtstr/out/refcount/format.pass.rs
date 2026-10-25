@@ -146,8 +146,7 @@ pub struct test_range_format_string_std_string_ {
     str_: (),
 }
 impl test_range_format_string_std_string_ {
-    pub fn new(str: ()) -> Self {
-        let str: Value<()> = Rc::new(RefCell::new(str));
+    pub fn new(mut str: ()) -> Self {
         Self {
             str_: unimplemented!(),
         }
@@ -170,8 +169,7 @@ pub struct test_range_format_string_std_wstring_ {
     str_: (),
 }
 impl test_range_format_string_std_wstring_ {
-    pub fn new(str: ()) -> Self {
-        let str: Value<()> = Rc::new(RefCell::new(str));
+    pub fn new(mut str: ()) -> Self {
         Self {
             str_: unimplemented!(),
         }
@@ -194,8 +192,7 @@ pub struct test_range_format_debug_string_std_string_ {
     str_: (),
 }
 impl test_range_format_debug_string_std_string_ {
-    pub fn new(str: ()) -> Self {
-        let str: Value<()> = Rc::new(RefCell::new(str));
+    pub fn new(mut str: ()) -> Self {
         Self {
             str_: unimplemented!(),
         }
@@ -218,8 +215,7 @@ pub struct test_range_format_debug_string_std_wstring_ {
     str_: (),
 }
 impl test_range_format_debug_string_std_wstring_ {
-    pub fn new(str: ()) -> Self {
-        let str: Value<()> = Rc::new(RefCell::new(str));
+    pub fn new(mut str: ()) -> Self {
         Self {
             str_: unimplemented!(),
         }
@@ -260,79 +256,59 @@ pub fn test_format_13(expected: (), arg: test_range_format_string_std_string_) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let arg: Value<test_range_format_string_std_string_> = Rc::new(RefCell::new(arg));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_9((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___test_range_format_string_std_string__ > = Rc::new(RefCell::new(( { make_format_args_14 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_9((*out.borrow()).clone(), unimplemented!()) }),
     ));
     ({
         ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_string__test_range_format_string_std_string___char_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
     });
     unimplemented!();
 }
-pub fn test_format_15(expected: (), arg: test_range_format_debug_string_std_string_) {
+pub fn test_format_14(expected: (), arg: test_range_format_debug_string_std_string_) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let arg: Value<test_range_format_debug_string_std_string_> = Rc::new(RefCell::new(arg));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_9((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___test_range_format_debug_string_std_string__ > = Rc::new(RefCell::new(( { make_format_args_16 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_9((*out.borrow()).clone(), unimplemented!()) }),
     ));
     ({
         ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_string___char_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
     });
     unimplemented!();
 }
-pub fn test_format_17(expected: (), arg: test_range_format_string_std_wstring_) {
+pub fn test_format_15(expected: (), arg: test_range_format_string_std_wstring_) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let arg: Value<test_range_format_string_std_wstring_> = Rc::new(RefCell::new(arg));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_11((*out.borrow()).clone(), {
-                let __tmp_2 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___test_range_format_string_std_wstring__ > = Rc::new(RefCell::new(( { make_format_args_18 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { __tmp_2.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_11((*out.borrow()).clone(), unimplemented!()) }),
     ));
     ({
         ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_string__test_range_format_string_std_wstring___wchar_t_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
     });
     unimplemented!();
 }
-pub fn test_format_19(expected: (), arg: test_range_format_debug_string_std_wstring_) {
+pub fn test_format_16(expected: (), arg: test_range_format_debug_string_std_wstring_) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let arg: Value<test_range_format_debug_string_std_wstring_> = Rc::new(RefCell::new(arg));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_11((*out.borrow()).clone(), {
-                let __tmp_3 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___test_range_format_debug_string_std_wstring__ > = Rc::new(RefCell::new(( { make_format_args_20 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { __tmp_3.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_11((*out.borrow()).clone(), unimplemented!()) }),
     ));
     ({
         ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_wstring___wchar_t_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
     });
     unimplemented!();
 }
-pub fn test_fmt_21() {
+pub fn test_fmt_17() {
     ({
         let _expected: () = unimplemented!();
         let _arg: test_range_format_string_std_string_ =
@@ -343,26 +319,26 @@ pub fn test_fmt_21() {
         let _expected: () = unimplemented!();
         let _arg: test_range_format_debug_string_std_string_ =
             test_range_format_debug_string_std_string_::new({ unimplemented!() });
-        test_format_15(_expected, _arg)
+        test_format_14(_expected, _arg)
     });
 }
-pub fn test_fmt_22() {
+pub fn test_fmt_18() {
     ({
         let _expected: () = unimplemented!();
         let _arg: test_range_format_string_std_wstring_ =
             test_range_format_string_std_wstring_::new({ unimplemented!() });
-        test_format_17(_expected, _arg)
+        test_format_15(_expected, _arg)
     });
     ({
         let _expected: () = unimplemented!();
         let _arg: test_range_format_debug_string_std_wstring_ =
             test_range_format_debug_string_std_wstring_::new({ unimplemented!() });
-        test_format_19(_expected, _arg)
+        test_format_16(_expected, _arg)
     });
 }
-pub fn test_23() {
-    ({ test_fmt_21() });
-    ({ test_fmt_22() });
+pub fn test_19() {
+    ({ test_fmt_17() });
+    ({ test_fmt_18() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -384,20 +360,20 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_23() });
+    ({ test_19() });
     return 0_();
 }
 thread_local!(
-    pub static format_kind_24: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static format_kind_20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static format_kind_25: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static format_kind_21: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static format_kind_26: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static format_kind_22: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static format_kind_27: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static format_kind_23: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait MultiStringTypeImpl {
     fn as_ptr_2(&self, _a0: Ptr<()>) -> Ptr<()>;
@@ -516,8 +492,8 @@ impl test_range_format_string_std_wstring_Impl for Ptr<test_range_format_string_
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = format_kind_24.with(|_| ());
-    let _ = format_kind_25.with(|_| ());
-    let _ = format_kind_26.with(|_| ());
-    let _ = format_kind_27.with(|_| ());
+    let _ = format_kind_20.with(|_| ());
+    let _ = format_kind_21.with(|_| ());
+    let _ = format_kind_22.with(|_| ());
+    let _ = format_kind_23.with(|_| ());
 }

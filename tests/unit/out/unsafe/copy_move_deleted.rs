@@ -119,17 +119,17 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut a: NoCopy = NoCopy::new({ 1_() });
-    let mut b: NoCopy = NoCopy::move_from({ &mut (*unimplemented!()) });
+    let mut b: NoCopy = NoCopy::move_from({ &mut a });
     unimplemented!();
-    (unsafe { NoCopy::move_assign(&mut a, &mut (*unimplemented!())) });
+    (unsafe { NoCopy::move_assign(&mut a, &mut b) });
     unimplemented!();
     (unsafe { bump_0((&mut a as *mut NoCopy)) });
     unimplemented!();
     let mut p: PrivateCopy = PrivateCopy::new();
     p.v = 3_();
-    let mut q: PrivateCopy = PrivateCopy::move_from({ &mut (*unimplemented!()) });
+    let mut q: PrivateCopy = PrivateCopy::move_from({ &mut p });
     unimplemented!();
-    (unsafe { PrivateCopy::move_assign(&mut p, &mut (*unimplemented!())) });
+    (unsafe { PrivateCopy::move_assign(&mut p, &mut q) });
     unimplemented!();
     let mut im: Immovable = Immovable::new();
     im.v = 4_();
@@ -140,10 +140,10 @@ unsafe fn main_0() -> () {
         inner: NoCopy::new({ 6_() }),
         tag: 7_(),
     };
-    let mut d: Container = Container::move_from({ &mut (*unimplemented!()) });
+    let mut d: Container = Container::move_from({ &mut c });
     unimplemented!();
     let mut h: VecHolder = <VecHolder>::default();
-    let mut h2: VecHolder = VecHolder::move_from({ &mut (*unimplemented!()) });
+    let mut h2: VecHolder = VecHolder::move_from({ &mut h });
     unimplemented!();
     return 0_();
 }

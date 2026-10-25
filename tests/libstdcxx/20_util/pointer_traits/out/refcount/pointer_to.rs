@@ -295,9 +295,7 @@ pub fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
-            let _l: Value<Ptr_> = Rc::new(RefCell::new(
-                ({ std___ptr_traits_ptr_to_Ptr__bool__false_::pointer_to(test.as_pointer()) }),
-            ));
+            let _l: Value<Ptr_> = Rc::new(RefCell::new(unimplemented!()));
             operator_eq_10(_l.as_pointer(), p.as_pointer())
         }) {
             ({
@@ -324,9 +322,7 @@ pub fn test02_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ std___ptr_traits_ptr_to_bool_ptr__bool__false_::pointer_to(test.as_pointer()) })
-            == (test.as_pointer()))
-        {
+        if !(unimplemented!() == (test.as_pointer())) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

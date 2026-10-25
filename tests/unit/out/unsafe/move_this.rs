@@ -35,16 +35,16 @@ impl Chain {
     }
     pub unsafe fn add_5(&mut self, mut n: ()) -> *mut Chain {
         self.v += n;
-        return &mut (*unimplemented!());
+        return &mut (*(self as *mut Chain));
     }
     pub unsafe fn take(&mut self) -> Chain {
-        return Chain::move_from({ &mut (*unimplemented!()) });
+        return Chain::move_from({ &mut (*(self as *mut Chain)) });
     }
     pub unsafe fn copy(&self) -> Chain {
         return Chain::copy_from({ &(*(self as *const Chain)) });
     }
     pub unsafe fn self_(&mut self) -> *mut Chain {
-        return &mut (*unimplemented!());
+        return &mut (*(self as *mut Chain));
     }
 }
 impl Clone for Chain {
@@ -67,12 +67,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     let mut b0: Chain = Chain::new({ 5_() });
     let mut b: Chain = Chain::move_from({
-        (unsafe {
-            Chain::add_5(
-                &mut (*(unsafe { Chain::add_5(&mut (*unimplemented!()), 1_()) })),
-                1_(),
-            )
-        })
+        (unsafe { Chain::add_5(&mut (*(unsafe { Chain::add_5(&mut b0, 1_()) })), 1_()) })
     });
     unimplemented!();
     let mut c: Chain = (unsafe { Chain::take(&mut Chain::new({ 10_() })) });
@@ -82,7 +77,7 @@ unsafe fn main_0() -> () {
     let mut g: Chain = Chain::new({ 20_() });
     unimplemented!();
     let mut e: Chain = Chain::new({ 30_() });
-    let mut f: Chain = (unsafe { Chain::take(&mut (*unimplemented!())) });
+    let mut f: Chain = (unsafe { Chain::take(&mut e) });
     unimplemented!();
     return 0_();
 }

@@ -90,21 +90,21 @@ impl NotMoveConstructible {
 pub struct NotMoveAssignable {}
 impl NotMoveAssignable {}
 pub unsafe fn can_swap_0() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
+}
+pub unsafe fn can_swap_1() -> () {
+    return unimplemented!();
 }
 pub unsafe fn can_swap_2() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_swap_3() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_swap_4() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_5));
+    return unimplemented!();
 }
-pub unsafe fn can_swap_6() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_5));
-}
-pub unsafe fn test_swap_constexpr_7() -> () {
+pub unsafe fn test_swap_constexpr_5() -> () {
     let mut i: () = 1_();
     let mut j: () = 2_();
     unimplemented!();

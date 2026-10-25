@@ -281,7 +281,7 @@ impl Default for f {
     }
 }
 pub unsafe fn test01_10() {
-    let mut b: std__Bind_f____ = (unsafe {
+    let mut b: () = (unsafe {
         let mut ___f: f = f::new();
         bind_11(&mut ___f)
     });
@@ -304,7 +304,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut bc: () = (*unimplemented!());
+    let mut bc: () = b;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -345,7 +345,7 @@ pub unsafe fn test01_10() {
     }
 }
 pub unsafe fn test02_13() {
-    let mut b: std__Bind_result_int__f____ = (unsafe {
+    let mut b: () = (unsafe {
         let mut ___f: f = f::new();
         bind_14(&mut ___f)
     });
@@ -368,7 +368,7 @@ pub unsafe fn test02_13() {
             unimplemented!();
         }
     }
-    let mut bc: () = (*unimplemented!());
+    let mut bc: () = b;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

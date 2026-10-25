@@ -372,12 +372,12 @@ pub unsafe fn test01_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut crbegin_15))(&mut (*unimplemented!()))
-        }) == (unsafe {
-            let ___t: *const R1 = c;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut rbegin_16))(___t)
-        })) {
+        if !((unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut crbegin_15))(&mut v) })
+            == (unsafe {
+                let ___t: *const R1 = c;
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut rbegin_16))(___t)
+            }))
+        {
             (unsafe {
                 __builtin_fprintf_17(
                     libcc2rs::stderr_unsafe(),
@@ -422,12 +422,12 @@ pub unsafe fn test01_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut crbegin_15))(&(*unimplemented!()))
-        }) == (unsafe {
-            let ___t: *const R1 = c;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut rbegin_16))(___t)
-        })) {
+        if !((unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut crbegin_15))(&cv) })
+            == (unsafe {
+                let ___t: *const R1 = c;
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut rbegin_16))(___t)
+            }))
+        {
             (unsafe {
                 __builtin_fprintf_17(
                     libcc2rs::stderr_unsafe(),

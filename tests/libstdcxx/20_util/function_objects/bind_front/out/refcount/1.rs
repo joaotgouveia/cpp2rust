@@ -304,7 +304,7 @@ pub fn test02_12() {
             unimplemented!();
         }
     }
-    q = ({ (*unimplemented!().upgrade().deref())() }).clone();
+    q = ({ (*g.borrow_mut())() }).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -344,7 +344,7 @@ pub fn test02_12() {
             unimplemented!();
         }
     }
-    q = ({ (*unimplemented!().upgrade().deref())() }).clone();
+    q = ({ (*cg.upgrade().deref())() }).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

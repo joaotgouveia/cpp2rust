@@ -92,8 +92,7 @@ unsafe fn main_0() -> () {
     let mut m: MoveOnly = (unsafe { (mk).unwrap()() });
     unimplemented!();
     let mut sc: Option<unsafe fn(MoveOnly) -> MoveOnly> = Some(scale_move_only_3);
-    let mut n: MoveOnly =
-        (unsafe { (sc).unwrap()(MoveOnly::move_from({ &mut (*unimplemented!()) })) });
+    let mut n: MoveOnly = (unsafe { (sc).unwrap()(MoveOnly::move_from({ &mut m })) });
     unimplemented!();
     unimplemented!();
     return 0_();

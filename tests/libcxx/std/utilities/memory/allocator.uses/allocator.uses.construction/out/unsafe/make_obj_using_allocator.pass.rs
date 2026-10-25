@@ -527,7 +527,7 @@ pub unsafe fn test_4() -> () {
     }
     {
         let mut p: () = unimplemented!();
-        let mut ret: () = (unsafe { make_obj_using_allocator_13(&a, &(*unimplemented!())) });
+        let mut ret: () = (unsafe { make_obj_using_allocator_13(&a, &p) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -539,7 +539,7 @@ pub unsafe fn test_4() -> () {
     }
     {
         let mut p: () = unimplemented!();
-        let mut ret: () = (unsafe { make_obj_using_allocator_14(&a, &mut (*unimplemented!())) });
+        let mut ret: () = (unsafe { make_obj_using_allocator_14(&a, &mut p) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -551,7 +551,7 @@ pub unsafe fn test_4() -> () {
     }
     {
         let mut p: () = unimplemented!();
-        let mut ret: () = (unsafe { make_obj_using_allocator_15(&a, unimplemented!()) });
+        let mut ret: () = (unsafe { make_obj_using_allocator_15(&a, &mut p) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -569,7 +569,7 @@ pub unsafe fn test_4() -> () {
     }
     {
         let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
-        let mut ret: () = (unsafe { make_obj_using_allocator_17(&a, &mut (*unimplemented!())) });
+        let mut ret: () = (unsafe { make_obj_using_allocator_17(&a, &mut ctp) });
         unimplemented!();
         unimplemented!();
     }

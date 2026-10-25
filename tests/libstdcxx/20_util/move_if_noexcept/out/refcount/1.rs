@@ -348,7 +348,7 @@ impl Default for except_move_no_copy {
 }
 pub fn test01_10() {
     let nemc1: Value<noexcept_move_copy> = Rc::new(RefCell::new(noexcept_move_copy::new()));
-    let mut nemc2: noexcept_move_copy = noexcept_move_copy::move_from({ unimplemented!() });
+    let mut nemc2: noexcept_move_copy = noexcept_move_copy::move_from({ nemc1.as_pointer() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -369,7 +369,8 @@ pub fn test01_10() {
         }
     }
     let nemnc1: Value<noexcept_move_no_copy> = Rc::new(RefCell::new(noexcept_move_no_copy::new()));
-    let mut nemnc2: noexcept_move_no_copy = noexcept_move_no_copy::move_from({ unimplemented!() });
+    let mut nemnc2: noexcept_move_no_copy =
+        noexcept_move_no_copy::move_from({ nemnc1.as_pointer() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -390,7 +391,7 @@ pub fn test01_10() {
         }
     }
     let emc1: Value<except_move_copy> = Rc::new(RefCell::new(except_move_copy::new()));
-    let mut emc2: except_move_copy = (*unimplemented!().upgrade().deref()).clone();
+    let mut emc2: except_move_copy = (*emc1.borrow()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -411,7 +412,7 @@ pub fn test01_10() {
         }
     }
     let emnc1: Value<except_move_no_copy> = Rc::new(RefCell::new(except_move_no_copy::new()));
-    let mut emnc2: except_move_no_copy = except_move_no_copy::move_from({ unimplemented!() });
+    let mut emnc2: except_move_no_copy = except_move_no_copy::move_from({ emnc1.as_pointer() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

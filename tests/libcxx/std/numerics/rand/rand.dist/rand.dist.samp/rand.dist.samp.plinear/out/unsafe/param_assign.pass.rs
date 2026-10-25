@@ -30,7 +30,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let mut p0: () = unimplemented!();
         let mut p1: () = unimplemented!();
-        p1 = (p0).clone();
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

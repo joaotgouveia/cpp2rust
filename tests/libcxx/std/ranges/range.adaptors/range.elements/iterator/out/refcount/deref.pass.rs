@@ -164,7 +164,7 @@ pub fn testValue_18(t: ()) {
     let t: Value<()> = Rc::new(RefCell::new(t));
     let ev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
@@ -172,7 +172,7 @@ pub fn testValue_19(t: ()) {
     let t: Value<()> = Rc::new(RefCell::new(t));
     let ev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }

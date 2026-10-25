@@ -232,20 +232,20 @@ pub fn test_16() -> () {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*t.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+        (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*t.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+        (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
         unimplemented!();
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*t.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+        (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -257,7 +257,7 @@ pub fn test_16() -> () {
         let mut y2: () = 500_();
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*t.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+        (*t.borrow_mut()) = (*t2.borrow()).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -302,7 +302,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::is_move_assignable<T>::value");;
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*t1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+        (*t1.borrow_mut()) = (*t2.borrow()).clone();
         unimplemented!();
         unimplemented!();
     }

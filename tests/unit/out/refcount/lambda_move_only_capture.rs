@@ -34,7 +34,7 @@ fn main_0() -> () {
     let _dtor_o = ScopedDestructor::new(&o, |__p| __p.destructor());
     let f: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new(lambda!(
         {
-            let h: Value<Owner> = Rc::new(RefCell::new(Owner::move_from({ unimplemented!() })));
+            let h: Value<Owner> = Rc::new(RefCell::new(Owner::move_from({ o.as_pointer() })));
         },
         || -> () {
             return ({ (*h.borrow()).p.clone() }.read());
@@ -43,9 +43,7 @@ fn main_0() -> () {
     let _dtor_f = ScopedDestructor::new(&f, |__p| __p.with(|__f| __f.destroy()));
     unimplemented!();
     unimplemented!();
-    let g: Value<()> = Rc::new(RefCell::new(
-        (*unimplemented!().upgrade().deref()).move_from(),
-    ));
+    let g: Value<()> = Rc::new(RefCell::new((*f.borrow()).move_from()));
     let _dtor_g = ScopedDestructor::new(&g, |__p| __p.with(|__f| __f.destroy()));
     unimplemented!();
     let total: Value<()> = Rc::new(RefCell::new(0_()));
@@ -87,7 +85,7 @@ impl OwnerImpl for Ptr<Owner> {
         return lambda!(
             {
                 let self_: Value<Owner> =
-                    Rc::new(RefCell::new(Owner::move_from({ unimplemented!() })));
+                    Rc::new(RefCell::new(Owner::move_from({ (*self).clone() })));
             },
             || -> () {
                 return ({ (*self_.borrow()).p.clone() }.read());

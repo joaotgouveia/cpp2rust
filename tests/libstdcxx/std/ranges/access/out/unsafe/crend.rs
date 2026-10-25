@@ -342,12 +342,12 @@ pub unsafe fn test01_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut crend_14))(&mut (*unimplemented!()))
-        }) == (unsafe {
-            let ___t: *const R1 = c;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut rend_15))(___t)
-        })) {
+        if !((unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut crend_14))(&mut r) })
+            == (unsafe {
+                let ___t: *const R1 = c;
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut rend_15))(___t)
+            }))
+        {
             (unsafe {
                 __builtin_fprintf_16(
                     libcc2rs::stderr_unsafe(),
@@ -368,7 +368,7 @@ pub unsafe fn test01_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unsafe {
-            let ___e: *const R1 = unimplemented!();
+            let ___e: *const R1 = c;
             (*std::cell::LazyCell::force_mut(&mut *&raw mut crend_14))(___e)
         }) == (unsafe {
             let ___t: *const R1 = c;

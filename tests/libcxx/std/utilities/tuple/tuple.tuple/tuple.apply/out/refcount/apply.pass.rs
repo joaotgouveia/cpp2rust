@@ -465,8 +465,8 @@ pub fn test_call_quals_and_arg_types_29() {
     let ct: Ptr<()> = t.as_pointer();
     ({ check_apply_quals_and_types_25(t.as_pointer()) });
     ({ check_apply_quals_and_types_26((ct).clone()) });
-    ({ check_apply_quals_and_types_27(unimplemented!()) });
-    ({ check_apply_quals_and_types_28(unimplemented!()) });
+    ({ check_apply_quals_and_types_27(t.as_pointer()) });
+    ({ check_apply_quals_and_types_28((ct).clone()) });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(1)]

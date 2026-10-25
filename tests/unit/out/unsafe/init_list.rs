@@ -52,7 +52,7 @@ unsafe fn main_0() -> () {
     (unsafe { f_0(unimplemented!()) });
     let mut p: Pair = Pair { a: 1_(), b: 2_() };
     let mut h: Holder = <Holder>::default();
-    (unsafe { Holder::operator_assign_1(&mut h, &mut (*unimplemented!())) });
+    (unsafe { Holder::operator_assign_1(&mut h, &mut p) });
     unimplemented!();
     unimplemented!();
     return 0_();

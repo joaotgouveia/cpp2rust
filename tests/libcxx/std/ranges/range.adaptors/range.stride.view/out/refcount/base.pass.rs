@@ -250,7 +250,7 @@ pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -574,7 +574,7 @@ pub fn test_12() -> () {
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
-        let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ > = Rc::new(RefCell::new(( { (*unimplemented!() .upgrade().deref()) . base_3 ( ) } )  )) ;
+        let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ > = Rc::new(RefCell::new(( { (*view.borrow()) . base_3 ( ) } )  )) ;
         unimplemented!();
     }
     {
@@ -586,7 +586,7 @@ pub fn test_12() -> () {
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!has_lvalue_qualified_base(view)");;
-        let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ > = Rc::new(RefCell::new(( { (*unimplemented!() .upgrade().deref()) . base_3 ( ) } )  )) ;
+        let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ > = Rc::new(RefCell::new(( { (*view.borrow()) . base_3 ( ) } )  )) ;
         unimplemented!();
     }
     return true;

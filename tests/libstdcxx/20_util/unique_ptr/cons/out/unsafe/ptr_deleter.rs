@@ -283,10 +283,7 @@ pub unsafe fn vdel_12(mut p: *mut ()) {
 pub unsafe fn test01_13() {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut count_10)) = 0_();
     {
-        let mut p: () = {
-            let mut __tmp_0: Option<unsafe fn(*mut ())> = Some(del_11);
-            std_unique_ptr_int__void__ptr__int_ptr__::new({ unimplemented!() }, { &mut __tmp_0 })
-        };
+        let mut p: () = unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -308,13 +305,7 @@ pub unsafe fn test01_13() {
         }
     }
     {
-        let mut p: () = {
-            let mut __tmp_1: Option<unsafe fn(*mut ())> = Some(del_11);
-            std_unique_ptr_int__void__ptr__int_ptr__::new(
-                { (Box::leak(Box::new(unimplemented!())) as *mut ()) },
-                { &mut __tmp_1 },
-            )
-        };
+        let mut p: () = unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -339,12 +330,7 @@ pub unsafe fn test01_13() {
 pub unsafe fn test02_15() {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut count_10)) = 0_();
     {
-        let mut p: () = {
-            let mut __tmp_2: Option<unsafe fn(*mut ())> = Some(vdel_12);
-            std_unique_ptr_intarrarr__void__ptr__int_ptr__::new_1({ Default::default() }, {
-                &mut __tmp_2
-            })
-        };
+        let mut p: () = unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -366,16 +352,7 @@ pub unsafe fn test02_15() {
         }
     }
     {
-        let mut p: () = {
-            let mut __tmp_3: Option<unsafe fn(*mut ())> = Some(vdel_12);
-            std_unique_ptr_intarrarr__void__ptr__int_ptr__::new_2(
-                {
-                    Box::leak((0..1_()).map(|_| unimplemented!()).collect::<Box<[()]>>())
-                        .as_mut_ptr()
-                },
-                { &mut __tmp_3 },
-            )
-        };
+        let mut p: () = unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

@@ -288,9 +288,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!()
-            == ({ (unimplemented!() as std___variant_hash_int_)(x2.as_pointer()) }))
-        {
+        if !(unimplemented!() == unimplemented!()) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),

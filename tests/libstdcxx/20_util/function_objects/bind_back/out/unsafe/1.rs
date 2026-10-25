@@ -314,8 +314,8 @@ pub unsafe fn test02_12() {
         }
     }
     q = (unsafe {
-        let ___self: *mut () = &mut (*unimplemented!());
-        (*unimplemented!())(___self)
+        let ___self: *mut () = &mut g;
+        g(___self)
     })
     .clone();
     let mut __do_while = true;
@@ -362,8 +362,8 @@ pub unsafe fn test02_12() {
         }
     }
     q = (unsafe {
-        let ___self: *const () = unimplemented!();
-        (*unimplemented!())(___self)
+        let ___self: *const () = cg;
+        (*cg)(___self)
     })
     .clone();
     let mut __do_while = true;

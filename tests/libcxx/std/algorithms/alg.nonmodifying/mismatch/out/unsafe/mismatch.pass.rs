@@ -542,7 +542,7 @@ pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1193,8 +1193,8 @@ pub unsafe fn test_55() -> () {
         let mut lhs: () = unimplemented!();
         let mut rhs: () = unimplemented!();
         (unsafe {
-            let _lhs: () = (*unimplemented!());
-            let _rhs: () = (*unimplemented!());
+            let _lhs: () = lhs;
+            let _rhs: () = rhs;
             check_43(_lhs, _rhs, 8_())
         });
     }
@@ -1202,8 +1202,8 @@ pub unsafe fn test_55() -> () {
         let mut lhs: () = unimplemented!();
         let mut rhs: () = unimplemented!();
         (unsafe {
-            let _lhs: () = (*unimplemented!());
-            let _rhs: () = (*unimplemented!());
+            let _lhs: () = lhs;
+            let _rhs: () = rhs;
             check_43(_lhs, _rhs, 4_())
         });
     }
@@ -1211,8 +1211,8 @@ pub unsafe fn test_55() -> () {
         let mut lhs: () = unimplemented!();
         let mut rhs: () = unimplemented!();
         (unsafe {
-            let _lhs: () = (*unimplemented!());
-            let _rhs: () = (*unimplemented!());
+            let _lhs: () = lhs;
+            let _rhs: () = rhs;
             check_44(_lhs, _rhs, 8_())
         });
     }
@@ -1220,8 +1220,8 @@ pub unsafe fn test_55() -> () {
         let mut lhs: () = unimplemented!();
         let mut rhs: () = unimplemented!();
         (unsafe {
-            let _lhs: () = (*unimplemented!());
-            let _rhs: () = (*unimplemented!());
+            let _lhs: () = lhs;
+            let _rhs: () = rhs;
             check_44(_lhs, _rhs, 4_())
         });
     }

@@ -72,28 +72,27 @@ impl Deleter_Aarrarr_ {
     }
 }
 pub fn swap_4(x: Ptr<Deleter_A_>, y: Ptr<Deleter_A_>) {
-    let t: Value<Deleter_A_> = Rc::new(RefCell::new(Deleter_A_::move_from({ unimplemented!() })));
+    let t: Value<Deleter_A_> = Rc::new(RefCell::new(Deleter_A_::move_from({ (x).clone() })));
     let _dtor_t = ScopedDestructor::new(&t, |__p| __p.destructor());
     ({
-        let _r: Ptr<Deleter_A_> = unimplemented!();
+        let _r: Ptr<Deleter_A_> = (y).clone();
         Deleter_A_Impl::move_assign(&x, _r)
     });
     ({
-        let _r: Ptr<Deleter_A_> = unimplemented!();
+        let _r: Ptr<Deleter_A_> = t.as_pointer();
         Deleter_A_Impl::move_assign(&y, _r)
     });
 }
 pub fn swap_5(x: Ptr<Deleter_Aarrarr_>, y: Ptr<Deleter_Aarrarr_>) {
-    let t: Value<Deleter_Aarrarr_> = Rc::new(RefCell::new(Deleter_Aarrarr_::move_from({
-        unimplemented!()
-    })));
+    let t: Value<Deleter_Aarrarr_> =
+        Rc::new(RefCell::new(Deleter_Aarrarr_::move_from({ (x).clone() })));
     let _dtor_t = ScopedDestructor::new(&t, |__p| __p.destructor());
     ({
-        let _r: Ptr<Deleter_Aarrarr_> = unimplemented!();
+        let _r: Ptr<Deleter_Aarrarr_> = (y).clone();
         Deleter_Aarrarr_Impl::move_assign(&x, _r)
     });
     ({
-        let _r: Ptr<Deleter_Aarrarr_> = unimplemented!();
+        let _r: Ptr<Deleter_Aarrarr_> = t.as_pointer();
         Deleter_Aarrarr_Impl::move_assign(&y, _r)
     });
 }

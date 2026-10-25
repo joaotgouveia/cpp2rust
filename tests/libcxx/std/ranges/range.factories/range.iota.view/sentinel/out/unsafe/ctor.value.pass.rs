@@ -266,12 +266,11 @@ pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
 pub unsafe fn test_20() -> () {
     {
-        let mut sent: std_ranges_iota_view_int__IntSentinelWith_int_____sentinel = unimplemented!();
+        let mut sent: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut sent: std_ranges_iota_view_SomeInt__IntSentinelWith_SomeInt_____sentinel =
-            unimplemented!();
+        let mut sent: () = unimplemented!();
         unimplemented!();
     }
     {

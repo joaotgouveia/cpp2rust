@@ -30,21 +30,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_()])));
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: () = ({ (*pa.borrow()).probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_()])));
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: () = ({ (*pa.borrow()).probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 30_()])));
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: () = ({ (*pa.borrow()).probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -52,7 +52,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([30_(), 10_()])));
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: () = ({ (*pa.borrow()).probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -60,7 +60,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([30_(), 0_(), 10_()])));
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: () = ({ (*pa.borrow()).probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -69,7 +69,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 30_(), 10_()])));
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: () = ({ (*pa.borrow()).probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -78,7 +78,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 10_()])));
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: () = ({ (*pa.borrow()).probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

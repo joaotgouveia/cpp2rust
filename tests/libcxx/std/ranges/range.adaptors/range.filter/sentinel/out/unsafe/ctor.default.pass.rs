@@ -608,7 +608,7 @@ pub unsafe fn iter_move_18(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -930,44 +930,44 @@ impl minimal_view_int_ptr__sentinel_wrapper_int_ptr__ {
     }
 }
 pub unsafe fn test_21() {
-    let mut sent1 : std_ranges_filter_view_minimal_view_cpp17_input_iterator_int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
-    let mut sent2 : std_ranges_filter_view_minimal_view_cpp17_input_iterator_int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
+    let mut sent1: () = unimplemented!();
+    let mut sent2: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub unsafe fn test_22() {
-    let mut sent1 : std_ranges_filter_view_minimal_view_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
-    let mut sent2 : std_ranges_filter_view_minimal_view_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
+    let mut sent1: () = unimplemented!();
+    let mut sent2: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub unsafe fn test_23() {
-    let mut sent1 : std_ranges_filter_view_minimal_view_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
-    let mut sent2 : std_ranges_filter_view_minimal_view_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
+    let mut sent1: () = unimplemented!();
+    let mut sent2: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub unsafe fn test_24() {
-    let mut sent1 : std_ranges_filter_view_minimal_view_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
-    let mut sent2 : std_ranges_filter_view_minimal_view_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
+    let mut sent1: () = unimplemented!();
+    let mut sent2: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub unsafe fn test_25() {
-    let mut sent1 : std_ranges_filter_view_minimal_view_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
-    let mut sent2 : std_ranges_filter_view_minimal_view_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
+    let mut sent1: () = unimplemented!();
+    let mut sent2: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub unsafe fn test_26() {
-    let mut sent1 : std_ranges_filter_view_minimal_view_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
-    let mut sent2 : std_ranges_filter_view_minimal_view_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____AlwaysTrue____sentinel = unimplemented!() ;
+    let mut sent1: () = unimplemented!();
+    let mut sent2: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub unsafe fn test_27() {
-    let mut sent1 : std_ranges_filter_view_minimal_view_int_ptr__sentinel_wrapper_int_ptr____AlwaysTrue____sentinel = unimplemented!() ;
-    let mut sent2 : std_ranges_filter_view_minimal_view_int_ptr__sentinel_wrapper_int_ptr____AlwaysTrue____sentinel = unimplemented!() ;
+    let mut sent1: () = unimplemented!();
+    let mut sent2: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }

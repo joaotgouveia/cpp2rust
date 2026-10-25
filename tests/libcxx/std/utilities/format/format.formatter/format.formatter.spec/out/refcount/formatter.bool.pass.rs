@@ -84,9 +84,8 @@ impl MultiStringType {
         }
     }
 }
-pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_4(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -95,19 +94,13 @@ pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___bool_ > = Rc::new(RefCell::new(( { make_format_args_5 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
+pub fn test_5(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(arg));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -116,54 +109,47 @@ pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___bool_ > = Rc::new(RefCell::new(( { make_format_args_7 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_termination_condition_8(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_6(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({ test_4(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     ({ test_4(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_termination_condition_9(mut expected: (), f: (), mut arg: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    let fmt: Value<()> = Rc::new(RefCell::new(({ (*f.borrow())() })));
+pub fn test_termination_condition_7(mut expected: (), mut f: (), mut arg: ()) {
+    let fmt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ test_6(unimplemented!(), unimplemented!(), arg, 1_()) });
+    ({ test_5(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
-    ({ test_6(unimplemented!(), unimplemented!(), arg, 0_()) });
+    ({ test_5(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub fn test_boolean_10() {
+pub fn test_boolean_8() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_8(_expected, _f, true)
+        test_termination_condition_6(_expected, _f, true)
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_8(_expected, _f, false)
+        test_termination_condition_6(_expected, _f, false)
     });
 }
-pub fn test_boolean_11() {
+pub fn test_boolean_9() {
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_9(_expected, _f, true)
+        test_termination_condition_7(_expected, _f, true)
     });
     ({
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_9(_expected, _f, false)
+        test_termination_condition_7(_expected, _f, false)
     });
 }
 pub fn main() {
@@ -186,8 +172,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_boolean_10() });
-    ({ test_boolean_11() });
+    ({ test_boolean_8() });
+    ({ test_boolean_9() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

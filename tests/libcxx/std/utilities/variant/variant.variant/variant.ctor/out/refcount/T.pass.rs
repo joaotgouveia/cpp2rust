@@ -252,7 +252,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_vector_bool_13() });
     {
         let mut vec_: Matcher_14 = Matcher_14::new_1();
-        let mut m: Matcher_14 = (*unimplemented!().upgrade().deref()).clone();
+        let mut m: Matcher_14 = (vec_).clone();
     }
     return 0_();
 }

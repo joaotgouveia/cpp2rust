@@ -84,7 +84,7 @@ impl NotTriviallyMovable {
     }
     pub fn move_from(other: Ptr<NotTriviallyMovable>) -> Self {
         Self {
-            inner_: Inner::move_from({ unimplemented!() }),
+            inner_: Inner::move_from({ field_ptr!(other, inner_) }),
         }
     }
 }

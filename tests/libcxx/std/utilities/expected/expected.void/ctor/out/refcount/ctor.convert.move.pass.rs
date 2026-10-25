@@ -534,7 +534,7 @@ pub struct Data {
 impl Data {
     pub fn new(m: Ptr<MoveOnly>) -> Self {
         Self {
-            data: MoveOnly::move_from({ unimplemented!() }),
+            data: MoveOnly::move_from({ (m).clone() }),
         }
     }
     pub fn move_from(_a0: Ptr<Data>) -> Self {

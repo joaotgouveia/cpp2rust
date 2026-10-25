@@ -1334,7 +1334,7 @@ pub unsafe fn test_alloc_21() -> () {
         {
             let mut str: () = unimplemented!();
             stats = <test_allocator_statistics>::default();
-            &(unsafe { (*unimplemented!()).substr_131(None, None) });
+            &(unsafe { str.substr_131(None, None) });
             unimplemented!();
             unimplemented!();
         }

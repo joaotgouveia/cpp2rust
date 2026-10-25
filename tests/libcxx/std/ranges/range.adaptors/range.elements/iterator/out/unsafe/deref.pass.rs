@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn testReference_0(ts: *mut [(); 2]) {
-    let mut ev : std_ranges_elements_view_std_ranges_ref_view_std_tuple_int__short__long_arr2arr___0_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let result: *mut () = &mut (*unimplemented!());
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -16,7 +16,7 @@ pub unsafe fn testReference_0(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_1(ts: *mut [(); 2]) {
-    let mut ev : std_ranges_elements_view_std_ranges_ref_view_std_tuple_int__short__long_arr2arr___1_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let result: *mut () = &mut (*unimplemented!());
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -25,7 +25,7 @@ pub unsafe fn testReference_1(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_2(ts: *mut [(); 2]) {
-    let mut ev : std_ranges_elements_view_std_ranges_ref_view_std_tuple_int__short__long_arr2arr___2_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let result: *mut () = &mut (*unimplemented!());
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -34,8 +34,7 @@ pub unsafe fn testReference_2(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_3(ts: *mut [(); 2]) {
-    let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_pair_int__short_arr2arr___0_ =
-        unimplemented!();
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let result: *mut () = &mut (*unimplemented!());
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -44,8 +43,7 @@ pub unsafe fn testReference_3(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_4(ts: *mut [(); 2]) {
-    let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_pair_int__short_arr2arr___1_ =
-        unimplemented!();
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let result: *mut () = &mut (*unimplemented!());
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -54,8 +52,7 @@ pub unsafe fn testReference_4(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_5(ts: *mut [(); 2]) {
-    let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_array_int__3_arr2arr___0_ =
-        unimplemented!();
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let result: *mut () = &mut (*unimplemented!());
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -64,8 +61,7 @@ pub unsafe fn testReference_5(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_6(ts: *mut [(); 2]) {
-    let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_array_int__3_arr2arr___1_ =
-        unimplemented!();
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let result: *mut () = &mut (*unimplemented!());
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -74,8 +70,7 @@ pub unsafe fn testReference_6(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_7(ts: *mut [(); 2]) {
-    let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_array_int__3_arr2arr___2_ =
-        unimplemented!();
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let result: *mut () = &mut (*unimplemented!());
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -84,7 +79,7 @@ pub unsafe fn testReference_7(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_8(ts: *mut [(); 2]) {
-    let mut ev : std_ranges_elements_view_std_ranges_ref_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_arr2arr___0_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: *mut () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -93,7 +88,7 @@ pub unsafe fn testReference_8(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testReference_9(ts: *mut [(); 2]) {
-    let mut ev : std_ranges_elements_view_std_ranges_ref_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_arr2arr___1_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: *mut () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
@@ -102,72 +97,72 @@ pub unsafe fn testReference_9(ts: *mut [(); 2]) {
     }
 }
 pub unsafe fn testValue_10(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____0_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_11(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____1_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_12(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____2_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_13(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____0_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_14(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____1_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_15(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____0_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_16(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____1_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_17(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____2_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_18(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____0_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
-    let mut result: *mut () = unimplemented!();
+    let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }
 pub unsafe fn testValue_19(mut t: ()) {
-    let mut ev : std_ranges_elements_view_std_ranges_transform_view_std_ranges_iota_view_int__int____lambda_at_deref_pass_cpp_40_60____1_ = unimplemented!()  ;
+    let mut ev: () = unimplemented!();
     let mut it: () = unimplemented!();
-    let mut result: *mut () = unimplemented!();
+    let mut result: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(result), ExpectedType>");;
     unimplemented!();
 }

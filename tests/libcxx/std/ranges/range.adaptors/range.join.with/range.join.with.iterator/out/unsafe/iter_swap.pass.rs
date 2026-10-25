@@ -83,7 +83,7 @@ impl IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
     pub unsafe fn new_1(mut iter: (), mut flag: Option<*mut SwapKind>) -> Self {
         let mut flag: *mut SwapKind = flag.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
         let mut this = Self {
-            iter_: (*unimplemented!()),
+            iter_: iter,
             flag_: flag,
         };
         this
@@ -184,7 +184,7 @@ impl IterSwapTrackingIterator_int_ptr__IterKind_pattern_ {
     pub unsafe fn new_1(mut iter: *mut (), mut flag: Option<*mut SwapKind>) -> Self {
         let mut flag: *mut SwapKind = flag.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
         let mut this = Self {
-            iter_: (*unimplemented!()),
+            iter_: iter,
             flag_: flag,
         };
         this
@@ -245,7 +245,7 @@ pub unsafe fn test_5() -> () {
         unimplemented!();
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it, 3_()) });
         (unsafe {
-            let ___x: *const () = &(*unimplemented!());
+            let ___x: *const () = &it;
             let mut ___y: () = (unsafe {
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut next_6))(it.clone(), 2_())
             });
@@ -254,10 +254,10 @@ pub unsafe fn test_5() -> () {
         unimplemented!();
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it, 3_()) });
         let it2: () = unimplemented!();
-        (unsafe { iter_swap_7(&(*unimplemented!()), &it2) });
+        (unsafe { iter_swap_7(&it, &it2) });
         unimplemented!();
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it, 6_()) });
-        (unsafe { iter_swap_7(&(*unimplemented!()), &it2) });
+        (unsafe { iter_swap_7(&it, &it2) });
         unimplemented!();
         const _: () = assert!(true, "std::is_void_v<decltype(iter_swap(it, it))>");;
         const _: () = assert!(true, "std::is_void_v<decltype(iter_swap(it2, it2))>");;

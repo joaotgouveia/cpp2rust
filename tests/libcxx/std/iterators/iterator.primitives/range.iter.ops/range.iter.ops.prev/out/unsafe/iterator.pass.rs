@@ -321,7 +321,7 @@ pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -492,7 +492,7 @@ pub unsafe fn check_11(mut first: *mut (), mut expected: *mut ()) {
     let mut it: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({ first });
     let mut result: bidirectional_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_12))(
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            bidirectional_iterator_int_ptr_::move_from({ &mut it }),
         )
     });
     unimplemented!();
@@ -501,7 +501,7 @@ pub unsafe fn check_13(mut first: *mut (), mut expected: *mut ()) {
     let mut it: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({ first });
     let mut result: random_access_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_12))(
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            random_access_iterator_int_ptr_::move_from({ &mut it }),
         )
     });
     unimplemented!();
@@ -510,7 +510,7 @@ pub unsafe fn check_14(mut first: *mut (), mut expected: *mut ()) {
     let mut it: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ first });
     let mut result: contiguous_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_12))(
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            contiguous_iterator_int_ptr_::move_from({ &mut it }),
         )
     });
     unimplemented!();
@@ -518,7 +518,7 @@ pub unsafe fn check_14(mut first: *mut (), mut expected: *mut ()) {
 pub unsafe fn check_15(mut first: *mut (), mut expected: *mut ()) {
     let mut it: *mut () = first;
     let mut result: *mut () =
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_12))((*unimplemented!())) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut prev_12))(it) });
     unimplemented!();
 }
 pub unsafe fn test_16() -> () {

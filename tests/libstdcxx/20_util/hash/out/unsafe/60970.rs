@@ -272,9 +272,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!())
-            == (unsafe { (unimplemented!() as std___hash_enum_E1__true_)(E1_FIRST) }))
-        {
+        if !((unimplemented!()) == (unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -293,9 +291,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!())
-            == (unsafe { (unimplemented!() as std___hash_enum_E1__true_)(E1_SECOND) }))
-        {
+        if !((unimplemented!()) == (unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -314,9 +310,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!())
-            == (unsafe { (unimplemented!() as std___hash_enum_E2__true_)(E2_THIRD) }))
-        {
+        if !((unimplemented!()) == (unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -335,9 +329,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!())
-            == (unsafe { (unimplemented!() as std___hash_enum_E2__true_)(E2_FOURTH) }))
-        {
+        if !((unimplemented!()) == (unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),

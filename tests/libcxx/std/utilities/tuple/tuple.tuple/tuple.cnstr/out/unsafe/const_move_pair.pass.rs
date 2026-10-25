@@ -351,7 +351,7 @@ impl Default for ConstMove {
 impl ConvertibleFrom_ConstMove_ {
     pub unsafe fn new_1(_v: *const ConstMove) -> Self {
         let mut this = Self {
-            v: ConstMove::move_from({ unimplemented!() }),
+            v: ConstMove::move_from({ _v }),
             alloc_constructed: false,
         };
         this
@@ -376,7 +376,7 @@ impl Default for ConvertibleFrom_ConstMove_ {
 impl ConvertibleFrom_int_ {
     pub unsafe fn new_1(_v: *const ()) -> Self {
         let mut this = Self {
-            v: (*unimplemented!()),
+            v: (*_v),
             alloc_constructed: false,
         };
         this
@@ -401,7 +401,7 @@ impl Default for ConvertibleFrom_int_ {
 impl ConvertibleFrom_TracedCopyMove_ {
     pub unsafe fn new_1(_v: *const TracedCopyMove) -> Self {
         let mut this = Self {
-            v: TracedCopyMove::new_1({ unimplemented!() }),
+            v: TracedCopyMove::new_1({ _v }),
             alloc_constructed: false,
         };
         this
@@ -426,7 +426,7 @@ impl Default for ConvertibleFrom_TracedCopyMove_ {
 impl ExplicitConstructibleFrom_ConstMove_ {
     pub unsafe fn new_1(_v: *const ConstMove) -> Self {
         let mut this = Self {
-            v: ConstMove::move_from({ unimplemented!() }),
+            v: ConstMove::move_from({ _v }),
             alloc_constructed: false,
         };
         this
@@ -451,7 +451,7 @@ impl Default for ExplicitConstructibleFrom_ConstMove_ {
 impl ExplicitConstructibleFrom_int_ {
     pub unsafe fn new_1(_v: *const ()) -> Self {
         let mut this = Self {
-            v: (*unimplemented!()),
+            v: (*_v),
             alloc_constructed: false,
         };
         this

@@ -278,7 +278,7 @@ pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -709,7 +709,7 @@ pub unsafe fn test_27() -> () {
             random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() });
         let mut io: () = unimplemented!();
         let mut iter: () = unimplemented!();
-        let mut sent : std_ranges_iota_view_random_access_iterator_int_ptr___IntSentinelWith_random_access_iterator_int_ptr______sentinel = unimplemented!()  ;
+        let mut sent: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -718,7 +718,7 @@ pub unsafe fn test_27() -> () {
             random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() });
         let io: () = unimplemented!();
         let iter: () = unimplemented!();
-        let sent : std_ranges_iota_view_random_access_iterator_int_ptr___IntSentinelWith_random_access_iterator_int_ptr______sentinel = unimplemented!()  ;
+        let sent: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

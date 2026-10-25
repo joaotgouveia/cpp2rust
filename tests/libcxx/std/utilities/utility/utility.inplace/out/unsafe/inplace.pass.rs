@@ -7,32 +7,25 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn check_tag_0(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1))
-        && (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return (unimplemented!()) && (unimplemented!());
+}
+pub unsafe fn check_tag_1(mut _a0: ()) -> () {
+    return (unimplemented!()) && (unimplemented!());
 }
 pub unsafe fn check_tag_2(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1))
-        && (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return (unimplemented!()) && (unimplemented!());
 }
 pub unsafe fn check_tag_3(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1))
-        && (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return (unimplemented!()) && (unimplemented!());
 }
 pub unsafe fn check_tag_4(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1))
-        && (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return (unimplemented!()) && (unimplemented!());
 }
 pub unsafe fn check_tag_5(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1))
-        && (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return (unimplemented!()) && (unimplemented!());
 }
 pub unsafe fn check_tag_6(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1))
-        && (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
-}
-pub unsafe fn check_tag_7(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1))
-        && (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return (unimplemented!()) && (unimplemented!());
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

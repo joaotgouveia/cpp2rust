@@ -381,9 +381,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
-            let keys: Value<()> = Rc::new(RefCell::new(
-                ({ (*unimplemented!().upgrade().deref()).extract() }),
-            ));
+            let keys: Value<()> = Rc::new(RefCell::new(({ (*s.borrow()).extract() })));
             unimplemented!();
         }
         {
@@ -393,9 +391,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
-            let keys: Value<()> = Rc::new(RefCell::new(
-                ({ (*unimplemented!().upgrade().deref()).extract() }),
-            ));
+            let keys: Value<()> = Rc::new(RefCell::new(({ (*s.borrow()).extract() })));
             unimplemented!();
         }
     }
@@ -416,9 +412,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
-            let keys: Value<()> = Rc::new(RefCell::new(
-                ({ (*unimplemented!().upgrade().deref()).extract() }),
-            ));
+            let keys: Value<()> = Rc::new(RefCell::new(({ (*s.borrow()).extract() })));
             unimplemented!();
         }
         {
@@ -428,9 +422,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
-            let keys: Value<()> = Rc::new(RefCell::new(
-                ({ (*unimplemented!().upgrade().deref()).extract() }),
-            ));
+            let keys: Value<()> = Rc::new(RefCell::new(({ (*s.borrow()).extract() })));
             unimplemented!();
         }
     }

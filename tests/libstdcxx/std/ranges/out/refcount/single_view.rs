@@ -436,7 +436,7 @@ pub fn test06_19() {
         ({ (*single_15.with(Value::clone).borrow_mut())(obj.as_pointer()) }),
     ));
     let y: Value<()> = Rc::new(RefCell::new(
-        ({ (*single_15.with(Value::clone).borrow_mut())(unimplemented!()) }),
+        ({ (*single_15.with(Value::clone).borrow_mut())(obj.as_pointer()) }),
     ));
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Default)]

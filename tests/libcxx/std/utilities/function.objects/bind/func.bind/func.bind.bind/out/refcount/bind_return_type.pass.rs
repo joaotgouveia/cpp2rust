@@ -19,10 +19,10 @@ pub fn return_const_lvalue_3(mut _a0: ()) -> Ptr<()> {
     return dummy_0.with(|v| v.as_pointer());
 }
 pub fn return_rvalue_4(mut _a0: ()) -> Ptr<()> {
-    return unimplemented!();
+    return dummy_0.with(|v| v.as_pointer());
 }
 pub fn return_const_rvalue_5(mut _a0: ()) -> Ptr<()> {
-    return unimplemented!();
+    return dummy_0.with(|v| v.as_pointer());
 }
 pub fn CheckCall_6() -> () {
     return unimplemented!();

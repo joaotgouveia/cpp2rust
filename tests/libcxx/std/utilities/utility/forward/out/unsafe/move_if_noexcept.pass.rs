@@ -80,7 +80,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "(std::is_same<decltype(std::move_if_noexcept(l)), const legacy&>::value)"
     );;
     let i1: () = 23_();
-    let i2: () = (*unimplemented!());
+    let i2: () = i1;
     const _: () = assert!(true, "i2 == 23");;
     return 0_();
 }

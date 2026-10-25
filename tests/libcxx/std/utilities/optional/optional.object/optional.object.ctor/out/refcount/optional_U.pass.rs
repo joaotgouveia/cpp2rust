@@ -82,22 +82,22 @@ impl Z {
 pub fn test_all_4() -> () {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_0(unimplemented!(), None) });
+        ({ test_0(rhs.as_pointer(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_0(unimplemented!(), None) });
+        ({ test_0(rhs.as_pointer(), None) });
     }
     return true;
 }
 pub fn test_all_5() -> () {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_1(unimplemented!(), None) });
+        ({ test_1(rhs.as_pointer(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_1(unimplemented!(), None) });
+        ({ test_1(rhs.as_pointer(), None) });
     }
     return true;
 }
@@ -127,11 +127,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test_all<int, X>()");;
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_2(unimplemented!(), None) });
+        ({ test_2(rhs.as_pointer(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_2(unimplemented!(), Some(true)) });
+        ({ test_2(rhs.as_pointer(), Some(true)) });
     }
     const _: () = assert!(
         true,

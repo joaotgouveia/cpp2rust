@@ -452,7 +452,7 @@ impl Default for ConvertibleFrom_TracedCopyMove_ {
 impl ConvertibleFrom_CvtFromTupleRef_ {
     pub unsafe fn new_1(_v: *mut CvtFromTupleRef) -> Self {
         let mut this = Self {
-            v: (*unimplemented!()),
+            v: (*_v),
             alloc_constructed: false,
         };
         this

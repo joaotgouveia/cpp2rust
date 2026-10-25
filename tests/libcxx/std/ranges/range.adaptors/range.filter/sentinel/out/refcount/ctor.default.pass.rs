@@ -486,7 +486,7 @@ pub fn iter_move_18(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -783,44 +783,44 @@ pub struct minimal_view_int_ptr__sentinel_wrapper_int_ptr__ {
 }
 impl minimal_view_int_ptr__sentinel_wrapper_int_ptr__ {}
 pub fn test_21() {
-    let sent1 : Value<std_ranges_filter_view_minimal_view_cpp17_input_iterator_int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
-    let sent2 : Value<std_ranges_filter_view_minimal_view_cpp17_input_iterator_int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
+    let sent1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sent2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub fn test_22() {
-    let sent1 : Value<std_ranges_filter_view_minimal_view_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
-    let sent2 : Value<std_ranges_filter_view_minimal_view_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
+    let sent1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sent2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub fn test_23() {
-    let sent1 : Value<std_ranges_filter_view_minimal_view_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
-    let sent2 : Value<std_ranges_filter_view_minimal_view_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
+    let sent1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sent2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub fn test_24() {
-    let sent1 : Value<std_ranges_filter_view_minimal_view_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
-    let sent2 : Value<std_ranges_filter_view_minimal_view_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
+    let sent1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sent2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub fn test_25() {
-    let sent1 : Value<std_ranges_filter_view_minimal_view_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
-    let sent2 : Value<std_ranges_filter_view_minimal_view_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
+    let sent1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sent2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub fn test_26() {
-    let sent1 : Value<std_ranges_filter_view_minimal_view_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
-    let sent2 : Value<std_ranges_filter_view_minimal_view_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
+    let sent1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sent2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
 pub fn test_27() {
-    let sent1 : Value<std_ranges_filter_view_minimal_view_int_ptr__sentinel_wrapper_int_ptr____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
-    let sent2 : Value<std_ranges_filter_view_minimal_view_int_ptr__sentinel_wrapper_int_ptr____AlwaysTrue____sentinel > = Rc::new(RefCell::new(unimplemented!() )) ;
+    let sent1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sent2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }

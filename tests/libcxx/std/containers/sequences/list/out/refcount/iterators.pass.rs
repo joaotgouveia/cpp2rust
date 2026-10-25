@@ -200,7 +200,7 @@ pub fn test_4() -> () {
         field!(
             ({
                 min_pointer_A__std_integral_constant_unsigned_long__0__Impl::operator_arrow(
-                    &Rc::new(RefCell::new((*(*i.borrow()).upgrade().deref()))).as_pointer(),
+                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
                 )
             }),
             first

@@ -177,133 +177,91 @@ pub fn test_format_8(expected: (), arg: ()) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_4((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_set_int__std_less_int___std_allocator_int___ > = Rc::new(RefCell::new(( { make_format_args_9 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_4((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_int__std_less_int___std_allocator_int____char_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
     unimplemented!();
 }
-pub fn test_format_10(expected: (), arg: ()) {
+pub fn test_format_9(expected: (), arg: ()) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_6((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_set_int__std_less_int___std_allocator_int___ > = Rc::new(RefCell::new(( { make_format_args_11 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_6((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_int__std_less_int___std_allocator_int____wchar_t_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
     unimplemented!();
 }
-pub fn test_assure_parse_is_called_12(fmt: ()) {
+pub fn test_assure_parse_is_called_10(fmt: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_4((*out.borrow()).clone(), {
-                let __tmp_2 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator___ > = Rc::new(RefCell::new(( { make_format_args_13 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { __tmp_2.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_4((*out.borrow()).clone(), unimplemented!()) }),
     ));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____char_ ) . parse ( ctx .as_pointer()  , )
-    });
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____char_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
+    unimplemented!();
 }
-pub fn test_assure_parse_is_called_14(fmt: ()) {
+pub fn test_assure_parse_is_called_11(fmt: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_6((*out.borrow()).clone(), {
-                let __tmp_3 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator___ > = Rc::new(RefCell::new(( { make_format_args_15 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { __tmp_3.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_6((*out.borrow()).clone(), unimplemented!()) }),
     ));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____wchar_t_ ) . parse ( ctx .as_pointer()  , )
-    });
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____wchar_t_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
+    unimplemented!();
 }
-pub fn test_assure_parse_is_called_16() {
+pub fn test_assure_parse_is_called_12() {
     let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_4((*out.borrow()).clone(), {
-                let __tmp_4 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator___ > = Rc::new(RefCell::new(( { make_format_args_13 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { __tmp_4.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_4((*out.borrow()).clone(), unimplemented!()) }),
     ));
     {
         let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
-    ({ test_assure_parse_is_called_12(unimplemented!()) });
-    ({ test_assure_parse_is_called_12(unimplemented!()) });
-    ({ test_assure_parse_is_called_12(unimplemented!()) });
+    ({ test_assure_parse_is_called_10(unimplemented!()) });
+    ({ test_assure_parse_is_called_10(unimplemented!()) });
+    ({ test_assure_parse_is_called_10(unimplemented!()) });
 }
-pub fn test_assure_parse_is_called_17() {
+pub fn test_assure_parse_is_called_13() {
     let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_6((*out.borrow()).clone(), {
-                let __tmp_5 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator___ > = Rc::new(RefCell::new(( { make_format_args_15 ( arg .as_pointer()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { __tmp_5.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_6((*out.borrow()).clone(), unimplemented!()) }),
     ));
     {
         let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
-    ({ test_assure_parse_is_called_14(unimplemented!()) });
-    ({ test_assure_parse_is_called_14(unimplemented!()) });
-    ({ test_assure_parse_is_called_14(unimplemented!()) });
+    ({ test_assure_parse_is_called_11(unimplemented!()) });
+    ({ test_assure_parse_is_called_11(unimplemented!()) });
+    ({ test_assure_parse_is_called_11(unimplemented!()) });
 }
-pub fn test_fmt_18() {
+pub fn test_fmt_14() {
     ({ test_format_8(unimplemented!(), unimplemented!()) });
-    ({ test_assure_parse_is_called_16() });
+    ({ test_assure_parse_is_called_12() });
 }
-pub fn test_fmt_19() {
-    ({ test_format_10(unimplemented!(), unimplemented!()) });
-    ({ test_assure_parse_is_called_17() });
+pub fn test_fmt_15() {
+    ({ test_format_9(unimplemented!(), unimplemented!()) });
+    ({ test_assure_parse_is_called_13() });
 }
-pub fn test_20() {
-    ({ test_fmt_18() });
-    ({ test_fmt_19() });
+pub fn test_16() {
+    ({ test_fmt_14() });
+    ({ test_fmt_15() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -325,7 +283,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_20() });
+    ({ test_16() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

@@ -34,7 +34,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "std::is_same<const int&&, decltype(std::get<0>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(t)))");;
-        let i: Ptr<()> = ({ get_0(unimplemented!()) });
+        let i: Ptr<()> = ({ get_0(t.as_pointer()) });
         unimplemented!();
     }
     {
@@ -49,8 +49,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "std::is_same<const int&&, decltype(std::get<1>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(t)))");;
-        let s: Ptr<()> = ({ get_1(unimplemented!()) });
-        let i: Ptr<()> = ({ get_2(unimplemented!()) });
+        let s: Ptr<()> = ({ get_1(t.as_pointer()) });
+        let i: Ptr<()> = ({ get_2(t.as_pointer()) });
         unimplemented!();
         unimplemented!();
     }

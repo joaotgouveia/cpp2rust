@@ -69,21 +69,21 @@ impl NotMoveConstructible {}
 pub struct NotMoveAssignable {}
 impl NotMoveAssignable {}
 pub fn can_swap_0() -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn can_swap_1() -> () {
+    return unimplemented!();
 }
 pub fn can_swap_2() -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_swap_3() -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_swap_4() -> () {
-    return value_5.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
-pub fn can_swap_6() -> () {
-    return value_5.with(|rc| *rc.borrow());
-}
-pub fn test_swap_constexpr_7() -> () {
+pub fn test_swap_constexpr_5() -> () {
     let mut i: () = 1_();
     let mut j: () = 2_();
     unimplemented!();

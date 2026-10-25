@@ -201,7 +201,7 @@ pub fn test_14() -> () {
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*unimplemented!().upgrade().deref()).value_29() });
+        ({ (*e.borrow()).value_29() });
         const _: () = assert!(true, "std::is_same_v<decltype(std::move(e).value()), void>");;
     }
     {

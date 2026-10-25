@@ -14,7 +14,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut i1: () = 3_();
-    let mut i2: () = (*unimplemented!());
+    let mut i2: () = i1;
     unimplemented!();
     unimplemented!();
     let mut __tmp_0: () = 40_();
@@ -31,7 +31,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut i8: () = 3_();
-    let i9: *mut () = &mut (*unimplemented!());
+    let i9: *mut () = &mut i8;
     unimplemented!();
     let mut p1: *mut () = (&mut i1 as *mut ());
     let mut p2: *mut () = (i3);

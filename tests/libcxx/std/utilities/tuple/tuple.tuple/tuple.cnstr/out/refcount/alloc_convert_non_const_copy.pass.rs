@@ -429,7 +429,7 @@ impl Default for ConvertibleFrom_TracedCopyMove_ {
 impl ConvertibleFrom_CvtFromTupleRef_ {
     pub fn new_1(_v: Ptr<CvtFromTupleRef>) -> Self {
         Self {
-            v: (*unimplemented!().upgrade().deref()).clone(),
+            v: (*_v.upgrade().deref()).clone(),
             alloc_constructed: false,
         }
     }

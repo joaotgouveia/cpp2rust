@@ -520,7 +520,7 @@ pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -697,17 +697,13 @@ pub unsafe fn test_iterators_14(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end1 });
         let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -725,15 +721,13 @@ pub unsafe fn test_iterators_16(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end1 });
         let ___first2: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -751,15 +745,13 @@ pub unsafe fn test_iterators_17(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end1 });
         let ___first2: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -777,15 +769,13 @@ pub unsafe fn test_iterators_18(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end1 });
         let ___first2: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -803,15 +793,13 @@ pub unsafe fn test_iterators_19(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end1 });
         let ___first2: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -829,15 +817,13 @@ pub unsafe fn test_iterators_20(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end1 });
         let ___first2: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -855,14 +841,12 @@ pub unsafe fn test_iterators_21(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
-        let ___first2: *mut () = (*unimplemented!());
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end1 });
+        let ___first2: *mut () = begin2;
         let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -880,15 +864,13 @@ pub unsafe fn test_iterators_22(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -906,13 +888,13 @@ pub unsafe fn test_iterators_23(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -930,13 +912,13 @@ pub unsafe fn test_iterators_24(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -954,13 +936,13 @@ pub unsafe fn test_iterators_25(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -978,13 +960,13 @@ pub unsafe fn test_iterators_26(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1002,13 +984,13 @@ pub unsafe fn test_iterators_27(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1026,12 +1008,12 @@ pub unsafe fn test_iterators_28(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
-        let ___first2: *mut () = (*unimplemented!());
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end1 });
+        let ___first2: *mut () = begin2;
         let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1049,15 +1031,13 @@ pub unsafe fn test_iterators_29(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1075,13 +1055,13 @@ pub unsafe fn test_iterators_30(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1099,13 +1079,13 @@ pub unsafe fn test_iterators_31(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1123,13 +1103,13 @@ pub unsafe fn test_iterators_32(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1147,13 +1127,13 @@ pub unsafe fn test_iterators_33(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1171,13 +1151,13 @@ pub unsafe fn test_iterators_34(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1195,12 +1175,12 @@ pub unsafe fn test_iterators_35(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
-        let ___first2: *mut () = (*unimplemented!());
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end1 });
+        let ___first2: *mut () = begin2;
         let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1218,15 +1198,13 @@ pub unsafe fn test_iterators_36(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1244,13 +1222,13 @@ pub unsafe fn test_iterators_37(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1268,13 +1246,13 @@ pub unsafe fn test_iterators_38(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1292,13 +1270,13 @@ pub unsafe fn test_iterators_39(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1316,13 +1294,13 @@ pub unsafe fn test_iterators_40(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1340,13 +1318,13 @@ pub unsafe fn test_iterators_41(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1364,12 +1342,12 @@ pub unsafe fn test_iterators_42(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
-        let ___first2: *mut () = (*unimplemented!());
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end1 });
+        let ___first2: *mut () = begin2;
         let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1387,15 +1365,13 @@ pub unsafe fn test_iterators_43(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1413,13 +1389,13 @@ pub unsafe fn test_iterators_44(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1437,13 +1413,13 @@ pub unsafe fn test_iterators_45(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1461,13 +1437,13 @@ pub unsafe fn test_iterators_46(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1485,13 +1461,13 @@ pub unsafe fn test_iterators_47(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1509,13 +1485,13 @@ pub unsafe fn test_iterators_48(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1533,12 +1509,12 @@ pub unsafe fn test_iterators_49(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
-        let ___first2: *mut () = (*unimplemented!());
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end1 });
+        let ___first2: *mut () = begin2;
         let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1556,15 +1532,13 @@ pub unsafe fn test_iterators_50(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1582,13 +1556,13 @@ pub unsafe fn test_iterators_51(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1606,13 +1580,13 @@ pub unsafe fn test_iterators_52(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1630,13 +1604,13 @@ pub unsafe fn test_iterators_53(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1654,13 +1628,13 @@ pub unsafe fn test_iterators_54(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1678,13 +1652,13 @@ pub unsafe fn test_iterators_55(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1702,12 +1676,12 @@ pub unsafe fn test_iterators_56(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin1 });
         let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
-        let ___first2: *mut () = (*unimplemented!());
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end1 });
+        let ___first2: *mut () = begin2;
         let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1724,15 +1698,13 @@ pub unsafe fn test_iterators_57(
     mut expected2: *mut (),
 ) {
     let mut ret: () = (unsafe {
-        let ___first1: *mut () = (*unimplemented!());
+        let ___first1: *mut () = begin1;
         let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
         let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
-            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({
-                &(*unimplemented!())
-            });
+            sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1749,13 +1721,13 @@ pub unsafe fn test_iterators_58(
     mut expected2: *mut (),
 ) {
     let mut ret: () = (unsafe {
-        let ___first1: *mut () = (*unimplemented!());
+        let ___first1: *mut () = begin1;
         let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
         let ___first2: cpp20_input_iterator_int_ptr_ =
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            cpp20_input_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
-            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1772,13 +1744,13 @@ pub unsafe fn test_iterators_59(
     mut expected2: *mut (),
 ) {
     let mut ret: () = (unsafe {
-        let ___first1: *mut () = (*unimplemented!());
+        let ___first1: *mut () = begin1;
         let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
         let ___first2: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            forward_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
-            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1795,13 +1767,13 @@ pub unsafe fn test_iterators_60(
     mut expected2: *mut (),
 ) {
     let mut ret: () = (unsafe {
-        let ___first1: *mut () = (*unimplemented!());
+        let ___first1: *mut () = begin1;
         let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
         let ___first2: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            bidirectional_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
-            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1818,13 +1790,13 @@ pub unsafe fn test_iterators_61(
     mut expected2: *mut (),
 ) {
     let mut ret: () = (unsafe {
-        let ___first1: *mut () = (*unimplemented!());
+        let ___first1: *mut () = begin1;
         let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
         let ___first2: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            random_access_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
-            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1841,13 +1813,13 @@ pub unsafe fn test_iterators_62(
     mut expected2: *mut (),
 ) {
     let mut ret: () = (unsafe {
-        let ___first1: *mut () = (*unimplemented!());
+        let ___first1: *mut () = begin1;
         let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
         let ___first2: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) });
+            contiguous_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
-            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &(*unimplemented!()) });
+            sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1864,12 +1836,12 @@ pub unsafe fn test_iterators_63(
     mut expected2: *mut (),
 ) {
     let mut ret: () = (unsafe {
-        let ___first1: *mut () = (*unimplemented!());
+        let ___first1: *mut () = begin1;
         let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
-        let ___first2: *mut () = (*unimplemented!());
+            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
+        let ___first2: *mut () = begin2;
         let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &((*unimplemented!()) as *mut ()) });
+            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )

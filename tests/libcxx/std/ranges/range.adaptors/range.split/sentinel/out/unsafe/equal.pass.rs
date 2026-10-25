@@ -539,7 +539,7 @@ pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -714,7 +714,7 @@ pub unsafe fn testOne_12() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -726,7 +726,7 @@ pub unsafe fn testOne_12() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -744,7 +744,7 @@ pub unsafe fn testOne_13() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -756,7 +756,7 @@ pub unsafe fn testOne_13() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -774,7 +774,7 @@ pub unsafe fn testOne_14() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -786,7 +786,7 @@ pub unsafe fn testOne_14() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -804,7 +804,7 @@ pub unsafe fn testOne_15() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -816,7 +816,7 @@ pub unsafe fn testOne_15() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -834,7 +834,7 @@ pub unsafe fn testOne_16() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -846,7 +846,7 @@ pub unsafe fn testOne_16() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            let mut e: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

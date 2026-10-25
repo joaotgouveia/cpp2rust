@@ -32,10 +32,8 @@ pub fn test_4() {
             ({ make_string_stream_2(Ptr::<()>::from_string_literal(b"12   3")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<std_ranges_basic_istream_view_int__char____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
-        let it2: Value<std_ranges_basic_istream_view_int__char____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -47,10 +45,9 @@ pub fn test_4() {
             ({ make_string_stream_2(Ptr::<()>::from_string_literal(b"45   6")) }),
         ));
         let isv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it1: Value<std_ranges_basic_istream_view_int__char____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        (*it1.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -60,10 +57,8 @@ pub fn test_5() {
             ({ make_string_stream_3(Ptr::<()>::from_string_literal(b"12   3")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
-        let it2: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -75,10 +70,9 @@ pub fn test_5() {
             ({ make_string_stream_3(Ptr::<()>::from_string_literal(b"45   6")) }),
         ));
         let isv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it1: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        (*it1.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }

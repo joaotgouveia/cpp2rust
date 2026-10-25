@@ -133,7 +133,7 @@ pub unsafe fn by_value_0(mut m: MoveOnly) -> () {
 }
 pub unsafe fn make_1(mut v: ()) -> MoveOnly {
     let mut m: MoveOnly = MoveOnly::new({ v });
-    return MoveOnly::move_from({ &mut (*unimplemented!()) });
+    return MoveOnly::move_from({ &mut m });
 }
 pub fn main() {
     unsafe {
@@ -143,13 +143,13 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut a: MoveOnly = MoveOnly::new({ 1_() });
-    let mut b: MoveOnly = MoveOnly::move_from({ &mut (*unimplemented!()) });
+    let mut b: MoveOnly = MoveOnly::move_from({ &mut a });
     unimplemented!();
     unimplemented!();
-    let mut c: MoveOnly = MoveOnly::move_from({ &mut (*unimplemented!()) });
+    let mut c: MoveOnly = MoveOnly::move_from({ &mut b });
     unimplemented!();
     unimplemented!();
-    let mut d: MoveOnly = MoveOnly::move_from({ &mut (*unimplemented!()) });
+    let mut d: MoveOnly = MoveOnly::move_from({ &mut c });
     unimplemented!();
     unimplemented!();
     let mut e: MoveOnly = (unsafe { make_1(5_()) });
@@ -164,25 +164,25 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut m: ConstMove = ConstMove::new();
-    let mut m1: ConstMove = ConstMove::new_1({ &mut (*unimplemented!()) });
+    let mut m1: ConstMove = ConstMove::new_1({ &mut m });
     let cm: ConstMove = ConstMove::new();
-    let mut m2: ConstMove = ConstMove::new_2({ &(*unimplemented!()) });
+    let mut m2: ConstMove = ConstMove::new_2({ &cm });
     unimplemented!();
     unimplemented!();
     let mut t: ThrowingMove = ThrowingMove::new({ 1_() });
-    let mut t1: ThrowingMove = ThrowingMove::copy_from({ &(*unimplemented!()) });
+    let mut t1: ThrowingMove = ThrowingMove::copy_from({ &t });
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut n: NoexceptMove = NoexceptMove::new({ 2_() });
-    let mut n1: NoexceptMove = NoexceptMove::move_from({ &mut (*unimplemented!()) });
+    let mut n1: NoexceptMove = NoexceptMove::move_from({ &mut n });
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut g: MoveOnly = MoveOnly::new({ 3_() });
-    let mut g1: MoveOnly = MoveOnly::move_from({ &mut (*unimplemented!()) });
+    let mut g1: MoveOnly = MoveOnly::move_from({ &mut g });
     unimplemented!();
     unimplemented!();
     return 0_();

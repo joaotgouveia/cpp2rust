@@ -122,7 +122,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub unsafe fn new(mut it: *mut ()) -> Self {
         let mut this = Self {
-            it_: (*unimplemented!()),
+            it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -673,7 +673,7 @@ pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1410,13 +1410,9 @@ pub unsafe fn test_result_19(mut input: (), mut starting_value: (), expected: ()
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_0 })
         };
         let mut result: () = (unsafe {
-            let ___first: *mut () = (*unimplemented!());
+            let ___first: *mut () = in_begin;
             let ___value: () = starting_value;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                ___first,
-                (*unimplemented!()),
-                ___value,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(___first, in_end, ___value)
         });
         unimplemented!();
         unimplemented!();
@@ -1445,13 +1441,9 @@ pub unsafe fn test_result_21(mut input: (), mut starting_value: (), expected: ()
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_2 })
         };
         let mut result: () = (unsafe {
-            let ___first: *mut () = (*unimplemented!());
+            let ___first: *mut () = in_begin;
             let ___value: () = starting_value;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                ___first,
-                (*unimplemented!()),
-                ___value,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(___first, in_end, ___value)
         });
         unimplemented!();
         unimplemented!();
@@ -1480,13 +1472,9 @@ pub unsafe fn test_result_22(mut input: (), mut starting_value: (), expected: ()
             sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_4 })
         };
         let mut result: () = (unsafe {
-            let ___first: *mut () = (*unimplemented!());
+            let ___first: *mut () = in_begin;
             let ___value: () = starting_value;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                ___first,
-                (*unimplemented!()),
-                ___value,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(___first, in_end, ___value)
         });
         unimplemented!();
         unimplemented!();
@@ -1519,8 +1507,8 @@ pub unsafe fn test_result_23(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                contiguous_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1558,8 +1546,8 @@ pub unsafe fn test_result_24(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                contiguous_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1597,8 +1585,8 @@ pub unsafe fn test_result_25(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                contiguous_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1637,8 +1625,8 @@ pub unsafe fn test_result_26(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                random_access_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1678,8 +1666,8 @@ pub unsafe fn test_result_27(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                random_access_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1719,8 +1707,8 @@ pub unsafe fn test_result_28(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                random_access_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1760,8 +1748,8 @@ pub unsafe fn test_result_29(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                bidirectional_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1801,8 +1789,8 @@ pub unsafe fn test_result_30(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                bidirectional_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1842,8 +1830,8 @@ pub unsafe fn test_result_31(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                bidirectional_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1882,8 +1870,8 @@ pub unsafe fn test_result_32(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                forward_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1921,8 +1909,8 @@ pub unsafe fn test_result_33(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                forward_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -1960,8 +1948,8 @@ pub unsafe fn test_result_34(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                forward_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2000,8 +1988,8 @@ pub unsafe fn test_result_35(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2041,8 +2029,8 @@ pub unsafe fn test_result_36(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2082,8 +2070,8 @@ pub unsafe fn test_result_37(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2123,8 +2111,8 @@ pub unsafe fn test_result_38(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp17_output_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp17_output_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2164,8 +2152,8 @@ pub unsafe fn test_result_39(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp17_output_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp17_output_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2205,8 +2193,8 @@ pub unsafe fn test_result_40(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp17_output_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp17_output_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2246,8 +2234,8 @@ pub unsafe fn test_result_41(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp20_output_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp20_output_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2287,8 +2275,8 @@ pub unsafe fn test_result_42(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp20_output_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp20_output_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2328,8 +2316,8 @@ pub unsafe fn test_result_43(mut input: (), mut starting_value: (), expected: ()
         };
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                cpp20_output_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
-                (*unimplemented!()),
+                cpp20_output_iterator_int_ptr_::move_from({ &mut in_begin }),
+                in_end,
                 starting_value,
             )
         });
@@ -2364,13 +2352,9 @@ pub unsafe fn test_result_44(mut input: (), mut starting_value: (), expected: ()
             sized_sentinel_int_ptr_::new_1({ &mut __tmp_48 })
         };
         let mut result: () = (unsafe {
-            let ___first: *mut () = (*unimplemented!());
+            let ___first: *mut () = in_begin;
             let ___value: () = starting_value;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                ___first,
-                (*unimplemented!()),
-                ___value,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(___first, in_end, ___value)
         });
         unimplemented!();
         unimplemented!();
@@ -2399,13 +2383,9 @@ pub unsafe fn test_result_45(mut input: (), mut starting_value: (), expected: ()
             sized_sentinel_int_ptr_::new_1({ &mut __tmp_50 })
         };
         let mut result: () = (unsafe {
-            let ___first: *mut () = (*unimplemented!());
+            let ___first: *mut () = in_begin;
             let ___value: () = starting_value;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                ___first,
-                (*unimplemented!()),
-                ___value,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(___first, in_end, ___value)
         });
         unimplemented!();
         unimplemented!();
@@ -2434,13 +2414,9 @@ pub unsafe fn test_result_46(mut input: (), mut starting_value: (), expected: ()
             sized_sentinel_int_ptr_::new_1({ &mut __tmp_52 })
         };
         let mut result: () = (unsafe {
-            let ___first: *mut () = (*unimplemented!());
+            let ___first: *mut () = in_begin;
             let ___value: () = starting_value;
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(
-                ___first,
-                (*unimplemented!()),
-                ___value,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(___first, in_end, ___value)
         });
         unimplemented!();
         unimplemented!();

@@ -50,10 +50,10 @@ unsafe fn main_0() -> () {
 }
 pub unsafe fn shuffle_1(mut x: ()) -> () {
     let mut a: S = S::new({ x });
-    let mut b: S = S::move_from({ &mut (*unimplemented!()) });
+    let mut b: S = S::move_from({ &mut a });
     unimplemented!();
     let mut c: S = S::new({ 1_() });
-    (unsafe { S::move_assign(&mut c, &mut (*unimplemented!())) });
+    (unsafe { S::move_assign(&mut c, &mut b) });
     unimplemented!();
     return (unsafe { sum_0(&c) });
 }

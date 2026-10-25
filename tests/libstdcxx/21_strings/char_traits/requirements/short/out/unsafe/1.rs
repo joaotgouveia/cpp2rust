@@ -278,7 +278,7 @@ pub unsafe fn test02_10() {
             unimplemented!();
         }
     }
-    (unsafe { __gnu_cxx_char_traits_short_::assign_1(&mut c1, &c2) });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -303,7 +303,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { __gnu_cxx_char_traits_short_::eq(&c1, &c2) })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -322,11 +322,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unsafe {
-            let ___c1: *const () = &c1;
-            let ___c2: *const () = &c1;
-            __gnu_cxx_char_traits_short_::eq(___c1, ___c2)
-        }) {
+        if !(unimplemented!()) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -345,11 +341,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unsafe {
-            let ___c1: *const () = &c2;
-            let ___c2: *const () = &c2;
-            __gnu_cxx_char_traits_short_::eq(___c1, ___c2)
-        }) {
+        if !(unimplemented!()) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -370,7 +362,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unsafe { __gnu_cxx_char_traits_short_::lt(&c2, &c1) }) {
+        if !(unimplemented!()) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -389,7 +381,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { __gnu_cxx_char_traits_short_::lt(&c1, &c2) })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -408,11 +400,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe {
-            let ___c1: *const () = &c1;
-            let ___c2: *const () = &c1;
-            __gnu_cxx_char_traits_short_::lt(___c1, ___c2)
-        })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -431,11 +419,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe {
-            let ___c1: *const () = &c2;
-            let ___c2: *const () = &c2;
-            __gnu_cxx_char_traits_short_::lt(___c1, ___c2)
-        })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -523,13 +507,7 @@ pub unsafe fn test02_10() {
     ];
     let mut array2: [(); 34] = [unimplemented!(); 34];
     let mut len: () = (*unimplemented!());
-    (unsafe {
-        __gnu_cxx_char_traits_short_::copy(
-            array2.as_mut_ptr(),
-            (array3.as_mut_ptr()).cast_const(),
-            len,
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -539,7 +517,7 @@ pub unsafe fn test02_10() {
     c2 = str_lit1[(0_()) as usize];
     let mut c3: () = array2[(1_()) as usize];
     let mut c4: () = str_lit1[(1_()) as usize];
-    (unsafe { __gnu_cxx_char_traits_short_::move_(array2.as_mut_ptr(), str_lit1.as_ptr(), 0_()) });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -578,7 +556,7 @@ pub unsafe fn test02_10() {
             unimplemented!();
         }
     }
-    (unsafe { __gnu_cxx_char_traits_short_::move_(array2.as_mut_ptr(), str_lit1.as_ptr(), 1_()) });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -655,7 +633,7 @@ pub unsafe fn test02_10() {
             unimplemented!();
         }
     }
-    (unsafe { __gnu_cxx_char_traits_short_::move_(array2.as_mut_ptr(), str_lit1.as_ptr(), 2_()) });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -754,9 +732,7 @@ pub unsafe fn test02_10() {
             unimplemented!();
         }
     }
-    let mut pc2: *mut () = (unsafe {
-        __gnu_cxx_char_traits_short_::move_(array1.as_mut_ptr(), (pc1).cast_const(), 0_())
-    });
+    let mut pc2: *mut () = unimplemented!();
     c3 = (*pc1.offset((0_()) as isize));
     c4 = array1[(0_()) as usize];
     let mut __do_while = true;
@@ -819,9 +795,7 @@ pub unsafe fn test02_10() {
     c1 = (*pc1.offset((0_()) as isize));
     c2 = array1[(0_()) as usize];
     let mut pc3: *mut () = pc1;
-    pc2 = (unsafe {
-        __gnu_cxx_char_traits_short_::move_(array1.as_mut_ptr(), (pc1).cast_const(), 10_())
-    });
+    pc2 = unimplemented!();
     c3 = (*pc1.offset((0_()) as isize));
     c4 = array1[(0_()) as usize];
     let mut __do_while = true;
@@ -921,7 +895,7 @@ pub unsafe fn test02_10() {
             unimplemented!();
         }
     }
-    len = (unsafe { __gnu_cxx_char_traits_short_::length(str_lit1.as_ptr()) });
+    len = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -947,10 +921,7 @@ pub unsafe fn test02_10() {
     }
     let N4: () =
         (::std::mem::size_of::<[(); 24]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut pc4: *const () = (unsafe {
-        let mut ___a: () = ('a' as ());
-        __gnu_cxx_char_traits_short_::find(str_lit1.as_ptr(), N4, &mut ___a)
-    });
+    let mut pc4: *const () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -989,10 +960,7 @@ pub unsafe fn test02_10() {
             unimplemented!();
         }
     }
-    pc4 = (unsafe {
-        let mut ___a: () = 2675_();
-        __gnu_cxx_char_traits_short_::find(str_lit1.as_ptr(), N4, &mut ___a)
-    });
+    pc4 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1038,9 +1006,7 @@ pub unsafe fn test02_10() {
             unimplemented!();
         }
     }
-    pc1 = (unsafe {
-        __gnu_cxx_char_traits_short_::assign_9(array2.as_mut_ptr(), array2_len, 5544_())
-    });
+    pc1 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1085,9 +1051,8 @@ pub unsafe fn test02_10() {
     }
     let mut n1: () =
         (::std::mem::size_of::<[(); 24]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    pc1 =
-        (unsafe { __gnu_cxx_char_traits_short_::copy(array2.as_mut_ptr(), str_lit1.as_ptr(), n1) });
-    len = (unsafe { __gnu_cxx_char_traits_short_::length((array2.as_mut_ptr()).cast_const()) });
+    pc1 = unimplemented!();
+    len = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1135,7 +1100,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { __gnu_cxx_char_traits_short_::compare(pconst1, pconst2, 10_()) }) > (0_())) {
+        if !((unimplemented!()) > (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1156,7 +1121,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { __gnu_cxx_char_traits_short_::compare(pconst2, pconst1, 10_()) }) < (0_())) {
+        if !((unimplemented!()) < (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1177,12 +1142,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___s1: *const () = pconst1;
-            let ___s2: *const () = pconst1;
-            __gnu_cxx_char_traits_short_::compare(___s1, ___s2, 10_())
-        }) == (0_()))
-        {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1203,12 +1163,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___s1: *const () = pconst2;
-            let ___s2: *const () = pconst2;
-            __gnu_cxx_char_traits_short_::compare(___s1, ___s2, 10_())
-        }) == (0_()))
-        {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

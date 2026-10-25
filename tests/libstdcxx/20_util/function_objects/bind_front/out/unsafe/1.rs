@@ -309,7 +309,7 @@ pub unsafe fn test02_12() {
             unimplemented!();
         }
     }
-    q = (unsafe { (*unimplemented!())() }).clone();
+    q = (unsafe { g() }).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -349,7 +349,7 @@ pub unsafe fn test02_12() {
             unimplemented!();
         }
     }
-    q = (unsafe { (*unimplemented!())() }).clone();
+    q = (unsafe { (*cg)() }).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

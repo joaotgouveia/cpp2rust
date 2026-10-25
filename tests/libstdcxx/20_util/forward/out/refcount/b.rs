@@ -257,7 +257,7 @@ impl __gnu_test_semaphore {}
 impl C_A_ {
     pub fn new(u: Ptr<Awrap>) -> Self {
         Self {
-            t_: ({ AwrapImpl::get(&unimplemented!()) }),
+            t_: ({ AwrapImpl::get(&u) }),
         }
     }
 }

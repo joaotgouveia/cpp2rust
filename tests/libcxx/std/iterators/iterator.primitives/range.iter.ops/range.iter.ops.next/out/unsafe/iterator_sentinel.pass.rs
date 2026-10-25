@@ -575,7 +575,7 @@ pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -921,7 +921,7 @@ pub unsafe fn check_assignable_21(mut first: *mut (), mut last: *mut (), mut exp
     };
     let mut result: cpp17_input_iterator_int_ptr__int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -936,7 +936,7 @@ pub unsafe fn check_assignable_23(mut first: *mut (), mut last: *mut (), mut exp
     };
     let mut result: cpp20_input_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            cpp20_input_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -950,7 +950,7 @@ pub unsafe fn check_assignable_24(mut first: *mut (), mut last: *mut (), mut exp
     };
     let mut result: forward_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            forward_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -965,7 +965,7 @@ pub unsafe fn check_assignable_25(mut first: *mut (), mut last: *mut (), mut exp
     };
     let mut result: bidirectional_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            bidirectional_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -980,7 +980,7 @@ pub unsafe fn check_assignable_26(mut first: *mut (), mut last: *mut (), mut exp
     };
     let mut result: random_access_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            random_access_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -995,7 +995,7 @@ pub unsafe fn check_assignable_27(mut first: *mut (), mut last: *mut (), mut exp
     };
     let mut result: contiguous_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            contiguous_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1007,9 +1007,8 @@ pub unsafe fn check_assignable_28(mut first: *mut (), mut last: *mut (), mut exp
         let mut __tmp_6: *mut () = last;
         assignable_sentinel_int_ptr_::new_1({ &mut __tmp_6 })
     };
-    let mut result: *mut () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))((*unimplemented!()), sent)
-    });
+    let mut result: *mut () =
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(it, sent) });
     unimplemented!();
 }
 pub unsafe fn check_sized_sentinel_29(
@@ -1023,7 +1022,7 @@ pub unsafe fn check_sized_sentinel_29(
     let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ (size as ()) });
     let mut result: cpp17_input_iterator_int_ptr__int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1039,7 +1038,7 @@ pub unsafe fn check_sized_sentinel_30(
     let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ (size as ()) });
     let mut result: cpp20_input_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            cpp20_input_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1055,7 +1054,7 @@ pub unsafe fn check_sized_sentinel_31(
     let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ (size as ()) });
     let mut result: forward_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            forward_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1071,7 +1070,7 @@ pub unsafe fn check_sized_sentinel_32(
     let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ (size as ()) });
     let mut result: bidirectional_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            bidirectional_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1087,7 +1086,7 @@ pub unsafe fn check_sized_sentinel_33(
     let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ (size as ()) });
     let mut result: random_access_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            random_access_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1103,7 +1102,7 @@ pub unsafe fn check_sized_sentinel_34(
     let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ (size as ()) });
     let mut result: contiguous_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            contiguous_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1117,9 +1116,8 @@ pub unsafe fn check_sized_sentinel_35(
     let mut size: () = (((last as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
     let mut it: *mut () = first;
     let mut sent: distance_apriori_sentinel = distance_apriori_sentinel::new_1({ (size as ()) });
-    let mut result: *mut () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))((*unimplemented!()), sent)
-    });
+    let mut result: *mut () =
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(it, sent) });
     unimplemented!();
 }
 pub unsafe fn check_sentinel_36(mut first: *mut (), mut last: *mut (), mut expected: *mut ()) {
@@ -1132,7 +1130,7 @@ pub unsafe fn check_sentinel_36(mut first: *mut (), mut last: *mut (), mut expec
     };
     let mut result: cpp17_input_iterator_int_ptr__int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1147,7 +1145,7 @@ pub unsafe fn check_sentinel_37(mut first: *mut (), mut last: *mut (), mut expec
     };
     let mut result: cpp20_input_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            cpp20_input_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            cpp20_input_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1161,7 +1159,7 @@ pub unsafe fn check_sentinel_38(mut first: *mut (), mut last: *mut (), mut expec
     };
     let mut result: forward_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            forward_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            forward_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1176,7 +1174,7 @@ pub unsafe fn check_sentinel_39(mut first: *mut (), mut last: *mut (), mut expec
     };
     let mut result: bidirectional_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            bidirectional_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            bidirectional_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1191,7 +1189,7 @@ pub unsafe fn check_sentinel_40(mut first: *mut (), mut last: *mut (), mut expec
     };
     let mut result: random_access_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            random_access_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            random_access_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1206,7 +1204,7 @@ pub unsafe fn check_sentinel_41(mut first: *mut (), mut last: *mut (), mut expec
     };
     let mut result: contiguous_iterator_int_ptr_ = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(
-            contiguous_iterator_int_ptr_::move_from({ &mut (*unimplemented!()) }),
+            contiguous_iterator_int_ptr_::move_from({ &mut it }),
             sent,
         )
     });
@@ -1218,9 +1216,8 @@ pub unsafe fn check_sentinel_42(mut first: *mut (), mut last: *mut (), mut expec
         let mut __tmp_13: *mut () = last;
         sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_13 })
     };
-    let mut result: *mut () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))((*unimplemented!()), sent)
-    });
+    let mut result: *mut () =
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut next_22))(it, sent) });
     unimplemented!();
 }
 pub unsafe fn test_43() -> () {

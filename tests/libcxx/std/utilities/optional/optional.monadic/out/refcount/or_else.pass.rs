@@ -246,7 +246,7 @@ pub fn test_16() -> () {
                         return unimplemented!();
                     }
                 })));
-            (*unimplemented!().upgrade().deref()).or_else(___f.as_pointer())
+            (*opt.borrow()).or_else(___f.as_pointer())
         });
     }
     return true;

@@ -268,32 +268,28 @@ pub unsafe fn test_20() -> () {
     {
         let io: () = unimplemented!();
         let mut iter: () = unimplemented!();
-        let mut sent: std_ranges_iota_view_int__IntComparableWith_int_____sentinel =
-            unimplemented!();
+        let mut sent: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut io: () = unimplemented!();
         let mut iter: () = unimplemented!();
-        let mut sent: std_ranges_iota_view_int__IntComparableWith_int_____sentinel =
-            unimplemented!();
+        let mut sent: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let io: () = unimplemented!();
         let mut iter: () = unimplemented!();
-        let mut sent: std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt_____sentinel =
-            unimplemented!();
+        let mut sent: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut io: () = unimplemented!();
         let mut iter: () = unimplemented!();
-        let mut sent: std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt_____sentinel =
-            unimplemented!();
+        let mut sent: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

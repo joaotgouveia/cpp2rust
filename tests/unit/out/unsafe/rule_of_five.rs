@@ -101,7 +101,7 @@ impl Clone for Buffer {
 pub unsafe fn make_3(mut size: ()) -> Buffer {
     let mut b: Buffer = Buffer::new({ size });
     let _dtor_b = ScopedDestructorUnsafe::new(&raw mut b, Buffer::destructor);
-    return Buffer::move_from({ &mut (*unimplemented!()) });
+    return Buffer::move_from({ &mut b });
 }
 pub fn main() {
     unsafe {
@@ -118,7 +118,7 @@ unsafe fn main_0() -> () {
         unimplemented!();
         b.data[(0_()) as usize] = 100_();
         unimplemented!();
-        let mut c: Buffer = Buffer::move_from({ &mut (*unimplemented!()) });
+        let mut c: Buffer = Buffer::move_from({ &mut a });
         let _dtor_c = ScopedDestructorUnsafe::new(&raw mut c, Buffer::destructor);
         unimplemented!();
         unimplemented!();
@@ -128,10 +128,10 @@ unsafe fn main_0() -> () {
         unimplemented!();
         (unsafe { Buffer::copy_assign(&mut d, &b) });
         unimplemented!();
-        (unsafe { Buffer::move_assign(&mut d, &mut (*unimplemented!())) });
+        (unsafe { Buffer::move_assign(&mut d, &mut c) });
         unimplemented!();
         (unsafe {
-            let _o: *mut Buffer = &mut (*unimplemented!());
+            let _o: *mut Buffer = &mut d;
             Buffer::move_assign(&mut d, _o)
         });
         unimplemented!();

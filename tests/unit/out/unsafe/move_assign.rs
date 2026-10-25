@@ -56,7 +56,7 @@ impl Default for ConstMoveAssign {
 }
 pub unsafe fn make_0(mut v: ()) -> MoveOnly {
     let mut m: MoveOnly = MoveOnly::new({ v });
-    return MoveOnly::move_from({ &mut (*unimplemented!()) });
+    return MoveOnly::move_from({ &mut m });
 }
 pub fn main() {
     unsafe {
@@ -68,14 +68,19 @@ unsafe fn main_0() -> () {
     let mut a: MoveOnly = MoveOnly::new({ 1_() });
     let mut b: MoveOnly = MoveOnly::new({ 2_() });
     let mut c: MoveOnly = MoveOnly::new({ 3_() });
-    (unsafe { MoveOnly::move_assign(&mut a, &mut (*unimplemented!())) });
+    (unsafe { MoveOnly::move_assign(&mut a, &mut b) });
     unimplemented!();
     unimplemented!();
     (unsafe {
         let mut _o: MoveOnly = MoveOnly::new({ 3_() });
         MoveOnly::move_assign(&mut b, &mut _o)
     });
-    (unsafe { MoveOnly::move_assign(&mut c, &mut (*unimplemented!())) });
+    (unsafe {
+        MoveOnly::move_assign(
+            &mut c,
+            &mut (*(unsafe { MoveOnly::move_assign(&mut a, &mut b) })),
+        )
+    });
     unimplemented!();
     (unsafe {
         let mut _o: MoveOnly = MoveOnly::new({ 5_() });
@@ -88,22 +93,22 @@ unsafe fn main_0() -> () {
     });
     unimplemented!();
     (unsafe {
-        let _o: *mut MoveOnly = &mut (*unimplemented!());
+        let _o: *mut MoveOnly = &mut a;
         MoveOnly::move_assign(&mut a, _o)
     });
     unimplemented!();
     let mut vec_: () = unimplemented!();
     unimplemented!();
     let mut d: MoveOnly = MoveOnly::new({ 8_() });
-    (unsafe { MoveOnly::move_assign(&mut (*unimplemented!()), &mut (*unimplemented!())) });
+    (unsafe { MoveOnly::move_assign(&mut (*unimplemented!()), &mut d) });
     unimplemented!();
     unimplemented!();
     let mut m: ConstMoveAssign = ConstMoveAssign::new();
     let mut m1: ConstMoveAssign = ConstMoveAssign::new();
     let mut m2: ConstMoveAssign = ConstMoveAssign::new();
     let cm: ConstMoveAssign = ConstMoveAssign::new();
-    (unsafe { ConstMoveAssign::operator_assign_2(&mut m1, &mut (*unimplemented!())) });
-    (unsafe { ConstMoveAssign::operator_assign_3(&mut m2, &(*unimplemented!())) });
+    (unsafe { ConstMoveAssign::operator_assign_2(&mut m1, &mut m) });
+    (unsafe { ConstMoveAssign::operator_assign_3(&mut m2, &cm) });
     unimplemented!();
     unimplemented!();
     return 0_();

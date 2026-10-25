@@ -204,9 +204,8 @@ pub unsafe fn test_14() -> () {
     }
     {
         let mut x: () = 42_();
-        let mut v: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut single_15))(&mut (*unimplemented!()))
-        });
+        let mut v: () =
+            (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut single_15))(&mut x) });
         unimplemented!();
         unimplemented!();
     }

@@ -332,9 +332,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ (*unimplemented!().upgrade().deref()).value_or(fallback.as_pointer()) }).i }
-            == 51_())
-        {
+        if !({ ({ (*o.borrow()).value_or(fallback.as_pointer()) }).i } == 51_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -375,7 +373,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ (*unimplemented!().upgrade().deref()).value_or(fallback.as_pointer()) }).i }
+        if !({ ({ (*o.borrow()).value_or(fallback.as_pointer()) }).i }
             == unimplemented!().with(|__s| (__s).i))
         {
             ({
@@ -403,9 +401,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ (*unimplemented!().upgrade().deref()).value_or(fallback.as_pointer()) }).i }
-            == 3_())
-        {
+        if !({ ({ (*o.borrow()).value_or(fallback.as_pointer()) }).i } == 3_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

@@ -309,8 +309,8 @@ pub fn test02_12() {
         }
     }
     q = ({
-        let ___self: Ptr<()> = unimplemented!();
-        (*unimplemented!().upgrade().deref())(___self)
+        let ___self: Ptr<()> = g.as_pointer();
+        (*g.borrow_mut())(___self)
     })
     .clone();
     let mut __do_while = true;
@@ -357,8 +357,8 @@ pub fn test02_12() {
         }
     }
     q = ({
-        let ___self: Ptr<()> = unimplemented!();
-        (*unimplemented!().upgrade().deref())(___self)
+        let ___self: Ptr<()> = (cg).clone();
+        (*cg.upgrade().deref())(___self)
     })
     .clone();
     let mut __do_while = true;

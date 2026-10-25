@@ -17,7 +17,7 @@ fn main_0() -> () {
     let mut r: () = unimplemented!();
     let mut cp: Ptr<()> = Ptr::alloc(Default::default());
     cp.delete();
-    let mut b: () = value_0.with(|rc| *rc.borrow());
+    let mut b: () = unimplemented!();
     let ilisti: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return 0_();
 }

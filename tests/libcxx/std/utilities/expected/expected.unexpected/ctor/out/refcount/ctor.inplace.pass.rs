@@ -66,7 +66,7 @@ impl Error {
     }
     pub fn new_2(a: Ptr<Arg>) -> Self {
         Self {
-            arg: Arg::move_from({ unimplemented!() }),
+            arg: Arg::move_from({ (a).clone() }),
         }
     }
     pub fn new_3(_a0: ()) -> Self {

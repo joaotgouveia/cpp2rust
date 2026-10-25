@@ -49,7 +49,7 @@ unsafe fn main_0() -> () {
     (*(unsafe { S::value_ref_3(&mut s) })) = 9_();
     unimplemented!();
     unimplemented!();
-    let cs: *const S = &(*unimplemented!());
+    let cs: *const S = &s;
     unimplemented!();
     unimplemented!();
     let mut p: *mut S = unimplemented!();

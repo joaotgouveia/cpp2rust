@@ -34,7 +34,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "std::is_same<const T&&, decltype(std::get<0>(std::move(c)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(c)))");;
-        let t: Ptr<()> = ({ get_0(unimplemented!()) });
+        let t: Ptr<()> = ({ get_0(c.as_pointer()) });
         unimplemented!();
     }
     {

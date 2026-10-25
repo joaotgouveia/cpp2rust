@@ -88,47 +88,37 @@ pub fn test_format_4(expected: (), arg: ()) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_0((*out.borrow()).clone(), {
-                let __tmp_0 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std___bit_reference_std_vector_bool__std_allocator_bool____true__ > = Rc::new(RefCell::new(( { make_format_args_5 ( (arg .as_pointer() ).reinterpret_cast::<std___bit_reference_std_vector_bool__std_allocator_bool____true_  >()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { __tmp_0.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_format_6(expected: (), arg: ()) {
+pub fn test_format_5(expected: (), arg: ()) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
-        ({
-            test_format_context_create_2((*out.borrow()).clone(), {
-                let __tmp_1 : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std___bit_reference_std_vector_bool__std_allocator_bool____true__ > = Rc::new(RefCell::new(( { make_format_args_7 ( (arg .as_pointer() ).reinterpret_cast::<std___bit_reference_std_vector_bool__std_allocator_bool____true_  >()  , ) } )  ));
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { __tmp_1.as_pointer() } , )
-            })
-        }),
+        ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
     unimplemented!();
     unimplemented!();
 }
-pub fn test_fmt_8() {
+pub fn test_fmt_6() {
     ({ test_format_4(unimplemented!(), unimplemented!()) });
     ({ test_format_4(unimplemented!(), unimplemented!()) });
 }
-pub fn test_fmt_9() {
-    ({ test_format_6(unimplemented!(), unimplemented!()) });
-    ({ test_format_6(unimplemented!(), unimplemented!()) });
+pub fn test_fmt_7() {
+    ({ test_format_5(unimplemented!(), unimplemented!()) });
+    ({ test_format_5(unimplemented!(), unimplemented!()) });
 }
-pub fn test_10() {
-    ({ test_fmt_8() });
-    ({ test_fmt_9() });
+pub fn test_8() {
+    ({ test_fmt_6() });
+    ({ test_fmt_7() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -150,7 +140,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_10() });
+    ({ test_8() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

@@ -139,11 +139,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
     {
         {
-            let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1(
-                { Default::default() },
-                { test_deleter_A_::new_1({ 3_() }) },
-                None,
-            )));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut d: Ptr<test_deleter_A_> = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -156,11 +152,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1(
-            { Default::default() },
-            { test_deleter_A_::new_1({ 3_() }) },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut d: Ptr<()> = unimplemented!();
         unimplemented!();
     }

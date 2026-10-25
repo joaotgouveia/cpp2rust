@@ -302,11 +302,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut d: move_deleter_int_ = move_deleter_int_::new_1({ 0_() });
         let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p1: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1(
-            { Default::default() },
-            { move_deleter_int_::move_from({ unimplemented!() }) },
-            None,
-        )));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
         let deleter: Value<FnPtr<Generic>> =
@@ -316,11 +312,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_2(
-            { unimplemented!() },
-            { lambda!(Generic, {}, |mut _a0: ()| {}) },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));

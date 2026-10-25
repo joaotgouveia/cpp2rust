@@ -387,7 +387,7 @@ pub fn test01_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ (*crbegin_15.with(Value::clone).borrow_mut())(unimplemented!()) }) } == {
+        if !({ ({ (*crbegin_15.with(Value::clone).borrow_mut())(v.as_pointer()) }) } == {
             ({
                 let ___t: Ptr<R1> = (c).clone();
                 (*rbegin_16.with(Value::clone).borrow_mut())(___t)
@@ -444,7 +444,7 @@ pub fn test01_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ (*crbegin_15.with(Value::clone).borrow_mut())(unimplemented!()) }) } == {
+        if !({ ({ (*crbegin_15.with(Value::clone).borrow_mut())(cv.as_pointer()) }) } == {
             ({
                 let ___t: Ptr<R1> = (c).clone();
                 (*rbegin_16.with(Value::clone).borrow_mut())(___t)

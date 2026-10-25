@@ -268,7 +268,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -287,7 +287,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (2_())) {
+        if !(((*unimplemented!()).second.b) == (2_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -307,7 +307,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -326,7 +326,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -346,7 +346,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (0_())) {
+        if !(((*unimplemented!()).second.a) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -365,7 +365,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -388,7 +388,7 @@ pub unsafe fn test_emplace_hint_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -407,7 +407,7 @@ pub unsafe fn test_emplace_hint_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (2_())) {
+        if !(((*unimplemented!()).second.b) == (2_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -427,7 +427,7 @@ pub unsafe fn test_emplace_hint_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -446,7 +446,7 @@ pub unsafe fn test_emplace_hint_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -466,7 +466,7 @@ pub unsafe fn test_emplace_hint_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (0_())) {
+        if !(((*unimplemented!()).second.a) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -485,7 +485,7 @@ pub unsafe fn test_emplace_hint_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -508,7 +508,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -527,7 +527,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (2_())) {
+        if !(((*unimplemented!()).second.b) == (2_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -547,7 +547,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -566,7 +566,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -586,7 +586,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (0_())) {
+        if !(((*unimplemented!()).second.a) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -605,7 +605,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -629,7 +629,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -648,7 +648,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (2_())) {
+        if !(((*unimplemented!()).second.b) == (2_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -669,7 +669,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -688,7 +688,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -709,7 +709,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.a) == (0_())) {
+        if !(((*unimplemented!()).second.a) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -728,7 +728,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*emplaced.first).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -751,7 +751,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -770,7 +770,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (2_())) {
+        if !(((*unimplemented!()).second.b) == (2_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -790,7 +790,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -809,7 +809,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -829,7 +829,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (0_())) {
+        if !(((*unimplemented!()).second.a) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -848,7 +848,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -872,7 +872,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -891,7 +891,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (2_())) {
+        if !(((*unimplemented!()).second.b) == (2_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -912,7 +912,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (1_())) {
+        if !(((*unimplemented!()).second.a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -931,7 +931,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -952,7 +952,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.a) == (0_())) {
+        if !(((*unimplemented!()).second.a) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -971,7 +971,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*it).second.b) == (0_())) {
+        if !(((*unimplemented!()).second.b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

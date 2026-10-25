@@ -14,12 +14,7 @@ pub fn yield_vector_0() -> () {
             ((*__promise.borrow()) as std___gen__Promise_erased_int_ref_)
                 .yield_value_2(x.as_pointer())
         });
-        ({
-            ((*__promise.borrow()) as std___gen__Promise_erased_int_ref_)
-                .yield_value_5_class_std_vector_int__ref_class_std_allocator_enum_std_byte_(
-                    unimplemented!(),
-                )
-        });
+        unimplemented!();
         (*x.borrow_mut()) = 456_();
         ({
             ((*__promise.borrow()) as std___gen__Promise_erased_int_ref_)
@@ -35,7 +30,7 @@ fn main_0() -> () {
     let __tmp_0: Value<()> = Rc::new(RefCell::new(({ yield_vector_0() })));
     let __range1: Ptr<()> = __tmp_0.as_pointer();
     'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut x: () = (x.read());
+        let mut x: () = (unimplemented!().read());
         unimplemented!();
     }
     0

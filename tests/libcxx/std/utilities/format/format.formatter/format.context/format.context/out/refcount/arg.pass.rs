@@ -9,209 +9,881 @@ use std::rc::{Rc, Weak};
 pub fn test_basic_format_arg_0(arg: (), expected: ()) -> () {
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let visitor : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { let expected : Value<() > = Rc::new(RefCell::new((*expected.borrow()) )) ;
- } , | a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle  , | -> ()  { let a : Value<std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return ( a == (*expected.borrow()) )   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : Ptr< ()  >  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } ) )) ;
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let expected: Value<()> = Rc::new(RefCell::new((*expected.borrow())));
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return (a == (*expected.borrow()));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: Ptr<()>| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    )));
     return unimplemented!();
 }
 pub fn test_basic_format_arg_1(arg: (), expected: ()) -> () {
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let visitor : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { let expected : Value<() > = Rc::new(RefCell::new((*expected.borrow()) )) ;
- } , | a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle  , | -> ()  { let a : Value<std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return ( a == (*expected.borrow()) )   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : Ptr< ()  >  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } ) )) ;
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let expected: Value<()> = Rc::new(RefCell::new((*expected.borrow())));
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return (a == (*expected.borrow()));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: Ptr<()>| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    )));
     return unimplemented!();
 }
 pub fn test_basic_format_arg_2(arg: (), expected: ()) -> () {
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let visitor : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { let expected : Value<() > = Rc::new(RefCell::new((*expected.borrow()) )) ;
- } , | a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle  , | -> ()  { let a : Value<std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return ( a == (*expected.borrow()) )   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : Ptr< ()  >  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } ) )) ;
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let expected: Value<()> = Rc::new(RefCell::new((*expected.borrow())));
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return (a == (*expected.borrow()));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: Ptr<()>| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    )));
     return unimplemented!();
 }
 pub fn test_basic_format_arg_3(arg: (), expected: ()) -> () {
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let visitor : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { let expected : Value<() > = Rc::new(RefCell::new(unimplemented!() )) ;
- } , | a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle  , | -> ()  { let a : Value<std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : Ptr< ()  >  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return unimplemented!()    ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } ) )) ;
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: Ptr<()>| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return unimplemented!();
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    )));
     return unimplemented!();
 }
 pub fn test_basic_format_arg_4(arg: (), expected: ()) -> () {
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let visitor : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { let expected : Value<() > = Rc::new(RefCell::new((*expected.borrow()) )) ;
- } , | a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle  , | -> ()  { let a : Value<std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return ( a == (*expected.borrow()) )   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : Ptr< ()  >  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } ) )) ;
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let expected: Value<()> = Rc::new(RefCell::new((*expected.borrow())));
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return (a == (*expected.borrow()));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: Ptr<()>| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    )));
     return unimplemented!();
 }
 pub fn test_basic_format_arg_5(arg: (), expected: ()) -> () {
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let visitor : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { let expected : Value<() > = Rc::new(RefCell::new((*expected.borrow()) )) ;
- } , | a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle  , | -> ()  { let a : Value<std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return ( a == (*expected.borrow()) )   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : Ptr< ()  >  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } ) )) ;
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let expected: Value<()> = Rc::new(RefCell::new((*expected.borrow())));
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return (a == (*expected.borrow()));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: Ptr<()>| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    )));
     return unimplemented!();
 }
 pub fn test_basic_format_arg_6(arg: (), expected: ()) -> () {
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let visitor : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { let expected : Value<() > = Rc::new(RefCell::new((*expected.borrow()) )) ;
- } , | a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle  , | -> ()  { let a : Value<std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return ( a == (*expected.borrow()) )   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : Ptr< ()  >  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } ) )) ;
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let expected: Value<()> = Rc::new(RefCell::new((*expected.borrow())));
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return (a == (*expected.borrow()));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: Ptr<()>| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    )));
     return unimplemented!();
 }
 pub fn test_basic_format_arg_7(arg: (), expected: ()) -> () {
     let arg: Value<()> = Rc::new(RefCell::new(arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let visitor : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { let expected : Value<() > = Rc::new(RefCell::new(unimplemented!() )) ;
- } , | a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle  , | -> ()  { let a : Value<std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : Ptr< ()  >  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } , | a : ()  , | -> ()  { let a : Value<() >  = Rc::new(RefCell::new(a)) ;
- { return unimplemented!()    ;
- } panic!("ub: non-void function does not return a value") } , | mut a : ()  , | -> ()  { { return false   ;
- } panic!("ub: non-void function does not return a value") } ) )) ;
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: Ptr<()>| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |a: ()| -> () {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                return unimplemented!();
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    )));
     return unimplemented!();
 }
 pub fn test_format_context_create_8(out_it: (), args: ()) -> () {
@@ -293,12 +965,12 @@ impl MultiStringType {
     }
 }
 pub fn test_12() {
-    let b: Value<()> = Rc::new(RefCell::new(true));
+    let mut b: () = true;
     let c: Value<()> = Rc::new(RefCell::new(('a' as ())));
     let a: Value<()> = Rc::new(RefCell::new(42_()));
     let string: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let store : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___bool__char__int__std_string_ > = Rc::new(RefCell::new(( { make_format_args_13 ( b .as_pointer()  , c .as_pointer()  , a .as_pointer()  , string .as_pointer()  , ) } )  )) ;
-    let args : Value<() > = Rc::new(RefCell::new(std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { store .as_pointer()  } , )  )) ;
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut output: () = unimplemented!();
     let context: Value<()> = Rc::new(RefCell::new(
         ({ test_format_context_create_8(unimplemented!(), (*args.borrow()).clone()) }),
@@ -317,13 +989,13 @@ pub fn test_12() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_14() {
-    let b: Value<()> = Rc::new(RefCell::new(true));
+pub fn test_13() {
+    let mut b: () = true;
     let c: Value<()> = Rc::new(RefCell::new(('a' as ())));
     let a: Value<()> = Rc::new(RefCell::new(42_()));
     let string: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let store : Value<std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___bool__wchar_t__int__std_wstring_ > = Rc::new(RefCell::new(( { make_format_args_15 ( b .as_pointer()  , c .as_pointer()  , a .as_pointer()  , string .as_pointer()  , ) } )  )) ;
-    let args : Value<() > = Rc::new(RefCell::new(std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { store .as_pointer()  } , )  )) ;
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut output: () = unimplemented!();
     let context: Value<()> = Rc::new(RefCell::new(
         ({ test_format_context_create_10(unimplemented!(), (*args.borrow()).clone()) }),
@@ -363,7 +1035,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_12() });
-    ({ test_14() });
+    ({ test_13() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

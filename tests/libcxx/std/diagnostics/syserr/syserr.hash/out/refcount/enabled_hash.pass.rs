@@ -182,1138 +182,1141 @@ pub fn swallow_1(
 ) {
 }
 pub fn can_hash_impl_2(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn can_hash_impl_3(mut _a0: ()) -> () {
+    return unimplemented!();
 }
 pub fn can_hash_impl_4(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_5(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_6(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_7(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_8(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_9(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_10(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_11(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_12(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_13(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_14(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_15(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_16(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_17(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_18(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_19(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_20(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_21(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_22(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_23(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_24(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_25(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_26(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_27(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_28(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_29(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_30(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_31(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_32(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_33(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_34(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_35(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_36(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_37(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_38(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_39(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_40(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_41(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_42(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_43(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_44(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_45(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_46(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_47(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_48(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_49(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_50(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_51(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_52(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_53(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_54(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_55(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_56(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_57(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_58(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_59(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_60(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_61(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_62(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_63(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_64(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_65(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_66(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_67(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_68(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_69(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_70(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_71(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_72(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_73(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_74(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_75(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_76(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_77(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_78(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_79(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_80(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_81(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_82(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_83(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_84(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_85(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_86(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_87(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_88(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_89(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_90(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_91(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_92(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_93(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_94(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_95(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_96(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_97(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_98(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_99(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_100(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_101(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_102(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_103(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_104(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_105(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_106(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_107(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_108(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_109(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_110(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_111(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_112(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_113(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_114(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_115(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_116(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_117(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_118(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_119(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_120(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_121(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_122(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_123(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_124(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_125(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_126(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_127(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_128(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_129(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_130(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_131(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_132(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_133(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_134(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_135(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_136(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_137(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_138(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_139(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_140(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_141(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_142(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_143(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_144(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_145(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_146(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_147(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_148(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_149(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_150(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_151(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_152(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_153(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_154(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_155(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_156(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_157(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_158(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_159(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_160(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_161(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_162(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_163(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_164(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_165(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_166(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_167(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_168(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_169(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_170(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_171(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_172(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_173(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_174(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_175(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_176(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_177(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_178(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_179(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_180(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_181(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_182(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_183(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_184(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_185(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_186(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_187(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_188(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_189(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_190(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_191(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_192(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_193(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_194(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_195(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_196(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_197(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_198(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_199(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_200(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_201(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_202(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_203(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_204(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_205(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_206(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_207(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_208(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_209(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_210(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_211(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_212(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_213(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_214(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_215(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_216(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_217(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_218(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_219(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_220(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_221(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_222(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_223(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_224(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_225(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_226(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_227(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_228(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_229(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_230(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_231(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_232(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_233(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_234(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_235(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_236(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_237(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_238(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_239(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_240(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_241(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_242(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_243(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_244(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_245(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_246(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_247(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_248(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_249(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_250(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_251(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_252(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_253(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_254(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_255(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_256(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_257(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_258(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_259(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_260(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_261(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_262(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_263(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_264(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_265(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_266(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_267(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_268(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_269(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_270(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_271(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_272(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_273(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_274(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_275(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_276(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_277(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_278(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_279(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_280(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_281(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_282(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_283(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_284(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_285(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_286(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_287(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_288(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_289(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_290(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_291(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_292(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_293(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_294(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_295(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_296(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_297(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_298(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_299(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_300(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_301(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_302(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_303(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_304(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_305(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_306(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_307(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_308(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_309(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_310(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_311(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_312(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_313(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_314(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_315(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_316(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_317(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_318(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_319(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_320(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_321(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_322(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_323(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_324(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_325(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_326(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_327(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_328(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_329(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_330(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_331(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_332(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_333(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_334(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_335(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_336(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_337(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_338(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_339(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_340(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_341(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_342(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_343(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_344(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_345(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_346(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_347(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_348(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_349(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_350(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_351(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_352(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_353(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_354(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_355(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_356(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_357(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_358(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_359(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_360(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_361(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_362(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_363(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_364(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_365(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_366(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_367(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_368(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_369(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_370(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_371(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_372(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_373(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_374(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_375(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_376(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_377(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn can_hash_impl_378(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
-pub fn can_hash_impl_379(mut _a0: ()) -> () {
-    return value_3.with(|rc| *rc.borrow());
+pub fn can_hash_379() -> () {
+    return ({ can_hash_impl_2(0_()) });
 }
 pub fn can_hash_380() -> () {
-    return ({ can_hash_impl_2(0_()) });
+    return ({ can_hash_impl_3(0_()) });
 }
 pub fn can_hash_381() -> () {
     return ({ can_hash_impl_4(0_()) });
@@ -2440,9 +2443,6 @@ pub fn can_hash_754() -> () {
 pub fn can_hash_755() -> () {
     return ({ can_hash_impl_378(0_()) });
 }
-pub fn can_hash_756() -> () {
-    return ({ can_hash_impl_379(0_()) });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ConvertibleToSimple_std_error_code_ {}
@@ -2971,6 +2971,36 @@ impl Default for ConvertibleTo_std_nullptr_t_ {
             }
         }
     }
+}
+pub fn test_hash_enabled_756(key: Option<Ptr<()>>) {
+    let mut __key_default: Option<Value<()>> = None;
+    let key: Ptr<()> = key.unwrap_or_else(|| {
+        __key_default
+            .insert(Rc::new(RefCell::new(unimplemented!())))
+            .as_pointer()
+    });
+    const _: () = assert!(true, "std::is_destructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_move_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_copy_assignable<Hash>::value");;
+    const _: () = assert!(true, "std::is_move_assignable<Hash>::value");;
+    const _: () = assert!(true, "std::is_swappable<Hash>::value");;
+    const _: () = assert!(true, "can_hash<Hash, Key&>()");;
+    const _: () = assert!(true, "can_hash<Hash, Key const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, Key&&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key const&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
+    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
 }
 pub fn test_hash_enabled_757(key: Option<Ptr<()>>) {
     let mut __key_default: Option<Value<()>> = None;
@@ -3632,37 +3662,7 @@ pub fn test_hash_enabled_778(key: Option<Ptr<()>>) {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_hash_enabled_779(key: Option<Ptr<()>>) {
-    let mut __key_default: Option<Value<()>> = None;
-    let key: Ptr<()> = key.unwrap_or_else(|| {
-        __key_default
-            .insert(Rc::new(RefCell::new(unimplemented!())))
-            .as_pointer()
-    });
-    const _: () = assert!(true, "std::is_destructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_move_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_copy_assignable<Hash>::value");;
-    const _: () = assert!(true, "std::is_move_assignable<Hash>::value");;
-    const _: () = assert!(true, "std::is_swappable<Hash>::value");;
-    const _: () = assert!(true, "can_hash<Hash, Key&>()");;
-    const _: () = assert!(true, "can_hash<Hash, Key const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, Key&&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key const&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-}
-pub fn test_hash_enabled_780(key: Option<Ptr<Enum>>) {
+pub fn test_hash_enabled_779(key: Option<Ptr<Enum>>) {
     let mut __key_default: Option<Value<Enum>> = None;
     let key: Ptr<Enum> = key.unwrap_or_else(|| {
         __key_default
@@ -3692,11 +3692,41 @@ pub fn test_hash_enabled_780(key: Option<Ptr<Enum>>) {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_hash_enabled_781(key: Option<Ptr<EnumClass>>) {
+pub fn test_hash_enabled_780(key: Option<Ptr<EnumClass>>) {
     let mut __key_default: Option<Value<EnumClass>> = None;
     let key: Ptr<EnumClass> = key.unwrap_or_else(|| {
         __key_default
             .insert(Rc::new(RefCell::new(<EnumClass>::default())))
+            .as_pointer()
+    });
+    const _: () = assert!(true, "std::is_destructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_move_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_copy_assignable<Hash>::value");;
+    const _: () = assert!(true, "std::is_move_assignable<Hash>::value");;
+    const _: () = assert!(true, "std::is_swappable<Hash>::value");;
+    const _: () = assert!(true, "can_hash<Hash, Key&>()");;
+    const _: () = assert!(true, "can_hash<Hash, Key const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, Key&&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key const&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
+    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+}
+pub fn test_hash_enabled_781(key: Option<Ptr<()>>) {
+    let mut __key_default: Option<Value<()>> = None;
+    let key: Ptr<()> = key.unwrap_or_else(|| {
+        __key_default
+            .insert(Rc::new(RefCell::new(unimplemented!())))
             .as_pointer()
     });
     const _: () = assert!(true, "std::is_destructible<Hash>::value");;
@@ -3752,37 +3782,7 @@ pub fn test_hash_enabled_782(key: Option<Ptr<()>>) {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_hash_enabled_783(key: Option<Ptr<()>>) {
-    let mut __key_default: Option<Value<()>> = None;
-    let key: Ptr<()> = key.unwrap_or_else(|| {
-        __key_default
-            .insert(Rc::new(RefCell::new(unimplemented!())))
-            .as_pointer()
-    });
-    const _: () = assert!(true, "std::is_destructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_move_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_copy_assignable<Hash>::value");;
-    const _: () = assert!(true, "std::is_move_assignable<Hash>::value");;
-    const _: () = assert!(true, "std::is_swappable<Hash>::value");;
-    const _: () = assert!(true, "can_hash<Hash, Key&>()");;
-    const _: () = assert!(true, "can_hash<Hash, Key const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, Key&&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key const&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-}
-pub fn test_hash_enabled_784(key: Option<Ptr<Ptr<Class>>>) {
+pub fn test_hash_enabled_783(key: Option<Ptr<Ptr<Class>>>) {
     let mut __key_default: Option<Value<Ptr<Class>>> = None;
     let key: Ptr<Ptr<Class>> = key.unwrap_or_else(|| {
         __key_default
@@ -3812,7 +3812,7 @@ pub fn test_hash_enabled_784(key: Option<Ptr<Ptr<Class>>>) {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_hash_enabled_785(key: Option<Ptr<()>>) {
+pub fn test_hash_enabled_784(key: Option<Ptr<()>>) {
     let mut __key_default: Option<Value<()>> = None;
     let key: Ptr<()> = key.unwrap_or_else(|| {
         __key_default
@@ -3850,7 +3850,7 @@ pub struct Class {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestHashEnabled {}
-pub fn test_library_hash_specializations_available_786() {
+pub fn test_library_hash_specializations_available_785() {
     ({
         for_each_0 ( <types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool__float__double__long_double__Enum__EnumClass__void_ptr__const_void_ptr__Class_ptr__std_nullptr_t_  >::default()  , <TestHashEnabled  >::default()  , )
     });
@@ -3875,10 +3875,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_library_hash_specializations_available_786() });
+    ({ test_library_hash_specializations_available_785() });
     {
+        ({ test_hash_enabled_756(None) });
         ({ test_hash_enabled_757(None) });
-        ({ test_hash_enabled_758(None) });
     }
     return 0_();
 }
@@ -4525,85 +4525,85 @@ pub trait TestHashEnabledImpl {
 }
 impl TestHashEnabledImpl for Ptr<TestHashEnabled> {
     fn operator_call_1_char(&self) {
-        ({ test_hash_enabled_759(None) });
+        ({ test_hash_enabled_758(None) });
     }
     fn operator_call_1_wchar_t(&self) {
-        ({ test_hash_enabled_760(None) });
+        ({ test_hash_enabled_759(None) });
     }
     fn operator_call_1_char8_t(&self) {
-        ({ test_hash_enabled_761(None) });
+        ({ test_hash_enabled_760(None) });
     }
     fn operator_call_1_char16_t(&self) {
-        ({ test_hash_enabled_762(None) });
+        ({ test_hash_enabled_761(None) });
     }
     fn operator_call_1_char32_t(&self) {
-        ({ test_hash_enabled_763(None) });
+        ({ test_hash_enabled_762(None) });
     }
     fn operator_call_1_signed_char(&self) {
-        ({ test_hash_enabled_764(None) });
+        ({ test_hash_enabled_763(None) });
     }
     fn operator_call_1_short(&self) {
-        ({ test_hash_enabled_765(None) });
+        ({ test_hash_enabled_764(None) });
     }
     fn operator_call_1_int(&self) {
-        ({ test_hash_enabled_766(None) });
+        ({ test_hash_enabled_765(None) });
     }
     fn operator_call_1_long(&self) {
-        ({ test_hash_enabled_767(None) });
+        ({ test_hash_enabled_766(None) });
     }
     fn operator_call_1_long_long(&self) {
-        ({ test_hash_enabled_768(None) });
+        ({ test_hash_enabled_767(None) });
     }
     fn operator_call_1___int128(&self) {
-        ({ test_hash_enabled_769(None) });
+        ({ test_hash_enabled_768(None) });
     }
     fn operator_call_1_unsigned_char(&self) {
-        ({ test_hash_enabled_770(None) });
+        ({ test_hash_enabled_769(None) });
     }
     fn operator_call_1_unsigned_short(&self) {
-        ({ test_hash_enabled_771(None) });
+        ({ test_hash_enabled_770(None) });
     }
     fn operator_call_1_unsigned_int(&self) {
-        ({ test_hash_enabled_772(None) });
+        ({ test_hash_enabled_771(None) });
     }
     fn operator_call_1_unsigned_long(&self) {
-        ({ test_hash_enabled_773(None) });
+        ({ test_hash_enabled_772(None) });
     }
     fn operator_call_1_unsigned_long_long(&self) {
-        ({ test_hash_enabled_774(None) });
+        ({ test_hash_enabled_773(None) });
     }
     fn operator_call_1_unsigned___int128(&self) {
-        ({ test_hash_enabled_775(None) });
+        ({ test_hash_enabled_774(None) });
     }
     fn operator_call_1__Bool(&self) {
-        ({ test_hash_enabled_776(None) });
+        ({ test_hash_enabled_775(None) });
     }
     fn operator_call_1_float(&self) {
-        ({ test_hash_enabled_777(None) });
+        ({ test_hash_enabled_776(None) });
     }
     fn operator_call_1_double(&self) {
-        ({ test_hash_enabled_778(None) });
+        ({ test_hash_enabled_777(None) });
     }
     fn operator_call_1_long_double(&self) {
-        ({ test_hash_enabled_779(None) });
+        ({ test_hash_enabled_778(None) });
     }
     fn operator_call_1_enum_Enum(&self) {
-        ({ test_hash_enabled_780(None) });
+        ({ test_hash_enabled_779(None) });
     }
     fn operator_call_1_enum_EnumClass(&self) {
-        ({ test_hash_enabled_781(None) });
+        ({ test_hash_enabled_780(None) });
     }
     fn operator_call_1_void_ptr(&self) {
-        ({ test_hash_enabled_782(None) });
+        ({ test_hash_enabled_781(None) });
     }
     fn operator_call_1_const_void_ptr(&self) {
-        ({ test_hash_enabled_783(None) });
+        ({ test_hash_enabled_782(None) });
     }
     fn operator_call_1_struct_Class_ptr(&self) {
-        ({ test_hash_enabled_784(None) });
+        ({ test_hash_enabled_783(None) });
     }
     fn operator_call_1_nullptr_t(&self) {
-        ({ test_hash_enabled_785(None) });
+        ({ test_hash_enabled_784(None) });
     }
 }
 pub fn __cpp2rust_init_globals() {}

@@ -21,29 +21,28 @@ pub unsafe fn test_sized_subrange_2() {
     let mut r: () = unimplemented!();
     unimplemented!();
     {
-        let mut __decomp_3: () = unimplemented!();
+        let mut __decomp_3: () = r.clone();
         let mut first: () = (unsafe { get_4(&mut __decomp_3) });
         let mut last: () = (unsafe { get_5(&mut __decomp_3) });
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut __decomp_6: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ =
-            unimplemented!();
-        let mut first: () = (unsafe { get_4(&mut *(&raw mut __decomp_6).cast::<()>()) });
-        let mut last: () = (unsafe { get_5(&mut *(&raw mut __decomp_6).cast::<()>()) });
+        let mut __decomp_6: () = r;
+        let mut first: () = (unsafe { get_4(&mut __decomp_6) });
+        let mut last: () = (unsafe { get_5(&mut __decomp_6) });
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut __decomp_7: () = unimplemented!();
+        let mut __decomp_7: () = r.clone();
         let mut first: () = (unsafe { get_4(&mut __decomp_7) });
         let mut last: () = (unsafe { get_5(&mut __decomp_7) });
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut __decomp_8: () = unimplemented!();
+        let mut __decomp_8: () = r.clone();
         let mut first: () = (unsafe { get_4(&mut __decomp_8) });
         let mut last: () = (unsafe { get_5(&mut __decomp_8) });
         unimplemented!();
@@ -55,28 +54,28 @@ pub unsafe fn test_unsized_subrange_9() {
     let mut r: () = unimplemented!();
     unimplemented!();
     {
-        let mut __decomp_10: () = unimplemented!();
+        let mut __decomp_10: () = r.clone();
         let mut first: () = (unsafe { get_11(&mut __decomp_10) });
         let mut last: () = (unsafe { get_12(&mut __decomp_10) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut __decomp_13 : std_ranges_subrange_int_ptr__std_unreachable_sentinel_t__std_ranges_subrange_kind_unsized_ = unimplemented!() ;
-        let mut first: () = (unsafe { get_11(&mut *(&raw mut __decomp_13).cast::<()>()) });
-        let mut last: () = (unsafe { get_12(&mut *(&raw mut __decomp_13).cast::<()>()) });
+        let mut __decomp_13: () = r;
+        let mut first: () = (unsafe { get_11(&mut __decomp_13) });
+        let mut last: () = (unsafe { get_12(&mut __decomp_13) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut __decomp_14: () = unimplemented!();
+        let mut __decomp_14: () = r.clone();
         let mut first: () = (unsafe { get_11(&mut __decomp_14) });
         let mut last: () = (unsafe { get_12(&mut __decomp_14) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut __decomp_15: () = unimplemented!();
+        let mut __decomp_15: () = r.clone();
         let mut first: () = (unsafe { get_11(&mut __decomp_15) });
         let mut last: () = (unsafe { get_12(&mut __decomp_15) });
         unimplemented!();

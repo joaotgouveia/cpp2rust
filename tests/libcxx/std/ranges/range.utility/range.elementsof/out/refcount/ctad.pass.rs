@@ -665,7 +665,7 @@ pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -837,8 +837,7 @@ pub fn test_impl_19() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -854,8 +853,7 @@ pub fn test_impl_19() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -895,8 +893,7 @@ pub fn test_impl_20() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -915,8 +912,7 @@ pub fn test_impl_20() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -959,8 +955,7 @@ pub fn test_impl_21() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -979,8 +974,7 @@ pub fn test_impl_21() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1023,8 +1017,7 @@ pub fn test_impl_22() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1043,8 +1036,7 @@ pub fn test_impl_22() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1085,8 +1077,7 @@ pub fn test_impl_23() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1103,8 +1094,7 @@ pub fn test_impl_23() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1146,8 +1136,7 @@ pub fn test_impl_24() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1166,8 +1155,7 @@ pub fn test_impl_24() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1210,8 +1198,7 @@ pub fn test_impl_25() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1230,8 +1217,7 @@ pub fn test_impl_25() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1271,8 +1257,7 @@ pub fn test_impl_26() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1288,8 +1273,7 @@ pub fn test_impl_26() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1329,8 +1313,7 @@ pub fn test_impl_27() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1349,8 +1332,7 @@ pub fn test_impl_27() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1393,8 +1375,7 @@ pub fn test_impl_28() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1413,8 +1394,7 @@ pub fn test_impl_28() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1457,8 +1437,7 @@ pub fn test_impl_29() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1477,8 +1456,7 @@ pub fn test_impl_29() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1519,8 +1497,7 @@ pub fn test_impl_30() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1537,8 +1514,7 @@ pub fn test_impl_30() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1580,8 +1556,7 @@ pub fn test_impl_31() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1600,8 +1575,7 @@ pub fn test_impl_31() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1644,8 +1618,7 @@ pub fn test_impl_32() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1664,8 +1637,7 @@ pub fn test_impl_32() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1707,8 +1679,7 @@ pub fn test_impl_33() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1724,8 +1695,7 @@ pub fn test_impl_33() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1767,8 +1737,7 @@ pub fn test_impl_34() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1787,8 +1756,7 @@ pub fn test_impl_34() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1833,8 +1801,7 @@ pub fn test_impl_35() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1853,8 +1820,7 @@ pub fn test_impl_35() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1899,8 +1865,7 @@ pub fn test_impl_36() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1919,8 +1884,7 @@ pub fn test_impl_36() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1963,8 +1927,7 @@ pub fn test_impl_37() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1981,8 +1944,7 @@ pub fn test_impl_37() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -2026,8 +1988,7 @@ pub fn test_impl_38() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -2046,8 +2007,7 @@ pub fn test_impl_38() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -2092,8 +2052,7 @@ pub fn test_impl_39() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -2112,8 +2071,7 @@ pub fn test_impl_39() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let elements: Value<()> =
-            Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        let elements: Value<()> = Rc::new(RefCell::new((r).clone()));
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"

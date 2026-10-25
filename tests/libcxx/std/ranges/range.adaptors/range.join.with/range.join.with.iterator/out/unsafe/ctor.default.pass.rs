@@ -179,7 +179,7 @@ impl forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_in
 impl std::cmp::PartialEq for forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_3(self as *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__, other as *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__) }}}
 impl std::cmp::Eq for forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ {}
 impl Default for forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { fn default() -> Self { unsafe { forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ :: new_1 ( )  } } }
-impl forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { pub unsafe fn new_1 ( other : *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * unimplemented!()  )  } , )  , } ;
+impl forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { pub unsafe fn new_1 ( other : *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * other ) . tracker_  } , )  , } ;
  unimplemented!()  ;
  this } }
 pub unsafe fn operator_eq_5(
@@ -215,7 +215,7 @@ impl forward_iterator_std___wrap_iter_const_int_ptr__ {
     pub unsafe fn new_1(other: *mut forward_iterator_std___wrap_iter_int_ptr__) -> Self {
         let mut this = Self {
             it_: unimplemented!(),
-            tracker_: support_double_move_tracker::move_from({ &mut (*unimplemented!()) }),
+            tracker_: support_double_move_tracker::move_from({ &mut (*other).tracker_ }),
         };
         unimplemented!();
         this
@@ -829,7 +829,7 @@ pub unsafe fn iter_move_25(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_26(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));

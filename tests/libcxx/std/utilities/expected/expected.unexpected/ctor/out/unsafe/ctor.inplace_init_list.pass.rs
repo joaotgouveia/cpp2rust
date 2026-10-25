@@ -48,7 +48,7 @@ impl Error {
     pub unsafe fn new_2(mut l: (), a: *mut Arg) -> Self {
         let mut this = Self {
             list: l.clone(),
-            arg: Arg::move_from({ unimplemented!() }),
+            arg: Arg::move_from({ a }),
         };
         this
     }

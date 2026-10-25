@@ -91,7 +91,7 @@ impl Moving__lambda_at_lambda_as_field_cpp_64_12__ {
     }
     pub unsafe fn move_from(o: *mut Moving__lambda_at_lambda_as_field_cpp_64_12__) -> Self {
         let mut this = Self {
-            f: (*unimplemented!()).move_from(),
+            f: (*o).f.move_from(),
             moves: (((*o).moves) + (1_())),
         };
         this
@@ -224,7 +224,7 @@ unsafe fn main_0() -> () {
             })
         });
     let mut m2: Moving__lambda_at_lambda_as_field_cpp_64_12__ =
-        Moving__lambda_at_lambda_as_field_cpp_64_12__::move_from({ &mut (*unimplemented!()) });
+        Moving__lambda_at_lambda_as_field_cpp_64_12__::move_from({ &mut m });
     unimplemented!();
     unimplemented!();
     return 0_();

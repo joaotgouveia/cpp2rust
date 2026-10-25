@@ -746,7 +746,7 @@ pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -1159,7 +1159,7 @@ pub unsafe fn test_compare_alloc_27() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
     }
     {
@@ -1167,7 +1167,7 @@ pub unsafe fn test_compare_alloc_27() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
     }
 }
@@ -1177,7 +1177,7 @@ pub unsafe fn test_compare_alloc_28() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
     }
     {
@@ -1185,7 +1185,7 @@ pub unsafe fn test_compare_alloc_28() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
     }
 }

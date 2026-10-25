@@ -65,7 +65,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut m: Movable = Movable::new({ 3_() }, { 4_() });
-    let mut __decomp_2: Movable = Movable::move_from({ &mut (*unimplemented!()) });
+    let mut __decomp_2: Movable = Movable::move_from({ &mut m });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -76,7 +76,7 @@ unsafe fn main_0() -> () {
         xs: unimplemented!(),
         ys: unimplemented!(),
     };
-    let mut __decomp_3: Holder = (unsafe { Holder::extract(&mut (*unimplemented!())) });
+    let mut __decomp_3: Holder = (unsafe { Holder::extract(&mut h) });
     unimplemented!();
     unimplemented!();
     unimplemented!();

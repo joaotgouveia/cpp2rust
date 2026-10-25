@@ -663,7 +663,7 @@ pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -842,7 +842,7 @@ pub unsafe fn test_impl_19() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -858,7 +858,7 @@ pub unsafe fn test_impl_19() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -897,7 +897,7 @@ pub unsafe fn test_impl_20() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -915,7 +915,7 @@ pub unsafe fn test_impl_20() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -956,7 +956,7 @@ pub unsafe fn test_impl_21() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -974,7 +974,7 @@ pub unsafe fn test_impl_21() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1015,7 +1015,7 @@ pub unsafe fn test_impl_22() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1033,7 +1033,7 @@ pub unsafe fn test_impl_22() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1072,7 +1072,7 @@ pub unsafe fn test_impl_23() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1088,7 +1088,7 @@ pub unsafe fn test_impl_23() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1129,7 +1129,7 @@ pub unsafe fn test_impl_24() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1147,7 +1147,7 @@ pub unsafe fn test_impl_24() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1188,7 +1188,7 @@ pub unsafe fn test_impl_25() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1206,7 +1206,7 @@ pub unsafe fn test_impl_25() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1245,7 +1245,7 @@ pub unsafe fn test_impl_26() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1261,7 +1261,7 @@ pub unsafe fn test_impl_26() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1300,7 +1300,7 @@ pub unsafe fn test_impl_27() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1318,7 +1318,7 @@ pub unsafe fn test_impl_27() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1359,7 +1359,7 @@ pub unsafe fn test_impl_28() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1377,7 +1377,7 @@ pub unsafe fn test_impl_28() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1418,7 +1418,7 @@ pub unsafe fn test_impl_29() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1436,7 +1436,7 @@ pub unsafe fn test_impl_29() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1475,7 +1475,7 @@ pub unsafe fn test_impl_30() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1491,7 +1491,7 @@ pub unsafe fn test_impl_30() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1532,7 +1532,7 @@ pub unsafe fn test_impl_31() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1550,7 +1550,7 @@ pub unsafe fn test_impl_31() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1591,7 +1591,7 @@ pub unsafe fn test_impl_32() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1609,7 +1609,7 @@ pub unsafe fn test_impl_32() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1649,7 +1649,7 @@ pub unsafe fn test_impl_33() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1665,7 +1665,7 @@ pub unsafe fn test_impl_33() {
     }
     {
         let mut r: Range_int_ptr_ = <Range_int_ptr_>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1705,7 +1705,7 @@ pub unsafe fn test_impl_34() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1723,7 +1723,7 @@ pub unsafe fn test_impl_34() {
     {
         let mut r: Range_contiguous_iterator_int_ptr__ =
             <Range_contiguous_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1765,7 +1765,7 @@ pub unsafe fn test_impl_35() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1783,7 +1783,7 @@ pub unsafe fn test_impl_35() {
     {
         let mut r: Range_random_access_iterator_int_ptr__ =
             <Range_random_access_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1825,7 +1825,7 @@ pub unsafe fn test_impl_36() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1843,7 +1843,7 @@ pub unsafe fn test_impl_36() {
     {
         let mut r: Range_bidirectional_iterator_int_ptr__ =
             <Range_bidirectional_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1883,7 +1883,7 @@ pub unsafe fn test_impl_37() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1899,7 +1899,7 @@ pub unsafe fn test_impl_37() {
     }
     {
         let mut r: Range_forward_iterator_int_ptr__ = <Range_forward_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -1941,7 +1941,7 @@ pub unsafe fn test_impl_38() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -1959,7 +1959,7 @@ pub unsafe fn test_impl_38() {
     {
         let mut r: Range_cpp20_input_iterator_int_ptr__ =
             <Range_cpp20_input_iterator_int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
@@ -2001,7 +2001,7 @@ pub unsafe fn test_impl_39() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
@@ -2019,7 +2019,7 @@ pub unsafe fn test_impl_39() {
     {
         let mut r: Range_cpp17_input_iterator_int_ptr__int_ptr__ =
             <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default();
-        let mut elements: () = (*unimplemented!());
+        let mut elements: () = r;
         const _: () = assert!(
             true,
             "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"

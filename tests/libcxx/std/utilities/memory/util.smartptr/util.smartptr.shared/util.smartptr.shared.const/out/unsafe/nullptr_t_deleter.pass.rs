@@ -251,11 +251,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p: () = std_shared_ptr_A_::new_1(
-            { Default::default() },
-            { test_deleter_A_::new_1({ 3_() }) },
-            None,
-        );
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -269,11 +265,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut p: () = std_shared_ptr_const_A_::new_1(
-            { Default::default() },
-            { test_deleter_const_A_::new_1({ 3_() }) },
-            None,
-        );
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

@@ -169,8 +169,8 @@ impl three_way_random_access_iterator_const_MoveOnly_ptr_ {
 impl three_way_random_access_iterator_const_MoveOnly_ptr_ {
     pub unsafe fn new_2(u: *mut three_way_random_access_iterator_MoveOnly_ptr_) -> Self {
         let mut this = Self {
-            it_: (*unimplemented!()).cast_const(),
-            tracker_: support_double_move_tracker::move_from({ &mut (*unimplemented!()) }),
+            it_: ((*u).it_).cast_const(),
+            tracker_: support_double_move_tracker::move_from({ &mut (*u).tracker_ }),
         };
         (*u).it_ = std::ptr::null_mut();
         this
@@ -444,7 +444,7 @@ pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));

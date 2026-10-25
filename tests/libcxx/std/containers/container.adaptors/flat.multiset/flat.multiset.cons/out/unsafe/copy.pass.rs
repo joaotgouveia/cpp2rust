@@ -608,11 +608,11 @@ pub unsafe fn test_7() {
         let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys2: () = (unsafe { mo.extract() });
         unimplemented!();
     }
     {
@@ -622,11 +622,11 @@ pub unsafe fn test_7() {
         let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys2: () = (unsafe { mo.extract() });
         unimplemented!();
     }
 }
@@ -638,11 +638,11 @@ pub unsafe fn test_8() {
         let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys2: () = (unsafe { mo.extract() });
         unimplemented!();
     }
     {
@@ -652,11 +652,11 @@ pub unsafe fn test_8() {
         let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys: () = (unsafe { m.extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { (*unimplemented!()).extract() });
+        let mut keys2: () = (unsafe { mo.extract() });
         unimplemented!();
     }
 }

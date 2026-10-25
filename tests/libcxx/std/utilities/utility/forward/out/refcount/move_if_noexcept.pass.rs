@@ -81,7 +81,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         "(std::is_same<decltype(std::move_if_noexcept(l)), const legacy&>::value)"
     );;
     let mut i1: () = 23_();
-    let mut i2: () = (unimplemented!().read());
+    let mut i2: () = i1;
     const _: () = assert!(true, "i2 == 23");;
     return 0_();
 }

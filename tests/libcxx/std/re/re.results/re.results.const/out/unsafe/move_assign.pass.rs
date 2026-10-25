@@ -537,7 +537,7 @@ impl Tag_X {
 pub unsafe fn test_10(a: *const ()) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (*unimplemented!()).clone();
+    m1 = (m0).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -547,7 +547,7 @@ pub unsafe fn test_10(a: *const ()) {
 pub unsafe fn test_11(a: *const ()) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (*unimplemented!()).clone();
+    m1 = (m0).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -557,7 +557,7 @@ pub unsafe fn test_11(a: *const ()) {
 pub unsafe fn test_12(a: *const test_allocator_std_csub_match_) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (*unimplemented!()).clone();
+    m1 = (m0).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -567,7 +567,7 @@ pub unsafe fn test_12(a: *const test_allocator_std_csub_match_) {
 pub unsafe fn test_13(a: *const test_allocator_std_wcsub_match_) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (*unimplemented!()).clone();
+    m1 = (m0).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -577,7 +577,7 @@ pub unsafe fn test_13(a: *const test_allocator_std_wcsub_match_) {
 pub unsafe fn test_14(a: *const other_allocator_std_csub_match_) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (*unimplemented!()).clone();
+    m1 = (m0).clone();
     unimplemented!();
     unimplemented!();
     {
@@ -587,7 +587,7 @@ pub unsafe fn test_14(a: *const other_allocator_std_csub_match_) {
 pub unsafe fn test_15(a: *const other_allocator_std_wcsub_match_) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (*unimplemented!()).clone();
+    m1 = (m0).clone();
     unimplemented!();
     unimplemented!();
     {

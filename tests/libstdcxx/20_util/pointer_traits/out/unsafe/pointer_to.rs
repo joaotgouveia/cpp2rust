@@ -284,8 +284,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _l: Ptr_ =
-                (unsafe { std___ptr_traits_ptr_to_Ptr__bool__false_::pointer_to(&mut test) });
+            let mut _l: Ptr_ = unimplemented!();
             operator_eq_10(&mut _l, &p)
         }) {
             (unsafe {
@@ -309,9 +308,7 @@ pub unsafe fn test02_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { std___ptr_traits_ptr_to_bool_ptr__bool__false_::pointer_to(&mut test) })
-            == (&mut test as *mut ()))
-        {
+        if !((unimplemented!()) == (&mut test as *mut ())) {
             (unsafe {
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

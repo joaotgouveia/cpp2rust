@@ -261,7 +261,7 @@ pub fn main() {
 fn main_0() -> () {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*b.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*b.borrow_mut()) = (*a.borrow()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -28,14 +28,14 @@ pub fn test_0() -> () {
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<()> = unimplemented!();
+        let x: Ptr<()> = e.as_pointer();
         const _: () = assert!(true, "std::same_as<decltype(x), int&&>");;
         unimplemented!();
         unimplemented!();
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<()> = unimplemented!();
+        let x: Ptr<()> = e.as_pointer();
         const _: () = assert!(true, "std::same_as<decltype(x), const int&&>");;
         unimplemented!();
         unimplemented!();

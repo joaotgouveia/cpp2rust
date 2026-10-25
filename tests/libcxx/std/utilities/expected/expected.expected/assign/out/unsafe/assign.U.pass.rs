@@ -960,7 +960,7 @@ pub unsafe fn test_3() -> () {
                 true,
                 "std::is_same_v<decltype(std::move(t)), MoveOnlyMulti&&>"
             );;
-            e1 = (*unimplemented!()).clone();
+            unimplemented!();
             unimplemented!();
         }
         {

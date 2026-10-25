@@ -47,7 +47,7 @@ pub unsafe fn check_stream_failed_7(val: *const ()) -> () {
     return unimplemented!();
 }
 pub unsafe fn check_limits_8() {
-    let is_unsigned: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9));
+    let is_unsigned: () = unimplemented!();
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let mut miniss: () = unimplemented!();
@@ -71,8 +71,55 @@ pub unsafe fn check_limits_8() {
         unimplemented!();
     }
 }
+pub unsafe fn check_limits_9() {
+    let is_unsigned: () = unimplemented!();
+    let mut minv: () = unimplemented!();
+    let mut maxv: () = unimplemented!();
+    let mut miniss: () = unimplemented!();
+    let mut maxiss: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut mins: () = unimplemented!();
+    let mut maxs: () = unimplemented!();
+    let mut maxoss: () = unimplemented!();
+    let mut minoss: () = unimplemented!();
+    let mut new_minv: () = unimplemented!();
+    let mut new_maxv: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (*unimplemented!()).postfix_inc();
+    unimplemented!();
+    {}
+}
 pub unsafe fn check_limits_10() {
-    let is_unsigned: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_11));
+    let is_unsigned: () = unimplemented!();
+    let mut minv: () = unimplemented!();
+    let mut maxv: () = unimplemented!();
+    let mut miniss: () = unimplemented!();
+    let mut maxiss: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut mins: () = unimplemented!();
+    let mut maxs: () = unimplemented!();
+    let mut maxoss: () = unimplemented!();
+    let mut minoss: () = unimplemented!();
+    let mut new_minv: () = unimplemented!();
+    let mut new_maxv: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (*unimplemented!()).postfix_inc();
+    unimplemented!();
+    {
+        (*unimplemented!()).postfix_inc();
+        unimplemented!();
+    }
+}
+pub unsafe fn check_limits_11() {
+    let is_unsigned: () = unimplemented!();
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let mut miniss: () = unimplemented!();
@@ -94,7 +141,7 @@ pub unsafe fn check_limits_10() {
     {}
 }
 pub unsafe fn check_limits_12() {
-    let is_unsigned: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9));
+    let is_unsigned: () = unimplemented!();
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let mut miniss: () = unimplemented!();
@@ -119,7 +166,7 @@ pub unsafe fn check_limits_12() {
     }
 }
 pub unsafe fn check_limits_13() {
-    let is_unsigned: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_11));
+    let is_unsigned: () = unimplemented!();
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let mut miniss: () = unimplemented!();
@@ -141,7 +188,7 @@ pub unsafe fn check_limits_13() {
     {}
 }
 pub unsafe fn check_limits_14() {
-    let is_unsigned: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9));
+    let is_unsigned: () = unimplemented!();
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let mut miniss: () = unimplemented!();
@@ -166,54 +213,7 @@ pub unsafe fn check_limits_14() {
     }
 }
 pub unsafe fn check_limits_15() {
-    let is_unsigned: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_11));
-    let mut minv: () = unimplemented!();
-    let mut maxv: () = unimplemented!();
-    let mut miniss: () = unimplemented!();
-    let mut maxiss: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut mins: () = unimplemented!();
-    let mut maxs: () = unimplemented!();
-    let mut maxoss: () = unimplemented!();
-    let mut minoss: () = unimplemented!();
-    let mut new_minv: () = unimplemented!();
-    let mut new_maxv: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (*unimplemented!()).postfix_inc();
-    unimplemented!();
-    {}
-}
-pub unsafe fn check_limits_16() {
-    let is_unsigned: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9));
-    let mut minv: () = unimplemented!();
-    let mut maxv: () = unimplemented!();
-    let mut miniss: () = unimplemented!();
-    let mut maxiss: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut mins: () = unimplemented!();
-    let mut maxs: () = unimplemented!();
-    let mut maxoss: () = unimplemented!();
-    let mut minoss: () = unimplemented!();
-    let mut new_minv: () = unimplemented!();
-    let mut new_maxv: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (*unimplemented!()).postfix_inc();
-    unimplemented!();
-    {
-        (*unimplemented!()).postfix_inc();
-        unimplemented!();
-    }
-}
-pub unsafe fn check_limits_17() {
-    let is_unsigned: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_11));
+    let is_unsigned: () = unimplemented!();
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let mut miniss: () = unimplemented!();
@@ -251,13 +251,13 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { check_limits_8() });
+    (unsafe { check_limits_9() });
     (unsafe { check_limits_10() });
+    (unsafe { check_limits_11() });
     (unsafe { check_limits_12() });
     (unsafe { check_limits_13() });
     (unsafe { check_limits_14() });
     (unsafe { check_limits_15() });
-    (unsafe { check_limits_16() });
-    (unsafe { check_limits_17() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

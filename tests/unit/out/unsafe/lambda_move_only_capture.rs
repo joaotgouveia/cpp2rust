@@ -34,7 +34,7 @@ impl Owner {
     pub unsafe fn take(&mut self) -> FnPtr<fn() -> ()> {
         return lambda_unsafe!(
             {
-                let self_: Owner = Owner::move_from({ &mut (*unimplemented!()) });
+                let self_: Owner = Owner::move_from({ &mut (*(self as *mut Owner)) });
             },
             || -> () {
                 return (*self_.p);
@@ -53,7 +53,7 @@ unsafe fn main_0() -> () {
     let _dtor_o = ScopedDestructorUnsafe::new(&raw mut o, Owner::destructor);
     let mut f: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
-            let h: Owner = Owner::move_from({ &mut (*unimplemented!()) });
+            let h: Owner = Owner::move_from({ &mut o });
         },
         || -> () {
             return (*h.p);
@@ -62,7 +62,7 @@ unsafe fn main_0() -> () {
     let _dtor_f = ScopedDestructorUnsafe::new(&raw mut f, |__f| __f.destroy());
     unimplemented!();
     unimplemented!();
-    let mut g: () = (*unimplemented!()).move_from();
+    let mut g: () = f.move_from();
     let _dtor_g = ScopedDestructorUnsafe::new(&raw mut g, |__f| __f.destroy());
     unimplemented!();
     let mut total: () = 0_();

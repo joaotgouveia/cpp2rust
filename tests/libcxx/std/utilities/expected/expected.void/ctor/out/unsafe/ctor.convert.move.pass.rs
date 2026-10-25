@@ -518,7 +518,7 @@ pub struct Data {
 impl Data {
     pub unsafe fn new(m: *mut MoveOnly) -> Self {
         let mut this = Self {
-            data: MoveOnly::move_from({ unimplemented!() }),
+            data: MoveOnly::move_from({ m }),
         };
         this
     }

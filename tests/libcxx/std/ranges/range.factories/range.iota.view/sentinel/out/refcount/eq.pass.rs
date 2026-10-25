@@ -280,32 +280,28 @@ pub fn test_20() -> () {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sent: Value<std_ranges_iota_view_int__IntComparableWith_int_____sentinel> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let sent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sent: Value<std_ranges_iota_view_int__IntComparableWith_int_____sentinel> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let sent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sent: Value<std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt_____sentinel> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let sent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sent: Value<std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt_____sentinel> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let sent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

@@ -29,11 +29,11 @@ pub fn test01_1() {
     let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*t1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*t1.borrow_mut()) = (*t3.borrow()).clone();
     let t4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*t4.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+    (*t4.borrow_mut()) = (*t6.borrow()).clone();
 }
 pub fn main() {
     __cpp2rust_init_globals();

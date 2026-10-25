@@ -580,7 +580,7 @@ impl Counter_int_ {
     }
     pub unsafe fn move_from(rhs: *mut Counter_int_) -> Self {
         let mut this = Self {
-            data_: (*unimplemented!()),
+            data_: (*rhs).data_,
         };
         (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_22)).prefix_inc();
         this

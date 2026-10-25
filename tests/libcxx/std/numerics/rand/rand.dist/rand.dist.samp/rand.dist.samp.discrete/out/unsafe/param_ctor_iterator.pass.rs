@@ -26,21 +26,21 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut p0: [(); 1] = [1_()];
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut p0: [(); 1] = [10_()];
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut p0: [(); 2] = [10_(), 30_()];
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -48,7 +48,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut p0: [(); 2] = [30_(), 10_()];
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -56,7 +56,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut p0: [(); 3] = [30_(), 0_(), 10_()];
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -65,7 +65,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut p0: [(); 3] = [0_(), 30_(), 10_()];
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -74,7 +74,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut p0: [(); 3] = [0_(), 0_(), 10_()];
         let mut pa: () = unimplemented!();
-        let mut p: () = (unsafe { pa.probabilities() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

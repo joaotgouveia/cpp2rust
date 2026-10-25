@@ -257,10 +257,10 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
-    (unsafe { std_ios_base::xalloc() });
-    (unsafe { std_ios_base::xalloc() });
-    (unsafe { std_ios_base::xalloc() });
-    let mut x4: () = (unsafe { std_ios_base::xalloc() });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut x4: () = unimplemented!();
     let mut out: () = unimplemented!();
     unimplemented!();
 }

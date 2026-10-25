@@ -119,7 +119,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub unsafe fn new(mut it: *mut ()) -> Self {
         let mut this = Self {
-            it_: (*unimplemented!()),
+            it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -673,7 +673,7 @@ pub unsafe fn iter_move_22(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut (*unimplemented!());
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
 pub unsafe fn operator_eq_23(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
@@ -877,10 +877,7 @@ pub unsafe fn test_25() -> () {
         });
         let mut c2: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&buffer, &mut ___count)
         });
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -898,17 +895,11 @@ pub unsafe fn test_25() -> () {
         });
         let mut c2: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&it, &mut ___count)
         });
         let mut c3: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut it, &mut ___count)
         });
         let mut c4: () = (unsafe {
             let mut ___it: contiguous_iterator_int_ptr_ =
@@ -922,17 +913,11 @@ pub unsafe fn test_25() -> () {
         });
         let mut c6: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&cit, &mut ___count)
         });
         let mut c7: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut cit, &mut ___count)
         });
         let mut c8: () = (unsafe {
             let mut ___it: contiguous_iterator_const_int_ptr_ =
@@ -970,15 +955,12 @@ pub unsafe fn test_25() -> () {
         });
         let mut c2: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&it, &mut ___count)
         });
         let mut c3: () = (unsafe {
             let mut ___count: () = 3_();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
+                &mut it_copy,
                 &mut ___count,
             )
         });
@@ -994,15 +976,12 @@ pub unsafe fn test_25() -> () {
         });
         let mut c6: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&cit, &mut ___count)
         });
         let mut c7: () = (unsafe {
             let mut ___count: () = 3_();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
+                &mut cit_copy,
                 &mut ___count,
             )
         });
@@ -1044,15 +1023,12 @@ pub unsafe fn test_25() -> () {
         });
         let mut c2: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&it, &mut ___count)
         });
         let mut c3: () = (unsafe {
             let mut ___count: () = 3_();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
+                &mut it_copy,
                 &mut ___count,
             )
         });
@@ -1068,15 +1044,12 @@ pub unsafe fn test_25() -> () {
         });
         let mut c6: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&cit, &mut ___count)
         });
         let mut c7: () = (unsafe {
             let mut ___count: () = 3_();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
+                &mut cit_copy,
                 &mut ___count,
             )
         });
@@ -1115,15 +1088,12 @@ pub unsafe fn test_25() -> () {
         });
         let mut c2: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&it, &mut ___count)
         });
         let mut c3: () = (unsafe {
             let mut ___count: () = 3_();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
+                &mut it_copy,
                 &mut ___count,
             )
         });
@@ -1152,15 +1122,12 @@ pub unsafe fn test_25() -> () {
         });
         let mut c2: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &(*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&it, &mut ___count)
         });
         let mut c3: () = (unsafe {
             let mut ___count: () = 3_();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
+                &mut it_copy,
                 &mut ___count,
             )
         });
@@ -1193,10 +1160,7 @@ pub unsafe fn test_25() -> () {
         );;
         let mut c3: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
-                &mut (*unimplemented!()),
-                &mut ___count,
-            )
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut it, &mut ___count)
         });
         let mut c4: () = (unsafe {
             let mut ___it: cpp20_input_iterator_int_ptr_ =

@@ -49,8 +49,7 @@ pub fn test_4() {
     let isv: Value<()> = Rc::new(RefCell::new(
         ({ (*istream_5.with(Value::clone).borrow_mut())(iss.as_pointer()) }),
     ));
-    let it: Value<std_ranges_basic_istream_view_int__char____iterator> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_6() {
@@ -60,8 +59,7 @@ pub fn test_6() {
     let isv: Value<()> = Rc::new(RefCell::new(
         ({ (*istream_5.with(Value::clone).borrow_mut())(iss.as_pointer()) }),
     ));
-    let it: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn main() {
