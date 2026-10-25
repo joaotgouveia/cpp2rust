@@ -129,17 +129,33 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
         !satisfiesConstraints(sema, tmpl, *args)) {
       return std::nullopt;
     }
-    // the qualifier with the deduced arguments is the class itself, not one
-    // taking fewer of its arguments (common_type<duration<T1, T2>> of
+    // the qualifier with the deduced arguments takes as many arguments as the
+    // class, not fewer of them (common_type<duration<T1, T2>> of
     // common_type<duration<int>, duration<int>>)
+    auto count = [](llvm::ArrayRef<clang::TemplateArgument> list) {
+      unsigned n = 0;
+      for (const auto &arg : list) {
+        n += arg.getKind() == clang::TemplateArgument::Pack ? arg.pack_size()
+                                                             : 1;
+      }
+      return n;
+    };
     RuleDecls::Trial trial(sema);
     clang::MultiLevelTemplateArgumentList mtal;
-    mtal.addOuterTemplateArguments(const_cast<clang::TypeAliasTemplateDecl *>(tmpl),
-                                   *args, /*Final=*/true);
+    mtal.addOuterTemplateArguments(
+        const_cast<clang::TypeAliasTemplateDecl *>(tmpl), *args,
+        /*Final=*/true);
     auto qualified = sema.SubstType(clang::QualType(qualifier, 0), mtal,
-                                    tmpl->getLocation(), clang::DeclarationName());
+                                    tmpl->getLocation(),
+                                    clang::DeclarationName());
+    auto spec = llvm::dyn_cast<clang::ClassTemplateSpecializationDecl>(owner);
+    auto written = qualified.isNull()
+                       ? nullptr
+                       : qualified->getAs<clang::TemplateSpecializationType>();
     if (qualified.isNull() || trial.failed() ||
-        !ctx.hasSameType(qualified, ctx.getCanonicalTagType(owner))) {
+        (spec && written &&
+         count(written->template_arguments()) !=
+             count(spec->getTemplateArgs().asArray()))) {
       return std::nullopt;
     }
     return TypeMatch{*std::move(args)};
