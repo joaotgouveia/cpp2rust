@@ -23,10 +23,13 @@ unsafe fn main_0() -> i32 {
         )
     });
     assert!(((((fd) >= (0)) as i32) != 0));
-    let mut tio: termios = unsafe { std::mem::zeroed::<termios>() };
-    assert!(((((libc::tcgetattr(fd, (&mut tio as *mut termios))) == (-1_i32)) as i32) != 0));
+    let mut tio: ::libc::termios = unsafe { std::mem::zeroed() };
     assert!(
-        ((((libc::tcsetattr(fd, 0, (&mut tio as *mut termios).cast_const())) == (-1_i32)) as i32)
+        ((((libc::tcgetattr(fd, (&mut tio as *mut ::libc::termios))) == (-1_i32)) as i32) != 0)
+    );
+    assert!(
+        ((((libc::tcsetattr(fd, 0, (&mut tio as *mut ::libc::termios).cast_const())) == (-1_i32))
+            as i32)
             != 0)
     );
     assert!(((((libc::close(fd)) == (0)) as i32) != 0));

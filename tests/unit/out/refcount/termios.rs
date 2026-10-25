@@ -32,7 +32,7 @@ fn main_0() -> i32 {
         }
     };
     assert!((((fd >= 0) as i32) != 0));
-    let tio: Value<termios> = <Value<termios>>::default();
+    let tio: Value<libcc2rs::Termios> = Rc::new(RefCell::new(Default::default()));
     assert!(
         (((match FdRegistry::with_fd(fd, |__fd| nix::sys::termios::tcgetattr(__fd)) {
             Ok(__t) => {

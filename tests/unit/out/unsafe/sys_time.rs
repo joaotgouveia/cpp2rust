@@ -15,11 +15,11 @@ pub unsafe fn test_time_0() {
     assert!(((((t3) >= (t1)) as i32) != 0));
 }
 pub unsafe fn print_tm_1(mut t: ::libc::time_t) {
-    let mut tm: tm = unsafe { std::mem::zeroed::<tm>() };
+    let mut tm: ::libc::tm = unsafe { std::mem::zeroed() };
     assert!(
         (((!((libc::gmtime_r(
             (&mut t as *mut ::libc::time_t).cast_const(),
-            (&mut tm as *mut tm)
+            (&mut tm as *mut ::libc::tm)
         ))
         .is_null())) as i32)
             != 0)
@@ -57,11 +57,11 @@ pub unsafe fn test_gmtime_r_2() {
     (unsafe { print_tm_1((4102444800_i64 as ::libc::time_t)) });
 }
 pub unsafe fn print_local_tm_3(mut t: ::libc::time_t) {
-    let mut tm: tm = unsafe { std::mem::zeroed::<tm>() };
+    let mut tm: ::libc::tm = unsafe { std::mem::zeroed() };
     assert!(
         (((!((libc::localtime_r(
             (&mut t as *mut ::libc::time_t).cast_const(),
-            (&mut tm as *mut tm)
+            (&mut tm as *mut ::libc::tm)
         ))
         .is_null())) as i32)
             != 0)
@@ -95,11 +95,11 @@ pub unsafe fn test_localtime_r_4() {
 }
 pub unsafe fn test_strftime_5() {
     let mut t: ::libc::time_t = (1721126096 as ::libc::time_t);
-    let mut tm: tm = unsafe { std::mem::zeroed::<tm>() };
+    let mut tm: ::libc::tm = unsafe { std::mem::zeroed() };
     assert!(
         (((!((libc::gmtime_r(
             (&mut t as *mut ::libc::time_t).cast_const(),
-            (&mut tm as *mut tm)
+            (&mut tm as *mut ::libc::tm)
         ))
         .is_null())) as i32)
             != 0)
@@ -110,7 +110,7 @@ pub unsafe fn test_strftime_5() {
             buf.as_mut_ptr(),
             ::std::mem::size_of::<[libc::c_char; 64]>(),
             (c"%Y-%m-%d %H:%M:%S".as_ptr().cast_mut()).cast_const(),
-            (&mut tm as *mut tm).cast_const()
+            (&mut tm as *mut ::libc::tm).cast_const()
         )) > (0_usize)) as i32)
             != 0)
     );
@@ -125,7 +125,7 @@ pub unsafe fn test_strftime_5() {
             buf.as_mut_ptr(),
             ::std::mem::size_of::<[libc::c_char; 64]>(),
             (c"%a, %d %b %Y %T".as_ptr().cast_mut()).cast_const(),
-            (&mut tm as *mut tm).cast_const()
+            (&mut tm as *mut ::libc::tm).cast_const()
         )) > (0_usize)) as i32)
             != 0)
     );
@@ -140,7 +140,7 @@ pub unsafe fn test_strftime_5() {
             buf.as_mut_ptr(),
             ::std::mem::size_of::<[libc::c_char; 64]>(),
             (c"day %j 100%%".as_ptr().cast_mut()).cast_const(),
-            (&mut tm as *mut tm).cast_const()
+            (&mut tm as *mut ::libc::tm).cast_const()
         )) > (0_usize)) as i32)
             != 0)
     );
@@ -155,7 +155,7 @@ pub unsafe fn test_strftime_5() {
             buf.as_mut_ptr(),
             ::std::mem::size_of::<[libc::c_char; 64]>(),
             (c"%e".as_ptr().cast_mut()).cast_const(),
-            (&mut tm as *mut tm).cast_const()
+            (&mut tm as *mut ::libc::tm).cast_const()
         )) > (0_usize)) as i32)
             != 0)
     );
@@ -171,7 +171,7 @@ pub unsafe fn test_strftime_5() {
             small.as_mut_ptr(),
             ::std::mem::size_of::<[libc::c_char; 4]>(),
             (c"%Y-%m-%d".as_ptr().cast_mut()).cast_const(),
-            (&mut tm as *mut tm).cast_const()
+            (&mut tm as *mut ::libc::tm).cast_const()
         )) == (0_usize)) as i32)
             != 0)
     );

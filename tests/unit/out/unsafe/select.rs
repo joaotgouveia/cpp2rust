@@ -18,13 +18,13 @@ unsafe fn main_0() -> i32 {
     let mut rset: ::libc::fd_set = std::mem::zeroed::<::libc::fd_set>();
     libc::FD_ZERO((&mut rset as *mut ::libc::fd_set));
     libc::FD_SET(fds[(0) as usize], (&mut rset as *mut ::libc::fd_set));
-    let mut tv: timeval = unsafe { std::mem::zeroed::<timeval>() };
+    let mut tv: ::libc::timeval = unsafe { std::mem::zeroed() };
     {
-        let byte_0 = ((&mut tv as *mut timeval) as *mut ::libc::c_void) as *mut u8;
-        for offset in 0..::std::mem::size_of::<timeval>() {
+        let byte_0 = ((&mut tv as *mut ::libc::timeval) as *mut ::libc::c_void) as *mut u8;
+        for offset in 0..::std::mem::size_of::<::libc::timeval>() {
             *byte_0.offset(offset as isize) = 0 as u8;
         }
-        ((&mut tv as *mut timeval) as *mut ::libc::c_void)
+        ((&mut tv as *mut ::libc::timeval) as *mut ::libc::c_void)
     };
     tv.tv_sec = (0 as ::libc::time_t);
     assert!(
@@ -33,7 +33,7 @@ unsafe fn main_0() -> i32 {
             (&mut rset as *mut ::libc::fd_set),
             std::ptr::null_mut(),
             std::ptr::null_mut(),
-            (&mut tv as *mut timeval)
+            (&mut tv as *mut ::libc::timeval)
         )) == (0)) as i32)
             != 0)
     );
@@ -62,7 +62,7 @@ unsafe fn main_0() -> i32 {
             (&mut rset as *mut ::libc::fd_set),
             std::ptr::null_mut(),
             std::ptr::null_mut(),
-            (&mut tv as *mut timeval)
+            (&mut tv as *mut ::libc::timeval)
         )) == (1)) as i32)
             != 0)
     );

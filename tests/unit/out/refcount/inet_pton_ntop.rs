@@ -11,8 +11,8 @@ pub fn test_s6_addr_access_0() {
         0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
         1_u8,
     ])));
-    let addr: Value<in6_addr> = <Value<in6_addr>>::default();
-    let mut ap: Ptr<in6_addr> = (addr.as_pointer());
+    let addr: Value<libcc2rs::In6Addr> = Rc::new(RefCell::new(Default::default()));
+    let mut ap: Ptr<libcc2rs::In6Addr> = (addr.as_pointer());
     {
         ((In6Addr::s6_addr(addr.as_pointer()) as Ptr<u8>) as Ptr<u8>)
             .to_any()

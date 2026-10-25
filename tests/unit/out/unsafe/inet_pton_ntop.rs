@@ -11,8 +11,8 @@ pub unsafe fn test_s6_addr_access_0() {
         0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
         1_u8,
     ];
-    let mut addr: in6_addr = unsafe { std::mem::zeroed::<in6_addr>() };
-    let mut ap: *mut in6_addr = (&mut addr as *mut in6_addr);
+    let mut addr: ::libc::in6_addr = unsafe { std::mem::zeroed() };
+    let mut ap: *mut ::libc::in6_addr = (&mut addr as *mut ::libc::in6_addr);
     {
         if 16_usize != 0 {
             ::std::ptr::copy_nonoverlapping(

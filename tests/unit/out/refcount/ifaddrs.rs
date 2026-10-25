@@ -11,7 +11,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let list: Value<Ptr<ifaddrs>> = Rc::new(RefCell::new(Ptr::<ifaddrs>::null()));
+    let list: Value<Ptr<libcc2rs::Ifaddrs>> =
+        Rc::new(RefCell::new(Ptr::<libcc2rs::Ifaddrs>::null()));
     assert!(
         ((({
             let __out = (list.as_pointer());
@@ -37,7 +38,7 @@ fn main_0() -> i32 {
     );
     assert!((((!((*list.borrow()).is_null())) as i32) != 0));
     let mut found_loopback: i32 = 0;
-    let mut ifa: Ptr<ifaddrs> = Ptr::<ifaddrs>::null();
+    let mut ifa: Ptr<libcc2rs::Ifaddrs> = Ptr::<libcc2rs::Ifaddrs>::null();
     ifa = (*list.borrow()).clone();
     'loop_: while (((!((ifa).is_null())) as i32) != 0) {
         assert!((((!((ifa.with(|__s| __s.ifa_name.clone())).is_null())) as i32) != 0));
@@ -54,11 +55,11 @@ fn main_0() -> i32 {
             ifa = { ifa.with(|__s| __s.ifa_next.clone()) };
             continue 'loop_;
         }
-        let mut sin: Ptr<sockaddr_in> = ifa
+        let mut sin: Ptr<libcc2rs::SockaddrIn> = ifa
             .with(|__s| __s.ifa_addr.clone())
-            .reinterpret_cast::<sockaddr_in>();
+            .reinterpret_cast::<libcc2rs::SockaddrIn>();
         let lo_be: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([127_u8, 0_u8, 0_u8, 1_u8])));
-        if (((((field_ptr!(sin, sin_addr)) as Ptr<in_addr>)
+        if (((((field_ptr!(sin, sin_addr)) as Ptr<libcc2rs::InAddr>)
             .to_any()
             .memcmp(
                 &((lo_be.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any(),
@@ -70,13 +71,13 @@ fn main_0() -> i32 {
             found_loopback = 1;
             assert!((((ifa.with(|__s| __s.ifa_flags) != 0_u32) as i32) != 0));
             assert!((((!((ifa.with(|__s| __s.ifa_netmask.clone())).is_null())) as i32) != 0));
-            let mut mask: Ptr<sockaddr_in> = ifa
+            let mut mask: Ptr<libcc2rs::SockaddrIn> = ifa
                 .with(|__s| __s.ifa_netmask.clone())
-                .reinterpret_cast::<sockaddr_in>();
+                .reinterpret_cast::<libcc2rs::SockaddrIn>();
             let mask_be: Value<Box<[u8]>> =
                 Rc::new(RefCell::new(Box::new([255_u8, 0_u8, 0_u8, 0_u8])));
             assert!(
-                (((((field_ptr!(mask, sin_addr)) as Ptr<in_addr>)
+                (((((field_ptr!(mask, sin_addr)) as Ptr<libcc2rs::InAddr>)
                     .to_any()
                     .memcmp(
                         &((mask_be.as_pointer() as Ptr::<u8>) as Ptr<u8>).to_any(),

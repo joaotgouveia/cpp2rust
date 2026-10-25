@@ -43,10 +43,10 @@ fn main_0() -> i32 {
         } == 1_isize) as i32)
             != 0)
     );
-    let pfd: Value<Box<[pollfd]>> = Rc::new(RefCell::new(
+    let pfd: Value<Box<[libcc2rs::Pollfd]>> = Rc::new(RefCell::new(
         (0..2)
-            .map(|_| <pollfd>::default())
-            .collect::<Box<[pollfd]>>(),
+            .map(|_| Default::default())
+            .collect::<Box<[libcc2rs::Pollfd]>>(),
     ));
     (*pfd.borrow_mut())[(0) as usize].fd = (*fds.borrow())[(0) as usize];
     (*pfd.borrow_mut())[(0) as usize].events = 1_i16;
@@ -56,7 +56,7 @@ fn main_0() -> i32 {
     (*pfd.borrow_mut())[(1) as usize].revents = 42_i16;
     assert!(
         ((({
-            let __p = (pfd.as_pointer() as Ptr<pollfd>);
+            let __p = (pfd.as_pointer() as Ptr<libcc2rs::Pollfd>);
             let __timeout = match nix::poll::PollTimeout::try_from(0) {
                 Ok(__t) => __t,
                 Err(_) => panic!("poll: unsupported timeout {}", 0),

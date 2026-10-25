@@ -31,12 +31,12 @@ fn main_0() -> i32 {
     let rset: Value<CFdSet> = Rc::new(RefCell::new(Default::default()));
     (rset.as_pointer()).with_mut(|__s| __s.zero());
     (rset.as_pointer()).with_mut(|__s| __s.set((*fds.borrow())[(0) as usize]));
-    let tv: Value<timeval> = <Value<timeval>>::default();
+    let tv: Value<libcc2rs::Timeval> = Rc::new(RefCell::new(Default::default()));
     {
-        ((tv.as_pointer()) as Ptr<timeval>)
+        ((tv.as_pointer()) as Ptr<libcc2rs::Timeval>)
             .to_any()
             .memset((0) as u8, 16usize as usize);
-        ((tv.as_pointer()) as Ptr<timeval>).to_any()
+        ((tv.as_pointer()) as Ptr<libcc2rs::Timeval>).to_any()
     };
     (*tv.borrow_mut()).tv_sec = (0 as ::libc::time_t);
     assert!(

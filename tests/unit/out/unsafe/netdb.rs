@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_ipv4_literal_0() {
-    let mut hints: addrinfo = unsafe { std::mem::zeroed::<addrinfo>() };
+    let mut hints: ::libc::addrinfo = unsafe { std::mem::zeroed() };
     hints.ai_flags = 0;
     hints.ai_protocol = 0;
     hints.ai_addrlen = (0 as libc::socklen_t);
@@ -16,13 +16,13 @@ pub unsafe fn test_ipv4_literal_0() {
     hints.ai_next = std::ptr::null_mut();
     hints.ai_family = libc::AF_INET;
     hints.ai_socktype = libc::SOCK_STREAM;
-    let mut res: *mut addrinfo = std::ptr::null_mut();
+    let mut res: *mut ::libc::addrinfo = std::ptr::null_mut();
     assert!(
         ((((libc::getaddrinfo(
             (c"127.0.0.1".as_ptr().cast_mut()).cast_const(),
             (c"8080".as_ptr().cast_mut()).cast_const(),
-            (&mut hints as *mut addrinfo).cast_const(),
-            (&mut res as *mut *mut addrinfo)
+            (&mut hints as *mut ::libc::addrinfo).cast_const(),
+            (&mut res as *mut *mut ::libc::addrinfo)
         )) == (0)) as i32)
             != 0)
     );
@@ -30,10 +30,11 @@ pub unsafe fn test_ipv4_literal_0() {
     assert!((((((*res).ai_family) == (libc::AF_INET)) as i32) != 0));
     assert!((((((*res).ai_socktype) == (libc::SOCK_STREAM)) as i32) != 0));
     assert!(
-        (((((*res).ai_addrlen as usize) == (::std::mem::size_of::<sockaddr_in>())) as i32) != 0)
+        (((((*res).ai_addrlen as usize) == (::std::mem::size_of::<::libc::sockaddr_in>())) as i32)
+            != 0)
     );
     assert!((((!(((*res).ai_addr).is_null())) as i32) != 0));
-    let mut sin: *mut sockaddr_in = ((*res).ai_addr as *mut sockaddr_in);
+    let mut sin: *mut ::libc::sockaddr_in = ((*res).ai_addr as *mut ::libc::sockaddr_in);
     assert!((((((*sin).sin_family as i32) == (libc::AF_INET)) as i32) != 0));
     let mut port_be: [u8; 2] = [(((8080) / (256)) as u8), (((8080) % (256)) as u8)];
     assert!(
@@ -62,7 +63,8 @@ pub unsafe fn test_ipv4_literal_0() {
     assert!(
         (((({
             let sa = core::slice::from_raw_parts(
-                ((&mut (*sin).sin_addr as *mut in_addr) as *const ::libc::c_void) as *const u8,
+                ((&mut (*sin).sin_addr as *mut ::libc::in_addr) as *const ::libc::c_void)
+                    as *const u8,
                 4_usize as usize,
             );
             let sb = core::slice::from_raw_parts(
@@ -83,7 +85,7 @@ pub unsafe fn test_ipv4_literal_0() {
     libc::freeaddrinfo(res);
 }
 pub unsafe fn test_ipv6_literal_1() {
-    let mut hints: addrinfo = unsafe { std::mem::zeroed::<addrinfo>() };
+    let mut hints: ::libc::addrinfo = unsafe { std::mem::zeroed() };
     hints.ai_flags = 0;
     hints.ai_protocol = 0;
     hints.ai_addrlen = (0 as libc::socklen_t);
@@ -92,23 +94,25 @@ pub unsafe fn test_ipv6_literal_1() {
     hints.ai_next = std::ptr::null_mut();
     hints.ai_family = libc::AF_INET6;
     hints.ai_socktype = libc::SOCK_STREAM;
-    let mut res: *mut addrinfo = std::ptr::null_mut();
+    let mut res: *mut ::libc::addrinfo = std::ptr::null_mut();
     assert!(
         ((((libc::getaddrinfo(
             (c"::1".as_ptr().cast_mut()).cast_const(),
             (c"443".as_ptr().cast_mut()).cast_const(),
-            (&mut hints as *mut addrinfo).cast_const(),
-            (&mut res as *mut *mut addrinfo)
+            (&mut hints as *mut ::libc::addrinfo).cast_const(),
+            (&mut res as *mut *mut ::libc::addrinfo)
         )) == (0)) as i32)
             != 0)
     );
     assert!((((!((res).is_null())) as i32) != 0));
     assert!((((((*res).ai_family) == (libc::AF_INET6)) as i32) != 0));
     assert!(
-        (((((*res).ai_addrlen as usize) == (::std::mem::size_of::<sockaddr_in6>())) as i32) != 0)
+        (((((*res).ai_addrlen as usize) == (::std::mem::size_of::<::libc::sockaddr_in6>()))
+            as i32)
+            != 0)
     );
     assert!((((!(((*res).ai_addr).is_null())) as i32) != 0));
-    let mut sin6: *mut sockaddr_in6 = ((*res).ai_addr as *mut sockaddr_in6);
+    let mut sin6: *mut ::libc::sockaddr_in6 = ((*res).ai_addr as *mut ::libc::sockaddr_in6);
     assert!((((((*sin6).sin6_family as i32) == (libc::AF_INET6)) as i32) != 0));
     let mut port_be: [u8; 2] = [(((443) / (256)) as u8), (((443) % (256)) as u8)];
     assert!(
@@ -140,7 +144,8 @@ pub unsafe fn test_ipv6_literal_1() {
     assert!(
         (((({
             let sa = core::slice::from_raw_parts(
-                ((&mut (*sin6).sin6_addr as *mut in6_addr) as *const ::libc::c_void) as *const u8,
+                ((&mut (*sin6).sin6_addr as *mut ::libc::in6_addr) as *const ::libc::c_void)
+                    as *const u8,
                 16_usize as usize,
             );
             let sb = core::slice::from_raw_parts(
@@ -161,24 +166,25 @@ pub unsafe fn test_ipv6_literal_1() {
     libc::freeaddrinfo(res);
 }
 pub unsafe fn test_null_hints_2() {
-    let mut res: *mut addrinfo = std::ptr::null_mut();
+    let mut res: *mut ::libc::addrinfo = std::ptr::null_mut();
     assert!(
         ((((libc::getaddrinfo(
             (c"127.0.0.1".as_ptr().cast_mut()).cast_const(),
             (c"80".as_ptr().cast_mut()).cast_const(),
             std::ptr::null(),
-            (&mut res as *mut *mut addrinfo)
+            (&mut res as *mut *mut ::libc::addrinfo)
         )) == (0)) as i32)
             != 0)
     );
     assert!((((!((res).is_null())) as i32) != 0));
     assert!((((((*res).ai_family) == (libc::AF_INET)) as i32) != 0));
-    let mut sin: *mut sockaddr_in = ((*res).ai_addr as *mut sockaddr_in);
+    let mut sin: *mut ::libc::sockaddr_in = ((*res).ai_addr as *mut ::libc::sockaddr_in);
     let mut addr_be: [u8; 4] = [127_u8, 0_u8, 0_u8, 1_u8];
     assert!(
         (((({
             let sa = core::slice::from_raw_parts(
-                ((&mut (*sin).sin_addr as *mut in_addr) as *const ::libc::c_void) as *const u8,
+                ((&mut (*sin).sin_addr as *mut ::libc::in_addr) as *const ::libc::c_void)
+                    as *const u8,
                 4_usize as usize,
             );
             let sb = core::slice::from_raw_parts(

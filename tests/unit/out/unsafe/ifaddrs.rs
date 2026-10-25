@@ -13,11 +13,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut list: *mut ifaddrs = std::ptr::null_mut();
-    assert!(((((libc::getifaddrs((&mut list as *mut *mut ifaddrs))) == (0)) as i32) != 0));
+    let mut list: *mut libc::ifaddrs = std::ptr::null_mut();
+    assert!(((((libc::getifaddrs((&mut list as *mut *mut libc::ifaddrs))) == (0)) as i32) != 0));
     assert!((((!((list).is_null())) as i32) != 0));
     let mut found_loopback: i32 = 0;
-    let mut ifa: *mut ifaddrs = std::ptr::null_mut();
+    let mut ifa: *mut libc::ifaddrs = std::ptr::null_mut();
     ifa = list;
     'loop_: while (((!((ifa).is_null())) as i32) != 0) {
         assert!((((!(((*ifa).ifa_name).is_null())) as i32) != 0));
@@ -29,11 +29,12 @@ unsafe fn main_0() -> i32 {
             ifa = (*ifa).ifa_next;
             continue 'loop_;
         }
-        let mut sin: *mut sockaddr_in = ((*ifa).ifa_addr as *mut sockaddr_in);
+        let mut sin: *mut ::libc::sockaddr_in = ((*ifa).ifa_addr as *mut ::libc::sockaddr_in);
         let mut lo_be: [u8; 4] = [127_u8, 0_u8, 0_u8, 1_u8];
         if (((({
             let sa = core::slice::from_raw_parts(
-                ((&mut (*sin).sin_addr as *mut in_addr) as *const ::libc::c_void) as *const u8,
+                ((&mut (*sin).sin_addr as *mut ::libc::in_addr) as *const ::libc::c_void)
+                    as *const u8,
                 4_usize as usize,
             );
             let sb = core::slice::from_raw_parts(
@@ -54,12 +55,13 @@ unsafe fn main_0() -> i32 {
             found_loopback = 1;
             assert!((((((*ifa).ifa_flags) != (0_u32)) as i32) != 0));
             assert!((((!(((*ifa).ifa_netmask).is_null())) as i32) != 0));
-            let mut mask: *mut sockaddr_in = ((*ifa).ifa_netmask as *mut sockaddr_in);
+            let mut mask: *mut ::libc::sockaddr_in =
+                ((*ifa).ifa_netmask as *mut ::libc::sockaddr_in);
             let mut mask_be: [u8; 4] = [255_u8, 0_u8, 0_u8, 0_u8];
             assert!(
                 (((({
                     let sa = core::slice::from_raw_parts(
-                        ((&mut (*mask).sin_addr as *mut in_addr) as *const ::libc::c_void)
+                        ((&mut (*mask).sin_addr as *mut ::libc::in_addr) as *const ::libc::c_void)
                             as *const u8,
                         4_usize as usize,
                     );
