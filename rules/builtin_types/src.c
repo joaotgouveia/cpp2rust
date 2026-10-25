@@ -20,6 +20,7 @@ typedef double t180;
 typedef long double t190;
 typedef __int128 t200;
 typedef unsigned __int128 t210;
+typedef __float128 t215;
 typedef void t220;
 typedef void *t221;
 typedef const void *t222;
