@@ -181,6 +181,23 @@ impl Owner {
     }
 }
 #[repr(C)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct Copyable {
+    pub data: Vec<i32>,
+}
+impl Copyable {
+    pub unsafe fn move_from(_a0: *mut Copyable) -> Self {
+        let mut this = Self {
+            data: std::mem::take(&mut (*_a0).data),
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut Copyable) -> *mut Copyable {
+        self.data = std::mem::take(&mut (*_a0).data);
+        return &mut (*(self as *mut Copyable));
+    }
+}
+#[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, DestructorUnsafe, Default)]
 pub struct Holder {
     pub inner: Inner,
@@ -378,6 +395,16 @@ unsafe fn main_0() -> i32 {
                 .map_or(::std::ptr::null_mut(), |v| v as *mut i32))
             .is_null())
     );
+    let mut c1: Copyable = Copyable {
+        data: Vec::from([1, 2]),
+    };
+    let mut c2: Copyable = c1.clone();
+    let mut c3: Copyable = Copyable::move_from({ &mut c1 });
+    assert!(((c2.data.len()) == (2_usize)) && ((c3.data.len()) == (2_usize)));
+    assert!(c1.data.is_empty());
+    let mut c4: Copyable = <Copyable>::default();
+    (unsafe { Copyable::move_assign(&mut c4, &mut c3) });
+    assert!(((c4.data[(1_usize)]) == (2)) && (c3.data.is_empty()));
     let mut h1: Holder = Holder::new({ 4 });
     let _dtor_h1 = ScopedDestructorUnsafe::new(&raw mut h1, Holder::destructor);
     {

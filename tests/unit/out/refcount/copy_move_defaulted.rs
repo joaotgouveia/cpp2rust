@@ -205,6 +205,20 @@ impl Default for Owner {
         }
     }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
+#[byte_size(24)]
+pub struct Copyable {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub data: Vec<i32>,
+}
+impl Copyable {
+    pub fn move_from(_a0: Ptr<Copyable>) -> Self {
+        Self {
+            data: field!(_a0, data).with_mut(std::mem::take),
+        }
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Destructor, Default)]
 #[byte_size(32)]
 pub struct Holder {
@@ -395,6 +409,19 @@ fn main_0() -> i32 {
     assert!(
         ((*o2.borrow()).data.is_empty()) && (({ (*o2.borrow()).p.clone() }.as_pointer()).is_null())
     );
+    let c1: Value<Copyable> = Rc::new(RefCell::new(Copyable {
+        data: Vec::from([1, 2]),
+    }));
+    let mut c2: Copyable = (*c1.borrow()).clone();
+    let c3: Value<Copyable> = Rc::new(RefCell::new(Copyable::move_from({ c1.as_pointer() })));
+    assert!((c2.data.len() == 2_usize) && ((*c3.borrow()).data.len() == 2_usize));
+    assert!((*c1.borrow()).data.is_empty());
+    let c4: Value<Copyable> = Rc::new(RefCell::new(<Copyable>::default()));
+    ({ CopyableImpl::move_assign(&c4.as_pointer(), c3.as_pointer()) });
+    assert!(
+        ((vec_elem!(c4.as_pointer(), data, 1_usize).read()) == 2)
+            && ((*c3.borrow()).data.is_empty())
+    );
     let h1: Value<Holder> = Rc::new(RefCell::new(Holder::new({ 4 })));
     let _dtor_h1 = ScopedDestructor::new(&h1, |__p| __p.destructor());
     {
@@ -440,6 +467,17 @@ impl BufferImpl for Ptr<Buffer> {
                 );
             ((array_field_ptr!((*self), arr)) as Ptr<i32>).to_any()
         };
+        return (*self).clone();
+    }
+}
+pub trait CopyableImpl {
+    fn move_assign(&self, _a0: Ptr<Copyable>) -> Ptr<Copyable>;
+}
+impl CopyableImpl for Ptr<Copyable> {
+    fn move_assign(&self, _a0: Ptr<Copyable>) -> Ptr<Copyable> {
+        field_ref!((*self), data)
+            .as_pointer()
+            .write(field!(_a0, data).with_mut(std::mem::take));
         return (*self).clone();
     }
 }
