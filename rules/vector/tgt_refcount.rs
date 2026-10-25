@@ -306,7 +306,6 @@ fn f116<T1: ByteRepr>(
 ) -> RandomAccessIterator<T1> {
     let __it = a1;
     let __off = __it.index();
-    let __off = a1.index();
     a0.splice(__off..__off, a2);
     __it
 }
