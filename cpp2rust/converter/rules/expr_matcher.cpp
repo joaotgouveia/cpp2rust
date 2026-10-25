@@ -669,6 +669,12 @@ bool namesClass(const clang::FunctionDecl *rule) {
     while (type->isPointerType()) {
       type = type->getPointeeType();
     }
+    // a class nested in a class template
+    // (typename iota_view<T1, T2>::__iterator)
+    if (auto member = type->getAs<clang::DependentNameType>()) {
+      auto qualifier = member->getQualifier().getAsType();
+      type = qualifier ? clang::QualType(qualifier, 0) : type;
+    }
     if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
       return !spec->isTypeAlias() &&
              llvm::isa_and_nonnull<clang::ClassTemplateDecl>(
