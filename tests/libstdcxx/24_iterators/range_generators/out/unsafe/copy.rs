@@ -327,27 +327,17 @@ impl Default for copy_max_0_ {
 }
 pub unsafe fn foo_11() -> () {
     {
-        (unsafe {
-            let mut ___val: copy_max_1_ = copy_max_1_::new();
-            (__promise as std___gen__Promise_erased_const_copy_max_1__ref_)
-                .yield_value_2(&mut ___val)
-        });
+        unimplemented!();
     };
 }
 pub unsafe fn foo_12() -> () {
     {
-        (unsafe {
-            let mut ___val: copy_max_0_ = copy_max_0_::new();
-            (__promise as std___gen__Promise_erased_copy_max_0__refref_).yield_value_2(&mut ___val)
-        });
+        unimplemented!();
     };
 }
 pub unsafe fn foo_13() -> () {
     {
-        (unsafe {
-            let mut ___val: copy_max_0_ = copy_max_0_::new();
-            (__promise as std___gen__Promise_erased_copy_max_0__refref_).yield_value_2(&mut ___val)
-        });
+        unimplemented!();
     };
 }
 pub fn main() {

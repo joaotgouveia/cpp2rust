@@ -318,29 +318,17 @@ impl Default for copy_max_0_ {
 }
 pub fn foo_11() -> () {
     {
-        ({
-            let ___val: Value<copy_max_1_> = Rc::new(RefCell::new(copy_max_1_::new()));
-            ((*__promise.borrow()) as std___gen__Promise_erased_const_copy_max_1__ref_)
-                .yield_value_2(___val.as_pointer())
-        });
+        unimplemented!();
     };
 }
 pub fn foo_12() -> () {
     {
-        ({
-            let ___val: Value<copy_max_0_> = Rc::new(RefCell::new(copy_max_0_::new()));
-            ((*__promise.borrow()) as std___gen__Promise_erased_copy_max_0__refref_)
-                .yield_value_2(___val.as_pointer())
-        });
+        unimplemented!();
     };
 }
 pub fn foo_13() -> () {
     {
-        ({
-            let ___val: Value<copy_max_0_> = Rc::new(RefCell::new(copy_max_0_::new()));
-            ((*__promise.borrow()) as std___gen__Promise_erased_copy_max_0__refref_)
-                .yield_value_2(___val.as_pointer())
-        });
+        unimplemented!();
     };
 }
 pub fn main() {
