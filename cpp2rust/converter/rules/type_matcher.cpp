@@ -169,6 +169,9 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     auto defaulted = [](const clang::ClassTemplateSpecializationDecl *spec,
                         unsigned from) {
       auto params = spec->getSpecializedTemplate()->getTemplateParameters();
+      if (params->hasParameterPack()) {
+        return false;
+      }
       for (unsigned i = from; i < params->size(); ++i) {
         auto param = params->getParam(i);
         bool has_default = false;
@@ -181,7 +184,7 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
                        llvm::dyn_cast<clang::TemplateTemplateParmDecl>(param)) {
           has_default = tmpl->hasDefaultArgument();
         }
-        if (param->isParameterPack() || !has_default) {
+        if (!has_default) {
           return false;
         }
       }
