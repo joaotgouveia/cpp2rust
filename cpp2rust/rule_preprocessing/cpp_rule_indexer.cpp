@@ -39,6 +39,14 @@ std::string ClassOf(clang::QualType type) {
     type = type->getPointeeType();
   }
   if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
+    // a class template nested in a class template
+    // (typename elements_view<T1, T2>::template __sentinel<T3>)
+    if (auto name = spec->getTemplateName().getAsDependentTemplateName()) {
+      auto qualifier = name->getQualifier();
+      return qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type
+                 ? ClassOf(clang::QualType(qualifier.getAsType(), 0))
+                 : std::string();
+    }
     auto decl = spec->getTemplateName().getAsTemplateDecl();
     if (auto alias =
             llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(decl)) {
@@ -110,8 +118,22 @@ void AddRequiredClasses(clang::QualType type,
     }
     return;
   }
+  clang::NestedNameSpecifier qualifier = std::nullopt;
   if (auto name = type->getAs<clang::DependentNameType>()) {
-    auto qualifier = name->getQualifier();
+    qualifier = name->getQualifier();
+  } else if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
+    // a class template nested in a class template
+    // (typename elements_view<T1, T2>::template __sentinel<T3>)
+    if (auto name = spec->getTemplateName().getAsDependentTemplateName()) {
+      for (const auto &arg : spec->template_arguments()) {
+        if (arg.getKind() == clang::TemplateArgument::Type) {
+          AddRequiredClasses(arg.getAsType(), required, declared);
+        }
+      }
+      qualifier = name->getQualifier();
+    }
+  }
+  if (qualifier) {
     if (qualifier.getKind() != clang::NestedNameSpecifier::Kind::Type) {
       return;
     }

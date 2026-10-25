@@ -56,6 +56,13 @@ std::optional<std::vector<clang::TemplateArgument>>
 DeduceFromType(clang::Sema &sema, clang::TemplateParameterList *params,
                clang::QualType pattern, clang::QualType actual);
 
+// The rule's parameters from a pattern naming a class through the classes it
+// is nested in (typename elements_view<T1, T2>::template __sentinel<T3> of
+// elements_view<V, 0>::__sentinel<true>).
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
+                clang::QualType pattern, const clang::CXXRecordDecl *record);
+
 bool IsInternal(const clang::NamedDecl *decl);
 
 const clang::TypeAliasTemplateDecl *AliasTemplateOf(clang::QualType type);

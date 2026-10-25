@@ -104,6 +104,21 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     return TypeMatch{};
   }
   auto params = tmpl->getTemplateParameters();
+  // a class template nested in a class template
+  // (typename elements_view<T1, T2>::template __sentinel<T3>)
+  if (auto nested = pattern->getAs<clang::TemplateSpecializationType>();
+      nested && nested->getTemplateName().getAsDependentTemplateName()) {
+    auto record = RuleDecls::GetSugar(spelled) ? nullptr
+                                               : spelled->getAsCXXRecordDecl();
+    auto args = record ? RuleDecls::DeduceFromClass(sema, params, pattern,
+                                                    record)
+                       : std::nullopt;
+    if (!args || !(args = completeArgs(sema, tmpl, *std::move(args))) ||
+        !satisfiesConstraints(sema, tmpl, *args)) {
+      return std::nullopt;
+    }
+    return TypeMatch{*std::move(args)};
+  }
   if (auto member = pattern->getAs<clang::DependentNameType>()) {
     auto qualifier = member->getQualifier().getAsType();
     // the member type is a typedef or a nested class
@@ -124,9 +139,8 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     if (!owner) {
       return std::nullopt;
     }
-    auto args =
-        RuleDecls::DeduceFromType(sema, params, clang::QualType(qualifier, 0),
-                                  ctx.getCanonicalTagType(owner));
+    auto args = RuleDecls::DeduceFromClass(
+        sema, params, clang::QualType(qualifier, 0), owner);
     if (!args || !(args = completeArgs(sema, tmpl, *std::move(args))) ||
         !satisfiesConstraints(sema, tmpl, *args)) {
       return std::nullopt;

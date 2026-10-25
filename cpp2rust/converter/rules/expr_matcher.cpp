@@ -305,6 +305,15 @@ substituteSpecializationInRuleTmpl(clang::Sema &sema,
   return result.isInvalid() || trial.failed() ? nullptr : result.get();
 }
 
+// A class nested in a class template, by a member name
+// (typename iota_view<T1, T2>::__iterator) or a member template
+// (typename elements_view<T1, T2>::template __sentinel<T3>).
+bool isNestedClass(clang::QualType type) {
+  auto spec = type->getAs<clang::TemplateSpecializationType>();
+  return type->getAs<clang::DependentNameType>() ||
+         (spec && spec->getTemplateName().getAsDependentTemplateName());
+}
+
 // A static member named through its class (std::numeric_limits<T1>::min())
 // binds the rule's parameters from the class of the member the use names.
 std::optional<std::vector<clang::TemplateArgument>>
@@ -319,22 +328,16 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   // (typename discrete_distribution<T1>::param_type(a0, a1))
   if (auto construct =
           llvm::dyn_cast<clang::CXXUnresolvedConstructExpr>(returned)) {
-    auto member =
-        construct->getTypeAsWritten()->getAs<clang::DependentNameType>();
-    auto qualifier = member ? member->getQualifier().getAsType() : nullptr;
+    auto written = construct->getTypeAsWritten();
     auto record = RuleDecls::SkipImplicit(use)
                       ->getType()
                       .getCanonicalType()
                       ->getAsCXXRecordDecl();
-    auto owner = record ? llvm::dyn_cast<clang::CXXRecordDecl>(
-                              record->getDeclContext())
-                        : nullptr;
-    if (!qualifier || !owner) {
+    if (!isNestedClass(written) || !record) {
       return std::nullopt;
     }
-    return RuleDecls::DeduceFromType(sema, rule->getTemplateParameters(),
-                                     clang::QualType(qualifier, 0),
-                                     sema.Context.getCanonicalTagType(owner));
+    return RuleDecls::DeduceFromClass(sema, rule->getTemplateParameters(),
+                                      written, record);
   }
   // an operand of a class nested in the rule's class
   // (const typename regex_traits<T1>::_RegexMask & of regex_traits<char>)
@@ -342,23 +345,16 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   auto operands = getOperands(sema.Context, use, params.size());
   for (unsigned i = 0; i < params.size() && i < operands.size(); ++i) {
     auto param = params[i]->getType().getNonReferenceType();
-    auto member = param->getAs<clang::DependentNameType>();
-    auto qualifier = member ? member->getQualifier().getAsType() : nullptr;
     auto record = operands[i]
                       ->getType()
                       .getNonReferenceType()
                       .getCanonicalType()
                       ->getAsCXXRecordDecl();
-    auto owner = record ? llvm::dyn_cast<clang::CXXRecordDecl>(
-                              record->getDeclContext())
-                        : nullptr;
-    if (!qualifier || !owner ||
-        record->getIdentifier() != member->getIdentifier()) {
+    if (!isNestedClass(param) || !record) {
       continue;
     }
-    if (auto deduced = RuleDecls::DeduceFromType(
-            sema, rule->getTemplateParameters(), clang::QualType(qualifier, 0),
-            sema.Context.getCanonicalTagType(owner))) {
+    if (auto deduced = RuleDecls::DeduceFromClass(
+            sema, rule->getTemplateParameters(), param, record)) {
       return deduced;
     }
   }
@@ -691,6 +687,10 @@ bool namesClass(const clang::FunctionDecl *rule) {
     }
     // a class nested in a class template
     // (typename iota_view<T1, T2>::__iterator)
+    if (auto spec = type->getAs<clang::TemplateSpecializationType>();
+        spec && spec->getTemplateName().getAsDependentTemplateName()) {
+      return true;
+    }
     if (auto member = type->getAs<clang::DependentNameType>()) {
       auto qualifier = member->getQualifier().getAsType();
       type = qualifier ? clang::QualType(qualifier, 0) : type;
