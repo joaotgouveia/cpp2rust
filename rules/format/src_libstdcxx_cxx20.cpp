@@ -10,23 +10,27 @@ using t2 = std::__format::_Arg_store<T1, T2...>;
 template <typename... T1>
 std::string f7(const std::locale &a0, std::format_string<T1...> a1,
                T1 &&...a2) {
-  return std::format<T1...>(a0, std::move(a1), std::forward<T1>(a2)...);
+  return std::format<T1...>(a0, std::forward<std::format_string<T1...>>(a1),
+                            std::forward<T1>(a2)...);
 }
 
 template <typename... T1>
 std::wstring f8(const std::locale &a0, std::wformat_string<T1...> a1,
                 T1 &&...a2) {
-  return std::format<T1...>(a0, std::move(a1), std::forward<T1>(a2)...);
+  return std::format<T1...>(a0, std::forward<std::wformat_string<T1...>>(a1),
+                            std::forward<T1>(a2)...);
 }
 
 template <typename... T1>
 std::string f9(std::format_string<T1...> a0, T1 &&...a1) {
-  return std::format<T1...>(std::move(a0), std::forward<T1>(a1)...);
+  return std::format<T1...>(std::forward<std::format_string<T1...>>(a0),
+                            std::forward<T1>(a1)...);
 }
 
 template <typename... T1>
 std::wstring f10(std::wformat_string<T1...> a0, T1 &&...a1) {
-  return std::format<T1...>(std::move(a0), std::forward<T1>(a1)...);
+  return std::format<T1...>(std::forward<std::wformat_string<T1...>>(a0),
+                            std::forward<T1>(a1)...);
 }
 
 using t3 = std::format_args;
@@ -65,7 +69,8 @@ template <typename T1, typename... T2>
 T1 f18(T1 a0, const std::locale &a1, std::format_string<T2...> a2, T2 &&...a3)
   requires(std::output_iterator<T1, const char &>)
 {
-  return std::format_to<T1, T2...>(std::move(a0), a1, std::move(a2),
+  return std::format_to<T1, T2...>(std::move(a0), a1,
+                                   std::forward<std::format_string<T2...>>(a2),
                                    std::forward<T2>(a3)...);
 }
 
@@ -73,7 +78,8 @@ template <typename T1, typename... T2>
 T1 f19(T1 a0, const std::locale &a1, std::wformat_string<T2...> a2, T2 &&...a3)
   requires(std::output_iterator<T1, const wchar_t &>)
 {
-  return std::format_to<T1, T2...>(std::move(a0), a1, std::move(a2),
+  return std::format_to<T1, T2...>(std::move(a0), a1,
+                                   std::forward<std::wformat_string<T2...>>(a2),
                                    std::forward<T2>(a3)...);
 }
 
@@ -81,7 +87,8 @@ template <typename T1, typename... T2>
 T1 f20(T1 a0, std::format_string<T2...> a1, T2 &&...a2)
   requires(std::output_iterator<T1, const char &>)
 {
-  return std::format_to<T1, T2...>(std::move(a0), std::move(a1),
+  return std::format_to<T1, T2...>(std::move(a0),
+                                   std::forward<std::format_string<T2...>>(a1),
                                    std::forward<T2>(a2)...);
 }
 
@@ -89,7 +96,8 @@ template <typename T1, typename... T2>
 T1 f21(T1 a0, std::wformat_string<T2...> a1, T2 &&...a2)
   requires(std::output_iterator<T1, const wchar_t &>)
 {
-  return std::format_to<T1, T2...>(std::move(a0), std::move(a1),
+  return std::format_to<T1, T2...>(std::move(a0),
+                                   std::forward<std::wformat_string<T2...>>(a1),
                                    std::forward<T2>(a2)...);
 }
 
@@ -99,8 +107,9 @@ std::format_to_n_result<T1> f22(T1 a0, std::iter_difference_t<T1> a1,
                                 std::format_string<T2...> a3, T2 &&...a4)
   requires(std::output_iterator<T1, const char &>)
 {
-  return std::format_to_n<T1, T2...>(std::move(a0), std::move(a1), a2,
-                                     std::move(a3), std::forward<T2>(a4)...);
+  return std::format_to_n<T1, T2...>(
+      std::move(a0), std::forward<std::iter_difference_t<T1>>(a1), a2,
+      std::forward<std::format_string<T2...>>(a3), std::forward<T2>(a4)...);
 }
 
 template <typename T1, typename... T2>
@@ -109,8 +118,9 @@ std::format_to_n_result<T1> f23(T1 a0, std::iter_difference_t<T1> a1,
                                 std::wformat_string<T2...> a3, T2 &&...a4)
   requires(std::output_iterator<T1, const wchar_t &>)
 {
-  return std::format_to_n<T1, T2...>(std::move(a0), std::move(a1), a2,
-                                     std::move(a3), std::forward<T2>(a4)...);
+  return std::format_to_n<T1, T2...>(
+      std::move(a0), std::forward<std::iter_difference_t<T1>>(a1), a2,
+      std::forward<std::wformat_string<T2...>>(a3), std::forward<T2>(a4)...);
 }
 
 template <typename T1, typename... T2>
@@ -118,8 +128,9 @@ std::format_to_n_result<T1> f24(T1 a0, std::iter_difference_t<T1> a1,
                                 std::format_string<T2...> a2, T2 &&...a3)
   requires(std::output_iterator<T1, const char &>)
 {
-  return std::format_to_n<T1, T2...>(std::move(a0), std::move(a1),
-                                     std::move(a2), std::forward<T2>(a3)...);
+  return std::format_to_n<T1, T2...>(
+      std::move(a0), std::forward<std::iter_difference_t<T1>>(a1),
+      std::forward<std::format_string<T2...>>(a2), std::forward<T2>(a3)...);
 }
 
 template <typename T1, typename... T2>
@@ -127,30 +138,36 @@ std::format_to_n_result<T1> f25(T1 a0, std::iter_difference_t<T1> a1,
                                 std::wformat_string<T2...> a2, T2 &&...a3)
   requires(std::output_iterator<T1, const wchar_t &>)
 {
-  return std::format_to_n<T1, T2...>(std::move(a0), std::move(a1),
-                                     std::move(a2), std::forward<T2>(a3)...);
+  return std::format_to_n<T1, T2...>(
+      std::move(a0), std::forward<std::iter_difference_t<T1>>(a1),
+      std::forward<std::wformat_string<T2...>>(a2), std::forward<T2>(a3)...);
 }
 
 template <typename... T1>
 std::size_t f26(const std::locale &a0, std::format_string<T1...> a1,
                 T1 &&...a2) {
-  return std::formatted_size<T1...>(a0, std::move(a1), std::forward<T1>(a2)...);
+  return std::formatted_size<T1...>(
+      a0, std::forward<std::format_string<T1...>>(a1), std::forward<T1>(a2)...);
 }
 
 template <typename... T1>
 std::size_t f27(const std::locale &a0, std::wformat_string<T1...> a1,
                 T1 &&...a2) {
-  return std::formatted_size<T1...>(a0, std::move(a1), std::forward<T1>(a2)...);
+  return std::formatted_size<T1...>(
+      a0, std::forward<std::wformat_string<T1...>>(a1),
+      std::forward<T1>(a2)...);
 }
 
 template <typename... T1>
 std::size_t f28(std::format_string<T1...> a0, T1 &&...a1) {
-  return std::formatted_size<T1...>(std::move(a0), std::forward<T1>(a1)...);
+  return std::formatted_size<T1...>(std::forward<std::format_string<T1...>>(a0),
+                                    std::forward<T1>(a1)...);
 }
 
 template <typename... T1>
 std::size_t f29(std::wformat_string<T1...> a0, T1 &&...a1) {
-  return std::formatted_size<T1...>(std::move(a0), std::forward<T1>(a1)...);
+  return std::formatted_size<T1...>(
+      std::forward<std::wformat_string<T1...>>(a0), std::forward<T1>(a1)...);
 }
 
 template <typename T1 = std::format_context, typename... T2>
@@ -210,7 +227,8 @@ T1 f39(T1 a0, const std::locale &a1, std::wstring_view a2, std::wformat_args a3)
 
 template <typename T1, typename T2>
 decltype(auto) f40(T1 &&a0, std::basic_format_arg<T2> a1) {
-  return std::visit_format_arg<T1, T2>(std::forward<T1>(a0), std::move(a1));
+  return std::visit_format_arg<T1, T2>(
+      std::forward<T1>(a0), std::forward<std::basic_format_arg<T2>>(a1));
 }
 
 using t8 = std::wformat_args;

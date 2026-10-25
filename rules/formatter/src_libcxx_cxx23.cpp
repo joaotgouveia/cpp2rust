@@ -30,7 +30,7 @@ void f229(std::formatter<T1, T2> &a0, std::basic_string_view<T2> a1)
             std::formattable<std::ranges::range_reference_t<T1>, T2>)) &&
           (std::format_kind<T1> == (std::range_format)3)
 {
-  return a0.set_separator(std::move(a1));
+  return a0.set_separator(std::forward<std::basic_string_view<T2>>(a1));
 }
 
 template <typename T1, typename T2>
@@ -40,7 +40,8 @@ void f230(std::formatter<T1, T2> &a0, std::basic_string_view<T2> a1,
             std::formattable<std::ranges::range_reference_t<T1>, T2>)) &&
           (std::format_kind<T1> == (std::range_format)3)
 {
-  return a0.set_brackets(std::move(a1), std::move(a2));
+  return a0.set_brackets(std::forward<std::basic_string_view<T2>>(a1),
+                         std::forward<std::basic_string_view<T2>>(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -131,7 +132,10 @@ typename T3::iterator f238(
             std::formattable<std::ranges::range_reference_t<T1>, T2>)) &&
           (std::format_kind<T1> == std::format_kind<T1>)
 {
-  return a0.template format<T3>(std::move(a1), a2);
+  return a0.template format<T3>(
+      std::forward<std::conditional_t<std::ranges::input_range<T1 const>,
+                                      T1 const &, T1 &>>(a1),
+      a2);
 }
 
 template <typename T1, typename T2>
@@ -171,7 +175,12 @@ f242(const std::formatter<std::tuple<T2...>, T1> &a0,
                         const std::tuple<T2...> &, std::tuple<T2...> &>
          a1,
      T3 &a2) {
-  return a0.template format<T3>(std::move(a1), a2);
+  return a0.template format<T3>(
+      std::forward<
+          std::conditional_t<(std::formattable<T2 const, T1> && ...),
+                             const std::tuple<T2...> &, std::tuple<T2...> &>>(
+          a1),
+      a2);
 }
 
 template <typename T1, typename... T2>
@@ -180,13 +189,14 @@ using t78 = std::formatter<std::pair<T2...>, T1>;
 template <typename T1, typename... T2>
 void f243(std::formatter<std::pair<T2...>, T1> &a0,
           std::basic_string_view<T1> a1) {
-  return a0.set_separator(std::move(a1));
+  return a0.set_separator(std::forward<std::basic_string_view<T1>>(a1));
 }
 
 template <typename T1, typename... T2>
 void f244(std::formatter<std::pair<T2...>, T1> &a0,
           std::basic_string_view<T1> a1, std::basic_string_view<T1> a2) {
-  return a0.set_brackets(std::move(a1), std::move(a2));
+  return a0.set_brackets(std::forward<std::basic_string_view<T1>>(a1),
+                         std::forward<std::basic_string_view<T1>>(a2));
 }
 
 template <typename T1, typename... T2, typename T3>
@@ -201,7 +211,11 @@ f246(const std::formatter<std::pair<T2...>, T1> &a0,
                         const std::pair<T2...> &, std::pair<T2...> &>
          a1,
      T3 &a2) {
-  return a0.template format<T3>(std::move(a1), a2);
+  return a0.template format<T3>(
+      std::forward<
+          std::conditional_t<(std::formattable<T2 const, T1> && ...),
+                             const std::pair<T2...> &, std::pair<T2...> &>>(a1),
+      a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

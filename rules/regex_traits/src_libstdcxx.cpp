@@ -7,7 +7,9 @@
 template <typename T1>
 bool f11(const std::regex_traits<T1> &a0, T1 a1,
          typename std::regex_traits<T1>::char_class_type a2) {
-  return a0.isctype(std::move(a1), std::move(a2));
+  return a0.isctype(
+      std::move(a1),
+      std::forward<typename std::regex_traits<T1>::char_class_type>(a2));
 }
 
 template <typename T1, typename T2>
@@ -28,21 +30,24 @@ template <typename T1>
 typename std::regex_traits<T1>::_RegexMask
 f14(const typename std::regex_traits<T1>::_RegexMask &a0,
     typename std::regex_traits<T1>::_RegexMask a1) {
-  return a0.operator&(std::move(a1));
+  return a0.operator&(
+      std::forward<typename std::regex_traits<T1>::_RegexMask>(a1));
 }
 
 template <typename T1>
 typename std::regex_traits<T1>::_RegexMask
 f15(const typename std::regex_traits<T1>::_RegexMask &a0,
     typename std::regex_traits<T1>::_RegexMask a1) {
-  return a0.operator|(std::move(a1));
+  return a0.operator|(
+      std::forward<typename std::regex_traits<T1>::_RegexMask>(a1));
 }
 
 template <typename T1>
 typename std::regex_traits<T1>::_RegexMask
 f16(const typename std::regex_traits<T1>::_RegexMask &a0,
     typename std::regex_traits<T1>::_RegexMask a1) {
-  return a0.operator^(std::move(a1));
+  return a0.operator^(
+      std::forward<typename std::regex_traits<T1>::_RegexMask>(a1));
 }
 
 template <typename T1>
@@ -55,25 +60,29 @@ template <typename T1>
 typename std::regex_traits<T1>::_RegexMask &
 f18(typename std::regex_traits<T1>::_RegexMask &a0,
     typename std::regex_traits<T1>::_RegexMask a1) {
-  return a0.operator&=(std::move(a1));
+  return a0.operator&=(
+      std::forward<typename std::regex_traits<T1>::_RegexMask>(a1));
 }
 
 template <typename T1>
 typename std::regex_traits<T1>::_RegexMask &
 f19(typename std::regex_traits<T1>::_RegexMask &a0,
     typename std::regex_traits<T1>::_RegexMask a1) {
-  return a0.operator|=(std::move(a1));
+  return a0.operator|=(
+      std::forward<typename std::regex_traits<T1>::_RegexMask>(a1));
 }
 
 template <typename T1>
 typename std::regex_traits<T1>::_RegexMask &
 f20(typename std::regex_traits<T1>::_RegexMask &a0,
     typename std::regex_traits<T1>::_RegexMask a1) {
-  return a0.operator^=(std::move(a1));
+  return a0.operator^=(
+      std::forward<typename std::regex_traits<T1>::_RegexMask>(a1));
 }
 
 template <typename T1>
 bool f21(const typename std::regex_traits<T1>::_RegexMask &a0,
          typename std::regex_traits<T1>::_RegexMask a1) {
-  return a0.operator==(std::move(a1));
+  return a0.operator==(
+      std::forward<typename std::regex_traits<T1>::_RegexMask>(a1));
 }

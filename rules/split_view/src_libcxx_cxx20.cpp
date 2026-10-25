@@ -226,8 +226,9 @@ template <typename T1, typename T2>
 typename std::ranges::split_view<T1, T2>::__iterator
 f49(std::ranges::split_view<T1, T2> &a0, std::ranges::iterator_t<T1> a1,
     std::ranges::subrange<std::ranges::iterator_t<T1>> a2) {
-  return typename std::ranges::split_view<T1, T2>::__iterator(a0, std::move(a1),
-                                                              std::move(a2));
+  return typename std::ranges::split_view<T1, T2>::__iterator(
+      a0, std::forward<std::ranges::iterator_t<T1>>(a1),
+      std::forward<std::ranges::subrange<std::ranges::iterator_t<T1>>>(a2));
 }
 
 template <typename T1, typename T2>

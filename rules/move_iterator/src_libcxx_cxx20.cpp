@@ -48,7 +48,7 @@ bool f51(const std::move_iterator<T1> &a0, const std::move_sentinel<T2> &a1)
 template <typename T1>
 std::move_iterator<T1> f52(std::iter_difference_t<T1> a0,
                            const std::move_iterator<T1> &a1) {
-  return std::operator+ <T1>(std::move(a0), a1);
+  return std::operator+ <T1>(std::forward<std::iter_difference_t<T1>>(a0), a1);
 }
 
 template <typename T1, typename T2>

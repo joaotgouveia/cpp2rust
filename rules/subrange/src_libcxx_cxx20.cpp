@@ -50,8 +50,9 @@ f33(T4 a0, T2 a1, std::make_unsigned_t<std::iter_difference_t<T1>> a2)
             !std::sized_sentinel_for<T2, T1>)) &&
           (std::ranges::__convertible_to_non_slicing<T4, T1>)
 {
-  return std::ranges::subrange<T1, T2, T3>(std::move(a0), std::move(a1),
-                                           std::move(a2));
+  return std::ranges::subrange<T1, T2, T3>(
+      std::move(a0), std::move(a1),
+      std::forward<std::make_unsigned_t<std::iter_difference_t<T1>>>(a2));
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
@@ -94,7 +95,9 @@ f36(T4 &&a0, std::make_unsigned_t<std::iter_difference_t<T1>> a1)
             !std::sized_sentinel_for<T2, T1>)) &&
           (std::ranges::borrowed_range<T4>)
 {
-  return std::ranges::subrange<T1, T2, T3>(std::forward<T4>(a0), std::move(a1));
+  return std::ranges::subrange<T1, T2, T3>(
+      std::forward<T4>(a0),
+      std::forward<std::make_unsigned_t<std::iter_difference_t<T1>>>(a1));
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>

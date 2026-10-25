@@ -17,14 +17,18 @@ template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
 f24(std::flat_multiset<T1, T2, T3> &a0,
     typename std::flat_multiset<T1, T2, T3>::const_iterator a1, T1 const &a2) {
-  return a0.insert(std::move(a1), a2);
+  return a0.insert(
+      std::forward<typename std::flat_multiset<T1, T2, T3>::const_iterator>(a1),
+      a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
 f25(std::flat_multiset<T1, T2, T3> &a0,
     typename std::flat_multiset<T1, T2, T3>::const_iterator a1) {
-  return a0.erase(std::move(a1));
+  return a0.erase(
+      std::forward<typename std::flat_multiset<T1, T2, T3>::const_iterator>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -106,8 +110,9 @@ template <typename T1, typename T2, typename T3, typename... T4>
 typename std::flat_multiset<T1, T2, T3>::iterator
 f38(std::flat_multiset<T1, T2, T3> &a0,
     typename std::flat_multiset<T1, T2, T3>::const_iterator a1, T4 &&...a2) {
-  return a0.template emplace_hint<T4...>(std::move(a1),
-                                         std::forward<T4>(a2)...);
+  return a0.template emplace_hint<T4...>(
+      std::forward<typename std::flat_multiset<T1, T2, T3>::const_iterator>(a1),
+      std::forward<T4>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -138,7 +143,9 @@ f40(std::flat_multiset<T1, T2, T3> &a0,
            !(std::is_same<T4, typename std::_Flat_set_impl<
                                   T1, T2, T3, true>::value_type>::value))
 {
-  return a0.template insert<T4>(std::move(a1), std::forward<T4>(a2));
+  return a0.template insert<T4>(
+      std::forward<typename std::flat_multiset<T1, T2, T3>::const_iterator>(a1),
+      std::forward<T4>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

@@ -167,14 +167,18 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
 f21(std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1) {
-  return a0.erase(std::move(a1));
+  return a0.erase(
+      std::forward<
+          typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
 f22(std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::iterator a1) {
-  return a0.erase(std::move(a1));
+  return a0.erase(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::iterator>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -182,7 +186,11 @@ typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
 f23(std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
     typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a2) {
-  return a0.erase(std::move(a1), std::move(a2));
+  return a0.erase(
+      std::forward<
+          typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      std::forward<
+          typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -212,49 +220,63 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::size_type
 f28(const std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.bucket_size(std::move(a1));
+  return a0.bucket_size(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::local_iterator
 f29(std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.begin(std::move(a1));
+  return a0.begin(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::const_local_iterator
 f30(const std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.begin(std::move(a1));
+  return a0.begin(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::const_local_iterator
 f31(const std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.cbegin(std::move(a1));
+  return a0.cbegin(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::local_iterator
 f32(std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.end(std::move(a1));
+  return a0.end(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::const_local_iterator
 f33(const std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.end(std::move(a1));
+  return a0.end(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::const_local_iterator
 f34(const std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.cend(std::move(a1));
+  return a0.cend(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -275,13 +297,17 @@ void f37(std::unordered_map<T1, T2, T3, T4, T5> &a0, float a1) {
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f38(std::unordered_map<T1, T2, T3, T4, T5> &a0,
          typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.rehash(std::move(a1));
+  return a0.rehash(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f39(std::unordered_map<T1, T2, T3, T4, T5> &a0,
          typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a1) {
-  return a0.reserve(std::move(a1));
+  return a0.reserve(
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -297,8 +323,10 @@ typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
 f41(std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
     T6 &&...a2) {
-  return a0.template emplace_hint<T6...>(std::move(a1),
-                                         std::forward<T6>(a2)...);
+  return a0.template emplace_hint<T6...>(
+      std::forward<
+          typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      std::forward<T6>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,

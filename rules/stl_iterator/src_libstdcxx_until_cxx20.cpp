@@ -70,7 +70,7 @@ bool f49(const __gnu_cxx::__normal_iterator<T1, T3> &a0,
 
 template <typename T1>
 std::insert_iterator<T1> f50(T1 &a0, typename T1::iterator a1) {
-  return std::inserter<T1>(a0, std::move(a1));
+  return std::inserter<T1>(a0, std::forward<typename T1::iterator>(a1));
 }
 
 template <typename T1>

@@ -185,20 +185,21 @@ std::basic_string_view<T1, T2> f36(const std::basic_string_view<T1, T2> &a0,
 template <typename T1, typename T2>
 int f37(const std::basic_string_view<T1, T2> &a0,
         std::basic_string_view<T1, T2> a1) {
-  return a0.compare(std::move(a1));
+  return a0.compare(std::forward<std::basic_string_view<T1, T2>>(a1));
 }
 
 template <typename T1, typename T2>
 int f38(const std::basic_string_view<T1, T2> &a0, std::size_t a1,
         std::size_t a2, std::basic_string_view<T1, T2> a3) {
-  return a0.compare(a1, a2, std::move(a3));
+  return a0.compare(a1, a2, std::forward<std::basic_string_view<T1, T2>>(a3));
 }
 
 template <typename T1, typename T2>
 int f39(const std::basic_string_view<T1, T2> &a0, std::size_t a1,
         std::size_t a2, std::basic_string_view<T1, T2> a3, std::size_t a4,
         std::size_t a5) {
-  return a0.compare(a1, a2, std::move(a3), a4, a5);
+  return a0.compare(a1, a2, std::forward<std::basic_string_view<T1, T2>>(a3),
+                    a4, a5);
 }
 
 template <typename T1, typename T2>
@@ -221,7 +222,7 @@ int f42(const std::basic_string_view<T1, T2> &a0, std::size_t a1,
 template <typename T1, typename T2>
 std::size_t f43(const std::basic_string_view<T1, T2> &a0,
                 std::basic_string_view<T1, T2> a1, std::size_t a2) {
-  return a0.find(std::move(a1), a2);
+  return a0.find(std::forward<std::basic_string_view<T1, T2>>(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -245,7 +246,7 @@ std::size_t f46(const std::basic_string_view<T1, T2> &a0, const T1 *a1,
 template <typename T1, typename T2>
 std::size_t f47(const std::basic_string_view<T1, T2> &a0,
                 std::basic_string_view<T1, T2> a1, std::size_t a2) {
-  return a0.rfind(std::move(a1), a2);
+  return a0.rfind(std::forward<std::basic_string_view<T1, T2>>(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -269,7 +270,7 @@ std::size_t f50(const std::basic_string_view<T1, T2> &a0, const T1 *a1,
 template <typename T1, typename T2>
 std::size_t f51(const std::basic_string_view<T1, T2> &a0,
                 std::basic_string_view<T1, T2> a1, std::size_t a2) {
-  return a0.find_first_of(std::move(a1), a2);
+  return a0.find_first_of(std::forward<std::basic_string_view<T1, T2>>(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -293,7 +294,7 @@ std::size_t f54(const std::basic_string_view<T1, T2> &a0, const T1 *a1,
 template <typename T1, typename T2>
 std::size_t f55(const std::basic_string_view<T1, T2> &a0,
                 std::basic_string_view<T1, T2> a1, std::size_t a2) {
-  return a0.find_last_of(std::move(a1), a2);
+  return a0.find_last_of(std::forward<std::basic_string_view<T1, T2>>(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -317,7 +318,8 @@ std::size_t f58(const std::basic_string_view<T1, T2> &a0, const T1 *a1,
 template <typename T1, typename T2>
 std::size_t f59(const std::basic_string_view<T1, T2> &a0,
                 std::basic_string_view<T1, T2> a1, std::size_t a2) {
-  return a0.find_first_not_of(std::move(a1), a2);
+  return a0.find_first_not_of(std::forward<std::basic_string_view<T1, T2>>(a1),
+                              a2);
 }
 
 template <typename T1, typename T2>
@@ -341,7 +343,8 @@ std::size_t f62(const std::basic_string_view<T1, T2> &a0, const T1 *a1,
 template <typename T1, typename T2>
 std::size_t f63(const std::basic_string_view<T1, T2> &a0,
                 std::basic_string_view<T1, T2> a1, std::size_t a2) {
-  return a0.find_last_not_of(std::move(a1), a2);
+  return a0.find_last_not_of(std::forward<std::basic_string_view<T1, T2>>(a1),
+                             a2);
 }
 
 template <typename T1, typename T2>

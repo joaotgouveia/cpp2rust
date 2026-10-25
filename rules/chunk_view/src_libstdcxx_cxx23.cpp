@@ -8,7 +8,8 @@ template <typename T1>
 std::ranges::chunk_view<T1> f1(T1 a0, std::ranges::range_difference_t<T1> a1)
   requires(std::ranges::input_range<T1>)
 {
-  return std::ranges::chunk_view<T1>(std::move(a0), std::move(a1));
+  return std::ranges::chunk_view<T1>(
+      std::move(a0), std::forward<std::ranges::range_difference_t<T1>>(a1));
 }
 
 template <typename T1>
@@ -238,7 +239,8 @@ decltype(auto) f24(std::ranges::chunk_view<T1> &a0,
           (std::ranges::random_access_range<T2>) &&
           (std::ranges::input_range<T1>)
 {
-  return a0.template operator[]<T2>(std::move(a1));
+  return a0.template operator[]<T2>(
+      std::forward<std::ranges::range_difference_t<T2>>(a1));
 }
 
 template <typename T1, typename T2 = const std::ranges::chunk_view<T1>>
@@ -250,7 +252,8 @@ decltype(auto) f25(const std::ranges::chunk_view<T1> &a0,
           (std::ranges::random_access_range<T2>) &&
           (std::ranges::input_range<T1>)
 {
-  return a0.template operator[]<T2>(std::move(a1));
+  return a0.template operator[]<T2>(
+      std::forward<std::ranges::range_difference_t<T2>>(a1));
 }
 
 template <typename T1>
@@ -420,7 +423,8 @@ f51(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
     std::ranges::range_difference_t<T2> a1)
   requires(std::ranges::random_access_range<T2>)
 {
-  return a0.template operator[]<T2>(std::move(a1));
+  return a0.template operator[]<T2>(
+      std::forward<std::ranges::range_difference_t<T2>>(a1));
 }
 
 template <typename T1, typename T2>
@@ -429,5 +433,6 @@ f52(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
     std::ranges::range_difference_t<T2> a1)
   requires(std::ranges::random_access_range<T2>)
 {
-  return a0.template operator[]<T2>(std::move(a1));
+  return a0.template operator[]<T2>(
+      std::forward<std::ranges::range_difference_t<T2>>(a1));
 }

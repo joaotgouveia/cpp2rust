@@ -53,7 +53,8 @@ template <typename T1> std::__map_const_iterator<T1> f126(T1 a0) {
 template <typename T1>
 std::__map_const_iterator<T1>
 f127(std::__map_iterator<typename T1::__non_const_iterator> a0) {
-  return std::__map_const_iterator<T1>(std::move(a0));
+  return std::__map_const_iterator<T1>(
+      std::forward<std::__map_iterator<typename T1::__non_const_iterator>>(a0));
 }
 
 template <typename T1>
@@ -244,7 +245,8 @@ std::map<T1, T2, T3, T4> f155(const T3 &a0) {
 template <typename T1, typename T2, typename T3, typename T4>
 std::map<T1, T2, T3, T4> f156(std::initializer_list<std::pair<const T1, T2>> a0,
                               const T3 &a1) {
-  return std::map<T1, T2, T3, T4>(std::move(a0), a1);
+  return std::map<T1, T2, T3, T4>(
+      std::forward<std::initializer_list<std::pair<const T1, T2>>>(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>

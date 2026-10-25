@@ -9,7 +9,7 @@
 template <typename T1, typename T2, typename T3>
 bool f115(const std::basic_string<T1, T2, T3> &a0,
           std::basic_string_view<T1, T2> a1) {
-  return a0.starts_with(std::move(a1));
+  return a0.starts_with(std::forward<std::basic_string_view<T1, T2>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -25,7 +25,7 @@ bool f117(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
 template <typename T1, typename T2, typename T3>
 bool f118(const std::basic_string<T1, T2, T3> &a0,
           std::basic_string_view<T1, T2> a1) {
-  return a0.ends_with(std::move(a1));
+  return a0.ends_with(std::forward<std::basic_string_view<T1, T2>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>

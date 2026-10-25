@@ -137,7 +137,8 @@ template <typename T1>
 std::chrono::__detail::__local_time_fmt<T1>
 f17(std::chrono::local_time<T1> a0, const std::string *a1,
     const std::chrono::seconds *a2) {
-  return std::chrono::local_time_format<T1>(std::move(a0), a1, a2);
+  return std::chrono::local_time_format<T1>(
+      std::forward<std::chrono::local_time<T1>>(a0), a1, a2);
 }
 
 template <typename T1, typename T2>

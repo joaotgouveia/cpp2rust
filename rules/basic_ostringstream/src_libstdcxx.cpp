@@ -5,14 +5,18 @@
 template <typename T1, typename T2, typename T3>
 std::basic_ostringstream<T1, T2, T3>
 f36(typename std::basic_ostringstream<T1, T2, T3>::openmode a0) {
-  return std::basic_ostringstream<T1, T2, T3>(std::move(a0));
+  return std::basic_ostringstream<T1, T2, T3>(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::openmode>(
+          a0));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostringstream<T1, T2, T3>
 f37(const std::basic_string<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::openmode a1) {
-  return std::basic_ostringstream<T1, T2, T3>(a0, std::move(a1));
+  return std::basic_ostringstream<T1, T2, T3>(
+      a0, std::forward<typename std::basic_ostringstream<T1, T2, T3>::openmode>(
+              a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -145,7 +149,9 @@ template <typename T1, typename T2, typename T3>
 std::basic_ostringstream<T1, T2, T3> &
 f58(std::basic_ostringstream<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::pos_type a1) {
-  return a0.seekp(std::move(a1));
+  return a0.seekp(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::pos_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -153,7 +159,9 @@ std::basic_ostringstream<T1, T2, T3> &
 f59(std::basic_ostringstream<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::off_type a1,
     typename std::basic_ostringstream<T1, T2, T3>::seekdir a2) {
-  return a0.seekp(std::move(a1), std::move(a2));
+  return a0.seekp(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::off_type>(a1),
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::seekdir>(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -165,13 +173,15 @@ f60(const std::basic_ostringstream<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 void f61(std::basic_ostringstream<T1, T2, T3> &a0,
          typename std::basic_ostringstream<T1, T2, T3>::iostate a1) {
-  return a0.clear(std::move(a1));
+  return a0.clear(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::iostate>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 void f62(std::basic_ostringstream<T1, T2, T3> &a0,
          typename std::basic_ostringstream<T1, T2, T3>::iostate a1) {
-  return a0.setstate(std::move(a1));
+  return a0.setstate(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::iostate>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -183,7 +193,8 @@ f63(const std::basic_ostringstream<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 void f64(std::basic_ostringstream<T1, T2, T3> &a0,
          typename std::basic_ostringstream<T1, T2, T3>::iostate a1) {
-  return a0.exceptions(std::move(a1));
+  return a0.exceptions(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::iostate>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -195,14 +206,18 @@ template <typename T1, typename T2, typename T3>
 std::ios_base::fmtflags
 f66(std::basic_ostringstream<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::fmtflags a1) {
-  return a0.flags(std::move(a1));
+  return a0.flags(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::fmtflags>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::ios_base::fmtflags
 f67(std::basic_ostringstream<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::fmtflags a1) {
-  return a0.setf(std::move(a1));
+  return a0.setf(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::fmtflags>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -210,11 +225,16 @@ std::ios_base::fmtflags
 f68(std::basic_ostringstream<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::fmtflags a1,
     typename std::basic_ostringstream<T1, T2, T3>::fmtflags a2) {
-  return a0.setf(std::move(a1), std::move(a2));
+  return a0.setf(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::fmtflags>(a1),
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::fmtflags>(
+          a2));
 }
 
 template <typename T1, typename T2, typename T3>
 void f69(std::basic_ostringstream<T1, T2, T3> &a0,
          typename std::basic_ostringstream<T1, T2, T3>::fmtflags a1) {
-  return a0.unsetf(std::move(a1));
+  return a0.unsetf(
+      std::forward<typename std::basic_ostringstream<T1, T2, T3>::fmtflags>(
+          a1));
 }

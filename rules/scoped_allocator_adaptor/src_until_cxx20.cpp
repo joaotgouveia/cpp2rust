@@ -8,8 +8,9 @@ template <typename T1, typename... T2, typename T3, typename T4, typename... T5,
 void f13(std::scoped_allocator_adaptor<T1, T2...> &a0, std::pair<T3, T4> *a1,
          std::piecewise_construct_t a2, std::tuple<T5...> a3,
          std::tuple<T6...> a4) {
-  return a0.template construct<T3, T4, T5...>(a1, std::move(a2), std::move(a3),
-                                              std::move(a4));
+  return a0.template construct<T3, T4, T5...>(
+      a1, std::move(a2), std::forward<std::tuple<T5...>>(a3),
+      std::forward<std::tuple<T6...>>(a4));
 }
 
 template <typename T1, typename... T2, typename T3, typename T4>

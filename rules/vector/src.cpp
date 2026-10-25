@@ -187,7 +187,7 @@ std::vector<T1, T2> f24(std::vector<T1, T2> &&a0, const T2 &a1) {
 
 template <typename T1, typename T2>
 std::vector<T1, T2> f25(std::initializer_list<T1> a0, const T2 &a1) {
-  return std::vector<T1, T2>(std::move(a0), a1);
+  return std::vector<T1, T2>(std::forward<std::initializer_list<T1>>(a0), a1);
 }
 
 template <typename T1, typename T2>
@@ -204,12 +204,12 @@ std::vector<T1, T2> &f27(std::vector<T1, T2> &a0, std::vector<T1, T2> &&a1) {
 template <typename T1, typename T2>
 std::vector<T1, T2> &f28(std::vector<T1, T2> &a0,
                          std::initializer_list<T1> a1) {
-  return a0.operator=(std::move(a1));
+  return a0.operator=(std::forward<std::initializer_list<T1>>(a1));
 }
 
 template <typename T1, typename T2>
 void f29(std::vector<T1, T2> &a0, std::initializer_list<T1> a1) {
-  return a0.assign(std::move(a1));
+  return a0.assign(std::forward<std::initializer_list<T1>>(a1));
 }
 
 template <typename T1, typename T2>
@@ -314,34 +314,42 @@ template <typename T1, typename T2>
 typename std::vector<T1, T2>::iterator
 f49(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
     const T1 &a2) {
-  return a0.insert(std::move(a1), a2);
+  return a0.insert(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1), a2);
 }
 
 template <typename T1, typename T2>
 typename std::vector<T1, T2>::iterator
 f50(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
     T1 &&a2) {
-  return a0.insert(std::move(a1), std::move(a2));
+  return a0.insert(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::move(a2));
 }
 
 template <typename T1, typename T2>
 typename std::vector<T1, T2>::iterator
 f51(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
     std::initializer_list<T1> a2) {
-  return a0.insert(std::move(a1), std::move(a2));
+  return a0.insert(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::forward<std::initializer_list<T1>>(a2));
 }
 
 template <typename T1, typename T2>
 typename std::vector<T1, T2>::iterator
 f52(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1) {
-  return a0.erase(std::move(a1));
+  return a0.erase(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1));
 }
 
 template <typename T1, typename T2>
 typename std::vector<T1, T2>::iterator
 f53(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
     typename std::vector<T1, T2>::const_iterator a2) {
-  return a0.erase(std::move(a1), std::move(a2));
+  return a0.erase(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a2));
 }
 
 template <typename T1, typename T2>
@@ -357,7 +365,9 @@ template <typename T1, typename T2, typename... T3>
 typename std::vector<T1, T2>::iterator
 f56(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
     T3 &&...a2) {
-  return a0.template emplace<T3...>(std::move(a1), std::forward<T3>(a2)...);
+  return a0.template emplace<T3...>(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename T2> T2 f57(const std::vector<T1, T2> &a0) {

@@ -136,7 +136,8 @@ std::optional<T1> f103(std::in_place_t a0, std::initializer_list<T2> a1,
                        T3 &&...a2)
   requires(std::is_constructible_v<T1, std::initializer_list<T2> &, T3...>)
 {
-  return std::optional<T1>(std::move(a0), std::move(a1),
+  return std::optional<T1>(std::move(a0),
+                           std::forward<std::initializer_list<T2>>(a1),
                            std::forward<T3>(a2)...);
 }
 

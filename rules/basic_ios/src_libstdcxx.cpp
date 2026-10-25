@@ -11,13 +11,14 @@ typename std::basic_ios<T1, T2>::iostate f27(const std::basic_ios<T1, T2> &a0) {
 template <typename T1, typename T2>
 void f28(std::basic_ios<T1, T2> &a0,
          typename std::basic_ios<T1, T2>::iostate a1) {
-  return a0.clear(std::move(a1));
+  return a0.clear(std::forward<typename std::basic_ios<T1, T2>::iostate>(a1));
 }
 
 template <typename T1, typename T2>
 void f29(std::basic_ios<T1, T2> &a0,
          typename std::basic_ios<T1, T2>::iostate a1) {
-  return a0.setstate(std::move(a1));
+  return a0.setstate(
+      std::forward<typename std::basic_ios<T1, T2>::iostate>(a1));
 }
 
 template <typename T1, typename T2>
@@ -28,7 +29,8 @@ typename std::basic_ios<T1, T2>::iostate f30(const std::basic_ios<T1, T2> &a0) {
 template <typename T1, typename T2>
 void f31(std::basic_ios<T1, T2> &a0,
          typename std::basic_ios<T1, T2>::iostate a1) {
-  return a0.exceptions(std::move(a1));
+  return a0.exceptions(
+      std::forward<typename std::basic_ios<T1, T2>::iostate>(a1));
 }
 
 template <typename T1, typename T2>
@@ -39,24 +41,25 @@ std::ios_base::fmtflags f32(const std::basic_ios<T1, T2> &a0) {
 template <typename T1, typename T2>
 std::ios_base::fmtflags f33(std::basic_ios<T1, T2> &a0,
                             typename std::basic_ios<T1, T2>::fmtflags a1) {
-  return a0.flags(std::move(a1));
+  return a0.flags(std::forward<typename std::basic_ios<T1, T2>::fmtflags>(a1));
 }
 
 template <typename T1, typename T2>
 std::ios_base::fmtflags f34(std::basic_ios<T1, T2> &a0,
                             typename std::basic_ios<T1, T2>::fmtflags a1) {
-  return a0.setf(std::move(a1));
+  return a0.setf(std::forward<typename std::basic_ios<T1, T2>::fmtflags>(a1));
 }
 
 template <typename T1, typename T2>
 std::ios_base::fmtflags f35(std::basic_ios<T1, T2> &a0,
                             typename std::basic_ios<T1, T2>::fmtflags a1,
                             typename std::basic_ios<T1, T2>::fmtflags a2) {
-  return a0.setf(std::move(a1), std::move(a2));
+  return a0.setf(std::forward<typename std::basic_ios<T1, T2>::fmtflags>(a1),
+                 std::forward<typename std::basic_ios<T1, T2>::fmtflags>(a2));
 }
 
 template <typename T1, typename T2>
 void f36(std::basic_ios<T1, T2> &a0,
          typename std::basic_ios<T1, T2>::fmtflags a1) {
-  return a0.unsetf(std::move(a1));
+  return a0.unsetf(std::forward<typename std::basic_ios<T1, T2>::fmtflags>(a1));
 }

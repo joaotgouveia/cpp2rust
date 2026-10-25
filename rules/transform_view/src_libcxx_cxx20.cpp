@@ -243,7 +243,8 @@ decltype(auto) f53(std::ranges::transform_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::ranges::__transform_view_constraints<T1, T2>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
 
 template <typename T1, typename T2,
@@ -257,5 +258,6 @@ decltype(auto) f54(const std::ranges::transform_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::ranges::__transform_view_constraints<T1, T2>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }

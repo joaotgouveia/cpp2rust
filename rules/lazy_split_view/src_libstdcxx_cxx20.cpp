@@ -118,8 +118,8 @@ std::ranges::lazy_split_view<T1, T2> f9(T3 &&a0,
             std::ranges::__detail::__tiny_range<T2>)) &&
           (std::ranges::input_range<T3>) && (!(std::is_same<T3, T1>::value))
 {
-  return std::ranges::lazy_split_view<T1, T2>(std::forward<T3>(a0),
-                                              std::move(a1));
+  return std::ranges::lazy_split_view<T1, T2>(
+      std::forward<T3>(a0), std::forward<std::ranges::range_value_t<T3>>(a1));
 }
 
 template <typename T1, typename T2>
@@ -390,7 +390,8 @@ decltype(auto) f24(std::ranges::lazy_split_view<T1, T2> &a0,
            (std::ranges::forward_range<T1> ||
             std::ranges::__detail::__tiny_range<T2>))
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
 
 template <typename T1, typename T2,
@@ -409,5 +410,6 @@ decltype(auto) f25(const std::ranges::lazy_split_view<T1, T2> &a0,
            (std::ranges::forward_range<T1> ||
             std::ranges::__detail::__tiny_range<T2>))
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }

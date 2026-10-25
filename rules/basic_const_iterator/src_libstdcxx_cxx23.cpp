@@ -80,7 +80,7 @@ std::basic_const_iterator<T1> &f12(std::basic_const_iterator<T1> &a0,
                                    std::iter_difference_t<T1> a1)
   requires(std::random_access_iterator<T1>)
 {
-  return a0.operator+=(std::move(a1));
+  return a0.operator+=(std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1>
@@ -88,7 +88,7 @@ std::basic_const_iterator<T1> &f13(std::basic_const_iterator<T1> &a0,
                                    std::iter_difference_t<T1> a1)
   requires(std::random_access_iterator<T1>)
 {
-  return a0.operator-=(std::move(a1));
+  return a0.operator-=(std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1>
@@ -96,7 +96,7 @@ std::iter_const_reference_t<T1> f14(const std::basic_const_iterator<T1> &a0,
                                     std::iter_difference_t<T1> a1)
   requires(std::random_access_iterator<T1>)
 {
-  return a0.operator[](std::move(a1));
+  return a0.operator[](std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1>
@@ -143,7 +143,8 @@ template <typename T1, typename T2>
 std::basic_const_iterator<T1> f20(std::basic_const_iterator<T2> a0)
   requires(std::convertible_to<T2, T1>)
 {
-  return std::basic_const_iterator<T1>(std::move(a0));
+  return std::basic_const_iterator<T1>(
+      std::forward<std::basic_const_iterator<T2>>(a0));
 }
 
 template <typename T1, typename T2>
@@ -264,19 +265,19 @@ std::iter_difference_t<T1> f32(const T2 &a0,
 template <typename T1>
 std::basic_const_iterator<T1> f33(const std::basic_const_iterator<T1> &a0,
                                   std::iter_difference_t<T1> a1) {
-  return operator-(a0, std::move(a1));
+  return operator-(a0, std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1>
 std::basic_const_iterator<T1> f34(std::iter_difference_t<T1> a0,
                                   const std::basic_const_iterator<T1> &a1) {
-  return operator+(std::move(a0), a1);
+  return operator+(std::forward<std::iter_difference_t<T1>>(a0), a1);
 }
 
 template <typename T1>
 std::basic_const_iterator<T1> f35(const std::basic_const_iterator<T1> &a0,
                                   std::iter_difference_t<T1> a1) {
-  return operator+(a0, std::move(a1));
+  return operator+(a0, std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>

@@ -9,7 +9,8 @@ std::multiset<T1, T2, T3> f83(const T2 &a0) {
 
 template <typename T1, typename T2, typename T3>
 std::multiset<T1, T2, T3> f84(std::initializer_list<T1> a0, const T2 &a1) {
-  return std::multiset<T1, T2, T3>(std::move(a0), a1);
+  return std::multiset<T1, T2, T3>(std::forward<std::initializer_list<T1>>(a0),
+                                   a1);
 }
 
 template <typename T1, typename T2, typename T3>

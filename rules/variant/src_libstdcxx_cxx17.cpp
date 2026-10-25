@@ -44,7 +44,8 @@ template <typename... T1, typename T2, typename... T3,
               std::variant<T1...>::template __exactly_once<T2> &&
               std::is_constructible_v<T2, T3...>>>
 std::variant<T1...> f35(std::in_place_type_t<T2> a0, T3 &&...a1) {
-  return std::variant<T1...>(std::move(a0), std::forward<T3>(a1)...);
+  return std::variant<T1...>(std::forward<std::in_place_type_t<T2>>(a0),
+                             std::forward<T3>(a1)...);
 }
 
 template <typename... T1, typename T2, typename T3, typename... T4,
@@ -53,7 +54,8 @@ template <typename... T1, typename T2, typename T3, typename... T4,
               std::is_constructible_v<T2, std::initializer_list<T3> &, T4...>>>
 std::variant<T1...> f36(std::in_place_type_t<T2> a0,
                         std::initializer_list<T3> a1, T4 &&...a2) {
-  return std::variant<T1...>(std::move(a0), std::move(a1),
+  return std::variant<T1...>(std::forward<std::in_place_type_t<T2>>(a0),
+                             std::forward<std::initializer_list<T3>>(a1),
                              std::forward<T4>(a2)...);
 }
 
@@ -62,7 +64,8 @@ template <typename... T1, std::size_t T2, typename... T3,
           typename T5 = std::enable_if_t<std::is_constructible_v<
               typename std::_Nth_type<T2, T1...>::type, T3...>>>
 std::variant<T1...> f37(std::in_place_index_t<T2> a0, T3 &&...a1) {
-  return std::variant<T1...>(std::move(a0), std::forward<T3>(a1)...);
+  return std::variant<T1...>(std::forward<std::in_place_index_t<T2>>(a0),
+                             std::forward<T3>(a1)...);
 }
 
 template <typename... T1, std::size_t T2, typename T3, typename... T4,
@@ -72,7 +75,8 @@ template <typename... T1, std::size_t T2, typename T3, typename... T4,
                                       std::initializer_list<T3> &, T4...>>>
 std::variant<T1...> f38(std::in_place_index_t<T2> a0,
                         std::initializer_list<T3> a1, T4 &&...a2) {
-  return std::variant<T1...>(std::move(a0), std::move(a1),
+  return std::variant<T1...>(std::forward<std::in_place_index_t<T2>>(a0),
+                             std::forward<std::initializer_list<T3>>(a1),
                              std::forward<T4>(a2)...);
 }
 
@@ -90,8 +94,8 @@ std::enable_if_t<
         std::variant<T1...>::template __exactly_once<T2>,
     T2 &>
 f40(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
-  return a0.template emplace<T2, T3, T4...>(std::move(a1),
-                                            std::forward<T4>(a2)...);
+  return a0.template emplace<T2, T3, T4...>(
+      std::forward<std::initializer_list<T3>>(a1), std::forward<T4>(a2)...);
 }
 
 template <typename... T1, std::size_t T2, typename... T3>
@@ -108,8 +112,8 @@ std::enable_if_t<
                             std::initializer_list<T3> &, T4...>,
     typename std::_Nth_type<T2, T1...>::type &>
 f42(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
-  return a0.template emplace<T2, T3, T4...>(std::move(a1),
-                                            std::forward<T4>(a2)...);
+  return a0.template emplace<T2, T3, T4...>(
+      std::forward<std::initializer_list<T3>>(a1), std::forward<T4>(a2)...);
 }
 
 template <typename T1, typename... T2> auto f43(T1 &&a0, T2 &&...a1) {

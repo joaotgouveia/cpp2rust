@@ -73,7 +73,8 @@ std::set<T1, T2, T3> f4(std::set<T1, T2, T3> &&a0) {
 template <typename T1, typename T2, typename T3>
 std::set<T1, T2, T3> f5(std::initializer_list<T1> a0, const T2 &a1,
                         const T3 &a2) {
-  return std::set<T1, T2, T3>(std::move(a0), a1, a2);
+  return std::set<T1, T2, T3>(std::forward<std::initializer_list<T1>>(a0), a1,
+                              a2);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -93,7 +94,7 @@ std::set<T1, T2, T3> f8(std::set<T1, T2, T3> &&a0, const T3 &a1) {
 
 template <typename T1, typename T2, typename T3>
 std::set<T1, T2, T3> f9(std::initializer_list<T1> a0, const T3 &a1) {
-  return std::set<T1, T2, T3>(std::move(a0), a1);
+  return std::set<T1, T2, T3>(std::forward<std::initializer_list<T1>>(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -110,7 +111,7 @@ std::set<T1, T2, T3> &f11(std::set<T1, T2, T3> &a0, std::set<T1, T2, T3> &&a1) {
 template <typename T1, typename T2, typename T3>
 std::set<T1, T2, T3> &f12(std::set<T1, T2, T3> &a0,
                           std::initializer_list<T1> a1) {
-  return a0.operator=(std::move(a1));
+  return a0.operator=(std::forward<std::initializer_list<T1>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -164,26 +165,30 @@ template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
 f22(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
     const T1 &a2) {
-  return a0.insert(std::move(a1), a2);
+  return a0.insert(
+      std::forward<typename std::set<T1, T2, T3>::const_iterator>(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
 f23(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
     T1 &&a2) {
-  return a0.insert(std::move(a1), std::move(a2));
+  return a0.insert(
+      std::forward<typename std::set<T1, T2, T3>::const_iterator>(a1),
+      std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
 void f24(std::set<T1, T2, T3> &a0, std::initializer_list<T1> a1) {
-  return a0.insert(std::move(a1));
+  return a0.insert(std::forward<std::initializer_list<T1>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
 f25(std::set<T1, T2, T3> &a0,
     typename std::set<T1, T2, T3>::const_iterator a1) {
-  return a0.erase(std::move(a1));
+  return a0.erase(
+      std::forward<typename std::set<T1, T2, T3>::const_iterator>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -196,7 +201,9 @@ template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
 f27(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
     typename std::set<T1, T2, T3>::const_iterator a2) {
-  return a0.erase(std::move(a1), std::move(a2));
+  return a0.erase(
+      std::forward<typename std::set<T1, T2, T3>::const_iterator>(a1),
+      std::forward<typename std::set<T1, T2, T3>::const_iterator>(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -280,8 +287,9 @@ template <typename T1, typename T2, typename T3, typename... T4>
 typename std::set<T1, T2, T3>::iterator
 f41(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
     T4 &&...a2) {
-  return a0.template emplace_hint<T4...>(std::move(a1),
-                                         std::forward<T4>(a2)...);
+  return a0.template emplace_hint<T4...>(
+      std::forward<typename std::set<T1, T2, T3>::const_iterator>(a1),
+      std::forward<T4>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

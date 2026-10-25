@@ -35,7 +35,10 @@ f1(typename std::pointer_traits<T3>::template rebind<T1> a0,
    typename std::pointer_traits<T3>::template rebind<
        typename std::pointer_traits<T3>::template rebind<T1>>
        a1) {
-  return std::_Deque_iterator<T1, T2, T3>(std::move(a0), std::move(a1));
+  return std::_Deque_iterator<T1, T2, T3>(
+      std::forward<typename std::pointer_traits<T3>::template rebind<T1>>(a0),
+      std::forward<typename std::pointer_traits<T3>::template rebind<
+          typename std::pointer_traits<T3>::template rebind<T1>>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>

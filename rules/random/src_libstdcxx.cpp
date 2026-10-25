@@ -503,7 +503,7 @@ std::size_t f84(const std::seed_seq &a0) { return a0.size(); }
 
 template <typename T1, typename T2 = std::_Require<std::is_integral<T1>>>
 std::seed_seq f85(std::initializer_list<T1> a0) {
-  return {std::move(a0)};
+  return {std::forward<std::initializer_list<T1>>(a0)};
 }
 
 template <typename T1> std::seed_seq f86(T1 a0, T1 a1) {

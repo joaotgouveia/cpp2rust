@@ -3,5 +3,7 @@
 
 template <typename T1>
 T1 f1(T1 a0, T1 a1, typename std::iterator_traits<T1>::difference_type a2) {
-  return std::shift_left<T1>(std::move(a0), std::move(a1), std::move(a2));
+  return std::shift_left<T1>(
+      std::move(a0), std::move(a1),
+      std::forward<typename std::iterator_traits<T1>::difference_type>(a2));
 }

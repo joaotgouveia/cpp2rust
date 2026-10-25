@@ -28,8 +28,10 @@ std::basic_string<T1, T2, T3> &
 f127(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1,
      typename std::basic_string<T1, T2, T3>::const_iterator a2, T4 a3, T4 a4) {
-  return a0.template replace<T4>(std::move(a1), std::move(a2), std::move(a3),
-                                 std::move(a4));
+  return a0.template replace<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a2),
+      std::move(a3), std::move(a4));
 }
 
 template <typename T1, typename T2, typename T3>

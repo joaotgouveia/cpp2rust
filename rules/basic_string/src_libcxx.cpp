@@ -16,25 +16,29 @@ std::basic_string_view<T1, T2> f276(const std::basic_string<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 const T1 &f277(const std::basic_string<T1, T2, T3> &a0,
                typename std::basic_string<T1, T2, T3>::size_type a1) {
-  return a0.operator[](std::move(a1));
+  return a0.operator[](
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 T1 &f278(std::basic_string<T1, T2, T3> &a0,
          typename std::basic_string<T1, T2, T3>::size_type a1) {
-  return a0.operator[](std::move(a1));
+  return a0.operator[](
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 const T1 &f279(const std::basic_string<T1, T2, T3> &a0,
                typename std::basic_string<T1, T2, T3>::size_type a1) {
-  return a0.at(std::move(a1));
+  return a0.at(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 T1 &f280(std::basic_string<T1, T2, T3> &a0,
          typename std::basic_string<T1, T2, T3>::size_type a1) {
-  return a0.at(std::move(a1));
+  return a0.at(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -42,7 +46,9 @@ std::basic_string<T1, T2, T3> &
 f281(std::basic_string<T1, T2, T3> &a0, const T1 *a1,
      typename std::basic_string<T1, T2, T3>::size_type a2,
      typename std::basic_string<T1, T2, T3>::size_type a3) {
-  return a0.append(a1, std::move(a2), std::move(a3));
+  return a0.append(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a3));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -70,7 +76,9 @@ std::basic_string<T1, T2, T3> &
 f286(std::basic_string<T1, T2, T3> &a0, const T1 *a1,
      typename std::basic_string<T1, T2, T3>::size_type a2,
      typename std::basic_string<T1, T2, T3>::size_type a3) {
-  return a0.assign(a1, std::move(a2), std::move(a3));
+  return a0.assign(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a3));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -89,7 +97,9 @@ template <typename T1, typename T2, typename T3,
 std::basic_string<T1, T2, T3>
 f289(typename std::basic_string<T1, T2, T3>::size_type a0, T1 a1,
      const T3 &a2) {
-  return std::basic_string<T1, T2, T3>(std::move(a0), std::move(a1), a2);
+  return std::basic_string<T1, T2, T3>(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a0),
+      std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -142,7 +152,9 @@ template <typename T1, typename T2, typename T3, typename T4,
 typename std::basic_string<T1, T2, T3>::iterator
 f295(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1, T4 a2, T4 a3) {
-  return a0.template insert<T4>(std::move(a1), std::move(a2), std::move(a3));
+  return a0.template insert<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a1),
+      std::move(a2), std::move(a3));
 }
 
 template <
@@ -152,7 +164,9 @@ template <
 typename std::basic_string<T1, T2, T3>::iterator
 f296(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1, T4 a2, T4 a3) {
-  return a0.template insert<T4>(std::move(a1), std::move(a2), std::move(a3));
+  return a0.template insert<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a1),
+      std::move(a2), std::move(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -162,6 +176,8 @@ std::basic_string<T1, T2, T3> &
 f297(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1,
      typename std::basic_string<T1, T2, T3>::const_iterator a2, T4 a3, T4 a4) {
-  return a0.template replace<T4>(std::move(a1), std::move(a2), std::move(a3),
-                                 std::move(a4));
+  return a0.template replace<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a2),
+      std::move(a3), std::move(a4));
 }

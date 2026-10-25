@@ -19,7 +19,9 @@ template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::node_type
 f42(std::unordered_set<T1, T2, T3, T4> &a0,
     typename std::unordered_set<T1, T2, T3, T4>::const_iterator a1) {
-  return a0.extract(std::move(a1));
+  return a0.extract(
+      std::forward<typename std::unordered_set<T1, T2, T3, T4>::const_iterator>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -34,7 +36,10 @@ typename std::unordered_set<T1, T2, T3, T4>::iterator
 f44(std::unordered_set<T1, T2, T3, T4> &a0,
     typename std::unordered_set<T1, T2, T3, T4>::const_iterator a1,
     typename std::unordered_set<T1, T2, T3, T4>::node_type &&a2) {
-  return a0.insert(std::move(a1), std::move(a2));
+  return a0.insert(
+      std::forward<typename std::unordered_set<T1, T2, T3, T4>::const_iterator>(
+          a1),
+      std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,

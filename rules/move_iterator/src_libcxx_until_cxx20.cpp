@@ -38,5 +38,6 @@ std::move_iterator<T1> &f37(std::move_iterator<T1> &a0,
 template <typename T1>
 std::move_iterator<T1> f38(typename std::move_iterator<T1>::difference_type a0,
                            const std::move_iterator<T1> &a1) {
-  return std::operator+ <T1>(std::move(a0), a1);
+  return std::operator+ <T1>(
+      std::forward<typename std::move_iterator<T1>::difference_type>(a0), a1);
 }

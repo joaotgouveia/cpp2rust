@@ -6,7 +6,8 @@ using t1 = std::const_mem_fun1_t<T1, T2, T3>;
 
 template <typename T1, typename T2, typename T3>
 std::const_mem_fun1_t<T1, T2, T3> f1(T1 (T2::*a0)(T3) const) {
-  return std::const_mem_fun1_t<T1, T2, T3>(std::move(a0));
+  return std::const_mem_fun1_t<T1, T2, T3>(
+      std::forward<T1 (T2::*)(T3) const>(a0));
 }
 
 template <typename T1, typename T2, typename T3>

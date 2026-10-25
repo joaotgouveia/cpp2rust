@@ -279,47 +279,55 @@ bool f56(volatile std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
 template <typename T1>
 T1 f57(volatile std::atomic<T1> *a0,
        typename std::atomic<T1>::difference_type a1) {
-  return std::atomic_fetch_add<T1>(a0, std::move(a1));
+  return std::atomic_fetch_add<T1>(
+      a0, std::forward<typename std::atomic<T1>::difference_type>(a1));
 }
 
 template <typename T1>
 T1 f58(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1) {
-  return std::atomic_fetch_add<T1>(a0, std::move(a1));
+  return std::atomic_fetch_add<T1>(
+      a0, std::forward<typename std::atomic<T1>::difference_type>(a1));
 }
 
 template <typename T1>
 T1 f59(volatile std::atomic<T1> *a0,
        typename std::atomic<T1>::difference_type a1, std::memory_order a2) {
-  return std::atomic_fetch_add_explicit<T1>(a0, std::move(a1), a2);
+  return std::atomic_fetch_add_explicit<T1>(
+      a0, std::forward<typename std::atomic<T1>::difference_type>(a1), a2);
 }
 
 template <typename T1>
 T1 f60(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1,
        std::memory_order a2) {
-  return std::atomic_fetch_add_explicit<T1>(a0, std::move(a1), a2);
+  return std::atomic_fetch_add_explicit<T1>(
+      a0, std::forward<typename std::atomic<T1>::difference_type>(a1), a2);
 }
 
 template <typename T1>
 T1 f61(volatile std::atomic<T1> *a0,
        typename std::atomic<T1>::difference_type a1) {
-  return std::atomic_fetch_sub<T1>(a0, std::move(a1));
+  return std::atomic_fetch_sub<T1>(
+      a0, std::forward<typename std::atomic<T1>::difference_type>(a1));
 }
 
 template <typename T1>
 T1 f62(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1) {
-  return std::atomic_fetch_sub<T1>(a0, std::move(a1));
+  return std::atomic_fetch_sub<T1>(
+      a0, std::forward<typename std::atomic<T1>::difference_type>(a1));
 }
 
 template <typename T1>
 T1 f63(volatile std::atomic<T1> *a0,
        typename std::atomic<T1>::difference_type a1, std::memory_order a2) {
-  return std::atomic_fetch_sub_explicit<T1>(a0, std::move(a1), a2);
+  return std::atomic_fetch_sub_explicit<T1>(
+      a0, std::forward<typename std::atomic<T1>::difference_type>(a1), a2);
 }
 
 template <typename T1>
 T1 f64(std::atomic<T1> *a0, typename std::atomic<T1>::difference_type a1,
        std::memory_order a2) {
-  return std::atomic_fetch_sub_explicit<T1>(a0, std::move(a1), a2);
+  return std::atomic_fetch_sub_explicit<T1>(
+      a0, std::forward<typename std::atomic<T1>::difference_type>(a1), a2);
 }
 
 template <typename T1> bool f65(const std::atomic<T1> *a0) {

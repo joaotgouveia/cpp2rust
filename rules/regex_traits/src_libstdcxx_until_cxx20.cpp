@@ -7,5 +7,6 @@
 template <typename T1>
 bool f22(const typename std::regex_traits<T1>::_RegexMask &a0,
          typename std::regex_traits<T1>::_RegexMask a1) {
-  return a0.operator!=(std::move(a1));
+  return a0.operator!=(
+      std::forward<typename std::regex_traits<T1>::_RegexMask>(a1));
 }

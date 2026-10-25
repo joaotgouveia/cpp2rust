@@ -7,18 +7,22 @@
 
 template <typename... T1>
 void f1(std::FILE *a0, std::format_string<T1...> a1, T1 &&...a2) {
-  return std::print<T1...>(a0, std::move(a1), std::forward<T1>(a2)...);
+  return std::print<T1...>(a0, std::forward<std::format_string<T1...>>(a1),
+                           std::forward<T1>(a2)...);
 }
 
 template <typename... T1> void f2(std::format_string<T1...> a0, T1 &&...a1) {
-  return std::print<T1...>(std::move(a0), std::forward<T1>(a1)...);
+  return std::print<T1...>(std::forward<std::format_string<T1...>>(a0),
+                           std::forward<T1>(a1)...);
 }
 
 template <typename... T1>
 void f3(std::FILE *a0, std::format_string<T1...> a1, T1 &&...a2) {
-  return std::println<T1...>(a0, std::move(a1), std::forward<T1>(a2)...);
+  return std::println<T1...>(a0, std::forward<std::format_string<T1...>>(a1),
+                             std::forward<T1>(a2)...);
 }
 
 template <typename... T1> void f4(std::format_string<T1...> a0, T1 &&...a1) {
-  return std::println<T1...>(std::move(a0), std::forward<T1>(a1)...);
+  return std::println<T1...>(std::forward<std::format_string<T1...>>(a0),
+                             std::forward<T1>(a1)...);
 }

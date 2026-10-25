@@ -37,8 +37,8 @@ std::enable_if_t<
     std::is_constructible_v<T1, std::initializer_list<T2> &, T3...>,
     std::optional<T1>>
 f45(std::initializer_list<T2> a0, T3 &&...a1) {
-  return std::make_optional<T1, T2, T3...>(std::move(a0),
-                                           std::forward<T3>(a1)...);
+  return std::make_optional<T1, T2, T3...>(
+      std::forward<std::initializer_list<T2>>(a0), std::forward<T3>(a1)...);
 }
 
 std::nullopt_t::_Construct f46() { return std::nullopt_t::_Construct::_Token; }
@@ -115,7 +115,8 @@ template <typename T1, typename T2, typename... T3>
 std::enable_if_t<
     std::is_constructible_v<T1, std::initializer_list<T2> &, T3...>, T1 &>
 f61(std::optional<T1> &a0, std::initializer_list<T2> a1, T3 &&...a2) {
-  return a0.template emplace<T2, T3...>(std::move(a1), std::forward<T3>(a2)...);
+  return a0.template emplace<T2, T3...>(
+      std::forward<std::initializer_list<T2>>(a1), std::forward<T3>(a2)...);
 }
 
 template <typename T1>

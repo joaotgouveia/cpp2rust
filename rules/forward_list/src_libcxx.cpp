@@ -118,30 +118,34 @@ bool f123(const std::__forward_list_iterator<T1> &a0,
 template <typename T1, typename T2>
 std::forward_list<T1, T2>
 f124(typename std::forward_list<T1, T2>::size_type a0) {
-  return std::forward_list<T1, T2>(std::move(a0));
+  return std::forward_list<T1, T2>(
+      std::forward<typename std::forward_list<T1, T2>::size_type>(a0));
 }
 
 template <typename T1, typename T2>
 std::forward_list<T1, T2> f125(typename std::forward_list<T1, T2>::size_type a0,
                                const T2 &a1) {
-  return std::forward_list<T1, T2>(std::move(a0), a1);
+  return std::forward_list<T1, T2>(
+      std::forward<typename std::forward_list<T1, T2>::size_type>(a0), a1);
 }
 
 template <typename T1, typename T2>
 std::forward_list<T1, T2> f126(typename std::forward_list<T1, T2>::size_type a0,
                                const T1 &a1) {
-  return std::forward_list<T1, T2>(std::move(a0), a1);
+  return std::forward_list<T1, T2>(
+      std::forward<typename std::forward_list<T1, T2>::size_type>(a0), a1);
 }
 
 template <typename T1, typename T2>
 std::forward_list<T1, T2> f127(std::initializer_list<T1> a0) {
-  return std::forward_list<T1, T2>(std::move(a0));
+  return std::forward_list<T1, T2>(std::forward<std::initializer_list<T1>>(a0));
 }
 
 template <typename T1, typename T2>
 void f128(std::forward_list<T1, T2> &a0,
           typename std::forward_list<T1, T2>::size_type a1, const T1 &a2) {
-  return a0.assign(std::move(a1), a2);
+  return a0.assign(
+      std::forward<typename std::forward_list<T1, T2>::size_type>(a1), a2);
 }
 
 template <typename T1, typename T2>
@@ -155,26 +159,31 @@ typename std::forward_list<T1, T2>::iterator
 f130(std::forward_list<T1, T2> &a0,
      typename std::forward_list<T1, T2>::const_iterator a1,
      typename std::forward_list<T1, T2>::size_type a2, const T1 &a3) {
-  return a0.insert_after(std::move(a1), std::move(a2), a3);
+  return a0.insert_after(
+      std::forward<typename std::forward_list<T1, T2>::const_iterator>(a1),
+      std::forward<typename std::forward_list<T1, T2>::size_type>(a2), a3);
 }
 
 template <typename T1, typename T2>
 void f131(std::forward_list<T1, T2> &a0,
           typename std::forward_list<T1, T2>::size_type a1) {
-  return a0.resize(std::move(a1));
+  return a0.resize(
+      std::forward<typename std::forward_list<T1, T2>::size_type>(a1));
 }
 
 template <typename T1, typename T2>
 void f132(std::forward_list<T1, T2> &a0,
           typename std::forward_list<T1, T2>::size_type a1, const T1 &a2) {
-  return a0.resize(std::move(a1), a2);
+  return a0.resize(
+      std::forward<typename std::forward_list<T1, T2>::size_type>(a1), a2);
 }
 
 template <typename T1, typename T2,
           std::__enable_if_t<std::__is_allocator_v<T2>, int> T3 = 0>
 std::forward_list<T1, T2> f133(typename std::forward_list<T1, T2>::size_type a0,
                                const T1 &a1, const T2 &a2) {
-  return std::forward_list<T1, T2>(std::move(a0), a1, a2);
+  return std::forward_list<T1, T2>(
+      std::forward<typename std::forward_list<T1, T2>::size_type>(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3,
@@ -204,6 +213,7 @@ template <typename T1, typename T2, typename T3,
 typename std::forward_list<T1, T2>::iterator
 f137(std::forward_list<T1, T2> &a0,
      typename std::forward_list<T1, T2>::const_iterator a1, T3 a2, T3 a3) {
-  return a0.template insert_after<T3>(std::move(a1), std::move(a2),
-                                      std::move(a3));
+  return a0.template insert_after<T3>(
+      std::forward<typename std::forward_list<T1, T2>::const_iterator>(a1),
+      std::move(a2), std::move(a3));
 }

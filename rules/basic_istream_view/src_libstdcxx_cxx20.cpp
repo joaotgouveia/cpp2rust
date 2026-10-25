@@ -244,7 +244,8 @@ decltype(auto) f18(std::ranges::basic_istream_view<T1, T2, T3> &a0,
           (std::default_initializable<T1> &&
            std::ranges::__detail::__stream_extractable<T1, T2, T3>)
 {
-  return a0.template operator[]<T4>(std::move(a1));
+  return a0.template operator[]<T4>(
+      std::forward<std::ranges::range_difference_t<T4>>(a1));
 }
 
 template <typename T1, typename T2, typename T3,
@@ -259,7 +260,8 @@ decltype(auto) f19(const std::ranges::basic_istream_view<T1, T2, T3> &a0,
           (std::default_initializable<T1> &&
            std::ranges::__detail::__stream_extractable<T1, T2, T3>)
 {
-  return a0.template operator[]<T4>(std::move(a1));
+  return a0.template operator[]<T4>(
+      std::forward<std::ranges::range_difference_t<T4>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>

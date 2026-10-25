@@ -15,7 +15,10 @@ f106(std::from_range_t a0, T6 &&a1,
            T6, typename std::unordered_map<T1, T2, T3, T4, T5>::value_type>)
 {
   return std::unordered_map<T1, T2, T3, T4, T5>(
-      std::move(a0), std::forward<T6>(a1), std::move(a2), a3, a4, a5);
+      std::move(a0), std::forward<T6>(a1),
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a2),
+      a3, a4, a5);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -40,7 +43,10 @@ f108(std::from_range_t a0, T6 &&a1,
            T6, typename std::unordered_map<T1, T2, T3, T4, T5>::value_type>)
 {
   return std::unordered_map<T1, T2, T3, T4, T5>(
-      std::move(a0), std::forward<T6>(a1), std::move(a2), a3);
+      std::move(a0), std::forward<T6>(a1),
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a2),
+      a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -54,7 +60,10 @@ f109(std::from_range_t a0, T6 &&a1,
            T6, typename std::unordered_map<T1, T2, T3, T4, T5>::value_type>)
 {
   return std::unordered_map<T1, T2, T3, T4, T5>(
-      std::move(a0), std::forward<T6>(a1), std::move(a2), a3, a4);
+      std::move(a0), std::forward<T6>(a1),
+      std::forward<typename std::unordered_map<T1, T2, T3, T4, T5>::size_type>(
+          a2),
+      a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,

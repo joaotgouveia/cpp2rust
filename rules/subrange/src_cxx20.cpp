@@ -55,7 +55,7 @@ f6(const std::ranges::subrange<T1, T2, T3> &a0, std::iter_difference_t<T1> a1)
           ((T3 == std::ranges::subrange_kind::sized ||
             !std::sized_sentinel_for<T2, T1>))
 {
-  return a0.next(std::move(a1));
+  return a0.next(std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3>
@@ -64,7 +64,7 @@ std::ranges::subrange<T1, T2, T3> f7(std::ranges::subrange<T1, T2, T3> &&a0,
   requires((T3 == std::ranges::subrange_kind::sized ||
             !std::sized_sentinel_for<T2, T1>))
 {
-  return std::move(a0).next(std::move(a1));
+  return std::move(a0).next(std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3>
@@ -74,7 +74,7 @@ f8(const std::ranges::subrange<T1, T2, T3> &a0, std::iter_difference_t<T1> a1)
           ((T3 == std::ranges::subrange_kind::sized ||
             !std::sized_sentinel_for<T2, T1>))
 {
-  return a0.prev(std::move(a1));
+  return a0.prev(std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3>
@@ -83,7 +83,7 @@ std::ranges::subrange<T1, T2, T3> &f9(std::ranges::subrange<T1, T2, T3> &a0,
   requires((T3 == std::ranges::subrange_kind::sized ||
             !std::sized_sentinel_for<T2, T1>))
 {
-  return a0.advance(std::move(a1));
+  return a0.advance(std::forward<std::iter_difference_t<T1>>(a1));
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3,
@@ -97,7 +97,8 @@ decltype(auto) f10(std::ranges::subrange<T1, T2, T3> &a0,
           ((T3 == std::ranges::subrange_kind::sized ||
             !std::sized_sentinel_for<T2, T1>))
 {
-  return a0.template operator[]<T4>(std::move(a1));
+  return a0.template operator[]<T4>(
+      std::forward<std::ranges::range_difference_t<T4>>(a1));
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3,
@@ -111,5 +112,6 @@ decltype(auto) f11(const std::ranges::subrange<T1, T2, T3> &a0,
           ((T3 == std::ranges::subrange_kind::sized ||
             !std::sized_sentinel_for<T2, T1>))
 {
-  return a0.template operator[]<T4>(std::move(a1));
+  return a0.template operator[]<T4>(
+      std::forward<std::ranges::range_difference_t<T4>>(a1));
 }

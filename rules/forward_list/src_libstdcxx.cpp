@@ -141,7 +141,9 @@ template <bool T1, typename T2>
 std::__fwdlist::_Iterator<T1, T2>
 f81(typename std::__fwdlist::_Node_base<std::__ptr_rebind<T2, void>>::_Base_ptr
         a0) {
-  return std::__fwdlist::_Iterator<T1, T2>(std::move(a0));
+  return std::__fwdlist::_Iterator<T1, T2>(
+      std::forward<typename std::__fwdlist::_Node_base<
+          std::__ptr_rebind<T2, void>>::_Base_ptr>(a0));
 }
 
 template <bool T1, typename T2>
@@ -198,7 +200,9 @@ typename std::forward_list<T1, T2>::iterator
 f91(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1, std::size_t a2,
     const T1 &a3) {
-  return a0.insert_after(std::move(a1), a2, a3);
+  return a0.insert_after(
+      std::forward<typename std::forward_list<T1, T2>::const_iterator>(a1), a2,
+      a3);
 }
 
 template <typename T1, typename T2>
@@ -228,6 +232,7 @@ template <typename T1, typename T2, typename T3,
 typename std::forward_list<T1, T2>::iterator
 f96(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1, T3 a2, T3 a3) {
-  return a0.template insert_after<T3>(std::move(a1), std::move(a2),
-                                      std::move(a3));
+  return a0.template insert_after<T3>(
+      std::forward<typename std::forward_list<T1, T2>::const_iterator>(a1),
+      std::move(a2), std::move(a3));
 }

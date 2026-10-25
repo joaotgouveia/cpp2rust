@@ -113,7 +113,8 @@ std::expected<T1, T2> f14(std::unexpect_t a0, std::initializer_list<T3> a1,
   requires(std::is_constructible_v<T2, std::initializer_list<T3> &, T4...>) &&
           (std::is_void_v<T1>)
 {
-  return std::expected<T1, T2>(std::move(a0), std::move(a1),
+  return std::expected<T1, T2>(std::move(a0),
+                               std::forward<std::initializer_list<T3>>(a1),
                                std::forward<T4>(a2)...);
 }
 
@@ -317,7 +318,8 @@ std::expected<T1, T2> f49(std::in_place_t a0, std::initializer_list<T3> a1,
                           T4 &&...a2)
   requires(std::is_constructible_v<T1, std::initializer_list<T3> &, T4...>)
 {
-  return std::expected<T1, T2>(std::move(a0), std::move(a1),
+  return std::expected<T1, T2>(std::move(a0),
+                               std::forward<std::initializer_list<T3>>(a1),
                                std::forward<T4>(a2)...);
 }
 
@@ -333,7 +335,8 @@ std::expected<T1, T2> f51(std::unexpect_t a0, std::initializer_list<T3> a1,
                           T4 &&...a2)
   requires(std::is_constructible_v<T2, std::initializer_list<T3> &, T4...>)
 {
-  return std::expected<T1, T2>(std::move(a0), std::move(a1),
+  return std::expected<T1, T2>(std::move(a0),
+                               std::forward<std::initializer_list<T3>>(a1),
                                std::forward<T4>(a2)...);
 }
 
@@ -349,7 +352,8 @@ T1 &f53(std::expected<T1, T2> &a0, std::initializer_list<T3> a1, T4 &&...a2)
   requires(
       std::is_nothrow_constructible_v<T1, std::initializer_list<T3> &, T4...>)
 {
-  return a0.template emplace<T3, T4...>(std::move(a1), std::forward<T4>(a2)...);
+  return a0.template emplace<T3, T4...>(
+      std::forward<std::initializer_list<T3>>(a1), std::forward<T4>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3 = std::remove_cv_t<T1>>

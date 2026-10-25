@@ -126,16 +126,21 @@ template <typename T1>
 auto f153(const std::__val_expr<T1> &a0,
           typename std::__val_expr<T1>::value_type(a1)(
               typename std::__val_expr<T1>::value_type))
-    -> decltype(a0.apply(std::move(a1))) {
-  return a0.apply(std::move(a1));
+    -> decltype(a0.apply(std::forward<typename std::__val_expr<T1>::value_type(
+                             typename std::__val_expr<T1>::value_type)>(a1))) {
+  return a0.apply(std::forward<typename std::__val_expr<T1>::value_type(
+                      typename std::__val_expr<T1>::value_type)>(a1));
 }
 
 template <typename T1>
 auto f154(const std::__val_expr<T1> &a0,
           typename std::__val_expr<T1>::value_type(a1)(
               const typename std::__val_expr<T1>::value_type &))
-    -> decltype(a0.apply(std::move(a1))) {
-  return a0.apply(std::move(a1));
+    -> decltype(a0.apply(
+        std::forward<typename std::__val_expr<T1>::value_type(
+            const typename std::__val_expr<T1>::value_type &)>(a1))) {
+  return a0.apply(std::forward<typename std::__val_expr<T1>::value_type(
+                      const typename std::__val_expr<T1>::value_type &)>(a1));
 }
 
 template <typename T1,
@@ -766,12 +771,12 @@ std::indirect_array<T1> f251(std::valarray<T1> &a0,
 
 template <typename T1>
 std::valarray<T1> f252(const std::valarray<T1> &a0, T1(a1)(T1)) {
-  return a0.apply(std::move(a1));
+  return a0.apply(std::forward<T1(T1)>(a1));
 }
 
 template <typename T1>
 std::valarray<T1> f253(const std::valarray<T1> &a0, T1(a1)(const T1 &)) {
-  return a0.apply(std::move(a1));
+  return a0.apply(std::forward<T1(const T1 &)>(a1));
 }
 
 template <typename T1, typename T2>

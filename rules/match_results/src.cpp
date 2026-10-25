@@ -69,28 +69,32 @@ template <typename T1, typename T2>
 typename std::match_results<T1, T2>::difference_type
 f7(const std::match_results<T1, T2> &a0,
    typename std::match_results<T1, T2>::size_type a1) {
-  return a0.length(std::move(a1));
+  return a0.length(
+      std::forward<typename std::match_results<T1, T2>::size_type>(a1));
 }
 
 template <typename T1, typename T2>
 typename std::match_results<T1, T2>::difference_type
 f8(const std::match_results<T1, T2> &a0,
    typename std::match_results<T1, T2>::size_type a1) {
-  return a0.position(std::move(a1));
+  return a0.position(
+      std::forward<typename std::match_results<T1, T2>::size_type>(a1));
 }
 
 template <typename T1, typename T2>
 typename std::match_results<T1, T2>::string_type
 f9(const std::match_results<T1, T2> &a0,
    typename std::match_results<T1, T2>::size_type a1) {
-  return a0.str(std::move(a1));
+  return a0.str(
+      std::forward<typename std::match_results<T1, T2>::size_type>(a1));
 }
 
 template <typename T1, typename T2>
 const std::sub_match<T1> &
 f10(const std::match_results<T1, T2> &a0,
     typename std::match_results<T1, T2>::size_type a1) {
-  return a0.operator[](std::move(a1));
+  return a0.operator[](
+      std::forward<typename std::match_results<T1, T2>::size_type>(a1));
 }
 
 template <typename T1, typename T2>

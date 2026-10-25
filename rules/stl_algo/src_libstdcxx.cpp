@@ -163,12 +163,13 @@ T1 f33(T1 a0, T1 a1, const T2 &a2, T3 a3) {
 }
 
 template <typename T1> T1 f34(std::initializer_list<T1> a0) {
-  return std::max<T1>(std::move(a0));
+  return std::max<T1>(std::forward<std::initializer_list<T1>>(a0));
 }
 
 template <typename T1, typename T2>
 T1 f35(std::initializer_list<T1> a0, T2 a1) {
-  return std::max<T1, T2>(std::move(a0), std::move(a1));
+  return std::max<T1, T2>(std::forward<std::initializer_list<T1>>(a0),
+                          std::move(a1));
 }
 
 template <typename T1> T1 f36(T1 a0, T1 a1) {
@@ -193,12 +194,13 @@ T3 f39(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
 }
 
 template <typename T1> T1 f40(std::initializer_list<T1> a0) {
-  return std::min<T1>(std::move(a0));
+  return std::min<T1>(std::forward<std::initializer_list<T1>>(a0));
 }
 
 template <typename T1, typename T2>
 T1 f41(std::initializer_list<T1> a0, T2 a1) {
-  return std::min<T1, T2>(std::move(a0), std::move(a1));
+  return std::min<T1, T2>(std::forward<std::initializer_list<T1>>(a0),
+                          std::move(a1));
 }
 
 template <typename T1> T1 f42(T1 a0, T1 a1) {
@@ -215,7 +217,7 @@ std::pair<const T1 &, const T1 &> f44(const T1 &a0, const T1 &a1) {
 }
 
 template <typename T1> std::pair<T1, T1> f45(std::initializer_list<T1> a0) {
-  return std::minmax<T1>(std::move(a0));
+  return std::minmax<T1>(std::forward<std::initializer_list<T1>>(a0));
 }
 
 template <typename T1, typename T2>
@@ -225,7 +227,8 @@ std::pair<const T1 &, const T1 &> f46(const T1 &a0, const T1 &a1, T2 a2) {
 
 template <typename T1, typename T2>
 std::pair<T1, T1> f47(std::initializer_list<T1> a0, T2 a1) {
-  return std::minmax<T1, T2>(std::move(a0), std::move(a1));
+  return std::minmax<T1, T2>(std::forward<std::initializer_list<T1>>(a0),
+                             std::move(a1));
 }
 
 template <typename T1> std::pair<T1, T1> f48(T1 a0, T1 a1) {

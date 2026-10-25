@@ -71,35 +71,45 @@ template <typename T1, typename T2>
 typename __gnu_cxx::__normal_iterator<T1, T2>::reference
 f9(const __gnu_cxx::__normal_iterator<T1, T2> &a0,
    typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type a1) {
-  return a0.operator[](std::move(a1));
+  return a0.operator[](
+      std::forward<
+          typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type>(a1));
 }
 
 template <typename T1, typename T2>
 __gnu_cxx::__normal_iterator<T1, T2> &
 f10(__gnu_cxx::__normal_iterator<T1, T2> &a0,
     typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type a1) {
-  return a0.operator+=(std::move(a1));
+  return a0.operator+=(
+      std::forward<
+          typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type>(a1));
 }
 
 template <typename T1, typename T2>
 __gnu_cxx::__normal_iterator<T1, T2>
 f11(const __gnu_cxx::__normal_iterator<T1, T2> &a0,
     typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type a1) {
-  return a0.operator+(std::move(a1));
+  return a0.operator+(
+      std::forward<
+          typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type>(a1));
 }
 
 template <typename T1, typename T2>
 __gnu_cxx::__normal_iterator<T1, T2> &
 f12(__gnu_cxx::__normal_iterator<T1, T2> &a0,
     typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type a1) {
-  return a0.operator-=(std::move(a1));
+  return a0.operator-=(
+      std::forward<
+          typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type>(a1));
 }
 
 template <typename T1, typename T2>
 __gnu_cxx::__normal_iterator<T1, T2>
 f13(const __gnu_cxx::__normal_iterator<T1, T2> &a0,
     typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type a1) {
-  return a0.operator-(std::move(a1));
+  return a0.operator-(
+      std::forward<
+          typename __gnu_cxx::__normal_iterator<T1, T2>::difference_type>(a1));
 }
 
 template <typename T1, typename T2>
@@ -154,14 +164,17 @@ bool f22(const std::reverse_iterator<T1> &a0,
 template <typename T1>
 std::move_iterator<T1> f23(typename std::move_iterator<T1>::difference_type a0,
                            const std::move_iterator<T1> &a1) {
-  return std::operator+ <T1>(std::move(a0), a1);
+  return std::operator+ <T1>(
+      std::forward<typename std::move_iterator<T1>::difference_type>(a0), a1);
 }
 
 template <typename T1>
 std::reverse_iterator<T1>
 f24(typename std::reverse_iterator<T1>::difference_type a0,
     const std::reverse_iterator<T1> &a1) {
-  return std::operator+ <T1>(std::move(a0), a1);
+  return std::operator+ <T1>(
+      std::forward<typename std::reverse_iterator<T1>::difference_type>(a0),
+      a1);
 }
 
 template <typename T1, typename T2>

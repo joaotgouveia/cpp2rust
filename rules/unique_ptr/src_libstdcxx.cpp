@@ -47,7 +47,10 @@ std::unique_ptr<T1[], T2>
 f46(T3 a0,
     typename std::enable_if<!std::is_lvalue_reference<T4>::value, T4 &&>::type
         a1) {
-  return std::unique_ptr<T1[], T2>(std::move(a0), std::move(a1));
+  return std::unique_ptr<T1[], T2>(
+      std::move(a0),
+      std::forward<typename std::enable_if<!std::is_lvalue_reference<T4>::value,
+                                           T4 &&>::type>(a1));
 }
 
 template <typename T1, typename T2, typename T3 = T2,
@@ -95,7 +98,10 @@ std::unique_ptr<T1, T2>
 f52(T1 *a0,
     typename std::enable_if<!std::is_lvalue_reference<T3>::value, T3 &&>::type
         a1) {
-  return std::unique_ptr<T1, T2>(a0, std::move(a1));
+  return std::unique_ptr<T1, T2>(
+      a0,
+      std::forward<typename std::enable_if<!std::is_lvalue_reference<T3>::value,
+                                           T3 &&>::type>(a1));
 }
 
 template <typename T1, typename T2, typename T3 = T2,

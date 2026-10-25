@@ -22,7 +22,7 @@ std::generator<T1, T2, T3> f1(std::generator<T1, T2, T3> &&a0) {
 template <typename T1, typename T2, typename T3>
 std::generator<T1, T2, T3> &f2(std::generator<T1, T2, T3> &a0,
                                std::generator<T1, T2, T3> a1) {
-  return a0.operator=(std::move(a1));
+  return a0.operator=(std::forward<std::generator<T1, T2, T3>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -227,7 +227,8 @@ decltype(auto) f23(std::generator<T1, T2, T3> &a0,
                         std::remove_cv_t<std::generator<T1, T2, T3>>>) &&
           (std::ranges::random_access_range<T4>)
 {
-  return a0.template operator[]<T4>(std::move(a1));
+  return a0.template operator[]<T4>(
+      std::forward<std::ranges::range_difference_t<T4>>(a1));
 }
 
 template <typename T1, typename T2, typename T3,
@@ -239,7 +240,8 @@ decltype(auto) f24(const std::generator<T1, T2, T3> &a0,
                         std::remove_cv_t<std::generator<T1, T2, T3>>>) &&
           (std::ranges::random_access_range<T4>)
 {
-  return a0.template operator[]<T4>(std::move(a1));
+  return a0.template operator[]<T4>(
+      std::forward<std::ranges::range_difference_t<T4>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -300,7 +302,8 @@ f32(const typename std::generator<T1, T2, T3>::promise_type &a0) {
 template <typename T1, typename T2, typename T3>
 std::suspend_always f33(typename std::generator<T1, T2, T3>::promise_type &a0,
                         typename std::generator<T1, T2, T3>::yielded a1) {
-  return a0.yield_value(std::move(a1));
+  return a0.yield_value(
+      std::forward<typename std::generator<T1, T2, T3>::yielded>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -342,7 +345,9 @@ auto f38(typename std::generator<T1, T2, T3>::promise_type &a0,
   requires(std::same_as<std::__gen::_Yield2_t<T4, T5>,
                         typename std::generator<T1, T2, T3>::_Yielded>)
 {
-  return a0.template yield_value<T4, T5, T6, T7>(std::move(a1));
+  return a0.template yield_value<T4, T5, T6, T7>(
+      std::forward<std::ranges::elements_of<std::generator<T4, T5, T6> &&, T7>>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -353,7 +358,8 @@ auto f39(typename std::generator<T1, T2, T3>::promise_type &a0,
               typename std::generator<T1, T2, T3>::_Yielded>) &&
           (std::ranges::input_range<T4>)
 {
-  return a0.template yield_value<T4, T5>(std::move(a1));
+  return a0.template yield_value<T4, T5>(
+      std::forward<std::ranges::elements_of<T4, T5>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>

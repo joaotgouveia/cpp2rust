@@ -12,5 +12,7 @@ template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3>
 f217(typename std::basic_string<T1, T2, T3>::size_type a0, T1 a1,
      const T3 &a2) {
-  return std::basic_string<T1, T2, T3>(std::move(a0), std::move(a1), a2);
+  return std::basic_string<T1, T2, T3>(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a0),
+      std::move(a1), a2);
 }

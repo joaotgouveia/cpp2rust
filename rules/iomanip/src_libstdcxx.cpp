@@ -146,19 +146,20 @@ std::basic_ostream<T1, T2> &f35(std::basic_ostream<T1, T2> &a0, std::_Setw a1) {
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f36(std::basic_ostream<T1, T2> &a0,
                                 std::_Put_time<T1> a1) {
-  return std::operator<< <T1, T2>(a0, std::move(a1));
+  return std::operator<< <T1, T2>(a0, std::forward<std::_Put_time<T1>>(a1));
 }
 
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f37(std::basic_ostream<T1, T2> &a0,
                                 std::_Setfill<T1> a1) {
-  return std::operator<< <T1, T2>(a0, std::move(a1));
+  return std::operator<< <T1, T2>(a0, std::forward<std::_Setfill<T1>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f38(std::basic_ostream<T1, T2> &a0,
                                 std::_Put_money<T3> a1) {
-  return std::operator<< <T1, T2, T3>(a0, std::move(a1));
+  return std::operator<< <T1, T2, T3>(a0,
+                                      std::forward<std::_Put_money<T3>>(a1));
 }
 
 template <typename T1, typename T2>
@@ -193,19 +194,20 @@ std::basic_istream<T1, T2> &f43(std::basic_istream<T1, T2> &a0, std::_Setw a1) {
 template <typename T1, typename T2>
 std::basic_istream<T1, T2> &f44(std::basic_istream<T1, T2> &a0,
                                 std::_Get_time<T1> a1) {
-  return std::operator>> <T1, T2>(a0, std::move(a1));
+  return std::operator>> <T1, T2>(a0, std::forward<std::_Get_time<T1>>(a1));
 }
 
 template <typename T1, typename T2>
 std::basic_istream<T1, T2> &f45(std::basic_istream<T1, T2> &a0,
                                 std::_Setfill<T1> a1) {
-  return std::operator>> <T1, T2>(a0, std::move(a1));
+  return std::operator>> <T1, T2>(a0, std::forward<std::_Setfill<T1>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f46(std::basic_istream<T1, T2> &a0,
                                 std::_Get_money<T3> a1) {
-  return std::operator>> <T1, T2, T3>(a0, std::move(a1));
+  return std::operator>>
+      <T1, T2, T3>(a0, std::forward<std::_Get_money<T3>>(a1));
 }
 
 template <typename T1> std::_Put_money<T1> f47(const T1 &a0, bool a1) {

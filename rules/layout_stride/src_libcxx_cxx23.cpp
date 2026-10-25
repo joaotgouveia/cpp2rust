@@ -79,7 +79,8 @@ template <typename T1>
 typename std::layout_stride::mapping<T1>::index_type
 f13(const std::layout_stride::mapping<T1> &a0,
     typename std::layout_stride::mapping<T1>::rank_type a1) {
-  return a0.stride(std::move(a1));
+  return a0.stride(
+      std::forward<typename std::layout_stride::mapping<T1>::rank_type>(a1));
 }
 
 template <typename T1, typename T2>
@@ -92,7 +93,11 @@ f14(const T1 &a0,
        std::is_nothrow_constructible_v<
            typename std::layout_stride::mapping<T1>::index_type, const T2 &>))
 {
-  return std::layout_stride::mapping<T1>(a0, std::move(a1));
+  return std::layout_stride::mapping<T1>(
+      a0,
+      std::forward<
+          std::span<T2, std::layout_stride::mapping<T1>::extents_type::rank()>>(
+          a1));
 }
 
 template <typename T1, typename T2>

@@ -54,12 +54,12 @@ template <typename T1> void f12(std::auto_ptr<T1> &a0, T1 *a1) {
 }
 
 template <typename T1> std::auto_ptr<T1> f13(std::auto_ptr_ref<T1> a0) {
-  return {std::move(a0)};
+  return {std::forward<std::auto_ptr_ref<T1>>(a0)};
 }
 
 template <typename T1>
 std::auto_ptr<T1> &f14(std::auto_ptr<T1> &a0, std::auto_ptr_ref<T1> a1) {
-  return a0.operator=(std::move(a1));
+  return a0.operator=(std::forward<std::auto_ptr_ref<T1>>(a1));
 }
 
 template <typename T1, typename T2>

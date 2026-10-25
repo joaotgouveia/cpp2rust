@@ -12,10 +12,14 @@ typename std::iterator_traits<T1>::difference_type f2(T1 a0, T1 a1) {
 
 template <typename T1>
 T1 f3(T1 a0, typename std::iterator_traits<T1>::difference_type a1) {
-  return std::next<T1>(std::move(a0), std::move(a1));
+  return std::next<T1>(
+      std::move(a0),
+      std::forward<typename std::iterator_traits<T1>::difference_type>(a1));
 }
 
 template <typename T1>
 T1 f4(T1 a0, typename std::iterator_traits<T1>::difference_type a1) {
-  return std::prev<T1>(std::move(a0), std::move(a1));
+  return std::prev<T1>(
+      std::move(a0),
+      std::forward<typename std::iterator_traits<T1>::difference_type>(a1));
 }

@@ -44,7 +44,10 @@ f202(std::unordered_map<T1, T2, T3, T4, T5> &a0,
       !(std::is_same<T6, typename std::unordered_map<T1, T2, T3, T4,
                                                      T5>::node_type>::value))
 {
-  return a0.template insert<T6>(std::move(a1), std::forward<T6>(a2));
+  return a0.template insert<T6>(
+      std::forward<
+          typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      std::forward<T6>(a2));
 }
 
 template <

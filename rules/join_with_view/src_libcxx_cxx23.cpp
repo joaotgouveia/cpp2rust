@@ -109,8 +109,10 @@ f38(T3 &&a0, std::ranges::range_value_t<std::ranges::range_reference_t<T1>> a1)
            std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>) &&
           (std::ranges::input_range<T3>)
 {
-  return std::ranges::join_with_view<T1, T2>(std::forward<T3>(a0),
-                                             std::move(a1));
+  return std::ranges::join_with_view<T1, T2>(
+      std::forward<T3>(a0),
+      std::forward<
+          std::ranges::range_value_t<std::ranges::range_reference_t<T1>>>(a1));
 }
 
 template <typename T1, typename T2,
@@ -331,7 +333,8 @@ decltype(auto) f51(std::ranges::join_with_view<T1, T2> &a0,
            std::ranges::view<T2> &&
            std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
 
 template <typename T1, typename T2,
@@ -348,5 +351,6 @@ decltype(auto) f52(const std::ranges::join_with_view<T1, T2> &a0,
            std::ranges::view<T2> &&
            std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }

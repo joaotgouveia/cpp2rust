@@ -10,7 +10,8 @@ template <typename T1> using t2 = std::binder1st<T1>;
 
 template <typename T1>
 std::binder1st<T1> f5(const T1 &a0, const typename T1::first_argument_type a1) {
-  return std::binder1st<T1>(a0, std::move(a1));
+  return std::binder1st<T1>(
+      a0, std::forward<const typename T1::first_argument_type>(a1));
 }
 
 template <typename T1>

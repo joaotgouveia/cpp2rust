@@ -30,6 +30,7 @@ f145(std::forward_list<T1, T2> &a0,
      typename std::forward_list<T1, T2>::const_iterator a1, T3 &&a2)
   requires(std::_ContainerCompatibleRange<T3, T1>)
 {
-  return a0.template insert_range_after<T3>(std::move(a1),
-                                            std::forward<T3>(a2));
+  return a0.template insert_range_after<T3>(
+      std::forward<typename std::forward_list<T1, T2>::const_iterator>(a1),
+      std::forward<T3>(a2));
 }

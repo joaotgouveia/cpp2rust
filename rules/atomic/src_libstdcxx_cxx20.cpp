@@ -700,7 +700,7 @@ std::atomic<std::shared_ptr<T1>> f1014(std::nullptr_t a0) {
 
 template <typename T1>
 std::atomic<std::shared_ptr<T1>> f1015(std::shared_ptr<T1> a0) {
-  return {std::move(a0)};
+  return {std::forward<std::shared_ptr<T1>>(a0)};
 }
 
 template <typename T1>
@@ -717,12 +717,12 @@ std::shared_ptr<T1> f1017(const std::atomic<std::shared_ptr<T1>> &a0) {
 template <typename T1>
 void f1018(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> a1,
            std::memory_order a2) {
-  return a0.store(std::move(a1), a2);
+  return a0.store(std::forward<std::shared_ptr<T1>>(a1), a2);
 }
 
 template <typename T1>
 void f1019(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> a1) {
-  return a0.operator=(std::move(a1));
+  return a0.operator=(std::forward<std::shared_ptr<T1>>(a1));
 }
 
 template <typename T1>
@@ -733,37 +733,41 @@ void f1020(std::atomic<std::shared_ptr<T1>> &a0, std::nullptr_t a1) {
 template <typename T1>
 std::shared_ptr<T1> f1021(std::atomic<std::shared_ptr<T1>> &a0,
                           std::shared_ptr<T1> a1, std::memory_order a2) {
-  return a0.exchange(std::move(a1), a2);
+  return a0.exchange(std::forward<std::shared_ptr<T1>>(a1), a2);
 }
 
 template <typename T1>
 bool f1022(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> &a1,
            std::shared_ptr<T1> a2, std::memory_order a3, std::memory_order a4) {
-  return a0.compare_exchange_strong(a1, std::move(a2), a3, a4);
+  return a0.compare_exchange_strong(a1, std::forward<std::shared_ptr<T1>>(a2),
+                                    a3, a4);
 }
 
 template <typename T1>
 bool f1023(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> &a1,
            std::shared_ptr<T1> a2, std::memory_order a3) {
-  return a0.compare_exchange_strong(a1, std::move(a2), a3);
+  return a0.compare_exchange_strong(a1, std::forward<std::shared_ptr<T1>>(a2),
+                                    a3);
 }
 
 template <typename T1>
 bool f1024(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> &a1,
            std::shared_ptr<T1> a2, std::memory_order a3, std::memory_order a4) {
-  return a0.compare_exchange_weak(a1, std::move(a2), a3, a4);
+  return a0.compare_exchange_weak(a1, std::forward<std::shared_ptr<T1>>(a2), a3,
+                                  a4);
 }
 
 template <typename T1>
 bool f1025(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> &a1,
            std::shared_ptr<T1> a2, std::memory_order a3) {
-  return a0.compare_exchange_weak(a1, std::move(a2), a3);
+  return a0.compare_exchange_weak(a1, std::forward<std::shared_ptr<T1>>(a2),
+                                  a3);
 }
 
 template <typename T1>
 void f1026(const std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> a1,
            std::memory_order a2) {
-  return a0.wait(std::move(a1), a2);
+  return a0.wait(std::forward<std::shared_ptr<T1>>(a1), a2);
 }
 
 template <typename T1> void f1027(std::atomic<std::shared_ptr<T1>> &a0) {
@@ -791,7 +795,7 @@ template <typename T1> std::atomic<std::weak_ptr<T1>> f1031() { return {}; }
 
 template <typename T1>
 std::atomic<std::weak_ptr<T1>> f1032(std::weak_ptr<T1> a0) {
-  return {std::move(a0)};
+  return {std::forward<std::weak_ptr<T1>>(a0)};
 }
 
 template <typename T1>
@@ -808,48 +812,51 @@ std::weak_ptr<T1> f1034(const std::atomic<std::weak_ptr<T1>> &a0) {
 template <typename T1>
 void f1035(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> a1,
            std::memory_order a2) {
-  return a0.store(std::move(a1), a2);
+  return a0.store(std::forward<std::weak_ptr<T1>>(a1), a2);
 }
 
 template <typename T1>
 void f1036(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> a1) {
-  return a0.operator=(std::move(a1));
+  return a0.operator=(std::forward<std::weak_ptr<T1>>(a1));
 }
 
 template <typename T1>
 std::weak_ptr<T1> f1037(std::atomic<std::weak_ptr<T1>> &a0,
                         std::weak_ptr<T1> a1, std::memory_order a2) {
-  return a0.exchange(std::move(a1), a2);
+  return a0.exchange(std::forward<std::weak_ptr<T1>>(a1), a2);
 }
 
 template <typename T1>
 bool f1038(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> &a1,
            std::weak_ptr<T1> a2, std::memory_order a3, std::memory_order a4) {
-  return a0.compare_exchange_strong(a1, std::move(a2), a3, a4);
+  return a0.compare_exchange_strong(a1, std::forward<std::weak_ptr<T1>>(a2), a3,
+                                    a4);
 }
 
 template <typename T1>
 bool f1039(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> &a1,
            std::weak_ptr<T1> a2, std::memory_order a3) {
-  return a0.compare_exchange_strong(a1, std::move(a2), a3);
+  return a0.compare_exchange_strong(a1, std::forward<std::weak_ptr<T1>>(a2),
+                                    a3);
 }
 
 template <typename T1>
 bool f1040(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> &a1,
            std::weak_ptr<T1> a2, std::memory_order a3, std::memory_order a4) {
-  return a0.compare_exchange_weak(a1, std::move(a2), a3, a4);
+  return a0.compare_exchange_weak(a1, std::forward<std::weak_ptr<T1>>(a2), a3,
+                                  a4);
 }
 
 template <typename T1>
 bool f1041(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> &a1,
            std::weak_ptr<T1> a2, std::memory_order a3) {
-  return a0.compare_exchange_weak(a1, std::move(a2), a3);
+  return a0.compare_exchange_weak(a1, std::forward<std::weak_ptr<T1>>(a2), a3);
 }
 
 template <typename T1>
 void f1042(const std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> a1,
            std::memory_order a2) {
-  return a0.wait(std::move(a1), a2);
+  return a0.wait(std::forward<std::weak_ptr<T1>>(a1), a2);
 }
 
 template <typename T1> void f1043(std::atomic<std::weak_ptr<T1>> &a0) {

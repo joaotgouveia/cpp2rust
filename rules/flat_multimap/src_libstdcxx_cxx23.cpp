@@ -90,7 +90,10 @@ typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f26(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     const std::pair<T1, T2> &a2) {
-  return a0.insert(std::move(a1), a2);
+  return a0.insert(
+      std::forward<
+          typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -98,21 +101,28 @@ typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f27(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     std::pair<T1, T2> &&a2) {
-  return a0.insert(std::move(a1), std::move(a2));
+  return a0.insert(
+      std::forward<
+          typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f28(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator a1) {
-  return a0.erase(std::move(a1));
+  return a0.erase(
+      std::forward<typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f29(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator a1) {
-  return a0.erase(std::move(a1));
+  return a0.erase(
+      std::forward<
+          typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -125,7 +135,11 @@ typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f31(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator a2) {
-  return a0.erase(std::move(a1), std::move(a2));
+  return a0.erase(
+      std::forward<
+          typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      std::forward<
+          typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -215,8 +229,10 @@ typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f45(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator a1,
     T6 &&...a2) {
-  return a0.template emplace_hint<T6...>(std::move(a1),
-                                         std::forward<T6>(a2)...);
+  return a0.template emplace_hint<T6...>(
+      std::forward<
+          typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      std::forward<T6>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -253,7 +269,10 @@ f47(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
                T6, typename std::_Flat_map_impl<T1, T2, T3, T4, T5,
                                                 true>::value_type>::value))
 {
-  return a0.template insert<T6>(std::move(a1), std::forward<T6>(a2));
+  return a0.template insert<T6>(
+      std::forward<
+          typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      std::forward<T6>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,

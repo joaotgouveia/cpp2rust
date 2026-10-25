@@ -49,7 +49,8 @@ decltype(auto) f6(std::ranges::filter_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::is_object_v<T2>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
 
 template <typename T1, typename T2,
@@ -62,5 +63,6 @@ decltype(auto) f7(const std::ranges::filter_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::ranges::view<T1> && std::is_object_v<T2>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }

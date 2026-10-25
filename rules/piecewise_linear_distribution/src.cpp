@@ -63,7 +63,8 @@ std::piecewise_linear_distribution<T1> f9(T2 a0, T2 a1, T3 a2) {
 template <typename T1, typename T2>
 std::piecewise_linear_distribution<T1> f10(std::initializer_list<T1> a0,
                                            T2 a1) {
-  return std::piecewise_linear_distribution<T1>(std::move(a0), std::move(a1));
+  return std::piecewise_linear_distribution<T1>(
+      std::forward<std::initializer_list<T1>>(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -129,7 +130,7 @@ template <typename T1, typename T2>
 typename std::piecewise_linear_distribution<T1>::param_type
 f20(std::initializer_list<T1> a0, T2 a1) {
   return typename std::piecewise_linear_distribution<T1>::param_type(
-      std::move(a0), std::move(a1));
+      std::forward<std::initializer_list<T1>>(a0), std::move(a1));
 }
 
 template <typename T1, typename T2>

@@ -259,7 +259,8 @@ decltype(auto) f27(std::ranges::as_rvalue_view<T1> &a0,
                         std::remove_cv_t<std::ranges::as_rvalue_view<T1>>>) &&
           (std::ranges::random_access_range<T2>) && (std::ranges::view<T1>)
 {
-  return a0.template operator[]<T2>(std::move(a1));
+  return a0.template operator[]<T2>(
+      std::forward<std::ranges::range_difference_t<T2>>(a1));
 }
 
 template <typename T1, typename T2 = const std::ranges::as_rvalue_view<T1>>
@@ -270,5 +271,6 @@ decltype(auto) f28(const std::ranges::as_rvalue_view<T1> &a0,
                         std::remove_cv_t<std::ranges::as_rvalue_view<T1>>>) &&
           (std::ranges::random_access_range<T2>) && (std::ranges::view<T1>)
 {
-  return a0.template operator[]<T2>(std::move(a1));
+  return a0.template operator[]<T2>(
+      std::forward<std::ranges::range_difference_t<T2>>(a1));
 }

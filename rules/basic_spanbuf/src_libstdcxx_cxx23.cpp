@@ -32,7 +32,7 @@ std::basic_spanbuf<T1, T2> f2(std::ios_base::openmode a0) {
 
 template <typename T1, typename T2>
 std::basic_spanbuf<T1, T2> f3(std::span<T1> a0, std::ios_base::openmode a1) {
-  return std::basic_spanbuf<T1, T2>(std::move(a0), a1);
+  return std::basic_spanbuf<T1, T2>(std::forward<std::span<T1>>(a0), a1);
 }
 
 template <typename T1, typename T2>
@@ -58,7 +58,7 @@ std::span<T1> f7(const std::basic_spanbuf<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 void f8(std::basic_spanbuf<T1, T2> &a0, std::span<T1> a1) {
-  return a0.span(std::move(a1));
+  return a0.span(std::forward<std::span<T1>>(a1));
 }
 
 template <typename T1, typename T2>
@@ -76,7 +76,8 @@ typename std::basic_spanbuf<T1, T2>::pos_type
 f11(std::basic_spanbuf<T1, T2> &a0,
     typename std::basic_spanbuf<T1, T2>::off_type a1, std::ios_base::seekdir a2,
     std::ios_base::openmode a3) {
-  return a0.pubseekoff(std::move(a1), a2, a3);
+  return a0.pubseekoff(
+      std::forward<typename std::basic_spanbuf<T1, T2>::off_type>(a1), a2, a3);
 }
 
 template <typename T1, typename T2>
@@ -84,7 +85,8 @@ typename std::basic_spanbuf<T1, T2>::pos_type
 f12(std::basic_spanbuf<T1, T2> &a0,
     typename std::basic_spanbuf<T1, T2>::pos_type a1,
     std::ios_base::openmode a2) {
-  return a0.pubseekpos(std::move(a1), a2);
+  return a0.pubseekpos(
+      std::forward<typename std::basic_spanbuf<T1, T2>::pos_type>(a1), a2);
 }
 
 template <typename T1, typename T2> int f13(std::basic_spanbuf<T1, T2> &a0) {

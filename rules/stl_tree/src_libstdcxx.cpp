@@ -147,7 +147,9 @@ template <bool T1, typename T2>
 std::__rb_tree::_Iterator<T1, T2>
 f19(typename std::__rb_tree::_Node_base<std::__ptr_rebind<T2, void>>::_Base_ptr
         a0) {
-  return std::__rb_tree::_Iterator<T1, T2>(std::move(a0));
+  return std::__rb_tree::_Iterator<T1, T2>(
+      std::forward<typename std::__rb_tree::_Node_base<
+          std::__ptr_rebind<T2, void>>::_Base_ptr>(a0));
 }
 
 template <bool T1, typename T2>

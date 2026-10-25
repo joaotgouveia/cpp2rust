@@ -25,7 +25,9 @@ f245(const T4 &a0, typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T3 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return std::basic_string<T1, T2, T3>(a0, std::move(a1), std::move(a2), a3);
+  return std::basic_string<T1, T2, T3>(
+      a0, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2), a3);
 }
 
 template <
@@ -98,7 +100,9 @@ f250(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template append<T4>(a1, std::move(a2), std::move(a3));
+  return a0.template append<T4>(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -128,7 +132,9 @@ f252(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template assign<T4>(a1, std::move(a2), std::move(a3));
+  return a0.template assign<T4>(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -143,7 +149,8 @@ f253(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1, const T4 &a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template insert<T4>(std::move(a1), a2);
+  return a0.template insert<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -160,8 +167,10 @@ f254(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a4)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template insert<T4>(std::move(a1), a2, std::move(a3),
-                                std::move(a4));
+  return a0.template insert<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1), a2,
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a3),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a4));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
@@ -178,8 +187,10 @@ f255(std::basic_string<T1, T2, T3> &a0,
       !(std::is_same<
           T4, typename std::basic_string<T1, T2, T3>::const_iterator>::value))
 {
-  return a0.template replace<T4>(std::move(a1), std::move(a2), std::move(a3),
-                                 std::move(a4));
+  return a0.template replace<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a2),
+      std::move(a3), std::move(a4));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -195,7 +206,9 @@ f256(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template replace<T4>(std::move(a1), std::move(a2), a3);
+  return a0.template replace<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2), a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -213,8 +226,11 @@ f257(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a5)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template replace<T4>(std::move(a1), std::move(a2), a3,
-                                 std::move(a4), std::move(a5));
+  return a0.template replace<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2), a3,
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a4),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a5));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -230,7 +246,10 @@ f258(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template replace<T4>(std::move(a1), std::move(a2), a3);
+  return a0.template replace<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::const_iterator>(a2),
+      a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -245,7 +264,8 @@ f259(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find<T4>(a1, std::move(a2));
+  return a0.template find<T4>(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -260,7 +280,8 @@ f260(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template rfind<T4>(a1, std::move(a2));
+  return a0.template rfind<T4>(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -275,7 +296,8 @@ f261(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find_first_of<T4>(a1, std::move(a2));
+  return a0.template find_first_of<T4>(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -290,7 +312,8 @@ f262(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find_last_of<T4>(a1, std::move(a2));
+  return a0.template find_last_of<T4>(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -305,7 +328,8 @@ f263(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find_first_not_of<T4>(a1, std::move(a2));
+  return a0.template find_first_not_of<T4>(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -320,7 +344,8 @@ f264(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template find_last_not_of<T4>(a1, std::move(a2));
+  return a0.template find_last_not_of<T4>(
+      a1, std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -350,7 +375,9 @@ f266(const std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template compare<T4>(std::move(a1), std::move(a2), a3);
+  return a0.template compare<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2), a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -368,8 +395,11 @@ f267(const std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a5)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
-  return a0.template compare<T4>(std::move(a1), std::move(a2), a3,
-                                 std::move(a4), std::move(a5));
+  return a0.template compare<T4>(
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a1),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2), a3,
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a4),
+      std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a5));
 }
 
 template <typename T1, typename T2, typename T3>

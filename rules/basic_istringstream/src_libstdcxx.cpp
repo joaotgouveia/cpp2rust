@@ -5,14 +5,18 @@
 template <typename T1, typename T2, typename T3>
 std::basic_istringstream<T1, T2, T3>
 f41(typename std::basic_istringstream<T1, T2, T3>::openmode a0) {
-  return std::basic_istringstream<T1, T2, T3>(std::move(a0));
+  return std::basic_istringstream<T1, T2, T3>(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::openmode>(
+          a0));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istringstream<T1, T2, T3>
 f42(const std::basic_string<T1, T2, T3> &a0,
     typename std::basic_istringstream<T1, T2, T3>::openmode a1) {
-  return std::basic_istringstream<T1, T2, T3>(a0, std::move(a1));
+  return std::basic_istringstream<T1, T2, T3>(
+      a0, std::forward<typename std::basic_istringstream<T1, T2, T3>::openmode>(
+              a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -172,7 +176,9 @@ template <typename T1, typename T2, typename T3>
 std::basic_istringstream<T1, T2, T3> &
 f67(std::basic_istringstream<T1, T2, T3> &a0, std::streamsize a1,
     typename std::basic_istringstream<T1, T2, T3>::int_type a2) {
-  return a0.ignore(a1, std::move(a2));
+  return a0.ignore(
+      a1, std::forward<typename std::basic_istringstream<T1, T2, T3>::int_type>(
+              a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -209,7 +215,9 @@ template <typename T1, typename T2, typename T3>
 std::basic_istringstream<T1, T2, T3> &
 f73(std::basic_istringstream<T1, T2, T3> &a0,
     typename std::basic_istringstream<T1, T2, T3>::pos_type a1) {
-  return a0.seekg(std::move(a1));
+  return a0.seekg(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::pos_type>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -217,7 +225,9 @@ std::basic_istringstream<T1, T2, T3> &
 f74(std::basic_istringstream<T1, T2, T3> &a0,
     typename std::basic_istringstream<T1, T2, T3>::off_type a1,
     typename std::basic_istringstream<T1, T2, T3>::seekdir a2) {
-  return a0.seekg(std::move(a1), std::move(a2));
+  return a0.seekg(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::off_type>(a1),
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::seekdir>(a2));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -229,13 +239,15 @@ f75(const std::basic_istringstream<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 void f76(std::basic_istringstream<T1, T2, T3> &a0,
          typename std::basic_istringstream<T1, T2, T3>::iostate a1) {
-  return a0.clear(std::move(a1));
+  return a0.clear(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::iostate>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 void f77(std::basic_istringstream<T1, T2, T3> &a0,
          typename std::basic_istringstream<T1, T2, T3>::iostate a1) {
-  return a0.setstate(std::move(a1));
+  return a0.setstate(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::iostate>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -247,7 +259,8 @@ f78(const std::basic_istringstream<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 void f79(std::basic_istringstream<T1, T2, T3> &a0,
          typename std::basic_istringstream<T1, T2, T3>::iostate a1) {
-  return a0.exceptions(std::move(a1));
+  return a0.exceptions(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::iostate>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -259,14 +272,18 @@ template <typename T1, typename T2, typename T3>
 std::ios_base::fmtflags
 f81(std::basic_istringstream<T1, T2, T3> &a0,
     typename std::basic_istringstream<T1, T2, T3>::fmtflags a1) {
-  return a0.flags(std::move(a1));
+  return a0.flags(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::fmtflags>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::ios_base::fmtflags
 f82(std::basic_istringstream<T1, T2, T3> &a0,
     typename std::basic_istringstream<T1, T2, T3>::fmtflags a1) {
-  return a0.setf(std::move(a1));
+  return a0.setf(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::fmtflags>(
+          a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -274,11 +291,16 @@ std::ios_base::fmtflags
 f83(std::basic_istringstream<T1, T2, T3> &a0,
     typename std::basic_istringstream<T1, T2, T3>::fmtflags a1,
     typename std::basic_istringstream<T1, T2, T3>::fmtflags a2) {
-  return a0.setf(std::move(a1), std::move(a2));
+  return a0.setf(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::fmtflags>(a1),
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::fmtflags>(
+          a2));
 }
 
 template <typename T1, typename T2, typename T3>
 void f84(std::basic_istringstream<T1, T2, T3> &a0,
          typename std::basic_istringstream<T1, T2, T3>::fmtflags a1) {
-  return a0.unsetf(std::move(a1));
+  return a0.unsetf(
+      std::forward<typename std::basic_istringstream<T1, T2, T3>::fmtflags>(
+          a1));
 }

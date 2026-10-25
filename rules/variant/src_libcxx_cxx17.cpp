@@ -30,7 +30,8 @@ template <typename... T1, std::size_t T2, typename... T3,
               int>
               T6 = 0>
 std::variant<T1...> f59(std::in_place_index_t<T2> a0, T3 &&...a1) {
-  return std::variant<T1...>(std::move(a0), std::forward<T3>(a1)...);
+  return std::variant<T1...>(std::forward<std::in_place_index_t<T2>>(a0),
+                             std::forward<T3>(a1)...);
 }
 
 template <
@@ -44,7 +45,8 @@ template <
         T7 = 0>
 std::variant<T1...> f60(std::in_place_index_t<T2> a0,
                         std::initializer_list<T3> a1, T4 &&...a2) {
-  return std::variant<T1...>(std::move(a0), std::move(a1),
+  return std::variant<T1...>(std::forward<std::in_place_index_t<T2>>(a0),
+                             std::forward<std::initializer_list<T3>>(a1),
                              std::forward<T4>(a2)...);
 }
 
@@ -53,7 +55,8 @@ template <typename... T1, typename T2, typename... T3,
               T2, T1...>::value,
           std::enable_if_t<std::is_constructible_v<T2, T3...>, int> T5 = 0>
 std::variant<T1...> f61(std::in_place_type_t<T2> a0, T3 &&...a1) {
-  return std::variant<T1...>(std::move(a0), std::forward<T3>(a1)...);
+  return std::variant<T1...>(std::forward<std::in_place_type_t<T2>>(a0),
+                             std::forward<T3>(a1)...);
 }
 
 template <
@@ -65,7 +68,8 @@ template <
         T6 = 0>
 std::variant<T1...> f62(std::in_place_type_t<T2> a0,
                         std::initializer_list<T3> a1, T4 &&...a2) {
-  return std::variant<T1...>(std::move(a0), std::move(a1),
+  return std::variant<T1...>(std::forward<std::in_place_type_t<T2>>(a0),
+                             std::forward<std::initializer_list<T3>>(a1),
                              std::forward<T4>(a2)...);
 }
 
@@ -93,8 +97,8 @@ template <
         T7 = 0>
 std::variant_alternative_t<T2, std::variant<T1...>> &
 f64(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
-  return a0.template emplace<T2, T3, T4...>(std::move(a1),
-                                            std::forward<T4>(a2)...);
+  return a0.template emplace<T2, T3, T4...>(
+      std::forward<std::initializer_list<T3>>(a1), std::forward<T4>(a2)...);
 }
 
 template <typename... T1, typename T2, typename... T3,
@@ -113,8 +117,8 @@ template <
         std::is_constructible_v<T2, std::initializer_list<T3> &, T4...>, int>
         T6 = 0>
 T2 &f66(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
-  return a0.template emplace<T2, T3, T4...>(std::move(a1),
-                                            std::forward<T4>(a2)...);
+  return a0.template emplace<T2, T3, T4...>(
+      std::forward<std::initializer_list<T3>>(a1), std::forward<T4>(a2)...);
 }
 
 template <

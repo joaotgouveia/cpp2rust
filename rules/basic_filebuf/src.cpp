@@ -78,7 +78,8 @@ typename std::basic_filebuf<T1, T2>::pos_type
 f11(std::basic_filebuf<T1, T2> &a0,
     typename std::basic_filebuf<T1, T2>::off_type a1, std::ios_base::seekdir a2,
     std::ios_base::openmode a3) {
-  return a0.pubseekoff(std::move(a1), a2, a3);
+  return a0.pubseekoff(
+      std::forward<typename std::basic_filebuf<T1, T2>::off_type>(a1), a2, a3);
 }
 
 template <typename T1, typename T2>
@@ -86,7 +87,8 @@ typename std::basic_filebuf<T1, T2>::pos_type
 f12(std::basic_filebuf<T1, T2> &a0,
     typename std::basic_filebuf<T1, T2>::pos_type a1,
     std::ios_base::openmode a2) {
-  return a0.pubseekpos(std::move(a1), a2);
+  return a0.pubseekpos(
+      std::forward<typename std::basic_filebuf<T1, T2>::pos_type>(a1), a2);
 }
 
 template <typename T1, typename T2> int f13(std::basic_filebuf<T1, T2> &a0) {

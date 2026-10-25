@@ -29,5 +29,6 @@ void f3(std::pair<T1, T2> &a0, std::pair<T1, T2> &a1) {
 template <typename T1, typename T2, typename... T3, typename... T4>
 std::pair<T1, T2> f4(std::piecewise_construct_t a0, std::tuple<T3...> a1,
                      std::tuple<T4...> a2) {
-  return std::pair<T1, T2>(std::move(a0), std::move(a1), std::move(a2));
+  return std::pair<T1, T2>(std::move(a0), std::forward<std::tuple<T3...>>(a1),
+                           std::forward<std::tuple<T4...>>(a2));
 }

@@ -32,5 +32,7 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 typename std::map<T1, T2, T3, T4>::iterator
 f159(std::map<T1, T2, T3, T4> &a0,
      typename std::map<T1, T2, T3, T4>::const_iterator a1, T5 &&a2) {
-  return a0.template insert<T5>(std::move(a1), std::forward<T5>(a2));
+  return a0.template insert<T5>(
+      std::forward<typename std::map<T1, T2, T3, T4>::const_iterator>(a1),
+      std::forward<T5>(a2));
 }

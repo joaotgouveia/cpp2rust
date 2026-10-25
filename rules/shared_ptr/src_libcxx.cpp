@@ -12,38 +12,41 @@ std::shared_ptr<T1> f96(const T2 &a0, T3 &&...a1) {
 template <typename T1>
 bool f97(std::shared_ptr<T1> *a0, std::shared_ptr<T1> *a1,
          std::shared_ptr<T1> a2) {
-  return std::atomic_compare_exchange_strong<T1>(a0, a1, std::move(a2));
+  return std::atomic_compare_exchange_strong<T1>(
+      a0, a1, std::forward<std::shared_ptr<T1>>(a2));
 }
 
 template <typename T1>
 bool f98(std::shared_ptr<T1> *a0, std::shared_ptr<T1> *a1,
          std::shared_ptr<T1> a2, std::memory_order a3, std::memory_order a4) {
-  return std::atomic_compare_exchange_strong_explicit<T1>(a0, a1, std::move(a2),
-                                                          a3, a4);
+  return std::atomic_compare_exchange_strong_explicit<T1>(
+      a0, a1, std::forward<std::shared_ptr<T1>>(a2), a3, a4);
 }
 
 template <typename T1>
 bool f99(std::shared_ptr<T1> *a0, std::shared_ptr<T1> *a1,
          std::shared_ptr<T1> a2) {
-  return std::atomic_compare_exchange_weak<T1>(a0, a1, std::move(a2));
+  return std::atomic_compare_exchange_weak<T1>(
+      a0, a1, std::forward<std::shared_ptr<T1>>(a2));
 }
 
 template <typename T1>
 bool f100(std::shared_ptr<T1> *a0, std::shared_ptr<T1> *a1,
           std::shared_ptr<T1> a2, std::memory_order a3, std::memory_order a4) {
-  return std::atomic_compare_exchange_weak_explicit<T1>(a0, a1, std::move(a2),
-                                                        a3, a4);
+  return std::atomic_compare_exchange_weak_explicit<T1>(
+      a0, a1, std::forward<std::shared_ptr<T1>>(a2), a3, a4);
 }
 
 template <typename T1>
 std::shared_ptr<T1> f101(std::shared_ptr<T1> *a0, std::shared_ptr<T1> a1) {
-  return std::atomic_exchange<T1>(a0, std::move(a1));
+  return std::atomic_exchange<T1>(a0, std::forward<std::shared_ptr<T1>>(a1));
 }
 
 template <typename T1>
 std::shared_ptr<T1> f102(std::shared_ptr<T1> *a0, std::shared_ptr<T1> a1,
                          std::memory_order a2) {
-  return std::atomic_exchange_explicit<T1>(a0, std::move(a1), a2);
+  return std::atomic_exchange_explicit<T1>(
+      a0, std::forward<std::shared_ptr<T1>>(a1), a2);
 }
 
 template <typename T1> bool f103(const std::shared_ptr<T1> *a0) {
@@ -61,13 +64,14 @@ std::shared_ptr<T1> f105(const std::shared_ptr<T1> *a0, std::memory_order a1) {
 
 template <typename T1>
 void f106(std::shared_ptr<T1> *a0, std::shared_ptr<T1> a1) {
-  return std::atomic_store<T1>(a0, std::move(a1));
+  return std::atomic_store<T1>(a0, std::forward<std::shared_ptr<T1>>(a1));
 }
 
 template <typename T1>
 void f107(std::shared_ptr<T1> *a0, std::shared_ptr<T1> a1,
           std::memory_order a2) {
-  return std::atomic_store_explicit<T1>(a0, std::move(a1), a2);
+  return std::atomic_store_explicit<T1>(
+      a0, std::forward<std::shared_ptr<T1>>(a1), a2);
 }
 
 using t4 = std::bad_weak_ptr;

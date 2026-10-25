@@ -48,5 +48,6 @@ std::basic_ostream<T1, T2> &f115(std::basic_ostream<T1, T2> &a0,
 
 template <typename T1, typename T2>
 auto f116(std::basic_string_view<T1, T2> a0, T1 a1, T1 a2) {
-  return std::quoted<T1, T2>(std::move(a0), std::move(a1), std::move(a2));
+  return std::quoted<T1, T2>(std::forward<std::basic_string_view<T1, T2>>(a0),
+                             std::move(a1), std::move(a2));
 }

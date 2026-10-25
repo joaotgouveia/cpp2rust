@@ -150,7 +150,8 @@ template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &
 f22(std::basic_ostream<T1, T2> &a0,
     typename std::basic_ostream<T1, T2>::pos_type a1) {
-  return a0.seekp(std::move(a1));
+  return a0.seekp(
+      std::forward<typename std::basic_ostream<T1, T2>::pos_type>(a1));
 }
 
 template <typename T1, typename T2>
@@ -158,7 +159,9 @@ std::basic_ostream<T1, T2> &
 f23(std::basic_ostream<T1, T2> &a0,
     typename std::basic_ostream<T1, T2>::off_type a1,
     typename std::basic_ostream<T1, T2>::seekdir a2) {
-  return a0.seekp(std::move(a1), std::move(a2));
+  return a0.seekp(
+      std::forward<typename std::basic_ostream<T1, T2>::off_type>(a1),
+      std::forward<typename std::basic_ostream<T1, T2>::seekdir>(a2));
 }
 
 template <typename T1, typename T2>

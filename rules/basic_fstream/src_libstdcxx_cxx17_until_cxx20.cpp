@@ -10,7 +10,8 @@ template <typename T1, typename T2, typename T3,
                                   int>::type T5 = 0>
 std::basic_fstream<T1, T2>
 f107(const T3 &a0, typename std::basic_fstream<T1, T2>::openmode a1) {
-  return std::basic_fstream<T1, T2>(a0, std::move(a1));
+  return std::basic_fstream<T1, T2>(
+      a0, std::forward<typename std::basic_fstream<T1, T2>::openmode>(a1));
 }
 
 template <typename T1, typename T2, typename T3,
@@ -19,5 +20,6 @@ template <typename T1, typename T2, typename T3,
 std::_If_fs_path<T3, void>
 f108(std::basic_fstream<T1, T2> &a0, const T3 &a1,
      typename std::basic_fstream<T1, T2>::openmode a2) {
-  return a0.template open<T3>(a1, std::move(a2));
+  return a0.template open<T3>(
+      a1, std::forward<typename std::basic_fstream<T1, T2>::openmode>(a2));
 }

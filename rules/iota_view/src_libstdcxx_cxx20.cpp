@@ -31,7 +31,9 @@ f4(typename std::ranges::iota_view<T1, T2>::_Iterator a0,
   requires(std::same_as<T1, T2>) &&
           (std::__detail::__weakly_eq_cmp_with<T1, T2> && std::copyable<T1>)
 {
-  return std::ranges::iota_view<T1, T2>(std::move(a0), std::move(a1));
+  return std::ranges::iota_view<T1, T2>(
+      std::forward<typename std::ranges::iota_view<T1, T2>::_Iterator>(a0),
+      std::forward<typename std::ranges::iota_view<T1, T2>::_Iterator>(a1));
 }
 
 template <typename T1, typename T2>
@@ -41,7 +43,9 @@ f5(typename std::ranges::iota_view<T1, T2>::_Iterator a0,
   requires(std::same_as<T2, std::unreachable_sentinel_t>) &&
           (std::__detail::__weakly_eq_cmp_with<T1, T2> && std::copyable<T1>)
 {
-  return std::ranges::iota_view<T1, T2>(std::move(a0), std::move(a1));
+  return std::ranges::iota_view<T1, T2>(
+      std::forward<typename std::ranges::iota_view<T1, T2>::_Iterator>(a0),
+      std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -52,7 +56,9 @@ f6(typename std::ranges::iota_view<T1, T2>::_Iterator a0,
            (!std::same_as<T2, std::unreachable_sentinel_t>)) &&
           (std::__detail::__weakly_eq_cmp_with<T1, T2> && std::copyable<T1>)
 {
-  return std::ranges::iota_view<T1, T2>(std::move(a0), std::move(a1));
+  return std::ranges::iota_view<T1, T2>(
+      std::forward<typename std::ranges::iota_view<T1, T2>::_Iterator>(a0),
+      std::forward<typename std::ranges::iota_view<T1, T2>::_Sentinel>(a1));
 }
 
 template <typename T1, typename T2>
@@ -190,7 +196,8 @@ decltype(auto) f20(std::ranges::iota_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::__detail::__weakly_eq_cmp_with<T1, T2> && std::copyable<T1>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
 
 template <typename T1, typename T2,
@@ -203,7 +210,8 @@ decltype(auto) f21(const std::ranges::iota_view<T1, T2> &a0,
           (std::ranges::random_access_range<T3>) &&
           (std::__detail::__weakly_eq_cmp_with<T1, T2> && std::copyable<T1>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
 
 template <typename T1, typename T2>
@@ -289,7 +297,10 @@ f32(typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
     typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1)
   requires(std::ranges::__detail::__advanceable<T1>)
 {
-  return a0.operator+=(std::move(a1));
+  return a0.operator+=(
+      std::forward<
+          typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type>(
+          a1));
 }
 
 template <typename T1, typename T2>
@@ -298,7 +309,10 @@ f33(typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
     typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1)
   requires(std::ranges::__detail::__advanceable<T1>)
 {
-  return a0.operator-=(std::move(a1));
+  return a0.operator-=(
+      std::forward<
+          typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type>(
+          a1));
 }
 
 template <typename T1, typename T2>
@@ -306,7 +320,10 @@ T1 f34(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
        typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1)
   requires(std::ranges::__detail::__advanceable<T1>)
 {
-  return a0.operator[](std::move(a1));
+  return a0.operator[](
+      std::forward<
+          typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type>(
+          a1));
 }
 
 template <typename T1, typename T2>
@@ -320,21 +337,33 @@ template <typename T1, typename T2>
 typename std::ranges::iota_view<T1, T2>::_Iterator
 f36(typename std::ranges::iota_view<T1, T2>::_Iterator a0,
     typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1) {
-  return operator-(std::move(a0), std::move(a1));
+  return operator-(
+      std::forward<typename std::ranges::iota_view<T1, T2>::_Iterator>(a0),
+      std::forward<
+          typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type>(
+          a1));
 }
 
 template <typename T1, typename T2>
 typename std::ranges::iota_view<T1, T2>::_Iterator
 f37(typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a0,
     typename std::ranges::iota_view<T1, T2>::_Iterator a1) {
-  return operator+(std::move(a0), std::move(a1));
+  return operator+(
+      std::forward<
+          typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type>(
+          a0),
+      std::forward<typename std::ranges::iota_view<T1, T2>::_Iterator>(a1));
 }
 
 template <typename T1, typename T2>
 typename std::ranges::iota_view<T1, T2>::_Iterator
 f38(typename std::ranges::iota_view<T1, T2>::_Iterator a0,
     typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1) {
-  return operator+(std::move(a0), std::move(a1));
+  return operator+(
+      std::forward<typename std::ranges::iota_view<T1, T2>::_Iterator>(a0),
+      std::forward<
+          typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type>(
+          a1));
 }
 
 template <typename T1, typename T2>

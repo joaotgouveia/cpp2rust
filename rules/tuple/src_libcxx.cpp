@@ -11,12 +11,12 @@ void f142(std::tuple<T1...> &a0, std::tuple<T1...> &a1) {
 }
 
 template <typename T1> std::tuple<> f143(std::array<T1, 0> a0) {
-  return std::tuple<>(std::move(a0));
+  return std::tuple<>(std::forward<std::array<T1, 0>>(a0));
 }
 
 template <typename T1, typename T2>
 std::tuple<> f144(std::allocator_arg_t a0, const T1 &a1, std::array<T2, 0> a2) {
-  return std::tuple<>(std::move(a0), a1, std::move(a2));
+  return std::tuple<>(std::move(a0), a1, std::forward<std::array<T2, 0>>(a2));
 }
 
 template <typename... T1,

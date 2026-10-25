@@ -42,7 +42,9 @@ f95(std::map<T1, T2, T3, T4> &a0,
           T5, const typename std::map<T1, T2, T3, T4>::value_type &>::value) &&
       !(std::is_same<T5, typename std::map<T1, T2, T3, T4>::value_type>::value))
 {
-  return a0.template insert<T5>(std::move(a1), std::forward<T5>(a2));
+  return a0.template insert<T5>(
+      std::forward<typename std::map<T1, T2, T3, T4>::const_iterator>(a1),
+      std::forward<T5>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>

@@ -359,7 +359,8 @@ typename std::basic_format_context<T2, char>::iterator
 f60(const std::formatter<std::basic_string_view<char, T1>, char> &a0,
     std::basic_string_view<char, T1> a1,
     std::basic_format_context<T2, char> &a2) {
-  return a0.template format<T2>(std::move(a1), a2);
+  return a0.template format<T2>(
+      std::forward<std::basic_string_view<char, T1>>(a1), a2);
 }
 
 template <typename T1>
@@ -382,7 +383,8 @@ typename std::basic_format_context<T2, wchar_t>::iterator
 f63(const std::formatter<std::basic_string_view<wchar_t, T1>, wchar_t> &a0,
     std::basic_string_view<wchar_t, T1> a1,
     std::basic_format_context<T2, wchar_t> &a2) {
-  return a0.template format<T2>(std::move(a1), a2);
+  return a0.template format<T2>(
+      std::forward<std::basic_string_view<wchar_t, T1>>(a1), a2);
 }
 
 template <typename T1> std::formatter<std::nullptr_t, T1> f64() {

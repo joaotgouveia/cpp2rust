@@ -28,7 +28,9 @@ std::shuffle_order_engine<T1, T2> f3(T1 &&a0) {
 template <typename T1, std::size_t T2>
 std::shuffle_order_engine<T1, T2>
 f4(typename std::shuffle_order_engine<T1, T2>::result_type a0) {
-  return std::shuffle_order_engine<T1, T2>(std::move(a0));
+  return std::shuffle_order_engine<T1, T2>(
+      std::forward<typename std::shuffle_order_engine<T1, T2>::result_type>(
+          a0));
 }
 
 template <typename T1, std::size_t T2>
@@ -39,7 +41,9 @@ void f5(std::shuffle_order_engine<T1, T2> &a0) {
 template <typename T1, std::size_t T2>
 void f6(std::shuffle_order_engine<T1, T2> &a0,
         typename std::shuffle_order_engine<T1, T2>::result_type a1) {
-  return a0.seed(std::move(a1));
+  return a0.seed(
+      std::forward<typename std::shuffle_order_engine<T1, T2>::result_type>(
+          a1));
 }
 
 template <typename T1, std::size_t T2>

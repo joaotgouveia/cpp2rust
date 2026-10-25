@@ -66,7 +66,8 @@ std::ranges::split_view<T1, T2> f6(T3 &&a0, std::ranges::range_value_t<T3> a1)
                                       std::ranges::equal_to>) &&
           (std::ranges::forward_range<T3>) && (!(std::is_same<T3, T1>::value))
 {
-  return std::ranges::split_view<T1, T2>(std::forward<T3>(a0), std::move(a1));
+  return std::ranges::split_view<T1, T2>(
+      std::forward<T3>(a0), std::forward<std::ranges::range_value_t<T3>>(a1));
 }
 
 template <typename T1, typename T2,
@@ -82,7 +83,8 @@ decltype(auto) f7(std::ranges::split_view<T1, T2> &a0,
                                       std::ranges::iterator_t<T2>,
                                       std::ranges::equal_to>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
 
 template <typename T1, typename T2,
@@ -98,5 +100,6 @@ decltype(auto) f8(const std::ranges::split_view<T1, T2> &a0,
                                       std::ranges::iterator_t<T2>,
                                       std::ranges::equal_to>)
 {
-  return a0.template operator[]<T3>(std::move(a1));
+  return a0.template operator[]<T3>(
+      std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
