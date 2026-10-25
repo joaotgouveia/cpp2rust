@@ -56,6 +56,10 @@ std::optional<ExprKey> GetExprKey(clang::ASTContext &ctx,
 // derived class.
 std::optional<ExprKey> GetObjectMemberKey(const clang::Expr *use);
 
+// The member keys of the classes between the object's class and the one
+// declaring the member.
+std::vector<ExprKey> GetBaseMemberKeys(const clang::Expr *use);
+
 std::vector<ExprKey> GetExprKeys(clang::Sema &sema,
                                  const clang::NamedDecl *rule);
 

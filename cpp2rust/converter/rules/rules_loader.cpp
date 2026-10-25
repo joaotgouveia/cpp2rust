@@ -141,11 +141,22 @@ private:
       return;
     }
     auto record = object.getNonReferenceType()->getAsCXXRecordDecl();
-    if (!record ||
-        !ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
+    if (!record) {
       return;
     }
-    AddKey(MemberKey(ClassKey(record), name));
+    if (ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
+      AddKey(MemberKey(ClassKey(record), name));
+    }
+    // and the library classes it derives from, which may declare the member
+    // (formatter<color> : formatter<const char *>)
+    if (record->hasDefinition()) {
+      record->forallBases([&](const clang::CXXRecordDecl *base) {
+        if (ctx_.getSourceManager().isInSystemHeader(base->getLocation())) {
+          AddKey(MemberKey(ClassKey(base), name));
+        }
+        return true;
+      });
+    }
   }
 
   void AddReferencedDecl(const clang::ValueDecl *decl) {

@@ -195,6 +195,41 @@ std::optional<ExprKey> GetObjectMemberKey(const clang::Expr *use) {
   return std::nullopt;
 }
 
+std::vector<ExprKey> GetBaseMemberKeys(const clang::Expr *use) {
+  use = RuleDecls::SkipImplicit(use);
+  auto call = llvm::dyn_cast<clang::CXXMemberCallExpr>(use);
+  auto method = call ? call->getMethodDecl() : nullptr;
+  auto object = method
+                    ? call->getImplicitObjectArgument()->IgnoreParenImpCasts()
+                    : nullptr;
+  auto type =
+      object ? object->getType().getNonReferenceType() : clang::QualType();
+  if (!type.isNull() && type->isPointerType()) {
+    type = type->getPointeeType();
+  }
+  auto record = type.isNull() ? nullptr : type->getAsCXXRecordDecl();
+  std::vector<ExprKey> keys;
+  if (!record || !record->hasDefinition()) {
+    return keys;
+  }
+  // the classes between the object's and the one declaring the member
+  // (formatter<const char *> between formatter<color> and __formatter_string)
+  auto parent = method->getParent();
+  record->forallBases([&](const clang::CXXRecordDecl *base) {
+    if (base != parent && base->hasDefinition() &&
+        base->isDerivedFrom(parent)) {
+      auto &ctx = base->getASTContext();
+      if (auto key = getMemberKey(getParent(ctx.getCanonicalTagType(base)),
+                                  method->getDeclName());
+          key && !llvm::is_contained(keys, *key)) {
+        keys.push_back(*key);
+      }
+    }
+    return true;
+  });
+  return keys;
+}
+
 std::optional<ExprKey> GetExprKey(clang::ASTContext &ctx,
                                   const clang::Expr *expr) {
   expr = RuleDecls::SkipImplicit(expr);
