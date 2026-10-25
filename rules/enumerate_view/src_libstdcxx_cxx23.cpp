@@ -282,3 +282,205 @@ decltype(auto) f28(const std::ranges::enumerate_view<T1> &a0,
   return a0.template operator[]<T2>(
       std::forward<std::ranges::range_difference_t<T2>>(a1));
 }
+
+template <typename T1, bool T2>
+using t2 = typename std::ranges::enumerate_view<T1>::template _Iterator<T2>;
+
+template <typename T1, bool T2>
+using t3 = typename std::ranges::enumerate_view<T1>::template _Iterator<
+    T2>::iterator_category;
+
+template <typename T1, bool T2>
+using t4 = typename std::ranges::enumerate_view<T1>::template _Iterator<
+    T2>::iterator_concept;
+
+template <typename T1, bool T2>
+using t5 = typename std::ranges::enumerate_view<T1>::template _Iterator<
+    T2>::difference_type;
+
+template <typename T1, bool T2>
+using t6 = typename std::ranges::enumerate_view<T1>::template _Iterator<
+    T2>::value_type;
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2> f29()
+  requires(std::default_initializable<
+           std::ranges::iterator_t<typename std::ranges::enumerate_view<
+               T1>::template _Iterator<T2>::_Base>>)
+{
+  return typename std::ranges::enumerate_view<T1>::template _Iterator<T2>();
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+f30(typename std::ranges::enumerate_view<T1>::template _Iterator<!T2> a0)
+  requires(T2 &&
+           std::convertible_to<
+               std::ranges::iterator_t<T1>,
+               std::ranges::iterator_t<typename std::ranges::enumerate_view<
+                   T1>::template _Iterator<T2>::_Base>>)
+{
+  return typename std::ranges::enumerate_view<T1>::template _Iterator<T2>(
+      std::forward<
+          typename std::ranges::enumerate_view<T1>::template _Iterator<!T2>>(
+          a0));
+}
+
+template <typename T1, bool T2>
+auto f31(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+             &a0) {
+  return a0.base();
+}
+
+template <typename T1, bool T2>
+auto f32(
+    typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &&a0) {
+  return std::move(a0).base();
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<
+    T2>::difference_type
+f33(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+        &a0) {
+  return a0.index();
+}
+
+template <typename T1, bool T2>
+auto f34(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+             &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &
+f35(typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, bool T2>
+void f36(typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+         int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+f37(typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    int a1)
+  requires(std::ranges::forward_range<typename std::ranges::enumerate_view<
+               T1>::template _Iterator<T2>::_Base>)
+{
+  return a0.operator++(a1);
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &
+f38(typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0)
+  requires(
+      std::ranges::bidirectional_range<typename std::ranges::enumerate_view<
+          T1>::template _Iterator<T2>::_Base>)
+{
+  return a0.operator--();
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+f39(typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    int a1)
+  requires(
+      std::ranges::bidirectional_range<typename std::ranges::enumerate_view<
+          T1>::template _Iterator<T2>::_Base>)
+{
+  return a0.operator--(a1);
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &
+f40(typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::enumerate_view<T1>::template _Iterator<
+        T2>::difference_type a1)
+  requires(
+      std::ranges::random_access_range<typename std::ranges::enumerate_view<
+          T1>::template _Iterator<T2>::_Base>)
+{
+  return a0.operator+=(std::forward<typename std::ranges::enumerate_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &
+f41(typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::enumerate_view<T1>::template _Iterator<
+        T2>::difference_type a1)
+  requires(
+      std::ranges::random_access_range<typename std::ranges::enumerate_view<
+          T1>::template _Iterator<T2>::_Base>)
+{
+  return a0.operator-=(std::forward<typename std::ranges::enumerate_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+auto f42(
+    const typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::enumerate_view<T1>::template _Iterator<
+        T2>::difference_type a1)
+  requires(
+      std::ranges::random_access_range<typename std::ranges::enumerate_view<
+          T1>::template _Iterator<T2>::_Base>)
+{
+  return a0.operator[](std::forward<typename std::ranges::enumerate_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+auto f43(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+             &a0) {
+  return iter_move(a0);
+}
+
+template <typename T1, bool T2>
+std::strong_ordering
+f44(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+        &a1) {
+  return operator<=>(a0, a1);
+}
+
+template <typename T1, bool T2>
+bool f45(
+    const typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+        &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, bool T2>
+using t7 = typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>;
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Sentinel<T2> f46() {
+  return typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>();
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>
+f47(typename std::ranges::enumerate_view<T1>::template _Sentinel<!T2> a0)
+  requires(T2 &&
+           std::convertible_to<
+               std::ranges::sentinel_t<T1>,
+               std::ranges::sentinel_t<typename std::ranges::enumerate_view<
+                   T1>::template _Sentinel<T2>::_Base>>)
+{
+  return typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>(
+      std::forward<
+          typename std::ranges::enumerate_view<T1>::template _Sentinel<!T2>>(
+          a0));
+}
+
+template <typename T1, bool T2>
+auto f48(const typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>
+             &a0) {
+  return a0.base();
+}

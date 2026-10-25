@@ -283,38 +283,44 @@ using t5 =
 
 template <typename T1, typename T2, typename T3>
 typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator
-f20(typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &&a0) {
+f20(std::ranges::basic_istream_view<T1, T2, T3> *a0) {
+  return typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator(a0);
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator
+f21(typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &&a0) {
   return typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator(
       std::move(a0));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &
-f21(typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &a0,
+f22(typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &a0,
     typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &&a1) {
   return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &
-f22(typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &a0) {
+f23(typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &a0) {
   return a0.operator++();
 }
 
 template <typename T1, typename T2, typename T3>
-void f23(typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &a0,
+void f24(typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &a0,
          int a1) {
   return a0.operator++(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-T1 &f24(
+T1 &f25(
     const typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &a0) {
   return a0.operator*();
 }
 
 template <typename T1, typename T2, typename T3>
-bool f25(
+bool f26(
     const typename std::ranges::basic_istream_view<T1, T2, T3>::_Iterator &a0,
     std::default_sentinel_t a1) {
   return operator==(a0, std::move(a1));

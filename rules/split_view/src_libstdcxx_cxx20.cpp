@@ -241,31 +241,40 @@ typename std::ranges::split_view<T1, T2>::_Iterator f24() {
 }
 
 template <typename T1, typename T2>
+typename std::ranges::split_view<T1, T2>::_Iterator
+f25(std::ranges::split_view<T1, T2> *a0, std::ranges::iterator_t<T1> a1,
+    std::ranges::subrange<std::ranges::iterator_t<T1>> a2) {
+  return typename std::ranges::split_view<T1, T2>::_Iterator(
+      a0, std::forward<std::ranges::iterator_t<T1>>(a1),
+      std::forward<std::ranges::subrange<std::ranges::iterator_t<T1>>>(a2));
+}
+
+template <typename T1, typename T2>
 std::ranges::iterator_t<T1>
-f25(const typename std::ranges::split_view<T1, T2>::_Iterator &a0) {
+f26(const typename std::ranges::split_view<T1, T2>::_Iterator &a0) {
   return a0.base();
 }
 
 template <typename T1, typename T2>
 std::ranges::subrange<std::ranges::iterator_t<T1>>
-f26(const typename std::ranges::split_view<T1, T2>::_Iterator &a0) {
+f27(const typename std::ranges::split_view<T1, T2>::_Iterator &a0) {
   return a0.operator*();
 }
 
 template <typename T1, typename T2>
 typename std::ranges::split_view<T1, T2>::_Iterator &
-f27(typename std::ranges::split_view<T1, T2>::_Iterator &a0) {
+f28(typename std::ranges::split_view<T1, T2>::_Iterator &a0) {
   return a0.operator++();
 }
 
 template <typename T1, typename T2>
 typename std::ranges::split_view<T1, T2>::_Iterator
-f28(typename std::ranges::split_view<T1, T2>::_Iterator &a0, int a1) {
+f29(typename std::ranges::split_view<T1, T2>::_Iterator &a0, int a1) {
   return a0.operator++(a1);
 }
 
 template <typename T1, typename T2>
-bool f29(const typename std::ranges::split_view<T1, T2>::_Iterator &a0,
+bool f30(const typename std::ranges::split_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::split_view<T1, T2>::_Iterator &a1) {
   return operator==(a0, a1);
 }
@@ -274,6 +283,12 @@ template <typename T1, typename T2>
 using t7 = typename std::ranges::split_view<T1, T2>::_Sentinel;
 
 template <typename T1, typename T2>
-typename std::ranges::split_view<T1, T2>::_Sentinel f30() {
+typename std::ranges::split_view<T1, T2>::_Sentinel f31() {
   return typename std::ranges::split_view<T1, T2>::_Sentinel();
+}
+
+template <typename T1, typename T2>
+typename std::ranges::split_view<T1, T2>::_Sentinel
+f32(std::ranges::split_view<T1, T2> *a0) {
+  return typename std::ranges::split_view<T1, T2>::_Sentinel(a0);
 }

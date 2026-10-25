@@ -225,3 +225,47 @@ decltype(auto) f25(const std::ranges::take_while_view<T1, T2> &a0)
 {
   return a0.back();
 }
+
+template <typename T1, typename T2, bool T3>
+using t2 =
+    typename std::ranges::take_while_view<T1, T2>::template _Sentinel<T3>;
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::take_while_view<T1, T2>::template _Sentinel<T3> f26() {
+  return
+      typename std::ranges::take_while_view<T1, T2>::template _Sentinel<T3>();
+}
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::take_while_view<T1, T2>::template _Sentinel<T3>
+f27(typename std::ranges::take_while_view<T1, T2>::template _Sentinel<!T3> a0)
+  requires(T3 &&
+           std::convertible_to<
+               std::ranges::sentinel_t<T1>,
+               std::ranges::sentinel_t<typename std::ranges::take_while_view<
+                   T1, T2>::template _Sentinel<T3>::_Base>>)
+{
+  return typename std::ranges::take_while_view<T1, T2>::template _Sentinel<T3>(
+      std::forward<typename std::ranges::take_while_view<
+          T1, T2>::template _Sentinel<!T3>>(a0));
+}
+
+template <typename T1, typename T2, bool T3>
+auto f28(
+    const typename std::ranges::take_while_view<T1, T2>::template _Sentinel<T3>
+        &a0) {
+  return a0.base();
+}
+
+template <typename T1, typename T2, bool T3, bool T4, typename T5>
+bool f29(
+    const std::ranges::iterator_t<T5> &a0,
+    const typename std::ranges::take_while_view<T1, T2>::template _Sentinel<T3>
+        &a1)
+  requires(std::sentinel_for<
+           std::ranges::sentinel_t<typename std::ranges::take_while_view<
+               T1, T2>::template _Sentinel<T3>::_Base>,
+           std::ranges::iterator_t<T5>>)
+{
+  return operator==(a0, a1);
+}

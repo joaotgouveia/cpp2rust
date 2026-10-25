@@ -130,3 +130,30 @@ decltype(auto) f24(const std::ranges::take_view<T1> &a0)
 {
   return a0.back();
 }
+
+template <typename T1, bool T2>
+using t2 = typename std::ranges::take_view<T1>::template _Sentinel<T2>;
+
+template <typename T1, bool T2>
+typename std::ranges::take_view<T1>::template _Sentinel<T2> f25() {
+  return typename std::ranges::take_view<T1>::template _Sentinel<T2>();
+}
+
+template <typename T1, bool T2>
+typename std::ranges::take_view<T1>::template _Sentinel<T2>
+f26(typename std::ranges::take_view<T1>::template _Sentinel<!T2> a0)
+  requires(T2 && std::convertible_to<
+                     std::ranges::sentinel_t<T1>,
+                     std::ranges::sentinel_t<typename std::ranges::take_view<
+                         T1>::template _Sentinel<T2>::_Base>>)
+{
+  return typename std::ranges::take_view<T1>::template _Sentinel<T2>(
+      std::forward<
+          typename std::ranges::take_view<T1>::template _Sentinel<!T2>>(a0));
+}
+
+template <typename T1, bool T2>
+auto f27(
+    const typename std::ranges::take_view<T1>::template _Sentinel<T2> &a0) {
+  return a0.base();
+}

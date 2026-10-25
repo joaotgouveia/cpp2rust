@@ -191,8 +191,14 @@ typename std::ranges::filter_view<T1, T2>::_Sentinel f24() {
 }
 
 template <typename T1, typename T2>
+typename std::ranges::filter_view<T1, T2>::_Sentinel
+f25(std::ranges::filter_view<T1, T2> *a0) {
+  return typename std::ranges::filter_view<T1, T2>::_Sentinel(a0);
+}
+
+template <typename T1, typename T2>
 std::ranges::sentinel_t<T1>
-f25(const typename std::ranges::filter_view<T1, T2>::_Sentinel &a0) {
+f26(const typename std::ranges::filter_view<T1, T2>::_Sentinel &a0) {
   return a0.base();
 }
 
@@ -211,48 +217,64 @@ using t6 =
     typename std::ranges::filter_view<T1, T2>::_Iterator::difference_type;
 
 template <typename T1, typename T2>
-typename std::ranges::filter_view<T1, T2>::_Iterator f26() {
+typename std::ranges::filter_view<T1, T2>::_Iterator f27()
+  requires(std::default_initializable<
+           typename std::ranges::filter_view<T1, T2>::_Iterator::_Vp_iter>)
+{
   return typename std::ranges::filter_view<T1, T2>::_Iterator();
 }
 
 template <typename T1, typename T2>
+typename std::ranges::filter_view<T1, T2>::_Iterator
+f28(std::ranges::filter_view<T1, T2> *a0, std::ranges::iterator_t<T1> a1) {
+  return typename std::ranges::filter_view<T1, T2>::_Iterator(
+      a0, std::forward<std::ranges::iterator_t<T1>>(a1));
+}
+
+template <typename T1, typename T2>
 const std::ranges::iterator_t<T1> &
-f27(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+f29(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
   return a0.base();
 }
 
 template <typename T1, typename T2>
 std::ranges::iterator_t<T1>
-f28(typename std::ranges::filter_view<T1, T2>::_Iterator &&a0) {
+f30(typename std::ranges::filter_view<T1, T2>::_Iterator &&a0) {
   return std::move(a0).base();
 }
 
 template <typename T1, typename T2>
 std::ranges::range_reference_t<T1>
-f29(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+f31(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
   return a0.operator*();
 }
 
 template <typename T1, typename T2>
 std::ranges::iterator_t<T1>
-f30(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+f32(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0)
+  requires(
+      std::ranges::__detail::__has_arrow<
+          typename std::ranges::filter_view<T1, T2>::_Iterator::_Vp_iter> &&
+      std::copyable<
+          typename std::ranges::filter_view<T1, T2>::_Iterator::_Vp_iter>)
+{
   return a0.operator->();
 }
 
 template <typename T1, typename T2>
 typename std::ranges::filter_view<T1, T2>::_Iterator &
-f31(typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+f33(typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
   return a0.operator++();
 }
 
 template <typename T1, typename T2>
-void f32(typename std::ranges::filter_view<T1, T2>::_Iterator &a0, int a1) {
+void f34(typename std::ranges::filter_view<T1, T2>::_Iterator &a0, int a1) {
   return a0.operator++(a1);
 }
 
 template <typename T1, typename T2>
 typename std::ranges::filter_view<T1, T2>::_Iterator
-f33(typename std::ranges::filter_view<T1, T2>::_Iterator &a0, int a1)
+f35(typename std::ranges::filter_view<T1, T2>::_Iterator &a0, int a1)
   requires(std::ranges::forward_range<T1>)
 {
   return a0.operator++(a1);
@@ -260,7 +282,7 @@ f33(typename std::ranges::filter_view<T1, T2>::_Iterator &a0, int a1)
 
 template <typename T1, typename T2>
 typename std::ranges::filter_view<T1, T2>::_Iterator &
-f34(typename std::ranges::filter_view<T1, T2>::_Iterator &a0)
+f36(typename std::ranges::filter_view<T1, T2>::_Iterator &a0)
   requires(std::ranges::bidirectional_range<T1>)
 {
   return a0.operator--();
@@ -268,26 +290,26 @@ f34(typename std::ranges::filter_view<T1, T2>::_Iterator &a0)
 
 template <typename T1, typename T2>
 typename std::ranges::filter_view<T1, T2>::_Iterator
-f35(typename std::ranges::filter_view<T1, T2>::_Iterator &a0, int a1)
+f37(typename std::ranges::filter_view<T1, T2>::_Iterator &a0, int a1)
   requires(std::ranges::bidirectional_range<T1>)
 {
   return a0.operator--(a1);
 }
 
 template <typename T1, typename T2>
-void f36(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
+void f38(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::filter_view<T1, T2>::_Iterator &a1) {
   return iter_swap(a0, a1);
 }
 
 template <typename T1, typename T2>
 std::ranges::range_rvalue_reference_t<T1>
-f37(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+f39(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
   return iter_move(a0);
 }
 
 template <typename T1, typename T2>
-bool f38(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
+bool f40(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::filter_view<T1, T2>::_Iterator &a1) {
   return operator==(a0, a1);
 }

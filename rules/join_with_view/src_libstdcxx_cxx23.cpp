@@ -435,3 +435,156 @@ decltype(auto) f29(const std::ranges::join_with_view<T1, T2> &a0,
   return a0.template operator[]<T3>(
       std::forward<std::ranges::range_difference_t<T3>>(a1));
 }
+
+template <typename T1, typename T2, bool T3>
+using t2 = typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>;
+
+template <typename T1, typename T2, bool T3>
+using t3 = typename std::ranges::join_with_view<T1, T2>::template _Iterator<
+    T3>::iterator_concept;
+
+template <typename T1, typename T2, bool T3>
+using t4 = typename std::ranges::join_with_view<T1, T2>::template _Iterator<
+    T3>::value_type;
+
+template <typename T1, typename T2, bool T3>
+using t5 = typename std::ranges::join_with_view<T1, T2>::template _Iterator<
+    T3>::difference_type;
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3> f30() {
+  return typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>();
+}
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>
+f31(typename std::ranges::join_with_view<T1, T2>::template _Iterator<!T3> a0)
+  requires(
+      T3 &&
+      std::convertible_to<std::ranges::iterator_t<T1>,
+                          typename std::ranges::join_with_view<
+                              T1, T2>::template _Iterator<T3>::_OuterIter> &&
+      std::convertible_to<
+          std::ranges::iterator_t<
+              typename std::ranges::join_with_view<T1, T2>::_InnerRange>,
+          typename std::ranges::join_with_view<T1, T2>::template _Iterator<
+              T3>::_InnerIter> &&
+      std::convertible_to<std::ranges::iterator_t<T2>,
+                          typename std::ranges::join_with_view<
+                              T1, T2>::template _Iterator<T3>::_PatternIter>)
+{
+  return typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>(
+      std::forward<typename std::ranges::join_with_view<
+          T1, T2>::template _Iterator<!T3>>(a0));
+}
+
+template <typename T1, typename T2, bool T3>
+auto f32(
+    const typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>
+        &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3> &
+f33(typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3> &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, bool T3>
+void f34(
+    typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3> &a0,
+    int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>
+f35(typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3> &a0,
+    int a1)
+  requires(std::ranges::join_with_view<T1, T2>::template _Iterator<
+               T3>::_S_ref_is_glvalue &&
+           std::forward_iterator<typename std::ranges::join_with_view<
+               T1, T2>::template _Iterator<T3>::_OuterIter> &&
+           std::forward_iterator<typename std::ranges::join_with_view<
+               T1, T2>::template _Iterator<T3>::_InnerIter>)
+{
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3> &
+f36(typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3> &a0)
+  requires(
+      std::ranges::join_with_view<T1, T2>::template _Iterator<
+          T3>::_S_ref_is_glvalue &&
+      std::ranges::bidirectional_range<typename std::ranges::join_with_view<
+          T1, T2>::template _Iterator<T3>::_Base> &&
+      std::ranges::__detail::__bidirectional_common<
+          typename std::ranges::join_with_view<T1, T2>::template _Iterator<
+              T3>::_InnerBase> &&
+      std::ranges::__detail::__bidirectional_common<
+          typename std::ranges::join_with_view<T1, T2>::template _Iterator<
+              T3>::_PatternBase>)
+{
+  return a0.operator--();
+}
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>
+f37(typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3> &a0,
+    int a1)
+  requires(
+      std::ranges::join_with_view<T1, T2>::template _Iterator<
+          T3>::_S_ref_is_glvalue &&
+      std::ranges::bidirectional_range<typename std::ranges::join_with_view<
+          T1, T2>::template _Iterator<T3>::_Base> &&
+      std::ranges::__detail::__bidirectional_common<
+          typename std::ranges::join_with_view<T1, T2>::template _Iterator<
+              T3>::_InnerBase> &&
+      std::ranges::__detail::__bidirectional_common<
+          typename std::ranges::join_with_view<T1, T2>::template _Iterator<
+              T3>::_PatternBase>)
+{
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2, bool T3>
+void f38(
+    const typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>
+        &a0,
+    const typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>
+        &a1) {
+  return iter_swap(a0, a1);
+}
+
+template <typename T1, typename T2, bool T3>
+bool f39(
+    const typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>
+        &a0,
+    const typename std::ranges::join_with_view<T1, T2>::template _Iterator<T3>
+        &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2, bool T3>
+using t6 = typename std::ranges::join_with_view<T1, T2>::template _Sentinel<T3>;
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::join_with_view<T1, T2>::template _Sentinel<T3> f40() {
+  return typename std::ranges::join_with_view<T1, T2>::template _Sentinel<T3>();
+}
+
+template <typename T1, typename T2, bool T3>
+typename std::ranges::join_with_view<T1, T2>::template _Sentinel<T3>
+f41(typename std::ranges::join_with_view<T1, T2>::template _Sentinel<!T3> a0)
+  requires(T3 &&
+           std::convertible_to<
+               std::ranges::sentinel_t<T1>,
+               std::ranges::sentinel_t<typename std::ranges::join_with_view<
+                   T1, T2>::template _Sentinel<T3>::_Base>>)
+{
+  return typename std::ranges::join_with_view<T1, T2>::template _Sentinel<T3>(
+      std::forward<typename std::ranges::join_with_view<
+          T1, T2>::template _Sentinel<!T3>>(a0));
+}

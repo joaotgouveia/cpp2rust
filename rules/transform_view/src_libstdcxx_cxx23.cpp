@@ -3,7 +3,7 @@
 #include <utility>
 
 template <typename T1, typename T2>
-auto f27(std::ranges::transform_view<T1, T2> &a0)
+auto f50(std::ranges::transform_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::transform_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::transform_view<T1, T2>> &&
            std::same_as<
@@ -18,7 +18,7 @@ auto f27(std::ranges::transform_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f28(const std::ranges::transform_view<T1, T2> &a0)
+auto f51(const std::ranges::transform_view<T1, T2> &a0)
   requires(std::ranges::input_range<
               const std::ranges::transform_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::transform_view<T1, T2>> &&
@@ -34,7 +34,7 @@ auto f28(const std::ranges::transform_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f29(std::ranges::transform_view<T1, T2> &a0)
+auto f52(std::ranges::transform_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::transform_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::transform_view<T1, T2>> &&
            std::same_as<
@@ -49,7 +49,7 @@ auto f29(std::ranges::transform_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f30(const std::ranges::transform_view<T1, T2> &a0)
+auto f53(const std::ranges::transform_view<T1, T2> &a0)
   requires(std::ranges::input_range<
               const std::ranges::transform_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::transform_view<T1, T2>> &&

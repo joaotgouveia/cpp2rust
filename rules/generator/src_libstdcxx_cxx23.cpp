@@ -289,7 +289,8 @@ bool f30(const typename std::generator<T1, T2, T3>::_Iterator &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-auto f31(typename std::generator<T1, T2, T3>::promise_type &a0) {
+std::generator<T1, T2, T3>
+f31(typename std::generator<T1, T2, T3>::promise_type &a0) {
   return a0.get_return_object();
 }
 

@@ -3,7 +3,7 @@
 #include <utility>
 
 template <typename T1, typename T2>
-auto f26(std::ranges::take_while_view<T1, T2> &a0)
+auto f30(std::ranges::take_while_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::take_while_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::take_while_view<T1, T2>> &&
            std::same_as<
@@ -16,7 +16,7 @@ auto f26(std::ranges::take_while_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f27(const std::ranges::take_while_view<T1, T2> &a0)
+auto f31(const std::ranges::take_while_view<T1, T2> &a0)
   requires(std::ranges::input_range<
               const std::ranges::take_while_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::take_while_view<T1, T2>> &&
@@ -30,7 +30,7 @@ auto f27(const std::ranges::take_while_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f28(std::ranges::take_while_view<T1, T2> &a0)
+auto f32(std::ranges::take_while_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::take_while_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::take_while_view<T1, T2>> &&
            std::same_as<
@@ -43,7 +43,7 @@ auto f28(std::ranges::take_while_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f29(const std::ranges::take_while_view<T1, T2> &a0)
+auto f33(const std::ranges::take_while_view<T1, T2> &a0)
   requires(std::ranges::input_range<
               const std::ranges::take_while_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::take_while_view<T1, T2>> &&

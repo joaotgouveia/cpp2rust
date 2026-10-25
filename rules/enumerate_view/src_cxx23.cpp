@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <compare>
 #include <ranges>
 #include <utility>
 

@@ -339,89 +339,240 @@ auto f36(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
 }
 
 template <typename T1>
-bool f37(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+bool f37(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::forward_range<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           (!std::ranges::sized_range<typename std::ranges::chunk_view<
+                T1>::_OuterIter::value_type>)) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.empty();
 }
 
 template <typename T1>
-bool f38(
-    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+bool f38(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::sized_range<
+              typename std::ranges::chunk_view<T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.empty();
 }
 
 template <typename T1>
-bool f39(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+bool f39(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::forward_range<const typename std::ranges::chunk_view<
+               T1>::_OuterIter::value_type> &&
+           (!std::ranges::sized_range<const typename std::ranges::chunk_view<
+                T1>::_OuterIter::value_type>)) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
+  return a0.empty();
+}
+
+template <typename T1>
+bool f40(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::sized_range<const typename std::ranges::chunk_view<
+               T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
+  return a0.empty();
+}
+
+template <typename T1>
+bool f41(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
   return static_cast<bool>(a0);
 }
 
 template <typename T1>
-bool f40(
+bool f42(
     const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
   return static_cast<bool>(a0);
 }
 
 template <typename T1>
-auto f41(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+auto f43(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::contiguous_iterator<
+              std::ranges::iterator_t<typename std::ranges::chunk_view<
+                  T1>::_OuterIter::value_type>>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.data();
 }
 
 template <typename T1>
-auto f42(
-    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+auto f44(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::range<const typename std::ranges::chunk_view<
+               T1>::_OuterIter::value_type> &&
+           std::contiguous_iterator<
+               std::ranges::iterator_t<const typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.data();
 }
 
 template <typename T1>
 decltype(auto)
-f43(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+f45(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::forward_range<
+              typename std::ranges::chunk_view<T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.front();
 }
 
 template <typename T1>
 decltype(auto)
-f44(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+f46(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::forward_range<const typename std::ranges::chunk_view<
+               T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.front();
 }
 
 template <typename T1>
 decltype(auto)
-f45(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+f47(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::bidirectional_range<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::ranges::common_range<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.back();
 }
 
 template <typename T1>
 decltype(auto)
-f46(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+f48(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::bidirectional_range<
+               const typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type> &&
+           std::ranges::common_range<const typename std::ranges::chunk_view<
+               T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.back();
 }
 
 template <typename T1>
-auto f47(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+auto f49(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::input_range<
+              typename std::ranges::chunk_view<T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.cbegin();
 }
 
 template <typename T1>
-auto f48(
-    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+auto f50(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::input_range<const typename std::ranges::chunk_view<
+               T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.cbegin();
 }
 
 template <typename T1>
-auto f49(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+auto f51(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::input_range<
+              typename std::ranges::chunk_view<T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.cend();
 }
 
 template <typename T1>
-auto f50(
-    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+auto f52(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::ranges::input_range<const typename std::ranges::chunk_view<
+               T1>::_OuterIter::value_type>) &&
+          (std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>)
+{
   return a0.cend();
 }
 
 template <typename T1, typename T2>
 decltype(auto)
-f51(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
+f53(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
     std::ranges::range_difference_t<T2> a1)
-  requires(std::ranges::random_access_range<T2>)
+  requires(std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>) &&
+          (std::ranges::random_access_range<T2>)
 {
   return a0.template operator[]<T2>(
       std::forward<std::ranges::range_difference_t<T2>>(a1));
@@ -429,9 +580,15 @@ f51(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
 
 template <typename T1, typename T2>
 decltype(auto)
-f52(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
+f54(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
     std::ranges::range_difference_t<T2> a1)
-  requires(std::ranges::random_access_range<T2>)
+  requires(std::is_class_v<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type> &&
+           std::same_as<
+               typename std::ranges::chunk_view<T1>::_OuterIter::value_type,
+               std::remove_cv_t<typename std::ranges::chunk_view<
+                   T1>::_OuterIter::value_type>>) &&
+          (std::ranges::random_access_range<T2>)
 {
   return a0.template operator[]<T2>(
       std::forward<std::ranges::range_difference_t<T2>>(a1));
