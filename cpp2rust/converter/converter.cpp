@@ -1778,6 +1778,12 @@ bool Converter::ConvertSpecialCall(clang::CallExpr *expr) {
     return true;
   }
 
+  // std::move and the like are their operand, whatever rule they have
+  if (IsTransparentStdCall(expr)) {
+    Convert(expr->getArg(0));
+    return true;
+  }
+
   // The remaining calls are converted as rules say, if there is one.
   if (Mapper::Contains(ctx_, expr)) {
     return false;
@@ -1786,11 +1792,6 @@ bool Converter::ConvertSpecialCall(clang::CallExpr *expr) {
   if (IsImplicitAssignmentCall(expr)) {
     auto *call = clang::cast<clang::CXXMemberCallExpr>(expr);
     ConvertAssignment(call->getImplicitObjectArgument(), call->getArg(0), "=");
-    return true;
-  }
-
-  if (IsTransparentStdCall(expr)) {
-    Convert(expr->getArg(0));
     return true;
   }
 
