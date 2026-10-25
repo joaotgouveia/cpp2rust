@@ -258,7 +258,7 @@ impl __gnu_test_semaphore {}
 #[byte_size(1)]
 pub struct A {}
 pub fn test01_10() -> () {
-    let tuple_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let tuple_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         lambda! ( { let tuple_like : Ptr< ()  > = tuple_like .as_pointer()  ;
  } , | | { let t3b : Value<() > = Rc::new(RefCell::new(unimplemented!() )) ;
@@ -366,7 +366,7 @@ impl alloc_B01 {
     }
 }
 pub fn test01_16() -> () {
-    let tuple_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let tuple_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         lambda! ( { let tuple_like : Ptr< ()  > = tuple_like .as_pointer()  ;
  } , | | { let t3b : Value<() > = Rc::new(RefCell::new(unimplemented!() )) ;
@@ -430,7 +430,7 @@ pub fn test02_20() -> () {
         true,
         "!std::is_convertible_v<tuple_like_t<A>, tuple<B, B, B>>"
     );;
-    let tuple_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let tuple_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         lambda! ( { let tuple_like : Ptr< ()  > = tuple_like .as_pointer()  ;
  } , | | { let t3b : Value<() > = Rc::new(RefCell::new(unimplemented!() )) ;
@@ -530,7 +530,7 @@ pub fn test02_25() -> () {
         true,
         "!std::is_convertible_v<tuple_like_t<A>, tuple<B, B, B>>"
     );;
-    let tuple_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let tuple_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         lambda! ( { let tuple_like : Ptr< ()  > = tuple_like .as_pointer()  ;
  } , | | { let t3b : Value<() > = Rc::new(RefCell::new(unimplemented!() )) ;
@@ -578,7 +578,7 @@ pub fn test02_25() -> () {
     return true;
 }
 pub fn test03_29() -> () {
-    let tuple_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let tuple_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t3b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;
@@ -645,7 +645,7 @@ pub struct B_30 {
     pub m: (),
 }
 pub fn test04_34() -> () {
-    let tuple_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let tuple_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t3b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;

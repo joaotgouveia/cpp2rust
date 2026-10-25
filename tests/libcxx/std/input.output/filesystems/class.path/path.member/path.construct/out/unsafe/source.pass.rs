@@ -3128,45 +3128,45 @@ pub unsafe fn RunTestCaseImpl_44(MS: *const MultiStringType, mut args: ()) {
 }
 pub unsafe fn RunTestCase_45(MS: *const MultiStringType) {
     (unsafe { RunTestCaseImpl_35(MS) });
-    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_36(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_36(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_36(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_36(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_36(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_36(MS, unimplemented!()) });
 }
 pub unsafe fn RunTestCase_46(MS: *const MultiStringType) {
     (unsafe { RunTestCaseImpl_37(MS) });
-    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_38(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_38(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_38(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_38(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_38(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_38(MS, unimplemented!()) });
 }
 pub unsafe fn RunTestCase_47(MS: *const MultiStringType) {
     (unsafe { RunTestCaseImpl_39(MS) });
-    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_40(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_40(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_40(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_40(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_40(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_40(MS, unimplemented!()) });
 }
 pub unsafe fn RunTestCase_48(MS: *const MultiStringType) {
     (unsafe { RunTestCaseImpl_41(MS) });
-    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_42(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_42(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_42(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_42(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_42(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_42(MS, unimplemented!()) });
 }
 pub unsafe fn RunTestCase_49(MS: *const MultiStringType) {
     (unsafe { RunTestCaseImpl_43(MS) });
-    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_44(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_44(MS, unimplemented!()) });
+    (unsafe { RunTestCaseImpl_44(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_44(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_44(MS, unimplemented!()) });
     (unsafe { RunTestCaseImpl_44(MS, unimplemented!()) });
