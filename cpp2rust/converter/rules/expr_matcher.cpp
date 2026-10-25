@@ -413,7 +413,9 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
           ->getType()
           .getCanonicalType()
           .getUnqualifiedType());
-  auto last = static_cast<unsigned>(deducible.find_last_unset());
+  // a construction binds every argument of the class
+  auto last = construction ? params->size() - 1
+                           : static_cast<unsigned>(deducible.find_last_unset());
   // parameters deduced from the operands or with a default (T2 = T1, the SFINAE
   // parameter) need no binding here
   auto defaulted = [](const clang::NamedDecl *param) {
