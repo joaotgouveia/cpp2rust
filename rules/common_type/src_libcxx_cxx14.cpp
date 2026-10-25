@@ -1,5 +1,0 @@
-#include <chrono>
-#include <type_traits>
-#include <utility>
-
-template <typename... T1> using t27 = std::common_type_t<T1...>;

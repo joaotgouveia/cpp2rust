@@ -1,7 +1,0 @@
-#include <filesystem>
-#include <utility>
-
-bool f6(const std::filesystem::space_info &a0,
-        const std::filesystem::space_info &a1) {
-  return operator==(a0, a1);
-}

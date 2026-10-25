@@ -1,26 +1,12 @@
-#include <algorithm>
-#include <cstddef>
+// Copyright (c) 2022-present INESC-ID.
+// Distributed under the MIT license that can be found in the LICENSE file.
+
 #include <new>
-#include <utility>
 
-void f1(void *a0, const std::nothrow_t &a1) { return operator delete(a0, a1); }
+void *f1(std::size_t a0) { return ::operator new(a0); }
 
-void f2(void *a0, void *a1) { return operator delete(a0, a1); }
+void f2(void *a0) { return ::operator delete(a0); }
 
-void f3(void *a0, const std::nothrow_t &a1) {
-  return operator delete[](a0, a1);
-}
+void *f3(std::size_t a0) { return ::operator new[](a0); }
 
-void f4(void *a0, void *a1) { return operator delete[](a0, a1); }
-
-void *f5(std::size_t a0, const std::nothrow_t &a1) {
-  return operator new(a0, a1);
-}
-
-void *f6(std::size_t a0, void *a1) { return operator new(a0, a1); }
-
-void *f7(std::size_t a0, const std::nothrow_t &a1) {
-  return operator new[](a0, a1);
-}
-
-void *f8(std::size_t a0, void *a1) { return operator new[](a0, a1); }
+void f4(void *a0) { return ::operator delete[](a0); }

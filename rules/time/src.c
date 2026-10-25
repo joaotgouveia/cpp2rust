@@ -1,0 +1,68 @@
+// Copyright (c) 2022-present INESC-ID.
+// Distributed under the MIT license that can be found in the LICENSE file.
+
+#include <sys/time.h>
+#include <time.h>
+
+typedef struct tm t1;
+typedef struct timeval t2;
+typedef struct timespec t3;
+typedef time_t t4;
+
+// struct timespec::tv_sec is `__time_t` on glibc and `__darwin_time_t` on
+// Darwin. Give both time_t's translation.
+//
+// TODO:
+//
+//   Rules are written in terms of standard names `time_t tv_sec`, however
+//   libraries choose to implement them using library specific names `__time_t
+//   tv_sec`.
+//
+//   Fix this in converter by using the names in the rules, not the
+//   library-specific names.
+
+#if defined(__GLIBC__)
+typedef __time_t t5;
+#elif defined(__APPLE__)
+typedef __darwin_time_t t5;
+#else
+#error "Unsupported platform for time_t"
+#endif
+
+time_t f1(time_t *t) { return time(t); }
+
+int f2(clockid_t clk_id, struct timespec *tp) {
+  return clock_gettime(clk_id, tp);
+}
+
+struct tm *f4(const time_t *timer, struct tm *result) {
+  return gmtime_r(timer, result);
+}
+
+struct tm *f5(const time_t *timer, struct tm *result) {
+  return localtime_r(timer, result);
+}
+
+size_t f6(char *s, size_t maxsize, const char *format, const struct tm *tp) {
+  return strftime(s, maxsize, format, tp);
+}
+
+int f7(const char *file, const struct timeval tvp[2]) {
+  return utimes(file, tvp);
+}
+
+#if defined(__linux__)
+int f8(struct timeval *tv, struct timezone *tz) { return gettimeofday(tv, tz); }
+#elif defined(__APPLE__)
+int f8(struct timeval *tv, void *tz) { return gettimeofday(tv, tz); }
+#else
+#error "Unsupported platform for gettimeofday"
+#endif
+
+clockid_t f9(void) { return CLOCK_REALTIME; }
+
+clockid_t f10(void) { return CLOCK_MONOTONIC; }
+
+#ifdef __linux__
+clockid_t f11(void) { return CLOCK_MONOTONIC_RAW; }
+#endif

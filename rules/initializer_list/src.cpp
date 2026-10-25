@@ -1,45 +1,20 @@
-#include <algorithm>
+// Copyright (c) 2022-present INESC-ID.
+// Distributed under the MIT license that can be found in the LICENSE file.
+
 #include <cstddef>
 #include <initializer_list>
-#include <utility>
-
-template <typename T1> const T1 *f1(std::initializer_list<T1> a0) {
-  return std::begin<T1>(std::forward<std::initializer_list<T1>>(a0));
-}
-
-template <typename T1> const T1 *f2(std::initializer_list<T1> a0) {
-  return std::end<T1>(std::forward<std::initializer_list<T1>>(a0));
-}
 
 template <typename T1> using t1 = std::initializer_list<T1>;
 
-template <typename T1>
-using t2 = typename std::initializer_list<T1>::value_type;
-
-template <typename T1> using t3 = typename std::initializer_list<T1>::reference;
+template <typename T1> using t2 = typename std::initializer_list<T1>::size_type;
 
 template <typename T1>
-using t4 = typename std::initializer_list<T1>::const_reference;
-
-template <typename T1> using t5 = typename std::initializer_list<T1>::size_type;
-
-template <typename T1> using t6 = typename std::initializer_list<T1>::iterator;
-
-template <typename T1>
-using t7 = typename std::initializer_list<T1>::const_iterator;
-
-template <typename T1> std::initializer_list<T1> f3() {
-  return std::initializer_list<T1>();
+typename std::initializer_list<T1>::size_type
+f1(const std::initializer_list<T1> &o) {
+  return o.size();
 }
 
-template <typename T1> std::size_t f4(const std::initializer_list<T1> &a0) {
-  return a0.size();
-}
-
-template <typename T1> const T1 *f5(const std::initializer_list<T1> &a0) {
-  return a0.begin();
-}
-
-template <typename T1> const T1 *f6(const std::initializer_list<T1> &a0) {
-  return a0.end();
+template <typename T1, std::size_t T2>
+std::initializer_list<T1> f2(const T1 (&a0)[T2]) {
+  return std::initializer_list<T1>{a0};
 }

@@ -1,23 +1,44 @@
+// Copyright (c) 2022-present INESC-ID.
+// Distributed under the MIT license that can be found in the LICENSE file.
+
 #include <fstream>
-#include <iosfwd>
-#include <utility>
+#include <iostream>
+#include <iterator>
 
-template <typename T1, typename T2>
-void f1(std::basic_filebuf<T1, T2> &a0, std::basic_filebuf<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+using t1 = std::ifstream;
+using t2 = std::ofstream;
+using t3 = std::ostream_iterator<char>;
+using t4 = std::ostream_iterator<char>::ostream_type;
+
+std::ofstream f1(const char *filename, std::ios_base::openmode mode) {
+  return std::ofstream(filename, mode);
 }
 
-template <typename T1, typename T2>
-void f2(std::basic_fstream<T1, T2> &a0, std::basic_fstream<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+template <typename T1>
+std::ostream_iterator<T1> f2(const std::ostream_iterator<T1> &a0) {
+  return std::ostream_iterator<T1>(a0);
 }
 
-template <typename T1, typename T2>
-void f3(std::basic_ifstream<T1, T2> &a0, std::basic_ifstream<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+template <typename T1> std::ostream_iterator<T1> f3(std::ostream &a0) {
+  return std::ostream_iterator<T1>(a0);
 }
 
-template <typename T1, typename T2>
-void f4(std::basic_ofstream<T1, T2> &a0, std::basic_ofstream<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+std::filebuf *f4(const std::ifstream &o) { return o.rdbuf(); }
+
+std::ifstream f5(const char *filename, std::ios_base::openmode mode) {
+  return std::ifstream(filename, mode);
+}
+
+template <typename T1>
+std::istream_iterator<T1> f6(const std::istream_iterator<T1> &a0) {
+  return std::istream_iterator<T1>(a0);
+}
+
+template <typename T1>
+std::istreambuf_iterator<T1> f7(std::istreambuf_iterator<T1> &a0) {
+  return std::istreambuf_iterator<T1>(a0);
+}
+
+std::istreambuf_iterator<char> f8(std::basic_streambuf<char> *p) {
+  return std::istreambuf_iterator<char>(p);
 }

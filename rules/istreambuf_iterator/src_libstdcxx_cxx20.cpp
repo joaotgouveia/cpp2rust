@@ -1,7 +1,0 @@
-#include <algorithm>
-#include <ios>
-#include <iosfwd>
-#include <utility>
-
-template <typename T1, typename T2>
-using t7 = typename std::istreambuf_iterator<T1, T2>::pointer;
