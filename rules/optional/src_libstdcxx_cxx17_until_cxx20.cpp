@@ -65,7 +65,7 @@ std::__optional_ge_t<T1, T2> f74(const T1 &a0, const std::optional<T2> &a1) {
 }
 
 template <
-    typename T1, typename T2,
+    typename T1, typename T2 = std::remove_cv_t<T1>,
     std::enable_if_t<
         std::__and_v<std::__not_<std::is_same<std::optional<T1>,
                                               std::__remove_cvref_t<T2>>>,
@@ -83,7 +83,7 @@ std::optional<T1> f75(T2 &&a0) {
 }
 
 template <
-    typename T1, typename T2,
+    typename T1, typename T2 = std::remove_cv_t<T1>,
     std::enable_if_t<
         std::__and_v<std::__not_<std::is_same<std::optional<T1>,
                                               std::__remove_cvref_t<T2>>>,
@@ -171,7 +171,7 @@ std::optional<T1> f82(std::in_place_t a0, std::initializer_list<T2> a1,
                            std::forward<T3>(a2)...);
 }
 
-template <typename T1, typename T2,
+template <typename T1, typename T2 = std::remove_cv_t<T1>,
           typename std::enable_if<(!(std::is_same<T2, std::nullopt_t>::value)),
                                   int>::type T3 = 0>
 std::enable_if_t<

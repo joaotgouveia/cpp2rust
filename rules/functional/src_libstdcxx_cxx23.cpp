@@ -2,7 +2,7 @@
 #include <type_traits>
 #include <utility>
 
-template <typename T1, typename... T2> using t3 = std::_Bind_back<T1, T2...>;
+template <typename T1, typename... T2> using t6 = std::_Bind_back<T1, T2...>;
 
 template <typename T1, typename... T2, typename T3, typename... T4>
 std::_Bind_back<T1, T2...> f19(int a0, T3 &&a1, T4 &&...a2) {

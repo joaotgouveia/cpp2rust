@@ -292,7 +292,8 @@ auto f24(const std::ranges::repeat_view<T1, T2> &a0)
   return a0.cend();
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = std::ranges::repeat_view<T1, T2>>
 decltype(auto) f25(std::ranges::repeat_view<T1, T2> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
@@ -306,7 +307,8 @@ decltype(auto) f25(std::ranges::repeat_view<T1, T2> &a0,
   return a0.template operator[]<T3>(std::move(a1));
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = const std::ranges::repeat_view<T1, T2>>
 decltype(auto) f26(const std::ranges::repeat_view<T1, T2> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
@@ -321,18 +323,21 @@ decltype(auto) f26(const std::ranges::repeat_view<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
-using t2 =
-    typename std::ranges::repeat_view<T1, T2>::_Iterator::iterator_concept;
+using t2 = typename std::ranges::repeat_view<T1, T2>::_Iterator;
 
 template <typename T1, typename T2>
 using t3 =
+    typename std::ranges::repeat_view<T1, T2>::_Iterator::iterator_concept;
+
+template <typename T1, typename T2>
+using t4 =
     typename std::ranges::repeat_view<T1, T2>::_Iterator::iterator_category;
 
 template <typename T1, typename T2>
-using t4 = typename std::ranges::repeat_view<T1, T2>::_Iterator::value_type;
+using t5 = typename std::ranges::repeat_view<T1, T2>::_Iterator::value_type;
 
 template <typename T1, typename T2>
-using t5 =
+using t6 =
     typename std::ranges::repeat_view<T1, T2>::_Iterator::difference_type;
 
 template <typename T1, typename T2>
@@ -346,20 +351,86 @@ const T1 &f28(const typename std::ranges::repeat_view<T1, T2>::_Iterator &a0) {
 }
 
 template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator &
+f29(typename std::ranges::repeat_view<T1, T2>::_Iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator
+f30(typename std::ranges::repeat_view<T1, T2>::_Iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator &
+f31(typename std::ranges::repeat_view<T1, T2>::_Iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator
+f32(typename std::ranges::repeat_view<T1, T2>::_Iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator &
+f33(typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
+    typename std::ranges::repeat_view<T1, T2>::_Iterator::difference_type a1) {
+  return a0.operator+=(std::move(a1));
+}
+
+template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator &
+f34(typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
+    typename std::ranges::repeat_view<T1, T2>::_Iterator::difference_type a1) {
+  return a0.operator-=(std::move(a1));
+}
+
+template <typename T1, typename T2>
 const T1 &
-f29(const typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
+f35(const typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
     typename std::ranges::repeat_view<T1, T2>::_Iterator::difference_type a1) {
   return a0.operator[](std::move(a1));
 }
 
 template <typename T1, typename T2>
-auto f30(const typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
+typename std::ranges::repeat_view<T1, T2>::_Iterator::difference_type
+f36(const typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
+    const typename std::ranges::repeat_view<T1, T2>::_Iterator &a1) {
+  return operator-(a0, a1);
+}
+
+template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator
+f37(typename std::ranges::repeat_view<T1, T2>::_Iterator a0,
+    typename std::ranges::repeat_view<T1, T2>::_Iterator::difference_type a1) {
+  return operator-(std::move(a0), std::move(a1));
+}
+
+template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator
+f38(typename std::ranges::repeat_view<T1, T2>::_Iterator::difference_type a0,
+    typename std::ranges::repeat_view<T1, T2>::_Iterator a1) {
+  return operator+(std::move(a0), std::move(a1));
+}
+
+template <typename T1, typename T2>
+typename std::ranges::repeat_view<T1, T2>::_Iterator
+f39(typename std::ranges::repeat_view<T1, T2>::_Iterator a0,
+    typename std::ranges::repeat_view<T1, T2>::_Iterator::difference_type a1) {
+  return operator+(std::move(a0), std::move(a1));
+}
+
+template <typename T1, typename T2>
+auto f40(const typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::repeat_view<T1, T2>::_Iterator &a1) {
   return operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f31(const typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
+bool f41(const typename std::ranges::repeat_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::repeat_view<T1, T2>::_Iterator &a1) {
   return operator==(a0, a1);
 }

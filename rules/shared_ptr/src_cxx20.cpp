@@ -9,32 +9,32 @@
 #include <utility>
 
 template <typename T1, typename T2>
-std::shared_ptr<T1> f35(std::shared_ptr<T2> &&a0) {
+std::shared_ptr<T1> f37(std::shared_ptr<T2> &&a0) {
   return std::const_pointer_cast<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>
-std::shared_ptr<T1> f36(std::shared_ptr<T2> &&a0) {
+std::shared_ptr<T1> f38(std::shared_ptr<T2> &&a0) {
   return std::dynamic_pointer_cast<T1, T2>(std::move(a0));
 }
 
 template <typename T1>
-std::strong_ordering f37(const std::shared_ptr<T1> &a0, std::nullptr_t a1) {
+std::strong_ordering f39(const std::shared_ptr<T1> &a0, std::nullptr_t a1) {
   return std::operator<=> <T1>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::strong_ordering f38(const std::shared_ptr<T1> &a0,
+std::strong_ordering f40(const std::shared_ptr<T1> &a0,
                          const std::shared_ptr<T2> &a1) {
   return std::operator<=> <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::shared_ptr<T1> f39(std::shared_ptr<T2> &&a0) {
+std::shared_ptr<T1> f41(std::shared_ptr<T2> &&a0) {
   return std::reinterpret_pointer_cast<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>
-std::shared_ptr<T1> f40(std::shared_ptr<T2> &&a0) {
+std::shared_ptr<T1> f42(std::shared_ptr<T2> &&a0) {
   return std::static_pointer_cast<T1, T2>(std::move(a0));
 }

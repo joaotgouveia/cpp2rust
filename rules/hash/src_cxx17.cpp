@@ -15,7 +15,7 @@
 #include <variant>
 #include <vector>
 
-using t11 = std::hash<std::filesystem::path>;
+using t12 = std::hash<std::filesystem::path>;
 
 std::size_t f19(const std::hash<std::filesystem::path> &a0,
                 const std::filesystem::path &a1) {
@@ -46,7 +46,7 @@ std::hash<std::filesystem::path> &f24(std::hash<std::filesystem::path> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t12 = std::hash<std::monostate>;
+using t13 = std::hash<std::monostate>;
 
 std::size_t f25(const std::hash<std::monostate> &a0, const std::monostate &a1) {
   return a0.operator()(a1);

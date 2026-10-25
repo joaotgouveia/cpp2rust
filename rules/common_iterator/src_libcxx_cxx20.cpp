@@ -84,6 +84,9 @@ decltype(auto) f36(const std::common_iterator<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
+using t4 = typename std::common_iterator<T1, T2>::__proxy;
+
+template <typename T1, typename T2>
 const std::iter_value_t<T1> *
 f37(const typename std::common_iterator<T1, T2>::__proxy &a0) {
   return a0.operator->();

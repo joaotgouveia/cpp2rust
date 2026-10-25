@@ -288,13 +288,15 @@ std::filesystem::path &f68(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template concat<T1>(std::move(a1), std::move(a2));
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2 = std::char_traits<T1>,
+          typename T3 = std::allocator<T1>>
 std::basic_string<T1, T2, T3> f69(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template string<T1, T2, T3>(a1);
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2 = std::char_traits<T1>,
+          typename T3 = std::allocator<T1>>
 std::basic_string<T1, T2, T3> f70(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template generic_string<T1, T2, T3>(a1);

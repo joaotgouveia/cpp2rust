@@ -2,7 +2,7 @@
 #include <type_traits>
 #include <utility>
 
-template <typename T1, std::size_t T2> using t3 = std::extent<T1, T2>;
+template <typename T1, std::size_t T2> using t4 = std::extent<T1, T2>;
 
 template <typename T1, std::size_t T2>
 std::size_t f3(const std::extent<T1, T2> &a0) {

@@ -14,7 +14,7 @@ std::compare_three_way_result_t<T1, T2> f437(const std::optional<T1> &a0,
 }
 
 template <
-    typename T1, typename T2,
+    typename T1, typename T2 = T1,
     std::enable_if_t<
         std::_If<
             std::_IsNotSame<std::__remove_cvref_t<T2>,
@@ -37,7 +37,7 @@ std::optional<T1> f438(T2 &&a0)
 }
 
 template <
-    typename T1, typename T2,
+    typename T1, typename T2 = std::remove_cv_t<T1>,
     std::enable_if_t<
         std::_If<
             std::_IsNotSame<std::__remove_cvref_t<T2>,
@@ -124,7 +124,7 @@ std::optional<T1> f443(std::optional<T2> &&a0)
 }
 
 template <
-    typename T1, typename T2,
+    typename T1, typename T2 = std::remove_cv_t<T1>,
     std::enable_if_t<
         std::_And<std::_IsNotSame<std::__remove_cvref_t<T2>, std::optional<T1>>,
                   std::_Or<std::_IsNotSame<std::__remove_cvref_t<T2>, T1>,

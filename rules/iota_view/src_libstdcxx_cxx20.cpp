@@ -180,7 +180,8 @@ decltype(auto) f19(const std::ranges::iota_view<T1, T2> &a0)
   return a0.back();
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = std::ranges::iota_view<T1, T2>>
 decltype(auto) f20(std::ranges::iota_view<T1, T2> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::iota_view<T1, T2>> &&
@@ -192,7 +193,8 @@ decltype(auto) f20(std::ranges::iota_view<T1, T2> &a0,
   return a0.template operator[]<T3>(std::move(a1));
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = const std::ranges::iota_view<T1, T2>>
 decltype(auto) f21(const std::ranges::iota_view<T1, T2> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::iota_view<T1, T2>> &&
@@ -205,6 +207,9 @@ decltype(auto) f21(const std::ranges::iota_view<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
+using t2 = typename std::ranges::iota_view<T1, T2>::_Sentinel;
+
+template <typename T1, typename T2>
 typename std::ranges::iota_view<T1, T2>::_Sentinel f22() {
   return typename std::ranges::iota_view<T1, T2>::_Sentinel();
 }
@@ -215,13 +220,16 @@ typename std::ranges::iota_view<T1, T2>::_Sentinel f23(T2 a0) {
 }
 
 template <typename T1, typename T2>
-using t2 = typename std::ranges::iota_view<T1, T2>::_Iterator::iterator_concept;
+using t3 = typename std::ranges::iota_view<T1, T2>::_Iterator;
 
 template <typename T1, typename T2>
-using t3 = typename std::ranges::iota_view<T1, T2>::_Iterator::value_type;
+using t4 = typename std::ranges::iota_view<T1, T2>::_Iterator::iterator_concept;
 
 template <typename T1, typename T2>
-using t4 = typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type;
+using t5 = typename std::ranges::iota_view<T1, T2>::_Iterator::value_type;
+
+template <typename T1, typename T2>
+using t6 = typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type;
 
 template <typename T1, typename T2>
 typename std::ranges::iota_view<T1, T2>::_Iterator f24()
@@ -241,12 +249,60 @@ T1 f26(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0) {
 }
 
 template <typename T1, typename T2>
-void f27(typename std::ranges::iota_view<T1, T2>::_Iterator &a0, int a1) {
+typename std::ranges::iota_view<T1, T2>::_Iterator &
+f27(typename std::ranges::iota_view<T1, T2>::_Iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2>
+void f28(typename std::ranges::iota_view<T1, T2>::_Iterator &a0, int a1) {
   return a0.operator++(a1);
 }
 
 template <typename T1, typename T2>
-T1 f28(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+typename std::ranges::iota_view<T1, T2>::_Iterator
+f29(typename std::ranges::iota_view<T1, T2>::_Iterator &a0, int a1)
+  requires(std::incrementable<T1>)
+{
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2>
+typename std::ranges::iota_view<T1, T2>::_Iterator &
+f30(typename std::ranges::iota_view<T1, T2>::_Iterator &a0)
+  requires(std::ranges::__detail::__decrementable<T1>)
+{
+  return a0.operator--();
+}
+
+template <typename T1, typename T2>
+typename std::ranges::iota_view<T1, T2>::_Iterator
+f31(typename std::ranges::iota_view<T1, T2>::_Iterator &a0, int a1)
+  requires(std::ranges::__detail::__decrementable<T1>)
+{
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2>
+typename std::ranges::iota_view<T1, T2>::_Iterator &
+f32(typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+    typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1)
+  requires(std::ranges::__detail::__advanceable<T1>)
+{
+  return a0.operator+=(std::move(a1));
+}
+
+template <typename T1, typename T2>
+typename std::ranges::iota_view<T1, T2>::_Iterator &
+f33(typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+    typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1)
+  requires(std::ranges::__detail::__advanceable<T1>)
+{
+  return a0.operator-=(std::move(a1));
+}
+
+template <typename T1, typename T2>
+T1 f34(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
        typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1)
   requires(std::ranges::__detail::__advanceable<T1>)
 {
@@ -254,37 +310,65 @@ T1 f28(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
 }
 
 template <typename T1, typename T2>
-auto f29(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type
+f35(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+    const typename std::ranges::iota_view<T1, T2>::_Iterator &a1) {
+  return operator-(a0, a1);
+}
+
+template <typename T1, typename T2>
+typename std::ranges::iota_view<T1, T2>::_Iterator
+f36(typename std::ranges::iota_view<T1, T2>::_Iterator a0,
+    typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1) {
+  return operator-(std::move(a0), std::move(a1));
+}
+
+template <typename T1, typename T2>
+typename std::ranges::iota_view<T1, T2>::_Iterator
+f37(typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a0,
+    typename std::ranges::iota_view<T1, T2>::_Iterator a1) {
+  return operator+(std::move(a0), std::move(a1));
+}
+
+template <typename T1, typename T2>
+typename std::ranges::iota_view<T1, T2>::_Iterator
+f38(typename std::ranges::iota_view<T1, T2>::_Iterator a0,
+    typename std::ranges::iota_view<T1, T2>::_Iterator::difference_type a1) {
+  return operator+(std::move(a0), std::move(a1));
+}
+
+template <typename T1, typename T2>
+auto f39(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::iota_view<T1, T2>::_Iterator &a1) {
   return operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f30(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+bool f40(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::iota_view<T1, T2>::_Iterator &a1) {
   return operator>=(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f31(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+bool f41(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::iota_view<T1, T2>::_Iterator &a1) {
   return operator<=(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f32(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+bool f42(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::iota_view<T1, T2>::_Iterator &a1) {
   return operator>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f33(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+bool f43(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::iota_view<T1, T2>::_Iterator &a1) {
   return operator<(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f34(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
+bool f44(const typename std::ranges::iota_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::iota_view<T1, T2>::_Iterator &a1) {
   return operator==(a0, a1);
 }

@@ -24,7 +24,7 @@ template <
                          std::__variant_detail::__best_match_t<T2, T1...>, T2>,
                      int>
         T8 = 0>
-std::variant<T1...> f69(T2 &&a0)
+std::variant<T1...> f71(T2 &&a0)
   requires(!(std::is_same<T2, const std::variant<T1...> &>::value) &&
            !(std::is_same<T2, std::variant<T1...>>::value))
 {
@@ -46,7 +46,7 @@ template <
                 std::__variant_detail::__best_match_t<T2, T1...>, T2>,
         int>
         T6 = 0>
-std::variant<T1...> &f70(std::variant<T1...> &a0, T2 &&a1)
+std::variant<T1...> &f72(std::variant<T1...> &a0, T2 &&a1)
   requires(!(std::is_same<T2, const std::variant<T1...> &>::value) &&
            !(std::is_same<T2, std::variant<T1...>>::value))
 {
@@ -56,7 +56,7 @@ std::variant<T1...> &f70(std::variant<T1...> &a0, T2 &&a1)
 template <typename T1, typename T2, typename... T3,
           typename T4 =
               std::void_t<decltype(std::__as_variant(std::declval<T3>()))...>>
-T1 f71(T2 &&a0, T3 &&...a1) {
+T1 f73(T2 &&a0, T3 &&...a1) {
   return std::visit<T1, T2, T3...>(std::forward<T2>(a0),
                                    std::forward<T3>(a1)...);
 }

@@ -77,10 +77,12 @@ template <typename T1> using t20 = std::formatter<void *, T1>;
 
 template <typename T1> using t21 = std::formatter<std::nullptr_t, T1>;
 
-template <typename T1, typename T2>
-using t22 = std::formatter<std::chrono::sys_time<T1>, T2>;
+template <typename T1, std::size_t T2> using t22 = std::formatter<T1[T2], T1>;
 
 template <typename T1, typename T2>
-using t23 = std::formatter<std::chrono::local_time<T1>, T2>;
+using t23 = std::formatter<std::chrono::sys_time<T1>, T2>;
 
-template <typename T1, typename T2> using t24 = std::formatter<T1, T2>;
+template <typename T1, typename T2>
+using t24 = std::formatter<std::chrono::local_time<T1>, T2>;
+
+template <typename T1, typename T2> using t25 = std::formatter<T1, T2>;

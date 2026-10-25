@@ -317,7 +317,8 @@ decltype(auto) f50(const std::ranges::join_with_view<T1, T2> &a0)
   return a0.back();
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = std::ranges::join_with_view<T1, T2>>
 decltype(auto) f51(std::ranges::join_with_view<T1, T2> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
@@ -333,7 +334,8 @@ decltype(auto) f51(std::ranges::join_with_view<T1, T2> &a0,
   return a0.template operator[]<T3>(std::move(a1));
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = const std::ranges::join_with_view<T1, T2>>
 decltype(auto) f52(const std::ranges::join_with_view<T1, T2> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::join_with_view<T1, T2>> &&

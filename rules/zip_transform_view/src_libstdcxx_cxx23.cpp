@@ -397,7 +397,8 @@ auto f24(const std::ranges::zip_transform_view<T1, T2...> &a0)
   return a0.cend();
 }
 
-template <typename T1, typename... T2, typename T3>
+template <typename T1, typename... T2,
+          typename T3 = std::ranges::zip_transform_view<T1, T2...>>
 decltype(auto) f25(std::ranges::zip_transform_view<T1, T2...> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
@@ -415,7 +416,8 @@ decltype(auto) f25(std::ranges::zip_transform_view<T1, T2...> &a0,
   return a0.template operator[]<T3>(std::move(a1));
 }
 
-template <typename T1, typename... T2, typename T3>
+template <typename T1, typename... T2,
+          typename T3 = const std::ranges::zip_transform_view<T1, T2...>>
 decltype(auto) f26(const std::ranges::zip_transform_view<T1, T2...> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&

@@ -20,7 +20,7 @@ template <typename T1> void f7(std::formatter<const T1 *, T1> &a0) {
 }
 
 template <typename T1, typename... T2>
-using t25 = std::formatter<std::tuple<T2...>, T1>;
+using t26 = std::formatter<std::tuple<T2...>, T1>;
 
 template <typename T1, typename... T2>
 void f8(std::formatter<std::tuple<T2...>, T1> &a0,
@@ -35,10 +35,10 @@ void f9(std::formatter<std::tuple<T2...>, T1> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t26 = std::formatter<std::queue<T2, T3>, T1>;
+using t27 = std::formatter<std::queue<T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3>
-using t27 = std::formatter<std::stack<T2, T3>, T1>;
+using t28 = std::formatter<std::stack<T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t28 = std::formatter<std::priority_queue<T2, T3, T4>, T1>;
+using t29 = std::formatter<std::priority_queue<T2, T3, T4>, T1>;

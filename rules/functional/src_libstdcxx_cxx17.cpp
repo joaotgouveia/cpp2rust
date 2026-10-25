@@ -2,7 +2,7 @@
 #include <type_traits>
 #include <utility>
 
-template <typename T1> using t1 = std::_Not_fn<T1>;
+template <typename T1> using t4 = std::_Not_fn<T1>;
 
 template <typename T1> std::_Not_fn<T1> f4(const std::_Not_fn<T1> &a0) {
   return std::_Not_fn<T1>(a0);

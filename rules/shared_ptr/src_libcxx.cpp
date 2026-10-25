@@ -122,34 +122,16 @@ std::shared_ptr<T1> f110(T2 *a0, T3 a1, T4 a2) {
   return std::shared_ptr<T1>(a0, std::move(a1), std::move(a2));
 }
 
-template <typename T1, typename T2>
-std::shared_ptr<T1>
-f111(std::nullptr_t a0, T2 a1,
-     typename std::enable_if<
-         std::__shared_ptr_nullptr_deleter_ctor_reqs_v<T2>,
-         typename std::shared_ptr<T1>::__nullptr_sfinae_tag>::type a2) {
-  return std::shared_ptr<T1>(a0, std::move(a1), std::move(a2));
-}
-
-template <typename T1, typename T2, typename T3>
-std::shared_ptr<T1>
-f112(std::nullptr_t a0, T2 a1, T3 a2,
-     typename std::enable_if<
-         std::__shared_ptr_nullptr_deleter_ctor_reqs_v<T2>,
-         typename std::shared_ptr<T1>::__nullptr_sfinae_tag>::type a3) {
-  return std::shared_ptr<T1>(a0, std::move(a1), std::move(a2), std::move(a3));
-}
-
 template <typename T1, typename T2,
           std::__enable_if_t<std::__compatible_with_v<T2, T1>, int> T3 = 0>
-std::shared_ptr<T1> f113(const std::weak_ptr<T2> &a0) {
+std::shared_ptr<T1> f111(const std::weak_ptr<T2> &a0) {
   return std::shared_ptr<T1>(a0);
 }
 
 template <typename T1, typename T2,
           std::__enable_if_t<std::__raw_pointer_compatible_with_v<T2, T1>, int>
               T3 = 0>
-void f114(std::shared_ptr<T1> &a0, T2 *a1) {
+void f112(std::shared_ptr<T1> &a0, T2 *a1) {
   return a0.template reset<T2>(a1);
 }
 
@@ -157,7 +139,7 @@ template <
     typename T1, typename T2, typename T3,
     std::__enable_if_t<std::__shared_ptr_deleter_ctor_reqs_v<T3, T2, T1>, int>
         T4 = 0>
-void f115(std::shared_ptr<T1> &a0, T2 *a1, T3 a2) {
+void f113(std::shared_ptr<T1> &a0, T2 *a1, T3 a2) {
   return a0.template reset<T2, T3>(a1, std::move(a2));
 }
 
@@ -165,16 +147,16 @@ template <
     typename T1, typename T2, typename T3, typename T4,
     std::__enable_if_t<std::__shared_ptr_deleter_ctor_reqs_v<T3, T2, T1>, int>
         T5 = 0>
-void f116(std::shared_ptr<T1> &a0, T2 *a1, T3 a2, T4 a3) {
+void f114(std::shared_ptr<T1> &a0, T2 *a1, T3 a2, T4 a3) {
   return a0.template reset<T2, T3, T4>(a1, std::move(a2), std::move(a3));
 }
 
 template <typename T1, typename T2>
-bool f117(const std::shared_ptr<T1> &a0, const std::shared_ptr<T2> &a1) {
+bool f115(const std::shared_ptr<T1> &a0, const std::shared_ptr<T2> &a1) {
   return a0.template owner_before<T2>(a1);
 }
 
 template <typename T1, typename T2>
-bool f118(const std::shared_ptr<T1> &a0, const std::weak_ptr<T2> &a1) {
+bool f116(const std::shared_ptr<T1> &a0, const std::weak_ptr<T2> &a1) {
   return a0.template owner_before<T2>(a1);
 }

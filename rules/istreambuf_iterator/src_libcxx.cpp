@@ -37,6 +37,9 @@ auto f15(std::istreambuf_iterator<T1, T2> &a0, int a1)
 }
 
 template <typename T1, typename T2>
+using t13 = typename std::istreambuf_iterator<T1, T2>::__proxy;
+
+template <typename T1, typename T2>
 T1 f16(const typename std::istreambuf_iterator<T1, T2>::__proxy &a0) {
   return a0.operator*();
 }

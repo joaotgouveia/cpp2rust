@@ -374,7 +374,8 @@ decltype(auto) f23(const std::ranges::lazy_split_view<T1, T2> &a0)
   return a0.back();
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = std::ranges::lazy_split_view<T1, T2>>
 decltype(auto) f24(std::ranges::lazy_split_view<T1, T2> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::lazy_split_view<T1, T2>> &&
@@ -392,7 +393,8 @@ decltype(auto) f24(std::ranges::lazy_split_view<T1, T2> &a0,
   return a0.template operator[]<T3>(std::move(a1));
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = const std::ranges::lazy_split_view<T1, T2>>
 decltype(auto) f25(const std::ranges::lazy_split_view<T1, T2> &a0,
                    std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::lazy_split_view<T1, T2>> &&

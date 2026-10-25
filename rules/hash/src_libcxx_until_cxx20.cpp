@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <bitset>
 #include <cstddef>
 #include <functional>
 #include <memory>
@@ -10,18 +11,18 @@
 #include <vector>
 
 template <typename T1>
-using t58 = typename std::hash<std::shared_ptr<T1>>::argument_type;
+using t60 = typename std::hash<std::shared_ptr<T1>>::argument_type;
 
 template <typename T1>
-using t59 = typename std::hash<std::shared_ptr<T1>>::result_type;
+using t61 = typename std::hash<std::shared_ptr<T1>>::result_type;
 
 template <typename T1, typename T2>
-using t60 = typename std::hash<std::__enable_hash_helper<
+using t62 = typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::argument_type;
 
 template <typename T1, typename T2>
-using t61 = typename std::hash<std::__enable_hash_helper<
+using t63 = typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::result_type;
 
@@ -33,7 +34,7 @@ template <typename T1,
                                           (sizeof(T1) <= sizeof(std::size_t)),
                                       void>::type>::value),
               int>::type T2 = 0>
-std::size_t f247(const std::hash<T1> &a0, T1 a1) {
+std::size_t f271(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(std::move(a1));
 }
 
@@ -44,7 +45,7 @@ template <typename T1,
                                                     std::__is_unqualified_v<T1>,
                                                 void>::type>::value),
               int>::type T2 = 0>
-std::size_t f248(const std::hash<T1> &a0, T1 a1) {
+std::size_t f272(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(std::move(a1));
 }
 
@@ -58,7 +59,7 @@ template <typename T1,
                                           (sizeof(T1) > sizeof(std::size_t)),
                                       void>::type>::value),
               int>::type T3 = 0>
-std::size_t f249(const std::hash<T1> &a0, T1 a1) {
+std::size_t f273(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(std::move(a1));
 }
 
@@ -72,7 +73,7 @@ template <typename T1,
                                           (sizeof(T1) > sizeof(std::size_t)),
                                       void>::type>::value),
               int>::type T3 = 0>
-std::size_t f250(const std::hash<T1> &a0, T1 a1) {
+std::size_t f274(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(std::move(a1));
 }
 
@@ -86,7 +87,7 @@ template <typename T1,
                                           (sizeof(T1) > sizeof(std::size_t)),
                                       void>::type>::value),
               int>::type T3 = 0>
-std::size_t f251(const std::hash<T1> &a0, T1 a1) {
+std::size_t f275(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(std::move(a1));
 }
 
@@ -100,7 +101,7 @@ template <typename T1,
                                           (sizeof(T1) > sizeof(std::size_t)),
                                       void>::type>::value),
               int>::type T3 = 0>
-std::size_t f252(const std::hash<T1> &a0, T1 a1) {
+std::size_t f276(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(std::move(a1));
 }
 
@@ -114,7 +115,7 @@ template <typename T1,
                                           (sizeof(T1) > sizeof(std::size_t)),
                                       void>::type>::value),
               int>::type T3 = 0>
-std::size_t f253(const std::hash<T1> &a0, T1 a1) {
+std::size_t f277(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(std::move(a1));
 }
 
@@ -125,6 +126,6 @@ template <typename T1,
                                           std::__is_unqualified_v<T1>,
                                       void>::type>::value),
               int>::type T2 = 0>
-std::size_t f254(const std::hash<T1> &a0, T1 a1) {
+std::size_t f278(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(std::move(a1));
 }

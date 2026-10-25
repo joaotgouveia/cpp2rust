@@ -62,41 +62,26 @@ std::stack<T1, T2> &f36(std::stack<T1, T2> &a0, std::stack<T1, T2> &&a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::stack<T1, T2>
-f37(const T3 &a0,
-    typename std::enable_if<std::uses_allocator<T2, T3>::value, void>::type
-        *a1) {
+std::stack<T1, T2> f37(const T3 &a0) {
+  return std::stack<T1, T2>(a0);
+}
+
+template <typename T1, typename T2, typename T3>
+std::stack<T1, T2> f38(const T2 &a0, const T3 &a1) {
   return std::stack<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::stack<T1, T2>
-f38(const T2 &a0, const T3 &a1,
-    typename std::enable_if<std::uses_allocator<T2, T3>::value, void>::type
-        *a2) {
-  return std::stack<T1, T2>(a0, a1, a2);
+std::stack<T1, T2> f39(const std::stack<T1, T2> &a0, const T3 &a1) {
+  return std::stack<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::stack<T1, T2>
-f39(const std::stack<T1, T2> &a0, const T3 &a1,
-    typename std::enable_if<std::uses_allocator<T2, T3>::value, void>::type
-        *a2) {
-  return std::stack<T1, T2>(a0, a1, a2);
+std::stack<T1, T2> f40(T2 &&a0, const T3 &a1) {
+  return std::stack<T1, T2>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::stack<T1, T2>
-f40(T2 &&a0, const T3 &a1,
-    typename std::enable_if<std::uses_allocator<T2, T3>::value, void>::type
-        *a2) {
-  return std::stack<T1, T2>(std::move(a0), a1, a2);
-}
-
-template <typename T1, typename T2, typename T3>
-std::stack<T1, T2>
-f41(std::stack<T1, T2> &&a0, const T3 &a1,
-    typename std::enable_if<std::uses_allocator<T2, T3>::value, void>::type
-        *a2) {
-  return std::stack<T1, T2>(std::move(a0), a1, a2);
+std::stack<T1, T2> f41(std::stack<T1, T2> &&a0, const T3 &a1) {
+  return std::stack<T1, T2>(std::move(a0), a1);
 }

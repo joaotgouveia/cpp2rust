@@ -3,7 +3,7 @@
 #include <utility>
 
 template <typename T1, typename T2>
-auto f29(std::ranges::split_view<T1, T2> &a0)
+auto f31(std::ranges::split_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::split_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::split_view<T1, T2>> &&
            std::same_as<std::ranges::split_view<T1, T2>,
@@ -17,7 +17,7 @@ auto f29(std::ranges::split_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f30(const std::ranges::split_view<T1, T2> &a0)
+auto f32(const std::ranges::split_view<T1, T2> &a0)
   requires(std::ranges::input_range<const std::ranges::split_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::split_view<T1, T2>> &&
            std::same_as<std::ranges::split_view<T1, T2>,
@@ -31,7 +31,7 @@ auto f30(const std::ranges::split_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f31(std::ranges::split_view<T1, T2> &a0)
+auto f33(std::ranges::split_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::split_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::split_view<T1, T2>> &&
            std::same_as<std::ranges::split_view<T1, T2>,
@@ -45,7 +45,7 @@ auto f31(std::ranges::split_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f32(const std::ranges::split_view<T1, T2> &a0)
+auto f34(const std::ranges::split_view<T1, T2> &a0)
   requires(std::ranges::input_range<const std::ranges::split_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::split_view<T1, T2>> &&
            std::same_as<std::ranges::split_view<T1, T2>,

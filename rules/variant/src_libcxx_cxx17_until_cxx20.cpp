@@ -27,7 +27,7 @@ template <
         (!(std::is_same<T2, const std::variant<T1...> &>::value) &&
          !(std::is_same<T2, std::variant<T1...>>::value)),
         int>::type T9 = 0>
-std::variant<T1...> f67(T2 &&a0) {
+std::variant<T1...> f69(T2 &&a0) {
   return std::variant<T1...>(std::forward<T2>(a0));
 }
 
@@ -50,6 +50,6 @@ template <
         (!(std::is_same<T2, const std::variant<T1...> &>::value) &&
          !(std::is_same<T2, std::variant<T1...>>::value)),
         int>::type T7 = 0>
-std::variant<T1...> &f68(std::variant<T1...> &a0, T2 &&a1) {
+std::variant<T1...> &f70(std::variant<T1...> &a0, T2 &&a1) {
   return a0.template operator= <T2>(std::forward<T2>(a1));
 }

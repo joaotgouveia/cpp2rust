@@ -4,12 +4,12 @@
 #include <utility>
 
 template <typename T1, typename T2, std::_Lock_policy T3>
-T1 *f47(const std::__shared_ptr<T2, T3> &a0) {
+T1 *f49(const std::__shared_ptr<T2, T3> &a0) {
   return std::get_deleter<T1, T2, T3>(a0);
 }
 
 template <typename T1, typename T2, typename T3, std::_Lock_policy T4>
-std::basic_ostream<T1, T2> &f48(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f50(std::basic_ostream<T1, T2> &a0,
                                 const std::__shared_ptr<T3, T4> &a1) {
   return std::operator<< <T1, T2, T3, T4>(a0, a1);
 }
@@ -17,31 +17,21 @@ std::basic_ostream<T1, T2> &f48(std::basic_ostream<T1, T2> &a0,
 template <typename T1, typename T2,
           typename T3 = typename std::enable_if<
               std::is_constructible<std::__shared_ptr<T1>, T2 *>::value>::type>
-std::shared_ptr<T1> f49(T2 *a0) {
+std::shared_ptr<T1> f51(T2 *a0) {
   return std::shared_ptr<T1>(a0);
 }
 
 template <typename T1, typename T2, typename T3,
           typename T4 = typename std::enable_if<std::is_constructible<
               std::__shared_ptr<T1>, T2 *, T3>::value>::type>
-std::shared_ptr<T1> f50(T2 *a0, T3 a1) {
-  return std::shared_ptr<T1>(a0, std::move(a1));
-}
-
-template <typename T1, typename T2>
-std::shared_ptr<T1> f51(std::nullptr_t a0, T2 a1) {
+std::shared_ptr<T1> f52(T2 *a0, T3 a1) {
   return std::shared_ptr<T1>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
           typename T5 = typename std::enable_if<std::is_constructible<
               std::__shared_ptr<T1>, T2 *, T3, T4>::value>::type>
-std::shared_ptr<T1> f52(T2 *a0, T3 a1, T4 a2) {
-  return std::shared_ptr<T1>(a0, std::move(a1), std::move(a2));
-}
-
-template <typename T1, typename T2, typename T3>
-std::shared_ptr<T1> f53(std::nullptr_t a0, T2 a1, T3 a2) {
+std::shared_ptr<T1> f53(T2 *a0, T3 a1, T4 a2) {
   return std::shared_ptr<T1>(a0, std::move(a1), std::move(a2));
 }
 

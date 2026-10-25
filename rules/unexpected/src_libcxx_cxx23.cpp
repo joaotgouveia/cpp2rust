@@ -7,7 +7,7 @@ void f15(std::unexpected<T1> &a0, std::unexpected<T1> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = T1>
 std::unexpected<T1> f16(T2 &&a0)
   requires((!std::is_same_v<std::remove_cvref_t<T2>, std::unexpected<T1>> &&
             !std::is_same_v<std::remove_cvref_t<T2>, std::in_place_t> &&

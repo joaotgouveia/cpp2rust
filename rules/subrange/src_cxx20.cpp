@@ -86,7 +86,8 @@ std::ranges::subrange<T1, T2, T3> &f9(std::ranges::subrange<T1, T2, T3> &a0,
   return a0.advance(std::move(a1));
 }
 
-template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
+template <typename T1, typename T2, std::ranges::subrange_kind T3,
+          typename T4 = std::ranges::subrange<T1, T2, T3>>
 decltype(auto) f10(std::ranges::subrange<T1, T2, T3> &a0,
                    std::ranges::range_difference_t<T4> a1)
   requires(std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
@@ -99,7 +100,8 @@ decltype(auto) f10(std::ranges::subrange<T1, T2, T3> &a0,
   return a0.template operator[]<T4>(std::move(a1));
 }
 
-template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
+template <typename T1, typename T2, std::ranges::subrange_kind T3,
+          typename T4 = const std::ranges::subrange<T1, T2, T3>>
 decltype(auto) f11(const std::ranges::subrange<T1, T2, T3> &a0,
                    std::ranges::range_difference_t<T4> a1)
   requires(std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&

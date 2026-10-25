@@ -3,7 +3,7 @@
 #include <utility>
 
 template <typename T1, typename T2>
-auto f35(std::ranges::iota_view<T1, T2> &a0)
+auto f45(std::ranges::iota_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::iota_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::iota_view<T1, T2>> &&
            std::same_as<std::ranges::iota_view<T1, T2>,
@@ -14,7 +14,7 @@ auto f35(std::ranges::iota_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f36(const std::ranges::iota_view<T1, T2> &a0)
+auto f46(const std::ranges::iota_view<T1, T2> &a0)
   requires(std::ranges::input_range<const std::ranges::iota_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::iota_view<T1, T2>> &&
            std::same_as<std::ranges::iota_view<T1, T2>,
@@ -25,7 +25,7 @@ auto f36(const std::ranges::iota_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f37(std::ranges::iota_view<T1, T2> &a0)
+auto f47(std::ranges::iota_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::iota_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::iota_view<T1, T2>> &&
            std::same_as<std::ranges::iota_view<T1, T2>,
@@ -36,7 +36,7 @@ auto f37(std::ranges::iota_view<T1, T2> &a0)
 }
 
 template <typename T1, typename T2>
-auto f38(const std::ranges::iota_view<T1, T2> &a0)
+auto f48(const std::ranges::iota_view<T1, T2> &a0)
   requires(std::ranges::input_range<const std::ranges::iota_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::iota_view<T1, T2>> &&
            std::same_as<std::ranges::iota_view<T1, T2>,

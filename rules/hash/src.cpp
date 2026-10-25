@@ -61,14 +61,16 @@ std::hash<std::type_index> &f11(std::hash<std::type_index> &a0,
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1> using t3 = std::hash<T1 *>;
+template <std::size_t T1> using t3 = std::hash<std::bitset<T1>>;
+
+template <typename T1> using t4 = std::hash<T1 *>;
 
 template <typename T1> std::size_t f12(const std::hash<T1 *> &a0, T1 *a1) {
   return a0.operator()(a1);
 }
 
 template <typename T1>
-using t4 = std::hash<std::basic_string<char, std::char_traits<char>, T1>>;
+using t5 = std::hash<std::basic_string<char, std::char_traits<char>, T1>>;
 
 template <typename T1>
 std::size_t
@@ -78,7 +80,7 @@ f13(const std::hash<std::basic_string<char, std::char_traits<char>, T1>> &a0,
 }
 
 template <typename T1>
-using t5 = std::hash<std::basic_string<wchar_t, std::char_traits<wchar_t>, T1>>;
+using t6 = std::hash<std::basic_string<wchar_t, std::char_traits<wchar_t>, T1>>;
 
 template <typename T1>
 std::size_t
@@ -89,7 +91,7 @@ f14(const std::hash<std::basic_string<wchar_t, std::char_traits<wchar_t>, T1>>
 }
 
 template <typename T1>
-using t6 =
+using t7 =
     std::hash<std::basic_string<char16_t, std::char_traits<char16_t>, T1>>;
 
 template <typename T1>
@@ -101,7 +103,7 @@ f15(const std::hash<std::basic_string<char16_t, std::char_traits<char16_t>, T1>>
 }
 
 template <typename T1>
-using t7 =
+using t8 =
     std::hash<std::basic_string<char32_t, std::char_traits<char32_t>, T1>>;
 
 template <typename T1>
@@ -112,7 +114,7 @@ f16(const std::hash<std::basic_string<char32_t, std::char_traits<char32_t>, T1>>
   return a0.operator()(a1);
 }
 
-template <typename T1> using t8 = std::hash<std::shared_ptr<T1>>;
+template <typename T1> using t9 = std::hash<std::shared_ptr<T1>>;
 
 template <typename T1>
 std::size_t f17(const std::hash<std::shared_ptr<T1>> &a0,
@@ -120,7 +122,7 @@ std::size_t f17(const std::hash<std::shared_ptr<T1>> &a0,
   return a0.operator()(a1);
 }
 
-template <typename T1> using t9 = std::hash<std::vector<bool, T1>>;
+template <typename T1> using t10 = std::hash<std::vector<bool, T1>>;
 
 template <typename T1>
 std::size_t f18(const std::hash<std::vector<bool, T1>> &a0,
@@ -128,4 +130,4 @@ std::size_t f18(const std::hash<std::vector<bool, T1>> &a0,
   return a0.operator()(a1);
 }
 
-template <typename T1> using t10 = std::hash<T1>;
+template <typename T1> using t11 = std::hash<T1>;

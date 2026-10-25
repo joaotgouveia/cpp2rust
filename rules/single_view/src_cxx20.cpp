@@ -82,7 +82,7 @@ std::ranges::single_view<T1> f11(std::in_place_t a0, T2 &&...a1)
   return std::ranges::single_view<T1>(std::move(a0), std::forward<T2>(a1)...);
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = std::ranges::single_view<T1>>
 decltype(auto) f12(std::ranges::single_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::single_view<T1>> &&
@@ -93,7 +93,7 @@ decltype(auto) f12(std::ranges::single_view<T1> &a0,
   return a0.template operator[]<T2>(std::move(a1));
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = const std::ranges::single_view<T1>>
 decltype(auto) f13(const std::ranges::single_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::single_view<T1>> &&

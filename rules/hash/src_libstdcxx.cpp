@@ -8,7 +8,7 @@
 #include <utility>
 #include <vector>
 
-using t17 = std::hash<std::bitset<0>>;
+using t18 = std::hash<std::bitset<0>>;
 
 std::size_t f33(const std::hash<std::bitset<0>> &a0, const std::bitset<0> &a1) {
   return a0.operator()(a1);
@@ -34,7 +34,7 @@ std::hash<std::bitset<0>> &f38(std::hash<std::bitset<0>> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t18 = std::hash<std::thread::id>;
+using t19 = std::hash<std::thread::id>;
 
 std::size_t f39(const std::hash<std::thread::id> &a0,
                 const std::thread::id &a1) {
@@ -61,16 +61,16 @@ std::hash<std::thread::id> &f44(std::hash<std::thread::id> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t19 = std::hash<std::type_index>::result_type;
+using t20 = std::hash<std::type_index>::result_type;
 
-using t20 = std::hash<std::type_index>::argument_type;
+using t21 = std::hash<std::type_index>::argument_type;
 
 std::size_t f45(const std::hash<std::type_index> &a0,
                 const std::type_index &a1) {
   return a0.operator()(a1);
 }
 
-using t21 = std::hash<char>;
+using t22 = std::hash<char>;
 
 std::size_t f46(const std::hash<char> &a0, char a1) {
   return a0.operator()(a1);
@@ -92,7 +92,7 @@ std::hash<char> &f51(std::hash<char> &a0, std::hash<char> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t22 = std::hash<long double>;
+using t23 = std::hash<long double>;
 
 std::size_t f52(const std::hash<long double> &a0, long double a1) {
   return a0.operator()(a1);
@@ -118,7 +118,7 @@ std::hash<long double> &f57(std::hash<long double> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t23 = std::hash<int>;
+using t24 = std::hash<int>;
 
 std::size_t f58(const std::hash<int> &a0, int a1) { return a0.operator()(a1); }
 
@@ -138,7 +138,7 @@ std::hash<int> &f63(std::hash<int> &a0, std::hash<int> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t24 = std::hash<long long>;
+using t25 = std::hash<long long>;
 
 std::size_t f64(const std::hash<long long> &a0, long long a1) {
   return a0.operator()(a1);
@@ -163,7 +163,7 @@ std::hash<long long> &f69(std::hash<long long> &a0, std::hash<long long> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t25 = std::hash<long>;
+using t26 = std::hash<long>;
 
 std::size_t f70(const std::hash<long> &a0, long a1) {
   return a0.operator()(a1);
@@ -185,7 +185,7 @@ std::hash<long> &f75(std::hash<long> &a0, std::hash<long> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t26 = std::hash<short>;
+using t27 = std::hash<short>;
 
 std::size_t f76(const std::hash<short> &a0, short a1) {
   return a0.operator()(a1);
@@ -209,7 +209,7 @@ std::hash<short> &f81(std::hash<short> &a0, std::hash<short> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t27 = std::hash<wchar_t>;
+using t28 = std::hash<wchar_t>;
 
 std::size_t f82(const std::hash<wchar_t> &a0, wchar_t a1) {
   return a0.operator()(a1);
@@ -233,7 +233,7 @@ std::hash<wchar_t> &f87(std::hash<wchar_t> &a0, std::hash<wchar_t> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t28 = std::hash<bool>;
+using t29 = std::hash<bool>;
 
 std::size_t f88(const std::hash<bool> &a0, bool a1) {
   return a0.operator()(a1);
@@ -255,7 +255,7 @@ std::hash<bool> &f93(std::hash<bool> &a0, std::hash<bool> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t29 = std::hash<unsigned char>;
+using t30 = std::hash<unsigned char>;
 
 std::size_t f94(const std::hash<unsigned char> &a0, unsigned char a1) {
   return a0.operator()(a1);
@@ -281,7 +281,7 @@ std::hash<unsigned char> &f99(std::hash<unsigned char> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t30 = std::hash<double>;
+using t31 = std::hash<double>;
 
 std::size_t f100(const std::hash<double> &a0, double a1) {
   return a0.operator()(a1);
@@ -305,7 +305,7 @@ std::hash<double> &f105(std::hash<double> &a0, std::hash<double> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t31 = std::hash<float>;
+using t32 = std::hash<float>;
 
 std::size_t f106(const std::hash<float> &a0, float a1) {
   return a0.operator()(a1);
@@ -329,7 +329,7 @@ std::hash<float> &f111(std::hash<float> &a0, std::hash<float> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t32 = std::hash<unsigned int>;
+using t33 = std::hash<unsigned int>;
 
 std::size_t f112(const std::hash<unsigned int> &a0, unsigned int a1) {
   return a0.operator()(a1);
@@ -355,7 +355,7 @@ std::hash<unsigned int> &f117(std::hash<unsigned int> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t33 = std::hash<unsigned long long>;
+using t34 = std::hash<unsigned long long>;
 
 std::size_t f118(const std::hash<unsigned long long> &a0,
                  unsigned long long a1) {
@@ -382,7 +382,7 @@ std::hash<unsigned long long> &f123(std::hash<unsigned long long> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t34 = std::hash<unsigned long>;
+using t35 = std::hash<unsigned long>;
 
 std::size_t f124(const std::hash<unsigned long> &a0, unsigned long a1) {
   return a0.operator()(a1);
@@ -408,7 +408,7 @@ std::hash<unsigned long> &f129(std::hash<unsigned long> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t35 = std::hash<char16_t>;
+using t36 = std::hash<char16_t>;
 
 std::size_t f130(const std::hash<char16_t> &a0, char16_t a1) {
   return a0.operator()(a1);
@@ -433,7 +433,7 @@ std::hash<char16_t> &f135(std::hash<char16_t> &a0, std::hash<char16_t> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-using t36 = std::hash<signed char>;
+using t37 = std::hash<signed char>;
 
 std::size_t f136(const std::hash<signed char> &a0, signed char a1) {
   return a0.operator()(a1);
@@ -459,7 +459,7 @@ std::hash<signed char> &f141(std::hash<signed char> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t37 = std::hash<unsigned short>;
+using t38 = std::hash<unsigned short>;
 
 std::size_t f142(const std::hash<unsigned short> &a0, unsigned short a1) {
   return a0.operator()(a1);
@@ -485,7 +485,7 @@ std::hash<unsigned short> &f147(std::hash<unsigned short> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t38 = std::hash<char32_t>;
+using t39 = std::hash<char32_t>;
 
 std::size_t f148(const std::hash<char32_t> &a0, char32_t a1) {
   return a0.operator()(a1);
@@ -511,4 +511,4 @@ std::hash<char32_t> &f153(std::hash<char32_t> &a0, std::hash<char32_t> &&a1) {
 }
 
 template <typename T1, typename T2>
-using t39 = std::hash<std::unique_ptr<T1, T2>>;
+using t40 = std::hash<std::unique_ptr<T1, T2>>;

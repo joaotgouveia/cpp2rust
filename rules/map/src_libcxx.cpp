@@ -166,18 +166,88 @@ bool f145(const std::__map_iterator<T1> &a0,
   return operator==(a0, a1);
 }
 
+template <typename T1, typename T2, typename T3>
+using t44 = std::__tree_const_iterator<T1, T2, T3>;
+
+template <typename T1, typename T2, typename T3>
+using t45 = typename std::__tree_const_iterator<T1, T2, T3>::iterator_category;
+
+template <typename T1, typename T2, typename T3>
+using t46 = typename std::__tree_const_iterator<T1, T2, T3>::value_type;
+
+template <typename T1, typename T2, typename T3>
+using t47 = typename std::__tree_const_iterator<T1, T2, T3>::difference_type;
+
+template <typename T1, typename T2, typename T3>
+using t48 = typename std::__tree_const_iterator<T1, T2, T3>::reference;
+
+template <typename T1, typename T2, typename T3>
+using t49 = typename std::__tree_const_iterator<T1, T2, T3>::pointer;
+
+template <typename T1, typename T2, typename T3>
+std::__tree_const_iterator<T1, T2, T3> f146() {
+  return std::__tree_const_iterator<T1, T2, T3>();
+}
+
+template <typename T1, typename T2, typename T3>
+const T1 &f147(const std::__tree_const_iterator<T1, T2, T3> &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::__tree_const_iterator<T1, T2, T3>::pointer
+f148(const std::__tree_const_iterator<T1, T2, T3> &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3>
+std::__tree_const_iterator<T1, T2, T3> &
+f149(std::__tree_const_iterator<T1, T2, T3> &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3>
+std::__tree_const_iterator<T1, T2, T3>
+f150(std::__tree_const_iterator<T1, T2, T3> &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+std::__tree_const_iterator<T1, T2, T3> &
+f151(std::__tree_const_iterator<T1, T2, T3> &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2, typename T3>
+std::__tree_const_iterator<T1, T2, T3>
+f152(std::__tree_const_iterator<T1, T2, T3> &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f153(const std::__tree_const_iterator<T1, T2, T3> &a0,
+          const std::__tree_const_iterator<T1, T2, T3> &a1) {
+  return operator!=(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f154(const std::__tree_const_iterator<T1, T2, T3> &a0,
+          const std::__tree_const_iterator<T1, T2, T3> &a1) {
+  return operator==(a0, a1);
+}
+
 template <typename T1, typename T2, typename T3, typename T4>
-std::map<T1, T2, T3, T4> f146(const T3 &a0) {
+std::map<T1, T2, T3, T4> f155(const T3 &a0) {
   return std::map<T1, T2, T3, T4>(a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::map<T1, T2, T3, T4> f147(std::initializer_list<std::pair<const T1, T2>> a0,
+std::map<T1, T2, T3, T4> f156(std::initializer_list<std::pair<const T1, T2>> a0,
                               const T3 &a1) {
   return std::map<T1, T2, T3, T4>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::map<T1, T2, T3, T4> f148(T5 a0, T5 a1, const T3 &a2) {
+std::map<T1, T2, T3, T4> f157(T5 a0, T5 a1, const T3 &a2) {
   return std::map<T1, T2, T3, T4>(std::move(a0), std::move(a1), a2);
 }

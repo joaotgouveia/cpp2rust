@@ -9,7 +9,7 @@
 #include <thread>
 #include <utility>
 
-using t43 = std::formatter<std::stacktrace_entry>;
+using t44 = std::formatter<std::stacktrace_entry>;
 
 const std::basic_string_view<char>::value_type *
 f97(std::formatter<std::stacktrace_entry> &a0,
@@ -50,14 +50,16 @@ f103(const std::formatter<std::stacktrace_entry> &a0,
   return a0.template format<T1>(a1, a2);
 }
 
-using t44 = std::formatter<const char *, wchar_t>;
+using t45 = std::formatter<const char *, wchar_t>;
 
-using t45 = std::formatter<char *, wchar_t>;
+using t46 = std::formatter<char *, wchar_t>;
+
+template <std::size_t T1> using t47 = std::formatter<char[T1], wchar_t>;
 
 template <typename T1>
   requires(std::is_pointer_v<std::thread::native_handle_type> ||
            std::is_integral_v<std::thread::native_handle_type>)
-using t46 = std::formatter<std::thread::id, T1>;
+using t48 = std::formatter<std::thread::id, T1>;
 
 template <typename T1>
 typename std::basic_format_parse_context<T1>::iterator
@@ -83,7 +85,7 @@ template <typename T1> void f106(std::formatter<T1 *, T1> &a0) {
   return a0.set_debug_format();
 }
 
-template <typename T1> using t47 = std::formatter<std::basic_stacktrace<T1>>;
+template <typename T1> using t49 = std::formatter<std::basic_stacktrace<T1>>;
 
 template <typename T1>
 const std::basic_string_view<char>::value_type *
@@ -106,7 +108,7 @@ void f109(std::formatter<std::basic_string_view<char, T1>, char> &a0) {
 }
 
 template <typename T1>
-using t48 = std::formatter<std::basic_string_view<char, T1>, wchar_t>;
+using t50 = std::formatter<std::basic_string_view<char, T1>, wchar_t>;
 
 template <typename T1>
 void f110(std::formatter<std::basic_string_view<wchar_t, T1>, wchar_t> &a0) {
@@ -123,7 +125,7 @@ void f112(std::formatter<std::basic_string<char, T1, T2>, char> &a0) {
 }
 
 template <typename T1, typename T2>
-using t49 = std::formatter<std::basic_string<char, T1, T2>, wchar_t>;
+using t51 = std::formatter<std::basic_string<char, T1, T2>, wchar_t>;
 
 template <typename T1, typename T2>
 void f113(std::formatter<std::basic_string<wchar_t, T1, T2>, wchar_t> &a0) {
@@ -133,7 +135,7 @@ void f113(std::formatter<std::basic_string<wchar_t, T1, T2>, wchar_t> &a0) {
 template <typename T1, typename T2>
   requires((std::format_kind<T1> != std::range_format::disabled) &&
            std::formattable<std::ranges::range_reference_t<T1>, T2>)
-using t50 = std::formatter<T1, T2>;
+using t52 = std::formatter<T1, T2>;
 
 template <typename T1, typename T2>
 std::formatter<T1, T2> f114()
@@ -179,7 +181,7 @@ f118(std::formatter<std::tuple<T2...>, T1> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t51 = std::formatter<std::pair<T2, T3>, T1>;
+using t53 = std::formatter<std::pair<T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3>
 void f119(std::formatter<std::pair<T2, T3>, T1> &a0,

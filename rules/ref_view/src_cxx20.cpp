@@ -43,7 +43,7 @@ auto f6(const std::ranges::ref_view<T1> &a0)
   return a0.data();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = std::ranges::ref_view<T1>>
 decltype(auto) f7(std::ranges::ref_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::ref_view<T1>> &&
@@ -54,7 +54,7 @@ decltype(auto) f7(std::ranges::ref_view<T1> &a0,
   return a0.template operator[]<T2>(std::move(a1));
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = const std::ranges::ref_view<T1>>
 decltype(auto) f8(const std::ranges::ref_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::ref_view<T1>> &&

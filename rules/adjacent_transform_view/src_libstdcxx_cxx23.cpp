@@ -428,7 +428,8 @@ auto f26(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
   return a0.cend();
 }
 
-template <typename T1, typename T2, std::size_t T3, typename T4>
+template <typename T1, typename T2, std::size_t T3,
+          typename T4 = std::ranges::adjacent_transform_view<T1, T2, T3>>
 decltype(auto) f27(std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
                    std::ranges::range_difference_t<T4> a1)
   requires(std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
@@ -446,7 +447,8 @@ decltype(auto) f27(std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
   return a0.template operator[]<T4>(std::move(a1));
 }
 
-template <typename T1, typename T2, std::size_t T3, typename T4>
+template <typename T1, typename T2, std::size_t T3,
+          typename T4 = const std::ranges::adjacent_transform_view<T1, T2, T3>>
 decltype(auto) f28(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
                    std::ranges::range_difference_t<T4> a1)
   requires(std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&

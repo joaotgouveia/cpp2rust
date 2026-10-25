@@ -107,6 +107,8 @@ template <typename T1, typename T2> std::nullopt_t f123(T1 &&a0, T2 &&a1) {
   return std::nullopt_t(std::forward<T1>(a0), std::forward<T2>(a1));
 }
 
+using t6 = std::nullopt_t::__secret_tag;
+
 std::nullopt_t::__secret_tag f124() { return std::nullopt_t::__secret_tag(); }
 
 template <typename T1, typename T2,

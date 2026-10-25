@@ -249,7 +249,7 @@ auto f25(const std::ranges::slide_view<T1> &a0)
   return a0.cend();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = std::ranges::slide_view<T1>>
 decltype(auto) f26(std::ranges::slide_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::slide_view<T1>> &&
@@ -260,7 +260,7 @@ decltype(auto) f26(std::ranges::slide_view<T1> &a0,
   return a0.template operator[]<T2>(std::move(a1));
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = const std::ranges::slide_view<T1>>
 decltype(auto) f27(const std::ranges::slide_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::slide_view<T1>> &&
@@ -270,6 +270,9 @@ decltype(auto) f27(const std::ranges::slide_view<T1> &a0,
 {
   return a0.template operator[]<T2>(std::move(a1));
 }
+
+template <typename T1>
+using t2 = typename std::ranges::slide_view<T1>::_Sentinel;
 
 template <typename T1> typename std::ranges::slide_view<T1>::_Sentinel f28() {
   return typename std::ranges::slide_view<T1>::_Sentinel();

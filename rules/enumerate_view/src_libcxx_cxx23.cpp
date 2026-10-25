@@ -189,7 +189,7 @@ decltype(auto) f48(const std::ranges::enumerate_view<T1> &a0)
   return a0.back();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
 decltype(auto) f49(std::ranges::enumerate_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::enumerate_view<T1>> &&
@@ -201,7 +201,7 @@ decltype(auto) f49(std::ranges::enumerate_view<T1> &a0,
   return a0.template operator[]<T2>(std::move(a1));
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = const std::ranges::enumerate_view<T1>>
 decltype(auto) f50(const std::ranges::enumerate_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::enumerate_view<T1>> &&

@@ -61,11 +61,12 @@ template <typename T1> T1 &&f15(std::optional<T1> &&a0) {
   return std::move(a0).value();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = std::remove_cv_t<T1>>
 T1 f16(const std::optional<T1> &a0, T2 &&a1) {
   return a0.template value_or<T2>(std::forward<T2>(a1));
 }
 
-template <typename T1, typename T2> T1 f17(std::optional<T1> &&a0, T2 &&a1) {
+template <typename T1, typename T2 = std::remove_cv_t<T1>>
+T1 f17(std::optional<T1> &&a0, T2 &&a1) {
   return std::move(a0).template value_or<T2>(std::forward<T2>(a1));
 }

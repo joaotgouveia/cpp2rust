@@ -153,7 +153,8 @@ std::size_t f29(std::wformat_string<T1...> a0, T1 &&...a1) {
   return std::formatted_size<T1...>(std::move(a0), std::forward<T1>(a1)...);
 }
 
-template <typename T1, typename... T2> auto f30(T2 &...a0) {
+template <typename T1 = std::format_context, typename... T2>
+auto f30(T2 &...a0) {
   return std::make_format_args<T1, T2...>(a0...);
 }
 

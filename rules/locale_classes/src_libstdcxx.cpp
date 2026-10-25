@@ -84,6 +84,8 @@ std::locale::category f24() { return std::locale::all; }
 
 std::locale::id f25() { return {}; }
 
+using t5 = std::locale::_Impl;
+
 template <typename T1> const T1 &f26(const std::locale &a0) {
   return std::use_facet<T1>(a0);
 }

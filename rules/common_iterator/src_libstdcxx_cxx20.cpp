@@ -157,10 +157,16 @@ std::iter_rvalue_reference_t<T1> f23(const std::common_iterator<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
+using t2 = typename std::common_iterator<T1, T2>::__arrow_proxy;
+
+template <typename T1, typename T2>
 const std::iter_value_t<T1> *
 f24(const typename std::common_iterator<T1, T2>::__arrow_proxy &a0) {
   return a0.operator->();
 }
+
+template <typename T1, typename T2>
+using t3 = typename std::common_iterator<T1, T2>::__postfix_proxy;
 
 template <typename T1, typename T2>
 const std::iter_value_t<T1> &

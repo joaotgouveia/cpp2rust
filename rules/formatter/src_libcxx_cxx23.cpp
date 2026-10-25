@@ -22,7 +22,7 @@ void f226(std::formatter<std::basic_string_view<T1, T2>, T1> &a0) {
 template <typename T1, typename T2>
   requires((std::format_kind<T1> != std::range_format::disabled &&
             std::formattable<std::ranges::range_reference_t<T1>, T2>))
-using t73 = std::formatter<T1, T2>;
+using t75 = std::formatter<T1, T2>;
 
 template <typename T1, typename T2>
 void f227(std::formatter<T1, T2> &a0, std::basic_string_view<T2> a1)
@@ -113,7 +113,7 @@ template <typename T1, typename T2>
   requires(std::same_as<
               typename T1::__container,
               std::vector<bool, typename T1::__container::allocator_type>>)
-using t74 = std::formatter<T1, T2>;
+using t76 = std::formatter<T1, T2>;
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f235(std::formatter<T1, T2> &a0, T3 &a1)
@@ -150,7 +150,7 @@ f238(const std::formatter<std::tuple<T2...>, T1> &a0,
 }
 
 template <typename T1, typename... T2>
-using t75 = std::formatter<std::pair<T2...>, T1>;
+using t77 = std::formatter<std::pair<T2...>, T1>;
 
 template <typename T1, typename... T2>
 void f239(std::formatter<std::pair<T2...>, T1> &a0,

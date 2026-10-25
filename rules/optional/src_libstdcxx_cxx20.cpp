@@ -95,7 +95,7 @@ std::__optional_ge_t<T1, T2> f98(const T1 &a0, const std::optional<T2> &a1)
   return std::operator>= <T1, T2>(a0, a1);
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = std::remove_cv_t<T1>>
 std::optional<T1> f99(T2 &&a0)
   requires((!std::is_same_v<std::optional<T1>, std::remove_cvref_t<T2>>) &&
            (!std::is_same_v<std::in_place_t, std::remove_cvref_t<T2>>) &&
@@ -140,7 +140,7 @@ std::optional<T1> f103(std::in_place_t a0, std::initializer_list<T2> a1,
                            std::forward<T3>(a2)...);
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = std::remove_cv_t<T1>>
 std::optional<T1> &f104(std::optional<T1> &a0, T2 &&a1)
   requires((!std::is_same_v<std::optional<T1>, std::remove_cvref_t<T2>>) &&
            (!(std::is_scalar_v<T1> && std::is_same_v<T1, std::decay_t<T2>>)) &&

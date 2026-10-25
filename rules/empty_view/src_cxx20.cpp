@@ -40,7 +40,7 @@ bool f5()
   return std::ranges::empty_view<T1>::empty();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = std::ranges::empty_view<T1>>
 decltype(auto) f6(std::ranges::empty_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::empty_view<T1>> &&
@@ -51,7 +51,7 @@ decltype(auto) f6(std::ranges::empty_view<T1> &a0,
   return a0.template operator[]<T2>(std::move(a1));
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2 = const std::ranges::empty_view<T1>>
 decltype(auto) f7(const std::ranges::empty_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::empty_view<T1>> &&
