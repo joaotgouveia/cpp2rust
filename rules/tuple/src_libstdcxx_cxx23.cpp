@@ -92,8 +92,7 @@ std::tuple<T1...> f128(T2 &&a0)
            (!std::tuple<T1...>::template __use_other_ctor<T2>()) &&
            (!std::tuple<T1...>::template __dangles_from_tuple_like<T2>())) &&
           (std::__eligible_tuple_like<T2, std::tuple<T1...>>) &&
-          (!(std::is_same<T2, const T1 &...>::value) &&
-           !(std::is_same<T2, const std::tuple<T1...> &>::value) &&
+          (!(std::is_same<T2, const std::tuple<T1...> &>::value) &&
            !(std::is_same<T2, std::tuple<T1...>>::value))
 {
   return std::tuple<T1...>(std::forward<T2>(a0));

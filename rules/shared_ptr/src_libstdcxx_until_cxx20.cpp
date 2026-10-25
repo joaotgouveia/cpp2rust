@@ -50,3 +50,22 @@ typename std::enable_if<
 f48(std::shared_ptr<T1> &a0, std::shared_ptr<T2> &&a1) {
   return a0.template operator= <T2>(std::move(a1));
 }
+
+template <typename T1, typename std::enable_if<
+                           ((std::_Lock_policy)2U == (std::_Lock_policy)2U) &&
+                               (std::is_array<T1>::value == false) &&
+                               (std::is_void<T1>::value == true),
+                           int>::type T2 = 0>
+T1 *f49(const std::shared_ptr<T1> &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename std::enable_if<
+                           ((std::_Lock_policy)2U == (std::_Lock_policy)2U) &&
+                               (std::is_array<T1>::value == true) &&
+                               (std::is_void<T1>::value == false),
+                           int>::type T2 = 0>
+typename std::shared_ptr<T1>::element_type &f50(const std::shared_ptr<T1> &a0,
+                                                std::ptrdiff_t a1) {
+  return a0.operator[](a1);
+}
