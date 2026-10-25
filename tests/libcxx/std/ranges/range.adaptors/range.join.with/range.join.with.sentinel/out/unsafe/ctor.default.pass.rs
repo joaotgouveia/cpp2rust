@@ -1201,8 +1201,8 @@ const _: () = assert!(
 );
 pub unsafe fn test_20() -> () {
     const _: () = assert!(!(false), "!std::ranges::common_range<JWV>");;
-    let mut se : std_ranges_join_with_view_BasicView_std_vector_BasicView_std_vector_char___ViewProperties_false__false___forward_iterator____ViewProperties_false__true___forward_iterator___BasicView_std_vector_char___ViewProperties_false__false___forward_iterator_____sentinel_false_ = <std_ranges_join_with_view_BasicView_std_vector_BasicView_std_vector_char___ViewProperties_false__false___forward_iterator____ViewProperties_false__true___forward_iterator___BasicView_std_vector_char___ViewProperties_false__false___forward_iterator_____sentinel_false_ >::default() ;
-    let mut cse : std_ranges_join_with_view_BasicView_std_vector_BasicView_std_vector_char___ViewProperties_false__false___forward_iterator____ViewProperties_false__true___forward_iterator___BasicView_std_vector_char___ViewProperties_false__false___forward_iterator_____sentinel_true_ = <std_ranges_join_with_view_BasicView_std_vector_BasicView_std_vector_char___ViewProperties_false__false___forward_iterator____ViewProperties_false__true___forward_iterator___BasicView_std_vector_char___ViewProperties_false__false___forward_iterator_____sentinel_true_ >::default() ;
+    let mut se: () = unimplemented!();
+    let mut cse: () = unimplemented!();
     return true;
 }
 pub fn main() {

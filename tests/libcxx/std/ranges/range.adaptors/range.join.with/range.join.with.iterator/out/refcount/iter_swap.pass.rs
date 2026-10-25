@@ -235,29 +235,17 @@ pub fn test_5() -> () {
         let jwv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___x: Ptr<()> = it.as_pointer();
-            let ___y: Value<()> = Rc::new(RefCell::new(
-                ({ (*next_6.with(Value::clone).borrow_mut())((*it.borrow()).clone(), 2_()) }),
-            ));
-            iter_swap_7(___x, ___y.as_pointer())
-        });
         unimplemented!();
-        ({ (*advance_8.with(Value::clone).borrow_mut())(it.as_pointer(), 3_()) });
-        ({
-            let ___x: Ptr<()> = it.as_pointer();
-            let ___y: Value<()> = Rc::new(RefCell::new(
-                ({ (*next_6.with(Value::clone).borrow_mut())((*it.borrow()).clone(), 2_()) }),
-            ));
-            iter_swap_7(___x, ___y.as_pointer())
-        });
         unimplemented!();
-        ({ (*advance_8.with(Value::clone).borrow_mut())(it.as_pointer(), 3_()) });
+        ({ (*advance_6.with(Value::clone).borrow_mut())(it.as_pointer(), 3_()) });
+        unimplemented!();
+        unimplemented!();
+        ({ (*advance_6.with(Value::clone).borrow_mut())(it.as_pointer(), 3_()) });
         let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ iter_swap_7(it.as_pointer(), it2.as_pointer()) });
         unimplemented!();
-        ({ (*advance_8.with(Value::clone).borrow_mut())(it.as_pointer(), 6_()) });
-        ({ iter_swap_7(it.as_pointer(), it2.as_pointer()) });
+        unimplemented!();
+        ({ (*advance_6.with(Value::clone).borrow_mut())(it.as_pointer(), 6_()) });
+        unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "std::is_void_v<decltype(iter_swap(it, it))>");;
         const _: () = assert!(true, "std::is_void_v<decltype(iter_swap(it2, it2))>");;
@@ -277,32 +265,32 @@ pub fn test_5() -> () {
         let jwv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it2: Value<()> = Rc::new(RefCell::new(
-            ({ (*next_6.with(Value::clone).borrow_mut())((*it1.borrow()).clone()) }),
+            ({ (*next_7.with(Value::clone).borrow_mut())((*it1.borrow()).clone()) }),
         ));
         unimplemented!();
-        ({ iter_swap_9(it1.as_pointer(), it2.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        ({ (*advance_8.with(Value::clone).borrow_mut())(it2.as_pointer(), 2_()) });
+        unimplemented!();
+        ({ (*advance_6.with(Value::clone).borrow_mut())(it2.as_pointer(), 2_()) });
         (*v_swap_kind.borrow_mut()) = SwapKind_no_swap;
         unimplemented!();
-        ({ iter_swap_9(it1.as_pointer(), it2.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        ({ (*advance_8.with(Value::clone).borrow_mut())(it1.as_pointer(), 4_()) });
+        unimplemented!();
+        ({ (*advance_6.with(Value::clone).borrow_mut())(it1.as_pointer(), 4_()) });
         (*v_swap_kind.borrow_mut()) = {
             (*pat_swap_kind.borrow_mut()) = SwapKind_no_swap;
             (*pat_swap_kind.borrow())
         };
-        ({ iter_swap_9(it1.as_pointer(), it2.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        ({ (*advance_8.with(Value::clone).borrow_mut())(it2.as_pointer(), 3_()) });
+        unimplemented!();
+        ({ (*advance_6.with(Value::clone).borrow_mut())(it2.as_pointer(), 3_()) });
         (*v_swap_kind.borrow_mut()) = {
             (*pat_swap_kind.borrow_mut()) = SwapKind_no_swap;
             (*pat_swap_kind.borrow())
         };
-        ({ iter_swap_9(it1.as_pointer(), it2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }

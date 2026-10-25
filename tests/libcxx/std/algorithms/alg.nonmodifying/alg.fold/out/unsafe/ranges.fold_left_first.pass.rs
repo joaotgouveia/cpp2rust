@@ -952,7 +952,7 @@ pub unsafe fn check_iterator_26(r: *mut (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
             let ___first: () = unimplemented!();
-            let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_  = unimplemented!()  ;
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_24))(
                 ___first,
                 ___last,
@@ -968,7 +968,7 @@ pub unsafe fn check_iterator_26(r: *mut (), mut f: (), expected: *const ()) {
             invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
         let mut result: () = (unsafe {
             let ___first: () = unimplemented!();
-            let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_  = unimplemented!()  ;
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_24))(
                 ___first,
                 ___last,
@@ -986,7 +986,7 @@ pub unsafe fn check_iterator_26(r: *mut (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
             let ___first: () = unimplemented!();
-            let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_  = unimplemented!()  ;
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_25))(
                 ___first,
                 ___last,
@@ -1001,7 +1001,7 @@ pub unsafe fn check_iterator_26(r: *mut (), mut f: (), expected: *const ()) {
             invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
         let mut result: () = (unsafe {
             let ___first: () = unimplemented!();
-            let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_  = unimplemented!()  ;
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_25))(
                 ___first,
                 ___last,
@@ -3255,15 +3255,24 @@ pub unsafe fn non_common_range_test_case_71() {
     }
     {
         let mut data: () = unimplemented!();
-        let mut to_string_view : FnPtr<Generic> = lambda_unsafe! ( Generic , { } , | r : *mut std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_false__value_type , | -> () { let n : () = ( unsafe { let ___r: *mut std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_false__value_type  = r ; (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_11)) ( ___r , ) } ) ;
-  ;
- ;
- return unimplemented!()  ;
- } , | r : *mut std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_true__value_type , | -> () { let n : () = ( unsafe { let ___r: *mut std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_true__value_type  = r ; (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_11)) ( ___r , ) } ) ;
-  ;
- ;
- return unimplemented!()  ;
- } ) ;
+        let mut to_string_view: FnPtr<Generic> = lambda_unsafe!(
+            Generic,
+            {},
+            |r: *mut ()| -> () {
+                let n: () = (unsafe {
+                    let ___r: *mut () = r;
+                    (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_11))(___r)
+                });
+                return unimplemented!();
+            },
+            |r: *mut ()| -> () {
+                let n: () = (unsafe {
+                    let ___r: *mut () = r;
+                    (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_11))(___r)
+                });
+                return unimplemented!();
+            }
+        );
         let mut range: () = unimplemented!();
         (unsafe {
             let _r: () = range.clone();

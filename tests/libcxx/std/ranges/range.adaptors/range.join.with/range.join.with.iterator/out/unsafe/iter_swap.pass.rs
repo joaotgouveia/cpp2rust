@@ -235,29 +235,17 @@ pub unsafe fn test_5() -> () {
         let mut jwv: () = unimplemented!();
         unimplemented!();
         let mut it: () = unimplemented!();
-        (unsafe {
-            let ___x: *const () = &it;
-            let mut ___y: () = (unsafe {
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut next_6))(it.clone(), 2_())
-            });
-            iter_swap_7(___x, &mut ___y)
-        });
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it, 3_()) });
-        (unsafe {
-            let ___x: *const () = &it;
-            let mut ___y: () = (unsafe {
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut next_6))(it.clone(), 2_())
-            });
-            iter_swap_7(___x, &mut ___y)
-        });
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it, 3_()) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_6))(&mut it, 3_()) });
+        unimplemented!();
+        unimplemented!();
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_6))(&mut it, 3_()) });
         let it2: () = unimplemented!();
-        (unsafe { iter_swap_7(&it, &it2) });
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it, 6_()) });
-        (unsafe { iter_swap_7(&it, &it2) });
+        unimplemented!();
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_6))(&mut it, 6_()) });
+        unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "std::is_void_v<decltype(iter_swap(it, it))>");;
         const _: () = assert!(true, "std::is_void_v<decltype(iter_swap(it2, it2))>");;
@@ -277,31 +265,31 @@ pub unsafe fn test_5() -> () {
         let mut jwv: () = unimplemented!();
         let mut it1: () = unimplemented!();
         let mut it2: () =
-            (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut next_6))(it1.clone()) });
-        unimplemented!();
-        (unsafe { iter_swap_9(&it1, &it2) });
+            (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut next_7))(it1.clone()) });
         unimplemented!();
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it2, 2_()) });
+        unimplemented!();
+        unimplemented!();
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_6))(&mut it2, 2_()) });
         v_swap_kind = SwapKind_no_swap;
         unimplemented!();
-        (unsafe { iter_swap_9(&it1, &it2) });
         unimplemented!();
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it1, 4_()) });
+        unimplemented!();
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_6))(&mut it1, 4_()) });
         v_swap_kind = {
             pat_swap_kind = SwapKind_no_swap;
             pat_swap_kind
         };
-        (unsafe { iter_swap_9(&it1, &it2) });
         unimplemented!();
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_8))(&mut it2, 3_()) });
+        unimplemented!();
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_6))(&mut it2, 3_()) });
         v_swap_kind = {
             pat_swap_kind = SwapKind_no_swap;
             pat_swap_kind
         };
-        (unsafe { iter_swap_9(&it1, &it2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
