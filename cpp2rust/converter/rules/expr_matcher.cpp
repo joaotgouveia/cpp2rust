@@ -508,9 +508,8 @@ MatchResult matchVar(clang::ASTContext &ctx, const ResolvedDecl &usage_decl,
 // A static member named through a class (std::numeric_limits<T>::min()) is
 // the use of that class: numeric_limits<const volatile T1>::min() reaches the
 // same member through its base, but names another class.
-bool sameNamingClass(clang::ASTContext &ctx, const clang::Expr *use,
-                     const clang::Expr *returned) {
-  // the class written before :: or, for obj.min(), the class of the object
+// the class written before :: or, for obj.min(), the class of the object
+clang::QualType namingClass(const clang::Expr *expr) {
   auto naming = [](const clang::Expr *expr) -> clang::QualType {
     expr = RuleDecls::SkipImplicit(expr);
     if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
@@ -532,14 +531,19 @@ bool sameNamingClass(clang::ASTContext &ctx, const clang::Expr *use,
     }
     return clang::QualType(ref->getQualifier().getAsType(), 0);
   };
-  auto used = naming(use);
-  auto ruled = naming(returned);
+  return naming(expr);
+}
+
+bool sameNamingClass(clang::ASTContext &ctx, const clang::Expr *use,
+                     const clang::Expr *returned) {
+  auto used = namingClass(use);
+  auto ruled = namingClass(returned);
   if (used.isNull() || ruled.isNull() ||
       ctx.hasSameUnqualifiedType(used, ruled)) {
     return true;
   }
   // a static member named through a derived class (std::ios::xalloc of
-  // ios_base)
+  // ios_base), which a rule naming the class itself beats
   auto used_record = used->getAsCXXRecordDecl();
   auto ruled_record = ruled->getAsCXXRecordDecl();
   return used_record && ruled_record && used_record->hasDefinition() &&
@@ -764,6 +768,22 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
                                         const clang::NamedDecl *b) {
   auto a_function = a->getAsFunction();
   auto b_function = b->getAsFunction();
+  // A rule naming the class the use names beats one naming its base
+  // (numeric_limits<const T1>::min over numeric_limits<T1>::min).
+  if (a_function && b_function) {
+    auto used = namingClass(use);
+    auto names = [&](const clang::FunctionDecl *function) {
+      auto ruled = namingClass(RuleDecls::GetReturned(function));
+      return !used.isNull() && !ruled.isNull() &&
+             sema.Context.hasSameUnqualifiedType(
+                 used.getCanonicalType(), ruled.getCanonicalType());
+    };
+    auto a_names = names(a_function);
+    auto b_names = names(b_function);
+    if (a_names != b_names) {
+      return a_names ? a : b;
+    }
+  }
   // A rule that takes default arguments of the use matches it only because of
   // them, as C++ would not call it with the arguments that are written.
   if (a_function && b_function) {
