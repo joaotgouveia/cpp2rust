@@ -298,37 +298,66 @@ f32(const typename std::generator<T1, T2, T3>::promise_type &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-auto f33(typename std::generator<T1, T2, T3>::promise_type &a0) {
+std::suspend_always f33(typename std::generator<T1, T2, T3>::promise_type &a0,
+                        typename std::generator<T1, T2, T3>::yielded a1) {
+  return a0.yield_value(std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3>
+auto f34(
+    typename std::generator<T1, T2, T3>::promise_type &a0,
+    const std::remove_reference_t<typename std::generator<T1, T2, T3>::yielded>
+        &a1)
+  requires(
+      (std::is_rvalue_reference_v<
+           typename std::generator<T1, T2, T3>::_Yielded> &&
+       std::constructible_from<
+           typename std::__gen::_Promise_erased<
+               typename std::generator<T1, T2, T3>::_Yielded>::_Yielded_decvref,
+           const typename std::__gen::_Promise_erased<typename std::generator<
+               T1, T2, T3>::_Yielded>::_Yielded_deref &>))
+{
+  return a0.yield_value(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+auto f35(typename std::generator<T1, T2, T3>::promise_type &a0) {
   return a0.final_suspend();
 }
 
 template <typename T1, typename T2, typename T3>
-void f34(typename std::generator<T1, T2, T3>::promise_type &a0) {
+void f36(typename std::generator<T1, T2, T3>::promise_type &a0) {
   return a0.unhandled_exception();
 }
 
 template <typename T1, typename T2, typename T3>
-void f35(const typename std::generator<T1, T2, T3>::promise_type &a0) {
+void f37(const typename std::generator<T1, T2, T3>::promise_type &a0) {
   return a0.return_void();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6, typename T7>
-auto f36(typename std::generator<T1, T2, T3>::promise_type &a0,
-         std::ranges::elements_of<std::generator<T4, T5, T6> &&, T7> a1) {
+auto f38(typename std::generator<T1, T2, T3>::promise_type &a0,
+         std::ranges::elements_of<std::generator<T4, T5, T6> &&, T7> a1)
+  requires(std::same_as<std::__gen::_Yield2_t<T4, T5>,
+                        typename std::generator<T1, T2, T3>::_Yielded>)
+{
   return a0.template yield_value<T4, T5, T6, T7>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-auto f37(typename std::generator<T1, T2, T3>::promise_type &a0,
+auto f39(typename std::generator<T1, T2, T3>::promise_type &a0,
          std::ranges::elements_of<T4, T5> a1)
-  requires(std::ranges::input_range<T4>)
+  requires(std::convertible_to<
+              std::ranges::range_reference_t<T4>,
+              typename std::generator<T1, T2, T3>::_Yielded>) &&
+          (std::ranges::input_range<T4>)
 {
   return a0.template yield_value<T4, T5>(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-void *f38(std::size_t a0)
+void *f40(std::size_t a0)
   requires(std::default_initializable<
            typename std::__gen::_Promise_alloc<T3>::_Rebound>)
 {
@@ -336,12 +365,12 @@ void *f38(std::size_t a0)
 }
 
 template <typename T1, typename T2, typename T3>
-void f39(void *a0, std::size_t a1) {
+void f41(void *a0, std::size_t a1) {
   return std::generator<T1, T2, T3>::promise_type::operator delete(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename... T5>
-void *f40(std::size_t a0, std::allocator_arg_t a1, const T4 &a2,
+void *f42(std::size_t a0, std::allocator_arg_t a1, const T4 &a2,
           const T5 &...a3) {
   return std::generator<T1, T2, T3>::promise_type::operator new(
       a0, std::move(a1), a2, a3...);
@@ -349,7 +378,7 @@ void *f40(std::size_t a0, std::allocator_arg_t a1, const T4 &a2,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename... T6>
-void *f41(std::size_t a0, const T4 &a1, std::allocator_arg_t a2, const T5 &a3,
+void *f43(std::size_t a0, const T4 &a1, std::allocator_arg_t a2, const T5 &a3,
           const T6 &...a4) {
   return std::generator<T1, T2, T3>::promise_type::operator new(
       a0, a1, std::move(a2), a3, a4...);

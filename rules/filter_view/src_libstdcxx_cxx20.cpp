@@ -281,7 +281,13 @@ void f36(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
 }
 
 template <typename T1, typename T2>
-bool f37(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
+std::ranges::range_rvalue_reference_t<T1>
+f37(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+  return iter_move(a0);
+}
+
+template <typename T1, typename T2>
+bool f38(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
          const typename std::ranges::filter_view<T1, T2>::_Iterator &a1) {
   return operator==(a0, a1);
 }
