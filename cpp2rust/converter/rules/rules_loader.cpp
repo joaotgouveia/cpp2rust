@@ -408,7 +408,14 @@ bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
         last ? clang::Sema::LookupOrdinaryName
              : clang::Sema::LookupNamespaceName);
     if (!sema.LookupQualifiedName(result, scope) || result.empty()) {
-      return false;
+      // a C struct is in the tag namespace only (struct addrinfo)
+      if (!last || sema.getLangOpts().CPlusPlus) {
+        return false;
+      }
+      clang::LookupResult tag(sema, &sema.Context.Idents.get(part),
+                              clang::SourceLocation(),
+                              clang::Sema::LookupTagName);
+      return sema.LookupQualifiedName(tag, scope) && !tag.empty();
     }
     if (last) {
       return llvm::all_of(result, [](clang::NamedDecl *found) {

@@ -164,15 +164,42 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     auto qualified = sema.SubstType(clang::QualType(qualifier, 0), mtal,
                                     tmpl->getLocation(),
                                     clang::DeclarationName());
+    // unless the ones left out are defaulted (map<T1, T2> of
+    // map<int, int, less<int>, allocator<pair<const int, int>>>)
+    auto defaulted = [](const clang::ClassTemplateSpecializationDecl *spec,
+                        unsigned from) {
+      auto params = spec->getSpecializedTemplate()->getTemplateParameters();
+      for (unsigned i = from; i < params->size(); ++i) {
+        auto param = params->getParam(i);
+        bool has_default = false;
+        if (auto type = llvm::dyn_cast<clang::TemplateTypeParmDecl>(param)) {
+          has_default = type->hasDefaultArgument();
+        } else if (auto value =
+                       llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
+          has_default = value->hasDefaultArgument();
+        } else if (auto tmpl =
+                       llvm::dyn_cast<clang::TemplateTemplateParmDecl>(param)) {
+          has_default = tmpl->hasDefaultArgument();
+        }
+        if (param->isParameterPack() || !has_default) {
+          return false;
+        }
+      }
+      return true;
+    };
     auto spec = llvm::dyn_cast<clang::ClassTemplateSpecializationDecl>(owner);
     auto written = qualified.isNull()
                        ? nullptr
                        : qualified->getAs<clang::TemplateSpecializationType>();
-    if (qualified.isNull() || trial.failed() ||
-        (spec && written &&
-         count(written->template_arguments()) !=
-             count(spec->getTemplateArgs().asArray()))) {
+    if (qualified.isNull() || trial.failed()) {
       return std::nullopt;
+    }
+    if (spec && written) {
+      auto n = count(written->template_arguments());
+      if (n != count(spec->getTemplateArgs().asArray()) &&
+          !defaulted(spec, n)) {
+        return std::nullopt;
+      }
     }
     return TypeMatch{*std::move(args)};
   }
