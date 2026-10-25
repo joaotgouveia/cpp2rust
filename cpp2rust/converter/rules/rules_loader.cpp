@@ -216,6 +216,9 @@ private:
     if (const auto *vector = type->getAs<clang::VectorType>()) {
       return AddType(vector->getElementType());
     }
+    if (const auto *atomic = type->getAs<clang::AtomicType>()) {
+      return AddType(atomic->getValueType());
+    }
     if (const auto *fn = type->getAs<clang::FunctionType>()) {
       AddType(fn->getReturnType());
       if (const auto *proto = llvm::dyn_cast<clang::FunctionProtoType>(fn)) {
