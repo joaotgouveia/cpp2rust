@@ -11,21 +11,21 @@ use std::rc::{Rc, Weak};
 pub struct S {
     #[offset(0)]
     #[byte_size(24)]
-    pub v: (),
+    pub v: Vec<i32>,
     #[offset(24)]
     #[byte_size(8)]
-    pub n: Box<[()]>,
+    pub n: Box<[i32]>,
 }
 impl S {
-    pub fn new(mut x: ()) -> Self {
+    pub fn new(mut x: i32) -> Self {
         Self {
-            v: unimplemented!(),
-            n: Box::new([x, (x + 1_())]),
+            v: vec![x; (x as usize) as usize],
+            n: Box::new([x, (x + 1)]),
         }
     }
     pub fn move_from(_a0: Ptr<S>) -> Self {
         Self {
-            v: unimplemented!(),
+            v: field!(_a0, v).with_mut(std::mem::take),
             n: Box::new(std::array::from_fn::<_, 2, _>(|__i: usize| {
                 (*_a0.upgrade().deref()).n[(__i) as usize]
             })),
@@ -36,34 +36,33 @@ impl Default for S {
     fn default() -> Self {
         {
             S {
-                v: unimplemented!(),
-                n: (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+                v: Default::default(),
+                n: (0..2).map(|_| 0_i32).collect::<Box<[i32]>>(),
             }
         }
     }
 }
-pub fn sum_0(s: Ptr<S>) -> () {
-    return ({ ({ unimplemented!() } + { (array_elem!(s, n, 0_()).read()) }) } + {
-        (array_elem!(s, n, 1_()).read())
-    });
+pub fn sum_0(s: Ptr<S>) -> i32 {
+    return ({ ({ ((*s.upgrade().deref()).v.len() as i32) } + { (array_elem!(s, n, 0).read()) }) }
+        + { (array_elem!(s, n, 1).read()) });
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let s: Value<S> = Rc::new(RefCell::new(S::new({ 2_() })));
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+fn main_0() -> i32 {
+    let s: Value<S> = Rc::new(RefCell::new(S::new({ 2 })));
+    assert!((({ sum_0(s.as_pointer(),) }) == 7));
+    assert!((({ shuffle_1(3,) }) == 10));
+    return 0;
 }
-pub fn shuffle_1(mut x: ()) -> () {
-    let mut a: S = S::new({ x });
-    let mut b: S = S::move_from({ unimplemented!() });
-    unimplemented!();
-    let c: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
-    ({ SImpl::move_assign(&c.as_pointer(), unimplemented!()) });
-    unimplemented!();
+pub fn shuffle_1(mut x: i32) -> i32 {
+    let a: Value<S> = Rc::new(RefCell::new(S::new({ x })));
+    let b: Value<S> = Rc::new(RefCell::new(S::move_from({ a.as_pointer() })));
+    assert!((*a.borrow()).v.is_empty());
+    let c: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
+    ({ SImpl::move_assign(&c.as_pointer(), b.as_pointer()) });
+    assert!((*b.borrow()).v.is_empty());
     return ({ sum_0(c.as_pointer()) });
 }
 pub trait SImpl {
@@ -71,8 +70,18 @@ pub trait SImpl {
 }
 impl SImpl for Ptr<S> {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
-        unimplemented!();
-        unimplemented!();
+        field_ref!((*self), v)
+            .as_pointer()
+            .write(field!(_a0, v).with_mut(std::mem::take));
+        {
+            ((array_field_ptr!((*self), n)) as Ptr<i32>)
+                .to_any()
+                .memcpy(
+                    &((array_field_ptr!(_a0, n)) as Ptr<i32>).to_any(),
+                    8_usize as usize,
+                );
+            ((array_field_ptr!((*self), n)) as Ptr<i32>).to_any()
+        };
         return (*self).clone();
     }
 }

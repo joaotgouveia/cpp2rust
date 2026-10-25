@@ -7,11 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_getpwuid_0() {
-    let mut pw: *mut passwd = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut pw: *mut passwd = libc::getpwuid(libc::geteuid());
+    assert!((((!((pw).is_null())) as i32) != 0));
+    assert!((((((*pw).pw_uid) == (libc::geteuid())) as i32) != 0));
+    assert!(((((libc::strlen(((*pw).pw_name).cast_const())) > (0_usize)) as i32) != 0));
+    assert!((((!(((*pw).pw_dir).is_null())) as i32) != 0));
     (unsafe {
         libc::printf(
             (c"%s\n".as_ptr().cast_mut()).cast_const() as *const libc::c_char,
@@ -20,22 +20,35 @@ pub unsafe fn test_getpwuid_0() {
     });
 }
 pub unsafe fn test_getpwuid_missing_1() {
-    (*unimplemented!()) = 0_();
-    let mut pw: *mut passwd = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (*libcc2rs::cpp2rust_errno_unsafe()) = 0;
+    let mut pw: *mut passwd = libc::getpwuid((2147483646 as ::libc::uid_t));
+    assert!(((((pw).is_null()) as i32) != 0));
+    assert!(((((*libcc2rs::cpp2rust_errno_unsafe()) == (0)) as i32) != 0));
 }
 pub unsafe fn test_getpwuid_r_2() {
     let mut pw: passwd = unsafe { std::mem::zeroed::<passwd>() };
-    let mut buf: [(); 4096] = [unimplemented!(); 4096];
+    let mut buf: [libc::c_char; 4096] = [(0 as libc::c_char); 4096];
     let mut result: *mut passwd = std::ptr::null_mut();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut pw2: *mut passwd = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ((((libc::getpwuid_r(
+            libc::geteuid(),
+            (&mut pw as *mut passwd),
+            buf.as_mut_ptr(),
+            ::std::mem::size_of::<[libc::c_char; 4096]>(),
+            (&mut result as *mut *mut passwd)
+        )) == (0)) as i32)
+            != 0)
+    );
+    assert!(((((result) == (&mut pw as *mut passwd)) as i32) != 0));
+    assert!(((((pw.pw_uid) == (libc::geteuid())) as i32) != 0));
+    assert!(((((libc::strlen((pw.pw_name).cast_const())) > (0_usize)) as i32) != 0));
+    let mut pw2: *mut passwd = libc::getpwuid(libc::geteuid());
+    assert!((((!((pw2).is_null())) as i32) != 0));
+    assert!(
+        ((((libc::strcmp((pw.pw_name).cast_const(), ((*pw2).pw_name).cast_const())) == (0))
+            as i32)
+            != 0)
+    );
     (unsafe {
         libc::printf(
             (c"%s\n".as_ptr().cast_mut()).cast_const() as *const libc::c_char,
@@ -45,10 +58,19 @@ pub unsafe fn test_getpwuid_r_2() {
 }
 pub unsafe fn test_getpwuid_r_erange_3() {
     let mut pw: passwd = unsafe { std::mem::zeroed::<passwd>() };
-    let mut tiny: [(); 1] = [unimplemented!(); 1];
+    let mut tiny: [libc::c_char; 1] = [(0 as libc::c_char); 1];
     let mut result: *mut passwd = std::ptr::null_mut();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ((((libc::getpwuid_r(
+            libc::geteuid(),
+            (&mut pw as *mut passwd),
+            tiny.as_mut_ptr(),
+            ::std::mem::size_of::<[libc::c_char; 1]>(),
+            (&mut result as *mut *mut passwd)
+        )) == (libc::ERANGE)) as i32)
+            != 0)
+    );
+    assert!(((((result).is_null()) as i32) != 0));
 }
 pub fn main() {
     unsafe {
@@ -56,11 +78,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test_getpwuid_0() });
     (unsafe { test_getpwuid_missing_1() });
     (unsafe { test_getpwuid_r_2() });
     (unsafe { test_getpwuid_r_erange_3() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -9,17 +9,17 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Inner {
-    pub a: (),
-    pub b: (),
+    pub a: i32,
+    pub b: i32,
 }
-pub unsafe fn sum_inner_0(mut i: *mut Inner) -> () {
+pub unsafe fn sum_inner_0(mut i: *mut Inner) -> i32 {
     return (((*i).a) + ((*i).b));
 }
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union anon_1 {
     pub inner: Inner,
-    pub raw_: [(); 16],
+    pub raw_: [libc::c_char; 16],
 }
 impl Default for anon_1 {
     fn default() -> Self {
@@ -37,22 +37,24 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut standalone: Inner = <Inner>::default();
-    standalone.a = 3_();
-    standalone.b = 4_();
-    unimplemented!();
+    standalone.a = 3;
+    standalone.b = 4;
+    assert!(((((unsafe { sum_inner_0((&mut standalone as *mut Inner),) }) == (7)) as i32) != 0));
     let mut outer: Outer = <Outer>::default();
-    (unsafe {
-        let ___s: () = ((&mut outer as *mut Outer) as ());
-        let ___n: () = ::std::mem::size_of::<Outer>();
-        memset_2(___s, 0_(), ___n)
-    });
-    outer.u.inner.a = 3_();
-    outer.u.inner.b = 4_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    {
+        let byte_0 = ((&mut outer as *mut Outer) as *mut ::libc::c_void) as *mut u8;
+        for offset in 0..::std::mem::size_of::<Outer>() {
+            *byte_0.offset(offset as isize) = 0 as u8;
+        }
+        ((&mut outer as *mut Outer) as *mut ::libc::c_void)
+    };
+    outer.u.inner.a = 3;
+    outer.u.inner.b = 4;
+    assert!(((((unsafe { sum_inner_0((&mut outer.u.inner as *mut Inner),) }) == (7)) as i32) != 0));
+    assert!((((((outer.u.raw_[(0) as usize] as u8) as i32) == (3)) as i32) != 0));
+    assert!((((((outer.u.raw_[(4) as usize] as u8) as i32) == (4)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

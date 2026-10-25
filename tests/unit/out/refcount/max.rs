@@ -10,22 +10,69 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let x1: Value<()> = Rc::new(RefCell::new(1_()));
-    let x2: Value<()> = Rc::new(RefCell::new(2_()));
-    let mut x3: () = 10_();
-    let mut x4: () = 20_();
-    let mut p1: Ptr<()> = (x1.as_pointer());
-    let mut p2: Ptr<()> = (x2.as_pointer());
-    let mut r1: () = (unimplemented!().read());
-    let mut r2: () = (unimplemented!().read());
-    let mut r3: () = (unimplemented!().read());
-    let mut r4: () = (unimplemented!().read());
-    let mut r5: () = (unimplemented!().read());
-    unimplemented!();
-    let values: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 7_(), 7_(), 3_()])));
-    let mut max: Ptr<()> = unimplemented!();
-    unimplemented!();
-    return 0_();
+fn main_0() -> i32 {
+    let x1: Value<i32> = Rc::new(RefCell::new(1));
+    let x2: Value<i32> = Rc::new(RefCell::new(2));
+    let x3: Value<i32> = Rc::new(RefCell::new(10));
+    let x4: Value<i32> = Rc::new(RefCell::new(20));
+    let mut p1: Ptr<i32> = (x1.as_pointer());
+    let mut p2: Ptr<i32> = (x2.as_pointer());
+    let mut r1: i32 = (if x1.as_pointer().read() >= x2.as_pointer().read() {
+        x1.as_pointer()
+    } else {
+        x2.as_pointer()
+    }
+    .read());
+    let mut r2: i32 = (if x3.as_pointer().read() <= x4.as_pointer().read() {
+        x3.as_pointer()
+    } else {
+        x4.as_pointer()
+    }
+    .read());
+    let mut r3: i32 = (if (p1).clone().read() >= x2.as_pointer().read() {
+        (p1).clone()
+    } else {
+        x2.as_pointer()
+    }
+    .read());
+    let mut r4: i32 = (if (p2).clone().read() <= x3.as_pointer().read() {
+        (p2).clone()
+    } else {
+        x3.as_pointer()
+    }
+    .read());
+    let mut r5: i32 = {
+        let __tmp_0: Value<i32> = Rc::new(RefCell::new(30));
+        let __tmp_1: Value<i32> = Rc::new(RefCell::new(40));
+        (if __tmp_0.as_pointer().read() >= __tmp_1.as_pointer().read() {
+            __tmp_0.as_pointer()
+        } else {
+            __tmp_1.as_pointer()
+        }
+        .read())
+    };
+    assert!((((((r1 + r2) + r3) + r4) + r5) == 56));
+    let values: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 7, 7, 3])));
+    let mut max: Ptr<i32> = {
+        let mut __best = (values.as_pointer() as Ptr<i32>).clone();
+        if (values.as_pointer() as Ptr<i32>)
+            != (values.as_pointer() as Ptr<i32>).offset((4) as isize)
+        {
+            let mut __it = (values.as_pointer() as Ptr<i32>);
+            __it.iter_inc();
+            while __it != (values.as_pointer() as Ptr<i32>).offset((4) as isize) {
+                if __best
+                    .iter_deref()
+                    .with(|__b| __it.iter_deref().with(|__v| __b < __v))
+                {
+                    __best = __it.clone();
+                }
+                __it.iter_inc();
+            }
+        }
+        __best
+    };
+    assert!(({ (max).clone() } == { (values.as_pointer() as Ptr::<i32>).offset((1) as isize) }));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

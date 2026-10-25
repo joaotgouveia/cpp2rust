@@ -10,20 +10,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut cond: () = true;
-    let mut os1: Ptr<()> = if cond {
-        (cout_0.with(|v| v.as_pointer()))
+fn main_0() -> i32 {
+    let mut cond: bool = true;
+    let mut os1: Ptr<std::fs::File> = if cond {
+        (libcc2rs::cout())
     } else {
-        (cerr_1.with(|v| v.as_pointer()))
+        (libcc2rs::cerr())
     };
-    unimplemented!();
-    let os2: Ptr<()> = if cond {
-        (cout_0.with(|v| v.as_pointer()))
+    write!(os1, "hello\n",);
+    let os2: Ptr<std::fs::File> = if cond {
+        (libcc2rs::cout())
     } else {
-        (cerr_1.with(|v| v.as_pointer()))
+        (libcc2rs::cerr())
     };
-    unimplemented!();
-    return 0_();
+    write!(os2, "hello\n",);
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

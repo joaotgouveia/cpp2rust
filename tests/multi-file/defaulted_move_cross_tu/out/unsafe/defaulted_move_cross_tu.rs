@@ -9,32 +9,41 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct S {
-    pub v: (),
-    pub n: [(); 2],
+    pub v: Vec<i32>,
+    pub n: [i32; 2],
 }
 impl S {
-    pub unsafe fn new(mut x: ()) -> Self {
+    pub unsafe fn new(mut x: i32) -> Self {
         let mut this = Self {
-            v: unimplemented!(),
-            n: [x, ((x) + (1_()))],
+            v: vec![x; (x as usize) as usize],
+            n: [x, ((x) + (1))],
         };
         this
     }
     pub unsafe fn move_from(_a0: *mut S) -> Self {
         let mut this = Self {
-            v: unimplemented!(),
-            n: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).n[(__i) as usize]),
+            v: std::mem::take(&mut (*_a0).v),
+            n: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).n[(__i)]),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
-        unimplemented!();
-        unimplemented!();
+        self.v = std::mem::take(&mut (*_a0).v);
+        {
+            if 8_usize != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    ((&mut (*_a0).n as *mut [i32; 2]) as *const ::libc::c_void),
+                    ((&mut self.n as *mut [i32; 2]) as *mut ::libc::c_void),
+                    8_usize as usize,
+                )
+            }
+            ((&mut self.n as *mut [i32; 2]) as *mut ::libc::c_void)
+        };
         return &mut (*(self as *mut S));
     }
 }
-pub unsafe fn sum_0(s: *const S) -> () {
-    return (((unimplemented!()) + ((*s).n[(0_()) as usize])) + ((*s).n[(1_()) as usize]));
+pub unsafe fn sum_0(s: *const S) -> i32 {
+    return ((((*s).v.len() as i32) + ((*s).n[(0) as usize])) + ((*s).n[(1) as usize]));
 }
 pub fn main() {
     unsafe {
@@ -42,19 +51,19 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut s: S = S::new({ 2_() });
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+unsafe fn main_0() -> i32 {
+    let mut s: S = S::new({ 2 });
+    assert!(((unsafe { sum_0(&s,) }) == (7)));
+    assert!(((unsafe { shuffle_1(3,) }) == (10)));
+    return 0;
 }
-pub unsafe fn shuffle_1(mut x: ()) -> () {
+pub unsafe fn shuffle_1(mut x: i32) -> i32 {
     let mut a: S = S::new({ x });
     let mut b: S = S::move_from({ &mut a });
-    unimplemented!();
-    let mut c: S = S::new({ 1_() });
+    assert!(a.v.is_empty());
+    let mut c: S = S::new({ 1 });
     (unsafe { S::move_assign(&mut c, &mut b) });
-    unimplemented!();
+    assert!(b.v.is_empty());
     return (unsafe { sum_0(&c) });
 }
 pub unsafe fn __cpp2rust_init_globals() {}

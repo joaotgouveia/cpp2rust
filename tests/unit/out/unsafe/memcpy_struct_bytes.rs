@@ -18,25 +18,32 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut src: point = point {
-        x: (3_() as i32),
-        y: (7_() as i32),
+unsafe fn main_0() -> i32 {
+    let mut src: point = point { x: 3, y: 7 };
+    let mut buf: [u8; 8] = [0_u8; 8];
+    {
+        if ::std::mem::size_of::<[u8; 8]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                ((&mut src as *mut point) as *const ::libc::c_void),
+                (buf.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[u8; 8]>() as usize,
+            )
+        }
+        (buf.as_mut_ptr() as *mut ::libc::c_void)
     };
-    let mut buf: [(); 8] = [unimplemented!(); 8];
-    (unsafe {
-        let ___dest: () = (buf.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[(); 8]>();
-        memcpy_0(___dest, ((&mut src as *mut point) as ()), ___n)
-    });
     let mut dst: point = <point>::default();
-    (unsafe {
-        let ___dest: () = ((&mut dst as *mut point) as ());
-        let ___n: () = ::std::mem::size_of::<point>();
-        memcpy_0(___dest, (buf.as_mut_ptr() as ()), ___n)
-    });
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    {
+        if ::std::mem::size_of::<point>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (buf.as_mut_ptr() as *const ::libc::c_void),
+                ((&mut dst as *mut point) as *mut ::libc::c_void),
+                ::std::mem::size_of::<point>() as usize,
+            )
+        }
+        ((&mut dst as *mut point) as *mut ::libc::c_void)
+    };
+    assert!(((((dst.x) == (3)) as i32) != 0));
+    assert!(((((dst.y) == (7)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

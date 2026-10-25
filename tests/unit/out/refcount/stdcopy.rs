@@ -10,12 +10,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let input: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let output: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    unimplemented!();
-    return 0_();
+fn main_0() -> i32 {
+    let input: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+    let output: Value<Box<[i32]>> =
+        Rc::new(RefCell::new((0..3).map(|_| 0_i32).collect::<Box<[i32]>>()));
+    {
+        let mut __first = (input.as_pointer() as Ptr<i32>);
+        let mut __out = (output.as_pointer() as Ptr<i32>);
+        while __first != (input.as_pointer() as Ptr<i32>).offset((3) as isize) {
+            __out.iter_deref().write(__first.iter_deref().read().into());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

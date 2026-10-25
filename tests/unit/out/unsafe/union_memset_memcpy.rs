@@ -10,7 +10,7 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct shape_a {
     pub code: u16,
-    pub pad: [(); 14],
+    pub pad: [libc::c_char; 14],
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -18,14 +18,14 @@ pub struct shape_b {
     pub code: u16,
     pub lo: u16,
     pub hi: u32,
-    pub fill: [(); 8],
+    pub fill: [libc::c_char; 8],
 }
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union anon_0 {
     pub a: shape_a,
     pub b: shape_b,
-    pub raw_: [(); 256],
+    pub raw_: [libc::c_char; 256],
 }
 impl Default for anon_0 {
     fn default() -> Self {
@@ -43,59 +43,56 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut c: Container = <Container>::default();
-    (unsafe {
-        let ___s: () = ((&mut c as *mut Container) as ());
-        let ___n: () = ::std::mem::size_of::<Container>();
-        memset_1(___s, 0_(), ___n)
-    });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut src: [(); 16] = [
-        0_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    {
+        let byte_0 = ((&mut c as *mut Container) as *mut ::libc::c_void) as *mut u8;
+        for offset in 0..::std::mem::size_of::<Container>() {
+            *byte_0.offset(offset as isize) = 0 as u8;
+        }
+        ((&mut c as *mut Container) as *mut ::libc::c_void)
+    };
+    assert!(((((c.view.a.code as i32) == (0)) as i32) != 0));
+    assert!(((((c.view.b.lo as i32) == (0)) as i32) != 0));
+    assert!(((((c.view.raw_[(0) as usize] as i32) == (0)) as i32) != 0));
+    assert!(((((c.view.raw_[(255) as usize] as i32) == (0)) as i32) != 0));
+    let mut src: [u8; 16] = [
+        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
+        0_u8,
     ];
-    src[(0_()) as usize] = 2_();
-    src[(2_()) as usize] = 80_();
-    src[(3_()) as usize] = 0_();
-    src[(4_()) as usize] = 127_();
-    src[(5_()) as usize] = 0_();
-    src[(6_()) as usize] = 0_();
-    src[(7_()) as usize] = 1_();
-    let mut len: () = 16_();
-    unimplemented!();
-    (unsafe {
-        memcpy_2(
-            ((&mut c.view.raw_ as *mut [(); 256]) as ()),
-            (src.as_mut_ptr() as ()),
-            len,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let ___s: () = ((&mut c as *mut Container) as ());
-        let ___n: () = ::std::mem::size_of::<Container>();
-        memset_1(___s, 0_(), ___n)
-    });
-    unimplemented!();
-    return 0_();
+    src[(0) as usize] = 2_u8;
+    src[(2) as usize] = 80_u8;
+    src[(3) as usize] = 0_u8;
+    src[(4) as usize] = 127_u8;
+    src[(5) as usize] = 0_u8;
+    src[(6) as usize] = 0_u8;
+    src[(7) as usize] = 1_u8;
+    let mut len: usize = 16_usize;
+    assert!(((((len) <= (::std::mem::size_of::<[libc::c_char; 256]>())) as i32) != 0));
+    {
+        if len != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (src.as_mut_ptr() as *const ::libc::c_void),
+                ((&mut c.view.raw_ as *mut [libc::c_char; 256]) as *mut ::libc::c_void),
+                len as usize,
+            )
+        }
+        ((&mut c.view.raw_ as *mut [libc::c_char; 256]) as *mut ::libc::c_void)
+    };
+    assert!(((((c.view.b.code as i32) == (2)) as i32) != 0));
+    assert!(
+        (((((*((&mut c.view.b.lo as *mut u16) as *mut u8).offset((0) as isize)) as i32) == (80))
+            as i32)
+            != 0)
+    );
+    {
+        let byte_0 = ((&mut c as *mut Container) as *mut ::libc::c_void) as *mut u8;
+        for offset in 0..::std::mem::size_of::<Container>() {
+            *byte_0.offset(offset as isize) = 0 as u8;
+        }
+        ((&mut c as *mut Container) as *mut ::libc::c_void)
+    };
+    assert!(((((c.view.b.code as i32) == (0)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

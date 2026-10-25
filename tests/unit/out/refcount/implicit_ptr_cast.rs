@@ -6,17 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn write_ulong_0(mut p: Ptr<()>) {
-    p.write(42_());
+pub fn write_ulong_0(mut p: Ptr<u64>) {
+    p.write(42_u64);
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let x: Value<()> = Rc::new(RefCell::new(0_()));
-    ({ write_ulong_0((x.as_pointer())) });
-    unimplemented!();
-    return 0_();
+fn main_0() -> i32 {
+    let x: Value<usize> = Rc::new(RefCell::new(0_usize));
+    ({ write_ulong_0((x.as_pointer()).reinterpret_cast::<u64>()) });
+    assert!(((((*x.borrow()) == 42_usize) as i32) != 0));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

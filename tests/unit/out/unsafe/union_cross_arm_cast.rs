@@ -10,7 +10,7 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct shape_a {
     pub code: u16,
-    pub pad: [(); 14],
+    pub pad: [libc::c_char; 14],
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -26,7 +26,7 @@ pub struct shape_b {
 pub union anon_0 {
     pub a: shape_a,
     pub b: shape_b,
-    pub raw_: [(); 64],
+    pub raw_: [libc::c_char; 64],
 }
 impl Default for anon_0 {
     fn default() -> Self {
@@ -36,7 +36,7 @@ impl Default for anon_0 {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Container {
-    pub len: (),
+    pub len: u32,
     pub u: anon_0,
 }
 pub fn main() {
@@ -45,21 +45,32 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut c: Container = <Container>::default();
-    (unsafe {
-        let ___s: () = ((&mut c as *mut Container) as ());
-        let ___n: () = ::std::mem::size_of::<Container>();
-        memset_1(___s, 0_(), ___n)
-    });
+    {
+        let byte_0 = ((&mut c as *mut Container) as *mut ::libc::c_void) as *mut u8;
+        for offset in 0..::std::mem::size_of::<Container>() {
+            *byte_0.offset(offset as isize) = 0 as u8;
+        }
+        ((&mut c as *mut Container) as *mut ::libc::c_void)
+    };
     c.u.a.code = 10_u16;
-    c.len = ::std::mem::size_of::<shape_b>();
-    (*(((&mut c.u.a as *mut shape_a) as ()) as *mut shape_b)).tail = (3735928559_() as u32);
-    unimplemented!();
-    unimplemented!();
+    c.len = (::std::mem::size_of::<shape_b>() as u32);
+    (*(((&mut c.u.a as *mut shape_a) as *mut ::libc::c_void) as *mut shape_b)).tail =
+        3735928559_u32;
+    assert!(((((c.u.b.tail) == (3735928559_u32)) as i32) != 0));
+    assert!(((((c.u.b.code as i32) == (10)) as i32) != 0));
     c.u.b.lo = 8080_u16;
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(
+        (((((*((&mut c.u.raw_ as *mut [libc::c_char; 64]) as *mut u8).offset((2) as isize)) as i32)
+            == (144)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*((&mut c.u.raw_ as *mut [libc::c_char; 64]) as *mut u8).offset((3) as isize)) as i32)
+            == (31)) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

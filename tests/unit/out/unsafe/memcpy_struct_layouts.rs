@@ -10,33 +10,33 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct packed {
     pub a: i32,
-    pub b: (),
-    pub c: (),
+    pub b: libc::c_char,
+    pub c: libc::c_char,
     pub d: i16,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct reordered {
-    pub a: (),
+    pub a: libc::c_char,
     pub b: i32,
-    pub c: (),
+    pub c: libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct tail {
-    pub a: (),
-    pub b: (),
+    pub a: libc::c_char,
+    pub b: f64,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct nested {
     pub t: tail,
-    pub c: (),
+    pub c: libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct array {
-    pub name: [(); 3],
+    pub name: [libc::c_char; 3],
     pub x: i32,
 }
 pub fn main() {
@@ -45,112 +45,195 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut buf: [(); 64] = [unimplemented!(); 64];
+unsafe fn main_0() -> i32 {
+    let mut buf: [u8; 64] = [0_u8; 64];
     let mut p: [packed; 2] = [
         packed {
-            a: (1_() as i32),
-            b: 2_(),
-            c: 3_(),
+            a: 1,
+            b: (2 as libc::c_char),
+            c: (3 as libc::c_char),
             d: 4_i16,
         },
         packed {
-            a: (5_() as i32),
-            b: 6_(),
-            c: 7_(),
+            a: 5,
+            b: (6 as libc::c_char),
+            c: (7 as libc::c_char),
             d: 8_i16,
         },
     ];
-    (unsafe {
-        let ___src: () = (p.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[packed; 2]>();
-        memcpy_0((buf.as_mut_ptr() as ()), ___src, ___n)
-    });
-    unimplemented!();
+    {
+        if ::std::mem::size_of::<[packed; 2]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (p.as_mut_ptr() as *const ::libc::c_void),
+                (buf.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[packed; 2]>() as usize,
+            )
+        }
+        (buf.as_mut_ptr() as *mut ::libc::c_void)
+    };
+    assert!(
+        ((((buf[((::std::mem::size_of::<packed>() as usize).wrapping_add(4_usize))] as i32) == (6))
+            as i32)
+            != 0)
+    );
     let mut p2: [packed; 2] = [<packed>::default(); 2];
-    (unsafe {
-        let ___dest: () = (p2.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[packed; 2]>();
-        memcpy_0(___dest, (buf.as_mut_ptr() as ()), ___n)
-    });
-    unimplemented!();
+    {
+        if ::std::mem::size_of::<[packed; 2]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (buf.as_mut_ptr() as *const ::libc::c_void),
+                (p2.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[packed; 2]>() as usize,
+            )
+        }
+        (p2.as_mut_ptr() as *mut ::libc::c_void)
+    };
+    assert!(
+        (((((((((((((p2[(1) as usize].a) == (5)) as i32) != 0)
+            && ((((p2[(1) as usize].b as i32) == (6)) as i32) != 0)) as i32)
+            != 0)
+            && ((((p2[(1) as usize].c as i32) == (7)) as i32) != 0)) as i32)
+            != 0)
+            && ((((p2[(1) as usize].d as i32) == (8)) as i32) != 0)) as i32)
+            != 0)
+    );
     let mut r: [reordered; 2] = [
         reordered {
-            a: 1_(),
-            b: (2_() as i32),
-            c: 3_(),
+            a: (1 as libc::c_char),
+            b: 2,
+            c: (3 as libc::c_char),
         },
         reordered {
-            a: 4_(),
-            b: (5_() as i32),
-            c: 6_(),
+            a: (4 as libc::c_char),
+            b: 5,
+            c: (6 as libc::c_char),
         },
     ];
-    (unsafe {
-        let ___src: () = (r.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[reordered; 2]>();
-        memcpy_0((buf.as_mut_ptr() as ()), ___src, ___n)
-    });
-    unimplemented!();
+    {
+        if ::std::mem::size_of::<[reordered; 2]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (r.as_mut_ptr() as *const ::libc::c_void),
+                (buf.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[reordered; 2]>() as usize,
+            )
+        }
+        (buf.as_mut_ptr() as *mut ::libc::c_void)
+    };
+    assert!(
+        ((((buf[((::std::mem::size_of::<reordered>() as usize).wrapping_add(8_usize))] as i32)
+            == (6)) as i32)
+            != 0)
+    );
     let mut r2: [reordered; 2] = [<reordered>::default(); 2];
-    (unsafe {
-        let ___dest: () = (r2.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[reordered; 2]>();
-        memcpy_0(___dest, (buf.as_mut_ptr() as ()), ___n)
-    });
-    unimplemented!();
+    {
+        if ::std::mem::size_of::<[reordered; 2]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (buf.as_mut_ptr() as *const ::libc::c_void),
+                (r2.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[reordered; 2]>() as usize,
+            )
+        }
+        (r2.as_mut_ptr() as *mut ::libc::c_void)
+    };
+    assert!(
+        ((((((((((r2[(1) as usize].a as i32) == (4)) as i32) != 0)
+            && ((((r2[(1) as usize].b) == (5)) as i32) != 0)) as i32)
+            != 0)
+            && ((((r2[(1) as usize].c as i32) == (6)) as i32) != 0)) as i32)
+            != 0)
+    );
     let mut n: [nested; 2] = [
         nested {
             t: tail {
-                a: 1_(),
+                a: (1 as libc::c_char),
                 b: 2.5_f64,
             },
-            c: 3_(),
+            c: (3 as libc::c_char),
         },
         nested {
             t: tail {
-                a: 4_(),
+                a: (4 as libc::c_char),
                 b: 5.5_f64,
             },
-            c: 6_(),
+            c: (6 as libc::c_char),
         },
     ];
-    (unsafe {
-        let ___src: () = (n.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[nested; 2]>();
-        memcpy_0((buf.as_mut_ptr() as ()), ___src, ___n)
-    });
-    unimplemented!();
+    {
+        if ::std::mem::size_of::<[nested; 2]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (n.as_mut_ptr() as *const ::libc::c_void),
+                (buf.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[nested; 2]>() as usize,
+            )
+        }
+        (buf.as_mut_ptr() as *mut ::libc::c_void)
+    };
+    assert!(
+        ((((buf[((::std::mem::size_of::<nested>() as usize).wrapping_add(16_usize))] as i32) == (6))
+            as i32)
+            != 0)
+    );
     let mut n2: [nested; 2] = [<nested>::default(); 2];
-    (unsafe {
-        let ___dest: () = (n2.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[nested; 2]>();
-        memcpy_0(___dest, (buf.as_mut_ptr() as ()), ___n)
-    });
-    unimplemented!();
+    {
+        if ::std::mem::size_of::<[nested; 2]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (buf.as_mut_ptr() as *const ::libc::c_void),
+                (n2.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[nested; 2]>() as usize,
+            )
+        }
+        (n2.as_mut_ptr() as *mut ::libc::c_void)
+    };
+    assert!(
+        ((((((((((n2[(1) as usize].t.a as i32) == (4)) as i32) != 0)
+            && ((((n2[(1) as usize].t.b) == (5.5_f64)) as i32) != 0)) as i32)
+            != 0)
+            && ((((n2[(1) as usize].c as i32) == (6)) as i32) != 0)) as i32)
+            != 0)
+    );
     let mut a: [array; 2] = [
         array {
             name: std::mem::transmute(*b"ab\0"),
-            x: (1_() as i32),
+            x: 1,
         },
         array {
             name: std::mem::transmute(*b"cd\0"),
-            x: (2_() as i32),
+            x: 2,
         },
     ];
-    (unsafe {
-        let ___src: () = (a.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[array; 2]>();
-        memcpy_0((buf.as_mut_ptr() as ()), ___src, ___n)
-    });
-    unimplemented!();
+    {
+        if ::std::mem::size_of::<[array; 2]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (a.as_mut_ptr() as *const ::libc::c_void),
+                (buf.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[array; 2]>() as usize,
+            )
+        }
+        (buf.as_mut_ptr() as *mut ::libc::c_void)
+    };
+    assert!(
+        ((((buf[((::std::mem::size_of::<array>() as usize).wrapping_add(1_usize))] as i32)
+            == ('d' as i32)) as i32)
+            != 0)
+    );
     let mut a2: [array; 2] = [<array>::default(); 2];
-    (unsafe {
-        let ___dest: () = (a2.as_mut_ptr() as ());
-        let ___n: () = ::std::mem::size_of::<[array; 2]>();
-        memcpy_0(___dest, (buf.as_mut_ptr() as ()), ___n)
-    });
-    unimplemented!();
-    return 0_();
+    {
+        if ::std::mem::size_of::<[array; 2]>() != 0 {
+            ::std::ptr::copy_nonoverlapping(
+                (buf.as_mut_ptr() as *const ::libc::c_void),
+                (a2.as_mut_ptr() as *mut ::libc::c_void),
+                ::std::mem::size_of::<[array; 2]>() as usize,
+            )
+        }
+        (a2.as_mut_ptr() as *mut ::libc::c_void)
+    };
+    assert!(
+        ((((((((((a2[(1) as usize].name[(1) as usize] as i32) == ('d' as i32)) as i32) != 0)
+            && ((((a2[(1) as usize].name[(2) as usize] as i32) == (0)) as i32) != 0))
+            as i32)
+            != 0)
+            && ((((a2[(1) as usize].x) == (2)) as i32) != 0)) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,11 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Inner {
     #[offset(0)]
-    pub a: (),
+    pub a: i32,
     #[offset(4)]
-    pub b: (),
+    pub b: i32,
 }
-pub fn sum_inner_0(mut i: Ptr<Inner>) -> () {
+pub fn sum_inner_0(mut i: Ptr<Inner>) -> i32 {
     return ({ i.with(|__s| __s.a) } + { i.with(|__s| __s.b) });
 }
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
@@ -28,7 +28,7 @@ impl anon_1 {
     pub fn inner(this: Ptr<Self>) -> Ptr<Inner> {
         this.reinterpret_cast()
     }
-    pub fn raw_(this: Ptr<Self>) -> Ptr<()> {
+    pub fn raw_(this: Ptr<Self>) -> Ptr<i8> {
         this.reinterpret_cast()
     }
 }
@@ -50,22 +50,43 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let standalone: Value<Inner> = <Value<Inner>>::default();
-    (*standalone.borrow_mut()).a = 3_();
-    (*standalone.borrow_mut()).b = 4_();
-    unimplemented!();
+    (*standalone.borrow_mut()).a = 3;
+    (*standalone.borrow_mut()).b = 4;
+    assert!((((({ sum_inner_0((standalone.as_pointer()),) }) == 7) as i32) != 0));
     let outer: Value<Outer> = <Value<Outer>>::default();
-    ({
-        let ___s: () = ((outer.as_pointer()) as Ptr<Outer>).to_any();
-        let ___n: () = 16usize;
-        memset_2(___s, 0_(), ___n)
-    });
-    field!(anon_1::inner(field_ptr!(outer.as_pointer(), u)), a).write(3_());
-    field!(anon_1::inner(field_ptr!(outer.as_pointer(), u)), b).write(4_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    {
+        ((outer.as_pointer()) as Ptr<Outer>)
+            .to_any()
+            .memset((0) as u8, 16usize as usize);
+        ((outer.as_pointer()) as Ptr<Outer>).to_any()
+    };
+    field!(anon_1::inner(field_ptr!(outer.as_pointer(), u)), a).write(3);
+    field!(anon_1::inner(field_ptr!(outer.as_pointer(), u)), b).write(4);
+    assert!(
+        (((({ sum_inner_0((anon_1::inner(field_ptr!(outer.as_pointer(), u))).clone(),) }) == 7)
+            as i32)
+            != 0)
+    );
+    assert!(
+        ((((((elem!(
+            (anon_1::raw_(field_ptr!(outer.as_pointer(), u)).reinterpret_cast::<i8>() as Ptr::<i8>),
+            0
+        )
+        .read()) as u8) as i32)
+            == 3) as i32)
+            != 0)
+    );
+    assert!(
+        ((((((elem!(
+            (anon_1::raw_(field_ptr!(outer.as_pointer(), u)).reinterpret_cast::<i8>() as Ptr::<i8>),
+            4
+        )
+        .read()) as u8) as i32)
+            == 4) as i32)
+            != 0)
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}
