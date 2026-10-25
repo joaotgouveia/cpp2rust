@@ -241,6 +241,7 @@ private:
         if (ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
           AddSpecialMembers(record);
           AddIterator(type, record);
+          AddNodeHandle(record);
         }
       }
       return;
@@ -299,6 +300,21 @@ private:
     clang::LookupResult category(sema_, &ctx_.Idents.get("iterator_category"),
                                  loc, clang::Sema::LookupMemberName);
     if (sema_.LookupQualifiedName(category, instance_record)) {
+      AddKey(kAnyIteratorKey);
+    }
+  }
+
+  // A container with node handles (set<int>::node_type) uses the rules
+  // written for any class too, as an iterator does.
+  void AddNodeHandle(const clang::CXXRecordDecl *record) {
+    auto definition = record->getDefinition();
+    if (!definition) {
+      return;
+    }
+    if (llvm::any_of(definition->lookup(&ctx_.Idents.get("node_type")),
+                     [](const clang::NamedDecl *decl) {
+                       return llvm::isa<clang::TypedefNameDecl>(decl);
+                     })) {
       AddKey(kAnyIteratorKey);
     }
   }
