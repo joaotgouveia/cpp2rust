@@ -258,33 +258,3 @@ f131(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
      T3 a2, T3 a3) {
   return a0.template insert<T3>(std::move(a1), std::move(a2), std::move(a3));
 }
-
-template <typename T1, typename T2>
-using t27 = typename std::list<T1, T2>::iterator::iterator_category;
-
-template <typename T1, typename T2>
-using t28 = typename std::list<T1, T2>::iterator::value_type;
-
-template <typename T1, typename T2>
-using t29 = typename std::list<T1, T2>::iterator::reference;
-
-template <typename T1, typename T2>
-using t30 = typename std::list<T1, T2>::iterator::pointer;
-
-template <typename T1, typename T2>
-using t31 = typename std::list<T1, T2>::iterator::difference_type;
-
-template <typename T1, typename T2>
-using t32 = typename std::list<T1, T2>::const_iterator::iterator_category;
-
-template <typename T1, typename T2>
-using t33 = typename std::list<T1, T2>::const_iterator::value_type;
-
-template <typename T1, typename T2>
-using t34 = typename std::list<T1, T2>::const_iterator::reference;
-
-template <typename T1, typename T2>
-using t35 = typename std::list<T1, T2>::const_iterator::pointer;
-
-template <typename T1, typename T2>
-using t36 = typename std::list<T1, T2>::const_iterator::difference_type;

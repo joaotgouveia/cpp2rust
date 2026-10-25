@@ -96,7 +96,7 @@ f11(std::regex_token_iterator<T1, T2, T3> &a0, int a1) {
 
 template <typename T1, typename T2, typename T3, std::size_t T4>
 std::regex_token_iterator<T1, T2, T3>
-f12(T1 a0, T1 a1, const std::basic_regex<T2, T3> &a2, int (&a3)[T4],
+f12(T1 a0, T1 a1, const std::basic_regex<T2, T3> &a2, const int (&a3)[T4],
     std::regex_constants::match_flag_type a4) {
   return std::regex_token_iterator<T1, T2, T3>(std::move(a0), std::move(a1), a2,
                                                a3, a4);

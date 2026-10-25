@@ -60,7 +60,7 @@ bool f9(const std::function<T1(T2...)> &a0) {
 
 template <typename T1, typename... T2>
 T1 f10(const std::function<T1(T2...)> &a0, T2... a1) {
-  return a0.operator()(a1...);
+  return a0.operator()(std::move(a1)...);
 }
 
 template <typename T1, typename... T2>

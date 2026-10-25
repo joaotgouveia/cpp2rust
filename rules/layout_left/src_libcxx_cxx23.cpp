@@ -118,7 +118,7 @@ f17(const std::layout_left::mapping<T1> &a0, T2... a1)
                  typename std::layout_left::mapping<T1>::index_type, T2> &&
              ...)))
 {
-  return a0.template operator()<T2...>(a1...);
+  return a0.template operator()<T2...>(std::move(a1)...);
 }
 
 template <typename T1, typename T2>

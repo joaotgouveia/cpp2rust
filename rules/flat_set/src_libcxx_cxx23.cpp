@@ -582,15 +582,3 @@ bool f129(const std::flat_set<T1, T2, T3> &a0,
           const std::flat_set<T1, T2, T3> &a1) {
   return operator==(a0, a1);
 }
-
-template <typename T1, typename T2, typename T3>
-using t15 = typename std::flat_set<T1, T2, T3>::iterator::iterator_concept;
-
-template <typename T1, typename T2, typename T3>
-using t16 = typename std::flat_set<T1, T2, T3>::iterator::iterator_category;
-
-template <typename T1, typename T2, typename T3>
-using t17 = typename std::flat_set<T1, T2, T3>::iterator::value_type;
-
-template <typename T1, typename T2, typename T3>
-using t18 = typename std::flat_set<T1, T2, T3>::iterator::difference_type;

@@ -48,7 +48,7 @@ std::extents<T1, T2...> f6(T3... a0)
             (sizeof...(T3) == std::extents<T1, T2...>::__rank_ ||
              sizeof...(T3) == std::extents<T1, T2...>::__rank_dynamic_)))
 {
-  return std::extents<T1, T2...>(a0...);
+  return std::extents<T1, T2...>(std::move(a0)...);
 }
 
 template <typename T1, std::size_t... T2, typename T3, std::size_t T4>

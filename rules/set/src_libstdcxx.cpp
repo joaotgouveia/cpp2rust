@@ -51,18 +51,3 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::set<T1, T2, T3> f62(T4 a0, T4 a1) {
   return std::set<T1, T2, T3>(std::move(a0), std::move(a1));
 }
-
-template <typename T1, typename T2, typename T3>
-using t21 = typename std::set<T1, T2, T3>::iterator::value_type;
-
-template <typename T1, typename T2, typename T3>
-using t22 = typename std::set<T1, T2, T3>::iterator::reference;
-
-template <typename T1, typename T2, typename T3>
-using t23 = typename std::set<T1, T2, T3>::iterator::pointer;
-
-template <typename T1, typename T2, typename T3>
-using t24 = typename std::set<T1, T2, T3>::iterator::iterator_category;
-
-template <typename T1, typename T2, typename T3>
-using t25 = typename std::set<T1, T2, T3>::iterator::difference_type;

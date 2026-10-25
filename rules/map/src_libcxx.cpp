@@ -25,22 +25,22 @@ void f124(std::multimap<T1, T2, T3, T4> &a0,
   return std::swap<T1, T2, T3, T4>(a0, a1);
 }
 
-template <typename T1> using t32 = std::__map_const_iterator<T1>;
+template <typename T1> using t22 = std::__map_const_iterator<T1>;
 
 template <typename T1>
-using t33 = typename std::__map_const_iterator<T1>::iterator_category;
+using t23 = typename std::__map_const_iterator<T1>::iterator_category;
 
 template <typename T1>
-using t34 = typename std::__map_const_iterator<T1>::value_type;
+using t24 = typename std::__map_const_iterator<T1>::value_type;
 
 template <typename T1>
-using t35 = typename std::__map_const_iterator<T1>::difference_type;
+using t25 = typename std::__map_const_iterator<T1>::difference_type;
 
 template <typename T1>
-using t36 = typename std::__map_const_iterator<T1>::reference;
+using t26 = typename std::__map_const_iterator<T1>::reference;
 
 template <typename T1>
-using t37 = typename std::__map_const_iterator<T1>::pointer;
+using t27 = typename std::__map_const_iterator<T1>::pointer;
 
 template <typename T1> std::__map_const_iterator<T1> f125() {
   return std::__map_const_iterator<T1>();
@@ -100,19 +100,19 @@ bool f135(const std::__map_const_iterator<T1> &a0,
   return operator==(a0, a1);
 }
 
-template <typename T1> using t38 = std::__map_iterator<T1>;
+template <typename T1> using t28 = std::__map_iterator<T1>;
 
 template <typename T1>
-using t39 = typename std::__map_iterator<T1>::iterator_category;
+using t29 = typename std::__map_iterator<T1>::iterator_category;
 
-template <typename T1> using t40 = typename std::__map_iterator<T1>::value_type;
+template <typename T1> using t30 = typename std::__map_iterator<T1>::value_type;
 
 template <typename T1>
-using t41 = typename std::__map_iterator<T1>::difference_type;
+using t31 = typename std::__map_iterator<T1>::difference_type;
 
-template <typename T1> using t42 = typename std::__map_iterator<T1>::reference;
+template <typename T1> using t32 = typename std::__map_iterator<T1>::reference;
 
-template <typename T1> using t43 = typename std::__map_iterator<T1>::pointer;
+template <typename T1> using t33 = typename std::__map_iterator<T1>::pointer;
 
 template <typename T1> std::__map_iterator<T1> f136() {
   return std::__map_iterator<T1>();
@@ -167,22 +167,22 @@ bool f145(const std::__map_iterator<T1> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t44 = std::__tree_const_iterator<T1, T2, T3>;
+using t34 = std::__tree_const_iterator<T1, T2, T3>;
 
 template <typename T1, typename T2, typename T3>
-using t45 = typename std::__tree_const_iterator<T1, T2, T3>::iterator_category;
+using t35 = typename std::__tree_const_iterator<T1, T2, T3>::iterator_category;
 
 template <typename T1, typename T2, typename T3>
-using t46 = typename std::__tree_const_iterator<T1, T2, T3>::value_type;
+using t36 = typename std::__tree_const_iterator<T1, T2, T3>::value_type;
 
 template <typename T1, typename T2, typename T3>
-using t47 = typename std::__tree_const_iterator<T1, T2, T3>::difference_type;
+using t37 = typename std::__tree_const_iterator<T1, T2, T3>::difference_type;
 
 template <typename T1, typename T2, typename T3>
-using t48 = typename std::__tree_const_iterator<T1, T2, T3>::reference;
+using t38 = typename std::__tree_const_iterator<T1, T2, T3>::reference;
 
 template <typename T1, typename T2, typename T3>
-using t49 = typename std::__tree_const_iterator<T1, T2, T3>::pointer;
+using t39 = typename std::__tree_const_iterator<T1, T2, T3>::pointer;
 
 template <typename T1, typename T2, typename T3>
 std::__tree_const_iterator<T1, T2, T3> f146() {

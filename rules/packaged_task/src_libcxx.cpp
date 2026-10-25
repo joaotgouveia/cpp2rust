@@ -36,12 +36,12 @@ std::future<void> f20(std::packaged_task<void(T1...)> &a0) {
 
 template <typename... T1>
 void f21(std::packaged_task<void(T1...)> &a0, T1... a1) {
-  return a0.operator()(a1...);
+  return a0.operator()(std::move(a1)...);
 }
 
 template <typename... T1>
 void f22(std::packaged_task<void(T1...)> &a0, T1... a1) {
-  return a0.make_ready_at_thread_exit(a1...);
+  return a0.make_ready_at_thread_exit(std::move(a1)...);
 }
 
 template <typename... T1> void f23(std::packaged_task<void(T1...)> &a0) {

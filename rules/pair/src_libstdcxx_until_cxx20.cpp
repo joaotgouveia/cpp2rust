@@ -88,7 +88,8 @@ template <typename T1, typename T2, typename T3,
 std::pair<T1, T2>
 f11(T3 &&a0, typename std::pair<T1, T2>::__zero_as_null_pointer_constant a1,
     Args... args) {
-  return std::pair<T1, T2>(std::forward<T3>(a0), std::move(a1), args...);
+  return std::pair<T1, T2>(std::forward<T3>(a0), std::move(a1),
+                           std::move(args)...);
 }
 
 template <typename T1, typename T2, typename T3,
@@ -103,7 +104,8 @@ template <typename T1, typename T2, typename T3,
 std::pair<T1, T2>
 f12(T3 &&a0, typename std::pair<T1, T2>::__zero_as_null_pointer_constant a1,
     Args... args) {
-  return std::pair<T1, T2>(std::forward<T3>(a0), std::move(a1), args...);
+  return std::pair<T1, T2>(std::forward<T3>(a0), std::move(a1),
+                           std::move(args)...);
 }
 
 template <
@@ -119,7 +121,8 @@ template <
 std::pair<T1, T2>
 f13(typename std::pair<T1, T2>::__zero_as_null_pointer_constant a0, T3 &&a1,
     Args... args) {
-  return std::pair<T1, T2>(std::move(a0), std::forward<T3>(a1), args...);
+  return std::pair<T1, T2>(std::move(a0), std::forward<T3>(a1),
+                           std::move(args)...);
 }
 
 template <
@@ -135,7 +138,8 @@ template <
 std::pair<T1, T2>
 f14(typename std::pair<T1, T2>::__zero_as_null_pointer_constant a0, T3 &&a1,
     Args... args) {
-  return std::pair<T1, T2>(std::move(a0), std::forward<T3>(a1), args...);
+  return std::pair<T1, T2>(std::move(a0), std::forward<T3>(a1),
+                           std::move(args)...);
 }
 
 template <

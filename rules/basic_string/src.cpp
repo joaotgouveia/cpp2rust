@@ -817,38 +817,6 @@ int f112(const std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t15 = typename std::basic_string<T1, T2, T3>::iterator::iterator_category;
-
-template <typename T1, typename T2, typename T3>
-using t16 = typename std::basic_string<T1, T2, T3>::iterator::value_type;
-
-template <typename T1, typename T2, typename T3>
-using t17 = typename std::basic_string<T1, T2, T3>::iterator::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t18 = typename std::basic_string<T1, T2, T3>::iterator::reference;
-
-template <typename T1, typename T2, typename T3>
-using t19 = typename std::basic_string<T1, T2, T3>::iterator::pointer;
-
-template <typename T1, typename T2, typename T3>
-using t20 =
-    typename std::basic_string<T1, T2, T3>::const_iterator::iterator_category;
-
-template <typename T1, typename T2, typename T3>
-using t21 = typename std::basic_string<T1, T2, T3>::const_iterator::value_type;
-
-template <typename T1, typename T2, typename T3>
-using t22 =
-    typename std::basic_string<T1, T2, T3>::const_iterator::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t23 = typename std::basic_string<T1, T2, T3>::const_iterator::reference;
-
-template <typename T1, typename T2, typename T3>
-using t24 = typename std::basic_string<T1, T2, T3>::const_iterator::pointer;
-
-template <typename T1, typename T2, typename T3>
 typename std::basic_string<T1, T2, T3>::size_type f113() {
   return std::basic_string<T1, T2, T3>::npos;
 }

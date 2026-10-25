@@ -15,7 +15,7 @@ template <typename... T1>
 std::ranges::zip_view<T1...> f2(T1... a0)
   requires((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
-  return std::ranges::zip_view<T1...>(a0...);
+  return std::ranges::zip_view<T1...>(std::move(a0)...);
 }
 
 template <typename... T1>

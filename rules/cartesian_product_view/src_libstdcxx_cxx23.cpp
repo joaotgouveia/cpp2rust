@@ -16,7 +16,8 @@ template <typename T1, typename... T2>
 std::ranges::cartesian_product_view<T1, T2...> f2(T1 a0, T2... a1)
   requires((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
-  return std::ranges::cartesian_product_view<T1, T2...>(std::move(a0), a1...);
+  return std::ranges::cartesian_product_view<T1, T2...>(std::move(a0),
+                                                        std::move(a1)...);
 }
 
 template <typename T1, typename... T2>

@@ -317,9 +317,3 @@ f119(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
      T3 a2, T3 a3) {
   return a0.template insert<T3>(std::move(a1), std::move(a2), std::move(a3));
 }
-
-template <typename T1, typename T2>
-using t39 = typename std::vector<T1, T2>::iterator::iterator_type;
-
-template <typename T1, typename T2>
-using t40 = typename std::vector<T1, T2>::const_iterator::iterator_type;

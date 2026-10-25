@@ -212,27 +212,6 @@ f63(const std::span<T1, std::dynamic_extent> &a0) {
   return a0.template subspan<T2>();
 }
 
-template <typename T1>
-using t25 = typename std::span<T1, std::dynamic_extent>::iterator::value_type;
-
-template <typename T1>
-using t26 =
-    typename std::span<T1, std::dynamic_extent>::iterator::difference_type;
-
-template <typename T1>
-using t27 = typename std::span<T1, std::dynamic_extent>::iterator::pointer;
-
-template <typename T1>
-using t28 = typename std::span<T1, std::dynamic_extent>::iterator::reference;
-
-template <typename T1>
-using t29 =
-    typename std::span<T1, std::dynamic_extent>::iterator::iterator_category;
-
-template <typename T1>
-using t30 =
-    typename std::span<T1, std::dynamic_extent>::iterator::iterator_concept;
-
 template <typename T1> std::size_t f64() {
   return std::span<T1, std::dynamic_extent>::extent;
 }
@@ -337,21 +316,3 @@ std::span<T1, std::dynamic_extent != std::dynamic_extent ? std::dynamic_extent
 f78(const std::span<T1, T2> &a0) {
   return a0.template subspan<T3>();
 }
-
-template <typename T1, std::size_t T2>
-using t31 = typename std::span<T1, T2>::iterator::value_type;
-
-template <typename T1, std::size_t T2>
-using t32 = typename std::span<T1, T2>::iterator::difference_type;
-
-template <typename T1, std::size_t T2>
-using t33 = typename std::span<T1, T2>::iterator::pointer;
-
-template <typename T1, std::size_t T2>
-using t34 = typename std::span<T1, T2>::iterator::reference;
-
-template <typename T1, std::size_t T2>
-using t35 = typename std::span<T1, T2>::iterator::iterator_category;
-
-template <typename T1, std::size_t T2>
-using t36 = typename std::span<T1, T2>::iterator::iterator_concept;

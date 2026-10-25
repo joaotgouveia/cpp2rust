@@ -6,7 +6,7 @@ using t1 = std::out_ptr_t<T1, T2, T3...>;
 
 template <typename T1, typename T2, typename... T3>
 std::out_ptr_t<T1, T2, T3...> f1(T1 &a0, T3... a1) {
-  return std::out_ptr_t<T1, T2, T3...>(a0, a1...);
+  return std::out_ptr_t<T1, T2, T3...>(a0, std::move(a1)...);
 }
 
 template <typename T1, typename T2, typename... T3>

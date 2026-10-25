@@ -352,159 +352,174 @@ typename T3::iterator f183(const std::formatter<int, T1> &a0, T2 a1, T3 &a2)
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t58 = std::formatter<long long, T1>;
+template <typename T1> using t58 = std::formatter<__int128_t, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f184(std::formatter<long long, T1> &a0, T2 &a1) {
+typename T2::iterator f184(std::formatter<__int128_t, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f185(const std::formatter<long long, T1> &a0, T2 a1,
+typename T3::iterator f185(const std::formatter<__int128_t, T1> &a0, T2 a1,
                            T3 &a2)
   requires(std::integral<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t59 = std::formatter<long, T1>;
+template <typename T1> using t59 = std::formatter<long long, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f186(std::formatter<long, T1> &a0, T2 &a1) {
+typename T2::iterator f186(std::formatter<long long, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f187(const std::formatter<long, T1> &a0, T2 a1, T3 &a2)
+typename T3::iterator f187(const std::formatter<long long, T1> &a0, T2 a1,
+                           T3 &a2)
   requires(std::integral<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t60 = std::formatter<short, T1>;
+template <typename T1> using t60 = std::formatter<long, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f188(std::formatter<short, T1> &a0, T2 &a1) {
+typename T2::iterator f188(std::formatter<long, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f189(const std::formatter<short, T1> &a0, T2 a1, T3 &a2)
+typename T3::iterator f189(const std::formatter<long, T1> &a0, T2 a1, T3 &a2)
   requires(std::integral<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t61 = std::formatter<bool, T1>;
+template <typename T1> using t61 = std::formatter<short, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f190(std::formatter<bool, T1> &a0, T2 &a1) {
+typename T2::iterator f190(std::formatter<short, T1> &a0, T2 &a1) {
+  return a0.template parse<T2>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+typename T3::iterator f191(const std::formatter<short, T1> &a0, T2 a1, T3 &a2)
+  requires(std::integral<T2>)
+{
+  return a0.template format<T2, T3>(std::move(a1), a2);
+}
+
+template <typename T1> using t62 = std::formatter<bool, T1>;
+
+template <typename T1, typename T2>
+typename T2::iterator f192(std::formatter<bool, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2>
-typename T2::iterator f191(const std::formatter<bool, T1> &a0, bool a1,
+typename T2::iterator f193(const std::formatter<bool, T1> &a0, bool a1,
                            T2 &a2) {
   return a0.template format<T2>(a1, a2);
 }
 
-template <typename T1> using t62 = std::formatter<unsigned char, T1>;
+template <typename T1> using t63 = std::formatter<unsigned char, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f192(std::formatter<unsigned char, T1> &a0, T2 &a1) {
+typename T2::iterator f194(std::formatter<unsigned char, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f193(const std::formatter<unsigned char, T1> &a0, T2 a1,
+typename T3::iterator f195(const std::formatter<unsigned char, T1> &a0, T2 a1,
                            T3 &a2)
   requires(std::integral<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t63 = std::formatter<double, T1>;
+template <typename T1> using t64 = std::formatter<double, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f194(std::formatter<double, T1> &a0, T2 &a1) {
+typename T2::iterator f196(std::formatter<double, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f195(const std::formatter<double, T1> &a0, T2 a1, T3 &a2)
+typename T3::iterator f197(const std::formatter<double, T1> &a0, T2 a1, T3 &a2)
   requires(std::floating_point<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t64 = std::formatter<float, T1>;
+template <typename T1> using t65 = std::formatter<float, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f196(std::formatter<float, T1> &a0, T2 &a1) {
+typename T2::iterator f198(std::formatter<float, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f197(const std::formatter<float, T1> &a0, T2 a1, T3 &a2)
+typename T3::iterator f199(const std::formatter<float, T1> &a0, T2 a1, T3 &a2)
   requires(std::floating_point<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t65 = std::formatter<unsigned int, T1>;
+template <typename T1> using t66 = std::formatter<unsigned int, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f198(std::formatter<unsigned int, T1> &a0, T2 &a1) {
+typename T2::iterator f200(std::formatter<unsigned int, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f199(const std::formatter<unsigned int, T1> &a0, T2 a1,
+typename T3::iterator f201(const std::formatter<unsigned int, T1> &a0, T2 a1,
                            T3 &a2)
   requires(std::integral<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t66 = std::formatter<__uint128_t, T1>;
+template <typename T1> using t67 = std::formatter<__uint128_t, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f200(std::formatter<__uint128_t, T1> &a0, T2 &a1) {
+typename T2::iterator f202(std::formatter<__uint128_t, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f201(const std::formatter<__uint128_t, T1> &a0, T2 a1,
+typename T3::iterator f203(const std::formatter<__uint128_t, T1> &a0, T2 a1,
                            T3 &a2)
   requires(std::integral<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t67 = std::formatter<unsigned long long, T1>;
+template <typename T1> using t68 = std::formatter<unsigned long long, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f202(std::formatter<unsigned long long, T1> &a0, T2 &a1) {
+typename T2::iterator f204(std::formatter<unsigned long long, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f203(const std::formatter<unsigned long long, T1> &a0,
+typename T3::iterator f205(const std::formatter<unsigned long long, T1> &a0,
                            T2 a1, T3 &a2)
   requires(std::integral<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t68 = std::formatter<unsigned long, T1>;
+template <typename T1> using t69 = std::formatter<unsigned long, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f204(std::formatter<unsigned long, T1> &a0, T2 &a1) {
+typename T2::iterator f206(std::formatter<unsigned long, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f205(const std::formatter<unsigned long, T1> &a0, T2 a1,
+typename T3::iterator f207(const std::formatter<unsigned long, T1> &a0, T2 a1,
                            T3 &a2)
   requires(std::integral<T2>)
 {
@@ -512,40 +527,40 @@ typename T3::iterator f205(const std::formatter<unsigned long, T1> &a0, T2 a1,
 }
 
 template <typename T1, typename T2>
-typename T2::iterator f206(std::formatter<std::nullptr_t, T1> &a0, T2 &a1) {
+typename T2::iterator f208(std::formatter<std::nullptr_t, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2>
-typename T2::iterator f207(const std::formatter<std::nullptr_t, T1> &a0,
+typename T2::iterator f209(const std::formatter<std::nullptr_t, T1> &a0,
                            const void *a1, T2 &a2) {
   return a0.template format<T2>(a1, a2);
 }
 
-template <typename T1> using t69 = std::formatter<signed char, T1>;
+template <typename T1> using t70 = std::formatter<signed char, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f208(std::formatter<signed char, T1> &a0, T2 &a1) {
+typename T2::iterator f210(std::formatter<signed char, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f209(const std::formatter<signed char, T1> &a0, T2 a1,
+typename T3::iterator f211(const std::formatter<signed char, T1> &a0, T2 a1,
                            T3 &a2)
   requires(std::integral<T2>)
 {
   return a0.template format<T2, T3>(std::move(a1), a2);
 }
 
-template <typename T1> using t70 = std::formatter<unsigned short, T1>;
+template <typename T1> using t71 = std::formatter<unsigned short, T1>;
 
 template <typename T1, typename T2>
-typename T2::iterator f210(std::formatter<unsigned short, T1> &a0, T2 &a1) {
+typename T2::iterator f212(std::formatter<unsigned short, T1> &a0, T2 &a1) {
   return a0.template parse<T2>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f211(const std::formatter<unsigned short, T1> &a0, T2 a1,
+typename T3::iterator f213(const std::formatter<unsigned short, T1> &a0, T2 a1,
                            T3 &a2)
   requires(std::integral<T2>)
 {
@@ -553,91 +568,91 @@ typename T3::iterator f211(const std::formatter<unsigned short, T1> &a0, T2 a1,
 }
 
 template <typename T1, typename T2>
-using t71 = std::formatter<std::chrono::hh_mm_ss<T1>, T2>;
+using t72 = std::formatter<std::chrono::hh_mm_ss<T1>, T2>;
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f212(std::formatter<std::chrono::hh_mm_ss<T1>, T2> &a0,
+typename T3::iterator f214(std::formatter<std::chrono::hh_mm_ss<T1>, T2> &a0,
                            T3 &a1) {
   return a0.template parse<T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename T4::iterator
-f213(const std::formatter<std::chrono::hh_mm_ss<T1>, T2> &a0, const T3 &a1,
+f215(const std::formatter<std::chrono::hh_mm_ss<T1>, T2> &a0, const T3 &a1,
      T4 &a2) {
   return a0.template format<T3, T4>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f214(std::formatter<std::chrono::local_time<T1>, T2> &a0,
+typename T3::iterator f216(std::formatter<std::chrono::local_time<T1>, T2> &a0,
                            T3 &a1) {
   return a0.template parse<T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename T4::iterator
-f215(const std::formatter<std::chrono::local_time<T1>, T2> &a0, const T3 &a1,
+f217(const std::formatter<std::chrono::local_time<T1>, T2> &a0, const T3 &a1,
      T4 &a2) {
   return a0.template format<T3, T4>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-typename T3::iterator f216(std::formatter<std::chrono::sys_time<T1>, T2> &a0,
+typename T3::iterator f218(std::formatter<std::chrono::sys_time<T1>, T2> &a0,
                            T3 &a1) {
   return a0.template parse<T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename T4::iterator
-f217(const std::formatter<std::chrono::sys_time<T1>, T2> &a0, const T3 &a1,
+f219(const std::formatter<std::chrono::sys_time<T1>, T2> &a0, const T3 &a1,
      T4 &a2) {
   return a0.template format<T3, T4>(a1, a2);
 }
 
 template <typename T1, typename T2>
-using t72 = std::formatter<std::basic_string_view<T1, T2>, T1>;
+using t73 = std::formatter<std::basic_string_view<T1, T2>, T1>;
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator
-f218(const std::formatter<std::basic_string_view<T1, T2>, T1> &a0,
+f220(const std::formatter<std::basic_string_view<T1, T2>, T1> &a0,
      std::basic_string_view<T1, T2> a1, T3 &a2) {
   return a0.template format<T3>(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator
-f219(std::formatter<std::basic_string_view<T1, T2>, T1> &a0, T3 &a1) {
+f221(std::formatter<std::basic_string_view<T1, T2>, T1> &a0, T3 &a1) {
   return a0.template parse<T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-using t73 = std::formatter<std::chrono::duration<T1, T2>, T3>;
+using t74 = std::formatter<std::chrono::duration<T1, T2>, T3>;
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename T4::iterator
-f220(std::formatter<std::chrono::duration<T1, T2>, T3> &a0, T4 &a1) {
+f222(std::formatter<std::chrono::duration<T1, T2>, T3> &a0, T4 &a1) {
   return a0.template parse<T4>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename T5::iterator
-f221(const std::formatter<std::chrono::duration<T1, T2>, T3> &a0, const T4 &a1,
+f223(const std::formatter<std::chrono::duration<T1, T2>, T3> &a0, const T4 &a1,
      T5 &a2) {
   return a0.template format<T4, T5>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-using t74 = std::formatter<std::basic_string<T1, T2, T3>, T1>;
+using t75 = std::formatter<std::basic_string<T1, T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename T4::iterator
-f222(const std::formatter<std::basic_string<T1, T2, T3>, T1> &a0,
+f224(const std::formatter<std::basic_string<T1, T2, T3>, T1> &a0,
      const std::basic_string<T1, T2, T3> &a1, T4 &a2) {
   return a0.template format<T4>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename T4::iterator
-f223(std::formatter<std::basic_string<T1, T2, T3>, T1> &a0, T4 &a1) {
+f225(std::formatter<std::basic_string<T1, T2, T3>, T1> &a0, T4 &a1) {
   return a0.template parse<T4>(a1);
 }

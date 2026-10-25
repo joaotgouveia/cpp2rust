@@ -6,14 +6,14 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f245()
+std::basic_string<T1, T2, T3> f243()
   requires(std::is_default_constructible_v<T3>)
 {
   return std::basic_string<T1, T2, T3>();
 }
 
 template <typename T1, typename T2, typename T3>
-T3 f246(const std::basic_string<T1, T2, T3> &a0) {
+T3 f244(const std::basic_string<T1, T2, T3> &a0) {
   return a0.get_allocator();
 }
 
@@ -21,7 +21,7 @@ template <typename T1, typename T2, typename T3, typename T4,
           typename T5 = std::enable_if_t<std::is_convertible_v<
               const T4 &, std::basic_string_view<T1, T2>>>>
 std::basic_string<T1, T2, T3>
-f247(const T4 &a0, typename std::basic_string<T1, T2, T3>::size_type a1,
+f245(const T4 &a0, typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T3 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -37,7 +37,7 @@ template <
                 T4 const *, const std::basic_string<T1, T2, T3> *>>,
             std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
         void>>
-std::basic_string<T1, T2, T3> f248(const T4 &a0, const T3 &a1)
+std::basic_string<T1, T2, T3> f246(const T4 &a0, const T3 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return std::basic_string<T1, T2, T3>(a0, a1);
@@ -51,7 +51,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f249(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
+f247(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template operator= <T4>(a1);
@@ -65,7 +65,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f250(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
+f248(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template operator+= <T4>(a1);
@@ -79,7 +79,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f251(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
+f249(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template append<T4>(a1);
@@ -93,7 +93,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f252(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f250(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2,
      typename std::basic_string<T1, T2, T3>::size_type a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
@@ -109,7 +109,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f253(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
+f251(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template assign<T4>(a1);
@@ -123,7 +123,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f254(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f252(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2,
      typename std::basic_string<T1, T2, T3>::size_type a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
@@ -139,7 +139,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f255(std::basic_string<T1, T2, T3> &a0,
+f253(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1, const T4 &a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -154,7 +154,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f256(std::basic_string<T1, T2, T3> &a0,
+f254(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1, const T4 &a2,
      typename std::basic_string<T1, T2, T3>::size_type a3,
      typename std::basic_string<T1, T2, T3>::size_type a4)
@@ -167,7 +167,7 @@ f256(std::basic_string<T1, T2, T3> &a0,
 template <typename T1, typename T2, typename T3, typename T4,
           typename T5 = std::_RequireInputIter<T4>>
 std::basic_string<T1, T2, T3> &
-f257(std::basic_string<T1, T2, T3> &a0,
+f255(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1,
      typename std::basic_string<T1, T2, T3>::const_iterator a2, T4 a3, T4 a4)
   requires(
@@ -190,7 +190,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f258(std::basic_string<T1, T2, T3> &a0,
+f256(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
@@ -206,7 +206,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f259(std::basic_string<T1, T2, T3> &a0,
+f257(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3,
      typename std::basic_string<T1, T2, T3>::size_type a4,
@@ -225,7 +225,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     std::basic_string<T1, T2, T3> &>
-f260(std::basic_string<T1, T2, T3> &a0,
+f258(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1,
      typename std::basic_string<T1, T2, T3>::const_iterator a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
@@ -241,7 +241,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     typename __gnu_cxx::__alloc_traits<T3>::size_type>
-f261(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f259(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -256,7 +256,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     typename __gnu_cxx::__alloc_traits<T3>::size_type>
-f262(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f260(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -271,7 +271,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     typename __gnu_cxx::__alloc_traits<T3>::size_type>
-f263(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f261(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -286,7 +286,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     typename __gnu_cxx::__alloc_traits<T3>::size_type>
-f264(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f262(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -301,7 +301,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     typename __gnu_cxx::__alloc_traits<T3>::size_type>
-f265(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f263(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -316,7 +316,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     typename __gnu_cxx::__alloc_traits<T3>::size_type>
-f266(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+f264(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -331,7 +331,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     int>
-f267(const std::basic_string<T1, T2, T3> &a0, const T4 &a1)
+f265(const std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template compare<T4>(a1);
@@ -345,7 +345,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     int>
-f268(const std::basic_string<T1, T2, T3> &a0,
+f266(const std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
@@ -361,7 +361,7 @@ std::enable_if_t<
                                         const std::basic_string<T1, T2, T3> *>>,
         std::__not_<std::is_convertible<T4 const &, const T1 *>>>::value,
     int>
-f269(const std::basic_string<T1, T2, T3> &a0,
+f267(const std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3,
      typename std::basic_string<T1, T2, T3>::size_type a4,
@@ -372,31 +372,13 @@ f269(const std::basic_string<T1, T2, T3> &a0,
                                  std::move(a4), std::move(a5));
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::basic_string<T1, T2, T3>::iterator
-f270(const __gnu_cxx::__normal_iterator<T4, std::basic_string<T1, T2, T3>> &a0)
-  requires(std::is_convertible_v<
-           T4, typename std::basic_string<T1, T2, T3>::pointer>)
-{
-  return typename std::basic_string<T1, T2, T3>::iterator(a0);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::basic_string<T1, T2, T3>::const_iterator
-f271(const __gnu_cxx::__normal_iterator<T4, std::basic_string<T1, T2, T3>> &a0)
-  requires(std::is_convertible_v<
-           T4, typename std::basic_string<T1, T2, T3>::const_pointer>)
-{
-  return typename std::basic_string<T1, T2, T3>::const_iterator(a0);
-}
-
 template <typename T1, typename T2, typename T3>
-auto f272(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
+auto f268(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
   return std::operator<=> <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-auto f273(const std::basic_string<T1, T2, T3> &a0,
+auto f269(const std::basic_string<T1, T2, T3> &a0,
           const std::basic_string<T1, T2, T3> &a1) {
   return std::operator<=> <T1, T2, T3>(a0, a1);
 }

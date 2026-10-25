@@ -245,33 +245,3 @@ f40(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     T3 &&...a2) {
   return a0.template emplace<T3...>(std::move(a1), std::forward<T3>(a2)...);
 }
-
-template <typename T1, typename T2>
-using t14 = typename std::deque<T1, T2>::iterator::iterator_category;
-
-template <typename T1, typename T2>
-using t15 = typename std::deque<T1, T2>::iterator::value_type;
-
-template <typename T1, typename T2>
-using t16 = typename std::deque<T1, T2>::iterator::pointer;
-
-template <typename T1, typename T2>
-using t17 = typename std::deque<T1, T2>::iterator::reference;
-
-template <typename T1, typename T2>
-using t18 = typename std::deque<T1, T2>::iterator::difference_type;
-
-template <typename T1, typename T2>
-using t19 = typename std::deque<T1, T2>::const_iterator::iterator_category;
-
-template <typename T1, typename T2>
-using t20 = typename std::deque<T1, T2>::const_iterator::value_type;
-
-template <typename T1, typename T2>
-using t21 = typename std::deque<T1, T2>::const_iterator::pointer;
-
-template <typename T1, typename T2>
-using t22 = typename std::deque<T1, T2>::const_iterator::reference;
-
-template <typename T1, typename T2>
-using t23 = typename std::deque<T1, T2>::const_iterator::difference_type;
