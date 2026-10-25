@@ -535,7 +535,17 @@ clang::QualType namingClass(const clang::Expr *expr) {
         ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
       return {};
     }
-    return clang::QualType(ref->getQualifier().getAsType(), 0);
+    auto qualifier = clang::QualType(ref->getQualifier().getAsType(), 0);
+    // an enumerator of an unscoped enum is named by its class too
+    // (path::format::auto_format is path::auto_format)
+    if (auto enum_decl = qualifier->getAsEnumDecl();
+        enum_decl && !enum_decl->isScoped()) {
+      if (auto record = llvm::dyn_cast<clang::CXXRecordDecl>(
+              enum_decl->getDeclContext())) {
+        return enum_decl->getASTContext().getCanonicalTagType(record);
+      }
+    }
+    return qualifier;
   };
   return naming(expr);
 }
