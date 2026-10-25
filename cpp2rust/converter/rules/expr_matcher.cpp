@@ -399,7 +399,11 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
   bool aggregate =
       llvm::isa<clang::InitListExpr, clang::CXXStdInitializerListExpr>(
           RuleDecls::SkipImplicit(use));
-  if (deducible.all() && !aggregate) {
+  // a construction takes the class's arguments from its type, not from the
+  // operands (piecewise_constant_distribution<double>(0, 0, 1, fw))
+  bool construction =
+      llvm::isa<clang::CXXConstructExpr>(RuleDecls::SkipImplicit(use));
+  if (deducible.all() && !aggregate && !construction) {
     return explicit_args;
   }
   auto params = rule->getTemplateParameters();
