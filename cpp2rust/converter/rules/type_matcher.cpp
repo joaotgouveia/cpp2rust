@@ -78,7 +78,9 @@ bool isSameSugar(const clang::Type *a, const clang::Type *b) {
 std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
                                    const clang::NamedDecl *rule) {
   auto &ctx = sema.Context;
-  auto spelled = RuleDecls::PeelSugar(ctx, use).getUnqualifiedType();
+  // without the qualifiers written on it, keeping a typedef whose type is
+  // qualified (array<int *const, 2>::value_type)
+  auto spelled = RuleDecls::PeelSugar(ctx, use).getLocalUnqualifiedType();
   auto tmpl = llvm::dyn_cast<clang::TypeAliasTemplateDecl>(rule);
   auto alias = tmpl ? tmpl->getTemplatedDecl()
                     : llvm::cast<clang::TypedefNameDecl>(rule);
