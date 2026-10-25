@@ -260,10 +260,7 @@ pub fn main() {
 }
 fn main_0() -> () {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p2: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new_1(
-        { field_ptr!(p.as_pointer(), first) },
-        { field_ptr!(p.as_pointer(), second) },
-    )));
+    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let v : Value<() > = Rc::new(RefCell::new(std_ranges_zip_view_std_ranges_owning_view_std_array_int__2____std_ranges_owning_view_std_vector_int__std_allocator_int_____std_ranges_owning_view_std_array_int__1___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { unimplemented!()  } , )  )) ;
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

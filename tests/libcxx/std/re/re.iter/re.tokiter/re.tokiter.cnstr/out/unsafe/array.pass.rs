@@ -28,14 +28,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let phone_book: [(); 39] =
             std::mem::transmute(*b"start 555-1234, 555-2345, 555-3456 end\0");
         let indices: [(); 3] = [-1_(), 0_(), 1_()];
-        let mut i: () =
-            std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__::new_1(
-                { unimplemented!() },
-                { unimplemented!().offset(-((1_()) as isize)) },
-                { &phone_numbers },
-                { &indices },
-                None,
-            );
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

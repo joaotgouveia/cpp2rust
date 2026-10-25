@@ -34,8 +34,7 @@ pub fn test_3(mut expected: (), fmt: (), mut arg: color, mut offset: ()) {
     let formatter: Value<std_formatter_color__char_> =
         Rc::new(RefCell::new(<std_formatter_color__char_>::default()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        ({ ((*formatter.borrow()) as std___formatter_string_char_).parse(parse_ctx.as_pointer()) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));

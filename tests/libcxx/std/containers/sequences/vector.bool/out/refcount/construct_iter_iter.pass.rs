@@ -100,16 +100,6 @@ impl cpp17_input_iterator_const_bool_ptr__const_bool_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(16)]
-pub struct cpp17_input_iterator_unsigned_long__const_bool_ptr_ {
-    #[offset(0)]
-    it_: (),
-    #[offset(8)]
-    #[byte_size(1)]
-    tracker_: support_double_move_tracker,
-}
-impl cpp17_input_iterator_unsigned_long__const_bool_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn operator_ne_1(
     x: Ptr<forward_iterator_const_bool_ptr_>,
@@ -141,16 +131,6 @@ impl forward_iterator_const_bool_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct forward_iterator_unsigned_long_ {
-    #[offset(0)]
-    it_: (),
-    #[offset(8)]
-    #[byte_size(1)]
-    tracker_: support_double_move_tracker,
-}
-impl forward_iterator_unsigned_long_ {}
 pub fn operator_ne_2(
     x: Ptr<bidirectional_iterator_const_bool_ptr_>,
     y: Ptr<bidirectional_iterator_const_bool_ptr_>,
@@ -181,16 +161,6 @@ impl bidirectional_iterator_const_bool_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct bidirectional_iterator_unsigned_long_ {
-    #[offset(0)]
-    it_: (),
-    #[offset(8)]
-    #[byte_size(1)]
-    tracker_: support_double_move_tracker,
-}
-impl bidirectional_iterator_unsigned_long_ {}
 pub fn operator_sub_3(
     mut x: random_access_iterator_const_bool_ptr_,
     mut y: random_access_iterator_const_bool_ptr_,
@@ -227,16 +197,6 @@ impl random_access_iterator_const_bool_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct random_access_iterator_unsigned_long_ {
-    #[offset(0)]
-    it_: (),
-    #[offset(8)]
-    #[byte_size(1)]
-    tracker_: support_double_move_tracker,
-}
-impl random_access_iterator_unsigned_long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -968,24 +928,6 @@ impl bidirectional_iterator_const_bool_ptr_Impl for Ptr<bidirectional_iterator_c
         return (*self).clone();
     }
 }
-pub trait bidirectional_iterator_unsigned_long_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_unsigned_long_> {
-        unimplemented!()
-    }
-    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_unsigned_long_> {
-        unimplemented!()
-    }
-    fn operator_post_inc_8(&self, mut _a0: ()) -> bidirectional_iterator_unsigned_long_ {
-        unimplemented!()
-    }
-    fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_unsigned_long_ {
-        unimplemented!()
-    }
-}
-impl bidirectional_iterator_unsigned_long_Impl for Ptr<bidirectional_iterator_unsigned_long_> {}
 pub trait cpp17_input_iterator_const_bool_ptr__const_bool_ptr_Impl {
     fn operator_deref(&self) -> ();
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_bool_ptr__const_bool_ptr_>;
@@ -1019,24 +961,6 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     }
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
-pub trait cpp17_input_iterator_unsigned_long__const_bool_ptr_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_unsigned_long__const_bool_ptr_> {
-        unimplemented!()
-    }
-    fn operator_post_inc_6(
-        &self,
-        mut _a0: (),
-    ) -> cpp17_input_iterator_unsigned_long__const_bool_ptr_ {
-        unimplemented!()
-    }
-}
-impl cpp17_input_iterator_unsigned_long__const_bool_ptr_Impl
-    for Ptr<cpp17_input_iterator_unsigned_long__const_bool_ptr_>
-{
-}
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> () {
         unimplemented!()
@@ -1153,18 +1077,6 @@ impl forward_iterator_const_bool_ptr_Impl for Ptr<forward_iterator_const_bool_pt
         return (*self).clone();
     }
 }
-pub trait forward_iterator_unsigned_long_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_inc_6(&self) -> Ptr<forward_iterator_unsigned_long_> {
-        unimplemented!()
-    }
-    fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_unsigned_long_ {
-        unimplemented!()
-    }
-}
-impl forward_iterator_unsigned_long_Impl for Ptr<forward_iterator_unsigned_long_> {}
 pub trait forward_sized_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> Ptr<()> {
         unimplemented!()
@@ -1483,33 +1395,6 @@ impl random_access_iterator_const_bool_ptr_Impl for Ptr<random_access_iterator_c
         return (*self).clone();
     }
 }
-pub trait random_access_iterator_unsigned_long_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: ()) -> () {
-        unimplemented!()
-    }
-    fn operator_inc_7(&self) -> Ptr<random_access_iterator_unsigned_long_> {
-        unimplemented!()
-    }
-    fn operator_dec_8(&self) -> Ptr<random_access_iterator_unsigned_long_> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(&self, mut _a0: ()) -> random_access_iterator_unsigned_long_ {
-        unimplemented!()
-    }
-    fn operator_post_dec_10(&self, mut _a0: ()) -> random_access_iterator_unsigned_long_ {
-        unimplemented!()
-    }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<random_access_iterator_unsigned_long_> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_unsigned_long_> {
-        unimplemented!()
-    }
-}
-impl random_access_iterator_unsigned_long_Impl for Ptr<random_access_iterator_unsigned_long_> {}
 pub trait rvalue_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> Ptr<Ptr<()>> {
         unimplemented!()

@@ -307,11 +307,7 @@ pub fn test_26() -> () {
     }
     {
         let iv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iv2: Value<()> = Rc::new(RefCell::new(
-            std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let iv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     return true;
 }

@@ -88,7 +88,7 @@ pub struct cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocato
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { pub fn new ( it : ()  , ) -> Self { let it : Value<() >  = Rc::new(RefCell::new(it)) ;
- Self { it_ : unimplemented!()  , tracker_ : support_double_move_tracker :: new ( )   , }  } }
+ Self { it_ : ((*it.borrow()) ).clone()  , tracker_ : support_double_move_tracker :: new ( )   , }  } }
 pub fn operator_ne_1(
     x: Ptr<cpp17_input_iterator_bool_ptr__bool_ptr_>,
     y: Ptr<cpp17_input_iterator_bool_ptr__bool_ptr_>,
@@ -134,7 +134,7 @@ impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____
     pub fn new_1(it: ()) -> Self {
         let it: Value<()> = Rc::new(RefCell::new(it));
         Self {
-            it_: unimplemented!(),
+            it_: (*it.borrow()).clone(),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -144,7 +144,7 @@ impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____
         >,
     ) -> Self {
         Self {
-            it_: unimplemented!(),
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
     }

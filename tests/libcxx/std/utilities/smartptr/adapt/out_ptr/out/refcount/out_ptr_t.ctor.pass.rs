@@ -136,7 +136,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let uPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_out_ptr_t_std_unique_ptr_int__MoveOnlyDeleter_int____int_ptr__MoveOnlyDeleter_int__ :: new ( { uPtr .as_pointer()  } , { <MoveOnlyDeleter_int_  >::default()  } , )  ;
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

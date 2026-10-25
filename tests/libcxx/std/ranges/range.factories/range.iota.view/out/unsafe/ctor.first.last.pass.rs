@@ -294,10 +294,7 @@ pub unsafe fn test_26() -> () {
     }
     {
         let mut iv1: () = unimplemented!();
-        let mut iv2: () =
-            std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut iv2: () = unimplemented!();
     }
     return true;
 }

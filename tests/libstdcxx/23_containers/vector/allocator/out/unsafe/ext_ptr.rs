@@ -315,7 +315,7 @@ impl __gnu_test_CustomPointerAlloc_T_ {
         return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: (), mut n: ()) {
-        (unsafe { self.deallocate(unimplemented!(), n) });
+        unimplemented!();
     }
 }
 pub unsafe fn operator_eq_15(

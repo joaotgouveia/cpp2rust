@@ -674,12 +674,7 @@ impl __gnu_test_CustomPointerAlloc_T_Impl for Ptr<__gnu_test_CustomPointerAlloc_
     }
     fn deallocate(&self, p: (), mut n: ()) {
         let p: Value<()> = Rc::new(RefCell::new(p));
-        ({
-            (*(((*self) as *mut ()) as *mut std___new_allocator_T_)
-                .upgrade()
-                .deref())
-            .deallocate(unimplemented!(), n)
-        });
+        unimplemented!();
     }
 }
 pub trait __gnu_test_NullablePointer_const_void_ptr_Impl {

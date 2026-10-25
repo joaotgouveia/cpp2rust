@@ -84,7 +84,7 @@ pub struct cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocato
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> () { return unimplemented!()   ;
  } pub unsafe fn operator_inc_5 ( &mut self , ) -> *mut cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { unimplemented!()  ;
  return & mut ( * ( self as *mut cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  )  )  ;
@@ -133,7 +133,7 @@ pub struct forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bo
 impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ {
     pub unsafe fn new_1(mut it: ()) -> Self {
         let mut this = Self {
-            it_: unimplemented!(),
+            it_: it.clone(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -152,7 +152,7 @@ impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____
         _a0 : *mut forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__,
     ) -> Self {
         let mut this = Self {
-            it_: unimplemented!(),
+            it_: (*_a0).it_.clone(),
             tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this

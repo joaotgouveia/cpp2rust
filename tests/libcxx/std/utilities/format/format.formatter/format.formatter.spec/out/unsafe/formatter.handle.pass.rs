@@ -19,7 +19,7 @@ pub unsafe fn test_3(mut expected: (), mut fmt: (), mut arg: color, mut offset: 
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: std_formatter_color__char_ = <std_formatter_color__char_>::default();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe { (formatter as std___formatter_string_char_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();

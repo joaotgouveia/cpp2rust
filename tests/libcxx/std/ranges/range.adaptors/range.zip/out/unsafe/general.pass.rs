@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut v : () = std_ranges_zip_view_std_ranges_owning_view_std_array_int__2____std_ranges_owning_view_std_vector_int__std_allocator_int_____std_ranges_owning_view_std_array_int__1___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , )  ;
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

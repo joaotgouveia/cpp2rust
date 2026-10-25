@@ -164,19 +164,14 @@ pub fn test_9(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_char_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
         ({ test_format_context_create_0((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_char_)
-            .format(arg, format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_10(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
@@ -259,19 +254,14 @@ pub fn test_15(mut expected: (), fmt: (), mut arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
         ({ test_format_context_create_2((*out.borrow()).clone(), unimplemented!()) }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_)
-            .format(arg, format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_termination_condition_16(mut expected: (), mut f: (), mut arg: ()) {

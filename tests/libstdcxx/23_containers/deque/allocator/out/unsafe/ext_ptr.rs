@@ -319,7 +319,7 @@ impl __gnu_test_CustomPointerAlloc_T_ {
         return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: (), mut n: ()) {
-        (unsafe { self.deallocate(unimplemented!(), n) });
+        unimplemented!();
     }
 }
 impl __gnu_test_CustomPointerAlloc___gnu_cxx__Pointer_adapter___gnu_cxx__Std_pointer_impl_T___ {
@@ -338,7 +338,7 @@ impl __gnu_test_CustomPointerAlloc___gnu_cxx__Pointer_adapter___gnu_cxx__Std_poi
         return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: (), mut n: ()) {
-        (unsafe { self.deallocate(unimplemented!(), n) });
+        unimplemented!();
     }
 }
 pub unsafe fn operator_eq_15(

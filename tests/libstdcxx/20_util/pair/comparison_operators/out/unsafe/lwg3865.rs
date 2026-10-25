@@ -264,7 +264,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut p: () = unimplemented!();
-    let mut p2: () = std_pair_int_ref__int_ref_::new_1({ &mut p.first }, { &mut p.second });
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

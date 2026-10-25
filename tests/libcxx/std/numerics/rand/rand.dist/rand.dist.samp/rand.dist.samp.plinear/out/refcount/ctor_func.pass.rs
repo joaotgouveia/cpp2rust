@@ -30,11 +30,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let d: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_linear_distribution_double_::new_1({ 0_() }, { 0_() }, { 1_() }, {
-                FnPtr::<fn(()) -> ()>::new(fw_0)
-            }),
-        ));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -45,11 +41,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_linear_distribution_double_::new_1({ 1_() }, { 10_() }, { 12_() }, {
-                FnPtr::<fn(()) -> ()>::new(fw_0)
-            }),
-        ));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -60,11 +52,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_linear_distribution_double_::new_1({ 2_() }, { 6_() }, { 14_() }, {
-                FnPtr::<fn(()) -> ()>::new(fw_0)
-            }),
-        ));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
