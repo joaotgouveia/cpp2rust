@@ -37,7 +37,7 @@ namespace {
 Model model_ = Model::kUnsafe;
 clang::Sema *sema_ = nullptr;
 llvm::ArrayRef<std::string> rules_ir_dirs_;
-bool partial_ = false;
+bool check_used_rules_ = false;
 
 std::unordered_multimap<RuleKeys::ExprKey, ExprRuleDecl> exprs_;
 std::unordered_multimap<RuleKeys::TypeKey, TypeRuleDecl> types_;
@@ -161,7 +161,7 @@ void checkGenerics(const std::string &dir, const std::string &name,
 void addRule(clang::ASTContext &ctx, const std::string &dir,
              const std::string &name, const clang::NamedDecl *decl) {
   const llvm::json::Object *rule = nullptr;
-  if (!partial_) {
+  if (!check_used_rules_) {
     rule = findRule(Model::kUnsafe, dir, name);
     if (model_ == Model::kRefCount) {
       if (auto refcount_rule = findRule(model_, dir, name)) {
@@ -286,6 +286,7 @@ ExprMatch findExpr(const clang::Expr *use) {
 struct TypeRuleMatch {
   TypeRuleDecl *rule_decl = nullptr;
   AstMatcher::TypeMatch match;
+  const clang::TypedefNameDecl *unruled = nullptr;
 };
 
 TypeRuleMatch findType(clang::QualType use) {
@@ -338,6 +339,10 @@ TypeRuleMatch findType(clang::QualType use) {
   if (!best.rule_decl) {
     auto spelled = RuleDecls::SpelledTypedef(ctx, use);
     if (spelled && !IsUserDefinedDecl(spelled)) {
+      if (check_used_rules_) {
+        best.unruled = spelled;
+        return best;
+      }
       use.dump(llvm::errs(), ctx);
       llvm::report_fatal_error("typedef has no type rule");
     }
@@ -386,11 +391,11 @@ void SetIRDirs(llvm::ArrayRef<std::string> rules_ir_dirs) {
   rules_ir_dirs_ = rules_ir_dirs;
 }
 
-void Load(clang::Sema &sema, Model model, bool partial) {
+void Load(clang::Sema &sema, Model model, bool check_used_rules) {
   auto &ctx = sema.Context;
   sema_ = &sema;
   model_ = model;
-  partial_ = partial;
+  check_used_rules_ = check_used_rules;
   exprs_.clear();
   types_.clear();
   for (auto decl : ctx.getTranslationUnitDecl()->decls()) {
@@ -431,6 +436,11 @@ std::string SearchUID(clang::ASTContext &ctx, const clang::Expr *expr) {
 std::string SearchUID(clang::ASTContext &ctx, clang::QualType qual_type) {
   auto match = findType(qual_type);
   return match.rule_decl ? ruleUID(match.rule_decl->decl) : std::string();
+}
+
+const clang::TypedefNameDecl *UnruledTypedef(clang::ASTContext &ctx,
+                                             clang::QualType qual_type) {
+  return findType(qual_type).unruled;
 }
 
 clang::QualType GetInitType(const clang::Expr *expr) {
