@@ -38,6 +38,7 @@ Model model_ = Model::kUnsafe;
 clang::Sema *sema_ = nullptr;
 llvm::ArrayRef<std::string> rules_ir_dirs_;
 bool check_used_rules_ = false;
+std::vector<const clang::TypedefNameDecl *> unruled_typedefs_;
 
 std::unordered_multimap<RuleKeys::ExprKey, ExprRuleDecl> exprs_;
 std::unordered_multimap<RuleKeys::TypeKey, TypeRuleDecl> types_;
@@ -286,7 +287,6 @@ ExprMatch findExpr(const clang::Expr *use) {
 struct TypeRuleMatch {
   TypeRuleDecl *rule_decl = nullptr;
   AstMatcher::TypeMatch match;
-  const clang::TypedefNameDecl *unruled = nullptr;
 };
 
 TypeRuleMatch findType(clang::QualType use) {
@@ -340,7 +340,7 @@ TypeRuleMatch findType(clang::QualType use) {
     auto spelled = RuleDecls::SpelledTypedef(ctx, use);
     if (spelled && !IsUserDefinedDecl(spelled)) {
       if (check_used_rules_) {
-        best.unruled = spelled;
+        unruled_typedefs_.push_back(spelled);
         return best;
       }
       use.dump(llvm::errs(), ctx);
@@ -396,6 +396,7 @@ void Load(clang::Sema &sema, Model model, bool check_used_rules) {
   sema_ = &sema;
   model_ = model;
   check_used_rules_ = check_used_rules;
+  unruled_typedefs_.clear();
   exprs_.clear();
   types_.clear();
   for (auto decl : ctx.getTranslationUnitDecl()->decls()) {
@@ -438,9 +439,8 @@ std::string SearchUID(clang::ASTContext &ctx, clang::QualType qual_type) {
   return match.rule_decl ? ruleUID(match.rule_decl->decl) : std::string();
 }
 
-const clang::TypedefNameDecl *UnruledTypedef(clang::ASTContext &ctx,
-                                             clang::QualType qual_type) {
-  return findType(qual_type).unruled;
+std::vector<const clang::TypedefNameDecl *> TakeUnruledTypedefs() {
+  return std::exchange(unruled_typedefs_, {});
 }
 
 clang::QualType GetInitType(const clang::Expr *expr) {

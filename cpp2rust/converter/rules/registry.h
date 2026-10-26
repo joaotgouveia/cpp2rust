@@ -39,8 +39,7 @@ Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
 
 std::string SearchUID(clang::ASTContext &ctx, const clang::Expr *expr);
 std::string SearchUID(clang::ASTContext &ctx, clang::QualType qual_type);
-const clang::TypedefNameDecl *UnruledTypedef(clang::ASTContext &ctx,
-                                             clang::QualType qual_type);
+std::vector<const clang::TypedefNameDecl *> TakeUnruledTypedefs();
 
 const TranslationRule::ExprRule *GetExprRule(clang::ASTContext &ctx,
                                              const clang::Expr *expr);
