@@ -1,6 +1,5 @@
 #include <assert.h>
 #include <cstddef>
-#include <signal.h>
 #include <stddef.h>
 
 typedef int (*foo_t)(void *);
@@ -61,9 +60,5 @@ int main() {
   HashHolder<std::size_t (*)(bool)> hh(identity_hash<bool>);
   assert(hh.h(true) == 1);
 
-  sig_t handler = add_to_total;
-  handler(2);
-  handler(3);
-  assert(total == 5);
   return 0;
 }

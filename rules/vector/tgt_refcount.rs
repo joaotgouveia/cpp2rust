@@ -309,3 +309,7 @@ fn f116<T1: ByteRepr>(
     a0.splice(__off..__off, a2);
     __it
 }
+
+fn f117(a0: bool) -> bool {
+    a0
+}

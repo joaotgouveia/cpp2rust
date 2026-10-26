@@ -6,6 +6,10 @@
 
 using t1 = std::string;
 typedef std::string::size_type t3;
+using t4 = std::basic_string<char>;
+using t5 = std::string::reference;
+using t6 = std::string::const_reference;
+typedef std::string::value_type t7;
 
 std::string f1(const std::string &s, std::size_t pos, std::size_t count) {
   return s.substr(pos, count);
@@ -82,3 +86,7 @@ std::string &f30(std::string &dst, std::string &&src) {
 }
 
 bool f31(const std::string &a, const char *b) { return a != b; }
+
+std::size_t f32(const std::string &a0, const char *a1, std::size_t a2) {
+  return a0.find(a1, a2);
+}

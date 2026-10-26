@@ -3,6 +3,14 @@
 
 use libcc2rs::*;
 
+fn t1() -> isize {
+    0_isize
+}
+
+fn t2<T1>() -> T1 {
+    unimplemented!()
+}
+
 fn t3<T1>() -> Ptr<T1> {
     Ptr::null()
 }

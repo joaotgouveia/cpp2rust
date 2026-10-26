@@ -27,7 +27,7 @@ bool f13(long long a, long long b, long long *r) {
   return __builtin_mul_overflow(a, b, r);
 }
 
-void *f14(void *dst, const void *src, size_t n) {
+void *f14(void *dst, const void *src, __SIZE_TYPE__ n) {
   return __builtin_memcpy(dst, src, n);
 }
 

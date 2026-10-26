@@ -12,6 +12,14 @@ fn t1<T1: Default, T2: Default>() -> (Value<T1>, Value<T2>) {
     )
 }
 
+fn t2<T1>() -> T1 {
+    unimplemented!()
+}
+
+fn t3<T1, T2>() -> T2 {
+    unimplemented!()
+}
+
 fn f2<T1: Clone, T2: Clone>(a0: (Value<T1>, Value<T2>)) -> (Value<T1>, Value<T2>) {
     (
         Rc::new(RefCell::new(a0.0.borrow().clone())),

@@ -17,6 +17,10 @@ fn t3() -> ::std::fs::File {
     ::std::fs::File::open("").unwrap()
 }
 
+fn t4() -> ::std::fs::File {
+    ::std::fs::File::open("").unwrap()
+}
+
 fn f1(a0: Ptr<i8>) -> ::std::fs::File {
     ::std::fs::File::create(a0.to_string()).expect("Failed to open file")
 }

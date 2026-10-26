@@ -11,6 +11,14 @@ fn t4() -> usize {
     0_usize
 }
 
+fn t5<T1>() -> T1 {
+    unimplemented!()
+}
+
+fn t6<T1, T2>() -> T2 {
+    unimplemented!()
+}
+
 fn f1<T1: CppLess + Clone + ByteRepr + 'static, T2: Default + 'static>(
     a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
     a1: Ptr<T1>,

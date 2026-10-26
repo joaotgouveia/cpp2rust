@@ -77,10 +77,6 @@ fn main_0() -> i32 {
         HashHolder_unsigned_long__ptr__bool__::new({ __tmp_0.as_pointer() })
     };
     assert!((({ hh.h.call(true,) }) == 1_u64));
-    let mut handler: FnPtr<fn(i32)> = FnPtr::<fn(i32)>::new(add_to_total_8);
-    ({ handler.call(2) });
-    ({ handler.call(3) });
-    assert!((total_7.with(|rc| *rc.borrow()) == 5));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

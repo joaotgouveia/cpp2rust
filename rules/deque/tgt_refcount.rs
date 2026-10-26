@@ -13,6 +13,18 @@ fn t2() -> usize {
     0_usize
 }
 
+fn t3<T1>() -> T1 {
+    unimplemented!()
+}
+
+fn t4<T1>() -> Ptr<T1> {
+    Ptr::null()
+}
+
+fn t5<T1>() -> Ptr<T1> {
+    Ptr::null()
+}
+
 fn f1<T1>(a0: Ptr<T1>) -> Ptr<T1> {
     a0.to_last()
 }
