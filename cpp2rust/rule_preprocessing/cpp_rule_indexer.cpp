@@ -614,7 +614,7 @@ void IndexDir(const fs::path &rule_dir, const fs::path &out,
     std::vector<std::string> flags = {std::format("-std=c++{}", range.since)};
     flags.insert(flags.end(), cxx_flags.begin(), cxx_flags.end());
     if (range.library == "libcxx") {
-      cxx_flags.push_back("-stdlib=libc++");
+      flags.push_back("-stdlib=libc++");
     }
     Index(src_path, /*is_c=*/false, dir_name, flags, rules);
     for (auto &[key, entries] : rules) {
