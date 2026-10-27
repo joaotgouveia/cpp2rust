@@ -56,7 +56,9 @@ fn f14(a0: AnyPtr, a1: AnyPtr, a2: usize) -> AnyPtr {
     a0
 }
 
-fn f15() { std::process::abort() }
+fn f15() {
+    std::process::abort()
+}
 
 fn f16(a0: u64) -> i32 {
     a0.leading_zeros() as i32
