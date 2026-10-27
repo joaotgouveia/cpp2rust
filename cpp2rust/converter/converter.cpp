@@ -477,7 +477,8 @@ void Converter::ConvertFunctionBody(clang::FunctionDecl *decl) {
 bool Converter::VisitFunctionTemplateDecl(clang::FunctionTemplateDecl *decl) {
   for (auto *function_decl : decl->specializations()) {
     if (function_decl->getTemplateSpecializationKind() ==
-        clang::TSK_ExplicitSpecialization) {
+            clang::TSK_ExplicitSpecialization ||
+        IsLibraryOnlySpecialization(function_decl)) {
       continue;
     }
     VisitFunctionDecl(function_decl);
@@ -838,7 +839,8 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
       if (auto *tmpl = clang::dyn_cast_or_null<clang::FunctionTemplateDecl>(
               friend_decl->getFriendDecl())) {
         for (auto *spec : tmpl->specializations()) {
-          if (spec->isThisDeclarationADefinition()) {
+          if (spec->isThisDeclarationADefinition() &&
+              !IsLibraryOnlySpecialization(spec)) {
             VisitFunctionDecl(spec);
           }
         }
@@ -860,6 +862,9 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
     }
     if (auto *nested_tmpl = clang::dyn_cast<clang::ClassTemplateDecl>(d)) {
       for (auto *spec : nested_tmpl->specializations()) {
+        if (IsLibraryOnlySpecialization(spec)) {
+          continue;
+        }
         inner_structs_[GetID(spec)] = GetRecordName(spec);
         VisitCXXRecordDecl(spec);
       }
@@ -1774,6 +1779,12 @@ bool Converter::ConvertSpecialCall(clang::CallExpr *expr) {
     return true;
   }
 
+  // std::move and the like are their operand, whatever rule they have
+  if (IsTransparentStdCall(expr)) {
+    Convert(expr->getArg(0));
+    return true;
+  }
+
   // The remaining calls are converted as rules say, if there is one.
   if (Mapper::Contains(ctx_, expr)) {
     return false;
@@ -1782,11 +1793,6 @@ bool Converter::ConvertSpecialCall(clang::CallExpr *expr) {
   if (IsImplicitAssignmentCall(expr)) {
     auto *call = clang::cast<clang::CXXMemberCallExpr>(expr);
     ConvertAssignment(call->getImplicitObjectArgument(), call->getArg(0), "=");
-    return true;
-  }
-
-  if (IsTransparentStdCall(expr)) {
-    Convert(expr->getArg(0));
     return true;
   }
 
@@ -3188,6 +3194,10 @@ bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
     // FIXME: improve error handling
     llvm::errs() << "unsupported CXXOperatorCallExpr: "
                  << clang::getOperatorSpelling(expr->getOperator()) << '\n';
+    expr->dump();
+    if (auto *callee = expr->getCalleeDecl()) {
+      callee->dump();
+    }
     assert(0);
   }
   return false;
@@ -3467,6 +3477,9 @@ void Converter::ConvertRecordInitList(clang::InitListExpr *expr,
   }
 
   const auto *record = qual_type->getAsRecordDecl();
+  if (!IsUserDefinedDecl(record)) {
+    expr->dump();
+  }
   assert(IsUserDefinedDecl(record) && "aggregate list without a rule");
   if (record->isUnion()) {
     auto *field = expr->getInitializedFieldInUnion();
@@ -4042,6 +4055,9 @@ bool Converter::VisitPredefinedExpr(clang::PredefinedExpr *expr) {
 
 bool Converter::VisitClassTemplateDecl(clang::ClassTemplateDecl *decl) {
   for (auto decl : decl->specializations()) {
+    if (IsLibraryOnlySpecialization(decl)) {
+      continue;
+    }
     VisitCXXRecordDecl(decl);
   }
   return false;

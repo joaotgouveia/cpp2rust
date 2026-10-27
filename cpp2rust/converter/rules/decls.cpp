@@ -79,6 +79,26 @@ const clang::Expr *GetMacroMemberBase(const clang::SourceManager &sm,
   }
 }
 
+namespace {
+
+// integral arguments with the type of their parameter
+std::vector<clang::TemplateArgument> deducedArguments(
+    clang::Sema &sema, clang::TemplateParameterList *params,
+    llvm::SmallVectorImpl<clang::DeducedTemplateArgument> &deduced) {
+  for (unsigned i = 0; i < deduced.size(); ++i) {
+    auto nttp =
+        llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(params->getParam(i));
+    if (nttp && !nttp->getType()->isDependentType() &&
+        deduced[i].getKind() == clang::TemplateArgument::Integral) {
+      deduced[i] = clang::TemplateArgument(
+          sema.Context, deduced[i].getAsIntegral(), nttp->getType());
+    }
+  }
+  return std::vector<clang::TemplateArgument>(deduced.begin(), deduced.end());
+}
+
+} // namespace
+
 std::optional<std::vector<clang::TemplateArgument>>
 DeduceFromType(clang::Sema &sema, clang::TemplateParameterList *params,
                clang::QualType pattern, clang::QualType actual) {
@@ -93,16 +113,82 @@ DeduceFromType(clang::Sema &sema, clang::TemplateParameterList *params,
       trial.failed()) {
     return std::nullopt;
   }
-  for (unsigned i = 0; i < deduced.size(); ++i) {
-    auto nttp =
-        llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(params->getParam(i));
-    if (nttp && !nttp->getType()->isDependentType() &&
-        deduced[i].getKind() == clang::TemplateArgument::Integral) {
-      deduced[i] = clang::TemplateArgument(
-          sema.Context, deduced[i].getAsIntegral(), nttp->getType());
-    }
+  return deducedArguments(sema, params, deduced);
+}
+
+namespace {
+
+bool deduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
+                     clang::QualType pattern,
+                     const clang::CXXRecordDecl *record,
+                     clang::sema::TemplateDeductionInfo &info,
+                     llvm::SmallVectorImpl<clang::DeducedTemplateArgument>
+                         &deduced) {
+  auto owner = llvm::dyn_cast<clang::CXXRecordDecl>(record->getDeclContext());
+  if (auto member = pattern->getAs<clang::DependentNameType>()) {
+    auto qualifier = member->getQualifier();
+    // the member is the class or a typedef of it
+    // (regex_traits<char>::char_class_type is _RegexMask)
+    auto names = [&] {
+      if (record->getIdentifier() == member->getIdentifier()) {
+        return true;
+      }
+      auto definition = owner ? owner->getDefinition() : nullptr;
+      return definition &&
+             llvm::any_of(definition->lookup(member->getIdentifier()),
+                          [&](const clang::NamedDecl *decl) {
+                            auto alias =
+                                llvm::dyn_cast<clang::TypedefNameDecl>(decl);
+                            return alias &&
+                                   alias->getUnderlyingType()
+                                           ->getAsCXXRecordDecl() == record;
+                          });
+    };
+    return owner &&
+           qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type &&
+           names() &&
+           deduceFromClass(sema, params,
+                           clang::QualType(qualifier.getAsType(), 0), owner,
+                           info, deduced);
   }
-  return std::vector<clang::TemplateArgument>(deduced.begin(), deduced.end());
+  auto spec = pattern->getAs<clang::TemplateSpecializationType>();
+  if (auto name = spec ? spec->getTemplateName().getAsDependentTemplateName()
+                       : nullptr) {
+    auto nested =
+        llvm::dyn_cast<clang::ClassTemplateSpecializationDecl>(record);
+    auto qualifier = name->getQualifier();
+    return nested && owner &&
+           qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type &&
+           name->getName().getIdentifier() == record->getIdentifier() &&
+           deduceFromClass(sema, params,
+                           clang::QualType(qualifier.getAsType(), 0), owner,
+                           info, deduced) &&
+           sema.DeduceTemplateArguments(
+               params, spec->template_arguments(),
+               nested->getTemplateArgs().asArray(), info, deduced,
+               /*NumberOfArgumentsMustMatch=*/true) ==
+               clang::TemplateDeductionResult::Success;
+  }
+  return sema.DeduceTemplateArguments(
+             params, clang::TemplateArgument(pattern),
+             clang::TemplateArgument(sema.Context.getCanonicalTagType(record)),
+             info, deduced, /*NumberOfArgumentsMustMatch=*/true) ==
+         clang::TemplateDeductionResult::Success;
+}
+
+} // namespace
+
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
+                clang::QualType pattern, const clang::CXXRecordDecl *record) {
+  Trial trial(sema);
+  llvm::SmallVector<clang::DeducedTemplateArgument, 4> deduced(params->size());
+  clang::sema::TemplateDeductionInfo info(params->getTemplateLoc());
+  if (!deduceFromClass(sema, params, pattern, record, info, deduced) ||
+      trial.failed()) {
+    return std::nullopt;
+  }
+  return deducedArguments(sema, params, deduced);
 }
 
 bool IsInternal(const clang::NamedDecl *decl) {
@@ -129,9 +215,19 @@ bool IsInternal(const clang::NamedDecl *decl) {
   return false;
 }
 
+const clang::TypeAliasTemplateDecl *AliasTemplateOf(clang::QualType type) {
+  auto spec =
+      llvm::dyn_cast<clang::TemplateSpecializationType>(type.getTypePtr());
+  auto alias = spec ? llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(
+                          spec->getTemplateName().getAsTemplateDecl())
+                    : nullptr;
+  return alias ? alias->getCanonicalDecl() : nullptr;
+}
+
 clang::QualType PeelSugar(clang::ASTContext &ctx, clang::QualType type) {
   while (!llvm::isa<clang::TypedefType, clang::PredefinedSugarType>(
              type.getTypePtr()) &&
+         !AliasTemplateOf(type) &&
          type != type.getSingleStepDesugaredType(ctx)) {
     type = type.getSingleStepDesugaredType(ctx);
   }
@@ -154,13 +250,21 @@ clang::QualType SkipInternalTypedefs(clang::ASTContext &ctx,
                                      clang::QualType use) {
   auto cvr = use.getLocalCVRQualifiers();
   auto type = PeelSugar(ctx, use);
-  while (auto typedef_type =
-             llvm::dyn_cast<clang::TypedefType>(type.getTypePtr())) {
-    auto decl = typedef_type->getDecl();
-    if (!IsInternal(decl) && !IsUserDefinedDecl(decl)) {
+  while (true) {
+    // a typedef or an alias template of the user or of the library internals
+    // (libc++'s test_format_string<CharT, Args...>)
+    const clang::NamedDecl *decl = nullptr;
+    auto typedef_type = llvm::dyn_cast<clang::TypedefType>(type.getTypePtr());
+    if (typedef_type) {
+      decl = typedef_type->getDecl();
+    } else {
+      decl = AliasTemplateOf(type);
+    }
+    if (!decl || (!IsInternal(decl) && !IsUserDefinedDecl(decl))) {
       break;
     }
-    type = PeelSugar(ctx, typedef_type->desugar());
+    type = PeelSugar(ctx, typedef_type ? typedef_type->desugar()
+                                       : type.getSingleStepDesugaredType(ctx));
     cvr |= type.getLocalCVRQualifiers();
   }
   return type.withCVRQualifiers(cvr);

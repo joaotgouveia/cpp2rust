@@ -37,9 +37,14 @@ std::string InstantiateTgt(Converter &converter, const Bindings &bindings,
       ++pos;
       continue;
     }
-    auto repl =
-        MapBinding(converter, bindings, instantiated_template[pos + 1] - '1');
-    instantiated_template.replace(pos, 2, repl);
+    auto end = pos + 1;
+    unsigned n = 0;
+    while (end < instantiated_template.size() &&
+           std::isdigit(instantiated_template[end])) {
+      n = n * 10 + (instantiated_template[end++] - '0');
+    }
+    auto repl = MapBinding(converter, bindings, n - 1);
+    instantiated_template.replace(pos, end - pos, repl);
     pos += repl.length();
   }
   return instantiated_template;

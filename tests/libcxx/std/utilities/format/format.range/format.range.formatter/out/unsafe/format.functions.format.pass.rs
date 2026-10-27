@@ -1,0 +1,27205 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct MultiStringType {
+    pub w_: *const (),
+    pub wn_: (),
+    pub u8_: *const (),
+    pub u8n_: (),
+    pub u16_: *const (),
+    pub u16n_: (),
+    pub u32_: *const (),
+    pub u32n_: (),
+    pub s_: *const (),
+    pub sn_: (),
+}
+impl MultiStringType {
+    pub unsafe fn new(
+        mut w: *const (),
+        mut wn: (),
+        mut u8: *const (),
+        mut u8n: (),
+        mut u16: *const (),
+        mut u16n: (),
+        mut u32: *const (),
+        mut u32n: (),
+        mut s: *const (),
+        mut sn: (),
+    ) -> Self {
+        let mut this = Self {
+            w_: w,
+            wn_: wn,
+            u8_: u8,
+            u8n_: u8n,
+            u16_: u16,
+            u16n_: u16n,
+            u32_: u32,
+            u32n_: u32n,
+            s_: s,
+            sn_: sn,
+        };
+        this
+    }
+    pub unsafe fn as_ptr_2(&self, mut _a0: *const ()) -> *const () {
+        return self.s_;
+    }
+    pub unsafe fn as_ptr_3(&self, mut _a0: *const ()) -> *const () {
+        return self.w_;
+    }
+    pub unsafe fn as_ptr_4(&self, mut _a0: *const ()) -> *const () {
+        return self.u8_;
+    }
+    pub unsafe fn as_ptr_5(&self, mut _a0: *const ()) -> *const () {
+        return self.u16_;
+    }
+    pub unsafe fn as_ptr_6(&self, mut _a0: *const ()) -> *const () {
+        return self.u32_;
+    }
+    pub unsafe fn length_7(&self, mut _a0: *const ()) -> () {
+        return self.sn_;
+    }
+    pub unsafe fn length_8(&self, mut _a0: *const ()) -> () {
+        return self.wn_;
+    }
+    pub unsafe fn length_9(&self, mut _a0: *const ()) -> () {
+        return self.u8n_;
+    }
+    pub unsafe fn length_10(&self, mut _a0: *const ()) -> () {
+        return self.u16n_;
+    }
+    pub unsafe fn length_11(&self, mut _a0: *const ()) -> () {
+        return self.u32n_;
+    }
+    pub unsafe fn to_pconst_12(&self) -> *const () {
+        return self.s_;
+    }
+    pub unsafe fn to_pconst_13(&self) -> *const () {
+        return self.w_;
+    }
+    pub unsafe fn to_pconst_14(&self) -> *const () {
+        return self.u8_;
+    }
+    pub unsafe fn to_pconst_15(&self) -> *const () {
+        return self.u16_;
+    }
+    pub unsafe fn to_pconst_16(&self) -> *const () {
+        return self.u32_;
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct context_char_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct context_wchar_t_ {}
+pub type status = u16;
+pub const status_foo: status = 43690;
+pub const status_bar: status = 21845;
+pub const status_foobar: status = 43605;
+pub unsafe fn operator_cmp_0(
+    lhs: *const parse_call_validator,
+    rhs: *const parse_call_validator,
+) -> () {
+    return std::cmp::Ord::cmp(&(lhs), &(rhs));
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct parse_call_validator_parse_function_not_called {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct parse_call_validator {}
+impl std::cmp::Ord for parse_call_validator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        unsafe {
+            operator_cmp_0(
+                self as *const parse_call_validator,
+                other as *const parse_call_validator,
+            )
+        }
+    }
+}
+impl std::cmp::PartialOrd for parse_call_validator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+impl std::cmp::PartialEq for parse_call_validator {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_cmp_0(
+                self as *const parse_call_validator,
+                other as *const parse_call_validator,
+            ) == std::cmp::Ordering::Equal
+        }
+    }
+}
+impl std::cmp::Eq for parse_call_validator {}
+pub unsafe fn get_colons_1() -> () {
+    return unimplemented!();
+}
+pub unsafe fn get_colons_3() -> () {
+    return unimplemented!();
+}
+pub unsafe fn get_colons_5() -> () {
+    return unimplemented!();
+}
+pub unsafe fn get_colons_7() -> () {
+    return unimplemented!();
+}
+pub unsafe fn get_format_types_9() -> () {
+    return unimplemented!();
+}
+pub unsafe fn fmt_invalid_types_10(mut valid: ()) -> () {
+    let mut result: () = unimplemented!();
+    (unsafe {
+        let mut ___r: () = unimplemented!();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_11))(&mut ___r, unimplemented!())
+    });
+    return unimplemented!();
+}
+pub unsafe fn fmt_invalid_types_12(mut valid: ()) -> () {
+    let mut result: () = unimplemented!();
+    (unsafe {
+        let mut ___r: () = unimplemented!();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_11))(&mut ___r, unimplemented!())
+    });
+    return unimplemented!();
+}
+pub unsafe fn fmt_invalid_types_13(mut valid: ()) -> () {
+    let mut result: () = unimplemented!();
+    (unsafe {
+        let mut ___r: () = unimplemented!();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_11))(&mut ___r, unimplemented!())
+    });
+    return unimplemented!();
+}
+pub unsafe fn fmt_invalid_types_14(mut valid: ()) -> () {
+    let mut result: () = unimplemented!();
+    (unsafe {
+        let mut ___r: () = unimplemented!();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_11))(&mut ___r, unimplemented!())
+    });
+    return unimplemented!();
+}
+static mut result_2: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_4: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_6: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_8: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub unsafe fn fmt_invalid_types_15(mut valid: ()) -> () {
+    return (unsafe { fmt_invalid_types_10(unimplemented!()) });
+}
+pub unsafe fn fmt_invalid_types_16(mut valid: ()) -> () {
+    return (unsafe { fmt_invalid_types_13(unimplemented!()) });
+}
+pub unsafe fn fmt_invalid_nested_types_17(mut valid: ()) -> () {
+    return (unsafe { fmt_invalid_types_12(unimplemented!()) });
+}
+pub unsafe fn fmt_invalid_nested_types_18(mut valid: ()) -> () {
+    return (unsafe { fmt_invalid_types_14(unimplemented!()) });
+}
+pub unsafe fn get_temp_file_name_19() -> () {
+    let mut Name: () = unimplemented!();
+    let mut FD: () = (unsafe { mkstemp_20((&mut (*unimplemented!()) as *mut ())) });
+    if ((FD) == (-1_())) {
+        (unsafe { perror_21(c"mkstemp".as_ptr()) });
+        unimplemented!();
+    }
+    unimplemented!();
+    return unimplemented!();
+}
+pub unsafe fn glibc_version_less_than_22(mut version: *const ()) -> () {
+    let mut test_version: () = unimplemented!();
+    let mut n: () = (unsafe {
+        confstr_23(
+            (anon_24__CS_GNU_LIBC_VERSION as ()),
+            std::ptr::null_mut(),
+            0_(),
+        )
+    });
+    let mut current_version: *mut () =
+        Box::leak((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
+    (unsafe { confstr_23((anon_24__CS_GNU_LIBC_VERSION as ()), current_version, n) });
+    let mut result: () =
+        ((unsafe { strverscmp_25((current_version).cast_const(), unimplemented!()) }) < (0_()));
+    {
+        let __p = current_version;
+        if !__p.is_null() {
+            ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
+                __p,
+                libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
+                    / ::std::mem::size_of::<()>(),
+            )))
+        }
+    };
+    return result;
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+pub struct support_double_move_tracker {
+    moved_from_: (),
+}
+impl support_double_move_tracker {
+    pub unsafe fn new() -> Self {
+        let mut this = Self { moved_from_: false };
+        this
+    }
+    pub unsafe fn move_from(other: *mut support_double_move_tracker) -> Self {
+        let mut this = Self { moved_from_: false };
+        unimplemented!();
+        (*other).moved_from_ = true;
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        other: *mut support_double_move_tracker,
+    ) -> *mut support_double_move_tracker {
+        unimplemented!();
+        (*other).moved_from_ = true;
+        self.moved_from_ = false;
+        return &mut (*(self as *mut support_double_move_tracker));
+    }
+}
+impl Default for support_double_move_tracker {
+    fn default() -> Self {
+        unsafe { support_double_move_tracker::new() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
+{}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
+{}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
+{}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
+{}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct cpp17_output_iterator_int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl cpp17_output_iterator_int_ptr_ {}
+const _: () = assert!(
+    true,
+    "std::output_iterator<cpp17_output_iterator<int*>, int>"
+);
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
+pub struct forward_iterator_int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl forward_iterator_int_ptr_ {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
+        let mut this = Self {
+            it_: it,
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> () {
+        return &mut (*self.it_);
+    }
+    pub unsafe fn operator_inc_6(&mut self) -> *mut forward_iterator_int_ptr_ {
+        self.it_.prefix_inc();
+        return &mut (*(self as *mut forward_iterator_int_ptr_));
+    }
+    pub unsafe fn move_from(_a0: *mut forward_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+}
+impl Default for forward_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { forward_iterator_int_ptr_::new_1() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
+pub struct bidirectional_iterator_int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl bidirectional_iterator_int_ptr_ {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
+        let mut this = Self {
+            it_: it,
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> () {
+        return &mut (*self.it_);
+    }
+    pub unsafe fn operator_inc_6(&mut self) -> *mut bidirectional_iterator_int_ptr_ {
+        self.it_.prefix_inc();
+        return &mut (*(self as *mut bidirectional_iterator_int_ptr_));
+    }
+    pub unsafe fn move_from(_a0: *mut bidirectional_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+}
+impl Default for bidirectional_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { bidirectional_iterator_int_ptr_::new_1() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
+pub struct random_access_iterator_int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl random_access_iterator_int_ptr_ {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
+        let mut this = Self {
+            it_: it,
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> () {
+        return &mut (*self.it_);
+    }
+    pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_int_ptr_ {
+        self.it_.prefix_inc();
+        return &mut (*(self as *mut random_access_iterator_int_ptr_));
+    }
+    pub unsafe fn move_from(_a0: *mut random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+}
+impl Default for random_access_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { random_access_iterator_int_ptr_::new_1() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct cpp20_random_access_iterator_int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.it_);
+    }
+    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+        return &mut (*self.it_.offset((n) as isize));
+    }
+}
+const _: () = assert!(
+    true,
+    "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
+);
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
+pub struct contiguous_iterator_int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl contiguous_iterator_int_ptr_ {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
+        let mut this = Self {
+            it_: it,
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> () {
+        return &mut (*self.it_);
+    }
+    pub unsafe fn operator_arrow(&self) -> () {
+        return self.it_;
+    }
+    pub unsafe fn operator_inc_9(&mut self) -> *mut contiguous_iterator_int_ptr_ {
+        self.it_.prefix_inc();
+        return &mut (*(self as *mut contiguous_iterator_int_ptr_));
+    }
+    pub unsafe fn move_from(_a0: *mut contiguous_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+}
+impl Default for contiguous_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { contiguous_iterator_int_ptr_::new_1() }
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct cpp20_input_iterator_int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl cpp20_input_iterator_int_ptr_ {
+    pub unsafe fn new(mut it: *mut ()) -> Self {
+        let mut this = Self {
+            it_: it,
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_input_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_input_iterator_int_ptr_,
+    ) -> *mut cpp20_input_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_input_iterator_int_ptr_));
+    }
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.it_);
+    }
+    pub unsafe fn operator_inc_5(&mut self) -> *mut cpp20_input_iterator_int_ptr_ {
+        self.it_.prefix_inc();
+        return &mut (*(self as *mut cpp20_input_iterator_int_ptr_));
+    }
+    pub unsafe fn operator_post_inc_6(&mut self, mut _a0: ()) {
+        self.it_.prefix_inc();
+    }
+}
+const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
+#[repr(C)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct cpp20_output_iterator_int_ptr_ {
+    it_: *mut (),
+    tracker_: support_double_move_tracker,
+}
+impl cpp20_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp20_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_output_iterator_int_ptr_,
+    ) -> *mut cpp20_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_output_iterator_int_ptr_));
+    }
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.it_);
+    }
+}
+const _: () = assert!(
+    true,
+    "std::output_iterator<cpp20_output_iterator<int*>, int>"
+);
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
+pub struct IteratorOpCounts {
+    pub increments: (),
+    pub decrements: (),
+    pub zero_moves: (),
+    pub equal_cmps: (),
+}
+impl Default for IteratorOpCounts {
+    fn default() -> Self {
+        unsafe {
+            IteratorOpCounts {
+                increments: 0_(),
+                decrements: 0_(),
+                zero_moves: 0_(),
+                equal_cmps: 0_(),
+            }
+        }
+    }
+}
+pub unsafe fn operator_eq_26(
+    _a0: *const forward_sized_iterator_int_ptr_,
+    _a1: *const forward_sized_iterator_int_ptr_,
+) -> () {
+    return (((*_a0).it_) == ((*_a1).it_));
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
+pub struct forward_sized_iterator_int_ptr_ {
+    pub it_: *mut (),
+}
+impl forward_sized_iterator_int_ptr_ {}
+impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_eq_26(
+                self as *const forward_sized_iterator_int_ptr_,
+                other as *const forward_sized_iterator_int_ptr_,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
+impl Default for forward_sized_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe {
+            forward_sized_iterator_int_ptr_ {
+                it_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+const _: () = assert!(true, "std::forward_iterator<forward_sized_iterator<>>");
+const _: () = assert!(
+    true,
+    "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
+);
+pub unsafe fn operator_add_27(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+    return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
+        i.iter_swaps_
+    });
+}
+pub unsafe fn operator_add_28(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+    return (unsafe {
+        let _i: adl_Iterator = i;
+        operator_add_27(_i, n)
+    });
+}
+pub unsafe fn iter_swap_29(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        (*a.iter_swaps_).prefix_inc();
+    }
+}
+pub unsafe fn iter_move_30(mut iter: adl_Iterator) -> *mut () {
+    if !(iter.iter_moves_).is_null() {
+        (*iter.iter_moves_).prefix_inc();
+    }
+    return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
+}
+pub unsafe fn operator_eq_31(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+    return (((*lhs).ptr_) == ((*rhs).ptr_));
+}
+pub unsafe fn operator_cmp_32(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+    return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
+pub struct adl_Iterator {
+    ptr_: *mut (),
+    iter_moves_: *mut (),
+    iter_swaps_: *mut (),
+}
+impl adl_Iterator {
+    unsafe fn new_1(mut p: *mut (), mut iter_moves: *mut (), mut iter_swaps: *mut ()) -> Self {
+        let mut this = Self {
+            ptr_: p,
+            iter_moves_: iter_moves,
+            iter_swaps_: iter_swaps,
+        };
+        this
+    }
+    pub unsafe fn TrackMoves(mut p: *mut (), iter_moves: *mut ()) -> adl_Iterator {
+        return adl_Iterator::new_1({ p }, { (iter_moves) }, { std::ptr::null_mut() });
+    }
+    pub unsafe fn TrackSwaps_4(iter_swaps: *mut ()) -> adl_Iterator {
+        return adl_Iterator::new_1({ std::ptr::null_mut() }, { std::ptr::null_mut() }, {
+            (iter_swaps)
+        });
+    }
+    pub unsafe fn TrackSwaps_5(mut p: *mut (), iter_swaps: *mut ()) -> adl_Iterator {
+        return adl_Iterator::new_1({ p }, { std::ptr::null_mut() }, { (iter_swaps) });
+    }
+    pub unsafe fn iter_moves(&self) -> () {
+        unimplemented!();
+        return (*self.iter_moves_);
+    }
+    pub unsafe fn iter_swaps(&self) -> () {
+        unimplemented!();
+        return (*self.iter_swaps_);
+    }
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.ptr_);
+    }
+    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+        return &mut (*self.ptr_.offset((n) as isize));
+    }
+    pub unsafe fn operator_sub_10(&self, mut n: ()) -> adl_Iterator {
+        return adl_Iterator::new_1(
+            { self.ptr_.offset(-((n) as isize)) },
+            { self.iter_moves_ },
+            { self.iter_swaps_ },
+        );
+    }
+    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> () {
+        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<()>()) as ()
+            as ());
+    }
+    pub unsafe fn operator_add_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+        self.ptr_ = (self.ptr_).wrapping_add(n as usize);
+        return &mut (*(self as *mut adl_Iterator));
+    }
+    pub unsafe fn operator_sub_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+        self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
+        return &mut (*(self as *mut adl_Iterator));
+    }
+    pub unsafe fn operator_inc_14(&mut self) -> *mut adl_Iterator {
+        self.ptr_.prefix_inc();
+        return &mut (*(self as *mut adl_Iterator));
+    }
+    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: ()) -> adl_Iterator {
+        let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
+        self.ptr_.prefix_inc();
+        return prev;
+    }
+    pub unsafe fn operator_dec_16(&mut self) -> *mut adl_Iterator {
+        self.ptr_.prefix_dec();
+        return &mut (*(self as *mut adl_Iterator));
+    }
+    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: ()) -> adl_Iterator {
+        let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
+        self.ptr_.prefix_dec();
+        return prev;
+    }
+}
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        unsafe { operator_cmp_32(self as *const adl_Iterator, other as *const adl_Iterator) }
+    }
+}
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { operator_eq_31(self as *const adl_Iterator, other as *const adl_Iterator) }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
+impl Default for adl_Iterator {
+    fn default() -> Self {
+        unsafe {
+            adl_Iterator {
+                ptr_: std::ptr::null_mut(),
+                iter_moves_: std::ptr::null_mut(),
+                iter_swaps_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct rvalue_iterator_int_ptr_ {
+    it_: *mut *mut (),
+}
+impl rvalue_iterator_int_ptr_ {
+    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+        {
+            let mut cmp: () = std::cmp::Ord::cmp(
+                &((*(self as *const rvalue_iterator_int_ptr_)).it_),
+                &((*_a0).it_),
+            );
+            if !(unimplemented!()) {
+                return unimplemented!();
+            }
+        }
+        return unimplemented!();
+    }
+    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+        return (((*(self as *const rvalue_iterator_int_ptr_)).it_) == ((*_a0).it_));
+    }
+}
+impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        unsafe {
+            rvalue_iterator_int_ptr_::operator_cmp(self, other as *const rvalue_iterator_int_ptr_)
+        }
+    }
+}
+impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            rvalue_iterator_int_ptr_::operator_cmp(self, other as *const rvalue_iterator_int_ptr_)
+                == std::cmp::Ordering::Equal
+        }
+    }
+}
+impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
+const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct util_iterator_error {}
+impl util_iterator_error {
+    pub unsafe fn new(mut what: *const ()) -> Self {
+        let mut this = Self {};
+        this
+    }
+}
+pub unsafe fn test_char_default_33(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_0: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_0;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(0)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_1: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_1;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(0)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 2_();
+        check.spec::<fn((), (), *mut (), *mut (), *mut ())>(2).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+            &mut _args_4,
+        )
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_char_default_34(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_2: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_2;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(5)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_3: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_3;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(5)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(7)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 2_();
+        check.spec::<fn((), (), *mut (), *mut (), *mut ())>(9).call(
+            _expected,
+            _fmt,
+            _args_2,
+            &mut _args_3,
+            &mut _args_4,
+        )
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(5)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_char_default_35(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 30_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_4: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_4;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(59)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 4_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_5: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_5;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(59)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(90)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(60)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_char_string_36(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(0)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(1)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_6: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_6;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(0)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(0)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_string_37(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_7: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_7;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(3)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_string_38(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut non_contiguous_char_,
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_)>(84)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_)>(84)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_)>(84)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_)>(84)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_)>(84)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut non_contiguous_char_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_, *mut ())>(85)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut non_contiguous_char_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_, *mut ())>(85)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut non_contiguous_char_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_, *mut ())>(85)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut non_contiguous_char_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut non_contiguous_char_, *mut ())>(85)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_8: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_8;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut non_contiguous_char_ = input;
+            check_exception
+                .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_char_)>(57)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_string_39(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut contiguous_char_,
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_char_)>(86)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_char_)>(86)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_char_)>(86)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_char_)>(86)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_char_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_char_)>(86)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut contiguous_char_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut contiguous_char_, *mut ())>(87)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut contiguous_char_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut contiguous_char_, *mut ())>(87)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut contiguous_char_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut contiguous_char_, *mut ())>(87)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut contiguous_char_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut contiguous_char_, *mut ())>(87)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_9: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_9;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut contiguous_char_ = input;
+            check_exception
+                .spec::<fn((), (), *mut contiguous_char_)>(58)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_char_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_char_)>(58)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_string_40(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(88)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_10: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_10;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(59)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(59)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_string_41(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(94)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(94)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(94)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(94)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_11: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_11;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(62)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_string_42(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut non_contiguous_wchar_t_,
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(169)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(169)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(169)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(169)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut non_contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(169)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut non_contiguous_wchar_t_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_, *mut ())>(170)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut non_contiguous_wchar_t_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_, *mut ())>(170)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut non_contiguous_wchar_t_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_, *mut ())>(170)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut non_contiguous_wchar_t_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_, *mut ())>(170)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_12: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_12;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut non_contiguous_wchar_t_ = input;
+            check_exception
+                .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut non_contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut non_contiguous_wchar_t_)>(113)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_string_43(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut contiguous_wchar_t_,
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(171)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(171)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(171)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(171)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut contiguous_wchar_t_ = input;
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(171)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut contiguous_wchar_t_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_, *mut ())>(172)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut contiguous_wchar_t_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_, *mut ())>(172)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut contiguous_wchar_t_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_, *mut ())>(172)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut contiguous_wchar_t_ = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut contiguous_wchar_t_, *mut ())>(172)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_13: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_13;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut contiguous_wchar_t_ = input;
+            check_exception
+                .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut contiguous_wchar_t_ = input;
+        check_exception
+            .spec::<fn((), (), *mut contiguous_wchar_t_)>(114)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_escaped_string_44(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(3)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(3)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(3)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(3)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(3)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(4)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(4)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(4)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(4)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(2)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_escaped_string_45(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(5)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(6)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(3)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_escaped_string_46(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(91)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(91)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(91)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(91)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(91)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(92)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(92)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(92)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(92)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(61)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_escaped_string_47(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(93)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(94)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(94)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(94)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 13_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(94)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(62)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+}
+pub unsafe fn test_char_48(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_default_33(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_escaped_string_44(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_escaped_string_45(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_string_36(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_string_37(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_char_49(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_default_35(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_escaped_string_46(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_escaped_string_47(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_string_40(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_string_41(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_char_to_wchar_50(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_char_default_34(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _arg2: () = unimplemented!();
+        check_exception.spec::<fn((), (), *mut ())>(4).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = unimplemented!();
+        check_exception.spec::<fn((), (), *mut ())>(4).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+}
+pub unsafe fn test_bool_51(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 24_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 24_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 24_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 24_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_14: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_14;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(7).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    let mut __tmp_15: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_15;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(7).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(10)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(11).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        let mut _args_4: () = 7_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(12)
+            .call(_expected, _fmt, &mut input, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(7).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let mut _arg3: () = 32_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(8)
+            .call(unimplemented!(), unimplemented!(), &mut input, &mut _arg3)
+    });
+}
+pub unsafe fn test_bool_52(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 24_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 24_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 24_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 24_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_16: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_16;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(63).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    let mut __tmp_17: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_17;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(63).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(95)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(96).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        let mut _args_4: () = 7_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(97)
+            .call(_expected, _fmt, &mut input, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(63).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let mut _arg3: () = 32_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(64)
+            .call(unimplemented!(), unimplemented!(), &mut input, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_53(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_18: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_18;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(9)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_19: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_19;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(9)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(13)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(15)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(9)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(10)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_54(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_20: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_20;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(11)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_21: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_21;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(11)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(16)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(17)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(18)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(11)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(12)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_55(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_22: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_22;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(13)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_23: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_23;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(13)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(19)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(20)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(21)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(13)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(14)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_56(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_24: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_24;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(15)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_25: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_25;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(15)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(22)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(23)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(24)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(15)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(16)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_57(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: FnPtr<Generic>,
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 20_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 20_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 20_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 20_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    let mut __tmp_26: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_26;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let mut _arg2: () = (unsafe {
+                let _in_: *mut () = input;
+                make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+            });
+            check_exception.spec::<fn((), (), *mut ())>(47).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut _arg2,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 5_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 5_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 5_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 5_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    let mut __tmp_27: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_27;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let mut _arg2: () = (unsafe {
+                let _in_: *mut () = input;
+                make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+            });
+            check_exception.spec::<fn((), (), *mut ())>(47).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut _arg2,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(69)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 33_();
+        check.spec::<fn((), (), *mut (), *mut ())>(70).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(71)
+            .call(_expected, _fmt, &mut _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(47).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(48)
+            .call(unimplemented!(), unimplemented!(), &mut _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_58(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_28: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_28;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(65)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_29: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_29;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(65)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(98)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(99)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(100)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(65)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(66)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_59(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_30: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_30;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(67)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_31: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_31;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(67)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(101)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(103)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(67)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(68)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_60(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_32: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_32;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(69)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_33: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_33;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(69)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(104)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(105)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(106)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(69)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(70)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_61(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 20_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_34: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_34;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(71)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_35: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_35;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = &mut (*unimplemented!());
+            check_exception
+                .spec::<fn((), (), *mut ())>(71)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = &mut (*unimplemented!());
+        check
+            .spec::<fn((), (), *mut ())>(107)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(108)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = &mut (*unimplemented!());
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(109)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        check_exception
+            .spec::<fn((), (), *mut ())>(71)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = &mut (*unimplemented!());
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(72)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_62(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+    mut make_range: FnPtr<Generic>,
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 20_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 20_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 20_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 20_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    let mut __tmp_36: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_36;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let mut _arg2: () = (unsafe {
+                let _in_: *mut () = input;
+                make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+            });
+            check_exception.spec::<fn((), (), *mut ())>(103).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut _arg2,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 5_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 5_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 5_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 5_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    let mut __tmp_37: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_37;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let mut _arg2: () = (unsafe {
+                let _in_: *mut () = input;
+                make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+            });
+            check_exception.spec::<fn((), (), *mut ())>(103).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut _arg2,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check
+            .spec::<fn((), (), *mut ())>(154)
+            .call(_expected, _fmt, &mut _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 33_();
+        check.spec::<fn((), (), *mut (), *mut ())>(155).call(
+            _expected,
+            _fmt,
+            &mut _args_2,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(156)
+            .call(_expected, _fmt, &mut _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        check_exception.spec::<fn((), (), *mut ())>(103).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut _arg2,
+        )
+    });
+    (unsafe {
+        let mut _arg2: () = (unsafe {
+            let _in_: *mut () = input;
+            make_range.spec::<fn(*mut ()) -> ()>(0).call(_in_)
+        });
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(104)
+            .call(unimplemented!(), unimplemented!(), &mut _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_int_63(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_int_53(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut _input,
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_int_54(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut _input,
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_int_55(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut _input,
+            unimplemented!(),
+        )
+    });
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_int_56(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut _input,
+            unimplemented!(),
+        )
+    });
+}
+pub unsafe fn test_int_64(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_int_58(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut _input,
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_int_59(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut _input,
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_int_60(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut _input,
+            unimplemented!(),
+        )
+    });
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_int_61(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut _input,
+            unimplemented!(),
+        )
+    });
+}
+pub unsafe fn test_floating_point_65(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_38: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_38;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(17)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_39: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_39;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(17)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(27)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(25)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(26)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(27)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        let mut _args_5: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut (), *mut ())>(28)
+            .call(
+                _expected,
+                _fmt,
+                _args_2,
+                &mut _args_3,
+                &mut _args_4,
+                &mut _args_5,
+            )
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(17)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(18)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        let mut _arg4: () = 5_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(19)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3, &mut _arg4)
+    });
+}
+pub unsafe fn test_floating_point_66(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_40: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_40;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(20)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_41: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_41;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(20)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(31)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(29)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(30)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(31)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        let mut _args_5: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut (), *mut ())>(32)
+            .call(
+                _expected,
+                _fmt,
+                _args_2,
+                &mut _args_3,
+                &mut _args_4,
+                &mut _args_5,
+            )
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(20)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(21)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        let mut _arg4: () = 5_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(22)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3, &mut _arg4)
+    });
+}
+pub unsafe fn test_floating_point_67(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_42: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_42;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(23)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_43: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_43;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(23)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(35)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(33)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(34)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(35)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        let mut _args_5: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut (), *mut ())>(36)
+            .call(
+                _expected,
+                _fmt,
+                _args_2,
+                &mut _args_3,
+                &mut _args_4,
+                &mut _args_5,
+            )
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(23)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(24)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        let mut _arg4: () = 5_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(25)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3, &mut _arg4)
+    });
+}
+pub unsafe fn test_floating_point_68(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_44: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_44;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(73)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_45: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_45;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(73)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(112)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(110)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(111)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(112)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        let mut _args_5: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut (), *mut ())>(113)
+            .call(
+                _expected,
+                _fmt,
+                _args_2,
+                &mut _args_3,
+                &mut _args_4,
+                &mut _args_5,
+            )
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(73)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(74)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        let mut _arg4: () = 5_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(75)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3, &mut _arg4)
+    });
+}
+pub unsafe fn test_floating_point_69(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_46: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_46;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(76)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_47: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_47;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(76)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(116)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(114)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(115)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(116)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        let mut _args_5: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut (), *mut ())>(117)
+            .call(
+                _expected,
+                _fmt,
+                _args_2,
+                &mut _args_3,
+                &mut _args_4,
+                &mut _args_5,
+            )
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(76)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(77)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        let mut _arg4: () = 5_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(78)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3, &mut _arg4)
+    });
+}
+pub unsafe fn test_floating_point_70(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 27_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_48: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_48;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(79)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_49: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_49;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(79)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(120)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(118)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(119)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(120)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 33_();
+        let mut _args_4: () = 5_();
+        let mut _args_5: () = 2_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut (), *mut ())>(121)
+            .call(
+                _expected,
+                _fmt,
+                _args_2,
+                &mut _args_3,
+                &mut _args_4,
+                &mut _args_5,
+            )
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(79)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(80)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 33_();
+        let mut _arg4: () = 5_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(81)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3, &mut _arg4)
+    });
+}
+pub unsafe fn test_floating_point_71(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_floating_point_65(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_floating_point_66(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_floating_point_67(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_floating_point_72(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_floating_point_68(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_floating_point_69(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_floating_point_70(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_pointer_73(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_50: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_50;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(26)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_51: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_51;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(26)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(39)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(37)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(38)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(39)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(26)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 12_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(27)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_pointer_74(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_52: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_52;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(28)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_53: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_53;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(28)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(42)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(40)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(41)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(42)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(28)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 12_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(29)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_pointer_75(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_54: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_54;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(30)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_55: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_55;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(30)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(45)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(43)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(45)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(30)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 12_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(31)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_pointer_76(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_56: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_56;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(82)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_57: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_57;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(82)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(124)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(122)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(123)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(124)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(82)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 12_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(83)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_pointer_77(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_58: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_58;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(84)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_59: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_59;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(84)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(127)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(125)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(126)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(127)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(84)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 12_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(85)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_pointer_78(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 10_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_60: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_60;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(86)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_61: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_61;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(86)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(130)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(128)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(129)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 12_();
+        let mut _args_4: () = 5_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(130)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(86)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 12_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(87)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_pointer_79(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pointer_73(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pointer_74(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pointer_75(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_pointer_80(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pointer_76(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pointer_77(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pointer_78(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_string_81(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_62: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_62;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(32)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_63: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_63;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(32)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(48)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(46)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(47)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(48)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(32)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(33)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_string_82(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_64: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_64;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(34)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_65: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_65;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(34)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(51)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(49)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(50)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(51)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(34)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(35)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_string_83(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_66: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_66;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(36)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_67: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_67;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(36)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(54)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(52)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(53)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(54)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(36)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(37)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_string_84(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_68: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_68;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(88)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_69: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_69;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(88)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(133)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(131)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(132)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(133)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(88)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(89)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_string_85(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_70: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_70;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(90)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_71: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_71;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(90)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(136)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(134)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(135)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(136)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(90)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(91)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_string_86(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 23_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_72: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_72;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(92)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 3_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_73: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_73;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(92)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(139)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(137)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(138)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 25_();
+        let mut _args_4: () = 8_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(139)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(92)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 25_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(93)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+}
+pub unsafe fn test_string_87(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_string_81(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_string_82(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_string_83(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_string_88(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_string_84(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_string_85(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_string_86(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_status_89(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(56).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(56).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(56).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(56).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_74: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_74;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(38).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_75: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_75;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(38).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(55)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(56).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(38).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+}
+pub unsafe fn test_status_90(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(141).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(141).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(141).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(141).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_76: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_76;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(94).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_77: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_77;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(94).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(140)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 29_();
+        check.spec::<fn((), (), *mut (), *mut ())>(141).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(94).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+}
+pub unsafe fn test_pair_tuple_91(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_78: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_78;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(39)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_79: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_79;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(39)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 31_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(58)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 31_();
+        let mut _args_4: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(59)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(39)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 31_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(40)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(57)
+            .call(_expected, _fmt, _args)
+    });
+}
+pub unsafe fn test_pair_tuple_92(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_80: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_80;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(41)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_81: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_81;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(41)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 31_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(61)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 31_();
+        let mut _args_4: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(62)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(41)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 31_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(42)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(60)
+            .call(_expected, _fmt, _args)
+    });
+}
+pub unsafe fn test_pair_tuple_93(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_82: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_82;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(95)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_83: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_83;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(95)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 31_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(143)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 31_();
+        let mut _args_4: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(144)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(95)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 31_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(96)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(142)
+            .call(_expected, _fmt, _args)
+    });
+}
+pub unsafe fn test_pair_tuple_94(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    input: *mut (),
+) {
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 26_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    let mut __tmp_84: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_84;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(97)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    let mut __tmp_85: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_85;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            let _arg1: () = unimplemented!();
+            let _arg2: *mut () = input;
+            check_exception
+                .spec::<fn((), (), *mut ())>(97)
+                .call(unimplemented!(), _arg1, _arg2)
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 31_();
+        check
+            .spec::<fn((), (), *mut (), *mut ())>(146)
+            .call(_expected, _fmt, _args_2, &mut _args_3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args_2: *mut () = input;
+        let mut _args_3: () = 31_();
+        let mut _args_4: () = 11_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(147)
+            .call(_expected, _fmt, _args_2, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        check_exception
+            .spec::<fn((), (), *mut ())>(97)
+            .call(unimplemented!(), _arg1, _arg2)
+    });
+    (unsafe {
+        let _arg1: () = unimplemented!();
+        let _arg2: *mut () = input;
+        let mut _arg3: () = 31_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(98)
+            .call(unimplemented!(), _arg1, _arg2, &mut _arg3)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let _args: *mut () = input;
+        check
+            .spec::<fn((), (), *mut ())>(145)
+            .call(_expected, _fmt, _args)
+    });
+}
+pub unsafe fn test_pair_tuple_95(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pair_tuple_91(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pair_tuple_92(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_pair_tuple_96(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pair_tuple_93(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    (unsafe {
+        let mut _input: () = unimplemented!();
+        test_pair_tuple_94(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_tuple_int_97(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 17_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 17_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 17_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 17_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_86: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_86;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(43).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    let mut __tmp_87: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_87;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(43).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(63)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 23_();
+        check.spec::<fn((), (), *mut (), *mut ())>(64).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 23_();
+        let mut _args_4: () = 7_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(65)
+            .call(_expected, _fmt, &mut input, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(43).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let mut _arg3: () = 23_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(44)
+            .call(unimplemented!(), unimplemented!(), &mut input, &mut _arg3)
+    });
+}
+pub unsafe fn test_tuple_int_98(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 17_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 17_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 17_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 17_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_88: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_88;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(99).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 7_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    let mut __tmp_89: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_89;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(99).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(148)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 23_();
+        check.spec::<fn((), (), *mut (), *mut ())>(149).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 23_();
+        let mut _args_4: () = 7_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(150)
+            .call(_expected, _fmt, &mut input, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(99).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let mut _arg3: () = 23_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(100)
+            .call(unimplemented!(), unimplemented!(), &mut input, &mut _arg3)
+    });
+}
+pub unsafe fn test_tuple_int_int_int_99(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_90: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_90;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(45).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 14_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 14_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 14_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 14_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    let mut __tmp_91: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_91;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(45).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(66)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 37_();
+        check.spec::<fn((), (), *mut (), *mut ())>(67).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 37_();
+        let mut _args_4: () = 14_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(68)
+            .call(_expected, _fmt, &mut input, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(45).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let mut _arg3: () = 37_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(46)
+            .call(unimplemented!(), unimplemented!(), &mut input, &mut _arg3)
+    });
+}
+pub unsafe fn test_tuple_int_int_int_100(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 32_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    let mut __tmp_92: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_92;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(101).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 14_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 14_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 14_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 14_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    let mut __tmp_93: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_93;
+    'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut fmt: () = unimplemented!();
+        (unsafe {
+            check_exception.spec::<fn((), (), *mut ())>(101).call(
+                unimplemented!(),
+                unimplemented!(),
+                &mut input,
+            )
+        });
+    }
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        check
+            .spec::<fn((), (), *mut ())>(151)
+            .call(_expected, _fmt, &mut input)
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 37_();
+        check.spec::<fn((), (), *mut (), *mut ())>(152).call(
+            _expected,
+            _fmt,
+            &mut input,
+            &mut _args_3,
+        )
+    });
+    (unsafe {
+        let _expected: () = unimplemented!();
+        let _fmt: () = unimplemented!();
+        let mut _args_3: () = 37_();
+        let mut _args_4: () = 14_();
+        check
+            .spec::<fn((), (), *mut (), *mut (), *mut ())>(153)
+            .call(_expected, _fmt, &mut input, &mut _args_3, &mut _args_4)
+    });
+    (unsafe {
+        check_exception.spec::<fn((), (), *mut ())>(101).call(
+            unimplemented!(),
+            unimplemented!(),
+            &mut input,
+        )
+    });
+    (unsafe {
+        let mut _arg3: () = 37_();
+        check_exception
+            .spec::<fn((), (), *mut (), *mut ())>(102)
+            .call(unimplemented!(), unimplemented!(), &mut input, &mut _arg3)
+    });
+}
+pub unsafe fn test_with_ranges_impl_101(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_57(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_102(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_103(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_104(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_105(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_106(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_107(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_108(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_109(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_110(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_62(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_111(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_112(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_113(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_114(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_115(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_116(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_impl_117(
+    mut check: FnPtr<Generic>,
+    mut check_exception: FnPtr<Generic>,
+    mut input: (),
+) {
+    let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
+        return range;
+    });
+    (unsafe {
+        test_int_118(
+            check.copy_from(),
+            check_exception.copy_from(),
+            &mut input,
+            make_range.copy_from(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_119(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        test_with_ranges_impl_101(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+    (unsafe {
+        test_with_ranges_impl_102(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+    (unsafe {
+        test_with_ranges_impl_104(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+    (unsafe {
+        test_with_ranges_impl_106(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+    (unsafe {
+        test_with_ranges_impl_108(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+}
+pub unsafe fn test_with_ranges_120(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    let mut input: () = unimplemented!();
+    (unsafe {
+        test_with_ranges_impl_110(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+    (unsafe {
+        test_with_ranges_impl_111(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+    (unsafe {
+        test_with_ranges_impl_113(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+    (unsafe {
+        test_with_ranges_impl_115(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+    (unsafe {
+        test_with_ranges_impl_117(
+            check.copy_from(),
+            check_exception.copy_from(),
+            input.clone(),
+        )
+    });
+}
+#[repr(C)]
+#[derive(Clone, VaArg, FnPtrArg, Default)]
+pub struct non_contiguous_char_ {
+    data_: (),
+}
+impl non_contiguous_char_ {
+    pub unsafe fn begin(&mut self) -> () {
+        return unimplemented!();
+    }
+    pub unsafe fn end(&mut self) -> () {
+        return unimplemented!();
+    }
+    pub unsafe fn new(data: *mut ()) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+}
+#[repr(C)]
+#[derive(Clone, VaArg, FnPtrArg, Default)]
+pub struct non_contiguous_wchar_t_ {
+    data_: (),
+}
+impl non_contiguous_wchar_t_ {
+    pub unsafe fn begin(&mut self) -> () {
+        return unimplemented!();
+    }
+    pub unsafe fn end(&mut self) -> () {
+        return unimplemented!();
+    }
+    pub unsafe fn new(data: *mut ()) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+}
+#[repr(C)]
+#[derive(Clone, VaArg, FnPtrArg, Default)]
+pub struct contiguous_char_ {
+    data_: (),
+}
+impl contiguous_char_ {
+    pub unsafe fn begin(&mut self) -> () {
+        return unimplemented!();
+    }
+    pub unsafe fn end(&mut self) -> () {
+        return unimplemented!();
+    }
+    pub unsafe fn new(data: *mut ()) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+}
+#[repr(C)]
+#[derive(Clone, VaArg, FnPtrArg, Default)]
+pub struct contiguous_wchar_t_ {
+    data_: (),
+}
+impl contiguous_wchar_t_ {
+    pub unsafe fn begin(&mut self) -> () {
+        return unimplemented!();
+    }
+    pub unsafe fn end(&mut self) -> () {
+        return unimplemented!();
+    }
+    pub unsafe fn new(data: *mut ()) -> Self {
+        let mut this = Self {
+            data_: unimplemented!(),
+        };
+        this
+    }
+}
+pub unsafe fn test_adaptor_121(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    const _: () = assert!(
+        true,
+        "std::format_kind<non_contiguous<CharT>> == std::range_format::sequence"
+    );;
+    const _: () = assert!(true, "std::ranges::sized_range<non_contiguous<CharT>>");;
+    const _: () = assert!(
+        !(false),
+        "!std::ranges::contiguous_range<non_contiguous<CharT>>"
+    );;
+    (unsafe {
+        let mut _input: non_contiguous_char_ = {
+            let mut __tmp_94: () = unimplemented!();
+            non_contiguous_char_::new({ &mut __tmp_94 })
+        };
+        test_char_string_38(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    const _: () = assert!(
+        true,
+        "std::format_kind<contiguous<CharT>> == std::range_format::sequence"
+    );;
+    const _: () = assert!(true, "std::ranges::sized_range<contiguous<CharT>>");;
+    const _: () = assert!(true, "std::ranges::contiguous_range<contiguous<CharT>>");;
+    (unsafe {
+        let mut _input: contiguous_char_ = {
+            let mut __tmp_95: () = unimplemented!();
+            contiguous_char_::new({ &mut __tmp_95 })
+        };
+        test_char_string_39(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn test_adaptor_122(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    const _: () = assert!(
+        true,
+        "std::format_kind<non_contiguous<CharT>> == std::range_format::sequence"
+    );;
+    const _: () = assert!(true, "std::ranges::sized_range<non_contiguous<CharT>>");;
+    const _: () = assert!(
+        !(false),
+        "!std::ranges::contiguous_range<non_contiguous<CharT>>"
+    );;
+    (unsafe {
+        let mut _input: non_contiguous_wchar_t_ = {
+            let mut __tmp_96: () = unimplemented!();
+            non_contiguous_wchar_t_::new({ &mut __tmp_96 })
+        };
+        test_char_string_42(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+    const _: () = assert!(
+        true,
+        "std::format_kind<contiguous<CharT>> == std::range_format::sequence"
+    );;
+    const _: () = assert!(true, "std::ranges::sized_range<contiguous<CharT>>");;
+    const _: () = assert!(true, "std::ranges::contiguous_range<contiguous<CharT>>");;
+    (unsafe {
+        let mut _input: contiguous_wchar_t_ = {
+            let mut __tmp_97: () = unimplemented!();
+            contiguous_wchar_t_::new({ &mut __tmp_97 })
+        };
+        test_char_string_43(check.copy_from(), check_exception.copy_from(), &mut _input)
+    });
+}
+pub unsafe fn format_tests_123(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe { test_char_48(check.copy_from(), check_exception.copy_from()) });
+    {}
+    (unsafe { test_bool_51(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_int_63(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_floating_point_71(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_pointer_79(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_string_87(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_status_89(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_pair_tuple_95(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_tuple_int_97(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_tuple_int_int_int_99(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_with_ranges_119(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_adaptor_121(check.copy_from(), check_exception.copy_from()) });
+}
+pub unsafe fn format_tests_124(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+    (unsafe { test_char_49(check.copy_from(), check_exception.copy_from()) });
+    {
+        (unsafe { test_char_to_wchar_50(check.copy_from(), check_exception.copy_from()) });
+    }
+    (unsafe { test_bool_52(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_int_64(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_floating_point_72(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_pointer_80(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_string_88(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_status_90(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_pair_tuple_96(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_tuple_int_98(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_tuple_int_int_int_100(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_with_ranges_120(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { test_adaptor_122(check.copy_from(), check_exception.copy_from()) });
+}
+pub unsafe fn test_eprintf_125(
+    mut fmt: *const (),
+    args_1: *const *const (),
+    args_2: *const *const (),
+    args_3: *const *const (),
+    args_4: *const (),
+    args_5: *const *const (),
+) {
+    (unsafe {
+        libc::fprintf(
+            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
+            fmt as *const libc::c_char,
+            (*args_1),
+            (*args_2),
+            (*args_3),
+            (*args_4),
+            (*args_5),
+        )
+    });
+}
+pub unsafe fn test_eprintf_126(
+    mut fmt: *const (),
+    args_1: *const *const (),
+    args_2: *const *const (),
+    args_3: *const (),
+) {
+    (unsafe {
+        libc::fprintf(
+            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
+            fmt as *const libc::c_char,
+            (*args_1),
+            (*args_2),
+            (*args_3),
+        )
+    });
+}
+pub unsafe fn test_eprintf_127(mut fmt: *const (), args: *const *const ()) {
+    (unsafe {
+        libc::fprintf(
+            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
+            fmt as *const libc::c_char,
+            (*args),
+        )
+    });
+}
+pub unsafe fn test_log_128(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    mut message: *const (),
+) {
+    let mut msg: *const () = if !(condition).is_null() {
+        c"Assertion failure: ".as_ptr()
+    } else {
+        c"Unconditional failure:".as_ptr()
+    };
+    (unsafe {
+        test_eprintf_125(
+            c"%s%s %s %d\n%s".as_ptr(),
+            &msg,
+            &condition,
+            &file,
+            &line,
+            &message,
+        )
+    });
+}
+pub unsafe fn test_log_129(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_126(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_require_130(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_129(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_is_high_surrogate_131(mut value: ()) -> () {
+    return ((value) >= (55296_())) && ((value) <= (56319_()));
+}
+pub unsafe fn test_is_low_surrogate_132(mut value: ()) -> () {
+    return ((value) >= (56320_())) && ((value) <= (57343_()));
+}
+pub unsafe fn test_is_surrogate_133(mut value: ()) -> () {
+    return ((value) >= (55296_())) && ((value) <= (57343_()));
+}
+pub unsafe fn test_is_code_point_134(mut value: ()) -> () {
+    return ((value) <= (1114111_()));
+}
+pub unsafe fn test_is_scalar_value_135(mut value: ()) -> () {
+    return (unsafe { test_is_code_point_134(value) })
+        && (!(unsafe { test_is_surrogate_133(value) }));
+}
+pub static mut test_replacement_character_136: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { (65533 as ()) });
+pub unsafe fn test_encode_137(out_it: *mut (), mut value: ()) {
+    if ((value) < (128_())) {
+        unimplemented!();
+    } else if ((value) < (2048_())) {
+        unimplemented!();
+        unimplemented!();
+    } else {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_encode_138(out_it: *mut (), mut value: ()) {
+    if (((value) & (4294901760_())) == (0_())) {
+        (unsafe {
+            let _out_it: *mut () = out_it;
+            let _value: () = value;
+            test_encode_137(_out_it, _value)
+        });
+    } else {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_transcode_139(mut first: (), mut last: (), mut out_it: ()) -> () {
+    'loop_: while !(unimplemented!()) {
+        let mut value: () = (*unimplemented!());
+        if (unsafe { test_is_code_point_134(value) }) {
+            (unsafe { test_encode_138(&mut out_it, value) });
+        } else {
+            (unsafe {
+                test_encode_137(
+                    &mut out_it,
+                    (*std::cell::LazyCell::force_mut(
+                        &mut *&raw mut test_replacement_character_136,
+                    )),
+                )
+            });
+        }
+    }
+    return out_it;
+}
+pub unsafe fn test_transcode_140(mut first: *const (), mut last: *const (), mut out_it: ()) -> () {
+    'loop_: while ((first) != (last)) {
+        let mut value: () = (*first.postfix_inc());
+        if (unsafe { test_is_code_point_134(value) }) {
+            (unsafe { test_encode_138(&mut out_it, value) });
+        } else {
+            (unsafe {
+                test_encode_137(
+                    &mut out_it,
+                    (*std::cell::LazyCell::force_mut(
+                        &mut *&raw mut test_replacement_character_136,
+                    )),
+                )
+            });
+        }
+    }
+    return out_it;
+}
+pub unsafe fn operator_shl_141(os: *mut (), loc: *const ()) -> *mut () {
+    return &mut (*unimplemented!());
+}
+pub unsafe fn test_concat_142(stream: *mut (), value: *mut ()) -> *mut () {
+    return &mut (*unimplemented!());
+}
+pub unsafe fn test_concat_143(stream: *mut (), value: *mut ()) -> *mut () {
+    return &mut (*unimplemented!());
+}
+pub unsafe fn test_concat_144(stream: *mut (), value: *const [(); 18]) -> *mut () {
+    return &mut (*unimplemented!());
+}
+pub unsafe fn test_concat_145(stream: *mut (), value: *mut ()) -> *mut () {
+    return &mut (*unimplemented!());
+}
+pub unsafe fn test_concat_146(stream: *mut (), value: *mut ()) -> *mut () {
+    return &mut (*unimplemented!());
+}
+pub unsafe fn test_concat_147(stream: *mut (), value: *mut ()) -> *mut () {
+    let mut b: () = unimplemented!();
+    let mut e: () = unimplemented!();
+    if !(unimplemented!()) {
+        {}
+        (unsafe { test_transcode_139(unimplemented!(), unimplemented!(), unimplemented!()) });
+    }
+    return stream;
+}
+pub unsafe fn test_concat_148(stream: *mut (), value: *mut ()) -> *mut () {
+    let mut b: () = unimplemented!();
+    let mut e: () = unimplemented!();
+    if ((b) != (e)) {
+        {}
+        (unsafe { test_transcode_140(b, e, unimplemented!()) });
+    }
+    return stream;
+}
+pub unsafe fn test_concat_149(stream: *mut (), value: *mut ()) -> *mut () {
+    let mut b: () = unimplemented!();
+    let mut e: () = unimplemented!();
+    if ((b) != (e)) {
+        {}
+        (unsafe { test_transcode_140(b, e, unimplemented!()) });
+    }
+    return stream;
+}
+pub unsafe fn test_concat_message_150(
+    args_0: *const [(); 18],
+    args_1: *mut (),
+    args_2: *const [(); 18],
+    args_3: *mut (),
+    args_4: *const [(); 18],
+    args_5: *mut (),
+    args_6: *mut (),
+) -> () {
+    {
+        let mut sstr: () = unimplemented!();
+        {
+            (unsafe {
+                let _stream: *mut () = &mut sstr;
+                let _value: *const [(); 18] = args_0;
+                test_concat_144(_stream, _value)
+            });
+            {
+                (unsafe {
+                    let _stream: *mut () = &mut sstr;
+                    let _value: *mut () = args_1;
+                    test_concat_146(_stream, _value)
+                });
+                {
+                    (unsafe {
+                        let _stream: *mut () = &mut sstr;
+                        let _value: *const [(); 18] = args_2;
+                        test_concat_144(_stream, _value)
+                    });
+                    {
+                        (unsafe {
+                            let _stream: *mut () = &mut sstr;
+                            let _value: *mut () = args_3;
+                            test_concat_145(_stream, _value)
+                        });
+                        {
+                            (unsafe {
+                                let _stream: *mut () = &mut sstr;
+                                let _value: *const [(); 18] = args_4;
+                                test_concat_144(_stream, _value)
+                            });
+                            {
+                                (unsafe {
+                                    let _stream: *mut () = &mut sstr;
+                                    let _value: *mut () = args_5;
+                                    test_concat_143(_stream, _value)
+                                });
+                                (unsafe {
+                                    let _stream: *mut () = &mut sstr;
+                                    let _value: *mut () = args_6;
+                                    test_concat_142(_stream, _value)
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        return unimplemented!();
+    }
+    panic!("ub: non-void function does not return a value")
+}
+pub unsafe fn test_concat_message_151(
+    args_0: *const [(); 18],
+    args_1: *mut (),
+    args_2: *const [(); 18],
+    args_3: *mut (),
+    args_4: *const [(); 18],
+    args_5: *mut (),
+    args_6: *mut (),
+) -> () {
+    {
+        let mut sstr: () = unimplemented!();
+        {
+            (unsafe {
+                let _stream: *mut () = &mut sstr;
+                let _value: *const [(); 18] = args_0;
+                test_concat_144(_stream, _value)
+            });
+            {
+                (unsafe {
+                    let _stream: *mut () = &mut sstr;
+                    let _value: *mut () = args_1;
+                    test_concat_149(_stream, _value)
+                });
+                {
+                    (unsafe {
+                        let _stream: *mut () = &mut sstr;
+                        let _value: *const [(); 18] = args_2;
+                        test_concat_144(_stream, _value)
+                    });
+                    {
+                        (unsafe {
+                            let _stream: *mut () = &mut sstr;
+                            let _value: *mut () = args_3;
+                            test_concat_148(_stream, _value)
+                        });
+                        {
+                            (unsafe {
+                                let _stream: *mut () = &mut sstr;
+                                let _value: *const [(); 18] = args_4;
+                                test_concat_144(_stream, _value)
+                            });
+                            {
+                                (unsafe {
+                                    let _stream: *mut () = &mut sstr;
+                                    let _value: *mut () = args_5;
+                                    test_concat_147(_stream, _value)
+                                });
+                                (unsafe {
+                                    let _stream: *mut () = &mut sstr;
+                                    let _value: *mut () = args_6;
+                                    test_concat_142(_stream, _value)
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        return unimplemented!();
+    }
+    panic!("ub: non-void function does not return a value")
+}
+pub static mut test_152: std::cell::LazyCell<FnPtr<Generic>> =
+    std::cell::LazyCell::new(|| unsafe {
+        lambda_unsafe!(
+            Generic,
+            {},
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_130(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_153(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_154(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_155(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_156(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_157(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_158(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_159(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_160(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_161(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_162(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_163(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_164(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_165(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_166(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_167(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_168(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_169(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_170(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_171(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_172(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_173(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_174(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_175(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_176(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_177(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_178(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_179(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (),
+             mut fmt: (),
+             args_2: *mut (),
+             args_3: *mut (),
+             args_4: *mut (),
+             args_5: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_180(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_181(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_182(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_183(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (),
+             mut fmt: (),
+             args_2: *mut (),
+             args_3: *mut (),
+             args_4: *mut (),
+             args_5: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_184(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_185(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_186(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_187(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (),
+             mut fmt: (),
+             args_2: *mut (),
+             args_3: *mut (),
+             args_4: *mut (),
+             args_5: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_188(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_189(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_190(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_191(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_192(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_193(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_194(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_195(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_196(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_197(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_198(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_199(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_200(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_201(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_202(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_203(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_204(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_205(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_206(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_207(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_208(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_209(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_210(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_211(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_212(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_213(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_214(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_215(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_216(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_217(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_218(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_219(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_220(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_221(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_222(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_223(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_224(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_225(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_226(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_227(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_228(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_229(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_230(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_231(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_232(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_233(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_234(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_235(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut non_contiguous_char_| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_236(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut non_contiguous_char_, args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_237(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut contiguous_char_| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_238(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut contiguous_char_, args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_239(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_240(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_241(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_242(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_243(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_244(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_245(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_246(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_247(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_248(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_249(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_250(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_251(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_252(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_253(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_254(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_255(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_256(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_257(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_258(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_259(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_260(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_261(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_262(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_263(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_264(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (),
+             mut fmt: (),
+             args_2: *mut (),
+             args_3: *mut (),
+             args_4: *mut (),
+             args_5: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_265(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_266(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_267(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_268(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (),
+             mut fmt: (),
+             args_2: *mut (),
+             args_3: *mut (),
+             args_4: *mut (),
+             args_5: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_269(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_270(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_271(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_272(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (),
+             mut fmt: (),
+             args_2: *mut (),
+             args_3: *mut (),
+             args_4: *mut (),
+             args_5: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_273(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_274(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_275(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_276(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_277(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_278(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_279(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_280(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_281(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_282(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_283(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_284(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_285(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_286(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_287(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_288(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_289(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_290(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_291(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_292(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_293(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_294(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_295(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_296(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_297(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_298(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_299(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_300(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_301(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_302(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_303(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_304(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_305(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_306(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_307(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_308(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_309(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_310(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_311(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_312(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_313(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_314(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_315(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_316(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_317(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_318(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_319(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut (), args_4: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_320(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut non_contiguous_wchar_t_| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_321(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (),
+             mut fmt: (),
+             args_2: *mut non_contiguous_wchar_t_,
+             args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_322(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args: *mut contiguous_wchar_t_| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_323(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            },
+            |mut expected: (), mut fmt: (), args_2: *mut contiguous_wchar_t_, args_3: *mut ()| {
+                let mut out: () = unimplemented!();
+                (unsafe {
+                    let _condition: () = unimplemented!();
+                    let mut _arg: FnPtr<fn()> = lambda_unsafe!(
+                        {
+                            let fmt: *mut () = &mut fmt;
+                            let expected: *mut () = &mut expected;
+                            let out: *mut () = &mut out;
+                        },
+                        || {
+                            (unsafe {
+                                let mut _args: *const () = (unimplemented!() as *const ());
+                                test_eprintf_127(c"%s".as_ptr(), &mut _args)
+                            });
+                        }
+                    );
+                    test_require_324(
+                        _condition,
+                        c"out == expected".as_ptr(),
+                        c"format.functions.format.pass.cpp".as_ptr(),
+                        40_(),
+                        &mut _arg,
+                    )
+                });
+            }
+        )
+    });
+pub static mut test_exception_325: std::cell::LazyCell<FnPtr<Generic>> =
+    std::cell::LazyCell::new(|| unsafe {
+        lambda_unsafe!(
+            Generic,
+            {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut (), _a4: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut (), _a4: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut (), _a4: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut non_contiguous_char_| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut contiguous_char_| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut (), _a4: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut (), _a4: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut (), _a4: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut (), _a3: *mut ()| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut non_contiguous_wchar_t_| {},
+            |mut _a0: (), mut _a1: (), _a2: *mut contiguous_wchar_t_| {}
+        )
+    });
+
+pub fn main() {
+    let mut args: Vec<Vec<u8>> = std::env::args()
+        .map(|arg| arg.as_bytes().to_vec())
+        .collect();
+    args.iter_mut().for_each(|v| v.push(0));
+    let mut argv: Vec<*mut libc::c_char> = args
+        .iter()
+        .map(|arg| arg.as_ptr() as *mut libc::c_char)
+        .collect();
+    argv.push(::std::ptr::null_mut());
+    unsafe {
+        __cpp2rust_init_globals();
+        ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
+    }
+}
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe {
+        format_tests_123(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_152)).copy_from(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_325)).copy_from(),
+        )
+    });
+    (unsafe {
+        format_tests_124(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_152)).copy_from(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_325)).copy_from(),
+        )
+    });
+    return 0_();
+}
+pub unsafe fn __cpp2rust_init_globals() {
+    std::cell::LazyCell::force(&*&raw const test_replacement_character_136);
+    std::cell::LazyCell::force(&*&raw const test_152);
+    std::cell::LazyCell::force(&*&raw const test_exception_325);
+}

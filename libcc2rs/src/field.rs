@@ -1598,10 +1598,11 @@ mod tests {
     }
 
     #[test]
-    #[should_panic(expected = "too large for a pointer to its elements")]
     fn far_vector_field_ptr() {
-        let far: Ptr<Far> = field_ptr!(holds_far(), far);
-        let _: Ptr<i32> = field_ref!(far, v).decay();
+        let holder = holds_far();
+        let far: Ptr<Far> = field_ptr!(holder, far);
+        let v: Ptr<i32> = field_ref!(far, v).decay();
+        assert_eq!(v.offset(1).read(), 6);
     }
 
     #[test]
@@ -1611,6 +1612,8 @@ mod tests {
         let s: Value<Far> = Rc::new(RefCell::new(holds_far().borrow().far.clone()));
         let arr: Ptr<i32> = array_field_ptr!(s, arr);
         assert_eq!(arr.offset(2).read(), 3);
+        let v: Ptr<i32> = field_ref!(s, v).decay();
+        assert_eq!(v.offset(1).read(), 6);
     }
 
     #[derive(Clone, Default, Record, ByteRepr)]

@@ -6,6 +6,7 @@
 #include <clang/AST/ASTContext.h>
 #include <clang/AST/RecursiveASTVisitor.h>
 #include <clang/Basic/LangOptions.h>
+#include <clang/Lex/HeaderSearchOptions.h>
 #include <clang/Lex/Lexer.h>
 #include <clang/Lex/Preprocessor.h>
 #include <clang/Sema/Lookup.h>
@@ -23,6 +24,7 @@
 #include <format>
 #include <ranges>
 #include <string>
+#include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
@@ -79,12 +81,19 @@ public:
 
   bool VisitDeclRefExpr(clang::DeclRefExpr *expr) {
     AddReferencedDecl(expr->getDecl());
+    // a static member named through a derived class
+    if (llvm::isa<clang::CXXMethodDecl>(expr->getDecl()) &&
+        expr->getQualifier().getKind() ==
+            clang::NestedNameSpecifier::Kind::Type) {
+      AddMemberKey(clang::QualType(expr->getQualifier().getAsType(), 0),
+                   MemberName(expr->getDecl()->getDeclName()));
+    }
     return true;
   }
 
   bool VisitMemberExpr(clang::MemberExpr *expr) {
     AddReferencedDecl(expr->getMemberDecl());
-    auto object = expr->getBase()->getType();
+    auto object = expr->getBase()->IgnoreParenImpCasts()->getType();
     if (expr->isArrow()) {
       object = object->getPointeeType();
     }
@@ -96,7 +105,7 @@ public:
     if (auto method = llvm::dyn_cast_or_null<clang::CXXMethodDecl>(
             expr->getDirectCallee());
         method && expr->getNumArgs() > 0) {
-      AddMemberKey(expr->getArg(0)->getType(),
+      AddMemberKey(expr->getArg(0)->IgnoreParenImpCasts()->getType(),
                    MemberName(method->getDeclName()));
     }
     return true;
@@ -135,15 +144,32 @@ private:
       return;
     }
     auto record = object.getNonReferenceType()->getAsCXXRecordDecl();
-    if (!record ||
-        !ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
+    if (!record) {
       return;
     }
-    AddKey(MemberKey(ClassKey(record), name));
+    if (ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
+      AddKey(MemberKey(ClassKey(record), name));
+    }
+    // and the library classes it derives from, which may declare the member
+    // (formatter<color> : formatter<const char *>)
+    if (record->hasDefinition()) {
+      record->forallBases([&](const clang::CXXRecordDecl *base) {
+        if (ctx_.getSourceManager().isInSystemHeader(base->getLocation())) {
+          AddKey(MemberKey(ClassKey(base), name));
+        }
+        return true;
+      });
+    }
   }
 
   void AddReferencedDecl(const clang::ValueDecl *decl) {
     AddType(decl->getType());
+    // a member uses the class declaring it, also when named through a derived
+    // class (std::ios::xalloc of ios_base)
+    if (const auto *record =
+            llvm::dyn_cast<clang::RecordDecl>(decl->getDeclContext())) {
+      AddKey(ClassKey(record));
+    }
     if (const auto *fn = llvm::dyn_cast<clang::FunctionDecl>(decl)) {
       for (const auto *redecl : fn->redecls()) {
         AddType(redecl->getReturnType());
@@ -167,6 +193,11 @@ private:
               alias->getDecl()->getDeclContext())) {
         AddKey(ClassKey(record));
       }
+    }
+    if (const auto *spec = llvm::dyn_cast<clang::TemplateSpecializationType>(
+            type.getTypePtr());
+        spec && spec->isTypeAlias()) {
+      AddKey(DeclKey(spec->getTemplateName().getAsTemplateDecl()));
     }
     if (auto desugared = type.getSingleStepDesugaredType(ctx_);
         desugared != type) {
@@ -192,6 +223,9 @@ private:
     if (const auto *vector = type->getAs<clang::VectorType>()) {
       return AddType(vector->getElementType());
     }
+    if (const auto *atomic = type->getAs<clang::AtomicType>()) {
+      return AddType(atomic->getValueType());
+    }
     if (const auto *fn = type->getAs<clang::FunctionType>()) {
       AddType(fn->getReturnType());
       if (const auto *proto = llvm::dyn_cast<clang::FunctionProtoType>(fn)) {
@@ -214,6 +248,7 @@ private:
         if (ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
           AddSpecialMembers(record);
           AddIterator(type, record);
+          AddNodeHandle(record);
         }
       }
       return;
@@ -272,6 +307,21 @@ private:
     clang::LookupResult category(sema_, &ctx_.Idents.get("iterator_category"),
                                  loc, clang::Sema::LookupMemberName);
     if (sema_.LookupQualifiedName(category, instance_record)) {
+      AddKey(kAnyIteratorKey);
+    }
+  }
+
+  // A container with node handles (set<int>::node_type) uses the rules
+  // written for any class too, as an iterator does.
+  void AddNodeHandle(const clang::CXXRecordDecl *record) {
+    auto definition = record->getDefinition();
+    if (!definition) {
+      return;
+    }
+    if (llvm::any_of(definition->lookup(&ctx_.Idents.get("node_type")),
+                     [](const clang::NamedDecl *decl) {
+                       return llvm::isa<clang::TypedefNameDecl>(decl);
+                     })) {
       AddKey(kAnyIteratorKey);
     }
   }
@@ -363,17 +413,69 @@ unsigned CxxStandard(const clang::LangOptions &opts) {
   return 11;
 }
 
+// Whether a qualified name (std::__is_val_expr) is declared in the TU. A class
+// must be defined: rules name its members (std::_Bit_iterator::difference_type)
+// and some headers only declare it. A class template counts as defined when
+// one of its specializations is (libc++ declares only ctype<_CharT> and
+// defines ctype<char>).
+bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
+  clang::DeclContext *scope = sema.Context.getTranslationUnitDecl();
+  llvm::SmallVector<llvm::StringRef, 4> parts;
+  name.split(parts, "::");
+  for (auto [i, part] : llvm::enumerate(parts)) {
+    bool last = i + 1 == parts.size();
+    clang::LookupResult result(
+        sema, &sema.Context.Idents.get(part), clang::SourceLocation(),
+        last ? clang::Sema::LookupOrdinaryName
+             : clang::Sema::LookupNamespaceName);
+    if (!sema.LookupQualifiedName(result, scope) || result.empty()) {
+      // a C struct is in the tag namespace only (struct addrinfo)
+      if (!last || sema.getLangOpts().CPlusPlus) {
+        return false;
+      }
+      clang::LookupResult tag(sema, &sema.Context.Idents.get(part),
+                              clang::SourceLocation(),
+                              clang::Sema::LookupTagName);
+      return sema.LookupQualifiedName(tag, scope) && !tag.empty();
+    }
+    if (last) {
+      return llvm::all_of(result, [](clang::NamedDecl *found) {
+        auto decl = found->getUnderlyingDecl();
+        if (auto tmpl = llvm::dyn_cast<clang::ClassTemplateDecl>(decl)) {
+          return tmpl->getTemplatedDecl()->hasDefinition() ||
+                 llvm::any_of(tmpl->specializations(),
+                              [](const clang::ClassTemplateSpecializationDecl
+                                     *spec) { return spec->hasDefinition(); });
+        }
+        auto record = llvm::dyn_cast<clang::CXXRecordDecl>(decl);
+        return !record || record->hasDefinition();
+      });
+    }
+    auto ns = result.getAsSingle<clang::NamespaceDecl>();
+    if (!ns) {
+      return false;
+    }
+    scope = ns;
+  }
+  return false;
+}
+
 std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
-                               const clang::LangOptions &opts) {
+                               clang::Sema &sema, llvm::StringRef library) {
+  const auto &opts = sema.getLangOpts();
   bool is_cxx = opts.CPlusPlus;
   const auto &index = is_cxx ? CxxIndex() : CIndex();
   unsigned standard = is_cxx ? CxxStandard(opts) : 0;
   auto common = index.getString("common");
   std::string out;
+  if (is_cxx) {
+    out += "#include <utility>\n";
+  }
   if (!common->empty()) {
     out += "namespace cpp2rust_rules {\n" + common->str() + "}\n";
   }
   auto rules = index.getObject("rules");
+  std::unordered_map<std::string, bool> declared_names;
   std::vector<std::string> candidates(keys.begin(), keys.end());
   candidates.push_back(kAnyClassKey);
   for (const auto &key : candidates) {
@@ -389,10 +491,26 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
       if (auto until = rule->getInteger("until"); until && *until <= standard) {
         continue;
       }
+      if (auto rule_library = rule->getString("library");
+          rule_library && *rule_library != library) {
+        continue;
+      }
       if (auto required = rule->getArray("requires");
           required &&
           !llvm::all_of(*required, [&](const llvm::json::Value &key) {
             return keys.contains(key.getAsString()->str());
+          })) {
+        continue;
+      }
+      if (auto declared = rule->getArray("declares");
+          declared &&
+          !llvm::all_of(*declared, [&](const llvm::json::Value &name) {
+            auto text = name.getAsString()->str();
+            auto [it, inserted] = declared_names.try_emplace(text, false);
+            if (inserted) {
+              it->second = IsDeclared(sema, text);
+            }
+            return it->second;
           })) {
         continue;
       }
@@ -570,8 +688,7 @@ std::string TypeKey(clang::QualType type) {
           llvm::dyn_cast<clang::TypeOfExprType>(type.getTypePtr())) {
     type = typeof_type->getUnderlyingExpr()->getType();
   }
-  if (auto alias = type->getAs<clang::TypedefType>();
-      alias && !type.getCanonicalType()->getAsTagDecl()) {
+  if (auto alias = type->getAs<clang::TypedefType>()) {
     return DeclKey(alias->getDecl());
   }
   if (auto sugar = type->getAs<clang::PredefinedSugarType>()) {
@@ -622,11 +739,17 @@ void PragmaHandler::HandlePragma(clang::Preprocessor &PP,
   RuleUsageCollector collector(CI_.getSema(), keys);
   collector.TraverseDecl(ctx.getTranslationUnitDecl());
 
-  auto text = BuildRulesEpilogue(keys, ctx.getLangOpts());
+  auto text = BuildRulesEpilogue(
+      keys, CI_.getSema(),
+      PP.isMacroDefined("_LIBCPP_VERSION") ? "libcxx" : "libstdcxx");
   log() << "rules loaded for this translation unit:\n" << text;
   auto rules_file = src_mgr.createFileID(
       llvm::MemoryBuffer::getMemBufferCopy(text, "<cpp2rust-rules>"),
       clang::SrcMgr::C_System);
+  // Rules name the library's private and protected members, as the library
+  // does. The user's code and its pending instantiations are done by now.
+  const_cast<clang::LangOptions &>(CI_.getSema().getLangOpts()).AccessControl =
+      false;
   PP.EnterSourceFile(rules_file, nullptr, tok.getLocation());
 }
 

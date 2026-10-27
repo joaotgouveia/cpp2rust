@@ -1,0 +1,603 @@
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::cell::RefCell;
+use std::collections::BTreeMap;
+use std::io::prelude::*;
+use std::io::{Read, Seek, Write};
+use std::os::fd::AsFd;
+use std::rc::{Rc, Weak};
+pub fn DoNotOptimize_0(value: Ptr<()>) -> Ptr<()> {
+    b"";
+    return (value).clone();
+}
+pub fn is_string_asan_correct_1(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_2(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_3(_a0: Ptr<()>) -> () {
+    return true;
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct malloc_allocator_base {}
+impl malloc_allocator_base {
+    pub fn outstanding_alloc() -> () {
+        unimplemented!();
+        return ((alloc_count_5.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_6.with(|rc| *rc.borrow())));
+    }
+    pub fn reset() {
+        unimplemented!();
+        disable_default_constructor_7.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_4.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_6.with(|rc| *rc.borrow_mut() = 0_());
+    }
+}
+thread_local!(
+    pub static outstanding_bytes_4: Value<()> = Rc::new(RefCell::new(0_()));
+);
+thread_local!(
+    pub static alloc_count_5: Value<()> = Rc::new(RefCell::new(0_()));
+);
+thread_local!(
+    pub static dealloc_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+);
+thread_local!(
+    pub static disable_default_constructor_7: Value<()> = Rc::new(RefCell::new(false));
+);
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(8)]
+pub struct min_pointer_char__std_integral_constant_unsigned_long__0__ {
+    #[offset(0)]
+    #[byte_size(8)]
+    ptr_: Ptr<()>,
+}
+impl min_pointer_char__std_integral_constant_unsigned_long__0__ {
+    fn new_1(mut p: Ptr<()>) -> Self {
+        Self { ptr_: (p).clone() }
+    }
+    pub fn pointer_to(t: Ptr<()>) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
+        return min_pointer_char__std_integral_constant_unsigned_long__0__::new_1({
+            unimplemented!()
+        });
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(8)]
+pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    #[offset(0)]
+    #[byte_size(8)]
+    ptr_: (),
+}
+impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(8)]
+pub struct min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
+    #[offset(0)]
+    #[byte_size(8)]
+    ptr_: Ptr<()>,
+}
+impl min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
+    fn new_1(mut p: Ptr<()>) -> Self {
+        Self { ptr_: (p).clone() }
+    }
+    pub fn new_2(mut p: min_pointer_char__std_integral_constant_unsigned_long__0__) -> Self {
+        Self {
+            ptr_: (p.ptr_).clone(),
+        }
+    }
+    pub fn pointer_to(
+        t: Ptr<()>,
+    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
+        return min_pointer_const_char__std_integral_constant_unsigned_long__0__::new_1({
+            unimplemented!()
+        });
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(8)]
+pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
+    #[offset(0)]
+    #[byte_size(8)]
+    ptr_: (),
+}
+impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct min_allocator_char_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct safe_allocator_char_ {}
+impl safe_allocator_char_ {
+    pub fn new() -> Self {
+        Self {}
+    }
+}
+impl Default for safe_allocator_char_ {
+    fn default() -> Self {
+        { safe_allocator_char_::new() }
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct tiny_size_allocator_29__char__rebind_char_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct tiny_size_allocator_29__char_ {}
+pub fn test_string_9() {
+    let test_data: Value<Box<[Box<[Ptr<()>]>]>> = Rc::new(RefCell::new(Box::new([
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"abcde"),
+            Ptr::<()>::from_string_literal(b"abcdefghij"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"12345"),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+        ]),
+    ])));
+    let results: Value<Box<[Box<[Ptr<()>]>]>> = Rc::new(RefCell::new(Box::new([
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"12345"),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcde"),
+            Ptr::<()>::from_string_literal(b"abcde12345"),
+            Ptr::<()>::from_string_literal(b"abcde1234567890"),
+            Ptr::<()>::from_string_literal(b"abcde12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcdefghij"),
+            Ptr::<()>::from_string_literal(b"abcdefghij12345"),
+            Ptr::<()>::from_string_literal(b"abcdefghij1234567890"),
+            Ptr::<()>::from_string_literal(b"abcdefghij12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst12345"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst1234567890"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst12345678901234567890"),
+        ]),
+    ])));
+    let mut i: () = 0_();
+    'loop_: while (i != 4_()) {
+        let mut k: () = 0_();
+        'loop_: while (k != 4_()) {
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            k.prefix_inc();
+        }
+        i.prefix_inc();
+    }
+}
+pub fn test_string_10() {
+    let test_data: Value<Box<[Box<[Ptr<()>]>]>> = Rc::new(RefCell::new(Box::new([
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"abcde"),
+            Ptr::<()>::from_string_literal(b"abcdefghij"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"12345"),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+        ]),
+    ])));
+    let results: Value<Box<[Box<[Ptr<()>]>]>> = Rc::new(RefCell::new(Box::new([
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"12345"),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcde"),
+            Ptr::<()>::from_string_literal(b"abcde12345"),
+            Ptr::<()>::from_string_literal(b"abcde1234567890"),
+            Ptr::<()>::from_string_literal(b"abcde12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcdefghij"),
+            Ptr::<()>::from_string_literal(b"abcdefghij12345"),
+            Ptr::<()>::from_string_literal(b"abcdefghij1234567890"),
+            Ptr::<()>::from_string_literal(b"abcdefghij12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst12345"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst1234567890"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst12345678901234567890"),
+        ]),
+    ])));
+    let mut i: () = 0_();
+    'loop_: while (i != 4_()) {
+        let mut k: () = 0_();
+        'loop_: while (k != 4_()) {
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            k.prefix_inc();
+        }
+        i.prefix_inc();
+    }
+}
+pub fn test_string_11() {
+    let test_data: Value<Box<[Box<[Ptr<()>]>]>> = Rc::new(RefCell::new(Box::new([
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"abcde"),
+            Ptr::<()>::from_string_literal(b"abcdefghij"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"12345"),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+        ]),
+    ])));
+    let results: Value<Box<[Box<[Ptr<()>]>]>> = Rc::new(RefCell::new(Box::new([
+        Box::new([
+            Ptr::<()>::from_string_literal(b""),
+            Ptr::<()>::from_string_literal(b"12345"),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcde"),
+            Ptr::<()>::from_string_literal(b"abcde12345"),
+            Ptr::<()>::from_string_literal(b"abcde1234567890"),
+            Ptr::<()>::from_string_literal(b"abcde12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcdefghij"),
+            Ptr::<()>::from_string_literal(b"abcdefghij12345"),
+            Ptr::<()>::from_string_literal(b"abcdefghij1234567890"),
+            Ptr::<()>::from_string_literal(b"abcdefghij12345678901234567890"),
+        ]),
+        Box::new([
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst12345"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst1234567890"),
+            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst12345678901234567890"),
+        ]),
+    ])));
+    let mut i: () = 0_();
+    'loop_: while (i != 4_()) {
+        let mut k: () = 0_();
+        'loop_: while (k != 4_()) {
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            {
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
+                unimplemented!();
+            }
+            k.prefix_inc();
+        }
+        i.prefix_inc();
+    }
+}
+pub fn test_12() -> () {
+    ({ test_string_9() });
+    ({ test_string_10() });
+    ({ test_string_11() });
+    {
+        let mut lhs: () = unimplemented!();
+        unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut result: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    return true;
+}
+pub fn main() {
+    let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
+    let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
+    let args_ptr: Ptr<i8> = args.as_pointer();
+    let mut off = 0;
+    let argv: Value<Box<[Ptr<i8>]>> = Rc::new(RefCell::new(
+        ::std::env::args()
+            .map(|arg| {
+                let ptr = args_ptr.offset(off);
+                ptr.write_c_bytes(arg.as_bytes());
+                off += arg.len() + 1;
+                ptr
+            })
+            .chain(::std::iter::once(Ptr::null()))
+            .collect(),
+    ));
+    __cpp2rust_init_globals();
+    ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
+}
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_12() });
+    const _: () = assert!(true, "test()");;
+    return 0_();
+}
+pub trait min_allocator_char_Impl {
+    fn allocate(&self, n: ()) -> min_pointer_char__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_char__std_integral_constant_unsigned_long__0__, n: ());
+}
+impl min_allocator_char_Impl for Ptr<min_allocator_char_> {
+    fn allocate(&self, mut n: ()) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
+        return min_pointer_char__std_integral_constant_unsigned_long__0__::new_1({
+            unimplemented!()
+        });
+    }
+    fn deallocate(
+        &self,
+        mut p: min_pointer_char__std_integral_constant_unsigned_long__0__,
+        mut n: (),
+    ) {
+        unimplemented!();
+    }
+}
+pub trait min_pointer_char__std_integral_constant_unsigned_long__0__Impl {
+    fn to_(&self) -> () {
+        unimplemented!()
+    }
+    fn operator_deref(&self) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn operator_arrow(&self) -> Ptr<()>;
+    fn operator_inc_8(&self) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_inc_9(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_dec_10(&self) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_dec_11(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_add_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_sub_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_add(
+        &self,
+        mut n: (),
+    ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_sub(
+        &self,
+        mut n: (),
+    ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_index(&self, n: ()) -> Ptr<()>;
+}
+impl min_pointer_char__std_integral_constant_unsigned_long__0__Impl
+    for Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__>
+{
+    fn operator_arrow(&self) -> Ptr<()> {
+        return (*self).with(|__s| __s.ptr_.clone());
+    }
+    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+        return (*self).with(|__s| __s.ptr_.clone()).offset((n) as isize);
+    }
+}
+pub trait min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl {
+    fn to_(&self) -> () {
+        unimplemented!()
+    }
+    fn operator_deref(&self) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn operator_arrow(&self) -> Ptr<()>;
+    fn operator_inc_9(
+        &self,
+    ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_inc_10(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_dec_11(
+        &self,
+    ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_dec_12(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_add_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_sub_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_add(
+        &self,
+        mut n: (),
+    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_sub(
+        &self,
+        mut n: (),
+    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+}
+impl min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl
+    for Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__>
+{
+    fn operator_arrow(&self) -> Ptr<()> {
+        return (*self).with(|__s| __s.ptr_.clone());
+    }
+}
+pub trait min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl {
+    fn to_(&self) -> () {
+        unimplemented!()
+    }
+}
+impl min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl
+    for Ptr<min_pointer_const_void__std_integral_constant_unsigned_long__0__>
+{
+}
+pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
+    fn to_(&self) -> () {
+        unimplemented!()
+    }
+}
+impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
+    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
+{
+}
+pub trait safe_allocator_char_Impl {
+    fn allocate(&self, n: ()) -> Ptr<()>;
+    fn deallocate(&self, p: Ptr<()>, n: ());
+}
+impl safe_allocator_char_Impl for Ptr<safe_allocator_char_> {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        let memory: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+        {
+            ({
+                memset_8(
+                    (*memory.borrow()).to_any(),
+                    0_(),
+                    (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
+                )
+            });
+        }
+        return (*memory.borrow()).clone();
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+        {
+            ({
+                let _value: Value<()> = Rc::new(RefCell::new(
+                    ({
+                        memset_8(
+                            (p).to_any(),
+                            0_(),
+                            (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
+                        )
+                    }),
+                ));
+                DoNotOptimize_0(_value.as_pointer())
+            });
+        }
+        unimplemented!();
+    }
+}
+pub trait tiny_size_allocator_29__char_Impl {
+    fn allocate(&self, n: ()) -> Ptr<()>;
+    fn deallocate(&self, ptr: Ptr<()>, n: ());
+    fn max_size(&self) -> ();
+}
+impl tiny_size_allocator_29__char_Impl for Ptr<tiny_size_allocator_29__char_> {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!();
+        return unimplemented!();
+    }
+    fn deallocate(&self, mut ptr: Ptr<()>, mut n: ()) {
+        unimplemented!();
+    }
+    fn max_size(&self) -> () {
+        return 29_();
+    }
+}
+pub fn __cpp2rust_init_globals() {
+    let _ = outstanding_bytes_4.with(|_| ());
+    let _ = alloc_count_5.with(|_| ());
+    let _ = dealloc_count_6.with(|_| ());
+    let _ = disable_default_constructor_7.with(|_| ());
+}

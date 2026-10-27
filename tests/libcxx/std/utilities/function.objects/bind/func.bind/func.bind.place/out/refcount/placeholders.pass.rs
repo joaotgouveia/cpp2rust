@@ -1,0 +1,46 @@
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::cell::RefCell;
+use std::collections::BTreeMap;
+use std::io::prelude::*;
+use std::io::{Read, Seek, Write};
+use std::os::fd::AsFd;
+use std::rc::{Rc, Weak};
+pub fn test_all_0() -> () {
+    ({ test_1(_1_2.with(|v| v.as_pointer())) });
+    ({ test_3(_2_4.with(|v| v.as_pointer())) });
+    ({ test_5(_3_6.with(|v| v.as_pointer())) });
+    ({ test_7(_4_8.with(|v| v.as_pointer())) });
+    ({ test_9(_5_10.with(|v| v.as_pointer())) });
+    ({ test_11(_6_12.with(|v| v.as_pointer())) });
+    ({ test_13(_7_14.with(|v| v.as_pointer())) });
+    ({ test_15(_8_16.with(|v| v.as_pointer())) });
+    ({ test_17(_9_18.with(|v| v.as_pointer())) });
+    ({ test_19(_10_20.with(|v| v.as_pointer())) });
+    return true;
+}
+pub fn main() {
+    let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
+    let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
+    let args_ptr: Ptr<i8> = args.as_pointer();
+    let mut off = 0;
+    let argv: Value<Box<[Ptr<i8>]>> = Rc::new(RefCell::new(
+        ::std::env::args()
+            .map(|arg| {
+                let ptr = args_ptr.offset(off);
+                ptr.write_c_bytes(arg.as_bytes());
+                off += arg.len() + 1;
+                ptr
+            })
+            .chain(::std::iter::once(Ptr::null()))
+            .collect(),
+    ));
+    __cpp2rust_init_globals();
+    ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
+}
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_all_0() });
+    const _: () = assert!(true, "test_all()");;
+    return 0_();
+}
+pub fn __cpp2rust_init_globals() {}

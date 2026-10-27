@@ -1,0 +1,796 @@
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::cell::RefCell;
+use std::collections::BTreeMap;
+use std::io::prelude::*;
+use std::io::{Read, Seek, Write};
+use std::os::fd::AsFd;
+use std::rc::{Rc, Weak};
+pub fn test_comparison_0(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_1(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_2(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_3(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_4(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_5(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_6(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_7(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_8(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_9(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_10(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_11(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_12(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_13(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_14(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_15(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_16(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_17(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_18(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_19(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_20(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_21(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_22(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_23(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_24(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_25(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_26(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_27(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_28(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_29(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_30(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_31(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_32(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_33(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_34(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_35(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_36(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_37(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_38(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_39(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_40(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_41(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_42(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_43(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_44(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_45(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_46(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_47(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_48(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_49(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_50(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_51(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_52(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_53(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_54(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_55(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_56(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_57(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_58(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_59(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_60(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_61(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_62(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_63(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_64(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_65(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_66(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_67(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_68(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_69(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_70(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_71(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_72(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_73(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_74(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_75(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_76(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_77(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_78(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_79(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_80(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_81(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_82(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_83(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_84(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_85(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_86(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_87(mut equal: (), dest: (), src: ()) {
+    let dest: Value<()> = Rc::new(RefCell::new(dest));
+    let src: Value<()> = Rc::new(RefCell::new(src));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_comparison_different_rank_88() {
+    let mut D: () = dynamic_extent_89.with(|rc| *rc.borrow());
+    ({ test_comparison_12(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_13(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_14(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_15(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_16(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_17(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_18(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_19(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_20(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_21(false, unimplemented!(), unimplemented!()) });
+}
+pub fn test_comparison_different_rank_90() {
+    let mut D: () = dynamic_extent_89.with(|rc| *rc.borrow());
+    ({ test_comparison_34(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_35(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_36(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_37(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_38(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_39(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_40(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_41(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_42(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_43(false, unimplemented!(), unimplemented!()) });
+}
+pub fn test_comparison_different_rank_91() {
+    let mut D: () = dynamic_extent_89.with(|rc| *rc.borrow());
+    ({ test_comparison_56(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_57(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_58(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_59(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_60(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_61(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_62(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_63(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_64(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_65(false, unimplemented!(), unimplemented!()) });
+}
+pub fn test_comparison_different_rank_92() {
+    let mut D: () = dynamic_extent_89.with(|rc| *rc.borrow());
+    ({ test_comparison_78(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_79(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_80(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_81(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_82(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_83(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_84(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_85(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_86(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_87(false, unimplemented!(), unimplemented!()) });
+}
+pub fn test_comparison_same_rank_93() {
+    let mut D: () = dynamic_extent_89.with(|rc| *rc.borrow());
+    ({ test_comparison_0(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_1(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_2(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_3(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_4(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_1(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_2(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_5(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_6(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_7(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_8(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_9(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_7(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_10(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_11(false, unimplemented!(), unimplemented!()) });
+}
+pub fn test_comparison_same_rank_94() {
+    let mut D: () = dynamic_extent_89.with(|rc| *rc.borrow());
+    ({ test_comparison_22(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_23(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_24(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_25(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_26(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_23(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_24(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_27(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_28(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_29(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_30(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_31(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_29(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_32(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_33(false, unimplemented!(), unimplemented!()) });
+}
+pub fn test_comparison_same_rank_95() {
+    let mut D: () = dynamic_extent_89.with(|rc| *rc.borrow());
+    ({ test_comparison_44(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_45(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_46(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_47(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_48(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_45(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_46(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_49(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_50(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_51(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_52(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_53(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_51(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_54(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_55(false, unimplemented!(), unimplemented!()) });
+}
+pub fn test_comparison_same_rank_96() {
+    let mut D: () = dynamic_extent_89.with(|rc| *rc.borrow());
+    ({ test_comparison_66(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_67(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_68(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_69(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_70(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_67(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_68(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_71(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_72(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_73(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_74(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_75(true, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_73(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_76(false, unimplemented!(), unimplemented!()) });
+    ({ test_comparison_77(false, unimplemented!(), unimplemented!()) });
+}
+pub fn test_comparison_97() {
+    ({ test_comparison_same_rank_93() });
+    ({ test_comparison_different_rank_88() });
+}
+pub fn test_comparison_98() {
+    ({ test_comparison_same_rank_94() });
+    ({ test_comparison_different_rank_90() });
+}
+pub fn test_comparison_99() {
+    ({ test_comparison_same_rank_95() });
+    ({ test_comparison_different_rank_91() });
+}
+pub fn test_comparison_100() {
+    ({ test_comparison_same_rank_96() });
+    ({ test_comparison_different_rank_92() });
+}
+pub fn test_101() -> () {
+    ({ test_comparison_97() });
+    ({ test_comparison_98() });
+    ({ test_comparison_99() });
+    ({ test_comparison_100() });
+    return true;
+}
+pub fn main() {
+    let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
+    let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
+    let args_ptr: Ptr<i8> = args.as_pointer();
+    let mut off = 0;
+    let argv: Value<Box<[Ptr<i8>]>> = Rc::new(RefCell::new(
+        ::std::env::args()
+            .map(|arg| {
+                let ptr = args_ptr.offset(off);
+                ptr.write_c_bytes(arg.as_bytes());
+                off += arg.len() + 1;
+                ptr
+            })
+            .chain(::std::iter::once(Ptr::null()))
+            .collect(),
+    ));
+    __cpp2rust_init_globals();
+    ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
+}
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_101() });
+    const _: () = assert!(true, "test()");;
+    return 0_();
+}
+pub fn __cpp2rust_init_globals() {}

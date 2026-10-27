@@ -1,0 +1,366 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct malloc_allocator_base {}
+impl malloc_allocator_base {
+    pub unsafe fn outstanding_alloc() -> () {
+        unimplemented!();
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2))));
+    }
+    pub unsafe fn reset() {
+        unimplemented!();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_3)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_();
+    }
+}
+pub static mut outstanding_bytes_0: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut alloc_count_1: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut dealloc_count_2: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { false });
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut (),
+}
+impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    ptr_: (),
+}
+impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_allocator_int_ {}
+pub static mut t1_4: std::cell::LazyCell<[(); 8]> =
+    std::cell::LazyCell::new(|| unsafe { [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_()] });
+pub static mut t2_5: std::cell::LazyCell<[(); 3]> =
+    std::cell::LazyCell::new(|| unsafe { [10_(), 11_(), 12_()] });
+pub static mut size_t1_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    (((unimplemented!() as usize - unimplemented!() as usize) / ::std::mem::size_of::<()>()) as ()
+        as ())
+});
+pub static mut size_t2_7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    (((unimplemented!() as usize - unimplemented!() as usize) / ::std::mem::size_of::<()>()) as ()
+        as ())
+});
+pub unsafe fn testd_8(c: *const (), mut p: (), mut f: ()) {
+    let mut i: () = unimplemented!();
+    let mut n1: () = 0_();
+    'loop_: while ((n1) < (p)) {
+        unimplemented!();
+        {
+            n1.prefix_inc();
+            unimplemented!()
+        };
+    }
+    let mut n2: () = f;
+    'loop_: while ((n2) < ((f) + (1_()))) {
+        unimplemented!();
+        {
+            n2.prefix_inc();
+            unimplemented!()
+        };
+    }
+    'loop_: while ((n1) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+        unimplemented!();
+        {
+            n1.prefix_inc();
+            unimplemented!()
+        };
+    }
+    unimplemented!();
+}
+pub unsafe fn testd_9(c: *const (), mut p: (), mut f: ()) {
+    let mut i: () = unimplemented!();
+    let mut n1: () = 0_();
+    'loop_: while ((n1) < (p)) {
+        unimplemented!();
+        {
+            n1.prefix_inc();
+            unimplemented!()
+        };
+    }
+    let mut n2: () = f;
+    'loop_: while ((n2) < ((f) + (1_()))) {
+        unimplemented!();
+        {
+            n2.prefix_inc();
+            unimplemented!()
+        };
+    }
+    'loop_: while ((n1) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+        unimplemented!();
+        {
+            n1.prefix_inc();
+            unimplemented!()
+        };
+    }
+    unimplemented!();
+}
+pub unsafe fn tests_10(c: *const (), mut p: (), mut f: ()) {
+    let mut i: () = unimplemented!();
+    let mut n: () = 0_();
+    if ((p) == (f)) || ((p) == ((f) + (1_()))) {
+        n = 0_();
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+    } else if ((p) < (f)) {
+        n = 0_();
+        'loop_: while ((n) < (p)) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = f;
+        'loop_: while ((n) < ((f) + (1_()))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = p;
+        'loop_: while ((n) < (f)) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = ((f) + (1_()));
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+    } else {
+        n = 0_();
+        'loop_: while ((n) < (f)) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = ((f) + (1_()));
+        'loop_: while ((n) < (p)) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = f;
+        'loop_: while ((n) < ((f) + (1_()))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = p;
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+    }
+    unimplemented!();
+}
+pub unsafe fn tests_11(c: *const (), mut p: (), mut f: ()) {
+    let mut i: () = unimplemented!();
+    let mut n: () = 0_();
+    if ((p) == (f)) || ((p) == ((f) + (1_()))) {
+        n = 0_();
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+    } else if ((p) < (f)) {
+        n = 0_();
+        'loop_: while ((n) < (p)) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = f;
+        'loop_: while ((n) < ((f) + (1_()))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = p;
+        'loop_: while ((n) < (f)) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = ((f) + (1_()));
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+    } else {
+        n = 0_();
+        'loop_: while ((n) < (f)) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = ((f) + (1_()));
+        'loop_: while ((n) < (p)) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = f;
+        'loop_: while ((n) < ((f) + (1_()))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+        n = p;
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+            unimplemented!();
+            {
+                n.prefix_inc();
+                unimplemented!()
+            };
+        }
+    }
+    unimplemented!();
+}
+pub unsafe fn test_12() -> () {
+    {
+        let mut f: () = 0_();
+        'loop_: while ((f)
+            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t2_7)) - (1_())))
+        {
+            let mut p: () = 0_();
+            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+                let mut c1: () = unimplemented!();
+                let mut c2: () = unimplemented!();
+                unimplemented!();
+                (unsafe { testd_8(&c1, p, f) });
+                p.prefix_inc();
+            }
+            f.prefix_inc();
+        }
+        let mut f: () = 0_();
+        'loop_: while ((f)
+            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6)) - (1_())))
+        {
+            let mut p: () = 0_();
+            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+                let mut c1: () = unimplemented!();
+                unimplemented!();
+                (unsafe { tests_10(&c1, p, f) });
+                p.prefix_inc();
+            }
+            f.prefix_inc();
+        }
+    }
+    {
+        let mut f: () = 0_();
+        'loop_: while ((f)
+            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t2_7)) - (1_())))
+        {
+            let mut p: () = 0_();
+            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+                let mut c1: () = unimplemented!();
+                let mut c2: () = unimplemented!();
+                unimplemented!();
+                (unsafe { testd_9(&c1, p, f) });
+                p.prefix_inc();
+            }
+            f.prefix_inc();
+        }
+        let mut f: () = 0_();
+        'loop_: while ((f)
+            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6)) - (1_())))
+        {
+            let mut p: () = 0_();
+            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
+                let mut c1: () = unimplemented!();
+                unimplemented!();
+                (unsafe { tests_11(&c1, p, f) });
+                p.prefix_inc();
+            }
+            f.prefix_inc();
+        }
+    }
+    return true;
+}
+pub fn main() {
+    let mut args: Vec<Vec<u8>> = std::env::args()
+        .map(|arg| arg.as_bytes().to_vec())
+        .collect();
+    args.iter_mut().for_each(|v| v.push(0));
+    let mut argv: Vec<*mut libc::c_char> = args
+        .iter()
+        .map(|arg| arg.as_ptr() as *mut libc::c_char)
+        .collect();
+    argv.push(::std::ptr::null_mut());
+    unsafe {
+        __cpp2rust_init_globals();
+        ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
+    }
+}
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    unimplemented!();
+    return 0_();
+}
+pub unsafe fn __cpp2rust_init_globals() {
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);
+    std::cell::LazyCell::force(&*&raw const alloc_count_1);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_2);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_3);
+    std::cell::LazyCell::force(&*&raw const t1_4);
+    std::cell::LazyCell::force(&*&raw const t2_5);
+    std::cell::LazyCell::force(&*&raw const size_t1_6);
+    std::cell::LazyCell::force(&*&raw const size_t2_7);
+}

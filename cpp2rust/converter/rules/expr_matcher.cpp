@@ -10,6 +10,7 @@
 #include <clang/Lex/Lexer.h>
 #include <clang/Sema/EnterExpressionEvaluationContext.h>
 #include <clang/Sema/Overload.h>
+#include <clang/Sema/SemaConcept.h>
 #include <clang/Sema/Template.h>
 #include <clang/Sema/TemplateDeduction.h>
 #include <llvm/ADT/STLExtras.h>
@@ -28,26 +29,6 @@
 namespace cpp2rust::AstMatcher {
 
 namespace {
-
-bool hasSameArgTypes(clang::ASTContext &ctx, const clang::Expr *use,
-                     const clang::Expr *returned) {
-  auto use_call = llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(use));
-  auto rule_call =
-      llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(returned));
-  if (!use_call || !rule_call) {
-    return true;
-  }
-  if (use_call->getNumArgs() != rule_call->getNumArgs()) {
-    return false;
-  }
-  for (unsigned i = 0; i < use_call->getNumArgs(); ++i) {
-    if (!ctx.hasSameUnqualifiedType(use_call->getArg(i)->getType(),
-                                    rule_call->getArg(i)->getType())) {
-      return false;
-    }
-  }
-  return true;
-}
 
 struct MacroUsage {
   std::string name;
@@ -160,7 +141,15 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
     operands.assign(op->arg_begin(), op->arg_end());
     if (!operands.empty() &&
         llvm::isa_and_nonnull<clang::CXXMethodDecl>(op->getDirectCallee())) {
-      operands[0] = operands[0]->IgnoreParenImpCasts();
+      operands[0] = getObject(ctx, operands[0]->IgnoreParenImpCasts());
+    }
+    // A rule written as a0++ has no parameter for the dummy int of a postfix
+    // operator.
+    auto postfix = (op->getOperator() == clang::OO_PlusPlus ||
+                    op->getOperator() == clang::OO_MinusMinus) &&
+                   operands.size() == 2;
+    if (postfix && arity == 1) {
+      operands.pop_back();
     }
   } else if (auto call = llvm::dyn_cast<clang::CXXMemberCallExpr>(expr)) {
     operands.push_back(getObject(
@@ -175,7 +164,9 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
   } else if (auto list =
                  llvm::dyn_cast<clang::CXXStdInitializerListExpr>(expr)) {
     operands.push_back(list->getSubExpr()->IgnoreImplicit());
-  } else if (auto member = llvm::dyn_cast<clang::MemberExpr>(expr)) {
+  } else if (auto member = llvm::dyn_cast<clang::MemberExpr>(expr);
+             member && !llvm::isa<clang::VarDecl, clang::EnumConstantDecl>(
+                           member->getMemberDecl())) {
     auto macro_base =
         RuleDecls::GetMacroMemberBase(ctx.getSourceManager(), member);
     auto base =
@@ -203,21 +194,83 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
   return operands;
 }
 
+// The operands a rule deduces from, as the use's callee was chosen: a
+// function template deduced from the arguments as written (string_view == "ab"
+// deduces from const char[3], which picks the type_identity_t overload), any
+// other callee takes them converted to its parameters.
+std::vector<clang::Expr *> deducedOperands(clang::ASTContext &ctx,
+                                           const clang::Expr *use,
+                                           unsigned arity) {
+  auto operands = getOperands(ctx, use, arity);
+  auto expr = RuleDecls::SkipImplicit(use);
+  const clang::FunctionDecl *callee = nullptr;
+  if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
+    callee = call->getDirectCallee();
+  } else if (auto construct = llvm::dyn_cast<clang::CXXConstructExpr>(expr)) {
+    callee = construct->getConstructor();
+  }
+  if (!callee || !callee->isFunctionTemplateSpecialization()) {
+    return operands;
+  }
+  for (auto &operand : operands) {
+    operand = operand->IgnoreUnlessSpelledInSource();
+  }
+  return operands;
+}
+
+bool hasSameArgTypes(clang::ASTContext &ctx, const clang::Expr *use,
+                     const clang::Expr *returned, unsigned arity) {
+  auto use_call = llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(use));
+  if (!use_call ||
+      !llvm::isa<clang::CallExpr>(RuleDecls::SkipImplicit(returned))) {
+    return true;
+  }
+  auto use_operands = getOperands(ctx, use, arity);
+  auto rule_operands = getOperands(ctx, returned, arity);
+  if (use_operands.size() != rule_operands.size()) {
+    return false;
+  }
+  // The object of the use may be of a class derived from the object of the
+  // rule (codecvt_utf16 calling codecvt::in)
+  auto method =
+      llvm::dyn_cast_or_null<clang::CXXMethodDecl>(use_call->getDirectCallee());
+  unsigned first = 0;
+  if (method && !method->isStatic()) {
+    auto use_object = use_operands[0]->getType()->getAsCXXRecordDecl();
+    auto rule_object = rule_operands[0]->getType()->getAsCXXRecordDecl();
+    if (!use_object || !rule_object ||
+        (use_object->getCanonicalDecl() != rule_object->getCanonicalDecl() &&
+         !use_object->isDerivedFrom(rule_object))) {
+      return false;
+    }
+    first = 1;
+  }
+  for (unsigned i = first; i < use_operands.size(); ++i) {
+    if (!ctx.hasSameUnqualifiedType(use_operands[i]->getType(),
+                                    rule_operands[i]->getType())) {
+      return false;
+    }
+  }
+  return true;
+}
+
 clang::FunctionDecl *deduce(clang::Sema &sema,
                             clang::FunctionTemplateDecl *rule,
                             clang::TemplateArgumentListInfo &explicit_args,
                             llvm::ArrayRef<clang::Expr *> operands) {
   RuleDecls::Trial trial(sema);
-  clang::FunctionDecl *specialization = nullptr;
-  clang::sema::TemplateDeductionInfo info(rule->getLocation());
-  auto result = sema.DeduceTemplateArguments(
-      rule, explicit_args.size() ? &explicit_args : nullptr, operands,
-      specialization, info, false, false, false, clang::QualType(),
-      clang::Expr::Classification(), false,
-      [](llvm::ArrayRef<clang::QualType>, bool) { return false; });
-  return result == clang::TemplateDeductionResult::Success && !trial.failed()
-             ? specialization
-             : nullptr;
+  auto loc = rule->getLocation();
+  clang::OverloadCandidateSet set(loc, clang::OverloadCandidateSet::CSK_Normal);
+  auto found = clang::DeclAccessPair::make(rule, clang::AS_public);
+  sema.AddTemplateOverloadCandidate(
+      rule, found, explicit_args.size() ? &explicit_args : nullptr, operands,
+      set);
+  clang::OverloadCandidateSet::iterator best;
+  if (set.BestViableFunction(sema, loc, best) != clang::OR_Success ||
+      trial.failed()) {
+    return nullptr;
+  }
+  return best->Function;
 }
 
 const clang::Expr *
@@ -252,6 +305,86 @@ substituteSpecializationInRuleTmpl(clang::Sema &sema,
   return result.isInvalid() || trial.failed() ? nullptr : result.get();
 }
 
+// A class nested in a class template, by a member name
+// (typename iota_view<T1, T2>::__iterator) or a member template
+// (typename elements_view<T1, T2>::template __sentinel<T3>).
+bool isNestedClass(clang::QualType type) {
+  auto spec = type->getAs<clang::TemplateSpecializationType>();
+  return type->getAs<clang::DependentNameType>() ||
+         (spec && spec->getTemplateName().getAsDependentTemplateName());
+}
+
+// A static member named through its class (std::numeric_limits<T1>::min())
+// binds the rule's parameters from the class of the member the use names.
+std::optional<std::vector<clang::TemplateArgument>>
+deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
+                    const clang::Expr *use) {
+  auto returned = RuleDecls::GetReturned(rule->getTemplatedDecl());
+  if (!returned) {
+    return std::nullopt;
+  }
+  returned = RuleDecls::SkipImplicit(returned);
+  // a class nested in the rule's class
+  // (typename discrete_distribution<T1>::param_type(a0, a1))
+  if (auto construct =
+          llvm::dyn_cast<clang::CXXUnresolvedConstructExpr>(returned)) {
+    auto written = construct->getTypeAsWritten();
+    auto record = RuleDecls::SkipImplicit(use)
+                      ->getType()
+                      .getCanonicalType()
+                      ->getAsCXXRecordDecl();
+    if (!isNestedClass(written) || !record) {
+      return std::nullopt;
+    }
+    return RuleDecls::DeduceFromClass(sema, rule->getTemplateParameters(),
+                                      written, record);
+  }
+  // an operand of a class nested in the rule's class
+  // (const typename regex_traits<T1>::_RegexMask & of regex_traits<char>)
+  auto params = rule->getTemplatedDecl()->parameters();
+  auto operands = getOperands(sema.Context, use, params.size());
+  for (unsigned i = 0; i < params.size() && i < operands.size(); ++i) {
+    auto param = params[i]->getType().getNonReferenceType();
+    auto record = operands[i]
+                      ->getType()
+                      .getNonReferenceType()
+                      .getCanonicalType()
+                      ->getAsCXXRecordDecl();
+    if (!isNestedClass(param) || !record) {
+      continue;
+    }
+    if (auto deduced = RuleDecls::DeduceFromClass(
+            sema, rule->getTemplateParameters(), param, record)) {
+      return deduced;
+    }
+  }
+  if (auto call = llvm::dyn_cast<clang::CallExpr>(returned)) {
+    returned = call->getCallee()->IgnoreParenImpCasts();
+  }
+  auto ref = llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned);
+  if (!ref ||
+      ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
+    return std::nullopt;
+  }
+  use = RuleDecls::SkipImplicit(use);
+  const clang::Decl *used = nullptr;
+  if (auto call = llvm::dyn_cast<clang::CallExpr>(use)) {
+    used = call->getDirectCallee();
+  } else if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(use)) {
+    used = ref->getDecl();
+  }
+  auto record = used ? llvm::dyn_cast<clang::CXXRecordDecl>(
+                           used->getDeclContext())
+                     : nullptr;
+  if (!record) {
+    return std::nullopt;
+  }
+  return RuleDecls::DeduceFromType(
+      sema, rule->getTemplateParameters(),
+      clang::QualType(ref->getQualifier().getAsType(), 0),
+      sema.Context.getCanonicalTagType(record));
+}
+
 clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
                                               clang::FunctionTemplateDecl *rule,
                                               const clang::Expr *use) {
@@ -262,7 +395,11 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
   bool aggregate =
       llvm::isa<clang::InitListExpr, clang::CXXStdInitializerListExpr>(
           RuleDecls::SkipImplicit(use));
-  if (deducible.all() && !aggregate) {
+  // a construction takes the class's arguments from its type, not from the
+  // operands (piecewise_constant_distribution<double>(0, 0, 1, fw))
+  bool construction =
+      llvm::isa<clang::CXXConstructExpr>(RuleDecls::SkipImplicit(use));
+  if (deducible.all() && !aggregate && !construction) {
     return explicit_args;
   }
   auto params = rule->getTemplateParameters();
@@ -272,18 +409,59 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
           ->getType()
           .getCanonicalType()
           .getUnqualifiedType());
+  // a construction binds every argument of the class
+  auto last = construction ? params->size() - 1
+                           : static_cast<unsigned>(deducible.find_last_unset());
+  // parameters deduced from the operands or with a default (T2 = T1, the SFINAE
+  // parameter) need no binding here
+  auto defaulted = [](const clang::NamedDecl *param) {
+    if (auto type = llvm::dyn_cast<clang::TemplateTypeParmDecl>(param)) {
+      return type->hasDefaultArgument();
+    }
+    if (auto value = llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
+      return value->hasDefaultArgument();
+    }
+    auto tmpl = llvm::cast<clang::TemplateTemplateParmDecl>(param);
+    return tmpl->hasDefaultArgument();
+  };
+  auto bound = [&](const auto &args) {
+    for (unsigned i = 0; i < params->size() && i <= last; ++i) {
+      auto param = params->getParam(i);
+      if (!param->isParameterPack() && !deducible[i] && !defaulted(param) &&
+          args[i].isNull()) {
+        return false;
+      }
+    }
+    return true;
+  };
+  if (!deduced || !bound(*deduced)) {
+    if (auto qualified = deduceFromQualifier(sema, rule, use);
+        qualified && bound(*qualified)) {
+      deduced = std::move(qualified);
+    }
+  }
   if (!deduced) {
     return explicit_args;
   }
-  auto last = static_cast<unsigned>(deducible.find_last_unset());
   for (unsigned i = 0; i < params->size() && i <= last; ++i) {
     auto param = params->getParam(i);
-    if (param->isParameterPack() || (*deduced)[i].isNull()) {
+    if ((*deduced)[i].isNull()) {
       break;
     }
     clang::QualType nttp_type;
     if (auto nttp = llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
       nttp_type = nttp->getType();
+    }
+    // the class's pack (variant<T1...>) takes all the explicit arguments; the
+    // parameters after it are deduced from the operands
+    if (param->isParameterPack()) {
+      if ((*deduced)[i].getKind() == clang::TemplateArgument::Pack) {
+        for (const auto &element : (*deduced)[i].pack_elements()) {
+          explicit_args.addArgument(
+              sema.getTrivialTemplateArgumentLoc(element, nttp_type, loc));
+        }
+      }
+      break;
     }
     explicit_args.addArgument(
         sema.getTrivialTemplateArgumentLoc((*deduced)[i], nttp_type, loc));
@@ -292,14 +470,14 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
 }
 
 void checkCallable(clang::Sema &sema, const clang::Expr *use,
-                   clang::FunctionDecl *rule) {
+                   clang::FunctionDecl *rule,
+                   llvm::ArrayRef<clang::Expr *> operands) {
   auto ref = llvm::dyn_cast<clang::DeclRefExpr>(RuleDecls::SkipImplicit(use));
   if (ref && llvm::isa<clang::FunctionDecl>(ref->getDecl())) {
     return;
   }
   RuleDecls::Trial trial(sema);
   auto loc = use->getBeginLoc();
-  auto operands = getOperands(sema.Context, use, rule->getNumParams());
   clang::OverloadCandidateSet set(loc, clang::OverloadCandidateSet::CSK_Normal);
   auto found = clang::DeclAccessPair::make(rule, clang::AS_public);
   if (auto tmpl = rule->getDescribedFunctionTemplate()) {
@@ -329,17 +507,96 @@ MatchResult matchVar(clang::ASTContext &ctx, const ResolvedDecl &usage_decl,
   return llvm::ArrayRef<clang::TemplateArgument>();
 }
 
+// A static member named through a class (std::numeric_limits<T>::min()) is
+// the use of that class: numeric_limits<const volatile T1>::min() reaches the
+// same member through its base, but names another class.
+// the class written before :: or, for obj.min(), the class of the object
+clang::QualType namingClass(const clang::Expr *expr) {
+  auto naming = [](const clang::Expr *expr) -> clang::QualType {
+    expr = RuleDecls::SkipImplicit(expr);
+    if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
+      expr = call->getCallee()->IgnoreParenImpCasts();
+    }
+    if (auto member = llvm::dyn_cast<clang::MemberExpr>(expr);
+        member && llvm::isa<clang::VarDecl, clang::CXXMethodDecl>(
+                      member->getMemberDecl()) &&
+        (llvm::isa<clang::VarDecl>(member->getMemberDecl()) ||
+         llvm::cast<clang::CXXMethodDecl>(member->getMemberDecl())
+             ->isStatic())) {
+      auto base = member->getBase()->getType();
+      return member->isArrow() ? base->getPointeeType() : base;
+    }
+    auto ref = llvm::dyn_cast<clang::DeclRefExpr>(expr);
+    if (!ref ||
+        ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
+      return {};
+    }
+    auto qualifier = clang::QualType(ref->getQualifier().getAsType(), 0);
+    // an enumerator of an unscoped enum is named by its class too
+    // (path::format::auto_format is path::auto_format)
+    if (auto enum_decl = qualifier->getAsEnumDecl();
+        enum_decl && !enum_decl->isScoped()) {
+      if (auto record = llvm::dyn_cast<clang::CXXRecordDecl>(
+              enum_decl->getDeclContext())) {
+        return enum_decl->getASTContext().getCanonicalTagType(record);
+      }
+    }
+    return qualifier;
+  };
+  return naming(expr);
+}
+
+bool sameNamingClass(clang::ASTContext &ctx, const clang::Expr *use,
+                     const clang::Expr *returned) {
+  auto used = namingClass(use);
+  auto ruled = namingClass(returned);
+  if (used.isNull() || ruled.isNull() ||
+      ctx.hasSameUnqualifiedType(used, ruled)) {
+    return true;
+  }
+  // a static member named through a derived class (std::ios::xalloc of
+  // ios_base), which a rule naming the class itself beats
+  auto used_record = used->getAsCXXRecordDecl();
+  auto ruled_record = ruled->getAsCXXRecordDecl();
+  return used_record && ruled_record && used_record->hasDefinition() &&
+         used_record->isDerivedFrom(ruled_record);
+}
+
 MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
                           const ResolvedDecl &usage_decl,
                           clang::FunctionDecl *rule) {
   auto &ctx = sema.Context;
   auto returned = RuleDecls::GetReturned(rule);
   if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl ||
-      !hasSameArgTypes(ctx, use, returned)) {
+      !hasSameArgTypes(ctx, use, returned, rule->getNumParams()) ||
+      !sameNamingClass(ctx, use, returned)) {
     return std::nullopt;
   }
-  checkCallable(sema, use, rule);
+  checkCallable(sema, use, rule,
+                getOperands(ctx, use, rule->getNumParams()));
   return llvm::ArrayRef<clang::TemplateArgument>();
+}
+
+bool constructsReturnType(const clang::Expr *returned, clang::QualType ret,
+                          const ResolvedDecl &usage_decl) {
+  auto list =
+      llvm::dyn_cast<clang::InitListExpr>(RuleDecls::SkipImplicit(returned));
+  if (!list || list->getType()->isRecordType()) {
+    return false;
+  }
+  auto record = ret->getAsCXXRecordDecl();
+  if (!record) {
+    return false;
+  }
+  if (auto decl = std::get_if<const clang::Decl *>(&usage_decl)) {
+    auto ctor = llvm::dyn_cast<clang::CXXConstructorDecl>(*decl);
+    return ctor &&
+           ctor->getParent()->getCanonicalDecl() == record->getCanonicalDecl();
+  }
+  if (auto aggregate = std::get_if<AggregateUsage>(&usage_decl)) {
+    return RuleKeys::GetTypeKey(ret) == aggregate->type;
+  }
+  return false;
 }
 
 MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
@@ -347,28 +604,157 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
                           clang::FunctionTemplateDecl *rule) {
   auto &ctx = sema.Context;
   auto explicit_args = getResultArgs(sema, rule, use);
-  auto specialization =
-      deduce(sema, rule, explicit_args,
-             getOperands(ctx, use, rule->getTemplatedDecl()->getNumParams()));
+  auto arity = rule->getTemplatedDecl()->getNumParams();
+  // as the callee deduced, or, where the use converts an argument the callee
+  // did not deduce from (std::string to the string_view of operator==), as
+  // converted
+  auto operands = deducedOperands(ctx, use, arity);
+  auto specialization = deduce(sema, rule, explicit_args, operands);
+  if (!specialization) {
+    operands = getOperands(ctx, use, arity);
+    specialization = deduce(sema, rule, explicit_args, operands);
+  }
   if (!specialization) {
     return std::nullopt;
   }
   if (std::holds_alternative<AggregateUsage>(usage_decl)) {
     auto returned = RuleDecls::GetReturned(rule->getTemplatedDecl());
-    if (getResolvedDecl(ctx, returned, /*must_resolve=*/false) != usage_decl) {
+    if (getResolvedDecl(ctx, returned, /*must_resolve=*/false) != usage_decl &&
+        !constructsReturnType(returned, specialization->getReturnType(),
+                              usage_decl)) {
       return std::nullopt;
     }
-    checkCallable(sema, use, rule->getTemplatedDecl());
+    checkCallable(sema, use, rule->getTemplatedDecl(), operands);
     return specialization->getTemplateSpecializationArgs()->asArray();
   }
   auto returned =
       substituteSpecializationInRuleTmpl(sema, rule, specialization);
-  if (!returned ||
-      getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl) {
+  if (!returned) {
     return std::nullopt;
   }
-  checkCallable(sema, use, rule->getTemplatedDecl());
+  if (constructsReturnType(returned, specialization->getReturnType(),
+                           usage_decl)) {
+    checkCallable(sema, use, rule->getTemplatedDecl(), operands);
+    return specialization->getTemplateSpecializationArgs()->asArray();
+  }
+  if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl ||
+      !sameNamingClass(ctx, use, returned)) {
+    return std::nullopt;
+  }
+  checkCallable(sema, use, rule->getTemplatedDecl(), operands);
   return specialization->getTemplateSpecializationArgs()->asArray();
+}
+
+// Whether the constraints of a subsume those of b. Two rules spell the same
+// library constraint at two places, so atoms are matched by their canonical
+// profile instead of by their appearance in the source.
+bool subsumes(clang::Sema &sema, const clang::FunctionTemplateDecl *a,
+              const clang::FunctionTemplateDecl *b) {
+  llvm::SmallVector<clang::AssociatedConstraint, 4> a_constraints;
+  llvm::SmallVector<clang::AssociatedConstraint, 4> b_constraints;
+  a->getAssociatedConstraints(a_constraints);
+  b->getAssociatedConstraints(b_constraints);
+  // anything subsumes no constraints, and no constraints subsume nothing else
+  if (b_constraints.empty()) {
+    return true;
+  }
+  if (a_constraints.empty()) {
+    return false;
+  }
+  auto identical = [&](const clang::AtomicConstraint &lhs,
+                       const clang::AtomicConstraint &rhs) {
+    if (!lhs.hasMatchingParameterMapping(sema.Context, rhs)) {
+      return false;
+    }
+    llvm::FoldingSetNodeID lhs_id;
+    llvm::FoldingSetNodeID rhs_id;
+    lhs.getConstraintExpr()->Profile(lhs_id, sema.Context, /*Canonical=*/true);
+    rhs.getConstraintExpr()->Profile(rhs_id, sema.Context, /*Canonical=*/true);
+    return lhs_id == rhs_id;
+  };
+  clang::SubsumptionChecker checker(sema, identical);
+  return checker.Subsumes(a, a_constraints, b, b_constraints).value_or(false);
+}
+
+// Whether a parameter of the rule is a class or a specialization of a class
+// template, rather than a template parameter of the rule. An alias template
+// (std::iter_difference_t<T1>) names no class of its own.
+bool namesClass(const clang::FunctionDecl *rule) {
+  return llvm::any_of(rule->parameters(), [](const clang::ParmVarDecl *param) {
+    auto type = param->getType().getNonReferenceType();
+    while (type->isPointerType()) {
+      type = type->getPointeeType();
+    }
+    // a class nested in a class template
+    // (typename iota_view<T1, T2>::__iterator)
+    if (auto spec = type->getAs<clang::TemplateSpecializationType>();
+        spec && spec->getTemplateName().getAsDependentTemplateName()) {
+      return true;
+    }
+    if (auto member = type->getAs<clang::DependentNameType>()) {
+      auto qualifier = member->getQualifier().getAsType();
+      type = qualifier ? clang::QualType(qualifier, 0) : type;
+    }
+    if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
+      return !spec->isTypeAlias() &&
+             llvm::isa_and_nonnull<clang::ClassTemplateDecl>(
+                 spec->getTemplateName().getAsTemplateDecl());
+    }
+    return type->getAsCXXRecordDecl() != nullptr;
+  });
+}
+
+// The more constrained of two rules that differ only in their constraints.
+const clang::NamedDecl *moreConstrained(clang::Sema &sema,
+                                        const clang::NamedDecl *a,
+                                        clang::FunctionTemplateDecl *a_tmpl,
+                                        const clang::NamedDecl *b,
+                                        clang::FunctionTemplateDecl *b_tmpl) {
+  // overloads differ in their parameters, never in their return type
+  // (move_iterator's void operator++(int) and the constrained one returning
+  // move_iterator)
+  auto a_params = a_tmpl->getTemplatedDecl()->parameters();
+  auto b_params = b_tmpl->getTemplatedDecl()->parameters();
+  if (a_params.size() != b_params.size() ||
+      !llvm::all_of(llvm::zip(a_params, b_params),
+                    [&](auto params) {
+                      return sema.Context.hasSameType(
+                          std::get<0>(params)->getType(),
+                          std::get<1>(params)->getType());
+                    }) ||
+      !sema.TemplateParameterListsAreEqual(
+          a_tmpl->getTemplateParameters(), b_tmpl->getTemplateParameters(),
+          /*Complain=*/false, clang::Sema::TPL_TemplateMatch)) {
+    return nullptr;
+  }
+  auto a_subsumes = subsumes(sema, a_tmpl, b_tmpl);
+  auto b_subsumes = subsumes(sema, b_tmpl, a_tmpl);
+  if (a_subsumes == b_subsumes) {
+    return nullptr;
+  }
+  return a_subsumes ? a : b;
+}
+
+// Whether the rule deduces template parameters from the operands once the
+// use's type binds those of the class (tuple(T2 &&...) does, as the forwarding
+// constructor of tuple<T1...>; tuple(const T1 &...) does not).
+bool deducesFromOperands(clang::Sema &sema, const clang::Expr *use,
+                         clang::FunctionTemplateDecl *rule) {
+  llvm::SmallBitVector deducible;
+  sema.MarkDeducedTemplateParameters(rule, deducible);
+  auto fixed = RuleDecls::DeduceFromType(
+      sema, rule->getTemplateParameters(),
+      rule->getTemplatedDecl()->getReturnType(),
+      RuleDecls::SkipImplicit(use)
+          ->getType()
+          .getCanonicalType()
+          .getUnqualifiedType());
+  for (unsigned i = 0; i < deducible.size(); ++i) {
+    if (deducible[i] && (!fixed || (*fixed)[i].isNull())) {
+      return true;
+    }
+  }
+  return false;
 }
 
 } // namespace
@@ -398,21 +784,63 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
                                         const clang::NamedDecl *b) {
   auto a_function = a->getAsFunction();
   auto b_function = b->getAsFunction();
+  // A rule naming the class the use names beats one naming its base
+  // (numeric_limits<const T1>::min over numeric_limits<T1>::min).
+  if (a_function && b_function) {
+    auto used = namingClass(use);
+    auto names = [&](const clang::FunctionDecl *function) {
+      auto ruled = namingClass(RuleDecls::GetReturned(function));
+      return !used.isNull() && !ruled.isNull() &&
+             sema.Context.hasSameUnqualifiedType(
+                 used.getCanonicalType(), ruled.getCanonicalType());
+    };
+    auto a_names = names(a_function);
+    auto b_names = names(b_function);
+    if (a_names != b_names) {
+      return a_names ? a : b;
+    }
+  }
   // A rule that takes default arguments of the use matches it only because of
   // them, as C++ would not call it with the arguments that are written.
   if (a_function && b_function) {
-    auto a_operands =
-        getOperands(sema.Context, use, a_function->getNumParams()).size();
-    auto b_operands =
-        getOperands(sema.Context, use, b_function->getNumParams()).size();
-    if (a_operands != b_operands) {
-      return a_operands < b_operands ? a : b;
+    auto defaulted = [&](const clang::FunctionDecl *function) {
+      return llvm::count_if(
+          getOperands(sema.Context, use, function->getNumParams()),
+          [](const clang::Expr *operand) {
+            return llvm::isa<clang::CXXDefaultArgExpr>(operand);
+          });
+    };
+    auto a_defaulted = defaulted(a_function);
+    auto b_defaulted = defaulted(b_function);
+    if (a_defaulted != b_defaulted) {
+      return a_defaulted < b_defaulted ? a : b;
     }
   }
   auto a_tmpl =
       a_function ? a_function->getDescribedFunctionTemplate() : nullptr;
   auto b_tmpl =
       b_function ? b_function->getDescribedFunctionTemplate() : nullptr;
+  // Two plain functions are told apart as C++ calls them: an exact match on
+  // invalid_argument beats the inherited rule on logic_error.
+  if (a_function && b_function && !a_tmpl && !b_tmpl) {
+    RuleDecls::Trial trial(sema);
+    auto loc = use->getBeginLoc();
+    auto operands = getOperands(sema.Context, use, a_function->getNumParams());
+    clang::OverloadCandidateSet set(loc,
+                                    clang::OverloadCandidateSet::CSK_Normal);
+    for (auto function : {a_function, b_function}) {
+      auto candidate = const_cast<clang::FunctionDecl *>(function);
+      sema.AddOverloadCandidate(
+          candidate, clang::DeclAccessPair::make(candidate, clang::AS_public),
+          operands, set);
+    }
+    clang::OverloadCandidateSet::iterator best;
+    if (set.BestViableFunction(sema, loc, best) != clang::OR_Success ||
+        trial.failed()) {
+      return nullptr;
+    }
+    return best->Function == a_function ? a : b;
+  }
   if (!a_tmpl || !b_tmpl) {
     if (!a_tmpl && b_tmpl) {
       return a;
@@ -420,17 +848,44 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
     return a_tmpl && !b_tmpl ? b : nullptr;
   }
   RuleDecls::Trial trial(sema);
-  auto better = sema.getMoreSpecializedTemplate(
-      a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Call,
-      getOperands(sema.Context, use).size());
-  if (!better) {
-    better = sema.getMoreSpecializedTemplate(a_tmpl, b_tmpl, use->getBeginLoc(),
-                                             clang::TPOC_Conversion, 0);
+  // partial ordering compares rules taking the same operands; a rule written
+  // as a0++ takes one less than one taking the dummy int of a postfix operator
+  clang::FunctionTemplateDecl *better = nullptr;
+  if (getOperands(sema.Context, use, a_function->getNumParams()).size() ==
+      getOperands(sema.Context, use, b_function->getNumParams()).size()) {
+    better = sema.getMoreSpecializedTemplate(
+        a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Call,
+        getOperands(sema.Context, use).size());
+    if (!better) {
+      better = sema.getMoreSpecializedTemplate(
+          a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Conversion, 0);
+    }
   }
   if (better == a_tmpl) {
     return a;
   }
-  return better == b_tmpl ? b : nullptr;
+  if (better == b_tmpl) {
+    return b;
+  }
+  if (auto constrained = moreConstrained(sema, a, a_tmpl, b, b_tmpl)) {
+    return constrained;
+  }
+  // A rule written for a class (reverse_iterator<T1>) beats a generic rule
+  // over any iterator (forward_iterator<T1>).
+  auto a_class = namesClass(a_function);
+  auto b_class = namesClass(b_function);
+  if (a_class != b_class) {
+    return a_class ? a : b;
+  }
+  // As C++ prefers a non-template: a rule that the use's type binds fully
+  // (tuple(const T1 &...)) beats one deducing from the operands
+  // (tuple(T2 &&...)).
+  auto a_deduces = deducesFromOperands(sema, use, a_tmpl);
+  auto b_deduces = deducesFromOperands(sema, use, b_tmpl);
+  if (a_deduces != b_deduces) {
+    return a_deduces ? b : a;
+  }
+  return nullptr;
 }
 
 } // namespace cpp2rust::AstMatcher

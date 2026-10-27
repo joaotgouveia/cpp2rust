@@ -1,0 +1,325 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+
+pub fn main() {
+    let mut args: Vec<Vec<u8>> = std::env::args()
+        .map(|arg| arg.as_bytes().to_vec())
+        .collect();
+    args.iter_mut().for_each(|v| v.push(0));
+    let mut argv: Vec<*mut libc::c_char> = args
+        .iter()
+        .map(|arg| arg.as_ptr() as *mut libc::c_char)
+        .collect();
+    argv.push(::std::ptr::null_mut());
+    unsafe {
+        __cpp2rust_init_globals();
+        ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
+    }
+}
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 4] = [-15_(), -128_(), -128_(), -125_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -31_();
+        n[(1_()) as usize] = -128_();
+        n[(2_()) as usize] = -123_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -47_();
+        n[(1_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 4] = [-15_(), -128_(), -128_(), -125_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -31_();
+        n[(1_()) as usize] = -128_();
+        n[(2_()) as usize] = -123_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -47_();
+        n[(1_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 7] = [-17_(), -69_(), -65_(), -15_(), -128_(), -128_(), -125_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -31_();
+        n[(1_()) as usize] = -128_();
+        n[(2_()) as usize] = -123_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -17_();
+        n[(1_()) as usize] = -69_();
+        n[(2_()) as usize] = -65_();
+        n[(3_()) as usize] = -47_();
+        n[(4_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 4] = [-15_(), -128_(), -128_(), -125_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -31_();
+        n[(1_()) as usize] = -128_();
+        n[(2_()) as usize] = -123_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -47_();
+        n[(1_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 4] = [-15_(), -128_(), -128_(), -125_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -31_();
+        n[(1_()) as usize] = -128_();
+        n[(2_()) as usize] = -123_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -47_();
+        n[(1_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 7] = [-17_(), -69_(), -65_(), -15_(), -128_(), -128_(), -125_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -31_();
+        n[(1_()) as usize] = -128_();
+        n[(2_()) as usize] = -123_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -17_();
+        n[(1_()) as usize] = -69_();
+        n[(2_()) as usize] = -65_();
+        n[(3_()) as usize] = -47_();
+        n[(4_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 3] = [-31_(), -128_(), -123_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -47_();
+        n[(1_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 3] = [-31_(), -128_(), -123_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -47_();
+        n[(1_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c: () = unimplemented!();
+        let mut w: () = 0_();
+        let mut n: [(); 6] = [-17_(), -69_(), -65_(), -31_(), -128_(), -123_()];
+        let mut wp: *mut () = std::ptr::null_mut();
+        let mut m: () = unimplemented!();
+        let mut np: *const () = std::ptr::null();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        n[(0_()) as usize] = -47_();
+        n[(1_()) as usize] = -109_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        w = 86_();
+        n[(0_()) as usize] = 86_();
+        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    return 0_();
+}
+pub unsafe fn __cpp2rust_init_globals() {}

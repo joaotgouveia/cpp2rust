@@ -18,20 +18,30 @@
 namespace cpp2rust::RuleDecls {
 class Trial {
 public:
+  // Rules name the library's private members in their SFINAE, as the library
+  // does, so access is not checked while a rule is substituted.
   explicit Trial(clang::Sema &sema)
       : diagnostics_(sema.getDiagnostics()),
         suppressed_(diagnostics_.getSuppressAllDiagnostics()),
+        lang_opts_(const_cast<clang::LangOptions &>(sema.getLangOpts())),
+        access_control_(lang_opts_.AccessControl),
         trap_(sema, /*ForValidityCheck=*/true) {
     diagnostics_.setSuppressAllDiagnostics(true);
+    lang_opts_.AccessControl = false;
   }
 
-  ~Trial() { diagnostics_.setSuppressAllDiagnostics(suppressed_); }
+  ~Trial() {
+    lang_opts_.AccessControl = access_control_;
+    diagnostics_.setSuppressAllDiagnostics(suppressed_);
+  }
 
   bool failed() const { return trap_.hasErrorOccurred(); }
 
 private:
   clang::DiagnosticsEngine &diagnostics_;
   bool suppressed_;
+  clang::LangOptions &lang_opts_;
+  bool access_control_;
   clang::Sema::SFINAETrap trap_;
 };
 
@@ -46,7 +56,16 @@ std::optional<std::vector<clang::TemplateArgument>>
 DeduceFromType(clang::Sema &sema, clang::TemplateParameterList *params,
                clang::QualType pattern, clang::QualType actual);
 
+// The rule's parameters from a pattern naming a class through the classes it
+// is nested in (typename elements_view<T1, T2>::template __sentinel<T3> of
+// elements_view<V, 0>::__sentinel<true>).
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
+                clang::QualType pattern, const clang::CXXRecordDecl *record);
+
 bool IsInternal(const clang::NamedDecl *decl);
+
+const clang::TypeAliasTemplateDecl *AliasTemplateOf(clang::QualType type);
 
 clang::QualType PeelSugar(clang::ASTContext &ctx, clang::QualType type);
 

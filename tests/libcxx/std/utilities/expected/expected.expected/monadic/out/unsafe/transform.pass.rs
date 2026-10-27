@@ -1,0 +1,529 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
+    unimplemented!();
+    (*x).adlSwapCalled = true;
+    (*y).adlSwapCalled = true;
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
+pub struct ADLSwap {
+    pub i: (),
+    pub adlSwapCalled: (),
+}
+impl ADLSwap {
+    pub unsafe fn new(mut ii: ()) -> Self {
+        let mut this = Self {
+            i: ii,
+            adlSwapCalled: false,
+        };
+        this
+    }
+}
+impl Default for ADLSwap {
+    fn default() -> Self {
+        unsafe {
+            ADLSwap {
+                i: unimplemented!(),
+                adlSwapCalled: false,
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg, Default)]
+pub struct MoveOnlyErrorType {}
+impl MoveOnlyErrorType {
+    pub unsafe fn new(mut _a0: ()) -> Self {
+        let mut this = Self {};
+        this
+    }
+    pub unsafe fn new_1(_a0: *mut MoveOnlyErrorType) -> Self {
+        let mut this = Self {};
+        this
+    }
+    pub unsafe fn new_2(_a0: *const MoveOnlyErrorType) -> Self {
+        let mut this = Self {};
+        this
+    }
+}
+pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+    return (((*_a0).b) == ((*_a1).b));
+}
+#[repr(C)]
+#[derive(FnPtrArg, MoveCtorUnsafe, Default)]
+pub struct TailClobberer_0_ {
+    b: (),
+}
+impl TailClobberer_0_ {
+    pub unsafe fn move_from(_a0: *mut TailClobberer_0_) -> Self {
+        let mut this = Self { b: (*_a0).b };
+        this
+    }
+}
+impl std::cmp::PartialEq for TailClobberer_0_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_eq_1(
+                self as *const TailClobberer_0_,
+                other as *const TailClobberer_0_,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for TailClobberer_0_ {}
+const _: () = assert!(
+    true,
+    "!std::is_trivially_copy_constructible_v<TailClobberer<0>>"
+);
+const _: () = assert!(
+    true,
+    "std::is_trivially_move_constructible_v<TailClobberer<0>>"
+);
+#[repr(C)]
+#[derive(FnPtrArg, Default)]
+pub struct TailClobbererNonTrivialMove_0__true__false_ {}
+impl TailClobbererNonTrivialMove_0__true__false_ {}
+#[repr(C)]
+#[derive(FnPtrArg, Default)]
+pub struct TailClobbererNonTrivialMove_0__false__false_ {}
+impl TailClobbererNonTrivialMove_0__false__false_ {}
+const _: () = assert!(
+    true,
+    "!std::is_trivially_copy_constructible_v<TailClobbererNonTrivialMove<0>>"
+);
+const _: () = assert!(
+    true,
+    "std::is_move_constructible_v<TailClobbererNonTrivialMove<0>>"
+);
+const _: () = assert!(
+    true,
+    "!std::is_trivially_move_constructible_v<TailClobbererNonTrivialMove<0>>"
+);
+const _: () = assert!(
+    true,
+    "std::is_nothrow_move_constructible_v<TailClobbererNonTrivialMove<0, true>>"
+);
+const _: () = assert!(
+    true,
+    "!std::is_nothrow_move_constructible_v<TailClobbererNonTrivialMove<0, false>>"
+);
+#[repr(C)]
+#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, CopyAssignUnsafe)]
+pub struct BoolWithPadding {
+    val_: (),
+}
+impl BoolWithPadding {
+    pub unsafe fn new_1() -> Self {
+        let mut this = BoolWithPadding::new_2({ false });
+        this
+    }
+    pub unsafe fn new_2(mut val: ()) -> Self {
+        let mut this = Self {
+            val_: unimplemented!(),
+        };
+        {
+            (unsafe {
+                let ___s: () = (&raw mut this as ());
+                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
+                memset_2(___s, 0_(), ___n)
+            });
+        }
+        this.val_ = val;
+        this
+    }
+    pub unsafe fn copy_from(other: *const BoolWithPadding) -> Self {
+        let mut this = BoolWithPadding::new_2({ (*other).val_ });
+        this
+    }
+    pub unsafe fn copy_assign(&mut self, other: *const BoolWithPadding) -> *mut BoolWithPadding {
+        self.val_ = (*other).val_;
+        return &mut (*(self as *mut BoolWithPadding));
+    }
+    pub unsafe fn move_from(_a0: *mut BoolWithPadding) -> Self {
+        let mut this = Self { val_: (*_a0).val_ };
+        this
+    }
+}
+impl Clone for BoolWithPadding {
+    fn clone(&self) -> Self {
+        unsafe { BoolWithPadding::copy_from(self as *const BoolWithPadding) }
+    }
+}
+impl Default for BoolWithPadding {
+    fn default() -> Self {
+        unsafe { BoolWithPadding::new_1() }
+    }
+}
+#[repr(C)]
+#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, CopyAssignUnsafe)]
+pub struct IntWithoutPadding {
+    val_: (),
+}
+impl IntWithoutPadding {
+    pub unsafe fn new_1() -> Self {
+        let mut this = IntWithoutPadding::new_2({ 0_() });
+        this
+    }
+    pub unsafe fn new_2(mut val: ()) -> Self {
+        let mut this = Self {
+            val_: unimplemented!(),
+        };
+        {
+            (unsafe {
+                let ___s: () = (&raw mut this as ());
+                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
+                memset_2(___s, 0_(), ___n)
+            });
+        }
+        this.val_ = val;
+        this
+    }
+    pub unsafe fn copy_from(other: *const IntWithoutPadding) -> Self {
+        let mut this = IntWithoutPadding::new_2({ (*other).val_ });
+        this
+    }
+    pub unsafe fn copy_assign(
+        &mut self,
+        other: *const IntWithoutPadding,
+    ) -> *mut IntWithoutPadding {
+        self.val_ = (*other).val_;
+        return &mut (*(self as *mut IntWithoutPadding));
+    }
+    pub unsafe fn move_from(_a0: *mut IntWithoutPadding) -> Self {
+        let mut this = Self { val_: (*_a0).val_ };
+        this
+    }
+}
+impl Clone for IntWithoutPadding {
+    fn clone(&self) -> Self {
+        unsafe { IntWithoutPadding::copy_from(self as *const IntWithoutPadding) }
+    }
+}
+impl Default for IntWithoutPadding {
+    fn default() -> Self {
+        unsafe { IntWithoutPadding::new_1() }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct CheckForInvalidWritesBaseImpl_true__false_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct CheckForInvalidWritesBaseImpl_false__false_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct CheckForInvalidWritesBaseImpl_true__true_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct CheckForInvalidWritesBaseImpl_false__true_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct LVal {}
+impl LVal {
+    pub unsafe fn operator_call_1(&mut self, _a0: *mut ()) -> () {
+        return 1_();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct CLVal {}
+impl CLVal {
+    pub unsafe fn operator_call_2(&mut self, _a0: *const ()) -> () {
+        return 1_();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct RVal {}
+impl RVal {
+    pub unsafe fn operator_call_3(&mut self, _a0: *mut ()) -> () {
+        return 1_();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct CRVal {}
+impl CRVal {
+    pub unsafe fn operator_call_4(&mut self, _a0: *const ()) -> () {
+        return 1_();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct RefQual {}
+impl RefQual {
+    pub unsafe fn operator_call_1(&mut self, mut _a0: ()) -> () {
+        return 1_();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct CRefQual {}
+impl CRefQual {
+    pub unsafe fn operator_call_2(&self, mut _a0: ()) -> () {
+        return 1_();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct RVRefQual {}
+impl RVRefQual {
+    pub unsafe fn operator_call_3(&mut self, mut _a0: ()) -> () {
+        return 1_();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct RVCRefQual {}
+impl RVCRefQual {
+    pub unsafe fn operator_call_4(&self, mut _a0: ()) -> () {
+        return 1_();
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg, Default)]
+pub struct NonCopy {
+    pub value: (),
+}
+impl NonCopy {
+    pub unsafe fn new(mut val: ()) -> Self {
+        let mut this = Self { value: val };
+        this
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct NonConst {}
+impl NonConst {
+    pub unsafe fn non_const(&mut self) -> () {
+        return 1_();
+    }
+}
+const _: () = assert!(
+    !(false),
+    "!has_transform<const std::expected<int, std::unique_ptr<int>>&, int()>"
+);
+const _: () = assert!(
+    !(false),
+    "!has_transform<const std::expected<int, std::unique_ptr<int>>&&, int()>"
+);
+const _: () = assert!(
+    true,
+    "has_transform<std::expected<int, MoveOnlyErrorType>&&, int(int)>"
+);
+const _: () = assert!(
+    true,
+    "has_transform<const std::expected<int, MoveOnlyErrorType>&&, int(const int)>"
+);
+pub unsafe fn test_val_types_3() {
+    {
+        {
+            let mut e: () = unimplemented!();
+            let mut val: () = unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut e: () = unimplemented!();
+            let mut l: RefQual = <RefQual>::default();
+            let mut val: () = unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let e: () = unimplemented!();
+            let mut val: () = unimplemented!();
+            unimplemented!();
+        }
+        {
+            let e: () = unimplemented!();
+            let l: CRefQual = <CRefQual>::default();
+            let mut val: () = unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let mut e: () = unimplemented!();
+            let mut val: () = (unsafe {
+                let mut ___f: RVal = <RVal>::default();
+                e.transform(&mut ___f)
+            });
+            unimplemented!();
+        }
+        {
+            let mut e: () = unimplemented!();
+            let mut val: () = (unsafe {
+                let mut ___f: RVRefQual = <RVRefQual>::default();
+                e.transform(&mut ___f)
+            });
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let e: () = unimplemented!();
+            let mut val: () = (unsafe {
+                let mut ___f: CRVal = <CRVal>::default();
+                e.transform(&mut ___f)
+            });
+            unimplemented!();
+        }
+        {
+            let e: () = unimplemented!();
+            let l: RVCRefQual = <RVCRefQual>::default();
+            let mut val: () = unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn test_take_val_return_void_4() {
+    let mut e: () = unimplemented!();
+    let mut val: () = 0_();
+    &(unimplemented!());
+    unimplemented!();
+    &(unsafe {
+        let mut ___f: FnPtr<Generic> = lambda_unsafe!(
+            Generic,
+            {
+                let val: *mut () = &mut val;
+            },
+            |_a0: *mut ()| {
+                const _: () = assert!(true, "std::is_same_v<T, int>");;
+                unimplemented!();
+                (*val) = 2_();
+            },
+            |_a0: *const ()| {
+                const _: () = assert!(false, "std::is_same_v<T, int>");;
+                unimplemented!();
+                (*val) = 2_();
+            },
+            |_a0: *mut ()| {
+                const _: () = assert!(false, "std::is_same_v<T, int>");;
+                unimplemented!();
+                (*val) = 2_();
+            }
+        );
+        e.transform(&mut ___f)
+    });
+    let ce: *const () = &e;
+    unimplemented!();
+    &(unimplemented!());
+    unimplemented!();
+    &(unsafe {
+        let mut ___f: FnPtr<Generic> = lambda_unsafe!(
+            Generic,
+            {
+                let val: *mut () = &mut val;
+            },
+            |_a0: *const ()| {
+                const _: () = assert!(true, "std::is_same_v<T, const int>");;
+                unimplemented!();
+                (*val) = 4_();
+            },
+            |_a0: *const ()| {
+                const _: () = assert!(false, "std::is_same_v<T, const int>");;
+                unimplemented!();
+                (*val) = 4_();
+            }
+        );
+        (*ce).transform(&mut ___f)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_direct_non_list_init_5() {
+    let mut xform: FnPtr<fn(()) -> NonCopy> =
+        FnPtr::<fn(()) -> NonCopy>::new(|mut i: ()| -> NonCopy {
+            unsafe {
+                return NonCopy::new({ i });
+            }
+        });
+    let mut e: () = unimplemented!();
+    let mut n: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_sfinae_6() {
+    let mut e: () = unimplemented!();
+    let mut l: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |x: *mut NonConst| -> () {
+            return (unsafe { NonConst::non_const(&mut (*x)) });
+        },
+        |x: *mut NonConst| -> () {
+            return (unsafe { NonConst::non_const(&mut (*x)) });
+        }
+    );
+    &(unimplemented!());
+    &(unsafe { e.transform(&mut l) });
+    let mut e1: () = unimplemented!();
+    let ce1: *const () = &e1;
+    let never_called: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut _a0: ()| -> () {
+        unsafe {
+            unimplemented!();
+            return unimplemented!();
+        }
+    });
+    &(unimplemented!());
+    &(unsafe { e1.transform(&never_called) });
+    &(unimplemented!());
+    &(unsafe {
+        let ___f: *const FnPtr<fn(()) -> ()> = &never_called;
+        (*ce1).transform(___f)
+    });
+}
+pub unsafe fn test_move_only_error_type_7() {
+    {
+        let mut e: () = unimplemented!();
+        let mut l: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut _a0: ()| -> () {
+            unsafe {
+                return 0_();
+            }
+        });
+        &(unsafe { e.transform(&mut l) });
+    }
+    {
+        let e: () = unimplemented!();
+        let mut l: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|_a0: ()| -> () {
+            unsafe {
+                return 0_();
+            }
+        });
+        &(unsafe { e.transform(&mut l) });
+    }
+}
+pub unsafe fn test_8() -> () {
+    (unsafe { test_sfinae_6() });
+    (unsafe { test_val_types_3() });
+    (unsafe { test_direct_non_list_init_5() });
+    (unsafe { test_move_only_error_type_7() });
+    return true;
+}
+pub fn main() {
+    let mut args: Vec<Vec<u8>> = std::env::args()
+        .map(|arg| arg.as_bytes().to_vec())
+        .collect();
+    args.iter_mut().for_each(|v| v.push(0));
+    let mut argv: Vec<*mut libc::c_char> = args
+        .iter()
+        .map(|arg| arg.as_ptr() as *mut libc::c_char)
+        .collect();
+    argv.push(::std::ptr::null_mut());
+    unsafe {
+        __cpp2rust_init_globals();
+        ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
+    }
+}
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_8() });
+    const _: () = assert!(true, "test()");;
+    return 0_();
+}
+pub unsafe fn __cpp2rust_init_globals() {}

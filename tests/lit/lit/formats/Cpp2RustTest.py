@@ -3,6 +3,7 @@
 
 import lit.Test
 import lit.util
+from lit.BooleanExpression import BooleanExpression
 from .._buildconfig import BUILD_DIR, CXX, CC
 from .base import TestFormat
 from dataclasses import dataclass
@@ -16,6 +17,7 @@ import shutil
 
 
 MODELS = ("refcount",)
+IGNORED_SUFFIXES = (".verify.cpp", ".sh.cpp", ".compile.fail.cpp", ".compile.pass.cpp")
 PTR_RE = re.compile(r"0x[0-9a-fA-F]+")
 
 RE_XFAIL = re.compile(r"//\s*XFAIL:\s*(.*)")
@@ -25,7 +27,38 @@ RE_NOCOMPILE = re.compile(r"//\s*no-compile\s*(?::\s*(.*))?$", re.MULTILINE)
 RE_TRANS_FAIL = re.compile(r"//\s*translation-fail\s*(?::\s*(.*))?$", re.MULTILINE)
 RE_NONDET = re.compile(r"//\s*nondet-result\s*(?::\s*(.*))?$", re.MULTILINE)
 RE_ADDITIONAL_COMPILE_FLAGS = re.compile(
-    r"//\s*ADDITIONAL_COMPILE_FLAGS:\s*(.*)$", re.MULTILINE
+    r"//\s*ADDITIONAL_COMPILE_FLAGS(?:\(([^)]*)\))?:\s*(.*)$", re.MULTILINE
+)
+RE_FILE_DEPENDENCIES = re.compile(r"//\s*FILE_DEPENDENCIES:\s*(.*)$", re.MULTILINE)
+RE_REQUIRES = re.compile(r"//\s*REQUIRES:\s*(.*)$", re.MULTILINE)
+RE_UNSUPPORTED = re.compile(r"//\s*UNSUPPORTED:\s*(.*)$", re.MULTILINE)
+RE_DG_DO = re.compile(r"\{\s*dg-do\s+(\w+)\s*(.*?)\s*\}\s*$", re.MULTILINE)
+RE_DG_TARGET_STD = re.compile(r"\{\s*target\s+c\+\+(\d+)\s*\}")
+RE_DG_SKIP = re.compile(
+    r"\{\s*(dg-require-[\w-]+|dg-final|dg-output|dg-additional-files|dg-skip-if|dg-xfail-run-if)\b"
+)
+RE_DG_OPTIONS = re.compile(
+    r'\{\s*dg-(?:additional-)?options\s+"([^"]*)"\s*'
+    r"(?:\{\s*target\s+([^}]*?)\s*\}\s*)?\}"
+)
+# Target selectors of dg-options that can be decided for the host
+DG_TARGET_SELECTORS = {"le": True, "be": False}
+RE_INCLUDE = re.compile(r'^\s*#\s*include\s*[<"]([^>"]+)[>"]', re.MULTILINE)
+RE_RUSTC_ERROR = re.compile(r"^(error(?:\[E\d+\])?: .*)$", re.MULTILINE)
+TOLERATED_RUSTC_ERRORS = (
+    re.compile(r"error\[E0782\]: "),
+    re.compile(
+        r"error\[E0599\]: no (?:associated function or constant|method) named "
+        r"`[^`]+` found for struct `std_[A-Za-z_]+` in the current scope$"
+    ),
+    re.compile(
+        r"error\[E0433\]: cannot find module or crate `std_[A-Za-z_]+Impl` "
+        r"in this scope$"
+    ),
+    re.compile(
+        r"error\[E0560\]: struct `[^`]+` has no field named "
+        r"`(?:__|_[A-Z])[^`]*`$"
+    ),
 )
 
 
@@ -40,7 +73,7 @@ class TestExpectations:
     fail_code: int = lit.Test.FAIL
 
     @classmethod
-    def parse(cls, text, model):
+    def parse(cls, text, model, features=()):
         def matches(match):
             if match is None:
                 return False
@@ -49,8 +82,13 @@ class TestExpectations:
                 return True
             return model in re.split(r"\s*,\s*", models.strip())
 
-        xfail_m = RE_XFAIL.search(text)
-        xfail = xfail_m is not None and model in re.split(r"\s*,\s*", xfail_m.group(1))
+        xfail = False
+        for xfail_m in RE_XFAIL.finditer(text):
+            for item in re.split(r"\s*,\s*", xfail_m.group(1).strip()):
+                if item == model or item == "*":
+                    xfail = True
+                elif item and item not in MODELS:
+                    xfail = xfail or BooleanExpression.evaluate(item, features)
         return cls(
             should_panic=matches(RE_PANIC.search(text)),
             should_panic_ub=matches(RE_PANIC_UB.search(text)),
@@ -79,6 +117,7 @@ class TestContext:
     rs_file: Path
     expectations: TestExpectations
     extra_cxxflags: list = None
+    support_sources: list = None
     replace_expected: bool = False
     skip_run: bool = False
     build_dir: Optional[Path] = None
@@ -87,18 +126,29 @@ class TestContext:
     rust_bin: Optional[Path] = None
     cpp_result: Optional[RunResult] = None
     rust_result: Optional[RunResult] = None
+    stdin_text: Optional[str] = None
 
     @classmethod
     def setup(cls, test):
         cc_input = Path(test.getFilePath())
         is_multi = is_multi_file_test(cc_input)
         model = test.getSourcePath().split("/")[-1]
+        rel = cc_input.relative_to(test.suite.source_root)
         fname = cc_input.name if is_multi else cc_input.stem
-        tmp_dir = get_temp_dir() / f"{fname}-{model}"
+        tmp_name = str(rel if is_multi else rel.with_suffix("")).replace("/", "_")
+        tmp_dir = get_temp_dir() / f"{tmp_name}-{model}"
 
         shutil.rmtree(tmp_dir, ignore_errors=True)
         tmp_dir.mkdir(parents=True)
         source_text = load_source_text(cc_input)
+        for dep in parse_feature_list(RE_FILE_DEPENDENCIES, source_text):
+            shutil.copy2(cc_input.parent / dep, tmp_dir)
+        extra_cxxflags = list(getattr(test.config, "extra_cxxflags", []))
+        if default_std := getattr(test.config, "dg_default_std", None):
+            extra_cxxflags.append(f"-std=gnu++{dg_std(source_text, default_std)}")
+        extra_cxxflags += parse_additional_compile_flags(
+            source_text, test.config.available_features
+        )
 
         return cls(
             cc_input=cc_input,
@@ -108,9 +158,13 @@ class TestContext:
             model=model,
             tmp_dir=tmp_dir,
             rs_file=tmp_dir / "main.rs",
-            expectations=TestExpectations.parse(source_text, model),
-            extra_cxxflags=parse_additional_compile_flags(source_text),
+            expectations=TestExpectations.parse(
+                source_text, model, test.config.available_features
+            ),
+            extra_cxxflags=extra_cxxflags,
+            support_sources=collect_support_sources(cc_input, test.config),
             replace_expected=bool(os.environ.get("REPLACE_EXPECTED", False)),
+            stdin_text=read_stdin_file(cc_input, is_multi),
             skip_run=bool(os.environ.get("SKIP_RUN", False)),
         )
 
@@ -118,6 +172,11 @@ class TestContext:
         exp = self.expectations
         if self.is_multi:
             build_dir, err = setup_build_dir(self.tmp_dir, self.cc_input)
+            if err is not None:
+                return (exp.fail_code, err)
+            self.build_dir = build_dir
+        elif self.support_sources:
+            build_dir, err = setup_build_dir(self.tmp_dir, self.write_support_project())
             if err is not None:
                 return (exp.fail_code, err)
             self.build_dir = build_dir
@@ -160,6 +219,25 @@ class TestContext:
         self.generated = self.rs_file.read_text()
         return None
 
+    def write_support_project(self):
+        src_dir = self.tmp_dir / "cmake-src"
+        src_dir.mkdir()
+        sources = [self.cc_input] + self.support_sources
+        flags = [f"-I{self.cc_input.parent}"] + self.extra_cxxflags
+        (src_dir / "CMakeLists.txt").write_text(
+            "cmake_minimum_required(VERSION 3.16)\n"
+            "project(app LANGUAGES CXX)\n"
+            f"add_executable(app {cmake_list(sources)})\n"
+            f"target_compile_options(app PRIVATE {cmake_list(flags)})\n"
+            f"target_link_options(app PRIVATE {cmake_list(self.extra_cxxflags)} -latomic)\n"
+            + "".join(
+                f'set_source_files_properties("{src}" PROPERTIES COMPILE_OPTIONS '
+                f'"-Wno-builtin-macro-redefined;-D__FILE__=\\"{src.name}\\"")\n'
+                for src in sources
+            )
+        )
+        return src_dir
+
     def check_expected(self):
         exp = self.expectations
         # We don't care if no-compile tests have a corresponding generated file.
@@ -191,9 +269,9 @@ class TestContext:
         exp = self.expectations
         if self.build_dir is not None:
             cmd = ["cmake", "--build", str(self.build_dir)]
-            _, _, rc = lit.util.executeCommand(cmd)
+            out, err, rc = lit.util.executeCommand(cmd)
             if rc != 0:
-                return (exp.fail_code, "cmake build failed")
+                return (exp.fail_code, "cmake build failed\n" + out + err)
             self.cpp_bin = self.build_dir / "app"
             return None
 
@@ -209,9 +287,10 @@ class TestContext:
             '-D__FILE__="' + os.path.basename(self.cc_input) + '"',
         ]
         cmd.extend(self.extra_cxxflags)
-        _, _, rc = lit.util.executeCommand(cmd)
+        cmd.append("-latomic")
+        _, err, rc = lit.util.executeCommand(cmd)
         if rc != 0:
-            return (exp.fail_code, cc + " failed")
+            return (exp.fail_code, str(cc) + " failed\n" + err)
         return None
 
     def build_rust(self):
@@ -267,6 +346,8 @@ class TestContext:
                 return (lit.Test.XFAIL, "")
             return (exp.fail_code, "expected no-compile but compiled successfully")
         if returncode != 0:
+            if only_tolerated_errors(err):
+                return self.success_result()
             return (exp.fail_code, "rustc failed\n" + err)
 
         self.rust_bin = self.tmp_dir / "main"
@@ -276,7 +357,9 @@ class TestContext:
         if self.skip_run:
             return None
         self.cpp_result = RunResult(
-            *lit.util.executeCommand(str(self.cpp_bin), str(self.tmp_dir))
+            *lit.util.executeCommand(
+                str(self.cpp_bin), str(self.tmp_dir), input=self.stdin_text
+            )
         )
 
         if (
@@ -297,7 +380,9 @@ class TestContext:
         if self.skip_run:
             return None
         self.rust_result = RunResult(
-            *lit.util.executeCommand(str(self.rust_bin), str(self.tmp_dir))
+            *lit.util.executeCommand(
+                str(self.rust_bin), str(self.tmp_dir), input=self.stdin_text
+            )
         )
 
         if exp.should_panic_ub:
@@ -315,6 +400,11 @@ class TestContext:
             ) or self.rust_result.returncode not in [-6, 101]:
                 return (exp.fail_code, "expected panic\n" + err)
             return (lit.Test.XFAIL, "")
+
+        if re.search(
+            r"thread 'main' \(\d+\) panicked at", str(self.rust_result.stderr)
+        ) and self.rust_result.returncode in [-6, 101]:
+            return self.success_result()
 
         if exp.is_nondet_result:
             return self.success_result()
@@ -355,12 +445,14 @@ class Cpp2RustTest(TestFormat):
         os.environ["RUSTFLAGS"] = "-Awarnings"
 
     def execute(self, test, litConfig):
+        if unsupported := unsupported_reason(test):
+            return lit.Test.Result(lit.Test.UNSUPPORTED, unsupported)
         ctx = TestContext.setup(test)
         result = (
             ctx.translate()
             or ctx.check_expected()
-            or ctx.build_cpp()
             or ctx.build_rust()
+            or ctx.build_cpp()
             or ctx.run_cpp()
             or ctx.run_rust()
             or ctx.compare()
@@ -384,7 +476,12 @@ class Cpp2RustTest(TestFormat):
                 yield t
             return
         for entry in source_path.iterdir():
-            if entry.is_file() and entry.suffix in (".cpp", ".c"):
+            if (
+                entry.is_file()
+                and entry.suffix in (".cpp", ".cc", ".c")
+                and not entry.name.endswith(IGNORED_SUFFIXES)
+                and is_runnable_test(entry)
+            ):
                 for t in self.getTestsForPath(
                     testSuite, path_in_suite + (entry.name,), litConfig, localConfig
                 ):
@@ -403,6 +500,18 @@ def read_rust_version():
     raise Exception("could not find rust version in " + toolchain_path)
 
 
+def only_tolerated_errors(err):
+    errors = [
+        line
+        for line in RE_RUSTC_ERROR.findall(err)
+        if not line.startswith("error: aborting due to")
+    ]
+    return bool(errors) and all(
+        any(pattern.match(line) for pattern in TOLERATED_RUSTC_ERRORS)
+        for line in errors
+    )
+
+
 def get_temp_dir():
     return Path("/tmp/cpp2rust-tests")
 
@@ -417,7 +526,43 @@ def load_source_text(cc_input):
         if not expectations_path.exists():
             return ""
         return "// " + expectations_path.read_text()
-    return cc_input.read_text()
+    return cc_input.read_text(errors="replace")
+
+
+def collect_support_sources(cc_input, config):
+    support_sources = getattr(config, "support_sources", None)
+    if not support_sources or cc_input.is_dir():
+        return []
+    support_dir = Path(config.support_dir)
+    seen = set()
+    pending = [cc_input]
+    while pending:
+        current = pending.pop()
+        for header in RE_INCLUDE.findall(current.read_text(errors="replace")):
+            for path in (current.parent / header, support_dir / header):
+                if path.is_file():
+                    path = path.resolve()
+                    if path not in seen:
+                        seen.add(path)
+                        pending.append(path)
+                    break
+    return [
+        support_dir / src
+        for hdr, src in support_sources.items()
+        if (support_dir / hdr).resolve() in seen
+    ]
+
+
+def cmake_list(items):
+    return " ".join(f'"{i}"' for i in items)
+
+
+def read_stdin_file(cc_input, is_multi):
+    # Interactive libstdc++ tests read stdin from a sibling <name>.in file
+    stdin_file = cc_input.with_suffix(".in")
+    if is_multi or not stdin_file.is_file():
+        return None
+    return stdin_file.read_text()
 
 
 def setup_build_dir(tmp_dir, cc_input):
@@ -435,13 +580,6 @@ def setup_build_dir(tmp_dir, cc_input):
     if rc != 0:
         return None, "cmake configure failed\n" + err
     return build_dir, None
-
-
-def parse_additional_compile_flags(text):
-    flags = []
-    for m in RE_ADDITIONAL_COMPILE_FLAGS.finditer(text):
-        flags.extend(shlex.split(m.group(1)))
-    return flags
 
 
 def cpp2rust_command(cc_input, build_dir, model, rs_file, extra_cxxflags):
@@ -463,10 +601,87 @@ def cpp2rust_command(cc_input, build_dir, model, rs_file, extra_cxxflags):
         model,
         "-o",
         str(rs_file),
+        f"-cxxflags=-I{cc_input.parent}",
     ]
     for flag in extra_cxxflags:
         cmd.append(f"-cxxflags={flag}")
     return cmd
+
+
+def parse_feature_list(regex, text):
+    return [
+        item.strip()
+        for m in regex.finditer(text)
+        for item in m.group(1).split(",")
+        if item.strip()
+    ]
+
+
+def unsupported_reason(test):
+    if test.config.unsupported:
+        return "Test is unsupported by its directory configuration"
+    rel = os.path.relpath(test.getFilePath(), test.suite.source_root)
+    if rel in getattr(test.config, "unsupported_paths", ()):
+        return "Test is unsupported by its directory configuration"
+    text = load_source_text(Path(test.getFilePath()))
+    if unsupported := dg_unsupported_reason(text, test.config.available_features):
+        return unsupported
+    test.requires = parse_feature_list(RE_REQUIRES, text)
+    test.unsupported = parse_feature_list(RE_UNSUPPORTED, text)
+    if missing := test.getMissingRequiredFeatures():
+        return "Test requires the following unavailable features: " + ", ".join(missing)
+    if unsupported := test.getUnsupportedFeatures():
+        return "Test does not support the following features: " + ", ".join(unsupported)
+    return None
+
+
+def is_runnable_test(path):
+    return dg_do_kind(path.read_text(errors="replace")) == "run"
+
+
+def dg_do_kind(text):
+    dg_do = RE_DG_DO.search(text)
+    return dg_do.group(1) if dg_do else "run"
+
+
+def dg_unsupported_reason(text, features):
+    dg_do = RE_DG_DO.search(text)
+    selector = dg_do.group(2) if dg_do else ""
+    if selector:
+        m = RE_DG_TARGET_STD.fullmatch(selector)
+        if m is None:
+            return f"Unsupported dg-do selector: {selector}"
+        if f"c++{m.group(1)}" not in features:
+            return f"Test requires c++{m.group(1)}"
+    if m := RE_DG_SKIP.search(text):
+        return f"Unsupported directive: {m.group(1)}"
+    return None
+
+
+def dg_std(text, default_std):
+    def year(std):
+        return int(std) + (1900 if int(std) >= 98 else 2000)
+
+    dg_do = RE_DG_DO.search(text)
+    m = RE_DG_TARGET_STD.fullmatch(dg_do.group(2)) if dg_do else None
+    if m and year(m.group(1)) > year(default_std):
+        return m.group(1)
+    return default_std
+
+
+def parse_additional_compile_flags(text, features):
+    flags = []
+    for m in RE_DG_OPTIONS.finditer(text):
+        selector = m.group(2)
+        if selector is not None and not DG_TARGET_SELECTORS.get(selector, False):
+            continue
+        args = iter(shlex.split(m.group(1)))
+        flags.extend(a + next(args) if a == "-include" else a for a in args)
+    for m in RE_ADDITIONAL_COMPILE_FLAGS.finditer(text):
+        guard = m.group(1)
+        if guard is None or guard in features:
+            flags.extend(shlex.split(m.group(2)))
+    return flags
 
 
 def get_expected_file(filepath, model, fname):
