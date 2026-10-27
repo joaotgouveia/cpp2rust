@@ -157,11 +157,19 @@ where
 fn f16<T1: CppLess>(a0: Ptr<T1>, a1: Ptr<T1>) -> Ptr<T1> {
     let __a = a0;
     let __b = a1;
-    if CppLess::less(&__b, &__a) { __b } else { __a }
+    if CppLess::less(&__b, &__a) {
+        __b
+    } else {
+        __a
+    }
 }
 
 fn f17<T1: CppLess>(a0: Ptr<T1>, a1: Ptr<T1>) -> Ptr<T1> {
     let __a = a0;
     let __b = a1;
-    if CppLess::less(&__a, &__b) { __b } else { __a }
+    if CppLess::less(&__a, &__b) {
+        __b
+    } else {
+        __a
+    }
 }
