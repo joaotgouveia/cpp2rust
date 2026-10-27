@@ -56,7 +56,3 @@ template <typename T1> const T1 &f16(const T1 &a, const T1 &b) {
 template <typename T1> const T1 &f17(const T1 &a, const T1 &b) {
   return std::max(a, b);
 }
-
-template <typename T1> void f18(T1 first, T1 last) {
-  return std::random_shuffle(first, last);
-}

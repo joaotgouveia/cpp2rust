@@ -165,13 +165,3 @@ fn f17<T1: CppLess>(a0: Ptr<T1>, a1: Ptr<T1>) -> Ptr<T1> {
     let __b = a1;
     if CppLess::less(&__a, &__b) { __b } else { __a }
 }
-
-fn f18<T1: CppRandomAccessIterator<T2>, T2: Clone + ByteRepr>(a0: T1, a1: T1) {
-    let __first = a0;
-    let __n = a1.iter_distance(&__first);
-    let __random = std::hash::RandomState::new();
-    for __i in (1..__n).rev() {
-        let __j = (std::hash::BuildHasher::hash_one(&__random, __i) % (__i + 1) as u64) as isize;
-        cpp_swap!(__first.iter_at(__i), __first.iter_at(__j));
-    }
-}
