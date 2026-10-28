@@ -250,7 +250,7 @@ foreach(_rule_dir IN LISTS rule_subdirs)
   add_custom_command(
     OUTPUT ${_part}
     COMMAND ${CMAKE_COMMAND} -E make_directory ${rules_index_parts_dir}
-    COMMAND $<TARGET_FILE:cpp-rule-indexer> ${indexer_cxx_flags} --dir ${_rule_dir} -o ${_part}
+    COMMAND $<TARGET_FILE:cpp-rule-indexer> ${_indexer_cxx_flags} --dir ${_rule_dir} -o ${_part}
     DEPENDS ${_cpp_srcs} ${rule_common_headers} ${rule_indexer_sources} ${RUSTLS_HEADER} ${BROTLI_HEADERS}
     VERBATIM
   )
