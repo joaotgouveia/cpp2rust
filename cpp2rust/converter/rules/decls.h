@@ -56,6 +56,14 @@ std::optional<std::vector<clang::TemplateArgument>>
 DeduceFromType(clang::Sema &sema, clang::TemplateParameterList *params,
                clang::QualType pattern, clang::QualType actual);
 
+// The rule's parameters from the template arguments its body writes
+// (std::get<T1, T2, T3>(a0)) against those of the specialization the use
+// calls (get<0, int, long>).
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceFromArguments(clang::Sema &sema, clang::TemplateParameterList *params,
+                    llvm::ArrayRef<clang::TemplateArgumentLoc> pattern,
+                    llvm::ArrayRef<clang::TemplateArgument> actual);
+
 // The rule's parameters from a pattern naming a class through the classes it
 // is nested in (typename elements_view<T1, T2>::template __sentinel<T3> of
 // elements_view<V, 0>::__sentinel<true>).
