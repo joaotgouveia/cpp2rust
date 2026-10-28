@@ -116,6 +116,26 @@ DeduceFromType(clang::Sema &sema, clang::TemplateParameterList *params,
   return deducedArguments(sema, params, deduced);
 }
 
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceFromArguments(clang::Sema &sema, clang::TemplateParameterList *params,
+                    llvm::ArrayRef<clang::TemplateArgumentLoc> pattern,
+                    llvm::ArrayRef<clang::TemplateArgument> actual) {
+  Trial trial(sema);
+  llvm::SmallVector<clang::TemplateArgument, 4> written;
+  for (const auto &arg : pattern) {
+    written.push_back(arg.getArgument());
+  }
+  llvm::SmallVector<clang::DeducedTemplateArgument, 4> deduced(params->size());
+  clang::sema::TemplateDeductionInfo info(params->getTemplateLoc());
+  if (sema.DeduceTemplateArguments(params, written, actual, info, deduced,
+                                   /*NumberOfArgumentsMustMatch=*/false) !=
+          clang::TemplateDeductionResult::Success ||
+      trial.failed()) {
+    return std::nullopt;
+  }
+  return deducedArguments(sema, params, deduced);
+}
+
 namespace {
 
 bool deduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
