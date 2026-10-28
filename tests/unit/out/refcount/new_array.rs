@@ -7,13 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn sum_0(mut p: Ptr<i32>, mut n: i32) -> i32 {
-    let mut total: i32 = 0;
+    let total: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: i32 = 0;
     'loop_: while (i < n) {
-        total += { (elem!(p, i).read()) };
+        (*total.borrow_mut()) += { (elem!(p, i).read()) };
         i.prefix_inc();
     }
-    return total;
+    return (*total.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

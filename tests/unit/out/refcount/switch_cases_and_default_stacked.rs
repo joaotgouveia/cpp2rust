@@ -7,20 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn cases_and_default_stacked_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     'switch: {
         match { x } {
             __v if __v == 3 => {
-                r = 3;
+                (*r.borrow_mut()) = 3;
                 break 'switch;
             }
             _ => {
-                r = 42;
+                (*r.borrow_mut()) = 42;
                 break 'switch;
             }
         }
     };
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

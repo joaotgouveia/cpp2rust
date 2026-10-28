@@ -7,20 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn fallthrough_default_0(mut x: i32, mut flag: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     switch!(match x {
         __v if __v == 7 => {
             if (flag != 0) {
-                r = 100;
+                (*r.borrow_mut()) = 100;
                 break;
             };
         }
         _ => {
-            r = 42;
+            (*r.borrow_mut()) = 42;
             break;
         }
     });
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

@@ -7,24 +7,24 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn default_middle_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     'switch: {
         match { x } {
             __v if __v == 1 => {
-                r = 1;
+                (*r.borrow_mut()) = 1;
                 break 'switch;
             }
             __v if __v == 2 => {
-                r = 2;
+                (*r.borrow_mut()) = 2;
                 break 'switch;
             }
             _ => {
-                r = 99;
+                (*r.borrow_mut()) = 99;
                 break 'switch;
             }
         }
     };
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

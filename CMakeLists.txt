@@ -221,6 +221,9 @@ add_custom_command(
   VERBATIM
 )
 
+if (NOT INDEXER_CXX_FLAGS)
+    set(INDEXER_CXX_FLAGS "-std=c++23")
+endif()
 message(STATUS "rule-indexer C++ flags: ${INDEXER_CXX_FLAGS}")
 file(GLOB rule_subdirs CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/rules/*)
 file(GLOB rule_common_headers CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/rules/common/*.h)

@@ -126,10 +126,10 @@ fn main_0() -> i32 {
     };
     {
         let rhs_0 = ((ok as i32)
-            & (((*b_it.borrow())
-                != distinct
+            & ((!((*b_it.borrow())
+                == distinct
                     .as_pointer()
-                    .with(|__m: &Map<Key, (Value<Key>, Value<Mapped>)>| __m.end()))
+                    .with(|__m: &Map<Key, (Value<Key>, Value<Mapped>)>| __m.end())))
                 as i32))
             != 0;
         ok = rhs_0
@@ -237,10 +237,10 @@ fn main_0() -> i32 {
     if reused {
         {
             let rhs_0 = ((ok as i32)
-                & (((*first_it.borrow())
-                    != equivalent
+                & ((!((*first_it.borrow())
+                    == equivalent
                         .as_pointer()
-                        .with(|__m: &Map<Key, (Value<Key>, Value<Mapped>)>| __m.end()))
+                        .with(|__m: &Map<Key, (Value<Key>, Value<Mapped>)>| __m.end())))
                     as i32))
                 != 0;
             ok = rhs_0

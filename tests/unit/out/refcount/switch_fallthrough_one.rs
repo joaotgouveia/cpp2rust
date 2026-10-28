@@ -7,21 +7,21 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn fallthrough_one_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     switch!(match x {
         __v if __v == 1 => {
-            r += 10;
+            (*r.borrow_mut()) += 10;
         }
         __v if __v == 2 => {
-            r += 20;
+            (*r.borrow_mut()) += 20;
             break;
         }
         _ => {
-            r = -1_i32;
+            (*r.borrow_mut()) = -1_i32;
             break;
         }
     });
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

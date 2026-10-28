@@ -10,11 +10,11 @@ pub fn deref_0(mut p: Ptr<i32>) -> i32 {
     return (p.read());
 }
 pub fn strlen_1(mut s: Ptr<i8>) -> i32 {
-    let mut c: i32 = 0;
+    let c: Value<i32> = Rc::new(RefCell::new(0));
     'loop_: while ((s.postfix_inc().read()) != 0) {
-        c.prefix_inc();
+        (*c.borrow_mut()).prefix_inc();
     }
-    return c;
+    return (*c.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

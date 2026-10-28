@@ -40,7 +40,7 @@ fn main_0() -> i32 {
             }
         }),
     ));
-    let mut v_result_true: bool = (*it.borrow()) != v.decay().end();
+    let mut v_result_true: bool = !((*it.borrow()) == v.decay().end());
     let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
     Map::subscript_move(
         m.as_pointer(),
@@ -68,7 +68,7 @@ fn main_0() -> i32 {
         m.as_pointer()
             .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
     ));
-    let mut m_result_true: bool = (*m_begin.borrow()) != (*m_end.borrow());
+    let mut m_result_true: bool = !((*m_begin.borrow()) == (*m_end.borrow()));
     assert!(
         ((v_result_true) && (m_result_true))
             && (({

@@ -3,11 +3,12 @@
 
 #include <cstddef>
 
-typedef decltype(nullptr) t0;
+typedef std::nullptr_t t0;
 typedef bool t10;
 typedef char t20;
 typedef signed char t30;
 typedef unsigned char t40;
+typedef char8_t t50;
 typedef short t60;
 typedef unsigned short t70;
 typedef char16_t t80;

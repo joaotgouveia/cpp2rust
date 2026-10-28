@@ -12,11 +12,12 @@ pub fn runtime_only_0(mut x: i32) -> i32 {
 pub fn first_1(mut p: Ptr<i32>) -> i32 {
     return (p.read());
 }
-pub fn scaled_2(mut x: i32) -> i32 {
-    if (x < 0) {
-        return ({ runtime_only_0(-x) });
+pub fn scaled_2(x: i32) -> i32 {
+    let x: Value<i32> = Rc::new(RefCell::new(x));
+    if ((*x.borrow()) < 0) {
+        return ({ runtime_only_0(-(*x.borrow())) });
     }
-    return x;
+    return (*x.borrow());
 }
 pub fn half_3(mut x: f64) -> f64 {
     return (x / 2_f64);

@@ -99,20 +99,8 @@ fn f19<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: isize) -> Ptr<T2> {
     a0.iter_at(a1)
 }
 
-fn f20<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> bool {
-    a0 < a1
-}
-
-fn f21<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> bool {
-    a0 > a1
-}
-
-fn f22<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> bool {
-    a0 <= a1
-}
-
-fn f23<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> bool {
-    a0 >= a1
+fn f20<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> std::cmp::Ordering {
+    a0.partial_cmp(&a1).unwrap()
 }
 
 fn f24<T1: From<T2>, T2>(a0: T2) -> T1 {

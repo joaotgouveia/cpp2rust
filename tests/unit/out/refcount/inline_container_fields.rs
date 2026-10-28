@@ -89,13 +89,13 @@ impl Default for State {
     }
 }
 pub fn sum_0(mut p: Ptr<i32>, mut n: i32) -> i32 {
-    let mut s: i32 = 0;
+    let s: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: i32 = 0;
     'loop_: while (i < n) {
-        s += { (elem!(p, i).read()) };
+        (*s.borrow_mut()) += { (elem!(p, i).read()) };
         i.prefix_inc();
     }
-    return s;
+    return (*s.borrow());
 }
 pub fn fill_1(mut s: Ptr<State>) {
     let mut i: i32 = 0;

@@ -303,41 +303,8 @@ template <
             std::random_access_iterator_tag,
             typename std::iterator_traits<T1>::iterator_category>::value &&
         !std::is_pointer<T1>::value>::type>
-bool f20(const T1 &a0, const T1 &a1) {
-  return a0 < a1;
-}
-
-template <
-    typename T1, typename T2 = typename std::iterator_traits<T1>::value_type,
-    typename = typename std::enable_if<
-        std::is_base_of<
-            std::random_access_iterator_tag,
-            typename std::iterator_traits<T1>::iterator_category>::value &&
-        !std::is_pointer<T1>::value>::type>
-bool f21(const T1 &a0, const T1 &a1) {
-  return a0 > a1;
-}
-
-template <
-    typename T1, typename T2 = typename std::iterator_traits<T1>::value_type,
-    typename = typename std::enable_if<
-        std::is_base_of<
-            std::random_access_iterator_tag,
-            typename std::iterator_traits<T1>::iterator_category>::value &&
-        !std::is_pointer<T1>::value>::type>
-bool f22(const T1 &a0, const T1 &a1) {
-  return a0 <= a1;
-}
-
-template <
-    typename T1, typename T2 = typename std::iterator_traits<T1>::value_type,
-    typename = typename std::enable_if<
-        std::is_base_of<
-            std::random_access_iterator_tag,
-            typename std::iterator_traits<T1>::iterator_category>::value &&
-        !std::is_pointer<T1>::value>::type>
-bool f23(const T1 &a0, const T1 &a1) {
-  return a0 >= a1;
+std::strong_ordering f20(const T1 &a0, const T1 &a1) {
+  return a0 <=> a1;
 }
 
 template <

@@ -34,7 +34,7 @@ fn main_0() -> i32 {
             }
         }),
     ));
-    assert!((*it.borrow()) != v.decay().end());
+    assert!(!((*it.borrow()) == v.decay().end()));
     assert!((((*it.borrow()).iter_deref().read()) == 7));
     {
         let __first = v.decay().begin();

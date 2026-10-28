@@ -9,9 +9,9 @@ use std::rc::{Rc, Weak};
 pub fn f_0(bytes: Vec<i32>) -> usize {
     let bytes: Value<Vec<i32>> = Rc::new(RefCell::new(bytes));
     let mut buf: Ptr<Vec<i32>> = Ptr::alloc((*bytes.borrow()).clone());
-    let mut n: usize = (*bytes.borrow()).len();
+    let n: Value<usize> = Rc::new(RefCell::new((*bytes.borrow()).len()));
     buf.delete();
-    return n;
+    return (*n.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

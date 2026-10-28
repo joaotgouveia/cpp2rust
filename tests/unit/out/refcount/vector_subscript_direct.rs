@@ -40,13 +40,13 @@ pub fn push_and_index_0(v: Ptr<Vec<i32>>) -> i32 {
     return (((*v.upgrade().deref()).len() as i32) - 1);
 }
 pub fn sum_ref_1(v: Ptr<Vec<i32>>) -> i32 {
-    let mut s: i32 = 0;
+    let s: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: usize = 0_usize;
     'loop_: while ({ i } < { (*v.upgrade().deref()).len() }) {
-        s += (index!(v, i).read());
+        (*s.borrow_mut()) += (index!(v, i).read());
         i.prefix_inc();
     }
-    return s;
+    return (*s.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

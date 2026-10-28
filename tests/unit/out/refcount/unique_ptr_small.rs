@@ -20,7 +20,7 @@ fn main_0() -> i32 {
     assert!((((*n.borrow()).as_pointer().read()) == 20));
     let mut empty: Option<Value<i32>> = None;
     assert!(empty.is_none());
-    assert!((*n.borrow()).is_some());
+    assert!(!((*n.borrow()).is_none()));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

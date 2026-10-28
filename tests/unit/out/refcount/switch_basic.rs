@@ -7,29 +7,29 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn basic_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     let mut v: i32 = 0;
     'switch: {
         match { x } {
             __v if __v == 0 => {
-                r = 10;
+                (*r.borrow_mut()) = 10;
                 break 'switch;
             }
             __v if __v == 1 => {
-                r = 20;
+                (*r.borrow_mut()) = 20;
                 break 'switch;
             }
             __v if __v == 2 => {
-                r = 30;
+                (*r.borrow_mut()) = 30;
                 break 'switch;
             }
             _ => {
-                r = 40;
+                (*r.borrow_mut()) = 40;
                 break 'switch;
             }
         }
     };
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

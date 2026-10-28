@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn switch_on_assignment_0(mut x: i32) -> i32 {
     let mut y: i32 = 0;
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     'switch: {
         match {
             {
@@ -17,20 +17,20 @@ pub fn switch_on_assignment_0(mut x: i32) -> i32 {
             }
         } {
             __v if __v == 1 => {
-                r = 10;
+                (*r.borrow_mut()) = 10;
                 break 'switch;
             }
             __v if __v == 2 => {
-                r = 20;
+                (*r.borrow_mut()) = 20;
                 break 'switch;
             }
             _ => {
-                r = y;
+                (*r.borrow_mut()) = y;
                 break 'switch;
             }
         }
     };
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

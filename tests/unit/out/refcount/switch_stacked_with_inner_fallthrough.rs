@@ -7,20 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn stacked_with_inner_fallthrough_0(mut x: i32, mut flag: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     switch!(match x {
         __v if __v == 1 || __v == 2 || __v == 3 => {
             if !(flag != 0) {
-                r = 50;
+                (*r.borrow_mut()) = 50;
                 break;
             };
         }
         _ => {
-            r = 999;
+            (*r.borrow_mut()) = 999;
             break;
         }
     });
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

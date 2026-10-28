@@ -284,13 +284,13 @@ fn main_0() -> i32 {
     let r: Ptr<Map<i16, (Value<i16>, Value<u32>)>> = m.as_pointer();
     assert!(((*r.upgrade().deref()).len() == 4_usize));
     assert!(
-        ({
+        !(({
             let __tmp_4: Value<i16> = Rc::new(RefCell::new(4_i16));
             m.as_pointer()
                 .with(|__m: &Map<i16, (Value<i16>, Value<u32>)>| __m.find(&__tmp_4.as_pointer()))
-        }) != m
+        }) == m
             .as_pointer()
-            .with(|__m: &Map<i16, (Value<i16>, Value<u32>)>| __m.end())
+            .with(|__m: &Map<i16, (Value<i16>, Value<u32>)>| __m.end()))
     );
     {
         let __it = (*it4.borrow()).clone();

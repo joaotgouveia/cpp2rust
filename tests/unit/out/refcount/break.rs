@@ -7,12 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn for_test_0(mut n: i32) -> i32 {
-    let mut x: i32 = 0;
+    let x: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: i32 = 0;
     let mut j: i32 = 0;
     'loop_: while (i < n) {
-        x += 1;
-        if (x == 100) {
+        (*x.borrow_mut()) += 1;
+        if ((*x.borrow()) == 100) {
             break;
         }
         let mut k: i32 = 0;
@@ -27,13 +27,13 @@ pub fn for_test_0(mut n: i32) -> i32 {
                 i += k
             };
         }
-        x = { (x + 1) };
+        (*x.borrow_mut()) = { ((*x.borrow()) + 1) };
         {
             j = i;
             i += 1
         };
     }
-    return x;
+    return (*x.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

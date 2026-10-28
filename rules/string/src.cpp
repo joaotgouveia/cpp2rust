@@ -85,8 +85,6 @@ std::string &f30(std::string &dst, std::string &&src) {
   return dst = std::move(src);
 }
 
-bool f31(const std::string &a, const char *b) { return a != b; }
-
 std::size_t f32(const std::string &a0, const char *a1, std::size_t a2) {
   return a0.find(a1, a2);
 }

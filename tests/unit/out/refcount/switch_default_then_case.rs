@@ -7,24 +7,24 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn default_then_case_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     'switch: {
         match { x } {
             __v if __v == 1 => {
-                r = 1;
+                (*r.borrow_mut()) = 1;
                 break 'switch;
             }
             __v if __v == 3 => {
-                r = 3;
+                (*r.borrow_mut()) = 3;
                 break 'switch;
             }
             _ => {
-                r = 77;
+                (*r.borrow_mut()) = 77;
                 break 'switch;
             }
         }
     };
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

@@ -63,10 +63,11 @@ fn main_0() -> i32 {
     ));
     assert!((({ (*implicit.borrow()).call(1,) }) == 4));
     let bump: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(FnPtr::<fn(i32) -> i32>::new(
-        |mut x: i32| -> i32 {
+        |x: i32| -> i32 {
             {
-                x += 1;
-                return x;
+                let x: Value<i32> = Rc::new(RefCell::new(x));
+                (*x.borrow_mut()) += 1;
+                return (*x.borrow());
             }
         },
     )));

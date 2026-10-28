@@ -12,12 +12,13 @@ pub fn out_param_0(out: Option<Ptr<usize>>) {
         out.write(4_usize);
     }
 }
-pub fn parse_1(mut v: i32, idx: Option<Ptr<usize>>) -> i32 {
+pub fn parse_1(v: i32, idx: Option<Ptr<usize>>) -> i32 {
+    let v: Value<i32> = Rc::new(RefCell::new(v));
     let mut idx: Ptr<usize> = idx.unwrap_or_else(|| Ptr::<usize>::null());
     if !(idx).is_null() {
         idx.write(3_usize);
     }
-    return v;
+    return (*v.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

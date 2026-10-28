@@ -7,11 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn strlen_0(mut ptr: Ptr<i8>) -> u32 {
-    let mut count: u32 = 0_u32;
+    let count: Value<u32> = Rc::new(RefCell::new(0_u32));
     'loop_: while (((ptr.postfix_inc().read()) as i32) != (('\0' as i8) as i32)) {
-        count.prefix_inc();
+        (*count.borrow_mut()).prefix_inc();
     }
-    return count;
+    return (*count.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

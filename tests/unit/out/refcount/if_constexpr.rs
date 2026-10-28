@@ -32,17 +32,19 @@ pub fn keep_both_3(mut x: i32) -> i32 {
     }
     panic!("ub: non-void function does not return a value")
 }
-pub fn widen_4(mut v: u32) -> u64 {
+pub fn widen_4(v: u32) -> u64 {
+    let v: Value<u32> = Rc::new(RefCell::new(v));
     {}
-    return (v as u64);
+    return ((*v.borrow()) as u64);
 }
-pub fn widen_5(mut v: u64) -> u64 {
+pub fn widen_5(v: u64) -> u64 {
+    let v: Value<u64> = Rc::new(RefCell::new(v));
     {
-        let mut hi: u64 = v;
-        hi <<= 32;
-        return hi;
+        let hi: Value<u64> = Rc::new(RefCell::new((*v.borrow())));
+        (*hi.borrow_mut()) <<= 32;
+        return (*hi.borrow());
     }
-    return v;
+    return (*v.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

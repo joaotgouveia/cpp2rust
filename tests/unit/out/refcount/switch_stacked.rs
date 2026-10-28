@@ -7,24 +7,24 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn stacked_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     'switch: {
         match { x } {
             __v if __v == 1 || __v == 2 || __v == 3 => {
-                r = 100;
+                (*r.borrow_mut()) = 100;
                 break 'switch;
             }
             __v if __v == 4 || __v == 5 => {
-                r = 200;
+                (*r.borrow_mut()) = 200;
                 break 'switch;
             }
             _ => {
-                r = 300;
+                (*r.borrow_mut()) = 300;
                 break 'switch;
             }
         }
     };
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

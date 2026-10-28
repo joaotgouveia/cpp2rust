@@ -7,12 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn median_0(mut w: i32, mut n: i32, mut nw: i32) -> i32 {
-    let mut mx: i32 = if (w > n) { w } else { n };
-    let mut mn: i32 = ((w + n) - mx);
-    if (nw > mx) {
-        return mn;
-    } else if (nw < mn) {
-        return mx;
+    let mx: Value<i32> = Rc::new(RefCell::new(if (w > n) { w } else { n }));
+    let mn: Value<i32> = Rc::new(RefCell::new(((w + n) - (*mx.borrow()))));
+    if (nw > (*mx.borrow())) {
+        return (*mn.borrow());
+    } else if (nw < (*mn.borrow())) {
+        return (*mx.borrow());
     }
     return ((n + w) - nw);
 }
@@ -56,7 +56,7 @@ pub fn lehmer_2(mut sigma: Ptr<u32>, mut len: u32, mut code: Ptr<u32>) {
             }
             __it
         }));
-        assert!((*it.borrow()) != items.decay().end());
+        assert!(!((*it.borrow()) == items.decay().end()));
         let __rhs = ((*it.borrow()).iter_distance(&items.decay().begin()) as u32);
         elem!(code, i).write(__rhs);
         {
@@ -71,13 +71,13 @@ pub fn lehmer_2(mut sigma: Ptr<u32>, mut len: u32, mut code: Ptr<u32>) {
     }
 }
 pub fn sum_3(v: Ptr<Vec<i32>>) -> i32 {
-    let mut s: i32 = 0;
+    let s: Value<i32> = Rc::new(RefCell::new(0));
     let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
-    'loop_: while (*it.borrow()) != v.decay().end() {
-        s += ((*it.borrow()).iter_deref().read());
+    'loop_: while !((*it.borrow()) == v.decay().end()) {
+        (*s.borrow_mut()) += ((*it.borrow()).iter_deref().read());
         (*it.borrow_mut()).iter_inc();
     }
-    return s;
+    return (*s.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

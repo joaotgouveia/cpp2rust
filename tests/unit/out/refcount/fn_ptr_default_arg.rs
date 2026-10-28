@@ -6,15 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn identity_0(mut x: i32) -> i32 {
-    return x;
+pub fn identity_0(x: i32) -> i32 {
+    let x: Value<i32> = Rc::new(RefCell::new(x));
+    return (*x.borrow());
 }
-pub fn apply_1(mut x: i32, fn_: Option<FnPtr<fn(i32) -> i32>>) -> i32 {
+pub fn apply_1(x: i32, fn_: Option<FnPtr<fn(i32) -> i32>>) -> i32 {
+    let x: Value<i32> = Rc::new(RefCell::new(x));
     let mut fn_: FnPtr<fn(i32) -> i32> = fn_.unwrap_or_else(|| FnPtr::<fn(i32) -> i32>::null());
     if !(fn_).is_null() {
-        return ({ fn_.call(x) });
+        return ({ fn_.call((*x.borrow())) });
     }
-    return x;
+    return (*x.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

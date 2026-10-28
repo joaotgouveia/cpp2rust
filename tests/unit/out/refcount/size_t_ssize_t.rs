@@ -9,8 +9,9 @@ use std::rc::{Rc, Weak};
 pub fn add_sizes_0(mut a: usize, mut b: usize) -> usize {
     return (a).wrapping_add(b);
 }
-pub fn take_ulong_1(mut x: u64) -> u64 {
-    return x;
+pub fn take_ulong_1(x: u64) -> u64 {
+    let x: Value<u64> = Rc::new(RefCell::new(x));
+    return (*x.borrow());
 }
 pub fn sub_signed_2(mut a: isize, mut b: isize) -> isize {
     return (a - b);

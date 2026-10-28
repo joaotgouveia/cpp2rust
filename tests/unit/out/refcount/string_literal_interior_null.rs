@@ -7,13 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn sum_bytes_0(mut buf: Ptr<i8>, mut len: u32) -> i32 {
-    let mut sum: i32 = 0;
+    let sum: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: u32 = 0_u32;
     'loop_: while (i < len) {
-        sum += (((elem!(buf, i).read()) as u8) as i32);
+        (*sum.borrow_mut()) += (((elem!(buf, i).read()) as u8) as i32);
         i.postfix_inc();
     }
-    return sum;
+    return (*sum.borrow());
 }
 thread_local!(
     pub static g_packet_1: Value<Ptr<i8>> =

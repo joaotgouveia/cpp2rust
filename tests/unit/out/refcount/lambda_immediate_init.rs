@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn pick_0(x: Option<i32>) -> i32 {
-    let mut x: i32 = x.unwrap_or_else(|| {
+    let x: Value<i32> = Rc::new(RefCell::new(x.unwrap_or_else(|| {
         ({
             FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
@@ -16,8 +16,8 @@ pub fn pick_0(x: Option<i32>) -> i32 {
             })
             .call()
         })
-    });
-    return x;
+    })));
+    return (*x.borrow());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
@@ -49,13 +49,13 @@ thread_local!(
         ({
             FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    let mut s: i32 = 0;
+                    let s: Value<i32> = Rc::new(RefCell::new(0));
                     let mut i: i32 = 1;
                     'loop_: while (i <= 4) {
-                        s += i;
+                        (*s.borrow_mut()) += i;
                         i.postfix_inc();
                     }
-                    return s;
+                    return (*s.borrow());
                 }
             })
             .call()

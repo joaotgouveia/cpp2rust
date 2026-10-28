@@ -7,26 +7,26 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn mixed_return_break_0(mut x: i32) -> i32 {
-    let mut r: i32 = -1_i32;
+    let r: Value<i32> = Rc::new(RefCell::new(-1_i32));
     'switch: {
         match { x } {
             __v if __v == 0 => {
                 return 100;
             }
             __v if __v == 1 => {
-                r = 10;
+                (*r.borrow_mut()) = 10;
                 break 'switch;
             }
             __v if __v == 2 => {
                 return 200;
             }
             _ => {
-                r = 99;
+                (*r.borrow_mut()) = 99;
                 break 'switch;
             }
         }
     };
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

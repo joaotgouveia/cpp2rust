@@ -7,27 +7,27 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn compound_case_body_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+    let r: Value<i32> = Rc::new(RefCell::new(0));
     'switch: {
         match { x } {
             __v if __v == 1 => {
                 let mut y: i32 = 10;
                 let mut z: i32 = 20;
-                r = (y + z);
+                (*r.borrow_mut()) = (y + z);
                 break 'switch;
             }
             __v if __v == 2 => {
                 let mut y: i32 = 100;
-                r = (y - 1);
+                (*r.borrow_mut()) = (y - 1);
                 break 'switch;
             }
             _ => {
-                r = -1_i32;
+                (*r.borrow_mut()) = -1_i32;
                 break 'switch;
             }
         }
     };
-    return r;
+    return (*r.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

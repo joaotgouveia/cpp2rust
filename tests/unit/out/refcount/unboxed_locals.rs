@@ -21,30 +21,30 @@ pub struct Pair {
     pub second: i32,
 }
 pub fn total_2(v: Ptr<Vec<i32>>) -> i32 {
-    let mut s: i32 = 0;
+    let s: Value<i32> = Rc::new(RefCell::new(0));
     'loop_: for x in IterRange::new(v.decay().begin(), v.decay().end()) {
         let mut x: i32 = (x.iter_deref().read());
-        s += x;
+        (*s.borrow_mut()) += x;
     }
-    return s;
+    return (*s.borrow());
 }
 pub fn sum_3(mut arr: Ptr<i32>, mut n: i32) -> i32 {
-    let mut s: i32 = 0;
+    let s: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: i32 = 0;
     'loop_: while (i < n) {
-        s += { (elem!(arr, i).read()) };
+        (*s.borrow_mut()) += { (elem!(arr, i).read()) };
         i.prefix_inc();
     }
-    return s;
+    return (*s.borrow());
 }
 pub fn countdown_4(mut n: i32, step: Option<i32>) -> i32 {
     let mut step: i32 = step.unwrap_or_else(|| 1);
-    let mut steps: i32 = 0;
+    let steps: Value<i32> = Rc::new(RefCell::new(0));
     'loop_: while (n > 0) {
         n -= step;
-        steps.postfix_inc();
+        (*steps.borrow_mut()).postfix_inc();
     }
-    return steps;
+    return (*steps.borrow());
 }
 pub trait Shape {
     fn scale(&mut self, factor: i32) -> i32;

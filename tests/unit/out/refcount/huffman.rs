@@ -369,10 +369,11 @@ impl MinHeapImpl for Ptr<MinHeap> {
         }
     }
     fn ExtractMin(&self) -> Ptr<MinHeapNode> {
-        let mut out: Ptr<MinHeapNode> = (((*self).with(|__s| __s.arr.clone()).as_pointer()
-            as Ptr<Ptr<MinHeapNode>>)
-            .offset(0_usize as isize)
-            .read());
+        let out: Value<Ptr<MinHeapNode>> = Rc::new(RefCell::new(
+            (((*self).with(|__s| __s.arr.clone()).as_pointer() as Ptr<Ptr<MinHeapNode>>)
+                .offset(0_usize as isize)
+                .read()),
+        ));
         field!((*self), size).with_mut(|__v| __v.prefix_dec());
         let __rhs = (((*self).with(|__s| __s.arr.clone()).as_pointer() as Ptr<Ptr<MinHeapNode>>)
             .offset(((*self).with(|__s| __s.size) as usize) as isize)
@@ -381,7 +382,7 @@ impl MinHeapImpl for Ptr<MinHeap> {
             .offset(0_usize as isize)
             .write(__rhs);
         ({ MinHeapImpl::Heapify(self, 0) });
-        return out;
+        return (*out.borrow()).clone();
     }
     fn Insert(&self, mut node: Ptr<MinHeapNode>) {
         field!((*self), size).with_mut(|__v| __v.prefix_inc());
