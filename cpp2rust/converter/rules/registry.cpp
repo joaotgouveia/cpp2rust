@@ -173,7 +173,8 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
   }
 
   if (!name.starts_with('f')) {
-    auto type_rule = TranslationRule::ParseTypeRuleJSON(*rule);
+    auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                          : TranslationRule::TypeRule();
     auto keys = RuleKeys::GetTypeKeys(decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
@@ -182,10 +183,13 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
     return;
   }
   auto make_expr_rule = [&] {
-    return TranslationRule::ParseExprRuleJSON(*rule);
+    return rule ? TranslationRule::ParseExprRuleJSON(*rule)
+                : TranslationRule::ExprRule();
   };
   if (auto function = decl->getAsFunction()) {
-    checkGenerics(dir, name, function, make_expr_rule());
+    if (rule) {
+      checkGenerics(dir, name, function, make_expr_rule());
+    }
   } else {
     assert(llvm::isa<clang::VarDecl>(decl) &&
            "expression rule is neither a function nor a variable");

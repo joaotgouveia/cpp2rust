@@ -14,3 +14,7 @@ fn t2<T1>() -> T1 {
 fn t3<T1>() -> Ptr<T1> {
     Ptr::null()
 }
+
+fn t4<T1>() -> T1 {
+    unimplemented!()
+}
