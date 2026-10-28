@@ -794,8 +794,8 @@ bool IsUniquePtr(clang::QualType type) {
                    "unique_ptr");
 }
 
-bool IsCallToOstream(clang::CallExpr *expr) {
-  auto *op = clang::dyn_cast<clang::CXXOperatorCallExpr>(expr);
+bool IsCallToOstream(const clang::CallExpr *expr) {
+  const auto *op = clang::dyn_cast<clang::CXXOperatorCallExpr>(expr);
   return op &&
          op->getOperator() == clang::OverloadedOperatorKind::OO_LessLess &&
          IsStdDecl(expr->getType()->getAsCXXRecordDecl(), "basic_ostream");
@@ -1353,19 +1353,19 @@ const char *GetOverloadedOperator(const clang::FunctionDecl *decl) {
   }
 }
 
-bool IsSupportedOperator(clang::OverloadedOperatorKind op) {
-  switch (op) {
-  case clang::OO_None:
-  case clang::OO_New:
-  case clang::OO_Delete:
-  case clang::OO_Array_New:
-  case clang::OO_Array_Delete:
-  case clang::OO_ArrowStar:
-  case clang::OO_Conditional:
-  case clang::OO_Coawait:
-    return false;
-  default:
+bool IsSupportedOperator(const clang::CXXOperatorCallExpr *expr) {
+  switch (expr->getOperator()) {
+  case clang::OO_Equal:
+  case clang::OO_Star:
+  case clang::OO_Arrow:
+  case clang::OO_Subscript:
+  case clang::OO_Call:
+  case clang::OO_Less:
     return true;
+  case clang::OO_LessLess:
+    return IsCallToOstream(expr);
+  default:
+    return false;
   }
 }
 

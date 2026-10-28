@@ -161,7 +161,7 @@ bool IsStdDecl(const clang::NamedDecl *decl, llvm::StringRef name);
 
 bool IsUniquePtr(clang::QualType type);
 
-bool IsCallToOstream(clang::CallExpr *expr);
+bool IsCallToOstream(const clang::CallExpr *expr);
 
 bool IsCDecl(const clang::NamedDecl *decl, llvm::StringRef name);
 
@@ -228,7 +228,7 @@ clang::QualType GetReturnTypeOfFunction(const clang::CallExpr *expr);
 
 const char *GetOverloadedOperator(const clang::FunctionDecl *decl);
 
-bool IsSupportedOperator(clang::OverloadedOperatorKind op);
+bool IsSupportedOperator(const clang::CXXOperatorCallExpr *expr);
 
 std::string GetFunctionBaseName(const clang::FunctionDecl *decl);
 
