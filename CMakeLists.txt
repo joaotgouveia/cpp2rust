@@ -221,6 +221,7 @@ add_custom_command(
   VERBATIM
 )
 
+message(STATUS "rule-indexer C++ flags: ${INDEXER_CXX_FLAGS}")
 file(GLOB rule_subdirs CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/rules/*)
 file(GLOB rule_common_headers CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/rules/common/*.h)
 file(GLOB rule_indexer_sources CONFIGURE_DEPENDS
@@ -230,6 +231,10 @@ file(GLOB rule_indexer_sources CONFIGURE_DEPENDS
 set(_common_headers)
 foreach(_header IN LISTS rule_common_headers)
   list(APPEND _common_headers --common-header=${_header})
+endforeach()
+set(_indexer_cxx_flags)
+foreach(_flag IN LISTS INDEXER_CXX_FLAGS)
+  list(APPEND _indexer_cxx_flags --cxxflags=${_flag})
 endforeach()
 set(rules_index_parts)
 set(rules_index_parts_dir ${CMAKE_BINARY_DIR}/rules_index/parts)
@@ -245,7 +250,7 @@ foreach(_rule_dir IN LISTS rule_subdirs)
   add_custom_command(
     OUTPUT ${_part}
     COMMAND ${CMAKE_COMMAND} -E make_directory ${rules_index_parts_dir}
-    COMMAND $<TARGET_FILE:cpp-rule-indexer> --dir ${_rule_dir} -o ${_part}
+    COMMAND $<TARGET_FILE:cpp-rule-indexer> ${indexer_cxx_flags} --dir ${_rule_dir} -o ${_part}
     DEPENDS ${_cpp_srcs} ${rule_common_headers} ${rule_indexer_sources} ${RUSTLS_HEADER} ${BROTLI_HEADERS}
     VERBATIM
   )
