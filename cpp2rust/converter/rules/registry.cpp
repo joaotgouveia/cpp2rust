@@ -145,6 +145,36 @@ void checkGenerics(const std::string &dir, const std::string &name,
   }
 }
 
+TranslationRule::TypeRule placeholderTypeRule() {
+  TranslationRule::TypeRule rule;
+  rule.initializer = "unimplemented!()";
+  rule.type_info.type = "()";
+  return rule;
+}
+
+TranslationRule::ExprRule placeholderExprRule(const clang::NamedDecl *decl) {
+  unsigned num_params = 0;
+  if (auto function = decl->getAsFunction()) {
+    num_params = function->getNumParams();
+  } else {
+    auto proto = llvm::cast<clang::VarDecl>(decl)
+                     ->getType()
+                     ->getPointeeType()
+                     ->getAs<clang::FunctionProtoType>();
+    assert(proto && "placeholder expression rule is neither a function nor a "
+                    "function pointer");
+    num_params = proto->getNumParams();
+  }
+  TranslationRule::ExprRule rule;
+  rule.params.resize(num_params);
+  for (auto &param : rule.params) {
+    param.type = "()";
+  }
+  rule.return_type.type = "()";
+  rule.body.emplace_back(TranslationRule::TextFragment{"unimplemented!()"});
+  return rule;
+}
+
 void addRule(clang::ASTContext &ctx, const std::string &dir,
              const std::string &name, const clang::NamedDecl *decl) {
   auto rule = findRule(Model::kUnsafe, dir, name);
@@ -153,9 +183,9 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
       rule = refcount_rule;
     }
   }
-  assert(rule && "rule has no target");
   if (!name.starts_with('f')) {
-    auto type_rule = TranslationRule::ParseTypeRuleJSON(*rule);
+    auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                          : placeholderTypeRule();
     auto keys = RuleKeys::GetTypeKeys(decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
@@ -164,7 +194,8 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
     return;
   }
   auto make_expr_rule = [&] {
-    return TranslationRule::ParseExprRuleJSON(*rule);
+    return rule ? TranslationRule::ParseExprRuleJSON(*rule)
+                : placeholderExprRule(decl);
   };
   if (auto function = decl->getAsFunction()) {
     checkGenerics(dir, name, function, make_expr_rule());
