@@ -328,7 +328,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { PathPoint::getType(&(*unimplemented!())) }) == ('a' as ())) {
+        if !((unsafe { PathPoint::getType(&(*ret.first)) }) == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -354,7 +354,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { PathPoint::getType(&(*unimplemented!())) }) == ('a' as ())) {
+        if !((unsafe { PathPoint::getType(&(*ret.first)) }) == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -379,7 +379,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { PathPoint::getType(&(*unimplemented!())) }) == ('b' as ())) {
+        if !((unsafe { PathPoint::getType(&(*it)) }) == ('b' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -405,7 +405,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { PathPoint::getType(&(*unimplemented!())) }) == ('c' as ())) {
+        if !((unsafe { PathPoint::getType(&(*ret.first)) }) == ('c' as ())) {
             unimplemented!();
             unimplemented!();
         }

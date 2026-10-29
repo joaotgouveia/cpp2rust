@@ -92,9 +92,7 @@ impl Default for nasty_mutex {
     }
 }
 pub unsafe fn test_1(mut c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: *const ()) {
-    let mut q: () = std_insert_iterator_std_vector_int__std_allocator_int___::new({ &mut c1 }, {
-        unimplemented!()
-    });
+    let mut q: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -108,7 +106,7 @@ pub unsafe fn test_2(
     mut x3: (),
     c2: *const nasty_vector_int_,
 ) {
-    let mut q: () = std_insert_iterator_nasty_vector_int__::new({ &mut c1 }, { unimplemented!() });
+    let mut q: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

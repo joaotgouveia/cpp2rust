@@ -362,6 +362,80 @@ pub fn for_each_10(
         swallow_11(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6)
     });
 }
+pub fn for_each_12(
+    mut _a0 : types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__,
+    f: FnPtr<Generic>,
+) {
+    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
+    ({
+        let _arg0: () = {
+            ({ (*f.borrow()).spec::<fn()>(0).call() });
+            0_()
+        };
+        let _arg1: () = {
+            ({ (*f.borrow()).spec::<fn()>(1).call() });
+            0_()
+        };
+        let _arg2: () = {
+            ({ (*f.borrow()).spec::<fn()>(2).call() });
+            0_()
+        };
+        let _arg3: () = {
+            ({ (*f.borrow()).spec::<fn()>(3).call() });
+            0_()
+        };
+        let _arg4: () = {
+            ({ (*f.borrow()).spec::<fn()>(4).call() });
+            0_()
+        };
+        let _arg5: () = {
+            ({ (*f.borrow()).spec::<fn()>(5).call() });
+            0_()
+        };
+        let _arg6: () = {
+            ({ (*f.borrow()).spec::<fn()>(6).call() });
+            0_()
+        };
+        swallow_11(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6)
+    });
+}
+pub fn for_each_13(
+    mut _a0 : types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__,
+    f: FnPtr<Generic>,
+) {
+    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
+    ({
+        let _arg0: () = {
+            ({ (*f.borrow()).spec::<fn()>(0).call() });
+            0_()
+        };
+        let _arg1: () = {
+            ({ (*f.borrow()).spec::<fn()>(1).call() });
+            0_()
+        };
+        let _arg2: () = {
+            ({ (*f.borrow()).spec::<fn()>(2).call() });
+            0_()
+        };
+        let _arg3: () = {
+            ({ (*f.borrow()).spec::<fn()>(3).call() });
+            0_()
+        };
+        let _arg4: () = {
+            ({ (*f.borrow()).spec::<fn()>(4).call() });
+            0_()
+        };
+        let _arg5: () = {
+            ({ (*f.borrow()).spec::<fn()>(5).call() });
+            0_()
+        };
+        let _arg6: () = {
+            ({ (*f.borrow()).spec::<fn()>(6).call() });
+            0_()
+        };
+        swallow_11(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6)
+    });
+}
 pub fn swallow_11(
     mut _a0: (),
     mut _a1: (),
@@ -629,7 +703,7 @@ pub struct sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ {
     base_: Ptr<()>,
 }
 impl sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ {}
-pub fn operator_eq_12(
+pub fn operator_eq_14(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -645,7 +719,7 @@ pub struct forward_sized_iterator_int_ptr_ {
 impl forward_sized_iterator_int_ptr_ {}
 impl CppEq for forward_sized_iterator_int_ptr_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_12(__lhs.clone(), __rhs.clone())
+        operator_eq_14(__lhs.clone(), __rhs.clone())
     }
 }
 impl Default for forward_sized_iterator_int_ptr_ {
@@ -662,36 +736,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_13(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_15(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_13(_i, n)
+        operator_add_15(_i, n)
     });
 }
-pub fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_18(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -736,12 +810,12 @@ impl adl_Iterator {
 }
 impl CppLess for adl_Iterator {
     fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_18(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+        operator_cmp_20(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
 impl CppEq for adl_Iterator {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_17(__lhs.clone(), __rhs.clone())
+        operator_eq_19(__lhs.clone(), __rhs.clone())
     }
 }
 impl Default for adl_Iterator {
@@ -783,130 +857,10 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_impl_19() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
-        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
-        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
-        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-        );;
-    }
-    {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
-        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-        );;
-    }
-    {
-        {
-            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
-            let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-            );;
-        }
-        {
-            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
-            let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-            );;
-        }
-    }
-}
-pub fn test_impl_20() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
-        ));
-        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
-        ));
-        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
-        );;
-    }
-    {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
-        ));
-        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-        );;
-    }
-    {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
-        ));
-        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
-        const _: () = assert!(
-            true,
-            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-        );;
-    }
-    {
-        {
-            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_contiguous_iterator_int_ptr__>::default(),
-            ));
-            let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
-            );;
-        }
-        {
-            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_contiguous_iterator_int_ptr__>::default(),
-            ));
-            let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            const _: () = assert!(
-                true,
-                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
-            );;
-        }
-    }
-}
 pub fn test_impl_21() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -914,9 +868,7 @@ pub fn test_impl_21() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -924,9 +876,7 @@ pub fn test_impl_21() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -934,9 +884,7 @@ pub fn test_impl_21() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -945,9 +893,7 @@ pub fn test_impl_21() {
     }
     {
         {
-            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_random_access_iterator_int_ptr__>::default(),
-            ));
+            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -955,9 +901,7 @@ pub fn test_impl_21() {
             );;
         }
         {
-            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_random_access_iterator_int_ptr__>::default(),
-            ));
+            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -969,8 +913,8 @@ pub fn test_impl_21() {
 pub fn test_impl_22() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -979,8 +923,8 @@ pub fn test_impl_22() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -989,8 +933,8 @@ pub fn test_impl_22() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -999,8 +943,8 @@ pub fn test_impl_22() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1010,8 +954,8 @@ pub fn test_impl_22() {
     }
     {
         {
-            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_bidirectional_iterator_int_ptr__>::default(),
+            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_contiguous_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1020,8 +964,8 @@ pub fn test_impl_22() {
             );;
         }
         {
-            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_bidirectional_iterator_int_ptr__>::default(),
+            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_contiguous_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1034,8 +978,9 @@ pub fn test_impl_22() {
 pub fn test_impl_23() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let r: Value<Range_forward_iterator_int_ptr__> =
-            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1043,8 +988,9 @@ pub fn test_impl_23() {
         );;
     }
     {
-        let r: Value<Range_forward_iterator_int_ptr__> =
-            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1052,8 +998,9 @@ pub fn test_impl_23() {
         );;
     }
     {
-        let r: Value<Range_forward_iterator_int_ptr__> =
-            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1061,8 +1008,9 @@ pub fn test_impl_23() {
         );;
     }
     {
-        let r: Value<Range_forward_iterator_int_ptr__> =
-            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1071,8 +1019,9 @@ pub fn test_impl_23() {
     }
     {
         {
-            let r: Value<Range_forward_iterator_int_ptr__> =
-                Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_random_access_iterator_int_ptr__>::default(),
+            ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1080,8 +1029,9 @@ pub fn test_impl_23() {
             );;
         }
         {
-            let r: Value<Range_forward_iterator_int_ptr__> =
-                Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_random_access_iterator_int_ptr__>::default(),
+            ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1093,8 +1043,8 @@ pub fn test_impl_23() {
 pub fn test_impl_24() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1103,8 +1053,8 @@ pub fn test_impl_24() {
         );;
     }
     {
-        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1113,8 +1063,8 @@ pub fn test_impl_24() {
         );;
     }
     {
-        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1123,8 +1073,8 @@ pub fn test_impl_24() {
         );;
     }
     {
-        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1134,8 +1084,8 @@ pub fn test_impl_24() {
     }
     {
         {
-            let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_cpp20_input_iterator_int_ptr__>::default(),
+            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_bidirectional_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1144,8 +1094,8 @@ pub fn test_impl_24() {
             );;
         }
         {
-            let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_cpp20_input_iterator_int_ptr__>::default(),
+            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_bidirectional_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1158,9 +1108,8 @@ pub fn test_impl_24() {
 pub fn test_impl_25() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-        ));
+        let r: Value<Range_forward_iterator_int_ptr__> =
+            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1168,9 +1117,8 @@ pub fn test_impl_25() {
         );;
     }
     {
-        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-        ));
+        let r: Value<Range_forward_iterator_int_ptr__> =
+            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1178,9 +1126,8 @@ pub fn test_impl_25() {
         );;
     }
     {
-        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-        ));
+        let r: Value<Range_forward_iterator_int_ptr__> =
+            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1188,9 +1135,8 @@ pub fn test_impl_25() {
         );;
     }
     {
-        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-        ));
+        let r: Value<Range_forward_iterator_int_ptr__> =
+            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1199,9 +1145,8 @@ pub fn test_impl_25() {
     }
     {
         {
-            let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-                <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-            ));
+            let r: Value<Range_forward_iterator_int_ptr__> =
+                Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1209,9 +1154,8 @@ pub fn test_impl_25() {
             );;
         }
         {
-            let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-                <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-            ));
+            let r: Value<Range_forward_iterator_int_ptr__> =
+                Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1221,9 +1165,11 @@ pub fn test_impl_25() {
     }
 }
 pub fn test_impl_26() {
-    let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1231,7 +1177,9 @@ pub fn test_impl_26() {
         );;
     }
     {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1239,7 +1187,9 @@ pub fn test_impl_26() {
         );;
     }
     {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1247,7 +1197,9 @@ pub fn test_impl_26() {
         );;
     }
     {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1256,7 +1208,9 @@ pub fn test_impl_26() {
     }
     {
         {
-            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+            let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_cpp20_input_iterator_int_ptr__>::default(),
+            ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1264,7 +1218,9 @@ pub fn test_impl_26() {
             );;
         }
         {
-            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+            let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_cpp20_input_iterator_int_ptr__>::default(),
+            ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1274,10 +1230,10 @@ pub fn test_impl_26() {
     }
 }
 pub fn test_impl_27() {
-    let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
+        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1286,8 +1242,8 @@ pub fn test_impl_27() {
         );;
     }
     {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
+        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1296,8 +1252,8 @@ pub fn test_impl_27() {
         );;
     }
     {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
+        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1306,8 +1262,8 @@ pub fn test_impl_27() {
         );;
     }
     {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
+        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1317,8 +1273,8 @@ pub fn test_impl_27() {
     }
     {
         {
-            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_contiguous_iterator_int_ptr__>::default(),
+            let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+                <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1327,8 +1283,8 @@ pub fn test_impl_27() {
             );;
         }
         {
-            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_contiguous_iterator_int_ptr__>::default(),
+            let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+                <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1341,9 +1297,7 @@ pub fn test_impl_27() {
 pub fn test_impl_28() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1351,9 +1305,7 @@ pub fn test_impl_28() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1361,9 +1313,7 @@ pub fn test_impl_28() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1371,9 +1321,7 @@ pub fn test_impl_28() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1382,9 +1330,7 @@ pub fn test_impl_28() {
     }
     {
         {
-            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_random_access_iterator_int_ptr__>::default(),
-            ));
+            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1392,9 +1338,7 @@ pub fn test_impl_28() {
             );;
         }
         {
-            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_random_access_iterator_int_ptr__>::default(),
-            ));
+            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1406,8 +1350,8 @@ pub fn test_impl_28() {
 pub fn test_impl_29() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1416,8 +1360,8 @@ pub fn test_impl_29() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1426,8 +1370,8 @@ pub fn test_impl_29() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1436,8 +1380,8 @@ pub fn test_impl_29() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1447,8 +1391,8 @@ pub fn test_impl_29() {
     }
     {
         {
-            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_bidirectional_iterator_int_ptr__>::default(),
+            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_contiguous_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1457,8 +1401,8 @@ pub fn test_impl_29() {
             );;
         }
         {
-            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_bidirectional_iterator_int_ptr__>::default(),
+            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_contiguous_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1471,8 +1415,9 @@ pub fn test_impl_29() {
 pub fn test_impl_30() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let r: Value<Range_forward_iterator_int_ptr__> =
-            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1480,8 +1425,9 @@ pub fn test_impl_30() {
         );;
     }
     {
-        let r: Value<Range_forward_iterator_int_ptr__> =
-            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1489,8 +1435,9 @@ pub fn test_impl_30() {
         );;
     }
     {
-        let r: Value<Range_forward_iterator_int_ptr__> =
-            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1498,8 +1445,9 @@ pub fn test_impl_30() {
         );;
     }
     {
-        let r: Value<Range_forward_iterator_int_ptr__> =
-            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1508,8 +1456,9 @@ pub fn test_impl_30() {
     }
     {
         {
-            let r: Value<Range_forward_iterator_int_ptr__> =
-                Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_random_access_iterator_int_ptr__>::default(),
+            ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1517,8 +1466,9 @@ pub fn test_impl_30() {
             );;
         }
         {
-            let r: Value<Range_forward_iterator_int_ptr__> =
-                Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
+            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_random_access_iterator_int_ptr__>::default(),
+            ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1530,8 +1480,8 @@ pub fn test_impl_30() {
 pub fn test_impl_31() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1540,8 +1490,8 @@ pub fn test_impl_31() {
         );;
     }
     {
-        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1550,8 +1500,8 @@ pub fn test_impl_31() {
         );;
     }
     {
-        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1560,8 +1510,8 @@ pub fn test_impl_31() {
         );;
     }
     {
-        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1571,8 +1521,8 @@ pub fn test_impl_31() {
     }
     {
         {
-            let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_cpp20_input_iterator_int_ptr__>::default(),
+            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_bidirectional_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1581,8 +1531,8 @@ pub fn test_impl_31() {
             );;
         }
         {
-            let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_cpp20_input_iterator_int_ptr__>::default(),
+            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_bidirectional_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1595,9 +1545,8 @@ pub fn test_impl_31() {
 pub fn test_impl_32() {
     let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-        ));
+        let r: Value<Range_forward_iterator_int_ptr__> =
+            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1605,9 +1554,8 @@ pub fn test_impl_32() {
         );;
     }
     {
-        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-        ));
+        let r: Value<Range_forward_iterator_int_ptr__> =
+            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1615,9 +1563,8 @@ pub fn test_impl_32() {
         );;
     }
     {
-        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-        ));
+        let r: Value<Range_forward_iterator_int_ptr__> =
+            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1625,9 +1572,8 @@ pub fn test_impl_32() {
         );;
     }
     {
-        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-        ));
+        let r: Value<Range_forward_iterator_int_ptr__> =
+            Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1636,9 +1582,8 @@ pub fn test_impl_32() {
     }
     {
         {
-            let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-                <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-            ));
+            let r: Value<Range_forward_iterator_int_ptr__> =
+                Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1646,9 +1591,8 @@ pub fn test_impl_32() {
             );;
         }
         {
-            let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
-                <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
-            ));
+            let r: Value<Range_forward_iterator_int_ptr__> =
+                Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1658,11 +1602,11 @@ pub fn test_impl_32() {
     }
 }
 pub fn test_impl_33() {
-    let a: Value<test_allocator_std_byte_> =
-        Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
-    let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
+    let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1670,7 +1614,9 @@ pub fn test_impl_33() {
         );;
     }
     {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1678,7 +1624,9 @@ pub fn test_impl_33() {
         );;
     }
     {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1686,7 +1634,9 @@ pub fn test_impl_33() {
         );;
     }
     {
-        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+        let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp20_input_iterator_int_ptr__>::default(),
+        ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1695,7 +1645,9 @@ pub fn test_impl_33() {
     }
     {
         {
-            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+            let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_cpp20_input_iterator_int_ptr__>::default(),
+            ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1703,7 +1655,9 @@ pub fn test_impl_33() {
             );;
         }
         {
-            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
+            let r: Value<Range_cpp20_input_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_cpp20_input_iterator_int_ptr__>::default(),
+            ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1713,12 +1667,10 @@ pub fn test_impl_33() {
     }
 }
 pub fn test_impl_34() {
-    let a: Value<test_allocator_std_byte_> =
-        Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
-    let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
+    let mut a: min_allocator_std_byte_ = <min_allocator_std_byte_>::default();
     {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
+        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1727,8 +1679,8 @@ pub fn test_impl_34() {
         );;
     }
     {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
+        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1737,8 +1689,8 @@ pub fn test_impl_34() {
         );;
     }
     {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
+        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1747,8 +1699,8 @@ pub fn test_impl_34() {
         );;
     }
     {
-        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_contiguous_iterator_int_ptr__>::default(),
+        let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+            <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1758,8 +1710,8 @@ pub fn test_impl_34() {
     }
     {
         {
-            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_contiguous_iterator_int_ptr__>::default(),
+            let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+                <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1768,8 +1720,8 @@ pub fn test_impl_34() {
             );;
         }
         {
-            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_contiguous_iterator_int_ptr__>::default(),
+            let r: Value<Range_cpp17_input_iterator_int_ptr__int_ptr__> = Rc::new(RefCell::new(
+                <Range_cpp17_input_iterator_int_ptr__int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1784,9 +1736,7 @@ pub fn test_impl_35() {
         Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1794,9 +1744,7 @@ pub fn test_impl_35() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1804,9 +1752,7 @@ pub fn test_impl_35() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1814,9 +1760,7 @@ pub fn test_impl_35() {
         );;
     }
     {
-        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_random_access_iterator_int_ptr__>::default(),
-        ));
+        let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
             true,
@@ -1825,9 +1769,7 @@ pub fn test_impl_35() {
     }
     {
         {
-            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_random_access_iterator_int_ptr__>::default(),
-            ));
+            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1835,9 +1777,7 @@ pub fn test_impl_35() {
             );;
         }
         {
-            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_random_access_iterator_int_ptr__>::default(),
-            ));
+            let r: Value<Range_int_ptr_> = Rc::new(RefCell::new(<Range_int_ptr_>::default()));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
                 true,
@@ -1851,8 +1791,8 @@ pub fn test_impl_36() {
         Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1861,8 +1801,8 @@ pub fn test_impl_36() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1871,8 +1811,8 @@ pub fn test_impl_36() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1881,8 +1821,8 @@ pub fn test_impl_36() {
         );;
     }
     {
-        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-            <Range_bidirectional_iterator_int_ptr__>::default(),
+        let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_contiguous_iterator_int_ptr__>::default(),
         ));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
         const _: () = assert!(
@@ -1892,8 +1832,8 @@ pub fn test_impl_36() {
     }
     {
         {
-            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_bidirectional_iterator_int_ptr__>::default(),
+            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_contiguous_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1902,8 +1842,8 @@ pub fn test_impl_36() {
             );;
         }
         {
-            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
-                <Range_bidirectional_iterator_int_ptr__>::default(),
+            let r: Value<Range_contiguous_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_contiguous_iterator_int_ptr__>::default(),
             ));
             let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(
@@ -1918,6 +1858,140 @@ pub fn test_impl_37() {
         Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
     {
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
+        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
+        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
+        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+        );;
+    }
+    {
+        let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_random_access_iterator_int_ptr__>::default(),
+        ));
+        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+        );;
+    }
+    {
+        {
+            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_random_access_iterator_int_ptr__>::default(),
+            ));
+            let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+            );;
+        }
+        {
+            let r: Value<Range_random_access_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_random_access_iterator_int_ptr__>::default(),
+            ));
+            let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+            );;
+        }
+    }
+}
+pub fn test_impl_38() {
+    let a: Value<test_allocator_std_byte_> =
+        Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
+    let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
+    {
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
+        ));
+        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
+        ));
+        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, std::allocator<std::byte>>>"
+        );;
+    }
+    {
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
+        ));
+        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+        );;
+    }
+    {
+        let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+            <Range_bidirectional_iterator_int_ptr__>::default(),
+        ));
+        let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+        const _: () = assert!(
+            true,
+            "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+        );;
+    }
+    {
+        {
+            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_bidirectional_iterator_int_ptr__>::default(),
+            ));
+            let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&, Allocator>>"
+            );;
+        }
+        {
+            let r: Value<Range_bidirectional_iterator_int_ptr__> = Rc::new(RefCell::new(
+                <Range_bidirectional_iterator_int_ptr__>::default(),
+            ));
+            let elements: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            const _: () = assert!(
+                true,
+                "std::same_as<decltype(elements), std::ranges::elements_of<Range&&, Allocator>>"
+            );;
+        }
+    }
+}
+pub fn test_impl_39() {
+    let a: Value<test_allocator_std_byte_> =
+        Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
+    let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
+    {
         let r: Value<Range_forward_iterator_int_ptr__> =
             Rc::new(RefCell::new(<Range_forward_iterator_int_ptr__>::default()));
         let elements: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
@@ -1974,7 +2048,7 @@ pub fn test_impl_37() {
         }
     }
 }
-pub fn test_impl_38() {
+pub fn test_impl_40() {
     let a: Value<test_allocator_std_byte_> =
         Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
@@ -2041,7 +2115,7 @@ pub fn test_impl_38() {
         }
     }
 }
-pub fn test_impl_39() {
+pub fn test_impl_41() {
     let a: Value<test_allocator_std_byte_> =
         Rc::new(RefCell::new(<test_allocator_std_byte_>::default()));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
@@ -2129,31 +2203,31 @@ pub struct Range_cpp20_input_iterator_int_ptr__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Range_cpp17_input_iterator_int_ptr__int_ptr__ {}
-pub fn test_40() -> () {
+pub fn test_42() -> () {
     ({
-        for_each_8 ( <types_type_list_std_allocator_std_byte___min_allocator_std_byte___test_allocator_std_byte__  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_10 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_impl_19 ( ) } )  ;
- } , | | { ( { test_impl_20 ( ) } )  ;
- } , | | { ( { test_impl_21 ( ) } )  ;
+        for_each_8 ( <types_type_list_std_allocator_std_byte___min_allocator_std_byte___test_allocator_std_byte__  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_10 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_impl_21 ( ) } )  ;
  } , | | { ( { test_impl_22 ( ) } )  ;
  } , | | { ( { test_impl_23 ( ) } )  ;
  } , | | { ( { test_impl_24 ( ) } )  ;
  } , | | { ( { test_impl_25 ( ) } )  ;
- } )  , ) } )  ;
- } , | | { ( { for_each_41 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_impl_26 ( ) } )  ;
+ } , | | { ( { test_impl_26 ( ) } )  ;
  } , | | { ( { test_impl_27 ( ) } )  ;
- } , | | { ( { test_impl_28 ( ) } )  ;
+ } )  , ) } )  ;
+ } , | | { ( { for_each_12 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_impl_28 ( ) } )  ;
  } , | | { ( { test_impl_29 ( ) } )  ;
  } , | | { ( { test_impl_30 ( ) } )  ;
  } , | | { ( { test_impl_31 ( ) } )  ;
  } , | | { ( { test_impl_32 ( ) } )  ;
- } )  , ) } )  ;
- } , | | { ( { for_each_42 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_impl_33 ( ) } )  ;
+ } , | | { ( { test_impl_33 ( ) } )  ;
  } , | | { ( { test_impl_34 ( ) } )  ;
- } , | | { ( { test_impl_35 ( ) } )  ;
+ } )  , ) } )  ;
+ } , | | { ( { for_each_13 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_input_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_impl_35 ( ) } )  ;
  } , | | { ( { test_impl_36 ( ) } )  ;
  } , | | { ( { test_impl_37 ( ) } )  ;
  } , | | { ( { test_impl_38 ( ) } )  ;
  } , | | { ( { test_impl_39 ( ) } )  ;
+ } , | | { ( { test_impl_40 ( ) } )  ;
+ } , | | { ( { test_impl_41 ( ) } )  ;
  } )  , ) } )  ;
  } )  , )
     });
@@ -2179,7 +2253,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_40() });
+    ({ test_42() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

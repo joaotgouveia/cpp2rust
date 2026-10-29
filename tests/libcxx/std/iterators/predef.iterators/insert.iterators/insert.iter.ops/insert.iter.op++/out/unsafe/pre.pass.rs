@@ -99,25 +99,19 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
     }
 }
 pub unsafe fn test_0(mut c: ()) -> () {
-    let mut i: () = std_insert_iterator_std_vector_int__std_allocator_int___::new({ &mut c }, {
-        unimplemented!()
-    });
+    let mut i: () = unimplemented!();
     let r: *mut () = &mut (*unimplemented!());
     unimplemented!();
     return true;
 }
 pub unsafe fn test_1(mut c: nasty_vector_int_) -> () {
-    let mut i: () = std_insert_iterator_nasty_vector_int__::new({ &mut c }, {
-        (unsafe { nasty_vector_int_::end_14(&mut c) })
-    });
+    let mut i: () = unimplemented!();
     let r: *mut () = &mut (*unimplemented!());
     unimplemented!();
     return true;
 }
 pub unsafe fn test_2(mut c: ConstexprFixedCapacityDeque_int__10_) -> () {
-    let mut i: () = std_insert_iterator_ConstexprFixedCapacityDeque_int__10__::new({ &mut c }, {
-        (unsafe { ConstexprFixedCapacityDeque_int__10_::end_3(&mut c) })
-    });
+    let mut i: () = unimplemented!();
     let r: *mut () = &mut (*unimplemented!());
     unimplemented!();
     return true;

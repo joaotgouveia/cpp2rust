@@ -213,7 +213,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*sentry01.borrow())() }) == false) {
+        if !(unimplemented!() == false) {
             unimplemented!();
             unimplemented!();
         }
@@ -222,7 +222,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*sentry02.borrow())() }) == false) {
+        if !(unimplemented!() == false) {
             unimplemented!();
             unimplemented!();
         }
@@ -231,7 +231,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*sentry03.borrow())() }) == true) {
+        if !(unimplemented!() == true) {
             unimplemented!();
             unimplemented!();
         }
@@ -240,7 +240,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*sentry04.borrow())() }) == true) {
+        if !(unimplemented!() == true) {
             unimplemented!();
             unimplemented!();
         }

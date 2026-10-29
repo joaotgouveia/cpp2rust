@@ -241,7 +241,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == ('a' as ())) {
+        if !({ ((*it.borrow()).read()).first } == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -259,7 +259,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == ('a' as ())) {
+        if !({ ((*it.borrow()).read()).first } == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -284,7 +284,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == ('b' as ())) {
+        if !({ ((*it.borrow()).read()).first } == ('b' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -302,7 +302,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == ('c' as ())) {
+        if !({ ((*it.borrow()).read()).first } == ('c' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -331,7 +331,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == ('a' as ())) {
+        if !({ ((*it.borrow()).read()).first } == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -349,7 +349,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == ('a' as ())) {
+        if !({ ((*it.borrow()).read()).first } == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -374,7 +374,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == ('b' as ())) {
+        if !({ ((*it.borrow()).read()).first } == ('b' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -392,7 +392,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == ('c' as ())) {
+        if !({ ((*it.borrow()).read()).first } == ('c' as ())) {
             unimplemented!();
             unimplemented!();
         }

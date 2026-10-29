@@ -1022,7 +1022,7 @@ pub unsafe fn test_one_31() {
     unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
-    let mut k: () = unimplemented!();
+    let mut k: () = i.clone();
     unimplemented!();
     let mut j: () = 1_();
     'loop_: while ((j) <= (4_())) {
@@ -1065,7 +1065,7 @@ pub unsafe fn test_one_32() {
     unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
-    let mut k: () = unimplemented!();
+    let mut k: () = i.clone();
     unimplemented!();
     let mut j: () = 1_();
     'loop_: while ((j) <= (4_())) {
@@ -1149,7 +1149,7 @@ pub unsafe fn test_one_34() {
     unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
-    let mut k: () = unimplemented!();
+    let mut k: () = i.clone();
     unimplemented!();
     let mut j: () = 1_();
     'loop_: while ((j) <= (4_())) {
@@ -1178,7 +1178,7 @@ pub unsafe fn test_35() -> () {
     {
         let mut ii1: () = unimplemented!();
         let mut ii2: () = unimplemented!();
-        let mut ii4: () = unimplemented!();
+        let mut ii4: () = ii1.clone();
         let mut cii: () = unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -122,8 +122,8 @@ pub struct cpp17_input_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_______gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn operator_deref ( &self , ) -> () { return & ( * unimplemented!()  )   ;
+impl cpp17_input_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_______gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn operator_deref ( &self , ) -> () { return & ( * self . it_  )  ;
  } pub unsafe fn operator_inc_5 ( &mut self , ) -> *mut cpp17_input_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_______gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { unimplemented!()  ;
  return & mut ( * ( self as *mut cpp17_input_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_______gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  )  )  ;
  } pub unsafe fn move_from ( _a0 : *mut cpp17_input_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_______gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;
@@ -145,8 +145,8 @@ pub struct forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basi
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn operator_deref ( &self , ) -> () { return & ( * unimplemented!()  )   ;
+impl forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn operator_deref ( &self , ) -> () { return & ( * self . it_  )  ;
  } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { unimplemented!()  ;
  return & mut ( * ( self as *mut forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  )  )  ;
  } pub unsafe fn move_from ( _a0 : *mut forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ , ) -> Self { let mut this = Self { it_ : ( * _a0 ) . it_  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * _a0 ) . tracker_  } , )  , } ;

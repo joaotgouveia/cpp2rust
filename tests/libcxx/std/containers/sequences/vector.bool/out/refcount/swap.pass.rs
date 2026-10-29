@@ -492,7 +492,7 @@ pub fn tests_13() -> () {
         let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*r1.borrow_mut()) = true;
-        ({ swap_14((*r1.borrow()).clone(), (*r2.borrow()).clone()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -521,7 +521,7 @@ pub fn tests_13() -> () {
         let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*r1.borrow_mut()) = true;
-        ({ swap_14((*r1.borrow()).clone(), (*r2.borrow()).clone()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }

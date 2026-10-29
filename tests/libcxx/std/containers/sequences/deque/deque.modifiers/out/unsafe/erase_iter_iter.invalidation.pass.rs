@@ -9,7 +9,7 @@ use std::rc::Rc;
 pub unsafe fn del_at_start_0(mut c: (), mut num: ()) {
     let mut first: () = unimplemented!();
     let mut last: () = unimplemented!();
-    let mut it1: () = unimplemented!();
+    let mut it1: () = last.clone();
     let mut it2: () = unimplemented!();
     unimplemented!();
     let mut it3: () = unimplemented!();

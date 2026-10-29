@@ -103,7 +103,7 @@ pub struct forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basi
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub fn new_1 ( it : ()  , ) -> Self { let it : Value<() >  = Rc::new(RefCell::new(it)) ;
- Self { it_ : unimplemented!()  , tracker_ : support_double_move_tracker :: new ( )   , }  } pub fn move_from ( _a0 : Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > , ) -> Self { Self { it_ : field!(_a0, it_) .with_mut(std::mem::take)  , tracker_ : support_double_move_tracker :: move_from ( { field_ptr!(_a0 , tracker_)  } , )   , }  } }
+ Self { it_ : ((*it.borrow()) ).clone()  , tracker_ : support_double_move_tracker :: new ( )   , }  } pub fn move_from ( _a0 : Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > , ) -> Self { Self { it_ : field!(_a0, it_) .with_mut(std::mem::take)  , tracker_ : support_double_move_tracker :: move_from ( { field_ptr!(_a0 , tracker_)  } , )   , }  } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -742,7 +742,7 @@ pub trait forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic
     fn move_assign ( &self , _a0 : Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > , ) -> Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > ;
 }
 impl forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl for Ptr<forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____> {
-fn operator_deref ( &self , ) -> () { return unimplemented!()    ;
+fn operator_deref ( &self , ) -> () { return field_ptr!((* self )  , it_)   ;
  } fn operator_inc_6 ( &self , ) -> Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > { unimplemented!()  ;
  return ((* self )  ).clone()  ;
  } fn move_assign ( &self , _a0 : Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > , ) -> Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > { unimplemented!()  ;

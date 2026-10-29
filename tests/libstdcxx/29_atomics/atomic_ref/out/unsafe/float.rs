@@ -272,7 +272,7 @@ pub unsafe fn test01_9() {
                 }
             }
         }
-        (a as std___atomic_ref_float__false__true_) = 1.6_f32;
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -588,7 +588,7 @@ pub unsafe fn test02_10() {
                 }
             }
         }
-        (a as std___atomic_ref_double__false__true_) = 1.6_f64;
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -900,7 +900,7 @@ pub unsafe fn test04_12() {
         let mut a0: () = unimplemented!();
         let mut a1: () = unimplemented!();
         let mut a2: () = unimplemented!();
-        (a0 as std___atomic_ref_float_ptr__false__false_) = (&mut i as *mut ());
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

@@ -99,28 +99,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_1((unsafe { bind_12(Some(f_10)) })) });
+    (unsafe { test_1(unimplemented!()) });
+    (unsafe { test_1(unimplemented!()) });
+    (unsafe { test_2(unimplemented!()) });
     (unsafe {
-        test_1(
-            (unsafe {
-                let mut ___f: Option<unsafe fn()> = (Some(f_10));
-                bind_13(&mut ___f)
-            }),
-        )
-    });
-    (unsafe {
-        test_2(
-            (unsafe {
-                let mut ___f: A_void_0 = <A_void_0>::default();
-                bind_14(&mut ___f)
-            }),
-        )
-    });
-    (unsafe {
-        let mut _f: () = (unsafe {
-            let mut ___f: A_void_0 = <A_void_0>::default();
-            bind_14(&mut ___f)
-        });
+        let mut _f: () = unimplemented!();
         test_const_7(&mut _f)
     });
     (unsafe { test_3(unimplemented!()) });

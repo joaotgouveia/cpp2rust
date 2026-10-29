@@ -286,32 +286,6 @@ impl X {
     }
 }
 pub unsafe fn test01_9() {
-    let mut b0: () = (unsafe {
-        let mut ___f: X = <X>::default();
-        bind_10(&mut ___f)
-    });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { b0() }) == (0_())) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    let b1: () = (unsafe {
-        let mut ___f: X = <X>::default();
-        bind_10(&mut ___f)
-    });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { b1() }) == (1_())) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub unsafe fn test02_11() {
     let mut b0: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -331,7 +305,27 @@ pub unsafe fn test02_11() {
         }
     }
 }
-pub unsafe fn test03_12() {
+pub unsafe fn test02_10() {
+    let mut b0: () = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unsafe { b0() }) == (0_())) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    let b1: () = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unsafe { b1() }) == (1_())) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn test03_11() {
     let mut b0: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -361,7 +355,7 @@ pub unsafe fn test03_12() {
         }
     }
 }
-pub unsafe fn test04_13() {
+pub unsafe fn test04_12() {
     let mut b0: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -399,9 +393,9 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     (unsafe { test01_9() });
-    (unsafe { test02_11() });
-    (unsafe { test03_12() });
-    (unsafe { test04_13() });
+    (unsafe { test02_10() });
+    (unsafe { test03_11() });
+    (unsafe { test04_12() });
     return 0_();
 }
 impl __gnu_test_semaphore {
@@ -423,7 +417,7 @@ impl __gnu_test_semaphore {
         this
     }
 }
-pub unsafe fn set_memory_limits_14(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_13(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
@@ -440,14 +434,14 @@ pub unsafe fn set_memory_limits_14(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_15(mut size: ()) {
+pub unsafe fn set_file_limit_14(mut size: ()) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_16(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_15(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = unimplemented!();
@@ -482,7 +476,7 @@ pub unsafe fn verify_demangle_16(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_17(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_16(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -510,7 +504,7 @@ pub unsafe fn run_tests_wrapped_locale_17(mut name: *const (), l: *const __gnu_t
         unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_18(
+pub unsafe fn run_tests_wrapped_env_17(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -579,7 +573,7 @@ impl __gnu_test_semaphore {
         }
     }
 }
-pub unsafe fn test_tm_19(
+pub unsafe fn test_tm_18(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -590,18 +584,18 @@ pub unsafe fn test_tm_19(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_20)).clone();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).clone();
 }
-static mut tmp_20: std::cell::LazyCell<()> =
+static mut tmp_19: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

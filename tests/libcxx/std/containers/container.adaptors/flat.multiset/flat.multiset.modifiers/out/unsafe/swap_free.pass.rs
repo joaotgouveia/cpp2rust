@@ -1416,7 +1416,7 @@ pub unsafe fn test_one_46() {
         let mut m2: () = unimplemented!();
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_47(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1437,7 +1437,7 @@ pub unsafe fn test_one_46() {
             );
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_47(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1458,7 +1458,7 @@ pub unsafe fn test_one_46() {
         let mut m2: () = unimplemented!();
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_47(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1491,7 +1491,93 @@ pub unsafe fn test_one_46() {
             );
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_47(&mut m1, &mut m2) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_one_47() {
+    {
+        let mut m1: () = unimplemented!();
+        let mut m2: () = unimplemented!();
+        let mut m1_save: () = m1.clone();
+        let mut m2_save: () = m2.clone();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ar2: [(); 8] = [5_(), 5_(), 7_(), 8_(), 8_(), 10_(), 11_(), 12_()];
+        let mut m1: () = unimplemented!();
+        let mut m2: () =
+            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
+                { ar2.as_mut_ptr() },
+                {
+                    ar2.as_mut_ptr().offset(
+                        ((::std::mem::size_of::<[(); 8]>() as ())
+                            .wrapping_div((::std::mem::size_of::<()>() as ())))
+                            as isize,
+                    )
+                },
+                None,
+            );
+        let mut m1_save: () = m1.clone();
+        let mut m2_save: () = m2.clone();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ar1: [(); 4] = [1_(), 1_(), 3_(), 4_()];
+        let mut m1: () =
+            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
+                { ar1.as_mut_ptr() },
+                {
+                    ar1.as_mut_ptr().offset(
+                        ((::std::mem::size_of::<[(); 4]>() as ())
+                            .wrapping_div((::std::mem::size_of::<()>() as ())))
+                            as isize,
+                    )
+                },
+                None,
+            );
+        let mut m2: () = unimplemented!();
+        let mut m1_save: () = m1.clone();
+        let mut m2_save: () = m2.clone();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ar1: [(); 4] = [1_(), 1_(), 3_(), 4_()];
+        let mut ar2: [(); 8] = [5_(), 5_(), 7_(), 8_(), 9_(), 10_(), 11_(), 12_()];
+        let mut m1: () =
+            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
+                { ar1.as_mut_ptr() },
+                {
+                    ar1.as_mut_ptr().offset(
+                        ((::std::mem::size_of::<[(); 4]>() as ())
+                            .wrapping_div((::std::mem::size_of::<()>() as ())))
+                            as isize,
+                    )
+                },
+                None,
+            );
+        let mut m2: () =
+            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
+                { ar2.as_mut_ptr() },
+                {
+                    ar2.as_mut_ptr().offset(
+                        ((::std::mem::size_of::<[(); 8]>() as ())
+                            .wrapping_div((::std::mem::size_of::<()>() as ())))
+                            as isize,
+                    )
+                },
+                None,
+            );
+        let mut m1_save: () = m1.clone();
+        let mut m2_save: () = m2.clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1502,93 +1588,7 @@ pub unsafe fn test_one_48() {
         let mut m2: () = unimplemented!();
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_49(&mut m1, &mut m2) });
         unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ar2: [(); 8] = [5_(), 5_(), 7_(), 8_(), 8_(), 10_(), 11_(), 12_()];
-        let mut m1: () = unimplemented!();
-        let mut m2: () =
-            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { ar2.as_mut_ptr() },
-                {
-                    ar2.as_mut_ptr().offset(
-                        ((::std::mem::size_of::<[(); 8]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-                None,
-            );
-        let mut m1_save: () = m1.clone();
-        let mut m2_save: () = m2.clone();
-        (unsafe { swap_49(&mut m1, &mut m2) });
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ar1: [(); 4] = [1_(), 1_(), 3_(), 4_()];
-        let mut m1: () =
-            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { ar1.as_mut_ptr() },
-                {
-                    ar1.as_mut_ptr().offset(
-                        ((::std::mem::size_of::<[(); 4]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-                None,
-            );
-        let mut m2: () = unimplemented!();
-        let mut m1_save: () = m1.clone();
-        let mut m2_save: () = m2.clone();
-        (unsafe { swap_49(&mut m1, &mut m2) });
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ar1: [(); 4] = [1_(), 1_(), 3_(), 4_()];
-        let mut ar2: [(); 8] = [5_(), 5_(), 7_(), 8_(), 9_(), 10_(), 11_(), 12_()];
-        let mut m1: () =
-            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { ar1.as_mut_ptr() },
-                {
-                    ar1.as_mut_ptr().offset(
-                        ((::std::mem::size_of::<[(); 4]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-                None,
-            );
-        let mut m2: () =
-            std_flat_multiset_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { ar2.as_mut_ptr() },
-                {
-                    ar2.as_mut_ptr().offset(
-                        ((::std::mem::size_of::<[(); 8]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-                None,
-            );
-        let mut m1_save: () = m1.clone();
-        let mut m2_save: () = m2.clone();
-        (unsafe { swap_49(&mut m1, &mut m2) });
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_one_50() {
-    {
-        let mut m1: () = unimplemented!();
-        let mut m2: () = unimplemented!();
-        let mut m1_save: () = m1.clone();
-        let mut m2_save: () = m2.clone();
-        (unsafe { swap_51(&mut m1, &mut m2) });
         unimplemented!();
         unimplemented!();
     }
@@ -1598,7 +1598,7 @@ pub unsafe fn test_one_50() {
         let mut m2 : () = std_flat_multiset_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { ar2 .as_mut_ptr() } , { ar2 .as_mut_ptr() . offset ( ( ( ( ::std::mem::size_of::<[ () ; 8]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) ) as isize ) } , None , )  ;
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_51(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1608,7 +1608,7 @@ pub unsafe fn test_one_50() {
         let mut m2: () = unimplemented!();
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_51(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1619,18 +1619,18 @@ pub unsafe fn test_one_50() {
         let mut m2 : () = std_flat_multiset_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { ar2 .as_mut_ptr() } , { ar2 .as_mut_ptr() . offset ( ( ( ( ::std::mem::size_of::<[ () ; 8]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) ) as isize ) } , None , )  ;
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_51(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_one_52() {
+pub unsafe fn test_one_49() {
     {
         let mut m1: () = unimplemented!();
         let mut m2: () = unimplemented!();
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_53(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1651,7 +1651,7 @@ pub unsafe fn test_one_52() {
             );
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_53(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1672,7 +1672,7 @@ pub unsafe fn test_one_52() {
         let mut m2: () = unimplemented!();
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_53(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1705,18 +1705,18 @@ pub unsafe fn test_one_52() {
             );
         let mut m1_save: () = m1.clone();
         let mut m2_save: () = m2.clone();
-        (unsafe { swap_53(&mut m1, &mut m2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_54() -> () {
+pub unsafe fn test_50() -> () {
     (unsafe { test_one_46() });
     {
-        (unsafe { test_one_48() });
+        (unsafe { test_one_47() });
     }
-    (unsafe { test_one_50() });
-    (unsafe { test_one_52() });
+    (unsafe { test_one_48() });
+    (unsafe { test_one_49() });
     return true;
 }
 pub fn main() {
@@ -1735,7 +1735,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_54() });
+    (unsafe { test_50() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

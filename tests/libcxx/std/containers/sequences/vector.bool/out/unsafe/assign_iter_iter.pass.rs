@@ -54,49 +54,142 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
-pub unsafe fn operator_ne_0(
-    x : *const cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__,
-    y : *const cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__,
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
+pub unsafe fn operator_eq_0(
+    x: *const cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
+    y: *const cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
+) -> () {
+    return unimplemented!();
+}
+pub unsafe fn operator_ne_1(
+    x: *const cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
+    y: *const cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
 ) -> () {
     return !(unimplemented!());
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__
-{
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn operator_deref ( &self , ) -> () { return unimplemented!()   ;
- } pub unsafe fn operator_inc_5 ( &mut self , ) -> *mut cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { unimplemented!()  ;
- return & mut ( * ( self as *mut cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  )  )  ;
- } }
-pub unsafe fn operator_ne_1(
+impl cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {
+    pub unsafe fn new(mut it: ()) -> Self {
+        let mut this = Self {
+            it_: unimplemented!(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> () {
+        return (*self.it_);
+    }
+    pub unsafe fn operator_inc_5(
+        &mut self,
+    ) -> *mut cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {
+        unimplemented!();
+        return &mut (*(self as *mut cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_));
+    }
+    pub unsafe fn move_from(
+        _a0: *mut cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
+    ) -> Self {
+        let mut this = Self {
+            it_: unimplemented!(),
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
+    ) -> *mut cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {
+        unimplemented!();
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_));
+    }
+}
+impl std::cmp::PartialEq for cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_eq_0(
+                self as *const cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
+                other as *const cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {}
+pub unsafe fn operator_eq_2(
+    x: *const cpp17_input_iterator_bool_ptr__bool_ptr_,
+    y: *const cpp17_input_iterator_bool_ptr__bool_ptr_,
+) -> () {
+    return (((*x).it_) == ((*y).it_));
+}
+pub unsafe fn operator_ne_3(
     x: *const cpp17_input_iterator_bool_ptr__bool_ptr_,
     y: *const cpp17_input_iterator_bool_ptr__bool_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_bool_ptr__bool_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -116,56 +209,91 @@ impl cpp17_input_iterator_bool_ptr__bool_ptr_ {
         self.it_.prefix_inc();
         return &mut (*(self as *mut cpp17_input_iterator_bool_ptr__bool_ptr_));
     }
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_bool_ptr__bool_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_bool_ptr__bool_ptr_,
+    ) -> *mut cpp17_input_iterator_bool_ptr__bool_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_bool_ptr__bool_ptr_));
+    }
 }
+impl std::cmp::PartialEq for cpp17_input_iterator_bool_ptr__bool_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_eq_2(
+                self as *const cpp17_input_iterator_bool_ptr__bool_ptr_,
+                other as *const cpp17_input_iterator_bool_ptr__bool_ptr_,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for cpp17_input_iterator_bool_ptr__bool_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub unsafe fn operator_ne_2(
-    x: *const forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__,
-    y: *const forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__,
+pub unsafe fn operator_ne_4(
+    x: *const forward_iterator_std__Bit_iterator_,
+    y: *const forward_iterator_std__Bit_iterator_,
 ) -> () {
     return !(unimplemented!());
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
-pub struct forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ {
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct forward_iterator_std__Bit_iterator_ {
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ {
+impl forward_iterator_std__Bit_iterator_ {
     pub unsafe fn new_1(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
     pub unsafe fn operator_deref(&self) -> () {
-        return unimplemented!();
+        return (*self.it_);
     }
-    pub unsafe fn operator_inc_6(
-        &mut self,
-    ) -> *mut forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__
-    {
+    pub unsafe fn operator_inc_6(&mut self) -> *mut forward_iterator_std__Bit_iterator_ {
         unimplemented!();
-        return & mut ( * ( self as *mut forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  )  )  ;
+        return &mut (*(self as *mut forward_iterator_std__Bit_iterator_));
     }
-    pub unsafe fn move_from(
-        _a0 : *mut forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__,
-    ) -> Self {
+    pub unsafe fn move_from(_a0: *mut forward_iterator_std__Bit_iterator_) -> Self {
         let mut this = Self {
-            it_: (*_a0).it_.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_std__Bit_iterator_,
+    ) -> *mut forward_iterator_std__Bit_iterator_ {
+        unimplemented!();
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_std__Bit_iterator_));
+    }
 }
-pub unsafe fn operator_ne_3(
+pub unsafe fn operator_ne_5(
     x: *const forward_iterator_bool_ptr_,
     y: *const forward_iterator_bool_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_bool_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -192,9 +320,20 @@ impl forward_iterator_bool_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_bool_ptr_,
+    ) -> *mut forward_iterator_bool_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_bool_ptr_));
+    }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -205,6 +344,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
     }
 }
 const _: () = assert!(
@@ -294,7 +451,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub unsafe fn operator_eq_4(
+pub unsafe fn operator_eq_6(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -309,7 +466,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_4(
+            operator_eq_6(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -331,33 +488,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_5(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_7(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_5(_i, n)
+        operator_add_7(_i, n)
     });
 }
-pub unsafe fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -441,7 +598,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -451,7 +608,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -519,7 +676,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn tests_11() -> () {
+pub unsafe fn tests_13() -> () {
     {
         {
             let mut in_: () = unimplemented!();
@@ -610,7 +767,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_11() });
+    (unsafe { tests_13() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

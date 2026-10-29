@@ -273,7 +273,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { sentry01() }) == (false)) {
+        if !((unimplemented!()) == (false)) {
             unimplemented!();
             unimplemented!();
         }
@@ -282,7 +282,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { sentry02() }) == (false)) {
+        if !((unimplemented!()) == (false)) {
             unimplemented!();
             unimplemented!();
         }
@@ -291,7 +291,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { sentry03() }) == (true)) {
+        if !((unimplemented!()) == (true)) {
             unimplemented!();
             unimplemented!();
         }
@@ -300,7 +300,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { sentry04() }) == (true)) {
+        if !((unimplemented!()) == (true)) {
             unimplemented!();
             unimplemented!();
         }

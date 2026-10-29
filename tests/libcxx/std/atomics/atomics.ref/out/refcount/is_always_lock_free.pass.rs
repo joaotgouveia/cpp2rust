@@ -897,7 +897,7 @@ impl Default for LargeUserAtomicType {
     }
 }
 pub fn check_always_lock_free_41(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_42.with(|rc| *rc.borrow());
+    let mut is_always_lock_free: () = unimplemented!();
     {
         let mut known_status: LockFreeStatus = value_0.with(|rc| *rc.borrow());
         {
@@ -911,8 +911,8 @@ pub fn check_always_lock_free_41(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_43(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_44.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_42(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {
         let mut known_status: LockFreeStatus = value_4.with(|rc| *rc.borrow());
         {
@@ -926,8 +926,8 @@ pub fn check_always_lock_free_43(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_45(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_46.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_43(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {
         let mut known_status: LockFreeStatus = value_12.with(|rc| *rc.borrow());
         {
@@ -941,8 +941,8 @@ pub fn check_always_lock_free_45(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_47(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_48.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_44(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {
         let mut known_status: LockFreeStatus = value_14.with(|rc| *rc.borrow());
         {
@@ -956,8 +956,8 @@ pub fn check_always_lock_free_47(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_49(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_50.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_45(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {
         let mut known_status: LockFreeStatus = value_16.with(|rc| *rc.borrow());
         {
@@ -971,8 +971,8 @@ pub fn check_always_lock_free_49(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_51(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_52.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_46(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {
         let mut known_status: LockFreeStatus = value_18.with(|rc| *rc.borrow());
         {
@@ -986,8 +986,8 @@ pub fn check_always_lock_free_51(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_53(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_54.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_47(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {}
     {
         let mut is_lock_free: () = unimplemented!();
@@ -995,44 +995,44 @@ pub fn check_always_lock_free_53(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_55(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_56.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_48(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_57(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_58.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_49(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_59(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_60.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_50(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_61(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_62.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_51(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_63(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_64.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_52(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_65(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_66.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_53(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {}
     {}
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_67(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_68.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_54(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {
         let mut known_status: LockFreeStatus = value_34.with(|rc| *rc.borrow());
         {
@@ -1046,8 +1046,8 @@ pub fn check_always_lock_free_67(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn check_always_lock_free_69(a: Ptr<()>) {
-    let mut is_always_lock_free: () = is_always_lock_free_70.with(|rc| *rc.borrow());
+pub fn check_always_lock_free_55(a: Ptr<()>) {
+    let mut is_always_lock_free: () = unimplemented!();
     {
         let mut known_status: LockFreeStatus = value_36.with(|rc| *rc.borrow());
         {
@@ -1061,7 +1061,7 @@ pub fn check_always_lock_free_69(a: Ptr<()>) {
     }
     const _: () = assert!(true, "");;
 }
-pub fn test_71() {
+pub fn test_56() {
     let mut c: () = ('x' as ());
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1070,116 +1070,116 @@ pub fn test_71() {
     let i: Value<()> = Rc::new(RefCell::new(0_()));
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        check_always_lock_free_43(_a.as_pointer())
+        check_always_lock_free_42(_a.as_pointer())
     });
     let mut f: () = 0_f32;
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        check_always_lock_free_45(_a.as_pointer())
+        check_always_lock_free_43(_a.as_pointer())
     });
     let mut p: Ptr<()> = (i.as_pointer());
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        check_always_lock_free_47(_a.as_pointer())
+        check_always_lock_free_44(_a.as_pointer())
     });
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
-        let mut obj: Empty_72 = <Empty_72>::default();
+        let mut obj: Empty_57 = <Empty_57>::default();
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ check_always_lock_free_45(a.as_pointer()) });
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (0_() != 0) {
+        __do_while = false;
+        let mut obj: OneInt_58 = <OneInt_58>::default();
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ check_always_lock_free_46(a.as_pointer()) });
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (0_() != 0) {
+        __do_while = false;
+        let mut obj: IntArr2_59 = <IntArr2_59>::default();
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ check_always_lock_free_47(a.as_pointer()) });
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (0_() != 0) {
+        __do_while = false;
+        let mut obj: FloatArr3_60 = <FloatArr3_60>::default();
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ check_always_lock_free_48(a.as_pointer()) });
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (0_() != 0) {
+        __do_while = false;
+        let mut obj: LLIArr2_61 = <LLIArr2_61>::default();
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ check_always_lock_free_49(a.as_pointer()) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
-        let mut obj: OneInt_73 = <OneInt_73>::default();
+        let mut obj: LLIArr4_62 = <LLIArr4_62>::default();
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ check_always_lock_free_50(a.as_pointer()) });
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (0_() != 0) {
+        __do_while = false;
+        let mut obj: LLIArr8_63 = <LLIArr8_63>::default();
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ check_always_lock_free_51(a.as_pointer()) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
-        let mut obj: IntArr2_74 = <IntArr2_74>::default();
+        let mut obj: LLIArr16_64 = <LLIArr16_64>::default();
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ check_always_lock_free_52(a.as_pointer()) });
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (0_() != 0) {
+        __do_while = false;
+        let mut obj: Padding_65 = <Padding_65>::default();
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ check_always_lock_free_53(a.as_pointer()) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
-        let mut obj: FloatArr3_75 = <FloatArr3_75>::default();
+        let obj: Value<IntFloat_66> = Rc::new(RefCell::new(<IntFloat_66>::default()));
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ check_always_lock_free_55(a.as_pointer()) });
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (0_() != 0) {
-        __do_while = false;
-        let mut obj: LLIArr2_76 = <LLIArr2_76>::default();
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ check_always_lock_free_57(a.as_pointer()) });
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (0_() != 0) {
-        __do_while = false;
-        let mut obj: LLIArr4_77 = <LLIArr4_77>::default();
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ check_always_lock_free_59(a.as_pointer()) });
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (0_() != 0) {
-        __do_while = false;
-        let mut obj: LLIArr8_78 = <LLIArr8_78>::default();
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ check_always_lock_free_61(a.as_pointer()) });
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (0_() != 0) {
-        __do_while = false;
-        let mut obj: LLIArr16_79 = <LLIArr16_79>::default();
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ check_always_lock_free_63(a.as_pointer()) });
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (0_() != 0) {
-        __do_while = false;
-        let mut obj: Padding_80 = <Padding_80>::default();
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ check_always_lock_free_65(a.as_pointer()) });
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (0_() != 0) {
-        __do_while = false;
-        let obj: Value<IntFloat_81> = Rc::new(RefCell::new(<IntFloat_81>::default()));
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ check_always_lock_free_67(a.as_pointer()) });
+        ({ check_always_lock_free_54(a.as_pointer()) });
     }
     let mut __do_while = true;
     'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut obj: CharEnumClass_37 = <CharEnumClass_37>::default();
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ check_always_lock_free_69(a.as_pointer()) });
+        ({ check_always_lock_free_55(a.as_pointer()) });
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct Empty_72 {}
+pub struct Empty_57 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct OneInt_73 {
+pub struct OneInt_58 {
     #[offset(0)]
     pub i: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
-pub struct IntArr2_74 {
+pub struct IntArr2_59 {
     #[offset(0)]
     #[byte_size(8)]
     pub i: Box<[()]>,
 }
-impl Default for IntArr2_74 {
+impl Default for IntArr2_59 {
     fn default() -> Self {
         {
-            IntArr2_74 {
+            IntArr2_59 {
                 i: (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
@@ -1187,15 +1187,15 @@ impl Default for IntArr2_74 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct FloatArr3_75 {
+pub struct FloatArr3_60 {
     #[offset(0)]
     #[byte_size(12)]
     pub i: Box<[()]>,
 }
-impl Default for FloatArr3_75 {
+impl Default for FloatArr3_60 {
     fn default() -> Self {
         {
-            FloatArr3_75 {
+            FloatArr3_60 {
                 i: (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
@@ -1203,15 +1203,15 @@ impl Default for FloatArr3_75 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(16)]
-pub struct LLIArr2_76 {
+pub struct LLIArr2_61 {
     #[offset(0)]
     #[byte_size(16)]
     pub i: Box<[()]>,
 }
-impl Default for LLIArr2_76 {
+impl Default for LLIArr2_61 {
     fn default() -> Self {
         {
-            LLIArr2_76 {
+            LLIArr2_61 {
                 i: (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
@@ -1219,15 +1219,15 @@ impl Default for LLIArr2_76 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(32)]
-pub struct LLIArr4_77 {
+pub struct LLIArr4_62 {
     #[offset(0)]
     #[byte_size(32)]
     pub i: Box<[()]>,
 }
-impl Default for LLIArr4_77 {
+impl Default for LLIArr4_62 {
     fn default() -> Self {
         {
-            LLIArr4_77 {
+            LLIArr4_62 {
                 i: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
@@ -1235,15 +1235,15 @@ impl Default for LLIArr4_77 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(64)]
-pub struct LLIArr8_78 {
+pub struct LLIArr8_63 {
     #[offset(0)]
     #[byte_size(64)]
     pub i: Box<[()]>,
 }
-impl Default for LLIArr8_78 {
+impl Default for LLIArr8_63 {
     fn default() -> Self {
         {
-            LLIArr8_78 {
+            LLIArr8_63 {
                 i: (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
@@ -1251,15 +1251,15 @@ impl Default for LLIArr8_78 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(128)]
-pub struct LLIArr16_79 {
+pub struct LLIArr16_64 {
     #[offset(0)]
     #[byte_size(128)]
     pub i: Box<[()]>,
 }
-impl Default for LLIArr16_79 {
+impl Default for LLIArr16_64 {
     fn default() -> Self {
         {
-            LLIArr16_79 {
+            LLIArr16_64 {
                 i: (0..16).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
@@ -1267,7 +1267,7 @@ impl Default for LLIArr16_79 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
-pub struct Padding_80 {
+pub struct Padding_65 {
     #[offset(0)]
     pub c: (),
     #[offset(8)]
@@ -1275,12 +1275,12 @@ pub struct Padding_80 {
 }
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(4)]
-pub struct IntFloat_81 {
+pub struct IntFloat_66 {
     #[offset(0)]
     #[byte_size(4)]
     __bytes: Box<[u8]>,
 }
-impl IntFloat_81 {
+impl IntFloat_66 {
     pub fn i(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
@@ -1288,9 +1288,9 @@ impl IntFloat_81 {
         this.reinterpret_cast()
     }
 }
-impl Default for IntFloat_81 {
+impl Default for IntFloat_66 {
     fn default() -> Self {
-        IntFloat_81 {
+        IntFloat_66 {
             __bytes: Box::from([0u8; 4]),
         }
     }
@@ -1317,7 +1317,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_71() });
+    ({ test_56() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

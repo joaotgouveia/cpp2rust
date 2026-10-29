@@ -116,7 +116,9 @@ pub fn test_stable_6(mut N: ()) {
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while !(unimplemented!()) {
         let next: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        if (!(unimplemented!())) && ({ unimplemented!().val } == { unimplemented!().val }) {
+        if (!(unimplemented!()))
+            && ({ ((*it.borrow()).read()).val } == { ((*next.borrow()).read()).val })
+        {
             unimplemented!();
         }
         unimplemented!();

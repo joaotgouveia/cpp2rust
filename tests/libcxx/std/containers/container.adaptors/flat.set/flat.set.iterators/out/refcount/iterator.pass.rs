@@ -682,7 +682,7 @@ pub fn test_one_31() {
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let k: Value<()> = Rc::new(RefCell::new((*i.borrow()).clone()));
     unimplemented!();
     let mut j: () = 1_();
     'loop_: while (j <= 4_()) {
@@ -727,7 +727,7 @@ pub fn test_one_32() {
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let k: Value<()> = Rc::new(RefCell::new((*i.borrow()).clone()));
     unimplemented!();
     let mut j: () = 1_();
     'loop_: while (j <= 4_()) {
@@ -817,7 +817,7 @@ pub fn test_one_34() {
     unimplemented!();
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let k: Value<()> = Rc::new(RefCell::new((*i.borrow()).clone()));
     unimplemented!();
     let mut j: () = 1_();
     'loop_: while (j <= 4_()) {
@@ -846,7 +846,7 @@ pub fn test_35() -> () {
     {
         let ii1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ii2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ii4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ii4: Value<()> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
         let cii: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

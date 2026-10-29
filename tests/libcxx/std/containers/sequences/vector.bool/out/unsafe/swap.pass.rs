@@ -652,7 +652,7 @@ pub unsafe fn tests_13() -> () {
         let mut r1: () = unimplemented!();
         let mut r2: () = unimplemented!();
         r1 = true;
-        (unsafe { swap_14(r1, r2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -681,7 +681,7 @@ pub unsafe fn tests_13() -> () {
         let mut r1: () = unimplemented!();
         let mut r2: () = unimplemented!();
         r1 = true;
-        (unsafe { swap_14(r1, r2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }

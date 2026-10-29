@@ -110,12 +110,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({
-        let _arg0: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___f: Value<C> = Rc::new(RefCell::new(<C>::default()));
-                bind_6(___f.as_pointer())
-            }),
-        ));
+        let _arg0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_1(_arg0.as_pointer())
     });
     ({

@@ -21,15 +21,14 @@ thread_local!(
 thread_local!(
     pub static move_called_0: Value<()> = Rc::new(RefCell::new(false));
 );
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct A1_int_ {
     #[offset(0)]
     id_: (),
 }
 impl A1_int_ {
-    pub fn new_2(id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| 0_());
+    pub fn new_2(mut id: ()) -> Self {
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A1_int_>) -> Self {
@@ -60,11 +59,6 @@ impl Clone for A1_int_ {
         A1_int_::copy_from(__src.as_pointer())
     }
 }
-impl Default for A1_int_ {
-    fn default() -> Self {
-        { A1_int_::new_2(None) }
-    }
-}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct A1_char_ {
@@ -85,15 +79,14 @@ thread_local!(
 thread_local!(
     pub static move_called_10: Value<()> = Rc::new(RefCell::new(false));
 );
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct A2_int_ {
     #[offset(0)]
     id_: (),
 }
 impl A2_int_ {
-    pub fn new(id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| 0_());
+    pub fn new(mut id: ()) -> Self {
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A2_int_>) -> Self {
@@ -122,11 +115,6 @@ impl Clone for A2_int_ {
             id_: self.id_.clone(),
         }));
         A2_int_::copy_from(__src.as_pointer())
-    }
-}
-impl Default for A2_int_ {
-    fn default() -> Self {
-        { A2_int_::new(None) }
     }
 }
 pub fn operator_eq_12(x: Ptr<A2_int_>, y: Ptr<A2_int_>) -> () {
@@ -193,7 +181,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let mut a3: A1_int_ = A1_int_::new_2({ Some(3_()) });
+        let mut a3: A1_int_ = A1_int_::new_2({ 3_() });
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -210,20 +198,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     move_called_0.with(|rc| *rc.borrow_mut() = false);
     {
-        let mut a4: A1_int_ = A1_int_::new_2({ Some(4_()) });
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    copy_called_1.with(|rc| *rc.borrow_mut() = false);
-    move_called_0.with(|rc| *rc.borrow_mut() = false);
-    copy_called_9.with(|rc| *rc.borrow_mut() = false);
-    move_called_10.with(|rc| *rc.borrow_mut() = false);
-    {
+        let mut a4: A1_int_ = A1_int_::new_2({ 4_() });
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -236,9 +211,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     move_called_0.with(|rc| *rc.borrow_mut() = false);
     copy_called_9.with(|rc| *rc.borrow_mut() = false);
     move_called_10.with(|rc| *rc.borrow_mut() = false);
+    {
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    copy_called_1.with(|rc| *rc.borrow_mut() = false);
+    move_called_0.with(|rc| *rc.borrow_mut() = false);
+    copy_called_9.with(|rc| *rc.borrow_mut() = false);
+    move_called_10.with(|rc| *rc.borrow_mut() = false);
     move_called_0.with(|rc| *rc.borrow_mut() = false);
     {
-        let mut a4: A1_int_ = A1_int_::new_2({ Some(4_()) });
+        let mut a4: A1_int_ = A1_int_::new_2({ 4_() });
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

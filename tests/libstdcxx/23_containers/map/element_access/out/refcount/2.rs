@@ -523,7 +523,7 @@ pub fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (unimplemented!().first).val } == 1_()) {
+        if !({ ((unimplemented!().read()).first).val } == 1_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -531,7 +531,7 @@ pub fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (unimplemented!().second).val } == 17_()) {
+        if !({ ((unimplemented!().read()).second).val } == 17_()) {
             unimplemented!();
             unimplemented!();
         }

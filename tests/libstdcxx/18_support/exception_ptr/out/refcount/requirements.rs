@@ -200,7 +200,7 @@ impl __gnu_test_semaphore {}
 pub fn test01_9() {
     let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    (*p1.borrow_mut()) = (*p2.borrow()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -217,7 +217,7 @@ pub fn test01_9() {
             unimplemented!();
         }
     }
-    ({ swap_10(p1.as_pointer(), p2.as_pointer()) });
+    unimplemented!();
     let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
@@ -228,7 +228,7 @@ pub fn test01_9() {
             unimplemented!();
         }
     }
-    unimplemented!();
+    (*p4.borrow_mut()) = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -271,7 +271,7 @@ pub fn test01_9() {
         }
     }
 }
-pub fn test02_11() {
+pub fn test02_10() {
     let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -288,7 +288,7 @@ pub fn main() {
 }
 fn main_0() -> () {
     ({ test01_9() });
-    ({ test02_11() });
+    ({ test02_10() });
     return 0_();
 }
 impl __gnu_test_semaphore {
@@ -311,7 +311,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_12(size: Option<()>) {
+pub fn set_memory_limits_11(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -328,14 +328,14 @@ pub fn set_memory_limits_12(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_13(mut size: ()) {
+pub fn set_file_limit_12(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_14(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_13(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -370,7 +370,7 @@ pub fn verify_demangle_14(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_15(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_14(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -397,7 +397,7 @@ pub fn run_tests_wrapped_locale_15(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_16(
+pub fn run_tests_wrapped_env_15(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -467,7 +467,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_17(
+pub fn test_tm_16(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -478,19 +478,19 @@ pub fn test_tm_17(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_18.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_18.with(Value::clone).borrow()).clone();
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_17.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_18: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_17: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;

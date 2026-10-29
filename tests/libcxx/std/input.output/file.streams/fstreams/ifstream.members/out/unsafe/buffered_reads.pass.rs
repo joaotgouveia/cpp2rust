@@ -257,7 +257,167 @@ pub unsafe fn test_log_11(
     });
     (unsafe { (*functor).call() });
 }
-pub unsafe fn test_require_12(
+pub unsafe fn test_log_12(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_13(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_14(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_15(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_16(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_17(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_18(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_19(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_20(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_21(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_require_22(
     mut condition: (),
     mut condition_str: *const (),
     mut file: *const (),
@@ -276,7 +436,7 @@ pub unsafe fn test_require_12(
     });
     unimplemented!();
 }
-pub unsafe fn test_require_13(
+pub unsafe fn test_require_23(
     mut condition: (),
     mut condition_str: *const (),
     mut file: *const (),
@@ -295,7 +455,7 @@ pub unsafe fn test_require_13(
     });
     unimplemented!();
 }
-pub unsafe fn test_require_14(
+pub unsafe fn test_require_24(
     mut condition: (),
     mut condition_str: *const (),
     mut file: *const (),
@@ -314,7 +474,7 @@ pub unsafe fn test_require_14(
     });
     unimplemented!();
 }
-pub unsafe fn test_require_15(
+pub unsafe fn test_require_25(
     mut condition: (),
     mut condition_str: *const (),
     mut file: *const (),
@@ -333,7 +493,7 @@ pub unsafe fn test_require_15(
     });
     unimplemented!();
 }
-pub unsafe fn test_require_16(
+pub unsafe fn test_require_26(
     mut condition: (),
     mut condition_str: *const (),
     mut file: *const (),
@@ -352,7 +512,197 @@ pub unsafe fn test_require_16(
     });
     unimplemented!();
 }
-pub unsafe fn get_temp_file_name_17() -> () {
+pub unsafe fn test_require_27(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_12(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_28(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_13(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_29(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_14(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_30(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_15(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_31(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_16(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_32(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_17(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_33(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_18(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_34(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_19(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_35(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_20(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_36(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_21(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn get_temp_file_name_37() -> () {
     let mut Name: () = unimplemented!();
     let mut FD: () = unimplemented!();
     if ((FD) == (-1_())) {
@@ -362,7 +712,7 @@ pub unsafe fn get_temp_file_name_17() -> () {
     unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn glibc_version_less_than_18(mut version: *const ()) -> () {
+pub unsafe fn glibc_version_less_than_38(mut version: *const ()) -> () {
     let mut test_version: () = unimplemented!();
     let mut n: () = unimplemented!();
     let mut current_version: *mut () =
@@ -381,7 +731,7 @@ pub unsafe fn glibc_version_less_than_18(mut version: *const ()) -> () {
     };
     return result;
 }
-pub unsafe fn test_read_19(mut policy: LibraryDefaultBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_read_39(mut policy: LibraryDefaultBuffer, payload_sizes: *const ()) {
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
     let mut i: () = 0_();
@@ -390,7 +740,7 @@ pub unsafe fn test_read_19(mut policy: LibraryDefaultBuffer, payload_sizes: *con
             .wrapping_rem(((1_()) << ((8_()).wrapping_mul((::std::mem::size_of::<()>() as ())))));
         i.prefix_inc();
     }
-    let mut p: () = (unsafe { get_temp_file_name_17() });
+    let mut p: () = (unsafe { get_temp_file_name_37() });
     {
         let mut ofs: () = unimplemented!();
         unimplemented!();
@@ -423,7 +773,7 @@ pub unsafe fn test_read_19(mut policy: LibraryDefaultBuffer, payload_sizes: *con
                         });
                     }
                 );
-                test_require_12(
+                test_require_22(
                     _condition,
                     c"data[j] == exp".as_ptr(),
                     c"buffered_reads.pass.cpp".as_ptr(),
@@ -454,7 +804,7 @@ pub unsafe fn test_read_19(mut policy: LibraryDefaultBuffer, payload_sizes: *con
                     });
                 }
             );
-            test_require_13(
+            test_require_23(
                 _condition,
                 c"in_sz == total_size".as_ptr(),
                 c"buffered_reads.pass.cpp".as_ptr(),
@@ -495,7 +845,7 @@ pub unsafe fn test_read_19(mut policy: LibraryDefaultBuffer, payload_sizes: *con
                             });
                         }
                     );
-                    test_require_14(
+                    test_require_24(
                         _condition,
                         c"in_buffer[previously_read + j] == exp".as_ptr(),
                         c"buffered_reads.pass.cpp".as_ptr(),
@@ -510,7 +860,7 @@ pub unsafe fn test_read_19(mut policy: LibraryDefaultBuffer, payload_sizes: *con
     }
     unimplemented!();
 }
-pub unsafe fn test_read_20(mut policy: LibraryManagedBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_read_40(mut policy: LibraryManagedBuffer, payload_sizes: *const ()) {
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
     let mut i: () = 0_();
@@ -519,7 +869,7 @@ pub unsafe fn test_read_20(mut policy: LibraryManagedBuffer, payload_sizes: *con
             .wrapping_rem(((1_()) << ((8_()).wrapping_mul((::std::mem::size_of::<()>() as ())))));
         i.prefix_inc();
     }
-    let mut p: () = (unsafe { get_temp_file_name_17() });
+    let mut p: () = (unsafe { get_temp_file_name_37() });
     {
         let mut ofs: () = unimplemented!();
         unimplemented!();
@@ -552,7 +902,7 @@ pub unsafe fn test_read_20(mut policy: LibraryManagedBuffer, payload_sizes: *con
                         });
                     }
                 );
-                test_require_21(
+                test_require_27(
                     _condition,
                     c"data[j] == exp".as_ptr(),
                     c"buffered_reads.pass.cpp".as_ptr(),
@@ -583,7 +933,7 @@ pub unsafe fn test_read_20(mut policy: LibraryManagedBuffer, payload_sizes: *con
                     });
                 }
             );
-            test_require_22(
+            test_require_28(
                 _condition,
                 c"in_sz == total_size".as_ptr(),
                 c"buffered_reads.pass.cpp".as_ptr(),
@@ -624,7 +974,7 @@ pub unsafe fn test_read_20(mut policy: LibraryManagedBuffer, payload_sizes: *con
                             });
                         }
                     );
-                    test_require_23(
+                    test_require_29(
                         _condition,
                         c"in_buffer[previously_read + j] == exp".as_ptr(),
                         c"buffered_reads.pass.cpp".as_ptr(),
@@ -639,7 +989,7 @@ pub unsafe fn test_read_20(mut policy: LibraryManagedBuffer, payload_sizes: *con
     }
     unimplemented!();
 }
-pub unsafe fn test_read_24(mut policy: UserManagedBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_read_41(mut policy: UserManagedBuffer, payload_sizes: *const ()) {
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
     let mut i: () = 0_();
@@ -648,7 +998,7 @@ pub unsafe fn test_read_24(mut policy: UserManagedBuffer, payload_sizes: *const 
             .wrapping_rem(((1_()) << ((8_()).wrapping_mul((::std::mem::size_of::<()>() as ())))));
         i.prefix_inc();
     }
-    let mut p: () = (unsafe { get_temp_file_name_17() });
+    let mut p: () = (unsafe { get_temp_file_name_37() });
     {
         let mut ofs: () = unimplemented!();
         unimplemented!();
@@ -681,7 +1031,7 @@ pub unsafe fn test_read_24(mut policy: UserManagedBuffer, payload_sizes: *const 
                         });
                     }
                 );
-                test_require_25(
+                test_require_32(
                     _condition,
                     c"data[j] == exp".as_ptr(),
                     c"buffered_reads.pass.cpp".as_ptr(),
@@ -712,7 +1062,7 @@ pub unsafe fn test_read_24(mut policy: UserManagedBuffer, payload_sizes: *const 
                     });
                 }
             );
-            test_require_26(
+            test_require_33(
                 _condition,
                 c"in_sz == total_size".as_ptr(),
                 c"buffered_reads.pass.cpp".as_ptr(),
@@ -753,7 +1103,7 @@ pub unsafe fn test_read_24(mut policy: UserManagedBuffer, payload_sizes: *const 
                             });
                         }
                     );
-                    test_require_27(
+                    test_require_34(
                         _condition,
                         c"in_buffer[previously_read + j] == exp".as_ptr(),
                         c"buffered_reads.pass.cpp".as_ptr(),
@@ -768,7 +1118,7 @@ pub unsafe fn test_read_24(mut policy: UserManagedBuffer, payload_sizes: *const 
     }
     unimplemented!();
 }
-pub unsafe fn test_read_codecvt_28(mut policy: LibraryDefaultBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_read_codecvt_42(mut policy: LibraryDefaultBuffer, payload_sizes: *const ()) {
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
     let mut i: () = 0_();
@@ -776,7 +1126,7 @@ pub unsafe fn test_read_codecvt_28(mut policy: LibraryDefaultBuffer, payload_siz
         (*unimplemented!()) = i;
         i.prefix_inc();
     }
-    let mut p: () = (unsafe { get_temp_file_name_17() });
+    let mut p: () = (unsafe { get_temp_file_name_37() });
     {
         let mut ofs: () = unimplemented!();
         unimplemented!();
@@ -809,7 +1159,7 @@ pub unsafe fn test_read_codecvt_28(mut policy: LibraryDefaultBuffer, payload_siz
                         });
                     }
                 );
-                test_require_15(
+                test_require_25(
                     _condition,
                     c"data[j] == exp".as_ptr(),
                     c"buffered_reads.pass.cpp".as_ptr(),
@@ -860,7 +1210,7 @@ pub unsafe fn test_read_codecvt_28(mut policy: LibraryDefaultBuffer, payload_siz
                             });
                         }
                     );
-                    test_require_16(
+                    test_require_26(
                         _condition,
                         c"in_buffer[j + previously_read] == exp".as_ptr(),
                         c"buffered_reads.pass.cpp".as_ptr(),
@@ -875,7 +1225,7 @@ pub unsafe fn test_read_codecvt_28(mut policy: LibraryDefaultBuffer, payload_siz
     }
     unimplemented!();
 }
-pub unsafe fn test_read_codecvt_29(mut policy: LibraryManagedBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_read_codecvt_43(mut policy: LibraryManagedBuffer, payload_sizes: *const ()) {
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
     let mut i: () = 0_();
@@ -883,7 +1233,7 @@ pub unsafe fn test_read_codecvt_29(mut policy: LibraryManagedBuffer, payload_siz
         (*unimplemented!()) = i;
         i.prefix_inc();
     }
-    let mut p: () = (unsafe { get_temp_file_name_17() });
+    let mut p: () = (unsafe { get_temp_file_name_37() });
     {
         let mut ofs: () = unimplemented!();
         unimplemented!();
@@ -982,7 +1332,7 @@ pub unsafe fn test_read_codecvt_29(mut policy: LibraryManagedBuffer, payload_siz
     }
     unimplemented!();
 }
-pub unsafe fn test_read_codecvt_32(mut policy: UserManagedBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_read_codecvt_44(mut policy: UserManagedBuffer, payload_sizes: *const ()) {
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
     let mut i: () = 0_();
@@ -990,7 +1340,7 @@ pub unsafe fn test_read_codecvt_32(mut policy: UserManagedBuffer, payload_sizes:
         (*unimplemented!()) = i;
         i.prefix_inc();
     }
-    let mut p: () = (unsafe { get_temp_file_name_17() });
+    let mut p: () = (unsafe { get_temp_file_name_37() });
     {
         let mut ofs: () = unimplemented!();
         unimplemented!();
@@ -1023,7 +1373,7 @@ pub unsafe fn test_read_codecvt_32(mut policy: UserManagedBuffer, payload_sizes:
                         });
                     }
                 );
-                test_require_33(
+                test_require_35(
                     _condition,
                     c"data[j] == exp".as_ptr(),
                     c"buffered_reads.pass.cpp".as_ptr(),
@@ -1074,7 +1424,7 @@ pub unsafe fn test_read_codecvt_32(mut policy: UserManagedBuffer, payload_sizes:
                             });
                         }
                     );
-                    test_require_34(
+                    test_require_36(
                         _condition,
                         c"in_buffer[j + previously_read] == exp".as_ptr(),
                         c"buffered_reads.pass.cpp".as_ptr(),
@@ -1089,22 +1439,22 @@ pub unsafe fn test_read_codecvt_32(mut policy: UserManagedBuffer, payload_sizes:
     }
     unimplemented!();
 }
-pub static mut buffer_sizes_35: std::cell::LazyCell<()> =
+pub static mut buffer_sizes_45: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut io_sizes_36: std::cell::LazyCell<()> =
+pub static mut io_sizes_46: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut io_sizes_default_37: std::cell::LazyCell<()> =
+pub static mut io_sizes_default_47: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub unsafe fn test_1_read_38() {
+pub unsafe fn test_1_read_48() {
     'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut x: () = (*unimplemented!());
         (unsafe {
             let mut _payload_sizes: () = unimplemented!();
-            test_read_19(LibraryDefaultBuffer::new(), &mut _payload_sizes)
+            test_read_39(LibraryDefaultBuffer::new(), &mut _payload_sizes)
         });
         (unsafe {
             let mut _payload_sizes: () = unimplemented!();
-            test_read_codecvt_28(LibraryDefaultBuffer::new(), &mut _payload_sizes)
+            test_read_codecvt_42(LibraryDefaultBuffer::new(), &mut _payload_sizes)
         });
     }
     'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
@@ -1113,11 +1463,11 @@ pub unsafe fn test_1_read_38() {
             let mut x: () = (*unimplemented!());
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_read_20(LibraryManagedBuffer::new({ b }), &mut _payload_sizes)
+                test_read_40(LibraryManagedBuffer::new({ b }), &mut _payload_sizes)
             });
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_read_codecvt_29(LibraryManagedBuffer::new({ b }), &mut _payload_sizes)
+                test_read_codecvt_43(LibraryManagedBuffer::new({ b }), &mut _payload_sizes)
             });
         }
     }
@@ -1127,27 +1477,27 @@ pub unsafe fn test_1_read_38() {
             let mut x: () = (*unimplemented!());
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_read_24(UserManagedBuffer::new({ b }), &mut _payload_sizes)
+                test_read_41(UserManagedBuffer::new({ b }), &mut _payload_sizes)
             });
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_read_codecvt_32(UserManagedBuffer::new({ b }), &mut _payload_sizes)
+                test_read_codecvt_44(UserManagedBuffer::new({ b }), &mut _payload_sizes)
             });
         }
     }
 }
-pub unsafe fn test_2_reads_39() {
+pub unsafe fn test_2_reads_49() {
     'loop_: for a in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut a: () = (*unimplemented!());
         'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut b: () = (*unimplemented!());
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_read_19(LibraryDefaultBuffer::new(), &mut _payload_sizes)
+                test_read_39(LibraryDefaultBuffer::new(), &mut _payload_sizes)
             });
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_read_codecvt_28(LibraryDefaultBuffer::new(), &mut _payload_sizes)
+                test_read_codecvt_42(LibraryDefaultBuffer::new(), &mut _payload_sizes)
             });
         }
     }
@@ -1159,11 +1509,11 @@ pub unsafe fn test_2_reads_39() {
                 let mut b: () = (*unimplemented!());
                 (unsafe {
                     let mut _payload_sizes: () = unimplemented!();
-                    test_read_20(LibraryManagedBuffer::new({ buf }), &mut _payload_sizes)
+                    test_read_40(LibraryManagedBuffer::new({ buf }), &mut _payload_sizes)
                 });
                 (unsafe {
                     let mut _payload_sizes: () = unimplemented!();
-                    test_read_codecvt_29(LibraryManagedBuffer::new({ buf }), &mut _payload_sizes)
+                    test_read_codecvt_43(LibraryManagedBuffer::new({ buf }), &mut _payload_sizes)
                 });
             }
         }
@@ -1176,11 +1526,11 @@ pub unsafe fn test_2_reads_39() {
                 let mut b: () = (*unimplemented!());
                 (unsafe {
                     let mut _payload_sizes: () = unimplemented!();
-                    test_read_24(UserManagedBuffer::new({ buf }), &mut _payload_sizes)
+                    test_read_41(UserManagedBuffer::new({ buf }), &mut _payload_sizes)
                 });
                 (unsafe {
                     let mut _payload_sizes: () = unimplemented!();
-                    test_read_codecvt_32(UserManagedBuffer::new({ buf }), &mut _payload_sizes)
+                    test_read_codecvt_44(UserManagedBuffer::new({ buf }), &mut _payload_sizes)
                 });
             }
         }
@@ -1202,12 +1552,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_1_read_38() });
-    (unsafe { test_2_reads_39() });
+    (unsafe { test_1_read_48() });
+    (unsafe { test_2_reads_49() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const buffer_sizes_35);
-    std::cell::LazyCell::force(&*&raw const io_sizes_36);
-    std::cell::LazyCell::force(&*&raw const io_sizes_default_37);
+    std::cell::LazyCell::force(&*&raw const buffer_sizes_45);
+    std::cell::LazyCell::force(&*&raw const io_sizes_46);
+    std::cell::LazyCell::force(&*&raw const io_sizes_default_47);
 }

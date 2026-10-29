@@ -297,7 +297,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((unimplemented!()) == (1_())) && ((unsafe { unimplemented!()() }) == (1_())))
+        if !((((unimplemented!()) == (1_())) && ((unimplemented!()) == (1_())))
             && ((unimplemented!()) == (0_())))
         {
             unimplemented!();
@@ -308,7 +308,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!()) == (1_())) && ((unsafe { unimplemented!()() }) == (1_()))) {
+        if !(((unimplemented!()) == (1_())) && ((unimplemented!()) == (1_()))) {
             unimplemented!();
             unimplemented!();
         }

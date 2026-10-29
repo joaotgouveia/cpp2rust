@@ -68,13 +68,8 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
         }
     }
 }
-pub fn test_0(c: ()) -> () {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(
-        std_insert_iterator_std_vector_int__std_allocator_int___::new({ c.as_pointer() }, {
-            unimplemented!()
-        }),
-    ));
+pub fn test_0(mut c: ()) -> () {
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
     unimplemented!();
     unimplemented!();
@@ -83,10 +78,7 @@ pub fn test_0(c: ()) -> () {
 }
 pub fn test_1(c: nasty_vector_int_) -> () {
     let c: Value<nasty_vector_int_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(std_insert_iterator_nasty_vector_int__::new(
-        { c.as_pointer() },
-        { ({ nasty_vector_int_Impl::end_14(&c.as_pointer()) }) },
-    )));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
     unimplemented!();
     unimplemented!();
@@ -95,11 +87,7 @@ pub fn test_1(c: nasty_vector_int_) -> () {
 }
 pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> () {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(
-        std_insert_iterator_ConstexprFixedCapacityDeque_int__10__::new({ c.as_pointer() }, {
-            ({ ConstexprFixedCapacityDeque_int__10_Impl::end_3(&c.as_pointer()) })
-        }),
-    ));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
     unimplemented!();
     unimplemented!();

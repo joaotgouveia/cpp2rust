@@ -45,7 +45,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut kurtosis: () = 0_();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
-            let mut dbl: () = (({ unimplemented!()() }) - mean);
+            let mut dbl: () = (unimplemented!() - mean);
             let mut d2: () = ({ sqr_0(dbl) });
             var += d2;
             skew += (dbl * d2);
@@ -83,7 +83,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut kurtosis: () = 0_();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
-            let mut dbl: () = (({ unimplemented!()() }) - mean);
+            let mut dbl: () = (unimplemented!() - mean);
             let mut d2: () = ({ sqr_0(dbl) });
             var += d2;
             skew += (dbl * d2);

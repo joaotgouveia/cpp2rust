@@ -205,7 +205,7 @@ pub fn test_4() -> () {
         unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let k: Value<()> = Rc::new(RefCell::new((*i.borrow()).clone()));
         unimplemented!();
         let mut j: () = 1_();
         'loop_: while (j <= 8_()) {

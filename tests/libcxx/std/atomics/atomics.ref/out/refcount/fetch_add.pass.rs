@@ -1432,19 +1432,13 @@ impl TestFetchAdd_const_int_ptr_Impl for Ptr<TestFetchAdd_const_int_ptr_> {
                 let mut p: Ptr<()> = ((t.as_pointer() as Ptr<()>).offset(1_()));
                 let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 {
-                    let mut y: Ptr<()> = ({
-                        ((*a.borrow()) as std___atomic_ref_const_int_ptr__false__false_)
-                            .fetch_add(2_(), None)
-                    });
+                    let mut y: Ptr<()> = unimplemented!();
                     unimplemented!();
                     unimplemented!();
                     const _: () = assert!(true, "");;
                 }
                 {
-                    let mut y: Ptr<()> = ({
-                        ((*a.borrow()) as std___atomic_ref_const_int_ptr__false__false_)
-                            .fetch_add(4_(), Some(unimplemented!()))
-                    });
+                    let mut y: Ptr<()> = unimplemented!();
                     unimplemented!();
                     unimplemented!();
                     const _: () = assert!(true, "");;
@@ -1455,14 +1449,7 @@ impl TestFetchAdd_const_int_ptr_Impl for Ptr<TestFetchAdd_const_int_ptr_> {
             let fetch_add: Value<FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>)>> =
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>)>::new(
                     |x: Ptr<()>, mut old_val: Ptr<()>, mut new_val: Ptr<()>| {
-                        ({
-                            ((*x.upgrade().deref())
-                                as std___atomic_ref_const_int_ptr__false__false_)
-                                .fetch_add(
-                                    (((new_val).clone() - (old_val).clone()) as () as ()),
-                                    Some(unimplemented!()),
-                                )
-                        });
+                        unimplemented!();
                     },
                 )));
             let load: Value<FnPtr<fn(Ptr<()>) -> Ptr<()>>> =
@@ -1484,27 +1471,13 @@ impl TestFetchAdd_const_int_ptr_Impl for Ptr<TestFetchAdd_const_int_ptr_> {
             let fetch_add_no_arg: Value<FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>)>> =
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>)>::new(
                     |x: Ptr<()>, mut old_val: Ptr<()>, mut new_val: Ptr<()>| {
-                        ({
-                            ((*x.upgrade().deref())
-                                as std___atomic_ref_const_int_ptr__false__false_)
-                                .fetch_add(
-                                    (((new_val).clone() - (old_val).clone()) as () as ()),
-                                    None,
-                                )
-                        });
+                        unimplemented!();
                     },
                 )));
             let fetch_add_with_order: Value<FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>)>> =
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>)>::new(
                     |x: Ptr<()>, mut old_val: Ptr<()>, mut new_val: Ptr<()>| {
-                        ({
-                            ((*x.upgrade().deref())
-                                as std___atomic_ref_const_int_ptr__false__false_)
-                                .fetch_add(
-                                    (((new_val).clone() - (old_val).clone()) as () as ()),
-                                    Some(unimplemented!()),
-                                )
-                        });
+                        unimplemented!();
                     },
                 )));
             let load: Value<FnPtr<fn(Ptr<()>) -> Ptr<()>>> =
@@ -1788,19 +1761,13 @@ impl TestFetchAdd_int_ptr_Impl for Ptr<TestFetchAdd_int_ptr_> {
                 let mut p: Ptr<()> = ((t.as_pointer() as Ptr<()>).offset(1_()));
                 let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 {
-                    let mut y: Ptr<()> = ({
-                        ((*a.borrow()) as std___atomic_ref_int_ptr__false__false_)
-                            .fetch_add(2_(), None)
-                    });
+                    let mut y: Ptr<()> = unimplemented!();
                     unimplemented!();
                     unimplemented!();
                     const _: () = assert!(true, "");;
                 }
                 {
-                    let mut y: Ptr<()> = ({
-                        ((*a.borrow()) as std___atomic_ref_int_ptr__false__false_)
-                            .fetch_add(4_(), Some(unimplemented!()))
-                    });
+                    let mut y: Ptr<()> = unimplemented!();
                     unimplemented!();
                     unimplemented!();
                     const _: () = assert!(true, "");;
@@ -1811,13 +1778,7 @@ impl TestFetchAdd_int_ptr_Impl for Ptr<TestFetchAdd_int_ptr_> {
             let fetch_add: Value<FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>)>> =
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>)>::new(
                     |x: Ptr<()>, mut old_val: Ptr<()>, mut new_val: Ptr<()>| {
-                        ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_int_ptr__false__false_)
-                                .fetch_add(
-                                    (((new_val).clone() - (old_val).clone()) as () as ()),
-                                    Some(unimplemented!()),
-                                )
-                        });
+                        unimplemented!();
                     },
                 )));
             let load: Value<FnPtr<fn(Ptr<()>) -> Ptr<()>>> =
@@ -1839,25 +1800,13 @@ impl TestFetchAdd_int_ptr_Impl for Ptr<TestFetchAdd_int_ptr_> {
             let fetch_add_no_arg: Value<FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>)>> =
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>)>::new(
                     |x: Ptr<()>, mut old_val: Ptr<()>, mut new_val: Ptr<()>| {
-                        ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_int_ptr__false__false_)
-                                .fetch_add(
-                                    (((new_val).clone() - (old_val).clone()) as () as ()),
-                                    None,
-                                )
-                        });
+                        unimplemented!();
                     },
                 )));
             let fetch_add_with_order: Value<FnPtr<fn(Ptr<()>, Ptr<()>, Ptr<()>)>> =
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, Ptr<()>, Ptr<()>)>::new(
                     |x: Ptr<()>, mut old_val: Ptr<()>, mut new_val: Ptr<()>| {
-                        ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_int_ptr__false__false_)
-                                .fetch_add(
-                                    (((new_val).clone() - (old_val).clone()) as () as ()),
-                                    Some(unimplemented!()),
-                                )
-                        });
+                        unimplemented!();
                     },
                 )));
             let load: Value<FnPtr<fn(Ptr<()>) -> Ptr<()>>> =

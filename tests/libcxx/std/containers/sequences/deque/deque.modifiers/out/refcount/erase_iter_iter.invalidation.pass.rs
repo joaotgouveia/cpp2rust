@@ -10,7 +10,7 @@ pub fn del_at_start_0(c: (), mut num: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let it1: Value<()> = Rc::new(RefCell::new((*last.borrow()).clone()));
     let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let it3: Value<()> = Rc::new(RefCell::new(unimplemented!()));

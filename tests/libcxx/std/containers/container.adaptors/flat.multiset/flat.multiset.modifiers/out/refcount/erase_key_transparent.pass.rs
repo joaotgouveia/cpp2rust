@@ -1054,7 +1054,7 @@ pub struct HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_
     pub it_: (),
 }
 impl HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____ { pub fn new ( mut key : ()  , it : ()  , ) -> Self { let it : Value<() >  = Rc::new(RefCell::new(it)) ;
- Self { key_ : key  , it_ : unimplemented!()  , }  } }
+ Self { key_ : key  , it_ : ((*it.borrow()) ).clone()  , }  } }
 pub fn test_one_49() {
     let m: Value<()> = Rc::new(RefCell::new(
         std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
@@ -1303,7 +1303,7 @@ pub trait HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_v
     fn operator_cmp(&self, key: ()) -> ();
 }
 impl HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____Impl for Ptr<HeterogeneousKey_int____gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____> {
-fn to_ ( &self , ) -> ()  { return unimplemented!()   ;
+fn to_ ( &self , ) -> ()  { return (* self ) .with(|__s| __s . it_ .clone())    ;
  } fn operator_cmp ( &self , mut key : ()  , ) -> ()  { return std::cmp::Ord::cmp(&((* self ) .with(|__s| __s . key_ ) ), &(key ))   ;
  } }
 pub trait MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__Impl

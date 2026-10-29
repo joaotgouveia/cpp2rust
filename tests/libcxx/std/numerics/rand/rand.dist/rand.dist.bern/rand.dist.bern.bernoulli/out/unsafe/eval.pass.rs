@@ -41,7 +41,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut kurtosis: () = 0_();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {
-            let mut dbl: () = ((unsafe { unimplemented!()() }) - (mean));
+            let mut dbl: () = ((unimplemented!()) - (mean));
             let mut d2: () = (unsafe { sqr_0(dbl) });
             var += d2;
             skew += ((dbl) * (d2));
@@ -81,7 +81,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut kurtosis: () = 0_();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {
-            let mut dbl: () = ((unsafe { unimplemented!()() }) - (mean));
+            let mut dbl: () = ((unimplemented!()) - (mean));
             let mut d2: () = (unsafe { sqr_0(dbl) });
             var += d2;
             skew += ((dbl) * (d2));

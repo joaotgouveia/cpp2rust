@@ -414,10 +414,10 @@ pub fn test01_9() {
     }
 }
 pub fn test02_10() {
-    let mut pi1: Ptr<()> = (digits_11.with(|v| v.as_pointer()));
-    let mut pi2: Ptr<()> = (digits10_12.with(|v| v.as_pointer()));
-    let mut pi3: Ptr<()> = (max_exponent10_13.with(|v| v.as_pointer()));
-    let mut pb1: Ptr<()> = (traps_14.with(|v| v.as_pointer()));
+    let mut pi1: Ptr<()> = (unimplemented!());
+    let mut pi2: Ptr<()> = (unimplemented!());
+    let mut pi3: Ptr<()> = (unimplemented!());
+    let mut pb1: Ptr<()> = (unimplemented!());
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -448,7 +448,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_15(size: Option<()>) {
+pub fn set_memory_limits_11(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -465,14 +465,14 @@ pub fn set_memory_limits_15(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_16(mut size: ()) {
+pub fn set_file_limit_12(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_17(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_13(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -507,7 +507,7 @@ pub fn verify_demangle_17(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_18(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_14(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -534,7 +534,7 @@ pub fn run_tests_wrapped_locale_18(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_19(
+pub fn run_tests_wrapped_env_15(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -604,7 +604,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_20(
+pub fn test_tm_16(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -615,19 +615,19 @@ pub fn test_tm_20(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_21.with(Value::clone).borrow()).clone();
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_17.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_17.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_21: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_17: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait A_B_Impl {
     fn operator_eq(&self, i: ()) -> ();

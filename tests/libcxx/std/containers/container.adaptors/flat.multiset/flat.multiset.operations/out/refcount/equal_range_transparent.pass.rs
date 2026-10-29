@@ -870,7 +870,7 @@ pub fn test_one_35() {
             let last: Ptr<()> = unimplemented!();
             unimplemented!();
             unimplemented!();
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while !(unimplemented!()) {
                 unimplemented!();
                 unimplemented!();
@@ -882,7 +882,7 @@ pub fn test_one_35() {
             let last: Ptr<()> = unimplemented!();
             unimplemented!();
             unimplemented!();
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while !(unimplemented!()) {
                 unimplemented!();
                 unimplemented!();
@@ -1045,7 +1045,7 @@ pub fn test_one_40() {
             let last: Ptr<()> = unimplemented!();
             unimplemented!();
             unimplemented!();
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while !(unimplemented!()) {
                 unimplemented!();
                 unimplemented!();
@@ -1057,7 +1057,7 @@ pub fn test_one_40() {
             let last: Ptr<()> = unimplemented!();
             unimplemented!();
             unimplemented!();
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while !(unimplemented!()) {
                 unimplemented!();
                 unimplemented!();
@@ -1405,7 +1405,7 @@ pub fn test_one_50() {
             let last: Ptr<()> = unimplemented!();
             unimplemented!();
             unimplemented!();
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while !(unimplemented!()) {
                 unimplemented!();
                 unimplemented!();
@@ -1417,7 +1417,7 @@ pub fn test_one_50() {
             let last: Ptr<()> = unimplemented!();
             unimplemented!();
             unimplemented!();
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while !(unimplemented!()) {
                 unimplemented!();
                 unimplemented!();

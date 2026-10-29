@@ -201,36 +201,6 @@ impl __gnu_test_semaphore {}
 #[byte_size(1)]
 pub struct X {}
 pub fn test01_9() {
-    let b0: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
-            bind_10(___f.as_pointer())
-        }),
-    ));
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(({ (*b0.borrow_mut())() }) == 0_()) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    let b1: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___f: Value<X> = Rc::new(RefCell::new(<X>::default()));
-            bind_10(___f.as_pointer())
-        }),
-    ));
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(({ (*b1.borrow_mut())() }) == 1_()) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn test02_11() {
     let b0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -250,7 +220,27 @@ pub fn test02_11() {
         }
     }
 }
-pub fn test03_12() {
+pub fn test02_10() {
+    let b0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(({ (*b0.borrow_mut())() }) == 0_()) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    let b1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(({ (*b1.borrow_mut())() }) == 1_()) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn test03_11() {
     let b0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -280,7 +270,7 @@ pub fn test03_12() {
         }
     }
 }
-pub fn test04_13() {
+pub fn test04_12() {
     let b0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -316,9 +306,9 @@ pub fn main() {
 }
 fn main_0() -> () {
     ({ test01_9() });
-    ({ test02_11() });
-    ({ test03_12() });
-    ({ test04_13() });
+    ({ test02_10() });
+    ({ test03_11() });
+    ({ test04_12() });
     return 0_();
 }
 impl __gnu_test_semaphore {
@@ -341,7 +331,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_14(size: Option<()>) {
+pub fn set_memory_limits_13(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -358,14 +348,14 @@ pub fn set_memory_limits_14(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_15(mut size: ()) {
+pub fn set_file_limit_14(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_16(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_15(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -400,7 +390,7 @@ pub fn verify_demangle_16(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_17(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_16(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -427,7 +417,7 @@ pub fn run_tests_wrapped_locale_17(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_18(
+pub fn run_tests_wrapped_env_17(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -497,7 +487,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_19(
+pub fn test_tm_18(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -508,19 +498,19 @@ pub fn test_tm_19(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_20.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_20.with(Value::clone).borrow()).clone();
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_19.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_19.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_19: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait XImpl {
     fn operator_call_1(&self) -> ();

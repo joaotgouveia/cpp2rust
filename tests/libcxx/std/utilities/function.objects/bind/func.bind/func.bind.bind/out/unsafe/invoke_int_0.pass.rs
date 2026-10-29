@@ -39,30 +39,11 @@ impl A_int_0 {
     }
 }
 pub unsafe fn test_all_7() -> () {
-    (unsafe { test_0((unsafe { bind_8(Some(f_6)) }), 1_()) });
+    (unsafe { test_0(unimplemented!(), 1_()) });
+    (unsafe { test_0(unimplemented!(), 1_()) });
+    (unsafe { test_1(unimplemented!(), 4_()) });
     (unsafe {
-        test_0(
-            (unsafe {
-                let mut ___f: Option<unsafe fn() -> ()> = (Some(f_6));
-                bind_9(&mut ___f)
-            }),
-            1_(),
-        )
-    });
-    (unsafe {
-        test_1(
-            (unsafe {
-                let mut ___f: A_int_0 = <A_int_0>::default();
-                bind_10(&mut ___f)
-            }),
-            4_(),
-        )
-    });
-    (unsafe {
-        let mut _f: () = (unsafe {
-            let mut ___f: A_int_0 = <A_int_0>::default();
-            bind_10(&mut ___f)
-        });
+        let mut _f: () = unimplemented!();
         test_const_4(&mut _f, 5_())
     });
     (unsafe { test_2(unimplemented!(), 1_()) });

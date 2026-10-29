@@ -217,7 +217,7 @@ pub fn test01_9() {
             unimplemented!();
         }
     }
-    unimplemented!();
+    (*p1.borrow_mut()) = (*p2.borrow()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -57,13 +57,8 @@ impl Default for nasty_mutex {
         { nasty_mutex::new() }
     }
 }
-pub fn test_1(c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: Ptr<()>) {
-    let c1: Value<()> = Rc::new(RefCell::new(c1));
-    let q: Value<()> = Rc::new(RefCell::new(
-        std_insert_iterator_std_vector_int__std_allocator_int___::new({ c1.as_pointer() }, {
-            unimplemented!()
-        }),
-    ));
+pub fn test_1(mut c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: Ptr<()>) {
+    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -78,10 +73,7 @@ pub fn test_2(
     c2: Ptr<nasty_vector_int_>,
 ) {
     let c1: Value<nasty_vector_int_> = Rc::new(RefCell::new(c1));
-    let q: Value<()> = Rc::new(RefCell::new(std_insert_iterator_nasty_vector_int__::new(
-        { c1.as_pointer() },
-        { unimplemented!() },
-    )));
+    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -93,8 +93,8 @@ impl B {
     pub fn move_from(_a0: Ptr<B>) -> Self {
         Self {
             d: unimplemented!(),
-            it: unimplemented!(),
-            it2: unimplemented!(),
+            it: { (*_a0.upgrade().deref()).it.clone() },
+            it2: { (*_a0.upgrade().deref()).it2.clone() },
         }
     }
 }

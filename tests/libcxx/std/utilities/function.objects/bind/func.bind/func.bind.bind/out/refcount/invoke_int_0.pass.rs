@@ -35,33 +35,11 @@ pub fn f_6() -> () {
 #[byte_size(1)]
 pub struct A_int_0 {}
 pub fn test_all_7() -> () {
-    ({ test_0(({ bind_8(FnPtr::<fn() -> ()>::new(f_6)) }), 1_()) });
+    ({ test_0(unimplemented!(), 1_()) });
+    ({ test_0(unimplemented!(), 1_()) });
+    ({ test_1(unimplemented!(), 4_()) });
     ({
-        test_0(
-            ({
-                let ___f: Value<FnPtr<fn() -> ()>> =
-                    Rc::new(RefCell::new((FnPtr::<fn() -> ()>::new(f_6))));
-                bind_9(___f.as_pointer())
-            }),
-            1_(),
-        )
-    });
-    ({
-        test_1(
-            ({
-                let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_10(___f.as_pointer())
-            }),
-            4_(),
-        )
-    });
-    ({
-        let _f: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_10(___f.as_pointer())
-            }),
-        ));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_const_4(_f.as_pointer(), 5_())
     });
     ({ test_2(unimplemented!(), 1_()) });

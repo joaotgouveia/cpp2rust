@@ -7,44 +7,39 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn check_required_alignment_0() {
-    let required_alignment: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut required_alignment_1));
+    let required_alignment: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn check_required_alignment_1() {
+    let required_alignment: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn check_required_alignment_2() {
-    let required_alignment: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut required_alignment_3));
+    let required_alignment: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn check_required_alignment_3() {
+    let required_alignment: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn check_required_alignment_4() {
-    let required_alignment: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut required_alignment_5));
+    let required_alignment: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn check_required_alignment_6() {
-    let required_alignment: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut required_alignment_7));
-    unimplemented!();
-}
-pub unsafe fn check_required_alignment_8() {
-    let required_alignment: () =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut required_alignment_9));
-    unimplemented!();
-}
-pub unsafe fn test_10() -> () {
+pub unsafe fn test_5() -> () {
     (unsafe { check_required_alignment_0() });
+    (unsafe { check_required_alignment_1() });
     (unsafe { check_required_alignment_2() });
+    (unsafe { check_required_alignment_3() });
     (unsafe { check_required_alignment_4() });
-    (unsafe { check_required_alignment_6() });
-    (unsafe { check_required_alignment_8() });
     return true;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Empty_11 {}
+pub struct Empty_6 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Trivial_12 {
+pub struct Trivial_7 {
     pub a: (),
 }
 pub fn main() {
@@ -63,7 +58,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_10() });
+    (unsafe { test_5() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0(mut c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: *const ()) {
-    let mut q : () = std_insert_iterator_std_vector_std_unique_ptr_int__do_nothing___std_allocator_std_unique_ptr_int__do_nothing____ :: new ( { & mut c1 } , { unimplemented!()  } , )  ;
+    let mut q: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

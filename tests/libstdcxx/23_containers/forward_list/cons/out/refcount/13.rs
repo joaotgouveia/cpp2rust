@@ -235,7 +235,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().ok }) {
+        if !({ (unimplemented!().read()).ok }) {
             unimplemented!();
             unimplemented!();
         }
@@ -245,7 +245,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().ok }) {
+        if !({ (unimplemented!().read()).ok }) {
             unimplemented!();
             unimplemented!();
         }

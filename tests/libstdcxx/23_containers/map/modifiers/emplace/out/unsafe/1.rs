@@ -319,7 +319,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).first) == ('a' as ())) {
+        if !(((*ret.first).first) == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -345,7 +345,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).first) == ('a' as ())) {
+        if !(((*ret.first).first) == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -370,7 +370,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).first) == ('b' as ())) {
+        if !(((*it).first) == ('b' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -396,7 +396,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).first) == ('c' as ())) {
+        if !(((*ret.first).first) == ('c' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -433,7 +433,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).first) == ('a' as ())) {
+        if !(((*ret.first).first) == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -459,7 +459,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).first) == ('a' as ())) {
+        if !(((*ret.first).first) == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -484,7 +484,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).first) == ('b' as ())) {
+        if !(((*it).first) == ('b' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -510,7 +510,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).first) == ('c' as ())) {
+        if !(((*ret.first).first) == ('c' as ())) {
             unimplemented!();
             unimplemented!();
         }

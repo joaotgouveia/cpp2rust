@@ -85,7 +85,7 @@ pub unsafe fn test_4() -> () {
         'loop_: while ((j) <= (unimplemented!())) {
             unimplemented!();
             unimplemented!();
-            (*unimplemented!()).second = 2.5_f64;
+            (*i).second = 2.5_f64;
             unimplemented!();
             {
                 j.prefix_inc();
@@ -98,7 +98,7 @@ pub unsafe fn test_4() -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (*unimplemented!()).second = 1_();
+            (*i).second = 1_();
             unimplemented!();
             j.prefix_dec();
         }
@@ -195,7 +195,7 @@ pub unsafe fn test_4() -> () {
         'loop_: while ((j) <= (unimplemented!())) {
             unimplemented!();
             unimplemented!();
-            (*unimplemented!()).second = 2.5_f64;
+            (*i).second = 2.5_f64;
             unimplemented!();
             {
                 j.prefix_inc();
@@ -208,7 +208,7 @@ pub unsafe fn test_4() -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (*unimplemented!()).second = 1_();
+            (*i).second = 1_();
             unimplemented!();
             j.prefix_dec();
         }

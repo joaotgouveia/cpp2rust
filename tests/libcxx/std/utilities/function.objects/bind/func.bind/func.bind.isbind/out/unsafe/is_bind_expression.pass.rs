@@ -111,10 +111,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
-        let mut _arg0: () = (unsafe {
-            let mut ___f: C = <C>::default();
-            bind_6(&mut ___f)
-        });
+        let mut _arg0: () = unimplemented!();
         test_1(&mut _arg0)
     });
     (unsafe {

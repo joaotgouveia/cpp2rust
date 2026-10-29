@@ -203,7 +203,7 @@ pub fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*r.borrow())() }) == false) {
+        if !(unimplemented!() == false) {
             unimplemented!();
             unimplemented!();
         }

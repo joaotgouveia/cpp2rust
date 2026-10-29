@@ -373,13 +373,11 @@ impl A {
         this
     }
     pub unsafe fn new_2(mut it: ()) -> Self {
-        let mut this = Self {
-            _i: (*unimplemented!())._i,
-        };
+        let mut this = Self { _i: (*it)._i };
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(((*unimplemented!())._i) >= (0_())) {
+            if !(((*it)._i) >= (0_())) {
                 unimplemented!();
                 unimplemented!();
             }

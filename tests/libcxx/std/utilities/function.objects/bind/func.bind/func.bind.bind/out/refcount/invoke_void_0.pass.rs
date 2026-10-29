@@ -93,30 +93,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_1(({ bind_12(FnPtr::<fn()>::new(f_10)) })) });
+    ({ test_1(unimplemented!()) });
+    ({ test_1(unimplemented!()) });
+    ({ test_2(unimplemented!()) });
     ({
-        test_1(
-            ({
-                let ___f: Value<FnPtr<fn()>> = Rc::new(RefCell::new((FnPtr::<fn()>::new(f_10))));
-                bind_13(___f.as_pointer())
-            }),
-        )
-    });
-    ({
-        test_2(
-            ({
-                let ___f: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-                bind_14(___f.as_pointer())
-            }),
-        )
-    });
-    ({
-        let _f: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___f: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-                bind_14(___f.as_pointer())
-            }),
-        ));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_const_7(_f.as_pointer())
     });
     ({ test_3(unimplemented!()) });

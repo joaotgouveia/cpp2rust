@@ -217,7 +217,7 @@ fn main_0() -> () {
     }
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while !(unimplemented!()) {
-        if ({ unimplemented!().second } < 5_()) {
+        if ({ ((*it.borrow()).read()).second } < 5_()) {
             unimplemented!();
             (*p.borrow_mut()).second.prefix_inc();
         }

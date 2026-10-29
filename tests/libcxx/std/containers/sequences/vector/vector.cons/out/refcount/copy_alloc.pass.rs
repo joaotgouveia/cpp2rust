@@ -161,9 +161,6 @@ pub struct test_allocator_int__rebind_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_unsigned_long_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_int__rebind_int_ptr_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -247,29 +244,6 @@ impl Default for test_allocator_unsigned_long_ {
         }
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_int_ptr_ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_int_ptr_ {}
-impl Default for test_allocator_int_ptr_ {
-    fn default() -> Self {
-        {
-            test_allocator_int_ptr_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
 pub fn operator_eq_6(x: Ptr<other_allocator_int_>, y: Ptr<other_allocator_int_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -309,22 +283,6 @@ impl Default for other_allocator_unsigned_long_ {
     fn default() -> Self {
         {
             other_allocator_unsigned_long_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_int_ptr_ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_int_ptr_ {}
-impl Default for other_allocator_int_ptr_ {
-    fn default() -> Self {
-        {
-            other_allocator_int_ptr_ {
                 data_: unimplemented!(),
             }
         }
@@ -463,15 +421,6 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>,
-}
-impl min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
@@ -489,9 +438,6 @@ impl CppEq for min_allocator_int_ {
         operator_eq_16(__lhs.read(), __rhs.read())
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
@@ -516,10 +462,6 @@ impl Default for safe_allocator_int_ {
         { safe_allocator_int_::new() }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct safe_allocator_int_ptr_ {}
-impl safe_allocator_int_ptr_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct safe_allocator_unsigned_long_ {}
@@ -704,22 +646,6 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
         unimplemented!();
     }
 }
-pub trait min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl {
-    fn allocate ( &self , mut n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        mut n: (),
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl
-    for Ptr<min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>
-{
-}
 pub trait min_allocator_unsigned_long_Impl {
     fn allocate(
         &self,
@@ -889,42 +815,6 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         return (*tmp.borrow()).clone();
     }
 }
-pub trait min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_index(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-}
-impl min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__> {
-}
 pub trait min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
@@ -1016,21 +906,6 @@ impl other_allocator_int_Impl for Ptr<other_allocator_int_> {
         unimplemented!();
     }
 }
-pub trait other_allocator_int_ptr_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut s: ()) {
-        unimplemented!()
-    }
-    fn select_on_container_copy_construction(&self) -> other_allocator_int_ptr_ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_int_ptr_Impl for Ptr<other_allocator_int_ptr_> {}
 pub trait other_allocator_unsigned_long_Impl {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()
@@ -1068,15 +943,6 @@ impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
         unimplemented!();
     }
 }
-pub trait safe_allocator_int_ptr_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut n: ()) {
-        unimplemented!()
-    }
-}
-impl safe_allocator_int_ptr_Impl for Ptr<safe_allocator_int_ptr_> {}
 pub trait safe_allocator_unsigned_long_Impl {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()
@@ -1176,36 +1042,6 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
         unimplemented!();
     }
 }
-pub trait test_allocator_int_ptr_Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<Ptr<()>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut s: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<Ptr<()>>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

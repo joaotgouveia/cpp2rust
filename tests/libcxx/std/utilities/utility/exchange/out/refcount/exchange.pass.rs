@@ -7,14 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> () {
-    let mut v: () = 12_();
-    if (12_() != unimplemented!()) || (v != 23_()) {
+    let v: Value<()> = Rc::new(RefCell::new(12_()));
+    if (12_() != unimplemented!()) || ((*v.borrow()) != 23_()) {
         return false;
     }
-    if (23_() != unimplemented!()) || (v != 67_()) {
+    if (23_() != unimplemented!()) || ((*v.borrow()) != 67_()) {
         return false;
     }
-    if (67_() != unimplemented!()) || (v != 0_()) {
+    if (67_()
+        != ({
+            let ___new_val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            exchange_1(v.as_pointer(), ___new_val.as_pointer())
+        }))
+        || ((*v.borrow()) != 0_())
+    {
         return false;
     }
     return true;
@@ -31,7 +37,7 @@ impl TestNoexcept_true__false_ {}
 #[byte_size(1)]
 pub struct TestNoexcept_false__true_ {}
 impl TestNoexcept_false__true_ {}
-pub fn test_noexcept_1() -> () {
+pub fn test_noexcept_2() -> () {
     {
         let mut x: () = 42_();
         const _: () = assert!(true, "");;
@@ -72,7 +78,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let mut v: () = 12_();
+        let v: Value<()> = Rc::new(RefCell::new(12_()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

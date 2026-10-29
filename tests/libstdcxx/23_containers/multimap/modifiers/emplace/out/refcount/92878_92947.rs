@@ -211,7 +211,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().second.a } == 1_()) {
+        if !({ ((*it.borrow()).read()).second.a } == 1_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -219,24 +219,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().second.b } == 2_()) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !({ unimplemented!().second.a } == 1_()) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !({ unimplemented!().second.b } == 0_()) {
+        if !({ ((*it.borrow()).read()).second.b } == 2_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -245,7 +228,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().second.a } == 0_()) {
+        if !({ ((*it.borrow()).read()).second.a } == 1_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -253,7 +236,24 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().second.b } == 0_()) {
+        if !({ ((*it.borrow()).read()).second.b } == 0_()) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !({ ((*it.borrow()).read()).second.a } == 0_()) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !({ ((*it.borrow()).read()).second.b } == 0_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -265,7 +265,7 @@ pub fn test_emplace_hint_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().second.a } == 1_()) {
+        if !({ ((*it.borrow()).read()).second.a } == 1_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -273,24 +273,7 @@ pub fn test_emplace_hint_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().second.b } == 2_()) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !({ unimplemented!().second.a } == 1_()) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !({ unimplemented!().second.b } == 0_()) {
+        if !({ ((*it.borrow()).read()).second.b } == 2_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -299,7 +282,7 @@ pub fn test_emplace_hint_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().second.a } == 0_()) {
+        if !({ ((*it.borrow()).read()).second.a } == 1_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -307,7 +290,24 @@ pub fn test_emplace_hint_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().second.b } == 0_()) {
+        if !({ ((*it.borrow()).read()).second.b } == 0_()) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !({ ((*it.borrow()).read()).second.a } == 0_()) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !({ ((*it.borrow()).read()).second.b } == 0_()) {
             unimplemented!();
             unimplemented!();
         }

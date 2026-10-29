@@ -105,7 +105,7 @@ impl random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__ {
     pub fn new_1(it: ()) -> Self {
         let it: Value<()> = Rc::new(RefCell::new(it));
         Self {
-            it_: unimplemented!(),
+            it_: (*it.borrow()).clone(),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -113,7 +113,7 @@ impl random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__ {
         _a0: Ptr<random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__>,
     ) -> Self {
         Self {
-            it_: unimplemented!(),
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
     }
@@ -160,7 +160,7 @@ impl random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_pt
     pub fn new_1(it: ()) -> Self {
         let it: Value<()> = Rc::new(RefCell::new(it));
         Self {
-            it_: unimplemented!(),
+            it_: (*it.borrow()).clone(),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -168,7 +168,7 @@ impl random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_pt
         _a0: Ptr<random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__>,
     ) -> Self {
         Self {
-            it_: unimplemented!(),
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
     }
@@ -191,7 +191,7 @@ pub struct random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____ { pub fn new_1 ( it : ()  , ) -> Self { let it : Value<() >  = Rc::new(RefCell::new(it)) ;
- Self { it_ : unimplemented!()  , tracker_ : support_double_move_tracker :: new ( )   , }  } pub fn move_from ( _a0 : Ptr< random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____  > , ) -> Self { Self { it_ : unimplemented!()  , tracker_ : support_double_move_tracker :: move_from ( { field_ptr!(_a0 , tracker_)  } , )   , }  } }
+ Self { it_ : ((*it.borrow()) ).clone()  , tracker_ : support_double_move_tracker :: new ( )   , }  } pub fn move_from ( _a0 : Ptr< random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____  > , ) -> Self { Self { it_ : { (*_a0.upgrade().deref()) . it_ .clone() }   , tracker_ : support_double_move_tracker :: move_from ( { field_ptr!(_a0 , tracker_)  } , )   , }  } }
 impl CppEq for random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____ { fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { operator_eq_4(__lhs.clone(), __rhs.clone()) } }
 pub fn operator_ne_5(
     x : Ptr< random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  >,
@@ -211,7 +211,7 @@ pub struct random_access_iterator_std__Deque_iterator_int__const_int_ref__min_po
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____ { pub fn new_1 ( it : ()  , ) -> Self { let it : Value<() >  = Rc::new(RefCell::new(it)) ;
- Self { it_ : unimplemented!()  , tracker_ : support_double_move_tracker :: new ( )   , }  } pub fn move_from ( _a0 : Ptr< random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  > , ) -> Self { Self { it_ : unimplemented!()  , tracker_ : support_double_move_tracker :: move_from ( { field_ptr!(_a0 , tracker_)  } , )   , }  } }
+ Self { it_ : ((*it.borrow()) ).clone()  , tracker_ : support_double_move_tracker :: new ( )   , }  } pub fn move_from ( _a0 : Ptr< random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  > , ) -> Self { Self { it_ : { (*_a0.upgrade().deref()) . it_ .clone() }   , tracker_ : support_double_move_tracker :: move_from ( { field_ptr!(_a0 , tracker_)  } , )   , }  } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -1318,7 +1318,7 @@ impl random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_pt
     for Ptr<random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__>
 {
     fn operator_deref(&self) -> Ptr<()> {
-        return unimplemented!();
+        return field_ptr!((*self), it_);
     }
     fn operator_inc_7(
         &self,
@@ -1366,7 +1366,7 @@ pub trait random_access_iterator_std__Deque_iterator_int__const_int_ref__min_poi
     fn move_assign ( &self , _a0 : Ptr< random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  > , ) -> Ptr< random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  > ;
 }
 impl random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____Impl for Ptr<random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____> {
-fn operator_deref ( &self , ) -> Ptr< ()  > { return unimplemented!()    ;
+fn operator_deref ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , it_)   ;
  } fn operator_inc_7 ( &self , ) -> Ptr< random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  > { unimplemented!()  ;
  return ((* self )  ).clone()  ;
  } fn move_assign ( &self , _a0 : Ptr< random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  > , ) -> Ptr< random_access_iterator_std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0____  > { unimplemented!()  ;
@@ -1419,7 +1419,7 @@ impl random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__Impl
     for Ptr<random_access_iterator_std__Deque_iterator_int__int_ref__int_ptr__>
 {
     fn operator_deref(&self) -> Ptr<()> {
-        return unimplemented!();
+        return field_ptr!((*self), it_);
     }
     fn operator_inc_7(
         &self,
@@ -1460,7 +1460,7 @@ pub trait random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_i
     fn move_assign ( &self , _a0 : Ptr< random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____  > , ) -> Ptr< random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____  > ;
 }
 impl random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____Impl for Ptr<random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____> {
-fn operator_deref ( &self , ) -> Ptr< ()  > { return unimplemented!()    ;
+fn operator_deref ( &self , ) -> Ptr< ()  > { return field_ptr!((* self )  , it_)   ;
  } fn operator_inc_7 ( &self , ) -> Ptr< random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____  > { unimplemented!()  ;
  return ((* self )  ).clone()  ;
  } fn move_assign ( &self , _a0 : Ptr< random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____  > , ) -> Ptr< random_access_iterator_std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0____  > { unimplemented!()  ;

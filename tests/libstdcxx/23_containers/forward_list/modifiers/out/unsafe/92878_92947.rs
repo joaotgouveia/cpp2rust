@@ -322,7 +322,7 @@ pub unsafe fn test_emplace_after_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).a) == (1_())) {
+        if !(((*y).a) == (1_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -330,24 +330,7 @@ pub unsafe fn test_emplace_after_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).b) == (2_())) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((*unimplemented!()).a) == (1_())) {
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(((*unimplemented!()).b) == (0_())) {
+        if !(((*y).b) == (2_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -356,7 +339,7 @@ pub unsafe fn test_emplace_after_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).a) == (0_())) {
+        if !(((*y).a) == (1_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -364,7 +347,24 @@ pub unsafe fn test_emplace_after_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*unimplemented!()).b) == (0_())) {
+        if !(((*y).b) == (0_())) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((*y).a) == (0_())) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !(((*y).b) == (0_())) {
             unimplemented!();
             unimplemented!();
         }

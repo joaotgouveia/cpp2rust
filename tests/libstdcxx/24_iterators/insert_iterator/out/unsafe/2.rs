@@ -9,9 +9,8 @@ use std::rc::Rc;
 pub unsafe fn test02_0() {
     let mut li: () = unimplemented!();
     let mut liit: () = unimplemented!();
-    let mut it01: () =
-        std_insert_iterator_std_list_int__std_allocator_int___::new({ &mut li }, { liit.clone() });
-    let mut it02: () = (unsafe { inserter_1(&mut li, liit.clone()) });
+    let mut it01: () = unimplemented!();
+    let mut it02: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }

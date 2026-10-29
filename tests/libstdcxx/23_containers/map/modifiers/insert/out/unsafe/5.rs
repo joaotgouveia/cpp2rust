@@ -764,7 +764,7 @@ pub unsafe fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((*unimplemented!()).first).val) == (1_())) {
+        if !((((*p).first).val) == (1_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -772,7 +772,7 @@ pub unsafe fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((*unimplemented!()).second).val) == (3_())) {
+        if !((((*p).second).val) == (3_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -809,7 +809,7 @@ pub unsafe fn test02_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((*unimplemented!()).first).val) == (2_())) {
+        if !((((*p1).first).val) == (2_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -817,7 +817,7 @@ pub unsafe fn test02_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((*unimplemented!()).second).val) == (3_())) {
+        if !((((*p2).second).val) == (3_())) {
             unimplemented!();
             unimplemented!();
         }

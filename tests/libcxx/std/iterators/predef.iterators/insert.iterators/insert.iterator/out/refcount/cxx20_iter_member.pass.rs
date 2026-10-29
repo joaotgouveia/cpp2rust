@@ -50,10 +50,7 @@ const _: () = assert!(
 pub fn test_1() -> () {
     let c: Value<NoIteratorAlias> = Rc::new(RefCell::new(<NoIteratorAlias>::default()));
     let mut half: () = 0.5_f64;
-    let it: Value<()> = Rc::new(RefCell::new(std_insert_iterator_NoIteratorAlias_::new(
-        { c.as_pointer() },
-        { (array_field_ptr!(c.as_pointer(), data_) as Ptr<()>) },
-    )));
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();

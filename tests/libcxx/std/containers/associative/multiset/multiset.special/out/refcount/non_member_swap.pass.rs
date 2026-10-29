@@ -439,7 +439,7 @@ pub trait test_allocator_int_Impl {
     fn address_12(&self, x: ()) -> Ptr<()> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
         unimplemented!()
     }
     fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {

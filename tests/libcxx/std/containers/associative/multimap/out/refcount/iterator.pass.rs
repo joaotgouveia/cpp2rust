@@ -95,7 +95,7 @@ pub fn test_4() -> () {
             'loop_: while (d <= 2_()) {
                 unimplemented!();
                 unimplemented!();
-                unimplemented!().second = 2.5_f64;
+                field!((*i.borrow_mut()), second).write(2.5_f64);
                 unimplemented!();
                 {
                     d += 0.5_f64;
@@ -112,7 +112,7 @@ pub fn test_4() -> () {
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                unimplemented!().second = d;
+                field!((*i.borrow_mut()), second).write(d);
                 unimplemented!();
                 d += 0.5_f64;
             }
@@ -221,7 +221,7 @@ pub fn test_4() -> () {
             'loop_: while (d <= 2_()) {
                 unimplemented!();
                 unimplemented!();
-                unimplemented!().second = 2.5_f64;
+                field!((*i.borrow_mut()), second).write(2.5_f64);
                 unimplemented!();
                 {
                     d += 0.5_f64;
@@ -238,7 +238,7 @@ pub fn test_4() -> () {
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                unimplemented!().second = d;
+                field!((*i.borrow_mut()), second).write(d);
                 unimplemented!();
                 d += 0.5_f64;
             }

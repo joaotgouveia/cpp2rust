@@ -213,7 +213,7 @@ pub fn test01_9() {
                 }
             }
         }
-        ((*a.borrow_mut()) as std___atomic_ref_float__false__true_) = 1.6_f32;
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -529,7 +529,7 @@ pub fn test02_10() {
                 }
             }
         }
-        ((*a.borrow_mut()) as std___atomic_ref_double__false__true_) = 1.6_f64;
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -841,7 +841,7 @@ pub fn test04_12() {
         let a0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ((*a0.borrow_mut()) as std___atomic_ref_float_ptr__false__false_) = (i.as_pointer());
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

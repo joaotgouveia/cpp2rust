@@ -469,15 +469,10 @@ pub unsafe fn test01_9() {
     }
 }
 pub unsafe fn test02_10() {
-    let mut pi1: *const () =
-        (&raw const (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_11)) as *const ());
-    let mut pi2: *const () =
-        (&raw const (*std::cell::LazyCell::force_mut(&mut *&raw mut digits10_12)) as *const ());
-    let mut pi3: *const () =
-        (&raw const (*std::cell::LazyCell::force_mut(&mut *&raw mut max_exponent10_13))
-            as *const ());
-    let mut pb1: *const () =
-        (&raw const (*std::cell::LazyCell::force_mut(&mut *&raw mut traps_14)) as *const ());
+    let mut pi1: *const () = (&raw const unimplemented!() as *const ());
+    let mut pi2: *const () = (&raw const unimplemented!() as *const ());
+    let mut pi3: *const () = (&raw const unimplemented!() as *const ());
+    let mut pb1: *const () = (&raw const unimplemented!() as *const ());
 }
 pub fn main() {
     unsafe {
@@ -509,7 +504,7 @@ impl __gnu_test_semaphore {
         this
     }
 }
-pub unsafe fn set_memory_limits_15(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_11(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
@@ -526,14 +521,14 @@ pub unsafe fn set_memory_limits_15(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_16(mut size: ()) {
+pub unsafe fn set_file_limit_12(mut size: ()) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_17(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_13(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = unimplemented!();
@@ -568,7 +563,7 @@ pub unsafe fn verify_demangle_17(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_18(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_14(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -596,7 +591,7 @@ pub unsafe fn run_tests_wrapped_locale_18(mut name: *const (), l: *const __gnu_t
         unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_19(
+pub unsafe fn run_tests_wrapped_env_15(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -665,7 +660,7 @@ impl __gnu_test_semaphore {
         }
     }
 }
-pub unsafe fn test_tm_20(
+pub unsafe fn test_tm_16(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -676,18 +671,18 @@ pub unsafe fn test_tm_20(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).clone();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_17)).clone();
 }
-static mut tmp_21: std::cell::LazyCell<()> =
+static mut tmp_17: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

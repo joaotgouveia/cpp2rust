@@ -87,7 +87,7 @@ pub unsafe fn test_4() -> () {
             'loop_: while ((d) <= (2_())) {
                 unimplemented!();
                 unimplemented!();
-                (*unimplemented!()).second = 2.5_f64;
+                (*i).second = 2.5_f64;
                 unimplemented!();
                 {
                     d += 0.5_f64;
@@ -104,7 +104,7 @@ pub unsafe fn test_4() -> () {
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                (*unimplemented!()).second = d;
+                (*i).second = d;
                 unimplemented!();
                 d += 0.5_f64;
             }
@@ -213,7 +213,7 @@ pub unsafe fn test_4() -> () {
             'loop_: while ((d) <= (2_())) {
                 unimplemented!();
                 unimplemented!();
-                (*unimplemented!()).second = 2.5_f64;
+                (*i).second = 2.5_f64;
                 unimplemented!();
                 {
                     d += 0.5_f64;
@@ -230,7 +230,7 @@ pub unsafe fn test_4() -> () {
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                (*unimplemented!()).second = d;
+                (*i).second = d;
                 unimplemented!();
                 d += 0.5_f64;
             }

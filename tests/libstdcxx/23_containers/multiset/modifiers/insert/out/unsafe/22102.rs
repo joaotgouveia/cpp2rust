@@ -276,7 +276,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt1)) {
+        if !((*it4) == (vt1)) {
             unimplemented!();
             unimplemented!();
         }
@@ -300,7 +300,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it3)) {
             unimplemented!();
             unimplemented!();
         }
@@ -308,7 +308,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it2)) {
             unimplemented!();
             unimplemented!();
         }
@@ -328,7 +328,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt2)) {
+        if !((*it7) == (vt2)) {
             unimplemented!();
             unimplemented!();
         }
@@ -352,7 +352,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it4)) {
             unimplemented!();
             unimplemented!();
         }
@@ -360,7 +360,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it2)) {
             unimplemented!();
             unimplemented!();
         }
@@ -380,7 +380,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt3)) {
+        if !((*it10) == (vt3)) {
             unimplemented!();
             unimplemented!();
         }
@@ -404,7 +404,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it7)) {
             unimplemented!();
             unimplemented!();
         }
@@ -412,7 +412,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it2)) {
             unimplemented!();
             unimplemented!();
         }
@@ -432,7 +432,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt4)) {
+        if !((*it13) == (vt4)) {
             unimplemented!();
             unimplemented!();
         }
@@ -456,7 +456,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it2)) {
             unimplemented!();
             unimplemented!();
         }
@@ -464,7 +464,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it1)) {
             unimplemented!();
             unimplemented!();
         }
@@ -484,7 +484,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt5)) {
+        if !((*it16) == (vt5)) {
             unimplemented!();
             unimplemented!();
         }
@@ -508,7 +508,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it2)) {
             unimplemented!();
             unimplemented!();
         }
@@ -516,7 +516,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it13)) {
             unimplemented!();
             unimplemented!();
         }
@@ -535,7 +535,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt6)) {
+        if !((*it19) == (vt6)) {
             unimplemented!();
             unimplemented!();
         }
@@ -559,7 +559,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it1)) {
             unimplemented!();
             unimplemented!();
         }
@@ -579,7 +579,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt7)) {
+        if !((*it21) == (vt7)) {
             unimplemented!();
             unimplemented!();
         }
@@ -603,7 +603,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it3)) {
             unimplemented!();
             unimplemented!();
         }
@@ -623,7 +623,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt8)) {
+        if !((*it24) == (vt8)) {
             unimplemented!();
             unimplemented!();
         }
@@ -647,7 +647,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it21)) {
             unimplemented!();
             unimplemented!();
         }
@@ -655,7 +655,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it3)) {
             unimplemented!();
             unimplemented!();
         }
@@ -675,7 +675,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (vt9)) {
+        if !((*it27) == (vt9)) {
             unimplemented!();
             unimplemented!();
         }
@@ -699,7 +699,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it21)) {
             unimplemented!();
             unimplemented!();
         }
@@ -707,7 +707,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*unimplemented!()) == (*unimplemented!())) {
+        if !((*unimplemented!()) == (*it24)) {
             unimplemented!();
             unimplemented!();
         }

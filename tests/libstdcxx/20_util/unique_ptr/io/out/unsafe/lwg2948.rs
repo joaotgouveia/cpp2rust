@@ -335,13 +335,6 @@ impl deleter_wchar_t__pointer {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct deleter_wchar_t_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct deleter_std_basic_ostringstream_char__ref__pointer {}
-impl deleter_std_basic_ostringstream_char__ref__pointer {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct deleter_std_basic_ostringstream_char__ref_ {}
 pub unsafe fn operator_shl_11(o: *mut (), _a1: *mut deleter_char__pointer) -> () {
     unimplemented!();
     return 1_();

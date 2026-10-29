@@ -320,12 +320,12 @@ impl A {
     pub fn new_2(it: ()) -> Self {
         let it: Value<()> = Rc::new(RefCell::new(it));
         let __this: A = Self {
-            _i: { unimplemented!()._i },
+            _i: { ((*it.borrow()).read())._i },
         };
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !({ unimplemented!()._i } >= 0_()) {
+            if !({ ((*it.borrow()).read())._i } >= 0_()) {
                 unimplemented!();
                 unimplemented!();
             }

@@ -10,7 +10,7 @@ pub unsafe fn test_0() {
     {
         let mut ii1: () = unimplemented!();
         let mut ii2: () = unimplemented!();
-        let mut ii4: () = unimplemented!();
+        let mut ii4: () = ii1.clone();
         let mut cii: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -42,7 +42,7 @@ pub unsafe fn test_1() {
     {
         let mut ii1: () = unimplemented!();
         let mut ii2: () = unimplemented!();
-        let mut ii4: () = unimplemented!();
+        let mut ii4: () = ii1.clone();
         let mut cii: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -74,7 +74,7 @@ pub unsafe fn test_2() {
     {
         let mut ii1: () = unimplemented!();
         let mut ii2: () = unimplemented!();
-        let mut ii4: () = unimplemented!();
+        let mut ii4: () = ii1.clone();
         let mut cii: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -106,7 +106,7 @@ pub unsafe fn test_3() {
     {
         let mut ii1: () = unimplemented!();
         let mut ii2: () = unimplemented!();
-        let mut ii4: () = unimplemented!();
+        let mut ii4: () = ii1.clone();
         let mut cii: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -138,7 +138,7 @@ pub unsafe fn test_4() {
     {
         let mut ii1: () = unimplemented!();
         let mut ii2: () = unimplemented!();
-        let mut ii4: () = unimplemented!();
+        let mut ii4: () = ii1.clone();
         let mut cii: () = unimplemented!();
         unimplemented!();
         unimplemented!();

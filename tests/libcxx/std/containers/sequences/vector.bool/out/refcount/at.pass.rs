@@ -6,34 +6,39 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
+pub type anon_0 = ();
+pub const anon_0_value: anon_0 = 1;
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_macros_detail_is_same_std__Bit_reference__std__Bit_reference_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_1.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
+        return ((alloc_count_2.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_3.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_4.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_1: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_3: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_4: Value<()> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -118,22 +123,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_4: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_5: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_5: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_6: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_6(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_7(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_7(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_8(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_6(_x, _y)
+        operator_eq_7(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -193,7 +198,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_6(__lhs.clone(), __rhs.clone())
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -327,26 +332,6 @@ impl Tag_X {
         Self {}
     }
 }
-pub fn test_8() {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (1_() != 0),
-        (0_() != 0),
-        (1_() != 0),
-        (0_() != 0),
-        (1_() != 0),
-    ])));
-    let mut v: () = unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!() = (1_() != 0);
-    unimplemented!();
-    unimplemented!() = (1_() != 0);
-    unimplemented!();
-}
 pub fn test_9() {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         (1_() != 0),
@@ -387,19 +372,39 @@ pub fn test_10() {
     unimplemented!() = (1_() != 0);
     unimplemented!();
 }
-pub fn test_exception_11() {}
+pub fn test_11() {
+    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        (1_() != 0),
+        (0_() != 0),
+        (1_() != 0),
+        (0_() != 0),
+        (1_() != 0),
+    ])));
+    let mut v: () = unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!() = (1_() != 0);
+    unimplemented!();
+    unimplemented!() = (1_() != 0);
+    unimplemented!();
+}
 pub fn test_exception_12() {}
 pub fn test_exception_13() {}
-pub fn tests_14() -> () {
-    ({ test_8() });
+pub fn test_exception_14() {}
+pub fn tests_15() -> () {
     ({ test_9() });
     ({ test_10() });
+    ({ test_11() });
     return true;
 }
-pub fn test_exceptions_15() {
-    ({ test_exception_11() });
+pub fn test_exceptions_16() {
     ({ test_exception_12() });
     ({ test_exception_13() });
+    ({ test_exception_14() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -421,8 +426,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ tests_14() });
-    ({ test_exceptions_15() });
+    ({ tests_15() });
+    ({ test_exceptions_16() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }
@@ -684,8 +689,8 @@ impl test_allocator_bool_Impl for Ptr<test_allocator_bool_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_4.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_4.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
     }
 }
 pub trait test_allocator_statisticsImpl {
@@ -740,8 +745,8 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_4.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_4.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -794,8 +799,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_4.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_4.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -811,10 +816,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = outstanding_bytes_0.with(|_| ());
-    let _ = alloc_count_1.with(|_| ());
-    let _ = dealloc_count_2.with(|_| ());
-    let _ = disable_default_constructor_3.with(|_| ());
-    let _ = destructed_value_4.with(|_| ());
-    let _ = moved_value_5.with(|_| ());
+    let _ = outstanding_bytes_1.with(|_| ());
+    let _ = alloc_count_2.with(|_| ());
+    let _ = dealloc_count_3.with(|_| ());
+    let _ = disable_default_constructor_4.with(|_| ());
+    let _ = destructed_value_5.with(|_| ());
+    let _ = moved_value_6.with(|_| ());
 }

@@ -12,15 +12,14 @@ thread_local!(
 thread_local!(
     pub static move_called_1: Value<()> = Rc::new(RefCell::new(false));
 );
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct A1_int_ {
     #[offset(0)]
     id_: (),
 }
 impl A1_int_ {
-    pub fn new(id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| 0_());
+    pub fn new(mut id: ()) -> Self {
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A1_int_>) -> Self {
@@ -49,11 +48,6 @@ impl Clone for A1_int_ {
             id_: self.id_.clone(),
         }));
         A1_int_::copy_from(__src.as_pointer())
-    }
-}
-impl Default for A1_int_ {
-    fn default() -> Self {
-        { A1_int_::new(None) }
     }
 }
 pub fn operator_eq_4(x: Ptr<A1_int_>, y: Ptr<A1_int_>) -> () {
@@ -105,15 +99,14 @@ thread_local!(
 thread_local!(
     pub static move_called_10: Value<()> = Rc::new(RefCell::new(false));
 );
-#[derive(Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct A3_int_ {
     #[offset(0)]
     id_: (),
 }
 impl A3_int_ {
-    pub fn new(id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| 0_());
+    pub fn new(mut id: ()) -> Self {
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A3_int_>) -> Self {
@@ -135,11 +128,6 @@ impl Clone for A3_int_ {
             id_: self.id_.clone(),
         }));
         A3_int_::copy_from(__src.as_pointer())
-    }
-}
-impl Default for A3_int_ {
-    fn default() -> Self {
-        { A3_int_::new(None) }
     }
 }
 pub fn operator_eq_13(x: Ptr<A3_int_>, y: Ptr<A3_int_>) -> () {

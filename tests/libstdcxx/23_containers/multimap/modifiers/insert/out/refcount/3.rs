@@ -535,7 +535,7 @@ pub fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == 1_()) {
+        if !({ ((*i.borrow()).read()).first } == 1_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -543,7 +543,7 @@ pub fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (unimplemented!().second).val } == 3_()) {
+        if !({ (((*i.borrow()).read()).second).val } == 3_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -583,7 +583,7 @@ pub fn test02_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == 2_()) {
+        if !({ ((*i1.borrow()).read()).first } == 2_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -591,7 +591,7 @@ pub fn test02_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().first } == 2_()) {
+        if !({ ((*i2.borrow()).read()).first } == 2_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -599,8 +599,8 @@ pub fn test02_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (unimplemented!().second).val } == 7_())
-            && ({ (unimplemented!().second).val } == 3_()))
+        if !(({ (((*i1.borrow()).read()).second).val } == 7_())
+            && ({ (((*i2.borrow()).read()).second).val } == 3_()))
         {
             unimplemented!();
             unimplemented!();

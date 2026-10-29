@@ -276,7 +276,7 @@ pub unsafe fn test01_9() {
             unimplemented!();
         }
     }
-    unimplemented!();
+    p1 = (p2).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

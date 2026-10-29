@@ -278,7 +278,7 @@ unsafe fn main_0() -> () {
     }
     let mut it: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
-        if (((*unimplemented!()).second) < (5_())) {
+        if (((*it).second) < (5_())) {
             unimplemented!();
             p.second.prefix_inc();
         }

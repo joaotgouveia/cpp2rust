@@ -252,7 +252,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ PathPointImpl::getType(&unimplemented!()) }) == ('a' as ())) {
+        if !(({ PathPointImpl::getType(&field_ptr!(ret.as_pointer(), first)) }) == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -278,7 +278,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ PathPointImpl::getType(&unimplemented!()) }) == ('a' as ())) {
+        if !(({ PathPointImpl::getType(&field_ptr!(ret.as_pointer(), first)) }) == ('a' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -303,7 +303,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ PathPointImpl::getType(&unimplemented!()) }) == ('b' as ())) {
+        if !(({ PathPointImpl::getType(&it.as_pointer()) }) == ('b' as ())) {
             unimplemented!();
             unimplemented!();
         }
@@ -329,7 +329,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ PathPointImpl::getType(&unimplemented!()) }) == ('c' as ())) {
+        if !(({ PathPointImpl::getType(&field_ptr!(ret.as_pointer(), first)) }) == ('c' as ())) {
             unimplemented!();
             unimplemented!();
         }

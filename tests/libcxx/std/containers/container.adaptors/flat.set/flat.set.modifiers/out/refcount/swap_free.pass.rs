@@ -881,7 +881,7 @@ pub fn test_one_38() {
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
         let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_39(m1.as_pointer(), m2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -912,7 +912,7 @@ pub fn test_one_38() {
         ));
         let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
         let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_39(m1.as_pointer(), m2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -934,7 +934,7 @@ pub fn test_one_38() {
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
         let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_39(m1.as_pointer(), m2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -978,7 +978,115 @@ pub fn test_one_38() {
         ));
         let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
         let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_39(m1.as_pointer(), m2.as_pointer()) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_one_39() {
+    {
+        let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
+        let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let ar2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+            5_(),
+            6_(),
+            7_(),
+            8_(),
+            9_(),
+            10_(),
+            11_(),
+            12_(),
+        ])));
+        let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m2: Value<()> = Rc::new(RefCell::new(
+            std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
+                { (ar2.as_pointer() as Ptr<()>) },
+                {
+                    (ar2.as_pointer() as Ptr<()>).offset(
+                        ((::std::mem::size_of::<[(); 8]>() as ())
+                            .wrapping_div((::std::mem::size_of::<()>() as ())))
+                            as isize,
+                    )
+                },
+                None,
+            ),
+        ));
+        let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
+        let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let ar1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+        let m1: Value<()> = Rc::new(RefCell::new(
+            std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
+                { (ar1.as_pointer() as Ptr<()>) },
+                {
+                    (ar1.as_pointer() as Ptr<()>).offset(
+                        ((::std::mem::size_of::<[(); 4]>() as ())
+                            .wrapping_div((::std::mem::size_of::<()>() as ())))
+                            as isize,
+                    )
+                },
+                None,
+            ),
+        ));
+        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
+        let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let ar1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+        let ar2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+            5_(),
+            6_(),
+            7_(),
+            8_(),
+            9_(),
+            10_(),
+            11_(),
+            12_(),
+        ])));
+        let m1: Value<()> = Rc::new(RefCell::new(
+            std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
+                { (ar1.as_pointer() as Ptr<()>) },
+                {
+                    (ar1.as_pointer() as Ptr<()>).offset(
+                        ((::std::mem::size_of::<[(); 4]>() as ())
+                            .wrapping_div((::std::mem::size_of::<()>() as ())))
+                            as isize,
+                    )
+                },
+                None,
+            ),
+        ));
+        let m2: Value<()> = Rc::new(RefCell::new(
+            std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
+                { (ar2.as_pointer() as Ptr<()>) },
+                {
+                    (ar2.as_pointer() as Ptr<()>).offset(
+                        ((::std::mem::size_of::<[(); 8]>() as ())
+                            .wrapping_div((::std::mem::size_of::<()>() as ())))
+                            as isize,
+                    )
+                },
+                None,
+            ),
+        ));
+        let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
+        let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -989,115 +1097,7 @@ pub fn test_one_40() {
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
         let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_41(m1.as_pointer(), m2.as_pointer()) });
         unimplemented!();
-        unimplemented!();
-    }
-    {
-        let ar2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            5_(),
-            6_(),
-            7_(),
-            8_(),
-            9_(),
-            10_(),
-            11_(),
-            12_(),
-        ])));
-        let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m2: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { (ar2.as_pointer() as Ptr<()>) },
-                {
-                    (ar2.as_pointer() as Ptr<()>).offset(
-                        ((::std::mem::size_of::<[(); 8]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-                None,
-            ),
-        ));
-        let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
-        let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_41(m1.as_pointer(), m2.as_pointer()) });
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let ar1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let m1: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { (ar1.as_pointer() as Ptr<()>) },
-                {
-                    (ar1.as_pointer() as Ptr<()>).offset(
-                        ((::std::mem::size_of::<[(); 4]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-                None,
-            ),
-        ));
-        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
-        let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_41(m1.as_pointer(), m2.as_pointer()) });
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let ar1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let ar2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            5_(),
-            6_(),
-            7_(),
-            8_(),
-            9_(),
-            10_(),
-            11_(),
-            12_(),
-        ])));
-        let m1: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { (ar1.as_pointer() as Ptr<()>) },
-                {
-                    (ar1.as_pointer() as Ptr<()>).offset(
-                        ((::std::mem::size_of::<[(); 4]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-                None,
-            ),
-        ));
-        let m2: Value<()> = Rc::new(RefCell::new(
-            std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-                { (ar2.as_pointer() as Ptr<()>) },
-                {
-                    (ar2.as_pointer() as Ptr<()>).offset(
-                        ((::std::mem::size_of::<[(); 8]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-                None,
-            ),
-        ));
-        let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
-        let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_41(m1.as_pointer(), m2.as_pointer()) });
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub fn test_one_42() {
-    {
-        let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
-        let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_43(m1.as_pointer(), m2.as_pointer()) });
         unimplemented!();
         unimplemented!();
     }
@@ -1116,7 +1116,7 @@ pub fn test_one_42() {
         let m2 : Value<() > = Rc::new(RefCell::new(std_flat_set_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { ( ar2 .as_pointer()  as Ptr::<()> )  } , { ( ar2 .as_pointer()  as Ptr::<()> ) . offset ( ( ( ( ::std::mem::size_of::<[ () ; 8]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) ) as isize )  } , None , )  )) ;
         let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
         let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_43(m1.as_pointer(), m2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1126,7 +1126,7 @@ pub fn test_one_42() {
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
         let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_43(m1.as_pointer(), m2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1146,17 +1146,17 @@ pub fn test_one_42() {
         let m2 : Value<() > = Rc::new(RefCell::new(std_flat_set_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr___ :: new_1 ( { ( ar2 .as_pointer()  as Ptr::<()> )  } , { ( ar2 .as_pointer()  as Ptr::<()> ) . offset ( ( ( ( ::std::mem::size_of::<[ () ; 8]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) ) as isize )  } , None , )  )) ;
         let m1_save: Value<()> = Rc::new(RefCell::new((*m1.borrow()).clone()));
         let m2_save: Value<()> = Rc::new(RefCell::new((*m2.borrow()).clone()));
-        ({ swap_43(m1.as_pointer(), m2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_44() -> () {
+pub fn test_41() -> () {
     ({ test_one_38() });
     {
-        ({ test_one_40() });
+        ({ test_one_39() });
     }
-    ({ test_one_42() });
+    ({ test_one_40() });
     return true;
 }
 pub fn main() {
@@ -1179,7 +1179,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_44() });
+    ({ test_41() });
     return 0_();
 }
 pub trait MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__Impl

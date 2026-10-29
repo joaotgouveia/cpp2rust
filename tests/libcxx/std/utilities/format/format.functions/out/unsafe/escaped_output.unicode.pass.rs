@@ -152,7 +152,231 @@ pub unsafe fn test_log_4(
     });
     (unsafe { (*functor).call() });
 }
-pub unsafe fn test_require_5(
+pub unsafe fn test_log_5(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_6(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_7(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_8(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_9(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_10(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_11(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_12(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_13(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_14(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_15(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_16(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_17(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_log_18(
+    mut condition: *const (),
+    mut file: *const (),
+    mut line: (),
+    functor: *const FnPtr<fn()>,
+) {
+    (unsafe {
+        test_eprintf_1(
+            c"Assertion failure: %s %s %d\n".as_ptr(),
+            &condition,
+            &file,
+            &line,
+        )
+    });
+    (unsafe { (*functor).call() });
+}
+pub unsafe fn test_require_19(
     mut condition: (),
     mut condition_str: *const (),
     mut file: *const (),
@@ -171,24 +395,291 @@ pub unsafe fn test_require_5(
     });
     unimplemented!();
 }
-pub unsafe fn test_is_high_surrogate_6(mut value: ()) -> () {
+pub unsafe fn test_require_20(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_5(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_21(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_6(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_22(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_7(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_23(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_8(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_24(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_9(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_25(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_10(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_26(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_11(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_27(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_12(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_28(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_13(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_29(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_14(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_30(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_15(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_31(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_16(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_32(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_17(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_require_33(
+    mut condition: (),
+    mut condition_str: *const (),
+    mut file: *const (),
+    mut line: (),
+    arg: *const FnPtr<fn()>,
+) {
+    if condition {
+        return;
+    }
+    (unsafe {
+        let _condition: *const () = condition_str;
+        let _file: *const () = file;
+        let _line: () = line;
+        let _functor: *const FnPtr<fn()> = arg;
+        test_log_18(_condition, _file, _line, _functor)
+    });
+    unimplemented!();
+}
+pub unsafe fn test_is_high_surrogate_34(mut value: ()) -> () {
     return ((value) >= (55296_())) && ((value) <= (56319_()));
 }
-pub unsafe fn test_is_low_surrogate_7(mut value: ()) -> () {
+pub unsafe fn test_is_low_surrogate_35(mut value: ()) -> () {
     return ((value) >= (56320_())) && ((value) <= (57343_()));
 }
-pub unsafe fn test_is_surrogate_8(mut value: ()) -> () {
+pub unsafe fn test_is_surrogate_36(mut value: ()) -> () {
     return ((value) >= (55296_())) && ((value) <= (57343_()));
 }
-pub unsafe fn test_is_code_point_9(mut value: ()) -> () {
+pub unsafe fn test_is_code_point_37(mut value: ()) -> () {
     return ((value) <= (1114111_()));
 }
-pub unsafe fn test_is_scalar_value_10(mut value: ()) -> () {
-    return (unsafe { test_is_code_point_9(value) }) && (!(unsafe { test_is_surrogate_8(value) }));
+pub unsafe fn test_is_scalar_value_38(mut value: ()) -> () {
+    return (unsafe { test_is_code_point_37(value) })
+        && (!(unsafe { test_is_surrogate_36(value) }));
 }
-pub static mut test_replacement_character_11: std::cell::LazyCell<()> =
+pub static mut test_replacement_character_39: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { (65533 as ()) });
-pub unsafe fn test_encode_12(out_it: *mut (), mut value: ()) {
+pub unsafe fn test_encode_40(out_it: *mut (), mut value: ()) {
     if ((value) < (128_())) {
         unimplemented!();
     } else if ((value) < (2048_())) {
@@ -200,12 +691,12 @@ pub unsafe fn test_encode_12(out_it: *mut (), mut value: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_encode_13(out_it: *mut (), mut value: ()) {
+pub unsafe fn test_encode_41(out_it: *mut (), mut value: ()) {
     if (((value) & (4294901760_())) == (0_())) {
         (unsafe {
             let _out_it: *mut () = out_it;
             let _value: () = value;
-            test_encode_12(_out_it, _value)
+            test_encode_40(_out_it, _value)
         });
     } else {
         unimplemented!();
@@ -214,84 +705,84 @@ pub unsafe fn test_encode_13(out_it: *mut (), mut value: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_transcode_14(mut first: (), mut last: (), mut out_it: ()) -> () {
+pub unsafe fn test_transcode_42(mut first: (), mut last: (), mut out_it: ()) -> () {
     'loop_: while !(unimplemented!()) {
         let mut value: () = (*unimplemented!());
-        if (unsafe { test_is_code_point_9(value) }) {
-            (unsafe { test_encode_13(&mut out_it, value) });
+        if (unsafe { test_is_code_point_37(value) }) {
+            (unsafe { test_encode_41(&mut out_it, value) });
         } else {
             (unsafe {
-                test_encode_12(
+                test_encode_40(
                     &mut out_it,
-                    (*std::cell::LazyCell::force_mut(&mut *&raw mut test_replacement_character_11)),
+                    (*std::cell::LazyCell::force_mut(&mut *&raw mut test_replacement_character_39)),
                 )
             });
         }
     }
     return unimplemented!();
 }
-pub unsafe fn test_transcode_15(mut first: *const (), mut last: *const (), mut out_it: ()) -> () {
+pub unsafe fn test_transcode_43(mut first: *const (), mut last: *const (), mut out_it: ()) -> () {
     'loop_: while ((first) != (last)) {
         let mut value: () = (*first.postfix_inc());
-        if (unsafe { test_is_code_point_9(value) }) {
-            (unsafe { test_encode_13(&mut out_it, value) });
+        if (unsafe { test_is_code_point_37(value) }) {
+            (unsafe { test_encode_41(&mut out_it, value) });
         } else {
             (unsafe {
-                test_encode_12(
+                test_encode_40(
                     &mut out_it,
-                    (*std::cell::LazyCell::force_mut(&mut *&raw mut test_replacement_character_11)),
+                    (*std::cell::LazyCell::force_mut(&mut *&raw mut test_replacement_character_39)),
                 )
             });
         }
     }
     return unimplemented!();
 }
-pub unsafe fn operator_shl_16(os: *mut (), loc: *const ()) -> *mut () {
+pub unsafe fn operator_shl_44(os: *mut (), loc: *const ()) -> *mut () {
     return &mut (*unimplemented!());
 }
-pub unsafe fn test_concat_17(stream: *mut (), value: *mut ()) -> *mut () {
+pub unsafe fn test_concat_45(stream: *mut (), value: *mut ()) -> *mut () {
     return &mut (*unimplemented!());
 }
-pub unsafe fn test_concat_18(stream: *mut (), value: *mut ()) -> *mut () {
+pub unsafe fn test_concat_46(stream: *mut (), value: *mut ()) -> *mut () {
     return &mut (*unimplemented!());
 }
-pub unsafe fn test_concat_19(stream: *mut (), value: *const [(); 18]) -> *mut () {
+pub unsafe fn test_concat_47(stream: *mut (), value: *const [(); 18]) -> *mut () {
     return &mut (*unimplemented!());
 }
-pub unsafe fn test_concat_20(stream: *mut (), value: *mut ()) -> *mut () {
+pub unsafe fn test_concat_48(stream: *mut (), value: *mut ()) -> *mut () {
     return &mut (*unimplemented!());
 }
-pub unsafe fn test_concat_21(stream: *mut (), value: *mut ()) -> *mut () {
+pub unsafe fn test_concat_49(stream: *mut (), value: *mut ()) -> *mut () {
     return &mut (*unimplemented!());
 }
-pub unsafe fn test_concat_22(stream: *mut (), value: *mut ()) -> *mut () {
+pub unsafe fn test_concat_50(stream: *mut (), value: *mut ()) -> *mut () {
     let mut b: () = unimplemented!();
     let mut e: () = unimplemented!();
     if !(unimplemented!()) {
         {}
-        (unsafe { test_transcode_14(unimplemented!(), unimplemented!(), unimplemented!()) });
+        (unsafe { test_transcode_42(b.clone(), e.clone(), unimplemented!()) });
     }
     return stream;
 }
-pub unsafe fn test_concat_23(stream: *mut (), value: *mut ()) -> *mut () {
+pub unsafe fn test_concat_51(stream: *mut (), value: *mut ()) -> *mut () {
     let mut b: () = unimplemented!();
     let mut e: () = unimplemented!();
     if ((b) != (e)) {
         {}
-        (unsafe { test_transcode_15(b, e, unimplemented!()) });
+        (unsafe { test_transcode_43(b, e, unimplemented!()) });
     }
     return stream;
 }
-pub unsafe fn test_concat_24(stream: *mut (), value: *mut ()) -> *mut () {
+pub unsafe fn test_concat_52(stream: *mut (), value: *mut ()) -> *mut () {
     let mut b: () = unimplemented!();
     let mut e: () = unimplemented!();
     if ((b) != (e)) {
         {}
-        (unsafe { test_transcode_15(b, e, unimplemented!()) });
+        (unsafe { test_transcode_43(b, e, unimplemented!()) });
     }
     return stream;
 }
-pub unsafe fn test_concat_message_25(
+pub unsafe fn test_concat_message_53(
     args_0: *const [(); 18],
     args_1: *mut (),
     args_2: *const [(); 18],
@@ -306,42 +797,42 @@ pub unsafe fn test_concat_message_25(
             (unsafe {
                 let _stream: *mut () = &mut sstr;
                 let _value: *const [(); 18] = args_0;
-                test_concat_19(_stream, _value)
+                test_concat_47(_stream, _value)
             });
             {
                 (unsafe {
                     let _stream: *mut () = &mut sstr;
                     let _value: *mut () = args_1;
-                    test_concat_21(_stream, _value)
+                    test_concat_49(_stream, _value)
                 });
                 {
                     (unsafe {
                         let _stream: *mut () = &mut sstr;
                         let _value: *const [(); 18] = args_2;
-                        test_concat_19(_stream, _value)
+                        test_concat_47(_stream, _value)
                     });
                     {
                         (unsafe {
                             let _stream: *mut () = &mut sstr;
                             let _value: *mut () = args_3;
-                            test_concat_20(_stream, _value)
+                            test_concat_48(_stream, _value)
                         });
                         {
                             (unsafe {
                                 let _stream: *mut () = &mut sstr;
                                 let _value: *const [(); 18] = args_4;
-                                test_concat_19(_stream, _value)
+                                test_concat_47(_stream, _value)
                             });
                             {
                                 (unsafe {
                                     let _stream: *mut () = &mut sstr;
                                     let _value: *mut () = args_5;
-                                    test_concat_18(_stream, _value)
+                                    test_concat_46(_stream, _value)
                                 });
                                 (unsafe {
                                     let _stream: *mut () = &mut sstr;
                                     let _value: *mut () = args_6;
-                                    test_concat_17(_stream, _value)
+                                    test_concat_45(_stream, _value)
                                 })
                             }
                         }
@@ -353,7 +844,7 @@ pub unsafe fn test_concat_message_25(
     }
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn test_concat_message_26(
+pub unsafe fn test_concat_message_54(
     args_0: *const [(); 18],
     args_1: *mut (),
     args_2: *const [(); 18],
@@ -368,42 +859,42 @@ pub unsafe fn test_concat_message_26(
             (unsafe {
                 let _stream: *mut () = &mut sstr;
                 let _value: *const [(); 18] = args_0;
-                test_concat_19(_stream, _value)
+                test_concat_47(_stream, _value)
             });
             {
                 (unsafe {
                     let _stream: *mut () = &mut sstr;
                     let _value: *mut () = args_1;
-                    test_concat_24(_stream, _value)
+                    test_concat_52(_stream, _value)
                 });
                 {
                     (unsafe {
                         let _stream: *mut () = &mut sstr;
                         let _value: *const [(); 18] = args_2;
-                        test_concat_19(_stream, _value)
+                        test_concat_47(_stream, _value)
                     });
                     {
                         (unsafe {
                             let _stream: *mut () = &mut sstr;
                             let _value: *mut () = args_3;
-                            test_concat_23(_stream, _value)
+                            test_concat_51(_stream, _value)
                         });
                         {
                             (unsafe {
                                 let _stream: *mut () = &mut sstr;
                                 let _value: *const [(); 18] = args_4;
-                                test_concat_19(_stream, _value)
+                                test_concat_47(_stream, _value)
                             });
                             {
                                 (unsafe {
                                     let _stream: *mut () = &mut sstr;
                                     let _value: *mut () = args_5;
-                                    test_concat_22(_stream, _value)
+                                    test_concat_50(_stream, _value)
                                 });
                                 (unsafe {
                                     let _stream: *mut () = &mut sstr;
                                     let _value: *mut () = args_6;
-                                    test_concat_17(_stream, _value)
+                                    test_concat_45(_stream, _value)
                                 })
                             }
                         }
@@ -415,7 +906,7 @@ pub unsafe fn test_concat_message_26(
     }
     panic!("ub: non-void function does not return a value")
 }
-pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut test_format_55: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(
             Generic,
@@ -438,7 +929,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_5(
+                        test_require_19(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -470,7 +961,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_28(
+                        test_require_20(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -502,7 +993,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_29(
+                        test_require_21(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -534,7 +1025,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_30(
+                        test_require_22(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -566,7 +1057,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_31(
+                        test_require_23(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -598,7 +1089,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_32(
+                        test_require_24(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -630,7 +1121,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_33(
+                        test_require_25(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -662,7 +1153,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_34(
+                        test_require_26(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -694,7 +1185,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_35(
+                        test_require_27(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -726,7 +1217,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_36(
+                        test_require_28(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -758,7 +1249,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_37(
+                        test_require_29(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -790,7 +1281,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_38(
+                        test_require_30(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -822,7 +1313,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_39(
+                        test_require_31(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -854,7 +1345,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_40(
+                        test_require_32(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -886,7 +1377,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
                                 });
                             }
                         );
-                        test_require_41(
+                        test_require_33(
                             _condition,
                             c"out == expected".as_ptr(),
                             c"escaped_output.unicode.pass.cpp".as_ptr(),
@@ -902,7 +1393,7 @@ pub static mut test_format_27: std::cell::LazyCell<FnPtr<Generic>> =
             }
         )
     });
-pub static mut test_format_to_42: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut test_format_to_56: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(
             Generic,
@@ -971,7 +1462,7 @@ pub static mut test_format_to_42: std::cell::LazyCell<FnPtr<Generic>> =
             }
         )
     });
-pub static mut test_formatted_size_43: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut test_formatted_size_57: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(
             Generic,
@@ -998,7 +1489,7 @@ pub static mut test_formatted_size_43: std::cell::LazyCell<FnPtr<Generic>> =
             }
         )
     });
-pub static mut test_format_to_n_44: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut test_format_to_n_58: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(
             Generic,
@@ -1073,13 +1564,13 @@ pub static mut test_format_to_n_44: std::cell::LazyCell<FnPtr<Generic>> =
             }
         )
     });
-pub unsafe fn test_char_45() {
+pub unsafe fn test_char_59() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args_2: () = ('\'' as ());
         let mut _args_3: () = ('\"' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut (), *mut ())>(6)
             .call(_expected, _fmt, &mut _args_2, &mut _args_3)
     });
@@ -1087,7 +1578,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\t' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1095,7 +1586,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\n' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1103,7 +1594,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\r' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1111,7 +1602,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\\' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1119,7 +1610,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\'' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1127,7 +1618,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\"' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1135,7 +1626,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = (' ' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1143,7 +1634,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('a' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1151,7 +1642,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('b' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1159,7 +1650,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('c' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1167,7 +1658,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\0' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1175,7 +1666,7 @@ pub unsafe fn test_char_45() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\x1f' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(7)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1184,7 +1675,7 @@ pub unsafe fn test_char_45() {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             let mut _args: () = (b'\x80' as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(7)
                 .call(_expected, _fmt, &mut _args)
         });
@@ -1192,13 +1683,13 @@ pub unsafe fn test_char_45() {
     {}
     {}
 }
-pub unsafe fn test_char_46() {
+pub unsafe fn test_char_60() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args_2: () = ('\'' as ());
         let mut _args_3: () = ('\"' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut (), *mut ())>(9)
             .call(_expected, _fmt, &mut _args_2, &mut _args_3)
     });
@@ -1206,7 +1697,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\t' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1214,7 +1705,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\n' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1222,7 +1713,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\r' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1230,7 +1721,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\\' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1238,7 +1729,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\'' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1246,7 +1737,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\"' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1254,7 +1745,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = (' ' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1262,7 +1753,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('a' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1270,7 +1761,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('b' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1278,7 +1769,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('c' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1286,7 +1777,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\0' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1294,7 +1785,7 @@ pub unsafe fn test_char_46() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = ('\x1f' as ());
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(10)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1302,97 +1793,97 @@ pub unsafe fn test_char_46() {
     {
         (unsafe {
             let mut _args: () = (160 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (12288 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (8232 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (8233 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (173 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (1536 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (65279 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (55296 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (57343 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (57344 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (63743 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (888 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (6004 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (65535 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (768 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (65056 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
@@ -1407,90 +1898,90 @@ pub unsafe fn test_char_46() {
         const _: () = assert!(true, "x == y");;
         (unsafe {
             let mut _args: () = (69821 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (917631 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (983040 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (1048573 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (1048576 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (1114109 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (65548 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (1048575 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (1114110 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (66045 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (917760 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (1114112 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
         (unsafe {
             let mut _args: () = (4294967295 as ());
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *mut ())>(10)
                 .call(unimplemented!(), unimplemented!(), &mut _args)
         });
     }
 }
-pub unsafe fn test_string_47() {
+pub unsafe fn test_string_61() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1498,7 +1989,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1506,7 +1997,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1514,7 +2005,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1522,119 +2013,119 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 2])>(0)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xc3\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(1)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xc3(\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(1)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xc0\x80\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(1)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xc1\xbf\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(1)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xc2\x80\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xe0\x80\x80\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xe0\x81\xbf\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xe0\x82\x80\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xe0\x9f\xbf\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xe0\xa0\x80\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xed\x9f\xbf\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xed\xa0\x80\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xed\xaf\xbf\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xed\xbf\x80\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xed\xbf\xbf\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(2)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\xee\x80\x80\0"))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1645,7 +2136,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1656,7 +2147,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1667,7 +2158,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1678,7 +2169,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1689,7 +2180,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1700,7 +2191,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1711,7 +2202,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1722,7 +2213,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1733,7 +2224,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(3)
                 .call(
                     _expected,
@@ -1746,7 +2237,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1754,7 +2245,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1762,7 +2253,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1770,7 +2261,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1778,7 +2269,7 @@ pub unsafe fn test_string_47() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 2])>(0)
                 .call(_expected, _fmt, &std::mem::transmute(*b"\x80\0"))
         });
@@ -1787,7 +2278,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1795,7 +2286,7 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1803,19 +2294,19 @@ pub unsafe fn test_string_47() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(8)
             .call(_expected, _fmt, &mut _args)
     });
     {}
     {}
 }
-pub unsafe fn test_string_48() {
+pub unsafe fn test_string_62() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1823,7 +2314,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1831,7 +2322,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1839,7 +2330,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1847,14 +2338,14 @@ pub unsafe fn test_string_48() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 2])>(5)
                 .call(_expected, _fmt, &[195 as (), 0 as ()])
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(12)
                 .call(_expected, _fmt, &[195 as (), 40 as (), 0 as ()])
         });
@@ -1863,7 +2354,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1871,7 +2362,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1879,7 +2370,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1887,7 +2378,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1896,7 +2387,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1904,7 +2395,7 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
@@ -1912,13 +2403,13 @@ pub unsafe fn test_string_48() {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         let mut _args: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *mut ())>(11)
             .call(_expected, _fmt, &mut _args)
     });
     {
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(12)
                 .call(
                     unimplemented!(),
@@ -1927,17 +2418,17 @@ pub unsafe fn test_string_48() {
                 )
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 2])>(5)
                 .call(unimplemented!(), unimplemented!(), &[8232 as (), 0 as ()])
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 2])>(5)
                 .call(unimplemented!(), unimplemented!(), &[8233 as (), 0 as ()])
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(13)
                 .call(
                     unimplemented!(),
@@ -1946,12 +2437,12 @@ pub unsafe fn test_string_48() {
                 )
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 2])>(5)
                 .call(unimplemented!(), unimplemented!(), &[55296 as (), 0 as ()])
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(12)
                 .call(
                     unimplemented!(),
@@ -1960,7 +2451,7 @@ pub unsafe fn test_string_48() {
                 )
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(13)
                 .call(
                     unimplemented!(),
@@ -1969,7 +2460,7 @@ pub unsafe fn test_string_48() {
                 )
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(12)
                 .call(
                     unimplemented!(),
@@ -1987,7 +2478,7 @@ pub unsafe fn test_string_48() {
         let y: () = 131071_();
         const _: () = assert!(true, "x == y");;
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(12)
                 .call(
                     unimplemented!(),
@@ -1996,7 +2487,7 @@ pub unsafe fn test_string_48() {
                 )
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 5])>(14)
                 .call(
                     unimplemented!(),
@@ -2011,7 +2502,7 @@ pub unsafe fn test_string_48() {
                 )
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 4])>(13)
                 .call(
                     unimplemented!(),
@@ -2020,7 +2511,7 @@ pub unsafe fn test_string_48() {
                 )
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(12)
                 .call(
                     unimplemented!(),
@@ -2029,7 +2520,7 @@ pub unsafe fn test_string_48() {
                 )
         });
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
                 .spec::<fn((), (), *const [(); 3])>(12)
                 .call(
                     unimplemented!(),
@@ -2039,7 +2530,7 @@ pub unsafe fn test_string_48() {
         });
     }
 }
-pub unsafe fn test_format_functions_49(mut check: FnPtr<Generic>) {
+pub unsafe fn test_format_functions_63(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -2297,7 +2788,7 @@ pub unsafe fn test_format_functions_49(mut check: FnPtr<Generic>) {
             .call(_expected, _fmt, &mut _args)
     });
 }
-pub unsafe fn test_format_functions_50(mut check: FnPtr<Generic>) {
+pub unsafe fn test_format_functions_64(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -2555,7 +3046,7 @@ pub unsafe fn test_format_functions_50(mut check: FnPtr<Generic>) {
             .call(_expected, _fmt, &mut _args)
     });
 }
-pub unsafe fn test_format_functions_51(mut check: FnPtr<Generic>) {
+pub unsafe fn test_format_functions_65(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -2813,7 +3304,7 @@ pub unsafe fn test_format_functions_51(mut check: FnPtr<Generic>) {
             .call(_expected, _fmt, &mut _args)
     });
 }
-pub unsafe fn test_format_functions_52(mut check: FnPtr<Generic>) {
+pub unsafe fn test_format_functions_66(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -3071,7 +3562,7 @@ pub unsafe fn test_format_functions_52(mut check: FnPtr<Generic>) {
             .call(_expected, _fmt, &mut _args)
     });
 }
-pub unsafe fn test_format_functions_53(mut check: FnPtr<Generic>) {
+pub unsafe fn test_format_functions_67(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -3329,7 +3820,7 @@ pub unsafe fn test_format_functions_53(mut check: FnPtr<Generic>) {
             .call(_expected, _fmt, &mut _args)
     });
 }
-pub unsafe fn test_format_functions_54(mut check: FnPtr<Generic>) {
+pub unsafe fn test_format_functions_68(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -3587,7 +4078,7 @@ pub unsafe fn test_format_functions_54(mut check: FnPtr<Generic>) {
             .call(_expected, _fmt, &mut _args)
     });
 }
-pub unsafe fn test_format_functions_55(mut check: FnPtr<Generic>) {
+pub unsafe fn test_format_functions_69(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -3845,7 +4336,7 @@ pub unsafe fn test_format_functions_55(mut check: FnPtr<Generic>) {
             .call(_expected, _fmt, &mut _args)
     });
 }
-pub unsafe fn test_format_functions_56(mut check: FnPtr<Generic>) {
+pub unsafe fn test_format_functions_70(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -4103,57 +4594,57 @@ pub unsafe fn test_format_functions_56(mut check: FnPtr<Generic>) {
             .call(_expected, _fmt, &mut _args)
     });
 }
-pub unsafe fn test_57() {
-    (unsafe { test_char_45() });
-    (unsafe { test_string_47() });
+pub unsafe fn test_71() {
+    (unsafe { test_char_59() });
+    (unsafe { test_string_61() });
     (unsafe {
-        test_format_functions_49(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27)).copy_from(),
+        test_format_functions_63(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55)).copy_from(),
         )
     });
     (unsafe {
-        test_format_functions_50(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_to_42)).copy_from(),
+        test_format_functions_64(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_to_56)).copy_from(),
         )
     });
     (unsafe {
-        test_format_functions_51(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_formatted_size_43)).copy_from(),
+        test_format_functions_65(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_formatted_size_57)).copy_from(),
         )
     });
     (unsafe {
-        test_format_functions_52(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_to_n_44)).copy_from(),
-        )
-    });
-}
-pub unsafe fn test_58() {
-    (unsafe { test_char_46() });
-    (unsafe { test_string_48() });
-    (unsafe {
-        test_format_functions_53(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27)).copy_from(),
-        )
-    });
-    (unsafe {
-        test_format_functions_54(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_to_42)).copy_from(),
-        )
-    });
-    (unsafe {
-        test_format_functions_55(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_formatted_size_43)).copy_from(),
-        )
-    });
-    (unsafe {
-        test_format_functions_56(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_to_n_44)).copy_from(),
+        test_format_functions_66(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_to_n_58)).copy_from(),
         )
     });
 }
-pub unsafe fn test_ill_formed_utf8_59() {
+pub unsafe fn test_72() {
+    (unsafe { test_char_60() });
+    (unsafe { test_string_62() });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        test_format_functions_67(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55)).copy_from(),
+        )
+    });
+    (unsafe {
+        test_format_functions_68(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_to_56)).copy_from(),
+        )
+    });
+    (unsafe {
+        test_format_functions_69(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_formatted_size_57)).copy_from(),
+        )
+    });
+    (unsafe {
+        test_format_functions_70(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_to_n_58)).copy_from(),
+        )
+    });
+}
+pub unsafe fn test_ill_formed_utf8_73() {
+    (unsafe {
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 2])>(0)
             .call(
                 unimplemented!(),
@@ -4162,7 +4653,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 2])>(0)
             .call(
                 unimplemented!(),
@@ -4171,7 +4662,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
                 unimplemented!(),
@@ -4180,7 +4671,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 2])>(0)
             .call(
                 unimplemented!(),
@@ -4189,7 +4680,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
                 unimplemented!(),
@@ -4198,7 +4689,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 4])>(2)
             .call(
                 unimplemented!(),
@@ -4207,7 +4698,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
                 unimplemented!(),
@@ -4216,7 +4707,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
                 unimplemented!(),
@@ -4225,7 +4716,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 4])>(2)
             .call(
                 unimplemented!(),
@@ -4234,7 +4725,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
                 unimplemented!(),
@@ -4243,7 +4734,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 4])>(2)
             .call(
                 unimplemented!(),
@@ -4252,7 +4743,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
                 unimplemented!(),
@@ -4261,7 +4752,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 9])>(4)
             .call(
                 unimplemented!(),
@@ -4270,7 +4761,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
                 unimplemented!(),
@@ -4279,7 +4770,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
                 unimplemented!(),
@@ -4288,7 +4779,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
                 unimplemented!(),
@@ -4297,7 +4788,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
                 unimplemented!(),
@@ -4306,9 +4797,9 @@ pub unsafe fn test_ill_formed_utf8_59() {
             )
     });
 }
-pub unsafe fn test_ill_formed_utf32_60() {
+pub unsafe fn test_ill_formed_utf32_74() {
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 2])>(5)
             .call(
                 unimplemented!(),
@@ -4317,7 +4808,7 @@ pub unsafe fn test_ill_formed_utf32_60() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 2])>(5)
             .call(
                 unimplemented!(),
@@ -4326,7 +4817,7 @@ pub unsafe fn test_ill_formed_utf32_60() {
             )
     });
     (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_55))
             .spec::<fn((), (), *const [(); 2])>(5)
             .call(
                 unimplemented!(),
@@ -4351,16 +4842,16 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_57() });
-    (unsafe { test_58() });
-    (unsafe { test_ill_formed_utf8_59() });
-    (unsafe { test_ill_formed_utf32_60() });
+    (unsafe { test_71() });
+    (unsafe { test_72() });
+    (unsafe { test_ill_formed_utf8_73() });
+    (unsafe { test_ill_formed_utf32_74() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const test_replacement_character_11);
-    std::cell::LazyCell::force(&*&raw const test_format_27);
-    std::cell::LazyCell::force(&*&raw const test_format_to_42);
-    std::cell::LazyCell::force(&*&raw const test_formatted_size_43);
-    std::cell::LazyCell::force(&*&raw const test_format_to_n_44);
+    std::cell::LazyCell::force(&*&raw const test_replacement_character_39);
+    std::cell::LazyCell::force(&*&raw const test_format_55);
+    std::cell::LazyCell::force(&*&raw const test_format_to_56);
+    std::cell::LazyCell::force(&*&raw const test_formatted_size_57);
+    std::cell::LazyCell::force(&*&raw const test_format_to_n_58);
 }
