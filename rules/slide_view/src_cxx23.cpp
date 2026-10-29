@@ -359,42 +359,70 @@ auto f37(const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
 }
 
 template <typename T1, bool T2>
-auto f38(
+typename std::ranges::slide_view<T1>::template _Iterator<T2>
+f38(const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::slide_view<T1>::template _Iterator<
+        T2>::difference_type a1) {
+  return operator-(a0, std::forward<typename std::ranges::slide_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+typename std::ranges::slide_view<T1>::template _Iterator<T2>
+f39(typename std::ranges::slide_view<T1>::template _Iterator<
+        T2>::difference_type a0,
+    const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a1) {
+  return operator+(std::forward<typename std::ranges::slide_view<
+                       T1>::template _Iterator<T2>::difference_type>(a0),
+                   a1);
+}
+
+template <typename T1, bool T2>
+typename std::ranges::slide_view<T1>::template _Iterator<T2>
+f40(const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::slide_view<T1>::template _Iterator<
+        T2>::difference_type a1) {
+  return operator+(a0, std::forward<typename std::ranges::slide_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+auto f41(
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a1) {
   return operator<=>(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f39(
+bool f42(
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a1) {
   return operator>=(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f40(
+bool f43(
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a1) {
   return operator<=(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f41(
+bool f44(
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a1) {
   return operator>(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f42(
+bool f45(
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a1) {
   return operator<(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f43(
+bool f46(
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::slide_view<T1>::template _Iterator<T2> &a1) {
   return operator==(a0, a1);
@@ -403,6 +431,6 @@ bool f43(
 template <typename T1>
 using t7 = typename std::ranges::slide_view<T1>::_Sentinel;
 
-template <typename T1> typename std::ranges::slide_view<T1>::_Sentinel f44() {
+template <typename T1> typename std::ranges::slide_view<T1>::_Sentinel f47() {
   return typename std::ranges::slide_view<T1>::_Sentinel();
 }

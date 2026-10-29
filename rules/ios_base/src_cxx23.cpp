@@ -222,18 +222,120 @@ std::ios_base &f80(std::ios_base &a0) { return std::nouppercase(a0); }
 
 std::ios_base &f81(std::ios_base &a0) { return std::oct(a0); }
 
-std::ios_base &f82(std::ios_base &a0) { return std::right(a0); }
+std::ios_base::fmtflags f82(std::ios_base::fmtflags a0,
+                            std::ios_base::fmtflags a1) {
+  return std::operator&(a0, a1);
+}
 
-std::ios_base &f83(std::ios_base &a0) { return std::scientific(a0); }
+std::ios_base::iostate f83(std::ios_base::iostate a0,
+                           std::ios_base::iostate a1) {
+  return std::operator&(a0, a1);
+}
 
-std::ios_base &f84(std::ios_base &a0) { return std::showbase(a0); }
+std::ios_base::openmode f84(std::ios_base::openmode a0,
+                            std::ios_base::openmode a1) {
+  return std::operator&(a0, a1);
+}
 
-std::ios_base &f85(std::ios_base &a0) { return std::showpoint(a0); }
+const std::ios_base::fmtflags &f85(std::ios_base::fmtflags &a0,
+                                   std::ios_base::fmtflags a1) {
+  return std::operator&=(a0, a1);
+}
 
-std::ios_base &f86(std::ios_base &a0) { return std::showpos(a0); }
+const std::ios_base::iostate &f86(std::ios_base::iostate &a0,
+                                  std::ios_base::iostate a1) {
+  return std::operator&=(a0, a1);
+}
 
-std::ios_base &f87(std::ios_base &a0) { return std::skipws(a0); }
+const std::ios_base::openmode &f87(std::ios_base::openmode &a0,
+                                   std::ios_base::openmode a1) {
+  return std::operator&=(a0, a1);
+}
 
-std::ios_base &f88(std::ios_base &a0) { return std::unitbuf(a0); }
+std::ios_base::fmtflags f88(std::ios_base::fmtflags a0,
+                            std::ios_base::fmtflags a1) {
+  return std::operator^(a0, a1);
+}
 
-std::ios_base &f89(std::ios_base &a0) { return std::uppercase(a0); }
+std::ios_base::iostate f89(std::ios_base::iostate a0,
+                           std::ios_base::iostate a1) {
+  return std::operator^(a0, a1);
+}
+
+std::ios_base::openmode f90(std::ios_base::openmode a0,
+                            std::ios_base::openmode a1) {
+  return std::operator^(a0, a1);
+}
+
+const std::ios_base::fmtflags &f91(std::ios_base::fmtflags &a0,
+                                   std::ios_base::fmtflags a1) {
+  return std::operator^=(a0, a1);
+}
+
+const std::ios_base::iostate &f92(std::ios_base::iostate &a0,
+                                  std::ios_base::iostate a1) {
+  return std::operator^=(a0, a1);
+}
+
+const std::ios_base::openmode &f93(std::ios_base::openmode &a0,
+                                   std::ios_base::openmode a1) {
+  return std::operator^=(a0, a1);
+}
+
+std::ios_base::fmtflags f94(std::ios_base::fmtflags a0,
+                            std::ios_base::fmtflags a1) {
+  return std::operator|(a0, a1);
+}
+
+std::ios_base::iostate f95(std::ios_base::iostate a0,
+                           std::ios_base::iostate a1) {
+  return std::operator|(a0, a1);
+}
+
+std::ios_base::openmode f96(std::ios_base::openmode a0,
+                            std::ios_base::openmode a1) {
+  return std::operator|(a0, a1);
+}
+
+const std::ios_base::fmtflags &f97(std::ios_base::fmtflags &a0,
+                                   std::ios_base::fmtflags a1) {
+  return std::operator|=(a0, a1);
+}
+
+const std::ios_base::iostate &f98(std::ios_base::iostate &a0,
+                                  std::ios_base::iostate a1) {
+  return std::operator|=(a0, a1);
+}
+
+const std::ios_base::openmode &f99(std::ios_base::openmode &a0,
+                                   std::ios_base::openmode a1) {
+  return std::operator|=(a0, a1);
+}
+
+std::ios_base::fmtflags f100(std::ios_base::fmtflags a0) {
+  return std::operator~(a0);
+}
+
+std::ios_base::iostate f101(std::ios_base::iostate a0) {
+  return std::operator~(a0);
+}
+
+std::ios_base::openmode f102(std::ios_base::openmode a0) {
+  return std::operator~(a0);
+}
+
+std::ios_base &f103(std::ios_base &a0) { return std::right(a0); }
+
+std::ios_base &f104(std::ios_base &a0) { return std::scientific(a0); }
+
+std::ios_base &f105(std::ios_base &a0) { return std::showbase(a0); }
+
+std::ios_base &f106(std::ios_base &a0) { return std::showpoint(a0); }
+
+std::ios_base &f107(std::ios_base &a0) { return std::showpos(a0); }
+
+std::ios_base &f108(std::ios_base &a0) { return std::skipws(a0); }
+
+std::ios_base &f109(std::ios_base &a0) { return std::unitbuf(a0); }
+
+std::ios_base &f110(std::ios_base &a0) { return std::uppercase(a0); }

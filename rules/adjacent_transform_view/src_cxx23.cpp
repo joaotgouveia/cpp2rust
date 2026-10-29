@@ -448,7 +448,44 @@ f38(const typename std::ranges::adjacent_transform_view<
 }
 
 template <typename T1, typename T2, std::size_t T3, bool T4>
-auto f39(const typename std::ranges::adjacent_transform_view<
+typename std::ranges::adjacent_transform_view<T1, T2,
+                                              T3>::template _Iterator<T4>
+f39(const typename std::ranges::adjacent_transform_view<
+        T1, T2, T3>::template _Iterator<T4> &a0,
+    typename std::ranges::adjacent_transform_view<
+        T1, T2, T3>::template _Iterator<T4>::difference_type a1) {
+  return operator-(
+      a0, std::forward<typename std::ranges::adjacent_transform_view<
+              T1, T2, T3>::template _Iterator<T4>::difference_type>(a1));
+}
+
+template <typename T1, typename T2, std::size_t T3, bool T4>
+typename std::ranges::adjacent_transform_view<T1, T2,
+                                              T3>::template _Iterator<T4>
+f40(typename std::ranges::adjacent_transform_view<
+        T1, T2, T3>::template _Iterator<T4>::difference_type a0,
+    const typename std::ranges::adjacent_transform_view<
+        T1, T2, T3>::template _Iterator<T4> &a1) {
+  return operator+(
+      std::forward<typename std::ranges::adjacent_transform_view<
+          T1, T2, T3>::template _Iterator<T4>::difference_type>(a0),
+      a1);
+}
+
+template <typename T1, typename T2, std::size_t T3, bool T4>
+typename std::ranges::adjacent_transform_view<T1, T2,
+                                              T3>::template _Iterator<T4>
+f41(const typename std::ranges::adjacent_transform_view<
+        T1, T2, T3>::template _Iterator<T4> &a0,
+    typename std::ranges::adjacent_transform_view<
+        T1, T2, T3>::template _Iterator<T4>::difference_type a1) {
+  return operator+(
+      a0, std::forward<typename std::ranges::adjacent_transform_view<
+              T1, T2, T3>::template _Iterator<T4>::difference_type>(a1));
+}
+
+template <typename T1, typename T2, std::size_t T3, bool T4>
+auto f42(const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a0,
          const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a1) {
@@ -456,7 +493,7 @@ auto f39(const typename std::ranges::adjacent_transform_view<
 }
 
 template <typename T1, typename T2, std::size_t T3, bool T4>
-bool f40(const typename std::ranges::adjacent_transform_view<
+bool f43(const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a0,
          const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a1) {
@@ -464,7 +501,7 @@ bool f40(const typename std::ranges::adjacent_transform_view<
 }
 
 template <typename T1, typename T2, std::size_t T3, bool T4>
-bool f41(const typename std::ranges::adjacent_transform_view<
+bool f44(const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a0,
          const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a1) {
@@ -472,7 +509,7 @@ bool f41(const typename std::ranges::adjacent_transform_view<
 }
 
 template <typename T1, typename T2, std::size_t T3, bool T4>
-bool f42(const typename std::ranges::adjacent_transform_view<
+bool f45(const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a0,
          const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a1) {
@@ -480,7 +517,7 @@ bool f42(const typename std::ranges::adjacent_transform_view<
 }
 
 template <typename T1, typename T2, std::size_t T3, bool T4>
-bool f43(const typename std::ranges::adjacent_transform_view<
+bool f46(const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a0,
          const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a1) {
@@ -488,7 +525,7 @@ bool f43(const typename std::ranges::adjacent_transform_view<
 }
 
 template <typename T1, typename T2, std::size_t T3, bool T4>
-bool f44(const typename std::ranges::adjacent_transform_view<
+bool f47(const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a0,
          const typename std::ranges::adjacent_transform_view<
              T1, T2, T3>::template _Iterator<T4> &a1) {
@@ -503,7 +540,7 @@ using t7 =
 template <typename T1, typename T2, std::size_t T3, bool T4>
 typename std::ranges::adjacent_transform_view<T1, T2,
                                               T3>::template _Sentinel<T4>
-f45() {
+f48() {
   return typename std::ranges::adjacent_transform_view<
       T1, T2, T3>::template _Sentinel<T4>();
 }
@@ -511,7 +548,7 @@ f45() {
 template <typename T1, typename T2, std::size_t T3, bool T4>
 typename std::ranges::adjacent_transform_view<T1, T2,
                                               T3>::template _Sentinel<T4>
-f46(typename std::ranges::adjacent_transform_view<T1, T2,
+f49(typename std::ranges::adjacent_transform_view<T1, T2,
                                                   T3>::template _Sentinel<!T4>
         a0)
   requires(T4)

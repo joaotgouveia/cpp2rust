@@ -442,7 +442,40 @@ f46(const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
 }
 
 template <typename T1, std::size_t T2, bool T3>
-auto f47(
+typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
+f47(const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
+        &a0,
+    typename std::ranges::elements_view<T1, T2>::template _Iterator<
+        T3>::difference_type a1) {
+  return operator-(a0,
+                   std::forward<typename std::ranges::elements_view<
+                       T1, T2>::template _Iterator<T3>::difference_type>(a1));
+}
+
+template <typename T1, std::size_t T2, bool T3>
+typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
+f48(typename std::ranges::elements_view<T1, T2>::template _Iterator<
+        T3>::difference_type a0,
+    const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
+        &a1) {
+  return operator+(std::forward<typename std::ranges::elements_view<
+                       T1, T2>::template _Iterator<T3>::difference_type>(a0),
+                   a1);
+}
+
+template <typename T1, std::size_t T2, bool T3>
+typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
+f49(const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
+        &a0,
+    typename std::ranges::elements_view<T1, T2>::template _Iterator<
+        T3>::difference_type a1) {
+  return operator+(a0,
+                   std::forward<typename std::ranges::elements_view<
+                       T1, T2>::template _Iterator<T3>::difference_type>(a1));
+}
+
+template <typename T1, std::size_t T2, bool T3>
+auto f50(
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
         &a0,
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
@@ -451,7 +484,7 @@ auto f47(
 }
 
 template <typename T1, std::size_t T2, bool T3>
-bool f48(
+bool f51(
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
         &a0,
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
@@ -460,7 +493,7 @@ bool f48(
 }
 
 template <typename T1, std::size_t T2, bool T3>
-bool f49(
+bool f52(
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
         &a0,
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
@@ -469,7 +502,7 @@ bool f49(
 }
 
 template <typename T1, std::size_t T2, bool T3>
-bool f50(
+bool f53(
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
         &a0,
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
@@ -478,7 +511,7 @@ bool f50(
 }
 
 template <typename T1, std::size_t T2, bool T3>
-bool f51(
+bool f54(
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
         &a0,
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
@@ -487,7 +520,7 @@ bool f51(
 }
 
 template <typename T1, std::size_t T2, bool T3>
-bool f52(
+bool f55(
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>
         &a0,
     const typename std::ranges::elements_view<T1, T2>::template _Iterator<T3>

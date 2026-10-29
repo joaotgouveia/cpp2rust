@@ -387,49 +387,77 @@ void f42(
 }
 
 template <typename T1, bool T2>
-auto f43(
+typename std::ranges::stride_view<T1>::template _Iterator<T2>
+f43(const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::stride_view<T1>::template _Iterator<
+        T2>::difference_type a1) {
+  return operator-(a0, std::forward<typename std::ranges::stride_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+typename std::ranges::stride_view<T1>::template _Iterator<T2>
+f44(typename std::ranges::stride_view<T1>::template _Iterator<
+        T2>::difference_type a0,
+    const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a1) {
+  return operator+(std::forward<typename std::ranges::stride_view<
+                       T1>::template _Iterator<T2>::difference_type>(a0),
+                   a1);
+}
+
+template <typename T1, bool T2>
+typename std::ranges::stride_view<T1>::template _Iterator<T2>
+f45(const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::stride_view<T1>::template _Iterator<
+        T2>::difference_type a1) {
+  return operator+(a0, std::forward<typename std::ranges::stride_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+auto f46(
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a1) {
   return operator<=>(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f44(
+bool f47(
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a1) {
   return operator>=(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f45(
+bool f48(
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a1) {
   return operator<=(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f46(
+bool f49(
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a1) {
   return operator>(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f47(
+bool f50(
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a1) {
   return operator<(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f48(
+bool f51(
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a1) {
   return operator==(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f49(
+bool f52(
     const typename std::ranges::stride_view<T1>::template _Iterator<T2> &a0,
     std::default_sentinel_t a1) {
   return operator==(a0, std::move(a1));

@@ -365,15 +365,44 @@ auto f43(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
 }
 
 template <typename T1, bool T2>
-std::strong_ordering
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
 f44(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::enumerate_view<T1>::template _Iterator<
+        T2>::difference_type a1) {
+  return operator-(a0, std::forward<typename std::ranges::enumerate_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+f45(typename std::ranges::enumerate_view<T1>::template _Iterator<
+        T2>::difference_type a0,
+    const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+        &a1) {
+  return operator+(std::forward<typename std::ranges::enumerate_view<
+                       T1>::template _Iterator<T2>::difference_type>(a0),
+                   a1);
+}
+
+template <typename T1, bool T2>
+typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
+f46(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
+    typename std::ranges::enumerate_view<T1>::template _Iterator<
+        T2>::difference_type a1) {
+  return operator+(a0, std::forward<typename std::ranges::enumerate_view<
+                           T1>::template _Iterator<T2>::difference_type>(a1));
+}
+
+template <typename T1, bool T2>
+std::strong_ordering
+f47(const typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
         &a1) {
   return operator<=>(a0, a1);
 }
 
 template <typename T1, bool T2>
-bool f45(
+bool f48(
     const typename std::ranges::enumerate_view<T1>::template _Iterator<T2> &a0,
     const typename std::ranges::enumerate_view<T1>::template _Iterator<T2>
         &a1) {
@@ -384,13 +413,13 @@ template <typename T1, bool T2>
 using t7 = typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>;
 
 template <typename T1, bool T2>
-typename std::ranges::enumerate_view<T1>::template _Sentinel<T2> f46() {
+typename std::ranges::enumerate_view<T1>::template _Sentinel<T2> f49() {
   return typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>();
 }
 
 template <typename T1, bool T2>
 typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>
-f47(typename std::ranges::enumerate_view<T1>::template _Sentinel<!T2> a0)
+f50(typename std::ranges::enumerate_view<T1>::template _Sentinel<!T2> a0)
   requires(T2)
 {
   return typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>(
@@ -400,7 +429,7 @@ f47(typename std::ranges::enumerate_view<T1>::template _Sentinel<!T2> a0)
 }
 
 template <typename T1, bool T2>
-auto f48(const typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>
+auto f51(const typename std::ranges::enumerate_view<T1>::template _Sentinel<T2>
              &a0) {
   return a0.base();
 }
