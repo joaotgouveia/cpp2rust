@@ -226,7 +226,12 @@ RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias,
 class DeclaredNames : public clang::RecursiveASTVisitor<DeclaredNames> {
 public:
   bool VisitTemplateSpecializationType(clang::TemplateSpecializationType *type) {
-    Add(type->getTemplateName().getAsTemplateDecl());
+    auto name = type->getTemplateName();
+    if (auto shadow = name.getAsUsingShadowDecl()) {
+      Add(shadow);
+    } else {
+      Add(name.getAsTemplateDecl());
+    }
     return true;
   }
 
@@ -240,14 +245,17 @@ public:
     return true;
   }
 
+  // A name the rule spells through a using-declaration
+  // (std::is_execution_policy_v of __pstl::execution) is declared where the
+  // using-declaration is, so the found declaration names the scope.
   bool VisitDeclRefExpr(clang::DeclRefExpr *expr) {
-    Add(expr->getDecl());
+    Add(expr->getFoundDecl());
     return true;
   }
 
   bool VisitOverloadExpr(clang::OverloadExpr *expr) {
     for (auto decl : expr->decls()) {
-      Add(decl->getUnderlyingDecl());
+      Add(decl);
     }
     return true;
   }
