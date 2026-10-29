@@ -85,6 +85,9 @@ matchingDefinitions(clang::Sema &sema, clang::ClassTemplateDecl *tmpl,
   llvm::SmallVector<clang::ClassTemplatePartialSpecializationDecl *> partials;
   tmpl->getPartialSpecializations(partials);
   llvm::SmallVector<clang::CXXRecordDecl *> records;
+  // a constrained partial specialization takes only some of the dependent
+  // arguments (chunk_view<T1> of a forward range), the primary the others
+  bool constrained = false;
   for (auto partial : partials) {
     RuleDecls::Trial trial(sema);
     clang::sema::TemplateDeductionInfo info(partial->getLocation());
@@ -93,9 +96,11 @@ matchingDefinitions(clang::Sema &sema, clang::ClassTemplateDecl *tmpl,
             clang::TemplateDeductionResult::Success &&
         !trial.failed()) {
       records.push_back(partial);
+      constrained |=
+          spec->isDependentType() && partial->hasAssociatedConstraints();
     }
   }
-  if (!records.empty()) {
+  if (!records.empty() && !constrained) {
     return records;
   }
   records.push_back(tmpl->getTemplatedDecl());
