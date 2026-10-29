@@ -134,7 +134,7 @@ const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn base_8(i: Ptr<forward_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_int_ptr_ {
     #[offset(0)]
@@ -145,13 +145,7 @@ pub struct forward_iterator_int_ptr_ {
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_int_ptr_ {
-    pub fn new_1() -> Self {
-        Self {
-            it_: Ptr::<()>::null(),
-            tracker_: support_double_move_tracker::new(),
-        }
-    }
-    pub fn new_2(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<()>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -162,11 +156,6 @@ impl forward_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
-    }
-}
-impl Default for forward_iterator_int_ptr_ {
-    fn default() -> Self {
-        { forward_iterator_int_ptr_::new_1() }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -194,7 +183,7 @@ const _: () = assert!(
 pub fn base_9(i: Ptr<contiguous_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_int_ptr_ {
     #[offset(0)]
@@ -205,13 +194,7 @@ pub struct contiguous_iterator_int_ptr_ {
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_int_ptr_ {
-    pub fn new_1() -> Self {
-        Self {
-            it_: Ptr::<()>::null(),
-            tracker_: support_double_move_tracker::new(),
-        }
-    }
-    pub fn new_2(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<()>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -222,11 +205,6 @@ impl contiguous_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
-    }
-}
-impl Default for contiguous_iterator_int_ptr_ {
-    fn default() -> Self {
-        { contiguous_iterator_int_ptr_::new_1() }
     }
 }
 pub fn base_10(i: Ptr<cpp20_input_iterator_int_ptr_>) -> Ptr<()> {
@@ -651,9 +629,15 @@ pub trait contiguous_iterator_int_ptr_Impl {
     fn base(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_deref(&self) -> ();
-    fn operator_arrow(&self) -> ();
-    fn operator_index(&self, n: ()) -> ();
+    fn operator_deref(&self) -> () {
+        unimplemented!()
+    }
+    fn operator_arrow(&self) -> () {
+        unimplemented!()
+    }
+    fn operator_index(&self, mut n: ()) -> () {
+        unimplemented!()
+    }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_> {
         unimplemented!()
     }
@@ -678,15 +662,6 @@ pub trait contiguous_iterator_int_ptr_Impl {
     ) -> Ptr<contiguous_iterator_int_ptr_>;
 }
 impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
-    fn operator_deref(&self) -> () {
-        return (*self).with(|__s| __s.it_.clone());
-    }
-    fn operator_arrow(&self) -> () {
-        return (*self).with(|__s| __s.it_.clone());
-    }
-    fn operator_index(&self, mut n: ()) -> () {
-        return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
-    }
     fn move_assign(
         &self,
         _a0: Ptr<contiguous_iterator_int_ptr_>,
@@ -764,7 +739,9 @@ pub trait cpp20_input_iterator_int_ptr_Impl {
     fn operator_inc_5(&self) -> Ptr<cpp20_input_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, _a0: ());
+    fn operator_post_inc_6(&self, mut _a0: ()) {
+        unimplemented!()
+    }
 }
 impl cpp20_input_iterator_int_ptr_Impl for Ptr<cpp20_input_iterator_int_ptr_> {
     fn move_assign(
@@ -780,9 +757,6 @@ impl cpp20_input_iterator_int_ptr_Impl for Ptr<cpp20_input_iterator_int_ptr_> {
     }
     fn operator_deref(&self) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone());
-    }
-    fn operator_post_inc_6(&self, mut _a0: ()) {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
     }
 }
 pub trait cpp20_output_iterator_int_ptr_Impl {
@@ -860,7 +834,9 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     }
 }
 pub trait forward_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> () {
+        unimplemented!()
+    }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
         unimplemented!()
     }
@@ -870,9 +846,6 @@ pub trait forward_iterator_int_ptr_Impl {
     fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_>;
 }
 impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
-    fn operator_deref(&self) -> () {
-        return (*self).with(|__s| __s.it_.clone());
-    }
     fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_> {
         field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
         ({

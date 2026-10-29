@@ -299,7 +299,7 @@ pub unsafe fn test03_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { o.value_or(&mut fallback) }).i) == (51_())) {
+        if !((unimplemented!().i) == (51_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -315,7 +315,7 @@ pub unsafe fn test03_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { o.value_or(&mut fallback) }).i) == ((*unimplemented!()).i)) {
+        if !((unimplemented!().i) == ((*unimplemented!()).i)) {
             unimplemented!();
             unimplemented!();
         }
@@ -327,7 +327,7 @@ pub unsafe fn test04_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { o.value_or(&mut fallback) }).i) == (3_())) {
+        if !((unimplemented!().i) == (3_())) {
             unimplemented!();
             unimplemented!();
         }

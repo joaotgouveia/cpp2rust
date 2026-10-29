@@ -27,27 +27,27 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let h: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let h2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let min: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let min: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let min2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let ms: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let ms: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let ms2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let us: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let us: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let us2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let ns: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let ns2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

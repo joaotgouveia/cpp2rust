@@ -240,7 +240,7 @@ pub fn main() {
 fn main_0() -> () {
     let i: Value<()> = Rc::new(RefCell::new(42_()));
     let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i2: Ptr<()> = ({ any_cast_9(o.as_pointer()) });
+    let i2: Ptr<()> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -258,7 +258,7 @@ fn main_0() -> () {
         }
     }
     let o2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Ptr<()> = ({ any_cast_10(o2.as_pointer()) });
+    let t: Ptr<()> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -268,7 +268,7 @@ fn main_0() -> () {
         }
     }
     let o3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let v: Ptr<()> = ({ any_cast_11(o3.as_pointer()) });
+    let v: Ptr<()> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -278,7 +278,7 @@ fn main_0() -> () {
         }
     }
     let o4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let c: Ptr<combined> = ({ any_cast_12(o4.as_pointer()) });
+    let c: Ptr<combined> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -291,7 +291,7 @@ fn main_0() -> () {
         }
     }
     let o5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let c2: Ptr<combined> = ({ any_cast_12(o5.as_pointer()) });
+    let c2: Ptr<combined> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -325,7 +325,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_13(size: Option<()>) {
+pub fn set_memory_limits_9(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -342,14 +342,14 @@ pub fn set_memory_limits_13(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_14(mut size: ()) {
+pub fn set_file_limit_10(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_15(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_11(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -384,7 +384,7 @@ pub fn verify_demangle_15(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_16(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_12(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -411,7 +411,7 @@ pub fn run_tests_wrapped_locale_16(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_17(
+pub fn run_tests_wrapped_env_13(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -481,7 +481,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_18(
+pub fn test_tm_14(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -492,19 +492,19 @@ pub fn test_tm_18(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_19.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_19.with(Value::clone).borrow()).clone();
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_15.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_15.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_19: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;

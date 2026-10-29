@@ -202,16 +202,16 @@ impl __gnu_test_semaphore {}
 pub struct S {}
 const _: () = assert!(true, "!decltype(f<S>(0))::value");
 pub fn hashable_9() -> () {
-    return is_invocable_v_10.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn hashable_10() -> () {
+    return unimplemented!();
 }
 pub fn hashable_11() -> () {
-    return is_invocable_v_12.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
-pub fn hashable_13() -> () {
-    return is_invocable_v_14.with(|rc| *rc.borrow());
-}
-pub fn hashable_15() -> () {
-    return is_invocable_v_16.with(|rc| *rc.borrow());
+pub fn hashable_12() -> () {
+    return unimplemented!();
 }
 const _: () = assert!(true, "!hashable<std::optional<S>>()");
 const _: () = assert!(true, "!hashable<std::optional<const S>>()");
@@ -244,39 +244,39 @@ fn main_0() -> () {
     0
 }
 thread_local!(
-    pub static has_res_type_17: Value<()> = Rc::new(RefCell::new(false));
+    pub static has_res_type_13: Value<()> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static has_res_type_18: Value<()> = Rc::new(RefCell::new(false));
+    pub static has_res_type_14: Value<()> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static has_res_type_19: Value<()> = Rc::new(RefCell::new(false));
+    pub static has_res_type_15: Value<()> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static has_arg_type_20: Value<()> = Rc::new(RefCell::new(false));
+    pub static has_arg_type_16: Value<()> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static has_arg_type_21: Value<()> = Rc::new(RefCell::new(false));
+    pub static has_arg_type_17: Value<()> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static has_arg_type_22: Value<()> = Rc::new(RefCell::new(false));
+    pub static has_arg_type_18: Value<()> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static has_no_types_23: Value<()> = Rc::new(RefCell::new(
-        (!(has_res_type_17.with(|rc| *rc.borrow())))
-            && (!(has_arg_type_20.with(|rc| *rc.borrow()))),
+    pub static has_no_types_19: Value<()> = Rc::new(RefCell::new(
+        (!(has_res_type_13.with(|rc| *rc.borrow())))
+            && (!(has_arg_type_16.with(|rc| *rc.borrow()))),
     ));
 );
 thread_local!(
-    pub static has_no_types_24: Value<()> = Rc::new(RefCell::new(
-        (!(has_res_type_18.with(|rc| *rc.borrow())))
-            && (!(has_arg_type_21.with(|rc| *rc.borrow()))),
+    pub static has_no_types_20: Value<()> = Rc::new(RefCell::new(
+        (!(has_res_type_14.with(|rc| *rc.borrow())))
+            && (!(has_arg_type_17.with(|rc| *rc.borrow()))),
     ));
 );
 thread_local!(
-    pub static has_no_types_25: Value<()> = Rc::new(RefCell::new(
-        (!(has_res_type_19.with(|rc| *rc.borrow())))
-            && (!(has_arg_type_22.with(|rc| *rc.borrow()))),
+    pub static has_no_types_21: Value<()> = Rc::new(RefCell::new(
+        (!(has_res_type_15.with(|rc| *rc.borrow())))
+            && (!(has_arg_type_18.with(|rc| *rc.borrow()))),
     ));
 );
 const _: () = assert!(true, "has_no_types<int>");
@@ -302,7 +302,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_26(size: Option<()>) {
+pub fn set_memory_limits_22(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -319,14 +319,14 @@ pub fn set_memory_limits_26(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_27(mut size: ()) {
+pub fn set_file_limit_23(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_28(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_24(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -361,7 +361,7 @@ pub fn verify_demangle_28(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_29(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -388,7 +388,7 @@ pub fn run_tests_wrapped_locale_29(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_30(
+pub fn run_tests_wrapped_env_26(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -458,7 +458,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_31(
+pub fn test_tm_27(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -469,19 +469,19 @@ pub fn test_tm_31(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_32.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_32.with(Value::clone).borrow()).clone();
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_28.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_32: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_28: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -573,15 +573,15 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = has_res_type_17.with(|_| ());
-    let _ = has_res_type_18.with(|_| ());
-    let _ = has_res_type_19.with(|_| ());
-    let _ = has_arg_type_20.with(|_| ());
-    let _ = has_arg_type_21.with(|_| ());
-    let _ = has_arg_type_22.with(|_| ());
-    let _ = has_no_types_23.with(|_| ());
-    let _ = has_no_types_24.with(|_| ());
-    let _ = has_no_types_25.with(|_| ());
+    let _ = has_res_type_13.with(|_| ());
+    let _ = has_res_type_14.with(|_| ());
+    let _ = has_res_type_15.with(|_| ());
+    let _ = has_arg_type_16.with(|_| ());
+    let _ = has_arg_type_17.with(|_| ());
+    let _ = has_arg_type_18.with(|_| ());
+    let _ = has_no_types_19.with(|_| ());
+    let _ = has_no_types_20.with(|_| ());
+    let _ = has_no_types_21.with(|_| ());
     let _ = count_0.with(|_| ());
     let _ = count__1.with(|_| ());
     let _ = throw_on__2.with(|_| ());

@@ -131,7 +131,7 @@ pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
         unimplemented!();
     }
     let mut pos: () = unimplemented!();
-    if ((pos) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_4))) {
+    if ((pos) != (unimplemented!())) {
         unimplemented!();
     }
     unimplemented!();
@@ -202,7 +202,7 @@ impl Default for __gnu_test_scoped_file {
         unsafe { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub unsafe fn permissions_are_testable_6(mut print_msg: Option<()>) -> () {
+pub unsafe fn permissions_are_testable_5(mut print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| unsafe { true });
     let mut testable: () = false;
     if ((unimplemented!()) != (0_())) {
@@ -213,110 +213,110 @@ pub unsafe fn permissions_are_testable_6(mut print_msg: Option<()>) -> () {
     }
     return testable;
 }
-static mut counter_5: std::cell::LazyCell<()> =
+static mut counter_4: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub unsafe fn test_7(lhs: *const (), rhs: *const ()) {
+pub unsafe fn test_6(lhs: *const (), rhs: *const ()) {
     (unsafe {
         let mut _p1: () = unimplemented!();
         let _p2: *const () = &(*unimplemented!());
         compare_paths_0(&mut _p1, _p2)
     });
 }
-pub unsafe fn test01_8() {
+pub unsafe fn test01_7() {
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
     (unsafe {
         let mut _lhs: () = unimplemented!();
         let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-}
-pub unsafe fn test02_9() {
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
-    });
-    (unsafe {
-        let mut _lhs: () = unimplemented!();
-        let mut _rhs: () = unimplemented!();
-        test_7(&mut _lhs, &mut _rhs)
+        test_6(&mut _lhs, &mut _rhs)
     });
 }
-pub unsafe fn test03_10() {
+pub unsafe fn test02_8() {
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+    (unsafe {
+        let mut _lhs: () = unimplemented!();
+        let mut _rhs: () = unimplemented!();
+        test_6(&mut _lhs, &mut _rhs)
+    });
+}
+pub unsafe fn test03_9() {
     'loop_: for p in IterRange::new(
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1))
@@ -331,7 +331,7 @@ pub unsafe fn test03_10() {
                 .offset((18_()) as isize),
         ) {
             let q: () = unimplemented!();
-            (unsafe { test_7(&p, &q) });
+            (unsafe { test_6(&p, &q) });
         }
     }
 }
@@ -342,9 +342,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test01_8() });
-    (unsafe { test02_9() });
-    (unsafe { test03_10() });
+    (unsafe { test01_7() });
+    (unsafe { test02_8() });
+    (unsafe { test03_9() });
     0
 }
 pub unsafe fn __cpp2rust_init_globals() {

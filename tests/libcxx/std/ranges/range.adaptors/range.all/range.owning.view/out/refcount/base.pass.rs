@@ -32,9 +32,9 @@ pub struct Base {}
 pub fn test_4() -> () {
     let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b1: Ptr<Base> = unimplemented!();
-    let b2: Ptr<Base> = ({ (*ov.borrow()).base_7() });
+    let b2: Ptr<Base> = unimplemented!();
     let b3: Ptr<Base> = unimplemented!();
-    let b4: Ptr<Base> = ({ (*ov.borrow()).base_8() });
+    let b4: Ptr<Base> = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

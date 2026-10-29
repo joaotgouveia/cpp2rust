@@ -274,15 +274,7 @@ pub fn test_move_10() -> () {
         }
     }
     let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___f: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
-                {
-                    return unimplemented!();
-                }
-            })));
-        (*mo.borrow()).or_else(___f.as_pointer())
-    });
+    unimplemented!();
     return true;
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
@@ -371,7 +363,7 @@ pub fn test_call_13() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ (*o.borrow()).or_else(f.as_pointer()) }).read()) == 1_()) {
+        if !((unimplemented!().read()) == 1_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -387,7 +379,7 @@ pub fn test_call_13() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ (*o.borrow()).or_else(f.as_pointer()) }).read()) == 2_()) {
+        if !((unimplemented!().read()) == 2_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -404,13 +396,7 @@ pub fn test_call_13() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({
-            let ___f: Ptr<F_14> = (cf).clone();
-            (*o.borrow()).or_else(___f)
-        })
-        .read())
-            == 3_())
-        {
+        if !((unimplemented!().read()) == 3_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -426,13 +412,7 @@ pub fn test_call_13() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({
-            let ___f: Ptr<F_14> = (cf).clone();
-            (*o.borrow()).or_else(___f)
-        })
-        .read())
-            == 4_())
-        {
+        if !((unimplemented!().read()) == 4_()) {
             unimplemented!();
             unimplemented!();
         }

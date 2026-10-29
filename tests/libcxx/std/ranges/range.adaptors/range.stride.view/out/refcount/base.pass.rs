@@ -513,7 +513,7 @@ pub fn test_12() -> () {
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
-        let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ > = Rc::new(RefCell::new(( { (*view.borrow()) . base_3  ( ) } )  )) ;
+        let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ > = Rc::new(RefCell::new(unimplemented!()  )) ;
         unimplemented!();
     }
     {
@@ -525,7 +525,7 @@ pub fn test_12() -> () {
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!has_lvalue_qualified_base(view)");;
-        let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ > = Rc::new(RefCell::new(( { (*view.borrow()) . base_3  ( ) } )  )) ;
+        let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ > = Rc::new(RefCell::new(unimplemented!()  )) ;
         unimplemented!();
     }
     return true;

@@ -10,9 +10,9 @@ pub unsafe fn test_0() -> () {
     let mut vec_: () = unimplemented!();
     unimplemented!();
     let mut ref_: () = unimplemented!();
-    let mut ref2: () = unimplemented!();
+    let mut ref2: () = ref_.clone();
     unimplemented!();
-    unimplemented!();
+    (unsafe { ref_.flip() });
     unimplemented!();
     return true;
 }

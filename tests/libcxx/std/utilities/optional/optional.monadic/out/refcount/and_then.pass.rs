@@ -155,7 +155,7 @@ pub fn test_sfinae_2() {
         }
     )));
     &(unimplemented!());
-    &({ (*opt.borrow()).and_then(l.as_pointer()) });
+    &(unimplemented!());
 }
 pub fn test_3() -> () {
     ({ test_val_types_1() });
@@ -170,22 +170,13 @@ pub fn test_3() -> () {
         }),
     ));
     &(unimplemented!());
-    &({ (*opt.borrow()).and_then(never_called.as_pointer()) });
     &(unimplemented!());
-    &({
-        let ___f: Ptr<FnPtr<fn(()) -> ()>> = never_called.as_pointer();
-        (*copt.upgrade().deref()).and_then(___f)
-    });
+    &(unimplemented!());
+    &(unimplemented!());
     let nc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cnc: Ptr<()> = nc.as_pointer();
-    &({
-        let ___f: Value<NoCopy> = Rc::new(RefCell::new(<NoCopy>::default()));
-        (*cnc.upgrade().deref()).and_then(___f.as_pointer())
-    });
-    &({
-        let ___f: Value<NoCopy> = Rc::new(RefCell::new(<NoCopy>::default()));
-        (*nc.borrow()).and_then(___f.as_pointer())
-    });
+    &(unimplemented!());
+    &(unimplemented!());
     return true;
 }
 pub fn main() {

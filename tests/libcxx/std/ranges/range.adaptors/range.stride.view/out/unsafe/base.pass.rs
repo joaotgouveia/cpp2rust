@@ -631,7 +631,7 @@ pub unsafe fn test_12() -> () {
     {
         let mut view: () = unimplemented!();
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
-        let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ = ( unsafe { view . base_3   ( ) } )  ;
+        let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ = unimplemented!()  ;
         unimplemented!();
     }
     {
@@ -643,7 +643,7 @@ pub unsafe fn test_12() -> () {
     {
         let mut view: () = unimplemented!();
         const _: () = assert!(true, "!has_lvalue_qualified_base(view)");;
-        let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ = ( unsafe { view . base_3   ( ) } )  ;
+        let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ = unimplemented!()  ;
         unimplemented!();
     }
     return true;

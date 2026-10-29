@@ -32,9 +32,9 @@ pub struct Base {}
 pub unsafe fn test_4() -> () {
     let mut ov: () = unimplemented!();
     let b1: *mut Base = unimplemented!();
-    let b2: *mut Base = (unsafe { ov.base_7() });
+    let b2: *mut Base = unimplemented!();
     let b3: *const Base = unimplemented!();
-    let b4: *const Base = (unsafe { ov.base_8() });
+    let b4: *const Base = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

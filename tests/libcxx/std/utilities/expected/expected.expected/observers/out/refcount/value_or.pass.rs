@@ -145,22 +145,12 @@ pub fn test_14() -> () {
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Value<MoveOnly> = Rc::new(RefCell::new(
-            ({
-                let ___v: Value<()> = Rc::new(RefCell::new(10_()));
-                (*e.borrow()).value_or(___v.as_pointer())
-            }),
-        ));
+        let x: Value<MoveOnly> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Value<MoveOnly> = Rc::new(RefCell::new(
-            ({
-                let ___v: Value<()> = Rc::new(RefCell::new(10_()));
-                (*e.borrow()).value_or(___v.as_pointer())
-            }),
-        ));
+        let x: Value<MoveOnly> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;

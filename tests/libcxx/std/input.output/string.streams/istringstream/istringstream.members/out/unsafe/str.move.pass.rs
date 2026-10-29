@@ -96,20 +96,20 @@ impl MultiStringType {
 pub unsafe fn test_0() {
     {
         let mut ss: () = unimplemented!();
-        let mut s: () = (unsafe { ss.str_18() });
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut ss: () = unimplemented!();
-        let mut s: () = (unsafe { ss.str_18() });
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut ss: () = unimplemented!();
         let mut p: *const () = unimplemented!();
-        let mut s: () = (unsafe { ss.str_18() });
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -117,20 +117,20 @@ pub unsafe fn test_0() {
 pub unsafe fn test_1() {
     {
         let mut ss: () = unimplemented!();
-        let mut s: () = (unsafe { ss.str_18() });
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut ss: () = unimplemented!();
-        let mut s: () = (unsafe { ss.str_18() });
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut ss: () = unimplemented!();
         let mut p: *const () = unimplemented!();
-        let mut s: () = (unsafe { ss.str_18() });
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

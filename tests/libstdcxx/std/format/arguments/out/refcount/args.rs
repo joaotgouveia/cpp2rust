@@ -519,48 +519,48 @@ pub fn test_args_25() {
         {},
         |_a0: ()| -> () {
             let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-            return is_same_v_26.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |_a0: ()| -> () {
             let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-            return is_same_v_27.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_28.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_29.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_30.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_31.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_32.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_33.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_34.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_35.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_36.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: Ptr<()>| -> () {
-            return is_same_v_37.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |_a0: ()| -> () {
             let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-            return is_same_v_38.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |mut _a0: ()| -> () {
-            return is_same_v_39.with(|rc| *rc.borrow());
+            return unimplemented!();
         }
     )));
     let mut __do_while = true;
@@ -572,8 +572,8 @@ pub fn test_args_25() {
         }
     }
 }
-pub fn test_member_visit_40() {}
-pub fn test_visited_as_handle_41() {
+pub fn test_member_visit_26() {}
+pub fn test_visited_as_handle_27() {
     let mut v: () = unimplemented!();
     let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -582,59 +582,59 @@ pub fn test_visited_as_handle_41() {
         {},
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_26.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_27.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_28.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_29.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_30.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_31.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_32.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_33.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_34.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_35.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_36.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: Ptr<()>| -> () {
             let arg: Value<Ptr<()>> = Rc::new(RefCell::new(arg));
-            return is_same_v_37.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_38.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_39.with(|rc| *rc.borrow());
+            return unimplemented!();
         }
     )));
     let mut __do_while = true;
@@ -646,7 +646,7 @@ pub fn test_visited_as_handle_41() {
         }
     }
 }
-pub fn test_visited_as_handle_42() {
+pub fn test_visited_as_handle_28() {
     let mut v: () = unimplemented!();
     let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -655,59 +655,59 @@ pub fn test_visited_as_handle_42() {
         {},
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_26.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_27.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_28.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_29.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_30.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_31.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_32.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_33.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_34.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_35.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_36.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: Ptr<()>| -> () {
             let arg: Value<Ptr<()>> = Rc::new(RefCell::new(arg));
-            return is_same_v_37.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_38.with(|rc| *rc.borrow());
+            return unimplemented!();
         },
         |arg: ()| -> () {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return is_same_v_39.with(|rc| *rc.borrow());
+            return unimplemented!();
         }
     )));
     let mut __do_while = true;
@@ -726,9 +726,9 @@ pub fn main() {
 fn main_0() -> () {
     ({ test_empty_24() });
     ({ test_args_25() });
-    ({ test_member_visit_40() });
-    ({ test_visited_as_handle_41() });
-    ({ test_visited_as_handle_42() });
+    ({ test_member_visit_26() });
+    ({ test_visited_as_handle_27() });
+    ({ test_visited_as_handle_28() });
     0
 }
 impl __gnu_test_semaphore {
@@ -751,7 +751,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_43(size: Option<()>) {
+pub fn set_memory_limits_29(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -768,14 +768,14 @@ pub fn set_memory_limits_43(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_44(mut size: ()) {
+pub fn set_file_limit_30(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_45(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_31(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -810,7 +810,7 @@ pub fn verify_demangle_45(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_46(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_32(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -837,7 +837,7 @@ pub fn run_tests_wrapped_locale_46(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_47(
+pub fn run_tests_wrapped_env_33(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -907,7 +907,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_48(
+pub fn test_tm_34(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -918,19 +918,19 @@ pub fn test_tm_48(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_49.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_49.with(Value::clone).borrow()).clone();
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_35.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_35.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_49: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_35: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;

@@ -13,10 +13,10 @@ pub fn test_0() -> () {
     let ref_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
+    ({ (*ref_.borrow()).flip() });
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({ (*ref_.borrow()).flip() });
     unimplemented!();
     unimplemented!();
     return true;

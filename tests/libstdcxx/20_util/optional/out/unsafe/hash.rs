@@ -261,16 +261,16 @@ impl __gnu_test_semaphore {}
 pub struct S {}
 const _: () = assert!(true, "!decltype(f<S>(0))::value");
 pub unsafe fn hashable_9() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_invocable_v_10));
+    return unimplemented!();
+}
+pub unsafe fn hashable_10() -> () {
+    return unimplemented!();
 }
 pub unsafe fn hashable_11() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_invocable_v_12));
+    return unimplemented!();
 }
-pub unsafe fn hashable_13() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_invocable_v_14));
-}
-pub unsafe fn hashable_15() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_invocable_v_16));
+pub unsafe fn hashable_12() -> () {
+    return unimplemented!();
 }
 const _: () = assert!(true, "!hashable<std::optional<S>>()");
 const _: () = assert!(true, "!hashable<std::optional<const S>>()");
@@ -304,29 +304,29 @@ unsafe fn main_0() -> () {
     }
     0
 }
-pub static mut has_res_type_17: std::cell::LazyCell<()> =
+pub static mut has_res_type_13: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut has_res_type_18: std::cell::LazyCell<()> =
+pub static mut has_res_type_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut has_res_type_19: std::cell::LazyCell<()> =
+pub static mut has_res_type_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut has_arg_type_20: std::cell::LazyCell<()> =
+pub static mut has_arg_type_16: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut has_arg_type_21: std::cell::LazyCell<()> =
+pub static mut has_arg_type_17: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut has_arg_type_22: std::cell::LazyCell<()> =
+pub static mut has_arg_type_18: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut has_no_types_23: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_res_type_17)))
-        && (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_arg_type_20)))
+pub static mut has_no_types_19: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_res_type_13)))
+        && (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_arg_type_16)))
 });
-pub static mut has_no_types_24: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_res_type_18)))
-        && (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_arg_type_21)))
+pub static mut has_no_types_20: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_res_type_14)))
+        && (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_arg_type_17)))
 });
-pub static mut has_no_types_25: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_res_type_19)))
-        && (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_arg_type_22)))
+pub static mut has_no_types_21: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_res_type_15)))
+        && (!(*std::cell::LazyCell::force_mut(&mut *&raw mut has_arg_type_18)))
 });
 const _: () = assert!(true, "has_no_types<int>");
 const _: () = assert!(true, "has_no_types<double>");
@@ -350,7 +350,7 @@ impl __gnu_test_semaphore {
         this
     }
 }
-pub unsafe fn set_memory_limits_26(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_22(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
@@ -367,14 +367,14 @@ pub unsafe fn set_memory_limits_26(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_27(mut size: ()) {
+pub unsafe fn set_file_limit_23(mut size: ()) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_28(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_24(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = unimplemented!();
@@ -409,7 +409,7 @@ pub unsafe fn verify_demangle_28(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_29(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_25(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -437,7 +437,7 @@ pub unsafe fn run_tests_wrapped_locale_29(mut name: *const (), l: *const __gnu_t
         unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_30(
+pub unsafe fn run_tests_wrapped_env_26(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -506,7 +506,7 @@ impl __gnu_test_semaphore {
         }
     }
 }
-pub unsafe fn test_tm_31(
+pub unsafe fn test_tm_27(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -517,29 +517,29 @@ pub unsafe fn test_tm_31(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).clone();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_28)).clone();
 }
-static mut tmp_32: std::cell::LazyCell<()> =
+static mut tmp_28: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const has_res_type_17);
-    std::cell::LazyCell::force(&*&raw const has_res_type_18);
-    std::cell::LazyCell::force(&*&raw const has_res_type_19);
-    std::cell::LazyCell::force(&*&raw const has_arg_type_20);
-    std::cell::LazyCell::force(&*&raw const has_arg_type_21);
-    std::cell::LazyCell::force(&*&raw const has_arg_type_22);
-    std::cell::LazyCell::force(&*&raw const has_no_types_23);
-    std::cell::LazyCell::force(&*&raw const has_no_types_24);
-    std::cell::LazyCell::force(&*&raw const has_no_types_25);
+    std::cell::LazyCell::force(&*&raw const has_res_type_13);
+    std::cell::LazyCell::force(&*&raw const has_res_type_14);
+    std::cell::LazyCell::force(&*&raw const has_res_type_15);
+    std::cell::LazyCell::force(&*&raw const has_arg_type_16);
+    std::cell::LazyCell::force(&*&raw const has_arg_type_17);
+    std::cell::LazyCell::force(&*&raw const has_arg_type_18);
+    std::cell::LazyCell::force(&*&raw const has_no_types_19);
+    std::cell::LazyCell::force(&*&raw const has_no_types_20);
+    std::cell::LazyCell::force(&*&raw const has_no_types_21);
     std::cell::LazyCell::force(&*&raw const count_0);
     std::cell::LazyCell::force(&*&raw const count__1);
     std::cell::LazyCell::force(&*&raw const throw_on__2);

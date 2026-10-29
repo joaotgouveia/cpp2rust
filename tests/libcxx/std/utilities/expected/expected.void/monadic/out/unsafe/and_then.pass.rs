@@ -104,7 +104,7 @@ pub unsafe fn test_val_types_3() {
             }
         });
         let mut v: () = unimplemented!();
-        let mut val: () = (unsafe { v.and_then(&mut l) });
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -114,7 +114,7 @@ pub unsafe fn test_val_types_3() {
             }
         });
         let v: () = unimplemented!();
-        let mut val: () = (unsafe { v.and_then(&mut l) });
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -149,7 +149,7 @@ pub unsafe fn test_fail_4() {
             }
         });
         let mut v: () = unimplemented!();
-        let mut val: () = (unsafe { v.and_then(&mut f) });
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -160,7 +160,7 @@ pub unsafe fn test_fail_4() {
             }
         });
         let v: () = unimplemented!();
-        let mut val: () = (unsafe { v.and_then(&mut f) });
+        let mut val: () = unimplemented!();
         unimplemented!();
     }
 }

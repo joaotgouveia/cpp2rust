@@ -131,7 +131,7 @@ pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
         unimplemented!();
     }
     let mut pos: () = unimplemented!();
-    if ((pos) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_4))) {
+    if ((pos) != (unimplemented!())) {
         unimplemented!();
     }
     unimplemented!();
@@ -202,7 +202,7 @@ impl Default for __gnu_test_scoped_file {
         unsafe { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub unsafe fn permissions_are_testable_6(mut print_msg: Option<()>) -> () {
+pub unsafe fn permissions_are_testable_5(mut print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| unsafe { true });
     let mut testable: () = false;
     if ((unimplemented!()) != (0_())) {
@@ -213,9 +213,9 @@ pub unsafe fn permissions_are_testable_6(mut print_msg: Option<()>) -> () {
     }
     return testable;
 }
-static mut counter_5: std::cell::LazyCell<()> =
+static mut counter_4: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub unsafe fn test01_7() {
+pub unsafe fn test01_6() {
     'loop_: for p in IterRange::new(
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1))
@@ -227,7 +227,7 @@ pub unsafe fn test01_7() {
         (unsafe { compare_paths_0(&p, &copy) });
     }
 }
-pub unsafe fn test02_8() {
+pub unsafe fn test02_7() {
     'loop_: for p in IterRange::new(
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1))
@@ -247,8 +247,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test01_7() });
-    (unsafe { test02_8() });
+    (unsafe { test01_6() });
+    (unsafe { test02_7() });
     0
 }
 pub unsafe fn __cpp2rust_init_globals() {

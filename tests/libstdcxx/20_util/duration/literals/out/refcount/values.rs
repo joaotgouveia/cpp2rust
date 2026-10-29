@@ -198,7 +198,7 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test03_9() {
-    let jiffy: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let jiffy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -216,7 +216,7 @@ pub fn test03_9() {
             unimplemented!();
         }
     }
-    let blip: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let blip: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -234,7 +234,7 @@ pub fn test03_9() {
             unimplemented!();
         }
     }
-    let bit: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let bit: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -252,7 +252,7 @@ pub fn test03_9() {
             unimplemented!();
         }
     }
-    let warmup: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let warmup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -270,7 +270,7 @@ pub fn test03_9() {
             unimplemented!();
         }
     }
-    let classtime: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let classtime: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -314,7 +314,7 @@ pub fn test03_9() {
             unimplemented!();
         }
     }
-    let workday: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let workday: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -332,7 +332,7 @@ pub fn test03_9() {
             unimplemented!();
         }
     }
-    let immediate: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let immediate: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -350,7 +350,7 @@ pub fn test03_9() {
             unimplemented!();
         }
     }
-    let separated: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+    let separated: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

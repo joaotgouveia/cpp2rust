@@ -12,46 +12,46 @@ pub unsafe fn test_0() -> () {
     unimplemented!();
     let mut ref1: () = unimplemented!();
     let mut ref2: () = unimplemented!();
-    unimplemented!();
+    ref2 = (ref1).clone();
     {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = false;
+        unimplemented!() = true;
+        ref1 = (ref2).clone();
         unimplemented!();
         unimplemented!();
     }
     {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = false;
+        ref1 = (ref2).clone();
         unimplemented!();
         unimplemented!();
     }
     {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = false;
+        unimplemented!() = true;
+        ref1 = (ref2).clone();
         unimplemented!();
         unimplemented!();
     }
     {
+        unimplemented!() = true;
+        unimplemented!() = false;
+        ref1 = (ref2).clone();
         unimplemented!();
         unimplemented!();
+    }
+    {
+        unimplemented!() = false;
+        unimplemented!() = true;
+        ref1 = (ref2).clone();
         unimplemented!();
+        unimplemented!();
+    }
+    {
+        unimplemented!() = true;
+        unimplemented!() = false;
+        ref1 = (ref2).clone();
         unimplemented!();
         unimplemented!();
     }

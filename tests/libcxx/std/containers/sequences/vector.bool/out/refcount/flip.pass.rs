@@ -361,7 +361,8 @@ pub fn test_vector_flip_8(mut n: (), a: ()) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < n) {
-        unimplemented!();
+        let __rhs = ((i & 1_()) != 0);
+        unimplemented!() = __rhs;
         i.prefix_inc();
     }
     let mut original: () = unimplemented!();
@@ -378,7 +379,8 @@ pub fn test_vector_flip_9(mut n: (), mut a: min_allocator_bool_) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < n) {
-        unimplemented!();
+        let __rhs = ((i & 1_()) != 0);
+        unimplemented!() = __rhs;
         i.prefix_inc();
     }
     let mut original: () = unimplemented!();
@@ -396,7 +398,8 @@ pub fn test_vector_flip_10(mut n: (), a: test_allocator_bool_) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < n) {
-        unimplemented!();
+        let __rhs = ((i & 1_()) != 0);
+        unimplemented!() = __rhs;
         i.prefix_inc();
     }
     let mut original: () = unimplemented!();

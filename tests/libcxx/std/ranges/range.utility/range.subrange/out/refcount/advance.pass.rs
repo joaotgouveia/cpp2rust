@@ -664,7 +664,7 @@ pub fn test_24() -> () {
     unimplemented!();
     unimplemented!();
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b1: Value<()> = Rc::new(RefCell::new(({ (*b.borrow()).next_14(None) })));
+    let b1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));

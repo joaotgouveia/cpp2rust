@@ -131,7 +131,7 @@ pub fn nonexistent_path_3(file: Option<()>) -> () {
         unimplemented!();
     }
     let mut pos: () = unimplemented!();
-    if (pos != npos_4.with(|rc| *rc.borrow())) {
+    if (pos != unimplemented!()) {
         unimplemented!();
     }
     unimplemented!();
@@ -193,7 +193,7 @@ impl Default for __gnu_test_scoped_file {
         { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub fn permissions_are_testable_6(print_msg: Option<()>) -> () {
+pub fn permissions_are_testable_5(print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| true);
     let testable: Value<()> = Rc::new(RefCell::new(false));
     if (unimplemented!() != 0_()) {
@@ -205,9 +205,9 @@ pub fn permissions_are_testable_6(print_msg: Option<()>) -> () {
     return (*testable.borrow());
 }
 thread_local!(
-    static counter_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static counter_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
-pub fn test01_7() {
+pub fn test01_6() {
     'loop_: for p in IterRange::new(
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
@@ -217,7 +217,7 @@ pub fn test01_7() {
         ({ compare_paths_0(p.as_pointer(), copy.as_pointer()) });
     }
 }
-pub fn test02_8() {
+pub fn test02_7() {
     'loop_: for p in IterRange::new(
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
@@ -233,8 +233,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_7() });
-    ({ test02_8() });
+    ({ test01_6() });
+    ({ test02_7() });
     0
 }
 pub trait __gnu_test_scoped_fileImpl {

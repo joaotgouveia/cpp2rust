@@ -257,7 +257,7 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub unsafe fn test03_9() {
-    let mut jiffy: () = (unsafe { unimplemented!()() });
+    let mut jiffy: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -275,7 +275,7 @@ pub unsafe fn test03_9() {
             unimplemented!();
         }
     }
-    let mut blip: () = (unsafe { unimplemented!()() });
+    let mut blip: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -293,7 +293,7 @@ pub unsafe fn test03_9() {
             unimplemented!();
         }
     }
-    let mut bit: () = (unsafe { unimplemented!()() });
+    let mut bit: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -311,7 +311,7 @@ pub unsafe fn test03_9() {
             unimplemented!();
         }
     }
-    let mut warmup: () = (unsafe { unimplemented!()() });
+    let mut warmup: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -329,7 +329,7 @@ pub unsafe fn test03_9() {
             unimplemented!();
         }
     }
-    let mut classtime: () = (unsafe { unimplemented!()() });
+    let mut classtime: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -373,7 +373,7 @@ pub unsafe fn test03_9() {
             unimplemented!();
         }
     }
-    let mut workday: () = (unsafe { unimplemented!()() });
+    let mut workday: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -391,7 +391,7 @@ pub unsafe fn test03_9() {
             unimplemented!();
         }
     }
-    let mut immediate: () = (unsafe { unimplemented!()() });
+    let mut immediate: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -409,7 +409,7 @@ pub unsafe fn test03_9() {
             unimplemented!();
         }
     }
-    let mut separated: () = (unsafe { unimplemented!()() });
+    let mut separated: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

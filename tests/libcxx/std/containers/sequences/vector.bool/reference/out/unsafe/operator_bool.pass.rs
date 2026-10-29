@@ -13,7 +13,7 @@ pub unsafe fn test_0() -> () {
     unimplemented!();
     let mut true_ref: () = unimplemented!();
     let mut false_ref: () = unimplemented!();
-    let mut b: () = unimplemented!();
+    let mut b: () = (unsafe { true_ref() });
     unimplemented!();
     unimplemented!();
     unimplemented!();

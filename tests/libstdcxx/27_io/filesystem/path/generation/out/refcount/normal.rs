@@ -131,7 +131,7 @@ pub fn nonexistent_path_3(file: Option<()>) -> () {
         unimplemented!();
     }
     let mut pos: () = unimplemented!();
-    if (pos != npos_4.with(|rc| *rc.borrow())) {
+    if (pos != unimplemented!()) {
         unimplemented!();
     }
     unimplemented!();
@@ -193,7 +193,7 @@ impl Default for __gnu_test_scoped_file {
         { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub fn permissions_are_testable_6(print_msg: Option<()>) -> () {
+pub fn permissions_are_testable_5(print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| true);
     let testable: Value<()> = Rc::new(RefCell::new(false));
     if (unimplemented!() != 0_()) {
@@ -205,7 +205,7 @@ pub fn permissions_are_testable_6(print_msg: Option<()>) -> () {
     return (*testable.borrow());
 }
 thread_local!(
-    static counter_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static counter_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(128)]
@@ -237,12 +237,12 @@ pub struct __gnu_test_object_counter {}
 impl __gnu_test_object_counter {
     pub fn new() -> Self {
         let __this: __gnu_test_object_counter = Self {};
-        (*count_7.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_6.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(_a0: Ptr<__gnu_test_object_counter>) -> Self {
         let __this: __gnu_test_object_counter = Self {};
-        (*count_7.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_6.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
 }
@@ -263,20 +263,20 @@ impl Default for __gnu_test_object_counter {
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
     pub fn count() -> () {
-        return count__8.with(|rc| *rc.borrow());
+        return count__7.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*count__8.with(Value::clone).borrow_mut()).postfix_inc();
-        if (count__8.with(|rc| *rc.borrow()) == throw_on__9.with(|rc| *rc.borrow())) {
+        (*count__7.with(Value::clone).borrow_mut()).postfix_inc();
+        if (count__7.with(|rc| *rc.borrow()) == throw_on__8.with(|rc| *rc.borrow())) {
             unimplemented!();
         }
     }
     pub fn reset() {
-        count__8.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__9.with(|rc| *rc.borrow_mut() = 0_());
+        count__7.with(|rc| *rc.borrow_mut() = 0_());
+        throw_on__8.with(|rc| *rc.borrow_mut() = 0_());
     }
     pub fn throw_on(mut count: ()) {
-        throw_on__9.with(|rc| *rc.borrow_mut() = count);
+        throw_on__8.with(|rc| *rc.borrow_mut() = count);
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -284,20 +284,20 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub fn count() -> () {
-        return count__10.with(|rc| *rc.borrow());
+        return count__9.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*count__10.with(Value::clone).borrow_mut()).postfix_inc();
-        if (count__10.with(|rc| *rc.borrow()) == throw_on__11.with(|rc| *rc.borrow())) {
+        (*count__9.with(Value::clone).borrow_mut()).postfix_inc();
+        if (count__9.with(|rc| *rc.borrow()) == throw_on__10.with(|rc| *rc.borrow())) {
             unimplemented!();
         }
     }
     pub fn reset() {
-        count__10.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__11.with(|rc| *rc.borrow_mut() = 0_());
+        count__9.with(|rc| *rc.borrow_mut() = 0_());
+        throw_on__10.with(|rc| *rc.borrow_mut() = 0_());
     }
     pub fn throw_on(mut count: ()) {
-        throw_on__11.with(|rc| *rc.borrow_mut() = count);
+        throw_on__10.with(|rc| *rc.borrow_mut() = count);
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -305,13 +305,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub fn count() -> () {
-        return _M_count_12.with(|rc| *rc.borrow());
+        return _M_count_11.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*_M_count_12.with(Value::clone).borrow_mut()).postfix_inc();
+        (*_M_count_11.with(Value::clone).borrow_mut()).postfix_inc();
     }
     pub fn reset() {
-        _M_count_12.with(|rc| *rc.borrow_mut() = 0_());
+        _M_count_11.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -325,7 +325,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub fn new(id: Option<()>, throw_on_copy: Option<()>) -> Self {
         let mut id: () =
-            id.unwrap_or_else(|| (*next_id__13.with(Value::clone).borrow_mut()).postfix_dec());
+            id.unwrap_or_else(|| (*next_id__12.with(Value::clone).borrow_mut()).postfix_dec());
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| false);
         Self {
             id_: id,
@@ -356,12 +356,12 @@ impl __gnu_test_copy_tracker {
 }
 impl CppLess for __gnu_test_copy_tracker {
     fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_lt_14(__lhs.clone(), __rhs.clone())
+        operator_lt_13(__lhs.clone(), __rhs.clone())
     }
 }
 impl CppEq for __gnu_test_copy_tracker {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_15(__lhs.clone(), __rhs.clone())
+        operator_eq_14(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for __gnu_test_copy_tracker {
@@ -379,12 +379,12 @@ impl Default for __gnu_test_copy_tracker {
         { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub fn operator_eq_15(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_eq_14(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } == {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
 }
-pub fn operator_lt_14(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_lt_13(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } < {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
@@ -398,219 +398,219 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
-pub fn compare_paths_16(p: (), mut expected: ()) {
+pub fn compare_paths_15(p: (), mut expected: ()) {
     let p: Value<()> = Rc::new(RefCell::new(p));
     ({
         let _p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         compare_paths_0(p.as_pointer(), _p2.as_pointer())
     });
 }
-pub fn test01_17() {
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
+pub fn test01_16() {
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
 }
-pub fn test02_18() {
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
+pub fn test02_17() {
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
 }
-pub fn test03_19() {
-    let testcases: Value<Box<[anon_20]>> = Rc::new(RefCell::new(Box::new([
-        anon_20 {
+pub fn test03_18() {
+    let testcases: Value<Box<[anon_19]>> = Rc::new(RefCell::new(Box::new([
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b""),
             normalized: Ptr::<()>::from_string_literal(b""),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"."),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b".."),
             normalized: Ptr::<()>::from_string_literal(b".."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/"),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"//"),
             normalized: Ptr::<()>::from_string_literal(b"//"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/foo"),
             normalized: Ptr::<()>::from_string_literal(b"/foo"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/foo/"),
             normalized: Ptr::<()>::from_string_literal(b"/foo/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/foo/."),
             normalized: Ptr::<()>::from_string_literal(b"/foo/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/foo/.."),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/foo/../.."),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/foo/bar/.."),
             normalized: Ptr::<()>::from_string_literal(b"/foo/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/foo/bar/../.."),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/foo/bar/baz/../../.."),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/."),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/./"),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/./."),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/././"),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/././."),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"./"),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"./."),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"././"),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"././."),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"./././"),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"./././."),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"foo/.."),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"foo/../"),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"foo/../.."),
             normalized: Ptr::<()>::from_string_literal(b".."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"foo/../../.."),
             normalized: Ptr::<()>::from_string_literal(b"../.."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"C:bar/.."),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"C:/bar/.."),
             normalized: Ptr::<()>::from_string_literal(b"C:/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"C:"),
             normalized: Ptr::<()>::from_string_literal(b"C:"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"//host/bar/.."),
             normalized: Ptr::<()>::from_string_literal(b"/host/"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"//host"),
             normalized: Ptr::<()>::from_string_literal(b"/host"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"foo/../foo/.."),
             normalized: Ptr::<()>::from_string_literal(b"."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"foo/../foo/../.."),
             normalized: Ptr::<()>::from_string_literal(b".."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"../foo/../foo/.."),
             normalized: Ptr::<()>::from_string_literal(b".."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"../.f/../f"),
             normalized: Ptr::<()>::from_string_literal(b"../f"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"../f/../.f"),
             normalized: Ptr::<()>::from_string_literal(b"../.f"),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"../.."),
             normalized: Ptr::<()>::from_string_literal(b"../.."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"../../."),
             normalized: Ptr::<()>::from_string_literal(b"../.."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b".././../."),
             normalized: Ptr::<()>::from_string_literal(b"../.."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b".././.././"),
             normalized: Ptr::<()>::from_string_literal(b"../.."),
         },
-        anon_20 {
+        anon_19 {
             input: Ptr::<()>::from_string_literal(b"/.."),
             normalized: Ptr::<()>::from_string_literal(b"/"),
         },
     ])));
     'loop_: for test in IterRange::new(
-        (testcases.as_pointer() as Ptr<anon_20>),
-        (testcases.as_pointer() as Ptr<anon_20>).offset((43_()) as isize),
+        (testcases.as_pointer() as Ptr<anon_19>),
+        (testcases.as_pointer() as Ptr<anon_19>).offset((43_()) as isize),
     ) {
-        let test: Ptr<anon_20> = (test).clone();
+        let test: Ptr<anon_19> = (test).clone();
         ({
             let _p: () = unimplemented!();
             let _expected: () = unimplemented!();
-            compare_paths_16(_p, _expected)
+            compare_paths_15(_p, _expected)
         });
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
-pub struct anon_20 {
+pub struct anon_19 {
     #[offset(0)]
     #[byte_size(8)]
     pub input: Ptr<()>,
@@ -618,33 +618,33 @@ pub struct anon_20 {
     #[byte_size(8)]
     pub normalized: Ptr<()>,
 }
-pub fn test04_21() {
+pub fn test04_20() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
     unimplemented!();
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
     unimplemented!();
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
-    ({ compare_paths_16(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
+    ({ compare_paths_15(unimplemented!(), unimplemented!()) });
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_17() });
-    ({ test02_18() });
-    ({ test03_19() });
-    ({ test04_21() });
+    ({ test01_16() });
+    ({ test02_17() });
+    ({ test03_18() });
+    ({ test04_20() });
     0
 }
 impl __gnu_test_semaphore {
@@ -667,7 +667,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_22(size: Option<()>) {
+pub fn set_memory_limits_21(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -684,14 +684,14 @@ pub fn set_memory_limits_22(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_23(mut size: ()) {
+pub fn set_file_limit_22(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_24(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_23(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -726,7 +726,7 @@ pub fn verify_demangle_24(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_24(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -753,7 +753,7 @@ pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_26(
+pub fn run_tests_wrapped_env_25(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -777,25 +777,25 @@ pub fn run_tests_wrapped_env_26(
     }
 }
 thread_local!(
-    pub static count_7: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_6: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static count__8: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__7: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static throw_on__9: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__8: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static count__10: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__9: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static throw_on__11: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__10: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static _M_count_12: Value<()> = Rc::new(RefCell::new(0_()));
+    static _M_count_11: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static next_id__13: Value<()> = Rc::new(RefCell::new(0_()));
+    static next_id__12: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
@@ -823,7 +823,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_27(
+pub fn test_tm_26(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -834,19 +834,19 @@ pub fn test_tm_27(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_28.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_28.with(Value::clone).borrow()).clone();
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_27.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_27.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_28: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_27: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -899,7 +899,7 @@ pub trait __gnu_test_object_counterImpl {
 }
 impl __gnu_test_object_counterImpl for Ptr<__gnu_test_object_counter> {
     fn destructor(&self) {
-        (*count_7.with(Value::clone).borrow_mut()).prefix_dec();
+        (*count_6.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn copy_assign(&self, _a0: Ptr<__gnu_test_object_counter>) -> Ptr<__gnu_test_object_counter> {
         return (*self).clone();
@@ -954,11 +954,11 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
 }
 pub fn __cpp2rust_init_globals() {
     let _ = test_paths_1.with(|_| ());
-    let _ = count_7.with(|_| ());
-    let _ = count__8.with(|_| ());
-    let _ = throw_on__9.with(|_| ());
-    let _ = count__10.with(|_| ());
-    let _ = throw_on__11.with(|_| ());
-    let _ = _M_count_12.with(|_| ());
-    let _ = next_id__13.with(|_| ());
+    let _ = count_6.with(|_| ());
+    let _ = count__7.with(|_| ());
+    let _ = throw_on__8.with(|_| ());
+    let _ = count__9.with(|_| ());
+    let _ = throw_on__10.with(|_| ());
+    let _ = _M_count_11.with(|_| ());
+    let _ = next_id__12.with(|_| ());
 }

@@ -181,26 +181,9 @@ pub fn test_16() -> () {
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let __rhs = ({
-            let ___f: Value<FnPtr<fn() -> ()>> =
-                Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
-                    {
-                        return unimplemented!();
-                    }
-                })));
-            (*opt.borrow()).or_else(___f.as_pointer())
-        });
+        let __rhs = unimplemented!();
         (*opt.borrow_mut()) = __rhs;
-        &({
-            let ___f: Value<FnPtr<fn() -> ()>> =
-                Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
-                    {
-                        unimplemented!();
-                        return unimplemented!();
-                    }
-                })));
-            (*opt.borrow()).or_else(___f.as_pointer())
-        });
+        &(unimplemented!());
     }
     return true;
 }

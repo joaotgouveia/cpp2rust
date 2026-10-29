@@ -899,7 +899,7 @@ pub unsafe fn test_24() -> () {
     unimplemented!();
     unimplemented!();
     let mut b: () = unimplemented!();
-    let mut b1: () = (unsafe { b.next_14(None) });
+    let mut b1: () = unimplemented!();
     unimplemented!();
     let mut c: () = unimplemented!();
     let mut c1: () = unimplemented!();

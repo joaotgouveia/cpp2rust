@@ -223,23 +223,8 @@ pub unsafe fn test_16() -> () {
     }
     {
         let mut opt: () = unimplemented!();
-        opt = (unsafe {
-            let mut ___f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
-                unsafe {
-                    return unimplemented!();
-                }
-            });
-            opt.or_else(&mut ___f)
-        });
-        &(unsafe {
-            let mut ___f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
-                unsafe {
-                    unimplemented!();
-                    return unimplemented!();
-                }
-            });
-            opt.or_else(&mut ___f)
-        });
+        opt = unimplemented!();
+        &(unimplemented!());
     }
     return true;
 }

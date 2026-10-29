@@ -26,13 +26,13 @@ pub unsafe fn test_0() -> () {
     }
     {
         let mut e: () = unimplemented!();
-        let x: *mut () = (unsafe { e.error_41() });
+        let x: *mut () = unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(x), int&&>");;
         unimplemented!();
     }
     {
         let e: () = unimplemented!();
-        let x: *const () = (unsafe { e.error_40() });
+        let x: *const () = unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(x), const int&&>");;
         unimplemented!();
     }

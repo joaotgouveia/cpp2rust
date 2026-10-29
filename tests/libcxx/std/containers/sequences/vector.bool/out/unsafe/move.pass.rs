@@ -623,8 +623,8 @@ pub unsafe fn test_11(a: *const ()) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (5_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -637,8 +637,8 @@ pub unsafe fn test_12(a: *const ()) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (18_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -651,8 +651,8 @@ pub unsafe fn test_13(a: *const ()) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (33_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -665,8 +665,8 @@ pub unsafe fn test_14(a: *const ()) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (65_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -679,8 +679,8 @@ pub unsafe fn test_15(a: *const ()) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (299_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -693,8 +693,8 @@ pub unsafe fn test_16(a: *const other_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (5_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -707,8 +707,8 @@ pub unsafe fn test_17(a: *const other_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (18_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -721,8 +721,8 @@ pub unsafe fn test_18(a: *const other_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (33_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -735,8 +735,8 @@ pub unsafe fn test_19(a: *const other_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (65_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -749,8 +749,8 @@ pub unsafe fn test_20(a: *const other_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (299_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -763,8 +763,8 @@ pub unsafe fn test_21(a: *const min_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (5_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -777,8 +777,8 @@ pub unsafe fn test_22(a: *const min_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (18_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -791,8 +791,8 @@ pub unsafe fn test_23(a: *const min_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (33_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -805,8 +805,8 @@ pub unsafe fn test_24(a: *const min_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (65_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -819,8 +819,8 @@ pub unsafe fn test_25(a: *const min_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (299_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -833,8 +833,8 @@ pub unsafe fn test_26(a: *const test_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (5_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -847,8 +847,8 @@ pub unsafe fn test_27(a: *const test_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (18_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -861,8 +861,8 @@ pub unsafe fn test_28(a: *const test_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (33_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -875,8 +875,8 @@ pub unsafe fn test_29(a: *const test_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (65_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();
@@ -889,8 +889,8 @@ pub unsafe fn test_30(a: *const test_allocator_bool_) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while ((i) < (299_())) {
-        unimplemented!();
-        unimplemented!();
+        unimplemented!() = true;
+        unimplemented!() = true;
         i = (i).wrapping_add(2_());
     }
     let mut v2: () = unimplemented!();

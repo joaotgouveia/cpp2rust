@@ -78,7 +78,7 @@ impl CppEq for Z {
 pub fn test_2() -> () {
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let y: Value<Y> = Rc::new(RefCell::new(Y::new({ 3_() })));
+        let mut y: Y = Y::new({ 3_() });
         unimplemented!();
         unimplemented!();
     }
@@ -89,7 +89,7 @@ pub fn test_2() -> () {
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let y: Value<Y> = Rc::new(RefCell::new(Y::new({ 3_() })));
+        let mut y: Y = Y::new({ 3_() });
         unimplemented!();
         unimplemented!();
     }

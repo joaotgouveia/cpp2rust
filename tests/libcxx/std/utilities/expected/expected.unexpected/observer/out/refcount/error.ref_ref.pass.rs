@@ -10,7 +10,7 @@ const _: () = assert!(!(false), "!ErrorNoexcept<int>");
 const _: () = assert!(true, "ErrorNoexcept<std::unexpected<int>>");
 pub fn test_0() -> () {
     let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Ptr<()> = ({ (*unex.borrow()).error_11() });
+    let i: Ptr<()> = unimplemented!();
     const _: () = assert!(true, "std::same_as<decltype(i), int&&>");;
     unimplemented!();
     return true;

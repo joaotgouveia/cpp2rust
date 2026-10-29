@@ -47,27 +47,27 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "std::is_same<decltype( 3ns  ), std::chrono::nanoseconds>::value"
     );;
-    let mut h: () = (unsafe { unimplemented!()() });
+    let mut h: () = unimplemented!();
     unimplemented!();
     let mut h2: () = unimplemented!();
     unimplemented!();
-    let mut min: () = (unsafe { unimplemented!()() });
+    let mut min: () = unimplemented!();
     unimplemented!();
     let mut min2: () = unimplemented!();
     unimplemented!();
-    let mut s: () = (unsafe { unimplemented!()() });
+    let mut s: () = unimplemented!();
     unimplemented!();
     let mut s2: () = unimplemented!();
     unimplemented!();
-    let mut ms: () = (unsafe { unimplemented!()() });
+    let mut ms: () = unimplemented!();
     unimplemented!();
     let mut ms2: () = unimplemented!();
     unimplemented!();
-    let mut us: () = (unsafe { unimplemented!()() });
+    let mut us: () = unimplemented!();
     unimplemented!();
     let mut us2: () = unimplemented!();
     unimplemented!();
-    let mut ns: () = (unsafe { unimplemented!()() });
+    let mut ns: () = unimplemented!();
     unimplemented!();
     let mut ns2: () = unimplemented!();
     unimplemented!();

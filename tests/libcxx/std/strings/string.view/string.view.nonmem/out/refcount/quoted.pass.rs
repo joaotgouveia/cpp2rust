@@ -7,10 +7,10 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn is_skipws_0(mut is: Ptr<()>) -> () {
-    return (({ unimplemented!() } & { unimplemented!() }) != 0_());
+    return ((unimplemented!()) != 0_());
 }
 pub fn is_skipws_1(mut is: Ptr<()>) -> () {
-    return (({ unimplemented!() } & { unimplemented!() }) != 0_());
+    return ((unimplemented!()) != 0_());
 }
 pub fn round_trip_2(mut p: Ptr<()>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));

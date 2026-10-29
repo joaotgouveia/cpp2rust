@@ -333,14 +333,7 @@ pub unsafe fn test_move_10() -> () {
         }
     }
     let mut mo: () = unimplemented!();
-    (unsafe {
-        let mut ___f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
-            unsafe {
-                return unimplemented!();
-            }
-        });
-        mo.or_else(&mut ___f)
-    });
+    unimplemented!();
     return true;
 }
 #[repr(C)]
@@ -422,7 +415,7 @@ pub unsafe fn test_call_13() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe { o.or_else(&mut f) })) == (1_())) {
+        if !((*unimplemented!()) == (1_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -438,7 +431,7 @@ pub unsafe fn test_call_13() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe { o.or_else(&mut f) })) == (2_())) {
+        if !((*unimplemented!()) == (2_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -455,11 +448,7 @@ pub unsafe fn test_call_13() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe {
-            let ___f: *const F_14 = cf;
-            o.or_else(___f)
-        })) == (3_()))
-        {
+        if !((*unimplemented!()) == (3_())) {
             unimplemented!();
             unimplemented!();
         }
@@ -475,11 +464,7 @@ pub unsafe fn test_call_13() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(unsafe {
-            let ___f: *const F_14 = cf;
-            o.or_else(___f)
-        })) == (4_()))
-        {
+        if !((*unimplemented!()) == (4_())) {
             unimplemented!();
             unimplemented!();
         }

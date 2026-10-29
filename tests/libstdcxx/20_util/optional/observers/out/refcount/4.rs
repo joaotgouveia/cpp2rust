@@ -237,11 +237,11 @@ pub fn test02_10() {
 }
 pub fn test03_11() {
     let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let fallback: Value<value_type> = Rc::new(RefCell::new(value_type { i: 3_() }));
+    let mut fallback: value_type = value_type { i: 3_() };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ (*o.borrow()).value_or(fallback.as_pointer()) }).i } == 51_()) {
+        if !({ unimplemented!().i } == 51_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -257,9 +257,7 @@ pub fn test03_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ (*o.borrow()).value_or(fallback.as_pointer()) }).i }
-            == unimplemented!().with(|__s| (__s).i))
-        {
+        if !({ unimplemented!().i } == unimplemented!().with(|__s| (__s).i)) {
             unimplemented!();
             unimplemented!();
         }
@@ -267,11 +265,11 @@ pub fn test03_11() {
 }
 pub fn test04_12() {
     let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let fallback: Value<value_type> = Rc::new(RefCell::new(value_type { i: 3_() }));
+    let mut fallback: value_type = value_type { i: 3_() };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ (*o.borrow()).value_or(fallback.as_pointer()) }).i } == 3_()) {
+        if !({ unimplemented!().i } == 3_()) {
             unimplemented!();
             unimplemented!();
         }

@@ -13,10 +13,10 @@ pub unsafe fn test_0() -> () {
     let mut ref_: () = unimplemented!();
     unimplemented!();
     unimplemented!();
+    (unsafe { ref_.flip() });
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe { ref_.flip() });
     unimplemented!();
     unimplemented!();
     return true;

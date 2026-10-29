@@ -490,7 +490,7 @@ pub unsafe fn test_vector_flip_8(mut n: (), mut a: ()) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (n)) {
-        unimplemented!();
+        unimplemented!() = (((i) & (1_())) != 0);
         i.prefix_inc();
     }
     let mut original: () = unimplemented!();
@@ -507,7 +507,7 @@ pub unsafe fn test_vector_flip_9(mut n: (), mut a: min_allocator_bool_) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (n)) {
-        unimplemented!();
+        unimplemented!() = (((i) & (1_())) != 0);
         i.prefix_inc();
     }
     let mut original: () = unimplemented!();
@@ -524,7 +524,7 @@ pub unsafe fn test_vector_flip_10(mut n: (), mut a: test_allocator_bool_) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (n)) {
-        unimplemented!();
+        unimplemented!() = (((i) & (1_())) != 0);
         i.prefix_inc();
     }
     let mut original: () = unimplemented!();

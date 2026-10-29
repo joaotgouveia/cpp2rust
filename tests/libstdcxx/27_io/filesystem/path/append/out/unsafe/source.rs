@@ -131,7 +131,7 @@ pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
         unimplemented!();
     }
     let mut pos: () = unimplemented!();
-    if ((pos) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_4))) {
+    if ((pos) != (unimplemented!())) {
         unimplemented!();
     }
     unimplemented!();
@@ -202,7 +202,7 @@ impl Default for __gnu_test_scoped_file {
         unsafe { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub unsafe fn permissions_are_testable_6(mut print_msg: Option<()>) -> () {
+pub unsafe fn permissions_are_testable_5(mut print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| unsafe { true });
     let mut testable: () = false;
     if ((unimplemented!()) != (0_())) {
@@ -213,7 +213,7 @@ pub unsafe fn permissions_are_testable_6(mut print_msg: Option<()>) -> () {
     }
     return testable;
 }
-static mut counter_5: std::cell::LazyCell<()> =
+static mut counter_4: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(FnPtrArg)]
@@ -251,16 +251,16 @@ pub struct __gnu_test_object_counter {}
 impl __gnu_test_object_counter {
     pub unsafe fn new() -> Self {
         let mut this = Self {};
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_7)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_6)).prefix_inc();
         this
     }
     pub unsafe fn copy_from(_a0: *const __gnu_test_object_counter) -> Self {
         let mut this = Self {};
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_7)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_6)).prefix_inc();
         this
     }
     pub unsafe fn destructor(&mut self) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_7)).prefix_dec();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_6)).prefix_dec();
     }
     pub unsafe fn copy_assign(
         &mut self,
@@ -284,22 +284,22 @@ impl Default for __gnu_test_object_counter {
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__8));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__7));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__8)).postfix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__8))
-            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__9)))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__7)).postfix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__7))
+            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__8)))
         {
             unimplemented!();
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__8)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__9)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__7)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__8)) = 0_();
     }
     pub unsafe fn throw_on(mut count: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__9)) = count;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__8)) = count;
     }
 }
 #[repr(C)]
@@ -307,22 +307,22 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__10));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__9));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__10)).postfix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__10))
-            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__11)))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__9)).postfix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__9))
+            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__10)))
         {
             unimplemented!();
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__10)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__11)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__9)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__10)) = 0_();
     }
     pub unsafe fn throw_on(mut count: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__11)) = count;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__10)) = count;
     }
 }
 #[repr(C)]
@@ -330,13 +330,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_12));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_11));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_12)).postfix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_11)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_12)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_11)) = 0_();
     }
 }
 #[repr(C)]
@@ -348,7 +348,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
         let mut id: () = id.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__13)).postfix_dec()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__12)).postfix_dec()
         });
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
@@ -402,12 +402,12 @@ impl __gnu_test_copy_tracker {
 impl std::cmp::Ord for __gnu_test_copy_tracker {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_14(
+            if operator_lt_13(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_14(
+            } else if operator_lt_13(
                 other as *const __gnu_test_copy_tracker,
                 self as *const __gnu_test_copy_tracker,
             ) {
@@ -426,7 +426,7 @@ impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
 impl std::cmp::PartialEq for __gnu_test_copy_tracker {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_15(
+            operator_eq_14(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             )
@@ -444,14 +444,14 @@ impl Default for __gnu_test_copy_tracker {
         unsafe { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub unsafe fn operator_eq_15(
+pub unsafe fn operator_eq_14(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
-pub unsafe fn operator_lt_14(
+pub unsafe fn operator_lt_13(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
@@ -837,7 +837,7 @@ impl __gnu_test_test_container_const_wchar_t____gnu_test_input_iterator_wrapper_
         });
     }
 }
-pub unsafe fn test_16(p: *const (), mut s: *const ()) {
+pub unsafe fn test_15(p: *const (), mut s: *const ()) {
     let mut expected: () = unimplemented!();
     unimplemented!();
     let mut oper: () = unimplemented!();
@@ -854,7 +854,7 @@ pub unsafe fn test_16(p: *const (), mut s: *const ()) {
     (unsafe { compare_paths_0(&func, &expected) });
     (unsafe { compare_paths_0(&range, &expected) });
 }
-pub unsafe fn test_17(p: *const (), mut s: *const ()) {
+pub unsafe fn test_16(p: *const (), mut s: *const ()) {
     let mut expected: () = unimplemented!();
     unimplemented!();
     let mut oper: () = unimplemented!();
@@ -868,83 +868,83 @@ pub unsafe fn test_17(p: *const (), mut s: *const ()) {
     (unsafe { compare_paths_0(&func, &expected) });
     (unsafe { compare_paths_0(&range, &expected) });
 }
-pub unsafe fn test01_18() {
+pub unsafe fn test01_17() {
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"/foo/".as_ptr())
+        test_15(&mut _p, c"/foo/".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"baz".as_ptr())
+        test_15(&mut _p, c"baz".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"baz".as_ptr())
+        test_15(&mut _p, c"baz".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"/foo/bar".as_ptr())
+        test_15(&mut _p, c"/foo/bar".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"/foo/bar".as_ptr())
+        test_15(&mut _p, c"/foo/bar".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"".as_ptr())
+        test_15(&mut _p, c"".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"rel".as_ptr())
+        test_15(&mut _p, c"rel".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"/file".as_ptr())
+        test_15(&mut _p, c"/file".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"file".as_ptr())
-    });
-}
-pub unsafe fn test02_19() {
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"foo".as_ptr())
-    });
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"foo".as_ptr())
-    });
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"".as_ptr())
-    });
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"/bar".as_ptr())
-    });
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"c:/bar".as_ptr())
-    });
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"c:".as_ptr())
-    });
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"".as_ptr())
-    });
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"/bar".as_ptr())
-    });
-    (unsafe {
-        let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"c:\\bar".as_ptr())
+        test_15(&mut _p, c"file".as_ptr())
     });
 }
-pub unsafe fn test03_20() {
+pub unsafe fn test02_18() {
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"foo".as_ptr())
+    });
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"foo".as_ptr())
+    });
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"".as_ptr())
+    });
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"/bar".as_ptr())
+    });
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"c:/bar".as_ptr())
+    });
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"c:".as_ptr())
+    });
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"".as_ptr())
+    });
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"/bar".as_ptr())
+    });
+    (unsafe {
+        let mut _p: () = unimplemented!();
+        test_15(&mut _p, c"c:\\bar".as_ptr())
+    });
+}
+pub unsafe fn test03_19() {
     'loop_: for p in IterRange::new(
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1))
@@ -959,32 +959,32 @@ pub unsafe fn test03_20() {
                 .offset((18_()) as isize),
         ) {
             let q: () = unimplemented!();
-            (unsafe { test_16(&p, unimplemented!()) });
+            (unsafe { test_15(&p, unimplemented!()) });
             {}
         }
     }
 }
-pub unsafe fn test04_21() {
+pub unsafe fn test04_20() {
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_17(
+        test_16(
             &mut _p,
             [47 as (), 98 as (), 97 as (), 114 as (), 0 as ()].as_ptr(),
         )
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_16(&mut _p, c"/bar".as_ptr())
+        test_15(&mut _p, c"/bar".as_ptr())
     });
     (unsafe {
         let mut _p: () = unimplemented!();
-        test_17(
+        test_16(
             &mut _p,
             [47 as (), 98 as (), 97 as (), 114 as (), 0 as ()].as_ptr(),
         )
     });
 }
-pub unsafe fn test05_22() {
+pub unsafe fn test05_21() {
     let mut s: () = unimplemented!();
     let mut p: () = unimplemented!();
     unimplemented!();
@@ -1016,7 +1016,7 @@ pub unsafe fn test05_22() {
         compare_paths_0(&p3, &mut _p2)
     });
 }
-pub unsafe fn test06_23() {
+pub unsafe fn test06_22() {
     let s0: () = unimplemented!();
     let mut p: () = unimplemented!();
     let mut s: () = unimplemented!();
@@ -1025,11 +1025,11 @@ pub unsafe fn test06_23() {
         unimplemented!();
         i.prefix_inc();
     }
-    (unsafe { test_16(&p, unimplemented!()) });
+    (unsafe { test_15(&p, unimplemented!()) });
     let mut p2: () = unimplemented!();
-    (unsafe { test_16(&p2, unimplemented!()) });
+    (unsafe { test_15(&p2, unimplemented!()) });
 }
-pub unsafe fn test07_24() {
+pub unsafe fn test07_23() {
     let mut p: () = unimplemented!();
     let mut p0: () = unimplemented!();
     let mut s: () = unimplemented!();
@@ -1043,13 +1043,13 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test01_18() });
-    (unsafe { test02_19() });
-    (unsafe { test03_20() });
-    (unsafe { test04_21() });
-    (unsafe { test05_22() });
-    (unsafe { test06_23() });
-    (unsafe { test07_24() });
+    (unsafe { test01_17() });
+    (unsafe { test02_18() });
+    (unsafe { test03_19() });
+    (unsafe { test04_20() });
+    (unsafe { test05_21() });
+    (unsafe { test06_22() });
+    (unsafe { test07_23() });
     0
 }
 impl __gnu_test_semaphore {
@@ -1071,7 +1071,7 @@ impl __gnu_test_semaphore {
         this
     }
 }
-pub unsafe fn set_memory_limits_25(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_24(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
@@ -1088,14 +1088,14 @@ pub unsafe fn set_memory_limits_25(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_26(mut size: ()) {
+pub unsafe fn set_file_limit_25(mut size: ()) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_27(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_26(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = unimplemented!();
@@ -1130,7 +1130,7 @@ pub unsafe fn verify_demangle_27(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_28(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_27(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -1158,7 +1158,7 @@ pub unsafe fn run_tests_wrapped_locale_28(mut name: *const (), l: *const __gnu_t
         unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_29(
+pub unsafe fn run_tests_wrapped_env_28(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -1182,13 +1182,13 @@ pub unsafe fn run_tests_wrapped_env_29(
         unimplemented!();
     }
 }
-pub static mut count_7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__9: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__11: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_12: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__13: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut count__7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut throw_on__8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut count__9: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut throw_on__10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut _M_count_11: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut next_id__12: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
@@ -1227,7 +1227,7 @@ impl __gnu_test_semaphore {
         }
     }
 }
-pub unsafe fn test_tm_30(
+pub unsafe fn test_tm_29(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1238,26 +1238,26 @@ pub unsafe fn test_tm_30(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_31)).clone();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).clone();
 }
-static mut tmp_31: std::cell::LazyCell<()> =
+static mut tmp_30: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const test_paths_1);
-    std::cell::LazyCell::force(&*&raw const count_7);
-    std::cell::LazyCell::force(&*&raw const count__8);
-    std::cell::LazyCell::force(&*&raw const throw_on__9);
-    std::cell::LazyCell::force(&*&raw const count__10);
-    std::cell::LazyCell::force(&*&raw const throw_on__11);
-    std::cell::LazyCell::force(&*&raw const _M_count_12);
-    std::cell::LazyCell::force(&*&raw const next_id__13);
+    std::cell::LazyCell::force(&*&raw const count_6);
+    std::cell::LazyCell::force(&*&raw const count__7);
+    std::cell::LazyCell::force(&*&raw const throw_on__8);
+    std::cell::LazyCell::force(&*&raw const count__9);
+    std::cell::LazyCell::force(&*&raw const throw_on__10);
+    std::cell::LazyCell::force(&*&raw const _M_count_11);
+    std::cell::LazyCell::force(&*&raw const next_id__12);
 }
