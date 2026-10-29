@@ -28,38 +28,31 @@ std::add_pointer_t<std::iter_reference_t<T1>> f3(const T1 &a0) {
   return std::to_address(a0);
 }
 
-template <typename T1>
-  requires std::contiguous_iterator<T1> && std::three_way_comparable<T1> &&
-           (std::is_class<T1>::value)
-auto f4(const T1 &a0, const T1 &a1) -> decltype(a0 <=> a1) {
-  return a0 <=> a1;
-}
-
-const std::default_sentinel_t &f5() { return std::default_sentinel; }
+const std::default_sentinel_t &f4() { return std::default_sentinel; }
 
 using t3 = std::default_sentinel_t;
 
-std::default_sentinel_t f6() { return std::default_sentinel_t(); }
+std::default_sentinel_t f5() { return std::default_sentinel_t(); }
 
-std::default_sentinel_t f7(const std::default_sentinel_t &a0) {
+std::default_sentinel_t f6(const std::default_sentinel_t &a0) {
   return std::default_sentinel_t(a0);
 }
 
-std::default_sentinel_t f8(std::default_sentinel_t &&a0) {
+std::default_sentinel_t f7(std::default_sentinel_t &&a0) {
   return std::default_sentinel_t(std::move(a0));
 }
 
-std::default_sentinel_t &f9(std::default_sentinel_t &a0,
+std::default_sentinel_t &f8(std::default_sentinel_t &a0,
                             const std::default_sentinel_t &a1) {
   return a0.operator=(a1);
 }
 
-std::default_sentinel_t &f10(std::default_sentinel_t &a0,
-                             std::default_sentinel_t &&a1) {
+std::default_sentinel_t &f9(std::default_sentinel_t &a0,
+                            std::default_sentinel_t &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1, typename T2> bool f11() {
+template <typename T1, typename T2> bool f10() {
   return std::disable_sized_sentinel_for<T1, T2>;
 }
 
@@ -70,37 +63,37 @@ using t4 = T1;
 
 template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-T1 &f12(T1 &a0, T1 &a1) {
+T1 &f11(T1 &a0, T1 &a1) {
   return a0 = static_cast<T1 &>(a1);
 }
 
 template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-T1 &f13(T1 &a0, T1 const &a1) {
+T1 &f12(T1 &a0, T1 const &a1) {
   return a0 = static_cast<T1 const &>(a1);
 }
 
 template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-T1 &f14(T1 &a0, T1 const &&a1) {
+T1 &f13(T1 &a0, T1 const &&a1) {
   return a0 = static_cast<T1 const &&>(a1);
 }
 
 template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-auto f15(const T1 &a0, const T1 &a1) -> decltype(a0 == a1) {
+auto f14(const T1 &a0, const T1 &a1) -> decltype(a0 == a1) {
   return a0 == a1;
 }
 
 template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-auto f16(const T1 &a0, const T1 &a1) -> decltype(a0 != a1) {
+auto f15(const T1 &a0, const T1 &a1) -> decltype(a0 != a1) {
   return a0 != a1;
 }
 
 template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-T1 f17(T1 &a0) {
+T1 f16(T1 &a0) {
   return a0++;
 }
 
@@ -119,31 +112,31 @@ using t7 = T1;
 
 template <typename T1>
   requires std::input_or_output_iterator<T1> && (std::is_class<T1>::value)
-auto f18(T1 &a0) -> decltype(*a0) {
+auto f17(T1 &a0) -> decltype(*a0) {
   return *a0;
 }
 
 template <typename T1>
   requires std::input_or_output_iterator<T1> && (std::is_class<T1>::value)
-T1 &f19(T1 &a0, T1 &&a1) {
+T1 &f18(T1 &a0, T1 &&a1) {
   return a0 = static_cast<T1 &&>(a1);
 }
 
 template <typename T1>
   requires std::input_or_output_iterator<T1> && (std::is_class<T1>::value)
-auto f20(T1 &a0, T1 &a1) -> decltype(std::ranges::swap(a0, a1)) {
+auto f19(T1 &a0, T1 &a1) -> decltype(std::ranges::swap(a0, a1)) {
   return std::ranges::swap(a0, a1);
 }
 
 template <typename T1>
   requires std::input_or_output_iterator<T1> && (std::is_class<T1>::value)
-T1 &f21(T1 &a0) {
+T1 &f20(T1 &a0) {
   return ++a0;
 }
 
 template <typename T1>
   requires std::input_or_output_iterator<T1> && (std::is_class<T1>::value)
-auto f22(T1 &a0) -> decltype(a0++) {
+auto f21(T1 &a0) -> decltype(a0++) {
   return a0++;
 }
 
@@ -160,14 +153,14 @@ template <typename T1> using t12 = std::iter_value_t<T1>;
 template <typename T1, typename T2>
   requires std::output_iterator<T1, T2> &&
            (std::is_class<T1>::value || std::is_class<T2>::value)
-auto f23(T1 &&a0, T2 &&a1) -> decltype(*a0 = std::forward<T2>(a1)) {
+auto f22(T1 &&a0, T2 &&a1) -> decltype(*a0 = std::forward<T2>(a1)) {
   return *a0 = std::forward<T2>(a1);
 }
 
 template <typename T1, typename T2>
   requires std::output_iterator<T1, T2> &&
            (std::is_class<T1>::value || std::is_class<T2>::value)
-auto f24(T1 &&a0, T2 &&a1)
+auto f23(T1 &&a0, T2 &&a1)
     -> decltype(*std::forward<T1>(a0) = std::forward<T2>(a1)) {
   return *std::forward<T1>(a0) = std::forward<T2>(a1);
 }
@@ -175,7 +168,7 @@ auto f24(T1 &&a0, T2 &&a1)
 template <typename T1, typename T2>
   requires std::output_iterator<T1, T2> &&
            (std::is_class<T1>::value || std::is_class<T2>::value)
-auto f25(T1 &&a0, T2 &&a1)
+auto f24(T1 &&a0, T2 &&a1)
     -> decltype(const_cast<const std::iter_reference_t<T1> &&>(*a0) =
                     std::forward<T2>(a1)) {
   return const_cast<const std::iter_reference_t<T1> &&>(*a0) =
@@ -185,7 +178,7 @@ auto f25(T1 &&a0, T2 &&a1)
 template <typename T1, typename T2>
   requires std::output_iterator<T1, T2> &&
            (std::is_class<T1>::value || std::is_class<T2>::value)
-auto f26(T1 &&a0, T2 &&a1)
+auto f25(T1 &&a0, T2 &&a1)
     -> decltype(const_cast<const std::iter_reference_t<T1> &&>(
                     *std::forward<T1>(a0)) = std::forward<T2>(a1)) {
   return const_cast<const std::iter_reference_t<T1> &&>(*std::forward<T1>(a0)) =
@@ -195,7 +188,7 @@ auto f26(T1 &&a0, T2 &&a1)
 template <typename T1, typename T2>
   requires std::output_iterator<T1, T2> &&
            (std::is_class<T1>::value || std::is_class<T2>::value)
-auto f27(T1 &a0, T2 &&a1) -> decltype(*a0++ = std::forward<T2>(a1)) {
+auto f26(T1 &a0, T2 &&a1) -> decltype(*a0++ = std::forward<T2>(a1)) {
   return *a0++ = std::forward<T2>(a1);
 }
 
@@ -208,61 +201,61 @@ using t14 = T1;
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-auto f28(const T1 &a0, const T1 &a1) -> decltype(a0 < a1) {
+auto f27(const T1 &a0, const T1 &a1) -> decltype(a0 < a1) {
   return a0 < a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-auto f29(const T1 &a0, const T1 &a1) -> decltype(a0 > a1) {
+auto f28(const T1 &a0, const T1 &a1) -> decltype(a0 > a1) {
   return a0 > a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-auto f30(const T1 &a0, const T1 &a1) -> decltype(a0 <= a1) {
+auto f29(const T1 &a0, const T1 &a1) -> decltype(a0 <= a1) {
   return a0 <= a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-auto f31(const T1 &a0, const T1 &a1) -> decltype(a0 >= a1) {
+auto f30(const T1 &a0, const T1 &a1) -> decltype(a0 >= a1) {
   return a0 >= a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-T1 &f32(T1 &a0, const std::iter_difference_t<T1> &a1) {
+T1 &f31(T1 &a0, const std::iter_difference_t<T1> &a1) {
   return a0 += a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-T1 f33(const T1 &a0, const std::iter_difference_t<T1> &a1) {
+T1 f32(const T1 &a0, const std::iter_difference_t<T1> &a1) {
   return a0 + a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-T1 f34(const std::iter_difference_t<T1> &a0, const T1 &a1) {
+T1 f33(const std::iter_difference_t<T1> &a0, const T1 &a1) {
   return a0 + a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-T1 &f35(T1 &a0, const std::iter_difference_t<T1> &a1) {
+T1 &f34(T1 &a0, const std::iter_difference_t<T1> &a1) {
   return a0 -= a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-T1 f36(const T1 &a0, const std::iter_difference_t<T1> &a1) {
+T1 f35(const T1 &a0, const std::iter_difference_t<T1> &a1) {
   return a0 - a1;
 }
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-std::iter_reference_t<T1> f37(const T1 &a0,
+std::iter_reference_t<T1> f36(const T1 &a0,
                               const std::iter_difference_t<T1> &a1) {
   return a0[a1];
 }
@@ -270,21 +263,21 @@ std::iter_reference_t<T1> f37(const T1 &a0,
 template <typename T1>
   requires std::random_access_iterator<T1> && std::three_way_comparable<T1> &&
            (std::is_class<T1>::value)
-auto f38(const T1 &a0, const T1 &a1) -> decltype(a0 <=> a1) {
+auto f37(const T1 &a0, const T1 &a1) -> decltype(a0 <=> a1) {
   return a0 <=> a1;
 }
 
 template <typename T1, typename T2>
   requires(std::sentinel_for<T1, T2> || std::sentinel_for<T2, T1>) &&
           (std::is_class<T1>::value || std::is_class<T2>::value)
-auto f39(const T1 &a0, const T2 &a1) -> decltype(a0 == a1) {
+auto f38(const T1 &a0, const T2 &a1) -> decltype(a0 == a1) {
   return a0 == a1;
 }
 
 template <typename T1, typename T2>
   requires(std::sentinel_for<T1, T2> || std::sentinel_for<T2, T1>) &&
           (std::is_class<T1>::value || std::is_class<T2>::value)
-auto f40(const T1 &a0, const T2 &a1) -> decltype(a0 != a1) {
+auto f39(const T1 &a0, const T2 &a1) -> decltype(a0 != a1) {
   return a0 != a1;
 }
 
@@ -292,36 +285,36 @@ template <typename T1, typename T2>
   requires(std::sized_sentinel_for<T1, T2> ||
            std::sized_sentinel_for<T2, T1>) &&
           (std::is_class<T1>::value || std::is_class<T2>::value)
-auto f41(const T1 &a0, const T2 &a1) -> decltype(a0 - a1) {
+auto f40(const T1 &a0, const T2 &a1) -> decltype(a0 - a1) {
   return a0 - a1;
 }
 
-const std::unreachable_sentinel_t &f42() { return std::unreachable_sentinel; }
+const std::unreachable_sentinel_t &f41() { return std::unreachable_sentinel; }
 
 using t15 = std::unreachable_sentinel_t;
 
-std::unreachable_sentinel_t f43() { return std::unreachable_sentinel_t(); }
+std::unreachable_sentinel_t f42() { return std::unreachable_sentinel_t(); }
 
-std::unreachable_sentinel_t f44(const std::unreachable_sentinel_t &a0) {
+std::unreachable_sentinel_t f43(const std::unreachable_sentinel_t &a0) {
   return std::unreachable_sentinel_t(a0);
 }
 
-std::unreachable_sentinel_t f45(std::unreachable_sentinel_t &&a0) {
+std::unreachable_sentinel_t f44(std::unreachable_sentinel_t &&a0) {
   return std::unreachable_sentinel_t(std::move(a0));
 }
 
-std::unreachable_sentinel_t &f46(std::unreachable_sentinel_t &a0,
+std::unreachable_sentinel_t &f45(std::unreachable_sentinel_t &a0,
                                  const std::unreachable_sentinel_t &a1) {
   return a0.operator=(a1);
 }
 
-std::unreachable_sentinel_t &f47(std::unreachable_sentinel_t &a0,
+std::unreachable_sentinel_t &f46(std::unreachable_sentinel_t &a0,
                                  std::unreachable_sentinel_t &&a1) {
   return a0.operator=(std::move(a1));
 }
 
 template <typename T1>
-bool f48(std::unreachable_sentinel_t a0, const T1 &a1)
+bool f47(std::unreachable_sentinel_t a0, const T1 &a1)
   requires(std::weakly_incrementable<T1>)
 {
   return operator==(std::move(a0), a1);
