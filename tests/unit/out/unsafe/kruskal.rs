@@ -9,138 +9,61 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Edge {
-    pub u: i32,
-    pub v: i32,
-    pub weight: f64,
+    pub u: (),
+    pub v: (),
+    pub weight: (),
 }
-pub unsafe fn partition_0(arr: *mut Option<Box<[Edge]>>, mut start: i32, mut end: i32) -> i32 {
-    let pivot: *mut Edge = &mut (*(*arr)
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-        .add((start as usize)));
-    let mut count: i32 = 0;
-    let mut i: i32 = ((start) + (1));
+pub unsafe fn partition_0(
+    arr: *mut std_unique_ptr_Edgearrarr__std_default_delete_Edgearrarr__,
+    mut start: (),
+    mut end: (),
+) -> () {
+    let pivot: *mut Edge = &mut (&(*arr))[(start) as usize];
+    let mut count: () = 0_();
+    let mut i: () = ((start) + (1_()));
     'loop_: while ((i) <= (end)) {
-        if (((*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((i as usize)))
-        .weight)
-            <= ((*pivot).weight))
-        {
+        if (((&(*arr))[(i) as usize].weight) <= ((*pivot).weight)) {
             count.postfix_inc();
         }
         i.prefix_inc();
     }
-    let mut pidx: i32 = ((start) + (count));
+    let mut pidx: () = ((start) + (count));
     let mut tmp: Edge = Edge {
-        u: (*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((pidx as usize)))
-        .u,
-        v: (*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((pidx as usize)))
-        .v,
-        weight: (*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((pidx as usize)))
-        .weight,
+        u: (&(*arr))[(pidx) as usize].u,
+        v: (&(*arr))[(pidx) as usize].v,
+        weight: (&(*arr))[(pidx) as usize].weight,
     };
-    (*(*arr)
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-        .add((pidx as usize))) = Edge {
-        u: (*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((start as usize)))
-        .u,
-        v: (*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((start as usize)))
-        .v,
-        weight: (*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((start as usize)))
-        .weight,
+    (&(*arr))[(pidx) as usize] = Edge {
+        u: (&(*arr))[(start) as usize].u,
+        v: (&(*arr))[(start) as usize].v,
+        weight: (&(*arr))[(start) as usize].weight,
     };
-    (*(*arr)
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-        .add((start as usize))) = Edge {
+    (&(*arr))[(start) as usize] = Edge {
         u: tmp.u,
         v: tmp.v,
         weight: tmp.weight,
     };
-    let mut i: i32 = start;
-    let mut j: i32 = end;
+    let mut i: () = start;
+    let mut j: () = end;
     'loop_: while ((i) < (pidx)) && ((j) > (pidx)) {
-        'loop_: while (((*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((i as usize)))
-        .weight)
-            <= ((*pivot).weight))
-        {
+        'loop_: while (((&(*arr))[(i) as usize].weight) <= ((*pivot).weight)) {
             i.prefix_inc();
         }
-        'loop_: while (((*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((j as usize)))
-        .weight)
-            > ((*pivot).weight))
-        {
+        'loop_: while (((&(*arr))[(j) as usize].weight) > ((*pivot).weight)) {
             j.prefix_dec();
         }
         if ((i) < (pidx)) && ((j) > (pidx)) {
             tmp = Edge {
-                u: (*(*arr)
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-                    .add((i as usize)))
-                .u,
-                v: (*(*arr)
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-                    .add((i as usize)))
-                .v,
-                weight: (*(*arr)
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-                    .add((i as usize)))
-                .weight,
+                u: (&(*arr))[(i) as usize].u,
+                v: (&(*arr))[(i) as usize].v,
+                weight: (&(*arr))[(i) as usize].weight,
             };
-            (*(*arr)
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-                .add((i as usize))) = Edge {
-                u: (*(*arr)
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-                    .add((j as usize)))
-                .u,
-                v: (*(*arr)
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-                    .add((j as usize)))
-                .v,
-                weight: (*(*arr)
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-                    .add((j as usize)))
-                .weight,
+            (&(*arr))[(i) as usize] = Edge {
+                u: (&(*arr))[(j) as usize].u,
+                v: (&(*arr))[(j) as usize].v,
+                weight: (&(*arr))[(j) as usize].weight,
             };
-            (*(*arr)
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-                .add((j as usize))) = Edge {
+            (&(*arr))[(j) as usize] = Edge {
                 u: tmp.u,
                 v: tmp.v,
                 weight: tmp.weight,
@@ -151,147 +74,84 @@ pub unsafe fn partition_0(arr: *mut Option<Box<[Edge]>>, mut start: i32, mut end
     }
     return pidx;
 }
-pub unsafe fn quicksort_1(arr: *mut Option<Box<[Edge]>>, mut start: i32, mut end: i32) {
+pub unsafe fn quicksort_1(
+    arr: *mut std_unique_ptr_Edgearrarr__std_default_delete_Edgearrarr__,
+    mut start: (),
+    mut end: (),
+) {
     if ((start) >= (end)) {
         return;
     }
-    let mut p: i32 = (unsafe {
-        let _arr: *mut Option<Box<[Edge]>> = arr;
-        let _start: i32 = start;
-        let _end: i32 = end;
+    let mut p: () = (unsafe {
+        let _arr: *mut std_unique_ptr_Edgearrarr__std_default_delete_Edgearrarr__ = arr;
+        let _start: () = start;
+        let _end: () = end;
         partition_0(_arr, _start, _end)
     });
     (unsafe {
-        let _arr: *mut Option<Box<[Edge]>> = arr;
-        let _start: i32 = start;
-        let _end: i32 = ((p) - (1));
+        let _arr: *mut std_unique_ptr_Edgearrarr__std_default_delete_Edgearrarr__ = arr;
+        let _start: () = start;
+        let _end: () = ((p) - (1_()));
         quicksort_1(_arr, _start, _end)
     });
     (unsafe {
-        let _arr: *mut Option<Box<[Edge]>> = arr;
-        let _start: i32 = ((p) + (1));
-        let _end: i32 = end;
+        let _arr: *mut std_unique_ptr_Edgearrarr__std_default_delete_Edgearrarr__ = arr;
+        let _start: () = ((p) + (1_()));
+        let _end: () = end;
         quicksort_1(_arr, _start, _end)
     });
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct DisjointSet {
-    pub rank: Option<Box<[i32]>>,
-    pub parent: Option<Box<[i32]>>,
-    pub n: i32,
+    pub rank: std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    pub parent: std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    pub n: (),
 }
 impl DisjointSet {
     pub unsafe fn makeSet(&mut self) {
-        let mut i: i32 = 0;
+        let mut i: () = 0_();
         'loop_: while ((i) < (self.n)) {
-            (*self
-                .parent
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((i as usize))) = i;
-            (*self
-                .rank
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((i as usize))) = 1;
+            self.parent[(i) as usize] = i;
+            self.rank[(i) as usize] = 1_();
             i.postfix_inc();
         }
     }
-    pub unsafe fn find(&mut self, mut x: i32) -> i32 {
-        if ((*self
-            .parent
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((x as usize)))
-            != (x))
-        {
-            (*self
-                .parent
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((x as usize))) = (unsafe {
-                let _x: i32 = (*self
-                    .parent
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                    .add((x as usize)));
+    pub unsafe fn find(&mut self, mut x: ()) -> () {
+        if ((self.parent[(x) as usize]) != (x)) {
+            self.parent[(x) as usize] = (unsafe {
+                let _x: () = self.parent[(x) as usize];
                 DisjointSet::find(self, _x)
             });
         }
-        return (*self
-            .parent
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((x as usize)));
+        return self.parent[(x) as usize];
     }
-    pub unsafe fn merge(&mut self, mut x: i32, mut y: i32) {
-        let mut xset: i32 = (unsafe { DisjointSet::find(self, x) });
-        let mut yset: i32 = (unsafe { DisjointSet::find(self, y) });
+    pub unsafe fn merge(&mut self, mut x: (), mut y: ()) {
+        let mut xset: () = (unsafe { DisjointSet::find(self, x) });
+        let mut yset: () = (unsafe { DisjointSet::find(self, y) });
         if ((xset) == (yset)) {
             return;
         }
-        if ((*self
-            .rank
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((xset as usize)))
-            < (*self
-                .rank
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((yset as usize))))
-        {
-            (*self
-                .parent
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((xset as usize))) = yset;
-        } else if ((*self
-            .rank
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((xset as usize)))
-            > (*self
-                .rank
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((yset as usize))))
-        {
-            (*self
-                .parent
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((yset as usize))) = xset;
+        if ((self.rank[(xset) as usize]) < (self.rank[(yset) as usize])) {
+            self.parent[(xset) as usize] = yset;
+        } else if ((self.rank[(xset) as usize]) > (self.rank[(yset) as usize])) {
+            self.parent[(yset) as usize] = xset;
         } else {
-            (*self
-                .parent
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((yset as usize))) = xset;
-            (*self
-                .rank
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((xset as usize))) = ((*self
-                .rank
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((xset as usize)))
-                + (1));
+            self.parent[(yset) as usize] = xset;
+            self.rank[(xset) as usize] = ((self.rank[(xset) as usize]) + (1_()));
         }
     }
     pub unsafe fn move_from(_a0: *mut DisjointSet) -> Self {
         let mut this = Self {
-            rank: (*_a0).rank.take(),
-            parent: (*_a0).parent.take(),
+            rank: (*_a0).rank,
+            parent: (*_a0).parent,
             n: (*_a0).n,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut DisjointSet) -> *mut DisjointSet {
-        self.rank = (*_a0).rank.take();
-        self.parent = (*_a0).parent.take();
+        self.rank = ((*_a0).rank).clone();
+        self.parent = ((*_a0).parent).clone();
         self.n = (*_a0).n;
         return &mut (*(self as *mut DisjointSet));
     }
@@ -299,67 +159,45 @@ impl DisjointSet {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Graph {
-    pub edges: Option<Box<[Edge]>>,
-    pub V: i32,
-    pub E: i32,
+    pub edges: std_unique_ptr_Edgearrarr__std_default_delete_Edgearrarr__,
+    pub V: (),
+    pub E: (),
 }
 impl Graph {
     pub unsafe fn move_from(_a0: *mut Graph) -> Self {
         let mut this = Self {
-            edges: (*_a0).edges.take(),
+            edges: (*_a0).edges,
             V: (*_a0).V,
             E: (*_a0).E,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Graph) -> *mut Graph {
-        self.edges = (*_a0).edges.take();
+        self.edges = ((*_a0).edges).clone();
         self.V = (*_a0).V;
         self.E = (*_a0).E;
         return &mut (*(self as *mut Graph));
     }
 }
-pub unsafe fn MSTKruskal_2(graph: *mut Graph) -> f64 {
+pub unsafe fn MSTKruskal_2(graph: *mut Graph) -> () {
     (unsafe {
-        let _arr: *mut Option<Box<[Edge]>> = &mut (*graph).edges;
-        let _end: i32 = (((*graph).E) - (1));
-        quicksort_1(_arr, 0, _end)
+        let _arr: *mut std_unique_ptr_Edgearrarr__std_default_delete_Edgearrarr__ =
+            &mut (*graph).edges;
+        let _end: () = (((*graph).E) - (1_()));
+        quicksort_1(_arr, 0_(), _end)
     });
     let mut set: DisjointSet = DisjointSet {
-        rank: Some(
-            (0..((*graph).V as usize))
-                .map(|_| 0_i32)
-                .collect::<Box<[_]>>(),
-        ),
-        parent: Some(
-            (0..((*graph).V as usize))
-                .map(|_| 0_i32)
-                .collect::<Box<[_]>>(),
-        ),
+        rank: (unsafe { make_unique_3((*graph).V) }),
+        parent: (unsafe { make_unique_3((*graph).V) }),
         n: (*graph).V,
     };
     (unsafe { DisjointSet::makeSet(&mut set) });
-    let mut total_weight: f64 = 0_f64;
-    let mut i: i32 = 0;
+    let mut total_weight: () = 0_();
+    let mut i: () = 0_();
     'loop_: while ((i) < ((*graph).E)) {
-        let mut x: i32 = (*(*graph)
-            .edges
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((i as usize)))
-        .u;
-        let mut y: i32 = (*(*graph)
-            .edges
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((i as usize)))
-        .v;
-        let mut w: f64 = (*(*graph)
-            .edges
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-            .add((i as usize)))
-        .weight;
+        let mut x: () = (&(*graph)).edges[(i) as usize].u;
+        let mut y: () = (&(*graph)).edges[(i) as usize].v;
+        let mut w: () = (&(*graph)).edges[(i) as usize].weight;
         if ((unsafe { DisjointSet::find(&mut set, x) })
             != (unsafe { DisjointSet::find(&mut set, y) }))
         {
@@ -376,65 +214,41 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut V: i32 = 4;
-    let mut E: i32 = 5;
+unsafe fn main_0() -> () {
+    let mut V: () = 4_();
+    let mut E: () = 5_();
     let mut graph: Graph = Graph {
-        edges: Some(
-            (0..(E as usize))
-                .map(|_| <Edge>::default())
-                .collect::<Box<[_]>>(),
-        ),
+        edges: (unsafe { make_unique_4(E) }),
         V: V,
         E: E,
     };
-    (*graph
-        .edges
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-        .add(0_usize)) = Edge {
-        u: 0,
-        v: 1,
-        weight: 10_f64,
+    graph.edges[(0_()) as usize] = Edge {
+        u: 0_(),
+        v: 1_(),
+        weight: 10_(),
     };
-    (*graph
-        .edges
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-        .add(1_usize)) = Edge {
-        u: 1,
-        v: 3,
-        weight: 15_f64,
+    graph.edges[(1_()) as usize] = Edge {
+        u: 1_(),
+        v: 3_(),
+        weight: 15_(),
     };
-    (*graph
-        .edges
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-        .add(2_usize)) = Edge {
-        u: 2,
-        v: 3,
-        weight: 4_f64,
+    graph.edges[(2_()) as usize] = Edge {
+        u: 2_(),
+        v: 3_(),
+        weight: 4_(),
     };
-    (*graph
-        .edges
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-        .add(3_usize)) = Edge {
-        u: 2,
-        v: 0,
-        weight: 6_f64,
+    graph.edges[(3_()) as usize] = Edge {
+        u: 2_(),
+        v: 0_(),
+        weight: 6_(),
     };
-    (*graph
-        .edges
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Edge)
-        .add(4_usize)) = Edge {
-        u: 0,
-        v: 3,
-        weight: 5_f64,
+    graph.edges[(4_()) as usize] = Edge {
+        u: 0_(),
+        v: 3_(),
+        weight: 5_(),
     };
-    let mut total_weight: f64 = (unsafe { MSTKruskal_2(&mut graph) });
-    assert!(((total_weight) == (19_f64)));
-    return 0;
+    let mut total_weight: () = (unsafe { MSTKruskal_2(&mut graph) });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

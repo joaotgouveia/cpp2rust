@@ -12,12 +12,14 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<i32> = Vec::from([1, 2]);
-    let mut p: UnsafeRandomAccessIterator<i32> = v.begin();
-    let r: *const i32 = &v[(1_usize)];
-    (*p.iter_deref()) = (*r);
-    assert!(((v[(0_usize)]) == (2)));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut v: std_vector_int__std_allocator_int__ =
+        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None);
+    let mut p: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+        (unsafe { v.begin_26() });
+    let r: *const () = &v[(1_()) as usize];
+    (*p) = (*r);
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -6,10 +6,10 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn foo_0() -> bool {
+pub unsafe fn foo_0() -> () {
     return true;
 }
-pub unsafe fn bar_1() -> bool {
+pub unsafe fn bar_1() -> () {
     return true;
 }
 pub fn main() {
@@ -18,23 +18,39 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut i1: i32 = 0;
-    let mut i2: i32 = 1;
-    write!((*libcc2rs::cout_unsafe()), "{:}\n", (true as u8),);
-    write!((*libcc2rs::cout_unsafe()), "{:}\n", (false as u8),);
-    write!((*libcc2rs::cout_unsafe()), "{:}\n", (((i1) != (i2)) as u8),);
-    write!((*libcc2rs::cout_unsafe()), "{:}\n", (((i1) == (i2)) as u8),);
+unsafe fn main_0() -> () {
+    let mut i1: () = 0_();
+    let mut i2: () = 1_();
     write!(
-        (*libcc2rs::cout_unsafe()),
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
+        "{:}\n",
+        (true as u8),
+    );
+    write!(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
+        "{:}\n",
+        (false as u8),
+    );
+    write!(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
+        "{:}\n",
+        (((i1) != (i2)) as u8),
+    );
+    write!(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
+        "{:}\n",
+        (((i1) == (i2)) as u8),
+    );
+    write!(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
         "{:}\n",
         ((unsafe { foo_0() }) as u8),
     );
     write!(
-        (*libcc2rs::cout_unsafe()),
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_2)),
         "{:}\n",
         ((unsafe { bar_1() }) as u8),
     );
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

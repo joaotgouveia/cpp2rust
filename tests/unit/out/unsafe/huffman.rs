@@ -9,13 +9,13 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MinHeapNode {
-    pub data: libc::c_char,
-    pub freq: i32,
+    pub data: (),
+    pub freq: (),
     pub left: *mut MinHeapNode,
     pub right: *mut MinHeapNode,
 }
 impl MinHeapNode {
-    pub unsafe fn IsLeaf(&self) -> bool {
+    pub unsafe fn IsLeaf(&self) -> () {
         return ((self.left).is_null()) && ((self.right).is_null());
     }
 }
@@ -42,186 +42,80 @@ pub unsafe fn Swap_0(a: *mut MinHeapNode, b: *mut MinHeapNode) {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct MinHeap {
-    pub size: i32,
-    pub capacity: i32,
-    pub arr: Option<Box<[*mut MinHeapNode]>>,
-    pub next: i32,
-    pub alloc: Option<Box<[MinHeapNode]>>,
+    pub size: (),
+    pub capacity: (),
+    pub arr: std_unique_ptr_MinHeapNode_ptrarrarr__std_default_delete_MinHeapNode_ptrarrarr__,
+    pub next: (),
+    pub alloc: std_unique_ptr_MinHeapNodearrarr__std_default_delete_MinHeapNodearrarr__,
 }
 impl MinHeap {
-    pub unsafe fn Alloc(&mut self, mut data: libc::c_char, mut freq: i32) -> *mut MinHeapNode {
-        (*self
-            .alloc
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut MinHeapNode)
-            .add((self.next as usize))) = MinHeapNode {
+    pub unsafe fn Alloc(&mut self, mut data: (), mut freq: ()) -> *mut MinHeapNode {
+        self.alloc[(self.next) as usize] = MinHeapNode {
             data: data,
             freq: freq,
             left: std::ptr::null_mut(),
             right: std::ptr::null_mut(),
         };
-        return (&mut (*self
-            .alloc
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut MinHeapNode)
-            .add((self.next.postfix_inc() as usize))) as *mut MinHeapNode);
+        return (&mut self.alloc[(self.next.postfix_inc()) as usize] as *mut MinHeapNode);
     }
-    pub unsafe fn Heapify(&mut self, mut idx: i32) {
-        let mut smallest: i32 = idx;
-        let mut left: i32 = (((2) * (idx)) + (1));
-        let mut right: i32 = (((2) * (idx)) + (2));
+    pub unsafe fn Heapify(&mut self, mut idx: ()) {
+        let mut smallest: () = idx;
+        let mut left: () = (((2_()) * (idx)) + (1_()));
+        let mut right: () = (((2_()) * (idx)) + (2_()));
         if ((left) < (self.size))
-            && (((*(*self
-                .arr
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| {
-                    s.as_ptr() as *mut *mut MinHeapNode
-                })
-                .add((left as usize))))
-            .freq)
-                < ((*(*self
-                    .arr
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| {
-                        s.as_ptr() as *mut *mut MinHeapNode
-                    })
-                    .add((smallest as usize))))
-                .freq))
+            && (((*self.arr[(left) as usize]).freq) < ((*self.arr[(smallest) as usize]).freq))
         {
             smallest = left;
         }
         if ((right) < (self.size))
-            && (((*(*self
-                .arr
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| {
-                    s.as_ptr() as *mut *mut MinHeapNode
-                })
-                .add((right as usize))))
-            .freq)
-                < ((*(*self
-                    .arr
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| {
-                        s.as_ptr() as *mut *mut MinHeapNode
-                    })
-                    .add((smallest as usize))))
-                .freq))
+            && (((*self.arr[(right) as usize]).freq) < ((*self.arr[(smallest) as usize]).freq))
         {
             smallest = right;
         }
         if ((smallest) != (idx)) {
             (unsafe {
-                let _a: *mut MinHeapNode = &mut (*(*self
-                    .arr
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| {
-                        s.as_ptr() as *mut *mut MinHeapNode
-                    })
-                    .add((smallest as usize))));
-                let _b: *mut MinHeapNode = &mut (*(*self
-                    .arr
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| {
-                        s.as_ptr() as *mut *mut MinHeapNode
-                    })
-                    .add((idx as usize))));
+                let _a: *mut MinHeapNode = &mut (*self.arr[(smallest) as usize]);
+                let _b: *mut MinHeapNode = &mut (*self.arr[(idx) as usize]);
                 Swap_0(_a, _b)
             });
             (unsafe { MinHeap::Heapify(self, smallest) });
         }
     }
     pub unsafe fn ExtractMin(&mut self) -> *mut MinHeapNode {
-        let mut out: *mut MinHeapNode = (*self
-            .arr
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| {
-                s.as_ptr() as *mut *mut MinHeapNode
-            })
-            .add(0_usize));
+        let mut out: *mut MinHeapNode = self.arr[(0_()) as usize];
         self.size.prefix_dec();
-        (*self
-            .arr
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| {
-                s.as_ptr() as *mut *mut MinHeapNode
-            })
-            .add(0_usize)) = (*self
-            .arr
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| {
-                s.as_ptr() as *mut *mut MinHeapNode
-            })
-            .add((self.size as usize)));
-        (unsafe { MinHeap::Heapify(self, 0) });
+        self.arr[(0_()) as usize] = self.arr[(self.size) as usize];
+        (unsafe { MinHeap::Heapify(self, 0_()) });
         return out;
     }
     pub unsafe fn Insert(&mut self, mut node: *mut MinHeapNode) {
         self.size.prefix_inc();
-        let mut i: i32 = ((self.size) - (1));
-        'loop_: while ((i) != (0))
-            && (((*node).freq)
-                < ((*(*self
-                    .arr
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| {
-                        s.as_ptr() as *mut *mut MinHeapNode
-                    })
-                    .add(((((i) - (1)) / (2)) as usize))))
-                .freq))
+        let mut i: () = ((self.size) - (1_()));
+        'loop_: while ((i) != (0_()))
+            && (((*node).freq) < ((*self.arr[(((i) - (1_())) / (2_())) as usize]).freq))
         {
-            (*self
-                .arr
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| {
-                    s.as_ptr() as *mut *mut MinHeapNode
-                })
-                .add((i as usize))) = (*self
-                .arr
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| {
-                    s.as_ptr() as *mut *mut MinHeapNode
-                })
-                .add(((((i) - (1)) / (2)) as usize)));
-            i = (((i) - (1)) / (2));
+            self.arr[(i) as usize] = self.arr[(((i) - (1_())) / (2_())) as usize];
+            i = (((i) - (1_())) / (2_()));
         }
-        (*self
-            .arr
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| {
-                s.as_ptr() as *mut *mut MinHeapNode
-            })
-            .add((i as usize))) = node;
+        self.arr[(i) as usize] = node;
     }
     pub unsafe fn Build(
         &mut self,
-        data: *mut Option<Box<[libc::c_char]>>,
-        freq: *mut Option<Box<[i32]>>,
-        mut n: i32,
+        data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__,
+        freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+        mut n: (),
     ) {
-        let mut i: i32 = 0;
+        let mut i: () = 0_();
         'loop_: while ((i) < (n)) {
-            (*self
-                .arr
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| {
-                    s.as_ptr() as *mut *mut MinHeapNode
-                })
-                .add((self.size.postfix_inc() as usize))) = (unsafe {
-                let _data: libc::c_char = (*(*data)
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut libc::c_char)
-                    .add((i as usize)));
-                let _freq: i32 = (*(*freq)
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                    .add((i as usize)));
+            self.arr[(self.size.postfix_inc()) as usize] = (unsafe {
+                let _data: () = (&(*data))[(i) as usize];
+                let _freq: () = (&(*freq))[(i) as usize];
                 MinHeap::Alloc(self, _data, _freq)
             });
             i.prefix_inc();
         }
-        let mut i: i32 = (((self.size) - (2)) / (2));
-        'loop_: while ((i) >= (0)) {
+        let mut i: () = (((self.size) - (2_())) / (2_()));
+        'loop_: while ((i) >= (0_())) {
             (unsafe { MinHeap::Heapify(self, i) });
             i.prefix_dec();
         }
@@ -230,204 +124,139 @@ impl MinHeap {
         let mut this = Self {
             size: (*_a0).size,
             capacity: (*_a0).capacity,
-            arr: (*_a0).arr.take(),
+            arr: (*_a0).arr,
             next: (*_a0).next,
-            alloc: (*_a0).alloc.take(),
+            alloc: (*_a0).alloc,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut MinHeap) -> *mut MinHeap {
         self.size = (*_a0).size;
         self.capacity = (*_a0).capacity;
-        self.arr = (*_a0).arr.take();
+        self.arr = ((*_a0).arr).clone();
         self.next = (*_a0).next;
-        self.alloc = (*_a0).alloc.take();
+        self.alloc = ((*_a0).alloc).clone();
         return &mut (*(self as *mut MinHeap));
     }
 }
-pub unsafe fn AllocMinHeap_1(mut capacity: i32) -> Option<Box<MinHeap>> {
-    let mut minHeap: Option<Box<MinHeap>> = Some(Box::new(MinHeap {
-        size: 0,
-        capacity: capacity,
-        arr: Some(
-            (0..(capacity as usize))
-                .map(|_| std::ptr::null_mut())
-                .collect::<Box<[_]>>(),
-        ),
-        next: 0,
-        alloc: Some(
-            (0..10000_usize)
-                .map(|_| <MinHeapNode>::default())
-                .collect::<Box<[_]>>(),
-        ),
-    }));
-    return minHeap.take();
-}
-pub unsafe fn Huffman_2(
-    data: *mut Option<Box<[libc::c_char]>>,
-    freq: *mut Option<Box<[i32]>>,
-    mut size: i32,
-) -> Option<Box<MinHeap>> {
-    let mut minHeap: Option<Box<MinHeap>> = (unsafe { AllocMinHeap_1(size) });
-    (unsafe {
-        let _data: *mut Option<Box<[libc::c_char]>> = data;
-        let _freq: *mut Option<Box<[i32]>> = freq;
-        let _n: i32 = size;
-        MinHeap::Build(
-            &mut (*minHeap.as_deref().map_or(::std::ptr::null_mut(), |v| {
-                v as *const MinHeap as *mut MinHeap
-            })),
-            _data,
-            _freq,
-            _n,
-        )
+pub unsafe fn AllocMinHeap_1(
+    mut capacity: (),
+) -> std_unique_ptr_MinHeap__std_default_delete_MinHeap__ {
+    let mut minHeap: std_unique_ptr_MinHeap__std_default_delete_MinHeap__ = (unsafe {
+        let mut ___args: MinHeap = MinHeap {
+            size: 0_(),
+            capacity: capacity,
+            arr: (unsafe { make_unique_2(capacity) }),
+            next: 0_(),
+            alloc: (unsafe { make_unique_3(10000_()) }),
+        };
+        make_unique_4(&mut ___args)
     });
-    'loop_: while (((*minHeap.as_deref().map_or(::std::ptr::null_mut(), |v| {
-        v as *const MinHeap as *mut MinHeap
-    }))
-    .size)
-        != (1))
-    {
-        let mut left: *mut MinHeapNode = (unsafe {
-            MinHeap::ExtractMin(
-                &mut (*minHeap.as_deref().map_or(::std::ptr::null_mut(), |v| {
-                    v as *const MinHeap as *mut MinHeap
-                })),
-            )
-        });
-        let mut right: *mut MinHeapNode = (unsafe {
-            MinHeap::ExtractMin(
-                &mut (*minHeap.as_deref().map_or(::std::ptr::null_mut(), |v| {
-                    v as *const MinHeap as *mut MinHeap
-                })),
-            )
-        });
+    return minHeap;
+}
+pub unsafe fn Huffman_5(
+    data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__,
+    freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    mut size: (),
+) -> std_unique_ptr_MinHeap__std_default_delete_MinHeap__ {
+    let mut minHeap: std_unique_ptr_MinHeap__std_default_delete_MinHeap__ =
+        (unsafe { AllocMinHeap_1(size) });
+    (unsafe {
+        let _data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__ = data;
+        let _freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = freq;
+        let _n: () = size;
+        MinHeap::Build(&mut (*minHeap), _data, _freq, _n)
+    });
+    'loop_: while (((*minHeap).size) != (1_())) {
+        let mut left: *mut MinHeapNode = (unsafe { MinHeap::ExtractMin(&mut (*minHeap)) });
+        let mut right: *mut MinHeapNode = (unsafe { MinHeap::ExtractMin(&mut (*minHeap)) });
         let mut top: *mut MinHeapNode = (unsafe {
             MinHeap::Alloc(
-                &mut (*minHeap.as_deref().map_or(::std::ptr::null_mut(), |v| {
-                    v as *const MinHeap as *mut MinHeap
-                })),
-                ('$' as libc::c_char),
+                &mut (*minHeap),
+                ('$' as ()),
                 (((*left).freq) + ((*right).freq)),
             )
         });
         (*top).left = left;
         (*top).right = right;
-        (unsafe {
-            MinHeap::Insert(
-                &mut (*minHeap.as_deref().map_or(::std::ptr::null_mut(), |v| {
-                    v as *const MinHeap as *mut MinHeap
-                })),
-                top,
-            )
-        });
+        (unsafe { MinHeap::Insert(&mut (*minHeap), top) });
     }
-    return minHeap.take();
+    return minHeap;
 }
-pub unsafe fn CollectCode_3(
-    arr: *mut Option<Box<[i32]>>,
-    mut top: i32,
-    out: *mut Option<Box<[i32]>>,
-    next: *mut i32,
+pub unsafe fn CollectCode_6(
+    arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    mut top: (),
+    out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    next: *mut (),
 ) {
-    (*(*out)
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-        .add(((*next) as usize))) = 0;
-    let mut i: i32 = 0;
+    (&(*out))[(*next) as usize] = 0_();
+    let mut i: () = 0_();
     'loop_: while ((i) < (top)) {
-        (*(*out)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add(((*next) as usize))) = ((*(*out)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add(((*next) as usize)))
-            * (10));
-        (*(*out)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add(((*next) as usize))) = ((*(*out)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add(((*next) as usize)))
-            + (*(*arr)
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add((i as usize))));
+        (&(*out))[(*next) as usize] = (((&(*out))[(*next) as usize]) * (10_()));
+        (&(*out))[(*next) as usize] = (((&(*out))[(*next) as usize]) + ((&(*arr))[(i) as usize]));
         i.prefix_inc();
     }
     (*next).prefix_inc();
 }
-pub unsafe fn CollectCodes_4(
+pub unsafe fn CollectCodes_7(
     mut root: *mut MinHeapNode,
-    arr: *mut Option<Box<[i32]>>,
-    mut top: i32,
-    out: *mut Option<Box<[i32]>>,
-    next: *mut i32,
+    arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    mut top: (),
+    out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    next: *mut (),
 ) {
     if !(((*root).left).is_null()) {
-        (*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((top as usize))) = 0;
+        (&(*arr))[(top) as usize] = 0_();
         (unsafe {
             let _root: *mut MinHeapNode = (*root).left;
-            let _arr: *mut Option<Box<[i32]>> = arr;
-            let _top: i32 = ((top) + (1));
-            let _out: *mut Option<Box<[i32]>> = out;
-            let _next: *mut i32 = next;
-            CollectCodes_4(_root, _arr, _top, _out, _next)
+            let _arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = arr;
+            let _top: () = ((top) + (1_()));
+            let _out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = out;
+            let _next: *mut () = next;
+            CollectCodes_7(_root, _arr, _top, _out, _next)
         });
     }
     if !(((*root).right).is_null()) {
-        (*(*arr)
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((top as usize))) = 1;
+        (&(*arr))[(top) as usize] = 1_();
         (unsafe {
             let _root: *mut MinHeapNode = (*root).right;
-            let _arr: *mut Option<Box<[i32]>> = arr;
-            let _top: i32 = ((top) + (1));
-            let _out: *mut Option<Box<[i32]>> = out;
-            let _next: *mut i32 = next;
-            CollectCodes_4(_root, _arr, _top, _out, _next)
+            let _arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = arr;
+            let _top: () = ((top) + (1_()));
+            let _out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = out;
+            let _next: *mut () = next;
+            CollectCodes_7(_root, _arr, _top, _out, _next)
         });
     }
     if (unsafe { MinHeapNode::IsLeaf(&(*(root).cast_const())) }) {
         (unsafe {
-            let _arr: *mut Option<Box<[i32]>> = arr;
-            let _top: i32 = top;
-            let _out: *mut Option<Box<[i32]>> = out;
-            let _next: *mut i32 = next;
-            CollectCode_3(_arr, _top, _out, _next)
+            let _arr: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = arr;
+            let _top: () = top;
+            let _out: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = out;
+            let _next: *mut () = next;
+            CollectCode_6(_arr, _top, _out, _next)
         });
     }
 }
-pub unsafe fn HuffmanCodes_5(
-    data: *mut Option<Box<[libc::c_char]>>,
-    freq: *mut Option<Box<[i32]>>,
-    mut size: i32,
-) -> Option<Box<[i32]>> {
-    let mut minHeap: Option<Box<MinHeap>> = (unsafe {
-        let _data: *mut Option<Box<[libc::c_char]>> = data;
-        let _freq: *mut Option<Box<[i32]>> = freq;
-        let _size: i32 = size;
-        Huffman_2(_data, _freq, _size)
+pub unsafe fn HuffmanCodes_8(
+    data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__,
+    freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__,
+    mut size: (),
+) -> std_unique_ptr_intarrarr__std_default_delete_intarrarr__ {
+    let mut minHeap: std_unique_ptr_MinHeap__std_default_delete_MinHeap__ = (unsafe {
+        let _data: *mut std_unique_ptr_chararrarr__std_default_delete_chararrarr__ = data;
+        let _freq: *mut std_unique_ptr_intarrarr__std_default_delete_intarrarr__ = freq;
+        let _size: () = size;
+        Huffman_5(_data, _freq, _size)
     });
-    let mut root: *mut MinHeapNode = (unsafe {
-        MinHeap::ExtractMin(
-            &mut (*minHeap.as_deref().map_or(::std::ptr::null_mut(), |v| {
-                v as *const MinHeap as *mut MinHeap
-            })),
-        )
-    });
-    let mut arr: Option<Box<[i32]>> = Some((0..100_usize).map(|_| 0_i32).collect::<Box<[_]>>());
-    let mut out: Option<Box<[i32]>> = Some((0..100_usize).map(|_| 0_i32).collect::<Box<[_]>>());
-    let mut top: i32 = 0;
-    let mut next: i32 = 0;
-    (unsafe { CollectCodes_4(root, &mut arr, top, &mut out, &mut next) });
-    return out.take();
+    let mut root: *mut MinHeapNode = (unsafe { MinHeap::ExtractMin(&mut (*minHeap)) });
+    let mut arr: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
+        (unsafe { make_unique_9(100_()) });
+    let mut out: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
+        (unsafe { make_unique_9(100_()) });
+    let mut top: () = 0_();
+    let mut next: () = 0_();
+    (unsafe { CollectCodes_7(root, &mut arr, top, &mut out, &mut next) });
+    return out;
 }
 pub fn main() {
     unsafe {
@@ -435,69 +264,30 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut size: i32 = 6;
-    let mut arr1: [libc::c_char; 6] = [
-        ('a' as libc::c_char),
-        ('b' as libc::c_char),
-        ('c' as libc::c_char),
-        ('d' as libc::c_char),
-        ('e' as libc::c_char),
-        ('f' as libc::c_char),
+unsafe fn main_0() -> () {
+    let mut size: () = 6_();
+    let mut arr1: [(); 6] = [
+        ('a' as ()),
+        ('b' as ()),
+        ('c' as ()),
+        ('d' as ()),
+        ('e' as ()),
+        ('f' as ()),
     ];
-    let mut arr2: [i32; 6] = [5, 9, 12, 13, 16, 45];
-    let mut data: Option<Box<[libc::c_char]>> = Some(
-        (0..(size as usize))
-            .map(|_| (0 as libc::c_char))
-            .collect::<Box<[_]>>(),
-    );
-    let mut freq: Option<Box<[i32]>> =
-        Some((0..(size as usize)).map(|_| 0_i32).collect::<Box<[_]>>());
-    let mut i: i32 = 0;
+    let mut arr2: [(); 6] = [5_(), 9_(), 12_(), 13_(), 16_(), 45_()];
+    let mut data: std_unique_ptr_chararrarr__std_default_delete_chararrarr__ =
+        (unsafe { make_unique_10(size) });
+    let mut freq: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
+        (unsafe { make_unique_9(size) });
+    let mut i: () = 0_();
     'loop_: while ((i) < (size)) {
-        (*data
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut libc::c_char)
-            .add((i as usize))) = arr1[(i) as usize];
-        (*freq
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((i as usize))) = arr2[(i) as usize];
+        data[(i) as usize] = arr1[(i) as usize];
+        freq[(i) as usize] = arr2[(i) as usize];
         i.prefix_inc();
     }
-    let mut out: Option<Box<[i32]>> = (unsafe { HuffmanCodes_5(&mut data, &mut freq, size) });
-    assert!(
-        ((((((*out
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add(0_usize))
-            == (0))
-            && ((*out
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add(1_usize))
-                == (100)))
-            && ((*out
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add(2_usize))
-                == (101)))
-            && ((*out
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add(3_usize))
-                == (1100)))
-            && ((*out
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add(4_usize))
-                == (1101)))
-            && ((*out
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-                .add(5_usize))
-                == (111))
-    );
-    return 0;
+    let mut out: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
+        (unsafe { HuffmanCodes_8(&mut data, &mut freq, size) });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

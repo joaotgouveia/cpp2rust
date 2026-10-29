@@ -9,22 +9,20 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Holder {
-    pub v: Vec<i32>,
+    pub v: std_vector_int__std_allocator_int__,
 }
 impl Holder {
     pub unsafe fn move_from(_a0: *mut Holder) -> Self {
-        let mut this = Self {
-            v: std::mem::take(&mut (*_a0).v),
-        };
+        let mut this = Self { v: (*_a0).v };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Holder) -> *mut Holder {
-        self.v = std::mem::take(&mut (*_a0).v);
+        self.v = ((*_a0).v).clone();
         return &mut (*(self as *mut Holder));
     }
 }
-pub unsafe fn write_through_0(mut p: *mut i32) {
-    (*p) = 42;
+pub unsafe fn write_through_0(mut p: *mut ()) {
+    (*p) = 42_();
 }
 pub fn main() {
     unsafe {
@@ -32,37 +30,39 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<i32> = Vec::new();
-    {
-        let __a1 = 10;
-        v.push(__a1)
-    };
-    {
-        let __a1 = 20;
-        v.push(__a1)
-    };
-    let mut p: *mut Vec<i32> = (&mut v as *mut Vec<i32>);
-    let mut a: i32 = (&mut (*p))[(0_usize)];
-    (&mut (*p))[(1_usize)] = 30;
+unsafe fn main_0() -> () {
+    let mut v: std_vector_int__std_allocator_int__ =
+        <std_vector_int__std_allocator_int__>::default();
+    (unsafe {
+        let mut ___x: () = 10_();
+        v.push_back_58(&mut ___x)
+    });
+    (unsafe {
+        let mut ___x: () = 20_();
+        v.push_back_58(&mut ___x)
+    });
+    let mut p: *mut std_vector_int__std_allocator_int__ =
+        (&mut v as *mut std_vector_int__std_allocator_int__);
+    let mut a: () = (&mut (*p))[(0_()) as usize];
+    (&mut (*p))[(1_()) as usize] = 30_();
     let mut h: Holder = <Holder>::default();
-    {
-        let __a1 = 40;
-        h.v.push(__a1)
-    };
-    {
-        let __a1 = 50;
-        h.v.push(__a1)
-    };
+    (unsafe {
+        let mut ___x: () = 40_();
+        h.v.push_back_58(&mut ___x)
+    });
+    (unsafe {
+        let mut ___x: () = 50_();
+        h.v.push_back_58(&mut ___x)
+    });
     let mut hp: *mut Holder = (&mut h as *mut Holder);
-    let mut b: i32 = (&mut (*hp)).v[(0_usize)];
-    (&mut (*hp)).v[(1_usize)] = 60;
-    assert!(((a) == (10)));
-    assert!((((&mut (*p))[(1_usize)]) == (30)));
-    assert!(((b) == (40)));
-    assert!((((&mut (*hp)).v[(1_usize)]) == (60)));
-    (unsafe { write_through_0((&mut (&mut (*p))[0_usize as usize] as *mut i32)) });
-    assert!((((&mut (*p))[(0_usize)]) == (42)));
-    return 0;
+    let mut b: () = (&mut (*hp)).v[(0_()) as usize];
+    (&mut (*hp)).v[(1_()) as usize] = 60_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe { write_through_0((unsafe { (*p).at_49(0_()) })) });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

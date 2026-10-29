@@ -9,12 +9,12 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, DestructorUnsafe, Default)]
 pub struct Owner {
-    pub p: *mut i32,
+    pub p: *mut (),
 }
 impl Owner {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self {
-            p: (Box::leak(Box::new(v)) as *mut i32),
+            p: (Box::leak(Box::new(v)) as *mut ()),
         };
         this
     }
@@ -31,12 +31,12 @@ impl Owner {
             }
         };
     }
-    pub unsafe fn take(&mut self) -> FnPtr<fn() -> i32> {
+    pub unsafe fn take(&mut self) -> FnPtr<fn() -> ()> {
         return lambda_unsafe!(
             {
                 let self_: Owner = Owner::move_from({ &mut (*(self as *mut Owner)) });
             },
-            || -> i32 {
+            || -> () {
                 return (*self_.p);
             }
         );
@@ -48,44 +48,44 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut o: Owner = Owner::new({ 5 });
+unsafe fn main_0() -> () {
+    let mut o: Owner = Owner::new({ 5_() });
     let _dtor_o = ScopedDestructorUnsafe::new(&raw mut o, Owner::destructor);
-    let mut f: FnPtr<fn() -> i32> = lambda_unsafe!(
+    let mut f: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
             let h: Owner = Owner::move_from({ &mut o });
         },
-        || -> i32 {
+        || -> () {
             return (*h.p);
         }
     );
     let _dtor_f = ScopedDestructorUnsafe::new(&raw mut f, |__f| __f.destroy());
-    assert!((o.p).is_null());
-    assert!(((unsafe { f.call() }) == (5)));
-    let mut g: FnPtr<fn() -> i32> = f.move_from();
+    unimplemented!();
+    unimplemented!();
+    let mut g: FnPtr<fn() -> ()> = f.move_from();
     let _dtor_g = ScopedDestructorUnsafe::new(&raw mut g, |__f| __f.destroy());
-    assert!(((unsafe { g.call() }) == (5)));
-    let mut total: i32 = 0;
+    unimplemented!();
+    let mut total: () = 0_();
     let mut consume: FnPtr<fn()> = lambda_unsafe!(
         {
-            let h: Owner = Owner::new({ 7 });
-            let total: *mut i32 = &mut total;
+            let h: Owner = Owner::new({ 7_() });
+            let total: *mut () = &mut total;
         },
         || {
             (*total) += (*h.p);
-            (*h.p) = 0;
+            (*h.p) = 0_();
         }
     );
     let _dtor_consume = ScopedDestructorUnsafe::new(&raw mut consume, |__f| __f.destroy());
     (unsafe { consume.call() });
     (unsafe { consume.call() });
-    assert!(((total) == (7)));
-    let mut o2: Owner = Owner::new({ 9 });
+    unimplemented!();
+    let mut o2: Owner = Owner::new({ 9_() });
     let _dtor_o2 = ScopedDestructorUnsafe::new(&raw mut o2, Owner::destructor);
-    let mut t: FnPtr<fn() -> i32> = (unsafe { Owner::take(&mut o2) });
+    let mut t: FnPtr<fn() -> ()> = (unsafe { Owner::take(&mut o2) });
     let _dtor_t = ScopedDestructorUnsafe::new(&raw mut t, |__f| __f.destroy());
-    assert!((o2.p).is_null());
-    assert!(((unsafe { t.call() }) == (9)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

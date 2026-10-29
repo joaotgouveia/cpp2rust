@@ -10,18 +10,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let outer: Value<Vec<Vec<i32>>> = Rc::new(RefCell::new(Vec::new()));
-    let mut inner: Vec<i32> = Vec::new();
-    {
-        let a0_clone = inner.clone();
-        (*outer.borrow_mut()).push(a0_clone)
-    };
-    let mut sink: Ptr<Vec<i32>> = (outer.decay().to_last());
-    assert!(((*sink.upgrade().deref()).len() == 0_usize));
-    let mut p: Ptr<Vec<Vec<i32>>> = (outer.as_pointer());
-    sink = (p.decay().to_last());
-    assert!(((*sink.upgrade().deref()).len() == 0_usize));
-    return 0;
+fn main_0() -> () {
+    let outer : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() )) ;
+    let inner: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        <std_vector_int__std_allocator_int__>::default(),
+    ));
+    ({ (*outer.borrow()).push_back_57(inner.as_pointer()) });
+    let mut sink: Ptr<std_vector_int__std_allocator_int__> = ({ (*outer.borrow()).back_53() });
+    unimplemented!();
+    let mut p : Ptr< std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >  = ( outer .as_pointer()  )  ;
+    sink = ({ (*p.upgrade().deref()).back_53() });
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

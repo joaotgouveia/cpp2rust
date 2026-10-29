@@ -12,12 +12,13 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<Vec<i32>> = Vec::new();
-    {
-        let __a1 = (0..(10_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>();
-        v.push(__a1)
-    };
-    return 0;
+unsafe fn main_0() -> () {
+    let mut v : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ >::default() ;
+    (unsafe {
+        let mut ___x: std_vector_int__std_allocator_int__ =
+            std_vector_int__std_allocator_int__::new_1({ 10_() }, None);
+        v.push_back_58(&mut ___x)
+    });
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

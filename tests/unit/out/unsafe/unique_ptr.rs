@@ -9,254 +9,159 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct SafePointer {
-    pub ptr: Option<Box<i32>>,
+    pub ptr: std_unique_ptr_int__std_default_delete_int__,
 }
 impl SafePointer {
     pub unsafe fn inc(&mut self) {
-        (*self
-            .ptr
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-        .prefix_inc();
+        (*self.ptr).prefix_inc();
     }
     pub unsafe fn move_from(_a0: *mut SafePointer) -> Self {
-        let mut this = Self {
-            ptr: (*_a0).ptr.take(),
-        };
+        let mut this = Self { ptr: (*_a0).ptr };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut SafePointer) -> *mut SafePointer {
-        self.ptr = (*_a0).ptr.take();
+        self.ptr = ((*_a0).ptr).clone();
         return &mut (*(self as *mut SafePointer));
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Pair {
-    pub x: i32,
-    pub y: i32,
+    pub x: (),
+    pub y: (),
 }
 impl Pair {
-    pub unsafe fn inc(&mut self, mut k: i32) {
+    pub unsafe fn inc(&mut self, mut k: ()) {
         self.x += k;
         self.y += k;
     }
 }
-pub unsafe fn DoStuffWithSafePointer_0(safe_ptr: *mut Option<Box<SafePointer>>) {
-    let mut x1: Option<Box<i32>> = Some(Box::new(0));
-    let mut x2: Option<Box<i32>> = Some(Box::new(0));
-    (*x2.as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) = 1;
-    x1 = x2.take();
-    let mut raw_ptr1: *mut i32 = (&mut (*x1
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-        as *mut i32);
+pub unsafe fn DoStuffWithSafePointer_0(
+    safe_ptr: *mut std_unique_ptr_SafePointer__std_default_delete_SafePointer__,
+) {
+    let mut x1: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 0_();
+        make_unique_1(&mut ___args)
+    });
+    let mut x2: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 0_();
+        make_unique_1(&mut ___args)
+    });
+    (*x2) = 1_();
+    x1 = (x2).clone();
+    let mut raw_ptr1: *mut () = (&mut (*x1) as *mut ());
     (*raw_ptr1).prefix_inc();
-    (*(*safe_ptr).as_deref().map_or(::std::ptr::null_mut(), |v| {
-        v as *const SafePointer as *mut SafePointer
-    }))
-    .ptr = x1.take();
-    (unsafe {
-        SafePointer::inc(
-            &mut (*(*safe_ptr).as_deref().map_or(::std::ptr::null_mut(), |v| {
-                v as *const SafePointer as *mut SafePointer
-            })),
-        )
+    (*(*safe_ptr)).ptr = (x1).clone();
+    (unsafe { SafePointer::inc(&mut (*(*safe_ptr))) });
+    (unsafe { SafePointer::inc(&mut (*(*safe_ptr))) });
+    let mut x3: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 10_();
+        make_unique_1(&mut ___args)
     });
-    (unsafe {
-        SafePointer::inc(
-            &mut (*(*safe_ptr).as_deref().map_or(::std::ptr::null_mut(), |v| {
-                v as *const SafePointer as *mut SafePointer
-            })),
-        )
+    let mut x4: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 20_();
+        make_unique_1(&mut ___args)
     });
-    let mut x3: Option<Box<i32>> = Some(Box::new(10));
-    let mut x4: Option<Box<i32>> = Some(Box::new(20));
-    (*x3.as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) = ((*x3
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-        + (*x4
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)));
-    x4 = x3.take();
-    let mut raw_ptr2: *mut i32 = (&mut (*x4
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-        as *mut i32);
-    (*raw_ptr2) += 1;
-    let mut pair: Option<Box<Pair>> = Some(Box::new(Pair {
-        x: (*raw_ptr2),
-        y: 5,
-    }));
-    (unsafe {
-        Pair::inc(
-            &mut (*pair
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |v| v as *const Pair as *mut Pair)),
-            10,
-        )
-    });
-    (*(*(*safe_ptr).as_deref().map_or(::std::ptr::null_mut(), |v| {
-        v as *const SafePointer as *mut SafePointer
-    }))
-    .ptr
-    .as_deref()
-    .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) =
-        (((*(*(*safe_ptr).as_deref().map_or(::std::ptr::null_mut(), |v| {
-            v as *const SafePointer as *mut SafePointer
-        }))
-        .ptr
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-            + ((*pair
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |v| v as *const Pair as *mut Pair))
-            .x))
-            + ((*pair
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |v| v as *const Pair as *mut Pair))
-            .y));
-}
-pub unsafe fn Consume_1(mut safe_ptr: Option<Box<SafePointer>>) -> i32 {
-    let mut x: Option<Box<SafePointer>> = safe_ptr.take();
-    let mut p: Option<Box<Pair>> = Some(Box::from_raw(
-        (Box::leak(Box::new(<Pair>::default())) as *mut Pair),
-    ));
-    return ((*(*x.as_deref().map_or(::std::ptr::null_mut(), |v| {
-        v as *const SafePointer as *mut SafePointer
-    }))
-    .ptr
-    .as_deref()
-    .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-        + ((*p
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const Pair as *mut Pair))
-        .x));
-}
-pub unsafe fn RndStuff_2() {
-    let mut x1: Option<Box<[i32]>> = None;
-    let mut x2: Option<Box<[i32]>> = Some(Box::from_raw(Box::leak(
-        (0..100_usize).map(|_| 0_i32).collect::<Box<[i32]>>(),
-    )));
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (100)) {
-        (*x2.as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((i as usize))) = 1;
-        i.prefix_inc();
-    }
-    x2 = Some(Box::from_raw(Box::leak(
-        (0..200_usize).map(|_| 0_i32).collect::<Box<[i32]>>(),
-    )));
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (200)) {
-        (*x2.as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut i32)
-            .add((i as usize))) = 2;
-        i.prefix_inc();
-    }
-    let mut p2: *mut i32 = x2
-        .as_deref_mut()
-        .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr());
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (200)) {
-        assert!(((*p2.offset((i) as isize)) == (2)));
-        i.prefix_inc();
-    }
-    let mut x3: Option<Box<[Pair]>> = Some(
-        (0..10_usize)
-            .map(|_| <Pair>::default())
-            .collect::<Box<[_]>>(),
-    );
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (10)) {
-        (*x3.as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Pair)
-            .add((i as usize))) = Pair { x: 1, y: 2 };
-        i.prefix_inc();
-    }
-    let mut p3_0: *mut Pair = x3
-        .as_deref_mut()
-        .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr());
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (10)) {
-        assert!((((*p3_0.offset((i) as isize)).x) == (1)));
-        assert!((((*p3_0.offset((i) as isize)).y) == (2)));
-        (unsafe {
-            Pair::inc(
-                &mut (*x3
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Pair)
-                    .add((i as usize))),
-                10,
-            )
-        });
-        assert!((((*p3_0.offset((i) as isize)).x) == (11)));
-        assert!((((*p3_0.offset((i) as isize)).y) == (12)));
-        i.prefix_inc();
-    }
-    x3 = Some(Box::from_raw(Box::leak(
-        (0..50_usize)
-            .map(|_| <Pair>::default())
-            .collect::<Box<[Pair]>>(),
-    )));
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (50)) {
-        (*x3.as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Pair)
-            .add((i as usize))) = Pair {
-            x: -1_i32,
-            y: -2_i32,
+    (*x3) = ((*x3) + (*x4));
+    x4 = (x3).clone();
+    let mut raw_ptr2: *mut () = (&mut (*x4) as *mut ());
+    (*raw_ptr2) += 1_();
+    let mut pair: std_unique_ptr_Pair__std_default_delete_Pair__ = (unsafe {
+        let mut ___args: Pair = Pair {
+            x: (*raw_ptr2),
+            y: 5_(),
         };
+        make_unique_2(&mut ___args)
+    });
+    (unsafe { Pair::inc(&mut (*pair), 10_()) });
+    (*(*(*safe_ptr)).ptr) = (((*(*(*safe_ptr)).ptr) + ((*pair).x)) + ((*pair).y));
+}
+pub unsafe fn Consume_3(
+    mut safe_ptr: std_unique_ptr_SafePointer__std_default_delete_SafePointer__,
+) -> () {
+    let mut x: std_unique_ptr_SafePointer__std_default_delete_SafePointer__ = safe_ptr;
+    let mut p: std_unique_ptr_Pair__std_default_delete_Pair__ =
+        std_unique_ptr_Pair__std_default_delete_Pair__::new_1({
+            (Box::leak(Box::new(<Pair>::default())) as *mut Pair)
+        });
+    return ((*(*x).ptr) + ((*p).x));
+}
+pub unsafe fn RndStuff_4() {
+    let mut x1: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
+        <std_unique_ptr_intarrarr__std_default_delete_intarrarr__>::default();
+    let mut x2: std_unique_ptr_intarrarr__std_default_delete_intarrarr__ =
+        std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new_1({
+            Box::leak((0..100_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr()
+        });
+    let mut i: () = 0_();
+    'loop_: while ((i) < (100_())) {
+        x2[(i) as usize] = 1_();
         i.prefix_inc();
     }
-    let mut p3_1: *mut Pair = x3
-        .as_deref_mut()
-        .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr());
-    assert!(((p3_0) != (p3_1)));
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (50)) {
-        assert!((((*p3_1.offset((i) as isize)).x) == (-1_i32)));
-        assert!((((*p3_1.offset((i) as isize)).y) == (-2_i32)));
-        (unsafe {
-            Pair::inc(
-                &mut (*x3
-                    .as_deref()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_ptr() as *mut Pair)
-                    .add((i as usize))),
-                -10_i32,
+    (unsafe {
+        x2.reset(
+            Box::leak((0..200_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr(),
+        )
+    });
+    let mut i: () = 0_();
+    'loop_: while ((i) < (200_())) {
+        x2[(i) as usize] = 2_();
+        i.prefix_inc();
+    }
+    let mut p2: *mut () = (unsafe { x2.get() });
+    let mut i: () = 0_();
+    'loop_: while ((i) < (200_())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+    let mut x3: std_unique_ptr_Pairarrarr__std_default_delete_Pairarrarr__ =
+        (unsafe { make_unique_5(10_()) });
+    let mut i: () = 0_();
+    'loop_: while ((i) < (10_())) {
+        x3[(i) as usize] = Pair { x: 1_(), y: 2_() };
+        i.prefix_inc();
+    }
+    let mut p3_0: *mut Pair = (unsafe { x3.get() });
+    let mut i: () = 0_();
+    'loop_: while ((i) < (10_())) {
+        unimplemented!();
+        unimplemented!();
+        (unsafe { Pair::inc(&mut x3[(i) as usize], 10_()) });
+        unimplemented!();
+        unimplemented!();
+        i.prefix_inc();
+    }
+    (unsafe {
+        x3.reset(
+            Box::leak(
+                (0..50_())
+                    .map(|_| <Pair>::default())
+                    .collect::<Box<[Pair]>>(),
             )
-        });
-        assert!((((*p3_1.offset((i) as isize)).x) == (-11_i32)));
-        assert!((((*p3_1.offset((i) as isize)).y) == (-12_i32)));
+            .as_mut_ptr(),
+        )
+    });
+    let mut i: () = 0_();
+    'loop_: while ((i) < (50_())) {
+        x3[(i) as usize] = Pair { x: -1_(), y: -2_() };
+        i.prefix_inc();
+    }
+    let mut p3_1: *mut Pair = (unsafe { x3.get() });
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (50_())) {
+        unimplemented!();
+        unimplemented!();
+        (unsafe { Pair::inc(&mut x3[(i) as usize], -10_()) });
+        unimplemented!();
+        unimplemented!();
         i.prefix_inc();
     }
 }
-pub unsafe fn unique_ptr_that_wraps_container_3() {
-    let mut v: Option<Box<[Vec<libc::c_char>]>> =
-        Some((0..2_usize).map(|_| vec![0]).collect::<Box<[_]>>());
-    assert!(
-        (((*v
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr()
-                as *mut Vec<libc::c_char>)
-            .add(0_usize))
-        .len()
-            - 1)
-            == (0_usize))
-    );
-    assert!(
-        (((*v
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |s| s.as_ptr()
-                as *mut Vec<libc::c_char>)
-            .add(1_usize))
-        .len()
-            - 1)
-            == (0_usize))
-    );
+pub unsafe fn unique_ptr_that_wraps_container_6() {
+    let mut v : std_unique_ptr_std_basic_string_char__std_char_traits_char___std_allocator_char__arrarr__std_default_delete_std_basic_string_char__std_char_traits_char___std_allocator_char__arrarr__ = ( unsafe { make_unique_7 ( 2_() , ) } )  ;
+    unimplemented!();
+    unimplemented!();
 }
 pub fn main() {
     unsafe {
@@ -264,28 +169,26 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: Option<Box<i32>> = Some(Box::new(0));
-    let mut safe_ptr: Option<Box<SafePointer>> = Some(Box::new(SafePointer { ptr: x.take() }));
+unsafe fn main_0() -> () {
+    let mut x: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 0_();
+        make_unique_1(&mut ___args)
+    });
+    let mut safe_ptr: std_unique_ptr_SafePointer__std_default_delete_SafePointer__ = (unsafe {
+        let mut ___args: SafePointer = SafePointer { ptr: x };
+        make_unique_8(&mut ___args)
+    });
     (unsafe { DoStuffWithSafePointer_0(&mut safe_ptr) });
-    assert!(((unsafe { Consume_1(safe_ptr.take(),) }) == (60)));
-    let mut p: Option<Box<i32>> = Some(Box::from_raw((Box::leak(Box::new(1)) as *mut i32)));
-    {
-        let _a0: *mut i32 = (Box::leak(Box::new(2)) as *mut i32);
-        p = if _a0.is_null() {
-            None
-        } else {
-            Some(Box::from_raw(_a0))
-        }
-    };
-    assert!(
-        ((*p.as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-            == (2))
-    );
-    p = None;
-    assert!(p.is_none());
-    (unsafe { unique_ptr_that_wraps_container_3() });
-    return 0;
+    unimplemented!();
+    let mut p: std_unique_ptr_int__std_default_delete_int__ =
+        std_unique_ptr_int__std_default_delete_int__::new_1({
+            (Box::leak(Box::new(1_())) as *mut ())
+        });
+    (unsafe { p.reset(Some((Box::leak(Box::new(2_())) as *mut ()))) });
+    unimplemented!();
+    (unsafe { p.reset(None) });
+    unimplemented!();
+    (unsafe { unique_ptr_that_wraps_container_6() });
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

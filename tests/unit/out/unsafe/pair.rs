@@ -12,25 +12,36 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut p1: (f64, i32) = (1.into(), 2.into());
-    assert!(((p1.0) == (1_f64)));
-    assert!(((p1.1) == (2)));
-    let mut p2: (f64, i32) = (3.into(), 4.into());
-    assert!(((p2.0) == (3_f64)));
-    assert!(((p2.1) == (4)));
-    let mut p3: (f64, i32) = (5.into(), 6.into());
-    assert!(((p3.0) == (5_f64)));
-    assert!(((p3.1) == (6)));
-    let arr: [i32; 2] = [1, 2];
-    let mut n: u32 = 2_u32;
-    let mut const_ptr_pairs: Vec<(*const i32, u64)> = (0..(1_usize) as usize)
-        .map(|_| <(*const i32, u64)>::default())
-        .collect::<Vec<_>>();
-    const_ptr_pairs[(0_usize)] = (arr.as_ptr().offset((1) as isize).into(), n.into());
-    assert!(
-        ((*const_ptr_pairs[(0_usize)].0) == (2)) && ((const_ptr_pairs[(0_usize)].1) == (2_u64))
-    );
-    return 0;
+unsafe fn main_0() -> () {
+    let mut p1: std_pair_double__int_ = {
+        let mut __tmp_0: () = 1_();
+        let mut __tmp_1: () = 2_();
+        std_pair_double__int_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
+    };
+    unimplemented!();
+    unimplemented!();
+    let mut p2: std_pair_double__int_ = {
+        let mut __tmp_2: () = 3_();
+        let mut __tmp_3: () = 4_();
+        std_pair_double__int_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
+    };
+    unimplemented!();
+    unimplemented!();
+    let mut p3: std_pair_double__int_ = (unsafe {
+        let mut ___x: () = 5_();
+        let mut ___y: () = 6_();
+        make_pair_0(&mut ___x, &mut ___y)
+    });
+    unimplemented!();
+    unimplemented!();
+    let arr: [(); 2] = [1_(), 2_()];
+    let mut n: () = 2_();
+    let mut const_ptr_pairs : std_vector_std_pair_const_int_ptr__unsigned_long___std_allocator_std_pair_const_int_ptr__unsigned_long___ = std_vector_std_pair_const_int_ptr__unsigned_long___std_allocator_std_pair_const_int_ptr__unsigned_long___ :: new_1 ( { 1_() } , None , )  ;
+    const_ptr_pairs[(0_()) as usize] = (unsafe {
+        let mut ___x: *const () = arr.as_ptr().offset((1_()) as isize);
+        make_pair_1(&mut ___x, &mut n)
+    });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

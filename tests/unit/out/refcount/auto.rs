@@ -10,25 +10,28 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut x1: i32 = 1;
-    let mut x2: i16 = 2_i16;
-    let mut x3: u32 = 4_u32;
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+fn main_0() -> () {
+    let mut x1: () = 1_();
+    let mut x2: () = 2_();
+    let mut x3: () = 4_();
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        <std_vector_int__std_allocator_int__>::default(),
+    ));
+    ({
+        let ___x: Value<()> = Rc::new(RefCell::new(1_()));
+        (*v.borrow()).push_back_58(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<()> = Rc::new(RefCell::new(2_()));
+        (*v.borrow()).push_back_58(___x.as_pointer())
+    });
+    let mut sum: () = 0_();
+    'loop_: for elem in IterRange::new(({ (*v.borrow()).begin_26() }), ({ (*v.borrow()).end_28() }))
     {
-        let __a1 = 1;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 2;
-        (*v.borrow_mut()).push(__a1)
-    };
-    let mut sum: i32 = 0;
-    'loop_: for elem in IterRange::new(v.decay().begin(), v.decay().end()) {
-        let mut elem: i32 = (elem.iter_deref().read());
+        let mut elem: () = (elem.read());
         sum += elem;
     }
-    assert!((sum == 3));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

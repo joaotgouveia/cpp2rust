@@ -10,22 +10,21 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    let mut i: i32 = 0;
-    'loop_: while (i < 10) {
-        {
-            let a0_clone = i.clone();
-            (*v.borrow_mut()).push(a0_clone)
-        };
-        i.prefix_inc();
+fn main_0() -> () {
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        <std_vector_int__std_allocator_int__>::default(),
+    ));
+    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    'loop_: while ((*i.borrow()) < 10_()) {
+        ({ (*v.borrow()).push_back_57(i.as_pointer()) });
+        (*i.borrow_mut()).prefix_inc();
     }
-    let mut sum: i32 = 0;
-    'loop_: for x in IterRange::new(v.decay().begin(), v.decay().end()) {
-        let mut x: i32 = (x.iter_deref().read());
+    let mut sum: () = 0_();
+    'loop_: for x in IterRange::new(({ (*v.borrow()).begin_26() }), ({ (*v.borrow()).end_28() })) {
+        let mut x: () = (x.read());
         sum += x;
     }
-    assert!((sum == 45));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

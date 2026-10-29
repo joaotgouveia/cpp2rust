@@ -12,25 +12,26 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x1: i32 = 1;
-    let mut x2: i16 = 2_i16;
-    let mut x3: u32 = 4_u32;
-    let mut v: Vec<i32> = Vec::new();
-    {
-        let __a1 = 1;
-        v.push(__a1)
-    };
-    {
-        let __a1 = 2;
-        v.push(__a1)
-    };
-    let mut sum: i32 = 0;
-    'loop_: for elem in IterRange::new(v.begin(), v.end()) {
-        let mut elem: i32 = (*elem.iter_deref());
+unsafe fn main_0() -> () {
+    let mut x1: () = 1_();
+    let mut x2: () = 2_();
+    let mut x3: () = 4_();
+    let mut v: std_vector_int__std_allocator_int__ =
+        <std_vector_int__std_allocator_int__>::default();
+    (unsafe {
+        let mut ___x: () = 1_();
+        v.push_back_58(&mut ___x)
+    });
+    (unsafe {
+        let mut ___x: () = 2_();
+        v.push_back_58(&mut ___x)
+    });
+    let mut sum: () = 0_();
+    'loop_: for elem in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
+        let mut elem: () = (*elem);
         sum += elem;
     }
-    assert!(((sum) == (3)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

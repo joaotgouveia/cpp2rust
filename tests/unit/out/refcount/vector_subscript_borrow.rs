@@ -7,12 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static next_0: Value<i32> = Rc::new(RefCell::new(0));
+    pub static next_0: Value<()> = Rc::new(RefCell::new(0_()));
 );
-pub fn bump_1(mut v: Ptr<Vec<i32>>, mut x: i32) -> i32 {
+pub fn bump_1(mut v: Ptr<std_vector_int__std_allocator_int__>, mut x: ()) -> () {
     {
         let __rhs = x;
-        index!(v, 0_usize).with_mut(|__v| *__v = *__v + __rhs)
+        elem!((v), 0_()).with_mut(|__v| *__v = *__v + __rhs)
     };
     return (*next_0.with(Value::clone).borrow_mut()).postfix_inc();
 }
@@ -20,39 +20,37 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(vec![1; 4_usize as usize]));
-    let mut items: Vec<u32> = (0..(3_usize) as usize).map(|_| 0_u32).collect::<Vec<_>>();
-    let mut i: u32 = 0_u32;
-    'loop_: while ((i as usize) < items.len()) {
-        let __rhs = (i).wrapping_mul(2_u32);
-        items[(i as usize)] = __rhs;
+fn main_0() -> () {
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new({
+        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
+        std_vector_int__std_allocator_int__::new_1({ 4_() }, { __tmp_0.as_pointer() }, None)
+    }));
+    let items: Value<std_vector_unsigned_int__std_allocator_unsigned_int__> = Rc::new(
+        RefCell::new(std_vector_unsigned_int__std_allocator_unsigned_int__::new_1({ 3_() }, None)),
+    );
+    let mut i: () = 0_();
+    'loop_: while (i < ({ (*items.borrow()).size() })) {
+        let __rhs = (i).wrapping_mul(2_());
+        (*items.borrow_mut())[i] = __rhs;
         i.prefix_inc();
     }
     {
-        let rhs_0 = (items[1_usize]).wrapping_add(5_u32);
-        items[1_usize] = rhs_0
+        let rhs_0 = ({ (*items.borrow())[1_()] }).wrapping_add(5_());
+        (*items.borrow_mut())[1_()] = rhs_0
     };
-    items[2_usize].postfix_inc();
-    assert!(((items[0_usize] == 0_u32) && (items[1_usize] == 7_u32)) && (items[2_usize] == 5_u32));
-    elem!(v.decay(), ({ (*v.borrow())[0_usize] } as usize)).write(3);
-    let __rhs = ({ (*v.borrow())[1_usize] } + 4);
-    elem!(v.decay(), ({ (*v.borrow())[1_usize] } as usize)).write(__rhs);
-    assert!(({ (*v.borrow())[1_usize] } == 3) && ({ (*v.borrow())[3_usize] } == 7));
-    let mut p: Ptr<i32> = (v.decay().offset(0_usize));
-    elem!(v.decay(), ((p.read()) as usize)).write(9);
-    assert!(({ (*v.borrow())[1_usize] } == 9));
-    elem!(v.decay(), (({ bump_1((v.as_pointer()), 10,) }) as usize)).write(2);
-    assert!(({ (*v.borrow())[0_usize] } == 2));
-    assert!(
-        (({
-            let _v: Ptr<Vec<i32>> = (v.as_pointer());
-            let _x: i32 = { (*v.borrow())[2_usize] };
-            bump_1(_v, _x)
-        }) == 1)
-            && ({ (*v.borrow())[0_usize] } == 3)
-    );
-    return 0;
+    (*items.borrow_mut())[2_()].postfix_inc();
+    unimplemented!();
+    elem!(v.as_pointer(), { (*v.borrow())[0_()] }).write(3_());
+    let __rhs = ({ (*v.borrow())[1_()] } + 4_());
+    elem!(v.as_pointer(), { (*v.borrow())[1_()] }).write(__rhs);
+    unimplemented!();
+    let mut p: Ptr<()> = (v.as_pointer().offset(0_()));
+    elem!(v.as_pointer(), (p.read())).write(9_());
+    unimplemented!();
+    elem!(v.as_pointer(), ({ bump_1((v.as_pointer()), 10_(),) })).write(2_());
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {
     let _ = next_0.with(|_| ());

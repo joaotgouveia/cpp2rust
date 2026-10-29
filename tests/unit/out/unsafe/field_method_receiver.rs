@@ -9,13 +9,13 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Counter {
-    pub n: i32,
+    pub n: (),
 }
 impl Counter {
-    pub unsafe fn get(&self) -> i32 {
+    pub unsafe fn get(&self) -> () {
         return self.n;
     }
-    pub unsafe fn add(&mut self, mut k: i32) {
+    pub unsafe fn add(&mut self, mut k: ()) {
         self.n += k;
     }
     pub unsafe fn self_(&mut self) -> *mut Counter {
@@ -23,21 +23,21 @@ impl Counter {
     }
     pub unsafe fn take(&mut self, mut other: *mut Counter) {
         self.n += (*other).n;
-        (*other).n = 0;
+        (*other).n = 0_();
     }
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct S {
-    pub tag: i32,
+    pub tag: (),
     pub c: Counter,
     pub arr: [Counter; 2],
-    pub v: Vec<i32>,
+    pub v: std_vector_int__std_allocator_int__,
 }
 impl S {
     pub unsafe fn bump(&mut self) {
         (unsafe {
-            let _k: i32 = self.tag;
+            let _k: () = self.tag;
             Counter::add(&mut self.c, _k)
         });
     }
@@ -45,57 +45,45 @@ impl S {
         let mut this = Self {
             tag: (*_a0).tag,
             c: (*_a0).c,
-            arr: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).arr[(__i)]),
-            v: std::mem::take(&mut (*_a0).v),
+            arr: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).arr[(__i) as usize]),
+            v: (*_a0).v,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
         self.tag = (*_a0).tag;
         self.c = (*_a0).c;
-        {
-            if 8_usize != 0 {
-                ::std::ptr::copy_nonoverlapping(
-                    ((&mut (*_a0).arr as *mut [Counter; 2]) as *const ::libc::c_void),
-                    ((&mut self.arr as *mut [Counter; 2]) as *mut ::libc::c_void),
-                    8_usize as usize,
-                )
-            }
-            ((&mut self.arr as *mut [Counter; 2]) as *mut ::libc::c_void)
-        };
-        self.v = std::mem::take(&mut (*_a0).v);
+        unimplemented!();
+        self.v = ((*_a0).v).clone();
         return &mut (*(self as *mut S));
     }
 }
 pub unsafe fn run_0(mut o: *mut S) {
-    (unsafe { Counter::add(&mut (*o).c, 2) });
-    assert!(((unsafe { Counter::get(&(*o).c,) }) == (2)));
-    (unsafe { Counter::add(&mut (*o).arr[(1) as usize], 5) });
-    assert!(((unsafe { Counter::get(&(*o).arr[(1) as usize],) }) == (5)));
-    (unsafe { Counter::add(&mut (*(unsafe { Counter::self_(&mut (*o).c) })), 1) });
-    assert!(((unsafe { Counter::get(&(*o).c,) }) == (3)));
-    assert!(((unsafe { Counter::self_(&mut (*o).c,) }) == (&mut (*o).c as *mut Counter)));
+    (unsafe { Counter::add(&mut (*o).c, 2_()) });
+    unimplemented!();
+    (unsafe { Counter::add(&mut (*o).arr[(1_()) as usize], 5_()) });
+    unimplemented!();
+    (unsafe { Counter::add(&mut (*(unsafe { Counter::self_(&mut (*o).c) })), 1_()) });
+    unimplemented!();
+    unimplemented!();
     (unsafe {
-        let _other: *mut Counter = (&mut (*o).arr[(1) as usize] as *mut Counter);
-        Counter::take(&mut (*o).arr[(0) as usize], _other)
+        let _other: *mut Counter = (&mut (*o).arr[(1_()) as usize] as *mut Counter);
+        Counter::take(&mut (*o).arr[(0_()) as usize], _other)
     });
-    assert!(
-        ((unsafe { Counter::get(&(*o).arr[(0) as usize],) }) == (5))
-            && ((unsafe { Counter::get(&(*o).arr[(1) as usize],) }) == (0))
-    );
+    unimplemented!();
     (unsafe {
         let _other: *mut Counter = (&mut (*o).c as *mut Counter);
         Counter::take(&mut (*o).c, _other)
     });
-    assert!(((unsafe { Counter::get(&(*o).c,) }) == (0)));
+    unimplemented!();
     (unsafe { S::bump(&mut (*o)) });
-    assert!(((unsafe { Counter::get(&(*o).c,) }) == (1)));
-    {
-        let __a1 = (unsafe { Counter::get(&(*o).c) });
-        (*o).v.push(__a1)
-    };
-    assert!((((*o).v.len()) == (1_usize)) && (((&mut (*o)).v[(0_usize)]) == (1)));
-    assert!((((*o).tag) == (1)));
+    unimplemented!();
+    (unsafe {
+        let mut ___x: () = (unsafe { Counter::get(&(*o).c) });
+        (*o).v.push_back_58(&mut ___x)
+    });
+    unimplemented!();
+    unimplemented!();
 }
 pub fn main() {
     unsafe {
@@ -103,12 +91,12 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut local: S = <S>::default();
-    local.tag = 1;
+    local.tag = 1_();
     (unsafe { run_0((&mut local as *mut S)) });
     let mut heap: *mut S = (Box::leak(Box::new(<S>::default())) as *mut S);
-    (*heap).tag = 1;
+    (*heap).tag = 1_();
     (unsafe { run_0(heap) });
     {
         let __p = heap;
@@ -116,6 +104,6 @@ unsafe fn main_0() -> i32 {
             ::std::mem::drop(Box::from_raw(__p))
         }
     };
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,25 +10,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let vec_: Value<Vec<u32>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = 67305985_u32;
-        (*vec_.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 134678021_u32;
-        (*vec_.borrow_mut()).push(__a1)
-    };
-    let mut bytes: Ptr<u8> = vec_.decay().reinterpret_cast::<u8>();
-    assert!((((elem!(bytes, 0).read()) as i32) == 1));
-    assert!((((elem!(bytes, 1).read()) as i32) == 2));
-    assert!((((elem!(bytes, 2).read()) as i32) == 3));
-    assert!((((elem!(bytes, 3).read()) as i32) == 4));
-    assert!((((elem!(bytes, 4).read()) as i32) == 5));
-    assert!((((elem!(bytes, 7).read()) as i32) == 8));
-    elem!(bytes, 4).write(255_u8);
-    assert!(({ (*vec_.borrow())[1_usize] } == 134678271_u32));
-    return 0;
+fn main_0() -> () {
+    let vec_: Value<std_vector_unsigned_int__std_allocator_unsigned_int__> = Rc::new(RefCell::new(
+        <std_vector_unsigned_int__std_allocator_unsigned_int__>::default(),
+    ));
+    ({
+        let ___x: Value<()> = Rc::new(RefCell::new(67305985_()));
+        (*vec_.borrow()).push_back_58(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<()> = Rc::new(RefCell::new(134678021_()));
+        (*vec_.borrow()).push_back_58(___x.as_pointer())
+    });
+    let mut bytes: Ptr<()> = ({ (*vec_.borrow()).data_55() }).reinterpret_cast::<()>();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    elem!(bytes, 4_()).write(255_());
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

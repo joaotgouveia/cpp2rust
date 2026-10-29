@@ -10,29 +10,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let arr: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __bytes = Ptr::<i8>::from_string_literal(b"foo").to_c_bytes();
-        __bytes.push(0);
-        __bytes
-    }));
-    (*arr.borrow_mut())[1_usize] = ('b' as i8);
-    let mut p: Ptr<i8> = arr.decay().offset((1) as isize);
-    assert!((((p.read()) as i32) == (('b' as i8) as i32)));
-    assert!(
-        Ptr::<i8>::from_string_literal(b"fbo")
-            .with_c_str(|__s| (*arr.borrow())[..(*arr.borrow()).len().saturating_sub(1)] == *__s)
-    );
-    let mut names: [Ptr<i8>; 1] = [arr.decay()];
-    let mut copy: Vec<i8> = {
-        let mut __bytes = names[(0) as usize].to_c_bytes();
-        __bytes.push(0);
-        __bytes
-    };
-    assert!(
-        Ptr::<i8>::from_string_literal(b"fbo")
-            .with_c_str(|__s| copy[..copy.len().saturating_sub(1)] == *__s)
-    );
-    return 0;
+fn main_0() -> () {
+    let arr: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { Ptr::<()>::from_string_literal(b"foo") },
+                None,
+            ),
+        ));
+    (*arr.borrow_mut())[1_()] = ('b' as ());
+    let mut p: Ptr<()> = ({ (*arr.borrow()).c_str() }).offset((1_()) as isize);
+    unimplemented!();
+    unimplemented!();
+    let mut names: [Ptr<()>; 1] = [({ (*arr.borrow()).data_159() })];
+    let copy: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { (names[(0_()) as usize]).clone() },
+                None,
+            ),
+        ));
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

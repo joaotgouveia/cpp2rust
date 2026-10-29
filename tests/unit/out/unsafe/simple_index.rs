@@ -12,12 +12,13 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<bool> = Vec::from([true]);
-    assert!((v[(0_usize)] as bool));
-    let mut r: bool = v[(0_usize)];
-    let mut copy: bool = r;
-    assert!((copy as bool));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut v: std_vector_bool__std_allocator_bool__ =
+        std_vector_bool__std_allocator_bool__::new_1({ unimplemented!() }, None);
+    unimplemented!();
+    let mut r: std__Bit_reference = v[(0_()) as usize];
+    let mut copy: std__Bit_reference = r;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

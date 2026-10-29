@@ -12,17 +12,18 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut s: Vec<libc::c_char> = {
-        let s = c"ABCD".as_ptr();
-        std::slice::from_raw_parts(s, (0..).take_while(|&i| *s.add(i) != 0).count() + 1).to_vec()
-    };
-    let mut bytes: *const u8 = (s.as_ptr() as *const u8);
-    assert!((((*bytes.offset((0) as isize)) as i32) == (('A' as libc::c_char) as i32)));
-    assert!((((*bytes.offset((1) as isize)) as i32) == (('B' as libc::c_char) as i32)));
-    assert!((((*bytes.offset((2) as isize)) as i32) == (('C' as libc::c_char) as i32)));
-    assert!((((*bytes.offset((3) as isize)) as i32) == (('D' as libc::c_char) as i32)));
-    assert!((((*bytes.offset((4) as isize)) as i32) == (0)));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut s: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { c"ABCD".as_ptr() },
+            None,
+        );
+    let mut bytes: *const () = ((unsafe { s.c_str() }) as *const ());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,13 +10,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
-    let p: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
-    let r: Ptr<i32> = v.decay().offset(1_usize);
+fn main_0() -> () {
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
+    ));
+    let p: Value<__gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___> =
+        Rc::new(RefCell::new(({ (*v.borrow()).begin_26() })));
+    let r: Ptr<()> = v.as_pointer().offset(1_());
     let __rhs = (r.read());
-    (*p.borrow()).iter_deref().write(__rhs);
-    assert!(({ (*v.borrow())[0_usize] } == 2));
-    return 0;
+    (*p.borrow_mut()).write(__rhs);
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

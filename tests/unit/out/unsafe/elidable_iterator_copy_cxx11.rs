@@ -12,49 +12,42 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<i32> = Vec::new();
-    {
-        let __a1 = 4;
-        v.push(__a1)
-    };
-    {
-        let __a1 = 7;
-        v.push(__a1)
-    };
-    let mut it: UnsafeRandomAccessIterator<i32> = {
-        let mut __it = v.begin();
-        let __last = v.end();
-        let __value = &7;
-        while __it != __last && *__it.iter_deref() != *__value {
-            __it.iter_inc();
-        }
-        __it
-    };
-    assert!(it != v.end());
-    assert!(((*it.iter_deref()) == (7)));
-    {
-        let __first = v.begin();
-        let __n = v.end().iter_distance(&__first);
-        for __i in (1..__n).rev() {
-            let __j = libc::rand() as isize % (__i + 1);
-            cpp_swap_unsafe!(__first.iter_at(__i), __first.iter_at(__j));
-        }
-    };
-    {
-        let __first = v.begin();
-        let __n = v.end().iter_distance(&__first);
-        let mut __order: Vec<isize> = (0..__n).collect();
-        __order.sort_by(|&__x, &__y| (*__first.iter_at(__x)).cmp(&*__first.iter_at(__y)));
-        let __values: Vec<_> = __order
-            .iter()
-            .map(|&__i| std::ptr::read(__first.iter_at(__i)))
-            .collect();
-        for (__i, __v) in (0..__n).zip(__values) {
-            std::ptr::write(__first.iter_at(__i), __v);
-        }
-    };
-    assert!(((v[(0_usize)]) == (4)) && ((v[(1_usize)]) == (7)));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut v: std_vector_int__std_allocator_int__ =
+        <std_vector_int__std_allocator_int__>::default();
+    (unsafe {
+        let mut ___x: () = 4_();
+        v.push_back_58(&mut ___x)
+    });
+    (unsafe {
+        let mut ___x: () = 7_();
+        v.push_back_58(&mut ___x)
+    });
+    let mut it: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ = (unsafe {
+        let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+            (unsafe { v.begin_26() });
+        let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+            (unsafe { v.end_28() });
+        let mut ___val: () = 7_();
+        find_0(___first, ___last, &mut ___val)
+    });
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+            (unsafe { v.begin_26() });
+        let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+            (unsafe { v.end_28() });
+        random_shuffle_1(___first, ___last)
+    });
+    (unsafe {
+        let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+            (unsafe { v.begin_26() });
+        let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+            (unsafe { v.end_28() });
+        sort_2(___first, ___last)
+    });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

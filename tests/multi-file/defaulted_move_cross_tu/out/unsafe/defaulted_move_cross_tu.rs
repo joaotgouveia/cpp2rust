@@ -9,61 +9,50 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct S {
-    pub v: Vec<i32>,
-    pub n: [i32; 2],
+    pub v: std_vector_int__std_allocator_int__,
+    pub n: [(); 2],
 }
 impl S {
-    pub unsafe fn new(mut x: i32) -> Self {
+    pub unsafe fn new(mut x: ()) -> Self {
         let mut this = Self {
-            v: vec![x; (x as usize) as usize],
-            n: [x, ((x) + (1))],
+            v: std_vector_int__std_allocator_int__::new_1({ x }, { &x }, None),
+            n: [x, ((x) + (1_()))],
         };
         this
     }
     pub unsafe fn move_from(_a0: *mut S) -> Self {
         let mut this = Self {
-            v: std::mem::take(&mut (*_a0).v),
-            n: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).n[(__i)]),
+            v: (*_a0).v,
+            n: std::array::from_fn::<_, 2, _>(|__i: usize| (*_a0).n[(__i) as usize]),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
-        self.v = std::mem::take(&mut (*_a0).v);
-        {
-            if 8_usize != 0 {
-                ::std::ptr::copy_nonoverlapping(
-                    ((&mut (*_a0).n as *mut [i32; 2]) as *const ::libc::c_void),
-                    ((&mut self.n as *mut [i32; 2]) as *mut ::libc::c_void),
-                    8_usize as usize,
-                )
-            }
-            ((&mut self.n as *mut [i32; 2]) as *mut ::libc::c_void)
-        };
+        self.v = ((*_a0).v).clone();
+        unimplemented!();
         return &mut (*(self as *mut S));
     }
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct T {
-    pub v: Vec<i32>,
+    pub v: std_vector_int__std_allocator_int__,
 }
 impl T {
-    pub unsafe fn size(&self) -> i32 {
-        return (self.v.len() as i32);
+    pub unsafe fn size(&self) -> () {
+        return (unsafe { self.v.size() });
     }
     pub unsafe fn move_from(_a0: *mut T) -> Self {
-        let mut this = Self {
-            v: std::mem::take(&mut (*_a0).v),
-        };
+        let mut this = Self { v: (*_a0).v };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut T) -> *mut T {
-        self.v = std::mem::take(&mut (*_a0).v);
+        self.v = ((*_a0).v).clone();
         return &mut (*(self as *mut T));
     }
 }
-pub unsafe fn sum_0(s: *const S) -> i32 {
-    return ((((*s).v.len() as i32) + ((*s).n[(0) as usize])) + ((*s).n[(1) as usize]));
+pub unsafe fn sum_0(s: *const S) -> () {
+    return (((unsafe { (*s).v.size() }) + ((*s).n[(0_()) as usize])) + ((*s).n[(1_()) as usize]));
 }
 pub fn main() {
     unsafe {
@@ -71,31 +60,30 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut s: S = S::new({ 2 });
-    assert!(((unsafe { sum_0(&s,) }) == (7)));
-    assert!(((unsafe { shuffle_1(3,) }) == (10)));
+unsafe fn main_0() -> () {
+    let mut s: S = S::new({ 2_() });
+    unimplemented!();
+    unimplemented!();
     let mut t: T = T {
-        v: Vec::from([1, 2]),
+        v: std_vector_int__std_allocator_int__::new_2({ unimplemented!() }, None),
     };
-    assert!(((unsafe { T::size(&t,) }) == (2)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
-pub unsafe fn shuffle_1(mut x: i32) -> i32 {
+pub unsafe fn shuffle_1(mut x: ()) -> () {
     let mut a: S = S::new({ x });
     let mut b: S = S::move_from({ &mut a });
-    assert!(a.v.is_empty());
-    let mut c: S = S::new({ 1 });
+    unimplemented!();
+    let mut c: S = S::new({ 1_() });
     (unsafe { S::move_assign(&mut c, &mut b) });
-    assert!(b.v.is_empty());
-    let mut t: T = T { v: Vec::from([1]) };
+    unimplemented!();
+    let mut t: T = T {
+        v: std_vector_int__std_allocator_int__::new_2({ unimplemented!() }, None),
+    };
     let mut u: T = T::move_from({ &mut t });
     let mut w: T = <T>::default();
     (unsafe { T::move_assign(&mut w, &mut u) });
-    assert!(
-        (((unsafe { T::size(&t,) }) == (0)) && ((unsafe { T::size(&u,) }) == (0)))
-            && ((unsafe { T::size(&w,) }) == (1))
-    );
+    unimplemented!();
     return (unsafe { sum_0(&c) });
 }
 pub unsafe fn __cpp2rust_init_globals() {}

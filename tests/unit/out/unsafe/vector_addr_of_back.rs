@@ -12,18 +12,16 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut outer: Vec<Vec<i32>> = Vec::new();
-    let mut inner: Vec<i32> = Vec::new();
-    {
-        let a0_clone = inner.clone();
-        outer.push(a0_clone)
-    };
-    let mut sink: *mut Vec<i32> = ((outer).last_mut().unwrap());
-    assert!((((*(sink).cast_const()).len()) == (0_usize)));
-    let mut p: *mut Vec<Vec<i32>> = (&mut outer as *mut Vec<Vec<i32>>);
-    sink = ((*p).last_mut().unwrap());
-    assert!((((*(sink).cast_const()).len()) == (0_usize)));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut outer : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ >::default() ;
+    let mut inner: std_vector_int__std_allocator_int__ =
+        <std_vector_int__std_allocator_int__>::default();
+    (unsafe { outer.push_back_57(&inner) });
+    let mut sink: *mut std_vector_int__std_allocator_int__ = (unsafe { outer.back_53() });
+    unimplemented!();
+    let mut p : *mut std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = ( & mut outer as *mut std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ ) ;
+    sink = (unsafe { (*p).back_53() });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

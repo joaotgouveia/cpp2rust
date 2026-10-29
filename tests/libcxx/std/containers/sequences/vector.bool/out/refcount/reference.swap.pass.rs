@@ -6,21 +6,29 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn tests_0() -> () {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([false, true, false, true])));
-    let mut an: Ptr<()> = (a.as_pointer() as Ptr<()>).offset(
-        ((::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ())))
-            as isize,
+pub fn tests_0() -> bool {
+    let a: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, true, false, true])));
+    let mut an: Ptr<bool> = (a.as_pointer() as Ptr<bool>).offset(
+        ((::std::mem::size_of::<[bool; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<bool>() as usize))) as isize,
     );
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new({
+        let mut __v = Vec::new();
+        let mut __it = (a.as_pointer() as Ptr<bool>);
+        while __it != an {
+            __v.push(<bool>::try_from(__it.iter_deref().read()).ok().unwrap());
+            __it.iter_inc();
+        }
+        __v
+    }));
+    let r1: Value<bool> = Rc::new(RefCell::new({ (*v.borrow())[0_usize] }));
+    let r2: Value<bool> = Rc::new(RefCell::new({ (*v.borrow())[3_usize] }));
     const _: () = assert!(true, "(noexcept(v.swap(r1, r2)))");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!((*r1.borrow()) as bool));
+    assert!(((*r2.borrow()) as bool));
+    ({ std_vector_bool__std_allocator_bool__::swap_51((*r1.borrow()), (*r2.borrow())) });
+    assert!(((*r1.borrow()) as bool));
+    assert!(!((*r2.borrow()) as bool));
     return true;
 }
 pub fn main() {
@@ -42,9 +50,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_0() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -11,43 +11,40 @@ use std::rc::{Rc, Weak};
 pub struct Pair {
     #[offset(0)]
     #[byte_size(8)]
-    pub x1: Ptr<i32>,
+    pub x1: Ptr<()>,
     #[offset(8)]
     #[byte_size(8)]
-    pub x2: Ptr<i32>,
+    pub x2: Ptr<()>,
 }
-pub fn mkPair_0(x1: Ptr<i32>, x2: Ptr<i32>) -> Pair {
+pub fn mkPair_0(x1: Ptr<()>, x2: Ptr<()>) -> Pair {
     return Pair {
         x1: (x1).clone(),
         x2: (x2).clone(),
     };
 }
-pub fn fill_1(arr: Ptr<Option<Value<Box<[Ptr<i32>]>>>>, n1: Ptr<i32>) {
-    let n2: Value<i32> = Rc::new(RefCell::new((n1.read())));
+pub fn fill_1(
+    arr: Ptr<std_unique_ptr_int_ptrarrarr__std_default_delete_int_ptrarrarr__>,
+    n1: Ptr<()>,
+) {
+    let n2: Value<()> = Rc::new(RefCell::new((n1.read())));
     let pair: Value<Pair> = Rc::new(RefCell::new(
         ({
-            let _x1: Ptr<i32> = (n1).clone();
-            let _x2: Ptr<i32> = n2.as_pointer();
+            let _x1: Ptr<()> = (n1).clone();
+            let _x2: Ptr<()> = n2.as_pointer();
             mkPair_0(_x1, _x2)
         }),
     ));
-    ((*arr.upgrade().deref()).as_pointer() as Ptr<Ptr<i32>>)
-        .offset(0_usize as isize)
-        .write(({ (*pair.borrow()).x1.clone() }).clone());
-    ((*arr.upgrade().deref()).as_pointer() as Ptr<Ptr<i32>>)
-        .offset(1_usize as isize)
-        .write(({ (*pair.borrow()).x2.clone() }).clone());
+    elem!(arr, 0_()).write(({ (*pair.borrow()).x1.clone() }).clone());
+    elem!(arr, 1_()).write(({ (*pair.borrow()).x2.clone() }).clone());
 }
-pub fn any_2(arr: Ptr<Option<Value<Box<[Ptr<i32>]>>>>, n1: Ptr<i32>) -> bool {
-    let mut out: bool = false;
-    let mut i: i32 = 0;
+pub fn any_2(
+    arr: Ptr<std_unique_ptr_int_ptrarrarr__std_default_delete_int_ptrarrarr__>,
+    n1: Ptr<()>,
+) -> () {
+    let mut out: () = false;
+    let mut i: () = 0_();
     'loop_: while ({ i } < { (n1.read()) }) {
-        let __rhs = (out)
-            || (((((*arr.upgrade().deref()).as_pointer() as Ptr<Ptr<i32>>)
-                .offset((i as usize) as isize)
-                .read())
-            .read())
-                == 0);
+        let __rhs = (out) || (((elem!(arr, i).read()).read()) == 0_());
         out = __rhs;
         i.prefix_inc();
     }
@@ -57,15 +54,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let n: Value<i32> = Rc::new(RefCell::new(2));
-    let arr: Value<Option<Value<Box<[Ptr<i32>]>>>> =
-        Rc::new(RefCell::new(Some(Rc::new(RefCell::new(
-            (0..((*n.borrow()) as usize))
-                .map(|_| Ptr::<i32>::null())
-                .collect::<Box<[_]>>(),
-        )))));
+fn main_0() -> () {
+    let n: Value<()> = Rc::new(RefCell::new(2_()));
+    let arr: Value<std_unique_ptr_int_ptrarrarr__std_default_delete_int_ptrarrarr__> =
+        Rc::new(RefCell::new(({ make_unique_3((*n.borrow())) })));
     ({ fill_1(arr.as_pointer(), n.as_pointer()) });
-    return (({ any_2(arr.as_pointer(), n.as_pointer()) }) as i32);
+    return ({ any_2(arr.as_pointer(), n.as_pointer()) });
 }
 pub fn __cpp2rust_init_globals() {}

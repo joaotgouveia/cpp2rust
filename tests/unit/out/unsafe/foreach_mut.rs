@@ -12,67 +12,69 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v1: Vec<i32> = Vec::new();
-    {
-        let __a1 = 1;
-        v1.push(__a1)
-    };
-    {
-        let __a1 = 2;
-        v1.push(__a1)
-    };
-    {
-        let __a1 = 3;
-        v1.push(__a1)
-    };
-    let mut sum: i32 = 0;
-    'loop_: for x in IterRange::new(v1.begin(), v1.end()) {
-        let mut x: i32 = (*x.iter_deref());
+unsafe fn main_0() -> () {
+    let mut v1: std_vector_int__std_allocator_int__ =
+        <std_vector_int__std_allocator_int__>::default();
+    (unsafe {
+        let mut ___x: () = 1_();
+        v1.push_back_58(&mut ___x)
+    });
+    (unsafe {
+        let mut ___x: () = 2_();
+        v1.push_back_58(&mut ___x)
+    });
+    (unsafe {
+        let mut ___x: () = 3_();
+        v1.push_back_58(&mut ___x)
+    });
+    let mut sum: () = 0_();
+    'loop_: for x in IterRange::new((unsafe { v1.begin_26() }), (unsafe { v1.end_28() })) {
+        let mut x: () = (*x);
         sum += x.prefix_inc();
     }
-    'loop_: for x in IterRange::new(v1.begin(), v1.end()) {
-        let x: i32 = (*x.iter_deref());
+    'loop_: for x in IterRange::new((unsafe { v1.begin_26() }), (unsafe { v1.end_28() })) {
+        let x: () = (*x);
         sum += x;
     }
-    'loop_: for x in IterRange::new(v1.begin(), v1.end()) {
-        let x: *mut i32 = &mut (*x.iter_deref());
-        (*x) += 10;
+    'loop_: for x in IterRange::new((unsafe { v1.begin_26() }), (unsafe { v1.end_28() })) {
+        let x: *mut () = &mut (*x);
+        (*x) += 10_();
     }
-    'loop_: for x in IterRange::new(v1.begin(), v1.end()) {
-        let x: *const i32 = &(*x.iter_deref());
+    'loop_: for x in IterRange::new((unsafe { v1.begin_26() }), (unsafe { v1.end_28() })) {
+        let x: *const () = &(*x);
         sum += (*x);
     }
-    let mut v2: Vec<*mut i32> = Vec::new();
-    {
-        let __a1 = (&mut v1[(0_usize)] as *mut i32);
-        v2.push(__a1)
-    };
-    {
-        let __a1 = (&mut v1[(1_usize)] as *mut i32);
-        v2.push(__a1)
-    };
-    {
-        let __a1 = (&mut v1[(2_usize)] as *mut i32);
-        v2.push(__a1)
-    };
-    'loop_: for p in IterRange::new(v2.begin(), v2.end()) {
-        let mut p: *mut i32 = (*p.iter_deref());
-        (*p) += 5;
+    let mut v2: std_vector_int_ptr__std_allocator_int_ptr__ =
+        <std_vector_int_ptr__std_allocator_int_ptr__>::default();
+    (unsafe {
+        let mut ___x: *mut () = (&mut v1[(0_()) as usize] as *mut ());
+        v2.push_back_58(&mut ___x)
+    });
+    (unsafe {
+        let mut ___x: *mut () = (&mut v1[(1_()) as usize] as *mut ());
+        v2.push_back_58(&mut ___x)
+    });
+    (unsafe {
+        let mut ___x: *mut () = (&mut v1[(2_()) as usize] as *mut ());
+        v2.push_back_58(&mut ___x)
+    });
+    'loop_: for p in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
+        let mut p: *mut () = (*p);
+        (*p) += 5_();
     }
-    'loop_: for p in IterRange::new(v2.begin(), v2.end()) {
-        let p: *mut i32 = (*p.iter_deref());
+    'loop_: for p in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
+        let p: *mut () = (*p);
         sum += (*p);
     }
-    'loop_: for p in IterRange::new(v2.begin(), v2.end()) {
-        let mut p: *mut i32 = (*p.iter_deref());
-        (*p) += 5;
+    'loop_: for p in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
+        let mut p: *mut () = (*p);
+        (*p) += 5_();
     }
-    'loop_: for p in IterRange::new(v2.begin(), v2.end()) {
-        let mut p: *const i32 = (*p.iter_deref()).cast_const();
+    'loop_: for p in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
+        let mut p: *const () = (*p).cast_const();
         sum += (*p);
     }
-    assert!(((sum) == (168)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

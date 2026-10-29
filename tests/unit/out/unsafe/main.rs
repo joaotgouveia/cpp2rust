@@ -22,14 +22,15 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut argc: i32, mut argv: *mut *mut libc::c_char) -> i32 {
-    let mut s: Vec<libc::c_char> = {
-        let s = (*argv.offset((0) as isize)).cast_const();
-        std::slice::from_raw_parts(s, (0..).take_while(|&i| *s.add(i) != 0).count() + 1).to_vec()
-    };
-    assert!(((argc) == (1)));
-    assert!(((s.len() - 1) > (0_usize)));
-    assert!((((argc) + (((s.len() - 1) > (0_usize)) as i32)) == (2)));
-    return 0;
+unsafe fn main_0(mut argc: (), mut argv: *mut *mut ()) -> () {
+    let mut s: std_basic_string_char__std_char_traits_char___std_allocator_char__ =
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { (*argv.offset((0_()) as isize)).cast_const() },
+            None,
+        );
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

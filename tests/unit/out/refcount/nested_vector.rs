@@ -10,14 +10,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v1: Value<Vec<Vec<i32>>> = Rc::new(RefCell::new(Vec::new()));
-    let mut v2: Vec<i32> = Vec::from([1]);
-    {
-        let a0_clone = v2.clone();
-        (*v1.borrow_mut()).push(a0_clone)
-    };
-    assert!(((v1.decay().to_last().decay().offset(0_usize as isize).read()) == 1));
-    return 0;
+fn main_0() -> () {
+    let v1 : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() )) ;
+    let v2: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
+    ));
+    ({ (*v1.borrow()).push_back_57(v2.as_pointer()) });
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

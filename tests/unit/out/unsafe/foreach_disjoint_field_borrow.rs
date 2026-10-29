@@ -9,19 +9,19 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct S {
-    pub v: Vec<i32>,
-    pub a: i32,
+    pub v: std_vector_int__std_allocator_int__,
+    pub a: (),
 }
 impl S {
     pub unsafe fn move_from(_a0: *mut S) -> Self {
         let mut this = Self {
-            v: std::mem::take(&mut (*_a0).v),
+            v: (*_a0).v,
             a: (*_a0).a,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
-        self.v = std::mem::take(&mut (*_a0).v);
+        self.v = ((*_a0).v).clone();
         self.a = (*_a0).a;
         return &mut (*(self as *mut S));
     }
@@ -32,16 +32,16 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut s: S = <S>::default();
-    {
-        let __a1 = 1;
-        s.v.push(__a1)
-    };
-    'loop_: for e in IterRange::new(s.v.begin(), s.v.end()) {
-        let mut e: i32 = (*e.iter_deref());
+    (unsafe {
+        let mut ___x: () = 1_();
+        s.v.push_back_58(&mut ___x)
+    });
+    'loop_: for e in IterRange::new((unsafe { s.v.begin_26() }), (unsafe { s.v.end_28() })) {
+        let mut e: () = (*e);
         s.a.postfix_inc();
     }
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

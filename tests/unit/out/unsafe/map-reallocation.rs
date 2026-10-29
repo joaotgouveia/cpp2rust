@@ -12,54 +12,39 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let N: i32 = 10000;
-    let sentinel: i32 = ((N) / (2));
-    let mut m: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
-    (*m.subscript(&sentinel)) = sentinel;
-    let mut it: UnsafeBidirectionalIterator<(i32, i32)> = m.find(&sentinel);
-    let mut p: *mut i32 = (&mut (*it.iter_deref()).1 as *mut i32);
-    assert!(
-        (((*it.iter_deref()).1) == (sentinel))
-            && (!(c"iterator does not have correct value before insert".as_ptr()).is_null())
-    );
-    assert!(
-        ((*p) == (sentinel))
-            && (!(c"pointer does not have correct value before insert".as_ptr()).is_null())
-    );
-    let mut i: i32 = 0;
+unsafe fn main_0() -> () {
+    let N: () = 10000_();
+    let sentinel: () = ((N) / (2_()));
+    let mut m: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
+        <std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___>::default();
+    m[(sentinel) as usize] = sentinel;
+    let mut it: std__Rb_tree_iterator_std_pair_const_int__int__ = (unsafe { m.find_71(&sentinel) });
+    let mut p: *mut () = (&mut (*it).second as *mut ());
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
     'loop_: while ((i) < (sentinel)) {
-        (*m.subscript(&i)) = i;
+        m[(i) as usize] = i;
         i.prefix_inc();
     }
-    let mut i: i32 = ((sentinel) + (1));
+    let mut i: () = ((sentinel) + (1_()));
     'loop_: while ((i) <= (N)) {
-        (*m.subscript(&i)) = i;
+        m[(i) as usize] = i;
         i.prefix_inc();
     }
-    assert!(
-        (((*it.iter_deref()).1) != (0))
-            && (!(c"in refcount, iterator points to index 0 instead of sentinel".as_ptr())
-                .is_null())
-    );
-    assert!(
-        (((*it.iter_deref()).1) == (sentinel))
-            && (!(c"iterator does not have correct value after insert".as_ptr()).is_null())
-    );
-    assert!(
-        ((*p) == (sentinel))
-            && (!(c"pointer does not have correct value after insert".as_ptr()).is_null())
-    );
-    (*it.iter_deref()).1 = 57005;
-    assert!(((*m.subscript(&sentinel)) == (57005)));
-    assert!(((*p) == (57005)));
-    assert!(((m.len()) == ((((N) + (1)) as u32) as usize)));
-    let mut prev: i32 = -1_i32;
-    'loop_: for pair in IterRange::new(m.begin(), m.end()) {
-        let pair: *mut (i32, i32) = &mut (*pair.iter_deref());
-        assert!((((*pair).0) > (prev)));
-        prev = (*pair).0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (*it).second = 57005_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut prev: () = -1_();
+    'loop_: for pair in IterRange::new((unsafe { m.begin_18() }), (unsafe { m.end_20() })) {
+        let pair: *mut std_pair_const_int__int_ = &mut (*pair);
+        unimplemented!();
+        prev = (*pair).first;
     }
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,61 +10,40 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
-        ('a' as i8),
-        ('b' as i8),
-        ('\0' as i8),
-        ('c' as i8),
-        ('d' as i8),
-        ('\0' as i8),
+fn main_0() -> () {
+    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        ('a' as ()),
+        ('b' as ()),
+        ('\0' as ()),
+        ('c' as ()),
+        ('d' as ()),
+        ('\0' as ()),
     ])));
-    match (buf.as_pointer() as Ptr<i8>).with_c_bytes(|__bytes| {
-        libcc2rs::c_stdout().with_mut(|__f| __f.write(__bytes)) == __bytes.len()
-    }) {
-        true => 0,
-        false => -1,
-    };
-    {
-        let __c = (('|' as i8) as i32) as u8;
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&[__c])) {
-            1 => __c as i32,
-            _ => -1,
-        }
-    };
-    {
-        let mut __bytes = (buf.as_pointer() as Ptr<i8>).to_c_u8_bytes();
-        __bytes.push(b'\n');
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&__bytes)) == __bytes.len() {
-            true => 0,
-            false => -1,
-        }
-    };
-    let mut s: Vec<i8> = {
-        let mut __bytes = (buf.as_pointer() as Ptr<i8>).to_c_bytes();
-        __bytes.push(0);
-        __bytes
-    };
-    println!("{}", (s.len() - 1));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { (buf.as_pointer() as Ptr<()>) },
+                None,
+            ),
+        ));
+    println!("{}", ({ (*s.borrow()).size() }));
     println!(
         "{} {}",
-        (buf.as_pointer() as Ptr::<i8>)
-            .to_c_string_iterator()
-            .count(),
-        (buf.as_pointer() as Ptr::<i8>).with_c_str(|__lookup| {
-            s.iter()
-                .take(s.len().saturating_sub(1))
-                .rposition(|&x| __lookup.contains(&x))
-                .unwrap_or(usize::MAX)
-        })
+        unimplemented!(),
+        ({ (*s.borrow()).find_last_of_179((buf.as_pointer() as Ptr::<()>), None,) })
     );
-    let mut lit: Ptr<i8> = Ptr::<i8>::from_string_literal(b"xy\0zw");
-    let mut t: Vec<i8> = {
-        let mut __bytes = lit.to_c_bytes();
-        __bytes.push(0);
-        __bytes
-    };
-    println!("{}", (t.len() - 1));
-    return 0;
+    let mut lit: Ptr<()> = Ptr::<()>::from_string_literal(b"xy\0zw");
+    let t: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { (lit).clone() },
+                None,
+            ),
+        ));
+    println!("{}", ({ (*t.borrow()).size() }));
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

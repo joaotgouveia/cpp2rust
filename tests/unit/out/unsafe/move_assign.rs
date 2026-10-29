@@ -9,16 +9,16 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct MoveOnly {
-    pub v: i32,
+    pub v: (),
 }
 impl MoveOnly {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self { v: v };
         this
     }
     pub unsafe fn move_from(o: *mut MoveOnly) -> Self {
         let mut this = Self { v: (*o).v };
-        (*o).v = 0;
+        (*o).v = 0_();
         this
     }
     pub unsafe fn move_assign(&mut self, o: *mut MoveOnly) -> *mut MoveOnly {
@@ -26,26 +26,26 @@ impl MoveOnly {
             return &mut (*(self as *mut MoveOnly));
         }
         self.v = (*o).v;
-        (*o).v = 0;
+        (*o).v = 0_();
         return &mut (*(self as *mut MoveOnly));
     }
 }
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct ConstMoveAssign {
-    pub mark: i32,
+    pub mark: (),
 }
 impl ConstMoveAssign {
     pub unsafe fn new() -> Self {
-        let mut this = Self { mark: 0 };
+        let mut this = Self { mark: 0_() };
         this
     }
     pub unsafe fn operator_assign_2(&mut self, o: *mut ConstMoveAssign) -> *mut ConstMoveAssign {
-        self.mark = (((*o).mark) + (1));
+        self.mark = (((*o).mark) + (1_()));
         return &mut (*(self as *mut ConstMoveAssign));
     }
     pub unsafe fn operator_assign_3(&mut self, o: *const ConstMoveAssign) -> *mut ConstMoveAssign {
-        self.mark = (((*o).mark) + (10));
+        self.mark = (((*o).mark) + (10_()));
         return &mut (*(self as *mut ConstMoveAssign));
     }
 }
@@ -54,7 +54,7 @@ impl Default for ConstMoveAssign {
         unsafe { ConstMoveAssign::new() }
     }
 }
-pub unsafe fn make_0(mut v: i32) -> MoveOnly {
+pub unsafe fn make_0(mut v: ()) -> MoveOnly {
     let mut m: MoveOnly = MoveOnly::new({ v });
     return MoveOnly::move_from({ &mut m });
 }
@@ -64,15 +64,15 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut a: MoveOnly = MoveOnly::new({ 1 });
-    let mut b: MoveOnly = MoveOnly::new({ 2 });
-    let mut c: MoveOnly = MoveOnly::new({ 3 });
+unsafe fn main_0() -> () {
+    let mut a: MoveOnly = MoveOnly::new({ 1_() });
+    let mut b: MoveOnly = MoveOnly::new({ 2_() });
+    let mut c: MoveOnly = MoveOnly::new({ 3_() });
     (unsafe { MoveOnly::move_assign(&mut a, &mut b) });
-    assert!(((a.v) == (2)));
-    assert!(((b.v) == (0)));
+    unimplemented!();
+    unimplemented!();
     (unsafe {
-        let mut _o: MoveOnly = MoveOnly::new({ 3 });
+        let mut _o: MoveOnly = MoveOnly::new({ 3_() });
         MoveOnly::move_assign(&mut b, &mut _o)
     });
     (unsafe {
@@ -81,39 +81,40 @@ unsafe fn main_0() -> i32 {
             &mut (*(unsafe { MoveOnly::move_assign(&mut a, &mut b) })),
         )
     });
-    assert!((((b.v) == (0)) && ((a.v) == (0))) && ((c.v) == (3)));
+    unimplemented!();
     (unsafe {
-        let mut _o: MoveOnly = MoveOnly::new({ 5 });
+        let mut _o: MoveOnly = MoveOnly::new({ 5_() });
         MoveOnly::move_assign(&mut a, &mut _o)
     });
-    assert!(((a.v) == (5)));
+    unimplemented!();
     (unsafe {
-        let mut _o: MoveOnly = (unsafe { make_0(6) });
+        let mut _o: MoveOnly = (unsafe { make_0(6_()) });
         MoveOnly::move_assign(&mut a, &mut _o)
     });
-    assert!(((a.v) == (6)));
+    unimplemented!();
     (unsafe {
         let _o: *mut MoveOnly = &mut a;
         MoveOnly::move_assign(&mut a, _o)
     });
-    assert!(((a.v) == (6)));
-    let mut vec_: Vec<MoveOnly> = Vec::new();
-    {
-        let __a1 = MoveOnly::new({ 7 });
-        vec_.push(__a1)
-    };
-    let mut d: MoveOnly = MoveOnly::new({ 8 });
-    (unsafe { MoveOnly::move_assign(&mut vec_[(0_usize)], &mut d) });
-    assert!(((vec_[(0_usize)].v) == (8)));
-    assert!(((d.v) == (0)));
+    unimplemented!();
+    let mut vec_: std_vector_MoveOnly__std_allocator_MoveOnly__ =
+        <std_vector_MoveOnly__std_allocator_MoveOnly__>::default();
+    (unsafe {
+        let mut ___x: MoveOnly = MoveOnly::new({ 7_() });
+        vec_.push_back_58(&mut ___x)
+    });
+    let mut d: MoveOnly = MoveOnly::new({ 8_() });
+    (unsafe { MoveOnly::move_assign(&mut vec_[(0_()) as usize], &mut d) });
+    unimplemented!();
+    unimplemented!();
     let mut m: ConstMoveAssign = ConstMoveAssign::new();
     let mut m1: ConstMoveAssign = ConstMoveAssign::new();
     let mut m2: ConstMoveAssign = ConstMoveAssign::new();
     let cm: ConstMoveAssign = ConstMoveAssign::new();
     (unsafe { ConstMoveAssign::operator_assign_2(&mut m1, &mut m) });
     (unsafe { ConstMoveAssign::operator_assign_3(&mut m2, &cm) });
-    assert!(((m1.mark) == (1)));
-    assert!(((m2.mark) == (10)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

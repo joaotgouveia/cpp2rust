@@ -6,22 +6,22 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn first_0(u: Ptr<Option<Value<Vec<u8>>>>) -> Ptr<u8> {
-    return (*u.upgrade().deref()).as_pointer().decay();
+pub fn first_0(
+    u : Ptr< std_unique_ptr_std_vector_unsigned_char__std_allocator_unsigned_char____std_default_delete_std_vector_unsigned_char__std_allocator_unsigned_char____  >,
+) -> Ptr<()> {
+    return ({ ((*u.upgrade().deref()).read()).data_55() });
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Option<Value<Vec<u8>>>> = Rc::new(RefCell::new(
-        Ptr::alloc((0..(3_usize) as usize).map(|_| 0_u8).collect::<Vec<_>>()).to_owned_opt(),
-    ));
-    let mut p: Ptr<u8> = (*v.borrow()).as_pointer().decay();
-    elem!(p, 2).write(1_u8);
-    elem!(({ first_0(v.as_pointer(),) }), 0).write(5_u8);
-    assert!((((elem!(p, 0).read()) as i32) == 5));
-    assert!((((elem!(({ first_0(v.as_pointer(),) }), 2).read()) as i32) == 1));
-    return 0;
+fn main_0() -> () {
+    let v : Value<std_unique_ptr_std_vector_unsigned_char__std_allocator_unsigned_char____std_default_delete_std_vector_unsigned_char__std_allocator_unsigned_char____ > = Rc::new(RefCell::new(std_unique_ptr_std_vector_unsigned_char__std_allocator_unsigned_char____std_default_delete_std_vector_unsigned_char__std_allocator_unsigned_char____ :: new_1 ( { Ptr::alloc( std_vector_unsigned_char__std_allocator_unsigned_char__ :: new_1 ( { 3_()  } , None , )  )  } , )  )) ;
+    let mut p: Ptr<()> = ({ ((*v.borrow()).read()).data_55() });
+    elem!(p, 2_()).write(1_());
+    elem!(({ first_0(v.as_pointer(),) }), 0_()).write(5_());
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

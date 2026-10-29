@@ -12,14 +12,15 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<i32> = Vec::new();
-    {
-        let __a1 = 10;
-        v.push(__a1)
-    };
-    (*((v).first_mut().unwrap())) += 5;
-    assert!(((*((v).first_mut().unwrap())) == (15)));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut v: std_vector_int__std_allocator_int__ =
+        <std_vector_int__std_allocator_int__>::default();
+    (unsafe {
+        let mut ___x: () = 10_();
+        v.push_back_58(&mut ___x)
+    });
+    (*(unsafe { v.front_51() })) += 5_();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -9,31 +9,37 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe, Default)]
 pub struct DestroyTracker {
-    pub vec__: *mut (),
-    pub index_: (),
+    pub vec__: *mut Vec<bool>,
+    pub index_: usize,
 }
 impl DestroyTracker {
-    pub unsafe fn new(vec_: *mut ()) -> Self {
+    pub unsafe fn new(vec_: *mut Vec<bool>) -> Self {
         let mut this = Self {
             vec__: (vec_),
-            index_: unimplemented!(),
+            index_: (*vec_).len(),
         };
-        unimplemented!();
+        {
+            let a0_clone = false.clone();
+            (*vec_).push(a0_clone)
+        };
         this
     }
     pub unsafe fn copy_from(other: *const DestroyTracker) -> Self {
         let mut this = Self {
             vec__: (*other).vec__,
-            index_: unimplemented!(),
+            index_: (*(this.vec__).cast_const()).len(),
         };
-        unimplemented!();
+        {
+            let a0_clone = false.clone();
+            (*this.vec__).push(a0_clone)
+        };
         this
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const DestroyTracker) -> *mut DestroyTracker {
         return &mut (*(self as *mut DestroyTracker));
     }
     pub unsafe fn destructor(&mut self) {
-        unimplemented!();
+        (&mut (*self.vec__))[(self.index_)] = true;
     }
 }
 impl Clone for DestroyTracker {
@@ -41,137 +47,270 @@ impl Clone for DestroyTracker {
         unsafe { DestroyTracker::copy_from(self as *const DestroyTracker) }
     }
 }
-pub unsafe fn test_0(mut operation: FnPtr<fn(*mut (), *mut ())>) {
-    let mut all_destroyed: () = unimplemented!();
+pub unsafe fn test_0(mut operation: FnPtr<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>) {
+    let mut all_destroyed: Vec<bool> = Vec::new();
     {
-        let mut v: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) != (100_())) {
+        let mut v: Vec<DestroyTracker> = Vec::new();
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) != (100_usize)) {
             (unsafe { operation.call(&mut v, &mut all_destroyed) });
             i.prefix_inc();
         }
     }
-    unimplemented!();
+    assert!(
+        (unsafe {
+            let ___first: UnsafeRandomAccessIterator<bool> = all_destroyed.begin();
+            let ___last: UnsafeRandomAccessIterator<bool> = all_destroyed.end();
+            all_of_1(
+                ___first,
+                ___last,
+                FnPtr::<fn(bool) -> bool>::new(|mut b: bool| -> bool {
+                    unsafe {
+                        return b;
+                    }
+                }),
+            )
+        })
+    );
 }
-pub unsafe fn test_1(mut operation: FnPtr<fn(*mut (), *mut ())>) {
-    let mut all_destroyed: () = unimplemented!();
+pub unsafe fn test_2(mut operation: FnPtr<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>) {
+    let mut all_destroyed: Vec<bool> = Vec::new();
     {
-        let mut v: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) != (100_())) {
+        let mut v: Vec<DestroyTracker> = Vec::new();
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) != (100_usize)) {
             (unsafe { operation.call(&mut v, &mut all_destroyed) });
             i.prefix_inc();
         }
     }
-    unimplemented!();
+    assert!(
+        (unsafe {
+            let ___first: UnsafeRandomAccessIterator<bool> = all_destroyed.begin();
+            let ___last: UnsafeRandomAccessIterator<bool> = all_destroyed.end();
+            all_of_3(
+                ___first,
+                ___last,
+                FnPtr::<fn(bool) -> bool>::new(|mut b: bool| -> bool {
+                    unsafe {
+                        return b;
+                    }
+                }),
+            )
+        })
+    );
 }
-pub unsafe fn test_2(mut operation: FnPtr<fn(*mut (), *mut ())>) {
-    let mut all_destroyed: () = unimplemented!();
+pub unsafe fn test_4(mut operation: FnPtr<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>) {
+    let mut all_destroyed: Vec<bool> = Vec::new();
     {
-        let mut v: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) != (100_())) {
+        let mut v: Vec<DestroyTracker> = Vec::new();
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) != (100_usize)) {
             (unsafe { operation.call(&mut v, &mut all_destroyed) });
             i.prefix_inc();
         }
     }
-    unimplemented!();
+    assert!(
+        (unsafe {
+            let ___first: UnsafeRandomAccessIterator<bool> = all_destroyed.begin();
+            let ___last: UnsafeRandomAccessIterator<bool> = all_destroyed.end();
+            all_of_5(
+                ___first,
+                ___last,
+                FnPtr::<fn(bool) -> bool>::new(|mut b: bool| -> bool {
+                    unsafe {
+                        return b;
+                    }
+                }),
+            )
+        })
+    );
 }
-pub unsafe fn test_3(mut operation: FnPtr<fn(*mut (), *mut ())>) {
-    let mut all_destroyed: () = unimplemented!();
+pub unsafe fn test_6(mut operation: FnPtr<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>) {
+    let mut all_destroyed: Vec<bool> = Vec::new();
     {
-        let mut v: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) != (100_())) {
+        let mut v: Vec<DestroyTracker> = Vec::new();
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) != (100_usize)) {
             (unsafe { operation.call(&mut v, &mut all_destroyed) });
             i.prefix_inc();
         }
     }
-    unimplemented!();
+    assert!(
+        (unsafe {
+            let ___first: UnsafeRandomAccessIterator<bool> = all_destroyed.begin();
+            let ___last: UnsafeRandomAccessIterator<bool> = all_destroyed.end();
+            all_of_7(
+                ___first,
+                ___last,
+                FnPtr::<fn(bool) -> bool>::new(|mut b: bool| -> bool {
+                    unsafe {
+                        return b;
+                    }
+                }),
+            )
+        })
+    );
 }
-pub unsafe fn test_4(mut operation: FnPtr<fn(*mut (), *mut ())>) {
-    let mut all_destroyed: () = unimplemented!();
+pub unsafe fn test_8(mut operation: FnPtr<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>) {
+    let mut all_destroyed: Vec<bool> = Vec::new();
     {
-        let mut v: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) != (100_())) {
+        let mut v: Vec<DestroyTracker> = Vec::new();
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) != (100_usize)) {
             (unsafe { operation.call(&mut v, &mut all_destroyed) });
             i.prefix_inc();
         }
     }
-    unimplemented!();
+    assert!(
+        (unsafe {
+            let ___first: UnsafeRandomAccessIterator<bool> = all_destroyed.begin();
+            let ___last: UnsafeRandomAccessIterator<bool> = all_destroyed.end();
+            all_of_9(
+                ___first,
+                ___last,
+                FnPtr::<fn(bool) -> bool>::new(|mut b: bool| -> bool {
+                    unsafe {
+                        return b;
+                    }
+                }),
+            )
+        })
+    );
 }
-pub unsafe fn test_5(mut operation: FnPtr<fn(*mut (), *mut ())>) {
-    let mut all_destroyed: () = unimplemented!();
+pub unsafe fn test_10(mut operation: FnPtr<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>) {
+    let mut all_destroyed: Vec<bool> = Vec::new();
     {
-        let mut v: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) != (100_())) {
+        let mut v: Vec<DestroyTracker> = Vec::new();
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) != (100_usize)) {
             (unsafe { operation.call(&mut v, &mut all_destroyed) });
             i.prefix_inc();
         }
     }
-    unimplemented!();
+    assert!(
+        (unsafe {
+            let ___first: UnsafeRandomAccessIterator<bool> = all_destroyed.begin();
+            let ___last: UnsafeRandomAccessIterator<bool> = all_destroyed.end();
+            all_of_11(
+                ___first,
+                ___last,
+                FnPtr::<fn(bool) -> bool>::new(|mut b: bool| -> bool {
+                    unsafe {
+                        return b;
+                    }
+                }),
+            )
+        })
+    );
 }
-pub unsafe fn test_6(mut operation: FnPtr<fn(*mut (), *mut ())>) {
-    let mut all_destroyed: () = unimplemented!();
+pub unsafe fn test_12(mut operation: FnPtr<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>) {
+    let mut all_destroyed: Vec<bool> = Vec::new();
     {
-        let mut v: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) != (100_())) {
+        let mut v: Vec<DestroyTracker> = Vec::new();
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) != (100_usize)) {
             (unsafe { operation.call(&mut v, &mut all_destroyed) });
             i.prefix_inc();
         }
     }
-    unimplemented!();
+    assert!(
+        (unsafe {
+            let ___first: UnsafeRandomAccessIterator<bool> = all_destroyed.begin();
+            let ___last: UnsafeRandomAccessIterator<bool> = all_destroyed.end();
+            all_of_13(
+                ___first,
+                ___last,
+                FnPtr::<fn(bool) -> bool>::new(|mut b: bool| -> bool {
+                    unsafe {
+                        return b;
+                    }
+                }),
+            )
+        })
+    );
 }
-pub unsafe fn test_7() -> () {
+pub unsafe fn test_14() -> bool {
     (unsafe {
-        test_0(FnPtr::<fn(*mut (), *mut ())>::new(
-            |vec_: *mut (), tracker: *mut ()| unsafe {
-                unimplemented!();
+        test_0(FnPtr::<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>::new(
+            |vec_: *mut Vec<DestroyTracker>, tracker: *mut Vec<bool>| unsafe {
+                {
+                    let __init = DestroyTracker::new({ tracker });
+                    (*vec_).push(__init)
+                };
             },
         ))
     });
     (unsafe {
-        test_1(FnPtr::<fn(*mut (), *mut ())>::new(
-            |vec_: *mut (), tracker: *mut ()| unsafe {
-                unimplemented!();
+        test_2(FnPtr::<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>::new(
+            |vec_: *mut Vec<DestroyTracker>, tracker: *mut Vec<bool>| unsafe {
+                {
+                    let __a1 = DestroyTracker::new({ tracker });
+                    (*vec_).push(__a1)
+                };
             },
         ))
     });
     (unsafe {
-        test_2(FnPtr::<fn(*mut (), *mut ())>::new(
-            |vec_: *mut (), tracker: *mut ()| unsafe {
-                unimplemented!();
+        test_4(FnPtr::<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>::new(
+            |vec_: *mut Vec<DestroyTracker>, tracker: *mut Vec<bool>| unsafe {
+                (unsafe {
+                    let ___position: UnsafeRandomAccessIterator<DestroyTracker> =
+                        <UnsafeRandomAccessIterator<DestroyTracker>>::from((*vec_).begin());
+                    let ___args: *mut Vec<bool> = tracker;
+                    (*vec_).emplace(___position, ___args)
+                });
             },
         ))
     });
     (unsafe {
-        test_3(FnPtr::<fn(*mut (), *mut ())>::new(
-            |vec_: *mut (), tracker: *mut ()| unsafe {
-                unimplemented!();
+        test_6(FnPtr::<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>::new(
+            |vec_: *mut Vec<DestroyTracker>, tracker: *mut Vec<bool>| unsafe {
+                {
+                    let __it = <UnsafeRandomAccessIterator<DestroyTracker>>::from((*vec_).begin());
+                    let pos = __it
+                        .iter_distance(&UnsafeRandomAccessIterator::Vec((*vec_).as_mut_ptr()))
+                        as usize;
+                    (*vec_).insert(pos, DestroyTracker::new({ tracker }));
+                    __it
+                };
             },
         ))
     });
     (unsafe {
-        test_4(FnPtr::<fn(*mut (), *mut ())>::new(
-            |vec_: *mut (), tracker: *mut ()| unsafe {
-                unimplemented!();
+        test_8(FnPtr::<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>::new(
+            |vec_: *mut Vec<DestroyTracker>, tracker: *mut Vec<bool>| unsafe {
+                {
+                    let __a0 = ((*vec_).len()).wrapping_add(1_usize) as usize;
+                    (*vec_).resize(__a0, DestroyTracker::new({ tracker }))
+                };
             },
         ))
     });
     (unsafe {
-        test_5(FnPtr::<fn(*mut (), *mut ())>::new(
-            |vec_: *mut (), tracker: *mut ()| unsafe {
-                unimplemented!();
+        test_10(FnPtr::<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>::new(
+            |vec_: *mut Vec<DestroyTracker>, tracker: *mut Vec<bool>| unsafe {
+                (unsafe {
+                    let ___pos: UnsafeRandomAccessIterator<DestroyTracker> =
+                        <UnsafeRandomAccessIterator<DestroyTracker>>::from((*vec_).begin());
+                    let mut ___rg: Vec<DestroyTracker> = Vec::from([
+                        DestroyTracker::new({ tracker }),
+                        DestroyTracker::new({ tracker }),
+                    ]);
+                    (*vec_).insert_range(___pos, &mut ___rg)
+                });
             },
         ))
     });
     (unsafe {
-        test_6(FnPtr::<fn(*mut (), *mut ())>::new(
-            |vec_: *mut (), tracker: *mut ()| unsafe {
-                unimplemented!();
+        test_12(FnPtr::<fn(*mut Vec<DestroyTracker>, *mut Vec<bool>)>::new(
+            |vec_: *mut Vec<DestroyTracker>, tracker: *mut Vec<bool>| unsafe {
+                (unsafe {
+                    let mut ___rg: Vec<DestroyTracker> = Vec::from([
+                        DestroyTracker::new({ tracker }),
+                        DestroyTracker::new({ tracker }),
+                    ]);
+                    (*vec_).append_range(&mut ___rg)
+                });
             },
         ))
     });
@@ -192,9 +331,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_7() });
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    (unsafe { test_14() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

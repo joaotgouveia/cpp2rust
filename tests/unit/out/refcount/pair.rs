@@ -10,50 +10,40 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let p1: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(1.try_into().expect("failed conversion"))),
-        Rc::new(RefCell::new(2.try_into().expect("failed conversion"))),
-    )));
-    assert!(((*(*p1.borrow()).0.borrow()) == 1_f64));
-    assert!(((*(*p1.borrow()).1.borrow()) == 2));
-    let p2: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(3.try_into().expect("failed conversion"))),
-        Rc::new(RefCell::new(4.try_into().expect("failed conversion"))),
-    )));
-    assert!(((*(*p2.borrow()).0.borrow()) == 3_f64));
-    assert!(((*(*p2.borrow()).1.borrow()) == 4));
-    let p3: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(5.try_into().expect("failed conversion"))),
-        Rc::new(RefCell::new(6.try_into().expect("failed conversion"))),
-    )));
-    assert!(((*(*p3.borrow()).0.borrow()) == 5_f64));
-    assert!(((*(*p3.borrow()).1.borrow()) == 6));
-    let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
-    let mut n: u32 = 2_u32;
-    let const_ptr_pairs: Value<Vec<(Value<Ptr<i32>>, Value<u64>)>> = Rc::new(RefCell::new(
-        (0..(1_usize) as usize)
-            .map(|_| {
-                (
-                    Rc::new(RefCell::new(Ptr::<i32>::null())),
-                    Rc::new(RefCell::new(0_u64)),
-                )
-            })
-            .collect::<Vec<_>>(),
+fn main_0() -> () {
+    let p1: Value<std_pair_double__int_> = Rc::new(RefCell::new({
+        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
+        let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
+        std_pair_double__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+    }));
+    unimplemented!();
+    unimplemented!();
+    let p2: Value<std_pair_double__int_> = Rc::new(RefCell::new({
+        let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
+        let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
+        std_pair_double__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+    }));
+    unimplemented!();
+    unimplemented!();
+    let p3: Value<std_pair_double__int_> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<()> = Rc::new(RefCell::new(5_()));
+            let ___y: Value<()> = Rc::new(RefCell::new(6_()));
+            make_pair_0(___x.as_pointer(), ___y.as_pointer())
+        }),
     ));
-    (*const_ptr_pairs.borrow_mut())[0_usize] = (
-        Rc::new(RefCell::new(
-            (arr.as_pointer() as Ptr<i32>)
-                .offset((1) as isize)
-                .try_into()
-                .expect("failed conversion"),
-        )),
-        Rc::new(RefCell::new(n.try_into().expect("failed conversion"))),
-    );
-    assert!(
-        (((*(*const_ptr_pairs.borrow())[0_usize].0.borrow()).read()) == 2)
-            && ((*(*const_ptr_pairs.borrow())[0_usize].1.borrow()) == 2_u64)
-    );
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
+    let n: Value<()> = Rc::new(RefCell::new(2_()));
+    let const_ptr_pairs : Value<std_vector_std_pair_const_int_ptr__unsigned_long___std_allocator_std_pair_const_int_ptr__unsigned_long___ > = Rc::new(RefCell::new(std_vector_std_pair_const_int_ptr__unsigned_long___std_allocator_std_pair_const_int_ptr__unsigned_long___ :: new_1 ( { 1_()  } , None , )  )) ;
+    (*const_ptr_pairs.borrow_mut())[0_()] = ({
+        let ___x: Value<Ptr<()>> = Rc::new(RefCell::new(
+            (arr.as_pointer() as Ptr<()>).offset((1_()) as isize),
+        ));
+        make_pair_1(___x.as_pointer(), n.as_pointer())
+    });
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

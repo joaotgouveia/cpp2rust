@@ -10,97 +10,86 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Pair {
     #[offset(0)]
-    pub first: i32,
+    pub first: (),
     #[offset(4)]
-    pub second: i32,
+    pub second: (),
 }
-pub fn twice_0(v: Ptr<i64>) -> i64 {
-    return ((v.read()) * 2_i64);
+pub fn twice_0(v: Ptr<()>) -> () {
+    return ((v.read()) * 2_());
 }
-pub fn sum_1(p: Ptr<Pair>) -> i32 {
+pub fn sum_1(p: Ptr<Pair>) -> () {
     return ({ p.with(|__s| __s.first) } + { p.with(|__s| __s.second) });
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut x: i32 = 1;
-    let mut y: i32 = {
-        x = 2;
-        (x + 1)
+fn main_0() -> () {
+    let mut x: () = 1_();
+    let mut y: () = {
+        x = 2_();
+        (x + 1_())
     };
-    assert!((x == 2));
-    assert!((y == 3));
-    let mut z: i32 = {
+    unimplemented!();
+    unimplemented!();
+    let mut z: () = {
         {
-            1;
-            2
+            1_();
+            2_()
         };
-        3
+        3_()
     };
-    assert!((z == 3));
-    let counter: Value<i32> = Rc::new(RefCell::new(0));
-    let mut w: i32 = {
+    unimplemented!();
+    let counter: Value<()> = Rc::new(RefCell::new(0_()));
+    let mut w: () = {
         {
             (*counter.borrow_mut()).postfix_inc();
             (*counter.borrow_mut()).postfix_inc()
         };
         (*counter.borrow())
     };
-    assert!(((*counter.borrow()) == 2));
-    assert!((w == 2));
-    let mut a: i32 = 0;
-    let mut b: i32 = 0;
+    unimplemented!();
+    unimplemented!();
+    let mut a: () = 0_();
+    let mut b: () = 0_();
     if {
         {
-            a = 1;
-            b = 2
+            a = 1_();
+            b = 2_()
         };
-        ((a + b) > 0)
+        ((a + b) > 0_())
     } {
-        assert!((a == 1));
-        assert!((b == 2));
+        unimplemented!();
+        unimplemented!();
     }
-    let v1: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
-    let mut v2: Vec<i32> = {
-        a = 5;
+    let v1: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
+    ));
+    let v2: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new({
+        a = 5_();
         (*v1.borrow()).clone()
-    }
-    .clone();
-    {
-        let __a1 = 3;
-        v2.push(__a1)
-    };
-    assert!((a == 5));
-    assert!(((*v1.borrow()).len() == 2_usize));
-    assert!((v2.len() == 3_usize));
+    }));
+    ({
+        let ___x: Value<()> = Rc::new(RefCell::new(3_()));
+        (*v2.borrow()).push_back_58(___x.as_pointer())
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let p1: Value<Pair> = Rc::new(RefCell::new(Pair {
-        first: 1,
-        second: 2,
+        first: 1_(),
+        second: 2_(),
     }));
     let mut p2: Pair = {
-        b = 6;
+        b = 6_();
         (*p1.borrow()).clone()
     };
-    p2.first = 10;
-    assert!(({ (*p1.borrow()).first } == 1));
-    assert!((p2.first == 10));
-    assert!(
-        (({
-            let _v: Value<i64> = Rc::new(RefCell::new((a as i64)));
-            twice_0(_v.as_pointer())
-        }) == 10_i64)
-    );
-    assert!(
-        (({
-            sum_1({
-                a = 7;
-                p1.as_pointer()
-            })
-        }) == 3)
-    );
-    assert!((a == 7));
-    return 0;
+    p2.first = 10_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

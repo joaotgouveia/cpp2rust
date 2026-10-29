@@ -12,17 +12,21 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut a: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
-    (*a.subscript_move(&mut 1, |__k| cpp_move_unsafe!(__k))) = 10;
-    let mut b: UnsafeMap<i32, (i32, i32)> = a.clone();
-    (*b.subscript_move(&mut 1, |__k| cpp_move_unsafe!(__k))) = 20;
-    assert!(((*a.subscript_move(&mut 1, |__k| cpp_move_unsafe!(__k))) == (10)));
-    let mut x: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
-    (*x.subscript_move(&mut 2, |__k| cpp_move_unsafe!(__k))) = 3;
-    let mut y: UnsafeMap<i32, (i32, i32)> = x.clone();
-    (*y.subscript_move(&mut 2, |__k| cpp_move_unsafe!(__k))) = 4;
-    assert!(((*x.subscript_move(&mut 2, |__k| cpp_move_unsafe!(__k))) == (3)));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut a: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
+        <std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___>::default();
+    a[(1_()) as usize] = 10_();
+    let mut b: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
+        a.clone();
+    b[(1_()) as usize] = 20_();
+    unimplemented!();
+    let mut x: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
+        <std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___>::default();
+    x[(2_()) as usize] = 3_();
+    let mut y: std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___ =
+        x.clone();
+    y[(2_()) as usize] = 4_();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

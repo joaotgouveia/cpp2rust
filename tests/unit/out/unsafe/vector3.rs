@@ -12,44 +12,37 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<Vec<i32>> = Vec::new();
-    {
-        let __a0 = 2_usize as usize;
-        v.resize_with(__a0, || Default::default())
-    };
-    {
-        let __a0 = 2_usize as usize;
-        v[(0_usize)].resize_with(__a0, || 0_i32)
-    };
-    {
-        let __a0 = 1_usize as usize;
-        v[(1_usize)].resize_with(__a0, || 0_i32)
-    };
-    v[(0_usize)][(0_usize)] = 1;
-    v[(0_usize)][(1_usize)] = 5;
-    v[(1_usize)][(0_usize)] = 6;
-    'loop_: for v2 in IterRange::new(v.begin(), v.end()) {
-        let v2: *mut Vec<i32> = &mut (*v2.iter_deref());
-        'loop_: for i in IterRange::new((*v2).begin(), (*v2).end()) {
-            let i: *mut i32 = &mut (*i.iter_deref());
+unsafe fn main_0() -> () {
+    let mut v : std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ = <std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ >::default() ;
+    (unsafe { v.resize_40(2_()) });
+    (unsafe { v[(0_()) as usize].resize_40(2_()) });
+    (unsafe { v[(1_()) as usize].resize_40(1_()) });
+    v[(0_()) as usize][(0_()) as usize] = 1_();
+    v[(0_()) as usize][(1_()) as usize] = 5_();
+    v[(1_()) as usize][(0_()) as usize] = 6_();
+    'loop_: for v2 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
+        let v2: *mut std_vector_int__std_allocator_int__ = &mut (*v2);
+        'loop_: for i in IterRange::new((unsafe { (*v2).begin_26() }), (unsafe { (*v2).end_28() }))
+        {
+            let i: *mut () = &mut (*i);
             (*i).prefix_inc();
         }
     }
-    'loop_: for v2 in IterRange::new(v.begin(), v.end()) {
-        let v2: *mut Vec<i32> = &mut (*v2.iter_deref());
-        'loop_: for i in IterRange::new((*v2).begin(), (*v2).end()) {
-            let mut i: i32 = (*i.iter_deref());
-            (unsafe { libc::printf(c"%d\n".as_ptr() as *const libc::c_char, ((i) + (3))) });
+    'loop_: for v2 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
+        let v2: *mut std_vector_int__std_allocator_int__ = &mut (*v2);
+        'loop_: for i in IterRange::new((unsafe { (*v2).begin_26() }), (unsafe { (*v2).end_28() }))
+        {
+            let mut i: () = (*i);
+            unimplemented!();
         }
     }
-    'loop_: for v2 in IterRange::new(v.begin(), v.end()) {
-        let mut v2: Vec<i32> = (*v2.iter_deref()).clone();
-        'loop_: for i in IterRange::new(v2.begin(), v2.end()) {
-            let mut i: i32 = (*i.iter_deref());
-            (unsafe { libc::printf(c"%d\n".as_ptr() as *const libc::c_char, (i)) });
+    'loop_: for v2 in IterRange::new((unsafe { v.begin_26() }), (unsafe { v.end_28() })) {
+        let mut v2: std_vector_int__std_allocator_int__ = (*v2).clone();
+        'loop_: for i in IterRange::new((unsafe { v2.begin_26() }), (unsafe { v2.end_28() })) {
+            let mut i: () = (*i);
+            unimplemented!();
         }
     }
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

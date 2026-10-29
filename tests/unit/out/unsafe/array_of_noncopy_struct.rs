@@ -9,19 +9,19 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct NonCopy {
-    pub data: Vec<i32>,
-    pub tag: i32,
+    pub data: std_vector_int__std_allocator_int__,
+    pub tag: (),
 }
 impl NonCopy {
     pub unsafe fn move_from(_a0: *mut NonCopy) -> Self {
         let mut this = Self {
-            data: std::mem::take(&mut (*_a0).data),
+            data: (*_a0).data,
             tag: (*_a0).tag,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut NonCopy) -> *mut NonCopy {
-        self.data = std::mem::take(&mut (*_a0).data);
+        self.data = ((*_a0).data).clone();
         self.tag = (*_a0).tag;
         return &mut (*(self as *mut NonCopy));
     }
@@ -30,8 +30,8 @@ impl Default for NonCopy {
     fn default() -> Self {
         unsafe {
             NonCopy {
-                data: Default::default(),
-                tag: 0,
+                data: <std_vector_int__std_allocator_int__>::default(),
+                tag: 0_(),
             }
         }
     }
@@ -42,18 +42,18 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut arr: [NonCopy; 3] = std::array::from_fn::<_, 3, _>(|_| <NonCopy>::default());
-    arr[(0) as usize].tag = 7;
-    {
-        let __a1 = 42;
-        arr[(1) as usize].data.push(__a1)
-    };
-    assert!(((arr[(0) as usize].tag) == (7)));
-    assert!(((arr[(1) as usize].data.len()) == (1_usize)));
-    assert!(((arr[(1) as usize].data[(0_usize)]) == (42)));
-    assert!(((arr[(2) as usize].tag) == (0)));
-    assert!(((arr[(2) as usize].data.len()) == (0_usize)));
-    return 0;
+    arr[(0_()) as usize].tag = 7_();
+    (unsafe {
+        let mut ___x: () = 42_();
+        arr[(1_()) as usize].data.push_back_58(&mut ___x)
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -12,20 +12,24 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut cond: bool = true;
-    let mut os1: *mut std::fs::File = if cond {
-        (&raw mut (*libcc2rs::cout_unsafe()) as *mut std::fs::File)
+unsafe fn main_0() -> () {
+    let mut cond: () = true;
+    let mut os1: *mut std_basic_ostream_char__std_char_traits_char__ = if cond {
+        (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0))
+            as *mut std_basic_ostream_char__std_char_traits_char__)
     } else {
-        (&raw mut (*libcc2rs::cerr_unsafe()) as *mut std::fs::File)
+        (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cerr_1))
+            as *mut std_basic_ostream_char__std_char_traits_char__)
     };
     write!((*os1), "hello\n",);
-    let os2: *mut std::fs::File = if cond {
-        (&raw mut (*libcc2rs::cout_unsafe()) as *mut std::fs::File)
+    let os2: *mut std_basic_ostream_char__std_char_traits_char__ = if cond {
+        (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_0))
+            as *mut std_basic_ostream_char__std_char_traits_char__)
     } else {
-        (&raw mut (*libcc2rs::cerr_unsafe()) as *mut std::fs::File)
+        (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cerr_1))
+            as *mut std_basic_ostream_char__std_char_traits_char__)
     };
     write!((*os2), "hello\n",);
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

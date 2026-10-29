@@ -10,23 +10,21 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut n: u32 = 17_u32;
-    let d: Value<u32> = Rc::new(RefCell::new(n));
-    assert!(((*d.borrow()) == 17_u32));
-    let mut name: Ptr<i8> = Ptr::<i8>::from_string_literal(b"dir/file.txt");
-    let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v = Vec::new();
-        name.with_c_str(|__s| __v.extend_from_slice(__s));
-        __v.push(0);
-        __v
-    }));
-    let mut s: Vec<i8> = (*p.borrow()).clone();
-    assert!(((s.len() - 1) == 12_usize));
-    assert!(
-        Ptr::<i8>::from_string_literal(b"dir/file.txt")
-            .with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s)
-    );
-    return 0;
+fn main_0() -> () {
+    let mut n: () = 17_();
+    let d: Value<std_chrono_day> = Rc::new(RefCell::new(std_chrono_day::new_1({ n })));
+    unimplemented!();
+    let name: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::from_string_literal(
+        b"dir/file.txt",
+    )));
+    let p: Value<std_filesystem_path> = Rc::new(RefCell::new(std_filesystem_path::new_1(
+        { name.as_pointer() },
+        None,
+    )));
+    let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(({ (*p.borrow())() })));
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

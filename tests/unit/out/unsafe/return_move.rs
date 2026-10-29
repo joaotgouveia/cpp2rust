@@ -9,13 +9,13 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct node {
-    pub value: i32,
+    pub value: (),
     pub next: *mut node,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct pair_t {
-    pub a: i32,
+    pub a: (),
     pub n: *mut node,
 }
 pub static mut global_node_0: std::cell::LazyCell<*mut node> =
@@ -54,7 +54,7 @@ pub unsafe fn address_taken_8(mut n: *mut node) -> *mut node {
         std::ptr::null_mut()
     };
 }
-pub unsafe fn ret_struct_9(mut a: i32, mut n: *mut node) -> pair_t {
+pub unsafe fn ret_struct_9(mut a: (), mut n: *mut node) -> pair_t {
     let mut p: pair_t = <pair_t>::default();
     p.a = a;
     p.n = n;
@@ -66,20 +66,23 @@ pub unsafe fn ret_struct_param_10(mut p: pair_t) -> pair_t {
 pub unsafe fn ret_struct_ref_11(p: *mut pair_t) -> pair_t {
     return (*p);
 }
-pub unsafe fn ret_vec_12(mut v: Vec<i32>) -> Vec<i32> {
-    return std::mem::take(&mut v);
+pub unsafe fn ret_vec_12(
+    mut v: std_vector_int__std_allocator_int__,
+) -> std_vector_int__std_allocator_int__ {
+    return v;
 }
-pub unsafe fn ret_vec_local_13() -> Vec<i32> {
-    let mut v: Vec<i32> = Vec::new();
-    {
-        let __a1 = 1;
-        v.push(__a1)
-    };
-    return std::mem::take(&mut v);
+pub unsafe fn ret_vec_local_13() -> std_vector_int__std_allocator_int__ {
+    let mut v: std_vector_int__std_allocator_int__ =
+        <std_vector_int__std_allocator_int__>::default();
+    (unsafe {
+        let mut ___x: () = 1_();
+        v.push_back_58(&mut ___x)
+    });
+    return v;
 }
 pub unsafe fn ret_loop_14(mut n: *mut node) -> *mut node {
     'loop_: while !((*n).next).is_null() {
-        if (((*n).value) == (2)) {
+        if (((*n).value) == (2_())) {
             return n;
         }
         n = (*n).next;
@@ -92,39 +95,36 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut c: node = node {
-        value: 3,
+        value: 3_(),
         next: std::ptr::null_mut(),
     };
     let mut b: node = node {
-        value: 2,
+        value: 2_(),
         next: (&mut c as *mut node),
     };
     let mut a: node = node {
-        value: 1,
+        value: 1_(),
         next: (&mut b as *mut node),
     };
     (*std::cell::LazyCell::force_mut(&mut *&raw mut global_node_0)) = (&mut a as *mut node);
-    assert!(((unsafe { id_1((&mut a as *mut node),) }) == (&mut a as *mut node)));
-    assert!(((unsafe { local_ptr_3((&mut a as *mut node),) }) == (&mut b as *mut node)));
-    assert!(
-        ((unsafe { call_once_4(std::ptr::null_mut(), (&mut b as *mut node),) })
-            == (&mut b as *mut node))
-    );
-    assert!(((unsafe { call_twice_5((&mut c as *mut node),) }) == (&mut c as *mut node)));
-    assert!(((unsafe { next_of_6((&mut b as *mut node),) }) == (&mut c as *mut node)));
-    assert!(((unsafe { ret_global_7() }) == (&mut a as *mut node)));
-    assert!(((unsafe { address_taken_8((&mut a as *mut node),) }) == (&mut a as *mut node)));
-    let mut p: pair_t = (unsafe { ret_struct_9(4, (&mut a as *mut node)) });
-    assert!(((p.a) == (4)) && ((p.n) == (&mut a as *mut node)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut p: pair_t = (unsafe { ret_struct_9(4_(), (&mut a as *mut node)) });
+    unimplemented!();
     let mut q: pair_t = (unsafe { ret_struct_param_10(p) });
-    assert!(((q.a) == (4)) && ((q.n) == (&mut a as *mut node)));
+    unimplemented!();
     let mut r: pair_t = (unsafe { ret_struct_ref_11(&mut q) });
-    assert!(((r.a) == (4)) && ((r.n) == (&mut a as *mut node)));
-    assert!((((unsafe { ret_vec_12((unsafe { ret_vec_local_13() }),) }).len()) == (1_usize)));
-    assert!(((unsafe { ret_loop_14((&mut a as *mut node),) }) == (&mut b as *mut node)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const global_node_0);
