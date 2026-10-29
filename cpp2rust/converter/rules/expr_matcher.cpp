@@ -989,6 +989,20 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
   if (better == b_bound) {
     return b;
   }
+  // Binding the class's arguments hides the class a rule is written for:
+  // vector<bool, T1>(size_t, const bool &, const T1 &) and
+  // vector<T1, T2>(size_t, const T1 &, const T2 &) both become the one
+  // constructor of vector<bool>. As C++ picks the partial specialization
+  // before its constructors, the rule returning the more specialized class
+  // wins.
+  auto by_class = sema.getMoreSpecializedTemplate(
+      a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Conversion, 0);
+  if (by_class == a_tmpl) {
+    return a;
+  }
+  if (by_class == b_tmpl) {
+    return b;
+  }
   if (auto constrained = moreConstrained(sema, a, a_tmpl, b, b_tmpl)) {
     return constrained;
   }
