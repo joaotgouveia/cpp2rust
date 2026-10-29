@@ -149,7 +149,11 @@ std::vector<clang::QualType> resolveMemberType(clang::Sema &sema,
           owner_spec ? llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
                            owner_spec->getTemplateName().getAsTemplateDecl())
                      : nullptr;
-      assert(tmpl && "member type is not qualified by a class template");
+      // an owner that is no class template names no member here (an alias
+      // template specialization); the keys of a rule needing one fail later
+      if (!tmpl) {
+        continue;
+      }
       records = matchingDefinitions(sema, tmpl, owner_spec);
     }
     for (auto record : records) {
