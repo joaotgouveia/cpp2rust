@@ -107,6 +107,10 @@ void collectGenerics(const std::vector<TranslationRule::BodyFragment> &body,
                 std::get_if<TranslationRule::GenericFragment>(&fragment)) {
           used.insert(generic->n);
         }
+        if (auto generic =
+                std::get_if<TranslationRule::DefaultFragment>(&fragment)) {
+          used.insert(generic->n);
+        }
         return false;
       });
 }
@@ -172,13 +176,16 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
     assert(rule && "rule has no target");
   }
 
+  auto make_type_rule = [&] {
+    return rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                : TranslationRule::TypeRule();
+  };
   if (!name.starts_with('f')) {
-    auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
-                          : TranslationRule::TypeRule();
+    auto type_rule = make_type_rule();
     auto keys = RuleKeys::GetTypeKeys(decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
-      types_.emplace(key, TypeRuleDecl{decl, type_rule});
+      types_.emplace(key, TypeRuleDecl{decl, make_type_rule()});
     }
     return;
   }
@@ -385,12 +392,11 @@ TypeRuleMatch findType(clang::QualType use) {
   if (!best.rule_decl) {
     auto spelled = RuleDecls::SpelledTypedef(ctx, use);
     if (spelled && !IsUserDefinedDecl(spelled)) {
-      if (check_used_rules_) {
+      best = findType(use.getCanonicalType());
+      if (!best.rule_decl) {
         unruled_typedefs_.push_back(spelled);
-        return best;
       }
-      use.dump(llvm::errs(), ctx);
-      llvm::report_fatal_error("typedef has no type rule");
+      return best;
     }
   }
   return best;
