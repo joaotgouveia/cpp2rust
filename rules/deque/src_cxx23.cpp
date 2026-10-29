@@ -415,6 +415,54 @@ void f66(std::deque<T1, T2> &a0, T3 &&a1) {
   return a0.template append_range<T3>(std::forward<T3>(a1));
 }
 
+template <typename T1, typename T2>
+using t14 = typename std::deque<T1, T2>::iterator::iterator;
+
+template <typename T1, typename T2>
+using t15 = typename std::deque<T1, T2>::iterator::const_iterator;
+
+template <typename T1, typename T2>
+using t16 = typename std::deque<T1, T2>::iterator::iterator_category;
+
+template <typename T1, typename T2>
+using t17 = typename std::deque<T1, T2>::iterator::value_type;
+
+template <typename T1, typename T2>
+using t18 = typename std::deque<T1, T2>::iterator::pointer;
+
+template <typename T1, typename T2>
+using t19 = typename std::deque<T1, T2>::iterator::reference;
+
+template <typename T1, typename T2>
+using t20 = typename std::deque<T1, T2>::iterator::size_type;
+
+template <typename T1, typename T2>
+using t21 = typename std::deque<T1, T2>::iterator::difference_type;
+
+template <typename T1, typename T2>
+using t22 = typename std::deque<T1, T2>::const_iterator::iterator;
+
+template <typename T1, typename T2>
+using t23 = typename std::deque<T1, T2>::const_iterator::const_iterator;
+
+template <typename T1, typename T2>
+using t24 = typename std::deque<T1, T2>::const_iterator::iterator_category;
+
+template <typename T1, typename T2>
+using t25 = typename std::deque<T1, T2>::const_iterator::value_type;
+
+template <typename T1, typename T2>
+using t26 = typename std::deque<T1, T2>::const_iterator::pointer;
+
+template <typename T1, typename T2>
+using t27 = typename std::deque<T1, T2>::const_iterator::reference;
+
+template <typename T1, typename T2>
+using t28 = typename std::deque<T1, T2>::const_iterator::size_type;
+
+template <typename T1, typename T2>
+using t29 = typename std::deque<T1, T2>::const_iterator::difference_type;
+
 template <typename T1, typename T2, typename T3>
 typename std::deque<T1, T2>::size_type f67(std::deque<T1, T2> &a0,
                                            const T3 &a1) {
@@ -426,4 +474,4 @@ typename std::deque<T1, T2>::size_type f68(std::deque<T1, T2> &a0, T3 a1) {
   return std::erase_if(a0, std::move(a1));
 }
 
-template <typename T1> using t14 = std::pmr::deque<T1>;
+template <typename T1> using t30 = std::pmr::deque<T1>;

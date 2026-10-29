@@ -694,13 +694,44 @@ auto f94(const std::map<T1, T2, T3, T4> &a0, const T5 &a1)
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
+using t20 = typename std::map<T1, T2, T3, T4>::iterator::value_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t21 = typename std::map<T1, T2, T3, T4>::iterator::reference;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t22 = typename std::map<T1, T2, T3, T4>::iterator::pointer;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t23 = typename std::map<T1, T2, T3, T4>::iterator::iterator_category;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t24 = typename std::map<T1, T2, T3, T4>::iterator::difference_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t25 = typename std::map<T1, T2, T3, T4>::const_iterator::value_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t26 = typename std::map<T1, T2, T3, T4>::const_iterator::reference;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t27 = typename std::map<T1, T2, T3, T4>::const_iterator::pointer;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t28 =
+    typename std::map<T1, T2, T3, T4>::const_iterator::iterator_category;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t29 = typename std::map<T1, T2, T3, T4>::const_iterator::difference_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
 bool f95(const typename std::map<T1, T2, T3, T4>::value_compare &a0,
          const std::pair<const T1, T2> &a1, const std::pair<const T1, T2> &a2) {
   return a0.operator()(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-using t20 = std::pmr::map<T1, T2, T3>;
+using t30 = std::pmr::map<T1, T2, T3>;
 
 template <typename T1, typename T2, typename T3>
-using t21 = std::pmr::multimap<T1, T2, T3>;
+using t31 = std::pmr::multimap<T1, T2, T3>;

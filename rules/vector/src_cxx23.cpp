@@ -1012,3 +1012,45 @@ void f157(std::vector<T1, T2> &a0, T3 &&a1) {
 template <typename T1, typename T2> T2 f158(const std::vector<T1, T2> &a0) {
   return a0.get_allocator();
 }
+
+template <typename T1, typename T2>
+using t35 = typename std::vector<T1, T2>::iterator::iterator_type;
+
+template <typename T1, typename T2>
+using t36 = typename std::vector<T1, T2>::iterator::iterator_category;
+
+template <typename T1, typename T2>
+using t37 = typename std::vector<T1, T2>::iterator::value_type;
+
+template <typename T1, typename T2>
+using t38 = typename std::vector<T1, T2>::iterator::difference_type;
+
+template <typename T1, typename T2>
+using t39 = typename std::vector<T1, T2>::iterator::reference;
+
+template <typename T1, typename T2>
+using t40 = typename std::vector<T1, T2>::iterator::pointer;
+
+template <typename T1, typename T2>
+using t41 = typename std::vector<T1, T2>::iterator::iterator_concept;
+
+template <typename T1, typename T2>
+using t42 = typename std::vector<T1, T2>::const_iterator::iterator_type;
+
+template <typename T1, typename T2>
+using t43 = typename std::vector<T1, T2>::const_iterator::iterator_category;
+
+template <typename T1, typename T2>
+using t44 = typename std::vector<T1, T2>::const_iterator::value_type;
+
+template <typename T1, typename T2>
+using t45 = typename std::vector<T1, T2>::const_iterator::difference_type;
+
+template <typename T1, typename T2>
+using t46 = typename std::vector<T1, T2>::const_iterator::reference;
+
+template <typename T1, typename T2>
+using t47 = typename std::vector<T1, T2>::const_iterator::pointer;
+
+template <typename T1, typename T2>
+using t48 = typename std::vector<T1, T2>::const_iterator::iterator_concept;

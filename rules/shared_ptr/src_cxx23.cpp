@@ -315,21 +315,38 @@ template <typename T1> T1 *f62(const std::shared_ptr<T1> &a0) {
   return a0.operator->();
 }
 
+template <typename T1>
+T1 *f63(const std::shared_ptr<T1> &a0)
+  requires((std::is_array<T1>::value) == false) &&
+          ((std::is_void<T1>::value) == true)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+typename std::shared_ptr<T1>::element_type &f64(const std::shared_ptr<T1> &a0,
+                                                std::ptrdiff_t a1)
+  requires((std::is_array<T1>::value) == true) &&
+          ((std::is_void<T1>::value) == false)
+{
+  return a0.operator[](a1);
+}
+
 template <typename T1, typename T2>
-std::shared_ptr<T1> f63(std::shared_ptr<T2> &&a0) {
+std::shared_ptr<T1> f65(std::shared_ptr<T2> &&a0) {
   return std::static_pointer_cast<T1>(std::move(a0));
 }
 
 template <typename T1, typename T2>
-std::shared_ptr<T1> f64(const std::shared_ptr<T2> &a0) {
+std::shared_ptr<T1> f66(const std::shared_ptr<T2> &a0) {
   return std::static_pointer_cast<T1>(a0);
 }
 
 template <typename T1>
-void f65(std::shared_ptr<T1> &a0, std::shared_ptr<T1> &a1) {
+void f67(std::shared_ptr<T1> &a0, std::shared_ptr<T1> &a1) {
   return std::swap(a0, a1);
 }
 
-template <typename T1> void f66(std::weak_ptr<T1> &a0, std::weak_ptr<T1> &a1) {
+template <typename T1> void f68(std::weak_ptr<T1> &a0, std::weak_ptr<T1> &a1) {
   return std::swap(a0, a1);
 }
