@@ -189,7 +189,7 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
     }
   }
   if (!name.starts_with('f')) {
-    auto keys = RuleKeys::GetTypeKeys(decl);
+    auto keys = RuleKeys::GetTypeKeys(*sema_, decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
       auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
@@ -345,7 +345,7 @@ TypeRuleMatch findType(clang::QualType use) {
         }
         auto match = AstMatcher::MatchType(*sema_, type, it->second.decl);
         if (match && llvm::none_of(matches, [&](const TypeRuleMatch &other) {
-              return other.rule_decl == &it->second;
+              return other.rule_decl->decl == it->second.decl;
             })) {
           matches.push_back({&it->second, *std::move(match)});
         }

@@ -71,6 +71,14 @@ std::optional<std::vector<clang::TemplateArgument>>
 DeduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
                 clang::QualType pattern, const clang::CXXRecordDecl *record);
 
+// The rule's parameters a member type names no class of (T1 of typename
+// vector<bool, T1>::reference, which is _Bit_reference whichever T1) take the
+// defaults of the class template (allocator<bool>), when the member of the
+// class so named is the actual type.
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceFromDefaults(clang::Sema &sema, const clang::TemplateDecl *rule,
+                   clang::QualType pattern, clang::QualType actual);
+
 bool IsInternal(const clang::NamedDecl *decl);
 
 const clang::TypeAliasTemplateDecl *AliasTemplateOf(clang::QualType type);

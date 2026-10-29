@@ -7,6 +7,7 @@
 #include <clang/AST/ExprCXX.h>
 #include <clang/Sema/Template.h>
 #include <clang/Sema/TemplateDeduction.h>
+#include <llvm/ADT/STLExtras.h>
 #include <llvm/ADT/SmallVector.h>
 
 #include <cassert>
@@ -209,6 +210,76 @@ DeduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
     return std::nullopt;
   }
   return deducedArguments(sema, params, deduced);
+}
+
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceFromDefaults(clang::Sema &sema, const clang::TemplateDecl *rule,
+                   clang::QualType pattern, clang::QualType actual) {
+  auto member = pattern->getAs<clang::DependentNameType>();
+  if (!member || member->getQualifier().getKind() !=
+                     clang::NestedNameSpecifier::Kind::Type) {
+    return std::nullopt;
+  }
+  auto spec = member->getQualifier()
+                  .getAsType()
+                  ->getAs<clang::TemplateSpecializationType>();
+  auto tmpl = spec ? llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
+                         spec->getTemplateName().getAsTemplateDecl())
+                   : nullptr;
+  if (!tmpl || tmpl->getTemplateParameters()->hasParameterPack()) {
+    return std::nullopt;
+  }
+  auto params = rule->getTemplateParameters();
+  auto loc = params->getTemplateLoc();
+  // the arguments written before the rule's parameters are checked as written
+  // (bool of vector<bool, T1>), each written as a parameter takes its default
+  clang::TemplateArgumentListInfo written(loc, loc);
+  llvm::SmallVector<std::optional<unsigned>, 4> positions(params->size());
+  for (auto [i, arg] : llvm::enumerate(spec->template_arguments())) {
+    auto parm = arg.getKind() == clang::TemplateArgument::Type
+                    ? arg.getAsType()->getAs<clang::TemplateTypeParmType>()
+                    : nullptr;
+    if (parm && parm->getDepth() == params->getDepth() &&
+        !parm->isParameterPack()) {
+      if (positions[parm->getIndex()]) {
+        return std::nullopt;
+      }
+      positions[parm->getIndex()] = i;
+      continue;
+    }
+    if (arg.isDependent() || written.size() != i) {
+      return std::nullopt;
+    }
+    written.addArgument(sema.getTrivialTemplateArgumentLoc(
+        arg, arg.getNonTypeTemplateArgumentType(), loc));
+  }
+  if (!llvm::all_of(positions, [](const std::optional<unsigned> &position) {
+        return position.has_value();
+      })) {
+    return std::nullopt;
+  }
+  Trial trial(sema);
+  clang::Sema::CheckTemplateArgumentInfo info;
+  if (sema.CheckTemplateArgumentList(tmpl, loc, written, /*DefaultArgs=*/{},
+                                     /*PartialTemplateArgs=*/false, info) ||
+      trial.failed()) {
+    return std::nullopt;
+  }
+  llvm::SmallVector<clang::DeducedTemplateArgument, 4> deduced(params->size());
+  for (unsigned i = 0; i < params->size(); ++i) {
+    deduced[i] =
+        clang::DeducedTemplateArgument(info.CanonicalConverted[*positions[i]]);
+  }
+  auto args = deducedArguments(sema, params, deduced);
+  clang::MultiLevelTemplateArgumentList bound(
+      const_cast<clang::TemplateDecl *>(rule), args, /*Final=*/true);
+  auto resolved =
+      sema.SubstType(pattern, bound, loc, clang::DeclarationName());
+  if (resolved.isNull() || trial.failed() ||
+      !sema.Context.hasSameUnqualifiedType(resolved, actual)) {
+    return std::nullopt;
+  }
+  return args;
 }
 
 bool IsInternal(const clang::NamedDecl *decl) {

@@ -130,18 +130,37 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     } else if (!RuleDecls::GetSugar(spelled)) {
       named = spelled->getAsCXXRecordDecl();
     }
-    if (!qualifier || !named ||
-        named->getIdentifier() != member->getIdentifier()) {
+    // or the same class whichever the arguments, spelled as itself
+    // (_Bit_reference of typename vector<bool, T1>::reference)
+    auto from_defaults = [&]() -> std::optional<TypeMatch> {
+      auto args = RuleDecls::DeduceFromDefaults(sema, tmpl, pattern, spelled);
+      if (!args || !(args = completeArgs(sema, tmpl, *std::move(args))) ||
+          !satisfiesConstraints(sema, tmpl, *args)) {
+        return std::nullopt;
+      }
+      return TypeMatch{*std::move(args)};
+    };
+    if (!qualifier) {
       return std::nullopt;
+    }
+    // a use spelled through another member typedef names another member
+    // (vector<bool>::value_type is not vector<bool, T1>::const_reference)
+    if (!named || named->getIdentifier() != member->getIdentifier()) {
+      return llvm::isa<clang::TypedefType>(spelled.getTypePtr())
+                 ? std::nullopt
+                 : from_defaults();
     }
     auto owner =
         llvm::dyn_cast<clang::CXXRecordDecl>(named->getDeclContext());
     if (!owner) {
-      return std::nullopt;
+      return from_defaults();
     }
     auto args = RuleDecls::DeduceFromClass(
         sema, params, clang::QualType(qualifier, 0), owner);
-    if (!args || !(args = completeArgs(sema, tmpl, *std::move(args))) ||
+    if (!args) {
+      return from_defaults();
+    }
+    if (!(args = completeArgs(sema, tmpl, *std::move(args))) ||
         !satisfiesConstraints(sema, tmpl, *args)) {
       return std::nullopt;
     }

@@ -132,6 +132,11 @@ std::vector<clang::QualType> resolveMemberType(clang::Sema &sema,
   assert(qualifier && "member type is not qualified by a type");
   std::vector<clang::QualType> resolved;
   for (auto owner : resolveMemberType(sema, clang::QualType(qualifier, 0))) {
+    // a member of a template parameter names no class
+    // (typename _Traits::char_type of basic_string's value_type)
+    if (owner->getAs<clang::TemplateTypeParmType>()) {
+      continue;
+    }
     llvm::SmallVector<clang::CXXRecordDecl *> records;
     // an owner resolved to a class nested in a class template
     // (lazy_split_view::__outer_iterator of its value_type)
@@ -393,6 +398,31 @@ std::vector<ExprKey> GetExprKeys(clang::Sema &sema,
     }
     return keys;
   }
+  // a dependent cast of an object of a member type calls a conversion function
+  // of the class the member names (static_cast<bool>(a0) of
+  // const typename vector<bool, T1>::reference &)
+  if (auto cast = llvm::dyn_cast<clang::ExplicitCastExpr>(returned)) {
+    auto operand = RuleDecls::SkipImplicit(cast->getSubExpr());
+    auto type = operand->getType().getNonReferenceType();
+    if (llvm::isa<clang::DeclRefExpr>(operand) &&
+        type->getAs<clang::DependentNameType>()) {
+      std::vector<ExprKey> keys;
+      for (auto resolved : resolveMemberType(sema, type)) {
+        auto key = getConstructorKey(getParent(resolved));
+        if (key && !llvm::is_contained(keys, *key)) {
+          keys.push_back(*key);
+        }
+      }
+      if (keys.empty()) {
+        llvm::errs() << "expression rule " << rule->getQualifiedNameAsString()
+                     << " has no key: cast member type "
+                     << type.getAsString() << " has no class\n";
+        rule->dump(llvm::errs());
+      }
+      assert(!keys.empty() && "expression rule has no key");
+      return keys;
+    }
+  }
   auto key = GetExprKey(ctx, returned);
   if (!key && llvm::isa<clang::InitListExpr>(returned)) {
     key = getConstructorKey(getParent(rule->getAsFunction()->getReturnType()));
@@ -449,7 +479,8 @@ const clang::Decl *getAliasTemplate(clang::QualType type) {
   return alias ? alias->getCanonicalDecl() : nullptr;
 }
 
-std::vector<TypeKey> GetTypeKeys(const clang::NamedDecl *rule) {
+std::vector<TypeKey> GetTypeKeys(clang::Sema &sema,
+                                 const clang::NamedDecl *rule) {
   auto alias = llvm::dyn_cast<clang::TypedefNameDecl>(rule);
   if (auto tmpl = llvm::dyn_cast<clang::TypeAliasTemplateDecl>(rule)) {
     alias = tmpl->getTemplatedDecl();
@@ -460,23 +491,43 @@ std::vector<TypeKey> GetTypeKeys(const clang::NamedDecl *rule) {
     return {kAnyClass};
   }
   if (auto qualifier = enclosingQualifier(pattern.getTypePtr())) {
-    while (auto outer = enclosingQualifier(qualifier)) {
-      qualifier = outer;
+    auto outermost = qualifier;
+    while (auto outer = enclosingQualifier(outermost)) {
+      outermost = outer;
     }
-    auto parent = getParent(clang::QualType(qualifier, 0));
+    auto parent = getParent(clang::QualType(outermost, 0));
+    // a member of a class template that is an internal class whichever the
+    // arguments (_Bit_reference of vector<bool, T1>::reference) has the key of
+    // that class too, as uses spell it without the member
+    std::vector<TypeKey> keys;
+    auto spec = qualifier->getAs<clang::TemplateSpecializationType>();
+    if (outermost == qualifier && spec &&
+        llvm::isa_and_nonnull<clang::ClassTemplateDecl>(
+            spec->getTemplateName().getAsTemplateDecl())) {
+      for (auto resolved : resolveMemberType(sema, pattern)) {
+        auto key = GetTypeKey(resolved);
+        auto decl = key ? std::get_if<const clang::Decl *>(&*key) : nullptr;
+        if (decl && *decl &&
+            RuleDecls::IsInternal(llvm::cast<clang::NamedDecl>(*decl)) &&
+            !llvm::is_contained(keys, *key)) {
+          keys.push_back(*key);
+        }
+      }
+    }
     if (!parent) {
-      parent = getAliasTemplate(clang::QualType(qualifier, 0));
+      parent = getAliasTemplate(clang::QualType(outermost, 0));
     }
     if (!parent) {
       llvm::errs() << "type rule " << rule->getQualifiedNameAsString()
                    << " has no key: qualifier "
-                   << clang::QualType(qualifier, 0).getAsString()
+                   << clang::QualType(outermost, 0).getAsString()
                    << " of " << pattern.getAsString()
                    << " is neither a class nor an alias template\n";
       rule->dump(llvm::errs());
     }
     assert(parent && "type rule has no key");
-    return {parent};
+    keys.insert(keys.begin(), parent);
+    return keys;
   }
   auto key = GetTypeKey(pattern);
   if (!key) {

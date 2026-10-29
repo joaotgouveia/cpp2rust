@@ -201,10 +201,23 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
   return operands;
 }
 
+// The argument before its conversion to a base the callee takes
+// (operator==(const _Bit_iterator_base &, ...) of two vector<bool>::iterator),
+// which a rule written for the class of the argument does not see.
+clang::Expr *skipDerivedToBase(clang::Expr *operand) {
+  auto cast = llvm::dyn_cast<clang::ImplicitCastExpr>(operand);
+  while (cast && (cast->getCastKind() == clang::CK_DerivedToBase ||
+                  cast->getCastKind() == clang::CK_UncheckedDerivedToBase)) {
+    operand = cast->getSubExpr();
+    cast = llvm::dyn_cast<clang::ImplicitCastExpr>(operand);
+  }
+  return operand;
+}
+
 // The operands a rule deduces from, as the use's callee was chosen: a
 // function template deduced from the arguments as written (string_view == "ab"
 // deduces from const char[3], which picks the type_identity_t overload), any
-// other callee takes them converted to its parameters.
+// other callee takes them converted to its parameters, short of the base.
 std::vector<clang::Expr *> deducedOperands(clang::ASTContext &ctx,
                                            const clang::Expr *use,
                                            unsigned arity) {
@@ -217,6 +230,9 @@ std::vector<clang::Expr *> deducedOperands(clang::ASTContext &ctx,
     callee = construct->getConstructor();
   }
   if (!callee || !callee->isFunctionTemplateSpecialization()) {
+    for (auto &operand : operands) {
+      operand = skipDerivedToBase(operand);
+    }
     return operands;
   }
   for (auto &operand : operands) {
@@ -345,8 +361,14 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
     if (!isNestedClass(written) || !record) {
       return std::nullopt;
     }
-    return RuleDecls::DeduceFromClass(sema, rule->getTemplateParameters(),
-                                      written, record);
+    if (auto deduced = RuleDecls::DeduceFromClass(
+            sema, rule->getTemplateParameters(), written, record)) {
+      return deduced;
+    }
+    // a member that is the same class whichever the arguments
+    // (typename vector<bool, T1>::reference(a0) of _Bit_reference)
+    return RuleDecls::DeduceFromDefaults(
+        sema, rule, written, RuleDecls::SkipImplicit(use)->getType());
   }
   // an operand of a class nested in the rule's class
   // (const typename regex_traits<T1>::_RegexMask & of regex_traits<char>)
@@ -364,6 +386,12 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
     }
     if (auto deduced = RuleDecls::DeduceFromClass(
             sema, rule->getTemplateParameters(), param, record)) {
+      return deduced;
+    }
+    // (typename vector<bool, T1>::reference & of _Bit_reference)
+    auto spelled = skipDerivedToBase(operands[i])->getType();
+    if (auto deduced = RuleDecls::DeduceFromDefaults(
+            sema, rule, param, spelled.getNonReferenceType())) {
       return deduced;
     }
   }
