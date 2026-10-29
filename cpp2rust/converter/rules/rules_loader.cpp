@@ -79,7 +79,10 @@ public:
   bool VisitDeclRefExpr(clang::DeclRefExpr *expr) {
     AddReferencedDecl(expr->getDecl());
     // a static member named through a derived class
-    if (llvm::isa<clang::CXXMethodDecl>(expr->getDecl()) &&
+    // (std::atomic<float>::is_always_lock_free of __atomic_float)
+    auto var = llvm::dyn_cast<clang::VarDecl>(expr->getDecl());
+    if ((llvm::isa<clang::CXXMethodDecl>(expr->getDecl()) ||
+         (var && var->isStaticDataMember())) &&
         expr->getQualifier().getKind() ==
             clang::NestedNameSpecifier::Kind::Type) {
       AddMemberKey(clang::QualType(expr->getQualifier().getAsType(), 0),

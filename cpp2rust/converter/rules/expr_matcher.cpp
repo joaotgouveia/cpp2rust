@@ -321,6 +321,8 @@ bool isNestedClass(clang::QualType type) {
          (spec && spec->getTemplateName().getAsDependentTemplateName());
 }
 
+clang::QualType namingClass(const clang::Expr *expr);
+
 // A static member named through its class (std::numeric_limits<T1>::min())
 // binds the rule's parameters from the class of the member the use names.
 std::optional<std::vector<clang::TemplateArgument>>
@@ -373,6 +375,7 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
       ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
     return std::nullopt;
   }
+  auto qualifier = clang::QualType(ref->getQualifier().getAsType(), 0);
   use = RuleDecls::SkipImplicit(use);
   const clang::Decl *used = nullptr;
   if (auto call = llvm::dyn_cast<clang::CallExpr>(use)) {
@@ -383,13 +386,23 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   auto record = used ? llvm::dyn_cast<clang::CXXRecordDecl>(
                            used->getDeclContext())
                      : nullptr;
-  if (!record) {
-    return std::nullopt;
+  // a member of an implementation base, or named through an object, binds
+  // the class the use names (std::atomic<float>::is_always_lock_free of
+  // __atomic_float<float>, file.npos of basic_string<char>)
+  if (!record ||
+      RuleKeys::GetTypeKey(sema.Context.getCanonicalTagType(record)) !=
+          RuleKeys::GetTypeKey(qualifier)) {
+    auto named = namingClass(use);
+    if (named.isNull()) {
+      return std::nullopt;
+    }
+    return RuleDecls::DeduceFromType(
+        sema, rule->getTemplateParameters(), qualifier,
+        named.getCanonicalType().getUnqualifiedType());
   }
-  return RuleDecls::DeduceFromType(
-      sema, rule->getTemplateParameters(),
-      clang::QualType(ref->getQualifier().getAsType(), 0),
-      sema.Context.getCanonicalTagType(record));
+  return RuleDecls::DeduceFromType(sema, rule->getTemplateParameters(),
+                                   qualifier,
+                                   sema.Context.getCanonicalTagType(record));
 }
 
 // The rule's parameters from the arguments its body passes to the callee
