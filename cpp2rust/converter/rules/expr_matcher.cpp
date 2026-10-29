@@ -425,11 +425,11 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
       specialization->getTemplateSpecializationArgs()->asArray());
 }
 
-clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
-                                              clang::FunctionTemplateDecl *rule,
-                                              const clang::Expr *use) {
-  auto loc = rule->getLocation();
-  clang::TemplateArgumentListInfo explicit_args(loc, loc);
+// The rule's parameters that the use's class binds, null for those deduced
+// from the operands.
+std::vector<clang::TemplateArgument>
+getClassArgs(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
+             const clang::Expr *use) {
   llvm::SmallBitVector deducible;
   sema.MarkDeducedTemplateParameters(rule, deducible);
   bool aggregate =
@@ -440,7 +440,7 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
   bool construction =
       llvm::isa<clang::CXXConstructExpr>(RuleDecls::SkipImplicit(use));
   if (deducible.all() && !aggregate && !construction) {
-    return explicit_args;
+    return {};
   }
   auto params = rule->getTemplateParameters();
   auto deduced = RuleDecls::DeduceFromType(
@@ -487,22 +487,42 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
     }
   }
   if (!deduced) {
-    return explicit_args;
+    return {};
   }
+  std::vector<clang::TemplateArgument> args(params->size());
   for (unsigned i = 0; i < params->size() && i <= last; ++i) {
-    auto param = params->getParam(i);
     if ((*deduced)[i].isNull()) {
+      break;
+    }
+    args[i] = (*deduced)[i];
+    // the class's pack (variant<T1...>) takes all the explicit arguments; the
+    // parameters after it are deduced from the operands
+    if (params->getParam(i)->isParameterPack()) {
+      break;
+    }
+  }
+  return args;
+}
+
+clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
+                                              clang::FunctionTemplateDecl *rule,
+                                              const clang::Expr *use) {
+  auto loc = rule->getLocation();
+  clang::TemplateArgumentListInfo explicit_args(loc, loc);
+  auto params = rule->getTemplateParameters();
+  auto args = getClassArgs(sema, rule, use);
+  for (unsigned i = 0; i < args.size(); ++i) {
+    auto param = params->getParam(i);
+    if (args[i].isNull()) {
       break;
     }
     clang::QualType nttp_type;
     if (auto nttp = llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
       nttp_type = nttp->getType();
     }
-    // the class's pack (variant<T1...>) takes all the explicit arguments; the
-    // parameters after it are deduced from the operands
     if (param->isParameterPack()) {
-      if ((*deduced)[i].getKind() == clang::TemplateArgument::Pack) {
-        for (const auto &element : (*deduced)[i].pack_elements()) {
+      if (args[i].getKind() == clang::TemplateArgument::Pack) {
+        for (const auto &element : args[i].pack_elements()) {
           explicit_args.addArgument(
               sema.getTrivialTemplateArgumentLoc(element, nttp_type, loc));
         }
@@ -510,7 +530,7 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
       break;
     }
     explicit_args.addArgument(
-        sema.getTrivialTemplateArgumentLoc((*deduced)[i], nttp_type, loc));
+        sema.getTrivialTemplateArgumentLoc(args[i], nttp_type, loc));
   }
   return explicit_args;
 }
@@ -811,6 +831,52 @@ bool deducesFromOperands(clang::Sema &sema, const clang::Expr *use,
   return false;
 }
 
+// The rule as a member of the use's class: the parameters the class binds are
+// substituted, and only the rest stay parameters of the template, as C++ orders
+// the constructors of tuple<int> with its int known.
+clang::FunctionTemplateDecl *bindClassArgs(clang::Sema &sema,
+                                           const clang::Expr *use,
+                                           clang::FunctionTemplateDecl *rule) {
+  auto args = getClassArgs(sema, rule, use);
+  if (llvm::all_of(args, [](const clang::TemplateArgument &arg) {
+        return arg.isNull();
+      })) {
+    return rule;
+  }
+  auto &ctx = sema.Context;
+  auto pattern = rule->getTemplatedDecl();
+  auto loc = rule->getLocation();
+  clang::MultiLevelTemplateArgumentList bound(rule, args, /*Final=*/false);
+  clang::Sema::InstantiatingTemplate instantiating(
+      sema, loc, rule, args,
+      clang::Sema::CodeSynthesisContext::ExplicitTemplateArgumentSubstitution);
+  clang::LocalInstantiationScope scope(sema);
+  auto type = sema.SubstFunctionDeclType(
+      pattern->getTypeSourceInfo(), bound, loc, pattern->getDeclName(),
+      /*ThisContext=*/nullptr, clang::Qualifiers(),
+      /*EvaluateConstraints=*/false);
+  assert(type && "the rule takes the arguments of the use's class");
+  auto function = clang::FunctionDecl::Create(
+      ctx, pattern->getDeclContext(), pattern->getBeginLoc(), loc,
+      pattern->getDeclName(), type->getType(), type, clang::SC_None,
+      /*UsesFPIntrin=*/false, /*isInlineSpecified=*/false,
+      /*hasWrittenPrototype=*/true, clang::ConstexprSpecKind::Unspecified,
+      pattern->getTrailingRequiresClause());
+  auto params = type->getTypeLoc()
+                    .IgnoreParens()
+                    .castAs<clang::FunctionProtoTypeLoc>()
+                    .getParams();
+  for (auto param : params) {
+    param->setOwningFunction(function);
+  }
+  function->setParams(params);
+  auto tmpl = clang::FunctionTemplateDecl::Create(
+      ctx, pattern->getDeclContext(), loc, pattern->getDeclName(),
+      rule->getTemplateParameters(), function);
+  function->setDescribedFunctionTemplate(tmpl);
+  return tmpl;
+}
+
 } // namespace
 
 MatchResult Match(clang::Sema &sema, const clang::Expr *use,
@@ -905,20 +971,22 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
   // partial ordering compares rules taking the same operands; a rule written
   // as a0++ takes one less than one taking the dummy int of a postfix operator
   clang::FunctionTemplateDecl *better = nullptr;
+  auto a_bound = bindClassArgs(sema, use, a_tmpl);
+  auto b_bound = bindClassArgs(sema, use, b_tmpl);
   if (getOperands(sema.Context, use, a_function->getNumParams()).size() ==
       getOperands(sema.Context, use, b_function->getNumParams()).size()) {
     better = sema.getMoreSpecializedTemplate(
-        a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Call,
+        a_bound, b_bound, use->getBeginLoc(), clang::TPOC_Call,
         getOperands(sema.Context, use).size());
     if (!better) {
       better = sema.getMoreSpecializedTemplate(
-          a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Conversion, 0);
+          a_bound, b_bound, use->getBeginLoc(), clang::TPOC_Conversion, 0);
     }
   }
-  if (better == a_tmpl) {
+  if (better == a_bound) {
     return a;
   }
-  if (better == b_tmpl) {
+  if (better == b_bound) {
     return b;
   }
   if (auto constrained = moreConstrained(sema, a, a_tmpl, b, b_tmpl)) {
