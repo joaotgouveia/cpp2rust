@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut sb: () = unimplemented!();
+        let mut sb: std_strstreambuf = <std_strstreambuf>::default();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -32,7 +32,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        (unsafe { sb.freeze(Some(false)) });
     }
     return 0_();
 }

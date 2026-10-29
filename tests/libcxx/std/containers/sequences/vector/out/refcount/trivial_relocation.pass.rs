@@ -92,10 +92,7 @@ const _: () = assert!(
     true,
     "!std::is_trivially_copyable<NotTriviallyMovable>::value"
 );
-const _: () = assert!(
-    true,
-    "!std::__libcpp_is_trivially_relocatable<NotTriviallyMovable>::value"
-);
+const _: () = assert!(true, "");
 pub fn tests_0() -> () {
     let track: Value<Tracker> = Rc::new(RefCell::new(<Tracker>::default()));
     let mut v: () = unimplemented!();

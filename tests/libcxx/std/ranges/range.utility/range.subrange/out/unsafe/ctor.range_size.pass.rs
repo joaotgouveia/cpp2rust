@@ -31,21 +31,33 @@ pub unsafe fn test_1() -> () {
     {
         let mut range: BorrowedRange =
             BorrowedRange::new({ buff.as_mut_ptr() }, { buff.as_mut_ptr() });
-        let mut subrange: () = unimplemented!();
+        let mut subrange: () =
+            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
+                { &mut range },
+                { 0_() },
+            );
         unimplemented!();
     }
     {
         let mut range: BorrowedRange = BorrowedRange::new({ buff.as_mut_ptr() }, {
             buff.as_mut_ptr().offset((1_()) as isize)
         });
-        let mut subrange: () = unimplemented!();
+        let mut subrange: () =
+            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
+                { &mut range },
+                { 1_() },
+            );
         unimplemented!();
     }
     {
         let mut range: BorrowedRange = BorrowedRange::new({ buff.as_mut_ptr() }, {
             buff.as_mut_ptr().offset((2_()) as isize)
         });
-        let mut subrange: () = unimplemented!();
+        let mut subrange: () =
+            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
+                { &mut range },
+                { 2_() },
+            );
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -54,7 +66,11 @@ pub unsafe fn test_1() -> () {
         let mut range: BorrowedRange = BorrowedRange::new({ buff.as_mut_ptr() }, {
             buff.as_mut_ptr().offset((8_()) as isize)
         });
-        let mut subrange: () = unimplemented!();
+        let mut subrange: () =
+            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
+                { &mut range },
+                { 8_() },
+            );
         unimplemented!();
         unimplemented!();
         unimplemented!();

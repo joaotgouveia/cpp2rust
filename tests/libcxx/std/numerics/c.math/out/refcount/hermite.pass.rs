@@ -214,7 +214,7 @@ impl Default for CompareFloatingValues_long_double_ {
         { CompareFloatingValues_long_double_::new() }
     }
 }
-pub fn get_roots_19(mut n: ()) -> () {
+pub fn get_roots_10(mut n: ()) -> () {
     'switch: {
         match { n } {
             __v if __v == 0_() => {
@@ -288,7 +288,7 @@ pub fn get_roots_19(mut n: ()) -> () {
     };
     panic!("ub: non-void function does not return a value")
 }
-pub fn get_roots_20(mut n: ()) -> () {
+pub fn get_roots_11(mut n: ()) -> () {
     'switch: {
         match { n } {
             __v if __v == 0_() => {
@@ -362,7 +362,7 @@ pub fn get_roots_20(mut n: ()) -> () {
     };
     panic!("ub: non-void function does not return a value")
 }
-pub fn get_roots_21(mut n: ()) -> () {
+pub fn get_roots_12(mut n: ()) -> () {
     'switch: {
         match { n } {
             __v if __v == 0_() => {
@@ -436,7 +436,7 @@ pub fn get_roots_21(mut n: ()) -> () {
     };
     panic!("ub: non-void function does not return a value")
 }
-pub fn test_22() {
+pub fn test_13() {
     {
         let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __range2: Ptr<()> = __tmp_0.as_pointer();
@@ -493,14 +493,14 @@ pub fn test_22() {
         let h4: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
             |mut y: ()| -> () {
                 {
-                    return (((16_() * ({ pow_23(y, 4_()) })) - ((48_() * y) * y)) + 12_());
+                    return (((16_() * unimplemented!()) - ((48_() * y) * y)) + 12_());
                 }
             },
         )));
         let h5: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
             |mut y: ()| -> () {
                 {
-                    return (y * (((32_() * ({ pow_23(y, 4_()) })) - ((160_() * y) * y)) + 120_()));
+                    return (y * (((32_() * unimplemented!()) - ((160_() * y) * y)) + 120_()));
                 }
             },
         )));
@@ -545,7 +545,7 @@ pub fn test_22() {
                 let mut H_next: () = unimplemented!();
                 let mut H_next_recurrence: () =
                     (2_() * ((x * unimplemented!()) - (n * unimplemented!())));
-                if ({ isinf_10(H_next) }) {
+                if unimplemented!() {
                     break;
                 }
                 let compare: Value<CompareFloatingValues_float_> =
@@ -579,7 +579,7 @@ pub fn test_22() {
         )));
         let mut n: () = 0_();
         'loop_: while (n <= 20_()) {
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(({ get_roots_19(n) })));
+            let __tmp_5: Value<()> = Rc::new(RefCell::new(({ get_roots_10(n) })));
             let __range3: Ptr<()> = __tmp_5.as_pointer();
             'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut x: () = (unimplemented!().read());
@@ -602,7 +602,7 @@ pub fn test_22() {
     }
     { {} }
 }
-pub fn test_24() {
+pub fn test_14() {
     {
         let __tmp_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __range2: Ptr<()> = __tmp_6.as_pointer();
@@ -659,14 +659,14 @@ pub fn test_24() {
         let h4: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
             |mut y: ()| -> () {
                 {
-                    return (((16_() * ({ pow_25(y, 4_()) })) - ((48_() * y) * y)) + 12_());
+                    return (((16_() * unimplemented!()) - ((48_() * y) * y)) + 12_());
                 }
             },
         )));
         let h5: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
             |mut y: ()| -> () {
                 {
-                    return (y * (((32_() * ({ pow_25(y, 4_()) })) - ((160_() * y) * y)) + 120_()));
+                    return (y * (((32_() * unimplemented!()) - ((160_() * y) * y)) + 120_()));
                 }
             },
         )));
@@ -700,7 +700,7 @@ pub fn test_24() {
                 let mut H_next: () = unimplemented!();
                 let mut H_next_recurrence: () =
                     (2_() * ((x * unimplemented!()) - (n * unimplemented!())));
-                if ({ isinf_13(H_next) }) {
+                if unimplemented!() {
                     break;
                 }
                 let compare: Value<CompareFloatingValues_double_> =
@@ -736,7 +736,7 @@ pub fn test_24() {
         )));
         let mut n: () = 0_();
         'loop_: while (n <= 20_()) {
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(({ get_roots_20(n) })));
+            let __tmp_10: Value<()> = Rc::new(RefCell::new(({ get_roots_11(n) })));
             let __range3: Ptr<()> = __tmp_10.as_pointer();
             'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut x: () = (unimplemented!().read());
@@ -775,7 +775,7 @@ pub fn test_24() {
         }
     }
 }
-pub fn test_26() {
+pub fn test_15() {
     {
         let __tmp_11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __range2: Ptr<()> = __tmp_11.as_pointer();
@@ -832,14 +832,14 @@ pub fn test_26() {
         let h4: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
             |mut y: ()| -> () {
                 {
-                    return (((16_() * ({ pow_27(y, 4_()) })) - ((48_() * y) * y)) + 12_());
+                    return (((16_() * unimplemented!()) - ((48_() * y) * y)) + 12_());
                 }
             },
         )));
         let h5: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
             |mut y: ()| -> () {
                 {
-                    return (y * (((32_() * ({ pow_27(y, 4_()) })) - ((160_() * y) * y)) + 120_()));
+                    return (y * (((32_() * unimplemented!()) - ((160_() * y) * y)) + 120_()));
                 }
             },
         )));
@@ -884,7 +884,7 @@ pub fn test_26() {
                 let mut H_next: () = unimplemented!();
                 let mut H_next_recurrence: () =
                     (2_() * ((x * unimplemented!()) - (n * unimplemented!())));
-                if ({ isinf_16(H_next) }) {
+                if unimplemented!() {
                     break;
                 }
                 let compare: Value<CompareFloatingValues_long_double_> =
@@ -920,7 +920,7 @@ pub fn test_26() {
         )));
         let mut n: () = 0_();
         'loop_: while (n <= 20_()) {
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(({ get_roots_21(n) })));
+            let __tmp_16: Value<()> = Rc::new(RefCell::new(({ get_roots_12(n) })));
             let __range3: Ptr<()> = __tmp_16.as_pointer();
             'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
                 let mut x: () = (unimplemented!().read());
@@ -988,15 +988,15 @@ pub trait CompareFloatingValues_double_Impl {
 }
 impl CompareFloatingValues_double_Impl for Ptr<CompareFloatingValues_double_> {
     fn operator_call(&self, mut result: (), mut expected: ()) -> () {
-        if ({ isinf_13(expected) }) && ({ isinf_13(result) }) {
+        if (unimplemented!()) && (unimplemented!()) {
             return (result == expected);
         }
-        if ({ isnan_14(expected) }) || ({ isnan_14(result) }) {
+        if (unimplemented!()) || (unimplemented!()) {
             return false;
         }
         let mut tol: () = ((*self).with(|__s| __s.abs_tol)
-            + (({ abs_15(expected) }) * (*self).with(|__s| __s.rel_tol)));
-        return (({ abs_15((result - expected)) }) < tol);
+            + (unimplemented!() * (*self).with(|__s| __s.rel_tol)));
+        return (unimplemented!() < tol);
     }
 }
 pub trait CompareFloatingValues_float_Impl {
@@ -1004,15 +1004,15 @@ pub trait CompareFloatingValues_float_Impl {
 }
 impl CompareFloatingValues_float_Impl for Ptr<CompareFloatingValues_float_> {
     fn operator_call(&self, mut result: (), mut expected: ()) -> () {
-        if ({ isinf_10(expected) }) && ({ isinf_10(result) }) {
+        if (unimplemented!()) && (unimplemented!()) {
             return (result == expected);
         }
-        if ({ isnan_11(expected) }) || ({ isnan_11(result) }) {
+        if (unimplemented!()) || (unimplemented!()) {
             return false;
         }
         let mut tol: () = ((*self).with(|__s| __s.abs_tol)
-            + (({ abs_12(expected) }) * (*self).with(|__s| __s.rel_tol)));
-        return (({ abs_12((result - expected)) }) < tol);
+            + (unimplemented!() * (*self).with(|__s| __s.rel_tol)));
+        return (unimplemented!() < tol);
     }
 }
 pub trait CompareFloatingValues_long_double_Impl {
@@ -1020,15 +1020,15 @@ pub trait CompareFloatingValues_long_double_Impl {
 }
 impl CompareFloatingValues_long_double_Impl for Ptr<CompareFloatingValues_long_double_> {
     fn operator_call(&self, mut result: (), mut expected: ()) -> () {
-        if ({ isinf_16(expected) }) && ({ isinf_16(result) }) {
+        if (unimplemented!()) && (unimplemented!()) {
             return (result == expected);
         }
-        if ({ isnan_17(expected) }) || ({ isnan_17(result) }) {
+        if (unimplemented!()) || (unimplemented!()) {
             return false;
         }
         let mut tol: () = ((*self).with(|__s| __s.abs_tol)
-            + (({ abs_18(expected) }) * (*self).with(|__s| __s.rel_tol)));
-        return (({ abs_18((result - expected)) }) < tol);
+            + (unimplemented!() * (*self).with(|__s| __s.rel_tol)));
+        return (unimplemented!() < tol);
     }
 }
 pub trait TestFloatImpl {
@@ -1038,13 +1038,13 @@ pub trait TestFloatImpl {
 }
 impl TestFloatImpl for Ptr<TestFloat> {
     fn operator_call_1_float(&self) {
-        ({ test_22() });
+        ({ test_13() });
     }
     fn operator_call_1_double(&self) {
-        ({ test_24() });
+        ({ test_14() });
     }
     fn operator_call_1_long_double(&self) {
-        ({ test_26() });
+        ({ test_15() });
     }
 }
 pub trait TestIntImpl {

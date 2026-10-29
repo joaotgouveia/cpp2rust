@@ -350,44 +350,6 @@ impl Default for test_allocator_void_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std_pair_const_MoveOnly__MoveOnly___rebind_std_pair_const_MoveOnly__MoveOnly__
-{}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std_pair_const_MoveOnly__MoveOnly__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std_pair_const_MoveOnly__MoveOnly__ {}
-impl Default for test_allocator_std_pair_const_MoveOnly__MoveOnly__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std_pair_const_MoveOnly__MoveOnly__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std_pair_const_MoveOnly__MoveOnly__ {
-    data_: (),
-}
-impl other_allocator_std_pair_const_MoveOnly__MoveOnly__ {}
-impl Default for other_allocator_std_pair_const_MoveOnly__MoveOnly__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std_pair_const_MoveOnly__MoveOnly__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
 #[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
@@ -436,10 +398,6 @@ impl some_alloc_std_pair_const_MoveOnly__MoveOnly__ {}
 #[derive(FnPtrArg, Default)]
 pub struct some_alloc2_std_pair_const_MoveOnly__MoveOnly__ {}
 impl some_alloc2_std_pair_const_MoveOnly__MoveOnly__ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc3_std_pair_const_MoveOnly__MoveOnly__ {}
-impl some_alloc3_std_pair_const_MoveOnly__MoveOnly__ {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -465,18 +423,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         const _: () = assert!(
             true,
-            "noexcept(swap(std::declval<C&>(), std::declval<C&>()))"
-        );;
-    }
-    {
-        const _: () = assert!(
-            true,
-            "noexcept(swap(std::declval<C&>(), std::declval<C&>()))"
-        );;
-    }
-    {
-        const _: () = assert!(
-            true,
             "!noexcept(swap(std::declval<C&>(), std::declval<C&>()))"
         );;
     }
@@ -520,12 +466,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(
             true,
             "!noexcept(swap(std::declval<C&>(), std::declval<C&>()))"
-        );;
-    }
-    {
-        const _: () = assert!(
-            true,
-            "noexcept(swap(std::declval<C&>(), std::declval<C&>()))"
         );;
     }
     {

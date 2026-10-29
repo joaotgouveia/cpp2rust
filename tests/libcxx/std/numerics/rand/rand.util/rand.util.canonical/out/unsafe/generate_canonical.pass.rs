@@ -36,52 +36,52 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_3(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_4(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_5(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_6(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_7(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_8(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_9(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_10(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_11(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut r: () = unimplemented!();
-        let mut f: () = (unsafe { generate_canonical_12(&mut r) });
+        let mut f: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

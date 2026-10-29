@@ -6,22 +6,22 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn cmp_eq_0(mut rc: i32) -> i32 {
-    return ((rc == -1_i32) as i32);
+pub fn cmp_eq_0(mut rc: ()) -> () {
+    return ((rc == -1_()) as ());
 }
-pub fn cmp_or_ptr_1(mut p: Ptr<i8>, mut q: Ptr<i8>) -> i32 {
-    return (((!(p).is_null()) || (!(q).is_null())) as i32);
+pub fn cmp_or_ptr_1(mut p: Ptr<()>, mut q: Ptr<()>) -> () {
+    return (((!(p).is_null()) || (!(q).is_null())) as ());
 }
-pub fn both_null_2(mut s1: Ptr<i8>, mut s2: Ptr<i8>) -> i32 {
-    return ((((((s1).is_null()) as i32) != 0) && ((((s2).is_null()) as i32) != 0)) as i32);
+pub fn both_null_2(mut s1: Ptr<()>, mut s2: Ptr<()>) -> () {
+    return ((((((s1).is_null()) as ()) != 0) && ((((s2).is_null()) as ()) != 0)) as ());
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut a: i32 = 0;
-    let mut b: i32 = 0_i32;
+fn main_0() -> () {
+    let mut a: () = 0_();
+    let mut b: () = unimplemented!();
     if ({
         b = a;
         b
@@ -30,21 +30,15 @@ fn main_0() -> i32 {
     'loop_: while (((({
         b = a;
         b
-    }) != 0) as i32)
+    }) != 0_()) as ())
         != 0)
     {}
     if (a != 0) {}
-    if (((a == b) as i32) != 0) {}
-    if (((a < b) as i32) != 0) {}
-    assert!((((a == b) as i32) != 0));
-    assert!(
-        ((!(({
-            a = b;
-            a
-        }) != 0) as i32)
-            != 0)
-    );
-    let mut c: bool = false;
+    if (((a == b) as ()) != 0) {}
+    if (((a < b) as ()) != 0) {}
+    unimplemented!();
+    unimplemented!();
+    let mut c: () = unimplemented!();
     c = ({
         a = b;
         a
@@ -52,31 +46,31 @@ fn main_0() -> i32 {
     c = (((({
         b = a;
         b
-    }) != 0) as i32)
+    }) != 0_()) as ())
         != 0);
     c = (a != 0);
-    c = (((a == b) as i32) != 0);
-    c = (((a < b) as i32) != 0);
-    let mut x: i32 = 5;
-    let mut y: i32 = 5;
-    let mut eq: i32 = ((x == y) as i32);
-    let mut lt: i32 = ((x < y) as i32);
-    let mut neq: i32 = ((x != y) as i32);
-    assert!((((eq == 1) as i32) != 0));
-    assert!((((lt == 0) as i32) != 0));
-    assert!((((neq == 0) as i32) != 0));
-    let mut p1: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hi");
-    let mut p2: Ptr<i8> = Ptr::<i8>::null();
-    let mut either: i32 = (((!(p1).is_null()) || (!(p2).is_null())) as i32);
-    let mut both: i32 = (((!(p1).is_null()) && (!(p2).is_null())) as i32);
-    assert!((((either == 1) as i32) != 0));
-    assert!((((both == 0) as i32) != 0));
-    assert!((((({ cmp_eq_0(-1_i32,) }) == 1) as i32) != 0));
-    assert!((((({ cmp_eq_0(0,) }) == 0) as i32) != 0));
-    assert!((((({ cmp_or_ptr_1((p1).clone(), (p2).clone(),) }) == 1) as i32) != 0));
-    assert!((((({ cmp_or_ptr_1(Ptr::<i8>::null(), Ptr::<i8>::null(),) }) == 0) as i32) != 0));
-    assert!((((({ both_null_2(Ptr::<i8>::null(), Ptr::<i8>::null(),) }) == 1) as i32) != 0));
-    assert!((((({ both_null_2((p1).clone(), Ptr::<i8>::null(),) }) == 0) as i32) != 0));
-    return 0;
+    c = (((a == b) as ()) != 0);
+    c = (((a < b) as ()) != 0);
+    let mut x: () = 5_();
+    let mut y: () = 5_();
+    let mut eq: () = ((x == y) as ());
+    let mut lt: () = ((x < y) as ());
+    let mut neq: () = ((x != y) as ());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut p1: Ptr<()> = Ptr::<()>::from_string_literal(b"hi");
+    let mut p2: Ptr<()> = Ptr::<()>::null();
+    let mut either: () = (((!(p1).is_null()) || (!(p2).is_null())) as ());
+    let mut both: () = (((!(p1).is_null()) && (!(p2).is_null())) as ());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

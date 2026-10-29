@@ -57,12 +57,11 @@ pub fn operator_eq_4(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-impl std::cmp::PartialEq for min_allocator_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
+impl CppEq for min_allocator_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_int_ {}
 pub fn test_5() -> () {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));

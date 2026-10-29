@@ -8,12 +8,9 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0() {
     let mut ints: () = (unsafe {
-        let mut ___start: () = 0_();
-        let mut ___bound_sentinel: () = 5_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_1))(
-            &mut ___start,
-            &mut ___bound_sentinel,
-        )
+        let mut ___e: () = 0_();
+        let mut ___f: () = 5_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_1))(&mut ___e, &mut ___f)
     });
     let mut unique_ptr_maker: FnPtr<Generic> = lambda_unsafe!(
         Generic,

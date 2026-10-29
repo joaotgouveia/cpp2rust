@@ -12,13 +12,13 @@ pub fn test01_0() {
     unimplemented!();
     let b1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let h1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ (*h1.borrow_mut())(b1.as_pointer()) });
+    unimplemented!();
     let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let h2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ (*h2.borrow_mut())(b2.as_pointer()) });
+    unimplemented!();
     let b3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let h3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ (*h3.borrow_mut())(b3.as_pointer()) });
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();

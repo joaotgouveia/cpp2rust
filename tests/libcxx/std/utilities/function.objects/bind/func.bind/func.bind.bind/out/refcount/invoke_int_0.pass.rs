@@ -22,43 +22,35 @@ pub fn test_3(f: (), mut expected: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     unimplemented!();
 }
-pub fn test_4(f: (), mut expected: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
+pub fn test_const_4(f: Ptr<()>, mut expected: ()) {
     unimplemented!();
 }
-pub fn test_5(f: (), mut expected: ()) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
+pub fn test_const_5(f: Ptr<()>, mut expected: ()) {
     unimplemented!();
 }
-pub fn test_const_6(f: Ptr<()>, mut expected: ()) {
-    unimplemented!();
-}
-pub fn test_const_7(f: Ptr<()>, mut expected: ()) {
-    unimplemented!();
-}
-pub fn f_8() -> () {
+pub fn f_6() -> () {
     return 1_();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_int_0 {}
-pub fn test_all_9() -> () {
-    ({ test_0(({ bind_10(FnPtr::<fn() -> ()>::new(f_8)) }), 1_()) });
+pub fn test_all_7() -> () {
+    ({ test_0(({ bind_8(FnPtr::<fn() -> ()>::new(f_6)) }), 1_()) });
     ({
-        test_1(
+        test_0(
             ({
                 let ___f: Value<FnPtr<fn() -> ()>> =
-                    Rc::new(RefCell::new((FnPtr::<fn() -> ()>::new(f_8))));
-                bind_11(___f.as_pointer())
+                    Rc::new(RefCell::new((FnPtr::<fn() -> ()>::new(f_6))));
+                bind_9(___f.as_pointer())
             }),
             1_(),
         )
     });
     ({
-        test_2(
+        test_1(
             ({
                 let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_12(___f.as_pointer())
+                bind_10(___f.as_pointer())
             }),
             4_(),
         )
@@ -67,17 +59,17 @@ pub fn test_all_9() -> () {
         let _f: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_12(___f.as_pointer())
+                bind_10(___f.as_pointer())
             }),
         ));
-        test_const_6(_f.as_pointer(), 5_())
+        test_const_4(_f.as_pointer(), 5_())
     });
-    ({ test_3(unimplemented!(), 1_()) });
-    ({ test_4(unimplemented!(), 1_()) });
-    ({ test_5(unimplemented!(), 4_()) });
+    ({ test_2(unimplemented!(), 1_()) });
+    ({ test_2(unimplemented!(), 1_()) });
+    ({ test_3(unimplemented!(), 4_()) });
     ({
         let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_const_7(_f.as_pointer(), 5_())
+        test_const_5(_f.as_pointer(), 5_())
     });
     return true;
 }
@@ -101,7 +93,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_all_9() });
+    ({ test_all_7() });
     const _: () = assert!(true, "test_all()");;
     return 0_();
 }

@@ -139,23 +139,61 @@ pub unsafe fn for_each_2(
 }
 pub unsafe fn swallow_1(mut _a0: (), mut _a1: (), mut _a2: (), mut _a3: (), mut _a4: ()) {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_eq_3(
     x: *const forward_iterator_int_ptr_,
@@ -173,13 +211,20 @@ pub unsafe fn base_5(i: *const forward_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct forward_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -223,6 +268,11 @@ impl std::cmp::PartialEq for forward_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for forward_iterator_int_ptr_ {}
+impl Default for forward_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { forward_iterator_int_ptr_::new_1() }
+    }
+}
 pub unsafe fn operator_eq_6(
     x: *const forward_iterator_const_int_ptr_,
     y: *const forward_iterator_const_int_ptr_,
@@ -239,13 +289,20 @@ pub unsafe fn base_8(i: *const forward_iterator_const_int_ptr_) -> *const () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct forward_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_const_int_ptr_ {
-    pub unsafe fn new_1(mut it: *const ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *const ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -289,6 +346,11 @@ impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
+impl Default for forward_iterator_const_int_ptr_ {
+    fn default() -> Self {
+        unsafe { forward_iterator_const_int_ptr_::new_1() }
+    }
+}
 pub unsafe fn operator_eq_9(
     x: *const bidirectional_iterator_int_ptr_,
     y: *const bidirectional_iterator_int_ptr_,
@@ -305,13 +367,20 @@ pub unsafe fn base_11(i: *const bidirectional_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct bidirectional_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
 impl bidirectional_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -359,6 +428,11 @@ impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for bidirectional_iterator_int_ptr_ {}
+impl Default for bidirectional_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { bidirectional_iterator_int_ptr_::new_1() }
+    }
+}
 pub unsafe fn operator_eq_12(
     x: *const bidirectional_iterator_const_int_ptr_,
     y: *const bidirectional_iterator_const_int_ptr_,
@@ -375,13 +449,20 @@ pub unsafe fn base_14(i: *const bidirectional_iterator_const_int_ptr_) -> *const
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct bidirectional_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
 }
 impl bidirectional_iterator_const_int_ptr_ {
-    pub unsafe fn new_1(mut it: *const ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *const ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -429,35 +510,54 @@ impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
-pub unsafe fn operator_sub_15(
+impl Default for bidirectional_iterator_const_int_ptr_ {
+    fn default() -> Self {
+        unsafe { bidirectional_iterator_const_int_ptr_::new_1() }
+    }
+}
+pub unsafe fn operator_add_15(
+    mut x: random_access_iterator_int_ptr_,
+    mut n: (),
+) -> random_access_iterator_int_ptr_ {
+    (unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut x, n) });
+    return random_access_iterator_int_ptr_::move_from({ &mut x });
+}
+pub unsafe fn operator_sub_16(
     mut x: random_access_iterator_int_ptr_,
     mut y: random_access_iterator_int_ptr_,
 ) -> () {
     return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_16(
+pub unsafe fn operator_eq_17(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_17(
+pub unsafe fn operator_ne_18(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
-pub unsafe fn base_18(i: *const random_access_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_19(i: *const random_access_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -500,7 +600,7 @@ impl random_access_iterator_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_16(
+            operator_eq_17(
                 self as *const random_access_iterator_int_ptr_,
                 other as *const random_access_iterator_int_ptr_,
             )
@@ -508,35 +608,54 @@ impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_int_ptr_ {}
-pub unsafe fn operator_sub_19(
+impl Default for random_access_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { random_access_iterator_int_ptr_::new_1() }
+    }
+}
+pub unsafe fn operator_add_20(
+    mut x: random_access_iterator_const_int_ptr_,
+    mut n: (),
+) -> random_access_iterator_const_int_ptr_ {
+    (unsafe { random_access_iterator_const_int_ptr_::operator_add_assign(&mut x, n) });
+    return random_access_iterator_const_int_ptr_::move_from({ &mut x });
+}
+pub unsafe fn operator_sub_21(
     mut x: random_access_iterator_const_int_ptr_,
     mut y: random_access_iterator_const_int_ptr_,
 ) -> () {
     return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_20(
+pub unsafe fn operator_eq_22(
     x: *const random_access_iterator_const_int_ptr_,
     y: *const random_access_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_21(
+pub unsafe fn operator_ne_23(
     x: *const random_access_iterator_const_int_ptr_,
     y: *const random_access_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
-pub unsafe fn base_22(i: *const random_access_iterator_const_int_ptr_) -> *const () {
+pub unsafe fn base_24(i: *const random_access_iterator_const_int_ptr_) -> *const () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct random_access_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_const_int_ptr_ {
-    pub unsafe fn new_1(mut it: *const ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *const ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -579,7 +698,7 @@ impl random_access_iterator_const_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_20(
+            operator_eq_22(
                 self as *const random_access_iterator_const_int_ptr_,
                 other as *const random_access_iterator_const_int_ptr_,
             )
@@ -587,8 +706,13 @@ impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
+impl Default for random_access_iterator_const_int_ptr_ {
+    fn default() -> Self {
+        unsafe { random_access_iterator_const_int_ptr_::new_1() }
+    }
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -600,40 +724,72 @@ impl cpp20_random_access_iterator_int_ptr_ {
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
     }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
+    }
 }
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub unsafe fn operator_sub_23(
+pub unsafe fn operator_add_25(
+    mut x: contiguous_iterator_int_ptr_,
+    mut n: (),
+) -> contiguous_iterator_int_ptr_ {
+    (unsafe { contiguous_iterator_int_ptr_::operator_add_assign(&mut x, n) });
+    return contiguous_iterator_int_ptr_::move_from({ &mut x });
+}
+pub unsafe fn operator_sub_26(
     mut x: contiguous_iterator_int_ptr_,
     mut y: contiguous_iterator_int_ptr_,
 ) -> () {
     return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_24(
+pub unsafe fn operator_eq_27(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_25(
+pub unsafe fn operator_ne_28(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
-pub unsafe fn base_26(i: *const contiguous_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_29(i: *const contiguous_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct contiguous_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -673,7 +829,7 @@ impl contiguous_iterator_int_ptr_ {
 impl std::cmp::PartialEq for contiguous_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_24(
+            operator_eq_27(
                 self as *const contiguous_iterator_int_ptr_,
                 other as *const contiguous_iterator_int_ptr_,
             )
@@ -681,35 +837,54 @@ impl std::cmp::PartialEq for contiguous_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for contiguous_iterator_int_ptr_ {}
-pub unsafe fn operator_sub_27(
+impl Default for contiguous_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { contiguous_iterator_int_ptr_::new_1() }
+    }
+}
+pub unsafe fn operator_add_30(
+    mut x: contiguous_iterator_const_int_ptr_,
+    mut n: (),
+) -> contiguous_iterator_const_int_ptr_ {
+    (unsafe { contiguous_iterator_const_int_ptr_::operator_add_assign(&mut x, n) });
+    return contiguous_iterator_const_int_ptr_::move_from({ &mut x });
+}
+pub unsafe fn operator_sub_31(
     mut x: contiguous_iterator_const_int_ptr_,
     mut y: contiguous_iterator_const_int_ptr_,
 ) -> () {
     return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_28(
+pub unsafe fn operator_eq_32(
     x: *const contiguous_iterator_const_int_ptr_,
     y: *const contiguous_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_29(
+pub unsafe fn operator_ne_33(
     x: *const contiguous_iterator_const_int_ptr_,
     y: *const contiguous_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
-pub unsafe fn base_30(i: *const contiguous_iterator_const_int_ptr_) -> *const () {
+pub unsafe fn base_34(i: *const contiguous_iterator_const_int_ptr_) -> *const () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct contiguous_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_const_int_ptr_ {
-    pub unsafe fn new_1(mut it: *const ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *const ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -752,7 +927,7 @@ impl contiguous_iterator_const_int_ptr_ {
 impl std::cmp::PartialEq for contiguous_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_28(
+            operator_eq_32(
                 self as *const contiguous_iterator_const_int_ptr_,
                 other as *const contiguous_iterator_const_int_ptr_,
             )
@@ -760,10 +935,15 @@ impl std::cmp::PartialEq for contiguous_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for contiguous_iterator_const_int_ptr_ {}
-pub unsafe fn base_31(mut i: *mut ()) -> *mut () {
+impl Default for contiguous_iterator_const_int_ptr_ {
+    fn default() -> Self {
+        unsafe { contiguous_iterator_const_int_ptr_::new_1() }
+    }
+}
+pub unsafe fn base_35(mut i: *mut ()) -> *mut () {
     return i;
 }
-pub unsafe fn base_32(mut i: *const ()) -> *const () {
+pub unsafe fn base_36(mut i: *const ()) -> *const () {
     return i;
 }
 #[repr(C)]
@@ -857,13 +1037,13 @@ pub struct sentinel_wrapper_int_ptr_ {
 impl sentinel_wrapper_int_ptr_ {
     pub unsafe fn new_1(it: *const *mut ()) -> Self {
         let mut this = Self {
-            base_: (unsafe { base_31((*it)) }),
+            base_: (unsafe { base_35((*it)) }),
         };
         this
     }
     pub unsafe fn operator_eq(&self, other: *const *mut ()) -> () {
         {}
-        return ((self.base_) == (unsafe { base_31((*other)) }));
+        return ((self.base_) == (unsafe { base_35((*other)) }));
     }
 }
 #[repr(C)]
@@ -874,13 +1054,13 @@ pub struct sentinel_wrapper_contiguous_iterator_int_ptr__ {
 impl sentinel_wrapper_contiguous_iterator_int_ptr__ {
     pub unsafe fn new_1(it: *const contiguous_iterator_int_ptr_) -> Self {
         let mut this = Self {
-            base_: (unsafe { base_26(it) }),
+            base_: (unsafe { base_29(it) }),
         };
         this
     }
     pub unsafe fn operator_eq(&self, other: *const contiguous_iterator_int_ptr_) -> () {
         {}
-        return ((self.base_) == (unsafe { base_26(other) }));
+        return ((self.base_) == (unsafe { base_29(other) }));
     }
 }
 #[repr(C)]
@@ -891,13 +1071,13 @@ pub struct sentinel_wrapper_random_access_iterator_int_ptr__ {
 impl sentinel_wrapper_random_access_iterator_int_ptr__ {
     pub unsafe fn new_1(it: *const random_access_iterator_int_ptr_) -> Self {
         let mut this = Self {
-            base_: (unsafe { base_18(it) }),
+            base_: (unsafe { base_19(it) }),
         };
         this
     }
     pub unsafe fn operator_eq(&self, other: *const random_access_iterator_int_ptr_) -> () {
         {}
-        return ((self.base_) == (unsafe { base_18(other) }));
+        return ((self.base_) == (unsafe { base_19(other) }));
     }
 }
 #[repr(C)]
@@ -942,13 +1122,13 @@ pub struct sentinel_wrapper_const_int_ptr_ {
 impl sentinel_wrapper_const_int_ptr_ {
     pub unsafe fn new_1(it: *const *const ()) -> Self {
         let mut this = Self {
-            base_: (unsafe { base_32((*it)) }),
+            base_: (unsafe { base_36((*it)) }),
         };
         this
     }
     pub unsafe fn operator_eq(&self, other: *const *const ()) -> () {
         {}
-        return ((self.base_) == (unsafe { base_32((*other)) }));
+        return ((self.base_) == (unsafe { base_36((*other)) }));
     }
 }
 #[repr(C)]
@@ -959,13 +1139,13 @@ pub struct sentinel_wrapper_contiguous_iterator_const_int_ptr__ {
 impl sentinel_wrapper_contiguous_iterator_const_int_ptr__ {
     pub unsafe fn new_1(it: *const contiguous_iterator_const_int_ptr_) -> Self {
         let mut this = Self {
-            base_: (unsafe { base_30(it) }),
+            base_: (unsafe { base_34(it) }),
         };
         this
     }
     pub unsafe fn operator_eq(&self, other: *const contiguous_iterator_const_int_ptr_) -> () {
         {}
-        return ((self.base_) == (unsafe { base_30(other) }));
+        return ((self.base_) == (unsafe { base_34(other) }));
     }
 }
 #[repr(C)]
@@ -976,13 +1156,13 @@ pub struct sentinel_wrapper_random_access_iterator_const_int_ptr__ {
 impl sentinel_wrapper_random_access_iterator_const_int_ptr__ {
     pub unsafe fn new_1(it: *const random_access_iterator_const_int_ptr_) -> Self {
         let mut this = Self {
-            base_: (unsafe { base_22(it) }),
+            base_: (unsafe { base_24(it) }),
         };
         this
     }
     pub unsafe fn operator_eq(&self, other: *const random_access_iterator_const_int_ptr_) -> () {
         {}
-        return ((self.base_) == (unsafe { base_22(other) }));
+        return ((self.base_) == (unsafe { base_24(other) }));
     }
 }
 #[repr(C)]
@@ -1019,7 +1199,7 @@ impl sentinel_wrapper_forward_iterator_const_int_ptr__ {
         return ((self.base_) == (unsafe { base_8(other) }));
     }
 }
-pub unsafe fn operator_eq_33(
+pub unsafe fn operator_eq_37(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -1034,7 +1214,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_33(
+            operator_eq_37(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -1056,33 +1236,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_34(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_38(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_35(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_39(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_34(_i, n)
+        operator_add_38(_i, n)
     });
 }
-pub unsafe fn iter_swap_36(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_40(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_37(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_41(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_38(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_42(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_39(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_43(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1166,7 +1346,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_39(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_43(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1176,7 +1356,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_38(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_42(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1696,7 +1876,7 @@ impl IntWrapper {
         return ((self.value_) <= (other.value_));
     }
 }
-pub unsafe fn test_40() {
+pub unsafe fn test_44() {
     let mut make_chunk_by_view: FnPtr<Generic> =
         lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
             let mut view: View_int_ptr__int_ptr_ =
@@ -1760,7 +1940,7 @@ pub unsafe fn test_40() {
         unimplemented!();
     }
 }
-pub unsafe fn test_41() {
+pub unsafe fn test_45() {
     let mut make_chunk_by_view: FnPtr<Generic> =
         lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
             let mut view: View_int_ptr__sentinel_wrapper_int_ptr__ =
@@ -1828,280 +2008,14 @@ pub unsafe fn test_41() {
         unimplemented!();
     }
 }
-pub unsafe fn test_42() {
+pub unsafe fn test_46() {
     let mut make_chunk_by_view: FnPtr<Generic> =
         lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
             let mut view: View_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr__ =
                 View_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr__::new(
-                    { contiguous_iterator_int_ptr_::new_1({ unimplemented!() }) },
+                    { contiguous_iterator_int_ptr_::new_2({ unimplemented!() }) },
                     {
-                        contiguous_iterator_int_ptr_::new_1({
-                            unimplemented!().offset((unimplemented!()) as isize)
-                        })
-                    },
-                );
-            return unimplemented!();
-        });
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_43() {
-    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |arr: *mut ()| -> () {
-            let mut view : View_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___ = View_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___ :: new ( { contiguous_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_1 : contiguous_iterator_int_ptr_  = contiguous_iterator_int_ptr_ :: new_1 ( { unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) } , )  ; sentinel_wrapper_contiguous_iterator_int_ptr__ :: new_1 ( { & mut __tmp_1 } , )  } } , )  ;
-            return unimplemented!();
-        }
-    );
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_44() {
-    let mut make_chunk_by_view: FnPtr<Generic> =
-        lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
-            let mut view: View_random_access_iterator_int_ptr___random_access_iterator_int_ptr__ =
-                View_random_access_iterator_int_ptr___random_access_iterator_int_ptr__::new(
-                    { random_access_iterator_int_ptr_::new_1({ unimplemented!() }) },
-                    {
-                        random_access_iterator_int_ptr_::new_1({
-                            unimplemented!().offset((unimplemented!()) as isize)
-                        })
-                    },
-                );
-            return unimplemented!();
-        });
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_45() {
-    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |arr: *mut ()| -> () {
-            let mut view : View_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___ = View_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___ :: new ( { random_access_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_2 : random_access_iterator_int_ptr_  = random_access_iterator_int_ptr_ :: new_1 ( { unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) } , )  ; sentinel_wrapper_random_access_iterator_int_ptr__ :: new_1 ( { & mut __tmp_2 } , )  } } , )  ;
-            return unimplemented!();
-        }
-    );
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_46() {
-    let mut make_chunk_by_view: FnPtr<Generic> =
-        lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
-            let mut view: View_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr__ =
-                View_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr__::new(
-                    { bidirectional_iterator_int_ptr_::new_1({ unimplemented!() }) },
-                    {
-                        bidirectional_iterator_int_ptr_::new_1({
+                        contiguous_iterator_int_ptr_::new_2({
                             unimplemented!().offset((unimplemented!()) as isize)
                         })
                     },
@@ -2168,7 +2082,7 @@ pub unsafe fn test_47() {
         Generic,
         {},
         |arr: *mut ()| -> () {
-            let mut view : View_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___ = View_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___ :: new ( { bidirectional_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_3 : bidirectional_iterator_int_ptr_  = bidirectional_iterator_int_ptr_ :: new_1 ( { unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) } , )  ; sentinel_wrapper_bidirectional_iterator_int_ptr__ :: new_1 ( { & mut __tmp_3 } , )  } } , )  ;
+            let mut view : View_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___ = View_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___ :: new ( { contiguous_iterator_int_ptr_ :: new_2 ( { unimplemented!()  } , )  } , { { let mut __tmp_1 : contiguous_iterator_int_ptr_  = contiguous_iterator_int_ptr_ :: new_2 ( { unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) } , )  ; sentinel_wrapper_contiguous_iterator_int_ptr__ :: new_1 ( { & mut __tmp_1 } , )  } } , )  ;
             return unimplemented!();
         }
     );
@@ -2230,11 +2144,11 @@ pub unsafe fn test_47() {
 pub unsafe fn test_48() {
     let mut make_chunk_by_view: FnPtr<Generic> =
         lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
-            let mut view: View_forward_iterator_int_ptr___forward_iterator_int_ptr__ =
-                View_forward_iterator_int_ptr___forward_iterator_int_ptr__::new(
-                    { forward_iterator_int_ptr_::new_1({ unimplemented!() }) },
+            let mut view: View_random_access_iterator_int_ptr___random_access_iterator_int_ptr__ =
+                View_random_access_iterator_int_ptr___random_access_iterator_int_ptr__::new(
+                    { random_access_iterator_int_ptr_::new_2({ unimplemented!() }) },
                     {
-                        forward_iterator_int_ptr_::new_1({
+                        random_access_iterator_int_ptr_::new_2({
                             unimplemented!().offset((unimplemented!()) as isize)
                         })
                     },
@@ -2301,7 +2215,7 @@ pub unsafe fn test_49() {
         Generic,
         {},
         |arr: *mut ()| -> () {
-            let mut view : View_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___ = View_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___ :: new ( { forward_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_4 : forward_iterator_int_ptr_  = forward_iterator_int_ptr_ :: new_1 ( { unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) } , )  ; sentinel_wrapper_forward_iterator_int_ptr__ :: new_1 ( { & mut __tmp_4 } , )  } } , )  ;
+            let mut view : View_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___ = View_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___ :: new ( { random_access_iterator_int_ptr_ :: new_2 ( { unimplemented!()  } , )  } , { { let mut __tmp_2 : random_access_iterator_int_ptr_  = random_access_iterator_int_ptr_ :: new_2 ( { unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) } , )  ; sentinel_wrapper_random_access_iterator_int_ptr__ :: new_1 ( { & mut __tmp_2 } , )  } } , )  ;
             return unimplemented!();
         }
     );
@@ -2361,6 +2275,272 @@ pub unsafe fn test_49() {
     }
 }
 pub unsafe fn test_50() {
+    let mut make_chunk_by_view: FnPtr<Generic> =
+        lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
+            let mut view: View_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr__ =
+                View_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr__::new(
+                    { bidirectional_iterator_int_ptr_::new_2({ unimplemented!() }) },
+                    {
+                        bidirectional_iterator_int_ptr_::new_2({
+                            unimplemented!().offset((unimplemented!()) as isize)
+                        })
+                    },
+                );
+            return unimplemented!();
+        });
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_51() {
+    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |arr: *mut ()| -> () {
+            let mut view : View_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___ = View_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___ :: new ( { bidirectional_iterator_int_ptr_ :: new_2 ( { unimplemented!()  } , )  } , { { let mut __tmp_3 : bidirectional_iterator_int_ptr_  = bidirectional_iterator_int_ptr_ :: new_2 ( { unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) } , )  ; sentinel_wrapper_bidirectional_iterator_int_ptr__ :: new_1 ( { & mut __tmp_3 } , )  } } , )  ;
+            return unimplemented!();
+        }
+    );
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_52() {
+    let mut make_chunk_by_view: FnPtr<Generic> =
+        lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
+            let mut view: View_forward_iterator_int_ptr___forward_iterator_int_ptr__ =
+                View_forward_iterator_int_ptr___forward_iterator_int_ptr__::new(
+                    { forward_iterator_int_ptr_::new_2({ unimplemented!() }) },
+                    {
+                        forward_iterator_int_ptr_::new_2({
+                            unimplemented!().offset((unimplemented!()) as isize)
+                        })
+                    },
+                );
+            return unimplemented!();
+        });
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_53() {
+    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |arr: *mut ()| -> () {
+            let mut view : View_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___ = View_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___ :: new ( { forward_iterator_int_ptr_ :: new_2 ( { unimplemented!()  } , )  } , { { let mut __tmp_4 : forward_iterator_int_ptr_  = forward_iterator_int_ptr_ :: new_2 ( { unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) } , )  ; sentinel_wrapper_forward_iterator_int_ptr__ :: new_1 ( { & mut __tmp_4 } , )  } } , )  ;
+            return unimplemented!();
+        }
+    );
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_54() {
     let mut make_chunk_by_view: FnPtr<Generic> =
         lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
             let mut view: View_const_int_ptr__const_int_ptr_ =
@@ -2424,7 +2604,7 @@ pub unsafe fn test_50() {
         unimplemented!();
     }
 }
-pub unsafe fn test_51() {
+pub unsafe fn test_55() {
     let mut make_chunk_by_view: FnPtr<Generic> =
         lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
             let mut view: View_const_int_ptr__sentinel_wrapper_const_int_ptr__ =
@@ -2492,268 +2672,12 @@ pub unsafe fn test_51() {
         unimplemented!();
     }
 }
-pub unsafe fn test_52() {
-    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |arr: *mut ()| -> () {
-            let mut view : View_contiguous_iterator_const_int_ptr___contiguous_iterator_const_int_ptr__ = View_contiguous_iterator_const_int_ptr___contiguous_iterator_const_int_ptr__ :: new ( { contiguous_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  ) .cast_const() } , )  } , { contiguous_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  } , )  ;
-            return unimplemented!();
-        }
-    );
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_53() {
-    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |arr: *mut ()| -> () {
-            let mut view : View_contiguous_iterator_const_int_ptr___sentinel_wrapper_contiguous_iterator_const_int_ptr___ = View_contiguous_iterator_const_int_ptr___sentinel_wrapper_contiguous_iterator_const_int_ptr___ :: new ( { contiguous_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  ) .cast_const() } , )  } , { { let mut __tmp_6 : contiguous_iterator_const_int_ptr_  = contiguous_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  ; sentinel_wrapper_contiguous_iterator_const_int_ptr__ :: new_1 ( { & mut __tmp_6 } , )  } } , )  ;
-            return unimplemented!();
-        }
-    );
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_54() {
-    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |arr: *mut ()| -> () {
-            let mut view : View_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr__ = View_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr__ :: new ( { random_access_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  ) .cast_const() } , )  } , { random_access_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  } , )  ;
-            return unimplemented!();
-        }
-    );
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_55() {
-    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |arr: *mut ()| -> () {
-            let mut view : View_random_access_iterator_const_int_ptr___sentinel_wrapper_random_access_iterator_const_int_ptr___ = View_random_access_iterator_const_int_ptr___sentinel_wrapper_random_access_iterator_const_int_ptr___ :: new ( { random_access_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  ) .cast_const() } , )  } , { { let mut __tmp_7 : random_access_iterator_const_int_ptr_  = random_access_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  ; sentinel_wrapper_random_access_iterator_const_int_ptr__ :: new_1 ( { & mut __tmp_7 } , )  } } , )  ;
-            return unimplemented!();
-        }
-    );
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: () = unimplemented!();
-        let mut view: () = (unsafe {
-            make_chunk_by_view
-                .spec::<fn(*mut ()) -> ()>(0)
-                .call(&mut array)
-        });
-        let mut i: () = unimplemented!();
-        let mut result: () = (!(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
 pub unsafe fn test_56() {
     let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
         |arr: *mut ()| -> () {
-            let mut view : View_bidirectional_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr__ = View_bidirectional_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr__ :: new ( { bidirectional_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  ) .cast_const() } , )  } , { bidirectional_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  } , )  ;
+            let mut view : View_contiguous_iterator_const_int_ptr___contiguous_iterator_const_int_ptr__ = View_contiguous_iterator_const_int_ptr___contiguous_iterator_const_int_ptr__ :: new ( { contiguous_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  ) .cast_const() } , )  } , { contiguous_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  } , )  ;
             return unimplemented!();
         }
     );
@@ -2817,7 +2741,7 @@ pub unsafe fn test_57() {
         Generic,
         {},
         |arr: *mut ()| -> () {
-            let mut view : View_bidirectional_iterator_const_int_ptr___sentinel_wrapper_bidirectional_iterator_const_int_ptr___ = View_bidirectional_iterator_const_int_ptr___sentinel_wrapper_bidirectional_iterator_const_int_ptr___ :: new ( { bidirectional_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  ) .cast_const() } , )  } , { { let mut __tmp_8 : bidirectional_iterator_const_int_ptr_  = bidirectional_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  ; sentinel_wrapper_bidirectional_iterator_const_int_ptr__ :: new_1 ( { & mut __tmp_8 } , )  } } , )  ;
+            let mut view : View_contiguous_iterator_const_int_ptr___sentinel_wrapper_contiguous_iterator_const_int_ptr___ = View_contiguous_iterator_const_int_ptr___sentinel_wrapper_contiguous_iterator_const_int_ptr___ :: new ( { contiguous_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  ) .cast_const() } , )  } , { { let mut __tmp_6 : contiguous_iterator_const_int_ptr_  = contiguous_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  ; sentinel_wrapper_contiguous_iterator_const_int_ptr__ :: new_1 ( { & mut __tmp_6 } , )  } } , )  ;
             return unimplemented!();
         }
     );
@@ -2877,13 +2801,269 @@ pub unsafe fn test_57() {
     }
 }
 pub unsafe fn test_58() {
+    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |arr: *mut ()| -> () {
+            let mut view : View_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr__ = View_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr__ :: new ( { random_access_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  ) .cast_const() } , )  } , { random_access_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  } , )  ;
+            return unimplemented!();
+        }
+    );
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_59() {
+    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |arr: *mut ()| -> () {
+            let mut view : View_random_access_iterator_const_int_ptr___sentinel_wrapper_random_access_iterator_const_int_ptr___ = View_random_access_iterator_const_int_ptr___sentinel_wrapper_random_access_iterator_const_int_ptr___ :: new ( { random_access_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  ) .cast_const() } , )  } , { { let mut __tmp_7 : random_access_iterator_const_int_ptr_  = random_access_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  ; sentinel_wrapper_random_access_iterator_const_int_ptr__ :: new_1 ( { & mut __tmp_7 } , )  } } , )  ;
+            return unimplemented!();
+        }
+    );
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_60() {
+    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |arr: *mut ()| -> () {
+            let mut view : View_bidirectional_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr__ = View_bidirectional_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr__ :: new ( { bidirectional_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  ) .cast_const() } , )  } , { bidirectional_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  } , )  ;
+            return unimplemented!();
+        }
+    );
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_61() {
+    let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |arr: *mut ()| -> () {
+            let mut view : View_bidirectional_iterator_const_int_ptr___sentinel_wrapper_bidirectional_iterator_const_int_ptr___ = View_bidirectional_iterator_const_int_ptr___sentinel_wrapper_bidirectional_iterator_const_int_ptr___ :: new ( { bidirectional_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  ) .cast_const() } , )  } , { { let mut __tmp_8 : bidirectional_iterator_const_int_ptr_  = bidirectional_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  ; sentinel_wrapper_bidirectional_iterator_const_int_ptr__ :: new_1 ( { & mut __tmp_8 } , )  } } , )  ;
+            return unimplemented!();
+        }
+    );
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: () = unimplemented!();
+        let mut view: () = (unsafe {
+            make_chunk_by_view
+                .spec::<fn(*mut ()) -> ()>(0)
+                .call(&mut array)
+        });
+        let mut i: () = unimplemented!();
+        let mut result: () = (!(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_62() {
     let mut make_chunk_by_view: FnPtr<Generic> =
         lambda_unsafe!(Generic, {}, |arr: *mut ()| -> () {
             let mut view: View_forward_iterator_const_int_ptr___forward_iterator_const_int_ptr__ =
                 View_forward_iterator_const_int_ptr___forward_iterator_const_int_ptr__::new(
-                    { forward_iterator_const_int_ptr_::new_1({ (unimplemented!()).cast_const() }) },
+                    { forward_iterator_const_int_ptr_::new_2({ (unimplemented!()).cast_const() }) },
                     {
-                        forward_iterator_const_int_ptr_::new_1({
+                        forward_iterator_const_int_ptr_::new_2({
                             (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
                         })
                     },
@@ -2945,12 +3125,12 @@ pub unsafe fn test_58() {
         unimplemented!();
     }
 }
-pub unsafe fn test_59() {
+pub unsafe fn test_63() {
     let mut make_chunk_by_view: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
         |arr: *mut ()| -> () {
-            let mut view : View_forward_iterator_const_int_ptr___sentinel_wrapper_forward_iterator_const_int_ptr___ = View_forward_iterator_const_int_ptr___sentinel_wrapper_forward_iterator_const_int_ptr___ :: new ( { forward_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  ) .cast_const() } , )  } , { { let mut __tmp_9 : forward_iterator_const_int_ptr_  = forward_iterator_const_int_ptr_ :: new_1 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  ; sentinel_wrapper_forward_iterator_const_int_ptr__ :: new_1 ( { & mut __tmp_9 } , )  } } , )  ;
+            let mut view : View_forward_iterator_const_int_ptr___sentinel_wrapper_forward_iterator_const_int_ptr___ = View_forward_iterator_const_int_ptr___sentinel_wrapper_forward_iterator_const_int_ptr___ :: new ( { forward_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  ) .cast_const() } , )  } , { { let mut __tmp_9 : forward_iterator_const_int_ptr_  = forward_iterator_const_int_ptr_ :: new_2 ( { ( unimplemented!()  . offset ( ( unimplemented!()  ) as isize ) ) .cast_const() } , )  ; sentinel_wrapper_forward_iterator_const_int_ptr__ :: new_1 ( { & mut __tmp_9 } , )  } } , )  ;
             return unimplemented!();
         }
     );
@@ -3014,47 +3194,47 @@ pub unsafe fn test_59() {
 pub struct TestWithPair {}
 impl TestWithPair {
     pub unsafe fn operator_call_1_int_ptr(&self) {
-        (unsafe { test_40() });
-        (unsafe { test_41() });
-    }
-    pub unsafe fn operator_call_1_class_contiguous_iterator_int_ptr_(&self) {
-        (unsafe { test_42() });
-        (unsafe { test_43() });
-    }
-    pub unsafe fn operator_call_1_class_random_access_iterator_int_ptr_(&self) {
         (unsafe { test_44() });
         (unsafe { test_45() });
     }
-    pub unsafe fn operator_call_1_class_bidirectional_iterator_int_ptr_(&self) {
+    pub unsafe fn operator_call_1_class_contiguous_iterator_int_ptr_(&self) {
         (unsafe { test_46() });
         (unsafe { test_47() });
     }
-    pub unsafe fn operator_call_1_class_forward_iterator_int_ptr_(&self) {
+    pub unsafe fn operator_call_1_class_random_access_iterator_int_ptr_(&self) {
         (unsafe { test_48() });
         (unsafe { test_49() });
     }
-    pub unsafe fn operator_call_1_const_int_ptr(&self) {
+    pub unsafe fn operator_call_1_class_bidirectional_iterator_int_ptr_(&self) {
         (unsafe { test_50() });
         (unsafe { test_51() });
     }
-    pub unsafe fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) {
+    pub unsafe fn operator_call_1_class_forward_iterator_int_ptr_(&self) {
         (unsafe { test_52() });
         (unsafe { test_53() });
     }
-    pub unsafe fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) {
+    pub unsafe fn operator_call_1_const_int_ptr(&self) {
         (unsafe { test_54() });
         (unsafe { test_55() });
     }
-    pub unsafe fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) {
+    pub unsafe fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) {
         (unsafe { test_56() });
         (unsafe { test_57() });
     }
-    pub unsafe fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) {
+    pub unsafe fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) {
         (unsafe { test_58() });
         (unsafe { test_59() });
     }
+    pub unsafe fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) {
+        (unsafe { test_60() });
+        (unsafe { test_61() });
+    }
+    pub unsafe fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) {
+        (unsafe { test_62() });
+        (unsafe { test_63() });
+    }
 }
-pub unsafe fn tests_60() -> () {
+pub unsafe fn tests_64() -> () {
     let mut tester: TestWithPair = <TestWithPair>::default();
     (unsafe {
         for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__ >::default() , tester , )
@@ -3080,7 +3260,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_60() });
+    (unsafe { tests_64() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

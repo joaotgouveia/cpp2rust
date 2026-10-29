@@ -17,10 +17,10 @@ pub struct list_head {
 #[byte_size(16)]
 pub struct node {
     #[offset(0)]
-    pub value: i32,
+    pub value: (),
     #[offset(8)]
     #[byte_size(8)]
-    pub value_ptr: Ptr<i32>,
+    pub value_ptr: Ptr<()>,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(16)]
@@ -29,14 +29,14 @@ pub struct node_with_defaults {
     #[byte_size(8)]
     pub next: Ptr<node_with_defaults>,
     #[offset(8)]
-    pub value: i32,
+    pub value: (),
 }
 impl Default for node_with_defaults {
     fn default() -> Self {
         {
             node_with_defaults {
                 next: Ptr::<node_with_defaults>::null(),
-                value: 3,
+                value: 3_(),
             }
         }
     }
@@ -49,20 +49,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let list: Value<list_head> = <Value<list_head>>::default();
     *list.borrow_mut() = list_head {
         next: (list.as_pointer()),
     };
-    assert!(({ { (*list.borrow()).next.clone() } } == { (list.as_pointer()) }));
+    unimplemented!();
     let n: Value<node> = <Value<node>>::default();
     *n.borrow_mut() = node {
-        value: 42,
+        value: 42_(),
         value_ptr: (field_ptr!(n.as_pointer(), value)),
     };
-    assert!(({ { (*n.borrow()).value_ptr.clone() } } == { (field_ptr!(n.as_pointer(), value)) }));
-    { (*n.borrow()).value_ptr.clone() }.write(7);
-    assert!(({ (*n.borrow()).value } == 7));
+    unimplemented!();
+    { (*n.borrow()).value_ptr.clone() }.write(7_());
+    unimplemented!();
     let arr: Value<Box<[list_head]>> = Rc::new(RefCell::new(
         (0..2)
             .map(|_| <list_head>::default())
@@ -70,36 +70,28 @@ fn main_0() -> i32 {
     ));
     *arr.borrow_mut() = Box::new([
         list_head {
-            next: ((arr.as_pointer() as Ptr<list_head>).offset(1)),
+            next: ((arr.as_pointer() as Ptr<list_head>).offset(1_())),
         },
         list_head {
-            next: ((arr.as_pointer() as Ptr<list_head>).offset(0)),
+            next: ((arr.as_pointer() as Ptr<list_head>).offset(0_())),
         },
     ]);
-    assert!(
-        ({ { (*arr.borrow())[(0) as usize].next.clone() } } == {
-            ((arr.as_pointer() as Ptr<list_head>).offset(1))
-        })
-    );
-    assert!(
-        ({ { (*arr.borrow())[(1) as usize].next.clone() } } == {
-            ((arr.as_pointer() as Ptr<list_head>).offset(0))
-        })
-    );
+    unimplemented!();
+    unimplemented!();
     let d: Value<node_with_defaults> = <Value<node_with_defaults>>::default();
     *d.borrow_mut() = node_with_defaults {
         next: (d.as_pointer()),
-        value: 3,
+        value: 3_(),
     };
-    assert!(({ { (*d.borrow()).next.clone() } } == { (d.as_pointer()) }));
-    assert!(({ (*d.borrow()).value } == 3));
+    unimplemented!();
+    unimplemented!();
     let called: Value<list_head> = <Value<list_head>>::default();
     *called.borrow_mut() = list_head {
         next: ({ init_0((called.as_pointer())) }),
     };
-    assert!(({ { (*called.borrow()).next.clone() } } == { (called.as_pointer()) }));
-    let mut size: usize = ::std::mem::size_of::<usize>();
-    assert!((size == ::std::mem::size_of::<usize>()));
-    return 0;
+    unimplemented!();
+    let mut size: () = ::std::mem::size_of::<()>();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

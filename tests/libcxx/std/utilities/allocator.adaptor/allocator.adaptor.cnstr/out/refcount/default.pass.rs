@@ -24,23 +24,11 @@ impl A1_int_ {
         Self { id_: id }
     }
 }
-impl std::cmp::PartialEq for A1_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(A1_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A1_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A1_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A1_int_ {}
 impl Default for A1_int_ {
     fn default() -> Self {
         { A1_int_::new(None) }
@@ -67,23 +55,11 @@ impl A2_int_ {
         Self { id_: id }
     }
 }
-impl std::cmp::PartialEq for A2_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_8(
-                Rc::new(RefCell::new(A2_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A2_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A2_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A2_int_ {}
 impl Default for A2_int_ {
     fn default() -> Self {
         { A2_int_::new(None) }
@@ -110,23 +86,11 @@ impl A3_int_ {
         Self { id_: id }
     }
 }
-impl std::cmp::PartialEq for A3_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_13(
-                Rc::new(RefCell::new(A3_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A3_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A3_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A3_int_ {}
 impl Default for A3_int_ {
     fn default() -> Self {
         { A3_int_::new(None) }

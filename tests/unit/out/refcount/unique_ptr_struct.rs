@@ -10,26 +10,31 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Point {
     #[offset(0)]
-    pub x: i32,
+    pub x: (),
     #[offset(4)]
-    pub y: i32,
+    pub y: (),
 }
-pub fn sum_0(mut p: Point) -> i32 {
+pub fn sum_0(mut p: Point) -> () {
     return (p.x + p.y);
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut p: Option<Value<Point>> = Some(Rc::new(RefCell::new(Point { x: 3, y: 4 })));
+fn main_0() -> () {
+    let p: Value<std_unique_ptr_Point__std_default_delete_Point__> = Rc::new(RefCell::new(
+        ({
+            let ___args: Value<Point> = Rc::new(RefCell::new(Point { x: 3_(), y: 4_() }));
+            make_unique_1(___args.as_pointer())
+        }),
+    ));
     {
-        field!(p.as_pointer(), x).with_mut(|__v| *__v = *__v + 10)
+        field!((*p.borrow_mut()), x).with_mut(|__v| *__v = *__v + 10_())
     };
-    let __rhs = (p.as_pointer().with(|__s| __s.x) + p.as_pointer().with(|__s| __s.y));
-    field!(p.as_pointer(), y).write(__rhs);
-    let mut s: i32 = ({ sum_0((*p.as_pointer().upgrade().deref()).clone()) });
-    assert!((s == 30));
-    return 0;
+    let __rhs = ({ ((*p.borrow()).read()).x } + { ((*p.borrow()).read()).y });
+    field!((*p.borrow_mut()), y).write(__rhs);
+    let mut s: () = ({ sum_0((*(*p.borrow()).upgrade().deref()).clone()) });
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -97,22 +97,10 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const DefaultOnly,
-}
-impl min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_DefaultOnly_ {}

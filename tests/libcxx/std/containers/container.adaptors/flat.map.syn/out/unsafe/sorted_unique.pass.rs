@@ -20,7 +20,7 @@ pub unsafe fn test_0() -> () {
         let mut s: () = unimplemented!();
     }
     {
-        let s: *const () = &(*std::cell::LazyCell::force_mut(&mut *&raw mut sorted_unique_1));
+        let s: *const () = &(*unimplemented!());
     }
     {
         let copy: () = unimplemented!();

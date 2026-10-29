@@ -48,7 +48,7 @@ impl Clone for Arg {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct Error {
     pub arg: Arg,
 }
@@ -70,6 +70,12 @@ impl Error {
             arg: Arg::new({ 0_() }),
         };
         unimplemented!();
+        this
+    }
+    pub unsafe fn move_from(_a0: *mut Error) -> Self {
+        let mut this = Self {
+            arg: Arg::move_from({ &mut (*_a0).arg }),
+        };
         this
     }
 }

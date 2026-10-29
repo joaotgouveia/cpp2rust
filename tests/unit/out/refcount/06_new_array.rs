@@ -6,9 +6,9 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn take_0(p: Ptr<Ptr<i8>>) -> i8 {
-    elem!((p.read()), 0).write(9_i8);
-    let mut c: i8 = (elem!((p.read()), 0).read());
+pub fn take_0(p: Ptr<Ptr<()>>) -> () {
+    elem!((p.read()), 0_()).write(9_());
+    let mut c: () = (elem!((p.read()), 0_()).read());
     (p.read()).delete();
     return c;
 }
@@ -16,18 +16,19 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut e: Ptr<i32> = Ptr::alloc_array((0..2_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
-    elem!(e, 0).write(6);
-    elem!(e, 1).write(7);
+fn main_0() -> () {
+    let mut e: Ptr<()> =
+        Ptr::alloc_array((0..2_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
+    elem!(e, 0_()).write(6_());
+    elem!(e, 1_()).write(7_());
     e.delete();
-    let mut c: i8 = ({
-        let _p: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::alloc_array(
-            (0..4_usize).map(|_| 0_i8).collect::<Box<[i8]>>(),
+    let mut c: () = ({
+        let _p: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::alloc_array(
+            (0..4_()).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         )));
         take_0(_p.as_pointer())
     });
     &(c);
-    return 0;
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

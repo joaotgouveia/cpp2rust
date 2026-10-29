@@ -7,14 +7,6 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn use_0() {
-    &(::std::mem::size_of::<i8>());
-    &(::std::mem::size_of::<i16>());
-    &(::std::mem::size_of::<i32>());
-    &(::std::mem::size_of::<i64>());
-    &(::std::mem::size_of::<u8>());
-    &(::std::mem::size_of::<u16>());
-    &(::std::mem::size_of::<u32>());
-    &(::std::mem::size_of::<u64>());
     &(::std::mem::size_of::<()>());
     &(::std::mem::size_of::<()>());
     &(::std::mem::size_of::<()>());
@@ -32,9 +24,17 @@ pub unsafe fn use_0() {
     &(::std::mem::size_of::<()>());
     &(::std::mem::size_of::<()>());
     &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<usize>());
-    &(::std::mem::size_of::<i64>());
-    &(::std::mem::size_of::<u64>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<()>());
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -106,17 +106,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     const _: () = assert!(true, "std::is_signed<intptr_t>::value");;
     const _: () = assert!(
-        ((::std::mem::size_of::<usize>()) >= (::std::mem::size_of::<()>())),
+        ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
         "sizeof(uintptr_t) >= sizeof(void*)"
     );;
     const _: () = assert!(true, "std::is_unsigned<uintptr_t>::value");;
     const _: () = assert!(
-        ((::std::mem::size_of::<i64>()) >= (::std::mem::size_of::<()>())),
+        ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
         "sizeof(intmax_t) >= sizeof(long long)"
     );;
     const _: () = assert!(true, "std::is_signed<intmax_t>::value");;
     const _: () = assert!(
-        ((::std::mem::size_of::<u64>()) >= (::std::mem::size_of::<()>())),
+        ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
         "sizeof(uintmax_t) >= sizeof(unsigned long long)"
     );;
     const _: () = assert!(true, "std::is_unsigned<uintmax_t>::value");;

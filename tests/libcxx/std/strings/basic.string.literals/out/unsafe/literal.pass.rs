@@ -10,27 +10,32 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_string__std_string_ {}
+pub struct test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___std_allocator_char____std_basic_string_char__std_char_traits_char___std_allocator_char___
+{}
 pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_u8string__std_u8string_ {}
+pub struct test_macros_detail_is_same_std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t____std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t___
+{}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_wstring__std_wstring_ {}
+pub struct test_macros_detail_is_same_std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t____std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___
+{}
 pub type anon_3 = ();
 pub const anon_3_value: anon_3 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_u16string__std_u16string_ {}
+pub struct test_macros_detail_is_same_std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t____std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___
+{}
 pub type anon_4 = ();
 pub const anon_4_value: anon_4 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_u32string__std_u32string_ {}
+pub struct test_macros_detail_is_same_std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t____std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___
+{}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -95,11 +100,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut foo: () = (unsafe { operator_literal_s_5(c"".as_ptr(), 0_()) });
+        let mut foo: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut foo: () = (unsafe { operator_literal_s_5(c"".as_ptr(), 0_()) });
+        let mut foo: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

@@ -19,11 +19,11 @@ pub struct test_macros_detail_is_same_std_filesystem_perm_options_ref__std_files
 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_char____x01_____b_____x00___0_
+pub struct check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_
 {}
-impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_char____x01_____b_____x00___0_ { pub unsafe fn dcast ( mut e : () , ) -> () { return ( e as () )  ;
- } pub unsafe fn unpromote ( mut promoted : () , ) -> () { return promoted  ;
- } pub unsafe fn check ( ) -> () { { let mut ValRef : () = ( ( ( '\x01' as ()  ) ) as () ) ;
+impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_ { pub unsafe fn dcast ( mut e : () , ) -> () { return ( e as () )  ;
+ } pub unsafe fn unpromote ( mut promoted : () , ) -> () { return ( promoted as () )  ;
+ } pub unsafe fn check ( ) -> () { { let mut ValRef : () = ( ( 1_() ) as () ) ;
   ;
  ;
  const _: () = assert!(true, ""); ;
@@ -58,7 +58,7 @@ impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options
  ;
  const _: () = assert!(true, "dcast(~Val1) == unpromote(~UVal1)"); ;
  ;
- { let mut e : () = ( ( ( '\x01' as ()  ) ) as () ) ;
+ { let mut e : () = ( ( 1_() ) as () ) ;
   ;
  ;
  let eref : *mut () = & mut ( ( * unimplemented!()  )  ) ;
@@ -66,7 +66,7 @@ impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } { let mut e : () = ( ( ( '\x01' as ()  ) ) as () ) ;
+ } { let mut e : () = ( ( 1_() ) as () ) ;
   ;
  ;
  let eref : *mut () = & mut ( ( * unimplemented!()  )  ) ;
@@ -74,7 +74,7 @@ impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } { let mut e : () = ( ( ( '\x01' as ()  ) ) as () ) ;
+ } { let mut e : () = ( ( 1_() ) as () ) ;
   ;
  ;
  let eref : *mut () = & mut ( ( * unimplemented!()  )  ) ;
@@ -105,7 +105,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "std::is_enum<E>::value");;
     const _: () = assert!(true, "!std::is_convertible<E, UT>::value");;
-    const _: () = assert!(true, "std::is_same<UT, unsigned char >::value");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     const _: () = assert!(
         true,

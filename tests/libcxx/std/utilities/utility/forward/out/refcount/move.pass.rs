@@ -73,9 +73,8 @@ impl Default for A {
 pub fn test_constexpr_move_7() -> () {
     let y: Value<()> = Rc::new(RefCell::new(42_()));
     let mut cy: () = (*y.borrow());
-    return ((((unimplemented!().read()) == 42_()) && ((unimplemented!().read()) == 42_()))
-        && ((unimplemented!().read()) == 42_()))
-        && ((unimplemented!().read()) == 42_());
+    return ((((*y.borrow()) == 42_()) && (cy == 42_())) && ((*y.borrow()) == 42_()))
+        && ((*y.borrow()) == 42_());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -122,7 +121,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         &(a2);
         unimplemented!();
         unimplemented!();
-        let mut a3: A = A::move_from({ unimplemented!() });
+        let mut a3: A = A::move_from({ a.as_pointer() });
         &(a3);
         unimplemented!();
         unimplemented!();
@@ -130,14 +129,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         &(a4);
         unimplemented!();
         unimplemented!();
-        let mut a5: A = A::copy_from({ unimplemented!() });
+        let mut a5: A = A::copy_from({ ca.as_pointer() });
         &(a5);
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut mo: move_only = move_only::new();
-        ({ test_2(move_only::move_from({ unimplemented!() })) });
+        let mo: Value<move_only> = Rc::new(RefCell::new(move_only::new()));
+        ({ test_2(move_only::move_from({ mo.as_pointer() })) });
         ({ test_2(({ source_0() })) });
     }
     {

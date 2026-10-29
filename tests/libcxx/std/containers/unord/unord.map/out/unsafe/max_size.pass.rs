@@ -471,13 +471,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let max_dist: () = unimplemented!();
         let mut c: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let max_dist: () = unimplemented!();

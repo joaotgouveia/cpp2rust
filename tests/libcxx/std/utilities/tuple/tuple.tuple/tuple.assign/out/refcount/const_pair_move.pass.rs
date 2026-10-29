@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -514,7 +498,7 @@ pub struct AssignableFrom_MoveAssign_ {
     #[byte_size(4)]
     pub v: MoveAssign,
 }
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct AssignableFrom_TracedAssignment_ {
     #[offset(0)]
@@ -655,12 +639,26 @@ impl AssignableFrom_MoveAssign_Impl for Ptr<AssignableFrom_MoveAssign_> {
     }
 }
 pub trait AssignableFrom_TracedAssignment_Impl {
+    fn move_assign(
+        &self,
+        _a0: Ptr<AssignableFrom_TracedAssignment_>,
+    ) -> Ptr<AssignableFrom_TracedAssignment_>;
     fn operator_assign_6_struct_TracedAssignment_0(
         &self,
         t: Ptr<TracedAssignment>,
     ) -> Ptr<AssignableFrom_TracedAssignment_>;
 }
 impl AssignableFrom_TracedAssignment_Impl for Ptr<AssignableFrom_TracedAssignment_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<AssignableFrom_TracedAssignment_>,
+    ) -> Ptr<AssignableFrom_TracedAssignment_> {
+        ({
+            let _arg0: Ptr<TracedAssignment> = field_ptr!(_a0, v);
+            TracedAssignmentImpl::operator_assign_4(&field_ptr!((*self), v), _arg0)
+        });
+        return (*self).clone();
+    }
     fn operator_assign_6_struct_TracedAssignment_0(
         &self,
         t: Ptr<TracedAssignment>,

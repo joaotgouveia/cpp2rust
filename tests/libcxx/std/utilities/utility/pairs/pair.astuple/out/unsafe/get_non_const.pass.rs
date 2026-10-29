@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveAssignUnsafe)]
 pub struct S {
     pub a: (),
     pub k: (),
@@ -16,9 +16,14 @@ impl S {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             a: unimplemented!(),
-            k: (*(unsafe { get_0(&mut this.a) })),
+            k: (*unimplemented!()),
         };
         this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
+        unimplemented!();
+        self.k = (*_a0).k;
+        return &mut (*(self as *mut S));
     }
 }
 impl Default for S {
@@ -26,7 +31,7 @@ impl Default for S {
         unsafe { S::new() }
     }
 }
-pub unsafe fn getP_1() -> () {
+pub unsafe fn getP_0() -> () {
     return unimplemented!();
 }
 pub fn main() {
@@ -49,8 +54,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*(unsafe { get_2(&mut p) })) = 5_();
-        (*(unsafe { get_3(&mut p) })) = 6_();
+        (*unimplemented!()) = 5_();
+        (*unimplemented!()) = 6_();
         unimplemented!();
         unimplemented!();
     }

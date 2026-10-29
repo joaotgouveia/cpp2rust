@@ -12,17 +12,11 @@ pub struct S {
     #[offset(0)]
     pub i: (),
 }
-impl std::cmp::PartialEq for S {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(S { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(S { i: other.i.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for S {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for S {}
 pub fn operator_eq_1(x: Ptr<S>, y: Ptr<S>) -> () {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }

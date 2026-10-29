@@ -144,220 +144,77 @@ pub struct StrongSpaceship_6 {
     #[offset(0)]
     pub value: (),
 }
-impl std::cmp::Ord for StrongSpaceship_6 {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            StrongSpaceship_6Impl::operator_cmp(
-                &Rc::new(RefCell::new(StrongSpaceship_6 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(StrongSpaceship_6 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for StrongSpaceship_6 {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        StrongSpaceship_6Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for StrongSpaceship_6 {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for StrongSpaceship_6 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        StrongSpaceship_6Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for StrongSpaceship_6 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            StrongSpaceship_6Impl::operator_eq(
-                &Rc::new(RefCell::new(StrongSpaceship_6 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(StrongSpaceship_6 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for StrongSpaceship_6 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct WeakSpaceship_8 {
     #[offset(0)]
     pub value: (),
 }
-impl std::cmp::Ord for WeakSpaceship_8 {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            WeakSpaceship_8Impl::operator_cmp(
-                &Rc::new(RefCell::new(WeakSpaceship_8 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(WeakSpaceship_8 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for WeakSpaceship_8 {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        WeakSpaceship_8Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for WeakSpaceship_8 {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for WeakSpaceship_8 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        WeakSpaceship_8Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for WeakSpaceship_8 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            WeakSpaceship_8Impl::operator_eq(
-                &Rc::new(RefCell::new(WeakSpaceship_8 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(WeakSpaceship_8 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for WeakSpaceship_8 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct PartialSpaceship_10 {
     #[offset(0)]
     pub value: (),
 }
-impl std::cmp::Ord for PartialSpaceship_10 {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            PartialSpaceship_10Impl::operator_cmp(
-                &Rc::new(RefCell::new(PartialSpaceship_10 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(PartialSpaceship_10 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for PartialSpaceship_10 {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        PartialSpaceship_10Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for PartialSpaceship_10 {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for PartialSpaceship_10 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        PartialSpaceship_10Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for PartialSpaceship_10 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            PartialSpaceship_10Impl::operator_eq(
-                &Rc::new(RefCell::new(PartialSpaceship_10 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(PartialSpaceship_10 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for PartialSpaceship_10 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct NoSpaceship_12 {
     #[offset(0)]
     pub value: (),
 }
-impl std::cmp::Ord for NoSpaceship_12 {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if NoSpaceship_12Impl::operator_lt(
-                &Rc::new(RefCell::new(NoSpaceship_12 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NoSpaceship_12 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if NoSpaceship_12Impl::operator_lt(
-                &Rc::new(RefCell::new(NoSpaceship_12 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NoSpaceship_12 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for NoSpaceship_12 {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        NoSpaceship_12Impl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for NoSpaceship_12 {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for NoSpaceship_12 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        NoSpaceship_12Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for NoSpaceship_12 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            NoSpaceship_12Impl::operator_eq(
-                &Rc::new(RefCell::new(NoSpaceship_12 {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NoSpaceship_12 {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for NoSpaceship_12 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct SpaceshipNoEquals_14 {}
-impl std::cmp::Ord for SpaceshipNoEquals_14 {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            SpaceshipNoEquals_14Impl::operator_cmp(
-                &Rc::new(RefCell::new(SpaceshipNoEquals_14 {})).as_pointer(),
-                Rc::new(RefCell::new(SpaceshipNoEquals_14 {})).as_pointer(),
-            )
-        }
+impl CppLess for SpaceshipNoEquals_14 {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        SpaceshipNoEquals_14Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for SpaceshipNoEquals_14 {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for SpaceshipNoEquals_14 {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        SpaceshipNoEquals_14Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for SpaceshipNoEquals_14 {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            SpaceshipNoEquals_14Impl::operator_cmp(
-                &Rc::new(RefCell::new(SpaceshipNoEquals_14 {})).as_pointer(),
-                Rc::new(RefCell::new(SpaceshipNoEquals_14 {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for SpaceshipNoEquals_14 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CustomSpaceship_16 {}

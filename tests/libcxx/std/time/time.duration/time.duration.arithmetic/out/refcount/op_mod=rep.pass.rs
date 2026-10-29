@@ -11,7 +11,7 @@ use std::rc::{Rc, Weak};
 pub struct NotARep {}
 pub fn operator_rem_assign_0(d: (), mut _a1: NotARep) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
-    return (*d.borrow_mut()).clone();
+    return unimplemented!();
 }
 pub fn test_constexpr_1() -> () {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));

@@ -101,7 +101,7 @@ impl __gnu_test_copy_constructor {
         if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__2))
             == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__3)))
         {
-            (unsafe { __throw_runtime_error_4(c"copy_constructor::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
@@ -117,22 +117,22 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__5));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__5)).postfix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__5))
-            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__6)))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)).postfix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__4))
+            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)))
         {
-            (unsafe { __throw_runtime_error_4(c"assignment_operator::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__5)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__6)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = 0_();
     }
     pub unsafe fn throw_on(mut count: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__6)) = count;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = count;
     }
 }
 #[repr(C)]
@@ -140,13 +140,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_7));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_7)).postfix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_7)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)) = 0_();
     }
 }
 #[repr(C)]
@@ -158,7 +158,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
         let mut id: () = id.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__8)).postfix_dec()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__7)).postfix_dec()
         });
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
@@ -212,12 +212,12 @@ impl __gnu_test_copy_tracker {
 impl std::cmp::Ord for __gnu_test_copy_tracker {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_9(
+            if operator_lt_8(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_9(
+            } else if operator_lt_8(
                 other as *const __gnu_test_copy_tracker,
                 self as *const __gnu_test_copy_tracker,
             ) {
@@ -236,7 +236,7 @@ impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
 impl std::cmp::PartialEq for __gnu_test_copy_tracker {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_10(
+            operator_eq_9(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             )
@@ -254,14 +254,14 @@ impl Default for __gnu_test_copy_tracker {
         unsafe { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub unsafe fn operator_eq_10(
+pub unsafe fn operator_eq_9(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
-pub unsafe fn operator_lt_9(
+pub unsafe fn operator_lt_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
@@ -272,26 +272,15 @@ pub unsafe fn operator_lt_9(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
     sem_set_: (),
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
-pub unsafe fn test01_11() {
+pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(123_(), unimplemented!(), None, None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (45_()).into(),
-                        (c"void test01()".as_ptr()).into(),
-                        (c"check_from_chars(123, \"123\")".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -299,18 +288,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(-123_(), unimplemented!(), None, None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (46_()).into(),
-                        (c"void test01()".as_ptr()).into(),
-                        (c"check_from_chars(-123, \"-123\")".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -320,18 +298,7 @@ pub unsafe fn test01_11() {
         if !(unsafe {
             check_from_chars_0(123_(), unimplemented!(), Some(10_()), Some(('a' as ())))
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (47_()).into(),
-                        (c"void test01()".as_ptr()).into(),
-                        (c"check_from_chars(123, \"123a\", 10, \'a\')".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -339,19 +306,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(123_(), unimplemented!(), None, None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (48_()).into(),
-                        (c"void test01()".as_ptr()).into(),
-                        (c"check_from_chars(123, \"0000000000000000000000000000123\")".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -361,25 +316,12 @@ pub unsafe fn test01_11() {
         if !(unsafe {
             check_from_chars_0(123_(), unimplemented!(), Some(10_()), Some(('a' as ())))
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (49_()).into(),
-                        (c"void test01()".as_ptr()).into(),
-                        (c"check_from_chars(123, \"0000000000000000000000000000123a\", 10, \'a\')"
-                            .as_ptr())
-                        .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test02_13() {
+pub unsafe fn test02_11() {
     let mut base: () = 2_();
     'loop_: while ((base) < (34_())) {
         let mut __do_while = true;
@@ -388,18 +330,7 @@ pub unsafe fn test02_13() {
             if !(unsafe {
                 check_from_chars_0(0_(), unimplemented!(), Some(base), Some(('x' as ())))
             }) {
-                (unsafe {
-                    __builtin_fprintf_12(
-                        libcc2rs::stderr_unsafe(),
-                        c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                        Box::new([
-                            (c"1.cc".as_ptr()).into(),
-                            (58_()).into(),
-                            (c"void test02()".as_ptr()).into(),
-                            (c"check_from_chars(0, \"0x1\", base, \'x\')".as_ptr()).into(),
-                        ]),
-                    )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -409,18 +340,7 @@ pub unsafe fn test02_13() {
             if !(unsafe {
                 check_from_chars_0(0_(), unimplemented!(), Some(base), Some(('X' as ())))
             }) {
-                (unsafe {
-                    __builtin_fprintf_12(
-                        libcc2rs::stderr_unsafe(),
-                        c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                        Box::new([
-                            (c"1.cc".as_ptr()).into(),
-                            (59_()).into(),
-                            (c"void test02()".as_ptr()).into(),
-                            (c"check_from_chars(0, \"0X1\", base, \'X\')".as_ptr()).into(),
-                        ]),
-                    )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -430,18 +350,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1123_(), unimplemented!(), Some(34_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (62_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1123, \"0x1\", 34)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -449,18 +358,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1123_(), unimplemented!(), Some(34_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1123, \"0X1\", 34)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -468,18 +366,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1156_(), unimplemented!(), Some(35_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (64_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1156, \"0x1\", 35)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -487,18 +374,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1156_(), unimplemented!(), Some(35_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (65_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1156, \"0X1\", 35)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -506,18 +382,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1189_(), unimplemented!(), Some(36_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (66_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1189, \"0x1\", 36)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -525,18 +390,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1189_(), unimplemented!(), Some(36_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (67_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1189, \"0X1\", 36)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -544,18 +398,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1155_(), unimplemented!(), Some(34_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1155, \"xx\", 34)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -563,18 +406,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1155_(), unimplemented!(), Some(34_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (70_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1155, \"XX\", 34)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -582,18 +414,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1155_(), unimplemented!(), Some(34_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (71_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1155, \"Xx\", 34)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -601,18 +422,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1224_(), unimplemented!(), Some(35_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (72_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1224, \"yy\", 35)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -620,18 +430,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1224_(), unimplemented!(), Some(35_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (73_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1224, \"YY\", 35)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -639,18 +438,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1224_(), unimplemented!(), Some(35_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (74_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1224, \"yY\", 35)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -658,18 +446,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1295_(), unimplemented!(), Some(36_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (75_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1295, \"zz\", 36)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -677,18 +454,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1295_(), unimplemented!(), Some(36_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (76_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1295, \"ZZ\", 36)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -696,18 +462,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1295_(), unimplemented!(), Some(36_()), None) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (77_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1295, \"Zz\", 36)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -715,18 +470,7 @@ pub unsafe fn test02_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { check_from_chars_0(1_(), unimplemented!(), Some(2_()), Some(('2' as ()))) }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (80_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1, \"01234\", 2, \'2\')".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -735,18 +479,7 @@ pub unsafe fn test02_13() {
         __do_while = false;
         if !(unsafe { check_from_chars_0(27_(), unimplemented!(), Some(4_()), Some(('4' as ()))) })
         {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (81_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(27, \"1234\", 4, \'4\')".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -756,18 +489,7 @@ pub unsafe fn test02_13() {
         if !(unsafe {
             check_from_chars_0(1155_(), unimplemented!(), Some(34_()), Some(('y' as ())))
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (82_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1155, \"xxy\", 34, \'y\')".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -777,18 +499,7 @@ pub unsafe fn test02_13() {
         if !(unsafe {
             check_from_chars_0(1224_(), unimplemented!(), Some(35_()), Some(('z' as ())))
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"1.cc".as_ptr()).into(),
-                        (83_()).into(),
-                        (c"void test02()".as_ptr()).into(),
-                        (c"check_from_chars(1224, \"yyz\", 35, \'z\')".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -800,101 +511,57 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test01_11() });
-    (unsafe { test02_13() });
+    (unsafe { test01_10() });
+    (unsafe { test02_11() });
     0
 }
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         };
-        this.pid_ = ((unsafe { getpid_14() }) as ::libc::pid_t);
-        this.sem_set_ =
-            (unsafe { semget_15(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+        this.pid_ = unimplemented!();
+        this.sem_set_ = unimplemented!();
         if ((this.sem_set_) == (-1_())) {
-            (unsafe { __throw_runtime_error_4(c"could not obtain semaphore set".as_ptr()) });
+            unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_16(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
-        {
-            (unsafe { __throw_runtime_error_4(c"could not initialize semaphore".as_ptr()) });
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_17(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_12(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
-    (unsafe {
-        getrlimit_18(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_19(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
-    (unsafe {
-        getrlimit_18(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_19(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_18((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_19(
-            (__rlimit_resource_RLIMIT_AS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn set_file_limit_20(mut size: ()) {
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+pub unsafe fn set_file_limit_13(mut size: ()) {
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
-    (unsafe {
-        getrlimit_18(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_19(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn verify_demangle_21(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_14(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_22(
-            mangled,
-            std::ptr::null_mut(),
-            std::ptr::null_mut(),
-            (&mut status as *mut ()),
-        )
-    });
+    let mut demangled: *mut () = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
@@ -921,12 +588,12 @@ pub unsafe fn verify_demangle_21(mut mangled: *const (), mut wanted: *const ()) 
         });
     }
     let mut w: () = unimplemented!();
-    if unimplemented!() {
-        (unsafe { __throw_runtime_error_4(s) });
+    if !(unimplemented!()) {
+        unimplemented!();
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_23(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_15(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -944,19 +611,17 @@ pub unsafe fn run_tests_wrapped_locale_23(mut name: *const (), l: *const __gnu_t
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                (unsafe {
-                    __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_4(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_24(
+pub unsafe fn run_tests_wrapped_env_16(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -977,21 +642,21 @@ pub unsafe fn run_tests_wrapped_env_24(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_4(unimplemented!()) });
+        unimplemented!();
     }
 }
 pub static mut count_1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut count__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut throw_on__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut count__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut throw_on__5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut _M_count_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut next_id__7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
     pub val: (),
-    pub buf: *mut semid_ds,
+    pub buf: *mut (),
     pub array: *mut (),
 }
 impl Default for __gnu_test_semun {
@@ -1004,28 +669,28 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_14() })) {
-            (unsafe { semctl_16(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unimplemented!())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_25(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_4(c"could not signal semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_25(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_4(c"could not wait for semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
-pub unsafe fn test_tm_26(
+pub unsafe fn test_tm_17(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1035,26 +700,26 @@ pub unsafe fn test_tm_26(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_27));
+) -> () {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_18)).clone();
 }
-static mut tmp_27: std::cell::LazyCell<::libc::tm> =
-    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
+static mut tmp_18: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_1);
     std::cell::LazyCell::force(&*&raw const count__2);
     std::cell::LazyCell::force(&*&raw const throw_on__3);
-    std::cell::LazyCell::force(&*&raw const count__5);
-    std::cell::LazyCell::force(&*&raw const throw_on__6);
-    std::cell::LazyCell::force(&*&raw const _M_count_7);
-    std::cell::LazyCell::force(&*&raw const next_id__8);
+    std::cell::LazyCell::force(&*&raw const count__4);
+    std::cell::LazyCell::force(&*&raw const throw_on__5);
+    std::cell::LazyCell::force(&*&raw const _M_count_6);
+    std::cell::LazyCell::force(&*&raw const next_id__7);
 }

@@ -15,7 +15,8 @@ pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_string__std_string_ {}
+pub struct test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___std_allocator_char____std_basic_string_char__std_char_traits_char___std_allocator_char___
+{}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]

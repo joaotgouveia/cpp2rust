@@ -52,14 +52,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<()>,
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
 thread_local!(
@@ -81,76 +73,17 @@ impl Payload {
         Self { val: v, side: s }
     }
 }
-impl std::cmp::Ord for Payload {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if PayloadImpl::operator_lt(
-                &Rc::new(RefCell::new(Payload {
-                    val: self.val.clone(),
-                    side: self.side.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Payload {
-                    val: other.val.clone(),
-                    side: other.side.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if PayloadImpl::operator_lt(
-                &Rc::new(RefCell::new(Payload {
-                    val: other.val.clone(),
-                    side: other.side.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Payload {
-                    val: self.val.clone(),
-                    side: self.side.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Payload {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        PayloadImpl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Payload {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Payload {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(PayloadImpl::operator_lt(__lhs, __rhs.clone()))
+            && !(PayloadImpl::operator_lt(__rhs, __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for Payload {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(PayloadImpl::operator_lt(
-                &Rc::new(RefCell::new(Payload {
-                    val: self.val.clone(),
-                    side: self.side.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Payload {
-                    val: other.val.clone(),
-                    side: other.side.clone(),
-                }))
-                .as_pointer(),
-            )) && !(PayloadImpl::operator_lt(
-                &Rc::new(RefCell::new(Payload {
-                    val: other.val.clone(),
-                    side: other.side.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Payload {
-                    val: self.val.clone(),
-                    side: self.side.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for Payload {}
 pub fn test_stable_5(mut N: ()) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
@@ -178,9 +111,11 @@ pub fn test_stable_5(mut N: ()) {
         };
     }
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let next: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        if (unimplemented!()) && ({ unimplemented!().val } == { unimplemented!().val }) {
+        if (!(unimplemented!()))
+            && ({ ((*it.borrow()).read()).val } == { ((*next.borrow()).read()).val })
+        {
             unimplemented!();
         }
         unimplemented!();
@@ -306,70 +241,6 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn operator_inc_9(
-        &self,
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_10(
-        &self,
-        mut _a0: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_11(
-        &self,
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_12(
-        &self,
-        mut _a0: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>
-{
-}
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()

@@ -10,20 +10,30 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut p: Option<Value<i32>> = Some(Rc::new(RefCell::new(10)));
+fn main_0() -> () {
+    let p: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+        ({
+            let ___args: Value<()> = Rc::new(RefCell::new(10_()));
+            make_unique_0(___args.as_pointer())
+        }),
+    ));
     {
-        p.as_pointer().with_mut(|__v| *__v = *__v + 5)
+        (*p.borrow_mut()).with_mut(|__v| *__v = *__v + 5_())
     };
     {
-        p.as_pointer().with_mut(|__v| *__v = *__v - 3)
+        (*p.borrow_mut()).with_mut(|__v| *__v = *__v - 3_())
     };
     {
-        p.as_pointer().with_mut(|__v| *__v = *__v * 2)
+        (*p.borrow_mut()).with_mut(|__v| *__v = *__v * 2_())
     };
-    let mut q: Option<Value<i32>> = Some(Rc::new(RefCell::new(1)));
-    let mut sum: i32 = ((p.as_pointer().read()) + (q.as_pointer().read()));
-    assert!((sum == 25));
-    return 0;
+    let q: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+        ({
+            let ___args: Value<()> = Rc::new(RefCell::new(1_()));
+            make_unique_0(___args.as_pointer())
+        }),
+    ));
+    let mut sum: () = (((*p.borrow()).read()) + ((*q.borrow()).read()));
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

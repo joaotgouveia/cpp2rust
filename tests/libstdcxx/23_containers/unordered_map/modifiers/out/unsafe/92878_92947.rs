@@ -82,7 +82,7 @@ impl __gnu_test_copy_constructor {
         if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__1))
             == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)))
         {
-            (unsafe { __throw_runtime_error_3(c"copy_constructor::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
@@ -98,22 +98,22 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)).postfix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__4))
-            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)).postfix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__3))
+            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)))
         {
-            (unsafe { __throw_runtime_error_3(c"assignment_operator::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
     }
     pub unsafe fn throw_on(mut count: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = count;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
 #[repr(C)]
@@ -121,13 +121,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)).postfix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
     }
 }
 #[repr(C)]
@@ -139,7 +139,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
         let mut id: () = id.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__7)).postfix_dec()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
@@ -193,12 +193,12 @@ impl __gnu_test_copy_tracker {
 impl std::cmp::Ord for __gnu_test_copy_tracker {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_8(
+            if operator_lt_7(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_8(
+            } else if operator_lt_7(
                 other as *const __gnu_test_copy_tracker,
                 self as *const __gnu_test_copy_tracker,
             ) {
@@ -217,7 +217,7 @@ impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
 impl std::cmp::PartialEq for __gnu_test_copy_tracker {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_9(
+            operator_eq_8(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             )
@@ -235,14 +235,14 @@ impl Default for __gnu_test_copy_tracker {
         unsafe { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub unsafe fn operator_eq_9(
+pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
-pub unsafe fn operator_lt_8(
+pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
@@ -253,7 +253,7 @@ pub unsafe fn operator_lt_8(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
     sem_set_: (),
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[repr(C)]
@@ -262,25 +262,14 @@ pub struct aggressive_aggregate {
     pub a: (),
     pub b: (),
 }
-pub unsafe fn test_emplace_10() {
+pub unsafe fn test_emplace_9() {
     let mut x: () = unimplemented!();
     let mut emplaced: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (34_()).into(),
-                        (c"void test_emplace()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -288,18 +277,7 @@ pub unsafe fn test_emplace_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (2_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (35_()).into(),
-                        (c"void test_emplace()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -308,18 +286,7 @@ pub unsafe fn test_emplace_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (38_()).into(),
-                        (c"void test_emplace()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -327,18 +294,7 @@ pub unsafe fn test_emplace_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (39_()).into(),
-                        (c"void test_emplace()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -347,18 +303,7 @@ pub unsafe fn test_emplace_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (42_()).into(),
-                        (c"void test_emplace()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -366,41 +311,19 @@ pub unsafe fn test_emplace_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (43_()).into(),
-                        (c"void test_emplace()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test_emplace_hint_12() {
+pub unsafe fn test_emplace_hint_10() {
     let mut x: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (52_()).into(),
-                        (c"void test_emplace_hint()".as_ptr()).into(),
-                        (c"it->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -408,18 +331,7 @@ pub unsafe fn test_emplace_hint_12() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (2_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (53_()).into(),
-                        (c"void test_emplace_hint()".as_ptr()).into(),
-                        (c"it->second.b == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -428,18 +340,7 @@ pub unsafe fn test_emplace_hint_12() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (57_()).into(),
-                        (c"void test_emplace_hint()".as_ptr()).into(),
-                        (c"it->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -447,18 +348,7 @@ pub unsafe fn test_emplace_hint_12() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (58_()).into(),
-                        (c"void test_emplace_hint()".as_ptr()).into(),
-                        (c"it->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -467,18 +357,7 @@ pub unsafe fn test_emplace_hint_12() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (62_()).into(),
-                        (c"void test_emplace_hint()".as_ptr()).into(),
-                        (c"it->second.a == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -486,41 +365,19 @@ pub unsafe fn test_emplace_hint_12() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"void test_emplace_hint()".as_ptr()).into(),
-                        (c"it->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test_try_emplace_rvalue_13() {
+pub unsafe fn test_try_emplace_rvalue_11() {
     let mut x: () = unimplemented!();
     let mut emplaced: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (70_()).into(),
-                        (c"void test_try_emplace_rvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -528,18 +385,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (2_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (71_()).into(),
-                        (c"void test_try_emplace_rvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -548,18 +394,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (73_()).into(),
-                        (c"void test_try_emplace_rvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -567,18 +402,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (74_()).into(),
-                        (c"void test_try_emplace_rvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -587,18 +411,7 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (76_()).into(),
-                        (c"void test_try_emplace_rvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -606,23 +419,12 @@ pub unsafe fn test_try_emplace_rvalue_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (77_()).into(),
-                        (c"void test_try_emplace_rvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test_try_emplace_lvalue_14() {
+pub unsafe fn test_try_emplace_lvalue_12() {
     let mut x: () = unimplemented!();
     let mut key: () = 9_();
     let mut emplaced: () = unimplemented!();
@@ -630,18 +432,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (85_()).into(),
-                        (c"void test_try_emplace_lvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -649,18 +440,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (2_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (86_()).into(),
-                        (c"void test_try_emplace_lvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -670,18 +450,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (89_()).into(),
-                        (c"void test_try_emplace_lvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -689,18 +458,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (90_()).into(),
-                        (c"void test_try_emplace_lvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -710,18 +468,7 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.a) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (93_()).into(),
-                        (c"void test_try_emplace_lvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.a == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -729,41 +476,19 @@ pub unsafe fn test_try_emplace_lvalue_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*emplaced.first).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (94_()).into(),
-                        (c"void test_try_emplace_lvalue()".as_ptr()).into(),
-                        (c"emplaced.first->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test_try_emplace_hint_rvalue_15() {
+pub unsafe fn test_try_emplace_hint_rvalue_13() {
     let mut x: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (101_()).into(),
-                        (c"void test_try_emplace_hint_rvalue()".as_ptr()).into(),
-                        (c"it->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -771,18 +496,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (2_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (102_()).into(),
-                        (c"void test_try_emplace_hint_rvalue()".as_ptr()).into(),
-                        (c"it->second.b == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -791,18 +505,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (104_()).into(),
-                        (c"void test_try_emplace_hint_rvalue()".as_ptr()).into(),
-                        (c"it->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -810,18 +513,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (105_()).into(),
-                        (c"void test_try_emplace_hint_rvalue()".as_ptr()).into(),
-                        (c"it->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -830,18 +522,7 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (107_()).into(),
-                        (c"void test_try_emplace_hint_rvalue()".as_ptr()).into(),
-                        (c"it->second.a == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -849,23 +530,12 @@ pub unsafe fn test_try_emplace_hint_rvalue_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (108_()).into(),
-                        (c"void test_try_emplace_hint_rvalue()".as_ptr()).into(),
-                        (c"it->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test_try_emplace_hint_lvalue_16() {
+pub unsafe fn test_try_emplace_hint_lvalue_14() {
     let mut x: () = unimplemented!();
     let mut key: () = 15_();
     let mut it: () = unimplemented!();
@@ -873,18 +543,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (116_()).into(),
-                        (c"void test_try_emplace_hint_lvalue()".as_ptr()).into(),
-                        (c"it->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -892,18 +551,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (2_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (117_()).into(),
-                        (c"void test_try_emplace_hint_lvalue()".as_ptr()).into(),
-                        (c"it->second.b == 2".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -913,18 +561,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (120_()).into(),
-                        (c"void test_try_emplace_hint_lvalue()".as_ptr()).into(),
-                        (c"it->second.a == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -932,18 +569,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (121_()).into(),
-                        (c"void test_try_emplace_hint_lvalue()".as_ptr()).into(),
-                        (c"it->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -953,18 +579,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.a) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (124_()).into(),
-                        (c"void test_try_emplace_hint_lvalue()".as_ptr()).into(),
-                        (c"it->second.a == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -972,18 +587,7 @@ pub unsafe fn test_try_emplace_hint_lvalue_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(((*it).second.b) == (0_())) {
-            (unsafe {
-                __builtin_fprintf_11(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"92878_92947.cc".as_ptr()).into(),
-                        (125_()).into(),
-                        (c"void test_try_emplace_hint_lvalue()".as_ptr()).into(),
-                        (c"it->second.b == 0".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -995,105 +599,61 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test_emplace_10() });
-    (unsafe { test_emplace_hint_12() });
-    (unsafe { test_try_emplace_rvalue_13() });
-    (unsafe { test_try_emplace_lvalue_14() });
-    (unsafe { test_try_emplace_hint_rvalue_15() });
-    (unsafe { test_try_emplace_hint_lvalue_16() });
+    (unsafe { test_emplace_9() });
+    (unsafe { test_emplace_hint_10() });
+    (unsafe { test_try_emplace_rvalue_11() });
+    (unsafe { test_try_emplace_lvalue_12() });
+    (unsafe { test_try_emplace_hint_rvalue_13() });
+    (unsafe { test_try_emplace_hint_lvalue_14() });
     0
 }
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         };
-        this.pid_ = ((unsafe { getpid_17() }) as ::libc::pid_t);
-        this.sem_set_ =
-            (unsafe { semget_18(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+        this.pid_ = unimplemented!();
+        this.sem_set_ = unimplemented!();
         if ((this.sem_set_) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
+            unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_19(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
-        {
-            (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_20(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_15(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
-    (unsafe {
-        getrlimit_21(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_22(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
-    (unsafe {
-        getrlimit_21(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_22(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_21((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_22(
-            (__rlimit_resource_RLIMIT_AS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn set_file_limit_23(mut size: ()) {
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+pub unsafe fn set_file_limit_16(mut size: ()) {
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
-    (unsafe {
-        getrlimit_21(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_22(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn verify_demangle_24(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_17(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_25(
-            mangled,
-            std::ptr::null_mut(),
-            std::ptr::null_mut(),
-            (&mut status as *mut ()),
-        )
-    });
+    let mut demangled: *mut () = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
@@ -1121,11 +681,11 @@ pub unsafe fn verify_demangle_24(mut mangled: *const (), mut wanted: *const ()) 
     }
     let mut w: () = unimplemented!();
     if !(unimplemented!()) {
-        (unsafe { __throw_runtime_error_3(s) });
+        unimplemented!();
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_26(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_18(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -1143,19 +703,17 @@ pub unsafe fn run_tests_wrapped_locale_26(mut name: *const (), l: *const __gnu_t
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_27(
+pub unsafe fn run_tests_wrapped_env_19(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -1176,21 +734,21 @@ pub unsafe fn run_tests_wrapped_env_27(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
     pub val: (),
-    pub buf: *mut semid_ds,
+    pub buf: *mut (),
     pub array: *mut (),
 }
 impl Default for __gnu_test_semun {
@@ -1203,28 +761,28 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_17() })) {
-            (unsafe { semctl_19(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unimplemented!())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_28(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not signal semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_28(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not wait for semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
-pub unsafe fn test_tm_29(
+pub unsafe fn test_tm_20(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1234,26 +792,26 @@ pub unsafe fn test_tm_29(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_30));
+) -> () {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_21)).clone();
 }
-static mut tmp_30: std::cell::LazyCell<::libc::tm> =
-    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
+static mut tmp_21: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);
     std::cell::LazyCell::force(&*&raw const count__1);
     std::cell::LazyCell::force(&*&raw const throw_on__2);
-    std::cell::LazyCell::force(&*&raw const count__4);
-    std::cell::LazyCell::force(&*&raw const throw_on__5);
-    std::cell::LazyCell::force(&*&raw const _M_count_6);
-    std::cell::LazyCell::force(&*&raw const next_id__7);
+    std::cell::LazyCell::force(&*&raw const count__3);
+    std::cell::LazyCell::force(&*&raw const throw_on__4);
+    std::cell::LazyCell::force(&*&raw const _M_count_5);
+    std::cell::LazyCell::force(&*&raw const next_id__6);
 }

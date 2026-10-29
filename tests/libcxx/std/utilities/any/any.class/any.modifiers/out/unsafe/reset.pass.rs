@@ -461,13 +461,13 @@ const _: () = assert!(true, "IsSmallObject<small_tracked_t>::value");
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe)]
 pub struct large_tracked_t {
     pub arg_types: *const TypeID,
-    pub dummy: [(); 9],
+    pub dummy: [(); 5],
 }
 impl large_tracked_t {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             arg_types: (unsafe { makeArgumentID_12() }),
-            dummy: [unimplemented!(); 9],
+            dummy: [unimplemented!(); 5],
         };
         this.dummy[(0_()) as usize] = 42_();
         this
@@ -475,14 +475,14 @@ impl large_tracked_t {
     pub unsafe fn copy_from(_a0: *const large_tracked_t) -> Self {
         let mut this = Self {
             arg_types: (unsafe { makeArgumentID_15() }),
-            dummy: [unimplemented!(); 9],
+            dummy: [unimplemented!(); 5],
         };
         this
     }
     pub unsafe fn move_from(_a0: *mut large_tracked_t) -> Self {
         let mut this = Self {
             arg_types: (unsafe { makeArgumentID_16() }),
-            dummy: [unimplemented!(); 9],
+            dummy: [unimplemented!(); 5],
         };
         this
     }

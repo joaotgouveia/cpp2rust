@@ -25,11 +25,11 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
     {
-        let np: *const () = (unsafe { use_facet_0(&l) });
+        let np: *const () = unimplemented!();
         unimplemented!();
     }
     {
-        let np: *const () = (unsafe { use_facet_1(&l) });
+        let np: *const () = unimplemented!();
         unimplemented!();
     }
     return 0_();

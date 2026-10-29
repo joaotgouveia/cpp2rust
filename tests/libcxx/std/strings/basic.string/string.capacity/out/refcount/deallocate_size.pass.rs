@@ -7,14 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static allocated__0: Value<u64> = Rc::new(RefCell::new(0_u64));
+    pub static allocated__0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static deallocated__1: Value<u64> = Rc::new(RefCell::new(0_u64));
+    pub static deallocated__1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_alloc_char__unsigned_int__rebind_char_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct test_alloc_char__unsigned_int_ {}
@@ -28,9 +25,6 @@ impl Default for test_alloc_char__unsigned_int_ {
         { test_alloc_char__unsigned_int_::new() }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_alloc_char__unsigned_long__rebind_char_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct test_alloc_char__unsigned_long_ {}
@@ -99,13 +93,13 @@ impl test_alloc_char__unsigned_int_Impl for Ptr<test_alloc_char__unsigned_int_> 
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
         allocated__0.with(|rc| {
-            *rc.borrow_mut() = { (allocated__0.with(|rc| *rc.borrow())).wrapping_add((n as u64)) }
+            *rc.borrow_mut() = { (allocated__0.with(|rc| *rc.borrow())).wrapping_add(n) }
         });
         return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
         deallocated__1.with(|rc| {
-            *rc.borrow_mut() = { (deallocated__1.with(|rc| *rc.borrow())).wrapping_add((s as u64)) }
+            *rc.borrow_mut() = { (deallocated__1.with(|rc| *rc.borrow())).wrapping_add(s) }
         });
         unimplemented!();
     }
@@ -118,15 +112,13 @@ impl test_alloc_char__unsigned_long_Impl for Ptr<test_alloc_char__unsigned_long_
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
         allocated__0.with(|rc| {
-            *rc.borrow_mut() =
-                { ((allocated__0.with(|rc| *rc.borrow()) as ()).wrapping_add(n)) as u64 }
+            *rc.borrow_mut() = { (allocated__0.with(|rc| *rc.borrow())).wrapping_add(n) }
         });
         return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
         deallocated__1.with(|rc| {
-            *rc.borrow_mut() =
-                { ((deallocated__1.with(|rc| *rc.borrow()) as ()).wrapping_add(s)) as u64 }
+            *rc.borrow_mut() = { (deallocated__1.with(|rc| *rc.borrow())).wrapping_add(s) }
         });
         unimplemented!();
     }

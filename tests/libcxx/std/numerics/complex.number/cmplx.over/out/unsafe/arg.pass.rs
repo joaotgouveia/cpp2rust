@@ -173,21 +173,31 @@ pub unsafe fn classify_2(mut x: ()) -> () {
     if ((x) == (0_())) {
         return (anon_1_zero as ());
     }
-    if (unsafe { isinf_3(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if (unsafe { isnan_4(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub unsafe fn is_about_3(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub unsafe fn is_about_4(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub unsafe fn is_about_5(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_6(mut x: (), mut y: ()) {
+pub unsafe fn test_6(mut x: (), mut _a1: Option<()>) {
+    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
     unimplemented!();
 }
-pub unsafe fn is_about_7(mut x: (), mut y: ()) {
+pub unsafe fn test_7(mut x: (), mut _a1: Option<()>) {
+    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
     unimplemented!();
 }
 pub unsafe fn test_8(mut x: (), mut _a1: Option<()>) {
@@ -197,12 +207,12 @@ pub unsafe fn test_8(mut x: (), mut _a1: Option<()>) {
 }
 pub unsafe fn test_9(mut x: (), mut _a1: Option<()>) {
     let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
+    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
     unimplemented!();
 }
 pub unsafe fn test_10(mut x: (), mut _a1: Option<()>) {
     let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
+    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
     unimplemented!();
 }
 pub unsafe fn test_11(mut x: (), mut _a1: Option<()>) {
@@ -210,15 +220,15 @@ pub unsafe fn test_11(mut x: (), mut _a1: Option<()>) {
     const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
     unimplemented!();
 }
-pub unsafe fn test_12(mut x: (), mut _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
-    unimplemented!();
+pub unsafe fn test_12() {
+    (unsafe { test_9(0_(), None) });
+    (unsafe { test_9(1_(), None) });
+    (unsafe { test_9(10_(), None) });
 }
-pub unsafe fn test_13(mut x: (), mut _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-    const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
-    unimplemented!();
+pub unsafe fn test_13() {
+    (unsafe { test_10(0_(), None) });
+    (unsafe { test_10(1_(), None) });
+    (unsafe { test_10(10_(), None) });
 }
 pub unsafe fn test_14() {
     (unsafe { test_11(0_(), None) });
@@ -226,29 +236,19 @@ pub unsafe fn test_14() {
     (unsafe { test_11(10_(), None) });
 }
 pub unsafe fn test_15() {
-    (unsafe { test_12(0_(), None) });
-    (unsafe { test_12(1_(), None) });
-    (unsafe { test_12(10_(), None) });
+    (unsafe { test_6(0_(), None) });
+    (unsafe { test_6(1_(), None) });
+    (unsafe { test_6(10_(), None) });
 }
 pub unsafe fn test_16() {
-    (unsafe { test_13(0_(), None) });
-    (unsafe { test_13(1_(), None) });
-    (unsafe { test_13(10_(), None) });
+    (unsafe { test_7(0_(), None) });
+    (unsafe { test_7(1_(), None) });
+    (unsafe { test_7(10_(), None) });
 }
 pub unsafe fn test_17() {
     (unsafe { test_8(0_(), None) });
     (unsafe { test_8(1_(), None) });
     (unsafe { test_8(10_(), None) });
-}
-pub unsafe fn test_18() {
-    (unsafe { test_9(0_(), None) });
-    (unsafe { test_9(1_(), None) });
-    (unsafe { test_9(10_(), None) });
-}
-pub unsafe fn test_19() {
-    (unsafe { test_10(0_(), None) });
-    (unsafe { test_10(1_(), None) });
-    (unsafe { test_10(10_(), None) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -266,12 +266,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_12() });
+    (unsafe { test_13() });
     (unsafe { test_14() });
     (unsafe { test_15() });
     (unsafe { test_16() });
     (unsafe { test_17() });
-    (unsafe { test_18() });
-    (unsafe { test_19() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

@@ -26,17 +26,11 @@ pub struct MyInt {
     #[offset(0)]
     pub i: (),
 }
-impl std::cmp::PartialEq for MyInt {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(MyInt { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(MyInt { i: other.i.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for MyInt {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for MyInt {}
 pub fn test_1() -> () {
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));

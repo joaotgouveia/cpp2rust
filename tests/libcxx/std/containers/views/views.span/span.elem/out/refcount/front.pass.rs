@@ -8,62 +8,62 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn testConstexprSpan_0(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
 pub fn testConstexprSpan_1(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
 pub fn testConstexprSpan_2(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
 pub fn testConstexprSpan_3(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
 pub fn testConstexprSpan_4(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
 pub fn testRuntimeSpan_5(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub fn testRuntimeSpan_6(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub fn testRuntimeSpan_7(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub fn testRuntimeSpan_8(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub fn testRuntimeSpan_9(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub fn testRuntimeSpan_10(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub fn testRuntimeSpan_11(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub fn testEmptySpan_12(sp: ()) {

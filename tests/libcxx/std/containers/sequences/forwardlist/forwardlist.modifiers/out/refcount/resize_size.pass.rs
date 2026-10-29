@@ -25,59 +25,16 @@ impl DefaultOnly {
         __this
     }
 }
-impl std::cmp::Ord for DefaultOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_2(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_2(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for DefaultOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for DefaultOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for DefaultOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for DefaultOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for DefaultOnly {}
 impl Default for DefaultOnly {
     fn default() -> Self {
         { DefaultOnly::new() }

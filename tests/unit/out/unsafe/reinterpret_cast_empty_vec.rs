@@ -12,9 +12,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<u32> = Vec::new();
-    let mut bytes: *mut u16 = (v.as_mut_ptr() as *mut u16);
-    return 0;
+unsafe fn main_0() -> () {
+    let mut v: std_vector_unsigned_int__std_allocator_unsigned_int__ =
+        <std_vector_unsigned_int__std_allocator_unsigned_int__>::default();
+    let mut bytes: *mut () = ((unsafe { v.data_55() }) as *mut ());
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -67,11 +67,7 @@ impl TailClobberer_0_ {
             b: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<TailClobberer_0_>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.b = false;
         this
@@ -148,11 +144,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -195,11 +187,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -253,7 +241,7 @@ const _: () = assert!(
     true,
     "!std::is_default_constructible_v<std::expected<NoDedefaultCtor, int>>"
 );
-pub unsafe fn operator_eq_3(_a0: *const MyInt, _a1: *const MyInt) -> () {
+pub unsafe fn operator_eq_2(_a0: *const MyInt, _a1: *const MyInt) -> () {
     return (((*_a0).i) == ((*_a1).i));
 }
 #[repr(C)]
@@ -263,10 +251,15 @@ pub struct MyInt {
 }
 impl std::cmp::PartialEq for MyInt {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_3(self as *const MyInt, other as *const MyInt) }
+        unsafe { operator_eq_2(self as *const MyInt, other as *const MyInt) }
     }
 }
 impl std::cmp::Eq for MyInt {}
+pub unsafe fn testDefaultCtor_3() {
+    let mut e: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn testDefaultCtor_4() {
     let mut e: () = unimplemented!();
     unimplemented!();
@@ -307,33 +300,28 @@ pub unsafe fn testDefaultCtor_11() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn testDefaultCtor_12() {
-    let mut e: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn testTypes_13() {
+pub unsafe fn testTypes_12() {
+    (unsafe { testDefaultCtor_3() });
     (unsafe { testDefaultCtor_4() });
     (unsafe { testDefaultCtor_5() });
-    (unsafe { testDefaultCtor_6() });
 }
-pub unsafe fn testTypes_14() {
+pub unsafe fn testTypes_13() {
+    (unsafe { testDefaultCtor_6() });
     (unsafe { testDefaultCtor_7() });
     (unsafe { testDefaultCtor_8() });
-    (unsafe { testDefaultCtor_9() });
 }
-pub unsafe fn testTypes_15() {
+pub unsafe fn testTypes_14() {
+    (unsafe { testDefaultCtor_9() });
     (unsafe { testDefaultCtor_10() });
     (unsafe { testDefaultCtor_11() });
-    (unsafe { testDefaultCtor_12() });
 }
-pub unsafe fn test_16() -> () {
+pub unsafe fn test_15() -> () {
+    (unsafe { testTypes_12() });
     (unsafe { testTypes_13() });
     (unsafe { testTypes_14() });
-    (unsafe { testTypes_15() });
     return true;
 }
-pub unsafe fn testException_17() {}
+pub unsafe fn testException_16() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -350,9 +338,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_16() });
+    (unsafe { test_15() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_17() });
+    (unsafe { testException_16() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

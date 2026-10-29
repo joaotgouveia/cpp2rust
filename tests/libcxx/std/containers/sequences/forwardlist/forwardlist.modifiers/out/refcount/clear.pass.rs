@@ -10,17 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct NotConstructible {}
 impl NotConstructible {}
-impl std::cmp::PartialEq for NotConstructible {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(NotConstructible {})).as_pointer(),
-                Rc::new(RefCell::new(NotConstructible {})).as_pointer(),
-            )
-        }
+impl CppEq for NotConstructible {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for NotConstructible {}
 pub fn operator_eq_0(_a0: Ptr<NotConstructible>, _a1: Ptr<NotConstructible>) -> () {
     return true;
 }

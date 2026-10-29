@@ -199,21 +199,6 @@ pub static mut dealloc_count_16: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
 pub static mut disable_default_constructor_17: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std_pair_const_int__MoveOnly___std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
-}
-impl min_pointer_std_pair_const_int__MoveOnly___std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std_pair_const_int__MoveOnly__ {}
 pub unsafe fn do_insert_rv_test_18() {
     let mut m: () = unimplemented!();
     let mut r: () = unimplemented!();

@@ -37,65 +37,16 @@ impl Emplaceable {
         __this
     }
 }
-impl std::cmp::Ord for Emplaceable {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if EmplaceableImpl::operator_lt(
-                &Rc::new(RefCell::new(Emplaceable {
-                    int_: self.int_.clone(),
-                    double_: self.double_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Emplaceable {
-                    int_: other.int_.clone(),
-                    double_: other.double_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if EmplaceableImpl::operator_lt(
-                &Rc::new(RefCell::new(Emplaceable {
-                    int_: other.int_.clone(),
-                    double_: other.double_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Emplaceable {
-                    int_: self.int_.clone(),
-                    double_: self.double_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Emplaceable {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        EmplaceableImpl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Emplaceable {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Emplaceable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        EmplaceableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for Emplaceable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            EmplaceableImpl::operator_eq(
-                &Rc::new(RefCell::new(Emplaceable {
-                    int_: self.int_.clone(),
-                    double_: self.double_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Emplaceable {
-                    int_: other.int_.clone(),
-                    double_: other.double_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for Emplaceable {}
 impl Default for Emplaceable {
     fn default() -> Self {
         { Emplaceable::new_1() }

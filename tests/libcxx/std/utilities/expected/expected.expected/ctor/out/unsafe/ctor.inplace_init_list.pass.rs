@@ -235,11 +235,7 @@ impl TailClobberer_0_ {
             b: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<TailClobberer_0_>();
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.b = false;
         this
@@ -320,11 +316,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -367,11 +359,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -437,10 +425,24 @@ impl Data__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Data__ {
     pub vec__: (),
     pub tuple_: (),
+}
+impl Data__ {
+    pub unsafe fn move_from(_a0: *mut Data__) -> Self {
+        let mut this = Self {
+            vec__: unimplemented!(),
+            tuple_: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut Data__) -> *mut Data__ {
+        unimplemented!();
+        unimplemented!();
+        return &mut (*(self as *mut Data__));
+    }
 }
 impl Default for Data__ {
     fn default() -> Self {
@@ -477,7 +479,7 @@ impl Data_MoveOnly_ {
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Data_MoveOnly_) -> *mut Data_MoveOnly_ {
         unimplemented!();
-        self.tuple_ = ((*_a0).tuple_).clone();
+        unimplemented!();
         return &mut (*(self as *mut Data_MoveOnly_));
     }
 }
@@ -509,11 +511,11 @@ impl Data_int_ref__int_refref__MoveOnly_ {
         _a0: *mut Data_int_ref__int_refref__MoveOnly_,
     ) -> *mut Data_int_ref__int_refref__MoveOnly_ {
         unimplemented!();
-        self.tuple_ = ((*_a0).tuple_).clone();
+        unimplemented!();
         return &mut (*(self as *mut Data_int_ref__int_refref__MoveOnly_));
     }
 }
-pub unsafe fn test_17() -> () {
+pub unsafe fn test_16() -> () {
     {
         let mut e: () = unimplemented!();
         unimplemented!();
@@ -546,7 +548,7 @@ pub unsafe fn test_17() -> () {
     }
     return true;
 }
-pub unsafe fn testException_18() {}
+pub unsafe fn testException_17() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -563,9 +565,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_17() });
+    (unsafe { test_16() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_18() });
+    (unsafe { testException_17() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

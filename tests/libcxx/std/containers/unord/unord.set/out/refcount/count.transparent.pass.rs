@@ -48,68 +48,17 @@ impl C2Int {
         Self { i_: i }
     }
 }
-impl std::cmp::Ord for C2Int {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_0(
-                Rc::new(RefCell::new(C2Int {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C2Int {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_0(
-                Rc::new(RefCell::new(C2Int {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C2Int {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for C2Int {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for C2Int {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for C2Int {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_0(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_0(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for C2Int {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_0(
-                Rc::new(RefCell::new(C2Int {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C2Int {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-            )) && !(operator_lt_0(
-                Rc::new(RefCell::new(C2Int {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C2Int {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for C2Int {}
 impl Default for C2Int {
     fn default() -> Self {
         { C2Int::new_1() }
@@ -141,23 +90,11 @@ impl StoredType_int_ {
         Self { value_: value }
     }
 }
-impl std::cmp::PartialEq for StoredType_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_3(
-                Rc::new(RefCell::new(StoredType_int_ {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(StoredType_int_ {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for StoredType_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for StoredType_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct SearchedType_int_ {

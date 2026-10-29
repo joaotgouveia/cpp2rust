@@ -34,17 +34,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "std::endian::native == std::endian::little ||\n                   std::endian::native == std::endian::big"
     );;
     {
-        let mut i: u32 = 16909060_u32;
+        let mut i: () = 16909060_();
         let mut c: [(); 4] = [unimplemented!(); 4];
         const _: () = assert!(
-            ((::std::mem::size_of::<u32>()) == (::std::mem::size_of::<[(); 4]>())),
+            ((::std::mem::size_of::<()>()) == (::std::mem::size_of::<[(); 4]>())),
             "sizeof(i) == sizeof(c)"
         );;
-        (unsafe {
-            let ___dest: () = (c.as_mut_ptr() as ());
-            let ___n: () = ::std::mem::size_of::<[(); 4]>();
-            memcpy_0(___dest, ((&mut i as *mut u32) as ()), ___n)
-        });
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

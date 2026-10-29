@@ -235,11 +235,7 @@ impl TailClobberer_0_ {
             b: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<TailClobberer_0_>();
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.b = false;
         this
@@ -329,11 +325,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -376,11 +368,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_16(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -447,7 +435,7 @@ const _: () = assert!(
     !(false),
     "!ImplicitlyConstructible<std::expected<int, int>, std::in_place_t, int>"
 );
-pub unsafe fn operator_eq_17(mi: *const CopyOnly, mut ii: ()) -> () {
+pub unsafe fn operator_eq_16(mi: *const CopyOnly, mut ii: ()) -> () {
     return (((*mi).i) == (ii));
 }
 #[repr(C)]
@@ -460,6 +448,11 @@ impl CopyOnly {
         let mut this = Self { i: ii };
         this
     }
+}
+pub unsafe fn testInt_17() {
+    let mut e: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn testInt_18() {
     let mut e: () = unimplemented!();
@@ -476,25 +469,25 @@ pub unsafe fn testInt_20() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn testInt_21() {
-    let mut e: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn testLValue_22() {
+pub unsafe fn testLValue_21() {
     let mut t: () = 5_();
     let mut e: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn testLValue_23() {
+pub unsafe fn testLValue_22() {
     let mut t: CopyOnly = CopyOnly::new({ 5_() });
     let mut e: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn testLValue_24() {
+pub unsafe fn testLValue_23() {
     let mut t: TailClobberer_0_ = TailClobberer_0_::new_2({ 5_() });
+    let mut e: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn testRValue_24() {
     let mut e: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -509,22 +502,17 @@ pub unsafe fn testRValue_26() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn testRValue_27() {
-    let mut e: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_28() -> () {
+pub unsafe fn test_27() -> () {
+    (unsafe { testInt_17() });
     (unsafe { testInt_18() });
     (unsafe { testInt_19() });
     (unsafe { testInt_20() });
-    (unsafe { testInt_21() });
+    (unsafe { testLValue_21() });
     (unsafe { testLValue_22() });
     (unsafe { testLValue_23() });
-    (unsafe { testLValue_24() });
+    (unsafe { testRValue_24() });
     (unsafe { testRValue_25() });
     (unsafe { testRValue_26() });
-    (unsafe { testRValue_27() });
     {
         let mut e: () = unimplemented!();
         unimplemented!();
@@ -542,7 +530,7 @@ pub unsafe fn test_28() -> () {
     }
     return true;
 }
-pub unsafe fn testException_29() {}
+pub unsafe fn testException_28() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -559,9 +547,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_28() });
+    (unsafe { test_27() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_29() });
+    (unsafe { testException_28() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

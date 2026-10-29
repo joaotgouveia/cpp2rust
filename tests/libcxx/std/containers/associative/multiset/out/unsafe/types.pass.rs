@@ -45,12 +45,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

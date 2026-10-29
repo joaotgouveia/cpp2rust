@@ -693,12 +693,7 @@ pub fn testBasic_59(mut memory_order_0: (), mut memory_order_1: ()) {
 pub fn test_impl_60() {
     ({ testBasic_48() });
     ({ testBasic_49(unimplemented!()) });
-    ({
-        testBasic_50(
-            unimplemented!(),
-            memory_order_relaxed_61.with(|rc| *rc.borrow()),
-        )
-    });
+    ({ testBasic_50(unimplemented!(), unimplemented!()) });
     {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
@@ -924,15 +919,10 @@ pub fn test_impl_60() {
         ({ test_seq_cst_2((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
-pub fn test_impl_62() {
+pub fn test_impl_61() {
     ({ testBasic_51() });
     ({ testBasic_52(unimplemented!()) });
-    ({
-        testBasic_53(
-            unimplemented!(),
-            memory_order_relaxed_61.with(|rc| *rc.borrow()),
-        )
-    });
+    ({ testBasic_53(unimplemented!(), unimplemented!()) });
     {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
@@ -1158,15 +1148,10 @@ pub fn test_impl_62() {
         ({ test_seq_cst_5((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
-pub fn test_impl_63() {
+pub fn test_impl_62() {
     ({ testBasic_54() });
     ({ testBasic_55(unimplemented!()) });
-    ({
-        testBasic_56(
-            unimplemented!(),
-            memory_order_relaxed_61.with(|rc| *rc.borrow()),
-        )
-    });
+    ({ testBasic_56(unimplemented!(), unimplemented!()) });
     {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
@@ -1392,15 +1377,10 @@ pub fn test_impl_63() {
         ({ test_seq_cst_8((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
-pub fn test_impl_64() {
+pub fn test_impl_63() {
     ({ testBasic_57() });
     ({ testBasic_58(unimplemented!()) });
-    ({
-        testBasic_59(
-            unimplemented!(),
-            memory_order_relaxed_61.with(|rc| *rc.borrow()),
-        )
-    });
+    ({ testBasic_59(unimplemented!(), unimplemented!()) });
     {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
@@ -1626,16 +1606,16 @@ pub fn test_impl_64() {
         ({ test_seq_cst_11((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
-pub fn test_65() {
+pub fn test_64() {
     ({ test_impl_60() });
     {
-        ({ test_impl_62() });
+        ({ test_impl_61() });
     }
 }
-pub fn test_66() {
-    ({ test_impl_63() });
+pub fn test_65() {
+    ({ test_impl_62() });
     {
-        ({ test_impl_64() });
+        ({ test_impl_63() });
     }
 }
 pub fn main() {
@@ -1658,8 +1638,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_64() });
     ({ test_65() });
-    ({ test_66() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

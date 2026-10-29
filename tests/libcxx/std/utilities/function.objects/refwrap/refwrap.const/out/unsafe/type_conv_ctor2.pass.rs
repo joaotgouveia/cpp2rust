@@ -36,7 +36,7 @@ pub unsafe fn test_0() -> () {
         let mut b1: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
-        b1 = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -45,7 +45,7 @@ pub unsafe fn test_0() -> () {
         let mut b2: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
-        b2 = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     return true;

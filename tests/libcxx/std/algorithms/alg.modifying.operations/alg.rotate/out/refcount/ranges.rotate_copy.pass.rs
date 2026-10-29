@@ -136,7 +136,7 @@ pub fn for_each_2(
 }
 pub fn swallow_3(mut _a0: (), mut _a1: (), mut _a2: (), mut _a3: (), mut _a4: (), mut _a5: ()) {}
 pub fn swallow_1(mut _a0: (), mut _a1: (), mut _a2: (), mut _a3: (), mut _a4: ()) {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -146,12 +146,19 @@ pub struct cpp17_output_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_output_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -161,12 +168,19 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn base_4(i: Ptr<forward_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_int_ptr_ {
     #[offset(0)]
@@ -199,7 +213,7 @@ pub fn operator_ne_5(
 pub fn base_6(i: Ptr<forward_iterator_const_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -226,7 +240,7 @@ impl forward_iterator_const_int_ptr_ {
 pub fn base_7(i: Ptr<bidirectional_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_int_ptr_ {
     #[offset(0)]
@@ -259,7 +273,7 @@ pub fn operator_ne_8(
 pub fn base_9(i: Ptr<bidirectional_iterator_const_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -283,16 +297,16 @@ impl bidirectional_iterator_const_int_ptr_ {
         }
     }
 }
-pub fn operator_ne_10(
-    x: Ptr<random_access_iterator_const_int_ptr_>,
-    y: Ptr<random_access_iterator_const_int_ptr_>,
+pub fn operator_sub_10(
+    mut x: random_access_iterator_const_int_ptr_,
+    mut y: random_access_iterator_const_int_ptr_,
 ) -> () {
-    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
+    return (((x.it_).clone() - (y.it_).clone()) as () as ());
 }
 pub fn base_11(i: Ptr<random_access_iterator_const_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -319,7 +333,7 @@ impl random_access_iterator_const_int_ptr_ {
 pub fn base_12(i: Ptr<random_access_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -343,7 +357,7 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -353,29 +367,28 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub fn operator_add_13(
-    x: contiguous_iterator_const_int_ptr_,
-    mut n: (),
-) -> contiguous_iterator_const_int_ptr_ {
-    let x: Value<contiguous_iterator_const_int_ptr_> = Rc::new(RefCell::new(x));
-    ({ contiguous_iterator_const_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
-    return contiguous_iterator_const_int_ptr_::move_from({ x.as_pointer() });
-}
-pub fn operator_ne_14(
-    x: Ptr<contiguous_iterator_const_int_ptr_>,
-    y: Ptr<contiguous_iterator_const_int_ptr_>,
+pub fn operator_sub_13(
+    mut x: contiguous_iterator_const_int_ptr_,
+    mut y: contiguous_iterator_const_int_ptr_,
 ) -> () {
-    return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
+    return (((x.it_).clone() - (y.it_).clone()) as () as ());
 }
-pub fn base_15(i: Ptr<contiguous_iterator_const_int_ptr_>) -> Ptr<()> {
+pub fn base_14(i: Ptr<contiguous_iterator_const_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_const_int_ptr_ {
     #[offset(0)]
@@ -399,15 +412,10 @@ impl contiguous_iterator_const_int_ptr_ {
         }
     }
 }
-pub fn operator_add_16(x: contiguous_iterator_int_ptr_, mut n: ()) -> contiguous_iterator_int_ptr_ {
-    let x: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(x));
-    ({ contiguous_iterator_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
-    return contiguous_iterator_int_ptr_::move_from({ x.as_pointer() });
-}
-pub fn base_17(i: Ptr<contiguous_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_15(i: Ptr<contiguous_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_int_ptr_ {
     #[offset(0)]
@@ -431,11 +439,11 @@ impl contiguous_iterator_int_ptr_ {
         }
     }
 }
-pub fn base_18(i: Ptr<()>) -> Ptr<()> {
+pub fn base_16(i: Ptr<()>) -> Ptr<()> {
     let i: Value<Ptr<()>> = Rc::new(RefCell::new(i));
     return (*i.borrow()).clone();
 }
-pub fn base_19(i: Ptr<()>) -> Ptr<()> {
+pub fn base_17(i: Ptr<()>) -> Ptr<()> {
     let i: Value<Ptr<()>> = Rc::new(RefCell::new(i));
     return (*i.borrow()).clone();
 }
@@ -458,7 +466,7 @@ impl cpp20_input_iterator_int_ptr_ {
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
-pub fn base_20(i: Ptr<cpp20_output_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_18(i: Ptr<cpp20_output_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -577,7 +585,7 @@ pub struct sentinel_wrapper_int_ptr_ {
     base_: Ptr<()>,
 }
 impl sentinel_wrapper_int_ptr_ {}
-pub fn operator_eq_21(
+pub fn operator_eq_19(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -591,23 +599,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_21(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_19(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -622,36 +618,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_22(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_20(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_23(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_21(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_22(_i, n)
+        operator_add_20(_i, n)
     });
 }
-pub fn iter_swap_24(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_22(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_25(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_23(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_27(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -694,52 +690,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_27(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_25(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_24(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_26(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -759,44 +719,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -964,17 +897,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardIteratorNotDerivedFrom {}
-impl std::cmp::PartialEq for ForwardIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            ForwardIteratorNotDerivedFromImpl::operator_eq(
-                &Rc::new(RefCell::new(ForwardIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(ForwardIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppEq for ForwardIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        ForwardIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for ForwardIteratorNotDerivedFrom {}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(true, "std::incrementable<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(
@@ -988,17 +915,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardIteratorNotIncrementable {}
-impl std::cmp::PartialEq for ForwardIteratorNotIncrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            ForwardIteratorNotIncrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(ForwardIteratorNotIncrementable {})).as_pointer(),
-                Rc::new(RefCell::new(ForwardIteratorNotIncrementable {})).as_pointer(),
-            )
-        }
+impl CppEq for ForwardIteratorNotIncrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        ForwardIteratorNotIncrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for ForwardIteratorNotIncrementable {}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotIncrementable>");
 const _: () = assert!(
     !(false),
@@ -1015,17 +936,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BidirectionalIteratorNotDerivedFrom {}
-impl std::cmp::PartialEq for BidirectionalIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            BidirectionalIteratorNotDerivedFromImpl::operator_eq(
-                &Rc::new(RefCell::new(BidirectionalIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(BidirectionalIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppEq for BidirectionalIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        BidirectionalIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for BidirectionalIteratorNotDerivedFrom {}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDerivedFrom>"
@@ -1041,17 +956,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BidirectionalIteratorNotDecrementable {}
-impl std::cmp::PartialEq for BidirectionalIteratorNotDecrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            BidirectionalIteratorNotDecrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(BidirectionalIteratorNotDecrementable {})).as_pointer(),
-                Rc::new(RefCell::new(BidirectionalIteratorNotDecrementable {})).as_pointer(),
-            )
-        }
+impl CppEq for BidirectionalIteratorNotDecrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        BidirectionalIteratorNotDecrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for BidirectionalIteratorNotDecrementable {}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDecrementable>"
@@ -1079,17 +988,11 @@ pub struct PermutableNotSwappable_NotSwappable {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PermutableNotSwappable {}
-impl std::cmp::PartialEq for PermutableNotSwappable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            PermutableNotSwappableImpl::operator_eq(
-                &Rc::new(RefCell::new(PermutableNotSwappable {})).as_pointer(),
-                Rc::new(RefCell::new(PermutableNotSwappable {})).as_pointer(),
-            )
-        }
+impl CppEq for PermutableNotSwappable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        PermutableNotSwappableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for PermutableNotSwappable {}
 const _: () = assert!(true, "std::input_iterator<PermutableNotSwappable>");
 const _: () = assert!(true, "std::forward_iterator<PermutableNotSwappable>");
 const _: () = assert!(!(false), "!std::permutable<PermutableNotSwappable>");
@@ -1145,32 +1048,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorNotDerivedFrom {}
-impl std::cmp::Ord for RandomAccessIteratorNotDerivedFrom {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorNotDerivedFromImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorNotDerivedFrom {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorNotDerivedFrom {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorNotDerivedFromImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorNotDerivedFrom {}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorNotDerivedFrom>"
@@ -1182,32 +1071,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorBadIndex {}
-impl std::cmp::Ord for RandomAccessIteratorBadIndex {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorBadIndexImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorBadIndex {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadIndexImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorBadIndex {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorBadIndex {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadIndexImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorBadIndex {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorBadIndexImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorBadIndex {}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorBadIndex>"
@@ -1219,32 +1094,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorBadDifferenceType {}
-impl std::cmp::Ord for RandomAccessIteratorBadDifferenceType {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorBadDifferenceType {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorBadDifferenceType {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorBadDifferenceType {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorBadDifferenceType {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorBadDifferenceType {}
 const _: () = assert!(true, "std::regular<RandomAccessIteratorBadDifferenceType>");
 const _: () = assert!(
     !(false),
@@ -1295,7 +1156,7 @@ const _: () = assert!(
     true,
     "std::is_same_v<std::ranges::rotate_copy_result<int, int>, std::ranges::in_out_result<int, int>>"
 );
-pub fn test_28(value: (), mut middle: (), expected: ()) {
+pub fn test_26(value: (), mut middle: (), expected: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
@@ -1306,7 +1167,7 @@ pub fn test_28(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1323,7 +1184,87 @@ pub fn test_28(value: (), mut middle: (), expected: ()) {
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
+                    range.as_pointer(),
+                    ___middle,
+                    ___result,
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_28(value: (), mut middle: (), expected: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    {
+        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___first: Ptr<()> = unimplemented!();
+                let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
+                let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
+                    ___first, ___middle, ___last, ___result,
+                )
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
+                    range.as_pointer(),
+                    ___middle,
+                    ___result,
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_29(value: (), mut middle: (), expected: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    {
+        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___first: Ptr<()> = unimplemented!();
+                let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
+                let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
+                    ___first, ___middle, ___last, ___result,
+                )
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1346,7 +1287,7 @@ pub fn test_30(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1363,7 +1304,7 @@ pub fn test_30(value: (), mut middle: (), expected: ()) {
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1386,7 +1327,7 @@ pub fn test_31(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1403,7 +1344,7 @@ pub fn test_31(value: (), mut middle: (), expected: ()) {
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1425,8 +1366,9 @@ pub fn test_32(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1442,8 +1384,9 @@ pub fn test_32(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1465,8 +1408,9 @@ pub fn test_33(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1482,8 +1426,9 @@ pub fn test_33(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1507,7 +1452,7 @@ pub fn test_34(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1525,7 +1470,7 @@ pub fn test_34(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1549,7 +1494,7 @@ pub fn test_35(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1567,7 +1512,7 @@ pub fn test_35(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1591,7 +1536,7 @@ pub fn test_36(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1609,7 +1554,7 @@ pub fn test_36(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1631,9 +1576,9 @@ pub fn test_37(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1649,9 +1594,9 @@ pub fn test_37(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1673,9 +1618,9 @@ pub fn test_38(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1691,9 +1636,9 @@ pub fn test_38(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1717,7 +1662,7 @@ pub fn test_39(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1735,7 +1680,7 @@ pub fn test_39(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1759,7 +1704,7 @@ pub fn test_40(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1777,7 +1722,7 @@ pub fn test_40(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1801,7 +1746,7 @@ pub fn test_41(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1819,7 +1764,7 @@ pub fn test_41(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1841,9 +1786,9 @@ pub fn test_42(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1859,9 +1804,9 @@ pub fn test_42(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1883,9 +1828,9 @@ pub fn test_43(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1901,9 +1846,9 @@ pub fn test_43(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1927,7 +1872,7 @@ pub fn test_44(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1945,7 +1890,7 @@ pub fn test_44(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -1969,7 +1914,7 @@ pub fn test_45(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -1987,7 +1932,7 @@ pub fn test_45(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2011,7 +1956,7 @@ pub fn test_46(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2029,7 +1974,7 @@ pub fn test_46(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2051,9 +1996,9 @@ pub fn test_47(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2069,9 +2014,9 @@ pub fn test_47(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2093,9 +2038,9 @@ pub fn test_48(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2111,9 +2056,9 @@ pub fn test_48(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2137,7 +2082,7 @@ pub fn test_49(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2155,7 +2100,7 @@ pub fn test_49(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2179,7 +2124,7 @@ pub fn test_50(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2197,7 +2142,7 @@ pub fn test_50(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2221,7 +2166,7 @@ pub fn test_51(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2239,7 +2184,7 @@ pub fn test_51(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2261,9 +2206,9 @@ pub fn test_52(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2279,9 +2224,9 @@ pub fn test_52(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2303,9 +2248,9 @@ pub fn test_53(value: (), mut middle: (), expected: ()) {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2321,9 +2266,9 @@ pub fn test_53(value: (), mut middle: (), expected: ()) {
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2347,7 +2292,7 @@ pub fn test_54(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2365,7 +2310,7 @@ pub fn test_54(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2389,7 +2334,7 @@ pub fn test_55(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2407,7 +2352,7 @@ pub fn test_55(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2431,7 +2376,7 @@ pub fn test_56(value: (), mut middle: (), expected: ()) {
                 let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2449,7 +2394,7 @@ pub fn test_56(value: (), mut middle: (), expected: ()) {
                 let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2468,12 +2413,18 @@ pub fn test_57(value: (), mut middle: (), expected: ()) {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: Ptr<()> = unimplemented!();
-                let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ unimplemented!() });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        unimplemented!().offset((middle) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        unimplemented!().offset((unimplemented!()) as isize)
+                    });
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2488,10 +2439,12 @@ pub fn test_57(value: (), mut middle: (), expected: ()) {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        unimplemented!().offset((middle) as isize)
+                    });
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2510,12 +2463,18 @@ pub fn test_58(value: (), mut middle: (), expected: ()) {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: Ptr<()> = unimplemented!();
-                let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ unimplemented!() });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        unimplemented!().offset((middle) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        unimplemented!().offset((unimplemented!()) as isize)
+                    });
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2530,10 +2489,12 @@ pub fn test_58(value: (), mut middle: (), expected: ()) {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___middle: Ptr<()> = unimplemented!().offset((middle) as isize);
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        unimplemented!().offset((middle) as isize)
+                    });
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2563,7 +2524,7 @@ pub fn test_59(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2583,7 +2544,7 @@ pub fn test_59(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2613,7 +2574,7 @@ pub fn test_60(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2633,7 +2594,7 @@ pub fn test_60(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2663,7 +2624,7 @@ pub fn test_61(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2683,7 +2644,7 @@ pub fn test_61(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2712,8 +2673,9 @@ pub fn test_62(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2732,8 +2694,9 @@ pub fn test_62(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2762,8 +2725,9 @@ pub fn test_63(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2782,8 +2746,9 @@ pub fn test_63(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2814,7 +2779,7 @@ pub fn test_64(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2835,7 +2800,7 @@ pub fn test_64(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2866,7 +2831,7 @@ pub fn test_65(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2887,7 +2852,7 @@ pub fn test_65(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2918,7 +2883,7 @@ pub fn test_66(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2939,7 +2904,7 @@ pub fn test_66(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -2968,9 +2933,9 @@ pub fn test_67(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -2989,9 +2954,9 @@ pub fn test_67(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3020,9 +2985,9 @@ pub fn test_68(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3041,9 +3006,9 @@ pub fn test_68(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3074,7 +3039,7 @@ pub fn test_69(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3095,7 +3060,7 @@ pub fn test_69(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3126,7 +3091,7 @@ pub fn test_70(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3147,7 +3112,7 @@ pub fn test_70(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3178,7 +3143,7 @@ pub fn test_71(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3199,7 +3164,7 @@ pub fn test_71(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3228,9 +3193,9 @@ pub fn test_72(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3249,9 +3214,9 @@ pub fn test_72(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3280,9 +3245,9 @@ pub fn test_73(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3301,9 +3266,9 @@ pub fn test_73(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3334,7 +3299,7 @@ pub fn test_74(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3355,7 +3320,7 @@ pub fn test_74(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3386,7 +3351,7 @@ pub fn test_75(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3407,7 +3372,7 @@ pub fn test_75(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3438,7 +3403,7 @@ pub fn test_76(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3459,7 +3424,7 @@ pub fn test_76(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3488,9 +3453,9 @@ pub fn test_77(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3509,9 +3474,9 @@ pub fn test_77(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3540,9 +3505,9 @@ pub fn test_78(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3561,9 +3526,9 @@ pub fn test_78(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3594,7 +3559,7 @@ pub fn test_79(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3615,7 +3580,7 @@ pub fn test_79(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3646,7 +3611,7 @@ pub fn test_80(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3667,7 +3632,7 @@ pub fn test_80(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3698,7 +3663,7 @@ pub fn test_81(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3719,7 +3684,7 @@ pub fn test_81(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3748,9 +3713,9 @@ pub fn test_82(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3769,9 +3734,9 @@ pub fn test_82(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3800,9 +3765,9 @@ pub fn test_83(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3821,9 +3786,9 @@ pub fn test_83(value: (), mut middle: (), expected: ()) {
                     contiguous_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3854,7 +3819,7 @@ pub fn test_84(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3875,7 +3840,7 @@ pub fn test_84(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3906,7 +3871,7 @@ pub fn test_85(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3927,7 +3892,7 @@ pub fn test_85(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3958,7 +3923,7 @@ pub fn test_86(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -3979,7 +3944,7 @@ pub fn test_86(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -3998,19 +3963,18 @@ pub fn test_87(value: (), mut middle: (), expected: ()) {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: contiguous_iterator_const_int_ptr_ =
-                    contiguous_iterator_const_int_ptr_::new_1({ unimplemented!() });
-                let ___middle: contiguous_iterator_const_int_ptr_ =
-                    contiguous_iterator_const_int_ptr_::new_1({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___last: contiguous_iterator_const_int_ptr_ =
-                    contiguous_iterator_const_int_ptr_::new_1({
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4025,13 +3989,12 @@ pub fn test_87(value: (), mut middle: (), expected: ()) {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___middle: contiguous_iterator_const_int_ptr_ =
-                    contiguous_iterator_const_int_ptr_::new_1({
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4050,19 +4013,18 @@ pub fn test_88(value: (), mut middle: (), expected: ()) {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: contiguous_iterator_const_int_ptr_ =
-                    contiguous_iterator_const_int_ptr_::new_1({ unimplemented!() });
-                let ___middle: contiguous_iterator_const_int_ptr_ =
-                    contiguous_iterator_const_int_ptr_::new_1({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___last: contiguous_iterator_const_int_ptr_ =
-                    contiguous_iterator_const_int_ptr_::new_1({
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4077,13 +4039,12 @@ pub fn test_88(value: (), mut middle: (), expected: ()) {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___middle: contiguous_iterator_const_int_ptr_ =
-                    contiguous_iterator_const_int_ptr_::new_1({
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4113,7 +4074,7 @@ pub fn test_89(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4133,7 +4094,7 @@ pub fn test_89(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4163,7 +4124,7 @@ pub fn test_90(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4183,7 +4144,7 @@ pub fn test_90(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4213,7 +4174,7 @@ pub fn test_91(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4233,7 +4194,7 @@ pub fn test_91(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4262,8 +4223,9 @@ pub fn test_92(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4282,8 +4244,9 @@ pub fn test_92(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4312,8 +4275,9 @@ pub fn test_93(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4332,8 +4296,9 @@ pub fn test_93(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4364,7 +4329,7 @@ pub fn test_94(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4385,7 +4350,7 @@ pub fn test_94(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4416,7 +4381,7 @@ pub fn test_95(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4437,7 +4402,7 @@ pub fn test_95(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4468,7 +4433,7 @@ pub fn test_96(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4489,7 +4454,7 @@ pub fn test_96(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4518,9 +4483,9 @@ pub fn test_97(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4539,9 +4504,9 @@ pub fn test_97(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4570,9 +4535,9 @@ pub fn test_98(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4591,9 +4556,9 @@ pub fn test_98(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4624,7 +4589,7 @@ pub fn test_99(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4645,7 +4610,7 @@ pub fn test_99(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4676,7 +4641,7 @@ pub fn test_100(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4697,7 +4662,7 @@ pub fn test_100(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4728,7 +4693,7 @@ pub fn test_101(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4749,7 +4714,7 @@ pub fn test_101(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4778,9 +4743,9 @@ pub fn test_102(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4799,9 +4764,9 @@ pub fn test_102(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4830,9 +4795,9 @@ pub fn test_103(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4851,9 +4816,9 @@ pub fn test_103(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4884,7 +4849,7 @@ pub fn test_104(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4905,7 +4870,7 @@ pub fn test_104(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4936,7 +4901,7 @@ pub fn test_105(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -4957,7 +4922,7 @@ pub fn test_105(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -4988,7 +4953,7 @@ pub fn test_106(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5009,7 +4974,7 @@ pub fn test_106(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5038,9 +5003,9 @@ pub fn test_107(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5059,9 +5024,9 @@ pub fn test_107(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5090,9 +5055,9 @@ pub fn test_108(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5111,9 +5076,9 @@ pub fn test_108(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5144,7 +5109,7 @@ pub fn test_109(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5165,7 +5130,7 @@ pub fn test_109(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5196,7 +5161,7 @@ pub fn test_110(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5217,7 +5182,7 @@ pub fn test_110(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5248,7 +5213,7 @@ pub fn test_111(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5269,7 +5234,7 @@ pub fn test_111(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5298,9 +5263,9 @@ pub fn test_112(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5319,9 +5284,9 @@ pub fn test_112(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5350,9 +5315,9 @@ pub fn test_113(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5371,9 +5336,9 @@ pub fn test_113(value: (), mut middle: (), expected: ()) {
                     random_access_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5404,7 +5369,7 @@ pub fn test_114(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5425,7 +5390,7 @@ pub fn test_114(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5456,7 +5421,7 @@ pub fn test_115(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5477,7 +5442,7 @@ pub fn test_115(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5508,7 +5473,7 @@ pub fn test_116(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5529,7 +5494,7 @@ pub fn test_116(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5548,19 +5513,18 @@ pub fn test_117(value: (), mut middle: (), expected: ()) {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: random_access_iterator_const_int_ptr_ =
-                    random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
-                let ___middle: random_access_iterator_const_int_ptr_ =
-                    random_access_iterator_const_int_ptr_::new_1({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ unimplemented!() });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___last: random_access_iterator_const_int_ptr_ =
-                    random_access_iterator_const_int_ptr_::new_1({
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5575,13 +5539,12 @@ pub fn test_117(value: (), mut middle: (), expected: ()) {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___middle: random_access_iterator_const_int_ptr_ =
-                    random_access_iterator_const_int_ptr_::new_1({
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5600,19 +5563,18 @@ pub fn test_118(value: (), mut middle: (), expected: ()) {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: random_access_iterator_const_int_ptr_ =
-                    random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
-                let ___middle: random_access_iterator_const_int_ptr_ =
-                    random_access_iterator_const_int_ptr_::new_1({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ unimplemented!() });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___last: random_access_iterator_const_int_ptr_ =
-                    random_access_iterator_const_int_ptr_::new_1({
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5627,13 +5589,12 @@ pub fn test_118(value: (), mut middle: (), expected: ()) {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___middle: random_access_iterator_const_int_ptr_ =
-                    random_access_iterator_const_int_ptr_::new_1({
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5663,7 +5624,7 @@ pub fn test_119(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5683,7 +5644,7 @@ pub fn test_119(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5713,7 +5674,7 @@ pub fn test_120(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5733,7 +5694,7 @@ pub fn test_120(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5763,7 +5724,7 @@ pub fn test_121(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5783,7 +5744,7 @@ pub fn test_121(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5812,8 +5773,9 @@ pub fn test_122(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5832,8 +5794,9 @@ pub fn test_122(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5862,8 +5825,9 @@ pub fn test_123(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5882,8 +5846,9 @@ pub fn test_123(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5914,7 +5879,7 @@ pub fn test_124(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5935,7 +5900,7 @@ pub fn test_124(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -5966,7 +5931,7 @@ pub fn test_125(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -5987,7 +5952,7 @@ pub fn test_125(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6018,7 +5983,7 @@ pub fn test_126(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6039,7 +6004,7 @@ pub fn test_126(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6068,9 +6033,9 @@ pub fn test_127(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6089,9 +6054,9 @@ pub fn test_127(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6120,9 +6085,9 @@ pub fn test_128(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6141,9 +6106,9 @@ pub fn test_128(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6174,7 +6139,7 @@ pub fn test_129(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6195,7 +6160,7 @@ pub fn test_129(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6226,7 +6191,7 @@ pub fn test_130(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6247,7 +6212,7 @@ pub fn test_130(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6278,7 +6243,7 @@ pub fn test_131(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6299,7 +6264,7 @@ pub fn test_131(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6328,9 +6293,9 @@ pub fn test_132(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6349,9 +6314,9 @@ pub fn test_132(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6380,9 +6345,9 @@ pub fn test_133(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6401,9 +6366,9 @@ pub fn test_133(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6434,7 +6399,7 @@ pub fn test_134(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6455,7 +6420,7 @@ pub fn test_134(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6486,7 +6451,7 @@ pub fn test_135(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6507,7 +6472,7 @@ pub fn test_135(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6538,7 +6503,7 @@ pub fn test_136(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6559,7 +6524,7 @@ pub fn test_136(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6588,9 +6553,9 @@ pub fn test_137(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6609,9 +6574,9 @@ pub fn test_137(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6640,9 +6605,9 @@ pub fn test_138(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6661,9 +6626,9 @@ pub fn test_138(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6694,7 +6659,7 @@ pub fn test_139(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6715,7 +6680,7 @@ pub fn test_139(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6746,7 +6711,7 @@ pub fn test_140(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6767,7 +6732,7 @@ pub fn test_140(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6798,7 +6763,7 @@ pub fn test_141(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6819,7 +6784,7 @@ pub fn test_141(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6848,9 +6813,9 @@ pub fn test_142(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6869,9 +6834,9 @@ pub fn test_142(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6900,9 +6865,9 @@ pub fn test_143(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6921,9 +6886,9 @@ pub fn test_143(value: (), mut middle: (), expected: ()) {
                     bidirectional_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -6954,7 +6919,7 @@ pub fn test_144(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -6975,7 +6940,7 @@ pub fn test_144(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7006,7 +6971,7 @@ pub fn test_145(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7027,7 +6992,7 @@ pub fn test_145(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7058,7 +7023,7 @@ pub fn test_146(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7079,7 +7044,7 @@ pub fn test_146(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7098,19 +7063,18 @@ pub fn test_147(value: (), mut middle: (), expected: ()) {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: bidirectional_iterator_const_int_ptr_ =
-                    bidirectional_iterator_const_int_ptr_::new_1({ unimplemented!() });
-                let ___middle: bidirectional_iterator_const_int_ptr_ =
-                    bidirectional_iterator_const_int_ptr_::new_1({
+                let ___first: forward_iterator_const_int_ptr_ =
+                    forward_iterator_const_int_ptr_::new_1({ unimplemented!() });
+                let ___middle: forward_iterator_const_int_ptr_ =
+                    forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___last: bidirectional_iterator_const_int_ptr_ =
-                    bidirectional_iterator_const_int_ptr_::new_1({
+                let ___last: forward_iterator_const_int_ptr_ =
+                    forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7125,13 +7089,12 @@ pub fn test_147(value: (), mut middle: (), expected: ()) {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___middle: bidirectional_iterator_const_int_ptr_ =
-                    bidirectional_iterator_const_int_ptr_::new_1({
+                let ___middle: forward_iterator_const_int_ptr_ =
+                    forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7150,19 +7113,18 @@ pub fn test_148(value: (), mut middle: (), expected: ()) {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: bidirectional_iterator_const_int_ptr_ =
-                    bidirectional_iterator_const_int_ptr_::new_1({ unimplemented!() });
-                let ___middle: bidirectional_iterator_const_int_ptr_ =
-                    bidirectional_iterator_const_int_ptr_::new_1({
+                let ___first: forward_iterator_const_int_ptr_ =
+                    forward_iterator_const_int_ptr_::new_1({ unimplemented!() });
+                let ___middle: forward_iterator_const_int_ptr_ =
+                    forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___last: bidirectional_iterator_const_int_ptr_ =
-                    bidirectional_iterator_const_int_ptr_::new_1({
+                let ___last: forward_iterator_const_int_ptr_ =
+                    forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7177,13 +7139,12 @@ pub fn test_148(value: (), mut middle: (), expected: ()) {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___middle: bidirectional_iterator_const_int_ptr_ =
-                    bidirectional_iterator_const_int_ptr_::new_1({
+                let ___middle: forward_iterator_const_int_ptr_ =
+                    forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: Ptr<()> = unimplemented!();
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7213,7 +7174,7 @@ pub fn test_149(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7233,7 +7194,7 @@ pub fn test_149(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7263,7 +7224,7 @@ pub fn test_150(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7283,7 +7244,7 @@ pub fn test_150(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7313,7 +7274,7 @@ pub fn test_151(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7333,7 +7294,7 @@ pub fn test_151(value: (), mut middle: (), expected: ()) {
                         unimplemented!().offset((middle) as isize)
                     });
                 let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7362,8 +7323,9 @@ pub fn test_152(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7382,8 +7344,9 @@ pub fn test_152(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7412,8 +7375,9 @@ pub fn test_153(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7432,8 +7396,9 @@ pub fn test_153(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: Ptr<()> = unimplemented!();
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: contiguous_iterator_int_ptr_ =
+                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7464,7 +7429,7 @@ pub fn test_154(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7485,7 +7450,7 @@ pub fn test_154(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7516,7 +7481,7 @@ pub fn test_155(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7537,7 +7502,7 @@ pub fn test_155(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7568,7 +7533,7 @@ pub fn test_156(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7589,7 +7554,7 @@ pub fn test_156(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: contiguous_iterator_int_ptr_ =
                     contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7618,9 +7583,9 @@ pub fn test_157(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7639,9 +7604,9 @@ pub fn test_157(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7670,9 +7635,9 @@ pub fn test_158(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7691,9 +7656,9 @@ pub fn test_158(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: random_access_iterator_int_ptr_ =
+                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7724,7 +7689,7 @@ pub fn test_159(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7745,7 +7710,7 @@ pub fn test_159(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7776,7 +7741,7 @@ pub fn test_160(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7797,7 +7762,7 @@ pub fn test_160(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7828,7 +7793,7 @@ pub fn test_161(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7849,7 +7814,7 @@ pub fn test_161(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7878,9 +7843,9 @@ pub fn test_162(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7899,9 +7864,9 @@ pub fn test_162(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7930,9 +7895,9 @@ pub fn test_163(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -7951,9 +7916,9 @@ pub fn test_163(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: bidirectional_iterator_int_ptr_ =
+                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -7984,7 +7949,7 @@ pub fn test_164(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8005,7 +7970,7 @@ pub fn test_164(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8036,7 +8001,7 @@ pub fn test_165(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8057,7 +8022,7 @@ pub fn test_165(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8088,7 +8053,7 @@ pub fn test_166(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8109,7 +8074,7 @@ pub fn test_166(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: bidirectional_iterator_int_ptr_ =
                     bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8138,9 +8103,9 @@ pub fn test_167(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8159,9 +8124,9 @@ pub fn test_167(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8190,9 +8155,9 @@ pub fn test_168(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8211,9 +8176,9 @@ pub fn test_168(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8244,7 +8209,7 @@ pub fn test_169(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8265,7 +8230,7 @@ pub fn test_169(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8296,7 +8261,7 @@ pub fn test_170(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8317,7 +8282,7 @@ pub fn test_170(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8348,7 +8313,7 @@ pub fn test_171(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8369,7 +8334,7 @@ pub fn test_171(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: forward_iterator_int_ptr_ =
                     forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8398,9 +8363,9 @@ pub fn test_172(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8419,9 +8384,9 @@ pub fn test_172(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8450,9 +8415,9 @@ pub fn test_173(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((unimplemented!()) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8471,9 +8436,9 @@ pub fn test_173(value: (), mut middle: (), expected: ()) {
                     forward_iterator_const_int_ptr_::new_1({
                         unimplemented!().offset((middle) as isize)
                     });
-                let ___result: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___result: cpp20_output_iterator_int_ptr_ =
+                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8504,7 +8469,7 @@ pub fn test_174(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8525,7 +8490,7 @@ pub fn test_174(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8556,7 +8521,7 @@ pub fn test_175(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8577,7 +8542,7 @@ pub fn test_175(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8608,7 +8573,7 @@ pub fn test_176(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first, ___middle, ___last, ___result,
                 )
             })
@@ -8629,7 +8594,7 @@ pub fn test_176(value: (), mut middle: (), expected: ()) {
                     });
                 let ___result: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___middle,
                     ___result,
@@ -8641,502 +8606,398 @@ pub fn test_176(value: (), mut middle: (), expected: ()) {
         unimplemented!();
     }
 }
-pub fn test_177(value: (), mut middle: (), expected: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    {
-        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___first: forward_iterator_const_int_ptr_ =
-                    forward_iterator_const_int_ptr_::new_1({ unimplemented!() });
-                let ___middle: forward_iterator_const_int_ptr_ =
-                    forward_iterator_const_int_ptr_::new_1({
-                        unimplemented!().offset((middle) as isize)
-                    });
-                let ___last: forward_iterator_const_int_ptr_ =
-                    forward_iterator_const_int_ptr_::new_1({
-                        unimplemented!().offset((unimplemented!()) as isize)
-                    });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
-                    ___first, ___middle, ___last, ___result,
-                )
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___middle: forward_iterator_const_int_ptr_ =
-                    forward_iterator_const_int_ptr_::new_1({
-                        unimplemented!().offset((middle) as isize)
-                    });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
-                    range.as_pointer(),
-                    ___middle,
-                    ___result,
-                )
-            }),
-        ));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
+pub fn test_iterators_177() {
+    ({ test_26(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_28(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_29(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_30(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_31(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_31(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_31(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_31(unimplemented!(), 7_(), unimplemented!()) });
 }
-pub fn test_178(value: (), mut middle: (), expected: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    {
-        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___first: forward_iterator_const_int_ptr_ =
-                    forward_iterator_const_int_ptr_::new_1({ unimplemented!() });
-                let ___middle: forward_iterator_const_int_ptr_ =
-                    forward_iterator_const_int_ptr_::new_1({
-                        unimplemented!().offset((middle) as isize)
-                    });
-                let ___last: forward_iterator_const_int_ptr_ =
-                    forward_iterator_const_int_ptr_::new_1({
-                        unimplemented!().offset((unimplemented!()) as isize)
-                    });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
-                    ___first, ___middle, ___last, ___result,
-                )
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___middle: forward_iterator_const_int_ptr_ =
-                    forward_iterator_const_int_ptr_::new_1({
-                        unimplemented!().offset((middle) as isize)
-                    });
-                let ___result: cpp20_output_iterator_int_ptr_ =
-                    cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
-                    range.as_pointer(),
-                    ___middle,
-                    ___result,
-                )
-            }),
-        ));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
+pub fn test_iterators_178() {
+    ({ test_32(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_33(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_34(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_35(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_36(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_36(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_36(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_36(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_179() {
-    ({ test_28(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_30(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_31(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_32(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_33(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_33(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_33(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_33(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_37(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_38(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_39(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_40(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_41(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_41(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_41(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_41(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_180() {
-    ({ test_34(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_35(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_36(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_37(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_38(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_38(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_38(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_38(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_42(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_43(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_44(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_45(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_46(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_46(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_46(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_46(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_181() {
-    ({ test_39(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_40(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_41(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_42(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_43(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_43(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_43(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_43(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_47(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_48(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_49(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_50(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_51(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_51(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_51(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_51(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_182() {
-    ({ test_44(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_45(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_46(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_47(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_48(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_48(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_48(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_48(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_52(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_53(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_54(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_55(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_56(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_56(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_56(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_56(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_183() {
-    ({ test_49(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_50(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_51(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_52(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_53(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_53(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_53(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_53(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_57(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_58(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_59(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_60(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_61(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_61(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_61(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_61(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_184() {
-    ({ test_54(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_55(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_56(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_57(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_58(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_58(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_58(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_58(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_62(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_63(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_64(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_65(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_66(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_66(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_66(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_66(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_185() {
-    ({ test_59(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_60(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_61(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_62(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_63(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_63(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_63(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_63(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_67(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_68(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_69(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_70(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_71(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_71(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_71(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_71(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_186() {
-    ({ test_64(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_65(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_66(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_67(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_68(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_68(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_68(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_68(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_72(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_73(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_74(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_75(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_76(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_76(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_76(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_76(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_187() {
-    ({ test_69(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_70(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_71(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_72(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_73(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_73(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_73(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_73(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_77(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_78(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_79(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_80(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_81(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_81(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_81(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_81(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_188() {
-    ({ test_74(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_75(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_76(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_77(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_78(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_78(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_78(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_78(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_82(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_83(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_84(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_85(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_86(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_86(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_86(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_86(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_189() {
-    ({ test_79(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_80(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_81(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_82(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_83(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_83(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_83(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_83(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_87(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_88(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_89(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_90(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_91(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_91(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_91(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_91(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_190() {
-    ({ test_84(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_85(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_86(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_87(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_88(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_88(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_88(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_88(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_92(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_93(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_94(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_95(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_96(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_96(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_96(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_96(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_191() {
-    ({ test_89(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_90(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_91(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_92(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_93(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_93(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_93(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_93(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_97(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_98(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_99(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_100(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_101(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_101(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_101(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_101(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_192() {
-    ({ test_94(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_95(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_96(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_97(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_98(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_98(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_98(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_98(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_102(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_103(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_104(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_105(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_106(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_106(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_106(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_106(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_193() {
-    ({ test_99(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_100(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_101(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_102(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_103(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_103(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_103(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_103(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_107(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_108(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_109(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_110(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_111(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_111(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_111(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_111(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_194() {
-    ({ test_104(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_105(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_106(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_107(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_108(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_108(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_108(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_108(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_112(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_113(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_114(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_115(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_116(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_116(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_116(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_116(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_195() {
-    ({ test_109(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_110(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_111(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_112(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_113(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_113(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_113(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_113(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_117(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_118(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_119(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_120(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_121(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_121(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_121(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_121(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_196() {
-    ({ test_114(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_115(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_116(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_117(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_118(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_118(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_118(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_118(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_122(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_123(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_124(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_125(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_126(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_126(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_126(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_126(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_197() {
-    ({ test_119(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_120(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_121(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_122(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_123(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_123(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_123(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_123(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_127(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_128(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_129(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_130(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_131(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_131(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_131(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_131(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_198() {
-    ({ test_124(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_125(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_126(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_127(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_128(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_128(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_128(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_128(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_132(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_133(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_134(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_135(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_136(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_136(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_136(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_136(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_199() {
-    ({ test_129(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_130(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_131(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_132(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_133(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_133(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_133(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_133(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_137(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_138(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_139(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_140(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_141(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_141(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_141(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_141(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_200() {
-    ({ test_134(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_135(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_136(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_137(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_138(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_138(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_138(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_138(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_142(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_143(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_144(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_145(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_146(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_146(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_146(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_146(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_201() {
-    ({ test_139(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_140(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_141(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_142(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_143(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_143(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_143(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_143(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_147(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_148(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_149(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_150(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_151(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_151(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_151(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_151(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_202() {
-    ({ test_144(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_145(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_146(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_147(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_148(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_148(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_148(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_148(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_152(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_153(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_154(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_155(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_156(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_156(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_156(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_156(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_203() {
-    ({ test_149(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_150(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_151(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_152(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_153(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_153(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_153(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_153(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_157(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_158(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_159(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_160(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_161(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_161(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_161(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_161(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_204() {
-    ({ test_154(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_155(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_156(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_157(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_158(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_158(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_158(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_158(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_162(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_163(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_164(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_165(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_166(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_166(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_166(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_166(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_205() {
-    ({ test_159(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_160(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_161(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_162(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_163(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_163(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_163(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_163(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_167(unimplemented!(), 2_(), unimplemented!()) });
+    ({ test_168(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_169(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_170(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_171(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_171(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_171(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_171(unimplemented!(), 7_(), unimplemented!()) });
 }
 pub fn test_iterators_206() {
-    ({ test_164(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_165(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_166(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_167(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_168(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_168(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_168(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_168(unimplemented!(), 7_(), unimplemented!()) });
-}
-pub fn test_iterators_207() {
-    ({ test_169(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_170(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_171(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_172(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_172(unimplemented!(), 2_(), unimplemented!()) });
     ({ test_173(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_173(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_173(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_173(unimplemented!(), 7_(), unimplemented!()) });
-}
-pub fn test_iterators_208() {
-    ({ test_174(unimplemented!(), 2_(), unimplemented!()) });
-    ({ test_175(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_174(unimplemented!(), 0_(), unimplemented!()) });
+    ({ test_175(unimplemented!(), 1_(), unimplemented!()) });
     ({ test_176(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_177(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_178(unimplemented!(), 0_(), unimplemented!()) });
-    ({ test_178(unimplemented!(), 1_(), unimplemented!()) });
-    ({ test_178(unimplemented!(), 6_(), unimplemented!()) });
-    ({ test_178(unimplemented!(), 7_(), unimplemented!()) });
+    ({ test_176(unimplemented!(), 1_(), unimplemented!()) });
+    ({ test_176(unimplemented!(), 6_(), unimplemented!()) });
+    ({ test_176(unimplemented!(), 7_(), unimplemented!()) });
 }
-pub fn test_209() -> () {
+pub fn test_207() -> () {
     ({
-        for_each_0 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_2 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_179 ( ) } )  ;
+        for_each_0 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_2 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_177 ( ) } )  ;
+ } , | | { ( { test_iterators_178 ( ) } )  ;
+ } , | | { ( { test_iterators_179 ( ) } )  ;
  } , | | { ( { test_iterators_180 ( ) } )  ;
  } , | | { ( { test_iterators_181 ( ) } )  ;
  } , | | { ( { test_iterators_182 ( ) } )  ;
- } , | | { ( { test_iterators_183 ( ) } )  ;
- } , | | { ( { test_iterators_184 ( ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_210 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_185 ( ) } )  ;
+ } , | | { ( { for_each_208 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_183 ( ) } )  ;
+ } , | | { ( { test_iterators_184 ( ) } )  ;
+ } , | | { ( { test_iterators_185 ( ) } )  ;
  } , | | { ( { test_iterators_186 ( ) } )  ;
  } , | | { ( { test_iterators_187 ( ) } )  ;
  } , | | { ( { test_iterators_188 ( ) } )  ;
- } , | | { ( { test_iterators_189 ( ) } )  ;
- } , | | { ( { test_iterators_190 ( ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_211 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_191 ( ) } )  ;
+ } , | | { ( { for_each_209 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_189 ( ) } )  ;
+ } , | | { ( { test_iterators_190 ( ) } )  ;
+ } , | | { ( { test_iterators_191 ( ) } )  ;
  } , | | { ( { test_iterators_192 ( ) } )  ;
  } , | | { ( { test_iterators_193 ( ) } )  ;
  } , | | { ( { test_iterators_194 ( ) } )  ;
- } , | | { ( { test_iterators_195 ( ) } )  ;
- } , | | { ( { test_iterators_196 ( ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_212 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_197 ( ) } )  ;
+ } , | | { ( { for_each_210 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_195 ( ) } )  ;
+ } , | | { ( { test_iterators_196 ( ) } )  ;
+ } , | | { ( { test_iterators_197 ( ) } )  ;
  } , | | { ( { test_iterators_198 ( ) } )  ;
  } , | | { ( { test_iterators_199 ( ) } )  ;
  } , | | { ( { test_iterators_200 ( ) } )  ;
- } , | | { ( { test_iterators_201 ( ) } )  ;
- } , | | { ( { test_iterators_202 ( ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_213 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_203 ( ) } )  ;
+ } , | | { ( { for_each_211 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp20_output_iterator_int_ptr__  >::default()  , lambda! ( Generic , { } , | | { ( { test_iterators_201 ( ) } )  ;
+ } , | | { ( { test_iterators_202 ( ) } )  ;
+ } , | | { ( { test_iterators_203 ( ) } )  ;
  } , | | { ( { test_iterators_204 ( ) } )  ;
  } , | | { ( { test_iterators_205 ( ) } )  ;
  } , | | { ( { test_iterators_206 ( ) } )  ;
- } , | | { ( { test_iterators_207 ( ) } )  ;
- } , | | { ( { test_iterators_208 ( ) } )  ;
  } )  , ) } )  ;
  } )  , )
     });
     {
         {
             let c: Value<()> = Rc::new(RefCell::new(0_()));
-            let a: Value<Box<[AssignmentCounter_214]>> = Rc::new(RefCell::new(Box::new([
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
+            let a: Value<Box<[AssignmentCounter_212]>> = Rc::new(RefCell::new(Box::new([
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
             ])));
-            let b: Value<Box<[AssignmentCounter_214]>> = Rc::new(RefCell::new(Box::new([
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
+            let b: Value<Box<[AssignmentCounter_212]>> = Rc::new(RefCell::new(Box::new([
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
             ])));
             ({
-                let ___first: Ptr<AssignmentCounter_214> =
-                    (a.as_pointer() as Ptr<AssignmentCounter_214>);
-                let ___middle: Ptr<AssignmentCounter_214> =
-                    (a.as_pointer() as Ptr<AssignmentCounter_214>).offset((2_()) as isize);
-                let ___last: Ptr<AssignmentCounter_214> =
-                    (a.as_pointer() as Ptr<AssignmentCounter_214>).offset((4_()) as isize);
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
+                let ___first: Ptr<AssignmentCounter_212> =
+                    (a.as_pointer() as Ptr<AssignmentCounter_212>);
+                let ___middle: Ptr<AssignmentCounter_212> =
+                    (a.as_pointer() as Ptr<AssignmentCounter_212>).offset((2_()) as isize);
+                let ___last: Ptr<AssignmentCounter_212> =
+                    (a.as_pointer() as Ptr<AssignmentCounter_212>).offset((4_()) as isize);
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
                     ___first,
                     ___middle,
                     ___last,
-                    (b.as_pointer() as Ptr<AssignmentCounter_214>),
+                    (b.as_pointer() as Ptr<AssignmentCounter_212>),
                 )
             });
             unimplemented!();
         }
         {
             let c: Value<()> = Rc::new(RefCell::new(0_()));
-            let a: Value<Box<[AssignmentCounter_214]>> = Rc::new(RefCell::new(Box::new([
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
+            let a: Value<Box<[AssignmentCounter_212]>> = Rc::new(RefCell::new(Box::new([
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
             ])));
-            let b: Value<Box<[AssignmentCounter_214]>> = Rc::new(RefCell::new(Box::new([
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
-                AssignmentCounter_214::new({ (c.as_pointer()) }),
+            let b: Value<Box<[AssignmentCounter_212]>> = Rc::new(RefCell::new(Box::new([
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
+                AssignmentCounter_212::new({ (c.as_pointer()) }),
             ])));
             ({
-                let ___range: Ptr<AssignmentCounter_214> = a.as_pointer();
-                let ___middle: Ptr<AssignmentCounter_214> =
-                    (a.as_pointer() as Ptr<AssignmentCounter_214>).offset((2_()) as isize);
-                (*rotate_copy_29.with(Value::clone).borrow_mut())(
-                    ___range,
+                let ___r: Ptr<AssignmentCounter_212> = a.as_pointer();
+                let ___middle: Ptr<AssignmentCounter_212> =
+                    (a.as_pointer() as Ptr<AssignmentCounter_212>).offset((2_()) as isize);
+                (*rotate_copy_27.with(Value::clone).borrow_mut())(
+                    ___r,
                     ___middle,
-                    (b.as_pointer() as Ptr<AssignmentCounter_214>),
+                    (b.as_pointer() as Ptr<AssignmentCounter_212>),
                 )
             });
             unimplemented!();
@@ -9146,12 +9007,12 @@ pub fn test_209() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Default)]
 #[byte_size(8)]
-pub struct AssignmentCounter_214 {
+pub struct AssignmentCounter_212 {
     #[offset(0)]
     #[byte_size(8)]
     pub counter: Ptr<()>,
 }
-impl AssignmentCounter_214 {
+impl AssignmentCounter_212 {
     pub fn new(mut counter_: Ptr<()>) -> Self {
         Self {
             counter: (counter_).clone(),
@@ -9178,15 +9039,15 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_209() });
+    ({ test_207() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
-pub trait AssignmentCounter_214Impl {
-    fn copy_assign(&self, _a0: Ptr<AssignmentCounter_214>) -> Ptr<AssignmentCounter_214>;
+pub trait AssignmentCounter_212Impl {
+    fn copy_assign(&self, _a0: Ptr<AssignmentCounter_212>) -> Ptr<AssignmentCounter_212>;
 }
-impl AssignmentCounter_214Impl for Ptr<AssignmentCounter_214> {
-    fn copy_assign(&self, _a0: Ptr<AssignmentCounter_214>) -> Ptr<AssignmentCounter_214> {
+impl AssignmentCounter_212Impl for Ptr<AssignmentCounter_212> {
+    fn copy_assign(&self, _a0: Ptr<AssignmentCounter_212>) -> Ptr<AssignmentCounter_212> {
         (*self)
             .with(|__s| __s.counter.clone())
             .with_mut(|__v| __v.prefix_inc());
@@ -9724,6 +9585,10 @@ pub trait bidirectional_iterator_const_int_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_const_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_const_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_const_int_ptr_>;
 }
 impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -9731,6 +9596,17 @@ impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_co
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_const_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -9746,6 +9622,10 @@ pub trait bidirectional_iterator_int_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_>;
 }
 impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -9755,13 +9635,26 @@ impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait contiguous_iterator_const_int_ptr_Impl {
     fn base(&self) -> Ptr<()> {
         unimplemented!()
     }
     fn operator_deref(&self) -> ();
-    fn operator_arrow(&self) -> ();
+    fn operator_arrow(&self) -> () {
+        unimplemented!()
+    }
     fn operator_index(&self, mut n: ()) -> () {
         unimplemented!()
     }
@@ -9775,27 +9668,34 @@ pub trait contiguous_iterator_const_int_ptr_Impl {
     fn operator_post_dec_12(&self, mut _a0: ()) -> contiguous_iterator_const_int_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, n: ()) -> Ptr<contiguous_iterator_const_int_ptr_>;
+    fn operator_add_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_int_ptr_> {
+        unimplemented!()
+    }
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_const_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_const_int_ptr_>;
 }
 impl contiguous_iterator_const_int_ptr_Impl for Ptr<contiguous_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
-        return (*self).with(|__s| __s.it_.clone());
-    }
-    fn operator_arrow(&self) -> () {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_int_ptr_> {
-        {
-            let _ptr = field!((*self), it_);
-            _ptr.write(_ptr.read() + n)
-        };
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_const_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -9803,16 +9703,14 @@ pub trait contiguous_iterator_int_ptr_Impl {
     fn base(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> ();
+    fn operator_arrow(&self) -> () {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> ();
     fn operator_index(&self, mut n: ()) -> () {
         unimplemented!()
     }
-    fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_> {
-        unimplemented!()
-    }
+    fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_>;
     fn operator_dec_10(&self) -> Ptr<contiguous_iterator_int_ptr_> {
         unimplemented!()
     }
@@ -9822,20 +9720,34 @@ pub trait contiguous_iterator_int_ptr_Impl {
     fn operator_post_dec_12(&self, mut _a0: ()) -> contiguous_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, n: ()) -> Ptr<contiguous_iterator_int_ptr_>;
+    fn operator_add_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
+        unimplemented!()
+    }
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_>;
 }
 impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
-    fn operator_arrow(&self) -> () {
+    fn operator_deref(&self) -> () {
         return (*self).with(|__s| __s.it_.clone());
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
-        {
-            let _ptr = field!((*self), it_);
-            _ptr.write(_ptr.read() + n)
-        };
+    fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_> {
+        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -9849,8 +9761,24 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
+impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> () {
         unimplemented!()
@@ -9861,8 +9789,24 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
-impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {}
+impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp20_input_iterator_int_ptr_Impl {
     fn move_assign(
         &self,
@@ -9944,6 +9888,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -9952,6 +9900,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_const_int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -9959,6 +9918,10 @@ pub trait forward_iterator_const_int_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_const_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_const_int_ptr_>,
+    ) -> Ptr<forward_iterator_const_int_ptr_>;
 }
 impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -9968,6 +9931,17 @@ impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_const_int_ptr_>,
+    ) -> Ptr<forward_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -9975,6 +9949,7 @@ pub trait forward_iterator_int_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_>;
 }
 impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -9982,6 +9957,14 @@ impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -10018,6 +10001,10 @@ pub trait random_access_iterator_const_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_const_int_ptr_>,
+    ) -> Ptr<random_access_iterator_const_int_ptr_>;
 }
 impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_const_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -10025,6 +10012,17 @@ impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_co
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_const_int_ptr_>,
+    ) -> Ptr<random_access_iterator_const_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -10049,6 +10047,10 @@ pub trait random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_>;
 }
 impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -10056,6 +10058,17 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }

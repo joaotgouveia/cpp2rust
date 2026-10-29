@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -166,7 +150,10 @@ impl Default for test_allocator_void_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_allocator_bool__rebind_unsigned_int_ {}
+pub struct test_allocator_bool__rebind_unsigned_long_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_bool__rebind_bool_ {}
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(16)]
 pub struct test_allocator_bool_ {
@@ -192,7 +179,7 @@ impl Default for test_allocator_bool_ {
 }
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(16)]
-pub struct test_allocator_unsigned_int_ {
+pub struct test_allocator_unsigned_long_ {
     #[offset(0)]
     data_: (),
     #[offset(4)]
@@ -201,46 +188,14 @@ pub struct test_allocator_unsigned_int_ {
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
 }
-impl test_allocator_unsigned_int_ {}
-impl Default for test_allocator_unsigned_int_ {
+impl test_allocator_unsigned_long_ {}
+impl Default for test_allocator_unsigned_long_ {
     fn default() -> Self {
         {
-            test_allocator_unsigned_int_ {
+            test_allocator_unsigned_long_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_bool_ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_bool_ {}
-impl Default for other_allocator_bool_ {
-    fn default() -> Self {
-        {
-            other_allocator_bool_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_unsigned_long_ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_unsigned_long_ {}
-impl Default for other_allocator_unsigned_long_ {
-    fn default() -> Self {
-        {
-            other_allocator_unsigned_long_ {
-                data_: unimplemented!(),
             }
         }
     }
@@ -262,22 +217,6 @@ impl Tag_X {
         Self {}
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct some_alloc_bool_ {}
-impl some_alloc_bool_ {}
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct some_alloc_unsigned_long_ {}
-impl some_alloc_unsigned_long_ {}
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct some_alloc2_bool_ {}
-impl some_alloc2_bool_ {}
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct some_alloc2_unsigned_long_ {}
-impl some_alloc2_unsigned_long_ {}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct some_alloc3_bool_ {}
@@ -307,20 +246,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        const _: () = assert!(true, "std::is_nothrow_move_assignable<C>::value");;
-    }
-    {
         const _: () = assert!(true, "!std::is_nothrow_move_assignable<C>::value");;
     }
-    {
-        const _: () = assert!(true, "std::is_nothrow_move_assignable<C>::value");;
-    }
-    {
-        const _: () = assert!(true, "std::is_nothrow_move_assignable<C>::value");;
-    }
-    {
-        const _: () = assert!(true, "std::is_nothrow_move_assignable<C>::value");;
-    }
+    {}
     {
         const _: () = assert!(true, "!std::is_nothrow_move_assignable<C>::value");;
     }
@@ -338,48 +266,6 @@ impl Tag_XImpl for Ptr<Tag_X> {
         return (*self).clone();
     }
 }
-pub trait other_allocator_bool_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
-        unimplemented!()
-    }
-    fn select_on_container_copy_construction(&self) -> other_allocator_bool_ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_bool_Impl for Ptr<other_allocator_bool_> {}
-pub trait other_allocator_unsigned_long_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
-        unimplemented!()
-    }
-    fn select_on_container_copy_construction(&self) -> other_allocator_unsigned_long_ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_unsigned_long_Impl for Ptr<other_allocator_unsigned_long_> {}
-pub trait some_alloc2_bool_Impl {
-    fn deallocate(&self, mut _a0: (), mut _a1: ()) {
-        unimplemented!()
-    }
-}
-impl some_alloc2_bool_Impl for Ptr<some_alloc2_bool_> {}
-pub trait some_alloc2_unsigned_long_Impl {
-    fn deallocate(&self, mut _a0: (), mut _a1: ()) {
-        unimplemented!()
-    }
-}
-impl some_alloc2_unsigned_long_Impl for Ptr<some_alloc2_unsigned_long_> {}
 pub trait some_alloc3_bool_Impl {
     fn deallocate(&self, mut _a0: (), mut _a1: ()) {
         unimplemented!()
@@ -444,7 +330,7 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
-pub trait test_allocator_unsigned_int_Impl {
+pub trait test_allocator_unsigned_long_Impl {
     fn destructor(&self) {
         unimplemented!()
     }
@@ -473,7 +359,7 @@ pub trait test_allocator_unsigned_int_Impl {
         unimplemented!()
     }
 }
-impl test_allocator_unsigned_int_Impl for Ptr<test_allocator_unsigned_int_> {}
+impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();

@@ -154,7 +154,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut n: () = 0_();
         let mut i: () = unimplemented!();
         let mut e: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();
@@ -169,7 +169,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut n: () = 0_();
         let mut i: () = unimplemented!();
         let mut e: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();
@@ -186,7 +186,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut n: () = 0_();
         let mut i: () = unimplemented!();
         let mut e: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();

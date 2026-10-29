@@ -23,22 +23,22 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut ip: () = (unsafe { get_temporary_buffer_0(5_()) });
+    let mut ip: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { return_temporary_buffer_1(ip.first) });
+    unimplemented!();
     {
-        let mut ret: () = (unsafe { get_temporary_buffer_0(0_()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut ret: () = (unsafe { get_temporary_buffer_0(-5_()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut ret: () = (unsafe { get_temporary_buffer_0(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

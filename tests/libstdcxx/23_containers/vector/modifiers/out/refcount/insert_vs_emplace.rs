@@ -67,11 +67,7 @@ impl __gnu_test_copy_constructor {
     pub fn mark_call() {
         (*count__1.with(Value::clone).borrow_mut()).postfix_inc();
         if (count__1.with(|rc| *rc.borrow()) == throw_on__2.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"copy_constructor::mark_call",
-                ))
-            });
+            unimplemented!();
         }
     }
     pub fn reset() {
@@ -87,24 +83,20 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub fn count() -> () {
-        return count__4.with(|rc| *rc.borrow());
+        return count__3.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*count__4.with(Value::clone).borrow_mut()).postfix_inc();
-        if (count__4.with(|rc| *rc.borrow()) == throw_on__5.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"assignment_operator::mark_call",
-                ))
-            });
+        (*count__3.with(Value::clone).borrow_mut()).postfix_inc();
+        if (count__3.with(|rc| *rc.borrow()) == throw_on__4.with(|rc| *rc.borrow())) {
+            unimplemented!();
         }
     }
     pub fn reset() {
-        count__4.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__5.with(|rc| *rc.borrow_mut() = 0_());
+        count__3.with(|rc| *rc.borrow_mut() = 0_());
+        throw_on__4.with(|rc| *rc.borrow_mut() = 0_());
     }
     pub fn throw_on(mut count: ()) {
-        throw_on__5.with(|rc| *rc.borrow_mut() = count);
+        throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -112,13 +104,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub fn count() -> () {
-        return _M_count_6.with(|rc| *rc.borrow());
+        return _M_count_5.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*_M_count_6.with(Value::clone).borrow_mut()).postfix_inc();
+        (*_M_count_5.with(Value::clone).borrow_mut()).postfix_inc();
     }
     pub fn reset() {
-        _M_count_6.with(|rc| *rc.borrow_mut() = 0_());
+        _M_count_5.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -132,7 +124,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub fn new(id: Option<()>, throw_on_copy: Option<()>) -> Self {
         let mut id: () =
-            id.unwrap_or_else(|| (*next_id__7.with(Value::clone).borrow_mut()).postfix_dec());
+            id.unwrap_or_else(|| (*next_id__6.with(Value::clone).borrow_mut()).postfix_dec());
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| false);
         Self {
             id_: id,
@@ -161,65 +153,16 @@ impl __gnu_test_copy_tracker {
         ({ __gnu_test_destructor::reset() });
     }
 }
-impl std::cmp::Ord for __gnu_test_copy_tracker {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for __gnu_test_copy_tracker {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for __gnu_test_copy_tracker {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for __gnu_test_copy_tracker {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_9(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for __gnu_test_copy_tracker {}
 impl Clone for __gnu_test_copy_tracker {
     fn clone(&self) -> Self {
         let __src: Value<__gnu_test_copy_tracker> =
@@ -235,12 +178,12 @@ impl Default for __gnu_test_copy_tracker {
         { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub fn operator_eq_9(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } == {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
 }
-pub fn operator_lt_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } < {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
@@ -251,7 +194,7 @@ pub struct __gnu_test_semaphore {
     #[offset(0)]
     sem_set_: (),
     #[offset(4)]
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -287,7 +230,7 @@ impl X {
             i_: i,
             p_: (p).clone(),
         };
-        (*sp_10.with(Value::clone).borrow_mut()).c.postfix_inc();
+        (*sp_9.with(Value::clone).borrow_mut()).c.postfix_inc();
         __this
     }
     pub fn copy_from(x: Ptr<X>) -> Self {
@@ -295,7 +238,7 @@ impl X {
             i_: x.with(|__s| __s.i_),
             p_: x.with(|__s| __s.p_.clone()),
         };
-        (*sp_10.with(Value::clone).borrow_mut()).cc.postfix_inc();
+        (*sp_9.with(Value::clone).borrow_mut()).cc.postfix_inc();
         __this
     }
     pub fn move_from(x: Ptr<X>) -> Self {
@@ -303,7 +246,7 @@ impl X {
             i_: x.with(|__s| __s.i_),
             p_: x.with(|__s| __s.p_.clone()),
         };
-        (*sp_10.with(Value::clone).borrow_mut()).mc.postfix_inc();
+        (*sp_9.with(Value::clone).borrow_mut()).mc.postfix_inc();
         __this
     }
 }
@@ -316,7 +259,7 @@ impl Clone for X {
         X::copy_from(__src.as_pointer())
     }
 }
-pub fn operator_shl_11(os: Ptr<()>, sp: Ptr<X_special>) -> Ptr<()> {
+pub fn operator_shl_10(os: Ptr<()>, sp: Ptr<X_special>) -> Ptr<()> {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -326,9 +269,9 @@ pub fn operator_shl_11(os: Ptr<()>, sp: Ptr<X_special>) -> Ptr<()> {
     return (os).clone();
 }
 thread_local!(
-    pub static sp_10: Value<X_special> = Rc::new(RefCell::new(<X_special>::default()));
+    pub static sp_9: Value<X_special> = Rc::new(RefCell::new(<X_special>::default()));
 );
-pub fn operator_eq_12(lhs: Ptr<X_special>, rhs: Ptr<X_special>) -> () {
+pub fn operator_eq_11(lhs: Ptr<X_special>, rhs: Ptr<X_special>) -> () {
     return ((((({ lhs.with(|__s| __s.c) } == { rhs.with(|__s| __s.c) })
         && ({ lhs.with(|__s| __s.dt) } == { rhs.with(|__s| __s.dt) }))
         && ({ lhs.with(|__s| __s.cc) } == { rhs.with(|__s| __s.cc) }))
@@ -336,7 +279,7 @@ pub fn operator_eq_12(lhs: Ptr<X_special>, rhs: Ptr<X_special>) -> () {
         && ({ lhs.with(|__s| __s.mc) } == { rhs.with(|__s| __s.mc) }))
         && ({ lhs.with(|__s| __s.ma) } == { rhs.with(|__s| __s.ma) });
 }
-pub fn test01_13() {
+pub fn test01_12() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 0_(),
         dt: 1_(),
@@ -355,9 +298,9 @@ pub fn test01_13() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -367,29 +310,18 @@ pub fn test01_13() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (144_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test01()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -398,25 +330,14 @@ pub fn test01_13() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (145_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test01()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test02_15() {
+pub fn test02_13() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 0_(),
         dt: 0_(),
@@ -435,9 +356,9 @@ pub fn test02_15() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -447,29 +368,18 @@ pub fn test02_15() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (182_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test02()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -478,25 +388,14 @@ pub fn test02_15() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (183_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test02()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test03_16() {
+pub fn test03_14() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 1_(),
         dt: 1_(),
@@ -513,9 +412,9 @@ pub fn test03_16() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -523,29 +422,18 @@ pub fn test03_16() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (218_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test03()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -554,25 +442,14 @@ pub fn test03_16() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (219_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test03()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test04_17() {
+pub fn test04_15() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 0_(),
         dt: 3_(),
@@ -591,9 +468,9 @@ pub fn test04_17() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -603,29 +480,18 @@ pub fn test04_17() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (256_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test04()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -634,25 +500,14 @@ pub fn test04_17() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (257_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test04()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test05_18() {
+pub fn test05_16() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 0_(),
         dt: 3_(),
@@ -671,9 +526,9 @@ pub fn test05_18() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -683,29 +538,18 @@ pub fn test05_18() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (294_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test05()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -714,25 +558,14 @@ pub fn test05_18() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (295_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test05()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test06_19() {
+pub fn test06_17() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 1_(),
         dt: 4_(),
@@ -749,9 +582,9 @@ pub fn test06_19() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -759,29 +592,18 @@ pub fn test06_19() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (330_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test06()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -790,25 +612,14 @@ pub fn test06_19() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (331_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test06()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test07_20() {
+pub fn test07_18() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 0_(),
         dt: 0_(),
@@ -827,9 +638,9 @@ pub fn test07_20() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -839,29 +650,18 @@ pub fn test07_20() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (368_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test07()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -870,25 +670,14 @@ pub fn test07_20() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (369_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test07()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test08_21() {
+pub fn test08_19() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 0_(),
         dt: 0_(),
@@ -907,9 +696,9 @@ pub fn test08_21() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -919,29 +708,18 @@ pub fn test08_21() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (406_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test08()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -950,25 +728,14 @@ pub fn test08_21() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (407_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test08()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test09_22() {
+pub fn test09_20() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 1_(),
         dt: 1_(),
@@ -985,9 +752,9 @@ pub fn test09_22() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -995,29 +762,18 @@ pub fn test09_22() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (442_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test09()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1026,25 +782,14 @@ pub fn test09_22() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (443_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test09()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test10_23() {
+pub fn test10_21() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 0_(),
         dt: 3_(),
@@ -1063,9 +808,9 @@ pub fn test10_23() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -1075,29 +820,18 @@ pub fn test10_23() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (480_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test10()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1106,25 +840,14 @@ pub fn test10_23() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (481_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test10()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test11_24() {
+pub fn test11_22() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 0_(),
         dt: 3_(),
@@ -1143,9 +866,9 @@ pub fn test11_24() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -1155,29 +878,18 @@ pub fn test11_24() {
         unimplemented!();
         let x: Value<X> = Rc::new(RefCell::new(X::new({ 0_() }, { Ptr::<()>::null() })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (518_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test11()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1186,25 +898,14 @@ pub fn test11_24() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (519_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test11()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test12_25() {
+pub fn test12_23() {
     let expected: Value<X_special> = Rc::new(RefCell::new(X_special {
         c: 1_(),
         dt: 4_(),
@@ -1221,9 +922,9 @@ pub fn test12_25() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*ins.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*ins.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     {
         let mut v: () = unimplemented!();
@@ -1231,29 +932,18 @@ pub fn test12_25() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        sp_10.with(|rc| *rc.borrow_mut() = <X_special>::default());
+        sp_9.with(|rc| *rc.borrow_mut() = <X_special>::default());
         unimplemented!();
-        (*emp.borrow_mut()) = (*sp_10.with(Value::clone).borrow()).clone();
+        (*emp.borrow_mut()) = (*sp_9.with(Value::clone).borrow()).clone();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, emp.as_pointer())
+            operator_eq_11(_lhs, emp.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (554_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test12()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == emp")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1262,20 +952,9 @@ pub fn test12_25() {
         __do_while = false;
         if !({
             let _lhs: Ptr<X_special> = ins.as_pointer();
-            operator_eq_12(_lhs, expected.as_pointer())
+            operator_eq_11(_lhs, expected.as_pointer())
         }) {
-            ({
-                __builtin_fprintf_14(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"insert_vs_emplace.cc")).into(),
-                        (555_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test12()")).into(),
-                        (Ptr::<()>::from_string_literal(b"ins == expected")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1285,92 +964,68 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_13() });
-    ({ test02_15() });
-    ({ test03_16() });
-    ({ test04_17() });
-    ({ test05_18() });
-    ({ test06_19() });
-    ({ test07_20() });
-    ({ test08_21() });
-    ({ test09_22() });
-    ({ test10_23() });
-    ({ test11_24() });
-    ({ test12_25() });
+    ({ test01_12() });
+    ({ test02_13() });
+    ({ test03_14() });
+    ({ test04_15() });
+    ({ test05_16() });
+    ({ test06_17() });
+    ({ test07_18() });
+    ({ test08_19() });
+    ({ test09_20() });
+    ({ test10_21() });
+    ({ test11_22() });
+    ({ test12_23() });
     0
 }
 impl __gnu_test_semaphore {
     pub fn new() -> Self {
         let __this: Value<__gnu_test_semaphore> = Rc::new(RefCell::new(Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_26() }) as ::libc::pid_t));
-        field!(this, sem_set_)
-            .write(({ semget_27(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+        field!(this, pid_).write(unimplemented!());
+        field!(this, sem_set_).write(unimplemented!());
         if (this.with(|__s| __s.sem_set_) == -1_()) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not obtain semaphore set",
-                ))
-            });
+            unimplemented!();
         }
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if (({
-            semctl_28(
-                this.with(|__s| __s.sem_set_),
-                0_(),
-                16_(),
-                Box::new([((*val.borrow()).clone()).into()]),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not initialize semaphore",
-                ))
-            });
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_29(size: Option<()>) {
+pub fn set_memory_limits_24(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_30((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_31((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_30((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_31((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_30((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_31((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn set_file_limit_32(mut size: ()) {
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+pub fn set_file_limit_25(mut size: ()) {
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_30((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_31((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn verify_demangle_33(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_26(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
-    let mut demangled: Ptr<()> = ({
-        __cxa_demangle_34(
-            (mangled).clone(),
-            Ptr::<()>::null(),
-            Ptr::<()>::null(),
-            (status.as_pointer()),
-        )
-    });
+    let mut demangled: Ptr<()> = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).clone();
     } else {
@@ -1396,13 +1051,13 @@ pub fn verify_demangle_33(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if unimplemented!() {
-        ({ __throw_runtime_error_3((s).clone()) });
+    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    if !(unimplemented!()) {
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_35(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_27(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -1419,19 +1074,17 @@ pub fn run_tests_wrapped_locale_35(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                ({
-                    __builtin_fprintf_14 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_36(
+pub fn run_tests_wrapped_env_28(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -1451,7 +1104,7 @@ pub fn run_tests_wrapped_env_36(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 thread_local!(
@@ -1464,16 +1117,16 @@ thread_local!(
     static throw_on__2: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static count__4: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__3: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static throw_on__5: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__4: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static _M_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    static _M_count_5: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static next_id__7: Value<()> = Rc::new(RefCell::new(0_()));
+    static next_id__6: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
@@ -1486,7 +1139,7 @@ impl __gnu_test_semun {
     pub fn val(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
-    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<semid_ds>> {
+    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<()>> {
         this.reinterpret_cast()
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<()>> {
@@ -1501,7 +1154,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_38(
+pub fn test_tm_29(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1511,20 +1164,20 @@ pub fn test_tm_38(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_39.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_39.with(|rc| *rc.borrow());
+) -> () {
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_30.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_39: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_30: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait XImpl {
     fn destructor(&self);
@@ -1533,18 +1186,18 @@ pub trait XImpl {
 }
 impl XImpl for Ptr<X> {
     fn destructor(&self) {
-        (*sp_10.with(Value::clone).borrow_mut()).dt.postfix_inc();
+        (*sp_9.with(Value::clone).borrow_mut()).dt.postfix_inc();
     }
     fn copy_assign(&self, x: Ptr<X>) -> Ptr<X> {
         field!((*self), i_).write({ x.with(|__s| __s.i_) });
         field!((*self), p_).write({ x.with(|__s| __s.p_.clone()) });
-        (*sp_10.with(Value::clone).borrow_mut()).ca.postfix_inc();
+        (*sp_9.with(Value::clone).borrow_mut()).ca.postfix_inc();
         return (*self).clone();
     }
     fn move_assign(&self, x: Ptr<X>) -> Ptr<X> {
         field!((*self), i_).write({ x.with(|__s| __s.i_) });
         field!((*self), p_).write({ x.with(|__s| __s.p_.clone()) });
-        (*sp_10.with(Value::clone).borrow_mut()).ma.postfix_inc();
+        (*sp_9.with(Value::clone).borrow_mut()).ma.postfix_inc();
         return (*self).clone();
     }
 }
@@ -1620,59 +1273,30 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_26() })) {
-            ({
-                semctl_28(
-                    (*self).with(|__s| __s.sem_set_),
-                    0_(),
-                    0_(),
-                    Box::new([((*val.borrow()).clone()).into()]),
-                )
-            });
+        if ((*self).with(|__s| __s.pid_) == unimplemented!()) {
+            unimplemented!();
         }
     }
     fn signal(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_37(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not signal semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
     fn wait(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_37(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not wait for semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = sp_10.with(|_| ());
+    let _ = sp_9.with(|_| ());
     let _ = count_0.with(|_| ());
     let _ = count__1.with(|_| ());
     let _ = throw_on__2.with(|_| ());
-    let _ = count__4.with(|_| ());
-    let _ = throw_on__5.with(|_| ());
-    let _ = _M_count_6.with(|_| ());
-    let _ = next_id__7.with(|_| ());
+    let _ = count__3.with(|_| ());
+    let _ = throw_on__4.with(|_| ());
+    let _ = _M_count_5.with(|_| ());
+    let _ = next_id__6.with(|_| ());
 }

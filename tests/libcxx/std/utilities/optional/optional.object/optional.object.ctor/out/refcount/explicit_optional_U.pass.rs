@@ -53,23 +53,11 @@ impl X {
         __this
     }
 }
-impl std::cmp::PartialEq for X {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(X {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(X {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for X {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for X {}
 thread_local!(
     pub static count_3: Value<()> = Rc::new(RefCell::new(0_()));
 );

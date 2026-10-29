@@ -36,7 +36,7 @@ pub fn sputn_seekoff_0(
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut c: () = unimplemented!();
         if (unimplemented!() < 0_()) {
-            (*p1.borrow_mut()) = unimplemented!();
+            unimplemented!();
             unimplemented!();
             c = ('^' as ());
         } else {
@@ -56,7 +56,7 @@ pub fn sputn_seekoff_0(
         unimplemented!();
         unimplemented!().write(('Z' as ()));
         unimplemented!();
-        unimplemented!().write(({ toupper_1(c) }));
+        unimplemented!().write(unimplemented!());
         unimplemented!();
         let new_pos: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -80,14 +80,14 @@ pub fn sputn_seekoff_0(
         i.prefix_inc();
     }
 }
-pub fn sputn_not_open_2() {
+pub fn sputn_not_open_1() {
     let mut data: () = unimplemented!();
     let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut len: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn sputn_not_open_wchar_3() {
+pub fn sputn_not_open_wchar_2() {
     let mut data: () = unimplemented!();
     let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut len: () = unimplemented!();
@@ -114,8 +114,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ sputn_not_open_2() });
-    ({ sputn_not_open_wchar_3() });
+    ({ sputn_not_open_1() });
+    ({ sputn_not_open_wchar_2() });
     ({ sputn_seekoff_0(Ptr::<()>::null(), 10_(), 21_(), -27_(), 1_()) });
     ({ sputn_seekoff_0(Ptr::<()>::null(), 10_(), 1_(), -27_(), 1_()) });
     ({ sputn_seekoff_0(Ptr::<()>::null(), 10_(), 10_(), 14_(), 12_()) });

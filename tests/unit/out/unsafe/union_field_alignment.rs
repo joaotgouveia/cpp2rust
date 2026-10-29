@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union anon_0 {
-    pub bytes: [u8; 1],
-    pub aligner: *mut ::libc::c_void,
+    pub bytes: [(); 1],
+    pub aligner: (),
 }
 impl Default for anon_0 {
     fn default() -> Self {
@@ -29,11 +29,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut n: node = <node>::default();
     n.next = std::ptr::null_mut();
-    (*n.x.bytes.as_mut_ptr().add((0) as usize)) = 171_u8;
-    assert!((((((*n.x.bytes.as_mut_ptr().add((0) as usize)) as i32) == (171)) as i32) != 0));
-    return 0;
+    (*n.x.bytes.as_mut_ptr().add((0_()) as usize)) = 171_();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

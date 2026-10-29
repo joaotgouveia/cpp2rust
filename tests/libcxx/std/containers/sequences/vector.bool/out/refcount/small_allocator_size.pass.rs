@@ -6,13 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-impl sized_allocator_bool__unsigned_char__signed_char_ {
-    pub fn new_1(a: Ptr<sized_allocator_unsigned_char__unsigned_char__signed_char_>) -> Self {
-        Self {
-            data_: a.with(|__s| __s.data_),
-        }
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_char__signed_char_ {
@@ -20,11 +13,11 @@ pub struct sized_allocator_bool__unsigned_char__signed_char_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_char__signed_char_ {
-    pub fn new_2(mut d: ()) -> Self {
+    pub fn new(mut d: ()) -> Self {
         Self { data_: d }
     }
 }
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     pub fn new_1(a: Ptr<sized_allocator_bool__unsigned_char__signed_char_>) -> Self {
         Self {
             data_: a.with(|__s| __s.data_),
@@ -33,18 +26,11 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+pub struct sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     #[offset(0)]
     data_: (),
 }
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {}
-impl sized_allocator_bool__unsigned_short__short_ {
-    pub fn new_1(a: Ptr<sized_allocator_unsigned_short__unsigned_short__short_>) -> Self {
-        Self {
-            data_: a.with(|__s| __s.data_),
-        }
-    }
-}
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_short__short_ {
@@ -52,11 +38,11 @@ pub struct sized_allocator_bool__unsigned_short__short_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_short__short_ {
-    pub fn new_2(mut d: ()) -> Self {
+    pub fn new(mut d: ()) -> Self {
         Self { data_: d }
     }
 }
-impl sized_allocator_unsigned_short__unsigned_short__short_ {
+impl sized_allocator_unsigned_long__unsigned_short__short_ {
     pub fn new_1(a: Ptr<sized_allocator_bool__unsigned_short__short_>) -> Self {
         Self {
             data_: a.with(|__s| __s.data_),
@@ -65,18 +51,11 @@ impl sized_allocator_unsigned_short__unsigned_short__short_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct sized_allocator_unsigned_short__unsigned_short__short_ {
+pub struct sized_allocator_unsigned_long__unsigned_short__short_ {
     #[offset(0)]
     data_: (),
 }
-impl sized_allocator_unsigned_short__unsigned_short__short_ {}
-impl sized_allocator_bool__unsigned_int__int_ {
-    pub fn new_1(a: Ptr<sized_allocator_unsigned_int__unsigned_int__int_>) -> Self {
-        Self {
-            data_: a.with(|__s| __s.data_),
-        }
-    }
-}
+impl sized_allocator_unsigned_long__unsigned_short__short_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_int__int_ {
@@ -84,11 +63,11 @@ pub struct sized_allocator_bool__unsigned_int__int_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_int__int_ {
-    pub fn new_2(mut d: ()) -> Self {
+    pub fn new(mut d: ()) -> Self {
         Self { data_: d }
     }
 }
-impl sized_allocator_unsigned_int__unsigned_int__int_ {
+impl sized_allocator_unsigned_long__unsigned_int__int_ {
     pub fn new_1(a: Ptr<sized_allocator_bool__unsigned_int__int_>) -> Self {
         Self {
             data_: a.with(|__s| __s.data_),
@@ -97,18 +76,11 @@ impl sized_allocator_unsigned_int__unsigned_int__int_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct sized_allocator_unsigned_int__unsigned_int__int_ {
+pub struct sized_allocator_unsigned_long__unsigned_int__int_ {
     #[offset(0)]
     data_: (),
 }
-impl sized_allocator_unsigned_int__unsigned_int__int_ {}
-impl sized_allocator_bool__unsigned_long__long_ {
-    pub fn new_1(a: Ptr<sized_allocator_unsigned_long__unsigned_long__long_>) -> Self {
-        Self {
-            data_: a.with(|__s| __s.data_),
-        }
-    }
-}
+impl sized_allocator_unsigned_long__unsigned_int__int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_long__long_ {
@@ -116,7 +88,7 @@ pub struct sized_allocator_bool__unsigned_long__long_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_long__long_ {
-    pub fn new_2(mut d: ()) -> Self {
+    pub fn new(mut d: ()) -> Self {
         Self { data_: d }
     }
 }
@@ -275,17 +247,17 @@ impl sized_allocator_bool__unsigned_short__short_Impl
     for Ptr<sized_allocator_bool__unsigned_short__short_>
 {
 }
-pub trait sized_allocator_unsigned_char__unsigned_char__signed_char_Impl {
+pub trait sized_allocator_unsigned_long__unsigned_char__signed_char_Impl {
     fn allocate(&self, n: ()) -> Ptr<()>;
     fn deallocate(&self, p: Ptr<()>, n: ());
     fn max_size(&self) -> ();
 }
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_Impl
-    for Ptr<sized_allocator_unsigned_char__unsigned_char__signed_char_>
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_Impl
+    for Ptr<sized_allocator_unsigned_long__unsigned_char__signed_char_>
 {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         if (n
-            > ({ sized_allocator_unsigned_char__unsigned_char__signed_char_Impl::max_size(self) }))
+            > ({ sized_allocator_unsigned_long__unsigned_char__signed_char_Impl::max_size(self) }))
         {
             unimplemented!();
         }
@@ -298,16 +270,16 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_Impl
         return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-pub trait sized_allocator_unsigned_int__unsigned_int__int_Impl {
+pub trait sized_allocator_unsigned_long__unsigned_int__int_Impl {
     fn allocate(&self, n: ()) -> Ptr<()>;
     fn deallocate(&self, p: Ptr<()>, n: ());
     fn max_size(&self) -> ();
 }
-impl sized_allocator_unsigned_int__unsigned_int__int_Impl
-    for Ptr<sized_allocator_unsigned_int__unsigned_int__int_>
+impl sized_allocator_unsigned_long__unsigned_int__int_Impl
+    for Ptr<sized_allocator_unsigned_long__unsigned_int__int_>
 {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
-        if (n > ({ sized_allocator_unsigned_int__unsigned_int__int_Impl::max_size(self) })) {
+        if (n > ({ sized_allocator_unsigned_long__unsigned_int__int_Impl::max_size(self) })) {
             unimplemented!();
         }
         return unimplemented!();
@@ -340,16 +312,16 @@ impl sized_allocator_unsigned_long__unsigned_long__long_Impl
         return (unimplemented!() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-pub trait sized_allocator_unsigned_short__unsigned_short__short_Impl {
+pub trait sized_allocator_unsigned_long__unsigned_short__short_Impl {
     fn allocate(&self, n: ()) -> Ptr<()>;
     fn deallocate(&self, p: Ptr<()>, n: ());
     fn max_size(&self) -> ();
 }
-impl sized_allocator_unsigned_short__unsigned_short__short_Impl
-    for Ptr<sized_allocator_unsigned_short__unsigned_short__short_>
+impl sized_allocator_unsigned_long__unsigned_short__short_Impl
+    for Ptr<sized_allocator_unsigned_long__unsigned_short__short_>
 {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
-        if (n > ({ sized_allocator_unsigned_short__unsigned_short__short_Impl::max_size(self) })) {
+        if (n > ({ sized_allocator_unsigned_long__unsigned_short__short_Impl::max_size(self) })) {
             unimplemented!();
         }
         return unimplemented!();

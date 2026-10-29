@@ -16,8 +16,8 @@ pub fn test_constexpr_0() -> () {
     }
     if (67_()
         != ({
-            let ___new_value: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            exchange_1(v.as_pointer(), ___new_value.as_pointer())
+            let ___new_val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            exchange_1(v.as_pointer(), ___new_val.as_pointer())
         }))
         || ((*v.borrow()) != 0_())
     {

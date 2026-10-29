@@ -101,17 +101,7 @@ pub unsafe fn test_eprintf_0(
     args_4: *const (),
     args_5: *const *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-            (*args_4),
-            (*args_5),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_1(
     mut fmt: *const (),
@@ -119,24 +109,10 @@ pub unsafe fn test_eprintf_1(
     args_2: *const *const (),
     args_3: *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_2(mut fmt: *const (), args: *const *const ()) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_log_3(
     mut condition: *const (),
@@ -252,7 +228,7 @@ pub unsafe fn test_transcode_14(mut first: (), mut last: (), mut out_it: ()) -> 
             });
         }
     }
-    return out_it;
+    return unimplemented!();
 }
 pub unsafe fn test_transcode_15(mut first: *const (), mut last: *const (), mut out_it: ()) -> () {
     'loop_: while ((first) != (last)) {
@@ -268,7 +244,7 @@ pub unsafe fn test_transcode_15(mut first: *const (), mut last: *const (), mut o
             });
         }
     }
-    return out_it;
+    return unimplemented!();
 }
 pub unsafe fn operator_shl_16(os: *mut (), loc: *const ()) -> *mut () {
     return &mut (*unimplemented!());
@@ -1427,7 +1403,7 @@ pub unsafe fn test_char_46() {
             "sizeof(CharT) == 4"
         );;
         let x: () = 131071_();
-        let y: u32 = 131071_u32;
+        let y: () = 131071_();
         const _: () = assert!(true, "x == y");;
         (unsafe {
             let mut _args: () = (69821 as ());
@@ -2008,7 +1984,7 @@ pub unsafe fn test_string_48() {
             "sizeof(CharT) == 4"
         );;
         let x: () = 131071_();
-        let y: u32 = 131071_u32;
+        let y: () = 131071_();
         const _: () = assert!(true, "x == y");;
         (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
@@ -4180,7 +4156,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 2])>(0)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{df}\"".as_ptr(), 8_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xdf\0"),
             )
@@ -4189,7 +4165,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 2])>(0)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{ef}\"".as_ptr(), 8_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xef\0"),
             )
@@ -4198,7 +4174,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{ef}\\x{bf}\"".as_ptr(), 14_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xef\xbf\0"),
             )
@@ -4207,7 +4183,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 2])>(0)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{f7}\"".as_ptr(), 8_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf7\0"),
             )
@@ -4216,7 +4192,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{f7}\\x{bf}\"".as_ptr(), 14_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf7\xbf\0"),
             )
@@ -4225,7 +4201,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 4])>(2)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{f7}\\x{bf}\\x{bf}\"".as_ptr(), 20_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf7\xbf\xbf\0"),
             )
@@ -4234,7 +4210,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{df}a\"".as_ptr(), 9_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xdfa\0"),
             )
@@ -4243,7 +4219,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{ef}a\"".as_ptr(), 9_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xefa\0"),
             )
@@ -4252,7 +4228,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 4])>(2)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{ef}\\x{bf}a\"".as_ptr(), 15_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xef\xbfa\0"),
             )
@@ -4261,7 +4237,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 3])>(1)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{f7}a\"".as_ptr(), 9_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf7a\0"),
             )
@@ -4270,7 +4246,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 4])>(2)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{f7}\\x{bf}a\"".as_ptr(), 15_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf7\xbfa\0"),
             )
@@ -4279,7 +4255,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\x{f7}\\x{bf}\\x{bf}a\"".as_ptr(), 21_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf7\xbf\xbfa\0"),
             )
@@ -4288,12 +4264,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 9])>(4)
             .call(
-                (unsafe {
-                    operator_literal_sv_60(
-                        c"\"a\\x{f1}\\x{80}\\x{80}\\x{e1}\\x{80}\\x{c2}b\"".as_ptr(),
-                        40_(),
-                    )
-                }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"a\xf1\x80\x80\xe1\x80\xc2b\0"),
             )
@@ -4302,7 +4273,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
-                (unsafe { operator_literal_sv_60(c"\"\\u{10ffff}\"".as_ptr(), 12_()) }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf4\x8f\xbf\xbf\0"),
             )
@@ -4311,9 +4282,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
-                (unsafe {
-                    operator_literal_sv_60(c"\"\\x{f4}\\x{90}\\x{80}\\x{80}\"".as_ptr(), 26_())
-                }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf4\x90\x80\x80\0"),
             )
@@ -4322,9 +4291,7 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
-                (unsafe {
-                    operator_literal_sv_60(c"\"\\x{f5}\\x{b1}\\x{b2}\\x{b3}\"".as_ptr(), 26_())
-                }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf5\xb1\xb2\xb3\0"),
             )
@@ -4333,30 +4300,18 @@ pub unsafe fn test_ill_formed_utf8_59() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 5])>(3)
             .call(
-                (unsafe {
-                    operator_literal_sv_60(c"\"\\x{f7}\\x{bf}\\x{bf}\\x{bf}\"".as_ptr(), 26_())
-                }),
+                unimplemented!(),
                 unimplemented!(),
                 &std::mem::transmute(*b"\xf7\xbf\xbf\xbf\0"),
             )
     });
 }
-pub unsafe fn test_ill_formed_utf32_61() {
+pub unsafe fn test_ill_formed_utf32_60() {
     (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 2])>(5)
             .call(
-                (unsafe {
-                    operator_literal_sv_62(
-                        [
-                            34 as (), 92 as (), 117 as (), 123 as (), 49 as (), 48 as (),
-                            102 as (), 102 as (), 102 as (), 102 as (), 125 as (), 34 as (),
-                            0 as (),
-                        ]
-                        .as_ptr(),
-                        12_(),
-                    )
-                }),
+                unimplemented!(),
                 unimplemented!(),
                 &[1114111 as (), 0 as ()],
             )
@@ -4365,16 +4320,7 @@ pub unsafe fn test_ill_formed_utf32_61() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 2])>(5)
             .call(
-                (unsafe {
-                    operator_literal_sv_62(
-                        [
-                            34 as (), 92 as (), 120 as (), 123 as (), 49 as (), 49 as (), 48 as (),
-                            48 as (), 48 as (), 48 as (), 125 as (), 34 as (), 0 as (),
-                        ]
-                        .as_ptr(),
-                        12_(),
-                    )
-                }),
+                unimplemented!(),
                 unimplemented!(),
                 &[1114112 as (), 0 as ()],
             )
@@ -4383,17 +4329,7 @@ pub unsafe fn test_ill_formed_utf32_61() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_format_27))
             .spec::<fn((), (), *const [(); 2])>(5)
             .call(
-                (unsafe {
-                    operator_literal_sv_62(
-                        [
-                            34 as (), 92 as (), 120 as (), 123 as (), 102 as (), 102 as (),
-                            102 as (), 102 as (), 102 as (), 102 as (), 102 as (), 102 as (),
-                            125 as (), 34 as (), 0 as (),
-                        ]
-                        .as_ptr(),
-                        14_(),
-                    )
-                }),
+                unimplemented!(),
                 unimplemented!(),
                 &[4294967295 as (), 0 as ()],
             )
@@ -4418,7 +4354,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_57() });
     (unsafe { test_58() });
     (unsafe { test_ill_formed_utf8_59() });
-    (unsafe { test_ill_formed_utf32_61() });
+    (unsafe { test_ill_formed_utf32_60() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

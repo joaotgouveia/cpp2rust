@@ -14,7 +14,7 @@ pub fn testConstexprSpan_0(s: ()) -> () {
         let __rhs = (*ret.borrow()) && (unimplemented!());
         (*ret.borrow_mut()) = __rhs;
     } else {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
+        let __rhs = (*ret.borrow()) && (!(unimplemented!()));
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow()) && (unimplemented!() == unimplemented!());
@@ -29,7 +29,7 @@ pub fn testConstexprSpan_1(s: ()) -> () {
         let __rhs = (*ret.borrow()) && (unimplemented!());
         (*ret.borrow_mut()) = __rhs;
     } else {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
+        let __rhs = (*ret.borrow()) && (!(unimplemented!()));
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow()) && (unimplemented!() == unimplemented!());
@@ -44,7 +44,7 @@ pub fn testConstexprSpan_2(s: ()) -> () {
         let __rhs = (*ret.borrow()) && (unimplemented!());
         (*ret.borrow_mut()) = __rhs;
     } else {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
+        let __rhs = (*ret.borrow()) && (!(unimplemented!()));
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow()) && (unimplemented!() == unimplemented!());
@@ -59,7 +59,7 @@ pub fn testConstexprSpan_3(s: ()) -> () {
         let __rhs = (*ret.borrow()) && (unimplemented!());
         (*ret.borrow_mut()) = __rhs;
     } else {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
+        let __rhs = (*ret.borrow()) && (!(unimplemented!()));
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow()) && (unimplemented!() == unimplemented!());
@@ -74,7 +74,7 @@ pub fn testConstexprSpan_4(s: ()) -> () {
         let __rhs = (*ret.borrow()) && (unimplemented!());
         (*ret.borrow_mut()) = __rhs;
     } else {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
+        let __rhs = (*ret.borrow()) && (!(unimplemented!()));
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow()) && (unimplemented!() == unimplemented!());
@@ -149,7 +149,7 @@ pub fn testConstexprSpan_10(s: ()) -> () {
         let __rhs = (*ret.borrow()) && (unimplemented!());
         (*ret.borrow_mut()) = __rhs;
     } else {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
+        let __rhs = (*ret.borrow()) && (!(unimplemented!()));
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow()) && (unimplemented!() == unimplemented!());
@@ -249,12 +249,11 @@ pub fn testRuntimeSpan_20(s: ()) {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
-impl std::cmp::PartialEq for A {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_21(self.clone(), other.clone()) }
+impl CppEq for A {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_21(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for A {}
 pub fn operator_eq_21(mut _a0: A, mut _a1: A) -> () {
     return true;
 }

@@ -43,12 +43,6 @@ pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_
     ptr_: Ptr<()>,
 }
 impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -57,38 +51,29 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
     ptr_: Ptr<()>,
 }
-impl min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
+impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn new_1(mut p: Ptr<()>) -> Self {
         Self { ptr_: (p).clone() }
     }
-    pub fn pointer_to(
-        t: Ptr<()>,
-    ) -> min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
+    pub fn new_2(mut _a0: ()) -> Self {
+        Self {
+            ptr_: Ptr::<()>::null(),
+        }
+    }
+    pub fn pointer_to(t: Ptr<()>) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
+            unimplemented!()
+        });
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: (),
-}
-impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_5(
+pub fn operator_eq_4(
     mut _a0: min_allocator_std_pair_const_int__int__,
     mut _a1: min_allocator_std_pair_const_int__int__,
 ) -> () {
@@ -97,12 +82,11 @@ pub fn operator_eq_5(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__int__ {}
-impl std::cmp::PartialEq for min_allocator_std_pair_const_int__int__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_5(self.clone(), other.clone()) }
+impl CppEq for min_allocator_std_pair_const_int__int__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_std_pair_const_int__int__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Counter_base {}
@@ -117,70 +101,27 @@ impl Counter_int_ {
         let __this: Counter_int_ = Self {
             data_: (data.read()),
         };
-        (*gConstructed_6.with(Value::clone).borrow_mut()).prefix_inc();
+        (*gConstructed_5.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(rhs: Ptr<Counter_int_>) -> Self {
         let __this: Counter_int_ = Self {
             data_: rhs.with(|__s| __s.data_),
         };
-        (*gConstructed_6.with(Value::clone).borrow_mut()).prefix_inc();
+        (*gConstructed_5.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
 }
-impl std::cmp::Ord for Counter_int_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if Counter_int_Impl::operator_lt(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if Counter_int_Impl::operator_lt(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Counter_int_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        Counter_int_Impl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Counter_int_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Counter_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        Counter_int_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for Counter_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            Counter_int_Impl::operator_eq(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for Counter_int_ {}
 impl Clone for Counter_int_ {
     fn clone(&self) -> Self {
         let __src: Value<Counter_int_> = Rc::new(RefCell::new(Counter_int_ {
@@ -190,13 +131,32 @@ impl Clone for Counter_int_ {
     }
 }
 thread_local!(
-    pub static gConstructed_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static gConstructed_5: Value<()> = Rc::new(RefCell::new(0_()));
 );
+pub fn test_6(c: Ptr<()>) -> () {
+    let mut sz: () = unimplemented!();
+    let mut some_key: () = { unimplemented!().first };
+    let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    'loop_: while !(unimplemented!()) {
+        let mut key_value: () = { unimplemented!().first };
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        sz.prefix_dec();
+        {
+            unimplemented!();
+            unimplemented!().write(some_key);
+            unimplemented!();
+        }
+        unimplemented!();
+        unimplemented!();
+    }
+    unimplemented!();
+    return true;
+}
 pub fn test_7(c: Ptr<()>) -> () {
     let mut sz: () = unimplemented!();
     let mut some_key: () = { unimplemented!().first };
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let mut key_value: () = { unimplemented!().first };
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         sz.prefix_dec();
@@ -213,31 +173,12 @@ pub fn test_7(c: Ptr<()>) -> () {
 }
 pub fn test_8(c: Ptr<()>) -> () {
     let mut sz: () = unimplemented!();
-    let mut some_key : ()  = ( { min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , ) } )  .with(|__s| __s . first )  ;
-    let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while unimplemented!() {
-        let mut key_value : ()  = ( { min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , ) } )  .with(|__s| __s . first )  ;
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        sz.prefix_dec();
-        {
-            unimplemented!();
-            unimplemented!().write(some_key);
-            unimplemented!();
-        }
-        unimplemented!();
-        unimplemented!();
-    }
-    unimplemented!();
-    return true;
-}
-pub fn test_9(c: Ptr<()>) -> () {
-    let mut sz: () = unimplemented!();
     let some_key: Value<Counter_int_> = Rc::new(RefCell::new(Counter_int_::copy_from({
         field_ptr!(unimplemented!(), first)
     })));
     let _dtor_some_key = ScopedDestructor::new(&some_key, |__p| __p.destructor());
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let key_value: Value<Counter_int_> = Rc::new(RefCell::new(Counter_int_::copy_from({
             field_ptr!(unimplemented!(), first)
         })));
@@ -255,14 +196,14 @@ pub fn test_9(c: Ptr<()>) -> () {
     unimplemented!();
     return true;
 }
-pub fn test_10() -> () {
+pub fn test_9() -> () {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_7(m.as_pointer()) });
+        ({ test_6(m.as_pointer()) });
     }
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_8(m.as_pointer()) });
+        ({ test_7(m.as_pointer()) });
     }
     return true;
 }
@@ -289,10 +230,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({ test_9(m.as_pointer()) });
+        ({ test_8(m.as_pointer()) });
         unimplemented!();
     }
-    ({ test_10() });
+    ({ test_9() });
     return 0_();
 }
 pub trait Counter_int_Impl {
@@ -313,7 +254,7 @@ impl Counter_int_Impl for Ptr<Counter_int_> {
         return (*self).clone();
     }
     fn destructor(&self) {
-        (*gConstructed_6.with(Value::clone).borrow_mut()).prefix_dec();
+        (*gConstructed_5.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn operator_eq(&self, x: Ptr<Counter_int_>) -> () {
         return ({ (*self).with(|__s| __s.data_) } == { x.with(|__s| __s.data_) });
@@ -338,83 +279,60 @@ pub trait min_allocator_std_pair_const_int__int__Impl {
     }
 }
 impl min_allocator_std_pair_const_int__int__Impl for Ptr<min_allocator_std_pair_const_int__int__> {}
-pub trait min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__Impl {
+pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<()>;
+    fn operator_arrow(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()>;
-    fn operator_inc_9(
-        &self,
-    ) -> Ptr<min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__>
-    {
+    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_post_inc_10(
+    fn operator_post_inc_9(
         &self,
         mut _a0: (),
-    ) -> min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_dec_11(
-        &self,
-    ) -> Ptr<min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__>
-    {
+    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_post_dec_12(
+    fn operator_post_dec_11(
         &self,
         mut _a0: (),
-    ) -> min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
         mut n: (),
-    ) -> Ptr<min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__>
-    {
+    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
         mut n: (),
-    ) -> Ptr<min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__>
-    {
+    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_add(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
+    fn operator_add(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_sub(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
+    fn operator_sub(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()
     }
 }
-impl min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__>
+impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
+    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
 {
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<()> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
-}
-pub trait min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
-        unimplemented!()
-    }
-}
-impl min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_const_void__std_integral_constant_unsigned_long__0__>
-{
 }
 pub trait min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
@@ -494,5 +412,5 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_1.with(|_| ());
     let _ = dealloc_count_2.with(|_| ());
     let _ = disable_default_constructor_3.with(|_| ());
-    let _ = gConstructed_6.with(|_| ());
+    let _ = gConstructed_5.with(|_| ());
 }

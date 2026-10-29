@@ -182,77 +182,6 @@ impl Default for test_allocator_void_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_bool__rebind_unsigned_int_ {}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_bool_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_bool_ {}
-impl Default for test_allocator_bool_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_bool_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_unsigned_int_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_unsigned_int_ {}
-impl Default for test_allocator_unsigned_int_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_unsigned_int_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_bool_ {
-    data_: (),
-}
-impl other_allocator_bool_ {}
-impl Default for other_allocator_bool_ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_bool_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_unsigned_long_ {
-    data_: (),
-}
-impl other_allocator_unsigned_long_ {}
-impl Default for other_allocator_unsigned_long_ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_unsigned_long_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
 #[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
@@ -277,14 +206,6 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc_bool_ {}
-impl some_alloc_bool_ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc_unsigned_long_ {}
-impl some_alloc_unsigned_long_ {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -301,18 +222,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    {
-        const _: () = assert!(true, "std::is_nothrow_move_constructible<C>::value");;
-    }
-    {
-        const _: () = assert!(true, "std::is_nothrow_move_constructible<C>::value");;
-    }
-    {
-        const _: () = assert!(true, "std::is_nothrow_move_constructible<C>::value");;
-    }
-    {
-        const _: () = assert!(true, "std::is_nothrow_move_constructible<C>::value");;
-    }
+    {}
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

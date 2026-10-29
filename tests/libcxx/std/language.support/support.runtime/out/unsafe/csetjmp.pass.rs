@@ -25,7 +25,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut jb: () = unimplemented!();
     'switch: {
-        match { (unsafe { _setjmp_0(jb.as_mut_ptr()) }) } {
+        match { unimplemented!() } {
             __v if __v == 0_() => {
                 break 'switch;
             }
@@ -37,7 +37,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             }
         }
     };
-    (unsafe { longjmp_1(jb.as_mut_ptr(), 42_()) });
+    unimplemented!();
     const _: () = assert!(
         true,
         "std::is_same<decltype(std::longjmp(jb, 0)), void>::value"

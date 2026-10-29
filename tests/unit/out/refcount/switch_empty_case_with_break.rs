@@ -6,19 +6,19 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn empty_case_with_break_0(mut x: i32) -> i32 {
-    let mut r: i32 = 5;
+pub fn empty_case_with_break_0(mut x: ()) -> () {
+    let mut r: () = 5_();
     'switch: {
         match { x } {
-            __v if __v == 1 => {
+            __v if __v == 1_() => {
                 break 'switch;
             }
-            __v if __v == 2 => {
-                r = 2;
+            __v if __v == 2_() => {
+                r = 2_();
                 break 'switch;
             }
             _ => {
-                r = 9;
+                r = 9_();
                 break 'switch;
             }
         }
@@ -29,10 +29,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ empty_case_with_break_0(1,) }) == 5));
-    assert!((({ empty_case_with_break_0(2,) }) == 2));
-    assert!((({ empty_case_with_break_0(9,) }) == 9));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

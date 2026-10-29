@@ -6,26 +6,18 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-impl sized_allocator_bool__unsigned_char__signed_char_ {
-    pub unsafe fn new_1(
-        a: *const sized_allocator_unsigned_char__unsigned_char__signed_char_,
-    ) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct sized_allocator_bool__unsigned_char__signed_char_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_char__signed_char_ {
-    pub unsafe fn new_2(mut d: ()) -> Self {
+    pub unsafe fn new(mut d: ()) -> Self {
         let mut this = Self { data_: d };
         this
     }
 }
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     pub unsafe fn new_1(a: *const sized_allocator_bool__unsigned_char__signed_char_) -> Self {
         let mut this = Self { data_: (*a).data_ };
         this
@@ -33,14 +25,14 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+pub struct sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     data_: (),
 }
-impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
+impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
         if ((n)
             > (unsafe {
-                sized_allocator_unsigned_char__unsigned_char__signed_char_::max_size(self)
+                sized_allocator_unsigned_long__unsigned_char__signed_char_::max_size(self)
             }))
         {
             unimplemented!();
@@ -54,24 +46,18 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
         return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-impl sized_allocator_bool__unsigned_short__short_ {
-    pub unsafe fn new_1(a: *const sized_allocator_unsigned_short__unsigned_short__short_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct sized_allocator_bool__unsigned_short__short_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_short__short_ {
-    pub unsafe fn new_2(mut d: ()) -> Self {
+    pub unsafe fn new(mut d: ()) -> Self {
         let mut this = Self { data_: d };
         this
     }
 }
-impl sized_allocator_unsigned_short__unsigned_short__short_ {
+impl sized_allocator_unsigned_long__unsigned_short__short_ {
     pub unsafe fn new_1(a: *const sized_allocator_bool__unsigned_short__short_) -> Self {
         let mut this = Self { data_: (*a).data_ };
         this
@@ -79,13 +65,13 @@ impl sized_allocator_unsigned_short__unsigned_short__short_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct sized_allocator_unsigned_short__unsigned_short__short_ {
+pub struct sized_allocator_unsigned_long__unsigned_short__short_ {
     data_: (),
 }
-impl sized_allocator_unsigned_short__unsigned_short__short_ {
+impl sized_allocator_unsigned_long__unsigned_short__short_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
         if ((n)
-            > (unsafe { sized_allocator_unsigned_short__unsigned_short__short_::max_size(self) }))
+            > (unsafe { sized_allocator_unsigned_long__unsigned_short__short_::max_size(self) }))
         {
             unimplemented!();
         }
@@ -98,24 +84,18 @@ impl sized_allocator_unsigned_short__unsigned_short__short_ {
         return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-impl sized_allocator_bool__unsigned_int__int_ {
-    pub unsafe fn new_1(a: *const sized_allocator_unsigned_int__unsigned_int__int_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct sized_allocator_bool__unsigned_int__int_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_int__int_ {
-    pub unsafe fn new_2(mut d: ()) -> Self {
+    pub unsafe fn new(mut d: ()) -> Self {
         let mut this = Self { data_: d };
         this
     }
 }
-impl sized_allocator_unsigned_int__unsigned_int__int_ {
+impl sized_allocator_unsigned_long__unsigned_int__int_ {
     pub unsafe fn new_1(a: *const sized_allocator_bool__unsigned_int__int_) -> Self {
         let mut this = Self { data_: (*a).data_ };
         this
@@ -123,12 +103,12 @@ impl sized_allocator_unsigned_int__unsigned_int__int_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct sized_allocator_unsigned_int__unsigned_int__int_ {
+pub struct sized_allocator_unsigned_long__unsigned_int__int_ {
     data_: (),
 }
-impl sized_allocator_unsigned_int__unsigned_int__int_ {
+impl sized_allocator_unsigned_long__unsigned_int__int_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
-        if ((n) > (unsafe { sized_allocator_unsigned_int__unsigned_int__int_::max_size(self) })) {
+        if ((n) > (unsafe { sized_allocator_unsigned_long__unsigned_int__int_::max_size(self) })) {
             unimplemented!();
         }
         return unimplemented!();
@@ -140,19 +120,13 @@ impl sized_allocator_unsigned_int__unsigned_int__int_ {
         return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
-impl sized_allocator_bool__unsigned_long__long_ {
-    pub unsafe fn new_1(a: *const sized_allocator_unsigned_long__unsigned_long__long_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct sized_allocator_bool__unsigned_long__long_ {
     data_: (),
 }
 impl sized_allocator_bool__unsigned_long__long_ {
-    pub unsafe fn new_2(mut d: ()) -> Self {
+    pub unsafe fn new(mut d: ()) -> Self {
         let mut this = Self { data_: d };
         this
     }

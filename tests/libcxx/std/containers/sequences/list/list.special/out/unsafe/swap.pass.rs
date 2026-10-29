@@ -227,7 +227,7 @@ impl Default for test_allocator_int_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ {
-                data_: unimplemented!(),
+                data_: 0_(),
                 id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
@@ -243,7 +243,11 @@ pub struct other_allocator_int_ {
     data_: (),
 }
 impl other_allocator_int_ {
-    pub unsafe fn new_1(mut i: ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self { data_: -1_() };
+        this
+    }
+    pub unsafe fn new_2(mut i: ()) -> Self {
         let mut this = Self { data_: i };
         this
     }
@@ -261,11 +265,7 @@ impl std::cmp::PartialEq for other_allocator_int_ {
 impl std::cmp::Eq for other_allocator_int_ {}
 impl Default for other_allocator_int_ {
     fn default() -> Self {
-        unsafe {
-            other_allocator_int_ {
-                data_: unimplemented!(),
-            }
-        }
+        unsafe { other_allocator_int_::new_1() }
     }
 }
 #[repr(C)]
@@ -331,12 +331,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
 pub unsafe fn operator_eq_10(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
     return true;
 }

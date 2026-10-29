@@ -13,7 +13,7 @@ pub unsafe fn test1_0() {
     let mut e1: () = unimplemented!();
     let mut os: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     &(a);
 }
 pub unsafe fn test2_1() {
@@ -23,7 +23,7 @@ pub unsafe fn test2_1() {
     let mut e1: () = unimplemented!();
     let mut os: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     &(a);
 }
 pub fn main() {

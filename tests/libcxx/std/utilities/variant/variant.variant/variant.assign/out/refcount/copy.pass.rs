@@ -274,20 +274,20 @@ pub fn test_copy_assignment_same_index_5() {
         const _: () = assert!(true, "result.value == 42");;
     }
     {
-        let test: Value<anon_8> = Rc::new(RefCell::new(<anon_8>::default()));
-        let mut result: Result_long_ = ({ anon_8Impl::operator_call(&test.as_pointer()) });
+        let test: Value<anon_7> = Rc::new(RefCell::new(<anon_7>::default()));
+        let mut result: Result_long_ = ({ anon_7Impl::operator_call(&test.as_pointer()) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42l");;
     }
     {
-        let test: Value<anon_10> = Rc::new(RefCell::new(<anon_10>::default()));
-        let mut result: Result_int_ = ({ anon_10Impl::operator_call(&test.as_pointer()) });
+        let test: Value<anon_8> = Rc::new(RefCell::new(<anon_8>::default()));
+        let mut result: Result_int_ = ({ anon_8Impl::operator_call(&test.as_pointer()) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
     {
-        let test: Value<anon_12> = Rc::new(RefCell::new(<anon_12>::default()));
-        let mut result: Result_int_ = ({ anon_12Impl::operator_call(&test.as_pointer()) });
+        let test: Value<anon_9> = Rc::new(RefCell::new(<anon_9>::default()));
+        let mut result: Result_int_ = ({ anon_9Impl::operator_call(&test.as_pointer()) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
@@ -297,14 +297,14 @@ pub fn test_copy_assignment_same_index_5() {
 pub struct anon_6 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
+pub struct anon_7 {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
 pub struct anon_8 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct anon_10 {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct anon_12 {}
-pub fn test_copy_assignment_different_index_14() {
+pub struct anon_9 {}
+pub fn test_copy_assignment_different_index_10() {
     {
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -334,86 +334,86 @@ pub fn test_copy_assignment_different_index_14() {
         unimplemented!();
     }
     {
-        let test: Value<anon_15> = Rc::new(RefCell::new(<anon_15>::default()));
-        let mut result: Result_long_ = ({ anon_15Impl::operator_call(&test.as_pointer()) });
+        let test: Value<anon_11> = Rc::new(RefCell::new(<anon_11>::default()));
+        let mut result: Result_long_ = ({ anon_11Impl::operator_call(&test.as_pointer()) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42l");;
     }
     {
-        let test: Value<anon_16> = Rc::new(RefCell::new(<anon_16>::default()));
-        let mut result: Result_int_ = ({ anon_16Impl::operator_call(&test.as_pointer()) });
+        let test: Value<anon_12> = Rc::new(RefCell::new(<anon_12>::default()));
+        let mut result: Result_int_ = ({ anon_12Impl::operator_call(&test.as_pointer()) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct anon_15 {}
+pub struct anon_11 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct anon_16 {}
-pub fn test_assignment_throw_17() {}
+pub struct anon_12 {}
+pub fn test_assignment_throw_13() {}
+pub fn test_constexpr_assign_imp_14(v: Ptr<()>, new_value: Ptr<()>) {
+    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_constexpr_assign_imp_15(v: Ptr<()>, new_value: Ptr<()>) {
+    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_constexpr_assign_imp_16(v: Ptr<()>, new_value: Ptr<()>) {
+    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_constexpr_assign_imp_17(v: Ptr<()>, new_value: Ptr<()>) {
+    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub fn test_constexpr_assign_imp_18(v: Ptr<()>, new_value: Ptr<()>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_constexpr_assign_imp_19(v: Ptr<()>, new_value: Ptr<()>) {
+pub fn test_constexpr_assign_imp_19(v: Ptr<()>, new_value: Ptr<NonTrivialCopyAssign>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_constexpr_assign_imp_20(v: Ptr<()>, new_value: Ptr<()>) {
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_constexpr_assign_imp_21(v: Ptr<()>, new_value: Ptr<()>) {
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_constexpr_assign_imp_22(v: Ptr<()>, new_value: Ptr<()>) {
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_constexpr_assign_imp_23(v: Ptr<()>, new_value: Ptr<NonTrivialCopyAssign>) {
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_constexpr_copy_assignment_trivial_24() {
+pub fn test_constexpr_copy_assignment_trivial_20() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_assignable<V>::value");;
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
-        test_constexpr_assign_imp_18(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_14(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
-        test_constexpr_assign_imp_18(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_14(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<()> = Rc::new(RefCell::new(Default::default()));
-        test_constexpr_assign_imp_19(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_15(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
-        test_constexpr_assign_imp_20(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_16(_v.as_pointer(), _new_value.as_pointer())
     });
 }
-pub fn operator_eq_25(x: Ptr<NonTrivialCopyAssign>, y: Ptr<NonTrivialCopyAssign>) -> () {
+pub fn operator_eq_21(x: Ptr<NonTrivialCopyAssign>, y: Ptr<NonTrivialCopyAssign>) -> () {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
@@ -432,17 +432,11 @@ impl NonTrivialCopyAssign {
         }
     }
 }
-impl std::cmp::PartialEq for NonTrivialCopyAssign {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_25(
-                Rc::new(RefCell::new(NonTrivialCopyAssign { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(NonTrivialCopyAssign { i: other.i.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for NonTrivialCopyAssign {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_21(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for NonTrivialCopyAssign {}
 impl Clone for NonTrivialCopyAssign {
     fn clone(&self) -> Self {
         let __src: Value<NonTrivialCopyAssign> =
@@ -455,53 +449,53 @@ impl Default for NonTrivialCopyAssign {
         { NonTrivialCopyAssign { i: 0_() } }
     }
 }
-pub fn test_constexpr_copy_assignment_non_trivial_26() {
+pub fn test_constexpr_copy_assignment_non_trivial_22() {
     const _: () = assert!(true, "!std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "!std::is_trivially_copy_assignable<V>::value");;
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
-        test_constexpr_assign_imp_21(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_17(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
-        test_constexpr_assign_imp_21(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_17(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<()> = Rc::new(RefCell::new(Default::default()));
-        test_constexpr_assign_imp_22(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_18(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<NonTrivialCopyAssign> =
             Rc::new(RefCell::new(NonTrivialCopyAssign::new({ 5_() })));
-        test_constexpr_assign_imp_23(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_19(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<NonTrivialCopyAssign> =
             Rc::new(RefCell::new(NonTrivialCopyAssign::new({ 5_() })));
-        test_constexpr_assign_imp_23(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_19(_v.as_pointer(), _new_value.as_pointer())
     });
 }
-pub fn non_constexpr_test_27() {
+pub fn non_constexpr_test_23() {
     ({ test_copy_assignment_empty_empty_2() });
     ({ test_copy_assignment_non_empty_empty_3() });
     ({ test_copy_assignment_empty_non_empty_4() });
-    ({ test_assignment_throw_17() });
+    ({ test_assignment_throw_13() });
 }
-pub fn cxx17_constexpr_test_28() -> () {
+pub fn cxx17_constexpr_test_24() -> () {
     ({ test_copy_assignment_sfinae_1() });
     ({ test_copy_assignment_not_noexcept_0() });
-    ({ test_constexpr_copy_assignment_trivial_24() });
+    ({ test_constexpr_copy_assignment_trivial_20() });
     return true;
 }
-pub fn cxx20_constexpr_test_29() -> () {
+pub fn cxx20_constexpr_test_25() -> () {
     ({ test_copy_assignment_same_index_5() });
-    ({ test_copy_assignment_different_index_14() });
-    ({ test_constexpr_copy_assignment_non_trivial_26() });
+    ({ test_copy_assignment_different_index_10() });
+    ({ test_constexpr_copy_assignment_non_trivial_22() });
     return true;
 }
 pub fn main() {
@@ -524,9 +518,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ non_constexpr_test_27() });
-    ({ cxx17_constexpr_test_28() });
-    ({ cxx20_constexpr_test_29() });
+    ({ non_constexpr_test_23() });
+    ({ cxx17_constexpr_test_24() });
+    ({ cxx20_constexpr_test_25() });
     const _: () = assert!(true, "cxx17_constexpr_test()");;
     const _: () = assert!(true, "cxx20_constexpr_test()");;
     return 0_();
@@ -608,17 +602,17 @@ impl TCopyAssignNTMoveAssignImpl for Ptr<TCopyAssignNTMoveAssign> {
         return (*self).clone();
     }
 }
-pub trait anon_10Impl {
-    fn operator_call(&self) -> Result_int_;
+pub trait anon_11Impl {
+    fn operator_call(&self) -> Result_long_;
 }
-impl anon_10Impl for Ptr<anon_10> {
-    fn operator_call(&self) -> Result_int_ {
+impl anon_11Impl for Ptr<anon_11> {
+    fn operator_call(&self) -> Result_long_ {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        return Result_int_ {
+        return Result_long_ {
             index: unimplemented!(),
-            value: ({ get_11(v.as_pointer()) }).with(|__s| __s.value),
+            value: (unimplemented!().read()),
         };
     }
 }
@@ -632,35 +626,7 @@ impl anon_12Impl for Ptr<anon_12> {
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: ({ get_13(v.as_pointer()) }).with(|__s| __s.value),
-        };
-    }
-}
-pub trait anon_15Impl {
-    fn operator_call(&self) -> Result_long_;
-}
-impl anon_15Impl for Ptr<anon_15> {
-    fn operator_call(&self) -> Result_long_ {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        return Result_long_ {
-            index: unimplemented!(),
-            value: (({ get_9(v.as_pointer()) }).read()),
-        };
-    }
-}
-pub trait anon_16Impl {
-    fn operator_call(&self) -> Result_int_;
-}
-impl anon_16Impl for Ptr<anon_16> {
-    fn operator_call(&self) -> Result_int_ {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        return Result_int_ {
-            index: unimplemented!(),
-            value: ({ get_11(v.as_pointer()) }).with(|__s| __s.value),
+            value: unimplemented!().with(|__s| __s.value),
         };
     }
 }
@@ -674,21 +640,49 @@ impl anon_6Impl for Ptr<anon_6> {
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: (({ get_7(v.as_pointer()) }).read()),
+            value: (unimplemented!().read()),
         };
     }
 }
-pub trait anon_8Impl {
+pub trait anon_7Impl {
     fn operator_call(&self) -> Result_long_;
 }
-impl anon_8Impl for Ptr<anon_8> {
+impl anon_7Impl for Ptr<anon_7> {
     fn operator_call(&self) -> Result_long_ {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: (({ get_9(v.as_pointer()) }).read()),
+            value: (unimplemented!().read()),
+        };
+    }
+}
+pub trait anon_8Impl {
+    fn operator_call(&self) -> Result_int_;
+}
+impl anon_8Impl for Ptr<anon_8> {
+    fn operator_call(&self) -> Result_int_ {
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        return Result_int_ {
+            index: unimplemented!(),
+            value: unimplemented!().with(|__s| __s.value),
+        };
+    }
+}
+pub trait anon_9Impl {
+    fn operator_call(&self) -> Result_int_;
+}
+impl anon_9Impl for Ptr<anon_9> {
+    fn operator_call(&self) -> Result_int_ {
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        return Result_int_ {
+            index: unimplemented!(),
+            value: unimplemented!().with(|__s| __s.value),
         };
     }
 }

@@ -10,14 +10,14 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let a: Value<i32> = Rc::new(RefCell::new(0));
-    let mut p: Ptr<i32> = (a.as_pointer());
-    assert!((((!((p).is_null())) as i32) != 0));
-    assert!((((!((p).is_null())) as i32) != 0));
-    p = Ptr::<i32>::null();
-    assert!(((((p).is_null()) as i32) != 0));
-    assert!(((((p).is_null()) as i32) != 0));
-    return 0;
+fn main_0() -> () {
+    let a: Value<()> = Rc::new(RefCell::new(0_()));
+    let mut p: Ptr<()> = (a.as_pointer());
+    unimplemented!();
+    unimplemented!();
+    p = Ptr::<()>::null();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

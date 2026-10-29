@@ -10,27 +10,27 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Point {
     #[offset(0)]
-    pub x: i32,
+    pub x: (),
     #[offset(4)]
-    pub y: i32,
+    pub y: (),
 }
-pub fn agg_0(mut n: i32) -> i32 {
-    let mut buf40: [i8; 40] = [0_i8; 40];
-    let mut buf256: [u8; 256] = [0_u8; 256];
-    let mut arr64: [i32; 64] = [0_i32; 64];
-    let mut longs: [i64; 33] = [0_i64; 33];
+pub fn agg_0(mut n: ()) -> () {
+    let mut buf40: [(); 40] = [unimplemented!(); 40];
+    let mut buf256: [(); 256] = [unimplemented!(); 256];
+    let mut arr64: [(); 64] = [unimplemented!(); 64];
+    let mut longs: [(); 33] = [unimplemented!(); 33];
     let mut p: Point = <Point>::default();
-    let mut ptr: Ptr<i32> = Ptr::<i32>::null();
-    let mut fp: FnPtr<fn(i32) -> i32> = FnPtr::<fn(i32) -> i32>::null();
-    let mut file: Ptr<CFile> = Ptr::null();
-    let mut total: i32 = 0_i32;
+    let mut ptr: Ptr<()> = Ptr::<()>::null();
+    let mut fp: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::null();
+    let mut file: () = unimplemented!();
+    let mut total: () = unimplemented!();
     goto_block!({
         '__entry: {
-            total = 0;
-            if (((n < 0) as i32) != 0) {
+            total = 0_();
+            if (((n < 0_()) as ()) != 0) {
                 goto!('out);
             }
-            total = 1;
+            total = 1_();
         }
         'out: {
             return total;
@@ -42,9 +42,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((((({ agg_0(-1_i32,) }) == 0) as i32) != 0));
-    assert!((((({ agg_0(1,) }) == 1) as i32) != 0));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

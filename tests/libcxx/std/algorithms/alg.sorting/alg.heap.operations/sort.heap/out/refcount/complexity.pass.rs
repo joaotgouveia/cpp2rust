@@ -65,68 +65,17 @@ impl MyInt {
         __this
     }
 }
-impl std::cmp::Ord for MyInt {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_1(
-                Rc::new(RefCell::new(MyInt {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MyInt {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_1(
-                Rc::new(RefCell::new(MyInt {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MyInt {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for MyInt {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for MyInt {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for MyInt {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_1(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_1(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for MyInt {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_1(
-                Rc::new(RefCell::new(MyInt {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MyInt {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )) && !(operator_lt_1(
-                Rc::new(RefCell::new(MyInt {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MyInt {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for MyInt {}
 impl Clone for MyInt {
     fn clone(&self) -> Self {
         let __src: Value<MyInt> = Rc::new(RefCell::new(MyInt {
@@ -176,10 +125,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         stats_0.with(|rc| *rc.borrow_mut() = <Stats>::default());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
         logn.prefix_inc();
     }
     return 0_();

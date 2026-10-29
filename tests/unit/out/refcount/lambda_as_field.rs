@@ -36,20 +36,20 @@ pub struct Guard__lambda_at_lambda_as_field_cpp_45_13__ {
 pub struct Holder__lambda_at_lambda_as_field_cpp_39_12__ {
     #[offset(0)]
     #[byte_size(1)]
-    pub f: FnPtr<fn(i32) -> i32>,
+    pub f: FnPtr<fn(()) -> ()>,
     #[offset(4)]
-    pub calls: i32,
+    pub calls: (),
 }
 impl Default for Holder__lambda_at_lambda_as_field_cpp_39_12__ {
     fn default() -> Self {
         {
             Holder__lambda_at_lambda_as_field_cpp_39_12__ {
-                f: FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+                f: FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
                     {
-                        return (x + 1);
+                        return (x + 1_());
                     }
                 }),
-                calls: 0_i32,
+                calls: unimplemented!(),
             }
         }
     }
@@ -59,31 +59,31 @@ impl Default for Holder__lambda_at_lambda_as_field_cpp_39_12__ {
 pub struct Holder__lambda_at_lambda_as_field_cpp_51_12__ {
     #[offset(0)]
     #[byte_size(4)]
-    pub f: FnPtr<fn(i32) -> i32>,
+    pub f: FnPtr<fn(()) -> ()>,
     #[offset(4)]
-    pub calls: i32,
+    pub calls: (),
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor)]
 #[byte_size(8)]
 pub struct Moving__lambda_at_lambda_as_field_cpp_64_12__ {
     #[offset(0)]
     #[byte_size(1)]
-    pub f: FnPtr<fn(i32) -> i32>,
+    pub f: FnPtr<fn(()) -> ()>,
     #[offset(4)]
-    pub moves: i32,
+    pub moves: (),
 }
 impl Moving__lambda_at_lambda_as_field_cpp_64_12__ {
-    pub fn new(f: FnPtr<fn(i32) -> i32>) -> Self {
-        let f: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(f));
+    pub fn new(f: FnPtr<fn(()) -> ()>) -> Self {
+        let f: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(f));
         Self {
             f: (*f.borrow()).copy_from(),
-            moves: 0,
+            moves: 0_(),
         }
     }
     pub fn move_from(o: Ptr<Moving__lambda_at_lambda_as_field_cpp_64_12__>) -> Self {
         Self {
             f: (*o.upgrade().deref()).f.move_from(),
-            moves: (o.with(|__s| __s.moves) + 1),
+            moves: (o.with(|__s| __s.moves) + 1_()),
         }
     }
 }
@@ -91,48 +91,48 @@ impl Default for Moving__lambda_at_lambda_as_field_cpp_64_12__ {
     fn default() -> Self {
         {
             Moving__lambda_at_lambda_as_field_cpp_64_12__ {
-                f: FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+                f: FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
                     {
-                        return (x * 2);
+                        return (x * 2_());
                     }
                 }),
-                moves: 0,
+                moves: 0_(),
             }
         }
     }
 }
-pub fn wrap_1(fn_: FnPtr<fn(i32) -> i32>) -> FnPtr<fn(i32) -> i32> {
-    let fn_: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(fn_));
+pub fn wrap_1(fn_: FnPtr<fn(()) -> ()>) -> FnPtr<fn(()) -> ()> {
+    let fn_: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(fn_));
     return lambda!(
         {
-            let fn_: Value<FnPtr<fn(i32) -> i32>> =
+            let fn_: Value<FnPtr<fn(()) -> ()>> =
                 Rc::new(RefCell::new((*fn_.borrow()).copy_from()));
         },
-        |mut x: i32| -> i32 {
-            return (({ (*fn_.borrow()).call(x) }) + 1);
+        |mut x: ()| -> () {
+            return (({ (*fn_.borrow()).call(x) }) + 1_());
         }
     );
 }
-pub fn wrap_2(fn_: FnPtr<fn(i32) -> i32>) -> FnPtr<fn(i32) -> i32> {
-    let fn_: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(fn_));
+pub fn wrap_2(fn_: FnPtr<fn(()) -> ()>) -> FnPtr<fn(()) -> ()> {
+    let fn_: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(fn_));
     return lambda!(
         {
-            let fn_: Value<FnPtr<fn(i32) -> i32>> =
+            let fn_: Value<FnPtr<fn(()) -> ()>> =
                 Rc::new(RefCell::new((*fn_.borrow()).copy_from()));
         },
-        |mut x: i32| -> i32 {
-            return (({ (*fn_.borrow()).call(x) }) + 1);
+        |mut x: ()| -> () {
+            return (({ (*fn_.borrow()).call(x) }) + 1_());
         }
     );
 }
 thread_local!(
-    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
+    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
 );
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     {
         let g: Value<Guard__lambda_at_lambda_as_field_cpp_34_13__> =
             Rc::new(RefCell::new(Guard__lambda_at_lambda_as_field_cpp_34_13__ {
@@ -141,30 +141,28 @@ fn main_0() -> i32 {
                 }),
             }));
         let _dtor_g = ScopedDestructor::new(&g, |__p| __p.destructor());
-        assert!((count_0.with(|rc| *rc.borrow()) == 0));
+        unimplemented!();
     }
-    assert!((count_0.with(|rc| *rc.borrow()) == 1));
+    unimplemented!();
     let n: Value<Holder__lambda_at_lambda_as_field_cpp_39_12__> = Rc::new(RefCell::new(
         Holder__lambda_at_lambda_as_field_cpp_39_12__ {
-            f: FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+            f: FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
                 {
-                    return (x + 1);
+                    return (x + 1_());
                 }
             }),
-            calls: 0,
+            calls: 0_(),
         },
     ));
-    assert!(
-        (({ Holder__lambda_at_lambda_as_field_cpp_39_12__Impl::call(&n.as_pointer(), 2,) }) == 3)
-    );
-    assert!(({ (*n.borrow()).calls } == 1));
-    let cleaned: Value<i32> = Rc::new(RefCell::new(0));
+    unimplemented!();
+    unimplemented!();
+    let cleaned: Value<()> = Rc::new(RefCell::new(0_()));
     {
         let g: Value<Guard__lambda_at_lambda_as_field_cpp_45_13__> =
             Rc::new(RefCell::new(Guard__lambda_at_lambda_as_field_cpp_45_13__ {
                 f: lambda!(
                     {
-                        let cleaned: Ptr<i32> = cleaned.as_pointer();
+                        let cleaned: Ptr<()> = cleaned.as_pointer();
                     },
                     || {
                         cleaned.with_mut(|__v| __v.postfix_inc());
@@ -172,53 +170,49 @@ fn main_0() -> i32 {
                 ),
             }));
         let _dtor_g = ScopedDestructor::new(&g, |__p| __p.destructor());
-        assert!(((*cleaned.borrow()) == 0));
+        unimplemented!();
     }
-    assert!(((*cleaned.borrow()) == 1));
-    let factor: Value<i32> = Rc::new(RefCell::new(3));
+    unimplemented!();
+    let factor: Value<()> = Rc::new(RefCell::new(3_()));
     let h: Value<Holder__lambda_at_lambda_as_field_cpp_51_12__> = Rc::new(RefCell::new(
         Holder__lambda_at_lambda_as_field_cpp_51_12__ {
             f: lambda!(
                 {
-                    let factor: Value<i32> = Rc::new(RefCell::new((*factor.borrow())));
+                    let factor: Value<()> = Rc::new(RefCell::new((*factor.borrow())));
                 },
-                |mut x: i32| -> i32 {
+                |mut x: ()| -> () {
                     return (x * (*factor.borrow()));
                 }
             ),
-            calls: 0,
+            calls: 0_(),
         },
     ));
-    (*factor.borrow_mut()) = 100;
-    assert!(
-        (({ Holder__lambda_at_lambda_as_field_cpp_51_12__Impl::call(&h.as_pointer(), 2,) }) == 6)
-    );
-    assert!(
-        (({ Holder__lambda_at_lambda_as_field_cpp_51_12__Impl::call(&h.as_pointer(), 5,) }) == 15)
-    );
-    assert!(({ (*h.borrow()).calls } == 2));
-    let w: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(
+    (*factor.borrow_mut()) = 100_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let w: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(
         ({
             wrap_1(lambda!(
                 {
-                    let factor: Value<i32> = Rc::new(RefCell::new((*factor.borrow())));
+                    let factor: Value<()> = Rc::new(RefCell::new((*factor.borrow())));
                 },
-                |mut x: i32| -> i32 {
+                |mut x: ()| -> () {
                     return (x * (*factor.borrow()));
                 }
             ))
         }),
     ));
-    (*factor.borrow_mut()) = 7;
-    assert!((({ (*w.borrow()).call(2,) }) == 201));
-    let ww: Value<FnPtr<fn(i32) -> i32>> =
+    (*factor.borrow_mut()) = 7_();
+    unimplemented!();
+    let ww: Value<FnPtr<fn(()) -> ()>> =
         Rc::new(RefCell::new(({ wrap_2((*w.borrow()).copy_from()) })));
-    assert!((({ (*ww.borrow()).call(2,) }) == 202));
+    unimplemented!();
     let m: Value<Moving__lambda_at_lambda_as_field_cpp_64_12__> = Rc::new(RefCell::new(
         Moving__lambda_at_lambda_as_field_cpp_64_12__::new({
-            FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+            FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
                 {
-                    return (x * 2);
+                    return (x * 2_());
                 }
             })
         }),
@@ -226,9 +220,9 @@ fn main_0() -> i32 {
     let m2: Value<Moving__lambda_at_lambda_as_field_cpp_64_12__> = Rc::new(RefCell::new(
         Moving__lambda_at_lambda_as_field_cpp_64_12__::move_from({ m.as_pointer() }),
     ));
-    assert!((({ (*m2.borrow()).f.call(3,) }) == 6));
-    assert!(({ (*m2.borrow()).moves } == 1));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub trait Guard__lambda_at_lambda_as_field_cpp_34_13__Impl {
     fn destructor(&self);
@@ -251,23 +245,23 @@ impl Guard__lambda_at_lambda_as_field_cpp_45_13__Impl
     }
 }
 pub trait Holder__lambda_at_lambda_as_field_cpp_39_12__Impl {
-    fn call(&self, x: i32) -> i32;
+    fn call(&self, x: ()) -> ();
 }
 impl Holder__lambda_at_lambda_as_field_cpp_39_12__Impl
     for Ptr<Holder__lambda_at_lambda_as_field_cpp_39_12__>
 {
-    fn call(&self, mut x: i32) -> i32 {
+    fn call(&self, mut x: ()) -> () {
         field!((*self), calls).with_mut(|__v| __v.postfix_inc());
         return ({ (*(*self).upgrade().deref()).f.call(x) });
     }
 }
 pub trait Holder__lambda_at_lambda_as_field_cpp_51_12__Impl {
-    fn call(&self, x: i32) -> i32;
+    fn call(&self, x: ()) -> ();
 }
 impl Holder__lambda_at_lambda_as_field_cpp_51_12__Impl
     for Ptr<Holder__lambda_at_lambda_as_field_cpp_51_12__>
 {
-    fn call(&self, mut x: i32) -> i32 {
+    fn call(&self, mut x: ()) -> () {
         field!((*self), calls).with_mut(|__v| __v.postfix_inc());
         return ({ (*(*self).upgrade().deref()).f.call(x) });
     }

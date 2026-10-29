@@ -27,10 +27,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut c: ::libc::clock_t = (0 as ::libc::clock_t);
+    let mut c: () = 0_();
     let mut s: () = 0_();
-    let t: Value<::libc::time_t> = Rc::new(RefCell::new((0 as ::libc::time_t)));
-    let tm: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let t: Value<()> = Rc::new(RefCell::new(0_()));
+    let tm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (&(c));
     (&(s));
     (&(*t.borrow_mut()));

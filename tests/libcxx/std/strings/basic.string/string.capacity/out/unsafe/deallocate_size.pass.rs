@@ -6,13 +6,10 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub static mut allocated__0: std::cell::LazyCell<u64> =
-    std::cell::LazyCell::new(|| unsafe { 0_u64 });
-pub static mut deallocated__1: std::cell::LazyCell<u64> =
-    std::cell::LazyCell::new(|| unsafe { 0_u64 });
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_alloc_char__unsigned_int__rebind_char_ {}
+pub static mut allocated__0: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut deallocated__1: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_alloc_char__unsigned_int_ {}
@@ -24,13 +21,12 @@ impl test_alloc_char__unsigned_int_ {
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocated__0)) =
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut allocated__0)).wrapping_add((n as u64));
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut allocated__0)).wrapping_add(n);
         return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut deallocated__1)) =
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut deallocated__1))
-                .wrapping_add((s as u64));
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut deallocated__1)).wrapping_add(s);
         unimplemented!();
     }
 }
@@ -39,9 +35,6 @@ impl Default for test_alloc_char__unsigned_int_ {
         unsafe { test_alloc_char__unsigned_int_::new() }
     }
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_alloc_char__unsigned_long__rebind_char_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_alloc_char__unsigned_long_ {}
@@ -53,14 +46,12 @@ impl test_alloc_char__unsigned_long_ {
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocated__0)) =
-            (((*std::cell::LazyCell::force_mut(&mut *&raw mut allocated__0)) as ()).wrapping_add(n))
-                as u64;
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut allocated__0)).wrapping_add(n);
         return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut deallocated__1)) =
-            (((*std::cell::LazyCell::force_mut(&mut *&raw mut deallocated__1)) as ())
-                .wrapping_add(s)) as u64;
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut deallocated__1)).wrapping_add(s);
         unimplemented!();
     }
 }

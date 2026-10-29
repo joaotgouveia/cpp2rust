@@ -10,33 +10,33 @@ use std::rc::{Rc, Weak};
 #[byte_size(16)]
 pub struct node {
     #[offset(0)]
-    pub data: i32,
+    pub data: (),
     #[offset(8)]
     #[byte_size(8)]
     pub next: Ptr<node>,
 }
-pub type opt = u32;
+pub type opt = ();
 pub const opt_OPT_STRING_OUT: opt = 0;
 pub const opt_OPT_FILE: opt = 1;
 pub const opt_OPT_NODE: opt = 2;
 pub const opt_OPT_NODE_OUT: opt = 3;
-pub fn dispatch_0(option: i32, __args: Box<[VaArg]>) -> i32 {
+pub fn dispatch_0(option: (), __args: Box<[VaArg]>) -> () {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
-    let option: Value<i32> = Rc::new(RefCell::new(option));
+    let option: Value<()> = Rc::new(RefCell::new(option));
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
     (*ap.borrow_mut()) = __args.as_pointer();
-    let mut result: i32 = 0;
+    let mut result: () = 0_();
     'switch: {
         match { (*option.borrow()) } {
             __v if __v == (opt_OPT_STRING_OUT as i32) => {
-                let mut out: Ptr<Ptr<i8>> = (*ap.borrow_mut()).arg::<Ptr<Ptr<i8>>>();
-                out.write(Ptr::<i8>::from_string_literal(b"hello"));
-                result = 1;
+                let mut out: Ptr<Ptr<()>> = (*ap.borrow_mut()).arg::<Ptr<Ptr<()>>>();
+                out.write(Ptr::<()>::from_string_literal(b"hello"));
+                result = 1_();
                 break 'switch;
             }
             __v if __v == (opt_OPT_FILE as i32) => {
-                let mut f: Ptr<CFile> = (*ap.borrow_mut()).arg::<Ptr<CFile>>();
-                result = ((!((f).is_null())) as i32);
+                let mut f: () = (*ap.borrow_mut()).arg::<()>();
+                result = ((!((f).is_null())) as ());
                 break 'switch;
             }
             __v if __v == (opt_OPT_NODE as i32) => {
@@ -47,7 +47,7 @@ pub fn dispatch_0(option: i32, __args: Box<[VaArg]>) -> i32 {
             __v if __v == (opt_OPT_NODE_OUT as i32) => {
                 let mut out: Ptr<Ptr<node>> = (*ap.borrow_mut()).arg::<Ptr<Ptr<node>>>();
                 out.write(Ptr::<node>::null());
-                result = 2;
+                result = 2_();
                 break 'switch;
             }
             _ => {}
@@ -59,60 +59,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let s: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::<i8>::null()));
-    assert!(
-        (((({
-            dispatch_0(
-                (opt_OPT_STRING_OUT as i32),
-                Box::new([(s.as_pointer()).into()]),
-            )
-        }) == 1) as i32)
-            != 0)
-    );
-    assert!((((!((*s.borrow()).is_null())) as i32) != 0));
-    assert!(
-        (((({
-            dispatch_0(
-                (opt_OPT_FILE as i32),
-                Box::new([(libcc2rs::c_stdout()).into()]),
-            )
-        }) == 1) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            dispatch_0(
-                (opt_OPT_FILE as i32),
-                Box::new([((AnyPtr::default()).reinterpret_cast::<CFile>()).into()]),
-            )
-        }) == 0) as i32)
-            != 0)
-    );
+fn main_0() -> () {
+    let s: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let head: Value<node> = Rc::new(RefCell::new(node {
-        data: 42,
+        data: 42_(),
         next: Ptr::<node>::null(),
     }));
-    assert!(
-        (((({
-            dispatch_0(
-                (opt_OPT_NODE as i32),
-                Box::new([(head.as_pointer()).into()]),
-            )
-        }) == 42) as i32)
-            != 0)
-    );
+    unimplemented!();
     let outp: Value<Ptr<node>> = Rc::new(RefCell::new((head.as_pointer())));
-    assert!(
-        (((({
-            dispatch_0(
-                (opt_OPT_NODE_OUT as i32),
-                Box::new([(outp.as_pointer()).into()]),
-            )
-        }) == 2) as i32)
-            != 0)
-    );
-    assert!(((((*outp.borrow()).is_null()) as i32) != 0));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

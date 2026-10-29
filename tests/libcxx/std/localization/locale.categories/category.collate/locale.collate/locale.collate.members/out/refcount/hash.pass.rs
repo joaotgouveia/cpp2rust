@@ -31,13 +31,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut x1: () = unimplemented!();
         let mut x2: () = unimplemented!();
-        let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
+        let f: Ptr<()> = unimplemented!();
         unimplemented!();
     }
     {
         let mut x1: () = unimplemented!();
         let mut x2: () = unimplemented!();
-        let f: Ptr<()> = ({ use_facet_1(l.as_pointer()) });
+        let f: Ptr<()> = unimplemented!();
         unimplemented!();
     }
     return 0_();

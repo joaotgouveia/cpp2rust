@@ -14,8 +14,8 @@ pub fn foo1_0() {
         Rc::new(RefCell::new(<__gnu_cxx_throw_value_limit>::default()));
 }
 pub fn foo2_1() -> () {
-    let mut b: () = unimplemented!();
-    return b;
+    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    return (*b.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

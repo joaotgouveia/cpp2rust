@@ -90,7 +90,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (&(*i1.borrow_mut()));
     }
-    let mut i: i64 = 0_i64;
+    let mut i: () = 0_();
     (&(i));
     const _: () = assert!(
         true,

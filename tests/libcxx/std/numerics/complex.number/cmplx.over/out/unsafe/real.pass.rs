@@ -173,22 +173,46 @@ pub unsafe fn classify_2(mut x: ()) -> () {
     if ((x) == (0_())) {
         return (anon_1_zero as ());
     }
-    if (unsafe { isinf_3(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if (unsafe { isnan_4(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub unsafe fn is_about_3(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub unsafe fn is_about_4(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub unsafe fn is_about_5(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_6(mut x: (), mut y: ()) {
+pub unsafe fn test_6(mut _a0: Option<()>) {
+    let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
+    const _: () = assert!(
+        true,
+        "(std::is_same<decltype(std::real(T(x))), double>::value)"
+    );;
     unimplemented!();
+    let val: () = 0_();
+    const _: () = assert!(true, "std::real(val) == val");;
+    let t: () = unimplemented!();
+    const _: () = assert!(true, "t.real() == x");;
 }
-pub unsafe fn is_about_7(mut x: (), mut y: ()) {
+pub unsafe fn test_7(mut _a0: Option<()>) {
+    let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
+    const _: () = assert!(
+        true,
+        "(std::is_same<decltype(std::real(T(x))), double>::value)"
+    );;
     unimplemented!();
+    let val: () = 1_();
+    const _: () = assert!(true, "std::real(val) == val");;
+    let t: () = unimplemented!();
+    const _: () = assert!(true, "t.real() == x");;
 }
 pub unsafe fn test_8(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -197,7 +221,7 @@ pub unsafe fn test_8(mut _a0: Option<()>) {
         "(std::is_same<decltype(std::real(T(x))), double>::value)"
     );;
     unimplemented!();
-    let val: () = 0_();
+    let val: () = 10_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -209,7 +233,7 @@ pub unsafe fn test_9(mut _a0: Option<()>) {
         "(std::is_same<decltype(std::real(T(x))), double>::value)"
     );;
     unimplemented!();
-    let val: () = 1_();
+    let val: () = 0_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -221,7 +245,7 @@ pub unsafe fn test_10(mut _a0: Option<()>) {
         "(std::is_same<decltype(std::real(T(x))), double>::value)"
     );;
     unimplemented!();
-    let val: () = 10_();
+    let val: () = 1_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -233,7 +257,7 @@ pub unsafe fn test_11(mut _a0: Option<()>) {
         "(std::is_same<decltype(std::real(T(x))), double>::value)"
     );;
     unimplemented!();
-    let val: () = 0_();
+    let val: () = 10_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -245,7 +269,7 @@ pub unsafe fn test_12(mut _a0: Option<()>) {
         "(std::is_same<decltype(std::real(T(x))), double>::value)"
     );;
     unimplemented!();
-    let val: () = 1_();
+    let val: () = 0_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -257,7 +281,7 @@ pub unsafe fn test_13(mut _a0: Option<()>) {
         "(std::is_same<decltype(std::real(T(x))), double>::value)"
     );;
     unimplemented!();
-    let val: () = 10_();
+    let val: () = 1_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -269,31 +293,25 @@ pub unsafe fn test_14(mut _a0: Option<()>) {
         "(std::is_same<decltype(std::real(T(x))), double>::value)"
     );;
     unimplemented!();
-    let val: () = 0_();
+    let val: () = 10_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
 }
 pub unsafe fn test_15(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
-    const _: () = assert!(
-        true,
-        "(std::is_same<decltype(std::real(T(x))), double>::value)"
-    );;
+    const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 1_();
+    let val: () = 0_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
 }
 pub unsafe fn test_16(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
-    const _: () = assert!(
-        true,
-        "(std::is_same<decltype(std::real(T(x))), double>::value)"
-    );;
+    const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 10_();
+    let val: () = 1_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -302,7 +320,7 @@ pub unsafe fn test_17(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
     const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 0_();
+    let val: () = 10_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -311,7 +329,7 @@ pub unsafe fn test_18(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
     const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 1_();
+    let val: () = 0_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -320,7 +338,7 @@ pub unsafe fn test_19(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
     const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 10_();
+    let val: () = 1_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -329,7 +347,7 @@ pub unsafe fn test_20(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
     const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 0_();
+    let val: () = 10_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -338,7 +356,7 @@ pub unsafe fn test_21(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
     const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 1_();
+    let val: () = 0_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -347,7 +365,7 @@ pub unsafe fn test_22(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
     const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 10_();
+    let val: () = 1_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
@@ -356,58 +374,40 @@ pub unsafe fn test_23(mut _a0: Option<()>) {
     let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
     const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
     unimplemented!();
-    let val: () = 0_();
-    const _: () = assert!(true, "std::real(val) == val");;
-    let t: () = unimplemented!();
-    const _: () = assert!(true, "t.real() == x");;
-}
-pub unsafe fn test_24(mut _a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
-    const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
-    unimplemented!();
-    let val: () = 1_();
-    const _: () = assert!(true, "std::real(val) == val");;
-    let t: () = unimplemented!();
-    const _: () = assert!(true, "t.real() == x");;
-}
-pub unsafe fn test_25(mut _a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unsafe { unimplemented!() });
-    const _: () = assert!(true, "(std::is_same<decltype(std::real(T(x))), T>::value)");;
-    unimplemented!();
     let val: () = 10_();
     const _: () = assert!(true, "std::real(val) == val");;
     let t: () = unimplemented!();
     const _: () = assert!(true, "t.real() == x");;
 }
-pub unsafe fn test_26() {
-    (unsafe { test_17(None) });
-    (unsafe { test_18(None) });
-    (unsafe { test_19(None) });
-}
-pub unsafe fn test_27() {
-    (unsafe { test_20(None) });
-    (unsafe { test_21(None) });
-    (unsafe { test_22(None) });
-}
-pub unsafe fn test_28() {
-    (unsafe { test_23(None) });
-    (unsafe { test_24(None) });
-    (unsafe { test_25(None) });
-}
-pub unsafe fn test_29() {
-    (unsafe { test_8(None) });
-    (unsafe { test_9(None) });
-    (unsafe { test_10(None) });
-}
-pub unsafe fn test_30() {
-    (unsafe { test_11(None) });
-    (unsafe { test_12(None) });
-    (unsafe { test_13(None) });
-}
-pub unsafe fn test_31() {
-    (unsafe { test_14(None) });
+pub unsafe fn test_24() {
     (unsafe { test_15(None) });
     (unsafe { test_16(None) });
+    (unsafe { test_17(None) });
+}
+pub unsafe fn test_25() {
+    (unsafe { test_18(None) });
+    (unsafe { test_19(None) });
+    (unsafe { test_20(None) });
+}
+pub unsafe fn test_26() {
+    (unsafe { test_21(None) });
+    (unsafe { test_22(None) });
+    (unsafe { test_23(None) });
+}
+pub unsafe fn test_27() {
+    (unsafe { test_6(None) });
+    (unsafe { test_7(None) });
+    (unsafe { test_8(None) });
+}
+pub unsafe fn test_28() {
+    (unsafe { test_9(None) });
+    (unsafe { test_10(None) });
+    (unsafe { test_11(None) });
+}
+pub unsafe fn test_29() {
+    (unsafe { test_12(None) });
+    (unsafe { test_13(None) });
+    (unsafe { test_14(None) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -425,12 +425,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_24() });
+    (unsafe { test_25() });
     (unsafe { test_26() });
     (unsafe { test_27() });
     (unsafe { test_28() });
     (unsafe { test_29() });
-    (unsafe { test_30() });
-    (unsafe { test_31() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

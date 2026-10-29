@@ -27,19 +27,26 @@ pub type anon_3 = ();
 pub const anon_3_value: anon_3 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_const_std_filesystem_path_ptr__const_std_filesystem_path_ptr_
+pub struct test_macros_detail_is_same_const_std_filesystem_path_ref__const_std_filesystem_path_ref_
 {}
 pub type anon_4 = ();
 pub const anon_4_value: anon_4 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_const_std_string_ref__const_std_string_ref_ {}
+pub struct test_macros_detail_is_same_const_std_filesystem_path_ptr__const_std_filesystem_path_ptr_
+{}
 pub type anon_5 = ();
 pub const anon_5_value: anon_5 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_macros_detail_is_same_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref__const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref_
+{}
+pub type anon_6 = ();
+pub const anon_6_value: anon_6 = 1;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
-pub unsafe fn checkCollectionsEqual_6(
+pub unsafe fn checkCollectionsEqual_7(
     mut start1: (),
     end1: (),
     mut start2: *const (),
@@ -54,7 +61,7 @@ pub unsafe fn checkCollectionsEqual_6(
     }
     return ((unimplemented!()) && ((start2) == (end2)));
 }
-pub unsafe fn checkCollectionsEqualBackwards_7(
+pub unsafe fn checkCollectionsEqualBackwards_8(
     start1: (),
     mut end1: (),
     start2: *const (),
@@ -69,16 +76,13 @@ pub unsafe fn checkCollectionsEqualBackwards_7(
     }
     return ((unimplemented!()) && ((start2) == (end2)));
 }
-pub unsafe fn checkIteratorConcepts_8() {
+pub unsafe fn checkIteratorConcepts_9() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "std::bidirectional_iterator<It>");;
     const _: () = assert!(true, "");;
-    const _: () = assert!(
-        true,
-        "std::is_same<Traits::iterator_category, std::input_iterator_tag>::value"
-    );;
-    const _: () = assert!(true, "std::is_same<Traits::pointer, path const*>::value");;
-    const _: () = assert!(true, "std::is_same<Traits::reference, path>::value");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     {
         let mut it: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -98,7 +102,7 @@ pub unsafe fn checkIteratorConcepts_8() {
         unimplemented!();
     }
 }
-pub unsafe fn checkBeginEndBasic_9() {
+pub unsafe fn checkBeginEndBasic_10() {
     {
         let p: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -155,8 +159,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { checkIteratorConcepts_8() });
-    (unsafe { checkBeginEndBasic_9() });
+    (unsafe { checkIteratorConcepts_9() });
+    (unsafe { checkBeginEndBasic_10() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

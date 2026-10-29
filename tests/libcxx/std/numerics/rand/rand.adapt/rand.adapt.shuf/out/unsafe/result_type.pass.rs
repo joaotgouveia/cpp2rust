@@ -11,27 +11,13 @@ use std::rc::Rc;
 pub struct rand1_unsigned_long__0__10_ {
     x_: (),
 }
-impl rand1_unsigned_long__0__10_ {
-    pub unsafe fn min() -> () {
-        return 0_();
-    }
-    pub unsafe fn max() -> () {
-        return 10_();
-    }
-}
+impl rand1_unsigned_long__0__10_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct rand1_unsigned_long_long__0__10_ {
     x_: (),
 }
-impl rand1_unsigned_long_long__0__10_ {
-    pub unsafe fn min() -> () {
-        return 0_();
-    }
-    pub unsafe fn max() -> () {
-        return 10_();
-    }
-}
+impl rand1_unsigned_long_long__0__10_ {}
 pub unsafe fn test1_0() {
     const _: () = assert!(
         true,

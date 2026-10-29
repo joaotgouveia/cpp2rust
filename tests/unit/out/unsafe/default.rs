@@ -9,28 +9,32 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Pointers {
-    pub x1: *mut i32,
-    pub x2: *const i32,
-    pub x3: [*mut i32; 5],
-    pub x4: [*const i32; 10],
-    pub x5: i32,
+    pub x1: *mut (),
+    pub x2: *const (),
+    pub x3: [*mut (); 5],
+    pub x4: [*const (); 10],
+    pub x5: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct SmallArrays {
-    pub a: [i32; 32],
-    pub f: Option<unsafe fn(i32) -> i32>,
-    pub fs: [Option<unsafe fn(i32) -> i32>; 2],
+    pub a: [(); 32],
+    pub f: Option<unsafe fn(()) -> ()>,
+    pub fs: [Option<unsafe fn(()) -> ()>; 2],
     pub p: [Pointers; 2],
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct BigArray {
-    pub a: [i32; 33],
+    pub a: [(); 33],
 }
 impl Default for BigArray {
     fn default() -> Self {
-        unsafe { BigArray { a: [0_i32; 33] } }
+        unsafe {
+            BigArray {
+                a: [unimplemented!(); 33],
+            }
+        }
     }
 }
 pub fn main() {
@@ -39,9 +43,9 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut default_pointers: *mut Pointers = Box::leak(
-        (0..10_usize)
+        (0..10_())
             .map(|_| <Pointers>::default())
             .collect::<Box<[Pointers]>>(),
     )
@@ -57,7 +61,7 @@ unsafe fn main_0() -> i32 {
         }
     };
     let mut small: *mut SmallArrays = Box::leak(
-        (0..2_usize)
+        (0..2_())
             .map(|_| <SmallArrays>::default())
             .collect::<Box<[SmallArrays]>>(),
     )
@@ -73,7 +77,7 @@ unsafe fn main_0() -> i32 {
         }
     };
     let mut big: *mut BigArray = Box::leak(
-        (0..2_usize)
+        (0..2_())
             .map(|_| <BigArray>::default())
             .collect::<Box<[BigArray]>>(),
     )
@@ -88,6 +92,6 @@ unsafe fn main_0() -> i32 {
             )))
         }
     };
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

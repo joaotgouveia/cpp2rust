@@ -15,7 +15,8 @@ pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_std_string___std_optional_std_string__ {}
+pub struct test_macros_detail_is_same_std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -38,7 +39,8 @@ thread_local!(
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct mandate_same_std_optional_std_string___std_optional_std_string__ {}
+pub struct mandate_same_std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 thread_local!(
     pub static value_6: Value<()> = Rc::new(RefCell::new(true));
 );

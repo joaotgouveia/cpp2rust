@@ -9,16 +9,16 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_int_ {
-    pub x: i32,
+    pub x: (),
 }
 impl S_int_ {
-    pub unsafe fn set(&mut self, mut v: i32) {
+    pub unsafe fn set(&mut self, mut v: ()) {
         self.x = v;
     }
 }
 impl Default for S_int_ {
     fn default() -> Self {
-        unsafe { S_int_ { x: 0 } }
+        unsafe { S_int_ { x: 0_() } }
     }
 }
 pub fn main() {
@@ -27,18 +27,18 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut p: S_int_ = <S_int_>::default();
-    (unsafe { S_int_::set(&mut p, 3) });
-    assert!(((unsafe { f_0((&mut p as *mut S_int_),) }) == (3)));
-    return 0;
+    (unsafe { S_int_::set(&mut p, 3_()) });
+    unimplemented!();
+    return 0_();
 }
 impl S_int_ {
-    pub unsafe fn get(&mut self) -> i32 {
+    pub unsafe fn get(&mut self) -> () {
         return self.x;
     }
 }
-pub unsafe fn f_0(mut p: *mut S_int_) -> i32 {
+pub unsafe fn f_0(mut p: *mut S_int_) -> () {
     return (unsafe { S_int_::get(&mut (*p)) });
 }
 pub unsafe fn __cpp2rust_init_globals() {}

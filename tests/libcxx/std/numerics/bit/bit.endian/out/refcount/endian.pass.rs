@@ -38,19 +38,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         "std::endian::native == std::endian::little ||\n                   std::endian::native == std::endian::big"
     );;
     {
-        let i: Value<u32> = Rc::new(RefCell::new(16909060_u32));
+        let i: Value<()> = Rc::new(RefCell::new(16909060_()));
         let c: Value<Box<[()]>> = Rc::new(RefCell::new(
             (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
         ));
         const _: () = assert!(
-            (::std::mem::size_of::<u32>() == ::std::mem::size_of::<[(); 4]>()),
+            (::std::mem::size_of::<()>() == ::std::mem::size_of::<[(); 4]>()),
             "sizeof(i) == sizeof(c)"
         );;
-        ({
-            let ___dest: () = ((c.as_pointer() as Ptr<()>) as Ptr<()>).to_any();
-            let ___n: () = ::std::mem::size_of::<[(); 4]>();
-            memcpy_0(___dest, ((i.as_pointer()) as Ptr<u32>).to_any(), ___n)
-        });
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

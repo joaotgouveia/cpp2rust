@@ -173,34 +173,46 @@ pub fn classify_2(mut x: ()) -> () {
     if (x == 0_()) {
         return (anon_1_zero as ());
     }
-    if ({ isinf_3(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if ({ isnan_4(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub fn is_about_3(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub fn is_about_4(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub fn is_about_5(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub fn is_about_6(mut x: (), mut y: ()) {
+pub fn test_6(c: Ptr<()>, x: ()) {
+    let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
-pub fn is_about_7(mut x: (), mut y: ()) {
+pub fn test_7(c: Ptr<()>, x: ()) {
+    let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
 pub fn test_8(c: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
     unimplemented!();
 }
-pub fn test_9(c: Ptr<()>, x: ()) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+pub fn test_9() {
+    ({
+        let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_6(_c.as_pointer(), unimplemented!())
+    });
 }
-pub fn test_10(c: Ptr<()>, x: ()) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+pub fn test_10() {
+    ({
+        let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_c.as_pointer(), unimplemented!())
+    });
 }
 pub fn test_11() {
     ({
@@ -208,19 +220,7 @@ pub fn test_11() {
         test_8(_c.as_pointer(), unimplemented!())
     });
 }
-pub fn test_12() {
-    ({
-        let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(_c.as_pointer(), unimplemented!())
-    });
-}
-pub fn test_13() {
-    ({
-        let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(_c.as_pointer(), unimplemented!())
-    });
-}
-pub fn test_edges_14() {
+pub fn test_edges_12() {
     let mut N: () = (2448usize as ()).wrapping_div((16usize as ()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
@@ -229,53 +229,43 @@ pub fn test_edges_14() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-        } else if ({ isfinite_15(unimplemented!()) }) && ({ isinf_3(unimplemented!()) }) {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if ({ isfinite_15(unimplemented!()) }) && ({ isnan_4(unimplemented!()) }) {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if (({ isinf_3(unimplemented!()) }) && (unimplemented!() > 0_()))
-            && (unimplemented!() == 0_())
-        {
+        } else if ((unimplemented!()) && (unimplemented!() > 0_())) && (unimplemented!() == 0_()) {
             unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-        } else if (({ isinf_3(unimplemented!()) }) && (unimplemented!() < 0_()))
-            && ({ isinf_3(unimplemented!()) })
-        {
+        } else if ((unimplemented!()) && (unimplemented!() < 0_())) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if (({ isinf_3(unimplemented!()) }) && (unimplemented!() > 0_()))
-            && ({ isinf_3(unimplemented!()) })
-        {
+        } else if ((unimplemented!()) && (unimplemented!() > 0_())) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if (({ isinf_3(unimplemented!()) }) && (unimplemented!() < 0_()))
-            && ({ isnan_4(unimplemented!()) })
-        {
+        } else if ((unimplemented!()) && (unimplemented!() < 0_())) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if (({ isinf_3(unimplemented!()) }) && (unimplemented!() > 0_()))
-            && ({ isnan_4(unimplemented!()) })
-        {
+        } else if ((unimplemented!()) && (unimplemented!() > 0_())) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if ({ isnan_4(unimplemented!()) }) && (unimplemented!() == 0_()) {
+        } else if (unimplemented!()) && (unimplemented!() == 0_()) {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-        } else if ({ isnan_4(unimplemented!()) }) && (unimplemented!() != 0_()) {
+        } else if (unimplemented!()) && (unimplemented!() != 0_()) {
             unimplemented!();
             unimplemented!();
-        } else if ({ isnan_4(unimplemented!()) }) && ({ isnan_4(unimplemented!()) }) {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if ({ isfinite_15(unimplemented!()) }) && (({ abs_16(unimplemented!()) }) <= 1_()) {
+        } else if (unimplemented!()) && (unimplemented!() <= 1_()) {
             unimplemented!();
             unimplemented!();
-        } else if ({ isinf_3(unimplemented!()) }) && (unimplemented!() == 0_()) {
+        } else if (unimplemented!()) && (unimplemented!() == 0_()) {
             unimplemented!();
             unimplemented!();
         }
@@ -302,10 +292,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_9() });
+    ({ test_10() });
     ({ test_11() });
-    ({ test_12() });
-    ({ test_13() });
-    ({ test_edges_14() });
+    ({ test_edges_12() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

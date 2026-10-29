@@ -6,21 +6,21 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn fallthrough_into_block_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+pub fn fallthrough_into_block_0(mut x: ()) -> () {
+    let mut r: () = 0_();
     switch!(match x {
-        __v if __v == 1 => {
-            r += 1;
+        __v if __v == 1_() => {
+            r += 1_();
         }
-        __v if __v == 2 => {
+        __v if __v == 2_() => {
             {
-                let mut tmp: i32 = (r * 10);
-                r = (tmp + 5);
+                let mut tmp: () = (r * 10_());
+                r = (tmp + 5_());
                 break;
             }
         }
         _ => {
-            r = -1_i32;
+            r = -1_();
             break;
         }
     });
@@ -30,10 +30,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ fallthrough_into_block_0(1,) }) == 15));
-    assert!((({ fallthrough_into_block_0(2,) }) == 5));
-    assert!((({ fallthrough_into_block_0(99,) }) == -1_i32));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

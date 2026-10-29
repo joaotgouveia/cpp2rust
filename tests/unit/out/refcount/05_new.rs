@@ -16,11 +16,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut d: Ptr<i32> = Ptr::alloc(0);
-    d.write(5);
+fn main_0() -> () {
+    let mut d: Ptr<()> = Ptr::alloc(0_());
+    d.write(5_());
     d.delete();
-    let mut c: Ptr<i32> = Ptr::alloc(3);
+    let mut c: Ptr<()> = Ptr::alloc(3_());
     c.delete();
     ({
         DImpl::operator_call(
@@ -28,7 +28,7 @@ fn main_0() -> i32 {
             Ptr::alloc(<A>::default()),
         )
     });
-    return 0;
+    return 0_();
 }
 pub trait DImpl {
     fn operator_call(&self, ptr: Ptr<A>);

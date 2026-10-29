@@ -82,7 +82,7 @@ impl __gnu_test_copy_constructor {
         if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__1))
             == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)))
         {
-            (unsafe { __throw_runtime_error_3(c"copy_constructor::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
@@ -98,22 +98,22 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)).postfix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__4))
-            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)).postfix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__3))
+            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)))
         {
-            (unsafe { __throw_runtime_error_3(c"assignment_operator::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
     }
     pub unsafe fn throw_on(mut count: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = count;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
 #[repr(C)]
@@ -121,13 +121,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)).postfix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
     }
 }
 #[repr(C)]
@@ -139,7 +139,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
         let mut id: () = id.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__7)).postfix_dec()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
@@ -193,12 +193,12 @@ impl __gnu_test_copy_tracker {
 impl std::cmp::Ord for __gnu_test_copy_tracker {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_8(
+            if operator_lt_7(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_8(
+            } else if operator_lt_7(
                 other as *const __gnu_test_copy_tracker,
                 self as *const __gnu_test_copy_tracker,
             ) {
@@ -217,7 +217,7 @@ impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
 impl std::cmp::PartialEq for __gnu_test_copy_tracker {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_9(
+            operator_eq_8(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             )
@@ -235,14 +235,14 @@ impl Default for __gnu_test_copy_tracker {
         unsafe { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub unsafe fn operator_eq_9(
+pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
-pub unsafe fn operator_lt_8(
+pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
@@ -253,115 +253,104 @@ pub unsafe fn operator_lt_8(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
     sem_set_: (),
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
-pub static mut min_10: std::cell::LazyCell<()> =
+pub static mut min_9: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((-127_()) - (1_())) });
-pub static mut max_11: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 127_() });
+pub static mut max_10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 127_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_char_ {}
-pub static mut min_12: std::cell::LazyCell<()> =
+pub static mut min_11: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((-127_()) - (1_())) });
-pub static mut max_13: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 127_() });
+pub static mut max_12: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 127_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_signed_char_ {}
-pub static mut min_14: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut max_15: std::cell::LazyCell<()> =
+pub static mut min_13: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut max_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { (((127_()) * (2_())) + (1_())) });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_unsigned_char_ {}
-pub static mut min_16: std::cell::LazyCell<()> =
+pub static mut min_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((-32767_()) - (1_())) });
-pub static mut max_17: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 32767_() });
+pub static mut max_16: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 32767_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_short_ {}
-pub static mut min_18: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut max_19: std::cell::LazyCell<()> =
+pub static mut min_17: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut max_18: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { (((32767_()) * (2_())) + (1_())) });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_unsigned_short_ {}
-pub static mut min_20: std::cell::LazyCell<()> =
+pub static mut min_19: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((-2147483647_()) - (1_())) });
-pub static mut max_21: std::cell::LazyCell<()> =
+pub static mut max_20: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_int_ {}
-pub static mut min_22: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut max_23: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut min_21: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut max_22: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     (((2147483647_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_unsigned_int_ {}
-pub static mut min_24: std::cell::LazyCell<()> =
+pub static mut min_23: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((-9223372036854775807_()) - (1_())) });
-pub static mut max_25: std::cell::LazyCell<()> =
+pub static mut max_24: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 9223372036854775807_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_long_ {}
-pub static mut min_26: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut max_27: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut min_25: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut max_26: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     (((9223372036854775807_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_unsigned_long_ {}
-pub static mut min_28: std::cell::LazyCell<()> =
+pub static mut min_27: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { ((-2147483647_()) - (1_())) });
-pub static mut max_29: std::cell::LazyCell<()> =
+pub static mut max_28: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_wchar_t_ {}
-pub static mut min_30: std::cell::LazyCell<()> =
+pub static mut min_29: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 1.1754944e-38_f32 });
-pub static mut max_31: std::cell::LazyCell<()> =
+pub static mut max_30: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 3.4028235e+38_f32 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_float_ {}
-pub static mut min_32: std::cell::LazyCell<()> =
+pub static mut min_31: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2.2250738585072014e-308_f64 });
-pub static mut max_33: std::cell::LazyCell<()> =
+pub static mut max_32: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 1.7976931348623157e+308_f64 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_double_ {}
-pub static mut min_34: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_f64 });
-pub static mut max_35: std::cell::LazyCell<()> =
+pub static mut min_33: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_f64 });
+pub static mut max_34: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { f64::INFINITY });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct extrema_long_double_ {}
-pub unsafe fn test_extrema_36() {
+pub unsafe fn test_extrema_35() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_10));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_11));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_9));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_10));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = char]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -369,18 +358,51 @@ pub unsafe fn test_extrema_36() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = char]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn test_extrema_36() {
+    let mut limits_min: () = unimplemented!();
+    let mut limits_max: () = unimplemented!();
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_11));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_12));
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((extrema_min) == (limits_min)) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((extrema_max) == (limits_max)) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn test_extrema_37() {
+    let mut limits_min: () = unimplemented!();
+    let mut limits_max: () = unimplemented!();
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_13));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_14));
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((extrema_min) == (limits_min)) {
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((extrema_max) == (limits_max)) {
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -388,24 +410,13 @@ pub unsafe fn test_extrema_36() {
 pub unsafe fn test_extrema_38() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_12));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_13));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_15));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_16));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = signed char]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -413,18 +424,7 @@ pub unsafe fn test_extrema_38() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = signed char]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -432,24 +432,13 @@ pub unsafe fn test_extrema_38() {
 pub unsafe fn test_extrema_39() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_14));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_15));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_17));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_18));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = unsigned char]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -457,18 +446,7 @@ pub unsafe fn test_extrema_39() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = unsigned char]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -476,24 +454,13 @@ pub unsafe fn test_extrema_39() {
 pub unsafe fn test_extrema_40() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_16));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_17));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_19));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_20));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = short]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -501,18 +468,7 @@ pub unsafe fn test_extrema_40() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = short]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -520,24 +476,13 @@ pub unsafe fn test_extrema_40() {
 pub unsafe fn test_extrema_41() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_18));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_19));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_21));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_22));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = unsigned short]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -545,18 +490,7 @@ pub unsafe fn test_extrema_41() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = unsigned short]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -564,24 +498,13 @@ pub unsafe fn test_extrema_41() {
 pub unsafe fn test_extrema_42() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_20));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_21));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_23));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_24));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = int]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -589,18 +512,7 @@ pub unsafe fn test_extrema_42() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = int]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -608,24 +520,13 @@ pub unsafe fn test_extrema_42() {
 pub unsafe fn test_extrema_43() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_22));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_23));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_25));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_26));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = unsigned int]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -633,18 +534,7 @@ pub unsafe fn test_extrema_43() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = unsigned int]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -652,24 +542,13 @@ pub unsafe fn test_extrema_43() {
 pub unsafe fn test_extrema_44() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_24));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_25));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_29));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_30));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = long]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -677,18 +556,7 @@ pub unsafe fn test_extrema_44() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = long]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -696,24 +564,13 @@ pub unsafe fn test_extrema_44() {
 pub unsafe fn test_extrema_45() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_26));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_27));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_32));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = unsigned long]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -721,18 +578,7 @@ pub unsafe fn test_extrema_45() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = unsigned long]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -740,24 +586,13 @@ pub unsafe fn test_extrema_45() {
 pub unsafe fn test_extrema_46() {
     let mut limits_min: () = unimplemented!();
     let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_30));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_31));
+    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_33));
+    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_34));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = float]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -765,106 +600,7 @@ pub unsafe fn test_extrema_46() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = float]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
             unimplemented!();
-        }
-    }
-}
-pub unsafe fn test_extrema_47() {
-    let mut limits_min: () = unimplemented!();
-    let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_32));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_33));
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = double]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = double]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-}
-pub unsafe fn test_extrema_48() {
-    let mut limits_min: () = unimplemented!();
-    let mut limits_max: () = unimplemented!();
-    let mut extrema_min: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut min_34));
-    let mut extrema_max: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut max_35));
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((extrema_min) == (limits_min)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"void test_extrema() [T = long double]".as_ptr()).into(),
-                        (c"extrema_min == limits_min".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((extrema_max) == (limits_max)) {
-            (unsafe {
-                __builtin_fprintf_37(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"min_max.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"void test_extrema() [T = long double]".as_ptr()).into(),
-                        (c"extrema_max == limits_max".as_ptr()).into(),
-                    ]),
-                )
-            });
             unimplemented!();
         }
     }
@@ -876,7 +612,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
+    (unsafe { test_extrema_35() });
     (unsafe { test_extrema_36() });
+    (unsafe { test_extrema_37() });
     (unsafe { test_extrema_38() });
     (unsafe { test_extrema_39() });
     (unsafe { test_extrema_40() });
@@ -886,101 +624,55 @@ unsafe fn main_0() -> () {
     (unsafe { test_extrema_44() });
     (unsafe { test_extrema_45() });
     (unsafe { test_extrema_46() });
-    (unsafe { test_extrema_47() });
-    (unsafe { test_extrema_48() });
     return 0_();
 }
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         };
-        this.pid_ = ((unsafe { getpid_49() }) as ::libc::pid_t);
-        this.sem_set_ =
-            (unsafe { semget_50(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+        this.pid_ = unimplemented!();
+        this.sem_set_ = unimplemented!();
         if ((this.sem_set_) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
+            unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_51(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
-        {
-            (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_52(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_47(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
-    (unsafe {
-        getrlimit_53(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_54(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
-    (unsafe {
-        getrlimit_53(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_54(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_53((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_54(
-            (__rlimit_resource_RLIMIT_AS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn set_file_limit_55(mut size: ()) {
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+pub unsafe fn set_file_limit_48(mut size: ()) {
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
-    (unsafe {
-        getrlimit_53(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_54(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn verify_demangle_56(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_49(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_57(
-            mangled,
-            std::ptr::null_mut(),
-            std::ptr::null_mut(),
-            (&mut status as *mut ()),
-        )
-    });
+    let mut demangled: *mut () = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
@@ -1007,12 +699,12 @@ pub unsafe fn verify_demangle_56(mut mangled: *const (), mut wanted: *const ()) 
         });
     }
     let mut w: () = unimplemented!();
-    if unimplemented!() {
-        (unsafe { __throw_runtime_error_3(s) });
+    if !(unimplemented!()) {
+        unimplemented!();
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_58(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_50(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -1030,19 +722,17 @@ pub unsafe fn run_tests_wrapped_locale_58(mut name: *const (), l: *const __gnu_t
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                (unsafe {
-                    __builtin_fprintf_37 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_59(
+pub unsafe fn run_tests_wrapped_env_51(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -1063,21 +753,21 @@ pub unsafe fn run_tests_wrapped_env_59(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
     pub val: (),
-    pub buf: *mut semid_ds,
+    pub buf: *mut (),
     pub array: *mut (),
 }
 impl Default for __gnu_test_semun {
@@ -1090,28 +780,28 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_49() })) {
-            (unsafe { semctl_51(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unimplemented!())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_60(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not signal semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_60(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not wait for semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
-pub unsafe fn test_tm_61(
+pub unsafe fn test_tm_52(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1121,52 +811,52 @@ pub unsafe fn test_tm_61(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_62));
+) -> () {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_53)).clone();
 }
-static mut tmp_62: std::cell::LazyCell<::libc::tm> =
-    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
+static mut tmp_53: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const min_10);
-    std::cell::LazyCell::force(&*&raw const max_11);
-    std::cell::LazyCell::force(&*&raw const min_12);
-    std::cell::LazyCell::force(&*&raw const max_13);
-    std::cell::LazyCell::force(&*&raw const min_14);
-    std::cell::LazyCell::force(&*&raw const max_15);
-    std::cell::LazyCell::force(&*&raw const min_16);
-    std::cell::LazyCell::force(&*&raw const max_17);
-    std::cell::LazyCell::force(&*&raw const min_18);
-    std::cell::LazyCell::force(&*&raw const max_19);
-    std::cell::LazyCell::force(&*&raw const min_20);
-    std::cell::LazyCell::force(&*&raw const max_21);
-    std::cell::LazyCell::force(&*&raw const min_22);
-    std::cell::LazyCell::force(&*&raw const max_23);
-    std::cell::LazyCell::force(&*&raw const min_24);
-    std::cell::LazyCell::force(&*&raw const max_25);
-    std::cell::LazyCell::force(&*&raw const min_26);
-    std::cell::LazyCell::force(&*&raw const max_27);
-    std::cell::LazyCell::force(&*&raw const min_28);
-    std::cell::LazyCell::force(&*&raw const max_29);
-    std::cell::LazyCell::force(&*&raw const min_30);
-    std::cell::LazyCell::force(&*&raw const max_31);
-    std::cell::LazyCell::force(&*&raw const min_32);
-    std::cell::LazyCell::force(&*&raw const max_33);
-    std::cell::LazyCell::force(&*&raw const min_34);
-    std::cell::LazyCell::force(&*&raw const max_35);
+    std::cell::LazyCell::force(&*&raw const min_9);
+    std::cell::LazyCell::force(&*&raw const max_10);
+    std::cell::LazyCell::force(&*&raw const min_11);
+    std::cell::LazyCell::force(&*&raw const max_12);
+    std::cell::LazyCell::force(&*&raw const min_13);
+    std::cell::LazyCell::force(&*&raw const max_14);
+    std::cell::LazyCell::force(&*&raw const min_15);
+    std::cell::LazyCell::force(&*&raw const max_16);
+    std::cell::LazyCell::force(&*&raw const min_17);
+    std::cell::LazyCell::force(&*&raw const max_18);
+    std::cell::LazyCell::force(&*&raw const min_19);
+    std::cell::LazyCell::force(&*&raw const max_20);
+    std::cell::LazyCell::force(&*&raw const min_21);
+    std::cell::LazyCell::force(&*&raw const max_22);
+    std::cell::LazyCell::force(&*&raw const min_23);
+    std::cell::LazyCell::force(&*&raw const max_24);
+    std::cell::LazyCell::force(&*&raw const min_25);
+    std::cell::LazyCell::force(&*&raw const max_26);
+    std::cell::LazyCell::force(&*&raw const min_27);
+    std::cell::LazyCell::force(&*&raw const max_28);
+    std::cell::LazyCell::force(&*&raw const min_29);
+    std::cell::LazyCell::force(&*&raw const max_30);
+    std::cell::LazyCell::force(&*&raw const min_31);
+    std::cell::LazyCell::force(&*&raw const max_32);
+    std::cell::LazyCell::force(&*&raw const min_33);
+    std::cell::LazyCell::force(&*&raw const max_34);
     std::cell::LazyCell::force(&*&raw const count_0);
     std::cell::LazyCell::force(&*&raw const count__1);
     std::cell::LazyCell::force(&*&raw const throw_on__2);
-    std::cell::LazyCell::force(&*&raw const count__4);
-    std::cell::LazyCell::force(&*&raw const throw_on__5);
-    std::cell::LazyCell::force(&*&raw const _M_count_6);
-    std::cell::LazyCell::force(&*&raw const next_id__7);
+    std::cell::LazyCell::force(&*&raw const count__3);
+    std::cell::LazyCell::force(&*&raw const throw_on__4);
+    std::cell::LazyCell::force(&*&raw const _M_count_5);
+    std::cell::LazyCell::force(&*&raw const next_id__6);
 }

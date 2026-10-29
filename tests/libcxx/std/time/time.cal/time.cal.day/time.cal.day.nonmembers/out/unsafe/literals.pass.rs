@@ -31,14 +31,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "7d == day(7)");;
-        let mut d1: () = (unsafe { operator_literal_d_1(4_()) });
+        let mut d1: () = unimplemented!();
         unimplemented!();
     }
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "7d == std::chrono::day(7)");;
-        let mut d1: () = (unsafe { operator_literal_d_1(4_()) });
+        let mut d1: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

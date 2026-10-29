@@ -62,7 +62,8 @@ const _: () = assert!(
 pub unsafe fn test_1() -> () {
     let mut c: NoIteratorAlias = <NoIteratorAlias>::default();
     let mut half: () = 0.5_f64;
-    let mut it: () = unimplemented!();
+    let mut it: () =
+        std_insert_iterator_NoIteratorAlias_::new({ &mut c }, { c.data_.as_mut_ptr() });
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();

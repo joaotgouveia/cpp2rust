@@ -184,19 +184,51 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_std_pair_const_int__int__ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_std_pair_const_int__int__ {}
+impl test_allocator_std_pair_const_int__int__ {
+    pub unsafe fn copy_from(a: *const test_allocator_std_pair_const_int__int__) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
+impl Clone for test_allocator_std_pair_const_int__int__ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_std_pair_const_int__int__::copy_from(
+                self as *const test_allocator_std_pair_const_int__int__,
+            )
+        }
+    }
+}
 impl Default for test_allocator_std_pair_const_int__int__ {
     fn default() -> Self {
         unsafe {
             test_allocator_std_pair_const_int__int__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -207,19 +239,51 @@ impl Default for test_allocator_std_pair_const_int__int__ {
 pub struct test_allocator_std_pair_const_int__StrongOrder___rebind_std_pair_const_int__StrongOrder__
 {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_std_pair_const_int__StrongOrder__ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_std_pair_const_int__StrongOrder__ {}
+impl test_allocator_std_pair_const_int__StrongOrder__ {
+    pub unsafe fn copy_from(a: *const test_allocator_std_pair_const_int__StrongOrder__) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
+impl Clone for test_allocator_std_pair_const_int__StrongOrder__ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_std_pair_const_int__StrongOrder__::copy_from(
+                self as *const test_allocator_std_pair_const_int__StrongOrder__,
+            )
+        }
+    }
+}
 impl Default for test_allocator_std_pair_const_int__StrongOrder__ {
     fn default() -> Self {
         unsafe {
             test_allocator_std_pair_const_int__StrongOrder__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -230,19 +294,51 @@ impl Default for test_allocator_std_pair_const_int__StrongOrder__ {
 pub struct test_allocator_std_pair_const_int__WeakOrder___rebind_std_pair_const_int__WeakOrder__ {
 }
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_std_pair_const_int__WeakOrder__ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_std_pair_const_int__WeakOrder__ {}
+impl test_allocator_std_pair_const_int__WeakOrder__ {
+    pub unsafe fn copy_from(a: *const test_allocator_std_pair_const_int__WeakOrder__) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
+impl Clone for test_allocator_std_pair_const_int__WeakOrder__ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_std_pair_const_int__WeakOrder__::copy_from(
+                self as *const test_allocator_std_pair_const_int__WeakOrder__,
+            )
+        }
+    }
+}
 impl Default for test_allocator_std_pair_const_int__WeakOrder__ {
     fn default() -> Self {
         unsafe {
             test_allocator_std_pair_const_int__WeakOrder__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -253,19 +349,51 @@ impl Default for test_allocator_std_pair_const_int__WeakOrder__ {
 pub struct test_allocator_std_pair_const_int__PartialOrder___rebind_std_pair_const_int__PartialOrder__
 {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_std_pair_const_int__PartialOrder__ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_std_pair_const_int__PartialOrder__ {}
+impl test_allocator_std_pair_const_int__PartialOrder__ {
+    pub unsafe fn copy_from(a: *const test_allocator_std_pair_const_int__PartialOrder__) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
+impl Clone for test_allocator_std_pair_const_int__PartialOrder__ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_std_pair_const_int__PartialOrder__::copy_from(
+                self as *const test_allocator_std_pair_const_int__PartialOrder__,
+            )
+        }
+    }
+}
 impl Default for test_allocator_std_pair_const_int__PartialOrder__ {
     fn default() -> Self {
         unsafe {
             test_allocator_std_pair_const_int__PartialOrder__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }

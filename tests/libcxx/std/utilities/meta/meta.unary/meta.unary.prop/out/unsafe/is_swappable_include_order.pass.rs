@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        const _: () = assert!(true, "std::__is_swappable_v<T>");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::is_swappable_v<T>");;
     }
     {

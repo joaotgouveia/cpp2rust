@@ -142,22 +142,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut p2: () = unimplemented!();
         unimplemented!();
     }
-    {
-        let mut pA: () = unimplemented!();
-        unimplemented!();
-        {
-            let mut b: B = B::new();
-            let _dtor_b = ScopedDestructorUnsafe::new(&raw mut b, B::destructor);
-            let mut pB: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    unimplemented!();
-    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

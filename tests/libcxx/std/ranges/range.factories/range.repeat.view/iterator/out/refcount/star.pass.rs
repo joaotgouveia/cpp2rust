@@ -48,13 +48,8 @@ pub fn test_0() -> () {
         let __tmp_0: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(31_()));
-                let ___bound_sentinel: Value<()> = Rc::new(RefCell::new(100_()));
-                (*repeat_1.with(Value::clone).borrow_mut())(
-                    ___value.as_pointer(),
-                    ___bound_sentinel.as_pointer(),
-                )
-            })
-            .clone(),
+                (*repeat_1.with(Value::clone).borrow_mut())(___value.as_pointer(), 100_())
+            }),
         ));
         let __range1: Ptr<()> = __tmp_0.as_pointer();
         'loop_: for val in IterRange::new(unimplemented!(), unimplemented!()) {

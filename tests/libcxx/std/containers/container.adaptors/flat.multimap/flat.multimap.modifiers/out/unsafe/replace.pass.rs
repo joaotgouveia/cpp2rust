@@ -54,23 +54,61 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_add_0(
     mut x: three_way_random_access_iterator_int_ptr_,
@@ -194,14 +232,20 @@ pub unsafe fn operator_add_4(
     (unsafe { three_way_random_access_iterator_const_int_ptr_::operator_add_assign(&mut x, n) });
     return three_way_random_access_iterator_const_int_ptr_::move_from({ &mut x });
 }
-pub unsafe fn operator_eq_5(
+pub unsafe fn operator_sub_5(
+    mut x: three_way_random_access_iterator_const_int_ptr_,
+    mut y: three_way_random_access_iterator_const_int_ptr_,
+) -> () {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
+}
+pub unsafe fn operator_eq_6(
     x: *const three_way_random_access_iterator_const_int_ptr_,
     y: *const three_way_random_access_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct three_way_random_access_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -237,11 +281,22 @@ impl three_way_random_access_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut three_way_random_access_iterator_const_int_ptr_,
+    ) -> *mut three_way_random_access_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut three_way_random_access_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for three_way_random_access_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_5(
+            operator_eq_6(
                 self as *const three_way_random_access_iterator_const_int_ptr_,
                 other as *const three_way_random_access_iterator_const_int_ptr_,
             )
@@ -249,26 +304,26 @@ impl std::cmp::PartialEq for three_way_random_access_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for three_way_random_access_iterator_const_int_ptr_ {}
-pub unsafe fn operator_add_6(
+pub unsafe fn operator_add_7(
     mut x: three_way_random_access_iterator_double_ptr_,
     mut n: (),
 ) -> three_way_random_access_iterator_double_ptr_ {
     (unsafe { three_way_random_access_iterator_double_ptr_::operator_add_assign(&mut x, n) });
     return three_way_random_access_iterator_double_ptr_::move_from({ &mut x });
 }
-pub unsafe fn operator_sub_7(
+pub unsafe fn operator_sub_8(
     mut x: three_way_random_access_iterator_double_ptr_,
     mut y: three_way_random_access_iterator_double_ptr_,
 ) -> () {
     return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_8(
+pub unsafe fn operator_eq_9(
     x: *const three_way_random_access_iterator_double_ptr_,
     y: *const three_way_random_access_iterator_double_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_cmp_9(
+pub unsafe fn operator_cmp_10(
     x: *const three_way_random_access_iterator_double_ptr_,
     y: *const three_way_random_access_iterator_double_ptr_,
 ) -> () {
@@ -341,7 +396,7 @@ impl three_way_random_access_iterator_double_ptr_ {
 impl std::cmp::Ord for three_way_random_access_iterator_double_ptr_ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            operator_cmp_9(
+            operator_cmp_10(
                 self as *const three_way_random_access_iterator_double_ptr_,
                 other as *const three_way_random_access_iterator_double_ptr_,
             )
@@ -356,7 +411,7 @@ impl std::cmp::PartialOrd for three_way_random_access_iterator_double_ptr_ {
 impl std::cmp::PartialEq for three_way_random_access_iterator_double_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_8(
+            operator_eq_9(
                 self as *const three_way_random_access_iterator_double_ptr_,
                 other as *const three_way_random_access_iterator_double_ptr_,
             )
@@ -364,21 +419,27 @@ impl std::cmp::PartialEq for three_way_random_access_iterator_double_ptr_ {
     }
 }
 impl std::cmp::Eq for three_way_random_access_iterator_double_ptr_ {}
-pub unsafe fn operator_add_10(
+pub unsafe fn operator_add_11(
     mut x: three_way_random_access_iterator_const_double_ptr_,
     mut n: (),
 ) -> three_way_random_access_iterator_const_double_ptr_ {
     (unsafe { three_way_random_access_iterator_const_double_ptr_::operator_add_assign(&mut x, n) });
     return three_way_random_access_iterator_const_double_ptr_::move_from({ &mut x });
 }
-pub unsafe fn operator_eq_11(
+pub unsafe fn operator_sub_12(
+    mut x: three_way_random_access_iterator_const_double_ptr_,
+    mut y: three_way_random_access_iterator_const_double_ptr_,
+) -> () {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
+}
+pub unsafe fn operator_eq_13(
     x: *const three_way_random_access_iterator_const_double_ptr_,
     y: *const three_way_random_access_iterator_const_double_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct three_way_random_access_iterator_const_double_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -414,11 +475,22 @@ impl three_way_random_access_iterator_const_double_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut three_way_random_access_iterator_const_double_ptr_,
+    ) -> *mut three_way_random_access_iterator_const_double_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut three_way_random_access_iterator_const_double_ptr_));
+    }
 }
 impl std::cmp::PartialEq for three_way_random_access_iterator_const_double_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_11(
+            operator_eq_13(
                 self as *const three_way_random_access_iterator_const_double_ptr_,
                 other as *const three_way_random_access_iterator_const_double_ptr_,
             )
@@ -427,7 +499,7 @@ impl std::cmp::PartialEq for three_way_random_access_iterator_const_double_ptr_ 
 }
 impl std::cmp::Eq for three_way_random_access_iterator_const_double_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -438,6 +510,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
     }
 }
 const _: () = assert!(
@@ -527,7 +617,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub unsafe fn operator_eq_12(
+pub unsafe fn operator_eq_14(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -542,7 +632,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_12(
+            operator_eq_14(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -564,33 +654,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_13(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_15(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_13(_i, n)
+        operator_add_15(_i, n)
     });
 }
-pub unsafe fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_18(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -674,7 +764,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_20(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -684,7 +774,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_19(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -753,7 +843,7 @@ impl util_iterator_error {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__
 {
     data_: (),
@@ -765,9 +855,12 @@ impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_
  } pub unsafe fn end_15 ( &self , ) -> three_way_random_access_iterator_const_int_ptr_ { return ( unsafe { let _x: three_way_random_access_iterator_const_int_ptr_  = ( unsafe { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: begin_12 ( self , ) } )  ; let _n: ()  = ( unsafe { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: size ( self , ) } )  ; operator_add_4 ( _x , _n , ) } )   ;
  } pub unsafe fn size ( &self , ) -> () { return unimplemented!()   ;
  } pub unsafe fn clear ( &mut self , ) { unimplemented!()  ;
+ } pub unsafe fn move_from ( _a0 : *mut MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ , ) -> Self { let mut this = Self { data_ : unimplemented!() , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ , ) -> *mut MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ { unimplemented!()  ;
+ return & mut ( * ( self as *mut MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  )  )  ;
  } }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__
 {
     data_: (),
@@ -775,10 +868,13 @@ pub struct MinSequenceContainer_double__three_way_random_access_iterator_double_
 impl MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ { pub unsafe fn new_1 ( mut il : () , ) -> Self { let mut this = Self { data_ : unimplemented!() , } ;
  this } pub unsafe fn begin_11 ( &mut self , ) -> three_way_random_access_iterator_double_ptr_ { return three_way_random_access_iterator_double_ptr_ :: new_1 ( { unimplemented!()  } , )   ;
  } pub unsafe fn begin_12 ( &self , ) -> three_way_random_access_iterator_const_double_ptr_ { return three_way_random_access_iterator_const_double_ptr_ :: new_1 ( { unimplemented!()  } , )   ;
- } pub unsafe fn end_14 ( &mut self , ) -> three_way_random_access_iterator_double_ptr_ { return ( unsafe { let _x: three_way_random_access_iterator_double_ptr_  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: begin_11 ( self , ) } )  ; let _n: ()  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: size ( self , ) } )  ; operator_add_6 ( _x , _n , ) } )   ;
- } pub unsafe fn end_15 ( &self , ) -> three_way_random_access_iterator_const_double_ptr_ { return ( unsafe { let _x: three_way_random_access_iterator_const_double_ptr_  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: begin_12 ( self , ) } )  ; let _n: ()  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: size ( self , ) } )  ; operator_add_10 ( _x , _n , ) } )   ;
+ } pub unsafe fn end_14 ( &mut self , ) -> three_way_random_access_iterator_double_ptr_ { return ( unsafe { let _x: three_way_random_access_iterator_double_ptr_  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: begin_11 ( self , ) } )  ; let _n: ()  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: size ( self , ) } )  ; operator_add_7 ( _x , _n , ) } )   ;
+ } pub unsafe fn end_15 ( &self , ) -> three_way_random_access_iterator_const_double_ptr_ { return ( unsafe { let _x: three_way_random_access_iterator_const_double_ptr_  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: begin_12 ( self , ) } )  ; let _n: ()  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: size ( self , ) } )  ; operator_add_11 ( _x , _n , ) } )   ;
  } pub unsafe fn size ( &self , ) -> () { return unimplemented!()   ;
  } pub unsafe fn clear ( &mut self , ) { unimplemented!()  ;
+ } pub unsafe fn move_from ( _a0 : *mut MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ , ) -> Self { let mut this = Self { data_ : unimplemented!() , } ;
+ this } pub unsafe fn move_assign ( &mut self , _a0 : *mut MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ , ) -> *mut MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ { unimplemented!()  ;
+ return & mut ( * ( self as *mut MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__  )  )  ;
  } }
 const _: () = assert!(!(false), "!HasAllocatorType<MinSequenceContainer<int>>");
 const _: () = assert!(!(false), "!HasEmplace<MinSequenceContainer<int>>");
@@ -940,21 +1036,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_19: std::cell::LazyCell<()> =
+pub static mut destructed_value_21: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_20: std::cell::LazyCell<()> =
+pub static mut moved_value_22: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_21(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_23(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_22(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_24(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_21(_x, _y)
+        operator_eq_23(_x, _y)
     });
 }
 #[repr(C)]
@@ -1018,8 +1114,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_19));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_19));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_21));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_21));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -1040,7 +1136,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_21(
+            operator_eq_23(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -1096,50 +1192,50 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_24))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_25))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_26))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_27))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_26)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_23)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_24)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_25)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_28)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_25)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_26)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_27)) = 0_();
     }
 }
-pub static mut outstanding_bytes_23: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_25: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_24: std::cell::LazyCell<()> =
+pub static mut alloc_count_26: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_25: std::cell::LazyCell<()> =
+pub static mut dealloc_count_27: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_26: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_28: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub unsafe fn operator_sub_27(
+pub unsafe fn operator_sub_29(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_lt_28(
+pub unsafe fn operator_lt_30(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) < (y.ptr_));
 }
-pub unsafe fn operator_eq_29(
+pub unsafe fn operator_eq_31(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_30(
+pub unsafe fn operator_ne_32(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_29(_x, y)
+        operator_eq_31(_x, y)
     });
 }
 #[repr(C)]
@@ -1152,17 +1248,11 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*self.ptr_);
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
     }
     pub unsafe fn operator_inc_8(
         &mut self,
@@ -1181,6 +1271,13 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         mut n: (),
     ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
+        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_sub_assign(
+        &mut self,
+        mut n: (),
+    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
     pub unsafe fn operator_add(
@@ -1203,9 +1300,9 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_28(self.clone(), other.clone()) {
+            if operator_lt_30(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_28(other.clone(), self.clone()) {
+            } else if operator_lt_30(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1220,7 +1317,7 @@ impl std::cmp::PartialOrd for min_pointer_int__std_integral_constant_unsigned_lo
 }
 impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_29(self.clone(), other.clone()) }
+        unsafe { operator_eq_31(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
@@ -1230,13 +1327,19 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_31(
+pub unsafe fn operator_sub_33(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_ne_32(
+pub unsafe fn operator_eq_34(
+    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+) -> () {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_35(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -1257,9 +1360,6 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     pub unsafe fn operator_deref(&self) -> *const () {
         return &(*self.ptr_);
     }
-    pub unsafe fn operator_arrow(&self) -> *const () {
-        return self.ptr_;
-    }
     pub unsafe fn operator_inc_9(
         &mut self,
     ) -> *mut min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
@@ -1268,37 +1368,43 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
             as *mut min_pointer_const_int__std_integral_constant_unsigned_long__0__));
     }
 }
+impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { operator_eq_34(self.clone(), other.clone()) }
+    }
+}
+impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_33(
+pub unsafe fn operator_sub_36(
     mut x: min_pointer_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_lt_34(
+pub unsafe fn operator_lt_37(
     mut x: min_pointer_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) < (y.ptr_));
 }
-pub unsafe fn operator_eq_35(
+pub unsafe fn operator_eq_38(
     mut x: min_pointer_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_36(
+pub unsafe fn operator_ne_39(
     mut x: min_pointer_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_double__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_35(_x, y)
+        operator_eq_38(_x, y)
     });
 }
 #[repr(C)]
@@ -1311,17 +1417,11 @@ impl min_pointer_double__std_integral_constant_unsigned_long__0__ {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*self.ptr_);
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
     }
     pub unsafe fn operator_inc_8(
         &mut self,
@@ -1340,6 +1440,13 @@ impl min_pointer_double__std_integral_constant_unsigned_long__0__ {
         mut n: (),
     ) -> *mut min_pointer_double__std_integral_constant_unsigned_long__0__ {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
+        return &mut (*(self as *mut min_pointer_double__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_sub_assign(
+        &mut self,
+        mut n: (),
+    ) -> *mut min_pointer_double__std_integral_constant_unsigned_long__0__ {
+        self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
         return &mut (*(self as *mut min_pointer_double__std_integral_constant_unsigned_long__0__));
     }
     pub unsafe fn operator_add(
@@ -1362,9 +1469,9 @@ impl min_pointer_double__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_double__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_34(self.clone(), other.clone()) {
+            if operator_lt_37(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_34(other.clone(), self.clone()) {
+            } else if operator_lt_37(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1379,17 +1486,23 @@ impl std::cmp::PartialOrd for min_pointer_double__std_integral_constant_unsigned
 }
 impl std::cmp::PartialEq for min_pointer_double__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_35(self.clone(), other.clone()) }
+        unsafe { operator_eq_38(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_double__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_37(
+pub unsafe fn operator_sub_40(
     mut x: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_ne_38(
+pub unsafe fn operator_eq_41(
+    mut x: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
+) -> () {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_42(
     mut x: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -1412,9 +1525,6 @@ impl min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
     pub unsafe fn operator_deref(&self) -> *const () {
         return &(*self.ptr_);
     }
-    pub unsafe fn operator_arrow(&self) -> *const () {
-        return self.ptr_;
-    }
     pub unsafe fn operator_inc_9(
         &mut self,
     ) -> *mut min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
@@ -1423,15 +1533,12 @@ impl min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
             as *mut min_pointer_const_double__std_integral_constant_unsigned_long__0__));
     }
 }
-pub unsafe fn operator_eq_39(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
-    return true;
+impl std::cmp::PartialEq for min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { operator_eq_41(self.clone(), other.clone()) }
+    }
 }
-pub unsafe fn operator_ne_40(mut x: min_allocator_int_, mut y: min_allocator_int_) -> () {
-    return !(unsafe {
-        let _arg0: min_allocator_int_ = x;
-        operator_eq_39(_arg0, y)
-    });
-}
+impl std::cmp::Eq for min_pointer_const_double__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
@@ -1451,21 +1558,6 @@ impl min_allocator_int_ {
     ) {
         unimplemented!();
     }
-}
-impl std::cmp::PartialEq for min_allocator_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_39(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_allocator_int_ {}
-pub unsafe fn operator_eq_41(mut _a0: min_allocator_double_, mut _a1: min_allocator_double_) -> () {
-    return true;
-}
-pub unsafe fn operator_ne_42(mut x: min_allocator_double_, mut y: min_allocator_double_) -> () {
-    return !(unsafe {
-        let _arg0: min_allocator_double_ = x;
-        operator_eq_41(_arg0, y)
-    });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -1487,12 +1579,6 @@ impl min_allocator_double_ {
         unimplemented!();
     }
 }
-impl std::cmp::PartialEq for min_allocator_double_ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_41(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_allocator_double_ {}
 const _: () = assert!(true, "CanReplace<Map, std::vector<int>, std::vector<int>>");
 const _: () = assert!(
     !(false),
@@ -1507,7 +1593,7 @@ const _: () = assert!(
     "!CanReplace<Map, const std::vector<int>&, const std::vector<int>&>"
 );
 pub unsafe fn test_43() {
-    let mut m: () = unimplemented!();
+    let mut m : () = std_flat_multimap_int__double__std_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , None , )  ;
     let mut new_keys: () = unimplemented!();
     let mut new_values: () = unimplemented!();
     let mut expected_keys: () = unimplemented!();
@@ -1518,7 +1604,7 @@ pub unsafe fn test_43() {
     unimplemented!();
 }
 pub unsafe fn test_44() {
-    let mut m: () = unimplemented!();
+    let mut m : () = std_flat_multimap_int__double__std_less_int___std_deque_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , None , )  ;
     let mut new_keys: () = unimplemented!();
     let mut new_values: () = unimplemented!();
     let mut expected_keys: () = unimplemented!();
@@ -1529,7 +1615,7 @@ pub unsafe fn test_44() {
     unimplemented!();
 }
 pub unsafe fn test_45() {
-    let mut m: () = unimplemented!();
+    let mut m : () = std_flat_multimap_int__double__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr___ :: new_1 ( { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: new_1 ( { unimplemented!() } , )  } , { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: new_1 ( { unimplemented!() } , )  } , None , )  ;
     let mut new_keys : MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ = MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: new_1 ( { unimplemented!() } , )  ;
     let mut new_values : MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ = MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: new_1 ( { unimplemented!() } , )  ;
     let mut expected_keys : MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ = new_keys .clone() ;
@@ -1540,7 +1626,7 @@ pub unsafe fn test_45() {
     unimplemented!();
 }
 pub unsafe fn test_46() {
-    let mut m: () = unimplemented!();
+    let mut m : () = std_flat_multimap_int__double__std_less_int___std_vector_int__min_allocator_int____std_vector_double__min_allocator_double___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , None , )  ;
     let mut new_keys: () = unimplemented!();
     let mut new_values: () = unimplemented!();
     let mut expected_keys: () = unimplemented!();
@@ -1580,10 +1666,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_19);
-    std::cell::LazyCell::force(&*&raw const moved_value_20);
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_23);
-    std::cell::LazyCell::force(&*&raw const alloc_count_24);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_25);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_26);
+    std::cell::LazyCell::force(&*&raw const destructed_value_21);
+    std::cell::LazyCell::force(&*&raw const moved_value_22);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_25);
+    std::cell::LazyCell::force(&*&raw const alloc_count_26);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_27);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_28);
 }

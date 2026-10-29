@@ -181,32 +181,22 @@ impl Default for test_allocator_void_ {
     }
 }
 pub unsafe fn operator_eq_4(
-    x: *const test_allocator_std_csub_match_,
-    y: *const test_allocator_std_csub_match_,
+    x: *const test_allocator_std_sub_match_const_char_ptr__,
+    y: *const test_allocator_std_sub_match_const_char_ptr__,
 ) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_5(
-    x: *const test_allocator_std_csub_match_,
-    y: *const test_allocator_std_csub_match_,
-) -> () {
-    return !(unsafe {
-        let _x: *const test_allocator_std_csub_match_ = x;
-        let _y: *const test_allocator_std_csub_match_ = y;
-        operator_eq_4(_x, _y)
-    });
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std_csub_match__rebind_std_csub_match_ {}
+pub struct test_allocator_std_sub_match_const_char_ptr___rebind_std_sub_match_const_char_ptr__ {}
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std_csub_match_ {
+pub struct test_allocator_std_sub_match_const_char_ptr__ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_std_csub_match_ {
+impl test_allocator_std_sub_match_const_char_ptr__ {
     pub unsafe fn new_1(mut data: ()) -> Self {
         let mut this = Self {
             data_: data,
@@ -215,7 +205,7 @@ impl test_allocator_std_csub_match_ {
         };
         this
     }
-    pub unsafe fn copy_from(a: *const test_allocator_std_csub_match_) -> Self {
+    pub unsafe fn copy_from(a: *const test_allocator_std_sub_match_const_char_ptr__) -> Self {
         let mut this = Self {
             data_: (*a).data_,
             id_: (*a).id_,
@@ -267,35 +257,161 @@ impl test_allocator_std_csub_match_ {
             (*self.stats_).destroy_count.prefix_inc();
         };
     }
-    pub unsafe fn construct_16_std_csub_match(&mut self, mut p: *mut (), val: *mut ()) {
+    pub unsafe fn construct_16_class_std_sub_match_const_char_ptr_(
+        &mut self,
+        mut p: *mut (),
+        val: *mut (),
+    ) {
         if !((self.stats_).is_null()) {
             (*self.stats_).construct_count.prefix_inc();
         }
         unimplemented!();
     }
 }
-impl std::cmp::PartialEq for test_allocator_std_csub_match_ {
+impl std::cmp::PartialEq for test_allocator_std_sub_match_const_char_ptr__ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
             operator_eq_4(
-                self as *const test_allocator_std_csub_match_,
-                other as *const test_allocator_std_csub_match_,
+                self as *const test_allocator_std_sub_match_const_char_ptr__,
+                other as *const test_allocator_std_sub_match_const_char_ptr__,
             )
         }
     }
 }
-impl std::cmp::Eq for test_allocator_std_csub_match_ {}
-impl Clone for test_allocator_std_csub_match_ {
+impl std::cmp::Eq for test_allocator_std_sub_match_const_char_ptr__ {}
+impl Clone for test_allocator_std_sub_match_const_char_ptr__ {
     fn clone(&self) -> Self {
         unsafe {
-            test_allocator_std_csub_match_::copy_from(self as *const test_allocator_std_csub_match_)
+            test_allocator_std_sub_match_const_char_ptr__::copy_from(
+                self as *const test_allocator_std_sub_match_const_char_ptr__,
+            )
         }
     }
 }
-impl Default for test_allocator_std_csub_match_ {
+impl Default for test_allocator_std_sub_match_const_char_ptr__ {
     fn default() -> Self {
         unsafe {
-            test_allocator_std_csub_match_ {
+            test_allocator_std_sub_match_const_char_ptr__ {
+                data_: 0_(),
+                id_: 0_(),
+                stats_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+pub unsafe fn operator_eq_5(
+    x: *const test_allocator_std_sub_match_const_wchar_t_ptr__,
+    y: *const test_allocator_std_sub_match_const_wchar_t_ptr__,
+) -> () {
+    return (((*x).data_) == ((*y).data_));
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_std_sub_match_const_wchar_t_ptr___rebind_std_sub_match_const_wchar_t_ptr__
+{}
+#[repr(C)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
+pub struct test_allocator_std_sub_match_const_wchar_t_ptr__ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_std_sub_match_const_wchar_t_ptr__ {
+    pub unsafe fn new_1(mut data: ()) -> Self {
+        let mut this = Self {
+            data_: data,
+            id_: 0_(),
+            stats_: std::ptr::null_mut(),
+        };
+        this
+    }
+    pub unsafe fn copy_from(a: *const test_allocator_std_sub_match_const_wchar_t_ptr__) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
+    }
+    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).alloc_count.prefix_dec();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
+        }
+        unimplemented!();
+    }
+    pub unsafe fn max_size(&self) -> () {
+        return (((2147483647_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
+            .wrapping_div((::std::mem::size_of::<()>() as ()));
+    }
+    pub unsafe fn destroy(&mut self, mut p: *mut ()) {
+        if !((self.stats_).is_null()) {
+            (*self.stats_).destroy_count.prefix_inc();
+        };
+    }
+    pub unsafe fn construct_16_class_std_sub_match_const_wchar_t_ptr_(
+        &mut self,
+        mut p: *mut (),
+        val: *mut (),
+    ) {
+        if !((self.stats_).is_null()) {
+            (*self.stats_).construct_count.prefix_inc();
+        }
+        unimplemented!();
+    }
+}
+impl std::cmp::PartialEq for test_allocator_std_sub_match_const_wchar_t_ptr__ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_eq_5(
+                self as *const test_allocator_std_sub_match_const_wchar_t_ptr__,
+                other as *const test_allocator_std_sub_match_const_wchar_t_ptr__,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for test_allocator_std_sub_match_const_wchar_t_ptr__ {}
+impl Clone for test_allocator_std_sub_match_const_wchar_t_ptr__ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_std_sub_match_const_wchar_t_ptr__::copy_from(
+                self as *const test_allocator_std_sub_match_const_wchar_t_ptr__,
+            )
+        }
+    }
+}
+impl Default for test_allocator_std_sub_match_const_wchar_t_ptr__ {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_std_sub_match_const_wchar_t_ptr__ {
                 data_: 0_(),
                 id_: 0_(),
                 stats_: std::ptr::null_mut(),
@@ -304,142 +420,57 @@ impl Default for test_allocator_std_csub_match_ {
     }
 }
 pub unsafe fn operator_eq_6(
-    x: *const test_allocator_std_wcsub_match_,
-    y: *const test_allocator_std_wcsub_match_,
+    x: *const other_allocator_std_sub_match_const_char_ptr__,
+    y: *const other_allocator_std_sub_match_const_char_ptr__,
 ) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_7(
-    x: *const test_allocator_std_wcsub_match_,
-    y: *const test_allocator_std_wcsub_match_,
-) -> () {
-    return !(unsafe {
-        let _x: *const test_allocator_std_wcsub_match_ = x;
-        let _y: *const test_allocator_std_wcsub_match_ = y;
-        operator_eq_6(_x, _y)
-    });
-}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std_wcsub_match__rebind_std_wcsub_match_ {}
-#[repr(C)]
-#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std_wcsub_match_ {
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
+pub struct other_allocator_std_sub_match_const_char_ptr__ {
     data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_std_wcsub_match_ {
-    pub unsafe fn new_1(mut data: ()) -> Self {
-        let mut this = Self {
-            data_: data,
-            id_: 0_(),
-            stats_: std::ptr::null_mut(),
-        };
+impl other_allocator_std_sub_match_const_char_ptr__ {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self { data_: -1_() };
         this
     }
-    pub unsafe fn copy_from(a: *const test_allocator_std_wcsub_match_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        unimplemented!();
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).copied.prefix_inc();
-        }
+    pub unsafe fn new_2(mut i: ()) -> Self {
+        let mut this = Self { data_: i };
         this
-    }
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-    }
-    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
         unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-    pub unsafe fn max_size(&self) -> () {
-        return (((2147483647_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-    }
-    pub unsafe fn destroy(&mut self, mut p: *mut ()) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).destroy_count.prefix_inc();
-        };
-    }
-    pub unsafe fn construct_16_std_wcsub_match(&mut self, mut p: *mut (), val: *mut ()) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).construct_count.prefix_inc();
-        }
-        unimplemented!();
     }
 }
-impl std::cmp::PartialEq for test_allocator_std_wcsub_match_ {
+impl std::cmp::PartialEq for other_allocator_std_sub_match_const_char_ptr__ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
             operator_eq_6(
-                self as *const test_allocator_std_wcsub_match_,
-                other as *const test_allocator_std_wcsub_match_,
+                self as *const other_allocator_std_sub_match_const_char_ptr__,
+                other as *const other_allocator_std_sub_match_const_char_ptr__,
             )
         }
     }
 }
-impl std::cmp::Eq for test_allocator_std_wcsub_match_ {}
-impl Clone for test_allocator_std_wcsub_match_ {
-    fn clone(&self) -> Self {
-        unsafe {
-            test_allocator_std_wcsub_match_::copy_from(
-                self as *const test_allocator_std_wcsub_match_,
-            )
-        }
-    }
-}
-impl Default for test_allocator_std_wcsub_match_ {
+impl std::cmp::Eq for other_allocator_std_sub_match_const_char_ptr__ {}
+impl Default for other_allocator_std_sub_match_const_char_ptr__ {
     fn default() -> Self {
-        unsafe {
-            test_allocator_std_wcsub_match_ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
+        unsafe { other_allocator_std_sub_match_const_char_ptr__::new_1() }
     }
 }
-pub unsafe fn operator_eq_8(
-    x: *const other_allocator_std_csub_match_,
-    y: *const other_allocator_std_csub_match_,
+pub unsafe fn operator_eq_7(
+    x: *const other_allocator_std_sub_match_const_wchar_t_ptr__,
+    y: *const other_allocator_std_sub_match_const_wchar_t_ptr__,
 ) -> () {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std_csub_match_ {
+pub struct other_allocator_std_sub_match_const_wchar_t_ptr__ {
     data_: (),
 }
-impl other_allocator_std_csub_match_ {
+impl other_allocator_std_sub_match_const_wchar_t_ptr__ {
     pub unsafe fn new_1() -> Self {
         let mut this = Self { data_: -1_() };
         this
@@ -452,60 +483,20 @@ impl other_allocator_std_csub_match_ {
         unimplemented!();
     }
 }
-impl std::cmp::PartialEq for other_allocator_std_csub_match_ {
+impl std::cmp::PartialEq for other_allocator_std_sub_match_const_wchar_t_ptr__ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_8(
-                self as *const other_allocator_std_csub_match_,
-                other as *const other_allocator_std_csub_match_,
+            operator_eq_7(
+                self as *const other_allocator_std_sub_match_const_wchar_t_ptr__,
+                other as *const other_allocator_std_sub_match_const_wchar_t_ptr__,
             )
         }
     }
 }
-impl std::cmp::Eq for other_allocator_std_csub_match_ {}
-impl Default for other_allocator_std_csub_match_ {
+impl std::cmp::Eq for other_allocator_std_sub_match_const_wchar_t_ptr__ {}
+impl Default for other_allocator_std_sub_match_const_wchar_t_ptr__ {
     fn default() -> Self {
-        unsafe { other_allocator_std_csub_match_::new_1() }
-    }
-}
-pub unsafe fn operator_eq_9(
-    x: *const other_allocator_std_wcsub_match_,
-    y: *const other_allocator_std_wcsub_match_,
-) -> () {
-    return (((*x).data_) == ((*y).data_));
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std_wcsub_match_ {
-    data_: (),
-}
-impl other_allocator_std_wcsub_match_ {
-    pub unsafe fn new_1() -> Self {
-        let mut this = Self { data_: -1_() };
-        this
-    }
-    pub unsafe fn new_2(mut i: ()) -> Self {
-        let mut this = Self { data_: i };
-        this
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
-        unimplemented!();
-    }
-}
-impl std::cmp::PartialEq for other_allocator_std_wcsub_match_ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            operator_eq_9(
-                self as *const other_allocator_std_wcsub_match_,
-                other as *const other_allocator_std_wcsub_match_,
-            )
-        }
-    }
-}
-impl std::cmp::Eq for other_allocator_std_wcsub_match_ {}
-impl Default for other_allocator_std_wcsub_match_ {
-    fn default() -> Self {
-        unsafe { other_allocator_std_wcsub_match_::new_1() }
+        unsafe { other_allocator_std_sub_match_const_wchar_t_ptr__::new_1() }
     }
 }
 #[repr(C)]
@@ -534,60 +525,60 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-pub unsafe fn test_10(a: *const ()) {
+pub unsafe fn test_8(a: *const ()) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (m0).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
         unimplemented!();
     }
 }
-pub unsafe fn test_11(a: *const ()) {
+pub unsafe fn test_9(a: *const ()) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (m0).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
         unimplemented!();
     }
 }
-pub unsafe fn test_12(a: *const test_allocator_std_csub_match_) {
+pub unsafe fn test_10(a: *const test_allocator_std_sub_match_const_char_ptr__) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (m0).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
         unimplemented!();
     }
 }
-pub unsafe fn test_13(a: *const test_allocator_std_wcsub_match_) {
+pub unsafe fn test_11(a: *const test_allocator_std_sub_match_const_wchar_t_ptr__) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (m0).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
         unimplemented!();
     }
 }
-pub unsafe fn test_14(a: *const other_allocator_std_csub_match_) {
+pub unsafe fn test_12(a: *const other_allocator_std_sub_match_const_char_ptr__) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (m0).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
         unimplemented!();
     }
 }
-pub unsafe fn test_15(a: *const other_allocator_std_wcsub_match_) {
+pub unsafe fn test_13(a: *const other_allocator_std_sub_match_const_wchar_t_ptr__) {
     let mut m0: () = unimplemented!();
     let mut m1: () = unimplemented!();
-    m1 = (m0).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -612,31 +603,31 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
         let mut _a: () = unimplemented!();
-        test_10(&mut _a)
+        test_8(&mut _a)
     });
     (unsafe {
         let mut _a: () = unimplemented!();
+        test_9(&mut _a)
+    });
+    (unsafe {
+        let mut _a: test_allocator_std_sub_match_const_char_ptr__ =
+            test_allocator_std_sub_match_const_char_ptr__::new_1({ 3_() });
+        test_10(&mut _a)
+    });
+    (unsafe {
+        let mut _a: test_allocator_std_sub_match_const_wchar_t_ptr__ =
+            test_allocator_std_sub_match_const_wchar_t_ptr__::new_1({ 3_() });
         test_11(&mut _a)
     });
     (unsafe {
-        let mut _a: test_allocator_std_csub_match_ =
-            test_allocator_std_csub_match_::new_1({ 3_() });
+        let mut _a: other_allocator_std_sub_match_const_char_ptr__ =
+            other_allocator_std_sub_match_const_char_ptr__::new_2({ 3_() });
         test_12(&mut _a)
     });
     (unsafe {
-        let mut _a: test_allocator_std_wcsub_match_ =
-            test_allocator_std_wcsub_match_::new_1({ 3_() });
+        let mut _a: other_allocator_std_sub_match_const_wchar_t_ptr__ =
+            other_allocator_std_sub_match_const_wchar_t_ptr__::new_2({ 3_() });
         test_13(&mut _a)
-    });
-    (unsafe {
-        let mut _a: other_allocator_std_csub_match_ =
-            other_allocator_std_csub_match_::new_2({ 3_() });
-        test_14(&mut _a)
-    });
-    (unsafe {
-        let mut _a: other_allocator_std_wcsub_match_ =
-            other_allocator_std_wcsub_match_::new_2({ 3_() });
-        test_15(&mut _a)
     });
     return 0_();
 }

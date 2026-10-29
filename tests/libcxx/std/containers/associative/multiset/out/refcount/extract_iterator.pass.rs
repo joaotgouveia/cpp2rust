@@ -43,12 +43,6 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<()>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -57,24 +51,17 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_5(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
+pub fn operator_eq_4(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-impl std::cmp::PartialEq for min_allocator_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_5(self.clone(), other.clone()) }
+impl CppEq for min_allocator_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Counter_base {}
@@ -89,70 +76,27 @@ impl Counter_int_ {
         let __this: Counter_int_ = Self {
             data_: (data.read()),
         };
-        (*gConstructed_6.with(Value::clone).borrow_mut()).prefix_inc();
+        (*gConstructed_5.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(rhs: Ptr<Counter_int_>) -> Self {
         let __this: Counter_int_ = Self {
             data_: rhs.with(|__s| __s.data_),
         };
-        (*gConstructed_6.with(Value::clone).borrow_mut()).prefix_inc();
+        (*gConstructed_5.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
 }
-impl std::cmp::Ord for Counter_int_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if Counter_int_Impl::operator_lt(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if Counter_int_Impl::operator_lt(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Counter_int_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        Counter_int_Impl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Counter_int_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Counter_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        Counter_int_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for Counter_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            Counter_int_Impl::operator_eq(
-                &Rc::new(RefCell::new(Counter_int_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Counter_int_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for Counter_int_ {}
 impl Clone for Counter_int_ {
     fn clone(&self) -> Self {
         let __src: Value<Counter_int_> = Rc::new(RefCell::new(Counter_int_ {
@@ -162,12 +106,12 @@ impl Clone for Counter_int_ {
     }
 }
 thread_local!(
-    pub static gConstructed_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static gConstructed_5: Value<()> = Rc::new(RefCell::new(0_()));
 );
-pub fn test_7(c: Ptr<()>) {
+pub fn test_6(c: Ptr<()>) {
     let mut sz: () = unimplemented!();
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let mut key_value: () = (unimplemented!().read());
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         sz.prefix_dec();
@@ -177,10 +121,10 @@ pub fn test_7(c: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn test_8(c: Ptr<()>) {
+pub fn test_7(c: Ptr<()>) {
     let mut sz: () = unimplemented!();
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let key_value: Value<Counter_int_> =
             Rc::new(RefCell::new(Counter_int_::copy_from({ unimplemented!() })));
         let _dtor_key_value = ScopedDestructor::new(&key_value, |__p| __p.destructor());
@@ -192,10 +136,10 @@ pub fn test_8(c: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn test_9(c: Ptr<()>) {
+pub fn test_8(c: Ptr<()>) {
     let mut sz: () = unimplemented!();
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let mut key_value: () = (unimplemented!().read());
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         sz.prefix_dec();
@@ -205,20 +149,20 @@ pub fn test_9(c: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn test_10() -> () {
+pub fn test_9() -> () {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ test_6(m.as_pointer()) });
+    }
+    {
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         ({ test_7(m.as_pointer()) });
+        unimplemented!();
     }
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
         ({ test_8(m.as_pointer()) });
-        unimplemented!();
-    }
-    {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_9(m.as_pointer()) });
     }
     return true;
 }
@@ -242,7 +186,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_10() });
+    ({ test_9() });
     return 0_();
 }
 pub trait Counter_int_Impl {
@@ -261,7 +205,7 @@ pub trait Counter_int_Impl {
 }
 impl Counter_int_Impl for Ptr<Counter_int_> {
     fn destructor(&self) {
-        (*gConstructed_6.with(Value::clone).borrow_mut()).prefix_dec();
+        (*gConstructed_5.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn operator_eq(&self, x: Ptr<Counter_int_>) -> () {
         return ({ (*self).with(|__s| __s.data_) } == { x.with(|__s| __s.data_) });
@@ -351,5 +295,5 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_1.with(|_| ());
     let _ = dealloc_count_2.with(|_| ());
     let _ = disable_default_constructor_3.with(|_| ());
-    let _ = gConstructed_6.with(|_| ());
+    let _ = gConstructed_5.with(|_| ());
 }

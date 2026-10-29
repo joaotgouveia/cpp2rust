@@ -15,7 +15,7 @@ pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_int__std_ratio_86400__1____std_chrono_duration_int__std_ratio_86400__1___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_86400__1____std_chrono_duration_long__std_ratio_86400__1___
 {}
 pub fn euclidian_subtraction_2(mut lhs: (), mut rhs: ()) -> () {
     let mut modulus: () = ((6_() as ()).wrapping_sub((0_() as ())) as ()).wrapping_add(1_());

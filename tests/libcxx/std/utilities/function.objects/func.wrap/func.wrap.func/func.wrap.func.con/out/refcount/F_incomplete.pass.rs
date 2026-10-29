@@ -7,19 +7,26 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
-#[byte_size(64)]
+#[byte_size(40)]
 pub struct X {
-    #[offset(16)]
-    #[byte_size(48)]
+    #[offset(8)]
+    #[byte_size(32)]
     _cb: (),
 }
 impl X {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(48)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
+#[byte_size(32)]
 pub struct IncompleteReturnType {
     #[offset(0)]
-    #[byte_size(48)]
+    #[byte_size(32)]
     pub fn_: (),
+}
+impl IncompleteReturnType {
+    pub fn move_from(_a0: Ptr<IncompleteReturnType>) -> Self {
+        Self {
+            fn_: unimplemented!(),
+        }
+    }
 }
 thread_local!(
     pub static called_0: Value<()> = Rc::new(RefCell::new(0_()));
@@ -27,7 +34,7 @@ thread_local!(
 pub fn test_fn_1() -> IncompleteReturnType {
     (*called_0.with(Value::clone).borrow_mut()).prefix_inc();
     let I: Value<IncompleteReturnType> = Rc::new(RefCell::new(<IncompleteReturnType>::default()));
-    return (*I.borrow()).clone();
+    return IncompleteReturnType::move_from({ I.as_pointer() });
 }
 pub fn test_pr34298_2() {
     const _: () = assert!(
@@ -75,6 +82,15 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_pr34298_2() });
     return 0_();
+}
+pub trait IncompleteReturnTypeImpl {
+    fn move_assign(&self, _a0: Ptr<IncompleteReturnType>) -> Ptr<IncompleteReturnType>;
+}
+impl IncompleteReturnTypeImpl for Ptr<IncompleteReturnType> {
+    fn move_assign(&self, _a0: Ptr<IncompleteReturnType>) -> Ptr<IncompleteReturnType> {
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub fn __cpp2rust_init_globals() {
     let _ = called_0.with(|_| ());

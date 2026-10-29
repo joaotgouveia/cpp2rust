@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn _pow_0(mut a: (), mut b: ()) -> () {
-    return ({ pow_1(a, b) });
+    return unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -31,7 +31,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let fnc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let task: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let task2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let task2: Value<()> = Rc::new(RefCell::new((*task.borrow()).clone()));
     unimplemented!();
     unimplemented!();
     return 0_();

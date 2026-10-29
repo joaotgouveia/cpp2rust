@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let jb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'switch: {
-        match { ({ _setjmp_0((jb.as_pointer() as Ptr<__jmp_buf_tag>)) }) } {
+        match { unimplemented!() } {
             __v if __v == 0_() => {
                 break 'switch;
             }
@@ -41,7 +41,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             }
         }
     };
-    ({ longjmp_1((jb.as_pointer() as Ptr<__jmp_buf_tag>), 42_()) });
+    unimplemented!();
     const _: () = assert!(
         true,
         "std::is_same<decltype(std::longjmp(jb, 0)), void>::value"

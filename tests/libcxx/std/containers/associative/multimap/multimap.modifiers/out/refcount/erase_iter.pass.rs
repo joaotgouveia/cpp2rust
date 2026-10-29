@@ -42,22 +42,7 @@ pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsign
     #[byte_size(8)]
     ptr_: Ptr<()>,
 }
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    fn new_1(mut p: Ptr<()>) -> Self {
-        Self { ptr_: (p).clone() }
-    }
-    pub fn pointer_to(
-        t: Ptr<()>,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
-    }
-}
-pub fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
+impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -66,12 +51,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__double__ {}
@@ -83,48 +62,21 @@ impl TemplateConstructor {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TemplateConstructor {}
-impl std::cmp::Ord for TemplateConstructor {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_5(
-                Rc::new(RefCell::new(TemplateConstructor {})).as_pointer(),
-                Rc::new(RefCell::new(TemplateConstructor {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_5(
-                Rc::new(RefCell::new(TemplateConstructor {})).as_pointer(),
-                Rc::new(RefCell::new(TemplateConstructor {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for TemplateConstructor {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for TemplateConstructor {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for TemplateConstructor {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_4(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_4(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for TemplateConstructor {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_5(
-                Rc::new(RefCell::new(TemplateConstructor {})).as_pointer(),
-                Rc::new(RefCell::new(TemplateConstructor {})).as_pointer(),
-            )) && !(operator_lt_5(
-                Rc::new(RefCell::new(TemplateConstructor {})).as_pointer(),
-                Rc::new(RefCell::new(TemplateConstructor {})).as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for TemplateConstructor {}
-pub fn operator_lt_5(_a0: Ptr<TemplateConstructor>, _a1: Ptr<TemplateConstructor>) -> () {
+pub fn operator_lt_4(_a0: Ptr<TemplateConstructor>, _a1: Ptr<TemplateConstructor>) -> () {
     return false;
 }
-pub fn test_6() -> () {
+pub fn test_5() -> () {
     {
         let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
             unimplemented!(),
@@ -362,7 +314,7 @@ pub fn test_6() -> () {
             TemplateConstructor::new({ __tmp_0.as_pointer() })
         };
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        if unimplemented!() {
+        if !(unimplemented!()) {
             unimplemented!();
         }
     }
@@ -388,7 +340,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_6() });
+    ({ test_5() });
     return 0_();
 }
 pub trait min_allocator_std_pair_const_int__double__Impl {
@@ -417,7 +369,9 @@ pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigne
     fn operator_deref(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()>;
+    fn operator_arrow(&self) -> Ptr<()> {
+        unimplemented!()
+    }
     fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
@@ -475,9 +429,6 @@ pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigne
 impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
 {
-    fn operator_arrow(&self) -> Ptr<()> {
-        return (*self).with(|__s| __s.ptr_.clone());
-    }
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {

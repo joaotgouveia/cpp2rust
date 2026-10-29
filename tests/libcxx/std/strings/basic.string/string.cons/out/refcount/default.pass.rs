@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -166,32 +150,6 @@ impl Default for test_allocator_void_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_allocator_char__rebind_char_ {}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_char_ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_char_ {}
-impl Default for test_allocator_char_ {
-    fn default() -> Self {
-        {
-            test_allocator_char_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
 pub struct Ctor_Tag {}
 #[derive(Record, ByteRepr, FnPtrArg, CopyAssign, MoveAssign, Default)]
 #[byte_size(1)]
@@ -207,51 +165,13 @@ impl Tag_X {
         Self {}
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(8)]
-pub struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    block: Ptr<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block>,
-}
-impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {}
-impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
-    fn default() -> Self {
-        {
-            detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ { block : Ptr::<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block>::null() , }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_char__10__rebind_char_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct limited_allocator_char__10_ {
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_char__10_ {}
-pub fn is_string_asan_correct_4(_a0: Ptr<()>) -> () {
-    return true;
-}
-const _: () = assert!(
-    true,
-    "std::is_nothrow_default_constructible<std::string>::value"
-);
-const _: () = assert!(
-    true,
-    "std::is_nothrow_default_constructible<\n                         std::basic_string<char, std::char_traits<char>, test_allocator<char>>>::value"
-);
-const _: () = assert!(
-    true,
-    "!std::is_nothrow_default_constructible<\n                         std::basic_string<char, std::char_traits<char>, limited_allocator<char, 10>>>::value"
-);
-pub fn test_5() -> () {
-    let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+const _: () = assert!(true, "");
+const _: () = assert!(true, "");
+const _: () = assert!(true, "");
+pub fn test_4() -> () {
+    let mut str: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     return true;
 }
 pub fn main() {
@@ -274,16 +194,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_5() });
+    ({ test_4() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block;
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct limited_alloc_handle_10_;
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -296,78 +210,6 @@ impl Tag_XImpl for Ptr<Tag_X> {
         return (*self).clone();
     }
 }
-pub trait detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn operator_deref_4(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn operator_arrow_5(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn operator_deref_6(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn get_8(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn get_9(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-}
-impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl
-    for Ptr<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__>
-{
-}
-pub trait limited_allocator_char__10_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-}
-impl limited_allocator_char__10_Impl for Ptr<limited_allocator_char__10_> {}
-pub trait test_allocator_char_Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<()>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_char_Impl for Ptr<test_allocator_char_> {}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

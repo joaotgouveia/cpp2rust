@@ -6,20 +6,20 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn stacked_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+pub unsafe fn stacked_0(mut x: ()) -> () {
+    let mut r: () = 0_();
     'switch: {
         match { x } {
-            __v if __v == 1 || __v == 2 || __v == 3 => {
-                r = 100;
+            __v if __v == 1_() || __v == 2_() || __v == 3_() => {
+                r = 100_();
                 break 'switch;
             }
-            __v if __v == 4 || __v == 5 => {
-                r = 200;
+            __v if __v == 4_() || __v == 5_() => {
+                r = 200_();
                 break 'switch;
             }
             _ => {
-                r = 300;
+                r = 300_();
                 break 'switch;
             }
         }
@@ -32,11 +32,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((unsafe { stacked_0(1,) }) == (100)));
-    assert!(((unsafe { stacked_0(3,) }) == (100)));
-    assert!(((unsafe { stacked_0(5,) }) == (200)));
-    assert!(((unsafe { stacked_0(9,) }) == (300)));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

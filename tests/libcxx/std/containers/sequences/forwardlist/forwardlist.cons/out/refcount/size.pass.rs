@@ -25,59 +25,16 @@ impl DefaultOnly {
         __this
     }
 }
-impl std::cmp::Ord for DefaultOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_2(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_2(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for DefaultOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for DefaultOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for DefaultOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for DefaultOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for DefaultOnly {}
 impl Default for DefaultOnly {
     fn default() -> Self {
         { DefaultOnly::new() }
@@ -140,12 +97,11 @@ pub fn operator_eq_7(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_DefaultOnly_ {}
-impl std::cmp::PartialEq for min_allocator_DefaultOnly_ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_7(self.clone(), other.clone()) }
+impl CppEq for min_allocator_DefaultOnly_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_7(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_DefaultOnly_ {}
 pub fn check_allocator_8(mut n: (), alloc: Option<Ptr<()>>) {
     let mut __alloc_default: Option<Value<()>> = None;
     let alloc: Ptr<()> = alloc.unwrap_or_else(|| {
@@ -200,7 +156,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();
@@ -215,7 +171,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();
@@ -232,7 +188,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();

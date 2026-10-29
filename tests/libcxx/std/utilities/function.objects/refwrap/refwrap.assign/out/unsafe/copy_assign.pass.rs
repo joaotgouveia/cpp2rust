@@ -31,42 +31,42 @@ pub unsafe fn test_0(t: *mut Option<unsafe fn()>) {
     let mut r: () = unimplemented!();
     let mut t2: Option<unsafe fn()> = (*t);
     let mut r2: () = unimplemented!();
-    r2 = (r).clone();
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_1(t: *mut functor1) {
     let mut r: () = unimplemented!();
     let mut t2: functor1 = (*t);
     let mut r2: () = unimplemented!();
-    r2 = (r).clone();
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_2(t: *mut ()) {
     let mut r: () = unimplemented!();
     let mut t2: () = (*t);
     let mut r2: () = unimplemented!();
-    r2 = (r).clone();
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_3(t: *const ()) {
     let mut r: () = unimplemented!();
     let t2: () = (*t);
     let mut r2: () = unimplemented!();
-    r2 = (r).clone();
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_4(t: *mut convertible_to_int_ref) {
     let mut r: () = unimplemented!();
     let mut t2: convertible_to_int_ref = (*t);
     let mut r2: () = unimplemented!();
-    r2 = (r).clone();
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_5(t: *const convertible_to_int_ref) {
     let mut r: () = unimplemented!();
     let t2: convertible_to_int_ref = (*t);
     let mut r2: () = unimplemented!();
-    r2 = (r).clone();
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn f_6() {}
@@ -74,7 +74,7 @@ pub unsafe fn g_7() {}
 pub unsafe fn test_function_8() {
     let mut r: () = unimplemented!();
     let mut r2: () = unimplemented!();
-    r2 = (r).clone();
+    unimplemented!();
     unimplemented!();
 }
 pub fn main() {

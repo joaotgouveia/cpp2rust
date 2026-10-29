@@ -7,7 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn where_0(_a0: Ptr<()>) {}
-pub fn test1_1() {
+pub fn where_1(_a0: Ptr<()>) {}
+pub fn test1_2() {
     const _: () = assert!(true, "(E::word_size == 24)");;
     const _: () = assert!(true, "(E::short_lag == 10)");;
     const _: () = assert!(true, "(E::long_lag == 24)");;
@@ -17,9 +18,9 @@ pub fn test1_1() {
     ({ where_0(unimplemented!()) });
     ({ where_0(unimplemented!()) });
     ({ where_0(unimplemented!()) });
-    ({ where_0(unimplemented!()) });
+    ({ where_1(unimplemented!()) });
 }
-pub fn test2_2() {
+pub fn test2_3() {
     const _: () = assert!(true, "(E::word_size == 48)");;
     const _: () = assert!(true, "(E::short_lag == 5)");;
     const _: () = assert!(true, "(E::long_lag == 12)");;
@@ -29,7 +30,7 @@ pub fn test2_2() {
     ({ where_0(unimplemented!()) });
     ({ where_0(unimplemented!()) });
     ({ where_0(unimplemented!()) });
-    ({ where_0(unimplemented!()) });
+    ({ where_1(unimplemented!()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -51,8 +52,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test1_1() });
-    ({ test2_2() });
+    ({ test1_2() });
+    ({ test2_3() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

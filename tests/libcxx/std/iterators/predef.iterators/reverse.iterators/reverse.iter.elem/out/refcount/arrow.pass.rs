@@ -32,23 +32,11 @@ impl A {
         Self { data_: 1_() }
     }
 }
-impl std::cmp::PartialEq for A {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(A {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A {}
 impl Default for A {
     fn default() -> Self {
         { A::new() }
@@ -74,23 +62,11 @@ impl B {
         Self { data_: d }
     }
 }
-impl std::cmp::PartialEq for B {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(B {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(B {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for B {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for B {}
 impl Default for B {
     fn default() -> Self {
         { B::new(None) }
@@ -110,23 +86,11 @@ impl C {
         Self { data_: 1_() }
     }
 }
-impl std::cmp::PartialEq for C {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_3(
-                Rc::new(RefCell::new(C {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for C {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for C {}
 impl Default for C {
     fn default() -> Self {
         { C::new() }

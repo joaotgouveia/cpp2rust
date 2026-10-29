@@ -25,8 +25,8 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut buf: [(); 12] = std::mem::transmute(*b"123 4.5 dog\0");
-        let out: () = unimplemented!();
-        let mut sb: *mut () = unimplemented!();
+        let out: std_strstream = std_strstream::new_1({ buf.as_mut_ptr() }, { 0_() }, None);
+        let mut sb: *mut std_strstreambuf = (unsafe { out.rdbuf() });
         unimplemented!();
         unimplemented!();
     }

@@ -369,14 +369,26 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_5__ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct limited_allocator_int__5__rebind_int_ {}
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
+#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct limited_allocator_int__5_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_5__,
 }
-impl limited_allocator_int__5_ {}
+impl limited_allocator_int__5_ {
+    pub unsafe fn new() -> Self {
+        let mut this = Self {
+            handle_: (unsafe { make_thread_unsafe_shared_7() }),
+        };
+        this
+    }
+}
 impl limited_allocator_int__5_ {
     pub unsafe fn destructor(&mut self) {
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_5__::destructor(&mut self.handle_);
+    }
+}
+impl Default for limited_allocator_int__5_ {
+    fn default() -> Self {
+        unsafe { limited_allocator_int__5_::new() }
     }
 }
 #[repr(C)]
@@ -416,12 +428,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {

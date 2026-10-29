@@ -73,76 +73,17 @@ impl Payload {
         Self { val: v, side: s }
     }
 }
-impl std::cmp::Ord for Payload {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if PayloadImpl::operator_lt(
-                &Rc::new(RefCell::new(Payload {
-                    val: self.val.clone(),
-                    side: self.side.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Payload {
-                    val: other.val.clone(),
-                    side: other.side.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if PayloadImpl::operator_lt(
-                &Rc::new(RefCell::new(Payload {
-                    val: other.val.clone(),
-                    side: other.side.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Payload {
-                    val: self.val.clone(),
-                    side: self.side.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Payload {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        PayloadImpl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Payload {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Payload {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(PayloadImpl::operator_lt(__lhs, __rhs.clone()))
+            && !(PayloadImpl::operator_lt(__rhs, __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for Payload {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(PayloadImpl::operator_lt(
-                &Rc::new(RefCell::new(Payload {
-                    val: self.val.clone(),
-                    side: self.side.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Payload {
-                    val: other.val.clone(),
-                    side: other.side.clone(),
-                }))
-                .as_pointer(),
-            )) && !(PayloadImpl::operator_lt(
-                &Rc::new(RefCell::new(Payload {
-                    val: other.val.clone(),
-                    side: other.side.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Payload {
-                    val: self.val.clone(),
-                    side: self.side.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for Payload {}
 pub fn greater_5(lhs: Ptr<Payload>, rhs: Ptr<Payload>) -> () {
     return ({ lhs.with(|__s| __s.val) } > { rhs.with(|__s| __s.val) });
 }
@@ -173,9 +114,9 @@ pub fn test_stable_6(mut N: ()) {
         };
     }
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         let next: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        if (unimplemented!()) && ({ unimplemented!().val } == { unimplemented!().val }) {
+        if (!(unimplemented!())) && ({ unimplemented!().val } == { unimplemented!().val }) {
             unimplemented!();
         }
         unimplemented!();

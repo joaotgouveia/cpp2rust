@@ -11,62 +11,49 @@ use std::rc::{Rc, Weak};
 pub struct Entry {
     #[offset(0)]
     #[byte_size(8)]
-    pub name: Ptr<i8>,
+    pub name: Ptr<()>,
     #[offset(8)]
     #[byte_size(8)]
-    pub p: Ptr<i32>,
+    pub p: Ptr<()>,
 }
 thread_local!(
     pub static single_entry_0: Value<Entry> = Rc::new(RefCell::new(Entry {
-        name: Ptr::<i8>::from_string_literal(b"alone"),
-        p: Ptr::<i32>::null(),
+        name: Ptr::<()>::from_string_literal(b"alone"),
+        p: Ptr::<()>::null(),
     }));
 );
 thread_local!(
     pub static entries_1: Value<Box<[Entry]>> = Rc::new(RefCell::new(Box::new([
         Entry {
-            name: Ptr::<i8>::from_string_literal(b"first"),
-            p: Ptr::<i32>::null(),
+            name: Ptr::<()>::from_string_literal(b"first"),
+            p: Ptr::<()>::null(),
         },
         Entry {
-            name: Ptr::<i8>::from_string_literal(b"second"),
-            p: Ptr::<i32>::null(),
+            name: Ptr::<()>::from_string_literal(b"second"),
+            p: Ptr::<()>::null(),
         },
     ])));
 );
 thread_local!(
-    pub static arr_of_pointers_2: Value<Box<[Ptr<i8>]>> = Rc::new(RefCell::new(Box::new([
-        Ptr::<i8>::null(),
-        Ptr::<i8>::null(),
-        Ptr::<i8>::null(),
+    pub static arr_of_pointers_2: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(Box::new([
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
     ])));
 );
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!(({ (*single_entry_0.with(Value::clone).borrow()).p.clone() }).is_null());
-    let mut i: i32 = 0;
-    'loop_: while (i < 2) {
-        assert!(
-            ({
-                (*entries_1.with(Value::clone).borrow())[(i) as usize]
-                    .p
-                    .clone()
-            })
-            .is_null()
-        );
-        assert!(
-            ({
-                let __idx0 = (i) as usize;
-                arr_of_pointers_2.with(|rc| rc.borrow()[__idx0].clone())
-            })
-            .is_null()
-        );
+fn main_0() -> () {
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < 2_()) {
+        unimplemented!();
+        unimplemented!();
         i.prefix_inc();
     }
-    return 0;
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {
     let _ = single_entry_0.with(|_| ());

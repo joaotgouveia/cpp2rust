@@ -12,11 +12,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    return if ((((libc::close(1234)) == (-1_i32)) as i32) != 0) {
-        0
+unsafe fn main_0() -> () {
+    return if ((((unimplemented!()) == (-1_())) as ()) != 0) {
+        0_()
     } else {
-        1
+        1_()
     };
 }
 pub unsafe fn __cpp2rust_init_globals() {}

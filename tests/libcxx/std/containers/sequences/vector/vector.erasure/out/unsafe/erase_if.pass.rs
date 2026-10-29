@@ -11,12 +11,7 @@ pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_unsigned_long__unsigned_long_ {}
-pub type anon_1 = ();
-pub const anon_1_value: anon_1 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_unsigned_int__unsigned_int_ {}
-pub unsafe fn DoNotOptimize_2(value: *const ()) -> *const () {
+pub unsafe fn DoNotOptimize_1(value: *const ()) -> *const () {
     c"";
     return value;
 }
@@ -70,21 +65,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_3: std::cell::LazyCell<()> =
+pub static mut destructed_value_2: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_4: std::cell::LazyCell<()> =
+pub static mut moved_value_3: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_5(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_4(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_6(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_5(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_5(_x, _y)
+        operator_eq_4(_x, _y)
     });
 }
 #[repr(C)]
@@ -148,8 +143,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_3));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_3));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -170,7 +165,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_5(
+            operator_eq_4(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -198,21 +193,34 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ {}
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_int_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_int_ {
+    pub unsafe fn copy_from(a: *const test_allocator_int_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_3));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_3));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -243,6 +251,17 @@ impl test_allocator_int_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).destroy_count.prefix_inc();
         };
+    }
+    pub unsafe fn construct_16_const_int_ref(&mut self, mut p: *mut (), val: *const ()) {
+        if !((self.stats_).is_null()) {
+            (*self.stats_).construct_count.prefix_inc();
+        }
+        unimplemented!();
+    }
+}
+impl Clone for test_allocator_int_ {
+    fn clone(&self) -> Self {
+        unsafe { test_allocator_int_::copy_from(self as *const test_allocator_int_) }
     }
 }
 impl Default for test_allocator_int_ {
@@ -288,44 +307,44 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_8))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_9))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_7))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_8))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_10)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_7)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_8)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_9)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_9)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_6)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_7)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_8)) = 0_();
     }
 }
-pub static mut outstanding_bytes_7: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_6: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_8: std::cell::LazyCell<()> =
+pub static mut alloc_count_7: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_9: std::cell::LazyCell<()> =
+pub static mut dealloc_count_8: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_10: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_9: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub unsafe fn operator_sub_11(
+pub unsafe fn operator_sub_10(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_12(
+pub unsafe fn operator_eq_11(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_13(
+pub unsafe fn operator_ne_12(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_12(_x, y)
+        operator_eq_11(_x, y)
     });
 }
 #[repr(C)]
@@ -338,28 +357,16 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*self.ptr_);
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
     }
     pub unsafe fn operator_inc_8(
         &mut self,
     ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
         self.ptr_.prefix_inc();
-        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
-    }
-    pub unsafe fn operator_dec_10(
-        &mut self,
-    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        self.ptr_.prefix_dec();
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
     pub unsafe fn operator_add_assign(
@@ -385,7 +392,7 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
 }
 impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self.clone(), other.clone()) }
+        unsafe { operator_eq_11(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
@@ -395,19 +402,13 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_14(
+pub unsafe fn operator_sub_13(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_15(
-    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_16(
+pub unsafe fn operator_ne_14(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -425,16 +426,17 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         };
         this
     }
-    pub unsafe fn operator_arrow(&self) -> *const () {
-        return self.ptr_;
+    pub unsafe fn operator_deref(&self) -> *const () {
+        return &(*self.ptr_);
+    }
+    pub unsafe fn operator_inc_9(
+        &mut self,
+    ) -> *mut min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_.prefix_inc();
+        return &mut (*(self
+            as *mut min_pointer_const_int__std_integral_constant_unsigned_long__0__));
     }
 }
-impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_15(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
@@ -472,29 +474,15 @@ impl safe_allocator_int_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
         let mut memory: *mut () = unimplemented!();
         {
-            (unsafe {
-                let ___s: () = (memory as ());
-                memset_17(
-                    ___s,
-                    0_(),
-                    (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
-                )
-            });
+            unimplemented!();
         }
         return memory;
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
         {
             (unsafe {
-                let mut _value: () = (unsafe {
-                    let ___s: () = (p as ());
-                    memset_17(
-                        ___s,
-                        0_(),
-                        (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
-                    )
-                });
-                DoNotOptimize_2(&mut _value)
+                let mut _value: () = unimplemented!();
+                DoNotOptimize_1(&mut _value)
             });
         }
         unimplemented!();
@@ -504,6 +492,36 @@ impl Default for safe_allocator_int_ {
     fn default() -> Self {
         unsafe { safe_allocator_int_::new() }
     }
+}
+pub unsafe fn test0_15(
+    mut s: (),
+    mut p: FnPtr<Generic>,
+    mut expected: (),
+    mut expected_erased_count: (),
+) {
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test0_16(
+    mut s: (),
+    mut p: FnPtr<Generic>,
+    mut expected: (),
+    mut expected_erased_count: (),
+) {
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test0_17(
+    mut s: (),
+    mut p: FnPtr<Generic>,
+    mut expected: (),
+    mut expected_erased_count: (),
+) {
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn test0_18(
     mut s: (),
@@ -835,35 +853,131 @@ pub unsafe fn test0_50(
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test0_51(
-    mut s: (),
-    mut p: FnPtr<Generic>,
-    mut expected: (),
-    mut expected_erased_count: (),
-) {
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_51() {
+    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (1_()));
+    });
+    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (2_()));
+    });
+    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (3_()));
+    });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (4_()));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return false;
+    });
+    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_17(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_18(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_17(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_19(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_20(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
-pub unsafe fn test0_52(
-    mut s: (),
-    mut p: FnPtr<Generic>,
-    mut expected: (),
-    mut expected_erased_count: (),
-) {
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_52() {
+    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (1_()));
+    });
+    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (2_()));
+    });
+    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (3_()));
+    });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (4_()));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return false;
+    });
+    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_23(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_23(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_23(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_24(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_23(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_23(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_25(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_26(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
-pub unsafe fn test0_53(
-    mut s: (),
-    mut p: FnPtr<Generic>,
-    mut expected: (),
-    mut expected_erased_count: (),
-) {
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_53() {
+    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (1_()));
+    });
+    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (2_()));
+    });
+    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (3_()));
+    });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (4_()));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return false;
+    });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_29(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_29(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_29(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_30(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_29(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_29(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_31(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_32(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test_54() {
     let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
@@ -884,28 +998,28 @@ pub unsafe fn test_54() {
     let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
         return false;
     });
-    (unsafe { test0_18(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_19(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_19(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_20(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_20(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_19(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_20(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_21(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_19(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_19(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_20(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_18(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_19(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_20(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_22(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_23(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_35(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_35(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_35(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_36(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_35(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_35(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_37(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_38(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test_55() {
     let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
@@ -926,28 +1040,28 @@ pub unsafe fn test_55() {
     let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
         return false;
     });
-    (unsafe { test0_24(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_24(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_25(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_24(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_25(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_26(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_24(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_26(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_24(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_25(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_26(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_27(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_24(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_25(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_24(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_25(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_26(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_24(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_25(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_26(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_28(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_29(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_41(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_41(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_41(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_42(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_41(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_41(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_43(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_44(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test_56() {
     let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
@@ -968,162 +1082,36 @@ pub unsafe fn test_56() {
     let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
         return false;
     });
-    (unsafe { test0_30(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_30(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_31(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_30(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_31(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_32(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_30(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_32(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_30(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_31(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_32(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_33(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_30(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_31(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_30(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_31(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_32(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_30(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_31(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_32(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_34(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_35(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_45(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_45(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_46(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_45(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_46(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_47(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_45(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_47(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_45(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_46(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_47(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_48(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_45(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_46(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_45(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_46(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_47(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_45(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_46(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
+    (unsafe { test0_47(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_49(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_50(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
-pub unsafe fn test_57() {
-    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (1_()));
-    });
-    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (2_()));
-    });
-    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (3_()));
-    });
-    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (4_()));
-    });
-    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return true;
-    });
-    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return false;
-    });
-    (unsafe { test0_36(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_36(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_37(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_36(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_37(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_38(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_36(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_38(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_36(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_37(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_38(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_39(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_36(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_37(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_36(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_37(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_38(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_36(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_37(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_38(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_40(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_41(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
-}
-pub unsafe fn test_58() {
-    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (1_()));
-    });
-    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (2_()));
-    });
-    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (3_()));
-    });
-    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (4_()));
-    });
-    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return true;
-    });
-    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return false;
-    });
-    (unsafe { test0_42(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_42(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_43(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_42(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_43(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_44(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_42(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_44(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_42(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_43(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_44(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_45(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_42(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_43(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_42(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_43(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_44(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_42(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_43(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_44(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_46(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_47(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
-}
-pub unsafe fn test_59() {
-    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (1_()));
-    });
-    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (2_()));
-    });
-    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (3_()));
-    });
-    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (4_()));
-    });
-    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return true;
-    });
-    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return false;
-    });
-    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_49(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_49(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_50(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_50(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_49(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_50(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_51(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_49(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_49(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_50(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_49(unimplemented!(), is2.copy_from(), unimplemented!(), 2_()) });
-    (unsafe { test0_50(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_52(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_53(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
-}
-pub unsafe fn tests_60() -> () {
+pub unsafe fn tests_57() -> () {
+    (unsafe { test_51() });
+    (unsafe { test_52() });
+    (unsafe { test_53() });
     (unsafe { test_54() });
     (unsafe { test_55() });
     (unsafe { test_56() });
-    (unsafe { test_57() });
-    (unsafe { test_58() });
-    (unsafe { test_59() });
     return true;
 }
 pub fn main() {
@@ -1142,15 +1130,15 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_60() });
+    (unsafe { tests_57() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_3);
-    std::cell::LazyCell::force(&*&raw const moved_value_4);
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_7);
-    std::cell::LazyCell::force(&*&raw const alloc_count_8);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_9);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_10);
+    std::cell::LazyCell::force(&*&raw const destructed_value_2);
+    std::cell::LazyCell::force(&*&raw const moved_value_3);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_6);
+    std::cell::LazyCell::force(&*&raw const alloc_count_7);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_8);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_9);
 }

@@ -303,19 +303,19 @@ impl std::cmp::Ord for ComparesToMyBool {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
             if {
-                let __cmp = &operator_lt_10(
+                let __cmp = operator_lt_10(
                     self as *const ComparesToMyBool,
                     other as *const ComparesToMyBool,
                 );
-                MyBool::to_(__cmp)
+                MyBool::to_(&__cmp)
             } {
                 std::cmp::Ordering::Less
             } else if {
-                let __cmp = &operator_lt_10(
+                let __cmp = operator_lt_10(
                     other as *const ComparesToMyBool,
                     self as *const ComparesToMyBool,
                 );
-                MyBool::to_(__cmp)
+                MyBool::to_(&__cmp)
             } {
                 std::cmp::Ordering::Greater
             } else {
@@ -333,11 +333,11 @@ impl std::cmp::PartialEq for ComparesToMyBool {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
             {
-                let __cmp = &operator_eq_11(
+                let __cmp = operator_eq_11(
                     self as *const ComparesToMyBool,
                     other as *const ComparesToMyBool,
                 );
-                MyBool::to_(__cmp)
+                MyBool::to_(&__cmp)
             }
         }
     }

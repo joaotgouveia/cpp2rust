@@ -6,16 +6,16 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub static mut copies_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
-pub static mut moves_1: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+pub static mut copies_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut moves_1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct Movable {
-    pub x: i32,
-    pub y: i32,
+    pub x: (),
+    pub y: (),
 }
 impl Movable {
-    pub unsafe fn new(mut x: i32, mut y: i32) -> Self {
+    pub unsafe fn new(mut x: (), mut y: ()) -> Self {
         let mut this = Self { x: x, y: y };
         this
     }
@@ -32,8 +32,8 @@ impl Movable {
             x: (*other).x,
             y: (*other).y,
         };
-        (*other).x = 0;
-        (*other).y = 0;
+        (*other).x = 0_();
+        (*other).y = 0_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut moves_1)).prefix_inc();
         this
     }
@@ -46,26 +46,26 @@ impl Clone for Movable {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Holder {
-    pub xs: Vec<i32>,
-    pub ys: Vec<i32>,
+    pub xs: std_vector_int__std_allocator_int__,
+    pub ys: std_vector_int__std_allocator_int__,
 }
 impl Holder {
     pub unsafe fn extract(&mut self) -> Holder {
         return Holder {
-            xs: std::mem::take(&mut self.xs),
-            ys: std::mem::take(&mut self.ys),
+            xs: self.xs,
+            ys: self.ys,
         };
     }
     pub unsafe fn move_from(_a0: *mut Holder) -> Self {
         let mut this = Self {
-            xs: std::mem::take(&mut (*_a0).xs),
-            ys: std::mem::take(&mut (*_a0).ys),
+            xs: (*_a0).xs,
+            ys: (*_a0).ys,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Holder) -> *mut Holder {
-        self.xs = std::mem::take(&mut (*_a0).xs);
-        self.ys = std::mem::take(&mut (*_a0).ys);
+        self.xs = ((*_a0).xs).clone();
+        self.ys = ((*_a0).ys).clone();
         return &mut (*(self as *mut Holder));
     }
 }
@@ -75,27 +75,27 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut m: Movable = Movable::new({ 3 }, { 4 });
+unsafe fn main_0() -> () {
+    let mut m: Movable = Movable::new({ 3_() }, { 4_() });
     let mut __decomp_2: Movable = Movable::move_from({ &mut m });
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_1)) == (1)));
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
-    assert!(((__decomp_2.x) == (3)));
-    assert!(((__decomp_2.y) == (4)));
-    assert!(((m.x) == (0)));
-    assert!(((m.y) == (0)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut h: Holder = Holder {
-        xs: Vec::from([1, 2, 3]),
-        ys: Vec::from([4, 5]),
+        xs: std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
+        ys: std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, None),
     };
     let mut __decomp_3: Holder = (unsafe { Holder::extract(&mut h) });
-    assert!(((__decomp_3.xs.len()) == (3_usize)));
-    assert!(((__decomp_3.ys.len()) == (2_usize)));
-    assert!(((__decomp_3.xs[(2_usize)]) == (3)));
-    assert!(((__decomp_3.ys[(0_usize)]) == (4)));
-    assert!(h.xs.is_empty());
-    assert!(h.ys.is_empty());
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const copies_0);

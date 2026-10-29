@@ -355,9 +355,6 @@ pub struct test_allocator_int__rebind_int_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_int__rebind_const_int_ptr_ {}
-#[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
 pub struct test_allocator_int_ {
     data_: (),
@@ -388,6 +385,19 @@ impl test_allocator_int_ {
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
     }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
+    }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
         unimplemented!();
         if !((self.stats_).is_null()) {
@@ -413,15 +423,8 @@ impl Default for test_allocator_int_ {
         }
     }
 }
-#[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
-pub struct test_allocator_int_ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
 impl test_allocator_int_ptr_ {
-    pub unsafe fn move_from(a: *mut test_allocator_int_ptr_) -> Self {
+    pub unsafe fn new_1(a: *const test_allocator_int_) -> Self {
         let mut this = Self {
             data_: (*a).data_,
             id_: (*a).id_,
@@ -429,12 +432,19 @@ impl test_allocator_int_ptr_ {
         };
         if !((this.stats_).is_null()) {
             (*this.stats_).count.prefix_inc();
-            (*this.stats_).moved.prefix_inc();
+            (*this.stats_).converted.prefix_inc();
         }
-        unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_15));
         this
     }
+}
+#[repr(C)]
+#[derive(FnPtrArg, DestructorUnsafe)]
+pub struct test_allocator_int_ptr_ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_int_ptr_ {
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
@@ -444,6 +454,19 @@ impl test_allocator_int_ptr_ {
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
     }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut *mut () {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
+    }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut (), mut s: ()) {
         unimplemented!();
         if !((self.stats_).is_null()) {
@@ -452,35 +475,11 @@ impl test_allocator_int_ptr_ {
         }
         unimplemented!();
     }
-    pub unsafe fn destroy(&mut self, mut p: *mut *mut ()) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).destroy_count.prefix_inc();
-        };
-    }
 }
 impl Default for test_allocator_int_ptr_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ptr_ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_const_int_ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_const_int_ptr_ {}
-impl Default for test_allocator_const_int_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_const_int_ptr_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: std::ptr::null_mut(),
@@ -514,72 +513,6 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-pub unsafe fn operator_eq_18(
-    mut _a0: ThrowingMoveAllocator_int_,
-    mut _a1: ThrowingMoveAllocator_int_,
-) -> () {
-    return true;
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
-pub struct ThrowingMoveAllocator_int_ {}
-impl ThrowingMoveAllocator_int_ {
-    pub unsafe fn move_from(_a0: *mut ThrowingMoveAllocator_int_) -> Self {
-        let mut this = Self {};
-        this
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        unimplemented!();
-        return;
-    }
-}
-impl std::cmp::PartialEq for ThrowingMoveAllocator_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_18(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for ThrowingMoveAllocator_int_ {}
-pub unsafe fn operator_eq_19(
-    mut _a0: ThrowingMoveAllocator_int_ptr_,
-    mut _a1: ThrowingMoveAllocator_int_ptr_,
-) -> () {
-    return true;
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
-pub struct ThrowingMoveAllocator_int_ptr_ {}
-impl ThrowingMoveAllocator_int_ptr_ {
-    pub unsafe fn move_from(_a0: *mut ThrowingMoveAllocator_int_ptr_) -> Self {
-        let mut this = Self {};
-        this
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut *mut (), mut n: ()) {
-        unimplemented!();
-        return;
-    }
-}
-impl std::cmp::PartialEq for ThrowingMoveAllocator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_19(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for ThrowingMoveAllocator_int_ptr_ {}
-pub unsafe fn operator_eq_20(
-    mut _a0: ThrowingMoveAllocator_const_int_ptr_,
-    mut _a1: ThrowingMoveAllocator_const_int_ptr_,
-) -> () {
-    return true;
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct ThrowingMoveAllocator_const_int_ptr_ {}
-impl ThrowingMoveAllocator_const_int_ptr_ {}
-impl std::cmp::PartialEq for ThrowingMoveAllocator_const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_20(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for ThrowingMoveAllocator_const_int_ptr_ {}
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct ThrowingMoveComp {}
@@ -642,37 +575,19 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        const _: () = assert!(true, "std::is_nothrow_move_constructible_v<C>");;
+        const _: () = assert!(true, "");;
         let mut c: () = unimplemented!();
-        let mut d: () = unimplemented!();
+        let mut d: () = c;
     }
     {
-        const _: () = assert!(true, "std::is_nothrow_move_constructible_v<C>");;
+        const _: () = assert!(true, "");;
         let mut c: () = unimplemented!();
-        let mut d: () = unimplemented!();
-    }
-    {
-        const _: () = assert!(
-            true,
-            "!std::is_nothrow_move_constructible_v<std::deque<int, ThrowingMoveAllocator<int>>>"
-        );;
-        const _: () = assert!(true, "!std::is_nothrow_move_constructible_v<C>");;
-        let mut c: () = unimplemented!();
-        let mut d: () = unimplemented!();
-    }
-    {
-        const _: () = assert!(
-            true,
-            "!std::is_nothrow_move_constructible_v<std::deque<int, ThrowingMoveAllocator<int>>>"
-        );;
-        const _: () = assert!(true, "!std::is_nothrow_move_constructible_v<C>");;
-        let mut c: () = unimplemented!();
-        let mut d: () = unimplemented!();
+        let mut d: () = c;
     }
     {
         const _: () = assert!(true, "!std::is_nothrow_move_constructible_v<C>");;
         let mut c: () = unimplemented!();
-        let mut d: () = unimplemented!();
+        let mut d: () = c;
     }
     return 0_();
 }

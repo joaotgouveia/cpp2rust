@@ -10,75 +10,55 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct Entry {
     #[offset(0)]
-    pub bits: u8,
+    pub bits: (),
     #[offset(2)]
-    pub value: u16,
+    pub value: (),
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let table: Value<Box<[Entry]>> = Rc::new(RefCell::new(Box::new([
         Entry {
-            bits: 1_u8,
-            value: 4369_u16,
+            bits: 1_(),
+            value: 4369_(),
         },
         Entry {
-            bits: 2_u8,
-            value: 8738_u16,
+            bits: 2_(),
+            value: 8738_(),
         },
         Entry {
-            bits: 3_u8,
-            value: 13107_u16,
+            bits: 3_(),
+            value: 13107_(),
         },
         Entry {
-            bits: 4_u8,
-            value: 17476_u16,
+            bits: 4_(),
+            value: 17476_(),
         },
         Entry {
-            bits: 0_u8,
-            value: 0_u16,
+            bits: 0_(),
+            value: 0_(),
         },
         Entry {
-            bits: 0_u8,
-            value: 0_u16,
+            bits: 0_(),
+            value: 0_(),
         },
         Entry {
-            bits: 0_u8,
-            value: 0_u16,
+            bits: 0_(),
+            value: 0_(),
         },
         Entry {
-            bits: 0_u8,
-            value: 0_u16,
+            bits: 0_(),
+            value: 0_(),
         },
     ])));
-    let mut table_size: usize = 4_usize;
-    {
-        (((table.as_pointer() as Ptr<Entry>).offset(table_size)) as Ptr<Entry>)
-            .to_any()
-            .memcpy(
-                &(((table.as_pointer() as Ptr<Entry>).offset(0)) as Ptr<Entry>).to_any(),
-                ((table_size as u64).wrapping_mul((4usize as u64)) as usize) as usize,
-            );
-        (((table.as_pointer() as Ptr<Entry>).offset(table_size)) as Ptr<Entry>).to_any()
-    };
-    assert!(
-        (({ (*table.borrow())[(4) as usize].bits } as i32) == 1)
-            && (({ (*table.borrow())[(4) as usize].value } as i32) == 4369)
-    );
-    assert!(
-        (({ (*table.borrow())[(5) as usize].bits } as i32) == 2)
-            && (({ (*table.borrow())[(5) as usize].value } as i32) == 8738)
-    );
-    assert!(
-        (({ (*table.borrow())[(6) as usize].bits } as i32) == 3)
-            && (({ (*table.borrow())[(6) as usize].value } as i32) == 13107)
-    );
-    assert!(
-        (({ (*table.borrow())[(7) as usize].bits } as i32) == 4)
-            && (({ (*table.borrow())[(7) as usize].value } as i32) == 17476)
-    );
-    return 0;
+    let mut table_size: () = 4_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

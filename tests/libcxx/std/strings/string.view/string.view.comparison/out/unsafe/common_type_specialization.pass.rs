@@ -483,7 +483,7 @@ pub struct char_wrapper {
     pub c: (),
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct convertible_to_string_view {
     pub sv: (),
 }
@@ -496,6 +496,19 @@ impl convertible_to_string_view {
     }
     pub unsafe fn to_(&self) -> () {
         return unimplemented!();
+    }
+    pub unsafe fn move_from(_a0: *mut convertible_to_string_view) -> Self {
+        let mut this = Self {
+            sv: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut convertible_to_string_view,
+    ) -> *mut convertible_to_string_view {
+        unimplemented!();
+        return &mut (*(self as *mut convertible_to_string_view));
     }
 }
 pub unsafe fn test_13() {

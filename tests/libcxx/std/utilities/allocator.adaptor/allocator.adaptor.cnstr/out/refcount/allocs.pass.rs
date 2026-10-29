@@ -47,23 +47,11 @@ impl A1_int_ {
         __this
     }
 }
-impl std::cmp::PartialEq for A1_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(A1_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A1_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A1_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A1_int_ {}
 impl Clone for A1_int_ {
     fn clone(&self) -> Self {
         let __src: Value<A1_int_> = Rc::new(RefCell::new(A1_int_ {
@@ -123,23 +111,11 @@ impl A2_int_ {
         __this
     }
 }
-impl std::cmp::PartialEq for A2_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_12(
-                Rc::new(RefCell::new(A2_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A2_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A2_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_12(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A2_int_ {}
 impl Clone for A2_int_ {
     fn clone(&self) -> Self {
         let __src: Value<A2_int_> = Rc::new(RefCell::new(A2_int_ {
@@ -180,23 +156,11 @@ impl A3_int_ {
         __this
     }
 }
-impl std::cmp::PartialEq for A3_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_17(
-                Rc::new(RefCell::new(A3_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A3_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A3_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_17(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A3_int_ {}
 impl Clone for A3_int_ {
     fn clone(&self) -> Self {
         let __src: Value<A3_int_> = Rc::new(RefCell::new(A3_int_ {

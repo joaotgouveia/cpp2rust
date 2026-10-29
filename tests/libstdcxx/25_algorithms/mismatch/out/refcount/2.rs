@@ -67,11 +67,7 @@ impl __gnu_test_copy_constructor {
     pub fn mark_call() {
         (*count__1.with(Value::clone).borrow_mut()).postfix_inc();
         if (count__1.with(|rc| *rc.borrow()) == throw_on__2.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"copy_constructor::mark_call",
-                ))
-            });
+            unimplemented!();
         }
     }
     pub fn reset() {
@@ -87,24 +83,20 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub fn count() -> () {
-        return count__4.with(|rc| *rc.borrow());
+        return count__3.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*count__4.with(Value::clone).borrow_mut()).postfix_inc();
-        if (count__4.with(|rc| *rc.borrow()) == throw_on__5.with(|rc| *rc.borrow())) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"assignment_operator::mark_call",
-                ))
-            });
+        (*count__3.with(Value::clone).borrow_mut()).postfix_inc();
+        if (count__3.with(|rc| *rc.borrow()) == throw_on__4.with(|rc| *rc.borrow())) {
+            unimplemented!();
         }
     }
     pub fn reset() {
-        count__4.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__5.with(|rc| *rc.borrow_mut() = 0_());
+        count__3.with(|rc| *rc.borrow_mut() = 0_());
+        throw_on__4.with(|rc| *rc.borrow_mut() = 0_());
     }
     pub fn throw_on(mut count: ()) {
-        throw_on__5.with(|rc| *rc.borrow_mut() = count);
+        throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -112,13 +104,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub fn count() -> () {
-        return _M_count_6.with(|rc| *rc.borrow());
+        return _M_count_5.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
-        (*_M_count_6.with(Value::clone).borrow_mut()).postfix_inc();
+        (*_M_count_5.with(Value::clone).borrow_mut()).postfix_inc();
     }
     pub fn reset() {
-        _M_count_6.with(|rc| *rc.borrow_mut() = 0_());
+        _M_count_5.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -132,7 +124,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub fn new(id: Option<()>, throw_on_copy: Option<()>) -> Self {
         let mut id: () =
-            id.unwrap_or_else(|| (*next_id__7.with(Value::clone).borrow_mut()).postfix_dec());
+            id.unwrap_or_else(|| (*next_id__6.with(Value::clone).borrow_mut()).postfix_dec());
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| false);
         Self {
             id_: id,
@@ -161,65 +153,16 @@ impl __gnu_test_copy_tracker {
         ({ __gnu_test_destructor::reset() });
     }
 }
-impl std::cmp::Ord for __gnu_test_copy_tracker {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_8(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for __gnu_test_copy_tracker {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for __gnu_test_copy_tracker {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for __gnu_test_copy_tracker {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_9(
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: self.id_.clone(),
-                    throw_on_copy_: self.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_copy_tracker {
-                    id_: other.id_.clone(),
-                    throw_on_copy_: other.throw_on_copy_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for __gnu_test_copy_tracker {}
 impl Clone for __gnu_test_copy_tracker {
     fn clone(&self) -> Self {
         let __src: Value<__gnu_test_copy_tracker> =
@@ -235,12 +178,12 @@ impl Default for __gnu_test_copy_tracker {
         { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub fn operator_eq_9(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } == {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
 }
-pub fn operator_lt_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } < {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
@@ -251,7 +194,7 @@ pub struct __gnu_test_semaphore {
     #[offset(0)]
     sem_set_: (),
     #[offset(4)]
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -302,34 +245,18 @@ impl __gnu_test_input_iterator_wrapper_int_ {
                 this.with(|__s| __s.SharedInfo.clone())
                     .with(|__s| __s.last.clone())
             })) {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"2.cc" )  ) .into() , ( 250_() ) .into() , ( Ptr::<() >::from_string_literal(b"__gnu_test::input_iterator_wrapper<int>::input_iterator_wrapper(T *, ContainerType *) [T = int]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"ptr >= SharedInfo->first && ptr <= SharedInfo->last" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::PartialEq for __gnu_test_input_iterator_wrapper_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            __gnu_test_input_iterator_wrapper_int_Impl::operator_eq(
-                &Rc::new(RefCell::new(__gnu_test_input_iterator_wrapper_int_ {
-                    ptr: self.ptr.clone(),
-                    SharedInfo: self.SharedInfo.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(__gnu_test_input_iterator_wrapper_int_ {
-                    ptr: other.ptr.clone(),
-                    SharedInfo: other.SharedInfo.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for __gnu_test_input_iterator_wrapper_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        __gnu_test_input_iterator_wrapper_int_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for __gnu_test_input_iterator_wrapper_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_ {
@@ -345,39 +272,39 @@ impl __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_ {
     }
 }
 thread_local!(
-    pub static array1_11: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
+    pub static array1_9: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
 );
 thread_local!(
-    pub static array2_12: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 0_()])));
+    pub static array2_10: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 0_()])));
 );
 thread_local!(
-    pub static array3_13: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 0_(), 1_()])));
+    pub static array3_11: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 0_(), 1_()])));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct equal_to {}
 thread_local!(
-    pub static eq_15: Value<equal_to> = Rc::new(RefCell::new(<equal_to>::default()));
+    pub static eq_13: Value<equal_to> = Rc::new(RefCell::new(<equal_to>::default()));
 );
 thread_local!(
-    pub static count_14: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_12: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static test_16: Value<()> = Rc::new(RefCell::new(false));
+    pub static test_14: Value<()> = Rc::new(RefCell::new(false));
 );
-pub fn test1_17() {
+pub fn test1_15() {
     let con1: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array1_11.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array1_11.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array1_9.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array1_9.with(|v| v.as_pointer()) as Ptr<()>) },
             ),
         ));
     let con2: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
             ),
         ));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -385,20 +312,9 @@ pub fn test1_17() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array1_11.with(|v| v.as_pointer()) as Ptr<()>)
+            (array1_9.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (56_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test1()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array1")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -406,42 +322,20 @@ pub fn test1_17() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (57_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test1()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array1_11.with(|v| v.as_pointer()) as Ptr<()>)
+            (array1_9.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (59_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test1()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array1")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -449,56 +343,34 @@ pub fn test1_17() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (60_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test1()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(count_14.with(|rc| *rc.borrow()) == 0_()) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (61_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test1()")).into(),
-                        (Ptr::<()>::from_string_literal(b"equal_to::count == 0")).into(),
-                    ]),
-                )
-            });
+        if !(count_12.with(|rc| *rc.borrow()) == 0_()) {
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test2_18() {
+pub fn test2_16() {
     let con1: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array1_11.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array1_11.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array1_9.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array1_9.with(|v| v.as_pointer()) as Ptr<()>) },
             ),
         ));
     let con2: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
             ),
         ));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -506,20 +378,9 @@ pub fn test2_18() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array1_11.with(|v| v.as_pointer()) as Ptr<()>)
+            (array1_9.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (70_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test2()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array1")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -527,42 +388,20 @@ pub fn test2_18() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (71_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test2()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array1_11.with(|v| v.as_pointer()) as Ptr<()>)
+            (array1_9.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (74_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test2()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array1")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -570,56 +409,34 @@ pub fn test2_18() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (75_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test2()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(count_14.with(|rc| *rc.borrow()) == 0_()) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (76_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test2()")).into(),
-                        (Ptr::<()>::from_string_literal(b"equal_to::count == 0")).into(),
-                    ]),
-                )
-            });
+        if !(count_12.with(|rc| *rc.borrow()) == 0_()) {
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test3_19() {
+pub fn test3_17() {
     let con1: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array1_11.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array1_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
+                { (array1_9.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array1_9.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
             ),
         ));
     let con2: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
             ),
         ));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -627,20 +444,9 @@ pub fn test3_19() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array1_11.with(|v| v.as_pointer()) as Ptr<()>)
+            (array1_9.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (85_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test3()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array1")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -648,42 +454,20 @@ pub fn test3_19() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (86_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test3()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    (*res.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array1_11.with(|v| v.as_pointer()) as Ptr<()>)
+            (array1_9.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (89_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test3()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array1")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -691,56 +475,34 @@ pub fn test3_19() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (90_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test3()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(count_14.with(|rc| *rc.borrow()) == 0_()) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (91_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test3()")).into(),
-                        (Ptr::<()>::from_string_literal(b"equal_to::count == 0")).into(),
-                    ]),
-                )
-            });
+        if !(count_12.with(|rc| *rc.borrow()) == 0_()) {
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub fn test4_20() {
+pub fn test4_18() {
     let con1: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array1_11.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array1_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
+                { (array1_9.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array1_9.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
             ),
         ));
     let con2: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
             ),
         ));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -748,20 +510,9 @@ pub fn test4_20() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array1_11.with(|v| v.as_pointer()) as Ptr<()>)
+            (array1_9.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (100_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test4()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array1")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -769,44 +520,22 @@ pub fn test4_20() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (101_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test4()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    (*con1.borrow_mut()).bounds.first = (array1_11.with(|v| v.as_pointer()) as Ptr<()>);
-    (*con2.borrow_mut()).bounds.first = (array2_12.with(|v| v.as_pointer()) as Ptr<()>);
-    (*res.borrow_mut()) = unimplemented!();
+    (*con1.borrow_mut()).bounds.first = (array1_9.with(|v| v.as_pointer()) as Ptr<()>);
+    (*con2.borrow_mut()).bounds.first = (array2_10.with(|v| v.as_pointer()) as Ptr<()>);
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array1_11.with(|v| v.as_pointer()) as Ptr<()>)
+            (array1_9.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (106_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test4()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array1")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -814,57 +543,35 @@ pub fn test4_20() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (107_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test4()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(count_14.with(|rc| *rc.borrow()) == 1_()) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (108_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test4()")).into(),
-                        (Ptr::<()>::from_string_literal(b"equal_to::count == 1")).into(),
-                    ]),
-                )
-            });
+        if !(count_12.with(|rc| *rc.borrow()) == 1_()) {
+            unimplemented!();
             unimplemented!();
         }
     }
-    count_14.with(|rc| *rc.borrow_mut() = 0_());
+    count_12.with(|rc| *rc.borrow_mut() = 0_());
 }
-pub fn test5_21() {
+pub fn test5_19() {
     let con3: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array3_13.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
+                { (array3_11.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
             ),
         ));
     let con2: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
             ),
         ));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -872,20 +579,9 @@ pub fn test5_21() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (118_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test5()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array3 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -893,44 +589,22 @@ pub fn test5_21() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (119_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test5()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    (*con3.borrow_mut()).bounds.first = (array3_13.with(|v| v.as_pointer()) as Ptr<()>);
-    (*con2.borrow_mut()).bounds.first = (array2_12.with(|v| v.as_pointer()) as Ptr<()>);
-    (*res.borrow_mut()) = unimplemented!();
+    (*con3.borrow_mut()).bounds.first = (array3_11.with(|v| v.as_pointer()) as Ptr<()>);
+    (*con2.borrow_mut()).bounds.first = (array2_10.with(|v| v.as_pointer()) as Ptr<()>);
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (124_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test5()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array3 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -938,57 +612,35 @@ pub fn test5_21() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (125_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test5()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(count_14.with(|rc| *rc.borrow()) == 2_()) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (126_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test5()")).into(),
-                        (Ptr::<()>::from_string_literal(b"equal_to::count == 2")).into(),
-                    ]),
-                )
-            });
+        if !(count_12.with(|rc| *rc.borrow()) == 2_()) {
+            unimplemented!();
             unimplemented!();
         }
     }
-    count_14.with(|rc| *rc.borrow_mut() = 0_());
+    count_12.with(|rc| *rc.borrow_mut() = 0_());
 }
-pub fn test6_22() {
+pub fn test6_20() {
     let con3: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array3_13.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((3_()) as isize) },
+                { (array3_11.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((3_()) as isize) },
             ),
         ));
     let con2: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
             ),
         ));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -996,20 +648,9 @@ pub fn test6_22() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (136_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test6()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array3 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1017,44 +658,22 @@ pub fn test6_22() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (137_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test6()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    (*con3.borrow_mut()).bounds.first = (array3_13.with(|v| v.as_pointer()) as Ptr<()>);
-    (*con2.borrow_mut()).bounds.first = (array2_12.with(|v| v.as_pointer()) as Ptr<()>);
-    (*res.borrow_mut()) = unimplemented!();
+    (*con3.borrow_mut()).bounds.first = (array3_11.with(|v| v.as_pointer()) as Ptr<()>);
+    (*con2.borrow_mut()).bounds.first = (array2_10.with(|v| v.as_pointer()) as Ptr<()>);
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (142_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test6()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array3 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1062,57 +681,35 @@ pub fn test6_22() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (143_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test6()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array2 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(count_14.with(|rc| *rc.borrow()) == 2_()) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (144_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test6()")).into(),
-                        (Ptr::<()>::from_string_literal(b"equal_to::count == 2")).into(),
-                    ]),
-                )
-            });
+        if !(count_12.with(|rc| *rc.borrow()) == 2_()) {
+            unimplemented!();
             unimplemented!();
         }
     }
-    count_14.with(|rc| *rc.borrow_mut() = 0_());
+    count_12.with(|rc| *rc.borrow_mut() = 0_());
 }
-pub fn test7_23() {
+pub fn test7_21() {
     let con3: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array3_13.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((3_()) as isize) },
+                { (array3_11.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((3_()) as isize) },
             ),
         ));
     let con2: Value<__gnu_test_test_container_int____gnu_test_input_iterator_wrapper_> =
         Rc::new(RefCell::new(
             __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_::new(
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>) },
-                { (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>) },
+                { (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize) },
             ),
         ));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1120,20 +717,9 @@ pub fn test7_23() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (154_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test7()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array2 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1141,44 +727,22 @@ pub fn test7_23() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (155_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test7()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array3 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    (*con3.borrow_mut()).bounds.first = (array3_13.with(|v| v.as_pointer()) as Ptr<()>);
-    (*con2.borrow_mut()).bounds.first = (array2_12.with(|v| v.as_pointer()) as Ptr<()>);
-    (*res.borrow_mut()) = unimplemented!();
+    (*con3.borrow_mut()).bounds.first = (array3_11.with(|v| v.as_pointer()) as Ptr<()>);
+    (*con2.borrow_mut()).bounds.first = (array2_10.with(|v| v.as_pointer()) as Ptr<()>);
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).first.ptr.clone() } } == {
-            (array2_12.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array2_10.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (160_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test7()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.first.ptr == array2 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1186,130 +750,84 @@ pub fn test7_23() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ { (*res.borrow()).second.ptr.clone() } } == {
-            (array3_13.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
+            (array3_11.with(|v| v.as_pointer()) as Ptr<()>).offset((2_()) as isize)
         }) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (161_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test7()")).into(),
-                        (Ptr::<()>::from_string_literal(b"res.second.ptr == array3 + 2")).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(count_14.with(|rc| *rc.borrow()) == 2_()) {
-            ({
-                __builtin_fprintf_10(
-                    libcc2rs::stderr_unsafe(),
-                    Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
-                    Box::new([
-                        (Ptr::<()>::from_string_literal(b"2.cc")).into(),
-                        (162_()).into(),
-                        (Ptr::<()>::from_string_literal(b"void test7()")).into(),
-                        (Ptr::<()>::from_string_literal(b"equal_to::count == 2")).into(),
-                    ]),
-                )
-            });
+        if !(count_12.with(|rc| *rc.borrow()) == 2_()) {
+            unimplemented!();
             unimplemented!();
         }
     }
-    count_14.with(|rc| *rc.borrow_mut() = 0_());
+    count_12.with(|rc| *rc.borrow_mut() = 0_());
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test1_17() });
-    ({ test2_18() });
-    ({ test3_19() });
-    ({ test4_20() });
-    ({ test5_21() });
-    ({ test6_22() });
-    ({ test7_23() });
+    ({ test1_15() });
+    ({ test2_16() });
+    ({ test3_17() });
+    ({ test4_18() });
+    ({ test5_19() });
+    ({ test6_20() });
+    ({ test7_21() });
     0
 }
 impl __gnu_test_semaphore {
     pub fn new() -> Self {
         let __this: Value<__gnu_test_semaphore> = Rc::new(RefCell::new(Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_24() }) as ::libc::pid_t));
-        field!(this, sem_set_)
-            .write(({ semget_25(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+        field!(this, pid_).write(unimplemented!());
+        field!(this, sem_set_).write(unimplemented!());
         if (this.with(|__s| __s.sem_set_) == -1_()) {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not obtain semaphore set",
-                ))
-            });
+            unimplemented!();
         }
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if (({
-            semctl_26(
-                this.with(|__s| __s.sem_set_),
-                0_(),
-                16_(),
-                Box::new([((*val.borrow()).clone()).into()]),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not initialize semaphore",
-                ))
-            });
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_27(size: Option<()>) {
+pub fn set_memory_limits_22(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_28((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_29((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_28((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_29((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    unimplemented!();
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_28((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_29((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn set_file_limit_30(mut size: ()) {
-    let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
+pub fn set_file_limit_23(mut size: ()) {
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_28((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_29((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    unimplemented!();
 }
-pub fn verify_demangle_31(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_24(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
-    let mut demangled: Ptr<()> = ({
-        __cxa_demangle_32(
-            (mangled).clone(),
-            Ptr::<()>::null(),
-            Ptr::<()>::null(),
-            (status.as_pointer()),
-        )
-    });
+    let mut demangled: Ptr<()> = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).clone();
     } else {
@@ -1335,13 +853,13 @@ pub fn verify_demangle_31(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if unimplemented!() {
-        ({ __throw_runtime_error_3((s).clone()) });
+    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    if !(unimplemented!()) {
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_33(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -1358,19 +876,17 @@ pub fn run_tests_wrapped_locale_33(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_34(
+pub fn run_tests_wrapped_env_26(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -1390,7 +906,7 @@ pub fn run_tests_wrapped_env_34(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 thread_local!(
@@ -1403,16 +919,16 @@ thread_local!(
     static throw_on__2: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static count__4: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__3: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static throw_on__5: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__4: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static _M_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    static _M_count_5: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    static next_id__7: Value<()> = Rc::new(RefCell::new(0_()));
+    static next_id__6: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
@@ -1425,7 +941,7 @@ impl __gnu_test_semun {
     pub fn val(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
-    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<semid_ds>> {
+    pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<()>> {
         this.reinterpret_cast()
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<()>> {
@@ -1440,7 +956,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_36(
+pub fn test_tm_27(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1450,20 +966,20 @@ pub fn test_tm_36(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_37.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_37.with(|rc| *rc.borrow());
+) -> () {
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_28.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_28.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_37: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_28: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
@@ -1544,9 +1060,7 @@ impl __gnu_test_input_iterator_wrapper_int_Impl for Ptr<__gnu_test_input_iterato
                     in_.with(|__s| __s.SharedInfo.clone())
                 }))
             {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"2.cc" )  ) .into() , ( 262_() ) .into() , ( Ptr::<() >::from_string_literal(b"bool __gnu_test::input_iterator_wrapper<int>::operator==(const input_iterator_wrapper<T> &) const [T = int]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"SharedInfo && SharedInfo == in.SharedInfo" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -1562,9 +1076,7 @@ impl __gnu_test_input_iterator_wrapper_int_Impl for Ptr<__gnu_test_input_iterato
                     .with(|__s| __s.SharedInfo.clone())
                     .with(|__s| __s.first.clone())
             })) {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"2.cc" )  ) .into() , ( 263_() ) .into() , ( Ptr::<() >::from_string_literal(b"bool __gnu_test::input_iterator_wrapper<int>::operator==(const input_iterator_wrapper<T> &) const [T = int]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"ptr>=SharedInfo->first && in.ptr>=SharedInfo->first" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -1587,9 +1099,7 @@ impl __gnu_test_input_iterator_wrapper_int_Impl for Ptr<__gnu_test_input_iterato
                         .with(|__s| __s.last.clone())
                 }))
             {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"2.cc" )  ) .into() , ( 276_() ) .into() , ( Ptr::<() >::from_string_literal(b"T &__gnu_test::input_iterator_wrapper<int>::operator*() const [T = int]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"SharedInfo && ptr < SharedInfo->last" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -1601,9 +1111,7 @@ impl __gnu_test_input_iterator_wrapper_int_Impl for Ptr<__gnu_test_input_iterato
                     .with(|__s| __s.SharedInfo.clone())
                     .with(|__s| __s.first.clone())
             }) {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"2.cc" )  ) .into() , ( 277_() ) .into() , ( Ptr::<() >::from_string_literal(b"T &__gnu_test::input_iterator_wrapper<int>::operator*() const [T = int]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"ptr >= SharedInfo->first" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -1620,9 +1128,7 @@ impl __gnu_test_input_iterator_wrapper_int_Impl for Ptr<__gnu_test_input_iterato
                         .with(|__s| __s.last.clone())
                 }))
             {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"2.cc" )  ) .into() , ( 290_() ) .into() , ( Ptr::<() >::from_string_literal(b"input_iterator_wrapper<T> &__gnu_test::input_iterator_wrapper<int>::operator++() [T = int]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"SharedInfo && ptr < SharedInfo->last" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -1634,9 +1140,7 @@ impl __gnu_test_input_iterator_wrapper_int_Impl for Ptr<__gnu_test_input_iterato
                     .with(|__s| __s.SharedInfo.clone())
                     .with(|__s| __s.first.clone())
             }) {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"2.cc" )  ) .into() , ( 291_() ) .into() , ( Ptr::<() >::from_string_literal(b"input_iterator_wrapper<T> &__gnu_test::input_iterator_wrapper<int>::operator++() [T = int]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"ptr>=SharedInfo->first" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -1673,49 +1177,20 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_24() })) {
-            ({
-                semctl_26(
-                    (*self).with(|__s| __s.sem_set_),
-                    0_(),
-                    0_(),
-                    Box::new([((*val.borrow()).clone()).into()]),
-                )
-            });
+        if ((*self).with(|__s| __s.pid_) == unimplemented!()) {
+            unimplemented!();
         }
     }
     fn signal(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_35(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not signal semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
     fn wait(&self) {
-        let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (({
-            semop_35(
-                (*self).with(|__s| __s.sem_set_),
-                (op.as_pointer() as Ptr<sembuf>),
-                1_(),
-            )
-        }) == -1_())
-        {
-            ({
-                __throw_runtime_error_3(Ptr::<()>::from_string_literal(
-                    b"could not wait for semaphore",
-                ))
-            });
+        let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
+        if (unimplemented!() == -1_()) {
+            unimplemented!();
         }
     }
 }
@@ -1743,9 +1218,7 @@ impl __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_Impl
             if !(({ (pos).clone() } >= { (*self).with(|__s| __s.bounds.first.clone()) })
                 && ({ (pos).clone() } <= { (*self).with(|__s| __s.bounds.last.clone()) }))
             {
-                ({
-                    __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"2.cc" )  ) .into() , ( 628_() ) .into() , ( Ptr::<() >::from_string_literal(b"ItType<T> __gnu_test::test_container<int, __gnu_test::input_iterator_wrapper>::it(T *) [T = int, ItType = __gnu_test::input_iterator_wrapper]" )  ) .into() , ( Ptr::<() >::from_string_literal(b"pos >= bounds.first && pos <= bounds.last" )  ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
@@ -1771,22 +1244,22 @@ pub trait equal_toImpl {
 }
 impl equal_toImpl for Ptr<equal_to> {
     fn operator_call(&self, mut l: (), mut r: ()) -> () {
-        (*count_14.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_12.with(Value::clone).borrow_mut()).prefix_inc();
         return (l == r);
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = array1_11.with(|_| ());
-    let _ = array2_12.with(|_| ());
-    let _ = array3_13.with(|_| ());
-    let _ = eq_15.with(|_| ());
-    let _ = count_14.with(|_| ());
-    let _ = test_16.with(|_| ());
+    let _ = array1_9.with(|_| ());
+    let _ = array2_10.with(|_| ());
+    let _ = array3_11.with(|_| ());
+    let _ = eq_13.with(|_| ());
+    let _ = count_12.with(|_| ());
+    let _ = test_14.with(|_| ());
     let _ = count_0.with(|_| ());
     let _ = count__1.with(|_| ());
     let _ = throw_on__2.with(|_| ());
-    let _ = count__4.with(|_| ());
-    let _ = throw_on__5.with(|_| ());
-    let _ = _M_count_6.with(|_| ());
-    let _ = next_id__7.with(|_| ());
+    let _ = count__3.with(|_| ());
+    let _ = throw_on__4.with(|_| ());
+    let _ = _M_count_5.with(|_| ());
+    let _ = next_id__6.with(|_| ());
 }

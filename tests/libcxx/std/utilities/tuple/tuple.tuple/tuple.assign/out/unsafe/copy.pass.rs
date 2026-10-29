@@ -60,13 +60,13 @@ pub unsafe fn test_0() -> () {
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
-        t = (t0).clone();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
-        t = (t0).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -77,7 +77,7 @@ pub unsafe fn test_0() -> () {
         let mut y2: () = 500_();
         let mut t: () = unimplemented!();
         let mut t2: () = unimplemented!();
-        t = (t2).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -106,7 +106,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let t0: () = unimplemented!();
         let mut t: () = unimplemented!();
-        t = (t0).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

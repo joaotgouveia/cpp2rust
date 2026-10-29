@@ -47,18 +47,50 @@ impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_B_ {}
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct A {
     pub d: (),
     pub it: (),
     pub it2: (),
 }
+impl A {
+    pub unsafe fn move_from(_a0: *mut A) -> Self {
+        let mut this = Self {
+            d: unimplemented!(),
+            it: (*_a0).it,
+            it2: (*_a0).it2,
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut A) -> *mut A {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        return &mut (*(self as *mut A));
+    }
+}
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct B {
     pub d: (),
     pub it: (),
     pub it2: (),
+}
+impl B {
+    pub unsafe fn move_from(_a0: *mut B) -> Self {
+        let mut this = Self {
+            d: unimplemented!(),
+            it: unimplemented!(),
+            it2: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut B) -> *mut B {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        return &mut (*(self as *mut B));
+    }
 }
 pub unsafe fn test_4() -> () {
     {

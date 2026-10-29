@@ -181,9 +181,6 @@ impl Default for test_allocator_void_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_char__rebind_char_ {}
-#[repr(C)]
 #[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_char_ {
     data_: (),
@@ -292,10 +289,6 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct throwing_alloc_char_ {}
-impl throwing_alloc_char_ {}
 pub static mut unused_string_4: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub static mut unused_wide_string_5: std::cell::LazyCell<()> =
@@ -305,17 +298,14 @@ const _: () = assert!(
     true,
     "std::is_nothrow_destructible< std::basic_string<char, std::char_traits<char>, test_allocator<char>>>::value"
 );
-const _: () = assert!(
-    true,
-    "!std::is_nothrow_destructible< std::basic_string<char, std::char_traits<char>, throwing_alloc<char>>>::value"
-);
+const _: () = assert!(true, "");
 pub unsafe fn test_6() -> () {
     let mut alloc_stats: test_allocator_statistics = <test_allocator_statistics>::default();
     {
         let mut str2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     unimplemented!();
     return true;

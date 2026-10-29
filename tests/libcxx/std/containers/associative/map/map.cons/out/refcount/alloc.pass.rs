@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -208,27 +192,11 @@ impl test_allocator_std_pair_const_int__double__ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::PartialEq for test_allocator_std_pair_const_int__double__ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(test_allocator_std_pair_const_int__double__ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_std_pair_const_int__double__ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_std_pair_const_int__double__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_std_pair_const_int__double__ {}
 impl Clone for test_allocator_std_pair_const_int__double__ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_std_pair_const_int__double__> =
@@ -322,12 +290,11 @@ pub fn operator_eq_9(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__double__ {}
-impl std::cmp::PartialEq for min_allocator_std_pair_const_int__double__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_9(self.clone(), other.clone()) }
+impl CppEq for min_allocator_std_pair_const_int__double__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_9(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_std_pair_const_int__double__ {}
 pub fn operator_eq_10(
     mut _a0: explicit_allocator_std_pair_const_int__double__,
     mut _a1: explicit_allocator_std_pair_const_int__double__,
@@ -342,12 +309,11 @@ impl explicit_allocator_std_pair_const_int__double__ {
         Self {}
     }
 }
-impl std::cmp::PartialEq for explicit_allocator_std_pair_const_int__double__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_10(self.clone(), other.clone()) }
+impl CppEq for explicit_allocator_std_pair_const_int__double__ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_10(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for explicit_allocator_std_pair_const_int__double__ {}
 impl Default for explicit_allocator_std_pair_const_int__double__ {
     fn default() -> Self {
         { explicit_allocator_std_pair_const_int__double__::new() }

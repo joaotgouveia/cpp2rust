@@ -62,13 +62,14 @@ impl MultiStringType {
         }
     }
 }
-pub fn test_0(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_0(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_1(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -82,62 +83,8 @@ pub fn test_0(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -148,7 +95,62 @@ pub fn test_0(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -156,13 +158,14 @@ pub fn test_0(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_1(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_2(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_3(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -176,62 +179,8 @@ pub fn test_1(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -242,7 +191,62 @@ pub fn test_1(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -250,13 +254,14 @@ pub fn test_1(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_2(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_4(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_3(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -270,62 +275,8 @@ pub fn test_2(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -336,7 +287,62 @@ pub fn test_2(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -344,13 +350,14 @@ pub fn test_2(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_3(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_5(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_3(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -364,62 +371,8 @@ pub fn test_3(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -430,7 +383,62 @@ pub fn test_3(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -438,13 +446,14 @@ pub fn test_3(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_4(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_6(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_3(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -458,62 +467,8 @@ pub fn test_4(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -524,7 +479,62 @@ pub fn test_4(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -532,13 +542,14 @@ pub fn test_4(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_5(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_7(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_8(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -552,62 +563,8 @@ pub fn test_5(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -618,7 +575,62 @@ pub fn test_5(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -626,13 +638,14 @@ pub fn test_5(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_6(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_9(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_10(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -646,62 +659,8 @@ pub fn test_6(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -712,7 +671,62 @@ pub fn test_6(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -720,13 +734,14 @@ pub fn test_6(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_7(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_11(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_12(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -740,62 +755,8 @@ pub fn test_7(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -806,7 +767,62 @@ pub fn test_7(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -814,13 +830,14 @@ pub fn test_7(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_8(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_13(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_14(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -834,62 +851,8 @@ pub fn test_8(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -900,7 +863,62 @@ pub fn test_8(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -908,13 +926,14 @@ pub fn test_8(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_9(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_15(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_16(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -928,62 +947,8 @@ pub fn test_9(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -994,7 +959,62 @@ pub fn test_9(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1002,13 +1022,14 @@ pub fn test_9(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_10(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_17(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_18(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -1022,62 +1043,8 @@ pub fn test_10(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1087,22 +1054,6 @@ pub fn test_10(mut value: ()) {
             {
                 unimplemented!();
             }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_11(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -1116,62 +1067,8 @@ pub fn test_11(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1181,22 +1078,6 @@ pub fn test_11(mut value: ()) {
             {
                 unimplemented!();
             }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_12(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -1210,62 +1091,14 @@ pub fn test_12(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1276,571 +1109,8 @@ pub fn test_12(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_13(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_14(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_15(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_16(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_17(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_18(mut value: Ptr<()>) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<Ptr<()>> = Rc::new(RefCell::new((value).clone()));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
             {
                 unimplemented!();
             }
@@ -1850,12 +1120,12 @@ pub fn test_18(mut value: Ptr<()>) {
 }
 pub fn test_19(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_20(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -1869,62 +1139,8 @@ pub fn test_19(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1934,22 +1150,6 @@ pub fn test_19(value: ()) {
             {
                 unimplemented!();
             }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_20(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -1963,62 +1163,8 @@ pub fn test_20(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2029,7 +1175,38 @@ pub fn test_20(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2039,7 +1216,679 @@ pub fn test_20(mut value: ()) {
 }
 pub fn test_21(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_22(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_23(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_24(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_25(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_26(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_27(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_28(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_29(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_30(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_31(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_32(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_33(value: Ptr<()>) {
+    let value: Value<Ptr<()>> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_34(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<Ptr<()>> = Rc::new(RefCell::new((*value.borrow()).clone()));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_35(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_36(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
@@ -2058,62 +1907,8 @@ pub fn test_21(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2124,7 +1919,62 @@ pub fn test_21(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2132,13 +1982,14 @@ pub fn test_21(value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_22(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_37(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_38(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -2152,62 +2003,8 @@ pub fn test_22(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2218,7 +2015,62 @@ pub fn test_22(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2226,13 +2078,14 @@ pub fn test_22(mut value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_23(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_39(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_40(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(value));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -2246,62 +2099,8 @@ pub fn test_23(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2311,22 +2110,6 @@ pub fn test_23(mut value: ()) {
             {
                 unimplemented!();
             }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_24(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -2340,62 +2123,8 @@ pub fn test_24(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2405,22 +2134,6 @@ pub fn test_24(mut value: ()) {
             {
                 unimplemented!();
             }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_25(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -2434,62 +2147,14 @@ pub fn test_25(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2500,1417 +2165,8 @@ pub fn test_25(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_26(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_27(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_28(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_29(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_30(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_31(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_32(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_33(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_34(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_35(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_36(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_37(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_38(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_39(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(value));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_40(mut value: Ptr<()>) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<Ptr<()>> = Rc::new(RefCell::new((value).clone()));
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
-            {
-                unimplemented!();
-            }
-        },
-        |a: ()| {
-            let a: Value<()> = Rc::new(RefCell::new(a));
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
             {
                 unimplemented!();
             }
@@ -3920,12 +2176,12 @@ pub fn test_40(mut value: Ptr<()>) {
 }
 pub fn test_41(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_42(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -3939,62 +2195,8 @@ pub fn test_41(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4004,22 +2206,6 @@ pub fn test_41(value: ()) {
             {
                 unimplemented!();
             }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    )));
-    unimplemented!();
-}
-pub fn test_42(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
@@ -4033,62 +2219,8 @@ pub fn test_42(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4099,7 +2231,38 @@ pub fn test_42(mut value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4109,7 +2272,1735 @@ pub fn test_42(mut value: ()) {
 }
 pub fn test_43(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_44(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_45(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_46(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_47(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_46(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_48(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_46(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_49(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_50(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_51(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_52(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_53(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_54(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_55(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_56(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_57(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_58(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_59(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_60(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_61(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_62(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_63(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_64(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_65(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_66(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_67(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_68(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_69(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_70(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_71(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_72(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_73(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_74(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new((*value.borrow())));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_75(value: Ptr<()>) {
+    let value: Value<Ptr<()>> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_76(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<Ptr<()>> = Rc::new(RefCell::new((*value.borrow()).clone()));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_77(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_78(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
@@ -4128,62 +4019,8 @@ pub fn test_43(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4194,7 +4031,62 @@ pub fn test_43(value: ()) {
                 unimplemented!();
             }
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4202,8 +4094,201 @@ pub fn test_43(value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_handle_44(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_79(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_80(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_81(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_82(value.as_pointer()) })));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            {
+                unimplemented!();
+            }
+        }
+    )));
+    unimplemented!();
+}
+pub fn test_handle_83(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_84(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
@@ -4216,54 +4301,60 @@ pub fn test_handle_44(mut value: ()) {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         }
     )));
     unimplemented!();
 }
-pub fn test_handle_45(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_handle_85(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_86(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
@@ -4276,54 +4367,60 @@ pub fn test_handle_45(mut value: ()) {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         }
     )));
     unimplemented!();
 }
-pub fn test_handle_46(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_handle_87(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_88(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
@@ -4336,54 +4433,60 @@ pub fn test_handle_46(mut value: ()) {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         }
     )));
     unimplemented!();
 }
-pub fn test_handle_47(mut value: ()) {
-    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_handle_89(value: ()) {
+    let value: Value<()> = Rc::new(RefCell::new(value));
+    let store: Value<()> = Rc::new(RefCell::new(({ make_format_args_90(value.as_pointer()) })));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
@@ -4396,257 +4499,262 @@ pub fn test_handle_47(mut value: ()) {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: ()| {
-            unimplemented!();
-        },
-        |mut a: Ptr<()>| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
             let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
-        |mut a: ()| {
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: Ptr<()>| {
+            let a: Value<Ptr<()>> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
+            unimplemented!();
+        },
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         }
     )));
     unimplemented!();
 }
-pub fn test_48() {
+pub fn test_91() {
     let mut empty: () = unimplemented!();
     let mut str: () = unimplemented!();
     ({ test_0(true) });
     ({ test_0(false) });
-    ({ test_1(('a' as ())) });
-    ({ test_1(('z' as ())) });
-    ({ test_1(('0' as ())) });
-    ({ test_1(('9' as ())) });
+    ({ test_2(('a' as ())) });
+    ({ test_2(('z' as ())) });
+    ({ test_2(('0' as ())) });
+    ({ test_2(('9' as ())) });
     {
-        ({ test_1(('a' as ())) });
-        ({ test_1(('z' as ())) });
-        ({ test_1(('0' as ())) });
-        ({ test_1(('9' as ())) });
+        ({ test_2(('a' as ())) });
+        ({ test_2(('z' as ())) });
+        ({ test_2(('0' as ())) });
+        ({ test_2(('9' as ())) });
     }
-    ({ test_5(unimplemented!()) });
-    ({ test_5(0_()) });
-    ({ test_5(unimplemented!()) });
-    ({ test_6(unimplemented!()) });
-    ({ test_6(unimplemented!()) });
-    ({ test_6(0_()) });
-    ({ test_6(unimplemented!()) });
-    ({ test_6(unimplemented!()) });
-    ({ test_7(unimplemented!()) });
-    ({ test_7(unimplemented!()) });
     ({ test_7(unimplemented!()) });
     ({ test_7(0_()) });
     ({ test_7(unimplemented!()) });
-    ({ test_7(unimplemented!()) });
-    ({ test_7(unimplemented!()) });
-    ({ test_8(unimplemented!()) });
-    ({ test_8(unimplemented!()) });
-    ({ test_8(unimplemented!()) });
-    ({ test_8(unimplemented!()) });
-    ({ test_8(0_()) });
-    ({ test_8(unimplemented!()) });
-    ({ test_8(unimplemented!()) });
-    ({ test_8(unimplemented!()) });
-    ({ test_8(unimplemented!()) });
-    ({ test_9(unimplemented!()) });
-    ({ test_9(unimplemented!()) });
-    ({ test_9(unimplemented!()) });
     ({ test_9(unimplemented!()) });
     ({ test_9(unimplemented!()) });
     ({ test_9(0_()) });
     ({ test_9(unimplemented!()) });
     ({ test_9(unimplemented!()) });
-    ({ test_9(unimplemented!()) });
-    ({ test_9(unimplemented!()) });
-    ({ test_9(unimplemented!()) });
-    ({ test_handle_44(0_()) });
-    ({ test_10(0_()) });
-    ({ test_10(unimplemented!()) });
+    ({ test_11(unimplemented!()) });
+    ({ test_11(unimplemented!()) });
+    ({ test_11(unimplemented!()) });
     ({ test_11(0_()) });
     ({ test_11(unimplemented!()) });
     ({ test_11(unimplemented!()) });
-    ({ test_12(0_()) });
-    ({ test_12(unimplemented!()) });
-    ({ test_12(unimplemented!()) });
-    ({ test_12(unimplemented!()) });
+    ({ test_11(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
     ({ test_13(0_()) });
     ({ test_13(unimplemented!()) });
     ({ test_13(unimplemented!()) });
     ({ test_13(unimplemented!()) });
     ({ test_13(unimplemented!()) });
-    ({ test_14(0_()) });
-    ({ test_14(unimplemented!()) });
-    ({ test_14(unimplemented!()) });
-    ({ test_14(unimplemented!()) });
-    ({ test_14(unimplemented!()) });
-    ({ test_14(unimplemented!()) });
-    ({ test_handle_45(0_()) });
-    ({ test_15(-unimplemented!()) });
-    ({ test_15(-unimplemented!()) });
-    ({ test_15(-0_f64) });
-    ({ test_15(0_f64) });
     ({ test_15(unimplemented!()) });
     ({ test_15(unimplemented!()) });
-    ({ test_16(-unimplemented!()) });
-    ({ test_16(-unimplemented!()) });
-    ({ test_16(-0_f64) });
-    ({ test_16(0_f64) });
-    ({ test_16(unimplemented!()) });
-    ({ test_16(unimplemented!()) });
-    ({ test_17(-unimplemented!()) });
-    ({ test_17(-unimplemented!()) });
-    ({ test_17(-0_f64) });
-    ({ test_17(0_f64) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(0_()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_handle_83(0_()) });
+    ({ test_17(0_()) });
     ({ test_17(unimplemented!()) });
-    ({ test_17(unimplemented!()) });
-    ({ test_18(unimplemented!()) });
-    ({ test_18(unimplemented!()) });
+    ({ test_19(0_()) });
     ({ test_19(unimplemented!()) });
     ({ test_19(unimplemented!()) });
-    ({ test_19(unimplemented!()) });
-    ({ test_20(unimplemented!()) });
-    ({ test_20(unimplemented!()) });
-    ({ test_20(unimplemented!()) });
-    ({ test_21(Default::default()) });
+    ({ test_21(0_()) });
+    ({ test_21(unimplemented!()) });
+    ({ test_21(unimplemented!()) });
+    ({ test_21(unimplemented!()) });
+    ({ test_23(0_()) });
+    ({ test_23(unimplemented!()) });
+    ({ test_23(unimplemented!()) });
+    ({ test_23(unimplemented!()) });
+    ({ test_23(unimplemented!()) });
+    ({ test_25(0_()) });
+    ({ test_25(unimplemented!()) });
+    ({ test_25(unimplemented!()) });
+    ({ test_25(unimplemented!()) });
+    ({ test_25(unimplemented!()) });
+    ({ test_25(unimplemented!()) });
+    ({ test_handle_85(0_()) });
+    ({ test_27(-unimplemented!()) });
+    ({ test_27(-unimplemented!()) });
+    ({ test_27(-0_f64) });
+    ({ test_27(0_f64) });
+    ({ test_27(unimplemented!()) });
+    ({ test_27(unimplemented!()) });
+    ({ test_29(-unimplemented!()) });
+    ({ test_29(-unimplemented!()) });
+    ({ test_29(-0_f64) });
+    ({ test_29(0_f64) });
+    ({ test_29(unimplemented!()) });
+    ({ test_29(unimplemented!()) });
+    ({ test_31(-unimplemented!()) });
+    ({ test_31(-unimplemented!()) });
+    ({ test_31(-0_f64) });
+    ({ test_31(0_f64) });
+    ({ test_31(unimplemented!()) });
+    ({ test_31(unimplemented!()) });
+    ({ test_33(unimplemented!()) });
+    ({ test_33(unimplemented!()) });
+    ({ test_35(unimplemented!()) });
+    ({ test_35(unimplemented!()) });
+    ({ test_35(unimplemented!()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_39(Default::default()) });
 }
-pub fn test_49() {
+pub fn test_92() {
     let mut empty: () = unimplemented!();
     let mut str: () = unimplemented!();
-    ({ test_22(true) });
-    ({ test_22(false) });
-    ({ test_23(('a' as ())) });
-    ({ test_23(('z' as ())) });
-    ({ test_23(('0' as ())) });
-    ({ test_23(('9' as ())) });
+    ({ test_41(true) });
+    ({ test_41(false) });
+    ({ test_43(('a' as ())) });
+    ({ test_43(('z' as ())) });
+    ({ test_43(('0' as ())) });
+    ({ test_43(('9' as ())) });
     {
         {
-            ({ test_24(('a' as ())) });
-            ({ test_24(('z' as ())) });
-            ({ test_24(('0' as ())) });
-            ({ test_24(('9' as ())) });
+            ({ test_45(('a' as ())) });
+            ({ test_45(('z' as ())) });
+            ({ test_45(('0' as ())) });
+            ({ test_45(('9' as ())) });
         }
     }
-    ({ test_27(unimplemented!()) });
-    ({ test_27(0_()) });
-    ({ test_27(unimplemented!()) });
-    ({ test_28(unimplemented!()) });
-    ({ test_28(unimplemented!()) });
-    ({ test_28(0_()) });
-    ({ test_28(unimplemented!()) });
-    ({ test_28(unimplemented!()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_29(0_()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_30(unimplemented!()) });
-    ({ test_30(unimplemented!()) });
-    ({ test_30(unimplemented!()) });
-    ({ test_30(unimplemented!()) });
-    ({ test_30(0_()) });
-    ({ test_30(unimplemented!()) });
-    ({ test_30(unimplemented!()) });
-    ({ test_30(unimplemented!()) });
-    ({ test_30(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(0_()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_handle_46(0_()) });
-    ({ test_32(0_()) });
-    ({ test_32(unimplemented!()) });
-    ({ test_33(0_()) });
-    ({ test_33(unimplemented!()) });
-    ({ test_33(unimplemented!()) });
-    ({ test_34(0_()) });
-    ({ test_34(unimplemented!()) });
-    ({ test_34(unimplemented!()) });
-    ({ test_34(unimplemented!()) });
-    ({ test_35(0_()) });
-    ({ test_35(unimplemented!()) });
-    ({ test_35(unimplemented!()) });
-    ({ test_35(unimplemented!()) });
-    ({ test_35(unimplemented!()) });
-    ({ test_36(0_()) });
-    ({ test_36(unimplemented!()) });
-    ({ test_36(unimplemented!()) });
-    ({ test_36(unimplemented!()) });
-    ({ test_36(unimplemented!()) });
-    ({ test_36(unimplemented!()) });
-    ({ test_handle_47(0_()) });
-    ({ test_37(-unimplemented!()) });
-    ({ test_37(-unimplemented!()) });
-    ({ test_37(-0_f64) });
-    ({ test_37(0_f64) });
-    ({ test_37(unimplemented!()) });
-    ({ test_37(unimplemented!()) });
-    ({ test_38(-unimplemented!()) });
-    ({ test_38(-unimplemented!()) });
-    ({ test_38(-0_f64) });
-    ({ test_38(0_f64) });
-    ({ test_38(unimplemented!()) });
-    ({ test_38(unimplemented!()) });
-    ({ test_39(-unimplemented!()) });
-    ({ test_39(-unimplemented!()) });
-    ({ test_39(-0_f64) });
-    ({ test_39(0_f64) });
-    ({ test_39(unimplemented!()) });
-    ({ test_39(unimplemented!()) });
-    ({ test_40(unimplemented!()) });
-    ({ test_40(unimplemented!()) });
-    ({ test_41(unimplemented!()) });
-    ({ test_41(unimplemented!()) });
-    ({ test_41(unimplemented!()) });
-    ({ test_42(unimplemented!()) });
-    ({ test_42(unimplemented!()) });
-    ({ test_42(unimplemented!()) });
-    ({ test_43(Default::default()) });
+    ({ test_49(unimplemented!()) });
+    ({ test_49(0_()) });
+    ({ test_49(unimplemented!()) });
+    ({ test_51(unimplemented!()) });
+    ({ test_51(unimplemented!()) });
+    ({ test_51(0_()) });
+    ({ test_51(unimplemented!()) });
+    ({ test_51(unimplemented!()) });
+    ({ test_53(unimplemented!()) });
+    ({ test_53(unimplemented!()) });
+    ({ test_53(unimplemented!()) });
+    ({ test_53(0_()) });
+    ({ test_53(unimplemented!()) });
+    ({ test_53(unimplemented!()) });
+    ({ test_53(unimplemented!()) });
+    ({ test_55(unimplemented!()) });
+    ({ test_55(unimplemented!()) });
+    ({ test_55(unimplemented!()) });
+    ({ test_55(unimplemented!()) });
+    ({ test_55(0_()) });
+    ({ test_55(unimplemented!()) });
+    ({ test_55(unimplemented!()) });
+    ({ test_55(unimplemented!()) });
+    ({ test_55(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(0_()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_57(unimplemented!()) });
+    ({ test_handle_87(0_()) });
+    ({ test_59(0_()) });
+    ({ test_59(unimplemented!()) });
+    ({ test_61(0_()) });
+    ({ test_61(unimplemented!()) });
+    ({ test_61(unimplemented!()) });
+    ({ test_63(0_()) });
+    ({ test_63(unimplemented!()) });
+    ({ test_63(unimplemented!()) });
+    ({ test_63(unimplemented!()) });
+    ({ test_65(0_()) });
+    ({ test_65(unimplemented!()) });
+    ({ test_65(unimplemented!()) });
+    ({ test_65(unimplemented!()) });
+    ({ test_65(unimplemented!()) });
+    ({ test_67(0_()) });
+    ({ test_67(unimplemented!()) });
+    ({ test_67(unimplemented!()) });
+    ({ test_67(unimplemented!()) });
+    ({ test_67(unimplemented!()) });
+    ({ test_67(unimplemented!()) });
+    ({ test_handle_89(0_()) });
+    ({ test_69(-unimplemented!()) });
+    ({ test_69(-unimplemented!()) });
+    ({ test_69(-0_f64) });
+    ({ test_69(0_f64) });
+    ({ test_69(unimplemented!()) });
+    ({ test_69(unimplemented!()) });
+    ({ test_71(-unimplemented!()) });
+    ({ test_71(-unimplemented!()) });
+    ({ test_71(-0_f64) });
+    ({ test_71(0_f64) });
+    ({ test_71(unimplemented!()) });
+    ({ test_71(unimplemented!()) });
+    ({ test_73(-unimplemented!()) });
+    ({ test_73(-unimplemented!()) });
+    ({ test_73(-0_f64) });
+    ({ test_73(0_f64) });
+    ({ test_73(unimplemented!()) });
+    ({ test_73(unimplemented!()) });
+    ({ test_75(unimplemented!()) });
+    ({ test_75(unimplemented!()) });
+    ({ test_77(unimplemented!()) });
+    ({ test_77(unimplemented!()) });
+    ({ test_77(unimplemented!()) });
+    ({ test_79(unimplemented!()) });
+    ({ test_79(unimplemented!()) });
+    ({ test_79(unimplemented!()) });
+    ({ test_81(Default::default()) });
 }
-pub fn test_50() {
-    ({ test_48() });
-    ({ test_49() });
+pub fn test_93() {
+    ({ test_91() });
+    ({ test_92() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -4668,7 +4776,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_50() });
+    ({ test_93() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

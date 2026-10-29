@@ -54,16 +54,16 @@ pub unsafe fn test_1() -> () {
     {
         let mut e: () = unimplemented!();
         let mut x: () = (unsafe {
-            let mut ___error: () = 10_();
-            e.error_or(&mut ___error)
+            let mut ___e: () = 10_();
+            e.error_or(&mut ___e)
         });
         unimplemented!();
     }
     {
         let mut e: () = unimplemented!();
         let mut x: () = (unsafe {
-            let mut ___error: () = 10_();
-            e.error_or(&mut ___error)
+            let mut ___e: () = 10_();
+            e.error_or(&mut ___e)
         });
         unimplemented!();
     }

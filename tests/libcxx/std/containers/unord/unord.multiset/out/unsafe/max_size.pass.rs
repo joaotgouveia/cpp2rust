@@ -422,6 +422,9 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_1844674407
     }
 }
 #[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct limited_allocator_int__10__rebind_int_ {}
+#[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct limited_allocator_int__10_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
@@ -432,6 +435,9 @@ impl limited_allocator_int__10_ {
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor(&mut self.handle_);
     }
 }
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct limited_allocator_int__18446744073709551615__rebind_int_ {}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct limited_allocator_int__18446744073709551615_ {
@@ -464,13 +470,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let max_dist: () = unimplemented!();
         let mut c: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let max_dist: () = unimplemented!();

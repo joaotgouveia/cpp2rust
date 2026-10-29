@@ -14,17 +14,11 @@ impl Key {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Key {}
-impl std::cmp::PartialEq for Key {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            KeyImpl::operator_eq(
-                &Rc::new(RefCell::new(Key {})).as_pointer(),
-                Rc::new(RefCell::new(Key {})).as_pointer(),
-            )
-        }
+impl CppEq for Key {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        KeyImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for Key {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

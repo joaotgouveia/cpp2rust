@@ -6,29 +6,29 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type Overload = u32;
+pub type Overload = ();
 pub const Overload_kLvalueOverload: Overload = 1;
 pub const Overload_kRvalueOverload: Overload = 2;
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct Tracked {
-    pub v: i32,
-    pub copies: i32,
-    pub moves: i32,
+    pub v: (),
+    pub copies: (),
+    pub moves: (),
 }
 impl Tracked {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self {
             v: v,
-            copies: 0,
-            moves: 0,
+            copies: 0_(),
+            moves: 0_(),
         };
         this
     }
     pub unsafe fn copy_from(o: *const Tracked) -> Self {
         let mut this = Self {
             v: (*o).v,
-            copies: (((*o).copies) + (1)),
+            copies: (((*o).copies) + (1_())),
             moves: (*o).moves,
         };
         this
@@ -37,9 +37,9 @@ impl Tracked {
         let mut this = Self {
             v: (*o).v,
             copies: (*o).copies,
-            moves: (((*o).moves) + (1)),
+            moves: (((*o).moves) + (1_())),
         };
-        (*o).v = 0;
+        (*o).v = 0_();
         this
     }
 }
@@ -107,44 +107,28 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut lvalue: Tracked = Tracked::new({ 7 });
-    assert!(
-        (((unsafe { forward_once_2(&mut lvalue,) }) as i32) == (Overload_kLvalueOverload as i32))
-    );
-    assert!(((lvalue.v) == (7)));
-    assert!(
-        (((unsafe {
-            let mut _x: Tracked = Tracked::new({ 8 });
-            forward_once_3(&mut _x)
-        }) as i32)
-            == (Overload_kRvalueOverload as i32))
-    );
-    let mut relayed: Tracked = Tracked::new({ 9 });
-    assert!(
-        (((unsafe { forward_twice_4(&mut relayed,) }) as i32) == (Overload_kLvalueOverload as i32))
-    );
-    assert!(((relayed.v) == (9)));
-    assert!(
-        (((unsafe {
-            let mut _x: Tracked = Tracked::new({ 10 });
-            forward_twice_5(&mut _x)
-        }) as i32)
-            == (Overload_kRvalueOverload as i32))
-    );
-    let mut kept: Tracked = Tracked::new({ 11 });
+unsafe fn main_0() -> () {
+    let mut lvalue: Tracked = Tracked::new({ 7_() });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut relayed: Tracked = Tracked::new({ 9_() });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut kept: Tracked = Tracked::new({ 11_() });
     let mut from_lvalue: Holder = (unsafe { forward_into_ctor_6(&mut kept) });
-    assert!(((from_lvalue.t.v) == (11)));
-    assert!(((from_lvalue.t.copies) == (1)));
-    assert!(((from_lvalue.t.moves) == (0)));
-    assert!(((kept.v) == (11)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut from_rvalue: Holder = (unsafe {
-        let mut _x: Tracked = Tracked::new({ 12 });
+        let mut _x: Tracked = Tracked::new({ 12_() });
         forward_into_ctor_7(&mut _x)
     });
-    assert!(((from_rvalue.t.v) == (12)));
-    assert!(((from_rvalue.t.copies) == (0)));
-    assert!(((from_rvalue.t.moves) == (1)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

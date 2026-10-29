@@ -10,66 +10,66 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1____std_chrono_duration_long_long__std_ratio_1__1___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
 pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1000____std_chrono_duration_long_long__std_ratio_1__1000___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000____std_chrono_duration_long__std_ratio_1__1000___
 {}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1000000____std_chrono_duration_long_long__std_ratio_1__1000000___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000____std_chrono_duration_long__std_ratio_1__1000000___
 {}
 pub type anon_3 = ();
 pub const anon_3_value: anon_3 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1000000000____std_chrono_duration_long_long__std_ratio_1__1000000000___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000000____std_chrono_duration_long__std_ratio_1__1000000000___
 {}
 pub type anon_4 = ();
 pub const anon_4_value: anon_4 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__10000____std_chrono_duration_long_long__std_ratio_1__10000___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__10000____std_chrono_duration_long__std_ratio_1__10000___
 {}
-pub unsafe fn check_subseconds_5(mut d: ()) -> i64 {
+pub unsafe fn check_subseconds_5(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_subseconds_6(mut d: ()) -> i64 {
+pub unsafe fn check_subseconds_6(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_subseconds_7(mut d: ()) -> i64 {
+pub unsafe fn check_subseconds_7(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_subseconds_8(mut d: ()) -> i64 {
+pub unsafe fn check_subseconds_8(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_subseconds_9(mut d: ()) -> i64 {
+pub unsafe fn check_subseconds_9(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_subseconds_10(mut d: ()) -> i64 {
+pub unsafe fn check_subseconds_10(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_subseconds_11(mut d: ()) -> i64 {
+pub unsafe fn check_subseconds_11(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

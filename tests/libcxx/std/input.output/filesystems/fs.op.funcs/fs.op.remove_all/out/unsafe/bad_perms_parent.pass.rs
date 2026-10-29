@@ -14,17 +14,7 @@ pub unsafe fn test_eprintf_0(
     args_4: *const (),
     args_5: *const *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-            (*args_4),
-            (*args_5),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_log_1(
     mut condition: *const (),
@@ -152,7 +142,7 @@ pub unsafe fn format_string_imp_3(mut msg: *const (), __args: Box<[VaArg]>) -> (
         ScopedDestructorUnsafe::new(&raw mut args_copy_guard, GuardVAList_4::destructor);
     let mut local_buff: () = unimplemented!();
     let mut size: () = unimplemented!();
-    let mut ret: () = (unsafe { vsnprintf_5(unimplemented!(), size, msg, args_cp) });
+    let mut ret: () = unimplemented!();
     (unsafe { GuardVAList_4::clear(&mut args_copy_guard) });
     if ((ret) == (0_())) {
         return unimplemented!();
@@ -162,13 +152,13 @@ pub unsafe fn format_string_imp_3(mut msg: *const (), __args: Box<[VaArg]>) -> (
     }
     size = (ret).wrapping_add(1_());
     let mut buff_ptr: () = unimplemented!();
-    ret = (unsafe { vsnprintf_5(unimplemented!(), size, msg, args) });
+    ret = unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn unwrap_6(s: *mut ()) -> *const () {
+pub unsafe fn unwrap_5(s: *mut ()) -> *const () {
     return unimplemented!();
 }
-pub unsafe fn unwrap_7(a: *mut *const ()) -> *const *const () {
+pub unsafe fn unwrap_6(a: *mut *const ()) -> *const *const () {
     const _: () = assert!(true, "!std::is_class<Arg>::value");;
     return a;
 }
@@ -194,7 +184,7 @@ impl GuardVAList_4 {
         if self.active {}
     }
 }
-pub unsafe fn format_string_8(
+pub unsafe fn format_string_7(
     mut fmt: *const (),
     args_1: *const *const (),
     args_2: *const (),
@@ -204,14 +194,14 @@ pub unsafe fn format_string_8(
         format_string_imp_3(
             fmt,
             Box::new([
-                (*(unsafe { unwrap_7((args_1).cast_mut()) })).into(),
-                (unsafe { unwrap_6((args_2).cast_mut()) }).into(),
-                (unsafe { unwrap_6((args_3).cast_mut()) }).into(),
+                (*(unsafe { unwrap_6((args_1).cast_mut()) })).into(),
+                (unsafe { unwrap_5((args_2).cast_mut()) }).into(),
+                (unsafe { unwrap_5((args_3).cast_mut()) }).into(),
             ]),
         )
     });
 }
-pub unsafe fn format_string_9(
+pub unsafe fn format_string_8(
     mut fmt: *const (),
     args_1: *const *const (),
     args_2: *const (),
@@ -222,15 +212,15 @@ pub unsafe fn format_string_9(
         format_string_imp_3(
             fmt,
             Box::new([
-                (*(unsafe { unwrap_7((args_1).cast_mut()) })).into(),
-                (unsafe { unwrap_6((args_2).cast_mut()) }).into(),
-                (unsafe { unwrap_6((args_3).cast_mut()) }).into(),
-                (*(unsafe { unwrap_7((args_4).cast_mut()) })).into(),
+                (*(unsafe { unwrap_6((args_1).cast_mut()) })).into(),
+                (unsafe { unwrap_5((args_2).cast_mut()) }).into(),
+                (unsafe { unwrap_5((args_3).cast_mut()) }).into(),
+                (*(unsafe { unwrap_6((args_4).cast_mut()) })).into(),
             ]),
         )
     });
 }
-pub unsafe fn format_string_10(
+pub unsafe fn format_string_9(
     mut fmt: *const (),
     args_1: *const *const (),
     args_2: *const (),
@@ -242,22 +232,22 @@ pub unsafe fn format_string_10(
         format_string_imp_3(
             fmt,
             Box::new([
-                (*(unsafe { unwrap_7((args_1).cast_mut()) })).into(),
-                (unsafe { unwrap_6((args_2).cast_mut()) }).into(),
-                (unsafe { unwrap_6((args_3).cast_mut()) }).into(),
-                (*(unsafe { unwrap_7((args_4).cast_mut()) })).into(),
-                (*(unsafe { unwrap_7((args_5).cast_mut()) })).into(),
+                (*(unsafe { unwrap_6((args_1).cast_mut()) })).into(),
+                (unsafe { unwrap_5((args_2).cast_mut()) }).into(),
+                (unsafe { unwrap_5((args_3).cast_mut()) }).into(),
+                (*(unsafe { unwrap_6((args_4).cast_mut()) })).into(),
+                (*(unsafe { unwrap_6((args_5).cast_mut()) })).into(),
             ]),
         )
     });
 }
-pub unsafe fn symlink_11(mut oldname: *const (), mut newname: *const (), mut is_dir: ()) -> () {
+pub unsafe fn symlink_10(mut oldname: *const (), mut newname: *const (), mut is_dir: ()) -> () {
     &(is_dir);
-    return (unsafe { symlink_12(oldname, newname) });
+    return unimplemented!();
 }
-pub unsafe fn space_13(mut path: (), capacity: *mut u64, free: *mut u64, avail: *mut u64) -> () {
-    let mut expect: statvfs = unsafe { std::mem::zeroed::<statvfs>() };
-    if ((unsafe { statvfs_14(unimplemented!(), (&mut expect as *mut statvfs)) }) == (-1_())) {
+pub unsafe fn space_11(mut path: (), capacity: *mut (), free: *mut (), avail: *mut ()) -> () {
+    let mut expect: () = unimplemented!();
+    if ((unimplemented!()) == (-1_())) {
         return false;
     }
     unimplemented!();
@@ -265,39 +255,35 @@ pub unsafe fn space_13(mut path: (), capacity: *mut u64, free: *mut u64, avail: 
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut do_mult: FnPtr<fn(u64) -> u64> = lambda_unsafe!(
+    let mut do_mult: FnPtr<fn(()) -> ()> = lambda_unsafe!(
         {
-            let expect: *mut statvfs = &mut expect;
+            let expect: *mut () = &mut expect;
         },
-        |mut val: u64| -> u64 {
-            let mut fsize: u64 = ((*expect).f_frsize as u64);
-            let mut new_val: u64 = (val).wrapping_mul(fsize);
+        |mut val: ()| -> () {
+            let mut fsize: () = (*expect).f_frsize;
+            let mut new_val: () = (val).wrapping_mul(fsize);
             unimplemented!();
             return new_val;
         }
     );
-    (*capacity) = (unsafe { do_mult.call((expect.f_blocks as u64)) });
-    (*free) = (unsafe { do_mult.call((expect.f_bfree as u64)) });
-    (*avail) = (unsafe { do_mult.call((expect.f_bavail as u64)) });
+    (*capacity) = (unsafe { do_mult.call(expect.f_blocks) });
+    (*free) = (unsafe { do_mult.call(expect.f_bfree) });
+    (*avail) = (unsafe { do_mult.call(expect.f_bavail) });
     return true;
 }
-pub unsafe fn fopen64_15(mut pathname: *const (), mut mode: *const ()) -> *mut ::libc::FILE {
-    return libc::fopen(pathname, mode);
-}
-pub unsafe fn ftruncate64_16(mut fd: (), mut length: ::libc::off_t) -> () {
+pub unsafe fn fopen64_12(mut pathname: *const (), mut mode: *const ()) -> () {
     return unimplemented!();
 }
-pub unsafe fn getcwd_17() -> () {
+pub unsafe fn ftruncate64_13(mut fd: (), mut length: ()) -> () {
+    return unimplemented!();
+}
+pub unsafe fn getcwd_14() -> () {
     let mut buf: [(); 4096] = [unimplemented!(); 4096];
-    let mut ret: *mut () = (unsafe {
-        let ___buf: *mut () = buf.as_mut_ptr();
-        let ___size: () = ::std::mem::size_of::<[(); 4096]>();
-        getcwd_18(___buf, ___size)
-    });
+    let mut ret: *mut () = unimplemented!();
     unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn exists_19(path: *const ()) -> () {
+pub unsafe fn exists_15(path: *const ()) -> () {
     let mut tmp: () = unimplemented!();
     return ((unimplemented!()) == (0_()));
 }
@@ -312,17 +298,17 @@ impl scoped_test_env {
             test_root: (unsafe { scoped_test_env::available_cwd_path() }),
         };
         let mut cmd: () = unimplemented!();
-        let mut ret: () = (unsafe { system_20(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         this
     }
     pub unsafe fn destructor(&mut self) {
         let mut cmd: () = unimplemented!();
-        let mut ret: () = (unsafe { system_20(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        ret = (unsafe { system_20(unimplemented!()) });
+        ret = unimplemented!();
         unimplemented!();
     }
     pub unsafe fn make_env_path(&mut self, mut p: ()) -> () {
@@ -339,46 +325,24 @@ impl scoped_test_env {
         }
         return unimplemented!();
     }
-    pub unsafe fn create_file(&mut self, mut filename_path: (), mut size: Option<u64>) -> () {
-        let mut size: u64 = size.unwrap_or_else(|| unsafe { 0_u64 });
+    pub unsafe fn create_file(&mut self, mut filename_path: (), mut size: Option<()>) -> () {
+        let mut size: () = size.unwrap_or_else(|| unsafe { 0_() });
         let mut filename: () = (unsafe { scoped_test_env::sanitize_path(self, unimplemented!()) });
         if ((size) > (unimplemented!())) {
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"create_file(%s, %ju) too large\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                    (size),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
-        let mut file: *mut ::libc::FILE = (unsafe { fopen64_15(unimplemented!(), c"we".as_ptr()) });
+        let mut file: () = (unsafe { fopen64_12(unimplemented!(), c"we".as_ptr()) });
         if (file).is_null() {
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"fopen %s failed: %s\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                    (unsafe { strerror_21((*unimplemented!())) }),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
-        if ((unsafe { ftruncate64_16(libc::fileno(file), (size as ::libc::off_t)) }) == (-1_())) {
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"ftruncate %s %ju failed: %s\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                    (size),
-                    (unsafe { strerror_21((*unimplemented!())) }),
-                )
-            });
-            libc::fclose(file);
+        if ((unsafe { ftruncate64_13(unimplemented!(), size) }) == (-1_())) {
+            unimplemented!();
+            unimplemented!();
             unimplemented!();
         }
-        libc::fclose(file);
+        unimplemented!();
         return unimplemented!();
     }
     pub unsafe fn create_dir(&mut self, mut filename_path: ()) -> () {
@@ -406,7 +370,7 @@ impl scoped_test_env {
         let mut ret: () = (unsafe {
             let _oldname: *const () = unimplemented!();
             let _newname: *const () = unimplemented!();
-            symlink_11(_oldname, _newname, is_dir)
+            symlink_10(_oldname, _newname, is_dir)
         });
         unimplemented!();
         return unimplemented!();
@@ -450,34 +414,26 @@ impl scoped_test_env {
         let mut to: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut ret: () = (unsafe {
-            let ___from: *const () = unimplemented!();
-            let ___to: *const () = unimplemented!();
-            link_22(___from, ___to)
-        });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }
     pub unsafe fn create_fifo(&mut self, mut file: ()) -> () {
         unimplemented!();
-        let mut ret: () = (unsafe { mkfifo_23(unimplemented!(), 438_()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }
     pub unsafe fn create_socket(&mut self, mut file: ()) -> () {
         unimplemented!();
-        let mut address: libc::sockaddr_un = unsafe { std::mem::zeroed() };
-        address.sun_family = (1 as libc::sa_family_t);
+        let mut address: () = unimplemented!();
+        address.sun_family = 1_();
         if ((unimplemented!()) > (::std::mem::size_of::<[(); 108]>())) {
             unimplemented!();
         }
         unimplemented!();
-        (unsafe {
-            let ___dest: *mut () = address.sun_path.as_mut_ptr();
-            let ___n: () = ::std::mem::size_of::<[(); 108]>();
-            strncpy_24(___dest, unimplemented!(), ___n)
-        });
-        let mut fd: () = libc::socket(1_(), (libc::SOCK_STREAM as ()), 0_());
+        unimplemented!();
+        let mut fd: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }
@@ -489,7 +445,7 @@ impl scoped_test_env {
         let mut p: () = unimplemented!();
         'loop_: while (unsafe {
             let mut _path: () = unimplemented!();
-            exists_19(&mut _path)
+            exists_15(&mut _path)
         }) {
             unimplemented!();
         }
@@ -582,9 +538,9 @@ impl static_test_env {
             )
         });
         (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), None) });
-        (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), Some(42_u64)) });
+        (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), Some(42_())) });
         (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), None) });
-        (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), Some(42_u64)) });
+        (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), Some(42_())) });
         (unsafe {
             scoped_test_env::create_directory_symlink(
                 &mut this.env_,
@@ -626,12 +582,12 @@ pub struct CWDGuard {
 impl CWDGuard {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            oldCwd_: (unsafe { getcwd_17() }),
+            oldCwd_: (unsafe { getcwd_14() }),
         };
         this
     }
     pub unsafe fn destructor(&mut self) {
-        let mut ret: () = (unsafe { chdir_25(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -640,7 +596,7 @@ impl Default for CWDGuard {
         unsafe { CWDGuard::new() }
     }
 }
-pub unsafe fn GetTestEC_26(mut Idx: Option<()>) -> () {
+pub unsafe fn GetTestEC_16(mut Idx: Option<()>) -> () {
     let mut Idx: () = Idx.unwrap_or_else(|| unsafe { 0_() });
     let mut GetErrc: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
@@ -670,7 +626,7 @@ pub unsafe fn GetTestEC_26(mut Idx: Option<()>) -> () {
     );
     return unimplemented!();
 }
-pub unsafe fn ErrorIsImp_27(ec: *const (), errors: *const ()) -> () {
+pub unsafe fn ErrorIsImp_17(ec: *const (), errors: *const ()) -> () {
     let mut cond: () = unimplemented!();
     'loop_: for errc in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut errc: () = (*unimplemented!());
@@ -680,7 +636,7 @@ pub unsafe fn ErrorIsImp_27(ec: *const (), errors: *const ()) -> () {
     }
     return false;
 }
-pub unsafe fn NormalizeExpectedPerms_28(mut P: ()) -> () {
+pub unsafe fn NormalizeExpectedPerms_18(mut P: ()) -> () {
     return P;
 }
 #[repr(C)]
@@ -749,7 +705,7 @@ impl ExceptionChecker {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { ExceptionChecker::check_libcxx_string(self, Err_) });
+        const _: () = assert!(true, "");;
     }
     pub unsafe fn check_libcxx_string(&mut self, Err_: *const ()) {
         let mut message: () = unimplemented!();
@@ -768,9 +724,9 @@ impl ExceptionChecker {
  let additional_msg : *mut () = & mut additional_msg ;
  let message : *mut () = & mut message ;
  let transform_path : *mut FnPtr<fn(*const () ,) -> () > = & mut transform_path ;
- } , | | -> () { 'switch: { match { ( * this_  ) . num_paths   } { __v if __v ==  0_()  =>  { return ( unsafe { format_string_8 ( c"filesystem error: in %s: %s%s" .as_ptr() , & ( * this_  ) . func_name  , additional_msg , message , ) } )   ;
- }, __v if __v ==  1_()  =>  { return ( unsafe { let _args_1: *const *const ()  = & ( * this_  ) . func_name  ; let mut _args_4 : *const ()  = ( unimplemented!()  as *const () ) ; format_string_9 ( c"filesystem error: in %s: %s%s [%s]" .as_ptr() , _args_1 , additional_msg , message , & mut _args_4 , ) } )   ;
- }, __v if __v ==  2_()  =>  { return ( unsafe { let _args_1: *const *const ()  = & ( * this_  ) . func_name  ; let mut _args_4 : *const ()  = ( unimplemented!()  as *const () ) ; let mut _args_5 : *const ()  = ( unimplemented!()  as *const () ) ; format_string_10 ( c"filesystem error: in %s: %s%s [%s] [%s]" .as_ptr() , _args_1 , additional_msg , message , & mut _args_4 , & mut _args_5 , ) } )   ;
+ } , | | -> () { 'switch: { match { ( * this_  ) . num_paths   } { __v if __v ==  0_()  =>  { return ( unsafe { format_string_7 ( c"filesystem error: in %s: %s%s" .as_ptr() , & ( * this_  ) . func_name  , additional_msg , message , ) } )   ;
+ }, __v if __v ==  1_()  =>  { return ( unsafe { let _args_1: *const *const ()  = & ( * this_  ) . func_name  ; let mut _args_4 : *const ()  = ( unimplemented!()  as *const () ) ; format_string_8 ( c"filesystem error: in %s: %s%s [%s]" .as_ptr() , _args_1 , additional_msg , message , & mut _args_4 , ) } )   ;
+ }, __v if __v ==  2_()  =>  { return ( unsafe { let _args_1: *const *const ()  = & ( * this_  ) . func_name  ; let mut _args_4 : *const ()  = ( unimplemented!()  as *const () ) ; let mut _args_5 : *const ()  = ( unimplemented!()  as *const () ) ; format_string_9 ( c"filesystem error: in %s: %s%s [%s] [%s]" .as_ptr() , _args_1 , additional_msg , message , & mut _args_4 , & mut _args_5 , ) } )   ;
  }, _ =>  { ( unsafe { test_fail_2 ( c"/app/cpp2rust/tests/libcxx/support/filesystem_test_helper.h" .as_ptr() , 618_() , & std::mem::transmute(*b"unexpected case\0") , ) } )  ;
  return unimplemented!()  ;
  }, } } ;
@@ -778,27 +734,9 @@ impl ExceptionChecker {
         });
         unimplemented!();
         if !(unimplemented!()) {
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"filesystem_error::what() does not match expected output:\n".as_ptr()
-                        as *const libc::c_char,
-                )
-            });
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"  expected: \"%s\"\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                )
-            });
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"  actual:   \"%s\"\n\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                )
-            });
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
         }
     }
 }
@@ -816,7 +754,7 @@ impl Default for ExceptionChecker {
         }
     }
 }
-pub unsafe fn GetWindowsInaccessibleDir_29() -> () {
+pub unsafe fn GetWindowsInaccessibleDir_19() -> () {
     let dir: () = unimplemented!();
     let mut ec: () = unimplemented!();
     let root: () = unimplemented!();
@@ -828,28 +766,17 @@ pub unsafe fn GetWindowsInaccessibleDir_29() -> () {
             continue 'loop_;
         }
         if (!(unimplemented!())) || (!(unimplemented!())) {
-            (unsafe {
-                libc:: fprintf ( libcc2rs::stderr_unsafe() as *mut ::libc::FILE , c"The expected inaccessible directory \"%s\" was found but doesn\'t behave as expected, skipping tests regarding it\n" .as_ptr() as *const libc::c_char , ( unimplemented!()  ) , )
-            });
+            unimplemented!();
             return unimplemented!();
         }
         &(unimplemented!());
         if !(unimplemented!()) {
-            (unsafe {
-                libc:: fprintf ( libcc2rs::stderr_unsafe() as *mut ::libc::FILE , c"The expected inaccessible directory \"%s\" was found but seems to be accessible, skipping tests regarding it\n" .as_ptr() as *const libc::c_char , ( unimplemented!()  ) , )
-            });
+            unimplemented!();
             return unimplemented!();
         }
         return unimplemented!();
     }
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            c"No inaccessible directory \"%s\" found, skipping tests regarding it\n".as_ptr()
-                as *const libc::c_char,
-            (unimplemented!()),
-        )
-    });
+    unimplemented!();
     return unimplemented!();
 }
 pub fn main() {
@@ -873,7 +800,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let parent_dir: () = unimplemented!();
     let child_dir: () = unimplemented!();
     unimplemented!();
-    let BadRet: u64 = (-1_() as u64);
+    let BadRet: () = -1_();
     let mut ec: () = unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -190,9 +190,6 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    {
-        const _: () = assert!(true, "std::is_nothrow_move_constructible<C>::value");;
-    }
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

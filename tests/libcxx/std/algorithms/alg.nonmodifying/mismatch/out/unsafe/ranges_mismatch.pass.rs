@@ -54,12 +54,31 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
@@ -68,7 +87,7 @@ pub unsafe fn base_0(i: *const cpp17_input_iterator_int_ptr__int_ptr_) -> *mut (
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -95,13 +114,24 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn base_1(i: *const forward_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -128,12 +158,23 @@ impl forward_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_int_ptr_,
+    ) -> *mut forward_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_int_ptr_));
+    }
 }
 pub unsafe fn base_2(i: *const bidirectional_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct bidirectional_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -160,12 +201,23 @@ impl bidirectional_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut bidirectional_iterator_int_ptr_,
+    ) -> *mut bidirectional_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut bidirectional_iterator_int_ptr_));
+    }
 }
 pub unsafe fn base_3(i: *const random_access_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -192,9 +244,20 @@ impl random_access_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut random_access_iterator_int_ptr_,
+    ) -> *mut random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut random_access_iterator_int_ptr_));
+    }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -206,6 +269,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
     }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
+    }
 }
 const _: () = assert!(
     true,
@@ -215,7 +296,7 @@ pub unsafe fn base_4(i: *const contiguous_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -241,6 +322,17 @@ impl contiguous_iterator_int_ptr_ {
             tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut contiguous_iterator_int_ptr_,
+    ) -> *mut contiguous_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut contiguous_iterator_int_ptr_));
     }
 }
 pub unsafe fn base_5(mut i: *mut ()) -> *mut () {
@@ -845,8 +937,7 @@ pub unsafe fn test_iterators_21(
         let ___last1: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
             sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &end1 });
         let ___first2: *mut () = begin2;
-        let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
+        let ___last2: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1012,8 +1103,7 @@ pub unsafe fn test_iterators_28(
         let ___last1: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
             sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: *mut () = begin2;
-        let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
+        let ___last2: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1179,8 +1269,7 @@ pub unsafe fn test_iterators_35(
         let ___last1: sentinel_wrapper_forward_iterator_int_ptr__ =
             sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: *mut () = begin2;
-        let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
+        let ___last2: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1346,8 +1435,7 @@ pub unsafe fn test_iterators_42(
         let ___last1: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: *mut () = begin2;
-        let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
+        let ___last2: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1513,8 +1601,7 @@ pub unsafe fn test_iterators_49(
         let ___last1: sentinel_wrapper_random_access_iterator_int_ptr__ =
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: *mut () = begin2;
-        let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
+        let ___last2: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1680,8 +1767,7 @@ pub unsafe fn test_iterators_56(
         let ___last1: sentinel_wrapper_contiguous_iterator_int_ptr__ =
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &end1 });
         let ___first2: *mut () = begin2;
-        let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
+        let ___last2: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )
@@ -1699,8 +1785,7 @@ pub unsafe fn test_iterators_57(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: *mut () = begin1;
-        let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
+        let ___last1: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end1 });
         let ___first2: cpp17_input_iterator_int_ptr__int_ptr_ =
             cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ =
@@ -1722,8 +1807,7 @@ pub unsafe fn test_iterators_58(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: *mut () = begin1;
-        let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
+        let ___last1: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end1 });
         let ___first2: cpp20_input_iterator_int_ptr_ =
             cpp20_input_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_cpp20_input_iterator_int_ptr__ =
@@ -1745,8 +1829,7 @@ pub unsafe fn test_iterators_59(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: *mut () = begin1;
-        let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
+        let ___last1: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end1 });
         let ___first2: forward_iterator_int_ptr_ =
             forward_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_forward_iterator_int_ptr__ =
@@ -1768,8 +1851,7 @@ pub unsafe fn test_iterators_60(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: *mut () = begin1;
-        let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
+        let ___last1: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end1 });
         let ___first2: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_bidirectional_iterator_int_ptr__ =
@@ -1791,8 +1873,7 @@ pub unsafe fn test_iterators_61(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: *mut () = begin1;
-        let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
+        let ___last1: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end1 });
         let ___first2: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_random_access_iterator_int_ptr__ =
@@ -1814,8 +1895,7 @@ pub unsafe fn test_iterators_62(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: *mut () = begin1;
-        let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
+        let ___last1: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end1 });
         let ___first2: contiguous_iterator_int_ptr_ =
             contiguous_iterator_int_ptr_::move_from({ &mut begin2 });
         let ___last2: sentinel_wrapper_contiguous_iterator_int_ptr__ =
@@ -1837,11 +1917,9 @@ pub unsafe fn test_iterators_63(
 ) {
     let mut ret: () = (unsafe {
         let ___first1: *mut () = begin1;
-        let ___last1: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end1 as *mut ()) });
+        let ___last1: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end1 });
         let ___first2: *mut () = begin2;
-        let ___last2: sentinel_wrapper_int_ptr_ =
-            sentinel_wrapper_int_ptr_::new_1({ &(end2 as *mut ()) });
+        let ___last2: sentinel_wrapper_int_ptr_ = sentinel_wrapper_int_ptr_::new_1({ &end2 });
         (*std::cell::LazyCell::force_mut(&mut *&raw mut mismatch_15))(
             ___first1, ___last1, ___first2, ___last2, None, None, None,
         )

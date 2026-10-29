@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -170,10 +154,7 @@ pub struct test_allocator_StrongOrder__rebind_StrongOrder_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_StrongOrder__rebind_StrongOrder_ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_StrongOrder__rebind_const_StrongOrder_ptr_ {}
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_StrongOrder_ {
     #[offset(0)]
@@ -184,7 +165,33 @@ pub struct test_allocator_StrongOrder_ {
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
 }
-impl test_allocator_StrongOrder_ {}
+impl test_allocator_StrongOrder_ {
+    pub fn copy_from(a: Ptr<test_allocator_StrongOrder_>) -> Self {
+        let __this: Value<test_allocator_StrongOrder_> = Rc::new(RefCell::new(Self {
+            data_: a.with(|__s| __s.data_),
+            id_: a.with(|__s| __s.id_),
+            stats_: a.with(|__s| __s.stats_.clone()),
+        }));
+        let this: Ptr<test_allocator_StrongOrder_> = __this.as_pointer();
+        unimplemented!();
+        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+        }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl Clone for test_allocator_StrongOrder_ {
+    fn clone(&self) -> Self {
+        let __src: Value<test_allocator_StrongOrder_> =
+            Rc::new(RefCell::new(test_allocator_StrongOrder_ {
+                data_: self.data_.clone(),
+                id_: self.id_.clone(),
+                stats_: self.stats_.clone(),
+            }));
+        test_allocator_StrongOrder_::copy_from(__src.as_pointer())
+    }
+}
 impl Default for test_allocator_StrongOrder_ {
     fn default() -> Self {
         {
@@ -202,10 +209,7 @@ pub struct test_allocator_PartialOrder__rebind_PartialOrder_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_PartialOrder__rebind_PartialOrder_ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_PartialOrder__rebind_const_PartialOrder_ptr_ {}
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_PartialOrder_ {
     #[offset(0)]
@@ -216,7 +220,33 @@ pub struct test_allocator_PartialOrder_ {
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
 }
-impl test_allocator_PartialOrder_ {}
+impl test_allocator_PartialOrder_ {
+    pub fn copy_from(a: Ptr<test_allocator_PartialOrder_>) -> Self {
+        let __this: Value<test_allocator_PartialOrder_> = Rc::new(RefCell::new(Self {
+            data_: a.with(|__s| __s.data_),
+            id_: a.with(|__s| __s.id_),
+            stats_: a.with(|__s| __s.stats_.clone()),
+        }));
+        let this: Ptr<test_allocator_PartialOrder_> = __this.as_pointer();
+        unimplemented!();
+        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+        }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl Clone for test_allocator_PartialOrder_ {
+    fn clone(&self) -> Self {
+        let __src: Value<test_allocator_PartialOrder_> =
+            Rc::new(RefCell::new(test_allocator_PartialOrder_ {
+                data_: self.data_.clone(),
+                id_: self.id_.clone(),
+                stats_: self.stats_.clone(),
+            }));
+        test_allocator_PartialOrder_::copy_from(__src.as_pointer())
+    }
+}
 impl Default for test_allocator_PartialOrder_ {
     fn default() -> Self {
         {
@@ -228,7 +258,22 @@ impl Default for test_allocator_PartialOrder_ {
         }
     }
 }
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
+impl test_allocator_StrongOrder_ptr_ {
+    pub fn new_1(a: Ptr<test_allocator_StrongOrder_>) -> Self {
+        let __this: Value<test_allocator_StrongOrder_ptr_> = Rc::new(RefCell::new(Self {
+            data_: a.with(|__s| __s.data_),
+            id_: a.with(|__s| __s.id_),
+            stats_: a.with(|__s| __s.stats_.clone()),
+        }));
+        let this: Ptr<test_allocator_StrongOrder_ptr_> = __this.as_pointer();
+        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+        }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_StrongOrder_ptr_ {
     #[offset(0)]
@@ -239,60 +284,11 @@ pub struct test_allocator_StrongOrder_ptr_ {
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
 }
-impl test_allocator_StrongOrder_ptr_ {
-    pub fn copy_from(a: Ptr<test_allocator_StrongOrder_ptr_>) -> Self {
-        let __this: Value<test_allocator_StrongOrder_ptr_> = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<test_allocator_StrongOrder_ptr_> = __this.as_pointer();
-        unimplemented!();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-}
-impl Clone for test_allocator_StrongOrder_ptr_ {
-    fn clone(&self) -> Self {
-        let __src: Value<test_allocator_StrongOrder_ptr_> =
-            Rc::new(RefCell::new(test_allocator_StrongOrder_ptr_ {
-                data_: self.data_.clone(),
-                id_: self.id_.clone(),
-                stats_: self.stats_.clone(),
-            }));
-        test_allocator_StrongOrder_ptr_::copy_from(__src.as_pointer())
-    }
-}
+impl test_allocator_StrongOrder_ptr_ {}
 impl Default for test_allocator_StrongOrder_ptr_ {
     fn default() -> Self {
         {
             test_allocator_StrongOrder_ptr_ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_const_StrongOrder_ptr_ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_const_StrongOrder_ptr_ {}
-impl Default for test_allocator_const_StrongOrder_ptr_ {
-    fn default() -> Self {
-        {
-            test_allocator_const_StrongOrder_ptr_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
@@ -300,7 +296,22 @@ impl Default for test_allocator_const_StrongOrder_ptr_ {
         }
     }
 }
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
+impl test_allocator_PartialOrder_ptr_ {
+    pub fn new_1(a: Ptr<test_allocator_PartialOrder_>) -> Self {
+        let __this: Value<test_allocator_PartialOrder_ptr_> = Rc::new(RefCell::new(Self {
+            data_: a.with(|__s| __s.data_),
+            id_: a.with(|__s| __s.id_),
+            stats_: a.with(|__s| __s.stats_.clone()),
+        }));
+        let this: Ptr<test_allocator_PartialOrder_ptr_> = __this.as_pointer();
+        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+        }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_PartialOrder_ptr_ {
     #[offset(0)]
@@ -311,60 +322,11 @@ pub struct test_allocator_PartialOrder_ptr_ {
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
 }
-impl test_allocator_PartialOrder_ptr_ {
-    pub fn copy_from(a: Ptr<test_allocator_PartialOrder_ptr_>) -> Self {
-        let __this: Value<test_allocator_PartialOrder_ptr_> = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<test_allocator_PartialOrder_ptr_> = __this.as_pointer();
-        unimplemented!();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-}
-impl Clone for test_allocator_PartialOrder_ptr_ {
-    fn clone(&self) -> Self {
-        let __src: Value<test_allocator_PartialOrder_ptr_> =
-            Rc::new(RefCell::new(test_allocator_PartialOrder_ptr_ {
-                data_: self.data_.clone(),
-                id_: self.id_.clone(),
-                stats_: self.stats_.clone(),
-            }));
-        test_allocator_PartialOrder_ptr_::copy_from(__src.as_pointer())
-    }
-}
+impl test_allocator_PartialOrder_ptr_ {}
 impl Default for test_allocator_PartialOrder_ptr_ {
     fn default() -> Self {
         {
             test_allocator_PartialOrder_ptr_ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_const_PartialOrder_ptr_ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_const_PartialOrder_ptr_ {}
-impl Default for test_allocator_const_PartialOrder_ptr_ {
-    fn default() -> Self {
-        {
-            test_allocator_const_PartialOrder_ptr_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
@@ -1276,59 +1238,16 @@ impl LessAndEqComp {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for LessAndEqComp {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_14(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_14(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for LessAndEqComp {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_14(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for LessAndEqComp {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for LessAndEqComp {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_15(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for LessAndEqComp {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_15(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for LessAndEqComp {}
 pub fn operator_cmp_16(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
@@ -1349,22 +1268,16 @@ impl StrongOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for StrongOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_16(self.clone(), other.clone()) }
+impl CppLess for StrongOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_16(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for StrongOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for StrongOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_16(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for StrongOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_16(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
-    }
-}
-impl std::cmp::Eq for StrongOrder {}
 pub fn operator_cmp_17(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1385,22 +1298,16 @@ impl WeakOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for WeakOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_17(self.clone(), other.clone()) }
+impl CppLess for WeakOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_17(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for WeakOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for WeakOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_17(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for WeakOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_17(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
-    }
-}
-impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_18(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
@@ -1424,22 +1331,16 @@ impl PartialOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for PartialOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_18(self.clone(), other.clone()) }
+impl CppLess for PartialOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_18(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for PartialOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for PartialOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_19(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::PartialEq for PartialOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_19(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for PartialOrder {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonComparable {}
@@ -1465,23 +1366,11 @@ impl EqualityComparable {
         Self { value_: value }
     }
 }
-impl std::cmp::PartialEq for EqualityComparable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_20(
-                Rc::new(RefCell::new(EqualityComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(EqualityComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for EqualityComparable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_20(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for EqualityComparable {}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
@@ -1511,44 +1400,16 @@ impl ThreeWayComparable {
         Self { value_: value }
     }
 }
-impl std::cmp::Ord for ThreeWayComparable {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_22(
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for ThreeWayComparable {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_22(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for ThreeWayComparable {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for ThreeWayComparable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_21(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for ThreeWayComparable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_21(
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for ThreeWayComparable {}
 const _: () = assert!(true, "std::equality_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "std::three_way_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "HasOperatorEqual<ThreeWayComparable>");
@@ -1816,9 +1677,7 @@ pub trait test_allocator_PartialOrder_Impl {
     }
     fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<PartialOrder>;
     fn deallocate(&self, p: Ptr<PartialOrder>, s: ());
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
+    fn max_size(&self) -> ();
     fn destroy(&self, p: Ptr<PartialOrder>);
     fn get_data(&self) -> () {
         unimplemented!()
@@ -1884,6 +1743,10 @@ impl test_allocator_PartialOrder_Impl for Ptr<test_allocator_PartialOrder_> {
         }
         unimplemented!();
     }
+    fn max_size(&self) -> () {
+        return (((2147483647_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
+            .wrapping_div((4usize as ()));
+    }
     fn destroy(&self, mut p: Ptr<PartialOrder>) {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
@@ -1915,23 +1778,15 @@ pub trait test_allocator_PartialOrder_ptr_Impl {
     fn max_size(&self) -> () {
         unimplemented!()
     }
-    fn destroy(&self, p: Ptr<Ptr<PartialOrder>>);
+    fn destroy(&self, mut p: Ptr<Ptr<PartialOrder>>) {
+        unimplemented!()
+    }
     fn get_data(&self) -> () {
         unimplemented!()
     }
     fn get_id(&self) -> () {
         unimplemented!()
     }
-    fn construct_16_struct_PartialOrder_ptr(
-        &self,
-        p: Ptr<Ptr<PartialOrder>>,
-        val: Ptr<Ptr<PartialOrder>>,
-    );
-    fn construct_16_struct_PartialOrder_ptrref(
-        &self,
-        p: Ptr<Ptr<PartialOrder>>,
-        val: Ptr<Ptr<PartialOrder>>,
-    );
 }
 impl test_allocator_PartialOrder_ptr_Impl for Ptr<test_allocator_PartialOrder_ptr_> {
     fn destructor(&self) {
@@ -1985,34 +1840,6 @@ impl test_allocator_PartialOrder_ptr_Impl for Ptr<test_allocator_PartialOrder_pt
         }
         unimplemented!();
     }
-    fn destroy(&self, mut p: Ptr<Ptr<PartialOrder>>) {
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
-                .with_mut(|__v| __v.prefix_inc());
-        };
-    }
-    fn construct_16_struct_PartialOrder_ptr(
-        &self,
-        mut p: Ptr<Ptr<PartialOrder>>,
-        val: Ptr<Ptr<PartialOrder>>,
-    ) {
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), construct_count)
-                .with_mut(|__v| __v.prefix_inc());
-        }
-        unimplemented!();
-    }
-    fn construct_16_struct_PartialOrder_ptrref(
-        &self,
-        mut p: Ptr<Ptr<PartialOrder>>,
-        val: Ptr<Ptr<PartialOrder>>,
-    ) {
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), construct_count)
-                .with_mut(|__v| __v.prefix_inc());
-        }
-        unimplemented!();
-    }
 }
 pub trait test_allocator_StrongOrder_Impl {
     fn destructor(&self);
@@ -2024,9 +1851,7 @@ pub trait test_allocator_StrongOrder_Impl {
     }
     fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<StrongOrder>;
     fn deallocate(&self, p: Ptr<StrongOrder>, s: ());
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
+    fn max_size(&self) -> ();
     fn destroy(&self, p: Ptr<StrongOrder>);
     fn get_data(&self) -> () {
         unimplemented!()
@@ -2088,6 +1913,10 @@ impl test_allocator_StrongOrder_Impl for Ptr<test_allocator_StrongOrder_> {
         }
         unimplemented!();
     }
+    fn max_size(&self) -> () {
+        return (((2147483647_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
+            .wrapping_div((4usize as ()));
+    }
     fn destroy(&self, mut p: Ptr<StrongOrder>) {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
@@ -2119,23 +1948,15 @@ pub trait test_allocator_StrongOrder_ptr_Impl {
     fn max_size(&self) -> () {
         unimplemented!()
     }
-    fn destroy(&self, p: Ptr<Ptr<StrongOrder>>);
+    fn destroy(&self, mut p: Ptr<Ptr<StrongOrder>>) {
+        unimplemented!()
+    }
     fn get_data(&self) -> () {
         unimplemented!()
     }
     fn get_id(&self) -> () {
         unimplemented!()
     }
-    fn construct_16_struct_StrongOrder_ptr(
-        &self,
-        p: Ptr<Ptr<StrongOrder>>,
-        val: Ptr<Ptr<StrongOrder>>,
-    );
-    fn construct_16_struct_StrongOrder_ptrref(
-        &self,
-        p: Ptr<Ptr<StrongOrder>>,
-        val: Ptr<Ptr<StrongOrder>>,
-    );
 }
 impl test_allocator_StrongOrder_ptr_Impl for Ptr<test_allocator_StrongOrder_ptr_> {
     fn destructor(&self) {
@@ -2189,95 +2010,7 @@ impl test_allocator_StrongOrder_ptr_Impl for Ptr<test_allocator_StrongOrder_ptr_
         }
         unimplemented!();
     }
-    fn destroy(&self, mut p: Ptr<Ptr<StrongOrder>>) {
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
-                .with_mut(|__v| __v.prefix_inc());
-        };
-    }
-    fn construct_16_struct_StrongOrder_ptr(
-        &self,
-        mut p: Ptr<Ptr<StrongOrder>>,
-        val: Ptr<Ptr<StrongOrder>>,
-    ) {
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), construct_count)
-                .with_mut(|__v| __v.prefix_inc());
-        }
-        unimplemented!();
-    }
-    fn construct_16_struct_StrongOrder_ptrref(
-        &self,
-        mut p: Ptr<Ptr<StrongOrder>>,
-        val: Ptr<Ptr<StrongOrder>>,
-    ) {
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), construct_count)
-                .with_mut(|__v| __v.prefix_inc());
-        }
-        unimplemented!();
-    }
 }
-pub trait test_allocator_const_PartialOrder_ptr_Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<Ptr<PartialOrder>> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<Ptr<PartialOrder>> {
-        unimplemented!()
-    }
-    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<Ptr<PartialOrder>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<PartialOrder>>, mut s: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<Ptr<PartialOrder>>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_const_PartialOrder_ptr_Impl for Ptr<test_allocator_const_PartialOrder_ptr_> {}
-pub trait test_allocator_const_StrongOrder_ptr_Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<Ptr<StrongOrder>> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<Ptr<StrongOrder>> {
-        unimplemented!()
-    }
-    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<Ptr<StrongOrder>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<StrongOrder>>, mut s: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<Ptr<StrongOrder>>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_const_StrongOrder_ptr_Impl for Ptr<test_allocator_const_StrongOrder_ptr_> {}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

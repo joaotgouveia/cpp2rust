@@ -7,19 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static first_0: Value<i32> = Rc::new(RefCell::new(0_i32));
+    pub static first_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static second_1: Value<i32> = Rc::new(RefCell::new((first_0.with(|rc| *rc.borrow()) + 1)));
+    pub static second_1: Value<()> =
+        Rc::new(RefCell::new((first_0.with(|rc| *rc.borrow()) + 1_())));
 );
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((first_0.with(|rc| *rc.borrow()) == 0));
-    assert!((second_1.with(|rc| *rc.borrow()) == (first_0.with(|rc| *rc.borrow()) + 1)));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {
     let _ = first_0.with(|_| ());

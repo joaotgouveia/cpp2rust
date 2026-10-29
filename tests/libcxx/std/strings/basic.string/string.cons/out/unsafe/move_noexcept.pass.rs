@@ -181,9 +181,6 @@ impl Default for test_allocator_void_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_char__rebind_char_ {}
-#[repr(C)]
 #[derive(FnPtrArg)]
 pub struct test_allocator_char_ {
     data_: (),
@@ -243,9 +240,6 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
         }
     }
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_char__10__rebind_char_ {}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
 pub struct limited_allocator_char__10_ {

@@ -6,18 +6,6 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct constexpr_char_traits_char_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct constexpr_char_traits_wchar_t_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct constexpr_char_traits_char16_t_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct constexpr_char_traits_char32_t_ {}
 pub unsafe fn test_string_typedef_0() {
     const _: () = assert!(true, "std::is_same<StdStr, PmrStr>::value");;
     const _: () = assert!(true, "std::is_same<PmrStr, PmrTypedef>::value");;

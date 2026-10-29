@@ -196,7 +196,7 @@ pub unsafe fn operator_lt_9(rhs: *const C2Int, mut lhs: ()) -> () {
     return ((unsafe { C2Int::get(&(*rhs)) }) < (lhs));
 }
 pub unsafe fn iter_in_range_10(mut first: (), mut last: (), mut to_find: ()) -> () {
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -205,7 +205,7 @@ pub unsafe fn iter_in_range_10(mut first: (), mut last: (), mut to_find: ()) -> 
     return false;
 }
 pub unsafe fn iter_in_range_11(mut first: (), mut last: (), mut to_find: ()) -> () {
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -214,7 +214,7 @@ pub unsafe fn iter_in_range_11(mut first: (), mut last: (), mut to_find: ()) -> 
     return false;
 }
 pub unsafe fn iter_in_range_12(mut first: (), mut last: (), mut to_find: ()) -> () {
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -223,7 +223,7 @@ pub unsafe fn iter_in_range_12(mut first: (), mut last: (), mut to_find: ()) -> 
     return false;
 }
 pub unsafe fn iter_in_range_13(mut first: (), mut last: (), mut to_find: ()) -> () {
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -232,7 +232,7 @@ pub unsafe fn iter_in_range_13(mut first: (), mut last: (), mut to_find: ()) -> 
     return false;
 }
 pub unsafe fn iter_in_range_14(mut first: (), mut last: (), mut to_find: ()) -> () {
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -241,7 +241,7 @@ pub unsafe fn iter_in_range_14(mut first: (), mut last: (), mut to_find: ()) -> 
     return false;
 }
 pub unsafe fn iter_in_range_15(mut first: (), mut last: (), mut to_find: ()) -> () {
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }

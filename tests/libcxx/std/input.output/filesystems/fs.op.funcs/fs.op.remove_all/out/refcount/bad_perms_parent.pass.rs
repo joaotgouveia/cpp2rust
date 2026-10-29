@@ -14,17 +14,7 @@ pub fn test_eprintf_0(
     args_4: Ptr<()>,
     args_5: Ptr<Ptr<()>>,
 ) {
-    ({
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            (fmt).clone() as *const libc::c_char,
-            (args_1.read()),
-            (args_2.read()),
-            (args_3.read()),
-            (args_4.read()),
-            (args_5.read()),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_log_1(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>) {
     let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
@@ -129,14 +119,7 @@ pub fn format_string_imp_3(msg: Ptr<()>, __args: Box<[VaArg]>) -> () {
     let _dtor_args_copy_guard = ScopedDestructor::new(&args_copy_guard, |__p| __p.destructor());
     let local_buff: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut size: () = unimplemented!();
-    let mut ret: () = ({
-        vsnprintf_5(
-            unimplemented!(),
-            size,
-            (*msg.borrow()).clone(),
-            (*args_cp.borrow()).clone(),
-        )
-    });
+    let mut ret: () = unimplemented!();
     ({ GuardVAList_4Impl::clear(&args_copy_guard.as_pointer()) });
     if (ret == 0_()) {
         return unimplemented!();
@@ -146,20 +129,13 @@ pub fn format_string_imp_3(msg: Ptr<()>, __args: Box<[VaArg]>) -> () {
     }
     size = (ret).wrapping_add(1_());
     let mut buff_ptr: () = unimplemented!();
-    ret = ({
-        vsnprintf_5(
-            unimplemented!(),
-            size,
-            (*msg.borrow()).clone(),
-            (*args.borrow()).clone(),
-        )
-    });
+    ret = unimplemented!();
     return unimplemented!();
 }
-pub fn unwrap_6(s: Ptr<()>) -> Ptr<()> {
+pub fn unwrap_5(s: Ptr<()>) -> Ptr<()> {
     return unimplemented!();
 }
-pub fn unwrap_7(a: Ptr<Ptr<()>>) -> Ptr<Ptr<()>> {
+pub fn unwrap_6(a: Ptr<Ptr<()>>) -> Ptr<Ptr<()>> {
     const _: () = assert!(true, "!std::is_class<Arg>::value");;
     return (a).clone();
 }
@@ -180,7 +156,7 @@ impl GuardVAList_4 {
         }
     }
 }
-pub fn format_string_8(
+pub fn format_string_7(
     mut fmt: Ptr<()>,
     args_1: Ptr<Ptr<()>>,
     args_2: Ptr<()>,
@@ -190,14 +166,14 @@ pub fn format_string_8(
         format_string_imp_3(
             fmt,
             Box::new([
-                (({ unwrap_7((args_1).clone()) }).read()).into(),
-                ({ unwrap_6((args_2).clone()) }).into(),
-                ({ unwrap_6((args_3).clone()) }).into(),
+                (({ unwrap_6((args_1).clone()) }).read()).into(),
+                ({ unwrap_5((args_2).clone()) }).into(),
+                ({ unwrap_5((args_3).clone()) }).into(),
             ]),
         )
     });
 }
-pub fn format_string_9(
+pub fn format_string_8(
     mut fmt: Ptr<()>,
     args_1: Ptr<Ptr<()>>,
     args_2: Ptr<()>,
@@ -208,15 +184,15 @@ pub fn format_string_9(
         format_string_imp_3(
             fmt,
             Box::new([
-                (({ unwrap_7((args_1).clone()) }).read()).into(),
-                ({ unwrap_6((args_2).clone()) }).into(),
-                ({ unwrap_6((args_3).clone()) }).into(),
-                (({ unwrap_7((args_4).clone()) }).read()).into(),
+                (({ unwrap_6((args_1).clone()) }).read()).into(),
+                ({ unwrap_5((args_2).clone()) }).into(),
+                ({ unwrap_5((args_3).clone()) }).into(),
+                (({ unwrap_6((args_4).clone()) }).read()).into(),
             ]),
         )
     });
 }
-pub fn format_string_10(
+pub fn format_string_9(
     mut fmt: Ptr<()>,
     args_1: Ptr<Ptr<()>>,
     args_2: Ptr<()>,
@@ -228,22 +204,22 @@ pub fn format_string_10(
         format_string_imp_3(
             fmt,
             Box::new([
-                (({ unwrap_7((args_1).clone()) }).read()).into(),
-                ({ unwrap_6((args_2).clone()) }).into(),
-                ({ unwrap_6((args_3).clone()) }).into(),
-                (({ unwrap_7((args_4).clone()) }).read()).into(),
-                (({ unwrap_7((args_5).clone()) }).read()).into(),
+                (({ unwrap_6((args_1).clone()) }).read()).into(),
+                ({ unwrap_5((args_2).clone()) }).into(),
+                ({ unwrap_5((args_3).clone()) }).into(),
+                (({ unwrap_6((args_4).clone()) }).read()).into(),
+                (({ unwrap_6((args_5).clone()) }).read()).into(),
             ]),
         )
     });
 }
-pub fn symlink_11(mut oldname: Ptr<()>, mut newname: Ptr<()>, mut is_dir: ()) -> () {
+pub fn symlink_10(mut oldname: Ptr<()>, mut newname: Ptr<()>, mut is_dir: ()) -> () {
     &(is_dir);
-    return ({ symlink_12(oldname, newname) });
+    return unimplemented!();
 }
-pub fn space_13(mut path: (), capacity: Ptr<u64>, free: Ptr<u64>, avail: Ptr<u64>) -> () {
-    let expect: Value<statvfs> = Rc::new(RefCell::new(<statvfs>::default()));
-    if (({ statvfs_14(unimplemented!(), (expect.as_pointer())) }) == -1_()) {
+pub fn space_11(mut path: (), capacity: Ptr<()>, free: Ptr<()>, avail: Ptr<()>) -> () {
+    let expect: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    if (unimplemented!() == -1_()) {
         return false;
     }
     unimplemented!();
@@ -251,52 +227,48 @@ pub fn space_13(mut path: (), capacity: Ptr<u64>, free: Ptr<u64>, avail: Ptr<u64
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let do_mult: Value<FnPtr<fn(u64) -> u64>> = Rc::new(RefCell::new(lambda!(
+    let do_mult: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(lambda!(
         {
-            let expect: Ptr<statvfs> = expect.as_pointer();
+            let expect: Ptr<()> = expect.as_pointer();
         },
-        |mut val: u64| -> u64 {
-            let mut fsize: u64 = (expect.with(|__s| __s.f_frsize) as u64);
-            let new_val: Value<u64> = Rc::new(RefCell::new((val).wrapping_mul(fsize)));
+        |mut val: ()| -> () {
+            let mut fsize: () = expect.with(|__s| __s.f_frsize);
+            let new_val: Value<()> = Rc::new(RefCell::new((val).wrapping_mul(fsize)));
             unimplemented!();
             return (*new_val.borrow());
         }
     )));
-    let __rhs = ({ (*do_mult.borrow()).call(({ (*expect.borrow()).f_blocks } as u64)) });
+    let __rhs = ({ (*do_mult.borrow()).call({ (*expect.borrow()).f_blocks }) });
     capacity.write(__rhs);
-    let __rhs = ({ (*do_mult.borrow()).call(({ (*expect.borrow()).f_bfree } as u64)) });
+    let __rhs = ({ (*do_mult.borrow()).call({ (*expect.borrow()).f_bfree }) });
     free.write(__rhs);
-    let __rhs = ({ (*do_mult.borrow()).call(({ (*expect.borrow()).f_bavail } as u64)) });
+    let __rhs = ({ (*do_mult.borrow()).call({ (*expect.borrow()).f_bavail }) });
     avail.write(__rhs);
     return true;
 }
-pub fn fopen64_15(mut pathname: Ptr<()>, mut mode: Ptr<()>) -> *mut ::libc::FILE {
-    return libc::fopen(pathname, mode);
-}
-pub fn ftruncate64_16(mut fd: (), mut length: ::libc::off_t) -> () {
+pub fn fopen64_12(mut pathname: Ptr<()>, mut mode: Ptr<()>) -> () {
     return unimplemented!();
 }
-pub fn getcwd_17() -> () {
+pub fn ftruncate64_13(mut fd: (), mut length: ()) -> () {
+    return unimplemented!();
+}
+pub fn getcwd_14() -> () {
     let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..4096).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut ret: Ptr<()> = ({
-        let ___buf: Ptr<()> = (buf.as_pointer() as Ptr<()>);
-        let ___size: () = ::std::mem::size_of::<[(); 4096]>();
-        getcwd_18(___buf, ___size)
-    });
+    let mut ret: Ptr<()> = unimplemented!();
     unimplemented!();
     return unimplemented!();
 }
-pub fn exists_19(path: Ptr<()>) -> () {
+pub fn exists_15(path: Ptr<()>) -> () {
     let tmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return (unimplemented!() == 0_());
 }
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
-#[byte_size(24)]
+#[byte_size(40)]
 pub struct scoped_test_env {
     #[offset(0)]
-    #[byte_size(24)]
+    #[byte_size(40)]
     pub test_root: (),
 }
 impl scoped_test_env {
@@ -305,7 +277,7 @@ impl scoped_test_env {
             test_root: ({ scoped_test_env::available_cwd_path() }),
         };
         let mut cmd: () = unimplemented!();
-        let mut ret: () = ({ system_20(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         __this
@@ -318,7 +290,7 @@ impl scoped_test_env {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         'loop_: while ({
             let _path: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            exists_19(_path.as_pointer())
+            exists_15(_path.as_pointer())
         }) {
             unimplemented!();
         }
@@ -331,63 +303,63 @@ impl Default for scoped_test_env {
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
-#[byte_size(456)]
+#[byte_size(664)]
 pub struct static_test_env {
     #[offset(0)]
-    #[byte_size(24)]
+    #[byte_size(40)]
     env_: scoped_test_env,
-    #[offset(24)]
-    #[byte_size(24)]
+    #[offset(40)]
+    #[byte_size(40)]
     pub Root: (),
-    #[offset(48)]
+    #[offset(80)]
     #[byte_size(24)]
     pub TestFileList: (),
-    #[offset(72)]
+    #[offset(104)]
     #[byte_size(24)]
     pub TestDirList: (),
-    #[offset(96)]
-    #[byte_size(24)]
+    #[offset(128)]
+    #[byte_size(40)]
     pub File: (),
-    #[offset(120)]
-    #[byte_size(24)]
-    pub Dir: (),
-    #[offset(144)]
-    #[byte_size(24)]
-    pub Dir2: (),
     #[offset(168)]
-    #[byte_size(24)]
+    #[byte_size(40)]
+    pub Dir: (),
+    #[offset(208)]
+    #[byte_size(40)]
+    pub Dir2: (),
+    #[offset(248)]
+    #[byte_size(40)]
     pub Dir3: (),
-    #[offset(192)]
-    #[byte_size(24)]
-    pub SymlinkToFile: (),
-    #[offset(216)]
-    #[byte_size(24)]
-    pub SymlinkToDir: (),
-    #[offset(240)]
-    #[byte_size(24)]
-    pub BadSymlink: (),
-    #[offset(264)]
-    #[byte_size(24)]
-    pub DNE: (),
     #[offset(288)]
-    #[byte_size(24)]
+    #[byte_size(40)]
+    pub SymlinkToFile: (),
+    #[offset(328)]
+    #[byte_size(40)]
+    pub SymlinkToDir: (),
+    #[offset(368)]
+    #[byte_size(40)]
+    pub BadSymlink: (),
+    #[offset(408)]
+    #[byte_size(40)]
+    pub DNE: (),
+    #[offset(448)]
+    #[byte_size(40)]
     pub EmptyFile: (),
-    #[offset(312)]
-    #[byte_size(24)]
+    #[offset(488)]
+    #[byte_size(40)]
     pub NonEmptyFile: (),
-    #[offset(336)]
-    #[byte_size(24)]
+    #[offset(528)]
+    #[byte_size(40)]
     pub CharFile: (),
-    #[offset(360)]
+    #[offset(568)]
     #[byte_size(24)]
     pub DirIterationList: (),
-    #[offset(384)]
+    #[offset(592)]
     #[byte_size(24)]
     pub DirIterationListDepth1: (),
-    #[offset(408)]
+    #[offset(616)]
     #[byte_size(24)]
     pub RecDirIterationList: (),
-    #[offset(432)]
+    #[offset(640)]
     #[byte_size(24)]
     pub RecDirFollowSymlinksIterationList: (),
 }
@@ -451,19 +423,11 @@ impl static_test_env {
         });
         ({ scoped_test_envImpl::create_file(&field_ptr!(this, env_), unimplemented!(), None) });
         ({
-            scoped_test_envImpl::create_file(
-                &field_ptr!(this, env_),
-                unimplemented!(),
-                Some(42_u64),
-            )
+            scoped_test_envImpl::create_file(&field_ptr!(this, env_), unimplemented!(), Some(42_()))
         });
         ({ scoped_test_envImpl::create_file(&field_ptr!(this, env_), unimplemented!(), None) });
         ({
-            scoped_test_envImpl::create_file(
-                &field_ptr!(this, env_),
-                unimplemented!(),
-                Some(42_u64),
-            )
+            scoped_test_envImpl::create_file(&field_ptr!(this, env_), unimplemented!(), Some(42_()))
         });
         ({
             scoped_test_envImpl::create_directory_symlink(
@@ -490,16 +454,16 @@ impl Default for static_test_env {
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
-#[byte_size(24)]
+#[byte_size(32)]
 pub struct CWDGuard {
     #[offset(0)]
-    #[byte_size(24)]
+    #[byte_size(32)]
     pub oldCwd_: (),
 }
 impl CWDGuard {
     pub fn new() -> Self {
         Self {
-            oldCwd_: ({ getcwd_17() }),
+            oldCwd_: ({ getcwd_14() }),
         }
     }
 }
@@ -508,7 +472,7 @@ impl Default for CWDGuard {
         { CWDGuard::new() }
     }
 }
-pub fn GetTestEC_26(Idx: Option<()>) -> () {
+pub fn GetTestEC_16(Idx: Option<()>) -> () {
     let Idx: Value<()> = Rc::new(RefCell::new(Idx.unwrap_or_else(|| 0_())));
     let GetErrc: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new(lambda!(
         {
@@ -538,7 +502,7 @@ pub fn GetTestEC_26(Idx: Option<()>) -> () {
     )));
     return unimplemented!();
 }
-pub fn ErrorIsImp_27(ec: Ptr<()>, errors: Ptr<()>) -> () {
+pub fn ErrorIsImp_17(ec: Ptr<()>, errors: Ptr<()>) -> () {
     let cond: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for errc in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut errc: () = (unimplemented!().read());
@@ -548,29 +512,29 @@ pub fn ErrorIsImp_27(ec: Ptr<()>, errors: Ptr<()>) -> () {
     }
     return false;
 }
-pub fn NormalizeExpectedPerms_28(P: ()) -> () {
+pub fn NormalizeExpectedPerms_18(P: ()) -> () {
     let P: Value<()> = Rc::new(RefCell::new(P));
     return (*P.borrow());
 }
 #[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(96)]
+#[byte_size(136)]
 pub struct ExceptionChecker {
     #[offset(0)]
     #[byte_size(4)]
     pub expected_err: (),
     #[offset(8)]
-    #[byte_size(24)]
+    #[byte_size(40)]
     pub expected_path1: (),
-    #[offset(32)]
-    #[byte_size(24)]
+    #[offset(48)]
+    #[byte_size(40)]
     pub expected_path2: (),
-    #[offset(56)]
+    #[offset(88)]
     pub num_paths: (),
-    #[offset(64)]
+    #[offset(96)]
     #[byte_size(8)]
     pub func_name: Ptr<()>,
-    #[offset(72)]
-    #[byte_size(24)]
+    #[offset(104)]
+    #[byte_size(32)]
     pub opt_message: (),
 }
 impl ExceptionChecker {
@@ -631,7 +595,7 @@ impl Default for ExceptionChecker {
         }
     }
 }
-pub fn GetWindowsInaccessibleDir_29() -> () {
+pub fn GetWindowsInaccessibleDir_19() -> () {
     let dir: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let root: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -690,7 +654,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let parent_dir: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let child_dir: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let mut BadRet: u64 = (-1_() as u64);
+    let mut BadRet: () = -1_();
     let ec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -702,7 +666,7 @@ pub trait CWDGuardImpl {
 }
 impl CWDGuardImpl for Ptr<CWDGuard> {
     fn destructor(&self) {
-        let mut ret: () = ({ chdir_25(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -715,7 +679,7 @@ impl ExceptionCheckerImpl for Ptr<ExceptionChecker> {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ ExceptionCheckerImpl::check_libcxx_string(self, (Err_).clone()) });
+        const _: () = assert!(true, "");;
     }
     fn check_libcxx_string(&self, Err_: Ptr<()>) {
         let message: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -737,9 +701,9 @@ impl ExceptionCheckerImpl for Ptr<ExceptionChecker> {
  let additional_msg : Ptr< ()  > = additional_msg .as_pointer()  ;
  let message : Ptr< ()  > = message .as_pointer()  ;
  let transform_path : Ptr< FnPtr<fn(Ptr< ()  > ,) -> ()  >  > = transform_path .as_pointer()  ;
- } , | | -> ()  { 'switch: { match { (*this_.borrow()).clone() .with(|__s| __s . num_paths )  } { __v if __v ==  0_()  =>  { return ( { format_string_8 ( Ptr::<() >::from_string_literal(b"filesystem error: in %s: %s%s" )  , field_ptr!((*this_.borrow()).clone()  , func_name)  , (additional_msg ).clone() , (message ).clone() , ) } )    ;
- }, __v if __v ==  1_()  =>  { return ( { let _args_1: Ptr< Ptr< ()  >  >  = field_ptr!((*this_.borrow()).clone()  , func_name)  ; let _args_4 : Value<Ptr< ()  > > = Rc::new(RefCell::new(unimplemented!()  )); format_string_9 ( Ptr::<() >::from_string_literal(b"filesystem error: in %s: %s%s [%s]" )  , _args_1 , (additional_msg ).clone() , (message ).clone() , _args_4.as_pointer() , ) } )    ;
- }, __v if __v ==  2_()  =>  { return ( { let _args_1: Ptr< Ptr< ()  >  >  = field_ptr!((*this_.borrow()).clone()  , func_name)  ; let _args_4 : Value<Ptr< ()  > > = Rc::new(RefCell::new(unimplemented!()  )); let _args_5 : Value<Ptr< ()  > > = Rc::new(RefCell::new(unimplemented!()  )); format_string_10 ( Ptr::<() >::from_string_literal(b"filesystem error: in %s: %s%s [%s] [%s]" )  , _args_1 , (additional_msg ).clone() , (message ).clone() , _args_4.as_pointer() , _args_5.as_pointer() , ) } )    ;
+ } , | | -> ()  { 'switch: { match { (*this_.borrow()).clone() .with(|__s| __s . num_paths )  } { __v if __v ==  0_()  =>  { return ( { format_string_7 ( Ptr::<() >::from_string_literal(b"filesystem error: in %s: %s%s" )  , field_ptr!((*this_.borrow()).clone()  , func_name)  , (additional_msg ).clone() , (message ).clone() , ) } )    ;
+ }, __v if __v ==  1_()  =>  { return ( { let _args_1: Ptr< Ptr< ()  >  >  = field_ptr!((*this_.borrow()).clone()  , func_name)  ; let _args_4 : Value<Ptr< ()  > > = Rc::new(RefCell::new(unimplemented!()  )); format_string_8 ( Ptr::<() >::from_string_literal(b"filesystem error: in %s: %s%s [%s]" )  , _args_1 , (additional_msg ).clone() , (message ).clone() , _args_4.as_pointer() , ) } )    ;
+ }, __v if __v ==  2_()  =>  { return ( { let _args_1: Ptr< Ptr< ()  >  >  = field_ptr!((*this_.borrow()).clone()  , func_name)  ; let _args_4 : Value<Ptr< ()  > > = Rc::new(RefCell::new(unimplemented!()  )); let _args_5 : Value<Ptr< ()  > > = Rc::new(RefCell::new(unimplemented!()  )); format_string_9 ( Ptr::<() >::from_string_literal(b"filesystem error: in %s: %s%s [%s] [%s]" )  , _args_1 , (additional_msg ).clone() , (message ).clone() , _args_4.as_pointer() , _args_5.as_pointer() , ) } )    ;
  }, _ =>  { ( { test_fail_2 ( Ptr::<() >::from_string_literal(b"/app/cpp2rust/tests/libcxx/support/filesystem_test_helper.h" )  , 618_()  , Ptr::<() >::from_string_literal(b"unexpected case" ) , ) } )  ;
  return unimplemented!()   ;
  }, } } ;
@@ -835,7 +799,7 @@ pub trait scoped_test_envImpl {
     fn destructor(&self);
     fn make_env_path(&self, p: ()) -> ();
     fn sanitize_path(&self, raw_: ()) -> ();
-    fn create_file(&self, filename_path: (), size: Option<u64>) -> ();
+    fn create_file(&self, filename_path: (), size: Option<()>) -> ();
     fn create_dir(&self, filename_path: ()) -> ();
     fn create_file_dir_symlink(
         &self,
@@ -858,10 +822,10 @@ pub trait scoped_test_envImpl {
 impl scoped_test_envImpl for Ptr<scoped_test_env> {
     fn destructor(&self) {
         let mut cmd: () = unimplemented!();
-        let mut ret: () = ({ system_20(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        ret = ({ system_20(unimplemented!()) });
+        ret = unimplemented!();
         unimplemented!();
     }
     fn make_env_path(&self, mut p: ()) -> () {
@@ -878,35 +842,31 @@ impl scoped_test_envImpl for Ptr<scoped_test_env> {
         }
         return unimplemented!();
     }
-    fn create_file(&self, filename_path: (), size: Option<u64>) -> () {
+    fn create_file(&self, filename_path: (), size: Option<()>) -> () {
         let filename_path: Value<()> = Rc::new(RefCell::new(filename_path));
-        let mut size: u64 = size.unwrap_or_else(|| 0_u64);
+        let mut size: () = size.unwrap_or_else(|| 0_());
         let mut filename: () = ({ scoped_test_envImpl::sanitize_path(self, unimplemented!()) });
         if (size > unimplemented!()) {
             eprintln!("create_file({}, {}) too large", unimplemented!(), size);
             unimplemented!();
         }
-        let mut file: *mut ::libc::FILE =
-            ({ fopen64_15(unimplemented!(), Ptr::<()>::from_string_literal(b"we")) });
+        let mut file: () =
+            ({ fopen64_12(unimplemented!(), Ptr::<()>::from_string_literal(b"we")) });
         if (file).is_null() {
-            eprintln!(
-                "fopen {} failed: {}",
-                unimplemented!(),
-                ({ strerror_21((unimplemented!().read()),) })
-            );
+            eprintln!("fopen {} failed: {}", unimplemented!(), unimplemented!());
             unimplemented!();
         }
-        if (({ ftruncate64_16(libc::fileno(file), (size as ::libc::off_t)) }) == -1_()) {
+        if (({ ftruncate64_13(unimplemented!(), size) }) == -1_()) {
             eprintln!(
                 "ftruncate {} {} failed: {}",
                 unimplemented!(),
                 size,
-                ({ strerror_21((unimplemented!().read()),) })
+                unimplemented!()
             );
-            libc::fclose(file);
+            unimplemented!();
             unimplemented!();
         }
-        libc::fclose(file);
+        unimplemented!();
         return unimplemented!();
     }
     fn create_dir(&self, filename_path: ()) -> () {
@@ -937,7 +897,7 @@ impl scoped_test_envImpl for Ptr<scoped_test_env> {
         let mut ret: () = ({
             let _oldname: Ptr<()> = unimplemented!();
             let _newname: Ptr<()> = unimplemented!();
-            symlink_11(_oldname, _newname, is_dir)
+            symlink_10(_oldname, _newname, is_dir)
         });
         unimplemented!();
         return unimplemented!();
@@ -982,35 +942,26 @@ impl scoped_test_envImpl for Ptr<scoped_test_env> {
         let mut to: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut ret: () = ({
-            let ___from: Ptr<()> = unimplemented!();
-            let ___to: Ptr<()> = unimplemented!();
-            link_22(___from, ___to)
-        });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }
     fn create_fifo(&self, mut file: ()) -> () {
         unimplemented!();
-        let mut ret: () = ({ mkfifo_23(unimplemented!(), 438_()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }
     fn create_socket(&self, mut file: ()) -> () {
         unimplemented!();
-        let address: Value<libc::sockaddr_un> =
-            Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-        (*address.borrow_mut()).sun_family = (1 as libc::sa_family_t);
+        let address: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        (*address.borrow_mut()).sun_family = 1_();
         if (unimplemented!() > ::std::mem::size_of::<[(); 108]>()) {
             unimplemented!();
         }
         unimplemented!();
-        ({
-            let ___dest: Ptr<()> = (array_field_ptr!(address.as_pointer(), sun_path) as Ptr<()>);
-            let ___n: () = ::std::mem::size_of::<[(); 108]>();
-            strncpy_24(___dest, unimplemented!(), ___n)
-        });
-        let mut fd: () = libc::socket(1_(), (libc::SOCK_STREAM as ()), 0_());
+        unimplemented!();
+        let mut fd: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }

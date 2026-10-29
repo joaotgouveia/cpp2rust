@@ -56,7 +56,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             i.prefix_inc();
         }
         var /= unimplemented!();
-        let mut dev: () = ({ sqrt_1(var) });
+        let mut dev: () = unimplemented!();
         skew /= ((unimplemented!() * dev) * var);
         kurtosis /= ((unimplemented!() * var) * var);
         kurtosis -= 3_();

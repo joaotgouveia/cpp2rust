@@ -442,17 +442,11 @@ impl UserAtomicType {
         Self { i: d }
     }
 }
-impl std::cmp::PartialEq for UserAtomicType {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_33(
-                Rc::new(RefCell::new(UserAtomicType { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(UserAtomicType { i: other.i.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for UserAtomicType {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_33(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for UserAtomicType {}
 impl Default for UserAtomicType {
     fn default() -> Self {
         { UserAtomicType::new(None) }
@@ -493,17 +487,11 @@ impl LargeUserAtomicType {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::PartialEq for LargeUserAtomicType {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_34(
-                Rc::new(RefCell::new(LargeUserAtomicType { a: self.a.clone() })).as_pointer(),
-                Rc::new(RefCell::new(LargeUserAtomicType { a: other.a.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for LargeUserAtomicType {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_34(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for LargeUserAtomicType {}
 impl Default for LargeUserAtomicType {
     fn default() -> Self {
         { LargeUserAtomicType::new(None) }

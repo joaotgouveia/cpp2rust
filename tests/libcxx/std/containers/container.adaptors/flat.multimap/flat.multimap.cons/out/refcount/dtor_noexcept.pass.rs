@@ -55,44 +55,16 @@ impl MoveOnly {
         __this
     }
 }
-impl std::cmp::Ord for MoveOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_6(
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for MoveOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for MoveOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for MoveOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for MoveOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for MoveOnly {}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -145,44 +117,16 @@ impl TrivialMoveOnly {
         }
     }
 }
-impl std::cmp::Ord for TrivialMoveOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_13(
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for TrivialMoveOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_9(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for TrivialMoveOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for TrivialMoveOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for TrivialMoveOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_7(
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for TrivialMoveOnly {}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -304,27 +248,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_16(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_16(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -352,9 +280,6 @@ pub struct test_allocator_MoveOnly__rebind_MoveOnly_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_MoveOnly__rebind_MoveOnly_ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_MoveOnly__rebind_const_MoveOnly_ptr_ {}
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_MoveOnly_ {
@@ -378,6 +303,21 @@ impl Default for test_allocator_MoveOnly_ {
         }
     }
 }
+impl test_allocator_MoveOnly_ptr_ {
+    pub fn new_1(a: Ptr<test_allocator_MoveOnly_>) -> Self {
+        let __this: Value<test_allocator_MoveOnly_ptr_> = Rc::new(RefCell::new(Self {
+            data_: a.with(|__s| __s.data_),
+            id_: a.with(|__s| __s.id_),
+            stats_: a.with(|__s| __s.stats_.clone()),
+        }));
+        let this: Ptr<test_allocator_MoveOnly_ptr_> = __this.as_pointer();
+        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+        }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_MoveOnly_ptr_ {
@@ -394,29 +334,6 @@ impl Default for test_allocator_MoveOnly_ptr_ {
     fn default() -> Self {
         {
             test_allocator_MoveOnly_ptr_ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_const_MoveOnly_ptr_ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_const_MoveOnly_ptr_ {}
-impl Default for test_allocator_const_MoveOnly_ptr_ {
-    fn default() -> Self {
-        {
-            test_allocator_const_MoveOnly_ptr_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
@@ -457,10 +374,6 @@ pub fn test_18() {
         const _: () = assert!(true, "std::is_nothrow_destructible_v<C>");;
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
-    {
-        const _: () = assert!(true, "!std::is_nothrow_destructible_v<C>");;
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    }
 }
 pub fn test_19() {
     {
@@ -473,10 +386,6 @@ pub fn test_19() {
     }
     {
         const _: () = assert!(true, "std::is_nothrow_destructible_v<C>");;
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    }
-    {
-        const _: () = assert!(true, "!std::is_nothrow_destructible_v<C>");;
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
 }
@@ -587,9 +496,7 @@ pub trait test_allocator_MoveOnly_Impl {
     fn address_12(&self, x: ()) -> Ptr<MoveOnly> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<MoveOnly> {
-        unimplemented!()
-    }
+    fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<MoveOnly>;
     fn deallocate(&self, p: Ptr<MoveOnly>, s: ());
     fn max_size(&self) -> () {
         unimplemented!()
@@ -611,6 +518,34 @@ impl test_allocator_MoveOnly_Impl for Ptr<test_allocator_MoveOnly_> {
         }
         field!((*self), data_).write(destructed_value_14.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_14.with(|rc| *rc.borrow()));
+    }
+    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<MoveOnly> {
+        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+        unimplemented!();
+        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
+            if ({
+                (*self)
+                    .with(|__s| __s.stats_.clone())
+                    .with(|__s| __s.time_to_throw)
+            } >= {
+                (*self)
+                    .with(|__s| __s.stats_.clone())
+                    .with(|__s| __s.throw_after)
+            }) {
+                unimplemented!();
+            }
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
+                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
+                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
+                ((*self)
+                    .with(|__s| __s.stats_.clone())
+                    .with(|__s| __s.allocated_size))
+                .wrapping_add(n)
+            });
+        }
+        return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<MoveOnly>, mut s: ()) {
         unimplemented!();
@@ -641,14 +576,14 @@ pub trait test_allocator_MoveOnly_ptr_Impl {
     fn address_12(&self, x: ()) -> Ptr<Ptr<MoveOnly>> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<Ptr<MoveOnly>> {
-        unimplemented!()
-    }
+    fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<Ptr<MoveOnly>>;
     fn deallocate(&self, p: Ptr<Ptr<MoveOnly>>, s: ());
     fn max_size(&self) -> () {
         unimplemented!()
     }
-    fn destroy(&self, p: Ptr<Ptr<MoveOnly>>);
+    fn destroy(&self, mut p: Ptr<Ptr<MoveOnly>>) {
+        unimplemented!()
+    }
     fn get_data(&self) -> () {
         unimplemented!()
     }
@@ -666,6 +601,34 @@ impl test_allocator_MoveOnly_ptr_Impl for Ptr<test_allocator_MoveOnly_ptr_> {
         field!((*self), data_).write(destructed_value_14.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_14.with(|rc| *rc.borrow()));
     }
+    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<Ptr<MoveOnly>> {
+        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+        unimplemented!();
+        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
+            if ({
+                (*self)
+                    .with(|__s| __s.stats_.clone())
+                    .with(|__s| __s.time_to_throw)
+            } >= {
+                (*self)
+                    .with(|__s| __s.stats_.clone())
+                    .with(|__s| __s.throw_after)
+            }) {
+                unimplemented!();
+            }
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
+                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
+                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
+                ((*self)
+                    .with(|__s| __s.stats_.clone())
+                    .with(|__s| __s.allocated_size))
+                .wrapping_add(n)
+            });
+        }
+        return unimplemented!();
+    }
     fn deallocate(&self, mut p: Ptr<Ptr<MoveOnly>>, mut s: ()) {
         unimplemented!();
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
@@ -680,43 +643,7 @@ impl test_allocator_MoveOnly_ptr_Impl for Ptr<test_allocator_MoveOnly_ptr_> {
         }
         unimplemented!();
     }
-    fn destroy(&self, mut p: Ptr<Ptr<MoveOnly>>) {
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
-                .with_mut(|__v| __v.prefix_inc());
-        };
-    }
 }
-pub trait test_allocator_const_MoveOnly_ptr_Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<Ptr<MoveOnly>> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<Ptr<MoveOnly>> {
-        unimplemented!()
-    }
-    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<Ptr<MoveOnly>> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<MoveOnly>>, mut s: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<Ptr<MoveOnly>>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_const_MoveOnly_ptr_Impl for Ptr<test_allocator_const_MoveOnly_ptr_> {}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

@@ -10,8 +10,34 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub unsafe fn eq(mut c1: (), mut c2: ()) -> () {
-        return ((c1) == (c2));
+    pub unsafe fn lt(mut c1: (), mut c2: ()) -> () {
+        return ((c1) < (c2));
+    }
+    pub unsafe fn compare(mut s1: *const (), mut s2: *const (), mut n: ()) -> () {
+        'loop_: while (n != 0) {
+            if (unsafe {
+                let _c1: () = (*s1);
+                let _c2: () = (*s2);
+                constexpr_char_traits_char_::lt(_c1, _c2)
+            }) {
+                return -1_();
+            }
+            if (unsafe {
+                let _c1: () = (*s2);
+                let _c2: () = (*s1);
+                constexpr_char_traits_char_::lt(_c1, _c2)
+            }) {
+                return 1_();
+            }
+            {
+                {
+                    n.prefix_dec();
+                    s1.prefix_inc()
+                };
+                s2.prefix_inc()
+            };
+        }
+        return 0_();
     }
 }
 pub unsafe fn test_0(s: *const (), mut str: *const (), mut pos: (), mut n: (), mut x: ()) {

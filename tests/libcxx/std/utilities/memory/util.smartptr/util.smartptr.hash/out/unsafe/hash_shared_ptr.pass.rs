@@ -189,9 +189,24 @@ pub struct ConvertibleToSimple_std_shared_ptr_int__ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ConvertibleToSimple_std_shared_ptr_A__ {}
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct ConvertibleTo_std_shared_ptr_int__ {
     pub to: (),
+}
+impl ConvertibleTo_std_shared_ptr_int__ {
+    pub unsafe fn move_from(_a0: *mut ConvertibleTo_std_shared_ptr_int__) -> Self {
+        let mut this = Self {
+            to: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut ConvertibleTo_std_shared_ptr_int__,
+    ) -> *mut ConvertibleTo_std_shared_ptr_int__ {
+        unimplemented!();
+        return &mut (*(self as *mut ConvertibleTo_std_shared_ptr_int__));
+    }
 }
 impl Default for ConvertibleTo_std_shared_ptr_int__ {
     fn default() -> Self {
@@ -203,9 +218,24 @@ impl Default for ConvertibleTo_std_shared_ptr_int__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct ConvertibleTo_std_shared_ptr_A__ {
     pub to: (),
+}
+impl ConvertibleTo_std_shared_ptr_A__ {
+    pub unsafe fn move_from(_a0: *mut ConvertibleTo_std_shared_ptr_A__) -> Self {
+        let mut this = Self {
+            to: unimplemented!(),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut ConvertibleTo_std_shared_ptr_A__,
+    ) -> *mut ConvertibleTo_std_shared_ptr_A__ {
+        unimplemented!();
+        return &mut (*(self as *mut ConvertibleTo_std_shared_ptr_A__));
+    }
 }
 impl Default for ConvertibleTo_std_shared_ptr_A__ {
     fn default() -> Self {

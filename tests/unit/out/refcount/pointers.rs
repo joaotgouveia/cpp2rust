@@ -10,18 +10,18 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct Test {
     #[offset(0)]
-    pub x: i32,
+    pub x: (),
 }
 pub fn Update_0(mut t: Ptr<Test>) -> Ptr<Test> {
-    let mut x: i32 = 1;
-    let mut y: i32 = 2;
+    let mut x: () = 1_();
+    let mut y: () = 2_();
     x.prefix_inc();
     ({ TestImpl::update(&t, x, y) });
     x = t.with(|__s| (__s).x);
     y = t.with(|__s| __s.x);
     ({
-        let _x: i32 = x;
-        let _y: i32 = y;
+        let _x: () = x;
+        let _y: () = y;
         TestImpl::update(&(t), _x, _y)
     });
     return t;
@@ -30,26 +30,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let t1: Value<Test> = Rc::new(RefCell::new(Test { x: 100 }));
+fn main_0() -> () {
+    let t1: Value<Test> = Rc::new(RefCell::new(Test { x: 100_() }));
     let mut t2: Ptr<Test> = ({ Update_0((t1.as_pointer())) });
     let mut t3: Ptr<Test> = Ptr::<Test>::null();
     t3 = (t2).clone();
-    field!(t3, x).write(15);
+    field!(t3, x).write(15_());
     {
-        ({ TestImpl::as_ptr(&t3) }).with_mut(|__v| *__v = *__v + 10)
+        ({ TestImpl::as_ptr(&t3) }).with_mut(|__v| *__v = *__v + 10_())
     };
-    assert!(
-        (({ ({ t3.with(|__s| __s.x) } + { t2.with(|__s| __s.x) }) } + { { (*t1.borrow()).x } })
-            == 75)
-    );
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub trait TestImpl {
     fn inc(&self);
     fn dec(&self);
-    fn as_ptr(&self) -> Ptr<i32>;
-    fn update(&self, x: i32, y: i32);
+    fn as_ptr(&self) -> Ptr<()>;
+    fn update(&self, x: (), y: ());
 }
 impl TestImpl for Ptr<Test> {
     fn inc(&self) {
@@ -58,10 +55,10 @@ impl TestImpl for Ptr<Test> {
     fn dec(&self) {
         field!((*self), x).with_mut(|__v| __v.postfix_dec());
     }
-    fn as_ptr(&self) -> Ptr<i32> {
+    fn as_ptr(&self) -> Ptr<()> {
         return (field_ptr!((*self), x));
     }
-    fn update(&self, mut x: i32, mut y: i32) {
+    fn update(&self, mut x: (), mut y: ()) {
         field!((*self), x).write((x + y));
     }
 }

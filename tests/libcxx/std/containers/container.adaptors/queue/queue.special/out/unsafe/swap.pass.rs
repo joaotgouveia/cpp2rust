@@ -13,7 +13,7 @@ pub unsafe fn make_0(mut n: ()) -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    return unimplemented!();
+    return c;
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -33,8 +33,8 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut q1: () = (unsafe { make_0(5_()) });
     let mut q2: () = (unsafe { make_0(10_()) });
-    let mut q1_save: () = unimplemented!();
-    let mut q2_save: () = unimplemented!();
+    let mut q1_save: () = q1.clone();
+    let mut q2_save: () = q2.clone();
     unimplemented!();
     unimplemented!();
     unimplemented!();

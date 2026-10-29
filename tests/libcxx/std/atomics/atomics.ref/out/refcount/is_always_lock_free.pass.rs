@@ -841,17 +841,11 @@ impl UserAtomicType {
         Self { i: d }
     }
 }
-impl std::cmp::PartialEq for UserAtomicType {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_39(
-                Rc::new(RefCell::new(UserAtomicType { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(UserAtomicType { i: other.i.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for UserAtomicType {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_39(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for UserAtomicType {}
 impl Default for UserAtomicType {
     fn default() -> Self {
         { UserAtomicType::new(None) }
@@ -892,17 +886,11 @@ impl LargeUserAtomicType {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::PartialEq for LargeUserAtomicType {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_40(
-                Rc::new(RefCell::new(LargeUserAtomicType { a: self.a.clone() })).as_pointer(),
-                Rc::new(RefCell::new(LargeUserAtomicType { a: other.a.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for LargeUserAtomicType {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_40(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for LargeUserAtomicType {}
 impl Default for LargeUserAtomicType {
     fn default() -> Self {
         { LargeUserAtomicType::new(None) }
@@ -948,7 +936,8 @@ pub fn check_always_lock_free_45(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            ({ ((*a.upgrade().deref()) as std___atomic_ref_float__false__true_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -963,7 +952,9 @@ pub fn check_always_lock_free_47(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () = ({
+            ((*a.upgrade().deref()) as std___atomic_ref_int_ptr__false__false_).is_lock_free()
+        });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -978,7 +969,8 @@ pub fn check_always_lock_free_49(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            ({ ((*a.upgrade().deref()) as std___atomic_ref_Empty__false__false_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -993,7 +985,8 @@ pub fn check_always_lock_free_51(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            ({ ((*a.upgrade().deref()) as std___atomic_ref_OneInt__false__false_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1002,7 +995,9 @@ pub fn check_always_lock_free_53(a: Ptr<()>) {
     let mut is_always_lock_free: () = is_always_lock_free_54.with(|rc| *rc.borrow());
     {}
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () = ({
+            ((*a.upgrade().deref()) as std___atomic_ref_IntArr2__false__false_).is_lock_free()
+        });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1053,7 +1048,9 @@ pub fn check_always_lock_free_67(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () = ({
+            ((*a.upgrade().deref()) as std___atomic_ref_IntFloat__false__false_).is_lock_free()
+        });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1068,7 +1065,9 @@ pub fn check_always_lock_free_69(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () = ({
+            ((*a.upgrade().deref()) as std___atomic_ref_CharEnumClass__false__false_).is_lock_free()
+        });
         unimplemented!();
     }
     const _: () = assert!(true, "");;

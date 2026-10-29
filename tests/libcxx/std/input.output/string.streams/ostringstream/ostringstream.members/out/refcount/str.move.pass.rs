@@ -65,20 +65,20 @@ impl MultiStringType {
 pub fn test_0() {
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = ({ (*ss.borrow()).str_16() });
+        let mut s: () = ({ (*ss.borrow()).str_18() });
         unimplemented!();
         unimplemented!();
     }
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = ({ (*ss.borrow()).str_16() });
+        let mut s: () = ({ (*ss.borrow()).str_18() });
         unimplemented!();
         unimplemented!();
     }
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: Ptr<()> = unimplemented!();
-        let mut s: () = ({ (*ss.borrow()).str_16() });
+        let mut s: () = ({ (*ss.borrow()).str_18() });
         unimplemented!();
         unimplemented!();
     }
@@ -86,20 +86,20 @@ pub fn test_0() {
 pub fn test_1() {
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = ({ (*ss.borrow()).str_16() });
+        let mut s: () = ({ (*ss.borrow()).str_18() });
         unimplemented!();
         unimplemented!();
     }
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = ({ (*ss.borrow()).str_16() });
+        let mut s: () = ({ (*ss.borrow()).str_18() });
         unimplemented!();
         unimplemented!();
     }
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: Ptr<()> = unimplemented!();
-        let mut s: () = ({ (*ss.borrow()).str_16() });
+        let mut s: () = ({ (*ss.borrow()).str_18() });
         unimplemented!();
         unimplemented!();
     }

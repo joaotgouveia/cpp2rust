@@ -1081,42 +1081,42 @@ pub unsafe fn tests_102() -> () {
     let mut __tmp_10: () = (unsafe { generate_signed_integral_values_94() });
     let __range1: *mut () = &mut __tmp_10;
     'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut i: i32 = ((*i) as i32);
-        (unsafe { test_roundtrip_through_nested_T_42((i as ())) });
-        (unsafe { test_roundtrip_through_buffer_8((i as ())) });
-        (unsafe { test_roundtrip_through_73((i as ())) });
-        (unsafe { test_roundtrip_through_74((i as ())) });
-        (unsafe { test_roundtrip_through_69((i as ())) });
+        let mut i: () = (*i);
+        (unsafe { test_roundtrip_through_nested_T_42(i) });
+        (unsafe { test_roundtrip_through_buffer_8(i) });
+        (unsafe { test_roundtrip_through_73(i) });
+        (unsafe { test_roundtrip_through_74(i) });
+        (unsafe { test_roundtrip_through_69(i) });
     }
     let mut __tmp_11: () = (unsafe { generate_signed_integral_values_95() });
     let __range1: *mut () = &mut __tmp_11;
     'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut i: i64 = ((*i) as i64);
-        (unsafe { test_roundtrip_through_nested_T_44((i as ())) });
-        (unsafe { test_roundtrip_through_buffer_10((i as ())) });
-        (unsafe { test_roundtrip_through_75((i as ())) });
-        (unsafe { test_roundtrip_through_76((i as ())) });
-        (unsafe { test_roundtrip_through_77((i as ())) });
+        let mut i: () = (*i);
+        (unsafe { test_roundtrip_through_nested_T_44(i) });
+        (unsafe { test_roundtrip_through_buffer_10(i) });
+        (unsafe { test_roundtrip_through_75(i) });
+        (unsafe { test_roundtrip_through_76(i) });
+        (unsafe { test_roundtrip_through_77(i) });
     }
     let mut __tmp_12: () = (unsafe { generate_unsigned_integral_values_99() });
     let __range1: *mut () = &mut __tmp_12;
     'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut i: u32 = ((*i) as u32);
-        (unsafe { test_roundtrip_through_nested_T_52((i as ())) });
-        (unsafe { test_roundtrip_through_buffer_18((i as ())) });
-        (unsafe { test_roundtrip_through_78((i as ())) });
-        (unsafe { test_roundtrip_through_78((i as ())) });
-        (unsafe { test_roundtrip_through_71((i as ())) });
+        let mut i: () = (*i);
+        (unsafe { test_roundtrip_through_nested_T_52(i) });
+        (unsafe { test_roundtrip_through_buffer_18(i) });
+        (unsafe { test_roundtrip_through_78(i) });
+        (unsafe { test_roundtrip_through_78(i) });
+        (unsafe { test_roundtrip_through_71(i) });
     }
     let mut __tmp_13: () = (unsafe { generate_unsigned_integral_values_100() });
     let __range1: *mut () = &mut __tmp_13;
     'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut i: u64 = ((*i) as u64);
-        (unsafe { test_roundtrip_through_nested_T_54((i as ())) });
-        (unsafe { test_roundtrip_through_buffer_20((i as ())) });
-        (unsafe { test_roundtrip_through_79((i as ())) });
-        (unsafe { test_roundtrip_through_80((i as ())) });
-        (unsafe { test_roundtrip_through_81((i as ())) });
+        let mut i: () = (*i);
+        (unsafe { test_roundtrip_through_nested_T_54(i) });
+        (unsafe { test_roundtrip_through_buffer_20(i) });
+        (unsafe { test_roundtrip_through_79(i) });
+        (unsafe { test_roundtrip_through_80(i) });
+        (unsafe { test_roundtrip_through_81(i) });
     }
     let mut __tmp_14: () = unimplemented!();
     let __range1: *mut () = &mut __tmp_14;

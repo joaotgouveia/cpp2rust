@@ -32,7 +32,7 @@ impl Clone for Arg {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct Error {
     pub list: (),
     pub arg: Arg,
@@ -49,6 +49,13 @@ impl Error {
         let mut this = Self {
             list: l.clone(),
             arg: Arg::move_from({ a }),
+        };
+        this
+    }
+    pub unsafe fn move_from(_a0: *mut Error) -> Self {
+        let mut this = Self {
+            list: (*_a0).list,
+            arg: Arg::move_from({ &mut (*_a0).arg }),
         };
         this
     }

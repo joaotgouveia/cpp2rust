@@ -68,68 +68,17 @@ impl PrivateConstructor {
         Self { val: v }
     }
 }
-impl std::cmp::Ord for PrivateConstructor {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_4(
-                Rc::new(RefCell::new(PrivateConstructor {
-                    val: self.val.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(PrivateConstructor {
-                    val: other.val.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_4(
-                Rc::new(RefCell::new(PrivateConstructor {
-                    val: other.val.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(PrivateConstructor {
-                    val: self.val.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for PrivateConstructor {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for PrivateConstructor {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for PrivateConstructor {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_4(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_4(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for PrivateConstructor {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_4(
-                Rc::new(RefCell::new(PrivateConstructor {
-                    val: self.val.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(PrivateConstructor {
-                    val: other.val.clone(),
-                }))
-                .as_pointer(),
-            )) && !(operator_lt_4(
-                Rc::new(RefCell::new(PrivateConstructor {
-                    val: other.val.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(PrivateConstructor {
-                    val: self.val.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for PrivateConstructor {}
 pub fn operator_lt_4(lhs: Ptr<PrivateConstructor>, rhs: Ptr<PrivateConstructor>) -> () {
     return ({ ({ PrivateConstructorImpl::get(&lhs) }) } < {
         ({ PrivateConstructorImpl::get(&rhs) })
@@ -183,68 +132,17 @@ impl C2Int {
         Self { i_: i }
     }
 }
-impl std::cmp::Ord for C2Int {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_7(
-                Rc::new(RefCell::new(C2Int {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C2Int {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_7(
-                Rc::new(RefCell::new(C2Int {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C2Int {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for C2Int {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for C2Int {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for C2Int {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_7(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_7(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for C2Int {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_7(
-                Rc::new(RefCell::new(C2Int {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C2Int {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-            )) && !(operator_lt_7(
-                Rc::new(RefCell::new(C2Int {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(C2Int {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for C2Int {}
 impl Default for C2Int {
     fn default() -> Self {
         { C2Int::new_1() }
@@ -263,7 +161,7 @@ pub fn iter_in_range_10(first: (), last: (), to_find: ()) -> () {
     let first: Value<()> = Rc::new(RefCell::new(first));
     let last: Value<()> = Rc::new(RefCell::new(last));
     let to_find: Value<()> = Rc::new(RefCell::new(to_find));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -275,7 +173,7 @@ pub fn iter_in_range_11(first: (), last: (), to_find: ()) -> () {
     let first: Value<()> = Rc::new(RefCell::new(first));
     let last: Value<()> = Rc::new(RefCell::new(last));
     let to_find: Value<()> = Rc::new(RefCell::new(to_find));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -287,7 +185,7 @@ pub fn iter_in_range_12(first: (), last: (), to_find: ()) -> () {
     let first: Value<()> = Rc::new(RefCell::new(first));
     let last: Value<()> = Rc::new(RefCell::new(last));
     let to_find: Value<()> = Rc::new(RefCell::new(to_find));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -299,7 +197,7 @@ pub fn iter_in_range_13(first: (), last: (), to_find: ()) -> () {
     let first: Value<()> = Rc::new(RefCell::new(first));
     let last: Value<()> = Rc::new(RefCell::new(last));
     let to_find: Value<()> = Rc::new(RefCell::new(to_find));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -311,7 +209,7 @@ pub fn iter_in_range_14(first: (), last: (), to_find: ()) -> () {
     let first: Value<()> = Rc::new(RefCell::new(first));
     let last: Value<()> = Rc::new(RefCell::new(last));
     let to_find: Value<()> = Rc::new(RefCell::new(to_find));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }
@@ -323,7 +221,7 @@ pub fn iter_in_range_15(first: (), last: (), to_find: ()) -> () {
     let first: Value<()> = Rc::new(RefCell::new(first));
     let last: Value<()> = Rc::new(RefCell::new(last));
     let to_find: Value<()> = Rc::new(RefCell::new(to_find));
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         if unimplemented!() {
             return true;
         }

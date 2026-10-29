@@ -9,34 +9,27 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Data {
-    pub v: i32,
+    pub v: (),
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Holder {
-    pub data: Option<Box<Data>>,
-    pub n: i32,
+    pub data: std_unique_ptr_Data__std_default_delete_Data__,
+    pub n: (),
 }
 impl Holder {
     pub unsafe fn set(&mut self, mut p: *mut Data) {
-        {
-            let _a0: *mut Data = p;
-            self.data = if _a0.is_null() {
-                None
-            } else {
-                Some(Box::from_raw(_a0))
-            }
-        };
+        (unsafe { self.data.reset(p) });
     }
     pub unsafe fn move_from(_a0: *mut Holder) -> Self {
         let mut this = Self {
-            data: (*_a0).data.take(),
+            data: (*_a0).data,
             n: (*_a0).n,
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Holder) -> *mut Holder {
-        self.data = (*_a0).data.take();
+        self.data = ((*_a0).data).clone();
         self.n = (*_a0).n;
         return &mut (*(self as *mut Holder));
     }
@@ -47,45 +40,20 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut h: Holder = <Holder>::default();
-    h.n = 1;
+    h.n = 1_();
     let mut hp: *mut Holder = (&mut h as *mut Holder);
-    {
-        let _a0: *mut Data = (Box::leak(Box::new(Data { v: 3 })) as *mut Data);
-        (*hp).data = if _a0.is_null() {
-            None
-        } else {
-            Some(Box::from_raw(_a0))
-        }
-    };
-    assert!(
-        (((*h
+    (unsafe {
+        (*hp)
             .data
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const Data as *mut Data))
-        .v) == (3))
-    );
-    (unsafe { Holder::set(&mut h, (Box::leak(Box::new(Data { v: 4 })) as *mut Data)) });
-    assert!(
-        (((*(*hp)
-            .data
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const Data as *mut Data))
-        .v) == (4))
-    );
-    (*(*hp)
-        .data
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const Data as *mut Data))
-    .v += (*hp).n;
-    assert!(
-        (((*h
-            .data
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const Data as *mut Data))
-        .v) == (5))
-    );
-    return 0;
+            .reset((Box::leak(Box::new(Data { v: 3_() })) as *mut Data))
+    });
+    unimplemented!();
+    (unsafe { Holder::set(&mut h, (Box::leak(Box::new(Data { v: 4_() })) as *mut Data)) });
+    unimplemented!();
+    (*(*hp).data).v += (*hp).n;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

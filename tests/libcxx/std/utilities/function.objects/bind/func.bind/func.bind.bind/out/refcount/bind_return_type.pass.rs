@@ -114,85 +114,75 @@ pub fn CheckCall_34() -> () {
 pub fn CheckCall_35() -> () {
     return unimplemented!();
 }
-pub fn CheckCall_36() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_37() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_38() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_39() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_40() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_41() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_42() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_43() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_44() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_45() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_46() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_47() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_48() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_49() -> () {
-    return unimplemented!();
-}
-pub fn CheckCall_50() -> () {
-    return unimplemented!();
-}
-pub fn do_test_51(mut func: FnPtr<fn(()) -> ()>) {
+pub fn do_test_36(mut func: FnPtr<fn(()) -> ()>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ret_r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let exp2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let exp_r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let exp_r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let exp: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+            (*ret.borrow_mut())(___args.as_pointer())
+        })
+        .clone(),
+    ));
+    let exp2: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+            let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+            (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+        })
+        .clone(),
+    ));
+    let exp_r: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+            (*ret_r.borrow_mut())(___args.as_pointer())
+        })
+        .clone(),
+    ));
+    let exp_r2: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+            let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+            (*ret_r.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+        })
+        .clone(),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     {}
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub fn do_test_52(mut func: FnPtr<fn(()) -> Ptr<()>>) {
+pub fn do_test_37(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ret_r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: Ptr<()> = unimplemented!();
-    let exp2: Ptr<()> = unimplemented!();
+    let exp: Ptr<()> = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let exp2: Ptr<()> = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     let exp_r: Ptr<()> = ({
         let ___args: Value<()> = Rc::new(RefCell::new(100_()));
         (*ret_r.borrow_mut())(___args.as_pointer())
@@ -215,23 +205,32 @@ pub fn do_test_52(mut func: FnPtr<fn(()) -> Ptr<()>>) {
         unimplemented!();
     }
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub fn do_test_53(mut func: FnPtr<fn(()) -> Ptr<()>>) {
+pub fn do_test_38(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ret_r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: Ptr<()> = unimplemented!();
-    let exp2: Ptr<()> = unimplemented!();
+    let exp: Ptr<()> = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let exp2: Ptr<()> = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     let exp_r: Ptr<()> = ({
         let ___args: Value<()> = Rc::new(RefCell::new(100_()));
         (*ret_r.borrow_mut())(___args.as_pointer())
@@ -254,23 +253,32 @@ pub fn do_test_53(mut func: FnPtr<fn(()) -> Ptr<()>>) {
         unimplemented!();
     }
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub fn do_test_54(mut func: FnPtr<fn(()) -> Ptr<()>>) {
+pub fn do_test_39(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ret_r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: Ptr<()> = unimplemented!();
-    let exp2: Ptr<()> = unimplemented!();
+    let exp: Ptr<()> = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let exp2: Ptr<()> = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     let exp_r: Ptr<()> = ({
         let ___args: Value<()> = Rc::new(RefCell::new(100_()));
         (*ret_r.borrow_mut())(___args.as_pointer())
@@ -293,23 +301,32 @@ pub fn do_test_54(mut func: FnPtr<fn(()) -> Ptr<()>>) {
         unimplemented!();
     }
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub fn do_test_55(mut func: FnPtr<fn(()) -> Ptr<()>>) {
+pub fn do_test_40(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ret_r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: Ptr<()> = unimplemented!();
-    let exp2: Ptr<()> = unimplemented!();
+    let exp: Ptr<()> = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let exp2: Ptr<()> = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     let exp_r: Ptr<()> = ({
         let ___args: Value<()> = Rc::new(RefCell::new(100_()));
         (*ret_r.borrow_mut())(___args.as_pointer())
@@ -332,80 +349,125 @@ pub fn do_test_55(mut func: FnPtr<fn(()) -> Ptr<()>>) {
         unimplemented!();
     }
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<BindR, int>()");;
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub fn do_test_r_56(mut func: FnPtr<fn(()) -> ()>) {
+pub fn do_test_r_41(mut func: FnPtr<fn(()) -> ()>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub fn do_test_r_57(mut func: FnPtr<fn(()) -> Ptr<()>>) {
+pub fn do_test_r_42(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub fn do_test_r_58(mut func: FnPtr<fn(()) -> Ptr<()>>) {
+pub fn do_test_r_43(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub fn do_test_r_59(mut func: FnPtr<fn(()) -> Ptr<()>>) {
+pub fn do_test_r_44(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub fn do_test_r_60(mut func: FnPtr<fn(()) -> Ptr<()>>) {
+pub fn do_test_r_45(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "");;
         const _: () = assert!(true, "CheckCall<Bind, int>()");;
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
@@ -430,16 +492,16 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ do_test_51(FnPtr::<fn(()) -> ()>::new(return_value_1)) });
-    ({ do_test_52(FnPtr::<fn(()) -> Ptr<()>>::new(return_lvalue_2)) });
-    ({ do_test_53(FnPtr::<fn(()) -> Ptr<()>>::new(return_const_lvalue_3)) });
-    ({ do_test_54(FnPtr::<fn(()) -> Ptr<()>>::new(return_rvalue_4)) });
-    ({ do_test_55(FnPtr::<fn(()) -> Ptr<()>>::new(return_const_rvalue_5)) });
-    ({ do_test_r_56(FnPtr::<fn(()) -> ()>::new(return_value_1)) });
-    ({ do_test_r_57(FnPtr::<fn(()) -> Ptr<()>>::new(return_lvalue_2)) });
-    ({ do_test_r_58(FnPtr::<fn(()) -> Ptr<()>>::new(return_const_lvalue_3)) });
-    ({ do_test_r_59(FnPtr::<fn(()) -> Ptr<()>>::new(return_rvalue_4)) });
-    ({ do_test_r_60(FnPtr::<fn(()) -> Ptr<()>>::new(return_const_rvalue_5)) });
+    ({ do_test_36(FnPtr::<fn(()) -> ()>::new(return_value_1)) });
+    ({ do_test_37(FnPtr::<fn(()) -> Ptr<()>>::new(return_lvalue_2)) });
+    ({ do_test_38(FnPtr::<fn(()) -> Ptr<()>>::new(return_const_lvalue_3)) });
+    ({ do_test_39(FnPtr::<fn(()) -> Ptr<()>>::new(return_rvalue_4)) });
+    ({ do_test_40(FnPtr::<fn(()) -> Ptr<()>>::new(return_const_rvalue_5)) });
+    ({ do_test_r_41(FnPtr::<fn(()) -> ()>::new(return_value_1)) });
+    ({ do_test_r_42(FnPtr::<fn(()) -> Ptr<()>>::new(return_lvalue_2)) });
+    ({ do_test_r_43(FnPtr::<fn(()) -> Ptr<()>>::new(return_const_lvalue_3)) });
+    ({ do_test_r_44(FnPtr::<fn(()) -> Ptr<()>>::new(return_rvalue_4)) });
+    ({ do_test_r_45(FnPtr::<fn(()) -> Ptr<()>>::new(return_const_rvalue_5)) });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

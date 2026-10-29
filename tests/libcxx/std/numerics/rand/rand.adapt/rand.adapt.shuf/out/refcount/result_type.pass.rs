@@ -12,28 +12,14 @@ pub struct rand1_unsigned_long__0__10_ {
     #[offset(0)]
     x_: (),
 }
-impl rand1_unsigned_long__0__10_ {
-    pub fn min() -> () {
-        return 0_();
-    }
-    pub fn max() -> () {
-        return 10_();
-    }
-}
+impl rand1_unsigned_long__0__10_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct rand1_unsigned_long_long__0__10_ {
     #[offset(0)]
     x_: (),
 }
-impl rand1_unsigned_long_long__0__10_ {
-    pub fn min() -> () {
-        return 0_();
-    }
-    pub fn max() -> () {
-        return 10_();
-    }
-}
+impl rand1_unsigned_long_long__0__10_ {}
 pub fn test1_0() {
     const _: () = assert!(
         true,

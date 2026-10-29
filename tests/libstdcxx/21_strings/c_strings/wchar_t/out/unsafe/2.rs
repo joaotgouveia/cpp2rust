@@ -24,25 +24,13 @@ pub unsafe fn test02_0() {
     ]
     .as_ptr();
     let mut carray: [(); 50] = [unimplemented!(); 50];
-    (unsafe { wcscpy_1(carray.as_mut_ptr(), ccarray1) });
+    unimplemented!();
     let mut cw: *const () = std::ptr::null();
     let mut w: *mut () = std::ptr::null_mut();
-    cw = (unsafe {
-        let ___s: *const () = ccarray1;
-        wmemchr_2(___s, (47 as ()), 3_())
-    })
-    .cast_const();
-    cw = (unsafe {
-        let ___wcs: *const () = ccarray1;
-        wcschr_3(___wcs, (47 as ()))
-    })
-    .cast_const();
-    cw = (unsafe { wcspbrk_4(ccarray1, ccarray2) }).cast_const();
-    cw = (unsafe {
-        let ___wcs: *const () = ccarray1;
-        wcsrchr_5(___wcs, (99 as ()))
-    })
-    .cast_const();
+    cw = (unimplemented!()).cast_const();
+    cw = (unimplemented!()).cast_const();
+    cw = (unimplemented!()).cast_const();
+    cw = (unimplemented!()).cast_const();
     w = unimplemented!();
     cw = cw;
     w = w;

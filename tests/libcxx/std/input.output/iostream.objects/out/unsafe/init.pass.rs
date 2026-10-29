@@ -42,30 +42,10 @@ impl Checker {
             )
             .as_mut_ptr(),
         };
-        (unsafe {
-            let ___src: () = (((&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cerr_0))
-                as *mut ()) as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<()>();
-            memcpy_1((this.cerr_mem_dump as ()), ___src, ___n)
-        });
-        (unsafe {
-            let ___src: () = (((&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cin_2))
-                as *mut ()) as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<()>();
-            memcpy_1((this.cin_mem_dump as ()), ___src, ___n)
-        });
-        (unsafe {
-            let ___src: () = (((&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut cout_3))
-                as *mut ()) as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<()>();
-            memcpy_1((this.cout_mem_dump as ()), ___src, ___n)
-        });
-        (unsafe {
-            let ___src: () = (((&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut clog_4))
-                as *mut ()) as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<()>();
-            memcpy_1((this.clog_mem_dump as ()), ___src, ___n)
-        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -116,7 +96,7 @@ impl Default for Checker {
         unsafe { Checker::new() }
     }
 }
-pub static mut check_5: std::cell::LazyCell<Checker> =
+pub static mut check_0: std::cell::LazyCell<Checker> =
     std::cell::LazyCell::new(|| unsafe { Checker::new() });
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
@@ -154,30 +134,10 @@ impl WideChecker {
             )
             .as_mut_ptr(),
         };
-        (unsafe {
-            let ___src: () = (((&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut wcerr_6))
-                as *mut ()) as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<()>();
-            memcpy_1((this.wcerr_mem_dump as ()), ___src, ___n)
-        });
-        (unsafe {
-            let ___src: () = (((&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut wcin_7))
-                as *mut ()) as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<()>();
-            memcpy_1((this.wcin_mem_dump as ()), ___src, ___n)
-        });
-        (unsafe {
-            let ___src: () = (((&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut wcout_8))
-                as *mut ()) as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<()>();
-            memcpy_1((this.wcout_mem_dump as ()), ___src, ___n)
-        });
-        (unsafe {
-            let ___src: () = (((&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut wclog_9))
-                as *mut ()) as *mut ()) as ());
-            let ___n: () = ::std::mem::size_of::<()>();
-            memcpy_1((this.wclog_mem_dump as ()), ___src, ___n)
-        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -228,7 +188,7 @@ impl Default for WideChecker {
         unsafe { WideChecker::new() }
     }
 }
-pub static mut wide_check_10: std::cell::LazyCell<WideChecker> =
+pub static mut wide_check_1: std::cell::LazyCell<WideChecker> =
     std::cell::LazyCell::new(|| unsafe { WideChecker::new() });
 
 pub fn main() {
@@ -258,6 +218,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const check_5);
-    std::cell::LazyCell::force(&*&raw const wide_check_10);
+    std::cell::LazyCell::force(&*&raw const check_0);
+    std::cell::LazyCell::force(&*&raw const wide_check_1);
 }

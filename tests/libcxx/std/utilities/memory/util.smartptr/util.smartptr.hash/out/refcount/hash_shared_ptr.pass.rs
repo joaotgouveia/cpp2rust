@@ -188,12 +188,19 @@ pub struct ConvertibleToSimple_std_shared_ptr_int__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ConvertibleToSimple_std_shared_ptr_A__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(16)]
 pub struct ConvertibleTo_std_shared_ptr_int__ {
     #[offset(0)]
     #[byte_size(16)]
     pub to: (),
+}
+impl ConvertibleTo_std_shared_ptr_int__ {
+    pub fn move_from(_a0: Ptr<ConvertibleTo_std_shared_ptr_int__>) -> Self {
+        Self {
+            to: unimplemented!(),
+        }
+    }
 }
 impl Default for ConvertibleTo_std_shared_ptr_int__ {
     fn default() -> Self {
@@ -204,12 +211,19 @@ impl Default for ConvertibleTo_std_shared_ptr_int__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(16)]
 pub struct ConvertibleTo_std_shared_ptr_A__ {
     #[offset(0)]
     #[byte_size(16)]
     pub to: (),
+}
+impl ConvertibleTo_std_shared_ptr_A__ {
+    pub fn move_from(_a0: Ptr<ConvertibleTo_std_shared_ptr_A__>) -> Self {
+        Self {
+            to: unimplemented!(),
+        }
+    }
 }
 impl Default for ConvertibleTo_std_shared_ptr_A__ {
     fn default() -> Self {
@@ -352,8 +366,20 @@ pub trait ConvertibleTo_std_shared_ptr_A__Impl {
     fn to_pconst_4(&self) -> Ptr<()> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<ConvertibleTo_std_shared_ptr_A__>,
+    ) -> Ptr<ConvertibleTo_std_shared_ptr_A__>;
 }
-impl ConvertibleTo_std_shared_ptr_A__Impl for Ptr<ConvertibleTo_std_shared_ptr_A__> {}
+impl ConvertibleTo_std_shared_ptr_A__Impl for Ptr<ConvertibleTo_std_shared_ptr_A__> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<ConvertibleTo_std_shared_ptr_A__>,
+    ) -> Ptr<ConvertibleTo_std_shared_ptr_A__> {
+        unimplemented!();
+        return (*self).clone();
+    }
+}
 pub trait ConvertibleTo_std_shared_ptr_int__Impl {
     fn to_pmut_1(&self) -> Ptr<()> {
         unimplemented!()
@@ -367,6 +393,18 @@ pub trait ConvertibleTo_std_shared_ptr_int__Impl {
     fn to_pconst_4(&self) -> Ptr<()> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<ConvertibleTo_std_shared_ptr_int__>,
+    ) -> Ptr<ConvertibleTo_std_shared_ptr_int__>;
 }
-impl ConvertibleTo_std_shared_ptr_int__Impl for Ptr<ConvertibleTo_std_shared_ptr_int__> {}
+impl ConvertibleTo_std_shared_ptr_int__Impl for Ptr<ConvertibleTo_std_shared_ptr_int__> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<ConvertibleTo_std_shared_ptr_int__>,
+    ) -> Ptr<ConvertibleTo_std_shared_ptr_int__> {
+        unimplemented!();
+        return (*self).clone();
+    }
+}
 pub fn __cpp2rust_init_globals() {}

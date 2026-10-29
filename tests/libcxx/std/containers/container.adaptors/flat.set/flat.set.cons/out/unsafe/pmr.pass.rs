@@ -54,37 +54,69 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
-pub unsafe fn operator_eq_0(
-    x: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    y: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-) -> () {
-    return (((*x).it_) == ((*y).it_));
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
 }
-pub unsafe fn operator_ne_1(
+pub unsafe fn operator_ne_0(
     x: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     y: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -113,21 +145,21 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         };
         this
     }
-}
-impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            operator_eq_0(
-                self as *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-                other as *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-            )
-        }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    ) -> *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_));
     }
 }
-impl std::cmp::Eq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -138,6 +170,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
     }
 }
 const _: () = assert!(
@@ -173,7 +223,7 @@ impl cpp20_input_iterator_int_ptr_ {
         return &mut (*self.it_);
     }
 }
-pub unsafe fn base_2(i: *const cpp20_input_iterator_const_int_ptr_) -> *const () {
+pub unsafe fn base_1(i: *const cpp20_input_iterator_const_int_ptr_) -> *const () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -278,16 +328,16 @@ pub struct sentinel_wrapper_cpp20_input_iterator_const_int_ptr__ {
 impl sentinel_wrapper_cpp20_input_iterator_const_int_ptr__ {
     pub unsafe fn new_1(it: *const cpp20_input_iterator_const_int_ptr_) -> Self {
         let mut this = Self {
-            base_: (unsafe { base_2(it) }),
+            base_: (unsafe { base_1(it) }),
         };
         this
     }
     pub unsafe fn operator_eq(&self, other: *const cpp20_input_iterator_const_int_ptr_) -> () {
         {}
-        return ((self.base_) == (unsafe { base_2(other) }));
+        return ((self.base_) == (unsafe { base_1(other) }));
     }
 }
-pub unsafe fn operator_eq_3(
+pub unsafe fn operator_eq_2(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -302,7 +352,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_3(
+            operator_eq_2(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -324,33 +374,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_4(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_3(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_4(_i, n)
+        operator_add_3(_i, n)
     });
 }
-pub unsafe fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -434,7 +484,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -444,7 +494,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -562,21 +612,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_10: std::cell::LazyCell<()> =
+pub static mut destructed_value_9: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_11: std::cell::LazyCell<()> =
+pub static mut moved_value_10: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_12(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_11(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_13(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_12(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_12(_x, _y)
+        operator_eq_11(_x, _y)
     });
 }
 #[repr(C)]
@@ -640,8 +690,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -662,7 +712,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_12(
+            operator_eq_11(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -712,7 +762,7 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-pub unsafe fn operator_eq_14(a: *const test_less_int_, b: *const test_less_int_) -> () {
+pub unsafe fn operator_eq_13(a: *const test_less_int_, b: *const test_less_int_) -> () {
     return (((*a).data_) == ((*b).data_));
 }
 #[repr(C)]
@@ -736,7 +786,7 @@ impl test_less_int_ {
 impl std::cmp::PartialEq for test_less_int_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_14(
+            operator_eq_13(
                 self as *const test_less_int_,
                 other as *const test_less_int_,
             )
@@ -749,14 +799,17 @@ impl Default for test_less_int_ {
         unsafe { test_less_int_::new_1() }
     }
 }
-pub unsafe fn test_15() {
+pub unsafe fn test_14() {
     {
         let mut mr: () = unimplemented!();
         let mut pa: () = unimplemented!();
-        let mut m1: () = unimplemented!();
+        let mut m1 : () = std_flat_set_int__std_less_int___std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_1 ( { & pa } , )  ;
         unimplemented!();
         unimplemented!();
-        let mut m2: () = unimplemented!();
+        let mut m2: () = {
+            let mut __tmp_0: *mut () = (&mut mr as *mut ());
+            std_flat_set_int__std_less_int___std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_2 ( { & mut __tmp_0 } , )
+        };
         unimplemented!();
         unimplemented!();
     }
@@ -782,29 +835,46 @@ pub unsafe fn test_15() {
     {
         let mut mr1: () = unimplemented!();
         let mut mr2: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_1: test_less_int_ = test_less_int_::new_2({ 5_() });
+            let mut __tmp_2: *mut () = (&mut mr1 as *mut ());
+            std_flat_set_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_1 } , { & mut __tmp_2 } , )
+        };
+        let mut m: () = {
+            let mut __tmp_3: *mut () = (&mut mr2 as *mut ());
+            std_flat_set_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_2 ( { & mo } , { & mut __tmp_3 } , )
+        };
         unimplemented!();
-        let mut keys: () = (unsafe { m.extract() });
+        let mut keys: () = (unsafe {
+            ( m as std__Flat_set_impl_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys2: () = (unsafe { mo.extract() });
+        let mut keys2: () = (unsafe {
+            ( mo as std__Flat_set_impl_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
         unimplemented!();
     }
     {
         let mut vs: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut m : () = std_flat_set_int__std_less_void___std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_1 ( { unimplemented!() } , None , )  ;
         unimplemented!();
         unimplemented!();
     }
     {
         let mut mr1: () = unimplemented!();
         let mut mr2: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_4: *mut () = (&mut mr1 as *mut ());
+            std_flat_set_int__std_less_void___std_deque_int__std_pmr_polymorphic_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_4 } , )
+        };
+        let mut m: () = {
+            let mut __tmp_5: *mut () = (&mut mr2 as *mut ());
+            std_flat_set_int__std_less_void___std_deque_int__std_pmr_polymorphic_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_5 } , )
+        };
+        m = (mo).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -812,15 +882,23 @@ pub unsafe fn test_15() {
     }
     {
         let mut mr: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_6: test_less_int_ = test_less_int_::new_2({ 5_() });
+            let mut __tmp_7: *mut () = (&mut mr as *mut ());
+            std_flat_set_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_6 } , { & mut __tmp_7 } , )
+        };
+        let mut m: () = mo.clone();
         unimplemented!();
         unimplemented!();
-        let mut ks: () = (unsafe { m.extract() });
+        let mut ks: () = (unsafe {
+            ( m as std__Flat_set_impl_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut kso: () = (unsafe { mo.extract() });
+        let mut kso: () = (unsafe {
+            ( mo as std__Flat_set_impl_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____false_ ) . extract   ( )
+        });
         unimplemented!();
     }
     {
@@ -862,8 +940,15 @@ pub unsafe fn test_15() {
         let mut expected: [(); 3] = [1_(), 2_(), 3_()];
         let mut mr1: () = unimplemented!();
         let mut mr2: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_8: test_less_int_ = test_less_int_::new_2({ 5_() });
+            let mut __tmp_9: *mut () = (&mut mr1 as *mut ());
+            std_flat_set_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_8 } , { & mut __tmp_9 } , )
+        };
+        let mut m: () = {
+            let mut __tmp_10: *mut () = (&mut mr2 as *mut ());
+            std_flat_set_int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int___ :: new_3 ( { & mut mo } , { & mut __tmp_10 } , )
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -874,16 +959,22 @@ pub unsafe fn test_15() {
     }
     {
         let mut vs: () = unimplemented!();
-        let mut m: () = unimplemented!();
+        let mut m : () = std_flat_set_int__std_less_void___std_deque_int__std_pmr_polymorphic_allocator_int___ :: new_2 ( { unimplemented!() } , None , )  ;
         unimplemented!();
         unimplemented!();
     }
     {
         let mut mr1: () = unimplemented!();
         let mut mr2: () = unimplemented!();
-        let mut mo: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
+        let mut mo: () = {
+            let mut __tmp_11: *mut () = (&mut mr1 as *mut ());
+            std_flat_set_std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char____std_less_void___std_vector_std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char____std_pmr_polymorphic_allocator_std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char_____ :: new_1 ( { unimplemented!() } , { & mut __tmp_11 } , )
+        };
+        let mut m: () = {
+            let mut __tmp_12: *mut () = (&mut mr2 as *mut ());
+            std_flat_set_std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char____std_less_void___std_vector_std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char____std_pmr_polymorphic_allocator_std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char_____ :: new_1 ( { unimplemented!() } , { & mut __tmp_12 } , )
+        };
+        m = (mo).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -979,10 +1070,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_15() });
+    (unsafe { test_14() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_10);
-    std::cell::LazyCell::force(&*&raw const moved_value_11);
+    std::cell::LazyCell::force(&*&raw const destructed_value_9);
+    std::cell::LazyCell::force(&*&raw const moved_value_10);
 }

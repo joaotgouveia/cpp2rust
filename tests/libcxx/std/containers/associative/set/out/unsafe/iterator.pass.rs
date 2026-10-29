@@ -181,7 +181,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
-        let mut k: () = i.clone();
+        let mut k: () = unimplemented!();
         unimplemented!();
         let mut j: () = 1_();
         'loop_: while ((j) <= (unimplemented!())) {

@@ -193,11 +193,7 @@ impl BoolWithPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -240,11 +236,7 @@ impl IntWithoutPadding {
             val_: unimplemented!(),
         };
         {
-            (unsafe {
-                let ___s: () = (&raw mut this as ());
-                let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         this.val_ = val;
         this
@@ -289,7 +281,7 @@ pub struct CheckForInvalidWritesBaseImpl_true__true_ {}
 pub struct CheckForInvalidWritesBaseImpl_false__true_ {}
 const _: () = assert!(!(false), "!EmplaceNoexcept<int>");
 const _: () = assert!(true, "EmplaceNoexcept<std::expected<void, int>>");
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_2() -> () {
     {
         let mut e: () = unimplemented!();
         unimplemented!();
@@ -320,7 +312,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_3() });
+    (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

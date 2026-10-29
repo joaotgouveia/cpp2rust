@@ -24,10 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "std::is_enum<E>::value");;
-    const _: () = assert!(
-        true,
-        "std::is_same<std::underlying_type<E>::type, unsigned char>::value"
-    );;
+    const _: () = assert!(true, "");;
     const _: () = assert!(
         true,
         "E::auto_format   != E::native_format &&\n          E::auto_format   != E::generic_format &&\n          E::native_format != E::generic_format"

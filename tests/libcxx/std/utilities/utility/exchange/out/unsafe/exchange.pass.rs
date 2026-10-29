@@ -16,8 +16,8 @@ pub unsafe fn test_constexpr_0() -> () {
     }
     if ((67_())
         != (unsafe {
-            let mut ___new_value: () = unimplemented!();
-            exchange_1(&mut v, &mut ___new_value)
+            let mut ___new_val: () = unimplemented!();
+            exchange_1(&mut v, &mut ___new_val)
         }))
         || ((v) != (0_()))
     {

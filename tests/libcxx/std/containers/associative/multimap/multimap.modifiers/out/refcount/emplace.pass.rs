@@ -37,65 +37,16 @@ impl Emplaceable {
         __this
     }
 }
-impl std::cmp::Ord for Emplaceable {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if EmplaceableImpl::operator_lt(
-                &Rc::new(RefCell::new(Emplaceable {
-                    int_: self.int_.clone(),
-                    double_: self.double_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Emplaceable {
-                    int_: other.int_.clone(),
-                    double_: other.double_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if EmplaceableImpl::operator_lt(
-                &Rc::new(RefCell::new(Emplaceable {
-                    int_: other.int_.clone(),
-                    double_: other.double_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Emplaceable {
-                    int_: self.int_.clone(),
-                    double_: self.double_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Emplaceable {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        EmplaceableImpl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Emplaceable {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Emplaceable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        EmplaceableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for Emplaceable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            EmplaceableImpl::operator_eq(
-                &Rc::new(RefCell::new(Emplaceable {
-                    int_: self.int_.clone(),
-                    double_: self.double_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Emplaceable {
-                    int_: other.int_.clone(),
-                    double_: other.double_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for Emplaceable {}
 impl Default for Emplaceable {
     fn default() -> Self {
         { Emplaceable::new_1() }
@@ -120,59 +71,16 @@ impl DefaultOnly {
         __this
     }
 }
-impl std::cmp::Ord for DefaultOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_2(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_2(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for DefaultOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for DefaultOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for DefaultOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for DefaultOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for DefaultOnly {}
 impl Default for DefaultOnly {
     fn default() -> Self {
         { DefaultOnly::new() }
@@ -217,17 +125,7 @@ pub struct min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_u
     #[byte_size(8)]
     ptr_: Ptr<()>,
 }
-impl min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_unsigned_long__0__ {
-    fn new_1(mut p: Ptr<()>) -> Self {
-        Self { ptr_: (p).clone() }
-    }
-    pub fn pointer_to(
-        t: Ptr<()>,
-    ) -> min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_unsigned_long__0__
-    {
-        return min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
-    }
-}
+impl min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -243,17 +141,7 @@ pub struct min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_u
     #[byte_size(8)]
     ptr_: Ptr<()>,
 }
-impl min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_unsigned_long__0__ {
-    fn new_1(mut p: Ptr<()>) -> Self {
-        Self { ptr_: (p).clone() }
-    }
-    pub fn pointer_to(
-        t: Ptr<()>,
-    ) -> min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_unsigned_long__0__
-    {
-        return min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
-    }
-}
+impl min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
@@ -261,16 +149,7 @@ pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsign
     #[byte_size(8)]
     ptr_: Ptr<()>,
 }
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    fn new_1(mut p: Ptr<()>) -> Self {
-        Self { ptr_: (p).clone() }
-    }
-    pub fn pointer_to(
-        t: Ptr<()>,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
-    }
-}
+impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__DefaultOnly__ {}
@@ -517,7 +396,9 @@ pub trait min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_un
     fn operator_deref(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()>;
+    fn operator_arrow(&self) -> Ptr<()> {
+        unimplemented!()
+    }
     fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_unsigned_long__0__>
@@ -579,9 +460,6 @@ pub trait min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_un
 impl min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_std_pair_const_int__DefaultOnly___std_integral_constant_unsigned_long__0__>
 {
-    fn operator_arrow(&self) -> Ptr<()> {
-        return (*self).with(|__s| __s.ptr_.clone());
-    }
 }
 pub trait min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_unsigned_long__0__Impl
 {
@@ -591,7 +469,9 @@ pub trait min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_un
     fn operator_deref(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()>;
+    fn operator_arrow(&self) -> Ptr<()> {
+        unimplemented!()
+    }
     fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_unsigned_long__0__>
@@ -653,9 +533,6 @@ pub trait min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_un
 impl min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_std_pair_const_int__Emplaceable___std_integral_constant_unsigned_long__0__>
 {
-    fn operator_arrow(&self) -> Ptr<()> {
-        return (*self).with(|__s| __s.ptr_.clone());
-    }
 }
 pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
@@ -664,7 +541,9 @@ pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigne
     fn operator_deref(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()>;
+    fn operator_arrow(&self) -> Ptr<()> {
+        unimplemented!()
+    }
     fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
@@ -722,9 +601,6 @@ pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigne
 impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
 {
-    fn operator_arrow(&self) -> Ptr<()> {
-        return (*self).with(|__s| __s.ptr_.clone());
-    }
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {

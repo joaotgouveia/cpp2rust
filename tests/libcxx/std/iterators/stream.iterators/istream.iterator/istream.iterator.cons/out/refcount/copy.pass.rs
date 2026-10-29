@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> () {
     let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).clone()));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return true;
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
@@ -56,7 +56,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).clone()));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(
             true,
@@ -65,7 +65,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).clone()));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(
             true,
@@ -75,7 +75,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).clone()));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut j: () = 0_();
         j = (unimplemented!().read());

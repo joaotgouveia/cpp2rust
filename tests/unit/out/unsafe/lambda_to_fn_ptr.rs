@@ -6,34 +6,34 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn apply_0(mut x: i32, mut fn_: Option<unsafe fn(i32) -> i32>) -> i32 {
+pub unsafe fn apply_0(mut x: (), mut fn_: Option<unsafe fn(()) -> ()>) -> () {
     return (unsafe { (fn_).unwrap()(x) });
 }
-pub unsafe fn call_nttp_1(mut x: i32) -> i32 {
+pub unsafe fn call_nttp_1(mut x: ()) -> () {
     return (unsafe {
-        (Some(|mut x: i32| -> i32 {
+        (Some(|mut x: ()| -> () {
             unsafe {
-                return ((x) - (1));
+                return ((x) - (1_()));
             }
         }))
         .unwrap()(x)
     });
 }
-pub unsafe fn call_nttp_2(mut x: i32) -> i32 {
+pub unsafe fn call_nttp_2(mut x: ()) -> () {
     return (unsafe {
-        (Some(|mut x: i32| -> i32 {
+        (Some(|mut x: ()| -> () {
             unsafe {
-                return ((x) * (10));
+                return ((x) * (10_()));
             }
         }))
         .unwrap()(x)
     });
 }
-pub unsafe fn call_nttp_3(mut x: i32) -> i32 {
+pub unsafe fn call_nttp_3(mut x: ()) -> () {
     return (unsafe {
-        FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+        FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
             unsafe {
-                return ((x) + (100));
+                return ((x) + (100_()));
             }
         })
         .call(x)
@@ -45,63 +45,52 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut fresh: Option<unsafe fn(i32) -> i32> = Some(|mut x: i32| -> i32 {
+unsafe fn main_0() -> () {
+    let mut fresh: Option<unsafe fn(()) -> ()> = Some(|mut x: ()| -> () {
         unsafe {
             return -x;
         }
     });
-    assert!(((unsafe { (fresh).unwrap()(5,) }) == (-5_i32)));
-    let mut twice: FnPtr<fn(i32) -> i32> = FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+    unimplemented!();
+    let mut twice: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
         unsafe {
-            return ((x) * (2));
+            return ((x) * (2_()));
         }
     });
-    let mut named: Option<unsafe fn(i32) -> i32> = Some(|mut x: i32| -> i32 {
+    let mut named: Option<unsafe fn(()) -> ()> = Some(|mut x: ()| -> () {
         unsafe {
-            return ((x) * (2));
+            return ((x) * (2_()));
         }
     });
-    assert!(((unsafe { (named).unwrap()(5,) }) == (10)));
-    assert!(
-        ((unsafe {
-            apply_0(
-                5,
-                Some(|mut x: i32| -> i32 {
-                    unsafe {
-                        return ((x) * (2));
-                    }
-                }),
-            )
-        }) == (10))
-    );
+    unimplemented!();
+    unimplemented!();
     named = fresh;
-    assert!(((unsafe { (named).unwrap()(3,) }) == (-3_i32)));
-    let mut p: Option<unsafe fn(i32) -> i32> = Some(|mut x: i32| -> i32 {
+    unimplemented!();
+    let mut p: Option<unsafe fn(()) -> ()> = Some(|mut x: ()| -> () {
         unsafe {
-            return ((x) * (3));
+            return ((x) * (3_()));
         }
     });
-    assert!(((unsafe { (p).unwrap()(2,) }) == (6)));
-    assert!(((unsafe { call_nttp_1(5,) }) == (4)));
-    assert!(((unsafe { call_nttp_2(5,) }) == (50)));
-    assert!(((unsafe { call_nttp_3(5,) }) == (105)));
-    let mut sum: FnPtr<fn(i32, Box<[VaArg]>) -> i32> =
-        FnPtr::<fn(i32, Box<[VaArg]>) -> i32>::new(|mut n: i32, __args: Box<[VaArg]>| -> i32 {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut sum: FnPtr<fn((), Box<[VaArg]>) -> ()> =
+        FnPtr::<fn((), Box<[VaArg]>) -> ()>::new(|mut n: (), __args: Box<[VaArg]>| -> () {
             unsafe {
                 let mut ap: *const VaArg = ::std::ptr::null();
                 ap = __args.as_ptr();
-                let mut s: i32 = 0;
-                let mut i: i32 = 0;
+                let mut s: () = 0_();
+                let mut i: () = 0_();
                 'loop_: while ((i) < (n)) {
-                    s += ap.arg::<i32>();
+                    s += ap.arg::<()>();
                     i.postfix_inc();
                 }
                 return s;
             }
         });
-    assert!(((unsafe { sum.call(2, Box::new([(5).into(), (5).into(),])) }) == (10)));
-    assert!(((unsafe { sum.call(3, Box::new([(1).into(), (2).into(), (3).into(),])) }) == (6)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

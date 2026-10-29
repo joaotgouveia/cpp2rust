@@ -23,19 +23,19 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
     unimplemented!();

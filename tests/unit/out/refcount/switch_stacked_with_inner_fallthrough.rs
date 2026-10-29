@@ -6,17 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn stacked_with_inner_fallthrough_0(mut x: i32, mut flag: i32) -> i32 {
-    let mut r: i32 = 0;
+pub fn stacked_with_inner_fallthrough_0(mut x: (), mut flag: ()) -> () {
+    let mut r: () = 0_();
     switch!(match x {
-        __v if __v == 1 || __v == 2 || __v == 3 => {
+        __v if __v == 1_() || __v == 2_() || __v == 3_() => {
             if !(flag != 0) {
-                r = 50;
+                r = 50_();
                 break;
             };
         }
         _ => {
-            r = 999;
+            r = 999_();
             break;
         }
     });
@@ -26,10 +26,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ stacked_with_inner_fallthrough_0(1, 0,) }) == 50));
-    assert!((({ stacked_with_inner_fallthrough_0(2, 1,) }) == 999));
-    assert!((({ stacked_with_inner_fallthrough_0(99, 0,) }) == 999));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

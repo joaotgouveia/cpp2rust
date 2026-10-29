@@ -81,37 +81,37 @@ pub struct test_macros_detail_is_same_const_std_ranges_empty_view_BigType__ref__
 pub unsafe fn testType_12() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut v: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut empty_13)).clone();
+    let mut v: () = unimplemented!().clone();
+    unimplemented!();
+}
+pub unsafe fn testType_13() {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let mut v: () = unimplemented!().clone();
     unimplemented!();
 }
 pub unsafe fn testType_14() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut v: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut empty_15)).clone();
+    let mut v: () = unimplemented!().clone();
+    unimplemented!();
+}
+pub unsafe fn testType_15() {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let mut v: () = unimplemented!().clone();
     unimplemented!();
 }
 pub unsafe fn testType_16() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut v: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut empty_17)).clone();
+    let mut v: () = unimplemented!().clone();
     unimplemented!();
 }
-pub unsafe fn testType_18() {
+pub unsafe fn testType_17() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut v: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut empty_19)).clone();
-    unimplemented!();
-}
-pub unsafe fn testType_20() {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let mut v: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut empty_21)).clone();
-    unimplemented!();
-}
-pub unsafe fn testType_22() {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let mut v: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut empty_23)).clone();
+    let mut v: () = unimplemented!().clone();
     unimplemented!();
 }
 #[repr(C)]
@@ -122,13 +122,13 @@ pub struct Empty {}
 pub struct BigType {
     pub buff: [(); 8],
 }
-pub unsafe fn test_24() -> () {
+pub unsafe fn test_18() -> () {
     (unsafe { testType_12() });
+    (unsafe { testType_13() });
     (unsafe { testType_14() });
+    (unsafe { testType_15() });
     (unsafe { testType_16() });
-    (unsafe { testType_18() });
-    (unsafe { testType_20() });
-    (unsafe { testType_22() });
+    (unsafe { testType_17() });
     return true;
 }
 pub fn main() {
@@ -147,7 +147,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_24() });
+    (unsafe { test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

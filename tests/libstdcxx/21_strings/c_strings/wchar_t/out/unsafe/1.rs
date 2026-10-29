@@ -28,28 +28,16 @@ pub unsafe fn test01_0() {
     ]
     .as_ptr();
     let mut carray: [(); 50] = [unimplemented!(); 50];
-    (unsafe { wcscpy_1(carray.as_mut_ptr(), ccarray1) });
-    cc1 = (unsafe {
-        let ___wcs: *const () = ccarray1;
-        wcschr_2(___wcs, (99 as ()))
-    })
-    .cast_const();
+    unimplemented!();
+    cc1 = (unimplemented!()).cast_const();
     c1 = unimplemented!();
-    cc1 = (unsafe { wcspbrk_3(ccarray1, ccarray2) }).cast_const();
+    cc1 = (unimplemented!()).cast_const();
     c1 = unimplemented!();
-    cc1 = (unsafe {
-        let ___wcs: *const () = ccarray1;
-        wcsrchr_4(___wcs, (99 as ()))
-    })
-    .cast_const();
+    cc1 = (unimplemented!()).cast_const();
     c1 = unimplemented!();
-    cc1 = (unsafe { wcsstr_5(ccarray1, ccarray2) }).cast_const();
+    cc1 = (unimplemented!()).cast_const();
     c1 = unimplemented!();
-    cc1 = (unsafe {
-        let ___s: *const () = ccarray1;
-        wmemchr_6(___s, (97 as ()), 3_())
-    })
-    .cast_const();
+    cc1 = (unimplemented!()).cast_const();
     c1 = unimplemented!();
     cc1 = cc1;
     c1 = c1;

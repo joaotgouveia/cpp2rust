@@ -7,30 +7,30 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static alive_0: Value<i32> = Rc::new(RefCell::new(0));
+    pub static alive_0: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static copies_1: Value<i32> = Rc::new(RefCell::new(0));
+    pub static copies_1: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
 #[byte_size(20)]
 pub struct Buffer {
     #[offset(0)]
     #[byte_size(16)]
-    pub data: Box<[i32]>,
+    pub data: Box<[()]>,
     #[offset(16)]
-    pub size: i32,
+    pub size: (),
 }
 impl Buffer {
-    pub fn new(mut size: i32) -> Self {
+    pub fn new(mut size: ()) -> Self {
         let __this: Value<Buffer> = Rc::new(RefCell::new(Self {
-            data: (0..4).map(|_| 0_i32).collect::<Box<[i32]>>(),
+            data: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             size: size,
         }));
         let this: Ptr<Buffer> = __this.as_pointer();
-        let mut i: i32 = 0;
-        'loop_: while (i < 4) {
-            array_elem!(this, data, i).write({ if (i < size) { i } else { -1_i32 } });
+        let mut i: () = 0_();
+        'loop_: while (i < 4_()) {
+            array_elem!(this, data, i).write({ if (i < size) { i } else { -1_() } });
             i.prefix_inc();
         }
         (*alive_0.with(Value::clone).borrow_mut()).prefix_inc();
@@ -38,12 +38,12 @@ impl Buffer {
     }
     pub fn copy_from(o: Ptr<Buffer>) -> Self {
         let __this: Value<Buffer> = Rc::new(RefCell::new(Self {
-            data: (0..4).map(|_| 0_i32).collect::<Box<[i32]>>(),
+            data: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             size: o.with(|__s| __s.size),
         }));
         let this: Ptr<Buffer> = __this.as_pointer();
-        let mut i: i32 = 0;
-        'loop_: while (i < 4) {
+        let mut i: () = 0_();
+        'loop_: while (i < 4_()) {
             array_elem!(this, data, i).write({ (array_elem!(o, data, i).read()) });
             i.prefix_inc();
         }
@@ -65,15 +65,15 @@ impl Default for Buffer {
     fn default() -> Self {
         {
             Buffer {
-                data: (0..4).map(|_| 0_i32).collect::<Box<[i32]>>(),
-                size: 0_i32,
+                data: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+                size: unimplemented!(),
             }
         }
     }
 }
-pub fn sum_2(b: Ptr<Buffer>) -> i32 {
-    let mut s: i32 = 0;
-    let mut i: i32 = 0;
+pub fn sum_2(b: Ptr<Buffer>) -> () {
+    let mut s: () = 0_();
+    let mut i: () = 0_();
     'loop_: while ({ i } < { b.with(|__s| __s.size) }) {
         s += (array_elem!(b, data, i).read());
         i.prefix_inc();
@@ -84,44 +84,37 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     {
-        let a: Value<Buffer> = Rc::new(RefCell::new(Buffer::new({ 4 })));
+        let a: Value<Buffer> = Rc::new(RefCell::new(Buffer::new({ 4_() })));
         let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
         let b: Value<Buffer> = Rc::new(RefCell::new(Buffer::copy_from({ a.as_pointer() })));
         let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
-        assert!((alive_0.with(|rc| *rc.borrow()) == 2) && (copies_1.with(|rc| *rc.borrow()) == 1));
-        array_elem!(b.as_pointer(), data, 0).write(100);
-        assert!(((array_elem!(a.as_pointer(), data, 0).read()) == 0));
-        let c: Value<Buffer> = Rc::new(RefCell::new(Buffer::new({ 2 })));
+        unimplemented!();
+        array_elem!(b.as_pointer(), data, 0_()).write(100_());
+        unimplemented!();
+        let c: Value<Buffer> = Rc::new(RefCell::new(Buffer::new({ 2_() })));
         let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
         ({ BufferImpl::copy_assign(&c.as_pointer(), a.as_pointer()) });
-        assert!(
-            ({ (*c.borrow()).size } == 4) && ((array_elem!(c.as_pointer(), data, 3).read()) == 3)
-        );
-        assert!((alive_0.with(|rc| *rc.borrow()) == 3) && (copies_1.with(|rc| *rc.borrow()) == 2));
+        unimplemented!();
+        unimplemented!();
         ({
             let _o: Ptr<Buffer> = c.as_pointer();
             BufferImpl::copy_assign(&c.as_pointer(), _o)
         });
-        assert!((copies_1.with(|rc| *rc.borrow()) == 2));
-        assert!((({ sum_2(a.as_pointer(),) }) == 6));
-        assert!((({ sum_2(b.as_pointer(),) }) == 106));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         let d: Value<Buffer> = Rc::new(RefCell::new(Buffer::copy_from({ a.as_pointer() })));
         let _dtor_d = ScopedDestructor::new(&d, |__p| __p.destructor());
-        assert!((alive_0.with(|rc| *rc.borrow()) == 4) && (copies_1.with(|rc| *rc.borrow()) == 3));
-        assert!(
-            ({ (*a.borrow()).size } == 4) && ((array_elem!(a.as_pointer(), data, 3).read()) == 3)
-        );
+        unimplemented!();
+        unimplemented!();
         ({ BufferImpl::copy_assign(&d.as_pointer(), b.as_pointer()) });
-        assert!((copies_1.with(|rc| *rc.borrow()) == 4));
-        assert!(
-            ((array_elem!(b.as_pointer(), data, 0).read()) == 100)
-                && ((array_elem!(d.as_pointer(), data, 0).read()) == 100)
-        );
+        unimplemented!();
+        unimplemented!();
     }
-    assert!((alive_0.with(|rc| *rc.borrow()) == 0));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub trait BufferImpl {
     fn destructor(&self);
@@ -136,8 +129,8 @@ impl BufferImpl for Ptr<Buffer> {
             return (*self).clone();
         }
         field!((*self), size).write({ o.with(|__s| __s.size) });
-        let mut i: i32 = 0;
-        'loop_: while (i < 4) {
+        let mut i: () = 0_();
+        'loop_: while (i < 4_()) {
             array_elem!((*self), data, i).write({ (array_elem!(o, data, i).read()) });
             i.prefix_inc();
         }

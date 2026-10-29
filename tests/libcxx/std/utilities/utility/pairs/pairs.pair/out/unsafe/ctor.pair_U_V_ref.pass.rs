@@ -359,7 +359,7 @@ impl Default for ConvertibleFrom_X_ {
         unsafe {
             ConvertibleFrom_X_ {
                 v: <X>::default(),
-                alloc_constructed: unimplemented!(),
+                alloc_constructed: false,
             }
         }
     }
@@ -375,7 +375,7 @@ impl Default for ConvertibleFrom_Y_ {
         unsafe {
             ConvertibleFrom_Y_ {
                 v: <Y>::default(),
-                alloc_constructed: unimplemented!(),
+                alloc_constructed: false,
             }
         }
     }
@@ -466,7 +466,7 @@ impl Default for ExplicitConstructibleFrom_Y_ {
         unsafe {
             ExplicitConstructibleFrom_Y_ {
                 v: <Y>::default(),
-                alloc_constructed: unimplemented!(),
+                alloc_constructed: false,
             }
         }
     }
@@ -482,7 +482,7 @@ impl Default for ExplicitConstructibleFrom_X_ {
         unsafe {
             ExplicitConstructibleFrom_X_ {
                 v: <X>::default(),
-                alloc_constructed: unimplemented!(),
+                alloc_constructed: false,
             }
         }
     }

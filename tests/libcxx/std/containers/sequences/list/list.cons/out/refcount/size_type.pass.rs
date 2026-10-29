@@ -25,59 +25,16 @@ impl DefaultOnly {
         __this
     }
 }
-impl std::cmp::Ord for DefaultOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_2(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_2(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for DefaultOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for DefaultOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for DefaultOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for DefaultOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DefaultOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for DefaultOnly {}
 impl Default for DefaultOnly {
     fn default() -> Self {
         { DefaultOnly::new() }
@@ -202,27 +159,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_5(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -358,14 +299,25 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_5__ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct limited_allocator_int__5__rebind_int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(8)]
 pub struct limited_allocator_int__5_ {
     #[offset(0)]
     #[byte_size(8)]
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_5__,
 }
-impl limited_allocator_int__5_ {}
+impl limited_allocator_int__5_ {
+    pub fn new() -> Self {
+        Self {
+            handle_: ({ make_thread_unsafe_shared_7() }),
+        }
+    }
+}
+impl Default for limited_allocator_int__5_ {
+    fn default() -> Self {
+        { limited_allocator_int__5_::new() }
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
@@ -413,40 +365,23 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<()>,
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
 pub struct min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
     ptr_: Ptr<DefaultOnly>,
 }
 impl min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<DefaultOnly>,
-}
-impl min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_eq_12(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-impl std::cmp::PartialEq for min_allocator_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_12(self.clone(), other.clone()) }
+impl CppEq for min_allocator_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_12(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_DefaultOnly_ {}
@@ -758,134 +693,6 @@ pub trait min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__Impl 
 }
 impl min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<DefaultOnly> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<DefaultOnly> {
-        unimplemented!()
-    }
-    fn operator_inc_9(
-        &self,
-    ) -> Ptr<min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_10(
-        &self,
-        mut _a0: (),
-    ) -> min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_11(
-        &self,
-    ) -> Ptr<min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_12(
-        &self,
-        mut _a0: (),
-    ) -> min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: ()) -> Ptr<DefaultOnly> {
-        unimplemented!()
-    }
-}
-impl min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<()> {
-        unimplemented!()
-    }
-    fn operator_inc_9(
-        &self,
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_10(
-        &self,
-        mut _a0: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_11(
-        &self,
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_12(
-        &self,
-        mut _a0: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
-        unimplemented!()
-    }
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>
 {
 }
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {

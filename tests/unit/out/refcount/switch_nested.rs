@@ -6,36 +6,36 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn nested_0(mut a: i32, mut b: i32) -> i32 {
-    let mut r: i32 = 0;
+pub fn nested_0(mut a: (), mut b: ()) -> () {
+    let mut r: () = 0_();
     'switch: {
         match { a } {
-            __v if __v == 1 => {
+            __v if __v == 1_() => {
                 'switch: {
                     match { b } {
-                        __v if __v == 10 => {
-                            r = 11;
+                        __v if __v == 10_() => {
+                            r = 11_();
                             break 'switch;
                         }
-                        __v if __v == 20 => {
-                            r = 12;
+                        __v if __v == 20_() => {
+                            r = 12_();
                             break 'switch;
                         }
                         _ => {
-                            r = 13;
+                            r = 13_();
                             break 'switch;
                         }
                     }
                 };
-                r += 1;
+                r += 1_();
                 break 'switch;
             }
-            __v if __v == 2 => {
-                r = 2;
+            __v if __v == 2_() => {
+                r = 2_();
                 break 'switch;
             }
             _ => {
-                r = -1_i32;
+                r = -1_();
                 break 'switch;
             }
         }
@@ -46,11 +46,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ nested_0(1, 10,) }) == 12));
-    assert!((({ nested_0(1, 99,) }) == 14));
-    assert!((({ nested_0(2, 0,) }) == 2));
-    assert!((({ nested_0(3, 3,) }) == -1_i32));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

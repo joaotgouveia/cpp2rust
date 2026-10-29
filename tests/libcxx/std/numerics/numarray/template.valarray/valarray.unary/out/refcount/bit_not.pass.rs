@@ -32,7 +32,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
@@ -50,7 +50,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ])));
         let mut N: () = (80usize as ()).wrapping_div((16usize as ()));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < N) {
@@ -68,7 +68,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {

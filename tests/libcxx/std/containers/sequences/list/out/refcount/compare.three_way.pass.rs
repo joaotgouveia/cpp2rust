@@ -122,27 +122,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_2(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -167,7 +151,7 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_StrongOrder__rebind_StrongOrder_ {}
-#[derive(Record, ByteRepr, FnPtrArg)]
+#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_StrongOrder_ {
     #[offset(0)]
@@ -183,8 +167,8 @@ impl Default for test_allocator_StrongOrder_ {
     fn default() -> Self {
         {
             test_allocator_StrongOrder_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -193,7 +177,7 @@ impl Default for test_allocator_StrongOrder_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_PartialOrder__rebind_PartialOrder_ {}
-#[derive(Record, ByteRepr, FnPtrArg)]
+#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_PartialOrder_ {
     #[offset(0)]
@@ -209,8 +193,8 @@ impl Default for test_allocator_PartialOrder_ {
     fn default() -> Self {
         {
             test_allocator_PartialOrder_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -1120,59 +1104,16 @@ impl LessAndEqComp {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for LessAndEqComp {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_14(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_14(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for LessAndEqComp {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_14(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for LessAndEqComp {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for LessAndEqComp {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_15(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for LessAndEqComp {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_15(
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(LessAndEqComp {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for LessAndEqComp {}
 pub fn operator_cmp_16(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
@@ -1193,22 +1134,16 @@ impl StrongOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for StrongOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_16(self.clone(), other.clone()) }
+impl CppLess for StrongOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_16(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for StrongOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for StrongOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_16(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for StrongOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_16(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
-    }
-}
-impl std::cmp::Eq for StrongOrder {}
 pub fn operator_cmp_17(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1229,22 +1164,16 @@ impl WeakOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for WeakOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_17(self.clone(), other.clone()) }
+impl CppLess for WeakOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_17(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for WeakOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for WeakOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_17(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for WeakOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_17(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
-    }
-}
-impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_18(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
@@ -1268,22 +1197,16 @@ impl PartialOrder {
         Self { value: v }
     }
 }
-impl std::cmp::Ord for PartialOrder {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_18(self.clone(), other.clone()) }
+impl CppLess for PartialOrder {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_18(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for PartialOrder {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for PartialOrder {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_19(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::PartialEq for PartialOrder {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_19(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for PartialOrder {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonComparable {}
@@ -1309,23 +1232,11 @@ impl EqualityComparable {
         Self { value_: value }
     }
 }
-impl std::cmp::PartialEq for EqualityComparable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_20(
-                Rc::new(RefCell::new(EqualityComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(EqualityComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for EqualityComparable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_20(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for EqualityComparable {}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
@@ -1355,44 +1266,16 @@ impl ThreeWayComparable {
         Self { value_: value }
     }
 }
-impl std::cmp::Ord for ThreeWayComparable {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_22(
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for ThreeWayComparable {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_22(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for ThreeWayComparable {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for ThreeWayComparable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_21(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for ThreeWayComparable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_21(
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: self.value_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(ThreeWayComparable {
-                    value_: other.value_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for ThreeWayComparable {}
 const _: () = assert!(true, "std::equality_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "std::three_way_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "HasOperatorEqual<ThreeWayComparable>");
@@ -1651,16 +1534,14 @@ impl Tag_XImpl for Ptr<Tag_X> {
     }
 }
 pub trait test_allocator_PartialOrder_Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
+    fn destructor(&self);
     fn address_11(&self, x: ()) -> Ptr<PartialOrder> {
         unimplemented!()
     }
     fn address_12(&self, x: ()) -> Ptr<PartialOrder> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<PartialOrder> {
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<PartialOrder> {
         unimplemented!()
     }
     fn deallocate(&self, mut p: Ptr<PartialOrder>, mut s: ()) {
@@ -1679,18 +1560,26 @@ pub trait test_allocator_PartialOrder_Impl {
         unimplemented!()
     }
 }
-impl test_allocator_PartialOrder_Impl for Ptr<test_allocator_PartialOrder_> {}
-pub trait test_allocator_StrongOrder_Impl {
+impl test_allocator_PartialOrder_Impl for Ptr<test_allocator_PartialOrder_> {
     fn destructor(&self) {
-        unimplemented!()
+        unimplemented!();
+        unimplemented!();
+        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+        }
+        field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
     }
+}
+pub trait test_allocator_StrongOrder_Impl {
+    fn destructor(&self);
     fn address_11(&self, x: ()) -> Ptr<StrongOrder> {
         unimplemented!()
     }
     fn address_12(&self, x: ()) -> Ptr<StrongOrder> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<StrongOrder> {
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<StrongOrder> {
         unimplemented!()
     }
     fn deallocate(&self, mut p: Ptr<StrongOrder>, mut s: ()) {
@@ -1709,7 +1598,17 @@ pub trait test_allocator_StrongOrder_Impl {
         unimplemented!()
     }
 }
-impl test_allocator_StrongOrder_Impl for Ptr<test_allocator_StrongOrder_> {}
+impl test_allocator_StrongOrder_Impl for Ptr<test_allocator_StrongOrder_> {
+    fn destructor(&self) {
+        unimplemented!();
+        unimplemented!();
+        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+        }
+        field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
+    }
+}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

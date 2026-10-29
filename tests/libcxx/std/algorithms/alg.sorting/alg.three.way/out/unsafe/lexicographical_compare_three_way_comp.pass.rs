@@ -54,31 +54,75 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 pub unsafe fn operator_eq_0(
     x: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     y: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_1(
+    x: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    y: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -107,6 +151,17 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    ) -> *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
@@ -120,14 +175,20 @@ impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ 
 }
 impl std::cmp::Eq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub unsafe fn operator_eq_1(
+pub unsafe fn operator_eq_2(
     x: *const forward_iterator_const_int_ptr_,
     y: *const forward_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_3(
+    x: *const forward_iterator_const_int_ptr_,
+    y: *const forward_iterator_const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -154,11 +215,22 @@ impl forward_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_const_int_ptr_,
+    ) -> *mut forward_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_1(
+            operator_eq_2(
                 self as *const forward_iterator_const_int_ptr_,
                 other as *const forward_iterator_const_int_ptr_,
             )
@@ -166,14 +238,20 @@ impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
-pub unsafe fn operator_eq_2(
+pub unsafe fn operator_eq_4(
     x: *const bidirectional_iterator_const_int_ptr_,
     y: *const bidirectional_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_5(
+    x: *const bidirectional_iterator_const_int_ptr_,
+    y: *const bidirectional_iterator_const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct bidirectional_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -200,11 +278,22 @@ impl bidirectional_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut bidirectional_iterator_const_int_ptr_,
+    ) -> *mut bidirectional_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut bidirectional_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_2(
+            operator_eq_4(
                 self as *const bidirectional_iterator_const_int_ptr_,
                 other as *const bidirectional_iterator_const_int_ptr_,
             )
@@ -212,20 +301,20 @@ impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
     }
 }
 impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
-pub unsafe fn operator_sub_3(
-    mut x: random_access_iterator_const_int_ptr_,
-    mut y: random_access_iterator_const_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_eq_4(
+pub unsafe fn operator_eq_6(
     x: *const random_access_iterator_const_int_ptr_,
     y: *const random_access_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_7(
+    x: *const random_access_iterator_const_int_ptr_,
+    y: *const random_access_iterator_const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -252,11 +341,22 @@ impl random_access_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut random_access_iterator_const_int_ptr_,
+    ) -> *mut random_access_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut random_access_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_4(
+            operator_eq_6(
                 self as *const random_access_iterator_const_int_ptr_,
                 other as *const random_access_iterator_const_int_ptr_,
             )
@@ -265,7 +365,7 @@ impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
 }
 impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -277,25 +377,43 @@ impl cpp20_random_access_iterator_int_ptr_ {
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
     }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
+    }
 }
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub unsafe fn operator_sub_5(
-    mut x: contiguous_iterator_const_int_ptr_,
-    mut y: contiguous_iterator_const_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_eq_6(
+pub unsafe fn operator_eq_8(
     x: *const contiguous_iterator_const_int_ptr_,
     y: *const contiguous_iterator_const_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
+pub unsafe fn operator_ne_9(
+    x: *const contiguous_iterator_const_int_ptr_,
+    y: *const contiguous_iterator_const_int_ptr_,
+) -> () {
+    return (((*x).it_) != ((*y).it_));
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_const_int_ptr_ {
     it_: *const (),
     tracker_: support_double_move_tracker,
@@ -322,11 +440,22 @@ impl contiguous_iterator_const_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut contiguous_iterator_const_int_ptr_,
+    ) -> *mut contiguous_iterator_const_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut contiguous_iterator_const_int_ptr_));
+    }
 }
 impl std::cmp::PartialEq for contiguous_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_6(
+            operator_eq_8(
                 self as *const contiguous_iterator_const_int_ptr_,
                 other as *const contiguous_iterator_const_int_ptr_,
             )
@@ -417,7 +546,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub unsafe fn operator_eq_7(
+pub unsafe fn operator_eq_10(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -432,7 +561,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_7(
+            operator_eq_10(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -454,33 +583,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_8(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_11(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_12(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_8(_i, n)
+        operator_add_11(_i, n)
     });
 }
-pub unsafe fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -564,7 +693,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -574,7 +703,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -642,7 +771,7 @@ impl util_iterator_error {
         this
     }
 }
-pub static mut compare_last_digit_strong_14: std::cell::LazyCell<FnPtr<fn((), ()) -> ()>> =
+pub static mut compare_last_digit_strong_17: std::cell::LazyCell<FnPtr<fn((), ()) -> ()>> =
     std::cell::LazyCell::new(|| unsafe {
         FnPtr::<fn((), ()) -> ()>::new(|mut a: (), mut b: ()| -> () {
             unsafe {
@@ -650,7 +779,7 @@ pub static mut compare_last_digit_strong_14: std::cell::LazyCell<FnPtr<fn((), ()
             }
         })
     });
-pub static mut compare_last_digit_weak_15: std::cell::LazyCell<FnPtr<fn((), ()) -> ()>> =
+pub static mut compare_last_digit_weak_18: std::cell::LazyCell<FnPtr<fn((), ()) -> ()>> =
     std::cell::LazyCell::new(|| unsafe {
         FnPtr::<fn((), ()) -> ()>::new(|mut a: (), mut b: ()| -> () {
             unsafe {
@@ -658,7 +787,7 @@ pub static mut compare_last_digit_weak_15: std::cell::LazyCell<FnPtr<fn((), ()) 
             }
         })
     });
-pub static mut compare_last_digit_partial_16: std::cell::LazyCell<FnPtr<fn((), ()) -> ()>> =
+pub static mut compare_last_digit_partial_19: std::cell::LazyCell<FnPtr<fn((), ()) -> ()>> =
     std::cell::LazyCell::new(|| unsafe {
         FnPtr::<fn((), ()) -> ()>::new(|mut a: (), mut b: ()| -> () {
             unsafe {
@@ -669,7 +798,7 @@ pub static mut compare_last_digit_partial_16: std::cell::LazyCell<FnPtr<fn((), (
             }
         })
     });
-pub static mut compare_int_result_17: std::cell::LazyCell<FnPtr<fn((), ()) -> ()>> =
+pub static mut compare_int_result_20: std::cell::LazyCell<FnPtr<fn((), ()) -> ()>> =
     std::cell::LazyCell::new(|| unsafe {
         FnPtr::<fn((), ()) -> ()>::new(|mut a: (), mut b: ()| -> () {
             unsafe {
@@ -700,33 +829,6 @@ const _: () = assert!(
     true,
     "has_lexicographical_compare<decltype(compare_int_result)>"
 );
-pub unsafe fn test_lexicographical_compare_18(
-    mut a: (),
-    mut b: (),
-    mut comp: FnPtr<fn((), ()) -> ()>,
-    mut expected: (),
-) {
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_lexicographical_compare_19(
-    mut a: (),
-    mut b: (),
-    mut comp: FnPtr<fn((), ()) -> ()>,
-    mut expected: (),
-) {
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_lexicographical_compare_20(
-    mut a: (),
-    mut b: (),
-    mut comp: FnPtr<fn((), ()) -> ()>,
-    mut expected: (),
-) {
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
 pub unsafe fn test_lexicographical_compare_21(
     mut a: (),
     mut b: (),
@@ -3418,57 +3520,36 @@ pub unsafe fn test_lexicographical_compare_319(
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_given_iterator_types_320() {
+pub unsafe fn test_lexicographical_compare_320(
+    mut a: (),
+    mut b: (),
+    mut comp: FnPtr<fn((), ()) -> ()>,
+    mut expected: (),
+) {
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_lexicographical_compare_321(
+    mut a: (),
+    mut b: (),
+    mut comp: FnPtr<fn((), ()) -> ()>,
+    mut expected: (),
+) {
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_lexicographical_compare_322(
+    mut a: (),
+    mut b: (),
+    mut comp: FnPtr<fn((), ()) -> ()>,
+    mut expected: (),
+) {
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_given_iterator_types_323() {
     let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
-    (unsafe {
-        test_lexicographical_compare_18(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_19(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_20(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_21(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_21(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_21(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_21(
             unimplemented!(),
@@ -3494,17 +3575,29 @@ pub unsafe fn test_given_iterator_types_320() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_21(
+        test_lexicographical_compare_24(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_321() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_24(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_24(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_24(
             unimplemented!(),
@@ -3530,29 +3623,17 @@ pub unsafe fn test_given_iterator_types_321() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_27(
+        test_lexicographical_compare_24(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_27(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_27(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_324() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_27(
             unimplemented!(),
@@ -3578,17 +3659,29 @@ pub unsafe fn test_given_iterator_types_321() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_27(
+        test_lexicographical_compare_30(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_322() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_30(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_30(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_30(
             unimplemented!(),
@@ -3614,29 +3707,17 @@ pub unsafe fn test_given_iterator_types_322() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_33(
+        test_lexicographical_compare_30(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_33(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_33(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_325() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_33(
             unimplemented!(),
@@ -3662,17 +3743,29 @@ pub unsafe fn test_given_iterator_types_322() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_33(
+        test_lexicographical_compare_36(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_323() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_36(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_36(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_36(
             unimplemented!(),
@@ -3698,29 +3791,17 @@ pub unsafe fn test_given_iterator_types_323() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_39(
+        test_lexicographical_compare_36(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_39(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_39(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_326() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_39(
             unimplemented!(),
@@ -3746,17 +3827,29 @@ pub unsafe fn test_given_iterator_types_323() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_39(
+        test_lexicographical_compare_42(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_324() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_42(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_42(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_42(
             unimplemented!(),
@@ -3782,29 +3875,17 @@ pub unsafe fn test_given_iterator_types_324() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_45(
+        test_lexicographical_compare_42(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_45(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_45(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_327() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_45(
             unimplemented!(),
@@ -3830,17 +3911,29 @@ pub unsafe fn test_given_iterator_types_324() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_45(
+        test_lexicographical_compare_48(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_325() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_48(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_48(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_48(
             unimplemented!(),
@@ -3866,29 +3959,17 @@ pub unsafe fn test_given_iterator_types_325() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_51(
+        test_lexicographical_compare_48(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_51(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_51(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_328() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_51(
             unimplemented!(),
@@ -3914,17 +3995,29 @@ pub unsafe fn test_given_iterator_types_325() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_51(
+        test_lexicographical_compare_54(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_326() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_54(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_54(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_54(
             unimplemented!(),
@@ -3950,29 +4043,17 @@ pub unsafe fn test_given_iterator_types_326() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_57(
+        test_lexicographical_compare_54(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_57(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_57(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_329() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_57(
             unimplemented!(),
@@ -3998,17 +4079,29 @@ pub unsafe fn test_given_iterator_types_326() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_57(
+        test_lexicographical_compare_60(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_327() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_60(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_60(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_60(
             unimplemented!(),
@@ -4034,29 +4127,17 @@ pub unsafe fn test_given_iterator_types_327() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_63(
+        test_lexicographical_compare_60(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_63(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_63(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_330() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_63(
             unimplemented!(),
@@ -4082,17 +4163,29 @@ pub unsafe fn test_given_iterator_types_327() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_63(
+        test_lexicographical_compare_66(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_328() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_66(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_66(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_66(
             unimplemented!(),
@@ -4118,29 +4211,17 @@ pub unsafe fn test_given_iterator_types_328() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_69(
+        test_lexicographical_compare_66(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_69(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_69(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_331() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_69(
             unimplemented!(),
@@ -4166,17 +4247,29 @@ pub unsafe fn test_given_iterator_types_328() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_69(
+        test_lexicographical_compare_72(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_329() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_72(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_72(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_72(
             unimplemented!(),
@@ -4202,29 +4295,17 @@ pub unsafe fn test_given_iterator_types_329() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_75(
+        test_lexicographical_compare_72(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_75(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_75(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_332() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_75(
             unimplemented!(),
@@ -4250,17 +4331,29 @@ pub unsafe fn test_given_iterator_types_329() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_75(
+        test_lexicographical_compare_78(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_330() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_78(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_78(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_78(
             unimplemented!(),
@@ -4286,29 +4379,17 @@ pub unsafe fn test_given_iterator_types_330() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_81(
+        test_lexicographical_compare_78(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_81(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_81(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_333() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_81(
             unimplemented!(),
@@ -4334,17 +4415,29 @@ pub unsafe fn test_given_iterator_types_330() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_81(
+        test_lexicographical_compare_84(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_331() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_84(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_84(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_84(
             unimplemented!(),
@@ -4370,29 +4463,17 @@ pub unsafe fn test_given_iterator_types_331() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_87(
+        test_lexicographical_compare_84(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_87(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_87(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_334() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_87(
             unimplemented!(),
@@ -4418,17 +4499,29 @@ pub unsafe fn test_given_iterator_types_331() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_87(
+        test_lexicographical_compare_90(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_332() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_90(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_90(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_90(
             unimplemented!(),
@@ -4454,29 +4547,17 @@ pub unsafe fn test_given_iterator_types_332() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_93(
+        test_lexicographical_compare_90(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_93(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_93(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_335() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_93(
             unimplemented!(),
@@ -4502,17 +4583,29 @@ pub unsafe fn test_given_iterator_types_332() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_93(
+        test_lexicographical_compare_96(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_333() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_96(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_96(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_96(
             unimplemented!(),
@@ -4538,29 +4631,17 @@ pub unsafe fn test_given_iterator_types_333() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_99(
+        test_lexicographical_compare_96(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_99(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_99(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_336() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_99(
             unimplemented!(),
@@ -4586,17 +4667,29 @@ pub unsafe fn test_given_iterator_types_333() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_99(
+        test_lexicographical_compare_102(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_334() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_102(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_102(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_102(
             unimplemented!(),
@@ -4622,29 +4715,17 @@ pub unsafe fn test_given_iterator_types_334() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_105(
+        test_lexicographical_compare_102(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_105(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_105(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_337() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_105(
             unimplemented!(),
@@ -4670,17 +4751,29 @@ pub unsafe fn test_given_iterator_types_334() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_105(
+        test_lexicographical_compare_108(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_335() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_108(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_108(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_108(
             unimplemented!(),
@@ -4706,29 +4799,17 @@ pub unsafe fn test_given_iterator_types_335() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_111(
+        test_lexicographical_compare_108(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_111(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_111(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_338() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_111(
             unimplemented!(),
@@ -4754,17 +4835,29 @@ pub unsafe fn test_given_iterator_types_335() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_111(
+        test_lexicographical_compare_114(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_336() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_114(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_114(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_114(
             unimplemented!(),
@@ -4790,29 +4883,17 @@ pub unsafe fn test_given_iterator_types_336() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_117(
+        test_lexicographical_compare_114(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_117(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_117(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_339() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_117(
             unimplemented!(),
@@ -4838,17 +4919,29 @@ pub unsafe fn test_given_iterator_types_336() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_117(
+        test_lexicographical_compare_120(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_337() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_120(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_120(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_120(
             unimplemented!(),
@@ -4874,29 +4967,17 @@ pub unsafe fn test_given_iterator_types_337() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_123(
+        test_lexicographical_compare_120(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_123(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_123(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_340() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_123(
             unimplemented!(),
@@ -4922,17 +5003,29 @@ pub unsafe fn test_given_iterator_types_337() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_123(
+        test_lexicographical_compare_126(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_338() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_126(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_126(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_126(
             unimplemented!(),
@@ -4958,29 +5051,17 @@ pub unsafe fn test_given_iterator_types_338() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_129(
+        test_lexicographical_compare_126(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_129(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_129(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_341() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_129(
             unimplemented!(),
@@ -5006,17 +5087,29 @@ pub unsafe fn test_given_iterator_types_338() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_129(
+        test_lexicographical_compare_132(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_339() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_132(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_132(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_132(
             unimplemented!(),
@@ -5042,29 +5135,17 @@ pub unsafe fn test_given_iterator_types_339() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_135(
+        test_lexicographical_compare_132(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_135(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_135(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_342() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_135(
             unimplemented!(),
@@ -5090,17 +5171,29 @@ pub unsafe fn test_given_iterator_types_339() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_135(
+        test_lexicographical_compare_138(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_340() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_138(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_138(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_138(
             unimplemented!(),
@@ -5126,29 +5219,17 @@ pub unsafe fn test_given_iterator_types_340() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_141(
+        test_lexicographical_compare_138(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_141(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_141(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_343() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_141(
             unimplemented!(),
@@ -5174,17 +5255,29 @@ pub unsafe fn test_given_iterator_types_340() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_141(
+        test_lexicographical_compare_144(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_341() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_144(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_144(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_144(
             unimplemented!(),
@@ -5210,29 +5303,17 @@ pub unsafe fn test_given_iterator_types_341() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_147(
+        test_lexicographical_compare_144(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_147(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_147(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_344() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_147(
             unimplemented!(),
@@ -5258,17 +5339,29 @@ pub unsafe fn test_given_iterator_types_341() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_147(
+        test_lexicographical_compare_150(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_342() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_150(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_150(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_150(
             unimplemented!(),
@@ -5294,29 +5387,17 @@ pub unsafe fn test_given_iterator_types_342() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_153(
+        test_lexicographical_compare_150(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_153(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_153(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_345() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_153(
             unimplemented!(),
@@ -5342,17 +5423,29 @@ pub unsafe fn test_given_iterator_types_342() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_153(
+        test_lexicographical_compare_156(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_343() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_156(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_156(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_156(
             unimplemented!(),
@@ -5378,29 +5471,17 @@ pub unsafe fn test_given_iterator_types_343() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_159(
+        test_lexicographical_compare_156(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_159(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_159(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_346() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_159(
             unimplemented!(),
@@ -5426,17 +5507,29 @@ pub unsafe fn test_given_iterator_types_343() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_159(
+        test_lexicographical_compare_162(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_344() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_162(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_162(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_162(
             unimplemented!(),
@@ -5462,29 +5555,17 @@ pub unsafe fn test_given_iterator_types_344() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_165(
+        test_lexicographical_compare_162(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_165(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_165(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_347() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_165(
             unimplemented!(),
@@ -5510,17 +5591,29 @@ pub unsafe fn test_given_iterator_types_344() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_165(
+        test_lexicographical_compare_168(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_345() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_168(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_168(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_168(
             unimplemented!(),
@@ -5546,29 +5639,17 @@ pub unsafe fn test_given_iterator_types_345() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_171(
+        test_lexicographical_compare_168(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_171(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_171(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_348() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_171(
             unimplemented!(),
@@ -5594,17 +5675,29 @@ pub unsafe fn test_given_iterator_types_345() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_171(
+        test_lexicographical_compare_174(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_346() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_174(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_174(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_174(
             unimplemented!(),
@@ -5630,29 +5723,17 @@ pub unsafe fn test_given_iterator_types_346() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_177(
+        test_lexicographical_compare_174(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_177(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_177(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_349() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_177(
             unimplemented!(),
@@ -5678,17 +5759,29 @@ pub unsafe fn test_given_iterator_types_346() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_177(
+        test_lexicographical_compare_180(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_347() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_180(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_180(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_180(
             unimplemented!(),
@@ -5714,29 +5807,17 @@ pub unsafe fn test_given_iterator_types_347() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_183(
+        test_lexicographical_compare_180(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_183(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_183(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_350() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_183(
             unimplemented!(),
@@ -5762,17 +5843,29 @@ pub unsafe fn test_given_iterator_types_347() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_183(
+        test_lexicographical_compare_186(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_348() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_186(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_186(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_186(
             unimplemented!(),
@@ -5798,29 +5891,17 @@ pub unsafe fn test_given_iterator_types_348() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_189(
+        test_lexicographical_compare_186(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_189(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_189(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_351() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_189(
             unimplemented!(),
@@ -5846,17 +5927,29 @@ pub unsafe fn test_given_iterator_types_348() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_189(
+        test_lexicographical_compare_192(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_349() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_192(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_192(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_192(
             unimplemented!(),
@@ -5882,29 +5975,17 @@ pub unsafe fn test_given_iterator_types_349() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_195(
+        test_lexicographical_compare_192(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_195(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_195(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_352() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_195(
             unimplemented!(),
@@ -5930,17 +6011,29 @@ pub unsafe fn test_given_iterator_types_349() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_195(
+        test_lexicographical_compare_198(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_350() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_198(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_198(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_198(
             unimplemented!(),
@@ -5966,29 +6059,17 @@ pub unsafe fn test_given_iterator_types_350() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_201(
+        test_lexicographical_compare_198(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_201(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_201(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_353() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_201(
             unimplemented!(),
@@ -6014,17 +6095,29 @@ pub unsafe fn test_given_iterator_types_350() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_201(
+        test_lexicographical_compare_204(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_351() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_204(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_204(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_204(
             unimplemented!(),
@@ -6050,29 +6143,17 @@ pub unsafe fn test_given_iterator_types_351() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_207(
+        test_lexicographical_compare_204(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_207(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_207(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_354() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_207(
             unimplemented!(),
@@ -6098,17 +6179,29 @@ pub unsafe fn test_given_iterator_types_351() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_207(
+        test_lexicographical_compare_210(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_352() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_210(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_210(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_210(
             unimplemented!(),
@@ -6134,29 +6227,17 @@ pub unsafe fn test_given_iterator_types_352() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_213(
+        test_lexicographical_compare_210(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_213(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_213(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_355() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_213(
             unimplemented!(),
@@ -6182,17 +6263,29 @@ pub unsafe fn test_given_iterator_types_352() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_213(
+        test_lexicographical_compare_216(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_353() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_216(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_216(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_216(
             unimplemented!(),
@@ -6218,29 +6311,17 @@ pub unsafe fn test_given_iterator_types_353() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_219(
+        test_lexicographical_compare_216(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_219(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_219(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_356() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_219(
             unimplemented!(),
@@ -6266,17 +6347,29 @@ pub unsafe fn test_given_iterator_types_353() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_219(
+        test_lexicographical_compare_222(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_354() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_222(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_222(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_222(
             unimplemented!(),
@@ -6302,29 +6395,17 @@ pub unsafe fn test_given_iterator_types_354() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_225(
+        test_lexicographical_compare_222(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_225(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_225(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_357() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_225(
             unimplemented!(),
@@ -6350,17 +6431,29 @@ pub unsafe fn test_given_iterator_types_354() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_225(
+        test_lexicographical_compare_228(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_355() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_228(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_228(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_228(
             unimplemented!(),
@@ -6386,29 +6479,17 @@ pub unsafe fn test_given_iterator_types_355() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_231(
+        test_lexicographical_compare_228(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_231(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_231(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_358() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_231(
             unimplemented!(),
@@ -6434,17 +6515,29 @@ pub unsafe fn test_given_iterator_types_355() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_231(
+        test_lexicographical_compare_234(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_356() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_234(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_234(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_234(
             unimplemented!(),
@@ -6470,29 +6563,17 @@ pub unsafe fn test_given_iterator_types_356() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_237(
+        test_lexicographical_compare_234(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_237(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_237(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_359() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_237(
             unimplemented!(),
@@ -6518,17 +6599,29 @@ pub unsafe fn test_given_iterator_types_356() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_237(
+        test_lexicographical_compare_240(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_357() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_240(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_240(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_240(
             unimplemented!(),
@@ -6554,29 +6647,17 @@ pub unsafe fn test_given_iterator_types_357() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_243(
+        test_lexicographical_compare_240(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_243(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_243(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_360() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_243(
             unimplemented!(),
@@ -6602,17 +6683,29 @@ pub unsafe fn test_given_iterator_types_357() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_243(
+        test_lexicographical_compare_246(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_358() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_246(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_246(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_246(
             unimplemented!(),
@@ -6638,29 +6731,17 @@ pub unsafe fn test_given_iterator_types_358() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_249(
+        test_lexicographical_compare_246(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_249(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_249(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_361() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_249(
             unimplemented!(),
@@ -6686,17 +6767,29 @@ pub unsafe fn test_given_iterator_types_358() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_249(
+        test_lexicographical_compare_252(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_359() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_252(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_252(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_252(
             unimplemented!(),
@@ -6722,29 +6815,17 @@ pub unsafe fn test_given_iterator_types_359() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_255(
+        test_lexicographical_compare_252(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_255(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_255(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_362() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_255(
             unimplemented!(),
@@ -6770,17 +6851,29 @@ pub unsafe fn test_given_iterator_types_359() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_255(
+        test_lexicographical_compare_258(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_360() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_258(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_258(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_258(
             unimplemented!(),
@@ -6806,29 +6899,17 @@ pub unsafe fn test_given_iterator_types_360() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_261(
+        test_lexicographical_compare_258(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_261(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_261(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_363() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_261(
             unimplemented!(),
@@ -6854,17 +6935,29 @@ pub unsafe fn test_given_iterator_types_360() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_261(
+        test_lexicographical_compare_264(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_361() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_264(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_264(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_264(
             unimplemented!(),
@@ -6890,29 +6983,17 @@ pub unsafe fn test_given_iterator_types_361() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_267(
+        test_lexicographical_compare_264(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_267(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_267(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_364() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_267(
             unimplemented!(),
@@ -6938,17 +7019,29 @@ pub unsafe fn test_given_iterator_types_361() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_267(
+        test_lexicographical_compare_270(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_362() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_270(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_270(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_270(
             unimplemented!(),
@@ -6974,29 +7067,17 @@ pub unsafe fn test_given_iterator_types_362() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_273(
+        test_lexicographical_compare_270(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_273(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_273(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_365() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_273(
             unimplemented!(),
@@ -7022,17 +7103,29 @@ pub unsafe fn test_given_iterator_types_362() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_273(
+        test_lexicographical_compare_276(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_363() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_276(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_276(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_276(
             unimplemented!(),
@@ -7058,29 +7151,17 @@ pub unsafe fn test_given_iterator_types_363() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_279(
+        test_lexicographical_compare_276(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_279(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_279(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_366() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_279(
             unimplemented!(),
@@ -7106,17 +7187,29 @@ pub unsafe fn test_given_iterator_types_363() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_279(
+        test_lexicographical_compare_282(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_364() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_282(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_282(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_282(
             unimplemented!(),
@@ -7142,29 +7235,17 @@ pub unsafe fn test_given_iterator_types_364() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_285(
+        test_lexicographical_compare_282(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_285(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_285(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_367() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_285(
             unimplemented!(),
@@ -7190,17 +7271,29 @@ pub unsafe fn test_given_iterator_types_364() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_285(
+        test_lexicographical_compare_288(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_365() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_288(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_288(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_288(
             unimplemented!(),
@@ -7226,29 +7319,17 @@ pub unsafe fn test_given_iterator_types_365() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_291(
+        test_lexicographical_compare_288(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_291(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_291(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_368() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_291(
             unimplemented!(),
@@ -7274,17 +7355,29 @@ pub unsafe fn test_given_iterator_types_365() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_291(
+        test_lexicographical_compare_294(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_366() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_294(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_294(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_294(
             unimplemented!(),
@@ -7310,29 +7403,17 @@ pub unsafe fn test_given_iterator_types_366() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_297(
+        test_lexicographical_compare_294(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_297(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_297(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_369() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_297(
             unimplemented!(),
@@ -7358,17 +7439,29 @@ pub unsafe fn test_given_iterator_types_366() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_297(
+        test_lexicographical_compare_300(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_367() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_300(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_300(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_300(
             unimplemented!(),
@@ -7394,29 +7487,17 @@ pub unsafe fn test_given_iterator_types_367() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_303(
+        test_lexicographical_compare_300(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_303(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_303(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_370() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_303(
             unimplemented!(),
@@ -7442,17 +7523,29 @@ pub unsafe fn test_given_iterator_types_367() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_303(
+        test_lexicographical_compare_306(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_given_iterator_types_368() {
-    let mut cmp: FnPtr<fn((), ()) -> ()> =
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14)).copy_from();
+    (unsafe {
+        test_lexicographical_compare_306(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_306(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
     (unsafe {
         test_lexicographical_compare_306(
             unimplemented!(),
@@ -7478,29 +7571,17 @@ pub unsafe fn test_given_iterator_types_368() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_309(
+        test_lexicographical_compare_306(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-    (unsafe {
-        test_lexicographical_compare_309(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_lexicographical_compare_309(
-            unimplemented!(),
-            unimplemented!(),
-            cmp.copy_from(),
-            unimplemented!(),
-        )
-    });
+}
+pub unsafe fn test_given_iterator_types_371() {
+    let mut cmp: FnPtr<fn((), ()) -> ()> =
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17)).copy_from();
     (unsafe {
         test_lexicographical_compare_309(
             unimplemented!(),
@@ -7526,93 +7607,34 @@ pub unsafe fn test_given_iterator_types_368() {
         )
     });
     (unsafe {
-        test_lexicographical_compare_309(
+        test_lexicographical_compare_312(
             unimplemented!(),
             unimplemented!(),
             cmp.copy_from(),
             unimplemented!(),
         )
     });
-}
-pub unsafe fn test_iterator_types1_369() {
-    (unsafe { test_given_iterator_types_320() });
-    (unsafe { test_given_iterator_types_321() });
-    (unsafe { test_given_iterator_types_322() });
-    (unsafe { test_given_iterator_types_323() });
-    (unsafe { test_given_iterator_types_324() });
-    (unsafe { test_given_iterator_types_325() });
-    (unsafe { test_given_iterator_types_326() });
-}
-pub unsafe fn test_iterator_types1_370() {
-    (unsafe { test_given_iterator_types_327() });
-    (unsafe { test_given_iterator_types_328() });
-    (unsafe { test_given_iterator_types_329() });
-    (unsafe { test_given_iterator_types_330() });
-    (unsafe { test_given_iterator_types_331() });
-    (unsafe { test_given_iterator_types_332() });
-    (unsafe { test_given_iterator_types_333() });
-}
-pub unsafe fn test_iterator_types1_371() {
-    (unsafe { test_given_iterator_types_334() });
-    (unsafe { test_given_iterator_types_335() });
-    (unsafe { test_given_iterator_types_336() });
-    (unsafe { test_given_iterator_types_337() });
-    (unsafe { test_given_iterator_types_338() });
-    (unsafe { test_given_iterator_types_339() });
-    (unsafe { test_given_iterator_types_340() });
-}
-pub unsafe fn test_iterator_types1_372() {
-    (unsafe { test_given_iterator_types_341() });
-    (unsafe { test_given_iterator_types_342() });
-    (unsafe { test_given_iterator_types_343() });
-    (unsafe { test_given_iterator_types_344() });
-    (unsafe { test_given_iterator_types_345() });
-    (unsafe { test_given_iterator_types_346() });
-    (unsafe { test_given_iterator_types_347() });
-}
-pub unsafe fn test_iterator_types1_373() {
-    (unsafe { test_given_iterator_types_348() });
-    (unsafe { test_given_iterator_types_349() });
-    (unsafe { test_given_iterator_types_350() });
-    (unsafe { test_given_iterator_types_351() });
-    (unsafe { test_given_iterator_types_352() });
-    (unsafe { test_given_iterator_types_353() });
-    (unsafe { test_given_iterator_types_354() });
-}
-pub unsafe fn test_iterator_types1_374() {
-    (unsafe { test_given_iterator_types_355() });
-    (unsafe { test_given_iterator_types_356() });
-    (unsafe { test_given_iterator_types_357() });
-    (unsafe { test_given_iterator_types_358() });
-    (unsafe { test_given_iterator_types_359() });
-    (unsafe { test_given_iterator_types_360() });
-    (unsafe { test_given_iterator_types_361() });
-}
-pub unsafe fn test_iterator_types1_375() {
-    (unsafe { test_given_iterator_types_362() });
-    (unsafe { test_given_iterator_types_363() });
-    (unsafe { test_given_iterator_types_364() });
-    (unsafe { test_given_iterator_types_365() });
-    (unsafe { test_given_iterator_types_366() });
-    (unsafe { test_given_iterator_types_367() });
-    (unsafe { test_given_iterator_types_368() });
-}
-pub unsafe fn test_iterator_types_376() {
-    (unsafe { test_iterator_types1_369() });
-    (unsafe { test_iterator_types1_370() });
-    (unsafe { test_iterator_types1_371() });
-    (unsafe { test_iterator_types1_372() });
-    (unsafe { test_iterator_types1_373() });
-    (unsafe { test_iterator_types1_374() });
-    (unsafe { test_iterator_types1_375() });
-}
-pub unsafe fn test_comparison_categories_377() {
     (unsafe {
         test_lexicographical_compare_312(
             unimplemented!(),
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_weak_15))
-                .copy_from(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_312(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_312(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
             unimplemented!(),
         )
     });
@@ -7620,8 +7642,7 @@ pub unsafe fn test_comparison_categories_377() {
         test_lexicographical_compare_313(
             unimplemented!(),
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_partial_16))
-                .copy_from(),
+            cmp.copy_from(),
             unimplemented!(),
         )
     });
@@ -7629,16 +7650,97 @@ pub unsafe fn test_comparison_categories_377() {
         test_lexicographical_compare_314(
             unimplemented!(),
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_14))
-                .copy_from(),
+            cmp.copy_from(),
             unimplemented!(),
         )
     });
     (unsafe {
+        test_lexicographical_compare_312(
+            unimplemented!(),
+            unimplemented!(),
+            cmp.copy_from(),
+            unimplemented!(),
+        )
+    });
+}
+pub unsafe fn test_iterator_types1_372() {
+    (unsafe { test_given_iterator_types_323() });
+    (unsafe { test_given_iterator_types_324() });
+    (unsafe { test_given_iterator_types_325() });
+    (unsafe { test_given_iterator_types_326() });
+    (unsafe { test_given_iterator_types_327() });
+    (unsafe { test_given_iterator_types_328() });
+    (unsafe { test_given_iterator_types_329() });
+}
+pub unsafe fn test_iterator_types1_373() {
+    (unsafe { test_given_iterator_types_330() });
+    (unsafe { test_given_iterator_types_331() });
+    (unsafe { test_given_iterator_types_332() });
+    (unsafe { test_given_iterator_types_333() });
+    (unsafe { test_given_iterator_types_334() });
+    (unsafe { test_given_iterator_types_335() });
+    (unsafe { test_given_iterator_types_336() });
+}
+pub unsafe fn test_iterator_types1_374() {
+    (unsafe { test_given_iterator_types_337() });
+    (unsafe { test_given_iterator_types_338() });
+    (unsafe { test_given_iterator_types_339() });
+    (unsafe { test_given_iterator_types_340() });
+    (unsafe { test_given_iterator_types_341() });
+    (unsafe { test_given_iterator_types_342() });
+    (unsafe { test_given_iterator_types_343() });
+}
+pub unsafe fn test_iterator_types1_375() {
+    (unsafe { test_given_iterator_types_344() });
+    (unsafe { test_given_iterator_types_345() });
+    (unsafe { test_given_iterator_types_346() });
+    (unsafe { test_given_iterator_types_347() });
+    (unsafe { test_given_iterator_types_348() });
+    (unsafe { test_given_iterator_types_349() });
+    (unsafe { test_given_iterator_types_350() });
+}
+pub unsafe fn test_iterator_types1_376() {
+    (unsafe { test_given_iterator_types_351() });
+    (unsafe { test_given_iterator_types_352() });
+    (unsafe { test_given_iterator_types_353() });
+    (unsafe { test_given_iterator_types_354() });
+    (unsafe { test_given_iterator_types_355() });
+    (unsafe { test_given_iterator_types_356() });
+    (unsafe { test_given_iterator_types_357() });
+}
+pub unsafe fn test_iterator_types1_377() {
+    (unsafe { test_given_iterator_types_358() });
+    (unsafe { test_given_iterator_types_359() });
+    (unsafe { test_given_iterator_types_360() });
+    (unsafe { test_given_iterator_types_361() });
+    (unsafe { test_given_iterator_types_362() });
+    (unsafe { test_given_iterator_types_363() });
+    (unsafe { test_given_iterator_types_364() });
+}
+pub unsafe fn test_iterator_types1_378() {
+    (unsafe { test_given_iterator_types_365() });
+    (unsafe { test_given_iterator_types_366() });
+    (unsafe { test_given_iterator_types_367() });
+    (unsafe { test_given_iterator_types_368() });
+    (unsafe { test_given_iterator_types_369() });
+    (unsafe { test_given_iterator_types_370() });
+    (unsafe { test_given_iterator_types_371() });
+}
+pub unsafe fn test_iterator_types_379() {
+    (unsafe { test_iterator_types1_372() });
+    (unsafe { test_iterator_types1_373() });
+    (unsafe { test_iterator_types1_374() });
+    (unsafe { test_iterator_types1_375() });
+    (unsafe { test_iterator_types1_376() });
+    (unsafe { test_iterator_types1_377() });
+    (unsafe { test_iterator_types1_378() });
+}
+pub unsafe fn test_comparison_categories_380() {
+    (unsafe {
         test_lexicographical_compare_315(
             unimplemented!(),
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_weak_15))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_weak_18))
                 .copy_from(),
             unimplemented!(),
         )
@@ -7647,7 +7749,7 @@ pub unsafe fn test_comparison_categories_377() {
         test_lexicographical_compare_316(
             unimplemented!(),
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_partial_16))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_partial_19))
                 .copy_from(),
             unimplemented!(),
         )
@@ -7656,13 +7758,40 @@ pub unsafe fn test_comparison_categories_377() {
         test_lexicographical_compare_317(
             unimplemented!(),
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_partial_16))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_strong_17))
+                .copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_318(
+            unimplemented!(),
+            unimplemented!(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_weak_18))
+                .copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_319(
+            unimplemented!(),
+            unimplemented!(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_partial_19))
+                .copy_from(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_lexicographical_compare_320(
+            unimplemented!(),
+            unimplemented!(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut compare_last_digit_partial_19))
                 .copy_from(),
             unimplemented!(),
         )
     });
 }
-pub unsafe fn test_comparator_invocation_count_378() {
+pub unsafe fn test_comparator_invocation_count_381() {
     let mut compare_invocation_count: () = 0_();
     let mut compare_last_digit_counting: FnPtr<fn((), ()) -> ()> = lambda_unsafe!(
         {
@@ -7675,7 +7804,7 @@ pub unsafe fn test_comparator_invocation_count_378() {
     );
     compare_invocation_count = 0_();
     (unsafe {
-        test_lexicographical_compare_318(
+        test_lexicographical_compare_321(
             unimplemented!(),
             unimplemented!(),
             compare_last_digit_counting.copy_from(),
@@ -7684,7 +7813,7 @@ pub unsafe fn test_comparator_invocation_count_378() {
     });
     unimplemented!();
     (unsafe {
-        test_lexicographical_compare_319(
+        test_lexicographical_compare_322(
             unimplemented!(),
             unimplemented!(),
             compare_last_digit_counting.copy_from(),
@@ -7693,16 +7822,16 @@ pub unsafe fn test_comparator_invocation_count_378() {
     });
     unimplemented!();
 }
-pub unsafe fn test_proxy_iterators_379() {
+pub unsafe fn test_proxy_iterators_382() {
     let mut vec_: () = unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_380() -> () {
-    (unsafe { test_iterator_types_376() });
-    (unsafe { test_comparison_categories_377() });
-    (unsafe { test_comparator_invocation_count_378() });
-    (unsafe { test_proxy_iterators_379() });
+pub unsafe fn test_383() -> () {
+    (unsafe { test_iterator_types_379() });
+    (unsafe { test_comparison_categories_380() });
+    (unsafe { test_comparator_invocation_count_381() });
+    (unsafe { test_proxy_iterators_382() });
     return true;
 }
 pub fn main() {
@@ -7721,13 +7850,13 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_380() });
+    (unsafe { test_383() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const compare_last_digit_strong_14);
-    std::cell::LazyCell::force(&*&raw const compare_last_digit_weak_15);
-    std::cell::LazyCell::force(&*&raw const compare_last_digit_partial_16);
-    std::cell::LazyCell::force(&*&raw const compare_int_result_17);
+    std::cell::LazyCell::force(&*&raw const compare_last_digit_strong_17);
+    std::cell::LazyCell::force(&*&raw const compare_last_digit_weak_18);
+    std::cell::LazyCell::force(&*&raw const compare_last_digit_partial_19);
+    std::cell::LazyCell::force(&*&raw const compare_int_result_20);
 }

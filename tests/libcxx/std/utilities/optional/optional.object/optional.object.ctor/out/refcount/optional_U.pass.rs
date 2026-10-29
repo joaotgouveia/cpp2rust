@@ -52,23 +52,11 @@ impl X {
         }
     }
 }
-impl std::cmp::PartialEq for X {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_3(
-                Rc::new(RefCell::new(X {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(X {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for X {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for X {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Z {}

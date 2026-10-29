@@ -12,54 +12,54 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut out: i32 = 0;
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (10)) {
-        if (((i) % (2)) == (0)) {
+unsafe fn main_0() -> () {
+    let mut out: () = 0_();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (10_())) {
+        if (((i) % (2_())) == (0_())) {
             i.prefix_inc();
             continue 'loop_;
         }
         out.prefix_inc();
         i.prefix_inc();
     }
-    let mut j: i32 = 0;
-    'loop_: while ((j) < (10)) {
-        if (((i) % (2)) == (0)) {
+    let mut j: () = 0_();
+    'loop_: while ((j) < (10_())) {
+        if (((i) % (2_())) == (0_())) {
             j.postfix_inc();
             continue 'loop_;
         }
         out.prefix_inc();
         j.postfix_inc();
     }
-    let mut k1: i32 = 0;
-    'loop_: while ((k1) < (5)) {
-        let mut k2: i32 = 0;
-        'loop_: while ((k2) < (5)) {
-            let mut k3: i32 = 0;
-            'loop_: while ((k3) < (5)) {
-                if (((((k1) + (k2)) + (k3)) % (2)) == (0)) {
+    let mut k1: () = 0_();
+    'loop_: while ((k1) < (5_())) {
+        let mut k2: () = 0_();
+        'loop_: while ((k2) < (5_())) {
+            let mut k3: () = 0_();
+            'loop_: while ((k3) < (5_())) {
+                if (((((k1) + (k2)) + (k3)) % (2_())) == (0_())) {
                     k3.postfix_inc();
                     continue 'loop_;
                 }
                 out.prefix_inc();
                 k3.postfix_inc();
             }
-            if ((((k1) + (k2)) % (2)) == (0)) {
+            if ((((k1) + (k2)) % (2_())) == (0_())) {
                 k2.postfix_inc();
                 continue 'loop_;
             }
             out.prefix_inc();
             k2.postfix_inc();
         }
-        if (((k1) % (2)) == (0)) {
+        if (((k1) % (2_())) == (0_())) {
             k1.postfix_inc();
             continue 'loop_;
         }
         out.prefix_inc();
         k1.postfix_inc();
     }
-    assert!(((out) == (81)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

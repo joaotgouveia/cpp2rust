@@ -336,10 +336,10 @@ pub unsafe fn test_1_3_12() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut nq: () = (unsafe { copysign_13(unimplemented!(), -1_()) });
-        let mut ns: () = (unsafe { copysign_13(unimplemented!(), -1_()) });
-        let mut ps: () = (unsafe { copysign_13(unimplemented!(), 1_()) });
-        let mut pq: () = (unsafe { copysign_13(unimplemented!(), 1_()) });
+        let mut nq: () = unimplemented!();
+        let mut ns: () = unimplemented!();
+        let mut ps: () = unimplemented!();
+        let mut pq: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -379,7 +379,7 @@ pub unsafe fn test_1_3_12() -> () {
     }
     return true;
 }
-pub unsafe fn test_1_3_14() -> () {
+pub unsafe fn test_1_3_13() -> () {
     const _: () = assert!(true, "std::numeric_limits<F>::is_iec559");;
     const _: () = assert!(true, "");;
     let mut v: [(); 14] = [
@@ -610,10 +610,10 @@ pub unsafe fn test_1_3_14() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut nq: () = (unsafe { copysign_15(unimplemented!(), -1_()) });
-        let mut ns: () = (unsafe { copysign_15(unimplemented!(), -1_()) });
-        let mut ps: () = (unsafe { copysign_15(unimplemented!(), 1_()) });
-        let mut pq: () = (unsafe { copysign_15(unimplemented!(), 1_()) });
+        let mut nq: () = unimplemented!();
+        let mut ns: () = unimplemented!();
+        let mut ps: () = unimplemented!();
+        let mut pq: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -658,7 +658,7 @@ pub unsafe fn test_1_3_14() -> () {
 pub struct N14_A {}
 impl std::cmp::Ord for N14_A {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_16(self as *const N14_A, other as *const N14_A) }
+        unsafe { operator_cmp_14(self as *const N14_A, other as *const N14_A) }
     }
 }
 impl std::cmp::PartialOrd for N14_A {
@@ -669,16 +669,16 @@ impl std::cmp::PartialOrd for N14_A {
 impl std::cmp::PartialEq for N14_A {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_cmp_16(self as *const N14_A, other as *const N14_A)
+            operator_cmp_14(self as *const N14_A, other as *const N14_A)
                 == std::cmp::Ordering::Equal
         }
     }
 }
 impl std::cmp::Eq for N14_A {}
-pub unsafe fn operator_cmp_17(_a0: *mut N14_A, _a1: *mut N14_A) -> () {
+pub unsafe fn operator_cmp_15(_a0: *mut N14_A, _a1: *mut N14_A) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_cmp_16(_a0: *mut N14_A, _a1: *mut N14_A) -> () {
+pub unsafe fn operator_cmp_14(_a0: *mut N14_A, _a1: *mut N14_A) -> () {
     return unimplemented!();
 }
 const _: () = assert!(true, "std::three_way_comparable<A>");
@@ -714,7 +714,7 @@ impl std::cmp::PartialEq for N14_C {
 }
 impl std::cmp::Eq for N14_C {}
 const _: () = assert!(true, "std::three_way_comparable<C>");
-pub unsafe fn test_1_4_18() -> () {
+pub unsafe fn test_1_4_16() -> () {
     let mut a: N14_A = <N14_A>::default();
     unimplemented!();
     unimplemented!();
@@ -752,8 +752,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_1_1_7() });
     (unsafe { test_1_2_11() });
     (unsafe { test_1_3_12() });
-    (unsafe { test_1_3_14() });
-    (unsafe { test_1_4_18() });
+    (unsafe { test_1_3_13() });
+    (unsafe { test_1_4_16() });
     const _: () = assert!(true, "test_1_3<float>()");;
     const _: () = assert!(true, "test_1_3<double>()");;
     const _: () = assert!(true, "test_1_4()");;

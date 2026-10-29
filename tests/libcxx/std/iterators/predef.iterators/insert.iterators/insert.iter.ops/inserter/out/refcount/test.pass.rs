@@ -68,24 +68,44 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
         }
     }
 }
-pub fn test_0(mut c: ()) -> () {
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_0(c: ()) -> () {
+    let c: Value<()> = Rc::new(RefCell::new(c));
+    let i: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___x: Ptr<()> = c.as_pointer();
+            let ___i: () = unimplemented!();
+            inserter_1(___x, ___i)
+        }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_1(c: nasty_vector_int_) -> () {
+pub fn test_2(c: nasty_vector_int_) -> () {
     let c: Value<nasty_vector_int_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___x: Ptr<nasty_vector_int_> = c.as_pointer();
+            let ___i: () = ({ nasty_vector_int_Impl::end_14(&c.as_pointer()) });
+            inserter_3(___x, ___i)
+        }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> () {
+pub fn test_4(c: ConstexprFixedCapacityDeque_int__10_) -> () {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___x: Ptr<ConstexprFixedCapacityDeque_int__10_> = c.as_pointer();
+            let ___i: Ptr<()> =
+                ({ ConstexprFixedCapacityDeque_int__10_Impl::end_3(&c.as_pointer()) });
+            inserter_5(___x, ___i)
+        }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -112,8 +132,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_0(unimplemented!()) });
-    ({ test_1(nasty_vector_int_::new_1()) });
-    ({ test_2(<ConstexprFixedCapacityDeque_int__10_>::default()) });
+    ({ test_2(nasty_vector_int_::new_1()) });
+    ({ test_4(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
     return 0_();
 }

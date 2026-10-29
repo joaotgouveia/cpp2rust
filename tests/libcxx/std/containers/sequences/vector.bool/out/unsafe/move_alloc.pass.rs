@@ -45,27 +45,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
-}
-impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_4(
-    mut x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_5(
-    mut x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_4(_x, y)
-    });
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
@@ -74,11 +53,8 @@ impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
         return &mut (*self.ptr_);
@@ -86,18 +62,19 @@ impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     pub unsafe fn operator_arrow(&self) -> *mut () {
         return self.ptr_;
     }
-    pub unsafe fn operator_inc_8(
-        &mut self,
-    ) -> *mut min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
-        self.ptr_.prefix_inc();
-        return &mut (*(self
-            as *mut min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__));
-    }
     pub unsafe fn operator_add_assign(
         &mut self,
         mut n: (),
     ) -> *mut min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
+        return &mut (*(self
+            as *mut min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_sub_assign(
+        &mut self,
+        mut n: (),
+    ) -> *mut min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
         return &mut (*(self
             as *mut min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__));
     }
@@ -114,50 +91,21 @@ impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         });
         return tmp;
     }
-}
-impl std::cmp::PartialEq for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_6(
-    mut x: min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
-}
-impl min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__ {
-    pub unsafe fn new_1(
-        mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-    ) -> Self {
-        let mut this = Self {
-            ptr_: (p.ptr_).cast_const(),
-        };
-        this
-    }
-    pub unsafe fn operator_deref(&self) -> *const () {
-        return &(*self.ptr_);
-    }
-    pub unsafe fn operator_inc_9(
-        &mut self,
-    ) -> *mut min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__ {
-        self.ptr_.prefix_inc();
-        return &mut (*(self
-            as *mut min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__));
-    }
-    pub unsafe fn operator_add_assign(
-        &mut self,
+    pub unsafe fn operator_sub(
+        &self,
         mut n: (),
-    ) -> *mut min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__ {
-        self.ptr_ = (self.ptr_).wrapping_add(n as usize);
-        return &mut (*(self
-            as *mut min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__));
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        let mut tmp: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ =
+            (*(self as *const min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__));
+        (unsafe {
+            min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__::operator_sub_assign(
+                &mut tmp, n,
+            )
+        });
+        return tmp;
+    }
+    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+        return &mut (*self.ptr_.offset((n) as isize));
     }
 }
 impl min_allocator_bool_ {
@@ -166,7 +114,7 @@ impl min_allocator_bool_ {
         this
     }
 }
-pub unsafe fn operator_eq_7(mut _a0: min_allocator_bool_, mut _a1: min_allocator_bool_) -> () {
+pub unsafe fn operator_eq_4(mut _a0: min_allocator_bool_, mut _a1: min_allocator_bool_) -> () {
     return true;
 }
 #[repr(C)]
@@ -174,7 +122,7 @@ pub unsafe fn operator_eq_7(mut _a0: min_allocator_bool_, mut _a1: min_allocator
 pub struct min_allocator_bool_ {}
 impl std::cmp::PartialEq for min_allocator_bool_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self.clone(), other.clone()) }
+        unsafe { operator_eq_4(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_bool_ {}
@@ -256,21 +204,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_8: std::cell::LazyCell<()> =
+pub static mut destructed_value_5: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_9: std::cell::LazyCell<()> =
+pub static mut moved_value_6: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_10(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_7(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_11(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_8(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_10(_x, _y)
+        operator_eq_7(_x, _y)
     });
 }
 #[repr(C)]
@@ -334,8 +282,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_8));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_8));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_5));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_5));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -356,7 +304,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_10(
+            operator_eq_7(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -381,7 +329,7 @@ impl Default for test_allocator_void_ {
     }
 }
 impl test_allocator_bool_ {
-    pub unsafe fn new_1(a: *const test_allocator_unsigned_int_) -> Self {
+    pub unsafe fn new_1(a: *const test_allocator_unsigned_long_) -> Self {
         let mut this = Self {
             data_: (*a).data_,
             id_: (*a).id_,
@@ -394,12 +342,15 @@ impl test_allocator_bool_ {
         this
     }
 }
-pub unsafe fn operator_eq_12(x: *const test_allocator_bool_, y: *const test_allocator_bool_) -> () {
+pub unsafe fn operator_eq_9(x: *const test_allocator_bool_, y: *const test_allocator_bool_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_bool__rebind_unsigned_int_ {}
+pub struct test_allocator_bool__rebind_unsigned_long_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_bool__rebind_bool_ {}
 #[repr(C)]
 #[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_bool_ {
@@ -422,14 +373,14 @@ impl test_allocator_bool_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_8));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_8));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_5));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_5));
     }
 }
 impl std::cmp::PartialEq for test_allocator_bool_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_12(
+            operator_eq_9(
                 self as *const test_allocator_bool_,
                 other as *const test_allocator_bool_,
             )
@@ -448,7 +399,7 @@ impl Default for test_allocator_bool_ {
         }
     }
 }
-impl test_allocator_unsigned_int_ {
+impl test_allocator_unsigned_long_ {
     pub unsafe fn new_1(a: *const test_allocator_bool_) -> Self {
         let mut this = Self {
             data_: (*a).data_,
@@ -463,21 +414,34 @@ impl test_allocator_unsigned_int_ {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_unsigned_int_ {
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
+pub struct test_allocator_unsigned_long_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_unsigned_int_ {
+impl test_allocator_unsigned_long_ {
+    pub unsafe fn copy_from(a: *const test_allocator_unsigned_long_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_8));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_8));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_5));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_5));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -500,15 +464,18 @@ impl test_allocator_unsigned_int_ {
         }
         unimplemented!();
     }
-    pub unsafe fn max_size(&self) -> () {
-        return (((2147483647_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+}
+impl Clone for test_allocator_unsigned_long_ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_unsigned_long_::copy_from(self as *const test_allocator_unsigned_long_)
+        }
     }
 }
-impl Default for test_allocator_unsigned_int_ {
+impl Default for test_allocator_unsigned_long_ {
     fn default() -> Self {
         unsafe {
-            test_allocator_unsigned_int_ {
+            test_allocator_unsigned_long_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: std::ptr::null_mut(),
@@ -522,7 +489,7 @@ impl other_allocator_bool_ {
         this
     }
 }
-pub unsafe fn operator_eq_13(
+pub unsafe fn operator_eq_10(
     x: *const other_allocator_bool_,
     y: *const other_allocator_bool_,
 ) -> () {
@@ -542,7 +509,7 @@ impl other_allocator_bool_ {
 impl std::cmp::PartialEq for other_allocator_bool_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_13(
+            operator_eq_10(
                 self as *const other_allocator_bool_,
                 other as *const other_allocator_bool_,
             )
@@ -613,7 +580,7 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-pub unsafe fn test_14(a: *const (), a0: *const ()) {
+pub unsafe fn test_11(a: *const (), a0: *const ()) {
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
@@ -629,7 +596,7 @@ pub unsafe fn test_14(a: *const (), a0: *const ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_15(a: *const (), a0: *const ()) {
+pub unsafe fn test_12(a: *const (), a0: *const ()) {
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
@@ -645,7 +612,7 @@ pub unsafe fn test_15(a: *const (), a0: *const ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_16(a: *const (), a0: *const ()) {
+pub unsafe fn test_13(a: *const (), a0: *const ()) {
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
@@ -661,7 +628,7 @@ pub unsafe fn test_16(a: *const (), a0: *const ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_17(a: *const (), a0: *const ()) {
+pub unsafe fn test_14(a: *const (), a0: *const ()) {
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
@@ -675,13 +642,79 @@ pub unsafe fn test_17(a: *const (), a0: *const ()) {
     unimplemented!();
     {
         unimplemented!();
+    }
+}
+pub unsafe fn test_15(a: *const test_allocator_bool_, a0: *const test_allocator_bool_) {
+    let mut v: () = unimplemented!();
+    let mut original: () = unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while ((i) < (5_())) {
+        unimplemented!();
+        unimplemented!();
+        i = (i).wrapping_add(2_());
+    }
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    if (unsafe {
+        let _x: *const test_allocator_bool_ = a;
+        let _y: *const test_allocator_bool_ = a0;
+        operator_eq_9(_x, _y)
+    }) {
+        unimplemented!();
+    } else {
+        const _: () = assert!(true, "");;
+    }
+}
+pub unsafe fn test_16(a: *const test_allocator_bool_, a0: *const test_allocator_bool_) {
+    let mut v: () = unimplemented!();
+    let mut original: () = unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while ((i) < (17_())) {
+        unimplemented!();
+        unimplemented!();
+        i = (i).wrapping_add(2_());
+    }
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    if (unsafe {
+        let _x: *const test_allocator_bool_ = a;
+        let _y: *const test_allocator_bool_ = a0;
+        operator_eq_9(_x, _y)
+    }) {
+        unimplemented!();
+    } else {
+        const _: () = assert!(true, "");;
+    }
+}
+pub unsafe fn test_17(a: *const test_allocator_bool_, a0: *const test_allocator_bool_) {
+    let mut v: () = unimplemented!();
+    let mut original: () = unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while ((i) < (65_())) {
+        unimplemented!();
+        unimplemented!();
+        i = (i).wrapping_add(2_());
+    }
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    if (unsafe {
+        let _x: *const test_allocator_bool_ = a;
+        let _y: *const test_allocator_bool_ = a0;
+        operator_eq_9(_x, _y)
+    }) {
+        unimplemented!();
+    } else {
+        const _: () = assert!(true, "");;
     }
 }
 pub unsafe fn test_18(a: *const test_allocator_bool_, a0: *const test_allocator_bool_) {
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
-    'loop_: while ((i) < (5_())) {
+    'loop_: while ((i) < (299_())) {
         unimplemented!();
         unimplemented!();
         i = (i).wrapping_add(2_());
@@ -692,14 +725,36 @@ pub unsafe fn test_18(a: *const test_allocator_bool_, a0: *const test_allocator_
     if (unsafe {
         let _x: *const test_allocator_bool_ = a;
         let _y: *const test_allocator_bool_ = a0;
-        operator_eq_12(_x, _y)
+        operator_eq_9(_x, _y)
     }) {
         unimplemented!();
     } else {
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
-pub unsafe fn test_19(a: *const test_allocator_bool_, a0: *const test_allocator_bool_) {
+pub unsafe fn test_19(a: *const other_allocator_bool_, a0: *const other_allocator_bool_) {
+    let mut v: () = unimplemented!();
+    let mut original: () = unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while ((i) < (5_())) {
+        unimplemented!();
+        unimplemented!();
+        i = (i).wrapping_add(2_());
+    }
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    if (unsafe {
+        let _x: *const other_allocator_bool_ = a;
+        let _y: *const other_allocator_bool_ = a0;
+        operator_eq_10(_x, _y)
+    }) {
+        unimplemented!();
+    } else {
+        const _: () = assert!(true, "");;
+    }
+}
+pub unsafe fn test_20(a: *const other_allocator_bool_, a0: *const other_allocator_bool_) {
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
@@ -712,16 +767,16 @@ pub unsafe fn test_19(a: *const test_allocator_bool_, a0: *const test_allocator_
     unimplemented!();
     unimplemented!();
     if (unsafe {
-        let _x: *const test_allocator_bool_ = a;
-        let _y: *const test_allocator_bool_ = a0;
-        operator_eq_12(_x, _y)
+        let _x: *const other_allocator_bool_ = a;
+        let _y: *const other_allocator_bool_ = a0;
+        operator_eq_10(_x, _y)
     }) {
         unimplemented!();
     } else {
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
-pub unsafe fn test_20(a: *const test_allocator_bool_, a0: *const test_allocator_bool_) {
+pub unsafe fn test_21(a: *const other_allocator_bool_, a0: *const other_allocator_bool_) {
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
@@ -734,107 +789,19 @@ pub unsafe fn test_20(a: *const test_allocator_bool_, a0: *const test_allocator_
     unimplemented!();
     unimplemented!();
     if (unsafe {
-        let _x: *const test_allocator_bool_ = a;
-        let _y: *const test_allocator_bool_ = a0;
-        operator_eq_12(_x, _y)
+        let _x: *const other_allocator_bool_ = a;
+        let _y: *const other_allocator_bool_ = a0;
+        operator_eq_10(_x, _y)
     }) {
         unimplemented!();
     } else {
-        unimplemented!();
-    }
-}
-pub unsafe fn test_21(a: *const test_allocator_bool_, a0: *const test_allocator_bool_) {
-    let mut v: () = unimplemented!();
-    let mut original: () = unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while ((i) < (299_())) {
-        unimplemented!();
-        unimplemented!();
-        i = (i).wrapping_add(2_());
-    }
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    if (unsafe {
-        let _x: *const test_allocator_bool_ = a;
-        let _y: *const test_allocator_bool_ = a0;
-        operator_eq_12(_x, _y)
-    }) {
-        unimplemented!();
-    } else {
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub unsafe fn test_22(a: *const other_allocator_bool_, a0: *const other_allocator_bool_) {
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
-    'loop_: while ((i) < (5_())) {
-        unimplemented!();
-        unimplemented!();
-        i = (i).wrapping_add(2_());
-    }
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    if (unsafe {
-        let _x: *const other_allocator_bool_ = a;
-        let _y: *const other_allocator_bool_ = a0;
-        operator_eq_13(_x, _y)
-    }) {
-        unimplemented!();
-    } else {
-        unimplemented!();
-    }
-}
-pub unsafe fn test_23(a: *const other_allocator_bool_, a0: *const other_allocator_bool_) {
-    let mut v: () = unimplemented!();
-    let mut original: () = unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while ((i) < (17_())) {
-        unimplemented!();
-        unimplemented!();
-        i = (i).wrapping_add(2_());
-    }
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    if (unsafe {
-        let _x: *const other_allocator_bool_ = a;
-        let _y: *const other_allocator_bool_ = a0;
-        operator_eq_13(_x, _y)
-    }) {
-        unimplemented!();
-    } else {
-        unimplemented!();
-    }
-}
-pub unsafe fn test_24(a: *const other_allocator_bool_, a0: *const other_allocator_bool_) {
-    let mut v: () = unimplemented!();
-    let mut original: () = unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while ((i) < (65_())) {
-        unimplemented!();
-        unimplemented!();
-        i = (i).wrapping_add(2_());
-    }
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    if (unsafe {
-        let _x: *const other_allocator_bool_ = a;
-        let _y: *const other_allocator_bool_ = a0;
-        operator_eq_13(_x, _y)
-    }) {
-        unimplemented!();
-    } else {
-        unimplemented!();
-    }
-}
-pub unsafe fn test_25(a: *const other_allocator_bool_, a0: *const other_allocator_bool_) {
-    let mut v: () = unimplemented!();
-    let mut original: () = unimplemented!();
-    let mut i: () = 1_();
     'loop_: while ((i) < (299_())) {
         unimplemented!();
         unimplemented!();
@@ -846,10 +813,58 @@ pub unsafe fn test_25(a: *const other_allocator_bool_, a0: *const other_allocato
     if (unsafe {
         let _x: *const other_allocator_bool_ = a;
         let _y: *const other_allocator_bool_ = a0;
-        operator_eq_13(_x, _y)
+        operator_eq_10(_x, _y)
     }) {
         unimplemented!();
     } else {
+        const _: () = assert!(true, "");;
+    }
+}
+pub unsafe fn test_23(a: *const min_allocator_bool_, a0: *const min_allocator_bool_) {
+    let mut v: () = unimplemented!();
+    let mut original: () = unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while ((i) < (5_())) {
+        unimplemented!();
+        unimplemented!();
+        i = (i).wrapping_add(2_());
+    }
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {
+        unimplemented!();
+    }
+}
+pub unsafe fn test_24(a: *const min_allocator_bool_, a0: *const min_allocator_bool_) {
+    let mut v: () = unimplemented!();
+    let mut original: () = unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while ((i) < (17_())) {
+        unimplemented!();
+        unimplemented!();
+        i = (i).wrapping_add(2_());
+    }
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {
+        unimplemented!();
+    }
+}
+pub unsafe fn test_25(a: *const min_allocator_bool_, a0: *const min_allocator_bool_) {
+    let mut v: () = unimplemented!();
+    let mut original: () = unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while ((i) < (65_())) {
+        unimplemented!();
+        unimplemented!();
+        i = (i).wrapping_add(2_());
+    }
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {
         unimplemented!();
     }
 }
@@ -857,54 +872,6 @@ pub unsafe fn test_26(a: *const min_allocator_bool_, a0: *const min_allocator_bo
     let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
-    'loop_: while ((i) < (5_())) {
-        unimplemented!();
-        unimplemented!();
-        i = (i).wrapping_add(2_());
-    }
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {
-        unimplemented!();
-    }
-}
-pub unsafe fn test_27(a: *const min_allocator_bool_, a0: *const min_allocator_bool_) {
-    let mut v: () = unimplemented!();
-    let mut original: () = unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while ((i) < (17_())) {
-        unimplemented!();
-        unimplemented!();
-        i = (i).wrapping_add(2_());
-    }
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {
-        unimplemented!();
-    }
-}
-pub unsafe fn test_28(a: *const min_allocator_bool_, a0: *const min_allocator_bool_) {
-    let mut v: () = unimplemented!();
-    let mut original: () = unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while ((i) < (65_())) {
-        unimplemented!();
-        unimplemented!();
-        i = (i).wrapping_add(2_());
-    }
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {
-        unimplemented!();
-    }
-}
-pub unsafe fn test_29(a: *const min_allocator_bool_, a0: *const min_allocator_bool_) {
-    let mut v: () = unimplemented!();
-    let mut original: () = unimplemented!();
-    let mut i: () = 1_();
     'loop_: while ((i) < (299_())) {
         unimplemented!();
         unimplemented!();
@@ -917,30 +884,45 @@ pub unsafe fn test_29(a: *const min_allocator_bool_, a0: *const min_allocator_bo
         unimplemented!();
     }
 }
-pub unsafe fn tests_30() -> () {
+pub unsafe fn tests_27() -> () {
     {
+        (unsafe {
+            let mut _a: () = unimplemented!();
+            let mut _a0: () = unimplemented!();
+            test_11(&mut _a, &mut _a0)
+        });
+        (unsafe {
+            let mut _a: () = unimplemented!();
+            let mut _a0: () = unimplemented!();
+            test_12(&mut _a, &mut _a0)
+        });
+        (unsafe {
+            let mut _a: () = unimplemented!();
+            let mut _a0: () = unimplemented!();
+            test_13(&mut _a, &mut _a0)
+        });
         (unsafe {
             let mut _a: () = unimplemented!();
             let mut _a0: () = unimplemented!();
             test_14(&mut _a, &mut _a0)
         });
+    }
+    {
         (unsafe {
-            let mut _a: () = unimplemented!();
-            let mut _a0: () = unimplemented!();
+            let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
+            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
             test_15(&mut _a, &mut _a0)
         });
         (unsafe {
-            let mut _a: () = unimplemented!();
-            let mut _a0: () = unimplemented!();
+            let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
+            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
             test_16(&mut _a, &mut _a0)
         });
         (unsafe {
-            let mut _a: () = unimplemented!();
-            let mut _a0: () = unimplemented!();
+            let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
+            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
             test_17(&mut _a, &mut _a0)
         });
-    }
-    {
         (unsafe {
             let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
             let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
@@ -948,41 +930,41 @@ pub unsafe fn tests_30() -> () {
         });
         (unsafe {
             let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            test_19(&mut _a, &mut _a0)
+            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 6_() });
+            test_15(&mut _a, &mut _a0)
         });
         (unsafe {
             let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            test_20(&mut _a, &mut _a0)
+            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 6_() });
+            test_16(&mut _a, &mut _a0)
         });
         (unsafe {
             let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            test_21(&mut _a, &mut _a0)
+            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 6_() });
+            test_17(&mut _a, &mut _a0)
         });
         (unsafe {
             let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
             let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 6_() });
             test_18(&mut _a, &mut _a0)
         });
+    }
+    {
         (unsafe {
-            let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 6_() });
+            let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
+            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
             test_19(&mut _a, &mut _a0)
         });
         (unsafe {
-            let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 6_() });
+            let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
+            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
             test_20(&mut _a, &mut _a0)
         });
         (unsafe {
-            let mut _a: test_allocator_bool_ = test_allocator_bool_::new_2({ 5_() });
-            let mut _a0: test_allocator_bool_ = test_allocator_bool_::new_2({ 6_() });
+            let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
+            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
             test_21(&mut _a, &mut _a0)
         });
-    }
-    {
         (unsafe {
             let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
             let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
@@ -990,60 +972,45 @@ pub unsafe fn tests_30() -> () {
         });
         (unsafe {
             let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            test_23(&mut _a, &mut _a0)
+            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 3_() });
+            test_19(&mut _a, &mut _a0)
         });
         (unsafe {
             let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            test_24(&mut _a, &mut _a0)
+            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 3_() });
+            test_20(&mut _a, &mut _a0)
         });
         (unsafe {
             let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            test_25(&mut _a, &mut _a0)
+            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 3_() });
+            test_21(&mut _a, &mut _a0)
         });
         (unsafe {
             let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
             let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 3_() });
             test_22(&mut _a, &mut _a0)
         });
+    }
+    {
         (unsafe {
-            let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 3_() });
+            let mut _a: min_allocator_bool_ = <min_allocator_bool_>::default();
+            let mut _a0: min_allocator_bool_ = <min_allocator_bool_>::default();
             test_23(&mut _a, &mut _a0)
         });
         (unsafe {
-            let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 3_() });
+            let mut _a: min_allocator_bool_ = <min_allocator_bool_>::default();
+            let mut _a0: min_allocator_bool_ = <min_allocator_bool_>::default();
             test_24(&mut _a, &mut _a0)
         });
         (unsafe {
-            let mut _a: other_allocator_bool_ = other_allocator_bool_::new_2({ 5_() });
-            let mut _a0: other_allocator_bool_ = other_allocator_bool_::new_2({ 3_() });
+            let mut _a: min_allocator_bool_ = <min_allocator_bool_>::default();
+            let mut _a0: min_allocator_bool_ = <min_allocator_bool_>::default();
             test_25(&mut _a, &mut _a0)
         });
-    }
-    {
         (unsafe {
             let mut _a: min_allocator_bool_ = <min_allocator_bool_>::default();
             let mut _a0: min_allocator_bool_ = <min_allocator_bool_>::default();
             test_26(&mut _a, &mut _a0)
-        });
-        (unsafe {
-            let mut _a: min_allocator_bool_ = <min_allocator_bool_>::default();
-            let mut _a0: min_allocator_bool_ = <min_allocator_bool_>::default();
-            test_27(&mut _a, &mut _a0)
-        });
-        (unsafe {
-            let mut _a: min_allocator_bool_ = <min_allocator_bool_>::default();
-            let mut _a0: min_allocator_bool_ = <min_allocator_bool_>::default();
-            test_28(&mut _a, &mut _a0)
-        });
-        (unsafe {
-            let mut _a: min_allocator_bool_ = <min_allocator_bool_>::default();
-            let mut _a0: min_allocator_bool_ = <min_allocator_bool_>::default();
-            test_29(&mut _a, &mut _a0)
         });
     }
     return true;
@@ -1064,7 +1031,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_30() });
+    (unsafe { tests_27() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }
@@ -1073,6 +1040,6 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const alloc_count_1);
     std::cell::LazyCell::force(&*&raw const dealloc_count_2);
     std::cell::LazyCell::force(&*&raw const disable_default_constructor_3);
-    std::cell::LazyCell::force(&*&raw const destructed_value_8);
-    std::cell::LazyCell::force(&*&raw const moved_value_9);
+    std::cell::LazyCell::force(&*&raw const destructed_value_5);
+    std::cell::LazyCell::force(&*&raw const moved_value_6);
 }

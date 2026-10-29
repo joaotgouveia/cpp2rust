@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union basic {
-    pub i: i32,
-    pub f: f32,
+    pub i: (),
+    pub f: (),
 }
 impl Default for basic {
     fn default() -> Self {
@@ -30,8 +30,8 @@ impl Default for empty {
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union underscores {
-    pub __: i32,
-    pub ___: f64,
+    pub __: (),
+    pub ___: (),
 }
 impl Default for underscores {
     fn default() -> Self {
@@ -44,57 +44,51 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut u: basic = <basic>::default();
     let mut e: empty = <empty>::default();
     &(e);
-    u.i = 42;
-    assert!(((u.i) == (42)));
+    u.i = 42_();
+    unimplemented!();
     u.f = 3.14_f32;
-    assert!(((u.f) == (3.14_f32)));
-    let mut buf: [u8; 4] = [0_u8; 4];
-    {
-        let byte_0 = (buf.as_mut_ptr() as *mut ::libc::c_void) as *mut u8;
-        for offset in 0..::std::mem::size_of::<[u8; 4]>() {
-            *byte_0.offset(offset as isize) = 0 as u8;
-        }
-        (buf.as_mut_ptr() as *mut ::libc::c_void)
-    };
+    unimplemented!();
+    let mut buf: [(); 4] = [unimplemented!(); 4];
+    unimplemented!();
     let mut ru: *mut basic = (buf.as_mut_ptr() as *mut basic);
-    let mut pi: *mut i32 = (&mut (*ru).i as *mut i32);
-    let mut pf: *mut f32 = (&mut (*ru).f as *mut f32);
-    (*ru).i = 7;
-    assert!(((*pi) == (7)));
-    (*pi) = 1065353216;
-    assert!((((*ru).i) == (1065353216)));
-    assert!(((*pf) == (1_f32)));
-    assert!(((buf[(3) as usize] as i32) == (63)));
-    let mut braced: basic = basic { i: 5 };
-    assert!(((braced.i) == (5)));
-    let mut copied: basic = basic { i: 7 };
-    assert!(((copied.i) == (7)));
+    let mut pi: *mut () = (&mut (*ru).i as *mut ());
+    let mut pf: *mut () = (&mut (*ru).f as *mut ());
+    (*ru).i = 7_();
+    unimplemented!();
+    (*pi) = 1065353216_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut braced: basic = basic { i: 5_() };
+    unimplemented!();
+    let mut copied: basic = basic { i: 7_() };
+    unimplemented!();
     {
         let mut anon_0: anon_0 = <anon_0>::default();
-        anon_0.ai = 11;
-        assert!(((anon_0.ai) == (11)));
-        anon_0.ai = 1065353216;
-        assert!(((anon_0.af) == (1_f32)));
+        anon_0.ai = 11_();
+        unimplemented!();
+        anon_0.ai = 1065353216_();
+        unimplemented!();
     }
     let mut us: underscores = <underscores>::default();
-    us.__ = 5;
-    assert!(((us.__) == (5)));
+    us.__ = 5_();
+    unimplemented!();
     us.___ = 2.5_f64;
-    assert!(((us.___) == (2.5_f64)));
-    let mut __: i32 = 1;
-    let mut ___: i32 = 2;
-    assert!((((__) + (___)) == (3)));
-    return 0;
+    unimplemented!();
+    let mut __: () = 1_();
+    let mut ___: () = 2_();
+    unimplemented!();
+    return 0_();
 }
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union anon_0 {
-    pub ai: i32,
-    pub af: f32,
+    pub ai: (),
+    pub af: (),
 }
 impl Default for anon_0 {
     fn default() -> Self {

@@ -16,9 +16,9 @@ pub struct node_t {
     #[byte_size(8)]
     pub right: Ptr<node_t>,
     #[offset(16)]
-    pub value: i32,
+    pub value: (),
 }
-pub fn find_0(mut node: Ptr<node_t>, mut value: i32) -> Ptr<node_t> {
+pub fn find_0(mut node: Ptr<node_t>, mut value: ()) -> Ptr<node_t> {
     if ({ value } < { node.with(|__s| __s.value) })
         && (!((node.with(|__s| __s.left.clone())).is_null()))
     {
@@ -32,7 +32,7 @@ pub fn find_0(mut node: Ptr<node_t>, mut value: i32) -> Ptr<node_t> {
     }
     return Ptr::<node_t>::null();
 }
-pub fn insert_1(mut node: Ptr<node_t>, mut value: i32) -> Ptr<node_t> {
+pub fn insert_1(mut node: Ptr<node_t>, mut value: ()) -> Ptr<node_t> {
     if (node).is_null() {
         return Ptr::alloc(node_t {
             left: Ptr::<node_t>::null(),
@@ -62,28 +62,28 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let mut root: Ptr<node_t> = Ptr::alloc(node_t {
         left: Ptr::<node_t>::null(),
         right: Ptr::<node_t>::null(),
-        value: 0,
+        value: 0_(),
     });
-    let __rhs = ({ insert_1((root).clone(), 1) });
+    let __rhs = ({ insert_1((root).clone(), 1_()) });
     root = __rhs;
-    let __rhs = ({ insert_1((root).clone(), 2) });
+    let __rhs = ({ insert_1((root).clone(), 2_()) });
     root = __rhs;
-    let __rhs = ({ insert_1((root).clone(), 3) });
+    let __rhs = ({ insert_1((root).clone(), 3_()) });
     root = __rhs;
-    let __rhs = ({ insert_1((root).clone(), 4) });
+    let __rhs = ({ insert_1((root).clone(), 4_()) });
     root = __rhs;
-    let mut out: bool = (((((({ find_0((root).clone(), 0) }).with(|__s| __s.value) == 0)
-        && (({ find_0((root).clone(), 1) }).with(|__s| __s.value) == 1))
-        && (({ find_0((root).clone(), 2) }).with(|__s| __s.value) == 2))
-        && (({ find_0((root).clone(), 3) }).with(|__s| __s.value) == 3))
-        && (({ find_0((root).clone(), 4) }).with(|__s| __s.value) == 4))
-        && (({ find_0((root).clone(), 5) }).is_null());
+    let mut out: () = (((((({ find_0((root).clone(), 0_()) }).with(|__s| __s.value) == 0_())
+        && (({ find_0((root).clone(), 1_()) }).with(|__s| __s.value) == 1_()))
+        && (({ find_0((root).clone(), 2_()) }).with(|__s| __s.value) == 2_()))
+        && (({ find_0((root).clone(), 3_()) }).with(|__s| __s.value) == 3_()))
+        && (({ find_0((root).clone(), 4_()) }).with(|__s| __s.value) == 4_()))
+        && (({ find_0((root).clone(), 5_()) }).is_null());
     ({ del_2((root).clone()) });
-    assert!(out);
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

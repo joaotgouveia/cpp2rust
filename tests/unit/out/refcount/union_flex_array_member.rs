@@ -14,10 +14,10 @@ pub struct anon_0 {
     __bytes: Box<[u8]>,
 }
 impl anon_0 {
-    pub fn bytes(this: Ptr<Self>) -> Ptr<u8> {
+    pub fn bytes(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
-    pub fn aligner(this: Ptr<Self>) -> Ptr<AnyPtr> {
+    pub fn aligner(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
 }
@@ -32,9 +32,9 @@ impl Default for anon_0 {
 #[byte_size(24)]
 pub struct node {
     #[offset(0)]
-    pub len: usize,
+    pub len: (),
     #[offset(8)]
-    pub pos: usize,
+    pub pos: (),
     #[offset(16)]
     #[byte_size(8)]
     pub x: anon_0,
@@ -43,55 +43,36 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut tail_size: usize = 32_usize;
-    let mut n: Ptr<node> =
-        libcc2rs::malloc_refcount(((24usize as u64).wrapping_add((tail_size as u64)) as usize))
-            .reinterpret_cast::<node>();
+fn main_0() -> () {
+    let mut tail_size: () = 32_();
+    let mut n: Ptr<node> = unimplemented!().reinterpret_cast::<node>();
     field!(n, len).write(tail_size);
-    let mut i: usize = 0_usize;
-    'loop_: while (((i < tail_size) as i32) != 0) {
+    let mut i: () = 0_();
+    'loop_: while (((i < tail_size) as ()) != 0) {
         elem!(
-            (anon_0::bytes(field_ptr!(n, x)).reinterpret_cast::<u8>() as Ptr::<u8>),
+            (anon_0::bytes(field_ptr!(n, x)).reinterpret_cast::<()>() as Ptr::<()>),
             i
         )
-        .write({ ((i & 255_usize) as u8) });
+        .write({ ((i & 255_()) as ()) });
         i.postfix_inc();
     }
-    let mut i: usize = 0_usize;
-    'loop_: while (((i < tail_size) as i32) != 0) {
-        assert!(
-            ((({
-                ((elem!(
-                    (anon_0::bytes(field_ptr!(n, x)).reinterpret_cast::<u8>() as Ptr::<u8>),
-                    i
-                )
-                .read()) as i32)
-            } == { (((i & 255_usize) as u8) as i32) }) as i32)
-                != 0)
-        );
+    let mut i: () = 0_();
+    'loop_: while (((i < tail_size) as ()) != 0) {
+        unimplemented!();
         i.postfix_inc();
     }
-    let mut p: Ptr<u8> = ((anon_0::bytes(field_ptr!(n, x)).reinterpret_cast::<u8>() as Ptr<u8>)
-        .offset((10) as isize));
-    assert!((((((p.read()) as i32) == 10) as i32) != 0));
-    p.write(170_u8);
-    assert!(
-        (((((elem!(
-            (anon_0::bytes(field_ptr!(n, x)).reinterpret_cast::<u8>() as Ptr::<u8>),
-            10
-        )
-        .read()) as i32)
-            == 170) as i32)
-            != 0)
-    );
-    field!(n, pos).write(20_usize);
-    let mut q: Ptr<u8> = ((anon_0::bytes(field_ptr!(n, x)).reinterpret_cast::<u8>() as Ptr<u8>)
+    let mut p: Ptr<()> = ((anon_0::bytes(field_ptr!(n, x)).reinterpret_cast::<()>() as Ptr<()>)
+        .offset((10_()) as isize));
+    unimplemented!();
+    p.write(170_());
+    unimplemented!();
+    field!(n, pos).write(20_());
+    let mut q: Ptr<()> = ((anon_0::bytes(field_ptr!(n, x)).reinterpret_cast::<()>() as Ptr<()>)
         .offset((n.with(|__s| __s.pos)) as isize));
-    assert!((((((q.read()) as i32) == 20) as i32) != 0));
-    q.write(187_u8);
-    assert!((((((q.read()) as i32) == 187) as i32) != 0));
-    libcc2rs::free_refcount((n).to_any());
-    return 0;
+    unimplemented!();
+    q.write(187_());
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

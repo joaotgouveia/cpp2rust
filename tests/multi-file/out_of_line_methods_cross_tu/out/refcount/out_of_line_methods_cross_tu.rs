@@ -10,68 +10,68 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 impl S {}
 pub trait Base {
-    fn apply(&mut self, x: i32) -> i32;
+    fn apply(&mut self, x: ()) -> ();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Derived {
     #[offset(8)]
-    pub factor: i32,
+    pub factor: (),
 }
 impl Derived {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Pair {
     #[offset(0)]
-    pub first: i32,
+    pub first: (),
     #[offset(4)]
-    pub second: i32,
+    pub second: (),
 }
-pub fn pair_diff_0(mut p: Ptr<Pair>) -> i32 {
+pub fn pair_diff_0(mut p: Ptr<Pair>) -> () {
     return ({ p.with(|__s| __s.first) } - { p.with(|__s| __s.second) });
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let s: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-    assert!((({ SImpl::get(&s.as_pointer(),) }) == 1));
-    ({ SImpl::set(&s.as_pointer(), 4) });
-    assert!((({ SImpl::get(&s.as_pointer(),) }) == 4));
-    assert!((({ SImpl::add(&s.as_pointer(), 2,) }) == 6));
-    let derived: Value<Derived> = Rc::new(RefCell::new(Derived::new({ 3 })));
+fn main_0() -> () {
+    let s: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+    unimplemented!();
+    ({ SImpl::set(&s.as_pointer(), 4_()) });
+    unimplemented!();
+    unimplemented!();
+    let derived: Value<Derived> = Rc::new(RefCell::new(Derived::new({ 3_() })));
     let mut base: PtrDyn<dyn Base> = (derived.as_pointer()).to_dyn::<dyn Base>(|w| w);
-    assert!((({ (*base.upgrade().deref_mut()).apply(5,) }) == 15));
+    unimplemented!();
     let pair: Value<Pair> = Rc::new(RefCell::new(Pair {
-        first: 7,
-        second: 3,
+        first: 7_(),
+        second: 3_(),
     }));
-    assert!((({ pair_sum_1((pair.as_pointer()),) }) == 10));
-    assert!((({ pair_diff_0((pair.as_pointer()),) }) == 4));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 impl S {
-    pub fn new(mut x: i32) -> Self {
+    pub fn new(mut x: ()) -> Self {
         Self { v: x }
     }
 }
 impl Derived {
-    pub fn new(mut factor: i32) -> Self {
+    pub fn new(mut factor: ()) -> Self {
         Self { factor: factor }
     }
 }
 impl S {}
 impl Derived {}
-pub fn pair_sum_1(mut p: Ptr<Pair>) -> i32 {
+pub fn pair_sum_1(mut p: Ptr<Pair>) -> () {
     return ({ p.with(|__s| __s.first) } + { p.with(|__s| __s.second) });
 }
 impl Base for Derived {
-    fn apply(&mut self, mut x: i32) -> i32 {
+    fn apply(&mut self, mut x: ()) -> () {
         return ({ self.factor } * x);
     }
 }
@@ -79,23 +79,23 @@ pub trait SImpl {
     fn destructor(&self) {
         unimplemented!()
     }
-    fn get(&self) -> i32;
-    fn set(&self, mut x: i32) {
+    fn get(&self) -> ();
+    fn set(&self, mut x: ()) {
         unimplemented!()
     }
-    fn add(&self, mut x: i32) -> i32 {
+    fn add(&self, mut x: ()) -> () {
         unimplemented!()
     }
 }
 impl SImpl for Ptr<S> {
-    fn get(&self) -> i32 {
+    fn get(&self) -> () {
         return (*self).with(|__s| __s.v);
     }
     fn destructor(&self) {}
-    fn set(&self, mut x: i32) {
+    fn set(&self, mut x: ()) {
         field!((*self), v).write(x);
     }
-    fn add(&self, mut x: i32) -> i32 {
+    fn add(&self, mut x: ()) -> () {
         {
             let __rhs = x;
             field!((*self), v).with_mut(|__v| *__v = *__v + __rhs)

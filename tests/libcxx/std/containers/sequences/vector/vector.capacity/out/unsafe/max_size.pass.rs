@@ -58,19 +58,16 @@ pub struct min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
 impl min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {
-    pub unsafe fn new_1(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.ptr_);
     }
-    pub unsafe fn operator_dec_10(
+    pub unsafe fn operator_inc_8(
         &mut self,
     ) -> *mut min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__ {
-        self.ptr_.prefix_dec();
+        self.ptr_.prefix_inc();
         return &mut (*(self
             as *mut min_pointer_unsigned_int__std_integral_constant_unsigned_long__0__));
     }
@@ -1121,103 +1118,103 @@ pub unsafe fn test_16(v: *const ()) {
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_17(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_18(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_19(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_20(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_21(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_22(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_23(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_24(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_25(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_26(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn test_27(v: *const ()) {
     let max_dist: () = unimplemented!();
     let max_alloc: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn tests_28() -> () {
     {
         let mut c: () = unimplemented!();
         unimplemented!();
+        const _: () = assert!(true, "");;
+    }
+    {
+        let max_dist: () = unimplemented!();
+        let mut c: () = unimplemented!();
         unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let max_dist: () = unimplemented!();
         let mut c: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-    }
-    {
-        let max_dist: () = unimplemented!();
-        let mut c: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         (unsafe {

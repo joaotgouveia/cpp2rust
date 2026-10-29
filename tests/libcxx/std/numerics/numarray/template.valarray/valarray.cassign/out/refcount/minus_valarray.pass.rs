@@ -205,11 +205,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         });
         ({
             let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_8(_rhs.as_pointer())
+            test_0(_rhs.as_pointer())
         });
         ({
             let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_7(_rhs.as_pointer())
+            test_8(_rhs.as_pointer())
         });
         ({
             let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));

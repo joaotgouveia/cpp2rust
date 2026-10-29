@@ -10,7 +10,7 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Empty {}
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct S {
     pub a: (),
     pub k: (),
@@ -20,10 +20,24 @@ impl S {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             a: unimplemented!(),
-            k: (*(unsafe { get_0(&mut this.a) })),
-            e: (*(unsafe { get_1(&mut this.a) })),
+            k: (*unimplemented!()),
+            e: (*unimplemented!()),
         };
         this
+    }
+    pub unsafe fn move_from(_a0: *mut S) -> Self {
+        let mut this = Self {
+            a: unimplemented!(),
+            k: (*_a0).k,
+            e: (*_a0).e,
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
+        unimplemented!();
+        self.k = (*_a0).k;
+        self.e = (*_a0).e;
+        return &mut (*(self as *mut S));
     }
 }
 impl Default for S {
@@ -31,7 +45,7 @@ impl Default for S {
         unsafe { S::new() }
     }
 }
-pub unsafe fn getP_2() -> () {
+pub unsafe fn getP_0() -> () {
     return unimplemented!();
 }
 pub fn main() {
@@ -53,7 +67,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut t: () = unimplemented!();
         unimplemented!();
-        (*(unsafe { get_3(&mut t) })) = 2_();
+        (*unimplemented!()) = 2_();
         unimplemented!();
     }
     {
@@ -61,7 +75,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*(unsafe { get_4(&mut t) })) = 4_();
+        (*unimplemented!()) = 4_();
         unimplemented!();
         unimplemented!();
     }
@@ -71,9 +85,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*(unsafe { get_5(&mut t) })) = 2.5_f64;
+        (*unimplemented!()) = 2.5_f64;
         unimplemented!();
-        (*(unsafe { get_6(&mut t) })) = 4_();
+        (*unimplemented!()) = 4_();
         unimplemented!();
         unimplemented!();
         unimplemented!();

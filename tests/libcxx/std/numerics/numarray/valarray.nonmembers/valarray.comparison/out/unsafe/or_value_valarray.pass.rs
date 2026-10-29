@@ -28,8 +28,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut a3: [(); 5] = [true, true, true, true, true];
         let N: () = 5_();
         let mut v2: () = unimplemented!();
-        let mut v3: () = (unsafe { unimplemented!()() });
-        let mut v3a: () = (unsafe { unimplemented!()() });
+        let mut v3: () = unimplemented!();
+        let mut v3a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -44,8 +44,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut a3: [(); 5] = [true, true, true, true, false];
         let N: () = 5_();
         let mut v2: () = unimplemented!();
-        let mut v3: () = (unsafe { unimplemented!()() });
-        let mut v3a: () = (unsafe { unimplemented!()() });
+        let mut v3: () = unimplemented!();
+        let mut v3a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();

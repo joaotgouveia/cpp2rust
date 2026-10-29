@@ -173,31 +173,45 @@ pub unsafe fn classify_2(mut x: ()) -> () {
     if ((x) == (0_())) {
         return (anon_1_zero as ());
     }
-    if (unsafe { isinf_3(x) }) {
+    if unimplemented!() {
         return (anon_1_inf as ());
     }
-    if (unsafe { isnan_4(x) }) {
+    if unimplemented!() {
         return (anon_1_NaN as ());
     }
     return (anon_1_non_zero as ());
 }
+pub unsafe fn is_about_3(mut x: (), mut y: ()) {
+    unimplemented!();
+}
+pub unsafe fn is_about_4(mut x: (), mut y: ()) {
+    unimplemented!();
+}
 pub unsafe fn is_about_5(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_6(mut x: (), mut y: ()) {
+pub unsafe fn test_6(c: *const (), mut x: ()) {
     unimplemented!();
 }
-pub unsafe fn is_about_7(mut x: (), mut y: ()) {
+pub unsafe fn test_7(c: *const (), mut x: ()) {
     unimplemented!();
 }
 pub unsafe fn test_8(c: *const (), mut x: ()) {
     unimplemented!();
 }
-pub unsafe fn test_9(c: *const (), mut x: ()) {
-    unimplemented!();
+pub unsafe fn test_9() {
+    (unsafe {
+        let mut _c: () = unimplemented!();
+        let _x: () = unimplemented!();
+        test_6(&mut _c, _x)
+    });
 }
-pub unsafe fn test_10(c: *const (), mut x: ()) {
-    unimplemented!();
+pub unsafe fn test_10() {
+    (unsafe {
+        let mut _c: () = unimplemented!();
+        let _x: () = unimplemented!();
+        test_7(&mut _c, _x)
+    });
 }
 pub unsafe fn test_11() {
     (unsafe {
@@ -206,22 +220,8 @@ pub unsafe fn test_11() {
         test_8(&mut _c, _x)
     });
 }
-pub unsafe fn test_12() {
-    (unsafe {
-        let mut _c: () = unimplemented!();
-        let _x: () = unimplemented!();
-        test_9(&mut _c, _x)
-    });
-}
-pub unsafe fn test_13() {
-    (unsafe {
-        let mut _c: () = unimplemented!();
-        let _x: () = unimplemented!();
-        test_10(&mut _c, _x)
-    });
-}
-pub unsafe fn test_edges_14() {
-    let pi: () = (unsafe { atan2_15(0_f64, -0_f64) });
+pub unsafe fn test_edges_12() {
+    let pi: () = unimplemented!();
     let N: () = (::std::mem::size_of::<[(); 153]>() as ())
         .wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut i: () = 0_();
@@ -229,10 +229,10 @@ pub unsafe fn test_edges_14() {
         let mut r: () = unimplemented!();
         if ((unimplemented!()) == (0_())) && ((unimplemented!()) == (0_())) {
             unimplemented!();
-            if (unsafe { signbit_16(unimplemented!()) }) {
-                (unsafe { is_about_6(unimplemented!(), ((-pi) / (2_()))) });
+            if unimplemented!() {
+                (unsafe { is_about_4(unimplemented!(), ((-pi) / (2_()))) });
             } else {
-                (unsafe { is_about_6(unimplemented!(), ((pi) / (2_()))) });
+                (unsafe { is_about_4(unimplemented!(), ((pi) / (2_()))) });
             }
         } else if ((unimplemented!()) == (1_())) && ((unimplemented!()) == (0_())) {
             unimplemented!();
@@ -242,77 +242,63 @@ pub unsafe fn test_edges_14() {
         } else if ((unimplemented!()) == (-1_())) && ((unimplemented!()) == (0_())) {
             unimplemented!();
             unimplemented!();
-            if (unsafe { signbit_16(unimplemented!()) }) {
-                (unsafe { is_about_6(unimplemented!(), -pi) });
+            if unimplemented!() {
+                (unsafe { is_about_4(unimplemented!(), -pi) });
             } else {
-                (unsafe { is_about_6(unimplemented!(), pi) });
+                (unsafe { is_about_4(unimplemented!(), pi) });
             }
-        } else if (unsafe { isfinite_17(unimplemented!()) })
-            && (unsafe { isinf_3(unimplemented!()) })
-        {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-            if (unsafe { signbit_16(unimplemented!()) }) {
-                (unsafe { is_about_6(unimplemented!(), ((-pi) / (2_()))) });
+            if unimplemented!() {
+                (unsafe { is_about_4(unimplemented!(), ((-pi) / (2_()))) });
             } else {
-                (unsafe { is_about_6(unimplemented!(), ((pi) / (2_()))) });
+                (unsafe { is_about_4(unimplemented!(), ((pi) / (2_()))) });
             }
-        } else if (unsafe { isfinite_17(unimplemented!()) })
-            && (unsafe { isnan_4(unimplemented!()) })
-        {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if ((unsafe { isinf_3(unimplemented!()) }) && ((unimplemented!()) < (0_())))
-            && (unsafe { isfinite_17(unimplemented!()) })
-        {
+        } else if ((unimplemented!()) && ((unimplemented!()) < (0_()))) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-            if (unsafe { signbit_16(unimplemented!()) }) {
-                (unsafe { is_about_6(unimplemented!(), -pi) });
+            if unimplemented!() {
+                (unsafe { is_about_4(unimplemented!(), -pi) });
             } else {
-                (unsafe { is_about_6(unimplemented!(), pi) });
+                (unsafe { is_about_4(unimplemented!(), pi) });
             }
-        } else if ((unsafe { isinf_3(unimplemented!()) }) && ((unimplemented!()) > (0_())))
-            && (unsafe { isfinite_17(unimplemented!()) })
-        {
+        } else if ((unimplemented!()) && ((unimplemented!()) > (0_()))) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-        } else if ((unsafe { isinf_3(unimplemented!()) }) && ((unimplemented!()) < (0_())))
-            && (unsafe { isinf_3(unimplemented!()) })
-        {
+        } else if ((unimplemented!()) && ((unimplemented!()) < (0_()))) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-            if (unsafe { signbit_16(unimplemented!()) }) {
-                (unsafe { is_about_6(unimplemented!(), ((-0.75_f64) * (pi))) });
+            if unimplemented!() {
+                (unsafe { is_about_4(unimplemented!(), ((-0.75_f64) * (pi))) });
             } else {
-                (unsafe { is_about_6(unimplemented!(), ((0.75_f64) * (pi))) });
+                (unsafe { is_about_4(unimplemented!(), ((0.75_f64) * (pi))) });
             }
-        } else if ((unsafe { isinf_3(unimplemented!()) }) && ((unimplemented!()) > (0_())))
-            && (unsafe { isinf_3(unimplemented!()) })
-        {
+        } else if ((unimplemented!()) && ((unimplemented!()) > (0_()))) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-            if (unsafe { signbit_16(unimplemented!()) }) {
-                (unsafe { is_about_6(unimplemented!(), ((-0.25_f64) * (pi))) });
+            if unimplemented!() {
+                (unsafe { is_about_4(unimplemented!(), ((-0.25_f64) * (pi))) });
             } else {
-                (unsafe { is_about_6(unimplemented!(), ((0.25_f64) * (pi))) });
+                (unsafe { is_about_4(unimplemented!(), ((0.25_f64) * (pi))) });
             }
-        } else if (unsafe { isinf_3(unimplemented!()) }) && (unsafe { isnan_4(unimplemented!()) }) {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-        } else if (unsafe { isnan_4(unimplemented!()) })
-            && (unsafe { isfinite_17(unimplemented!()) })
-        {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
-        } else if (unsafe { isnan_4(unimplemented!()) }) && (unsafe { isinf_3(unimplemented!()) }) {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-        } else if (unsafe { isnan_4(unimplemented!()) }) && (unsafe { isnan_4(unimplemented!()) }) {
+        } else if (unimplemented!()) && (unimplemented!()) {
             unimplemented!();
             unimplemented!();
         } else {
@@ -338,10 +324,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_9() });
+    (unsafe { test_10() });
     (unsafe { test_11() });
-    (unsafe { test_12() });
-    (unsafe { test_13() });
-    (unsafe { test_edges_14() });
+    (unsafe { test_edges_12() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

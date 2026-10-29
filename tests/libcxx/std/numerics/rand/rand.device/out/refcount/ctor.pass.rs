@@ -49,11 +49,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         });
         ({
             let _token: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            check_random_device_valid_2(_token.as_pointer())
+            check_random_device_invalid_3(_token.as_pointer())
         });
         ({
             let _token: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            check_random_device_valid_2(_token.as_pointer())
+            check_random_device_invalid_3(_token.as_pointer())
         });
         ({
             let _token: Value<()> = Rc::new(RefCell::new(unimplemented!()));

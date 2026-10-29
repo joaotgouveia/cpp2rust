@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn _pow_0(mut a: (), mut b: ()) -> () {
-    return (unsafe { pow_1(a, b) });
+    return unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -27,7 +27,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut fnc: () = unimplemented!();
     let mut task: () = unimplemented!();
-    let mut task2: () = unimplemented!();
+    let mut task2: () = task.clone();
     unimplemented!();
     unimplemented!();
     return 0_();

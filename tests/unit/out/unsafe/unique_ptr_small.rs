@@ -6,9 +6,12 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn change_0(n: *mut Option<Box<i32>>) {
-    let mut m: Option<Box<i32>> = Some(Box::new(20));
-    (*n) = m.take();
+pub unsafe fn change_0(n: *mut std_unique_ptr_int__std_default_delete_int__) {
+    let mut m: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 20_();
+        make_unique_1(&mut ___args)
+    });
+    (*n) = (m).clone();
 }
 pub fn main() {
     unsafe {
@@ -16,17 +19,17 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut n: Option<Box<i32>> = Some(Box::new(10));
+unsafe fn main_0() -> () {
+    let mut n: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 10_();
+        make_unique_1(&mut ___args)
+    });
     (unsafe { change_0(&mut n) });
-    assert!(
-        ((*n.as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-            == (20))
-    );
-    let mut empty: Option<Box<i32>> = None;
-    assert!(empty.is_none());
-    assert!(n.is_some());
-    return 0;
+    unimplemented!();
+    let mut empty: std_unique_ptr_int__std_default_delete_int__ =
+        <std_unique_ptr_int__std_default_delete_int__>::default();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

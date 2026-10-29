@@ -20,14 +20,12 @@ impl Char {
         let mut this = Self { underlying_: i };
         this
     }
-    pub unsafe fn new_3(mut i: i32) -> Self {
-        let mut this = Self {
-            underlying_: (i as ()),
-        };
+    pub unsafe fn new_3(mut i: ()) -> Self {
+        let mut this = Self { underlying_: i };
         this
     }
-    pub unsafe fn to_i32(&self) -> i32 {
-        return (self.underlying_ as i32);
+    pub unsafe fn to_(&self) -> () {
+        return self.underlying_;
     }
 }
 pub static mut id_0: std::cell::LazyCell<()> =

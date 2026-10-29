@@ -199,11 +199,23 @@ impl CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
     pub quals: CallQuals,
     pub arg_types: *const TypeID,
     pub args: (),
+}
+impl CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
+    pub unsafe fn move_from(
+        _a0: *mut CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__,
+    ) -> Self {
+        let mut this = Self {
+            quals: (*_a0).quals,
+            arg_types: (*_a0).arg_types,
+            args: unimplemented!(),
+        };
+        this
+    }
 }
 impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
     pub unsafe fn new(
@@ -221,11 +233,23 @@ impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
     pub quals: CallQuals,
     pub arg_types: *const TypeID,
     pub args: (),
+}
+impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
+    pub unsafe fn move_from(
+        _a0: *mut CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__,
+    ) -> Self {
+        let mut this = Self {
+            quals: (*_a0).quals,
+            arg_types: (*_a0).arg_types,
+            args: unimplemented!(),
+        };
+        this
+    }
 }
 impl CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
     pub unsafe fn new(

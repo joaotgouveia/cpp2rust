@@ -73,10 +73,7 @@ const _: () = assert!(
     true,
     "!std::is_trivially_copyable<NotTriviallyMovable>::value"
 );
-const _: () = assert!(
-    true,
-    "!std::__libcpp_is_trivially_relocatable<NotTriviallyMovable>::value"
-);
+const _: () = assert!(true, "");
 pub unsafe fn tests_0() -> () {
     let mut track: Tracker = <Tracker>::default();
     let mut v: () = unimplemented!();

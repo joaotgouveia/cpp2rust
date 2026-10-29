@@ -23,29 +23,29 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut h: () = (unsafe { operator_literal_h_0(4_()) });
+    let mut h: () = (unsafe { unimplemented!()() });
     unimplemented!();
-    let mut h2: () = (unsafe { operator_literal_h_1(4_f64) });
+    let mut h2: () = unimplemented!();
     unimplemented!();
-    let mut min: () = (unsafe { operator_literal_min_2(36_()) });
+    let mut min: () = (unsafe { unimplemented!()() });
     unimplemented!();
-    let mut min2: () = (unsafe { operator_literal_min_3(36_f64) });
+    let mut min2: () = unimplemented!();
     unimplemented!();
-    let mut s: () = (unsafe { operator_literal_s_4(24_()) });
+    let mut s: () = (unsafe { unimplemented!()() });
     unimplemented!();
-    let mut s2: () = (unsafe { operator_literal_s_5(24_f64) });
+    let mut s2: () = unimplemented!();
     unimplemented!();
-    let mut ms: () = (unsafe { operator_literal_ms_6(247_()) });
+    let mut ms: () = (unsafe { unimplemented!()() });
     unimplemented!();
-    let mut ms2: () = (unsafe { operator_literal_ms_7(247_f64) });
+    let mut ms2: () = unimplemented!();
     unimplemented!();
-    let mut us: () = (unsafe { operator_literal_us_8(867_()) });
+    let mut us: () = (unsafe { unimplemented!()() });
     unimplemented!();
-    let mut us2: () = (unsafe { operator_literal_us_9(867_f64) });
+    let mut us2: () = unimplemented!();
     unimplemented!();
-    let mut ns: () = (unsafe { operator_literal_ns_10(645_()) });
+    let mut ns: () = (unsafe { unimplemented!()() });
     unimplemented!();
-    let mut ns2: () = (unsafe { operator_literal_ns_11(645_f64) });
+    let mut ns2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

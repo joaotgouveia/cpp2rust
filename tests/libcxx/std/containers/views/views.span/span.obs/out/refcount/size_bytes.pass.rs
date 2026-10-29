@@ -29,7 +29,7 @@ pub fn testConstexprSpan_3(sp: (), mut sz: ()) -> () {
 pub fn testConstexprSpan_4(sp: (), mut sz: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    return (unimplemented!() == (sz).wrapping_mul((24usize as ())));
+    return (unimplemented!() == (sz).wrapping_mul((32usize as ())));
 }
 pub fn testConstexprSpan_5(sp: (), mut sz: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -54,7 +54,7 @@ pub fn testConstexprSpan_8(sp: (), mut sz: ()) -> () {
 pub fn testConstexprSpan_9(sp: (), mut sz: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    return (unimplemented!() == (sz).wrapping_mul((24usize as ())));
+    return (unimplemented!() == (sz).wrapping_mul((32usize as ())));
 }
 pub fn testConstexprSpan_10(sp: (), mut sz: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));

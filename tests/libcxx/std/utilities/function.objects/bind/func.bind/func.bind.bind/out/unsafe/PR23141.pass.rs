@@ -19,7 +19,7 @@ impl Fun {
     }
 }
 pub unsafe fn test_0() -> () {
-    unimplemented!();
+    (unsafe { unimplemented!()(&std::mem::transmute(*b"hello\0")) });
     return true;
 }
 pub fn main() {

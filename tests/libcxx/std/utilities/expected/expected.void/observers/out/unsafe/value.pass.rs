@@ -187,7 +187,7 @@ pub unsafe fn test_14() -> () {
     }
     {
         let mut e: () = unimplemented!();
-        (unsafe { e.value_29() });
+        (unsafe { e.value_26() });
         const _: () = assert!(true, "std::is_same_v<decltype(std::move(e).value()), void>");;
     }
     {

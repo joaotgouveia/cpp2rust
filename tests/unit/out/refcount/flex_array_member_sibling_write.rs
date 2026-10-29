@@ -10,17 +10,17 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct S {
     #[offset(0)]
-    pub n: i32,
+    pub n: (),
     #[offset(4)]
     #[byte_size(1)]
-    pub name: Box<[i8]>,
+    pub name: Box<[()]>,
 }
 impl Default for S {
     fn default() -> Self {
         {
             S {
-                n: 0_i32,
-                name: (0..1).map(|_| 0_i8).collect::<Box<[i8]>>(),
+                n: unimplemented!(),
+                name: (0..1).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
     }
@@ -29,17 +29,17 @@ impl Default for S {
 #[byte_size(8)]
 pub struct E {
     #[offset(0)]
-    pub id: i32,
+    pub id: (),
     #[offset(4)]
-    pub w: i32,
+    pub w: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(16)]
 pub struct T {
     #[offset(0)]
-    pub n: i32,
+    pub n: (),
     #[offset(4)]
-    pub cap: i32,
+    pub cap: (),
     #[offset(8)]
     #[byte_size(8)]
     pub a: Box<[E]>,
@@ -48,8 +48,8 @@ impl Default for T {
     fn default() -> Self {
         {
             T {
-                n: 0_i32,
-                cap: 0_i32,
+                n: unimplemented!(),
+                cap: unimplemented!(),
                 a: (0..1).map(|_| <E>::default()).collect::<Box<[E]>>(),
             }
         }
@@ -59,72 +59,29 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut s: Ptr<S> = libcc2rs::calloc_refcount(1_usize, (8usize as usize).wrapping_add(8_usize))
-        .reinterpret_cast::<S>();
-    assert!((((!((s).is_null())) as i32) != 0));
-    {
-        ((array_field_ptr!(s, name) as Ptr<i8>) as Ptr<i8>)
-            .to_any()
-            .memcpy(
-                &Ptr::<i8>::from_string_literal(b"abcdefg").to_any(),
-                8_usize as usize,
-            );
-        ((array_field_ptr!(s, name) as Ptr<i8>) as Ptr<i8>).to_any()
-    };
-    field!(s, n).write(5);
-    assert!((((s.with(|__s| __s.n) == 5) as i32) != 0));
-    assert!(
-        ((({
-            let mut __it1 = (array_field_ptr!(s, name) as Ptr<i8>).to_c_string_iterator();
-            let mut __it2 = Ptr::<i8>::from_string_literal(b"abcdefg").to_c_string_iterator();
-            loop {
-                let __c1 = __it1.next();
-                let __c2 = __it2.next();
-                if __c1 != __c2 {
-                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
-                }
-                if __c1.is_none() {
-                    break 0;
-                }
-            }
-        } == 0) as i32)
-            != 0)
-    );
-    libcc2rs::free_refcount((s).to_any());
-    let mut t: Ptr<T> =
-        libcc2rs::malloc_refcount((16usize as usize).wrapping_add((8usize as usize)))
-            .reinterpret_cast::<T>();
-    assert!((((!((t).is_null())) as i32) != 0));
-    field!(t, n).write(2);
-    field!(t, cap).write(2);
-    field!(array_elem!(t, a, 0), id).write(10);
-    field!(array_elem!(t, a, 1), w).write(20);
-    field!(t, n).write(3);
-    assert!(
-        ((((((array_elem!(t, a, 0).with(|__s| __s.id) == 10) as i32) != 0)
-            && (((array_elem!(t, a, 1).with(|__s| __s.w) == 20) as i32) != 0)) as i32)
-            != 0)
-    );
-    let mut tail: Ptr<E> = (t.offset((1) as isize)).reinterpret_cast::<E>();
-    assert!(
-        ((({ (tail).clone() } == { ((array_field_ptr!(t, a) as Ptr<E>).offset((1) as isize)) })
-            as i32)
-            != 0)
-    );
-    field!(elem!(tail, 0), id).write(30);
-    field!(t, cap).write(4);
-    assert!(
-        ((((((array_elem!(t, a, 1).with(|__s| __s.id) == 30) as i32) != 0)
-            && (((array_elem!(t, a, 1).with(|__s| __s.w) == 20) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((((t.with(|__s| __s.n) == 3) as i32) != 0)
-            && (((t.with(|__s| __s.cap) == 4) as i32) != 0)) as i32)
-            != 0)
-    );
-    libcc2rs::free_refcount((t).to_any());
-    return 0;
+fn main_0() -> () {
+    let mut s: Ptr<S> = unimplemented!().reinterpret_cast::<S>();
+    unimplemented!();
+    unimplemented!();
+    field!(s, n).write(5_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut t: Ptr<T> = unimplemented!().reinterpret_cast::<T>();
+    unimplemented!();
+    field!(t, n).write(2_());
+    field!(t, cap).write(2_());
+    field!(array_elem!(t, a, 0_()), id).write(10_());
+    field!(array_elem!(t, a, 1_()), w).write(20_());
+    field!(t, n).write(3_());
+    unimplemented!();
+    let mut tail: Ptr<E> = (t.offset((1_()) as isize)).reinterpret_cast::<E>();
+    unimplemented!();
+    field!(elem!(tail, 0_()), id).write(30_());
+    field!(t, cap).write(4_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

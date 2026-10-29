@@ -15,8 +15,8 @@ pub struct test_macros_detail_is_same_long__long_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct short_container {}
 impl short_container {
-    pub unsafe fn size(&self) -> u16 {
-        return 60000_u16;
+    pub unsafe fn size(&self) -> () {
+        return 60000_();
     }
 }
 pub unsafe fn test_container_1(c: *mut ()) {

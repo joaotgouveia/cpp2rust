@@ -502,7 +502,7 @@ pub unsafe fn test_24() -> () {
         let mut n: () = 0_();
         let mut i: () = unimplemented!();
         let mut e: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();
@@ -531,7 +531,7 @@ pub unsafe fn test_24() -> () {
         let mut n: () = 0_();
         let mut i: () = unimplemented!();
         let mut e: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();
@@ -560,7 +560,7 @@ pub unsafe fn test_24() -> () {
         let mut n: () = 0_();
         let mut i: () = unimplemented!();
         let mut e: () = unimplemented!();
-        'loop_: while unimplemented!() {
+        'loop_: while !(unimplemented!()) {
             unimplemented!();
             {
                 unimplemented!();

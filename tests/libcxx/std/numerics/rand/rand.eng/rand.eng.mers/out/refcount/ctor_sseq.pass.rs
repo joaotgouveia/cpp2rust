@@ -13,7 +13,7 @@ pub fn test1_0() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     &(a);
 }
 pub fn test2_1() {
@@ -23,7 +23,7 @@ pub fn test2_1() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     &(a);
 }
 pub fn main() {

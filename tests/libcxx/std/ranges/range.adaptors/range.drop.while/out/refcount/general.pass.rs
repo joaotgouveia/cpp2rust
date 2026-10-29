@@ -27,21 +27,14 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let source: Value<()> = Rc::new(RefCell::new(
-        ({
-            operator_literal_sv_0(
-                Ptr::<()>::from_string_literal(b"  \t   \t   \t   hello there"),
-                25_(),
-            )
-        }),
-    ));
+    let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_invisible: Value<FnPtr<Generic>> =
         Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
             return (x == (' ' as ())) || (x == ('\t' as ()));
         })));
     let skip_ws: Value<()> = Rc::new(RefCell::new(
         ({
-            (*drop_while_1.with(Value::clone).borrow_mut())(
+            (*drop_while_0.with(Value::clone).borrow_mut())(
                 source.as_pointer(),
                 is_invisible.as_pointer(),
             )

@@ -12,22 +12,20 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut p: Option<Box<i32>> = Some(Box::new(10));
-    (*p.as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) += 5;
-    (*p.as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) -= 3;
-    (*p.as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) *= 2;
-    let mut q: Option<Box<i32>> = Some(Box::new(1));
-    let mut sum: i32 = ((*p
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
-        + (*q
-            .as_deref()
-            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)));
-    assert!(((sum) == (25)));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut p: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 10_();
+        make_unique_0(&mut ___args)
+    });
+    (*p) += 5_();
+    (*p) -= 3_();
+    (*p) *= 2_();
+    let mut q: std_unique_ptr_int__std_default_delete_int__ = (unsafe {
+        let mut ___args: () = 1_();
+        make_unique_0(&mut ___args)
+    });
+    let mut sum: () = ((*p) + (*q));
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

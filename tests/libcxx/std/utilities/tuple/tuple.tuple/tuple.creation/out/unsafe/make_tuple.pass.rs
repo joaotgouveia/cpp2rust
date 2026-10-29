@@ -18,8 +18,8 @@ pub unsafe fn test_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*(unsafe { get_1(&mut t) })) = 0_();
-    (*(unsafe { get_2(&mut t) })) = 0_();
+    (*unimplemented!()) = 0_();
+    (*unimplemented!()) = 0_();
     unimplemented!();
     unimplemented!();
     return true;
@@ -44,8 +44,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "test()");;
     {
         let t1: () = unimplemented!();
-        let i1: () = (*(unsafe { get_3(&t1) }));
-        let d1: () = (*(unsafe { get_4(&t1) }));
+        let i1: () = (*unimplemented!());
+        let d1: () = (*unimplemented!());
         const _: () = assert!(true, "i1 == 1");;
         const _: () = assert!(true, "d1 == 3.14");;
     }

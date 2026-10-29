@@ -40,7 +40,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
     }
-    (unsafe { remove_0(c"seekoff.dat".as_ptr()) });
+    unimplemented!();
     {
         let mut buf: [(); 10] = [unimplemented!(); 10];
         let mut f: () = unimplemented!();
@@ -48,7 +48,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -59,7 +59,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
     }
-    (unsafe { remove_0(c"seekoff.dat".as_ptr()) });
+    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

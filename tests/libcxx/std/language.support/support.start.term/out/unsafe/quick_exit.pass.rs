@@ -23,8 +23,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { at_quick_exit_1(Some(f_0)) });
-    (unsafe { quick_exit_2(0_()) });
+    unimplemented!();
+    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

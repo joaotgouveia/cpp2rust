@@ -26,6 +26,8 @@ unsafe fn main_0() -> () {
     };
     let mut b: () = unimplemented!();
     let mut ilisti: () = unimplemented!();
+    const _: () = assert!(true, "std::has_single_bit(256u)");;
+    const _: () = assert!(((201411_()) >= (201411_())), "__cpp_lib_void_t >= 201411L");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

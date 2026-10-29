@@ -10,7 +10,7 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_back_insert_iterator_std_string___std_back_insert_iterator_std_string__
+pub struct test_macros_detail_is_same_std_back_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_back_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
 pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;

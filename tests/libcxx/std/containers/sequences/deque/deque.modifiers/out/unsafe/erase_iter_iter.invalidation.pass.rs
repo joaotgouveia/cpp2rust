@@ -6,10 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn is_double_ended_contiguous_container_asan_correct_0(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn del_at_start_1(mut c: (), mut num: ()) {
+pub unsafe fn del_at_start_0(mut c: (), mut num: ()) {
     let mut first: () = unimplemented!();
     let mut last: () = unimplemented!();
     let mut it1: () = unimplemented!();
@@ -23,9 +20,9 @@ pub unsafe fn del_at_start_1(mut c: (), mut num: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
-pub unsafe fn del_at_end_2(mut c: (), mut num: ()) {
+pub unsafe fn del_at_end_1(mut c: (), mut num: ()) {
     let mut last: () = unimplemented!();
     let mut first: () = unimplemented!();
     let mut it1: () = unimplemented!();
@@ -39,7 +36,7 @@ pub unsafe fn del_at_end_2(mut c: (), mut num: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -66,8 +63,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     'loop_: while ((unimplemented!()) > (1_())) {
         let mut i: () = 1_();
         'loop_: while ((i) < (unimplemented!())) {
-            (unsafe { del_at_start_1(unimplemented!(), i) });
-            (unsafe { del_at_end_2(unimplemented!(), i) });
+            (unsafe { del_at_start_0(unimplemented!(), i) });
+            (unsafe { del_at_end_1(unimplemented!(), i) });
             i.prefix_inc();
         }
         unimplemented!();

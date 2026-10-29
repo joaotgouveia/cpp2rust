@@ -184,19 +184,29 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_StrongOrder__rebind_StrongOrder_ {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_StrongOrder_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_StrongOrder_ {}
+impl test_allocator_StrongOrder_ {
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
 impl Default for test_allocator_StrongOrder_ {
     fn default() -> Self {
         unsafe {
             test_allocator_StrongOrder_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -206,19 +216,29 @@ impl Default for test_allocator_StrongOrder_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_PartialOrder__rebind_PartialOrder_ {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_PartialOrder_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_PartialOrder_ {}
+impl test_allocator_PartialOrder_ {
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
 impl Default for test_allocator_PartialOrder_ {
     fn default() -> Self {
         unsafe {
             test_allocator_PartialOrder_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }

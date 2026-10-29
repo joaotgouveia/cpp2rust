@@ -27,23 +27,11 @@ impl A1_int_ {
         __this
     }
 }
-impl std::cmp::PartialEq for A1_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(A1_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A1_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A1_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A1_int_ {}
 pub fn operator_eq_4(x: Ptr<A1_int_>, y: Ptr<A1_int_>) -> () {
     return ({ ({ A1_int_Impl::id(&x) }) } == { ({ A1_int_Impl::id(&y) }) });
 }

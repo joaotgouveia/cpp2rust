@@ -201,9 +201,6 @@ pub struct test_allocator_int__rebind_int_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ptr_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_int__rebind_const_int_ptr_ {}
-#[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
 pub struct test_allocator_int_ {
     data_: (),
@@ -246,6 +243,19 @@ impl test_allocator_int_ {
         }
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
         unimplemented!();
@@ -332,40 +342,13 @@ impl test_allocator_int_ptr_ {
     }
 }
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
+#[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_int_ptr_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_int_ptr_ {
-    pub unsafe fn copy_from(a: *const test_allocator_int_ptr_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        unimplemented!();
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).copied.prefix_inc();
-        }
-        this
-    }
-    pub unsafe fn move_from(a: *mut test_allocator_int_ptr_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).moved.prefix_inc();
-        }
-        unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_1));
-        this
-    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
@@ -375,6 +358,19 @@ impl test_allocator_int_ptr_ {
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
     }
+    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut *mut () {
+        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
+                unimplemented!();
+            }
+            (*self.stats_).time_to_throw.prefix_inc();
+            (*self.stats_).alloc_count.prefix_inc();
+            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+        }
+        return unimplemented!();
+    }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut (), mut s: ()) {
         unimplemented!();
         if !((self.stats_).is_null()) {
@@ -383,40 +379,11 @@ impl test_allocator_int_ptr_ {
         }
         unimplemented!();
     }
-    pub unsafe fn destroy(&mut self, mut p: *mut *mut ()) {
-        if !((self.stats_).is_null()) {
-            (*self.stats_).destroy_count.prefix_inc();
-        };
-    }
-}
-impl Clone for test_allocator_int_ptr_ {
-    fn clone(&self) -> Self {
-        unsafe { test_allocator_int_ptr_::copy_from(self as *const test_allocator_int_ptr_) }
-    }
 }
 impl Default for test_allocator_int_ptr_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ptr_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_const_int_ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_const_int_ptr_ {}
-impl Default for test_allocator_const_int_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_const_int_ptr_ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: std::ptr::null_mut(),
@@ -449,21 +416,6 @@ impl Default for other_allocator_int_ptr_ {
     fn default() -> Self {
         unsafe {
             other_allocator_int_ptr_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_const_int_ptr_ {
-    data_: (),
-}
-impl other_allocator_const_int_ptr_ {}
-impl Default for other_allocator_const_int_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_const_int_ptr_ {
                 data_: unimplemented!(),
             }
         }
@@ -509,7 +461,13 @@ pub unsafe fn test_4() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const A1&>");;
     }
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_0: test_allocator_short_ =
+                test_allocator_short_::new_1({ 0_() }, { 5_() });
+            std_flat_multiset_int__std_less_int___std_vector_int__test_allocator_int___::new_1({
+                &mut __tmp_0
+            })
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -527,7 +485,13 @@ pub unsafe fn test_5() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const A1&>");;
     }
     {
-        let mut m: () = unimplemented!();
+        let mut m: () = {
+            let mut __tmp_1: test_allocator_short_ =
+                test_allocator_short_::new_1({ 0_() }, { 5_() });
+            std_flat_multiset_int__std_less_int___std_deque_int__test_allocator_int___::new_1({
+                &mut __tmp_1
+            })
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();

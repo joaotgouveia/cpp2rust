@@ -45,7 +45,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut e: Empty = (*({ get_0(t.as_pointer()) }).upgrade().deref()).clone();
+        let mut e: Empty = (*unimplemented!().upgrade().deref()).clone();
         (&(e));
     }
     {
@@ -54,7 +54,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ get_1(t.as_pointer()) }).write(2.5_f64);
+        unimplemented!().write(2.5_f64);
         unimplemented!();
         unimplemented!();
         unimplemented!();

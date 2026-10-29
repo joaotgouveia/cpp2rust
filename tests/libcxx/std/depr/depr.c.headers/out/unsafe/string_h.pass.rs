@@ -80,42 +80,42 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut storage: [(); 12] = std::mem::transmute(*b"hello world\0");
         let mut s: *const () = (storage.as_mut_ptr()).cast_const();
         const _: () = assert!(true, "");;
-        let mut res: *const () = (unsafe { strchr_6(s, ('l' as ())) });
+        let mut res: *const () = unimplemented!();
         unimplemented!();
     }
     {
         let mut storage: [(); 12] = std::mem::transmute(*b"hello world\0");
         let mut s: *mut () = storage.as_mut_ptr();
         const _: () = assert!(true, "");;
-        let mut res: *mut () = (unsafe { strchr_7(s, ('l' as ())) });
+        let mut res: *mut () = unimplemented!();
         unimplemented!();
     }
     {
         let mut storage: [(); 12] = std::mem::transmute(*b"hello world\0");
         let mut s: *const () = (storage.as_mut_ptr()).cast_const();
         const _: () = assert!(true, "");;
-        let mut res: *const () = (unsafe { strpbrk_8(s, c"el".as_ptr()) });
+        let mut res: *const () = unimplemented!();
         unimplemented!();
     }
     {
         let mut storage: [(); 12] = std::mem::transmute(*b"hello world\0");
         let mut s: *mut () = storage.as_mut_ptr();
         const _: () = assert!(true, "");;
-        let mut res: *mut () = (unsafe { strpbrk_9(s, c"el".as_ptr()) });
+        let mut res: *mut () = unimplemented!();
         unimplemented!();
     }
     {
         let mut storage: [(); 12] = std::mem::transmute(*b"hello world\0");
         let mut s: *const () = (storage.as_mut_ptr()).cast_const();
         const _: () = assert!(true, "");;
-        let mut res: *const () = (unsafe { strrchr_10(s, ('l' as ())) });
+        let mut res: *const () = unimplemented!();
         unimplemented!();
     }
     {
         let mut storage: [(); 12] = std::mem::transmute(*b"hello world\0");
         let mut s: *mut () = storage.as_mut_ptr();
         const _: () = assert!(true, "");;
-        let mut res: *mut () = (unsafe { strrchr_11(s, ('l' as ())) });
+        let mut res: *mut () = unimplemented!();
         unimplemented!();
     }
     {
@@ -123,7 +123,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut count: () = 11_();
         let mut s: () = (storage.as_mut_ptr() as ());
         const _: () = assert!(true, "");;
-        let mut res: () = (unsafe { memchr_12(s, ('l' as ()), count) });
+        let mut res: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -131,21 +131,21 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut count: () = 11_();
         let mut s: () = (storage.as_mut_ptr() as ());
         const _: () = assert!(true, "");;
-        let mut res: () = (unsafe { memchr_13(s, ('l' as ()), count) });
+        let mut res: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut storage: [(); 12] = std::mem::transmute(*b"hello world\0");
         let mut s: *const () = (storage.as_mut_ptr()).cast_const();
         const _: () = assert!(true, "");;
-        let mut res: *const () = (unsafe { strstr_14(s, c"wor".as_ptr()) });
+        let mut res: *const () = unimplemented!();
         unimplemented!();
     }
     {
         let mut storage: [(); 12] = std::mem::transmute(*b"hello world\0");
         let mut s: *mut () = storage.as_mut_ptr();
         const _: () = assert!(true, "");;
-        let mut res: *mut () = (unsafe { strstr_15(s, c"wor".as_ptr()) });
+        let mut res: *mut () = unimplemented!();
         unimplemented!();
     }
     return 0_();

@@ -12,13 +12,13 @@ pub unsafe fn test01_0() {
     unimplemented!();
     let mut b1: () = unimplemented!();
     let mut h1: () = unimplemented!();
-    (unsafe { h1(&b1) });
+    unimplemented!();
     let mut b2: () = unimplemented!();
     let mut h2: () = unimplemented!();
-    (unsafe { h2(&b2) });
+    unimplemented!();
     let mut b3: () = unimplemented!();
     let mut h3: () = unimplemented!();
-    (unsafe { h3(&b3) });
+    unimplemented!();
 }
 pub fn main() {
     unsafe {

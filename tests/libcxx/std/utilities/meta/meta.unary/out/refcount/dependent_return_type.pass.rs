@@ -12,16 +12,16 @@ pub fn add_const_0() -> () {
 pub fn add_cv_1() -> () {
     return unimplemented!();
 }
-pub fn add_lvalue_reference_2() -> Ptr<()> {
+pub fn add_lvalue_reference_2() -> () {
     return i_3.with(|v| v.as_pointer());
 }
 thread_local!(
     static i_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
-pub fn add_pointer_4() -> Ptr<()> {
-    return Ptr::<()>::null();
+pub fn add_pointer_4() -> () {
+    return unimplemented!();
 }
-pub fn add_rvalue_reference_5() -> Ptr<()> {
+pub fn add_rvalue_reference_5() -> () {
     return i_6.with(|v| v.as_pointer());
 }
 thread_local!(

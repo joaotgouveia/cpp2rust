@@ -105,32 +105,16 @@ pub fn test_1_2_11() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct N13_A {}
-impl std::cmp::Ord for N13_A {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_12(
-                Rc::new(RefCell::new(N13_A {})).as_pointer(),
-                Rc::new(RefCell::new(N13_A {})).as_pointer(),
-            )
-        }
+impl CppLess for N13_A {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_12(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for N13_A {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for N13_A {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_12(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for N13_A {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_cmp_12(
-                Rc::new(RefCell::new(N13_A {})).as_pointer(),
-                Rc::new(RefCell::new(N13_A {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for N13_A {}
 pub fn operator_cmp_13(_a0: Ptr<N13_A>, _a1: Ptr<N13_A>) -> () {
     return unimplemented!();
 }
@@ -149,44 +133,16 @@ pub struct N13_C {
     #[byte_size(8)]
     pub touched: Ptr<()>,
 }
-impl std::cmp::Ord for N13_C {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            N13_CImpl::operator_cmp(
-                &Rc::new(RefCell::new(N13_C {
-                    touched: self.touched.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(N13_C {
-                    touched: other.touched.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for N13_C {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        N13_CImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for N13_C {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for N13_C {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        N13_CImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for N13_C {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            N13_CImpl::operator_cmp(
-                &Rc::new(RefCell::new(N13_C {
-                    touched: self.touched.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(N13_C {
-                    touched: other.touched.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for N13_C {}
 const _: () = assert!(true, "std::three_way_comparable<C>");
 pub fn test_1_3_14() -> () {
     let a: Value<N13_A> = Rc::new(RefCell::new(<N13_A>::default()));

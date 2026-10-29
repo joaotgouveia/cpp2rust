@@ -11,7 +11,7 @@ pub unsafe fn test_0(mut i: ()) {
     let mut h: () = unimplemented!();
     let mut ec: () = unimplemented!();
     let result: () = unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     (&(result));
 }
 pub fn main() {

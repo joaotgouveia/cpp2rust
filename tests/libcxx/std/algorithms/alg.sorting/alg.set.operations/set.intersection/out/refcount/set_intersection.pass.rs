@@ -44,7 +44,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -54,11 +54,18 @@ pub struct cpp17_output_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_output_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 pub fn base_0(i: Ptr<cpp17_output_iterator_TrivialSortable_ptr_>) -> Ptr<TrivialSortable> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_TrivialSortable_ptr_ {
     #[offset(0)]
@@ -85,7 +92,7 @@ impl cpp17_output_iterator_TrivialSortable_ptr_ {
 pub fn base_1(i: Ptr<cpp17_output_iterator_NonTrivialSortable_ptr_>) -> Ptr<NonTrivialSortable> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_NonTrivialSortable_ptr_ {
     #[offset(0)]
@@ -113,7 +120,7 @@ const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -123,14 +130,21 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 pub fn operator_ne_2(
     x: Ptr<cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_>,
     y: Ptr<cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_ {
     #[offset(0)]
@@ -162,7 +176,7 @@ pub fn operator_ne_3(
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_ {
     #[offset(0)]
@@ -192,7 +206,7 @@ const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn base_4(i: Ptr<forward_iterator_TrivialSortable_ptr_>) -> Ptr<TrivialSortable> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_TrivialSortable_ptr_ {
     #[offset(0)]
@@ -216,13 +230,7 @@ impl forward_iterator_TrivialSortable_ptr_ {
         }
     }
 }
-pub fn operator_eq_5(
-    x: Ptr<forward_iterator_const_TrivialSortable_ptr_>,
-    y: Ptr<forward_iterator_const_TrivialSortable_ptr_>,
-) -> () {
-    return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
-}
-pub fn operator_ne_6(
+pub fn operator_ne_5(
     x: Ptr<forward_iterator_const_TrivialSortable_ptr_>,
     y: Ptr<forward_iterator_const_TrivialSortable_ptr_>,
 ) -> () {
@@ -252,33 +260,10 @@ impl forward_iterator_const_TrivialSortable_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for forward_iterator_const_TrivialSortable_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_5(
-                Rc::new(RefCell::new(forward_iterator_const_TrivialSortable_ptr_ {
-                    it_: self.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: self.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_iterator_const_TrivialSortable_ptr_ {
-                    it_: other.it_.clone(),
-                    tracker_: support_double_move_tracker {
-                        moved_from_: other.tracker_.moved_from_.clone(),
-                    },
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for forward_iterator_const_TrivialSortable_ptr_ {}
-pub fn base_7(i: Ptr<forward_iterator_NonTrivialSortable_ptr_>) -> Ptr<NonTrivialSortable> {
+pub fn base_6(i: Ptr<forward_iterator_NonTrivialSortable_ptr_>) -> Ptr<NonTrivialSortable> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_NonTrivialSortable_ptr_ {
     #[offset(0)]
@@ -302,13 +287,7 @@ impl forward_iterator_NonTrivialSortable_ptr_ {
         }
     }
 }
-pub fn operator_eq_8(
-    x: Ptr<forward_iterator_const_NonTrivialSortable_ptr_>,
-    y: Ptr<forward_iterator_const_NonTrivialSortable_ptr_>,
-) -> () {
-    return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
-}
-pub fn operator_ne_9(
+pub fn operator_ne_7(
     x: Ptr<forward_iterator_const_NonTrivialSortable_ptr_>,
     y: Ptr<forward_iterator_const_NonTrivialSortable_ptr_>,
 ) -> () {
@@ -338,37 +317,10 @@ impl forward_iterator_const_NonTrivialSortable_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for forward_iterator_const_NonTrivialSortable_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_8(
-                Rc::new(RefCell::new(
-                    forward_iterator_const_NonTrivialSortable_ptr_ {
-                        it_: self.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: self.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    forward_iterator_const_NonTrivialSortable_ptr_ {
-                        it_: other.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: other.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for forward_iterator_const_NonTrivialSortable_ptr_ {}
-pub fn base_10(i: Ptr<bidirectional_iterator_TrivialSortable_ptr_>) -> Ptr<TrivialSortable> {
+pub fn base_8(i: Ptr<bidirectional_iterator_TrivialSortable_ptr_>) -> Ptr<TrivialSortable> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_TrivialSortable_ptr_ {
     #[offset(0)]
@@ -392,13 +344,7 @@ impl bidirectional_iterator_TrivialSortable_ptr_ {
         }
     }
 }
-pub fn operator_eq_11(
-    x: Ptr<bidirectional_iterator_const_TrivialSortable_ptr_>,
-    y: Ptr<bidirectional_iterator_const_TrivialSortable_ptr_>,
-) -> () {
-    return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
-}
-pub fn operator_ne_12(
+pub fn operator_ne_9(
     x: Ptr<bidirectional_iterator_const_TrivialSortable_ptr_>,
     y: Ptr<bidirectional_iterator_const_TrivialSortable_ptr_>,
 ) -> () {
@@ -428,37 +374,10 @@ impl bidirectional_iterator_const_TrivialSortable_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for bidirectional_iterator_const_TrivialSortable_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_11(
-                Rc::new(RefCell::new(
-                    bidirectional_iterator_const_TrivialSortable_ptr_ {
-                        it_: self.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: self.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    bidirectional_iterator_const_TrivialSortable_ptr_ {
-                        it_: other.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: other.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for bidirectional_iterator_const_TrivialSortable_ptr_ {}
-pub fn base_13(i: Ptr<bidirectional_iterator_NonTrivialSortable_ptr_>) -> Ptr<NonTrivialSortable> {
+pub fn base_10(i: Ptr<bidirectional_iterator_NonTrivialSortable_ptr_>) -> Ptr<NonTrivialSortable> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_NonTrivialSortable_ptr_ {
     #[offset(0)]
@@ -482,13 +401,7 @@ impl bidirectional_iterator_NonTrivialSortable_ptr_ {
         }
     }
 }
-pub fn operator_eq_14(
-    x: Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_>,
-    y: Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_>,
-) -> () {
-    return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
-}
-pub fn operator_ne_15(
+pub fn operator_ne_11(
     x: Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_>,
     y: Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_>,
 ) -> () {
@@ -518,37 +431,10 @@ impl bidirectional_iterator_const_NonTrivialSortable_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for bidirectional_iterator_const_NonTrivialSortable_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_14(
-                Rc::new(RefCell::new(
-                    bidirectional_iterator_const_NonTrivialSortable_ptr_ {
-                        it_: self.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: self.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    bidirectional_iterator_const_NonTrivialSortable_ptr_ {
-                        it_: other.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: other.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for bidirectional_iterator_const_NonTrivialSortable_ptr_ {}
-pub fn base_16(i: Ptr<random_access_iterator_TrivialSortable_ptr_>) -> Ptr<TrivialSortable> {
+pub fn base_12(i: Ptr<random_access_iterator_TrivialSortable_ptr_>) -> Ptr<TrivialSortable> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_TrivialSortable_ptr_ {
     #[offset(0)]
@@ -572,19 +458,7 @@ impl random_access_iterator_TrivialSortable_ptr_ {
         }
     }
 }
-pub fn operator_sub_17(
-    mut x: random_access_iterator_const_TrivialSortable_ptr_,
-    mut y: random_access_iterator_const_TrivialSortable_ptr_,
-) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
-}
-pub fn operator_eq_18(
-    x: Ptr<random_access_iterator_const_TrivialSortable_ptr_>,
-    y: Ptr<random_access_iterator_const_TrivialSortable_ptr_>,
-) -> () {
-    return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
-}
-pub fn operator_ne_19(
+pub fn operator_ne_13(
     x: Ptr<random_access_iterator_const_TrivialSortable_ptr_>,
     y: Ptr<random_access_iterator_const_TrivialSortable_ptr_>,
 ) -> () {
@@ -614,37 +488,10 @@ impl random_access_iterator_const_TrivialSortable_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for random_access_iterator_const_TrivialSortable_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_18(
-                Rc::new(RefCell::new(
-                    random_access_iterator_const_TrivialSortable_ptr_ {
-                        it_: self.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: self.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    random_access_iterator_const_TrivialSortable_ptr_ {
-                        it_: other.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: other.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for random_access_iterator_const_TrivialSortable_ptr_ {}
-pub fn base_20(i: Ptr<random_access_iterator_NonTrivialSortable_ptr_>) -> Ptr<NonTrivialSortable> {
+pub fn base_14(i: Ptr<random_access_iterator_NonTrivialSortable_ptr_>) -> Ptr<NonTrivialSortable> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_NonTrivialSortable_ptr_ {
     #[offset(0)]
@@ -668,19 +515,7 @@ impl random_access_iterator_NonTrivialSortable_ptr_ {
         }
     }
 }
-pub fn operator_sub_21(
-    mut x: random_access_iterator_const_NonTrivialSortable_ptr_,
-    mut y: random_access_iterator_const_NonTrivialSortable_ptr_,
-) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
-}
-pub fn operator_eq_22(
-    x: Ptr<random_access_iterator_const_NonTrivialSortable_ptr_>,
-    y: Ptr<random_access_iterator_const_NonTrivialSortable_ptr_>,
-) -> () {
-    return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
-}
-pub fn operator_ne_23(
+pub fn operator_ne_15(
     x: Ptr<random_access_iterator_const_NonTrivialSortable_ptr_>,
     y: Ptr<random_access_iterator_const_NonTrivialSortable_ptr_>,
 ) -> () {
@@ -710,34 +545,7 @@ impl random_access_iterator_const_NonTrivialSortable_ptr_ {
         }
     }
 }
-impl std::cmp::PartialEq for random_access_iterator_const_NonTrivialSortable_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_22(
-                Rc::new(RefCell::new(
-                    random_access_iterator_const_NonTrivialSortable_ptr_ {
-                        it_: self.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: self.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    random_access_iterator_const_NonTrivialSortable_ptr_ {
-                        it_: other.it_.clone(),
-                        tracker_: support_double_move_tracker {
-                            moved_from_: other.tracker_.moved_from_.clone(),
-                        },
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for random_access_iterator_const_NonTrivialSortable_ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -747,16 +555,23 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
 );
-pub fn base_24(i: Ptr<TrivialSortable>) -> Ptr<TrivialSortable> {
+pub fn base_16(i: Ptr<TrivialSortable>) -> Ptr<TrivialSortable> {
     let i: Value<Ptr<TrivialSortable>> = Rc::new(RefCell::new(i));
     return (*i.borrow()).clone();
 }
-pub fn base_25(i: Ptr<NonTrivialSortable>) -> Ptr<NonTrivialSortable> {
+pub fn base_17(i: Ptr<NonTrivialSortable>) -> Ptr<NonTrivialSortable> {
     let i: Value<Ptr<NonTrivialSortable>> = Rc::new(RefCell::new(i));
     return (*i.borrow()).clone();
 }
@@ -825,7 +640,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub fn operator_eq_26(
+pub fn operator_eq_18(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -839,23 +654,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_26(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_18(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -870,36 +673,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_27(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_19(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_28(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_20(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_27(_i, n)
+        operator_add_19(_i, n)
     });
 }
-pub fn iter_swap_29(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_21(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_30(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_22(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_31(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_32(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -942,52 +745,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_32(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_24(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_23(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_31(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -1007,44 +774,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -1054,7 +794,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn operator_lt_33(a: Ptr<TrivialSortable>, b: Ptr<TrivialSortable>) -> () {
+pub fn operator_lt_25(a: Ptr<TrivialSortable>, b: Ptr<TrivialSortable>) -> () {
     return ({ (a.with(|__s| __s.value) / 10_()) } < { (b.with(|__s| __s.value) / 10_()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -1074,74 +814,23 @@ impl TrivialSortable {
         return ({ a.with(|__s| __s.value) } < { b.with(|__s| __s.value) });
     }
 }
-impl std::cmp::Ord for TrivialSortable {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_33(
-                Rc::new(RefCell::new(TrivialSortable {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialSortable {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_33(
-                Rc::new(RefCell::new(TrivialSortable {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialSortable {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for TrivialSortable {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_25(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for TrivialSortable {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for TrivialSortable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_25(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_25(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for TrivialSortable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_33(
-                Rc::new(RefCell::new(TrivialSortable {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialSortable {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )) && !(operator_lt_33(
-                Rc::new(RefCell::new(TrivialSortable {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialSortable {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for TrivialSortable {}
 impl Default for TrivialSortable {
     fn default() -> Self {
         { TrivialSortable::new_1() }
     }
 }
-pub fn operator_lt_34(a: Ptr<NonTrivialSortable>, b: Ptr<NonTrivialSortable>) -> () {
+pub fn operator_lt_26(a: Ptr<NonTrivialSortable>, b: Ptr<NonTrivialSortable>) -> () {
     return ({ (a.with(|__s| __s.value) / 10_()) } < { (b.with(|__s| __s.value) / 10_()) });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
@@ -1166,68 +855,17 @@ impl NonTrivialSortable {
         return ({ a.with(|__s| __s.value) } < { b.with(|__s| __s.value) });
     }
 }
-impl std::cmp::Ord for NonTrivialSortable {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_34(
-                Rc::new(RefCell::new(NonTrivialSortable {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NonTrivialSortable {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_34(
-                Rc::new(RefCell::new(NonTrivialSortable {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NonTrivialSortable {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for NonTrivialSortable {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_26(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for NonTrivialSortable {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for NonTrivialSortable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_26(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_26(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for NonTrivialSortable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_34(
-                Rc::new(RefCell::new(NonTrivialSortable {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NonTrivialSortable {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-            )) && !(operator_lt_34(
-                Rc::new(RefCell::new(NonTrivialSortable {
-                    value: other.value.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(NonTrivialSortable {
-                    value: self.value.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for NonTrivialSortable {}
 impl Clone for NonTrivialSortable {
     fn clone(&self) -> Self {
         let __src: Value<NonTrivialSortable> = Rc::new(RefCell::new(NonTrivialSortable {
@@ -1340,48 +978,16 @@ impl TracedCopy {
         }
     }
 }
-impl std::cmp::Ord for TracedCopy {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            TracedCopyImpl::operator_cmp(
-                &Rc::new(RefCell::new(TracedCopy {
-                    copied: self.copied.clone(),
-                    data: self.data.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TracedCopy {
-                    copied: other.copied.clone(),
-                    data: other.data.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for TracedCopy {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        TracedCopyImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for TracedCopy {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for TracedCopy {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        TracedCopyImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for TracedCopy {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            TracedCopyImpl::operator_eq(
-                &Rc::new(RefCell::new(TracedCopy {
-                    copied: self.copied.clone(),
-                    data: self.data.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TracedCopy {
-                    copied: other.copied.clone(),
-                    data: other.data.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for TracedCopy {}
 impl Clone for TracedCopy {
     fn clone(&self) -> Self {
         let __src: Value<TracedCopy> = Rc::new(RefCell::new(TracedCopy {
@@ -1401,7 +1007,7 @@ impl Default for TracedCopy {
         }
     }
 }
-pub fn test4_35() {
+pub fn test4_27() {
     let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
         TrivialSortable::new_2({ 11_() }),
         TrivialSortable::new_2({ 33_() }),
@@ -1484,6 +1090,732 @@ pub fn test4_35() {
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_28() {
+    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_29() {
+    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_30() {
+    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_31() {
+    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ])));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ])));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_32() {
+    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_33() {
+    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_34() {
+    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_35() {
+    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1533,10 +1865,9 @@ pub fn test4_36() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1571,10 +1902,9 @@ pub fn test4_36() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1624,10 +1954,10 @@ pub fn test4_37() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1662,10 +1992,10 @@ pub fn test4_37() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1715,10 +2045,10 @@ pub fn test4_38() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1753,10 +2083,10 @@ pub fn test4_38() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1806,9 +2136,10 @@ pub fn test4_39() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1843,9 +2174,10 @@ pub fn test4_39() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1895,10 +2227,10 @@ pub fn test4_40() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1933,10 +2265,10 @@ pub fn test4_40() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -1986,10 +2318,9 @@ pub fn test4_41() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2024,10 +2355,9 @@ pub fn test4_41() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2077,10 +2407,10 @@ pub fn test4_42() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2115,10 +2445,10 @@ pub fn test4_42() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2168,10 +2498,10 @@ pub fn test4_43() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2206,10 +2536,10 @@ pub fn test4_43() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2259,9 +2589,10 @@ pub fn test4_44() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2296,9 +2627,10 @@ pub fn test4_44() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2348,10 +2680,10 @@ pub fn test4_45() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2386,10 +2718,10 @@ pub fn test4_45() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2439,10 +2771,9 @@ pub fn test4_46() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2477,10 +2808,9 @@ pub fn test4_46() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2530,10 +2860,10 @@ pub fn test4_47() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2568,10 +2898,10 @@ pub fn test4_47() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2621,10 +2951,10 @@ pub fn test4_48() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2659,10 +2989,10 @@ pub fn test4_48() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2712,9 +3042,10 @@ pub fn test4_49() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2749,9 +3080,10 @@ pub fn test4_49() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2801,10 +3133,10 @@ pub fn test4_50() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2839,10 +3171,10 @@ pub fn test4_50() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2892,10 +3224,9 @@ pub fn test4_51() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2930,10 +3261,9 @@ pub fn test4_51() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -2983,10 +3313,10 @@ pub fn test4_52() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3021,10 +3351,10 @@ pub fn test4_52() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3074,10 +3404,10 @@ pub fn test4_53() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3112,10 +3442,10 @@ pub fn test4_53() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3165,9 +3495,10 @@ pub fn test4_54() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3202,9 +3533,10 @@ pub fn test4_54() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3254,10 +3586,10 @@ pub fn test4_55() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3292,10 +3624,10 @@ pub fn test4_55() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3345,10 +3677,9 @@ pub fn test4_56() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3383,10 +3714,9 @@ pub fn test4_56() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3436,10 +3766,10 @@ pub fn test4_57() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3474,10 +3804,10 @@ pub fn test4_57() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3527,10 +3857,10 @@ pub fn test4_58() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3565,10 +3895,10 @@ pub fn test4_58() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3618,9 +3948,10 @@ pub fn test4_59() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3655,9 +3986,10 @@ pub fn test4_59() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3707,10 +4039,10 @@ pub fn test4_60() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3745,10 +4077,10 @@ pub fn test4_60() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3798,10 +4130,9 @@ pub fn test4_61() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3836,10 +4167,9 @@ pub fn test4_61() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3889,10 +4219,10 @@ pub fn test4_62() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3927,10 +4257,10 @@ pub fn test4_62() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -3980,10 +4310,10 @@ pub fn test4_63() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4018,10 +4348,10 @@ pub fn test4_63() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4071,9 +4401,10 @@ pub fn test4_64() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4108,9 +4439,10 @@ pub fn test4_64() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4160,10 +4492,10 @@ pub fn test4_65() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4198,10 +4530,10 @@ pub fn test4_65() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4251,10 +4583,9 @@ pub fn test4_66() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4289,10 +4620,9 @@ pub fn test4_66() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4342,10 +4672,10 @@ pub fn test4_67() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4380,10 +4710,10 @@ pub fn test4_67() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4433,10 +4763,10 @@ pub fn test4_68() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4471,10 +4801,10 @@ pub fn test4_68() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4524,9 +4854,10 @@ pub fn test4_69() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4561,9 +4892,10 @@ pub fn test4_69() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4613,10 +4945,10 @@ pub fn test4_70() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4651,10 +4983,10 @@ pub fn test4_70() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4704,10 +5036,9 @@ pub fn test4_71() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4742,10 +5073,9 @@ pub fn test4_71() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4795,10 +5125,10 @@ pub fn test4_72() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4833,10 +5163,10 @@ pub fn test4_72() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4886,10 +5216,10 @@ pub fn test4_73() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4924,10 +5254,10 @@ pub fn test4_73() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -4977,9 +5307,10 @@ pub fn test4_74() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5014,9 +5345,10 @@ pub fn test4_74() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5066,10 +5398,10 @@ pub fn test4_75() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5104,10 +5436,10 @@ pub fn test4_75() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5157,10 +5489,9 @@ pub fn test4_76() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5195,10 +5526,9 @@ pub fn test4_76() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5248,10 +5578,10 @@ pub fn test4_77() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5286,10 +5616,10 @@ pub fn test4_77() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5339,10 +5669,10 @@ pub fn test4_78() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5377,10 +5707,10 @@ pub fn test4_78() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5430,9 +5760,10 @@ pub fn test4_79() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5467,9 +5798,10 @@ pub fn test4_79() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5519,10 +5851,10 @@ pub fn test4_80() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5557,10 +5889,10 @@ pub fn test4_80() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5610,10 +5942,9 @@ pub fn test4_81() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5648,10 +5979,9 @@ pub fn test4_81() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5701,10 +6031,10 @@ pub fn test4_82() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5739,10 +6069,10 @@ pub fn test4_82() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5792,10 +6122,10 @@ pub fn test4_83() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5830,10 +6160,10 @@ pub fn test4_83() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5883,9 +6213,10 @@ pub fn test4_84() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5920,9 +6251,10 @@ pub fn test4_84() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -5972,10 +6304,10 @@ pub fn test4_85() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6010,10 +6342,10 @@ pub fn test4_85() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6063,10 +6395,9 @@ pub fn test4_86() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6101,10 +6432,9 @@ pub fn test4_86() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6154,10 +6484,10 @@ pub fn test4_87() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6192,10 +6522,10 @@ pub fn test4_87() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6245,10 +6575,10 @@ pub fn test4_88() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6283,10 +6613,10 @@ pub fn test4_88() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6336,9 +6666,10 @@ pub fn test4_89() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6373,9 +6704,10 @@ pub fn test4_89() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6425,10 +6757,10 @@ pub fn test4_90() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6463,10 +6795,10 @@ pub fn test4_90() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6516,10 +6848,9 @@ pub fn test4_91() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6554,10 +6885,9 @@ pub fn test4_91() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6607,10 +6937,10 @@ pub fn test4_92() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6645,10 +6975,10 @@ pub fn test4_92() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6698,10 +7028,10 @@ pub fn test4_93() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6736,10 +7066,10 @@ pub fn test4_93() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6789,9 +7119,10 @@ pub fn test4_94() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6826,9 +7157,10 @@ pub fn test4_94() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6878,10 +7210,10 @@ pub fn test4_95() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6916,10 +7248,10 @@ pub fn test4_95() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -6969,10 +7301,9 @@ pub fn test4_96() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7007,10 +7338,9 @@ pub fn test4_96() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7060,10 +7390,10 @@ pub fn test4_97() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7098,10 +7428,10 @@ pub fn test4_97() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7151,10 +7481,10 @@ pub fn test4_98() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7189,10 +7519,10 @@ pub fn test4_98() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7242,9 +7572,10 @@ pub fn test4_99() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7279,9 +7610,10 @@ pub fn test4_99() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7331,10 +7663,10 @@ pub fn test4_100() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7369,10 +7701,10 @@ pub fn test4_100() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7422,10 +7754,9 @@ pub fn test4_101() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7460,10 +7791,9 @@ pub fn test4_101() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7513,10 +7843,10 @@ pub fn test4_102() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7551,10 +7881,10 @@ pub fn test4_102() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7604,10 +7934,10 @@ pub fn test4_103() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7642,10 +7972,10 @@ pub fn test4_103() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7695,9 +8025,10 @@ pub fn test4_104() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7732,9 +8063,10 @@ pub fn test4_104() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7784,10 +8116,10 @@ pub fn test4_105() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7822,10 +8154,10 @@ pub fn test4_105() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7875,10 +8207,9 @@ pub fn test4_106() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7913,10 +8244,9 @@ pub fn test4_106() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -7966,10 +8296,10 @@ pub fn test4_107() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8004,10 +8334,10 @@ pub fn test4_107() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8057,10 +8387,10 @@ pub fn test4_108() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8095,10 +8425,10 @@ pub fn test4_108() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8148,9 +8478,10 @@ pub fn test4_109() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8185,9 +8516,10 @@ pub fn test4_109() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8237,10 +8569,10 @@ pub fn test4_110() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8275,10 +8607,10 @@ pub fn test4_110() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8328,10 +8660,9 @@ pub fn test4_111() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8366,10 +8697,9 @@ pub fn test4_111() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8419,10 +8749,10 @@ pub fn test4_112() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8457,10 +8787,10 @@ pub fn test4_112() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8510,10 +8840,10 @@ pub fn test4_113() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8548,10 +8878,10 @@ pub fn test4_113() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8601,9 +8931,10 @@ pub fn test4_114() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8638,9 +8969,10 @@ pub fn test4_114() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8690,10 +9022,10 @@ pub fn test4_115() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8728,10 +9060,10 @@ pub fn test4_115() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8781,10 +9113,9 @@ pub fn test4_116() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8819,10 +9150,9 @@ pub fn test4_116() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8872,10 +9202,10 @@ pub fn test4_117() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8910,10 +9240,10 @@ pub fn test4_117() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -8963,10 +9293,10 @@ pub fn test4_118() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9001,10 +9331,10 @@ pub fn test4_118() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9054,9 +9384,10 @@ pub fn test4_119() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9091,9 +9422,10 @@ pub fn test4_119() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9143,10 +9475,10 @@ pub fn test4_120() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9181,10 +9513,10 @@ pub fn test4_120() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9234,10 +9566,9 @@ pub fn test4_121() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9272,10 +9603,9 @@ pub fn test4_121() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9325,10 +9655,10 @@ pub fn test4_122() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9363,10 +9693,10 @@ pub fn test4_122() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9416,10 +9746,10 @@ pub fn test4_123() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9454,10 +9784,10 @@ pub fn test4_123() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9507,9 +9837,10 @@ pub fn test4_124() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9544,9 +9875,10 @@ pub fn test4_124() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9596,10 +9928,10 @@ pub fn test4_125() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9634,10 +9966,10 @@ pub fn test4_125() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9687,10 +10019,9 @@ pub fn test4_126() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9725,10 +10056,9 @@ pub fn test4_126() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9778,10 +10108,10 @@ pub fn test4_127() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9816,10 +10146,10 @@ pub fn test4_127() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9869,10 +10199,10 @@ pub fn test4_128() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9907,10 +10237,10 @@ pub fn test4_128() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9960,9 +10290,10 @@ pub fn test4_129() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -9997,9 +10328,10 @@ pub fn test4_129() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10049,10 +10381,10 @@ pub fn test4_130() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10087,10 +10419,10 @@ pub fn test4_130() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10140,10 +10472,9 @@ pub fn test4_131() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10178,10 +10509,9 @@ pub fn test4_131() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10231,10 +10561,10 @@ pub fn test4_132() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10269,10 +10599,10 @@ pub fn test4_132() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10322,10 +10652,10 @@ pub fn test4_133() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10360,10 +10690,10 @@ pub fn test4_133() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10413,9 +10743,10 @@ pub fn test4_134() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10450,9 +10781,10 @@ pub fn test4_134() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10502,10 +10834,10 @@ pub fn test4_135() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10540,10 +10872,10 @@ pub fn test4_135() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10593,10 +10925,9 @@ pub fn test4_136() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10631,10 +10962,9 @@ pub fn test4_136() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10684,10 +11014,10 @@ pub fn test4_137() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10722,10 +11052,10 @@ pub fn test4_137() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10775,10 +11105,10 @@ pub fn test4_138() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10813,10 +11143,10 @@ pub fn test4_138() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10866,9 +11196,10 @@ pub fn test4_139() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10903,9 +11234,10 @@ pub fn test4_139() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10955,10 +11287,10 @@ pub fn test4_140() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -10993,10 +11325,10 @@ pub fn test4_140() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11046,10 +11378,9 @@ pub fn test4_141() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11084,10 +11415,9 @@ pub fn test4_141() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11137,10 +11467,10 @@ pub fn test4_142() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11175,10 +11505,10 @@ pub fn test4_142() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11228,10 +11558,10 @@ pub fn test4_143() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11266,10 +11596,10 @@ pub fn test4_143() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11319,9 +11649,10 @@ pub fn test4_144() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11356,9 +11687,10 @@ pub fn test4_144() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11408,10 +11740,10 @@ pub fn test4_145() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11446,10 +11778,10 @@ pub fn test4_145() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11499,10 +11831,9 @@ pub fn test4_146() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11537,10 +11868,9 @@ pub fn test4_146() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11590,10 +11920,10 @@ pub fn test4_147() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11628,10 +11958,10 @@ pub fn test4_147() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11681,10 +12011,10 @@ pub fn test4_148() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11719,10 +12049,10 @@ pub fn test4_148() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
+        let end: Value<forward_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11772,9 +12102,10 @@ pub fn test4_149() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11809,9 +12140,10 @@ pub fn test4_149() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_8(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11861,10 +12193,10 @@ pub fn test4_150() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11899,10 +12231,10 @@ pub fn test4_150() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_12(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11952,10 +12284,9 @@ pub fn test4_151() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -11990,10 +12321,9 @@ pub fn test4_151() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<TrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
+        let mut it: Ptr<TrivialSortable> = ({ base_16((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
         }) {
@@ -12003,730 +12333,6 @@ pub fn test4_151() {
     }
 }
 pub fn test4_152() {
-    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_153() {
-    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_154() {
-    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
-        ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
-        ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_155() {
-    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<cpp17_output_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_0(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_156() {
-    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<forward_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_4(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_157() {
-    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<bidirectional_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_10(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_158() {
-    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<random_access_iterator_TrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_16(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_159() {
-    let a: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
-        ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[TrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
-        ])));
-        let mut end: Ptr<TrivialSortable> = unimplemented!();
-        unimplemented!();
-        let mut it: Ptr<TrivialSortable> = ({ base_24((end).clone()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<TrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_160() {
     let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
         NonTrivialSortable::new_2({ 11_() }),
         NonTrivialSortable::new_2({ 33_() }),
@@ -12809,6 +12415,732 @@ pub fn test4_160() {
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_153() {
+    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_154() {
+    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_155() {
+    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_156() {
+    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
+        ])));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
+        ])));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_157() {
+    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_158() {
+    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_159() {
+    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub fn test4_160() {
+    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
+    ])));
+    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
+    ])));
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
+        ])));
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
+        'loop_: while ({ (it).clone() } != {
+            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
+        }) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+        ])));
+        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
+        ])));
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -12858,10 +13190,9 @@ pub fn test4_161() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -12896,10 +13227,9 @@ pub fn test4_161() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -12949,10 +13279,10 @@ pub fn test4_162() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -12987,10 +13317,10 @@ pub fn test4_162() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13040,10 +13370,10 @@ pub fn test4_163() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13078,10 +13408,10 @@ pub fn test4_163() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13131,9 +13461,10 @@ pub fn test4_164() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13168,9 +13499,10 @@ pub fn test4_164() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13220,10 +13552,10 @@ pub fn test4_165() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13258,10 +13590,10 @@ pub fn test4_165() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13311,10 +13643,9 @@ pub fn test4_166() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13349,10 +13680,9 @@ pub fn test4_166() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13402,10 +13732,10 @@ pub fn test4_167() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13440,10 +13770,10 @@ pub fn test4_167() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13493,10 +13823,10 @@ pub fn test4_168() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13531,10 +13861,10 @@ pub fn test4_168() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13584,9 +13914,10 @@ pub fn test4_169() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13621,9 +13952,10 @@ pub fn test4_169() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13673,10 +14005,10 @@ pub fn test4_170() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13711,10 +14043,10 @@ pub fn test4_170() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13764,10 +14096,9 @@ pub fn test4_171() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13802,10 +14133,9 @@ pub fn test4_171() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13855,10 +14185,10 @@ pub fn test4_172() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13893,10 +14223,10 @@ pub fn test4_172() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13946,10 +14276,10 @@ pub fn test4_173() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -13984,10 +14314,10 @@ pub fn test4_173() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14037,9 +14367,10 @@ pub fn test4_174() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14074,9 +14405,10 @@ pub fn test4_174() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14126,10 +14458,10 @@ pub fn test4_175() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14164,10 +14496,10 @@ pub fn test4_175() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14217,10 +14549,9 @@ pub fn test4_176() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14255,10 +14586,9 @@ pub fn test4_176() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14308,10 +14638,10 @@ pub fn test4_177() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14346,10 +14676,10 @@ pub fn test4_177() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14399,10 +14729,10 @@ pub fn test4_178() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14437,10 +14767,10 @@ pub fn test4_178() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14490,9 +14820,10 @@ pub fn test4_179() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14527,9 +14858,10 @@ pub fn test4_179() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14579,10 +14911,10 @@ pub fn test4_180() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14617,10 +14949,10 @@ pub fn test4_180() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14670,10 +15002,9 @@ pub fn test4_181() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14708,10 +15039,9 @@ pub fn test4_181() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14761,10 +15091,10 @@ pub fn test4_182() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14799,10 +15129,10 @@ pub fn test4_182() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14852,10 +15182,10 @@ pub fn test4_183() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14890,10 +15220,10 @@ pub fn test4_183() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14943,9 +15273,10 @@ pub fn test4_184() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -14980,9 +15311,10 @@ pub fn test4_184() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15032,10 +15364,10 @@ pub fn test4_185() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15070,10 +15402,10 @@ pub fn test4_185() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15123,10 +15455,9 @@ pub fn test4_186() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15161,10 +15492,9 @@ pub fn test4_186() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15214,10 +15544,10 @@ pub fn test4_187() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15252,10 +15582,10 @@ pub fn test4_187() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15305,10 +15635,10 @@ pub fn test4_188() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15343,10 +15673,10 @@ pub fn test4_188() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15396,9 +15726,10 @@ pub fn test4_189() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15433,9 +15764,10 @@ pub fn test4_189() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15485,10 +15817,10 @@ pub fn test4_190() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15523,10 +15855,10 @@ pub fn test4_190() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15576,10 +15908,9 @@ pub fn test4_191() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15614,10 +15945,9 @@ pub fn test4_191() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15667,10 +15997,10 @@ pub fn test4_192() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15705,10 +16035,10 @@ pub fn test4_192() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15758,10 +16088,10 @@ pub fn test4_193() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15796,10 +16126,10 @@ pub fn test4_193() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15849,9 +16179,10 @@ pub fn test4_194() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15886,9 +16217,10 @@ pub fn test4_194() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15938,10 +16270,10 @@ pub fn test4_195() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -15976,10 +16308,10 @@ pub fn test4_195() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16029,10 +16361,9 @@ pub fn test4_196() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16067,10 +16398,9 @@ pub fn test4_196() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16120,10 +16450,10 @@ pub fn test4_197() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16158,10 +16488,10 @@ pub fn test4_197() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16211,10 +16541,10 @@ pub fn test4_198() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16249,10 +16579,10 @@ pub fn test4_198() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16302,9 +16632,10 @@ pub fn test4_199() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16339,9 +16670,10 @@ pub fn test4_199() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16391,10 +16723,10 @@ pub fn test4_200() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16429,10 +16761,10 @@ pub fn test4_200() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16482,10 +16814,9 @@ pub fn test4_201() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16520,10 +16851,9 @@ pub fn test4_201() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16573,10 +16903,10 @@ pub fn test4_202() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16611,10 +16941,10 @@ pub fn test4_202() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16664,10 +16994,10 @@ pub fn test4_203() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16702,10 +17032,10 @@ pub fn test4_203() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16755,9 +17085,10 @@ pub fn test4_204() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16792,9 +17123,10 @@ pub fn test4_204() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16844,10 +17176,10 @@ pub fn test4_205() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16882,10 +17214,10 @@ pub fn test4_205() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16935,10 +17267,9 @@ pub fn test4_206() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -16973,10 +17304,9 @@ pub fn test4_206() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17026,10 +17356,10 @@ pub fn test4_207() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17064,10 +17394,10 @@ pub fn test4_207() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17117,10 +17447,10 @@ pub fn test4_208() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17155,10 +17485,10 @@ pub fn test4_208() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17208,9 +17538,10 @@ pub fn test4_209() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17245,9 +17576,10 @@ pub fn test4_209() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17297,10 +17629,10 @@ pub fn test4_210() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17335,10 +17667,10 @@ pub fn test4_210() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17388,10 +17720,9 @@ pub fn test4_211() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17426,10 +17757,9 @@ pub fn test4_211() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17479,10 +17809,10 @@ pub fn test4_212() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17517,10 +17847,10 @@ pub fn test4_212() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17570,10 +17900,10 @@ pub fn test4_213() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17608,10 +17938,10 @@ pub fn test4_213() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17661,9 +17991,10 @@ pub fn test4_214() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17698,9 +18029,10 @@ pub fn test4_214() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17750,10 +18082,10 @@ pub fn test4_215() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17788,10 +18120,10 @@ pub fn test4_215() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17841,10 +18173,9 @@ pub fn test4_216() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17879,10 +18210,9 @@ pub fn test4_216() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17932,10 +18262,10 @@ pub fn test4_217() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -17970,10 +18300,10 @@ pub fn test4_217() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18023,10 +18353,10 @@ pub fn test4_218() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18061,10 +18391,10 @@ pub fn test4_218() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18114,9 +18444,10 @@ pub fn test4_219() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18151,9 +18482,10 @@ pub fn test4_219() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18203,10 +18535,10 @@ pub fn test4_220() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18241,10 +18573,10 @@ pub fn test4_220() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18294,10 +18626,9 @@ pub fn test4_221() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18332,10 +18663,9 @@ pub fn test4_221() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18385,10 +18715,10 @@ pub fn test4_222() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18423,10 +18753,10 @@ pub fn test4_222() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18476,10 +18806,10 @@ pub fn test4_223() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18514,10 +18844,10 @@ pub fn test4_223() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18567,9 +18897,10 @@ pub fn test4_224() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18604,9 +18935,10 @@ pub fn test4_224() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18656,10 +18988,10 @@ pub fn test4_225() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18694,10 +19026,10 @@ pub fn test4_225() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18747,10 +19079,9 @@ pub fn test4_226() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18785,10 +19116,9 @@ pub fn test4_226() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18838,10 +19168,10 @@ pub fn test4_227() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18876,10 +19206,10 @@ pub fn test4_227() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18929,10 +19259,10 @@ pub fn test4_228() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -18967,10 +19297,10 @@ pub fn test4_228() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19020,9 +19350,10 @@ pub fn test4_229() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19057,9 +19388,10 @@ pub fn test4_229() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19109,10 +19441,10 @@ pub fn test4_230() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19147,10 +19479,10 @@ pub fn test4_230() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19200,10 +19532,9 @@ pub fn test4_231() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19238,10 +19569,9 @@ pub fn test4_231() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19291,10 +19621,10 @@ pub fn test4_232() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19329,10 +19659,10 @@ pub fn test4_232() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19382,10 +19712,10 @@ pub fn test4_233() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19420,10 +19750,10 @@ pub fn test4_233() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19473,9 +19803,10 @@ pub fn test4_234() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19510,9 +19841,10 @@ pub fn test4_234() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19562,10 +19894,10 @@ pub fn test4_235() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19600,10 +19932,10 @@ pub fn test4_235() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19653,10 +19985,9 @@ pub fn test4_236() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19691,10 +20022,9 @@ pub fn test4_236() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19744,10 +20074,10 @@ pub fn test4_237() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19782,10 +20112,10 @@ pub fn test4_237() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19835,10 +20165,10 @@ pub fn test4_238() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19873,10 +20203,10 @@ pub fn test4_238() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19926,9 +20256,10 @@ pub fn test4_239() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -19963,9 +20294,10 @@ pub fn test4_239() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20015,10 +20347,10 @@ pub fn test4_240() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20053,10 +20385,10 @@ pub fn test4_240() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20106,10 +20438,9 @@ pub fn test4_241() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20144,10 +20475,9 @@ pub fn test4_241() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20197,10 +20527,10 @@ pub fn test4_242() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20235,10 +20565,10 @@ pub fn test4_242() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20288,10 +20618,10 @@ pub fn test4_243() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20326,10 +20656,10 @@ pub fn test4_243() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20379,9 +20709,10 @@ pub fn test4_244() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20416,9 +20747,10 @@ pub fn test4_244() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20468,10 +20800,10 @@ pub fn test4_245() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20506,10 +20838,10 @@ pub fn test4_245() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20559,10 +20891,9 @@ pub fn test4_246() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20597,10 +20928,9 @@ pub fn test4_246() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20650,10 +20980,10 @@ pub fn test4_247() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20688,10 +21018,10 @@ pub fn test4_247() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20741,10 +21071,10 @@ pub fn test4_248() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20779,10 +21109,10 @@ pub fn test4_248() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20832,9 +21162,10 @@ pub fn test4_249() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20869,9 +21200,10 @@ pub fn test4_249() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20921,10 +21253,10 @@ pub fn test4_250() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -20959,10 +21291,10 @@ pub fn test4_250() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21012,10 +21344,9 @@ pub fn test4_251() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21050,10 +21381,9 @@ pub fn test4_251() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21103,10 +21433,10 @@ pub fn test4_252() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21141,10 +21471,10 @@ pub fn test4_252() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21194,10 +21524,10 @@ pub fn test4_253() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21232,10 +21562,10 @@ pub fn test4_253() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21285,9 +21615,10 @@ pub fn test4_254() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21322,9 +21653,10 @@ pub fn test4_254() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21374,10 +21706,10 @@ pub fn test4_255() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21412,10 +21744,10 @@ pub fn test4_255() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21465,10 +21797,9 @@ pub fn test4_256() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21503,10 +21834,9 @@ pub fn test4_256() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21556,10 +21886,10 @@ pub fn test4_257() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21594,10 +21924,10 @@ pub fn test4_257() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21647,10 +21977,10 @@ pub fn test4_258() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21685,10 +22015,10 @@ pub fn test4_258() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21738,9 +22068,10 @@ pub fn test4_259() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21775,9 +22106,10 @@ pub fn test4_259() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21827,10 +22159,10 @@ pub fn test4_260() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21865,10 +22197,10 @@ pub fn test4_260() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21918,10 +22250,9 @@ pub fn test4_261() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -21956,10 +22287,9 @@ pub fn test4_261() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22009,10 +22339,10 @@ pub fn test4_262() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22047,10 +22377,10 @@ pub fn test4_262() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22100,10 +22430,10 @@ pub fn test4_263() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22138,10 +22468,10 @@ pub fn test4_263() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22191,9 +22521,10 @@ pub fn test4_264() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22228,9 +22559,10 @@ pub fn test4_264() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22280,10 +22612,10 @@ pub fn test4_265() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22318,10 +22650,10 @@ pub fn test4_265() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22371,10 +22703,9 @@ pub fn test4_266() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22409,10 +22740,9 @@ pub fn test4_266() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22462,10 +22792,10 @@ pub fn test4_267() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22500,10 +22830,10 @@ pub fn test4_267() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22553,10 +22883,10 @@ pub fn test4_268() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22591,10 +22921,10 @@ pub fn test4_268() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22644,9 +22974,10 @@ pub fn test4_269() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22681,9 +23012,10 @@ pub fn test4_269() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22733,10 +23065,10 @@ pub fn test4_270() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22771,10 +23103,10 @@ pub fn test4_270() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22824,10 +23156,9 @@ pub fn test4_271() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22862,10 +23193,9 @@ pub fn test4_271() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22915,10 +23245,10 @@ pub fn test4_272() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -22953,10 +23283,10 @@ pub fn test4_272() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23006,10 +23336,10 @@ pub fn test4_273() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23044,10 +23374,10 @@ pub fn test4_273() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_6(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23097,9 +23427,10 @@ pub fn test4_274() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23134,9 +23465,10 @@ pub fn test4_274() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
+        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_10(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23186,10 +23518,10 @@ pub fn test4_275() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23224,10 +23556,10 @@ pub fn test4_275() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
+        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_14(end.as_pointer()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23277,282 +23609,9 @@ pub fn test4_276() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_277() {
-    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_278() {
-    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_279() {
-    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ])));
         let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23589,7 +23648,7 @@ pub fn test4_279() {
         ])));
         let mut end: Ptr<NonTrivialSortable> = unimplemented!();
         unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
+        let mut it: Ptr<NonTrivialSortable> = ({ base_17((end).clone()) });
         'loop_: while ({ (it).clone() } != {
             (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
         }) {
@@ -23598,896 +23657,443 @@ pub fn test4_279() {
         }
     }
 }
-pub fn test4_280() {
-    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<cpp17_output_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_1(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
+pub fn test3_277() {
+    ({ test4_27() });
+    ({ test4_28() });
+    ({ test4_29() });
+    ({ test4_30() });
+    ({ test4_31() });
 }
-pub fn test4_281() {
-    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<forward_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_7(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_282() {
-    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<bidirectional_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_13(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_283() {
-    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ])));
-        let end: Value<random_access_iterator_NonTrivialSortable_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_20(end.as_pointer()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test4_284() {
-    let a: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ])));
-    let b: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ])));
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let result: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ])));
-        let expected: Value<Box<[NonTrivialSortable]>> = Rc::new(RefCell::new(Box::new([
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ])));
-        let mut end: Ptr<NonTrivialSortable> = unimplemented!();
-        unimplemented!();
-        let mut it: Ptr<NonTrivialSortable> = ({ base_25((end).clone()) });
-        'loop_: while ({ (it).clone() } != {
-            (result.as_pointer() as Ptr<NonTrivialSortable>).offset((20_()) as isize)
-        }) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub fn test3_285() {
+pub fn test3_278() {
+    ({ test4_32() });
+    ({ test4_33() });
+    ({ test4_34() });
     ({ test4_35() });
     ({ test4_36() });
+}
+pub fn test3_279() {
     ({ test4_37() });
     ({ test4_38() });
     ({ test4_39() });
-}
-pub fn test3_286() {
     ({ test4_40() });
     ({ test4_41() });
+}
+pub fn test3_280() {
     ({ test4_42() });
     ({ test4_43() });
     ({ test4_44() });
-}
-pub fn test3_287() {
     ({ test4_45() });
     ({ test4_46() });
+}
+pub fn test3_281() {
     ({ test4_47() });
     ({ test4_48() });
     ({ test4_49() });
-}
-pub fn test3_288() {
     ({ test4_50() });
     ({ test4_51() });
+}
+pub fn test3_282() {
     ({ test4_52() });
     ({ test4_53() });
     ({ test4_54() });
-}
-pub fn test3_289() {
     ({ test4_55() });
     ({ test4_56() });
+}
+pub fn test3_283() {
     ({ test4_57() });
     ({ test4_58() });
     ({ test4_59() });
-}
-pub fn test3_290() {
     ({ test4_60() });
     ({ test4_61() });
+}
+pub fn test3_284() {
     ({ test4_62() });
     ({ test4_63() });
     ({ test4_64() });
-}
-pub fn test3_291() {
     ({ test4_65() });
     ({ test4_66() });
+}
+pub fn test3_285() {
     ({ test4_67() });
     ({ test4_68() });
     ({ test4_69() });
-}
-pub fn test3_292() {
     ({ test4_70() });
     ({ test4_71() });
+}
+pub fn test3_286() {
     ({ test4_72() });
     ({ test4_73() });
     ({ test4_74() });
-}
-pub fn test3_293() {
     ({ test4_75() });
     ({ test4_76() });
+}
+pub fn test3_287() {
     ({ test4_77() });
     ({ test4_78() });
     ({ test4_79() });
-}
-pub fn test3_294() {
     ({ test4_80() });
     ({ test4_81() });
+}
+pub fn test3_288() {
     ({ test4_82() });
     ({ test4_83() });
     ({ test4_84() });
-}
-pub fn test3_295() {
     ({ test4_85() });
     ({ test4_86() });
+}
+pub fn test3_289() {
     ({ test4_87() });
     ({ test4_88() });
     ({ test4_89() });
-}
-pub fn test3_296() {
     ({ test4_90() });
     ({ test4_91() });
+}
+pub fn test3_290() {
     ({ test4_92() });
     ({ test4_93() });
     ({ test4_94() });
-}
-pub fn test3_297() {
     ({ test4_95() });
     ({ test4_96() });
+}
+pub fn test3_291() {
     ({ test4_97() });
     ({ test4_98() });
     ({ test4_99() });
-}
-pub fn test3_298() {
     ({ test4_100() });
     ({ test4_101() });
+}
+pub fn test3_292() {
     ({ test4_102() });
     ({ test4_103() });
     ({ test4_104() });
-}
-pub fn test3_299() {
     ({ test4_105() });
     ({ test4_106() });
+}
+pub fn test3_293() {
     ({ test4_107() });
     ({ test4_108() });
     ({ test4_109() });
-}
-pub fn test3_300() {
     ({ test4_110() });
     ({ test4_111() });
+}
+pub fn test3_294() {
     ({ test4_112() });
     ({ test4_113() });
     ({ test4_114() });
-}
-pub fn test3_301() {
     ({ test4_115() });
     ({ test4_116() });
+}
+pub fn test3_295() {
     ({ test4_117() });
     ({ test4_118() });
     ({ test4_119() });
-}
-pub fn test3_302() {
     ({ test4_120() });
     ({ test4_121() });
+}
+pub fn test3_296() {
     ({ test4_122() });
     ({ test4_123() });
     ({ test4_124() });
-}
-pub fn test3_303() {
     ({ test4_125() });
     ({ test4_126() });
+}
+pub fn test3_297() {
     ({ test4_127() });
     ({ test4_128() });
     ({ test4_129() });
-}
-pub fn test3_304() {
     ({ test4_130() });
     ({ test4_131() });
+}
+pub fn test3_298() {
     ({ test4_132() });
     ({ test4_133() });
     ({ test4_134() });
-}
-pub fn test3_305() {
     ({ test4_135() });
     ({ test4_136() });
+}
+pub fn test3_299() {
     ({ test4_137() });
     ({ test4_138() });
     ({ test4_139() });
-}
-pub fn test3_306() {
     ({ test4_140() });
     ({ test4_141() });
+}
+pub fn test3_300() {
     ({ test4_142() });
     ({ test4_143() });
     ({ test4_144() });
-}
-pub fn test3_307() {
     ({ test4_145() });
     ({ test4_146() });
+}
+pub fn test3_301() {
     ({ test4_147() });
     ({ test4_148() });
     ({ test4_149() });
-}
-pub fn test3_308() {
     ({ test4_150() });
     ({ test4_151() });
+}
+pub fn test3_302() {
     ({ test4_152() });
     ({ test4_153() });
     ({ test4_154() });
-}
-pub fn test3_309() {
     ({ test4_155() });
     ({ test4_156() });
+}
+pub fn test3_303() {
     ({ test4_157() });
     ({ test4_158() });
     ({ test4_159() });
-}
-pub fn test3_310() {
     ({ test4_160() });
     ({ test4_161() });
+}
+pub fn test3_304() {
     ({ test4_162() });
     ({ test4_163() });
     ({ test4_164() });
-}
-pub fn test3_311() {
     ({ test4_165() });
     ({ test4_166() });
+}
+pub fn test3_305() {
     ({ test4_167() });
     ({ test4_168() });
     ({ test4_169() });
-}
-pub fn test3_312() {
     ({ test4_170() });
     ({ test4_171() });
+}
+pub fn test3_306() {
     ({ test4_172() });
     ({ test4_173() });
     ({ test4_174() });
-}
-pub fn test3_313() {
     ({ test4_175() });
     ({ test4_176() });
+}
+pub fn test3_307() {
     ({ test4_177() });
     ({ test4_178() });
     ({ test4_179() });
-}
-pub fn test3_314() {
     ({ test4_180() });
     ({ test4_181() });
+}
+pub fn test3_308() {
     ({ test4_182() });
     ({ test4_183() });
     ({ test4_184() });
-}
-pub fn test3_315() {
     ({ test4_185() });
     ({ test4_186() });
+}
+pub fn test3_309() {
     ({ test4_187() });
     ({ test4_188() });
     ({ test4_189() });
-}
-pub fn test3_316() {
     ({ test4_190() });
     ({ test4_191() });
+}
+pub fn test3_310() {
     ({ test4_192() });
     ({ test4_193() });
     ({ test4_194() });
-}
-pub fn test3_317() {
     ({ test4_195() });
     ({ test4_196() });
+}
+pub fn test3_311() {
     ({ test4_197() });
     ({ test4_198() });
     ({ test4_199() });
-}
-pub fn test3_318() {
     ({ test4_200() });
     ({ test4_201() });
+}
+pub fn test3_312() {
     ({ test4_202() });
     ({ test4_203() });
     ({ test4_204() });
-}
-pub fn test3_319() {
     ({ test4_205() });
     ({ test4_206() });
+}
+pub fn test3_313() {
     ({ test4_207() });
     ({ test4_208() });
     ({ test4_209() });
-}
-pub fn test3_320() {
     ({ test4_210() });
     ({ test4_211() });
+}
+pub fn test3_314() {
     ({ test4_212() });
     ({ test4_213() });
     ({ test4_214() });
-}
-pub fn test3_321() {
     ({ test4_215() });
     ({ test4_216() });
+}
+pub fn test3_315() {
     ({ test4_217() });
     ({ test4_218() });
     ({ test4_219() });
-}
-pub fn test3_322() {
     ({ test4_220() });
     ({ test4_221() });
+}
+pub fn test3_316() {
     ({ test4_222() });
     ({ test4_223() });
     ({ test4_224() });
-}
-pub fn test3_323() {
     ({ test4_225() });
     ({ test4_226() });
+}
+pub fn test3_317() {
     ({ test4_227() });
     ({ test4_228() });
     ({ test4_229() });
-}
-pub fn test3_324() {
     ({ test4_230() });
     ({ test4_231() });
+}
+pub fn test3_318() {
     ({ test4_232() });
     ({ test4_233() });
     ({ test4_234() });
-}
-pub fn test3_325() {
     ({ test4_235() });
     ({ test4_236() });
+}
+pub fn test3_319() {
     ({ test4_237() });
     ({ test4_238() });
     ({ test4_239() });
-}
-pub fn test3_326() {
     ({ test4_240() });
     ({ test4_241() });
+}
+pub fn test3_320() {
     ({ test4_242() });
     ({ test4_243() });
     ({ test4_244() });
-}
-pub fn test3_327() {
     ({ test4_245() });
     ({ test4_246() });
+}
+pub fn test3_321() {
     ({ test4_247() });
     ({ test4_248() });
     ({ test4_249() });
-}
-pub fn test3_328() {
     ({ test4_250() });
     ({ test4_251() });
+}
+pub fn test3_322() {
     ({ test4_252() });
     ({ test4_253() });
     ({ test4_254() });
-}
-pub fn test3_329() {
     ({ test4_255() });
     ({ test4_256() });
+}
+pub fn test3_323() {
     ({ test4_257() });
     ({ test4_258() });
     ({ test4_259() });
-}
-pub fn test3_330() {
     ({ test4_260() });
     ({ test4_261() });
+}
+pub fn test3_324() {
     ({ test4_262() });
     ({ test4_263() });
     ({ test4_264() });
-}
-pub fn test3_331() {
     ({ test4_265() });
     ({ test4_266() });
+}
+pub fn test3_325() {
     ({ test4_267() });
     ({ test4_268() });
     ({ test4_269() });
-}
-pub fn test3_332() {
     ({ test4_270() });
     ({ test4_271() });
+}
+pub fn test3_326() {
     ({ test4_272() });
     ({ test4_273() });
     ({ test4_274() });
-}
-pub fn test3_333() {
     ({ test4_275() });
     ({ test4_276() });
-    ({ test4_277() });
-    ({ test4_278() });
-    ({ test4_279() });
 }
-pub fn test3_334() {
-    ({ test4_280() });
-    ({ test4_281() });
-    ({ test4_282() });
-    ({ test4_283() });
-    ({ test4_284() });
+pub fn test2_327() {
+    ({ test3_277() });
+    ({ test3_278() });
+    ({ test3_279() });
+    ({ test3_280() });
+    ({ test3_281() });
 }
-pub fn test2_335() {
+pub fn test2_328() {
+    ({ test3_282() });
+    ({ test3_283() });
+    ({ test3_284() });
     ({ test3_285() });
     ({ test3_286() });
+}
+pub fn test2_329() {
     ({ test3_287() });
     ({ test3_288() });
     ({ test3_289() });
-}
-pub fn test2_336() {
     ({ test3_290() });
     ({ test3_291() });
+}
+pub fn test2_330() {
     ({ test3_292() });
     ({ test3_293() });
     ({ test3_294() });
-}
-pub fn test2_337() {
     ({ test3_295() });
     ({ test3_296() });
+}
+pub fn test2_331() {
     ({ test3_297() });
     ({ test3_298() });
     ({ test3_299() });
-}
-pub fn test2_338() {
     ({ test3_300() });
     ({ test3_301() });
+}
+pub fn test2_332() {
     ({ test3_302() });
     ({ test3_303() });
     ({ test3_304() });
-}
-pub fn test2_339() {
     ({ test3_305() });
     ({ test3_306() });
+}
+pub fn test2_333() {
     ({ test3_307() });
     ({ test3_308() });
     ({ test3_309() });
-}
-pub fn test2_340() {
     ({ test3_310() });
     ({ test3_311() });
+}
+pub fn test2_334() {
     ({ test3_312() });
     ({ test3_313() });
     ({ test3_314() });
-}
-pub fn test2_341() {
     ({ test3_315() });
     ({ test3_316() });
+}
+pub fn test2_335() {
     ({ test3_317() });
     ({ test3_318() });
     ({ test3_319() });
-}
-pub fn test2_342() {
     ({ test3_320() });
     ({ test3_321() });
+}
+pub fn test2_336() {
     ({ test3_322() });
     ({ test3_323() });
     ({ test3_324() });
-}
-pub fn test2_343() {
     ({ test3_325() });
     ({ test3_326() });
-    ({ test3_327() });
-    ({ test3_328() });
-    ({ test3_329() });
 }
-pub fn test2_344() {
-    ({ test3_330() });
-    ({ test3_331() });
-    ({ test3_332() });
-    ({ test3_333() });
-    ({ test3_334() });
+pub fn test1_337() {
+    ({ test2_327() });
+    ({ test2_328() });
+    ({ test2_329() });
+    ({ test2_330() });
+    ({ test2_331() });
 }
-pub fn test1_345() {
+pub fn test1_338() {
+    ({ test2_332() });
+    ({ test2_333() });
+    ({ test2_334() });
     ({ test2_335() });
     ({ test2_336() });
-    ({ test2_337() });
-    ({ test2_338() });
-    ({ test2_339() });
 }
-pub fn test1_346() {
-    ({ test2_340() });
-    ({ test2_341() });
-    ({ test2_342() });
-    ({ test2_343() });
-    ({ test2_344() });
-}
-pub fn test_347() -> () {
-    ({ test1_345() });
-    ({ test1_346() });
+pub fn test_339() -> () {
+    ({ test1_337() });
+    ({ test1_338() });
     return true;
 }
 pub fn main() {
@@ -24510,7 +24116,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_347() });
+    ({ test_339() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -24667,6 +24273,10 @@ pub trait bidirectional_iterator_NonTrivialSortable_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_NonTrivialSortable_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_NonTrivialSortable_ptr_>,
+    ) -> Ptr<bidirectional_iterator_NonTrivialSortable_ptr_>;
 }
 impl bidirectional_iterator_NonTrivialSortable_ptr_Impl
     for Ptr<bidirectional_iterator_NonTrivialSortable_ptr_>
@@ -24676,6 +24286,17 @@ impl bidirectional_iterator_NonTrivialSortable_ptr_Impl
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_NonTrivialSortable_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_NonTrivialSortable_ptr_>,
+    ) -> Ptr<bidirectional_iterator_NonTrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -24691,6 +24312,10 @@ pub trait bidirectional_iterator_TrivialSortable_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_TrivialSortable_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_TrivialSortable_ptr_>,
+    ) -> Ptr<bidirectional_iterator_TrivialSortable_ptr_>;
 }
 impl bidirectional_iterator_TrivialSortable_ptr_Impl
     for Ptr<bidirectional_iterator_TrivialSortable_ptr_>
@@ -24702,11 +24327,24 @@ impl bidirectional_iterator_TrivialSortable_ptr_Impl
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_TrivialSortable_ptr_>,
+    ) -> Ptr<bidirectional_iterator_TrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait bidirectional_iterator_const_NonTrivialSortable_ptr_Impl {
     fn operator_deref(&self) -> ();
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_>;
-    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_>;
+    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_> {
+        unimplemented!()
+    }
     fn operator_post_inc_8(
         &self,
         mut _a0: (),
@@ -24734,10 +24372,6 @@ impl bidirectional_iterator_const_NonTrivialSortable_ptr_Impl
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
-        return (*self).clone();
-    }
     fn move_assign(
         &self,
         _a0: Ptr<bidirectional_iterator_const_NonTrivialSortable_ptr_>,
@@ -24753,7 +24387,9 @@ impl bidirectional_iterator_const_NonTrivialSortable_ptr_Impl
 pub trait bidirectional_iterator_const_TrivialSortable_ptr_Impl {
     fn operator_deref(&self) -> ();
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_TrivialSortable_ptr_>;
-    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_TrivialSortable_ptr_>;
+    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_TrivialSortable_ptr_> {
+        unimplemented!()
+    }
     fn operator_post_inc_8(
         &self,
         mut _a0: (),
@@ -24781,10 +24417,6 @@ impl bidirectional_iterator_const_TrivialSortable_ptr_Impl
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_TrivialSortable_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
-        return (*self).clone();
-    }
     fn move_assign(
         &self,
         _a0: Ptr<bidirectional_iterator_const_TrivialSortable_ptr_>,
@@ -24808,6 +24440,10 @@ pub trait cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSor
     ) -> cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_>;
 }
 impl cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_Impl
     for Ptr<cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_>
@@ -24819,6 +24455,17 @@ impl cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable
         &self,
     ) -> Ptr<cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_const_NonTrivialSortable_ptr__const_NonTrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -24833,6 +24480,10 @@ pub trait cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_
     ) -> cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_>;
 }
 impl cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_Impl
     for Ptr<cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_>
@@ -24846,6 +24497,17 @@ impl cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_I
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_const_TrivialSortable_ptr__const_TrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_deref(&self) -> () {
@@ -24857,14 +24519,34 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
+impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp17_output_iterator_NonTrivialSortable_ptr_Impl {
     fn operator_deref(&self) -> ();
     fn operator_inc_5(&self) -> Ptr<cpp17_output_iterator_NonTrivialSortable_ptr_>;
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_NonTrivialSortable_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_NonTrivialSortable_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_NonTrivialSortable_ptr_>;
 }
 impl cpp17_output_iterator_NonTrivialSortable_ptr_Impl
     for Ptr<cpp17_output_iterator_NonTrivialSortable_ptr_>
@@ -24876,6 +24558,17 @@ impl cpp17_output_iterator_NonTrivialSortable_ptr_Impl
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_NonTrivialSortable_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_NonTrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait cpp17_output_iterator_TrivialSortable_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -24883,6 +24576,10 @@ pub trait cpp17_output_iterator_TrivialSortable_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_TrivialSortable_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_TrivialSortable_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_TrivialSortable_ptr_>;
 }
 impl cpp17_output_iterator_TrivialSortable_ptr_Impl
     for Ptr<cpp17_output_iterator_TrivialSortable_ptr_>
@@ -24892,6 +24589,17 @@ impl cpp17_output_iterator_TrivialSortable_ptr_Impl
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_output_iterator_TrivialSortable_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_TrivialSortable_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_TrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -24905,8 +24613,24 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
-impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {}
+impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
+}
 pub trait cpp20_input_iterator_int_ptr_Impl {
     fn move_assign(
         &self,
@@ -24986,6 +24710,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -24994,6 +24722,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_NonTrivialSortable_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -25001,6 +24740,10 @@ pub trait forward_iterator_NonTrivialSortable_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_NonTrivialSortable_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_NonTrivialSortable_ptr_>,
+    ) -> Ptr<forward_iterator_NonTrivialSortable_ptr_>;
 }
 impl forward_iterator_NonTrivialSortable_ptr_Impl
     for Ptr<forward_iterator_NonTrivialSortable_ptr_>
@@ -25012,6 +24755,17 @@ impl forward_iterator_NonTrivialSortable_ptr_Impl
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_NonTrivialSortable_ptr_>,
+    ) -> Ptr<forward_iterator_NonTrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_TrivialSortable_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -25019,6 +24773,10 @@ pub trait forward_iterator_TrivialSortable_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_TrivialSortable_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_TrivialSortable_ptr_>,
+    ) -> Ptr<forward_iterator_TrivialSortable_ptr_>;
 }
 impl forward_iterator_TrivialSortable_ptr_Impl for Ptr<forward_iterator_TrivialSortable_ptr_> {
     fn operator_deref(&self) -> () {
@@ -25026,6 +24784,17 @@ impl forward_iterator_TrivialSortable_ptr_Impl for Ptr<forward_iterator_TrivialS
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_TrivialSortable_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<forward_iterator_TrivialSortable_ptr_>,
+    ) -> Ptr<forward_iterator_TrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -25134,6 +24903,10 @@ pub trait random_access_iterator_NonTrivialSortable_ptr_Impl {
     ) -> Ptr<random_access_iterator_NonTrivialSortable_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_NonTrivialSortable_ptr_>,
+    ) -> Ptr<random_access_iterator_NonTrivialSortable_ptr_>;
 }
 impl random_access_iterator_NonTrivialSortable_ptr_Impl
     for Ptr<random_access_iterator_NonTrivialSortable_ptr_>
@@ -25143,6 +24916,17 @@ impl random_access_iterator_NonTrivialSortable_ptr_Impl
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_NonTrivialSortable_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_NonTrivialSortable_ptr_>,
+    ) -> Ptr<random_access_iterator_NonTrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -25167,6 +24951,10 @@ pub trait random_access_iterator_TrivialSortable_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_TrivialSortable_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_TrivialSortable_ptr_>,
+    ) -> Ptr<random_access_iterator_TrivialSortable_ptr_>;
 }
 impl random_access_iterator_TrivialSortable_ptr_Impl
     for Ptr<random_access_iterator_TrivialSortable_ptr_>
@@ -25176,6 +24964,17 @@ impl random_access_iterator_TrivialSortable_ptr_Impl
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_TrivialSortable_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_TrivialSortable_ptr_>,
+    ) -> Ptr<random_access_iterator_TrivialSortable_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -25202,8 +25001,10 @@ pub trait random_access_iterator_const_NonTrivialSortable_ptr_Impl {
     }
     fn operator_add_assign(
         &self,
-        n: (),
-    ) -> Ptr<random_access_iterator_const_NonTrivialSortable_ptr_>;
+        mut n: (),
+    ) -> Ptr<random_access_iterator_const_NonTrivialSortable_ptr_> {
+        unimplemented!()
+    }
     fn operator_sub_assign(
         &self,
         mut n: (),
@@ -25223,16 +25024,6 @@ impl random_access_iterator_const_NonTrivialSortable_ptr_Impl
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_NonTrivialSortable_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
-        return (*self).clone();
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<random_access_iterator_const_NonTrivialSortable_ptr_> {
-        {
-            let _ptr = field!((*self), it_);
-            _ptr.write(_ptr.read() + n)
-        };
         return (*self).clone();
     }
     fn move_assign(
@@ -25268,7 +25059,12 @@ pub trait random_access_iterator_const_TrivialSortable_ptr_Impl {
     ) -> random_access_iterator_const_TrivialSortable_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, n: ()) -> Ptr<random_access_iterator_const_TrivialSortable_ptr_>;
+    fn operator_add_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<random_access_iterator_const_TrivialSortable_ptr_> {
+        unimplemented!()
+    }
     fn operator_sub_assign(
         &self,
         mut n: (),
@@ -25288,16 +25084,6 @@ impl random_access_iterator_const_TrivialSortable_ptr_Impl
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_TrivialSortable_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
-        return (*self).clone();
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<random_access_iterator_const_TrivialSortable_ptr_> {
-        {
-            let _ptr = field!((*self), it_);
-            _ptr.write(_ptr.read() + n)
-        };
         return (*self).clone();
     }
     fn move_assign(

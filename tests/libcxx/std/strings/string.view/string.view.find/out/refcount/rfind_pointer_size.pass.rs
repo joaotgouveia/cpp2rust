@@ -13,6 +13,35 @@ impl constexpr_char_traits_char_ {
     pub fn eq(mut c1: (), mut c2: ()) -> () {
         return (c1 == c2);
     }
+    pub fn lt(mut c1: (), mut c2: ()) -> () {
+        return (c1 < c2);
+    }
+    pub fn compare(mut s1: Ptr<()>, mut s2: Ptr<()>, mut n: ()) -> () {
+        'loop_: while (n != 0) {
+            if ({
+                let _c1: () = (s1.read());
+                let _c2: () = (s2.read());
+                constexpr_char_traits_char_::lt(_c1, _c2)
+            }) {
+                return -1_();
+            }
+            if ({
+                let _c1: () = (s2.read());
+                let _c2: () = (s1.read());
+                constexpr_char_traits_char_::lt(_c1, _c2)
+            }) {
+                return 1_();
+            }
+            {
+                {
+                    n.prefix_dec();
+                    s1.prefix_inc()
+                };
+                s2.prefix_inc()
+            };
+        }
+        return 0_();
+    }
     pub fn length(mut s: Ptr<()>) -> () {
         let len: Value<()> = Rc::new(RefCell::new(0_()));
         'loop_: while !({

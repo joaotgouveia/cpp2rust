@@ -54,32 +54,76 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_output_iterator_int_ptr_ {}
+impl cpp17_output_iterator_int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_output_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_output_iterator_int_ptr_,
+    ) -> *mut cpp17_output_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_output_iterator_int_ptr_));
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl cpp17_input_iterator_int_ptr__int_ptr_ {
+    pub unsafe fn move_from(_a0: *mut cpp17_input_iterator_int_ptr__int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp17_input_iterator_int_ptr__int_ptr_,
+    ) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp17_input_iterator_int_ptr__int_ptr_));
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub unsafe fn operator_ne_0(
+pub unsafe fn operator_eq_0(
+    x: *const forward_iterator_int_ptr_,
+    y: *const forward_iterator_int_ptr_,
+) -> () {
+    return (((*x).it_) == ((*y).it_));
+}
+pub unsafe fn operator_ne_1(
     x: *const forward_iterator_int_ptr_,
     y: *const forward_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -106,15 +150,37 @@ impl forward_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_int_ptr_,
+    ) -> *mut forward_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_int_ptr_));
+    }
 }
-pub unsafe fn operator_ne_1(
+impl std::cmp::PartialEq for forward_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_eq_0(
+                self as *const forward_iterator_int_ptr_,
+                other as *const forward_iterator_int_ptr_,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_int_ptr_ {}
+pub unsafe fn operator_ne_2(
     x: *const forward_iterator_Counted_ptr_,
     y: *const forward_iterator_Counted_ptr_,
 ) -> () {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_Counted_ptr_ {
     it_: *mut Counted,
     tracker_: support_double_move_tracker,
@@ -141,9 +207,20 @@ impl forward_iterator_Counted_ptr_ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut forward_iterator_Counted_ptr_,
+    ) -> *mut forward_iterator_Counted_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut forward_iterator_Counted_ptr_));
+    }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
@@ -154,6 +231,24 @@ impl cpp20_random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
         return &mut (*self.it_.offset((n) as isize));
+    }
+    pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
+        let mut this = Self {
+            it_: (*_a0).it_,
+            tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
+        };
+        this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut cpp20_random_access_iterator_int_ptr_,
+    ) -> *mut cpp20_random_access_iterator_int_ptr_ {
+        self.it_ = (*_a0).it_;
+        (unsafe {
+            let _other: *mut support_double_move_tracker = &mut (*_a0).tracker_;
+            support_double_move_tracker::move_assign(&mut self.tracker_, _other)
+        });
+        return &mut (*(self as *mut cpp20_random_access_iterator_int_ptr_));
     }
 }
 const _: () = assert!(
@@ -243,7 +338,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub unsafe fn operator_eq_2(
+pub unsafe fn operator_eq_3(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -258,7 +353,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_2(
+            operator_eq_3(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -280,33 +375,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_3(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_4(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_3(_i, n)
+        operator_add_4(_i, n)
     });
 }
-pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -390,7 +485,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -400,7 +495,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -473,15 +568,15 @@ impl util_iterator_error {
 pub struct Counted {}
 impl Counted {
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_9)) = {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_10)) = 0_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_10))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_10)) = {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_11)) = 0_();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_11))
         };
     }
     pub unsafe fn new() -> Self {
         let mut this = Self {};
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_9)).prefix_inc();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_10)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_10)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_11)).prefix_inc();
         this
     }
     pub unsafe fn copy_from(_a0: *const Counted) -> Self {
@@ -491,7 +586,7 @@ impl Counted {
     }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_9)).prefix_dec();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_10)).prefix_dec();
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const Counted) -> *mut Counted {
         return &mut (*(self as *mut Counted));
@@ -507,32 +602,32 @@ impl Default for Counted {
         unsafe { Counted::new() }
     }
 }
-pub static mut count_9: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut constructed_10: std::cell::LazyCell<()> =
+pub static mut count_10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut constructed_11: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct ThrowsCounted {}
 impl ThrowsCounted {
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_13)) = {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut count_11)) = {
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_12)) = 0_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_12))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_14)) = {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12)) = {
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_13)) = 0_();
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_13))
             };
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut count_11))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12))
         };
     }
     pub unsafe fn new() -> Self {
         let mut this = Self {};
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_12)).prefix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_13)) > (0_()))
-            && (((*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_13)).prefix_dec())
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_13)).prefix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_14)) > (0_()))
+            && (((*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_14)).prefix_dec())
                 == (0_()))
         {
             unimplemented!();
         }
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_11)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12)).prefix_inc();
         this
     }
     pub unsafe fn copy_from(_a0: *const ThrowsCounted) -> Self {
@@ -542,7 +637,7 @@ impl ThrowsCounted {
     }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_11)).prefix_dec();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12)).prefix_dec();
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const ThrowsCounted) -> *mut ThrowsCounted {
         return &mut (*(self as *mut ThrowsCounted));
@@ -558,12 +653,12 @@ impl Default for ThrowsCounted {
         unsafe { ThrowsCounted::new() }
     }
 }
-pub static mut count_11: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut constructed_12: std::cell::LazyCell<()> =
+pub static mut count_12: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut constructed_13: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut throw_after_13: std::cell::LazyCell<()> =
+pub static mut throw_after_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn test_14() -> () {
+pub unsafe fn test_15() -> () {
     {
         let n: () = 3_();
         let mut alloc: () = unimplemented!();
@@ -592,8 +687,8 @@ pub unsafe fn test_14() -> () {
     }
     return true;
 }
-pub unsafe fn test_ctor_throws_15() {}
-pub unsafe fn test_counted_16() {
+pub unsafe fn test_ctor_throws_16() {}
+pub unsafe fn test_counted_17() {
     let N: () = 5_();
     let mut pool: [(); 5] = [
         unimplemented!(),
@@ -628,15 +723,15 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_counted_16() });
-    (unsafe { test_ctor_throws_15() });
-    (unsafe { test_14() });
+    (unsafe { test_counted_17() });
+    (unsafe { test_ctor_throws_16() });
+    (unsafe { test_15() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const count_9);
-    std::cell::LazyCell::force(&*&raw const constructed_10);
-    std::cell::LazyCell::force(&*&raw const count_11);
-    std::cell::LazyCell::force(&*&raw const constructed_12);
-    std::cell::LazyCell::force(&*&raw const throw_after_13);
+    std::cell::LazyCell::force(&*&raw const count_10);
+    std::cell::LazyCell::force(&*&raw const constructed_11);
+    std::cell::LazyCell::force(&*&raw const count_12);
+    std::cell::LazyCell::force(&*&raw const constructed_13);
+    std::cell::LazyCell::force(&*&raw const throw_after_14);
 }

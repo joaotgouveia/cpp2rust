@@ -11,7 +11,7 @@ pub fn test_0(mut i: ()) {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     (&(result));
 }
 pub fn main() {

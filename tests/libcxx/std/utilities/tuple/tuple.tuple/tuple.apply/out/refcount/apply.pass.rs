@@ -38,23 +38,11 @@ impl TypeID {
         }
     }
 }
-impl std::cmp::PartialEq for TypeID {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(TypeID {
-                    m_id: self.m_id.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TypeID {
-                    m_id: other.m_id.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for TypeID {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for TypeID {}
 thread_local!(
     static id_3: Value<TypeID> = Rc::new(RefCell::new(TypeID::new({
         Ptr::<() >::from_string_literal(b"const TypeID &makeTypeIDImp() [T = ArgumentListID<int &, const int &, unsigned int &>]" )
@@ -174,7 +162,7 @@ impl CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(40)]
 pub struct CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
     #[offset(0)]
@@ -186,6 +174,17 @@ pub struct CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
     #[byte_size(24)]
     pub args: (),
 }
+impl CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
+    pub fn move_from(
+        _a0: Ptr<CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__>,
+    ) -> Self {
+        Self {
+            quals: { (*_a0.upgrade().deref()).quals },
+            arg_types: { (*_a0.upgrade().deref()).arg_types.clone() },
+            args: unimplemented!(),
+        }
+    }
+}
 impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
     pub fn new(mut q: CallQuals, xargs_1: Ptr<()>, xargs_2: Ptr<()>, xargs_3: Ptr<()>) -> Self {
         Self {
@@ -195,7 +194,7 @@ impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(40)]
 pub struct CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
     #[offset(0)]
@@ -206,6 +205,17 @@ pub struct CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
     #[offset(16)]
     #[byte_size(24)]
     pub args: (),
+}
+impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
+    pub fn move_from(
+        _a0: Ptr<CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__>,
+    ) -> Self {
+        Self {
+            quals: { (*_a0.upgrade().deref()).quals },
+            arg_types: { (*_a0.upgrade().deref()).arg_types.clone() },
+            args: unimplemented!(),
+        }
+    }
 }
 impl CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
     pub fn new(mut q: CallQuals, xargs_1: Ptr<()>, xargs_2: Ptr<()>, xargs_3: Ptr<()>) -> Self {
@@ -460,7 +470,7 @@ pub fn check_apply_quals_and_types_28(t: Ptr<()>) {
 }
 pub fn test_call_quals_and_arg_types_29() {
     let x: Value<()> = Rc::new(RefCell::new(42_()));
-    let mut y: () = 101_();
+    let y: Value<()> = Rc::new(RefCell::new(101_()));
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ct: Ptr<()> = t.as_pointer();
     ({ check_apply_quals_and_types_25(t.as_pointer()) });

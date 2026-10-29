@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut t1: ::libc::time_t = unimplemented!();
+    let mut t1: () = unimplemented!();
     (&(t1));
     return 0_();
 }

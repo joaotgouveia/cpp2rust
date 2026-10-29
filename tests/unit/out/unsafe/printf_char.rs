@@ -12,36 +12,13 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut c: libc::c_char = (('a' as i32) as libc::c_char);
-    let mut n: i32 = 3;
-    (unsafe {
-        libc::printf(
-            (c"%c\n".as_ptr().cast_mut()).cast_const() as *const libc::c_char,
-            (c as i32),
-        )
-    });
-    (unsafe {
-        libc::printf(
-            (c"%d %c\n".as_ptr().cast_mut()).cast_const() as *const libc::c_char,
-            (n),
-            (c as i32),
-        )
-    });
-    (unsafe {
-        libc::printf(
-            (c"100%% %c\n".as_ptr().cast_mut()).cast_const() as *const libc::c_char,
-            (c as i32),
-        )
-    });
-    (unsafe {
-        libc::printf(
-            (c"%c%c%d\n".as_ptr().cast_mut()).cast_const() as *const libc::c_char,
-            (c as i32),
-            ((c as i32) + (1)),
-            (n),
-        )
-    });
-    return 0;
+unsafe fn main_0() -> () {
+    let mut c: () = ('a' as ());
+    let mut n: () = 3_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

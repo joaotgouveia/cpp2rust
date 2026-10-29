@@ -18,23 +18,19 @@ pub fn test01_0() {
     let carray: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..50).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    ({ strcpy_1((carray.as_pointer() as Ptr<()>), (ccarray1).clone()) });
+    unimplemented!();
     let mut v: () = ((carray.as_pointer() as Ptr<()>) as Ptr<()>).to_any();
     let mut cv: () = (ccarray1).to_any();
-    cc1 = ({ strchr_2((ccarray1).clone(), ('c' as ())) });
-    c1 = ({ strchr_3((carray.as_pointer() as Ptr<()>), ('c' as ())) });
-    cc1 = ({ strpbrk_4((ccarray1).clone(), (ccarray2).clone()) });
-    c1 = ({ strpbrk_5((carray.as_pointer() as Ptr<()>), (ccarray2).clone()) });
-    cc1 = ({ strrchr_6((ccarray1).clone(), ('c' as ())) });
-    c1 = ({ strrchr_7((carray.as_pointer() as Ptr<()>), ('c' as ())) });
-    cc1 = ({ strstr_8((ccarray1).clone(), (ccarray2).clone()) });
-    c1 = ({
-        let ___haystack: Ptr<()> = (carray.as_pointer() as Ptr<()>);
-        let ___needle: Ptr<()> = (carray.as_pointer() as Ptr<()>);
-        strstr_9(___haystack, ___needle)
-    });
-    cv = { ({ memchr_10((cv).clone(), ('a' as ()), 3_()) }) };
-    v = { ({ memchr_11((v).clone(), ('a' as ()), 3_()) }) };
+    cc1 = unimplemented!();
+    c1 = unimplemented!();
+    cc1 = unimplemented!();
+    c1 = unimplemented!();
+    cc1 = unimplemented!();
+    c1 = unimplemented!();
+    cc1 = unimplemented!();
+    c1 = unimplemented!();
+    cv = { unimplemented!() };
+    v = { unimplemented!() };
     cc1 = { (cc1).clone() };
     c1 = { (c1).clone() };
 }

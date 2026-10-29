@@ -51,7 +51,7 @@ impl Clone for Arg {
         Arg::copy_from(__src.as_pointer())
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct Error {
     #[offset(0)]
@@ -76,6 +76,11 @@ impl Error {
         };
         unimplemented!();
         __this
+    }
+    pub fn move_from(_a0: Ptr<Error>) -> Self {
+        Self {
+            arg: Arg::move_from({ field_ptr!(_a0, arg) }),
+        }
     }
 }
 pub fn test_0() -> () {

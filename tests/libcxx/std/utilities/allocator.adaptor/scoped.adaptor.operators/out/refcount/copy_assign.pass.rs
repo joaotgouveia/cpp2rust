@@ -31,23 +31,11 @@ impl A1_int_ {
         __this
     }
 }
-impl std::cmp::PartialEq for A1_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(A1_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A1_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A1_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A1_int_ {}
 impl Default for A1_int_ {
     fn default() -> Self {
         { A1_int_::new(None) }
@@ -81,23 +69,11 @@ impl A2_int_ {
         __this
     }
 }
-impl std::cmp::PartialEq for A2_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_8(
-                Rc::new(RefCell::new(A2_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A2_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A2_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A2_int_ {}
 impl Clone for A2_int_ {
     fn clone(&self) -> Self {
         let __src: Value<A2_int_> = Rc::new(RefCell::new(A2_int_ {
@@ -139,23 +115,11 @@ impl A3_int_ {
         __this
     }
 }
-impl std::cmp::PartialEq for A3_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_13(
-                Rc::new(RefCell::new(A3_int_ {
-                    id_: self.id_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(A3_int_ {
-                    id_: other.id_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for A3_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for A3_int_ {}
 impl Clone for A3_int_ {
     fn clone(&self) -> Self {
         let __src: Value<A3_int_> = Rc::new(RefCell::new(A3_int_ {
@@ -197,7 +161,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let aN: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         copy_called_0.with(|rc| *rc.borrow_mut() = false);
         move_called_1.with(|rc| *rc.borrow_mut() = false);
-        (*aN.borrow_mut()) = (*a1.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -209,7 +173,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         move_called_1.with(|rc| *rc.borrow_mut() = false);
         copy_called_5.with(|rc| *rc.borrow_mut() = false);
         move_called_6.with(|rc| *rc.borrow_mut() = false);
-        (*aN.borrow_mut()) = (*a1.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -225,7 +189,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         move_called_6.with(|rc| *rc.borrow_mut() = false);
         copy_called_9.with(|rc| *rc.borrow_mut() = false);
         move_called_10.with(|rc| *rc.borrow_mut() = false);
-        (*aN.borrow_mut()) = (*a1.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

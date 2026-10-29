@@ -10,46 +10,14 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut fd: i32 = 0;
-    let ssloc: Value<libcc2rs::SockaddrStorage> = Rc::new(RefCell::new(Default::default()));
-    let slen: Value<libc::socklen_t> = Rc::new(RefCell::new((128usize as libc::socklen_t)));
-    assert!(
-        (((match nix::sys::socket::getsockname::<nix::sys::socket::SockaddrStorage>(fd) {
-            Ok(__ss) => {
-                Sockaddr::encode(
-                    &__ss,
-                    &(ssloc.as_pointer()).reinterpret_cast::<libcc2rs::Sockaddr>(),
-                    &(slen.as_pointer()),
-                );
-                0
-            }
-            Err(__e) => {
-                libcc2rs::cpp2rust_errno().write(__e as i32);
-                -1
-            }
-        } == -1_i32) as i32)
-            != 0)
-    );
-    let sin: Value<libcc2rs::SockaddrIn> = Rc::new(RefCell::new(Default::default()));
-    let inlen: Value<libc::socklen_t> = Rc::new(RefCell::new((16usize as libc::socklen_t)));
-    assert!(
-        (((match nix::sys::socket::getsockname::<nix::sys::socket::SockaddrStorage>(fd) {
-            Ok(__ss) => {
-                Sockaddr::encode(
-                    &__ss,
-                    &(sin.as_pointer()).reinterpret_cast::<libcc2rs::Sockaddr>(),
-                    &(inlen.as_pointer()),
-                );
-                0
-            }
-            Err(__e) => {
-                libcc2rs::cpp2rust_errno().write(__e as i32);
-                -1
-            }
-        } == -1_i32) as i32)
-            != 0)
-    );
-    return 0;
+fn main_0() -> () {
+    let mut fd: () = 0_();
+    let ssloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let slen: Value<()> = Rc::new(RefCell::new(128usize));
+    unimplemented!();
+    let sin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let inlen: Value<()> = Rc::new(RefCell::new(16usize));
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

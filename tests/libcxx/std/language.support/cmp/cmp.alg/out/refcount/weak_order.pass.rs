@@ -331,10 +331,288 @@ pub fn test_1_3_12() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let nq: Value<()> = Rc::new(RefCell::new(({ copysign_13(unimplemented!(), -1_()) })));
-        let ns: Value<()> = Rc::new(RefCell::new(({ copysign_13(unimplemented!(), -1_()) })));
-        let ps: Value<()> = Rc::new(RefCell::new(({ copysign_13(unimplemented!(), 1_()) })));
-        let pq: Value<()> = Rc::new(RefCell::new(({ copysign_13(unimplemented!(), 1_()) })));
+        let nq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ps: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let pq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while (i < 14_()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while (i < 14_()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while (i < 14_()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while (i < 14_()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        unimplemented!();
+        unimplemented!();
+    }
+    return true;
+}
+pub fn test_1_3_13() -> () {
+    const _: () = assert!(true, "");;
+    let v: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -unimplemented!(),
+        unimplemented!(),
+        -1_f64,
+        -0.1_f64,
+        -unimplemented!(),
+        -0_f64,
+        0_f64,
+        unimplemented!(),
+        0.1_f64,
+        1_f64,
+        2_f64,
+        3.14_f64,
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    const _: () = assert!(true, "std::size(v) == 14");;
+    let mut i: () = 0_();
+    'loop_: while (i < 14_()) {
+        let mut j: () = 0_();
+        'loop_: while (j < 14_()) {
+            let naturalOrder: Value<()> = Rc::new(RefCell::new(
+                (std::cmp::Ord::cmp(
+                    &((*v.borrow())[(i) as usize]),
+                    &((*v.borrow())[(j) as usize]),
+                )),
+            ));
+            if ((*v.borrow())[(i) as usize] == 0_()) && ((*v.borrow())[(j) as usize] == 0_()) {
+                unimplemented!();
+            } else {
+                unimplemented!();
+            }
+            j.prefix_inc();
+        }
+        i.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {
+        let nq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ps: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let pq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -609,288 +887,10 @@ pub fn test_1_3_14() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let nq: Value<()> = Rc::new(RefCell::new(({ copysign_15(unimplemented!(), -1_()) })));
-        let ns: Value<()> = Rc::new(RefCell::new(({ copysign_15(unimplemented!(), -1_()) })));
-        let ps: Value<()> = Rc::new(RefCell::new(({ copysign_15(unimplemented!(), 1_()) })));
-        let pq: Value<()> = Rc::new(RefCell::new(({ copysign_15(unimplemented!(), 1_()) })));
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 14_()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 14_()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 14_()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 14_()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
-}
-pub fn test_1_3_16() -> () {
-    const _: () = assert!(true, "");;
-    let v: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -unimplemented!(),
-        unimplemented!(),
-        -1_f64,
-        -0.1_f64,
-        -unimplemented!(),
-        -0_f64,
-        0_f64,
-        unimplemented!(),
-        0.1_f64,
-        1_f64,
-        2_f64,
-        3.14_f64,
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    const _: () = assert!(true, "std::size(v) == 14");;
-    let mut i: () = 0_();
-    'loop_: while (i < 14_()) {
-        let mut j: () = 0_();
-        'loop_: while (j < 14_()) {
-            let naturalOrder: Value<()> = Rc::new(RefCell::new(
-                (std::cmp::Ord::cmp(
-                    &((*v.borrow())[(i) as usize]),
-                    &((*v.borrow())[(j) as usize]),
-                )),
-            ));
-            if ((*v.borrow())[(i) as usize] == 0_()) && ((*v.borrow())[(j) as usize] == 0_()) {
-                unimplemented!();
-            } else {
-                unimplemented!();
-            }
-            j.prefix_inc();
-        }
-        i.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {
-        let nq: Value<()> = Rc::new(RefCell::new(({ copysign_17(unimplemented!(), -1_()) })));
-        let ns: Value<()> = Rc::new(RefCell::new(({ copysign_17(unimplemented!(), -1_()) })));
-        let ps: Value<()> = Rc::new(RefCell::new(({ copysign_17(unimplemented!(), 1_()) })));
-        let pq: Value<()> = Rc::new(RefCell::new(({ copysign_17(unimplemented!(), 1_()) })));
+        let nq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ps: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let pq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -933,36 +933,20 @@ pub fn test_1_3_16() -> () {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct N14_A {}
-impl std::cmp::Ord for N14_A {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_18(
-                Rc::new(RefCell::new(N14_A {})).as_pointer(),
-                Rc::new(RefCell::new(N14_A {})).as_pointer(),
-            )
-        }
+impl CppLess for N14_A {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_15(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for N14_A {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for N14_A {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_15(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for N14_A {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_cmp_18(
-                Rc::new(RefCell::new(N14_A {})).as_pointer(),
-                Rc::new(RefCell::new(N14_A {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for N14_A {}
-pub fn operator_cmp_19(_a0: Ptr<N14_A>, _a1: Ptr<N14_A>) -> () {
+pub fn operator_cmp_16(_a0: Ptr<N14_A>, _a1: Ptr<N14_A>) -> () {
     return unimplemented!();
 }
-pub fn operator_cmp_18(_a0: Ptr<N14_A>, _a1: Ptr<N14_A>) -> () {
+pub fn operator_cmp_15(_a0: Ptr<N14_A>, _a1: Ptr<N14_A>) -> () {
     return unimplemented!();
 }
 const _: () = assert!(true, "std::three_way_comparable<A>");
@@ -977,46 +961,18 @@ pub struct N14_C {
     #[byte_size(8)]
     pub touched: Ptr<()>,
 }
-impl std::cmp::Ord for N14_C {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            N14_CImpl::operator_cmp(
-                &Rc::new(RefCell::new(N14_C {
-                    touched: self.touched.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(N14_C {
-                    touched: other.touched.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for N14_C {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        N14_CImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for N14_C {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for N14_C {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        N14_CImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for N14_C {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            N14_CImpl::operator_cmp(
-                &Rc::new(RefCell::new(N14_C {
-                    touched: self.touched.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(N14_C {
-                    touched: other.touched.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for N14_C {}
 const _: () = assert!(true, "std::three_way_comparable<C>");
-pub fn test_1_4_20() -> () {
+pub fn test_1_4_17() -> () {
     let a: Value<N14_A> = Rc::new(RefCell::new(<N14_A>::default()));
     unimplemented!();
     unimplemented!();
@@ -1038,10 +994,10 @@ pub fn test_1_4_20() -> () {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct N15_A {}
-pub fn strong_order_21(_a0: Ptr<N15_A>, _a1: Ptr<N15_A>) -> () {
+pub fn strong_order_18(_a0: Ptr<N15_A>, _a1: Ptr<N15_A>) -> () {
     return unimplemented!();
 }
-pub fn strong_order_22(_a0: Ptr<N15_A>, _a1: Ptr<N15_A>) -> () {
+pub fn strong_order_19(_a0: Ptr<N15_A>, _a1: Ptr<N15_A>) -> () {
     return unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1056,7 +1012,7 @@ pub struct N15_C {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct N15_StrongOrder {}
-pub fn strong_order_23(lhs: Ptr<N15_D>, _a1: Ptr<N15_D>) -> N15_StrongOrder {
+pub fn strong_order_20(lhs: Ptr<N15_D>, _a1: Ptr<N15_D>) -> N15_StrongOrder {
     field!(lhs, touched).write(true);
     return <N15_StrongOrder>::default();
 }
@@ -1071,7 +1027,7 @@ impl Default for N15_D {
         { N15_D { touched: false } }
     }
 }
-pub fn test_1_5_24() -> () {
+pub fn test_1_5_21() -> () {
     let a: Value<N15_A> = Rc::new(RefCell::new(<N15_A>::default()));
     unimplemented!();
     unimplemented!();
@@ -1110,10 +1066,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_1_1_7() });
     ({ test_1_2_11() });
     ({ test_1_3_12() });
+    ({ test_1_3_13() });
     ({ test_1_3_14() });
-    ({ test_1_3_16() });
-    ({ test_1_4_20() });
-    ({ test_1_5_24() });
+    ({ test_1_4_17() });
+    ({ test_1_5_21() });
     const _: () = assert!(true, "test_1_3<float>()");;
     const _: () = assert!(true, "test_1_3<double>()");;
     const _: () = assert!(true, "test_1_3<long double>()");;

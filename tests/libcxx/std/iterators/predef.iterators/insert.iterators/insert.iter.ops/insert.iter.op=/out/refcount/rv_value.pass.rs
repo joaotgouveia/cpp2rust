@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: Ptr<()>) {
     let c1: Value<()> = Rc::new(RefCell::new(c1));
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let q : Value<() > = Rc::new(RefCell::new(std_insert_iterator_std_vector_std_unique_ptr_int__do_nothing___std_allocator_std_unique_ptr_int__do_nothing____ :: new ( { c1 .as_pointer()  } , { unimplemented!()   } , )  )) ;
     unimplemented!();
     unimplemented!();
     unimplemented!();

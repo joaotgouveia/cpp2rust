@@ -6,22 +6,22 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn switch_on_assignment_0(mut x: i32) -> i32 {
-    let mut y: i32 = 0;
-    let mut r: i32 = 0;
+pub unsafe fn switch_on_assignment_0(mut x: ()) -> () {
+    let mut y: () = 0_();
+    let mut r: () = 0_();
     'switch: {
         match {
             {
-                y = ((x) + (1));
+                y = ((x) + (1_()));
                 y
             }
         } {
-            __v if __v == 1 => {
-                r = 10;
+            __v if __v == 1_() => {
+                r = 10_();
                 break 'switch;
             }
-            __v if __v == 2 => {
-                r = 20;
+            __v if __v == 2_() => {
+                r = 20_();
                 break 'switch;
             }
             _ => {
@@ -38,10 +38,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((unsafe { switch_on_assignment_0(0,) }) == (10)));
-    assert!(((unsafe { switch_on_assignment_0(1,) }) == (20)));
-    assert!(((unsafe { switch_on_assignment_0(9,) }) == (10)));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

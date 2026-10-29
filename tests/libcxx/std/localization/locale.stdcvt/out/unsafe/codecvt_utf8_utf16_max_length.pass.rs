@@ -25,32 +25,32 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.max_length() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.max_length() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.max_length() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.max_length() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.max_length() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.max_length() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

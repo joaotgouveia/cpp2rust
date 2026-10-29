@@ -25,7 +25,7 @@ pub unsafe fn test_0() -> () {
     let mut er: () = unimplemented!();
     let mut nels: () = 0_();
     let mut it: () = er.first.clone();
-    'loop_: while unimplemented!() {
+    'loop_: while !(unimplemented!()) {
         unimplemented!();
         nels.postfix_inc();
         unimplemented!();

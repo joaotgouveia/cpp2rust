@@ -13,15 +13,15 @@ pub unsafe fn tests_1() -> () {
     {
         let mut array: () = unimplemented!();
         unimplemented!();
-        (*(unsafe { get_2(&mut array) })) = 99.1_f64;
+        (*unimplemented!()) = 99.1_f64;
         unimplemented!();
     }
     {
         let mut array: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*(unsafe { get_3(&mut array) })) = 99.1_f64;
-        (*(unsafe { get_4(&mut array) })) = 99.2_f64;
+        (*unimplemented!()) = 99.1_f64;
+        (*unimplemented!()) = 99.2_f64;
         unimplemented!();
         unimplemented!();
     }
@@ -30,7 +30,7 @@ pub unsafe fn tests_1() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*(unsafe { get_5(&mut array) })) = 99.2_f64;
+        (*unimplemented!()) = 99.2_f64;
         unimplemented!();
         unimplemented!();
         unimplemented!();

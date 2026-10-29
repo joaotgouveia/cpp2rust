@@ -17,56 +17,16 @@ impl S {
         Self { i_: i }
     }
 }
-impl std::cmp::Ord for S {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if SImpl::operator_lt(
-                &Rc::new(RefCell::new(S {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                other.clone(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if SImpl::operator_lt(
-                &Rc::new(RefCell::new(S {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-                self.clone(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for S {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        SImpl::operator_lt(__lhs, __rhs.read())
     }
 }
-impl std::cmp::PartialOrd for S {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for S {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(SImpl::operator_lt(__lhs, __rhs.read())) && !(SImpl::operator_lt(__rhs, __lhs.read()))
     }
 }
-impl std::cmp::PartialEq for S {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(SImpl::operator_lt(
-                &Rc::new(RefCell::new(S {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                other.clone(),
-            )) && !(SImpl::operator_lt(
-                &Rc::new(RefCell::new(S {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-                self.clone(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for S {}
 pub fn test_0(container: Ptr<()>) {
     {
         let c: Ptr<()> = (container).clone();

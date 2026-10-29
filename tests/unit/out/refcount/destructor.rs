@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static global_0: Value<i32> = Rc::new(RefCell::new(0));
+    pub static global_0: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
@@ -60,32 +60,33 @@ pub struct EmptyBody {
 #[byte_size(1)]
 pub struct Templated_char_ {
     #[offset(0)]
-    pub v: i8,
+    pub v: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(4)]
 pub struct Templated_int_ {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(4)]
 pub struct Copied {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 thread_local!(
-    pub static order_1: Value<Box<[i32]>> =
-        Rc::new(RefCell::new((0..3).map(|_| 0_i32).collect::<Box<[i32]>>()));
+    pub static order_1: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
 );
 thread_local!(
-    pub static order_count_2: Value<i32> = Rc::new(RefCell::new(0));
+    pub static order_count_2: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(4)]
 pub struct Tagged {
     #[offset(0)]
-    pub tag: i32,
+    pub tag: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(20)]
@@ -94,12 +95,12 @@ pub struct Ordered {
     #[byte_size(4)]
     pub first: Tagged,
     #[offset(4)]
-    pub dummy1: i32,
+    pub dummy1: (),
     #[offset(8)]
     #[byte_size(4)]
     pub second: Tagged,
     #[offset(12)]
-    pub dummy2: i32,
+    pub dummy2: (),
     #[offset(16)]
     #[byte_size(4)]
     pub third: Tagged,
@@ -108,89 +109,74 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     {
         let s: Value<S> = Rc::new(RefCell::new(<S>::default()));
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 1));
+    unimplemented!();
     {
         let s: Value<S> = Rc::new(RefCell::new(<S>::default()));
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 2));
+    unimplemented!();
     {
         let d: Value<Defaulted> = Rc::new(RefCell::new(<Defaulted>::default()));
         let _dtor_d = ScopedDestructor::new(&d, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 3));
+    unimplemented!();
     {
         let o: Value<Outer> = Rc::new(RefCell::new(<Outer>::default()));
         let _dtor_o = ScopedDestructor::new(&o, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 4));
+    unimplemented!();
     {
         let am: Value<ArrayMember> = Rc::new(RefCell::new(<ArrayMember>::default()));
         let _dtor_am = ScopedDestructor::new(&am, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 7));
+    unimplemented!();
     {
         let e: Value<EmptyBody> = Rc::new(RefCell::new(<EmptyBody>::default()));
         let _dtor_e = ScopedDestructor::new(&e, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 8));
+    unimplemented!();
     {
         let tc: Value<Templated_char_> = Rc::new(RefCell::new(<Templated_char_>::default()));
         let _dtor_tc = ScopedDestructor::new(&tc, |__p| __p.destructor());
         let ti: Value<Templated_int_> = Rc::new(RefCell::new(<Templated_int_>::default()));
         let _dtor_ti = ScopedDestructor::new(&ti, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 13));
+    unimplemented!();
     {
-        let a: Value<Copied> = Rc::new(RefCell::new(Copied { v: 5 }));
+        let a: Value<Copied> = Rc::new(RefCell::new(Copied { v: 5_() }));
         let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
         let b: Value<Copied> = Rc::new(RefCell::new((*a.borrow()).clone()));
         let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
-        assert!(({ (*b.borrow()).v } == 5));
+        unimplemented!();
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 15));
+    unimplemented!();
     {
         let o: Value<Ordered> = Rc::new(RefCell::new(Ordered {
-            first: Tagged { tag: 1 },
-            dummy1: 0,
-            second: Tagged { tag: 2 },
-            dummy2: 0,
-            third: Tagged { tag: 3 },
+            first: Tagged { tag: 1_() },
+            dummy1: 0_(),
+            second: Tagged { tag: 2_() },
+            dummy2: 0_(),
+            third: Tagged { tag: 3_() },
         }));
         let _dtor_o = ScopedDestructor::new(&o, |__p| __p.destructor());
     }
-    assert!((order_count_2.with(|rc| *rc.borrow()) == 3));
-    assert!(
-        (({
-            let __idx0 = (0) as usize;
-            order_1.with(|rc| rc.borrow()[__idx0])
-        }) == 3)
-    );
-    assert!(
-        (({
-            let __idx0 = (1) as usize;
-            order_1.with(|rc| rc.borrow()[__idx0])
-        }) == 2)
-    );
-    assert!(
-        (({
-            let __idx0 = (2) as usize;
-            order_1.with(|rc| rc.borrow()[__idx0])
-        }) == 1)
-    );
-    let mut before: i32 = global_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut before: () = global_0.with(|rc| *rc.borrow());
     {
         let cs: Value<S> = Rc::new(RefCell::new(<S>::default()));
         let _dtor_cs = ScopedDestructor::new(&cs, |__p| __p.destructor());
         &(*cs.borrow_mut());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == (before + 1)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub trait ArrayMemberImpl {
     fn destructor(&self);
@@ -280,8 +266,7 @@ impl Templated_char_Impl for Ptr<Templated_char_> {
     fn destructor(&self) {
         global_0.with(|rc| {
             *rc.borrow_mut() = {
-                ((global_0.with(|rc| *rc.borrow()) as usize)
-                    .wrapping_add((::std::mem::size_of::<i8>() as usize))) as i32
+                (global_0.with(|rc| *rc.borrow())).wrapping_add((::std::mem::size_of::<()>() as ()))
             }
         });
     }
@@ -293,8 +278,7 @@ impl Templated_int_Impl for Ptr<Templated_int_> {
     fn destructor(&self) {
         global_0.with(|rc| {
             *rc.borrow_mut() = {
-                ((global_0.with(|rc| *rc.borrow()) as usize)
-                    .wrapping_add((::std::mem::size_of::<i32>() as usize))) as i32
+                (global_0.with(|rc| *rc.borrow())).wrapping_add((::std::mem::size_of::<()>() as ()))
             }
         });
     }

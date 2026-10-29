@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut oss: () = unimplemented!();
+    let mut oss: std_ostrstream = <std_ostrstream>::default();
     let mut s: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (4096_())) {
@@ -32,7 +32,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    (unsafe { oss.freeze(Some(false)) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

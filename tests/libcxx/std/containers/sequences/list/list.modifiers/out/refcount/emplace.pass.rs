@@ -52,14 +52,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<A>,
-}
-impl min_pointer_const_A__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_A_ {}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
@@ -207,68 +199,6 @@ pub trait min_pointer_A__std_integral_constant_unsigned_long__0__Impl {
 }
 impl min_pointer_A__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_A__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_const_A__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<A> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<A> {
-        unimplemented!()
-    }
-    fn operator_inc_9(&self) -> Ptr<min_pointer_const_A__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_10(
-        &self,
-        mut _a0: (),
-    ) -> min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_11(
-        &self,
-    ) -> Ptr<min_pointer_const_A__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_12(
-        &self,
-        mut _a0: (),
-    ) -> min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_A__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: (),
-    ) -> Ptr<min_pointer_const_A__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: (),
-    ) -> min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: ()) -> Ptr<A> {
-        unimplemented!()
-    }
-}
-impl min_pointer_const_A__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_const_A__std_integral_constant_unsigned_long__0__>
 {
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {

@@ -10,12 +10,12 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct S {
     #[offset(0)]
-    pub a: i32,
+    pub a: (),
     #[offset(4)]
-    pub b: i32,
+    pub b: (),
 }
 impl S {
-    pub fn new(mut a: i32, mut b: i32) -> Self {
+    pub fn new(mut a: (), mut b: ()) -> Self {
         Self { a: a, b: b }
     }
 }
@@ -23,11 +23,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let s1: Value<S> = Rc::new(RefCell::new(S::new({ 1 }, { 2 })));
+fn main_0() -> () {
+    let s1: Value<S> = Rc::new(RefCell::new(S::new({ 1_() }, { 2_() })));
     let s2: Ptr<S> = s1.as_pointer();
-    assert!((s2.with(|__s| __s.a) == 1));
-    assert!((s2.with(|__s| __s.b) == 2));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -18,41 +18,16 @@ impl gnu_obj {
         Self { i: arg }
     }
 }
-impl std::cmp::Ord for gnu_obj {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if gnu_objImpl::operator_lt(
-                &Rc::new(RefCell::new(gnu_obj { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(gnu_obj { i: other.i.clone() })).as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if gnu_objImpl::operator_lt(
-                &Rc::new(RefCell::new(gnu_obj { i: other.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(gnu_obj { i: self.i.clone() })).as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for gnu_obj {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        gnu_objImpl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for gnu_obj {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for gnu_obj {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        gnu_objImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for gnu_obj {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            gnu_objImpl::operator_eq(
-                &Rc::new(RefCell::new(gnu_obj { i: self.i.clone() })).as_pointer(),
-                Rc::new(RefCell::new(gnu_obj { i: other.i.clone() })).as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for gnu_obj {}
 impl Default for gnu_obj {
     fn default() -> Self {
         { gnu_obj::new(None) }

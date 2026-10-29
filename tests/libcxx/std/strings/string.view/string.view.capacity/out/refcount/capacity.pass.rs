@@ -28,7 +28,7 @@ pub fn test1_0() {
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub fn test1_1() {
@@ -53,7 +53,7 @@ pub fn test1_1() {
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub fn test1_2() {
@@ -78,7 +78,7 @@ pub fn test1_2() {
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub fn test1_3() {
@@ -103,7 +103,7 @@ pub fn test1_3() {
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub fn test1_4() {
@@ -128,7 +128,7 @@ pub fn test1_4() {
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub fn test2_5(mut s: Ptr<()>, mut len: ()) {

@@ -30,7 +30,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             "std::is_same<const std::unique_ptr<int>&&, decltype(std::get<0>(std::move(p)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(p)))");;
-        let ptr: *const () = (unsafe { get_0(&p) });
+        let ptr: *const () = unimplemented!();
         unimplemented!();
     }
     {

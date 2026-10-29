@@ -12,20 +12,14 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut input: [i32; 3] = [1, 2, 3];
-    let mut output: [i32; 3] = [0_i32; 3];
-    {
-        let mut __first = input.as_mut_ptr();
-        let __last = input.as_mut_ptr().offset((3) as isize);
-        let mut __out = output.as_mut_ptr();
-        while __first != __last {
-            *__out.iter_deref() = (*__first.iter_deref()).clone().into();
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    return 0;
+unsafe fn main_0() -> () {
+    let mut input: [(); 3] = [1_(), 2_(), 3_()];
+    let mut output: [(); 3] = [unimplemented!(); 3];
+    (unsafe {
+        let ___first: *mut () = input.as_mut_ptr();
+        let ___last: *mut () = input.as_mut_ptr().offset((3_()) as isize);
+        copy_0(___first, ___last, output.as_mut_ptr())
+    });
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

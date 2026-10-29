@@ -35,8 +35,8 @@ impl Default for IterSwapTrackingIterator_int_ptr__IterKind_inner_view_ {
     }
 }
 pub fn iter_swap_0(
-    lhs: Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_>,
-    rhs: Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_>,
+    lhs : Ptr< IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  >,
+    rhs : Ptr< IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  >,
 ) {
     unimplemented!();
     let __rhs = {
@@ -46,14 +46,14 @@ pub fn iter_swap_0(
     };
     lhs.with(|__s| __s.flag_.clone()).write(__rhs);
     ({
-        let ___x: Ptr<()> = field_ptr!(lhs, iter_);
-        let ___y: Ptr<()> = field_ptr!(rhs, iter_);
-        (*iter_swap_1.with(Value::clone).borrow_mut())(___x, ___y)
+        let ___e1: Ptr<()> = field_ptr!(lhs, iter_);
+        let ___e2: Ptr<()> = field_ptr!(rhs, iter_);
+        (*iter_swap_1.with(Value::clone).borrow_mut())(___e1, ___e2)
     });
     return;
 }
 pub fn iter_swap_2(
-    lhs: Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_>,
+    lhs : Ptr< IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  >,
     rhs: Ptr<IterSwapTrackingIterator_int_ptr__IterKind_pattern_>,
 ) {
     unimplemented!();
@@ -64,16 +64,17 @@ pub fn iter_swap_2(
     };
     lhs.with(|__s| __s.flag_.clone()).write(__rhs);
     ({
-        let ___y: Value<Ptr<()>> = Rc::new(RefCell::new(
+        let ___e2: Value<Ptr<()>> = Rc::new(RefCell::new(
             ({ IterSwapTrackingIterator_int_ptr__IterKind_pattern_Impl::get_iter(&rhs) }),
         ));
-        (*iter_swap_1.with(Value::clone).borrow_mut())(field_ptr!(lhs, iter_), ___y.as_pointer())
+        (*iter_swap_1.with(Value::clone).borrow_mut())(field_ptr!(lhs, iter_), ___e2.as_pointer())
     });
     return;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(16)]
-pub struct IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
+pub struct IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_
+{
     #[offset(0)]
     #[byte_size(8)]
     iter_: (),
@@ -81,51 +82,11 @@ pub struct IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_vie
     #[byte_size(8)]
     flag_: Ptr<SwapKind>,
 }
-impl IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-    pub fn new_1(iter: (), flag: Option<Ptr<SwapKind>>) -> Self {
-        let iter: Value<()> = Rc::new(RefCell::new(iter));
-        let mut flag: Ptr<SwapKind> = flag.unwrap_or_else(|| Ptr::<SwapKind>::null());
-        Self {
-            iter_: (*iter.borrow_mut()).clone(),
-            flag_: (flag).clone(),
-        }
-    }
-}
-impl std::cmp::PartialEq
-    for IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_
-{
-    fn eq(&self, other: &Self) -> bool {
-        {
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_Impl::operator_eq(
-                &Rc::new(RefCell::new(
-                    IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-                        iter_: self.iter_.clone(),
-                        flag_: self.flag_.clone(),
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-                        iter_: other.iter_.clone(),
-                        flag_: other.flag_.clone(),
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {}
-impl Default for IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-    fn default() -> Self {
-        {
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-                iter_: unimplemented!(),
-                flag_: Ptr::<SwapKind>::null(),
-            }
-        }
-    }
-}
+impl IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { pub fn new_1 ( iter : ()  , flag : Option< Ptr< SwapKind  >  > , ) -> Self { let iter : Value<() >  = Rc::new(RefCell::new(iter)) ;
+ let mut flag : Ptr< SwapKind  >   = flag.unwrap_or_else(|| Ptr::<SwapKind>::null() ) ;
+ Self { iter_ : ((*iter.borrow_mut())  ).clone() , flag_ : (flag ).clone() , }  } }
+impl CppEq for IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_Impl::operator_eq(__lhs, __rhs.clone()) } }
+impl Default for IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { fn default() -> Self { { IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_ { iter_ : unimplemented!()  , flag_ : Ptr::<SwapKind>::null()  , } } } }
 pub fn iter_swap_3(
     lhs: Ptr<IterSwapTrackingIterator_int_ptr__IterKind_pattern_>,
     rhs: Ptr<IterSwapTrackingIterator_int_ptr__IterKind_pattern_>,
@@ -138,39 +99,29 @@ pub fn iter_swap_3(
     };
     lhs.with(|__s| __s.flag_.clone()).write(__rhs);
     ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(lhs, iter_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(rhs, iter_);
-        (*iter_swap_1.with(Value::clone).borrow_mut())(___x, ___y)
+        let ___e1: Ptr<Ptr<()>> = field_ptr!(lhs, iter_);
+        let ___e2: Ptr<Ptr<()>> = field_ptr!(rhs, iter_);
+        (*iter_swap_1.with(Value::clone).borrow_mut())(___e1, ___e2)
     });
     return;
 }
 pub fn iter_swap_4(
     lhs: Ptr<IterSwapTrackingIterator_int_ptr__IterKind_pattern_>,
-    rhs: Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_>,
+    rhs : Ptr< IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  >,
 ) {
     unimplemented!();
     let __rhs = {
-        ({
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_Impl::get_flag(
-                &rhs,
-            )
-        })
-        .write(SwapKind_with_different_type);
-        (({
-            IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_Impl::get_flag(
-                &rhs,
-            )
-        })
-        .read())
+        ( { IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_Impl :: get_flag ( &rhs  , ) } )   .write( SwapKind_with_different_type  ) ;
+        ( ( { IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_Impl :: get_flag ( &rhs  , ) } )  .read() )
     };
     lhs.with(|__s| __s.flag_.clone()).write(__rhs);
     ({
-        let ___y: Value<()> = Rc::new(RefCell::new(
+        let ___e2: Value<()> = Rc::new(RefCell::new(
             ({
-                IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_Impl :: get_iter ( &rhs  , )
+                IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_Impl :: get_iter ( &rhs  , )
             }),
         ));
-        (*iter_swap_1.with(Value::clone).borrow_mut())(field_ptr!(lhs, iter_), ___y.as_pointer())
+        (*iter_swap_1.with(Value::clone).borrow_mut())(field_ptr!(lhs, iter_), ___e2.as_pointer())
     });
     return;
 }
@@ -193,29 +144,11 @@ impl IterSwapTrackingIterator_int_ptr__IterKind_pattern_ {
         }
     }
 }
-impl std::cmp::PartialEq for IterSwapTrackingIterator_int_ptr__IterKind_pattern_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            IterSwapTrackingIterator_int_ptr__IterKind_pattern_Impl::operator_eq(
-                &Rc::new(RefCell::new(
-                    IterSwapTrackingIterator_int_ptr__IterKind_pattern_ {
-                        iter_: self.iter_.clone(),
-                        flag_: self.flag_.clone(),
-                    },
-                ))
-                .as_pointer(),
-                Rc::new(RefCell::new(
-                    IterSwapTrackingIterator_int_ptr__IterKind_pattern_ {
-                        iter_: other.iter_.clone(),
-                        flag_: other.flag_.clone(),
-                    },
-                ))
-                .as_pointer(),
-            )
-        }
+impl CppEq for IterSwapTrackingIterator_int_ptr__IterKind_pattern_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        IterSwapTrackingIterator_int_ptr__IterKind_pattern_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for IterSwapTrackingIterator_int_ptr__IterKind_pattern_ {}
 impl Default for IterSwapTrackingIterator_int_ptr__IterKind_pattern_ {
     fn default() -> Self {
         {
@@ -329,6 +262,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test()");;
     return 0_();
 }
+pub trait IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_Impl
+{
+    fn get_iter(&self) -> ();
+    fn get_flag(&self) -> Ptr<SwapKind>;
+    fn operator_inc_5 ( &self , ) -> Ptr< IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  > ;
+    fn operator_post_inc_6 ( &self , mut _a0 : ()  , ) -> IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_{
+        unimplemented!()
+    }
+    fn operator_deref(&self) -> Ptr<()>;
+    fn operator_eq(
+        &self,
+        other : Ptr< IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  >,
+    ) -> ();
+}
+impl IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_Impl for Ptr<IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_> {
+fn get_iter ( &self , ) -> ()  { return unimplemented!()   ;
+ } fn get_flag ( &self , ) -> Ptr< SwapKind  >  { return (* self ) .with(|__s| __s . flag_ .clone())   ;
+ } fn operator_inc_5 ( &self , ) -> Ptr< IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  > { unimplemented!()  ;
+ return ((* self )  ).clone()  ;
+ } fn operator_deref ( &self , ) -> Ptr< ()  > { return unimplemented!()    ;
+ } fn operator_eq ( &self , other : Ptr< IterSwapTrackingIterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int_____IterKind_inner_view_  > , ) -> ()  { return unimplemented!()    ;
+ } }
 pub trait IterSwapTrackingIterator_int_ptr__IterKind_inner_view_Impl {
     fn get_iter(&self) -> Ptr<()> {
         unimplemented!()
@@ -393,49 +348,6 @@ impl IterSwapTrackingIterator_int_ptr__IterKind_pattern_Impl
         return ({ (*self).with(|__s| __s.iter_.clone()) } == {
             other.with(|__s| __s.iter_.clone())
         });
-    }
-}
-pub trait IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_Impl {
-    fn get_iter(&self) -> ();
-    fn get_flag(&self) -> Ptr<SwapKind>;
-    fn operator_inc_5(
-        &self,
-    ) -> Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_>;
-    fn operator_post_inc_6(
-        &self,
-        mut _a0: (),
-    ) -> IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_ {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_eq(
-        &self,
-        other: Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_>,
-    ) -> ();
-}
-impl IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_Impl
-    for Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_>
-{
-    fn get_iter(&self) -> () {
-        return unimplemented!();
-    }
-    fn get_flag(&self) -> Ptr<SwapKind> {
-        return (*self).with(|__s| __s.flag_.clone());
-    }
-    fn operator_inc_5(
-        &self,
-    ) -> Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_> {
-        unimplemented!();
-        return (*self).clone();
-    }
-    fn operator_deref(&self) -> Ptr<()> {
-        return unimplemented!();
-    }
-    fn operator_eq(
-        &self,
-        other: Ptr<IterSwapTrackingIterator_std___wrap_iter_int_ptr___IterKind_inner_view_>,
-    ) -> () {
-        return unimplemented!();
     }
 }
 pub fn __cpp2rust_init_globals() {}

@@ -14,17 +14,7 @@ pub unsafe fn test_eprintf_0(
     args_4: *const (),
     args_5: *const *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-            (*args_4),
-            (*args_5),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_1(
     mut fmt: *const (),
@@ -32,24 +22,10 @@ pub unsafe fn test_eprintf_1(
     args_2: *const *const (),
     args_3: *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_2(mut fmt: *const (), args: *const *const ()) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_log_3(
     mut condition: *const (),
@@ -309,7 +285,7 @@ pub unsafe fn format_string_imp_20(mut msg: *const (), __args: Box<[VaArg]>) -> 
         ScopedDestructorUnsafe::new(&raw mut args_copy_guard, GuardVAList_21::destructor);
     let mut local_buff: () = unimplemented!();
     let mut size: () = unimplemented!();
-    let mut ret: () = (unsafe { vsnprintf_22(unimplemented!(), size, msg, args_cp) });
+    let mut ret: () = unimplemented!();
     (unsafe { GuardVAList_21::clear(&mut args_copy_guard) });
     if ((ret) == (0_())) {
         return unimplemented!();
@@ -319,13 +295,13 @@ pub unsafe fn format_string_imp_20(mut msg: *const (), __args: Box<[VaArg]>) -> 
     }
     size = (ret).wrapping_add(1_());
     let mut buff_ptr: () = unimplemented!();
-    ret = (unsafe { vsnprintf_22(unimplemented!(), size, msg, args) });
+    ret = unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn unwrap_23(s: *mut ()) -> *const () {
+pub unsafe fn unwrap_22(s: *mut ()) -> *const () {
     return unimplemented!();
 }
-pub unsafe fn unwrap_24(a: *mut *const ()) -> *const *const () {
+pub unsafe fn unwrap_23(a: *mut *const ()) -> *const *const () {
     const _: () = assert!(true, "!std::is_class<Arg>::value");;
     return a;
 }
@@ -351,7 +327,7 @@ impl GuardVAList_21 {
         if self.active {}
     }
 }
-pub unsafe fn format_string_25(
+pub unsafe fn format_string_24(
     mut fmt: *const (),
     args_1: *const *const (),
     args_2: *const (),
@@ -361,14 +337,14 @@ pub unsafe fn format_string_25(
         format_string_imp_20(
             fmt,
             Box::new([
-                (*(unsafe { unwrap_24((args_1).cast_mut()) })).into(),
-                (unsafe { unwrap_23((args_2).cast_mut()) }).into(),
-                (unsafe { unwrap_23((args_3).cast_mut()) }).into(),
+                (*(unsafe { unwrap_23((args_1).cast_mut()) })).into(),
+                (unsafe { unwrap_22((args_2).cast_mut()) }).into(),
+                (unsafe { unwrap_22((args_3).cast_mut()) }).into(),
             ]),
         )
     });
 }
-pub unsafe fn format_string_26(
+pub unsafe fn format_string_25(
     mut fmt: *const (),
     args_1: *const *const (),
     args_2: *const (),
@@ -379,15 +355,15 @@ pub unsafe fn format_string_26(
         format_string_imp_20(
             fmt,
             Box::new([
-                (*(unsafe { unwrap_24((args_1).cast_mut()) })).into(),
-                (unsafe { unwrap_23((args_2).cast_mut()) }).into(),
-                (unsafe { unwrap_23((args_3).cast_mut()) }).into(),
-                (*(unsafe { unwrap_24((args_4).cast_mut()) })).into(),
+                (*(unsafe { unwrap_23((args_1).cast_mut()) })).into(),
+                (unsafe { unwrap_22((args_2).cast_mut()) }).into(),
+                (unsafe { unwrap_22((args_3).cast_mut()) }).into(),
+                (*(unsafe { unwrap_23((args_4).cast_mut()) })).into(),
             ]),
         )
     });
 }
-pub unsafe fn format_string_27(
+pub unsafe fn format_string_26(
     mut fmt: *const (),
     args_1: *const *const (),
     args_2: *const (),
@@ -399,22 +375,22 @@ pub unsafe fn format_string_27(
         format_string_imp_20(
             fmt,
             Box::new([
-                (*(unsafe { unwrap_24((args_1).cast_mut()) })).into(),
-                (unsafe { unwrap_23((args_2).cast_mut()) }).into(),
-                (unsafe { unwrap_23((args_3).cast_mut()) }).into(),
-                (*(unsafe { unwrap_24((args_4).cast_mut()) })).into(),
-                (*(unsafe { unwrap_24((args_5).cast_mut()) })).into(),
+                (*(unsafe { unwrap_23((args_1).cast_mut()) })).into(),
+                (unsafe { unwrap_22((args_2).cast_mut()) }).into(),
+                (unsafe { unwrap_22((args_3).cast_mut()) }).into(),
+                (*(unsafe { unwrap_23((args_4).cast_mut()) })).into(),
+                (*(unsafe { unwrap_23((args_5).cast_mut()) })).into(),
             ]),
         )
     });
 }
-pub unsafe fn symlink_28(mut oldname: *const (), mut newname: *const (), mut is_dir: ()) -> () {
+pub unsafe fn symlink_27(mut oldname: *const (), mut newname: *const (), mut is_dir: ()) -> () {
     &(is_dir);
-    return (unsafe { symlink_29(oldname, newname) });
+    return unimplemented!();
 }
-pub unsafe fn space_30(mut path: (), capacity: *mut u64, free: *mut u64, avail: *mut u64) -> () {
-    let mut expect: statvfs = unsafe { std::mem::zeroed::<statvfs>() };
-    if ((unsafe { statvfs_31(unimplemented!(), (&mut expect as *mut statvfs)) }) == (-1_())) {
+pub unsafe fn space_28(mut path: (), capacity: *mut (), free: *mut (), avail: *mut ()) -> () {
+    let mut expect: () = unimplemented!();
+    if ((unimplemented!()) == (-1_())) {
         return false;
     }
     unimplemented!();
@@ -422,39 +398,35 @@ pub unsafe fn space_30(mut path: (), capacity: *mut u64, free: *mut u64, avail: 
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut do_mult: FnPtr<fn(u64) -> u64> = lambda_unsafe!(
+    let mut do_mult: FnPtr<fn(()) -> ()> = lambda_unsafe!(
         {
-            let expect: *mut statvfs = &mut expect;
+            let expect: *mut () = &mut expect;
         },
-        |mut val: u64| -> u64 {
-            let mut fsize: u64 = ((*expect).f_frsize as u64);
-            let mut new_val: u64 = (val).wrapping_mul(fsize);
+        |mut val: ()| -> () {
+            let mut fsize: () = (*expect).f_frsize;
+            let mut new_val: () = (val).wrapping_mul(fsize);
             unimplemented!();
             return new_val;
         }
     );
-    (*capacity) = (unsafe { do_mult.call((expect.f_blocks as u64)) });
-    (*free) = (unsafe { do_mult.call((expect.f_bfree as u64)) });
-    (*avail) = (unsafe { do_mult.call((expect.f_bavail as u64)) });
+    (*capacity) = (unsafe { do_mult.call(expect.f_blocks) });
+    (*free) = (unsafe { do_mult.call(expect.f_bfree) });
+    (*avail) = (unsafe { do_mult.call(expect.f_bavail) });
     return true;
 }
-pub unsafe fn fopen64_32(mut pathname: *const (), mut mode: *const ()) -> *mut ::libc::FILE {
-    return libc::fopen(pathname, mode);
-}
-pub unsafe fn ftruncate64_33(mut fd: (), mut length: ::libc::off_t) -> () {
+pub unsafe fn fopen64_29(mut pathname: *const (), mut mode: *const ()) -> () {
     return unimplemented!();
 }
-pub unsafe fn getcwd_34() -> () {
+pub unsafe fn ftruncate64_30(mut fd: (), mut length: ()) -> () {
+    return unimplemented!();
+}
+pub unsafe fn getcwd_31() -> () {
     let mut buf: [(); 4096] = [unimplemented!(); 4096];
-    let mut ret: *mut () = (unsafe {
-        let ___buf: *mut () = buf.as_mut_ptr();
-        let ___size: () = ::std::mem::size_of::<[(); 4096]>();
-        getcwd_35(___buf, ___size)
-    });
+    let mut ret: *mut () = unimplemented!();
     unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn exists_36(path: *const ()) -> () {
+pub unsafe fn exists_32(path: *const ()) -> () {
     let mut tmp: () = unimplemented!();
     return ((unimplemented!()) == (0_()));
 }
@@ -469,17 +441,17 @@ impl scoped_test_env {
             test_root: (unsafe { scoped_test_env::available_cwd_path() }),
         };
         let mut cmd: () = unimplemented!();
-        let mut ret: () = (unsafe { system_37(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         this
     }
     pub unsafe fn destructor(&mut self) {
         let mut cmd: () = unimplemented!();
-        let mut ret: () = (unsafe { system_37(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        ret = (unsafe { system_37(unimplemented!()) });
+        ret = unimplemented!();
         unimplemented!();
     }
     pub unsafe fn make_env_path(&mut self, mut p: ()) -> () {
@@ -496,46 +468,24 @@ impl scoped_test_env {
         }
         return unimplemented!();
     }
-    pub unsafe fn create_file(&mut self, mut filename_path: (), mut size: Option<u64>) -> () {
-        let mut size: u64 = size.unwrap_or_else(|| unsafe { 0_u64 });
+    pub unsafe fn create_file(&mut self, mut filename_path: (), mut size: Option<()>) -> () {
+        let mut size: () = size.unwrap_or_else(|| unsafe { 0_() });
         let mut filename: () = (unsafe { scoped_test_env::sanitize_path(self, unimplemented!()) });
         if ((size) > (unimplemented!())) {
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"create_file(%s, %ju) too large\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                    (size),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
-        let mut file: *mut ::libc::FILE = (unsafe { fopen64_32(unimplemented!(), c"we".as_ptr()) });
+        let mut file: () = (unsafe { fopen64_29(unimplemented!(), c"we".as_ptr()) });
         if (file).is_null() {
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"fopen %s failed: %s\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                    (unsafe { strerror_38((*unimplemented!())) }),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
-        if ((unsafe { ftruncate64_33(libc::fileno(file), (size as ::libc::off_t)) }) == (-1_())) {
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"ftruncate %s %ju failed: %s\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                    (size),
-                    (unsafe { strerror_38((*unimplemented!())) }),
-                )
-            });
-            libc::fclose(file);
+        if ((unsafe { ftruncate64_30(unimplemented!(), size) }) == (-1_())) {
+            unimplemented!();
+            unimplemented!();
             unimplemented!();
         }
-        libc::fclose(file);
+        unimplemented!();
         return unimplemented!();
     }
     pub unsafe fn create_dir(&mut self, mut filename_path: ()) -> () {
@@ -563,7 +513,7 @@ impl scoped_test_env {
         let mut ret: () = (unsafe {
             let _oldname: *const () = unimplemented!();
             let _newname: *const () = unimplemented!();
-            symlink_28(_oldname, _newname, is_dir)
+            symlink_27(_oldname, _newname, is_dir)
         });
         unimplemented!();
         return unimplemented!();
@@ -607,34 +557,26 @@ impl scoped_test_env {
         let mut to: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut ret: () = (unsafe {
-            let ___from: *const () = unimplemented!();
-            let ___to: *const () = unimplemented!();
-            link_39(___from, ___to)
-        });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }
     pub unsafe fn create_fifo(&mut self, mut file: ()) -> () {
         unimplemented!();
-        let mut ret: () = (unsafe { mkfifo_40(unimplemented!(), 438_()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }
     pub unsafe fn create_socket(&mut self, mut file: ()) -> () {
         unimplemented!();
-        let mut address: libc::sockaddr_un = unsafe { std::mem::zeroed() };
-        address.sun_family = (1 as libc::sa_family_t);
+        let mut address: () = unimplemented!();
+        address.sun_family = 1_();
         if ((unimplemented!()) > (::std::mem::size_of::<[(); 108]>())) {
             unimplemented!();
         }
         unimplemented!();
-        (unsafe {
-            let ___dest: *mut () = address.sun_path.as_mut_ptr();
-            let ___n: () = ::std::mem::size_of::<[(); 108]>();
-            strncpy_41(___dest, unimplemented!(), ___n)
-        });
-        let mut fd: () = libc::socket(1_(), (libc::SOCK_STREAM as ()), 0_());
+        unimplemented!();
+        let mut fd: () = unimplemented!();
         unimplemented!();
         return unimplemented!();
     }
@@ -646,7 +588,7 @@ impl scoped_test_env {
         let mut p: () = unimplemented!();
         'loop_: while (unsafe {
             let mut _path: () = unimplemented!();
-            exists_36(&mut _path)
+            exists_32(&mut _path)
         }) {
             unimplemented!();
         }
@@ -739,9 +681,9 @@ impl static_test_env {
             )
         });
         (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), None) });
-        (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), Some(42_u64)) });
+        (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), Some(42_())) });
         (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), None) });
-        (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), Some(42_u64)) });
+        (unsafe { scoped_test_env::create_file(&mut this.env_, unimplemented!(), Some(42_())) });
         (unsafe {
             scoped_test_env::create_directory_symlink(
                 &mut this.env_,
@@ -783,12 +725,12 @@ pub struct CWDGuard {
 impl CWDGuard {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            oldCwd_: (unsafe { getcwd_34() }),
+            oldCwd_: (unsafe { getcwd_31() }),
         };
         this
     }
     pub unsafe fn destructor(&mut self) {
-        let mut ret: () = (unsafe { chdir_42(unimplemented!()) });
+        let mut ret: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -797,7 +739,7 @@ impl Default for CWDGuard {
         unsafe { CWDGuard::new() }
     }
 }
-pub unsafe fn GetTestEC_43(mut Idx: Option<()>) -> () {
+pub unsafe fn GetTestEC_33(mut Idx: Option<()>) -> () {
     let mut Idx: () = Idx.unwrap_or_else(|| unsafe { 0_() });
     let mut GetErrc: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
@@ -827,7 +769,7 @@ pub unsafe fn GetTestEC_43(mut Idx: Option<()>) -> () {
     );
     return unimplemented!();
 }
-pub unsafe fn ErrorIsImp_44(ec: *const (), errors: *const ()) -> () {
+pub unsafe fn ErrorIsImp_34(ec: *const (), errors: *const ()) -> () {
     let mut cond: () = unimplemented!();
     'loop_: for errc in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut errc: () = (*unimplemented!());
@@ -837,7 +779,7 @@ pub unsafe fn ErrorIsImp_44(ec: *const (), errors: *const ()) -> () {
     }
     return false;
 }
-pub unsafe fn NormalizeExpectedPerms_45(mut P: ()) -> () {
+pub unsafe fn NormalizeExpectedPerms_35(mut P: ()) -> () {
     return P;
 }
 #[repr(C)]
@@ -906,7 +848,7 @@ impl ExceptionChecker {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { ExceptionChecker::check_libcxx_string(self, Err_) });
+        const _: () = assert!(true, "");;
     }
     pub unsafe fn check_libcxx_string(&mut self, Err_: *const ()) {
         let mut message: () = unimplemented!();
@@ -925,9 +867,9 @@ impl ExceptionChecker {
  let additional_msg : *mut () = & mut additional_msg ;
  let message : *mut () = & mut message ;
  let transform_path : *mut FnPtr<fn(*const () ,) -> () > = & mut transform_path ;
- } , | | -> () { 'switch: { match { ( * this_  ) . num_paths   } { __v if __v ==  0_()  =>  { return ( unsafe { format_string_25 ( c"filesystem error: in %s: %s%s" .as_ptr() , & ( * this_  ) . func_name  , additional_msg , message , ) } )   ;
- }, __v if __v ==  1_()  =>  { return ( unsafe { let _args_1: *const *const ()  = & ( * this_  ) . func_name  ; let mut _args_4 : *const ()  = ( unimplemented!()  as *const () ) ; format_string_26 ( c"filesystem error: in %s: %s%s [%s]" .as_ptr() , _args_1 , additional_msg , message , & mut _args_4 , ) } )   ;
- }, __v if __v ==  2_()  =>  { return ( unsafe { let _args_1: *const *const ()  = & ( * this_  ) . func_name  ; let mut _args_4 : *const ()  = ( unimplemented!()  as *const () ) ; let mut _args_5 : *const ()  = ( unimplemented!()  as *const () ) ; format_string_27 ( c"filesystem error: in %s: %s%s [%s] [%s]" .as_ptr() , _args_1 , additional_msg , message , & mut _args_4 , & mut _args_5 , ) } )   ;
+ } , | | -> () { 'switch: { match { ( * this_  ) . num_paths   } { __v if __v ==  0_()  =>  { return ( unsafe { format_string_24 ( c"filesystem error: in %s: %s%s" .as_ptr() , & ( * this_  ) . func_name  , additional_msg , message , ) } )   ;
+ }, __v if __v ==  1_()  =>  { return ( unsafe { let _args_1: *const *const ()  = & ( * this_  ) . func_name  ; let mut _args_4 : *const ()  = ( unimplemented!()  as *const () ) ; format_string_25 ( c"filesystem error: in %s: %s%s [%s]" .as_ptr() , _args_1 , additional_msg , message , & mut _args_4 , ) } )   ;
+ }, __v if __v ==  2_()  =>  { return ( unsafe { let _args_1: *const *const ()  = & ( * this_  ) . func_name  ; let mut _args_4 : *const ()  = ( unimplemented!()  as *const () ) ; let mut _args_5 : *const ()  = ( unimplemented!()  as *const () ) ; format_string_26 ( c"filesystem error: in %s: %s%s [%s] [%s]" .as_ptr() , _args_1 , additional_msg , message , & mut _args_4 , & mut _args_5 , ) } )   ;
  }, _ =>  { ( unsafe { test_fail_5 ( c"/app/cpp2rust/tests/libcxx/support/filesystem_test_helper.h" .as_ptr() , 618_() , & std::mem::transmute(*b"unexpected case\0") , ) } )  ;
  return unimplemented!()  ;
  }, } } ;
@@ -935,27 +877,9 @@ impl ExceptionChecker {
         });
         unimplemented!();
         if !(unimplemented!()) {
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"filesystem_error::what() does not match expected output:\n".as_ptr()
-                        as *const libc::c_char,
-                )
-            });
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"  expected: \"%s\"\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                )
-            });
-            (unsafe {
-                libc::fprintf(
-                    libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-                    c"  actual:   \"%s\"\n\n".as_ptr() as *const libc::c_char,
-                    (unimplemented!()),
-                )
-            });
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
         }
     }
 }
@@ -973,7 +897,7 @@ impl Default for ExceptionChecker {
         }
     }
 }
-pub unsafe fn GetWindowsInaccessibleDir_46() -> () {
+pub unsafe fn GetWindowsInaccessibleDir_36() -> () {
     let dir: () = unimplemented!();
     let mut ec: () = unimplemented!();
     let root: () = unimplemented!();
@@ -985,31 +909,20 @@ pub unsafe fn GetWindowsInaccessibleDir_46() -> () {
             continue 'loop_;
         }
         if (!(unimplemented!())) || (!(unimplemented!())) {
-            (unsafe {
-                libc:: fprintf ( libcc2rs::stderr_unsafe() as *mut ::libc::FILE , c"The expected inaccessible directory \"%s\" was found but doesn\'t behave as expected, skipping tests regarding it\n" .as_ptr() as *const libc::c_char , ( unimplemented!()  ) , )
-            });
+            unimplemented!();
             return unimplemented!();
         }
         &(unimplemented!());
         if !(unimplemented!()) {
-            (unsafe {
-                libc:: fprintf ( libcc2rs::stderr_unsafe() as *mut ::libc::FILE , c"The expected inaccessible directory \"%s\" was found but seems to be accessible, skipping tests regarding it\n" .as_ptr() as *const libc::c_char , ( unimplemented!()  ) , )
-            });
+            unimplemented!();
             return unimplemented!();
         }
         return unimplemented!();
     }
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            c"No inaccessible directory \"%s\" found, skipping tests regarding it\n".as_ptr()
-                as *const libc::c_char,
-            (unimplemented!()),
-        )
-    });
+    unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+pub unsafe fn print_tests_37(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         check
             .spec::<fn((), ())>(0)
@@ -1131,52 +1044,14 @@ pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnP
     (unsafe {
         let mut _args_2: () = ('\0' as ());
         check.spec::<fn((), (), *mut (), *const [(); 6])>(4).call(
-            (unsafe {
-                operator_literal_sv_48(
-                    (&[
-                        (104 as libc::c_char),
-                        (101 as libc::c_char),
-                        (108 as libc::c_char),
-                        (108 as libc::c_char),
-                        (111 as libc::c_char),
-                        (0 as libc::c_char),
-                        (119 as libc::c_char),
-                        (111 as libc::c_char),
-                        (114 as libc::c_char),
-                        (108 as libc::c_char),
-                        (100 as libc::c_char),
-                        (0 as libc::c_char),
-                    ])
-                        .as_ptr(),
-                    11_(),
-                )
-            }),
+            unimplemented!(),
             unimplemented!(),
             &mut _args_2,
             &std::mem::transmute(*b"world\0"),
         )
     });
     (unsafe {
-        let _expected: () = (unsafe {
-            operator_literal_sv_48(
-                (&[
-                    (104 as libc::c_char),
-                    (101 as libc::c_char),
-                    (108 as libc::c_char),
-                    (108 as libc::c_char),
-                    (111 as libc::c_char),
-                    (0 as libc::c_char),
-                    (119 as libc::c_char),
-                    (111 as libc::c_char),
-                    (114 as libc::c_char),
-                    (108 as libc::c_char),
-                    (100 as libc::c_char),
-                    (0 as libc::c_char),
-                ])
-                    .as_ptr(),
-                11_(),
-            )
-        });
+        let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         check.spec::<fn((), (), *const [(); 6])>(5).call(
             _expected,
@@ -1185,47 +1060,14 @@ pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnP
         )
     });
     (unsafe {
-        let _expected: () = (unsafe {
-            operator_literal_sv_48(
-                (&[
-                    (104 as libc::c_char),
-                    (101 as libc::c_char),
-                    (108 as libc::c_char),
-                    (108 as libc::c_char),
-                    (111 as libc::c_char),
-                    (0 as libc::c_char),
-                    (119 as libc::c_char),
-                    (111 as libc::c_char),
-                    (114 as libc::c_char),
-                    (108 as libc::c_char),
-                    (100 as libc::c_char),
-                    (0 as libc::c_char),
-                ])
-                    .as_ptr(),
-                11_(),
-            )
-        });
-        let mut _args: () = (unsafe {
-            operator_literal_sv_48(
-                (&[
-                    (0 as libc::c_char),
-                    (119 as libc::c_char),
-                    (111 as libc::c_char),
-                    (114 as libc::c_char),
-                    (108 as libc::c_char),
-                    (100 as libc::c_char),
-                    (0 as libc::c_char),
-                ])
-                    .as_ptr(),
-                6_(),
-            )
-        });
+        let _expected: () = unimplemented!();
+        let mut _args: () = unimplemented!();
         check
             .spec::<fn((), (), *mut ())>(6)
             .call(_expected, unimplemented!(), &mut _args)
     });
     (unsafe {
-        let _expected: () = (unsafe { operator_literal_sv_48(c"\xc2\xa1".as_ptr(), 2_()) });
+        let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         check.spec::<fn((), (), *const [(); 3])>(7).call(
             _expected,
@@ -1234,7 +1076,7 @@ pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnP
         )
     });
     (unsafe {
-        let _expected: () = (unsafe { operator_literal_sv_48(c"\xdf\xbf".as_ptr(), 2_()) });
+        let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         check.spec::<fn((), (), *const [(); 3])>(7).call(
             _expected,
@@ -1243,7 +1085,7 @@ pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnP
         )
     });
     (unsafe {
-        let _expected: () = (unsafe { operator_literal_sv_48(c"\xe0\xa0\x80".as_ptr(), 3_()) });
+        let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         check.spec::<fn((), (), *const [(); 4])>(8).call(
             _expected,
@@ -1252,7 +1094,7 @@ pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnP
         )
     });
     (unsafe {
-        let _expected: () = (unsafe { operator_literal_sv_48(c"\xef\xbf\xbd".as_ptr(), 3_()) });
+        let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         check.spec::<fn((), (), *const [(); 4])>(8).call(
             _expected,
@@ -1261,7 +1103,7 @@ pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnP
         )
     });
     (unsafe {
-        let _expected: () = (unsafe { operator_literal_sv_48(c"\xf0\x90\x80\x80".as_ptr(), 4_()) });
+        let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         check.spec::<fn((), (), *const [(); 5])>(9).call(
             _expected,
@@ -1270,7 +1112,7 @@ pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnP
         )
     });
     (unsafe {
-        let _expected: () = (unsafe { operator_literal_sv_48(c"\xf4\x8f\xbf\xbf".as_ptr(), 4_()) });
+        let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
         check.spec::<fn((), (), *const [(); 5])>(9).call(
             _expected,
@@ -1336,27 +1178,27 @@ pub unsafe fn print_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnP
         )
     });
 }
-pub static mut env_49: std::cell::LazyCell<scoped_test_env> =
+pub static mut env_38: std::cell::LazyCell<scoped_test_env> =
     std::cell::LazyCell::new(|| unsafe { scoped_test_env::new() });
-pub static mut filename_50: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut filename_39: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     (unsafe {
         scoped_test_env::create_file(
-            &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut env_49)),
+            &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut env_38)),
             unimplemented!(),
             None,
         )
     })
 });
-pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut test_file_40: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(
             Generic,
             {},
             |mut expected: (), mut fmt: ()| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1384,10 +1226,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                 });
             },
             |mut expected: (), mut fmt: (), args: *mut ()| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1405,7 +1247,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_52(
+                    test_require_41(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1415,10 +1257,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                 });
             },
             |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1436,7 +1278,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_53(
+                    test_require_42(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1467,10 +1309,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
              args_19: *mut (),
              args_20: *mut (),
              args_21: *mut ()| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1488,7 +1330,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_54(
+                    test_require_43(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1498,10 +1340,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                 });
             },
             |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *const [(); 6]| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1519,7 +1361,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_55(
+                    test_require_44(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1529,10 +1371,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                 });
             },
             |mut expected: (), mut fmt: (), args: *const [(); 6]| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1550,7 +1392,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_56(
+                    test_require_45(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1560,10 +1402,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                 });
             },
             |mut expected: (), mut fmt: (), args: *mut ()| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1581,7 +1423,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_57(
+                    test_require_46(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1591,10 +1433,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                 });
             },
             |mut expected: (), mut fmt: (), args: *const [(); 3]| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1612,7 +1454,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_58(
+                    test_require_47(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1622,10 +1464,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                 });
             },
             |mut expected: (), mut fmt: (), args: *const [(); 4]| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1643,7 +1485,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_59(
+                    test_require_48(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1653,10 +1495,10 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                 });
             },
             |mut expected: (), mut fmt: (), args: *const [(); 5]| {
-                let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+                let mut file: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                libc::fclose(file);
+                unimplemented!();
                 let mut stream: () = unimplemented!();
                 let mut out: () = unimplemented!();
                 (unsafe {
@@ -1674,7 +1516,7 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
                             });
                         }
                     );
-                    test_require_60(
+                    test_require_49(
                         _condition,
                         c"out == expected".as_ptr(),
                         c"print.file.pass.cpp".as_ptr(),
@@ -1685,32 +1527,32 @@ pub static mut test_file_51: std::cell::LazyCell<FnPtr<Generic>> =
             }
         )
     });
-pub static mut test_exception_61: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut test_exception_50: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(Generic, {}, |mut _a0: (), mut _a1: ()| {}, |mut _a0: (),
                                                                     mut _a1: (),
                                                                     _a2: *mut (
         )| {})
     });
-pub unsafe fn test_wide_stream_62() {
-    let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+pub unsafe fn test_wide_stream_51() {
+    let mut file: () = unimplemented!();
     unimplemented!();
-    let mut mode: () = (unsafe { fwide_63((file as *mut ::libc::FILE).cast::<_IO_FILE>(), 1_()) });
-    unimplemented!();
-}
-pub unsafe fn test_read_only_64() {
-    let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"r".as_ptr());
+    let mut mode: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_new_line_65() {
+pub unsafe fn test_read_only_52() {
+    let mut file: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_new_line_53() {
     {
-        let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"w".as_ptr());
+        let mut file: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut file: *mut ::libc::FILE = libc::fopen(unimplemented!(), c"wb".as_ptr());
+        let mut file: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1733,20 +1575,20 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
-        print_tests_47(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_file_51)).copy_from(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_61)).copy_from(),
+        print_tests_37(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_file_40)).copy_from(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_50)).copy_from(),
         )
     });
-    (unsafe { test_wide_stream_62() });
-    (unsafe { test_read_only_64() });
-    (unsafe { test_new_line_65() });
+    (unsafe { test_wide_stream_51() });
+    (unsafe { test_read_only_52() });
+    (unsafe { test_new_line_53() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const test_replacement_character_12);
-    std::cell::LazyCell::force(&*&raw const env_49);
-    std::cell::LazyCell::force(&*&raw const filename_50);
-    std::cell::LazyCell::force(&*&raw const test_file_51);
-    std::cell::LazyCell::force(&*&raw const test_exception_61);
+    std::cell::LazyCell::force(&*&raw const env_38);
+    std::cell::LazyCell::force(&*&raw const filename_39);
+    std::cell::LazyCell::force(&*&raw const test_file_40);
+    std::cell::LazyCell::force(&*&raw const test_exception_50);
 }

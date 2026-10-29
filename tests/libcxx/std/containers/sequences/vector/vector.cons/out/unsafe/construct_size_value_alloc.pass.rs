@@ -41,43 +41,19 @@ pub unsafe fn operator_sub_5(
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_lt_6(
-    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) < (y.ptr_));
-}
-pub unsafe fn operator_gt_7(
-    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (unsafe {
-        let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = y;
-        operator_lt_6(_x, x)
-    });
-}
-pub unsafe fn operator_le_8(
-    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = y;
-        operator_lt_6(_x, x)
-    });
-}
-pub unsafe fn operator_eq_9(
+pub unsafe fn operator_eq_6(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_10(
+pub unsafe fn operator_ne_7(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_9(_x, y)
+        operator_eq_6(_x, y)
     });
 }
 #[repr(C)]
@@ -90,25 +66,16 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
-        let mut this = Self {
-            ptr_: std::ptr::null_mut(),
-        };
-        this
+    pub unsafe fn to_(&self) -> () {
+        return !((self.ptr_).is_null());
     }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.ptr_);
     }
     pub unsafe fn operator_inc_8(
         &mut self,
     ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
         self.ptr_.prefix_inc();
-        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
-    }
-    pub unsafe fn operator_dec_10(
-        &mut self,
-    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        self.ptr_.prefix_dec();
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
     pub unsafe fn operator_add_assign(
@@ -132,27 +99,9 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return tmp;
     }
 }
-impl std::cmp::Ord for min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe {
-            if operator_lt_6(self.clone(), other.clone()) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_6(other.clone(), self.clone()) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
-    }
-}
-impl std::cmp::PartialOrd for min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
-    }
-}
 impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_9(self.clone(), other.clone()) }
+        unsafe { operator_eq_6(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
@@ -162,23 +111,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_11(
-    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
-}
-pub unsafe fn operator_eq_12(
+pub unsafe fn operator_eq_8(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_13(
-    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) != (y.ptr_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -205,7 +142,7 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
 }
 impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self.clone(), other.clone()) }
+        unsafe { operator_eq_8(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
@@ -215,7 +152,7 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_14(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
+pub unsafe fn operator_eq_9(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
     return true;
 }
 #[repr(C)]
@@ -240,11 +177,11 @@ impl min_allocator_int_ {
 }
 impl std::cmp::PartialEq for min_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_14(self.clone(), other.clone()) }
+        unsafe { operator_eq_9(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_int_ {}
-pub unsafe fn operator_eq_15(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> () {
+pub unsafe fn operator_eq_10(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> () {
     return true;
 }
 #[repr(C)]
@@ -258,28 +195,14 @@ impl safe_allocator_int_ {
     pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
         let mut memory: *mut () = unimplemented!();
         {
-            (unsafe {
-                let ___s: () = (memory as ());
-                memset_16(
-                    ___s,
-                    0_(),
-                    (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
-                )
-            });
+            unimplemented!();
         }
         return memory;
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
         {
             (unsafe {
-                let mut _value: () = (unsafe {
-                    let ___s: () = (p as ());
-                    memset_16(
-                        ___s,
-                        0_(),
-                        (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
-                    )
-                });
+                let mut _value: () = unimplemented!();
                 DoNotOptimize_0(&mut _value)
             });
         }
@@ -288,7 +211,7 @@ impl safe_allocator_int_ {
 }
 impl std::cmp::PartialEq for safe_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_15(self.clone(), other.clone()) }
+        unsafe { operator_eq_10(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for safe_allocator_int_ {}
@@ -297,21 +220,12 @@ impl Default for safe_allocator_int_ {
         unsafe { safe_allocator_int_::new() }
     }
 }
-pub unsafe fn is_contiguous_container_asan_correct_17(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_contiguous_container_asan_correct_18(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_contiguous_container_asan_correct_19(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_20(mut n: (), x: *const (), a: *const ()) {
+pub unsafe fn test_11(mut n: (), x: *const (), a: *const ()) {
     let mut c: () = unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let mut i: () = unimplemented!();
     let mut e: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
@@ -319,12 +233,12 @@ pub unsafe fn test_20(mut n: (), x: *const (), a: *const ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_21(mut n: (), x: *const (), a: *const min_allocator_int_) {
+pub unsafe fn test_12(mut n: (), x: *const (), a: *const min_allocator_int_) {
     let mut c: () = unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let mut i: () = unimplemented!();
     let mut e: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
@@ -332,12 +246,12 @@ pub unsafe fn test_21(mut n: (), x: *const (), a: *const min_allocator_int_) {
         unimplemented!();
     }
 }
-pub unsafe fn test_22(mut n: (), x: *const (), a: *const safe_allocator_int_) {
+pub unsafe fn test_13(mut n: (), x: *const (), a: *const safe_allocator_int_) {
     let mut c: () = unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     let mut i: () = unimplemented!();
     let mut e: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
@@ -345,36 +259,36 @@ pub unsafe fn test_22(mut n: (), x: *const (), a: *const safe_allocator_int_) {
         unimplemented!();
     }
 }
-pub unsafe fn tests_23() -> () {
+pub unsafe fn tests_14() -> () {
     (unsafe {
         let mut _x: () = 3_();
         let mut _a: () = unimplemented!();
-        test_20(0_(), &mut _x, &mut _a)
+        test_11(0_(), &mut _x, &mut _a)
     });
     (unsafe {
         let mut _x: () = 3_();
         let mut _a: () = unimplemented!();
-        test_20(50_(), &mut _x, &mut _a)
+        test_11(50_(), &mut _x, &mut _a)
     });
     (unsafe {
         let mut _x: () = 3_();
         let mut _a: min_allocator_int_ = <min_allocator_int_>::default();
-        test_21(0_(), &mut _x, &mut _a)
+        test_12(0_(), &mut _x, &mut _a)
     });
     (unsafe {
         let mut _x: () = 3_();
         let mut _a: min_allocator_int_ = <min_allocator_int_>::default();
-        test_21(50_(), &mut _x, &mut _a)
+        test_12(50_(), &mut _x, &mut _a)
     });
     (unsafe {
         let mut _x: () = 3_();
         let mut _a: safe_allocator_int_ = safe_allocator_int_::new();
-        test_22(0_(), &mut _x, &mut _a)
+        test_13(0_(), &mut _x, &mut _a)
     });
     (unsafe {
         let mut _x: () = 3_();
         let mut _a: safe_allocator_int_ = safe_allocator_int_::new();
-        test_22(50_(), &mut _x, &mut _a)
+        test_13(50_(), &mut _x, &mut _a)
     });
     return true;
 }
@@ -394,7 +308,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_23() });
+    (unsafe { tests_14() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

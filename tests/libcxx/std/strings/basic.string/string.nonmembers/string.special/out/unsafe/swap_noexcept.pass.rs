@@ -182,28 +182,6 @@ impl Default for test_allocator_void_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_char__rebind_char_ {}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_char_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_char_ {}
-impl Default for test_allocator_char_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_char_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
 #[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
@@ -252,12 +230,6 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    {
-        const _: () = assert!(
-            true,
-            "noexcept(swap(std::declval<C&>(), std::declval<C&>()))"
-        );;
-    }
     {
         const _: () = assert!(
             true,

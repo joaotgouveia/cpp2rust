@@ -46,8 +46,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let p5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i1: Ptr<()> = ({ get_0(p5.as_pointer()) });
-        let i2: Ptr<()> = ({ get_1(p5.as_pointer()) });
+        let i1: Ptr<()> = unimplemented!();
+        let i2: Ptr<()> = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -59,7 +59,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Ptr<()> = ({ get_2(t.as_pointer()) });
+        let p: Ptr<()> = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -80,7 +80,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut x: () = 42_();
-        let mut y: () = 43_();
+        let y: Value<()> = Rc::new(RefCell::new(43_()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,

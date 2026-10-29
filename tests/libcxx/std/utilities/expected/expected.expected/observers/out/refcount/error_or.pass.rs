@@ -54,16 +54,16 @@ pub fn test_1() -> () {
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut x: () = ({
-            let ___error: Value<()> = Rc::new(RefCell::new(10_()));
-            (*e.borrow()).error_or(___error.as_pointer())
+            let ___e: Value<()> = Rc::new(RefCell::new(10_()));
+            (*e.borrow()).error_or(___e.as_pointer())
         });
         unimplemented!();
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut x: () = ({
-            let ___error: Value<()> = Rc::new(RefCell::new(10_()));
-            (*e.borrow()).error_or(___error.as_pointer())
+            let ___e: Value<()> = Rc::new(RefCell::new(10_()));
+            (*e.borrow()).error_or(___e.as_pointer())
         });
         unimplemented!();
     }

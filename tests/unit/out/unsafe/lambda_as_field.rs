@@ -40,11 +40,11 @@ impl Guard__lambda_at_lambda_as_field_cpp_45_13__ {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg)]
 pub struct Holder__lambda_at_lambda_as_field_cpp_39_12__ {
-    pub f: FnPtr<fn(i32) -> i32>,
-    pub calls: i32,
+    pub f: FnPtr<fn(()) -> ()>,
+    pub calls: (),
 }
 impl Holder__lambda_at_lambda_as_field_cpp_39_12__ {
-    pub unsafe fn call(&mut self, mut x: i32) -> i32 {
+    pub unsafe fn call(&mut self, mut x: ()) -> () {
         self.calls.postfix_inc();
         return (unsafe { self.f.call(x) });
     }
@@ -53,12 +53,12 @@ impl Default for Holder__lambda_at_lambda_as_field_cpp_39_12__ {
     fn default() -> Self {
         unsafe {
             Holder__lambda_at_lambda_as_field_cpp_39_12__ {
-                f: FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+                f: FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
                     unsafe {
-                        return ((x) + (1));
+                        return ((x) + (1_()));
                     }
                 }),
-                calls: 0_i32,
+                calls: unimplemented!(),
             }
         }
     }
@@ -66,11 +66,11 @@ impl Default for Holder__lambda_at_lambda_as_field_cpp_39_12__ {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
 pub struct Holder__lambda_at_lambda_as_field_cpp_51_12__ {
-    pub f: FnPtr<fn(i32) -> i32>,
-    pub calls: i32,
+    pub f: FnPtr<fn(()) -> ()>,
+    pub calls: (),
 }
 impl Holder__lambda_at_lambda_as_field_cpp_51_12__ {
-    pub unsafe fn call(&mut self, mut x: i32) -> i32 {
+    pub unsafe fn call(&mut self, mut x: ()) -> () {
         self.calls.postfix_inc();
         return (unsafe { self.f.call(x) });
     }
@@ -78,21 +78,21 @@ impl Holder__lambda_at_lambda_as_field_cpp_51_12__ {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe)]
 pub struct Moving__lambda_at_lambda_as_field_cpp_64_12__ {
-    pub f: FnPtr<fn(i32) -> i32>,
-    pub moves: i32,
+    pub f: FnPtr<fn(()) -> ()>,
+    pub moves: (),
 }
 impl Moving__lambda_at_lambda_as_field_cpp_64_12__ {
-    pub unsafe fn new(mut f: FnPtr<fn(i32) -> i32>) -> Self {
+    pub unsafe fn new(mut f: FnPtr<fn(()) -> ()>) -> Self {
         let mut this = Self {
             f: f.copy_from(),
-            moves: 0,
+            moves: 0_(),
         };
         this
     }
     pub unsafe fn move_from(o: *mut Moving__lambda_at_lambda_as_field_cpp_64_12__) -> Self {
         let mut this = Self {
             f: (*o).f.move_from(),
-            moves: (((*o).moves) + (1)),
+            moves: (((*o).moves) + (1_())),
         };
         this
     }
@@ -101,44 +101,44 @@ impl Default for Moving__lambda_at_lambda_as_field_cpp_64_12__ {
     fn default() -> Self {
         unsafe {
             Moving__lambda_at_lambda_as_field_cpp_64_12__ {
-                f: FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+                f: FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
                     unsafe {
-                        return ((x) * (2));
+                        return ((x) * (2_()));
                     }
                 }),
-                moves: 0,
+                moves: 0_(),
             }
         }
     }
 }
-pub unsafe fn wrap_1(mut fn_: FnPtr<fn(i32) -> i32>) -> FnPtr<fn(i32) -> i32> {
+pub unsafe fn wrap_1(mut fn_: FnPtr<fn(()) -> ()>) -> FnPtr<fn(()) -> ()> {
     return lambda_unsafe!(
         {
-            let fn_: FnPtr<fn(i32) -> i32> = fn_.copy_from();
+            let fn_: FnPtr<fn(()) -> ()> = fn_.copy_from();
         },
-        |mut x: i32| -> i32 {
-            return ((unsafe { fn_.call(x) }) + (1));
+        |mut x: ()| -> () {
+            return ((unsafe { fn_.call(x) }) + (1_()));
         }
     );
 }
-pub unsafe fn wrap_2(mut fn_: FnPtr<fn(i32) -> i32>) -> FnPtr<fn(i32) -> i32> {
+pub unsafe fn wrap_2(mut fn_: FnPtr<fn(()) -> ()>) -> FnPtr<fn(()) -> ()> {
     return lambda_unsafe!(
         {
-            let fn_: FnPtr<fn(i32) -> i32> = fn_.copy_from();
+            let fn_: FnPtr<fn(()) -> ()> = fn_.copy_from();
         },
-        |mut x: i32| -> i32 {
-            return ((unsafe { fn_.call(x) }) + (1));
+        |mut x: ()| -> () {
+            return ((unsafe { fn_.call(x) }) + (1_()));
         }
     );
 }
-pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     {
         let mut g: Guard__lambda_at_lambda_as_field_cpp_34_13__ =
             Guard__lambda_at_lambda_as_field_cpp_34_13__ {
@@ -150,27 +150,27 @@ unsafe fn main_0() -> i32 {
             &raw mut g,
             Guard__lambda_at_lambda_as_field_cpp_34_13__::destructor,
         );
-        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
+        unimplemented!();
     }
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
+    unimplemented!();
     let mut n: Holder__lambda_at_lambda_as_field_cpp_39_12__ =
         Holder__lambda_at_lambda_as_field_cpp_39_12__ {
-            f: FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+            f: FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
                 unsafe {
-                    return ((x) + (1));
+                    return ((x) + (1_()));
                 }
             }),
-            calls: 0,
+            calls: 0_(),
         };
-    assert!(((unsafe { Holder__lambda_at_lambda_as_field_cpp_39_12__::call(&mut n, 2,) }) == (3)));
-    assert!(((n.calls) == (1)));
-    let mut cleaned: i32 = 0;
+    unimplemented!();
+    unimplemented!();
+    let mut cleaned: () = 0_();
     {
         let mut g: Guard__lambda_at_lambda_as_field_cpp_45_13__ =
             Guard__lambda_at_lambda_as_field_cpp_45_13__ {
                 f: lambda_unsafe!(
                     {
-                        let cleaned: *mut i32 = &mut cleaned;
+                        let cleaned: *mut () = &mut cleaned;
                     },
                     || {
                         (*cleaned).postfix_inc();
@@ -181,53 +181,53 @@ unsafe fn main_0() -> i32 {
             &raw mut g,
             Guard__lambda_at_lambda_as_field_cpp_45_13__::destructor,
         );
-        assert!(((cleaned) == (0)));
+        unimplemented!();
     }
-    assert!(((cleaned) == (1)));
-    let mut factor: i32 = 3;
+    unimplemented!();
+    let mut factor: () = 3_();
     let mut h: Holder__lambda_at_lambda_as_field_cpp_51_12__ =
         Holder__lambda_at_lambda_as_field_cpp_51_12__ {
             f: lambda_unsafe!(
                 {
-                    let factor: i32 = factor;
+                    let factor: () = factor;
                 },
-                |mut x: i32| -> i32 {
+                |mut x: ()| -> () {
                     return ((x) * (factor));
                 }
             ),
-            calls: 0,
+            calls: 0_(),
         };
-    factor = 100;
-    assert!(((unsafe { Holder__lambda_at_lambda_as_field_cpp_51_12__::call(&mut h, 2,) }) == (6)));
-    assert!(((unsafe { Holder__lambda_at_lambda_as_field_cpp_51_12__::call(&mut h, 5,) }) == (15)));
-    assert!(((h.calls) == (2)));
-    let mut w: FnPtr<fn(i32) -> i32> = (unsafe {
+    factor = 100_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut w: FnPtr<fn(()) -> ()> = (unsafe {
         wrap_1(lambda_unsafe!(
             {
-                let factor: i32 = factor;
+                let factor: () = factor;
             },
-            |mut x: i32| -> i32 {
+            |mut x: ()| -> () {
                 return ((x) * (factor));
             }
         ))
     });
-    factor = 7;
-    assert!(((unsafe { w.call(2,) }) == (201)));
-    let mut ww: FnPtr<fn(i32) -> i32> = (unsafe { wrap_2(w.copy_from()) });
-    assert!(((unsafe { ww.call(2,) }) == (202)));
+    factor = 7_();
+    unimplemented!();
+    let mut ww: FnPtr<fn(()) -> ()> = (unsafe { wrap_2(w.copy_from()) });
+    unimplemented!();
     let mut m: Moving__lambda_at_lambda_as_field_cpp_64_12__ =
         Moving__lambda_at_lambda_as_field_cpp_64_12__::new({
-            FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
+            FnPtr::<fn(()) -> ()>::new(|mut x: ()| -> () {
                 unsafe {
-                    return ((x) * (2));
+                    return ((x) * (2_()));
                 }
             })
         });
     let mut m2: Moving__lambda_at_lambda_as_field_cpp_64_12__ =
         Moving__lambda_at_lambda_as_field_cpp_64_12__::move_from({ &mut m });
-    assert!(((unsafe { m2.f.call(3,) }) == (6)));
-    assert!(((m2.moves) == (1)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

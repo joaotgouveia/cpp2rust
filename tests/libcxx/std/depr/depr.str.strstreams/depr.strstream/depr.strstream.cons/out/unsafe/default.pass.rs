@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut inout: () = unimplemented!();
+    let mut inout: std_strstream = <std_strstream>::default();
     let mut i: () = 123_();
     let mut d: () = 4.5_f64;
     let mut s: () = unimplemented!();
@@ -36,7 +36,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    (unsafe { inout.freeze(Some(false)) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

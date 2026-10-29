@@ -170,27 +170,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_6(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -215,7 +199,7 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ {}
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
     #[offset(0)]
@@ -238,6 +222,30 @@ impl test_allocator_int_ {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+    pub fn copy_from(a: Ptr<test_allocator_int_>) -> Self {
+        let __this: Value<test_allocator_int_> = Rc::new(RefCell::new(Self {
+            data_: a.with(|__s| __s.data_),
+            id_: a.with(|__s| __s.id_),
+            stats_: a.with(|__s| __s.stats_.clone()),
+        }));
+        let this: Ptr<test_allocator_int_> = __this.as_pointer();
+        unimplemented!();
+        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+        }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl Clone for test_allocator_int_ {
+    fn clone(&self) -> Self {
+        let __src: Value<test_allocator_int_> = Rc::new(RefCell::new(test_allocator_int_ {
+            data_: self.data_.clone(),
+            id_: self.id_.clone(),
+            stats_: self.stats_.clone(),
+        }));
+        test_allocator_int_::copy_from(__src.as_pointer())
     }
 }
 impl Default for test_allocator_int_ {
@@ -300,15 +308,15 @@ pub fn duplicate_keys_test_9() {
     let alloc_stats: Value<test_allocator_statistics> =
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
-        unimplemented!();
+        const _: () = assert!(true, "");;
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
-    unimplemented!();
+    const _: () = assert!(true, "");;
 }
 pub fn test_10() -> () {
     ({ basic_test_8() });

@@ -29,76 +29,17 @@ impl Tag {
         }
     }
 }
-impl std::cmp::Ord for Tag {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_0(
-                Rc::new(RefCell::new(Tag {
-                    val: self.val.clone(),
-                    tag: self.tag.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Tag {
-                    val: other.val.clone(),
-                    tag: other.tag.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_0(
-                Rc::new(RefCell::new(Tag {
-                    val: other.val.clone(),
-                    tag: other.tag.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Tag {
-                    val: self.val.clone(),
-                    tag: self.tag.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Tag {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Tag {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Tag {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(operator_lt_0(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_0(__rhs.clone(), __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for Tag {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(operator_lt_0(
-                Rc::new(RefCell::new(Tag {
-                    val: self.val.clone(),
-                    tag: self.tag.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Tag {
-                    val: other.val.clone(),
-                    tag: other.tag.clone(),
-                }))
-                .as_pointer(),
-            )) && !(operator_lt_0(
-                Rc::new(RefCell::new(Tag {
-                    val: other.val.clone(),
-                    tag: other.tag.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Tag {
-                    val: self.val.clone(),
-                    tag: self.tag.clone(),
-                }))
-                .as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for Tag {}
 impl Default for Tag {
     fn default() -> Self {
         { Tag::new_1() }

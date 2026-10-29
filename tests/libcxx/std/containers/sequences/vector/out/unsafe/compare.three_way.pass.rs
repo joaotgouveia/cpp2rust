@@ -184,13 +184,26 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_StrongOrder__rebind_StrongOrder_ {}
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_StrongOrder_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_StrongOrder_ {
+    pub unsafe fn copy_from(a: *const test_allocator_StrongOrder_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
@@ -230,6 +243,23 @@ impl test_allocator_StrongOrder_ {
             (*self.stats_).destroy_count.prefix_inc();
         };
     }
+    pub unsafe fn construct_16_const_struct_StrongOrder_ref(
+        &mut self,
+        mut p: *mut StrongOrder,
+        val: *const StrongOrder,
+    ) {
+        if !((self.stats_).is_null()) {
+            (*self.stats_).construct_count.prefix_inc();
+        }
+        unimplemented!();
+    }
+}
+impl Clone for test_allocator_StrongOrder_ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_StrongOrder_::copy_from(self as *const test_allocator_StrongOrder_)
+        }
+    }
 }
 impl Default for test_allocator_StrongOrder_ {
     fn default() -> Self {
@@ -246,13 +276,26 @@ impl Default for test_allocator_StrongOrder_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_PartialOrder__rebind_PartialOrder_ {}
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_PartialOrder_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_PartialOrder_ {
+    pub unsafe fn copy_from(a: *const test_allocator_PartialOrder_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
@@ -291,6 +334,23 @@ impl test_allocator_PartialOrder_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).destroy_count.prefix_inc();
         };
+    }
+    pub unsafe fn construct_16_const_struct_PartialOrder_ref(
+        &mut self,
+        mut p: *mut PartialOrder,
+        val: *const PartialOrder,
+    ) {
+        if !((self.stats_).is_null()) {
+            (*self.stats_).construct_count.prefix_inc();
+        }
+        unimplemented!();
+    }
+}
+impl Clone for test_allocator_PartialOrder_ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_PartialOrder_::copy_from(self as *const test_allocator_PartialOrder_)
+        }
     }
 }
 impl Default for test_allocator_PartialOrder_ {

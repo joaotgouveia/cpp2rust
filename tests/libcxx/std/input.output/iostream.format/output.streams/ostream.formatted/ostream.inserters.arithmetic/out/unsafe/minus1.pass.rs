@@ -92,7 +92,18 @@ pub unsafe fn test_hex_16(mut expected: *const ()) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
-        (*unimplemented!()) = (unsafe { toupper_17((*unimplemented!())) });
+        (*unimplemented!()) = unimplemented!();
+        i.prefix_inc();
+    }
+    unimplemented!();
+}
+pub unsafe fn test_hex_17(mut expected: *const ()) {
+    let mut ss: () = unimplemented!();
+    unimplemented!();
+    let mut str: () = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (unimplemented!())) {
+        (*unimplemented!()) = unimplemented!();
         i.prefix_inc();
     }
     unimplemented!();
@@ -103,7 +114,7 @@ pub unsafe fn test_hex_18(mut expected: *const ()) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
-        (*unimplemented!()) = (unsafe { toupper_17((*unimplemented!())) });
+        (*unimplemented!()) = unimplemented!();
         i.prefix_inc();
     }
     unimplemented!();
@@ -114,7 +125,7 @@ pub unsafe fn test_hex_19(mut expected: *const ()) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
-        (*unimplemented!()) = (unsafe { toupper_17((*unimplemented!())) });
+        (*unimplemented!()) = unimplemented!();
         i.prefix_inc();
     }
     unimplemented!();
@@ -125,7 +136,7 @@ pub unsafe fn test_hex_20(mut expected: *const ()) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
-        (*unimplemented!()) = (unsafe { toupper_17((*unimplemented!())) });
+        (*unimplemented!()) = unimplemented!();
         i.prefix_inc();
     }
     unimplemented!();
@@ -136,7 +147,7 @@ pub unsafe fn test_hex_21(mut expected: *const ()) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
-        (*unimplemented!()) = (unsafe { toupper_17((*unimplemented!())) });
+        (*unimplemented!()) = unimplemented!();
         i.prefix_inc();
     }
     unimplemented!();
@@ -147,7 +158,7 @@ pub unsafe fn test_hex_22(mut expected: *const ()) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
-        (*unimplemented!()) = (unsafe { toupper_17((*unimplemented!())) });
+        (*unimplemented!()) = unimplemented!();
         i.prefix_inc();
     }
     unimplemented!();
@@ -158,18 +169,7 @@ pub unsafe fn test_hex_23(mut expected: *const ()) {
     let mut str: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
-        (*unimplemented!()) = (unsafe { toupper_17((*unimplemented!())) });
-        i.prefix_inc();
-    }
-    unimplemented!();
-}
-pub unsafe fn test_hex_24(mut expected: *const ()) {
-    let mut ss: () = unimplemented!();
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (unimplemented!())) {
-        (*unimplemented!()) = (unsafe { toupper_17((*unimplemented!())) });
+        (*unimplemented!()) = unimplemented!();
         i.prefix_inc();
     }
     unimplemented!();
@@ -222,18 +222,18 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe { test_dec_15(c"-1".as_ptr()) });
     }
     (unsafe { test_hex_16(c"FFFF".as_ptr()) });
-    (unsafe { test_hex_18(c"FFFF".as_ptr()) });
+    (unsafe { test_hex_17(c"FFFF".as_ptr()) });
+    (unsafe { test_hex_18(c"FFFFFFFF".as_ptr()) });
     (unsafe { test_hex_19(c"FFFFFFFF".as_ptr()) });
-    (unsafe { test_hex_20(c"FFFFFFFF".as_ptr()) });
+    (unsafe { test_hex_20(c"FFFFFFFFFFFFFFFF".as_ptr()) });
     (unsafe { test_hex_21(c"FFFFFFFFFFFFFFFF".as_ptr()) });
-    (unsafe { test_hex_22(c"FFFFFFFFFFFFFFFF".as_ptr()) });
     {
+        (unsafe { test_hex_20(c"FFFFFFFFFFFFFFFF".as_ptr()) });
         (unsafe { test_hex_21(c"FFFFFFFFFFFFFFFF".as_ptr()) });
-        (unsafe { test_hex_22(c"FFFFFFFFFFFFFFFF".as_ptr()) });
     }
     {
+        (unsafe { test_hex_22(c"FFFFFFFFFFFFFFFF".as_ptr()) });
         (unsafe { test_hex_23(c"FFFFFFFFFFFFFFFF".as_ptr()) });
-        (unsafe { test_hex_24(c"FFFFFFFFFFFFFFFF".as_ptr()) });
     }
     return 0_();
 }

@@ -45,12 +45,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_const_A__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const A,
-}
-impl min_pointer_const_A__std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_A_ {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]

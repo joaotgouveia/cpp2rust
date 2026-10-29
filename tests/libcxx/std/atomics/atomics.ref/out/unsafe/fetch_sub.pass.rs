@@ -879,13 +879,17 @@ impl TestFetchSub_float_ {
             let mut x: () = 7_();
             let a: () = unimplemented!();
             {
-                let mut y: () = unimplemented!();
+                let mut y: () =
+                    (unsafe { (a as std___atomic_ref_float__false__true_).fetch_sub(4_(), None) });
                 unimplemented!();
                 unimplemented!();
                 const _: () = assert!(true, "");;
             }
             {
-                let mut y: () = unimplemented!();
+                let mut y: () = (unsafe {
+                    (a as std___atomic_ref_float__false__true_)
+                        .fetch_sub(2_(), Some(unimplemented!()))
+                });
                 unimplemented!();
                 unimplemented!();
                 const _: () = assert!(true, "");;
@@ -894,13 +898,19 @@ impl TestFetchSub_float_ {
         {
             let mut fetch_sub: FnPtr<fn(*const (), (), ())> = FnPtr::<fn(*const (), (), ())>::new(
                 |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                    unimplemented!();
+                    (unsafe {
+                        ((*x) as std___atomic_ref_float__false__true_)
+                            .fetch_sub(((old_val) - (new_val)), Some(unimplemented!()))
+                    });
                 },
             );
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return unimplemented!();
+                        return (unsafe {
+                            ((*x) as std___atomic_ref_float__false__true_)
+                                .load(Some(unimplemented!()))
+                        });
                     }
                 });
             (unsafe { test_acquire_release_67(fetch_sub.copy_from(), load.copy_from()) });
@@ -909,19 +919,27 @@ impl TestFetchSub_float_ {
             let mut fetch_sub_no_arg: FnPtr<fn(*const (), (), ())> =
                 FnPtr::<fn(*const (), (), ())>::new(
                     |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                        unimplemented!();
+                        (unsafe {
+                            ((*x) as std___atomic_ref_float__false__true_)
+                                .fetch_sub(((old_val) - (new_val)), None)
+                        });
                     },
                 );
             let mut fetch_sub_with_order: FnPtr<fn(*const (), (), ())> =
                 FnPtr::<fn(*const (), (), ())>::new(
                     |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                        unimplemented!();
+                        (unsafe {
+                            ((*x) as std___atomic_ref_float__false__true_)
+                                .fetch_sub(((old_val) - (new_val)), Some(unimplemented!()))
+                        });
                     },
                 );
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return unimplemented!();
+                        return (unsafe {
+                            ((*x) as std___atomic_ref_float__false__true_).load(None)
+                        });
                     }
                 });
             (unsafe { test_seq_cst_44(fetch_sub_no_arg.copy_from(), load.copy_from()) });
@@ -938,13 +956,17 @@ impl TestFetchSub_double_ {
             let mut x: () = 7_();
             let a: () = unimplemented!();
             {
-                let mut y: () = unimplemented!();
+                let mut y: () =
+                    (unsafe { (a as std___atomic_ref_double__false__true_).fetch_sub(4_(), None) });
                 unimplemented!();
                 unimplemented!();
                 const _: () = assert!(true, "");;
             }
             {
-                let mut y: () = unimplemented!();
+                let mut y: () = (unsafe {
+                    (a as std___atomic_ref_double__false__true_)
+                        .fetch_sub(2_(), Some(unimplemented!()))
+                });
                 unimplemented!();
                 unimplemented!();
                 const _: () = assert!(true, "");;
@@ -953,13 +975,19 @@ impl TestFetchSub_double_ {
         {
             let mut fetch_sub: FnPtr<fn(*const (), (), ())> = FnPtr::<fn(*const (), (), ())>::new(
                 |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                    unimplemented!();
+                    (unsafe {
+                        ((*x) as std___atomic_ref_double__false__true_)
+                            .fetch_sub(((old_val) - (new_val)), Some(unimplemented!()))
+                    });
                 },
             );
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return unimplemented!();
+                        return (unsafe {
+                            ((*x) as std___atomic_ref_double__false__true_)
+                                .load(Some(unimplemented!()))
+                        });
                     }
                 });
             (unsafe { test_acquire_release_68(fetch_sub.copy_from(), load.copy_from()) });
@@ -968,19 +996,27 @@ impl TestFetchSub_double_ {
             let mut fetch_sub_no_arg: FnPtr<fn(*const (), (), ())> =
                 FnPtr::<fn(*const (), (), ())>::new(
                     |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                        unimplemented!();
+                        (unsafe {
+                            ((*x) as std___atomic_ref_double__false__true_)
+                                .fetch_sub(((old_val) - (new_val)), None)
+                        });
                     },
                 );
             let mut fetch_sub_with_order: FnPtr<fn(*const (), (), ())> =
                 FnPtr::<fn(*const (), (), ())>::new(
                     |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                        unimplemented!();
+                        (unsafe {
+                            ((*x) as std___atomic_ref_double__false__true_)
+                                .fetch_sub(((old_val) - (new_val)), Some(unimplemented!()))
+                        });
                     },
                 );
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return unimplemented!();
+                        return (unsafe {
+                            ((*x) as std___atomic_ref_double__false__true_).load(None)
+                        });
                     }
                 });
             (unsafe { test_seq_cst_46(fetch_sub_no_arg.copy_from(), load.copy_from()) });
@@ -1894,13 +1930,18 @@ impl TestFetchSub_int_ptr_ {
                 let mut p: *mut () = (&mut t[(7_()) as usize] as *mut ());
                 let a: () = unimplemented!();
                 {
-                    let mut y: *mut () = unimplemented!();
+                    let mut y: *mut () = (unsafe {
+                        (a as std___atomic_ref_int_ptr__false__false_).fetch_sub(4_(), None)
+                    });
                     unimplemented!();
                     unimplemented!();
                     const _: () = assert!(true, "");;
                 }
                 {
-                    let mut y: *mut () = unimplemented!();
+                    let mut y: *mut () = (unsafe {
+                        (a as std___atomic_ref_int_ptr__false__false_)
+                            .fetch_sub(2_(), Some(unimplemented!()))
+                    });
                     unimplemented!();
                     unimplemented!();
                     const _: () = assert!(true, "");;
@@ -1908,37 +1949,63 @@ impl TestFetchSub_int_ptr_ {
             }
         }
         {
-            let mut fetch_sub: FnPtr<fn(*const (), *mut (), *mut ())> =
-                FnPtr::<fn(*const (), *mut (), *mut ())>::new(
-                    |x: *const (), mut old_val: *mut (), mut new_val: *mut ()| unsafe {
-                        unimplemented!();
-                    },
-                );
+            let mut fetch_sub: FnPtr<fn(*const (), *mut (), *mut ())> = FnPtr::<
+                fn(*const (), *mut (), *mut ()),
+            >::new(
+                |x: *const (), mut old_val: *mut (), mut new_val: *mut ()| unsafe {
+                    (unsafe {
+                        ((*x) as std___atomic_ref_int_ptr__false__false_).fetch_sub(
+                            (((old_val as usize - new_val as usize) / ::std::mem::size_of::<()>())
+                                as () as ()),
+                            Some(unimplemented!()),
+                        )
+                    });
+                },
+            );
             let mut load: FnPtr<fn(*const ()) -> *mut ()> =
                 FnPtr::<fn(*const ()) -> *mut ()>::new(|x: *const ()| -> *mut () {
                     unsafe {
-                        return unimplemented!();
+                        return (unsafe {
+                            ((*x) as std___atomic_ref_int_ptr__false__false_)
+                                .load(Some(unimplemented!()))
+                        });
                     }
                 });
             (unsafe { test_acquire_release_69(fetch_sub.copy_from(), load.copy_from()) });
         }
         {
-            let mut fetch_sub_no_arg: FnPtr<fn(*const (), *mut (), *mut ())> =
-                FnPtr::<fn(*const (), *mut (), *mut ())>::new(
-                    |x: *const (), mut old_val: *mut (), mut new_val: *mut ()| unsafe {
-                        unimplemented!();
-                    },
-                );
-            let mut fetch_sub_with_order: FnPtr<fn(*const (), *mut (), *mut ())> =
-                FnPtr::<fn(*const (), *mut (), *mut ())>::new(
-                    |x: *const (), mut old_val: *mut (), mut new_val: *mut ()| unsafe {
-                        unimplemented!();
-                    },
-                );
+            let mut fetch_sub_no_arg: FnPtr<fn(*const (), *mut (), *mut ())> = FnPtr::<
+                fn(*const (), *mut (), *mut ()),
+            >::new(
+                |x: *const (), mut old_val: *mut (), mut new_val: *mut ()| unsafe {
+                    (unsafe {
+                        ((*x) as std___atomic_ref_int_ptr__false__false_).fetch_sub(
+                            (((old_val as usize - new_val as usize) / ::std::mem::size_of::<()>())
+                                as () as ()),
+                            None,
+                        )
+                    });
+                },
+            );
+            let mut fetch_sub_with_order: FnPtr<fn(*const (), *mut (), *mut ())> = FnPtr::<
+                fn(*const (), *mut (), *mut ()),
+            >::new(
+                |x: *const (), mut old_val: *mut (), mut new_val: *mut ()| unsafe {
+                    (unsafe {
+                        ((*x) as std___atomic_ref_int_ptr__false__false_).fetch_sub(
+                            (((old_val as usize - new_val as usize) / ::std::mem::size_of::<()>())
+                                as () as ()),
+                            Some(unimplemented!()),
+                        )
+                    });
+                },
+            );
             let mut load: FnPtr<fn(*const ()) -> *mut ()> =
                 FnPtr::<fn(*const ()) -> *mut ()>::new(|x: *const ()| -> *mut () {
                     unsafe {
-                        return unimplemented!();
+                        return (unsafe {
+                            ((*x) as std___atomic_ref_int_ptr__false__false_).load(None)
+                        });
                     }
                 });
             (unsafe { test_seq_cst_48(fetch_sub_no_arg.copy_from(), load.copy_from()) });
@@ -1967,13 +2034,18 @@ impl TestFetchSub_const_int_ptr_ {
                 let mut p: *const () = (&t[(7_()) as usize] as *const ());
                 let a: () = unimplemented!();
                 {
-                    let mut y: *const () = unimplemented!();
+                    let mut y: *const () = (unsafe {
+                        (a as std___atomic_ref_const_int_ptr__false__false_).fetch_sub(4_(), None)
+                    });
                     unimplemented!();
                     unimplemented!();
                     const _: () = assert!(true, "");;
                 }
                 {
-                    let mut y: *const () = unimplemented!();
+                    let mut y: *const () = (unsafe {
+                        (a as std___atomic_ref_const_int_ptr__false__false_)
+                            .fetch_sub(2_(), Some(unimplemented!()))
+                    });
                     unimplemented!();
                     unimplemented!();
                     const _: () = assert!(true, "");;
@@ -1981,37 +2053,63 @@ impl TestFetchSub_const_int_ptr_ {
             }
         }
         {
-            let mut fetch_sub: FnPtr<fn(*const (), *const (), *const ())> =
-                FnPtr::<fn(*const (), *const (), *const ())>::new(
-                    |x: *const (), mut old_val: *const (), mut new_val: *const ()| unsafe {
-                        unimplemented!();
-                    },
-                );
+            let mut fetch_sub: FnPtr<fn(*const (), *const (), *const ())> = FnPtr::<
+                fn(*const (), *const (), *const ()),
+            >::new(
+                |x: *const (), mut old_val: *const (), mut new_val: *const ()| unsafe {
+                    (unsafe {
+                        ((*x) as std___atomic_ref_const_int_ptr__false__false_).fetch_sub(
+                            (((old_val as usize - new_val as usize) / ::std::mem::size_of::<()>())
+                                as () as ()),
+                            Some(unimplemented!()),
+                        )
+                    });
+                },
+            );
             let mut load: FnPtr<fn(*const ()) -> *const ()> =
                 FnPtr::<fn(*const ()) -> *const ()>::new(|x: *const ()| -> *const () {
                     unsafe {
-                        return unimplemented!();
+                        return (unsafe {
+                            ((*x) as std___atomic_ref_const_int_ptr__false__false_)
+                                .load(Some(unimplemented!()))
+                        });
                     }
                 });
             (unsafe { test_acquire_release_70(fetch_sub.copy_from(), load.copy_from()) });
         }
         {
-            let mut fetch_sub_no_arg: FnPtr<fn(*const (), *const (), *const ())> =
-                FnPtr::<fn(*const (), *const (), *const ())>::new(
-                    |x: *const (), mut old_val: *const (), mut new_val: *const ()| unsafe {
-                        unimplemented!();
-                    },
-                );
-            let mut fetch_sub_with_order: FnPtr<fn(*const (), *const (), *const ())> =
-                FnPtr::<fn(*const (), *const (), *const ())>::new(
-                    |x: *const (), mut old_val: *const (), mut new_val: *const ()| unsafe {
-                        unimplemented!();
-                    },
-                );
+            let mut fetch_sub_no_arg: FnPtr<fn(*const (), *const (), *const ())> = FnPtr::<
+                fn(*const (), *const (), *const ()),
+            >::new(
+                |x: *const (), mut old_val: *const (), mut new_val: *const ()| unsafe {
+                    (unsafe {
+                        ((*x) as std___atomic_ref_const_int_ptr__false__false_).fetch_sub(
+                            (((old_val as usize - new_val as usize) / ::std::mem::size_of::<()>())
+                                as () as ()),
+                            None,
+                        )
+                    });
+                },
+            );
+            let mut fetch_sub_with_order: FnPtr<fn(*const (), *const (), *const ())> = FnPtr::<
+                fn(*const (), *const (), *const ()),
+            >::new(
+                |x: *const (), mut old_val: *const (), mut new_val: *const ()| unsafe {
+                    (unsafe {
+                        ((*x) as std___atomic_ref_const_int_ptr__false__false_).fetch_sub(
+                            (((old_val as usize - new_val as usize) / ::std::mem::size_of::<()>())
+                                as () as ()),
+                            Some(unimplemented!()),
+                        )
+                    });
+                },
+            );
             let mut load: FnPtr<fn(*const ()) -> *const ()> =
                 FnPtr::<fn(*const ()) -> *const ()>::new(|x: *const ()| -> *const () {
                     unsafe {
-                        return unimplemented!();
+                        return (unsafe {
+                            ((*x) as std___atomic_ref_const_int_ptr__false__false_).load(None)
+                        });
                     }
                 });
             (unsafe { test_seq_cst_50(fetch_sub_no_arg.copy_from(), load.copy_from()) });

@@ -81,17 +81,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );;
     const _: () = assert!(true, "std::is_signed<std::intptr_t>::value");;
     const _: () = assert!(
-        (::std::mem::size_of::<usize>() >= 8usize),
+        (::std::mem::size_of::<()>() >= 8usize),
         "sizeof(std::uintptr_t) >= sizeof(void*)"
     );;
     const _: () = assert!(true, "std::is_unsigned<std::uintptr_t>::value");;
     const _: () = assert!(
-        (::std::mem::size_of::<i64>() >= ::std::mem::size_of::<()>()),
+        (::std::mem::size_of::<()>() >= ::std::mem::size_of::<()>()),
         "sizeof(std::intmax_t) >= sizeof(long long)"
     );;
     const _: () = assert!(true, "std::is_signed<std::intmax_t>::value");;
     const _: () = assert!(
-        (::std::mem::size_of::<u64>() >= ::std::mem::size_of::<()>()),
+        (::std::mem::size_of::<()>() >= ::std::mem::size_of::<()>()),
         "sizeof(std::uintmax_t) >= sizeof(unsigned long long)"
     );;
     const _: () = assert!(true, "std::is_unsigned<std::uintmax_t>::value");;

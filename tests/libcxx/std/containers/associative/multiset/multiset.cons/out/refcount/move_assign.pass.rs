@@ -55,44 +55,16 @@ impl MoveOnly {
         __this
     }
 }
-impl std::cmp::Ord for MoveOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_6(
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for MoveOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_2(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for MoveOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for MoveOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for MoveOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(MoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for MoveOnly {}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -145,44 +117,16 @@ impl TrivialMoveOnly {
         }
     }
 }
-impl std::cmp::Ord for TrivialMoveOnly {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_13(
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for TrivialMoveOnly {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_9(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for TrivialMoveOnly {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for TrivialMoveOnly {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for TrivialMoveOnly {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_7(
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(TrivialMoveOnly {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for TrivialMoveOnly {}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -202,23 +146,11 @@ impl test_less_MoveOnly_ {
         Self { data_: data }
     }
 }
-impl std::cmp::PartialEq for test_less_MoveOnly_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_14(
-                Rc::new(RefCell::new(test_less_MoveOnly_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_less_MoveOnly_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_less_MoveOnly_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_14(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_less_MoveOnly_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -335,27 +267,11 @@ impl test_allocator_void_ {
         }
     }
 }
-impl std::cmp::PartialEq for test_allocator_void_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_17(
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_void_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for test_allocator_void_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_17(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for test_allocator_void_ {}
 impl Clone for test_allocator_void_ {
     fn clone(&self) -> Self {
         let __src: Value<test_allocator_void_> = Rc::new(RefCell::new(test_allocator_void_ {
@@ -383,7 +299,7 @@ pub fn operator_eq_19(x: Ptr<test_allocator_MoveOnly_>, y: Ptr<test_allocator_Mo
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_MoveOnly__rebind_MoveOnly_ {}
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_MoveOnly_ {
     #[offset(0)]
@@ -402,28 +318,37 @@ impl test_allocator_MoveOnly_ {
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-}
-impl std::cmp::PartialEq for test_allocator_MoveOnly_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_19(
-                Rc::new(RefCell::new(test_allocator_MoveOnly_ {
-                    data_: self.data_.clone(),
-                    id_: self.id_.clone(),
-                    stats_: self.stats_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(test_allocator_MoveOnly_ {
-                    data_: other.data_.clone(),
-                    id_: other.id_.clone(),
-                    stats_: other.stats_.clone(),
-                }))
-                .as_pointer(),
-            )
+    pub fn copy_from(a: Ptr<test_allocator_MoveOnly_>) -> Self {
+        let __this: Value<test_allocator_MoveOnly_> = Rc::new(RefCell::new(Self {
+            data_: a.with(|__s| __s.data_),
+            id_: a.with(|__s| __s.id_),
+            stats_: a.with(|__s| __s.stats_.clone()),
+        }));
+        let this: Ptr<test_allocator_MoveOnly_> = __this.as_pointer();
+        unimplemented!();
+        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
         }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::Eq for test_allocator_MoveOnly_ {}
+impl CppEq for test_allocator_MoveOnly_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_19(__lhs.clone(), __rhs.clone())
+    }
+}
+impl Clone for test_allocator_MoveOnly_ {
+    fn clone(&self) -> Self {
+        let __src: Value<test_allocator_MoveOnly_> =
+            Rc::new(RefCell::new(test_allocator_MoveOnly_ {
+                data_: self.data_.clone(),
+                id_: self.id_.clone(),
+                stats_: self.stats_.clone(),
+            }));
+        test_allocator_MoveOnly_::copy_from(__src.as_pointer())
+    }
+}
 impl Default for test_allocator_MoveOnly_ {
     fn default() -> Self {
         {
@@ -449,23 +374,11 @@ impl other_allocator_MoveOnly_ {
         Self { data_: i }
     }
 }
-impl std::cmp::PartialEq for other_allocator_MoveOnly_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_20(
-                Rc::new(RefCell::new(other_allocator_MoveOnly_ {
-                    data_: self.data_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(other_allocator_MoveOnly_ {
-                    data_: other.data_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for other_allocator_MoveOnly_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_20(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for other_allocator_MoveOnly_ {}
 impl Default for other_allocator_MoveOnly_ {
     fn default() -> Self {
         {
@@ -543,12 +456,11 @@ pub fn operator_eq_25(mut _a0: min_allocator_MoveOnly_, mut _a1: min_allocator_M
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_MoveOnly_ {}
-impl std::cmp::PartialEq for min_allocator_MoveOnly_ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_25(self.clone(), other.clone()) }
+impl CppEq for min_allocator_MoveOnly_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_25(__lhs.read(), __rhs.read())
     }
 }
-impl std::cmp::Eq for min_allocator_MoveOnly_ {}
 pub fn test_26() -> () {
     {
         let a1: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
@@ -612,7 +524,7 @@ pub fn test_26() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let a1: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([

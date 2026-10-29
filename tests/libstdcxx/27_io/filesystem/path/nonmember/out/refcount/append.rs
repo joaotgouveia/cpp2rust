@@ -7,13 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn compare_paths_0(p1: Ptr<()>, p2: Ptr<()>) {
-    if unimplemented!() {
+    if !(unimplemented!()) {
         {
             unimplemented!();
             &(unimplemented!())
         };
     }
-    if unimplemented!() {
+    if !(unimplemented!()) {
         {
             unimplemented!();
             &(unimplemented!())
@@ -141,7 +141,7 @@ pub fn nonexistent_path_3(file: Option<()>) -> () {
     unimplemented!();
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let mut fd: () = ({ mkstemp_6((unimplemented!())) });
+    let mut fd: () = unimplemented!();
     if (fd == -1_()) {
         {
             unimplemented!();
@@ -193,124 +193,122 @@ impl Default for __gnu_test_scoped_file {
         { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub fn permissions_are_testable_7(print_msg: Option<()>) -> () {
+pub fn permissions_are_testable_6(print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| true);
-    let mut testable: () = false;
+    let testable: Value<()> = Rc::new(RefCell::new(false));
     if (unimplemented!() != 0_()) {
-        testable = true;
+        (*testable.borrow_mut()) = true;
     }
-    if (print_msg) && (!(testable)) {
-        libc::puts(Ptr::<()>::from_string_literal(
-            b"Skipping tests that depend on filesystem permissions",
-        ));
+    if (print_msg) && (!(*testable.borrow())) {
+        unimplemented!();
     }
-    return testable;
+    return (*testable.borrow());
 }
 thread_local!(
     static counter_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
-pub fn test_8(lhs: Ptr<()>, rhs: Ptr<()>) {
+pub fn test_7(lhs: Ptr<()>, rhs: Ptr<()>) {
     ({
         let _p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _p2: Ptr<()> = unimplemented!();
         compare_paths_0(_p1.as_pointer(), _p2)
     });
 }
-pub fn test01_9() {
+pub fn test01_8() {
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
     ({
         let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-}
-pub fn test02_10() {
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
-    });
-    ({
-        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_lhs.as_pointer(), _rhs.as_pointer())
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
     });
 }
-pub fn test03_11() {
+pub fn test02_9() {
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+    ({
+        let _lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_lhs.as_pointer(), _rhs.as_pointer())
+    });
+}
+pub fn test03_10() {
     'loop_: for p in IterRange::new(
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
@@ -321,7 +319,7 @@ pub fn test03_11() {
             (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
         ) {
             let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            ({ test_8(p.as_pointer(), q.as_pointer()) });
+            ({ test_7(p.as_pointer(), q.as_pointer()) });
         }
     }
 }
@@ -330,9 +328,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_9() });
-    ({ test02_10() });
-    ({ test03_11() });
+    ({ test01_8() });
+    ({ test02_9() });
+    ({ test03_10() });
     0
 }
 pub trait __gnu_test_scoped_fileImpl {

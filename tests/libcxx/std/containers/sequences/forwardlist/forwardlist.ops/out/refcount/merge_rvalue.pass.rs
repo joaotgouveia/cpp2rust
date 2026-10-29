@@ -69,65 +69,16 @@ pub struct value {
     #[offset(4)]
     pub b: (),
 }
-impl std::cmp::Ord for value {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if operator_lt_4(
-                Rc::new(RefCell::new(value {
-                    a: self.a.clone(),
-                    b: self.b.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(value {
-                    a: other.a.clone(),
-                    b: other.b.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if operator_lt_4(
-                Rc::new(RefCell::new(value {
-                    a: other.a.clone(),
-                    b: other.b.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(value {
-                    a: self.a.clone(),
-                    b: self.b.clone(),
-                }))
-                .as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for value {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_lt_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for value {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for value {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for value {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_5(
-                Rc::new(RefCell::new(value {
-                    a: self.a.clone(),
-                    b: self.b.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(value {
-                    a: other.a.clone(),
-                    b: other.b.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for value {}
 pub fn test_6() -> () {
     {
         let mut t1: [(); 6] = [3_(), 5_(), 6_(), 7_(), 12_(), 13_()];

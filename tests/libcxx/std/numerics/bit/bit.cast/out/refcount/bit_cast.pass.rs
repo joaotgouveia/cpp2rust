@@ -1318,42 +1318,42 @@ pub fn tests_102() -> () {
     let __tmp_10: Value<()> = Rc::new(RefCell::new(({ generate_signed_integral_values_94() })));
     let __range1: Ptr<()> = __tmp_10.as_pointer();
     'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut i: i32 = ((i.read()) as i32);
-        ({ test_roundtrip_through_nested_T_42((i as ())) });
-        ({ test_roundtrip_through_buffer_8((i as ())) });
-        ({ test_roundtrip_through_73((i as ())) });
-        ({ test_roundtrip_through_74((i as ())) });
-        ({ test_roundtrip_through_69((i as ())) });
+        let mut i: () = (i.read());
+        ({ test_roundtrip_through_nested_T_42(i) });
+        ({ test_roundtrip_through_buffer_8(i) });
+        ({ test_roundtrip_through_73(i) });
+        ({ test_roundtrip_through_74(i) });
+        ({ test_roundtrip_through_69(i) });
     }
     let __tmp_11: Value<()> = Rc::new(RefCell::new(({ generate_signed_integral_values_95() })));
     let __range1: Ptr<()> = __tmp_11.as_pointer();
     'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut i: i64 = ((i.read()) as i64);
-        ({ test_roundtrip_through_nested_T_44((i as ())) });
-        ({ test_roundtrip_through_buffer_10((i as ())) });
-        ({ test_roundtrip_through_75((i as ())) });
-        ({ test_roundtrip_through_76((i as ())) });
-        ({ test_roundtrip_through_77((i as ())) });
+        let mut i: () = (i.read());
+        ({ test_roundtrip_through_nested_T_44(i) });
+        ({ test_roundtrip_through_buffer_10(i) });
+        ({ test_roundtrip_through_75(i) });
+        ({ test_roundtrip_through_76(i) });
+        ({ test_roundtrip_through_77(i) });
     }
     let __tmp_12: Value<()> = Rc::new(RefCell::new(({ generate_unsigned_integral_values_99() })));
     let __range1: Ptr<()> = __tmp_12.as_pointer();
     'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut i: u32 = ((i.read()) as u32);
-        ({ test_roundtrip_through_nested_T_52((i as ())) });
-        ({ test_roundtrip_through_buffer_18((i as ())) });
-        ({ test_roundtrip_through_78((i as ())) });
-        ({ test_roundtrip_through_78((i as ())) });
-        ({ test_roundtrip_through_71((i as ())) });
+        let mut i: () = (i.read());
+        ({ test_roundtrip_through_nested_T_52(i) });
+        ({ test_roundtrip_through_buffer_18(i) });
+        ({ test_roundtrip_through_78(i) });
+        ({ test_roundtrip_through_78(i) });
+        ({ test_roundtrip_through_71(i) });
     }
     let __tmp_13: Value<()> = Rc::new(RefCell::new(({ generate_unsigned_integral_values_100() })));
     let __range1: Ptr<()> = __tmp_13.as_pointer();
     'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut i: u64 = ((i.read()) as u64);
-        ({ test_roundtrip_through_nested_T_54((i as ())) });
-        ({ test_roundtrip_through_buffer_20((i as ())) });
-        ({ test_roundtrip_through_79((i as ())) });
-        ({ test_roundtrip_through_80((i as ())) });
-        ({ test_roundtrip_through_81((i as ())) });
+        let mut i: () = (i.read());
+        ({ test_roundtrip_through_nested_T_54(i) });
+        ({ test_roundtrip_through_buffer_20(i) });
+        ({ test_roundtrip_through_79(i) });
+        ({ test_roundtrip_through_80(i) });
+        ({ test_roundtrip_through_81(i) });
     }
     let __tmp_14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __range1: Ptr<()> = __tmp_14.as_pointer();

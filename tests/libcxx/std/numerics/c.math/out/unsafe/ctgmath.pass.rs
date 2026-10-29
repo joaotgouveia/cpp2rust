@@ -25,7 +25,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut cd: () = unimplemented!();
     &(cd);
-    let mut x: () = (unsafe { sin_0(0_()) });
+    let mut x: () = unimplemented!();
     (&(x));
     return 0_();
 }

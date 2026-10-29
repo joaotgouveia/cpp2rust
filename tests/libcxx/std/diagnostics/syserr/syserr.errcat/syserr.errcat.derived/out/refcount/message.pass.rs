@@ -35,7 +35,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    const _: () = assert!(true, "");;
     unimplemented!();
     return 0_();
 }

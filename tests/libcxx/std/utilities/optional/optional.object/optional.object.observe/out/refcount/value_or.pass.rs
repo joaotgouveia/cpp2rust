@@ -48,23 +48,11 @@ impl X {
         }
     }
 }
-impl std::cmp::PartialEq for X {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(X {
-                    i_: self.i_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(X {
-                    i_: other.i_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for X {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for X {}
 pub fn operator_eq_1(z1: Ptr<Z>, z2: Ptr<Z>) -> () {
     return ({ z1.with(|__s| __s.i_) } == { z2.with(|__s| __s.i_) })
         && ({ z1.with(|__s| __s.j_) } == { z2.with(|__s| __s.j_) });
@@ -82,25 +70,11 @@ impl Z {
         Self { i_: i, j_: j }
     }
 }
-impl std::cmp::PartialEq for Z {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(Z {
-                    i_: self.i_.clone(),
-                    j_: self.j_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Z {
-                    i_: other.i_.clone(),
-                    j_: other.j_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for Z {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for Z {}
 pub fn test_2() -> () {
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));

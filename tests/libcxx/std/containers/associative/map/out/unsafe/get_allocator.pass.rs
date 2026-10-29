@@ -181,42 +181,22 @@ impl Default for test_allocator_void_ {
     }
 }
 pub unsafe fn operator_eq_4(
-    x: *const other_allocator_std_pair_const_int__std_string__,
-    y: *const other_allocator_std_pair_const_int__std_string__,
+    x : *const other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____,
+    y : *const other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____,
 ) -> () {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std_pair_const_int__std_string__ {
+pub struct other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
+{
     data_: (),
 }
-impl other_allocator_std_pair_const_int__std_string__ {
-    pub unsafe fn new_1(mut i: ()) -> Self {
-        let mut this = Self { data_: i };
-        this
-    }
-}
-impl std::cmp::PartialEq for other_allocator_std_pair_const_int__std_string__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            operator_eq_4(
-                self as *const other_allocator_std_pair_const_int__std_string__,
-                other as *const other_allocator_std_pair_const_int__std_string__,
-            )
-        }
-    }
-}
-impl std::cmp::Eq for other_allocator_std_pair_const_int__std_string__ {}
-impl Default for other_allocator_std_pair_const_int__std_string__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std_pair_const_int__std_string__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
+impl other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub unsafe fn new_1 ( mut i : () , ) -> Self { let mut this = Self { data_ : i , } ;
+ this } }
+impl std::cmp::PartialEq for other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_4(self as *const other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____, other as *const other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____) }}}
+impl std::cmp::Eq for other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ {}
+impl Default for other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn default() -> Self { unsafe { other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { data_ : unimplemented!() , } } } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
@@ -250,8 +230,7 @@ pub unsafe fn test_5() -> () {
         unimplemented!();
     }
     {
-        let mut alloc: other_allocator_std_pair_const_int__std_string__ =
-            other_allocator_std_pair_const_int__std_string__::new_1({ 1_() });
+        let mut alloc : other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ = other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1_() } , )  ;
         let m: () = unimplemented!();
         unimplemented!();
     }

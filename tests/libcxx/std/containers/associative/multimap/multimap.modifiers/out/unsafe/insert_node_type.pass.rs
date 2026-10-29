@@ -36,48 +36,93 @@ pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
 pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
-impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *mut ()) -> Self {
-        let mut this = Self { ptr_: p };
-        this
-    }
-    pub unsafe fn operator_arrow(&self) -> *mut () {
-        return self.ptr_;
-    }
-    pub unsafe fn pointer_to(
-        t: *mut (),
-    ) -> min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        return min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
-    }
-}
-pub unsafe fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
+impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_4(self.clone(), other.clone()) }
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut (),
+}
+impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn new_1(mut p: *mut ()) -> Self {
+        let mut this = Self { ptr_: p };
+        this
+    }
+    pub unsafe fn new_2(mut _a0: ()) -> Self {
+        let mut this = Self {
+            ptr_: std::ptr::null_mut(),
+        };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> *mut () {
+        return &mut (*self.ptr_);
+    }
+    pub unsafe fn pointer_to(
+        t: *mut (),
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
+            unimplemented!()
+        });
     }
 }
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_std_pair_const_int__int__ {}
+pub unsafe fn node_factory_4(c: *mut (), key: *const (), mapped: *const ()) -> () {
+    let mut it: () = unimplemented!();
+    return unimplemented!();
+}
 pub unsafe fn node_factory_5(c: *mut (), key: *const (), mapped: *const ()) -> () {
     let mut it: () = unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn node_factory_6(c: *mut (), key: *const (), mapped: *const ()) -> () {
-    let mut it: () = unimplemented!();
-    return unimplemented!();
+pub unsafe fn test_6(c: *mut ()) {
+    let mut nf: Option<unsafe fn(*mut (), *const (), *const ()) -> ()> = (Some(node_factory_4));
+    let mut c2: () = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) != (10_())) {
+        let mut node: () = (unsafe {
+            let _arg1: *const () = &i;
+            let mut _arg2: () = ((i) + (1_()));
+            (nf).unwrap()(&mut c2, _arg1, &mut _arg2)
+        });
+        unimplemented!();
+        let mut it: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        i.prefix_inc();
+    }
+    unimplemented!();
+    {
+        let mut def: () = unimplemented!();
+        let mut it: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut dupl: () = (unsafe {
+            let mut _arg1: () = 0_();
+            let mut _arg2: () = 42_();
+            (nf).unwrap()(&mut c2, &mut _arg1, &mut _arg2)
+        });
+        let mut it: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 1_();
+    'loop_: while ((i) != (10_())) {
+        unimplemented!();
+        unimplemented!();
+        i.prefix_inc();
+    }
 }
 pub unsafe fn test_7(c: *mut ()) {
     let mut nf: Option<unsafe fn(*mut (), *const (), *const ()) -> ()> = (Some(node_factory_5));
@@ -122,54 +167,11 @@ pub unsafe fn test_7(c: *mut ()) {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_8(c: *mut ()) {
-    let mut nf: Option<unsafe fn(*mut (), *const (), *const ()) -> ()> = (Some(node_factory_6));
-    let mut c2: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) != (10_())) {
-        let mut node: () = (unsafe {
-            let _arg1: *const () = &i;
-            let mut _arg2: () = ((i) + (1_()));
-            (nf).unwrap()(&mut c2, _arg1, &mut _arg2)
-        });
-        unimplemented!();
-        let mut it: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        i.prefix_inc();
-    }
-    unimplemented!();
-    {
-        let mut def: () = unimplemented!();
-        let mut it: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut dupl: () = (unsafe {
-            let mut _arg1: () = 0_();
-            let mut _arg2: () = 42_();
-            (nf).unwrap()(&mut c2, &mut _arg1, &mut _arg2)
-        });
-        let mut it: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while ((i) != (10_())) {
-        unimplemented!();
-        unimplemented!();
-        i.prefix_inc();
-    }
-}
-pub unsafe fn test_9() -> () {
+pub unsafe fn test_8() -> () {
     let mut m: () = unimplemented!();
-    (unsafe { test_7(&mut m) });
+    (unsafe { test_6(&mut m) });
     let mut m2: () = unimplemented!();
-    (unsafe { test_8(&mut m2) });
+    (unsafe { test_7(&mut m2) });
     return true;
 }
 pub fn main() {
@@ -188,7 +190,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_9() });
+    (unsafe { test_8() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

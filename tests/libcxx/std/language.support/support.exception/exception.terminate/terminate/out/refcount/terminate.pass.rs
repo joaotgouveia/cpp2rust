@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn f1_0() {
-    ({ exit_1(0_()) });
+    unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

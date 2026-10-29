@@ -45,27 +45,11 @@ impl X {
         }
     }
 }
-impl std::cmp::PartialEq for X {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(X {
-                    i_: self.i_.clone(),
-                    j_: self.j_.clone(),
-                    dtor_called_: self.dtor_called_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(X {
-                    i_: other.i_.clone(),
-                    j_: other.j_.clone(),
-                    dtor_called_: other.dtor_called_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for X {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for X {}
 impl Default for X {
     fn default() -> Self {
         {
@@ -104,25 +88,11 @@ impl Y {
         }
     }
 }
-impl std::cmp::PartialEq for Y {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(Y {
-                    i_: self.i_.clone(),
-                    j_: self.j_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Y {
-                    i_: other.i_.clone(),
-                    j_: other.j_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for Y {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for Y {}
 impl Default for Y {
     fn default() -> Self {
         { Y::new_1() }
@@ -157,25 +127,11 @@ impl Z {
         __this
     }
 }
-impl std::cmp::PartialEq for Z {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_3(
-                Rc::new(RefCell::new(Z {
-                    i_: self.i_.clone(),
-                    j_: self.j_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(Z {
-                    i_: other.i_.clone(),
-                    j_: other.j_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for Z {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for Z {}
 impl Default for Z {
     fn default() -> Self {
         { Z::new_1() }

@@ -43,25 +43,11 @@ impl CMyClass {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::PartialEq for CMyClass {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_4(
-                Rc::new(RefCell::new(CMyClass {
-                    fMagicValue: self.fMagicValue.clone(),
-                    fTag: self.fTag.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(CMyClass {
-                    fMagicValue: other.fMagicValue.clone(),
-                    fTag: other.fTag.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for CMyClass {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for CMyClass {}
 impl Clone for CMyClass {
     fn clone(&self) -> Self {
         let __src: Value<CMyClass> = Rc::new(RefCell::new(CMyClass {

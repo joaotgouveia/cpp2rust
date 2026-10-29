@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let f: Ptr<()> = ({ use_facet_0(unimplemented!()) });
+    let f: Ptr<()> = unimplemented!();
     let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let from: Value<Box<[()]>> = Rc::new(RefCell::new(Box::from([
         115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (), 120 as (),

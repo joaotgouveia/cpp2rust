@@ -10,7 +10,7 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NotARep {}
 pub unsafe fn operator_rem_assign_0(mut d: (), mut _a1: NotARep) -> () {
-    return d;
+    return unimplemented!();
 }
 pub unsafe fn test_constexpr_1() -> () {
     let mut s: () = unimplemented!();

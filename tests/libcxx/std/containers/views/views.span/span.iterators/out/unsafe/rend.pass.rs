@@ -12,7 +12,7 @@ pub unsafe fn testConstexprSpan_0(mut s: ()) -> () {
     if unimplemented!() {
         ret = (ret) && (unimplemented!());
     } else {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (!(unimplemented!()));
     }
     ret = (ret) && ((unimplemented!()) == (unimplemented!()));
     return ret;
@@ -23,7 +23,7 @@ pub unsafe fn testConstexprSpan_1(mut s: ()) -> () {
     if unimplemented!() {
         ret = (ret) && (unimplemented!());
     } else {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (!(unimplemented!()));
     }
     ret = (ret) && ((unimplemented!()) == (unimplemented!()));
     return ret;
@@ -34,7 +34,7 @@ pub unsafe fn testConstexprSpan_2(mut s: ()) -> () {
     if unimplemented!() {
         ret = (ret) && (unimplemented!());
     } else {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (!(unimplemented!()));
     }
     ret = (ret) && ((unimplemented!()) == (unimplemented!()));
     return ret;
@@ -45,7 +45,7 @@ pub unsafe fn testConstexprSpan_3(mut s: ()) -> () {
     if unimplemented!() {
         ret = (ret) && (unimplemented!());
     } else {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (!(unimplemented!()));
     }
     ret = (ret) && ((unimplemented!()) == (unimplemented!()));
     return ret;
@@ -56,7 +56,7 @@ pub unsafe fn testConstexprSpan_4(mut s: ()) -> () {
     if unimplemented!() {
         ret = (ret) && (unimplemented!());
     } else {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (!(unimplemented!()));
     }
     ret = (ret) && ((unimplemented!()) == (unimplemented!()));
     return ret;
@@ -112,7 +112,7 @@ pub unsafe fn testConstexprSpan_10(mut s: ()) -> () {
     if unimplemented!() {
         ret = (ret) && (unimplemented!());
     } else {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (!(unimplemented!()));
     }
     ret = (ret) && ((unimplemented!()) == (unimplemented!()));
     return ret;

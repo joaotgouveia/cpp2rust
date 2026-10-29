@@ -184,19 +184,49 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_StrongOrder__rebind_StrongOrder_ {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_StrongOrder_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_StrongOrder_ {}
+impl test_allocator_StrongOrder_ {
+    pub unsafe fn copy_from(a: *const test_allocator_StrongOrder_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
+impl Clone for test_allocator_StrongOrder_ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_StrongOrder_::copy_from(self as *const test_allocator_StrongOrder_)
+        }
+    }
+}
 impl Default for test_allocator_StrongOrder_ {
     fn default() -> Self {
         unsafe {
             test_allocator_StrongOrder_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -206,19 +236,49 @@ impl Default for test_allocator_StrongOrder_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_PartialOrder__rebind_PartialOrder_ {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_PartialOrder_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_PartialOrder_ {}
+impl test_allocator_PartialOrder_ {
+    pub unsafe fn copy_from(a: *const test_allocator_PartialOrder_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
+impl Clone for test_allocator_PartialOrder_ {
+    fn clone(&self) -> Self {
+        unsafe {
+            test_allocator_PartialOrder_::copy_from(self as *const test_allocator_PartialOrder_)
+        }
+    }
+}
 impl Default for test_allocator_PartialOrder_ {
     fn default() -> Self {
         unsafe {
             test_allocator_PartialOrder_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -228,19 +288,47 @@ impl Default for test_allocator_PartialOrder_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_int_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_int_ {}
+impl test_allocator_int_ {
+    pub unsafe fn copy_from(a: *const test_allocator_int_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
+impl Clone for test_allocator_int_ {
+    fn clone(&self) -> Self {
+        unsafe { test_allocator_int_::copy_from(self as *const test_allocator_int_) }
+    }
+}
 impl Default for test_allocator_int_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -250,19 +338,47 @@ impl Default for test_allocator_int_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_WeakOrder__rebind_WeakOrder_ {}
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_WeakOrder_ {
     data_: (),
     id_: (),
     stats_: *mut test_allocator_statistics,
 }
-impl test_allocator_WeakOrder_ {}
+impl test_allocator_WeakOrder_ {
+    pub unsafe fn copy_from(a: *const test_allocator_WeakOrder_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        unimplemented!();
+        unimplemented!();
+        if !((self.stats_).is_null()) {
+            (*self.stats_).count.prefix_dec();
+        }
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+}
+impl Clone for test_allocator_WeakOrder_ {
+    fn clone(&self) -> Self {
+        unsafe { test_allocator_WeakOrder_::copy_from(self as *const test_allocator_WeakOrder_) }
+    }
+}
 impl Default for test_allocator_WeakOrder_ {
     fn default() -> Self {
         unsafe {
             test_allocator_WeakOrder_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_(),
+                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }

@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let cd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     &(*cd.borrow_mut());
-    let mut x: () = ({ sin_0(0_()) });
+    let mut x: () = unimplemented!();
     (&(x));
     return 0_();
 }

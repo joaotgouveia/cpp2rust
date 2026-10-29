@@ -10,32 +10,32 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Pair {
     #[offset(0)]
-    pub first: i32,
+    pub first: (),
     #[offset(4)]
-    pub second: i32,
+    pub second: (),
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let __decomp_0: Value<Pair> = Rc::new(RefCell::new(Pair {
-        first: 1,
-        second: 2,
+        first: 1_(),
+        second: 2_(),
     }));
-    assert!(({ (*__decomp_0.borrow()).first } == 1));
-    assert!(({ (*__decomp_0.borrow()).second } == 2));
+    unimplemented!();
+    unimplemented!();
     let mut p: Pair = Pair {
-        first: 10,
-        second: 20,
+        first: 10_(),
+        second: 20_(),
     };
     let __decomp_1: Value<Pair> = Rc::new(RefCell::new((p).clone()));
-    (*__decomp_1.borrow_mut()).first = 11;
-    (*__decomp_1.borrow_mut()).second += 1;
-    assert!(({ (*__decomp_1.borrow()).first } == 11));
-    assert!(({ (*__decomp_1.borrow()).second } == 21));
-    assert!((p.first == 10));
-    assert!((p.second == 20));
-    return 0;
+    (*__decomp_1.borrow_mut()).first = 11_();
+    (*__decomp_1.borrow_mut()).second += 1_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

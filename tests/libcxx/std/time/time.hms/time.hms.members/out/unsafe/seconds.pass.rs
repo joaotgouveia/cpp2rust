@@ -10,42 +10,42 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long_long__std_ratio_1__1____std_chrono_duration_long_long__std_ratio_1__1___
+pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
-pub unsafe fn check_seconds_1(mut d: ()) -> i64 {
+pub unsafe fn check_seconds_1(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_seconds_2(mut d: ()) -> i64 {
+pub unsafe fn check_seconds_2(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_seconds_3(mut d: ()) -> i64 {
+pub unsafe fn check_seconds_3(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_seconds_4(mut d: ()) -> i64 {
+pub unsafe fn check_seconds_4(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_seconds_5(mut d: ()) -> i64 {
+pub unsafe fn check_seconds_5(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_seconds_6(mut d: ()) -> i64 {
+pub unsafe fn check_seconds_6(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
-pub unsafe fn check_seconds_7(mut d: ()) -> i64 {
+pub unsafe fn check_seconds_7(mut d: ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
+    return unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

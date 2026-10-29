@@ -10,7 +10,8 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_optional_std_string___std_optional_std_string__ {}
+pub struct test_macros_detail_is_same_std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[repr(C)]
@@ -19,7 +20,8 @@ pub struct test_macros_detail_is_same_std_optional_TestT___std_optional_TestT__ 
 pub static mut value_2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { true });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct mandate_same_std_optional_std_string___std_optional_std_string__ {}
+pub struct mandate_same_std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char____
+{}
 pub static mut can_make_optional_explicit_impl_3: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 pub static mut can_make_optional_explicit_impl_4: std::cell::LazyCell<()> =

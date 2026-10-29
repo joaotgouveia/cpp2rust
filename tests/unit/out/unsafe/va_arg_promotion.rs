@@ -6,16 +6,16 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_promotions_0(mut count: i32, __args: Box<[VaArg]>) -> i32 {
+pub unsafe fn test_promotions_0(mut count: (), __args: Box<[VaArg]>) -> () {
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
-    let mut a: i32 = ap.arg::<i32>();
-    let mut b: i32 = ap.arg::<i32>();
-    let mut c: f64 = ap.arg::<f64>();
-    assert!(((((a) == (65)) as i32) != 0));
-    assert!(((((b) == (10)) as i32) != 0));
-    assert!(((((c) == (3_f64)) as i32) != 0));
-    return (((a) + (b)) + (c as i32));
+    let mut a: () = ap.arg::<()>();
+    let mut b: () = ap.arg::<()>();
+    let mut c: () = ap.arg::<()>();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return (((a) + (b)) + (c as ()));
 }
 pub fn main() {
     unsafe {
@@ -23,19 +23,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: libc::c_char = (('A' as i32) as libc::c_char);
-    let mut y: i16 = 10_i16;
-    let mut z: f32 = 3_f32;
-    assert!(
-        ((((unsafe {
-            test_promotions_0(
-                3,
-                Box::new([(x as i32).into(), (y as i32).into(), (z as f64).into()]),
-            )
-        }) == (78)) as i32)
-            != 0)
-    );
-    return 0;
+unsafe fn main_0() -> () {
+    let mut x: () = ('A' as ());
+    let mut y: () = 10_();
+    let mut z: () = 3_f32;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

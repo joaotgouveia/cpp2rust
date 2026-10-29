@@ -1108,7 +1108,8 @@ pub unsafe fn check_always_lock_free_55(a: *const ()) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            (unsafe { ((*a) as std___atomic_ref_float__false__true_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1125,7 +1126,8 @@ pub unsafe fn check_always_lock_free_57(a: *const ()) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            (unsafe { ((*a) as std___atomic_ref_int_ptr__false__false_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1142,7 +1144,8 @@ pub unsafe fn check_always_lock_free_59(a: *const ()) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            (unsafe { ((*a) as std___atomic_ref_Empty__false__false_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1159,7 +1162,8 @@ pub unsafe fn check_always_lock_free_61(a: *const ()) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            (unsafe { ((*a) as std___atomic_ref_OneInt__false__false_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1169,7 +1173,8 @@ pub unsafe fn check_always_lock_free_63(a: *const ()) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_64));
     {}
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            (unsafe { ((*a) as std___atomic_ref_IntArr2__false__false_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1228,7 +1233,8 @@ pub unsafe fn check_always_lock_free_77(a: *const ()) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            (unsafe { ((*a) as std___atomic_ref_IntFloat__false__false_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1245,7 +1251,8 @@ pub unsafe fn check_always_lock_free_79(a: *const ()) {
         }
     }
     {
-        let mut is_lock_free: () = unimplemented!();
+        let mut is_lock_free: () =
+            (unsafe { ((*a) as std___atomic_ref_CharEnumClass__false__false_).is_lock_free() });
         unimplemented!();
     }
     const _: () = assert!(true, "");;

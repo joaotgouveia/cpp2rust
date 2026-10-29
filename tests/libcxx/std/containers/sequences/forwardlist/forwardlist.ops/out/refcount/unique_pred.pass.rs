@@ -48,21 +48,6 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<()>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_5(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
-pub fn operator_ne_6(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !({
-        let _x: min_pointer_void__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_5(_x, y)
-    });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -71,29 +56,23 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_5(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-pub fn do_unique_7(l: Ptr<()>, mut pred: FnPtr<fn((), ()) -> ()>, mut expected: ()) {
+pub fn do_unique_5(l: Ptr<()>, mut pred: FnPtr<fn((), ()) -> ()>, mut expected: ()) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
-pub fn do_unique_8(l: Ptr<()>, pred: (), mut expected: ()) {
+pub fn do_unique_6(l: Ptr<()>, pred: (), mut expected: ()) {
     let pred: Value<()> = Rc::new(RefCell::new(pred));
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
-pub fn do_unique_9(l: Ptr<()>, mut pred: FnPtr<fn((), ()) -> ()>, mut expected: ()) {
+pub fn do_unique_7(l: Ptr<()>, mut pred: FnPtr<fn((), ()) -> ()>, mut expected: ()) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -110,16 +89,16 @@ impl PredLWG526 {
         Self { i_: i }
     }
 }
-pub fn g_10(mut x: (), mut y: ()) -> () {
+pub fn g_8(mut x: (), mut y: ()) -> () {
     return (x == y);
 }
-pub fn test_11() -> () {
+pub fn test_9() -> () {
     {
         let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let mut t2: [(); 4] = [0_(), 5_(), 0_(), 5_()];
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 3_()) });
+        ({ do_unique_5(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 3_()) });
         unimplemented!();
     }
     {
@@ -127,7 +106,7 @@ pub fn test_11() -> () {
         let mut t2: [(); 1] = [0_()];
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 3_()) });
+        ({ do_unique_5(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 3_()) });
         unimplemented!();
     }
     {
@@ -135,13 +114,13 @@ pub fn test_11() -> () {
         let mut t2: [(); 1] = [5_()];
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 2_()) });
+        ({ do_unique_5(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 2_()) });
         unimplemented!();
     }
     {
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 0_()) });
+        ({ do_unique_5(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 0_()) });
         unimplemented!();
     }
     {
@@ -149,7 +128,7 @@ pub fn test_11() -> () {
         let mut t2: [(); 2] = [5_(), 0_()];
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 2_()) });
+        ({ do_unique_5(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 2_()) });
         unimplemented!();
     }
     {
@@ -168,7 +147,7 @@ pub fn test_11() -> () {
         ({
             let _l: Ptr<()> = c1.as_pointer();
             let _pred: () = unimplemented!();
-            do_unique_8(_l, _pred, 2_())
+            do_unique_6(_l, _pred, 2_())
         });
         let mut i: () = 0_();
         'loop_: while (i < 6_()) {
@@ -184,7 +163,7 @@ pub fn test_11() -> () {
         let mut t2: [(); 4] = [0_(), 5_(), 0_(), 5_()];
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_9(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 3_()) });
+        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 3_()) });
         unimplemented!();
     }
     {
@@ -192,7 +171,7 @@ pub fn test_11() -> () {
         let mut t2: [(); 1] = [0_()];
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_9(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 3_()) });
+        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 3_()) });
         unimplemented!();
     }
     {
@@ -200,13 +179,13 @@ pub fn test_11() -> () {
         let mut t2: [(); 1] = [5_()];
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_9(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 2_()) });
+        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 2_()) });
         unimplemented!();
     }
     {
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_9(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 0_()) });
+        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 0_()) });
         unimplemented!();
     }
     {
@@ -214,7 +193,7 @@ pub fn test_11() -> () {
         let mut t2: [(); 2] = [5_(), 0_()];
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ do_unique_9(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_10), 2_()) });
+        ({ do_unique_7(c1.as_pointer(), FnPtr::<fn((), ()) -> ()>::new(g_8), 2_()) });
         unimplemented!();
     }
     return true;

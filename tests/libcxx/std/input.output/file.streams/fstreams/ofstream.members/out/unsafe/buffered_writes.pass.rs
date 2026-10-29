@@ -116,17 +116,7 @@ pub unsafe fn test_eprintf_0(
     args_4: *const (),
     args_5: *const *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-            (*args_4),
-            (*args_5),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_1(
     mut fmt: *const (),
@@ -134,15 +124,7 @@ pub unsafe fn test_eprintf_1(
     args_2: *const *const (),
     args_3: *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_2(
     mut fmt: *const (),
@@ -152,27 +134,10 @@ pub unsafe fn test_eprintf_2(
     args_4: *const (),
     args_5: *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-            (*args_4),
-            (*args_5),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_3(mut fmt: *const (), args_1: *const (), args_2: *const ()) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_4(
     mut fmt: *const (),
@@ -180,15 +145,7 @@ pub unsafe fn test_eprintf_4(
     args_2: *const (),
     args_3: *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_5(
     mut fmt: *const (),
@@ -198,17 +155,7 @@ pub unsafe fn test_eprintf_5(
     args_4: *const (),
     args_5: *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-            (*args_4),
-            (*args_5),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_eprintf_6(
     mut fmt: *const (),
@@ -216,15 +163,7 @@ pub unsafe fn test_eprintf_6(
     args_2: *const (),
     args_3: *const (),
 ) {
-    (unsafe {
-        libc::fprintf(
-            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
-            fmt as *const libc::c_char,
-            (*args_1),
-            (*args_2),
-            (*args_3),
-        )
-    });
+    unimplemented!();
 }
 pub unsafe fn test_log_7(
     mut condition: *const (),
@@ -425,28 +364,21 @@ pub unsafe fn test_require_17(
 }
 pub unsafe fn get_temp_file_name_18() -> () {
     let mut Name: () = unimplemented!();
-    let mut FD: () = (unsafe { mkstemp_19((&mut (*unimplemented!()) as *mut ())) });
+    let mut FD: () = unimplemented!();
     if ((FD) == (-1_())) {
-        (unsafe { perror_20(c"mkstemp".as_ptr()) });
+        unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     return unimplemented!();
 }
-pub unsafe fn glibc_version_less_than_21(mut version: *const ()) -> () {
+pub unsafe fn glibc_version_less_than_19(mut version: *const ()) -> () {
     let mut test_version: () = unimplemented!();
-    let mut n: () = (unsafe {
-        confstr_22(
-            (anon_23__CS_GNU_LIBC_VERSION as ()),
-            std::ptr::null_mut(),
-            0_(),
-        )
-    });
+    let mut n: () = unimplemented!();
     let mut current_version: *mut () =
         Box::leak((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-    (unsafe { confstr_22((anon_23__CS_GNU_LIBC_VERSION as ()), current_version, n) });
-    let mut result: () =
-        ((unsafe { strverscmp_24((current_version).cast_const(), unimplemented!()) }) < (0_()));
+    unimplemented!();
+    let mut result: () = ((unimplemented!()) < (0_()));
     {
         let __p = current_version;
         if !__p.is_null() {
@@ -459,7 +391,7 @@ pub unsafe fn glibc_version_less_than_21(mut version: *const ()) -> () {
     };
     return result;
 }
-pub unsafe fn test_write_25(mut policy: LibraryDefaultBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_write_20(mut policy: LibraryDefaultBuffer, payload_sizes: *const ()) {
     let mut previously_written: () = 0_();
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
@@ -584,9 +516,9 @@ pub unsafe fn test_write_25(mut policy: LibraryDefaultBuffer, payload_sizes: *co
             i.prefix_inc();
         }
     }
-    (unsafe { remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub unsafe fn test_write_27(mut policy: LibraryManagedBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_write_21(mut policy: LibraryManagedBuffer, payload_sizes: *const ()) {
     let mut previously_written: () = 0_();
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
@@ -632,7 +564,7 @@ pub unsafe fn test_write_27(mut policy: LibraryManagedBuffer, payload_sizes: *co
                             });
                         }
                     );
-                    test_require_28(
+                    test_require_22(
                         _condition,
                         c"data[previously_written + j] == exp".as_ptr(),
                         c"buffered_writes.pass.cpp".as_ptr(),
@@ -662,7 +594,7 @@ pub unsafe fn test_write_27(mut policy: LibraryManagedBuffer, payload_sizes: *co
                     });
                 }
             );
-            test_require_29(
+            test_require_23(
                 _condition,
                 c"in_sz == total_size".as_ptr(),
                 c"buffered_writes.pass.cpp".as_ptr(),
@@ -700,7 +632,7 @@ pub unsafe fn test_write_27(mut policy: LibraryManagedBuffer, payload_sizes: *co
                         });
                     }
                 );
-                test_require_30(
+                test_require_24(
                     _condition,
                     c"in_buffer[i] == exp".as_ptr(),
                     c"buffered_writes.pass.cpp".as_ptr(),
@@ -711,9 +643,9 @@ pub unsafe fn test_write_27(mut policy: LibraryManagedBuffer, payload_sizes: *co
             i.prefix_inc();
         }
     }
-    (unsafe { remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub unsafe fn test_write_31(mut policy: UserManagedBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_write_25(mut policy: UserManagedBuffer, payload_sizes: *const ()) {
     let mut previously_written: () = 0_();
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
@@ -759,7 +691,7 @@ pub unsafe fn test_write_31(mut policy: UserManagedBuffer, payload_sizes: *const
                             });
                         }
                     );
-                    test_require_32(
+                    test_require_26(
                         _condition,
                         c"data[previously_written + j] == exp".as_ptr(),
                         c"buffered_writes.pass.cpp".as_ptr(),
@@ -789,7 +721,7 @@ pub unsafe fn test_write_31(mut policy: UserManagedBuffer, payload_sizes: *const
                     });
                 }
             );
-            test_require_33(
+            test_require_27(
                 _condition,
                 c"in_sz == total_size".as_ptr(),
                 c"buffered_writes.pass.cpp".as_ptr(),
@@ -827,7 +759,7 @@ pub unsafe fn test_write_31(mut policy: UserManagedBuffer, payload_sizes: *const
                         });
                     }
                 );
-                test_require_34(
+                test_require_28(
                     _condition,
                     c"in_buffer[i] == exp".as_ptr(),
                     c"buffered_writes.pass.cpp".as_ptr(),
@@ -838,9 +770,9 @@ pub unsafe fn test_write_31(mut policy: UserManagedBuffer, payload_sizes: *const
             i.prefix_inc();
         }
     }
-    (unsafe { remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub unsafe fn test_write_codecvt_35(mut policy: LibraryDefaultBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_write_codecvt_29(mut policy: LibraryDefaultBuffer, payload_sizes: *const ()) {
     let mut previously_written: () = 0_();
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
@@ -939,9 +871,9 @@ pub unsafe fn test_write_codecvt_35(mut policy: LibraryDefaultBuffer, payload_si
             i.prefix_inc();
         }
     }
-    (unsafe { remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub unsafe fn test_write_codecvt_36(mut policy: LibraryManagedBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_write_codecvt_30(mut policy: LibraryManagedBuffer, payload_sizes: *const ()) {
     let mut previously_written: () = 0_();
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
@@ -985,7 +917,7 @@ pub unsafe fn test_write_codecvt_36(mut policy: LibraryManagedBuffer, payload_si
                             });
                         }
                     );
-                    test_require_37(
+                    test_require_31(
                         _condition,
                         c"data[previously_written + j] == exp".as_ptr(),
                         c"buffered_writes.pass.cpp".as_ptr(),
@@ -1029,7 +961,7 @@ pub unsafe fn test_write_codecvt_36(mut policy: LibraryManagedBuffer, payload_si
                         });
                     }
                 );
-                test_require_38(
+                test_require_32(
                     _condition,
                     c"in_buffer[i] == exp".as_ptr(),
                     c"buffered_writes.pass.cpp".as_ptr(),
@@ -1040,9 +972,9 @@ pub unsafe fn test_write_codecvt_36(mut policy: LibraryManagedBuffer, payload_si
             i.prefix_inc();
         }
     }
-    (unsafe { remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub unsafe fn test_write_codecvt_39(mut policy: UserManagedBuffer, payload_sizes: *const ()) {
+pub unsafe fn test_write_codecvt_33(mut policy: UserManagedBuffer, payload_sizes: *const ()) {
     let mut previously_written: () = 0_();
     let mut total_size: () = unimplemented!();
     let mut data: () = unimplemented!();
@@ -1086,7 +1018,7 @@ pub unsafe fn test_write_codecvt_39(mut policy: UserManagedBuffer, payload_sizes
                             });
                         }
                     );
-                    test_require_40(
+                    test_require_34(
                         _condition,
                         c"data[previously_written + j] == exp".as_ptr(),
                         c"buffered_writes.pass.cpp".as_ptr(),
@@ -1130,7 +1062,7 @@ pub unsafe fn test_write_codecvt_39(mut policy: UserManagedBuffer, payload_sizes
                         });
                     }
                 );
-                test_require_41(
+                test_require_35(
                     _condition,
                     c"in_buffer[i] == exp".as_ptr(),
                     c"buffered_writes.pass.cpp".as_ptr(),
@@ -1141,24 +1073,24 @@ pub unsafe fn test_write_codecvt_39(mut policy: UserManagedBuffer, payload_sizes
             i.prefix_inc();
         }
     }
-    (unsafe { remove_26(unimplemented!()) });
+    unimplemented!();
 }
-pub static mut buffer_sizes_42: std::cell::LazyCell<()> =
+pub static mut buffer_sizes_36: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut io_sizes_43: std::cell::LazyCell<()> =
+pub static mut io_sizes_37: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut io_sizes_default_44: std::cell::LazyCell<()> =
+pub static mut io_sizes_default_38: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub unsafe fn test_1_write_45() {
+pub unsafe fn test_1_write_39() {
     'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut x: () = (*unimplemented!());
         (unsafe {
             let mut _payload_sizes: () = unimplemented!();
-            test_write_25(LibraryDefaultBuffer::new(), &mut _payload_sizes)
+            test_write_20(LibraryDefaultBuffer::new(), &mut _payload_sizes)
         });
         (unsafe {
             let mut _payload_sizes: () = unimplemented!();
-            test_write_codecvt_35(LibraryDefaultBuffer::new(), &mut _payload_sizes)
+            test_write_codecvt_29(LibraryDefaultBuffer::new(), &mut _payload_sizes)
         });
     }
     'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
@@ -1167,11 +1099,11 @@ pub unsafe fn test_1_write_45() {
             let mut x: () = (*unimplemented!());
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_write_27(LibraryManagedBuffer::new({ b }), &mut _payload_sizes)
+                test_write_21(LibraryManagedBuffer::new({ b }), &mut _payload_sizes)
             });
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_write_codecvt_36(LibraryManagedBuffer::new({ b }), &mut _payload_sizes)
+                test_write_codecvt_30(LibraryManagedBuffer::new({ b }), &mut _payload_sizes)
             });
         }
     }
@@ -1181,27 +1113,27 @@ pub unsafe fn test_1_write_45() {
             let mut x: () = (*unimplemented!());
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_write_31(UserManagedBuffer::new({ b }), &mut _payload_sizes)
+                test_write_25(UserManagedBuffer::new({ b }), &mut _payload_sizes)
             });
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_write_codecvt_39(UserManagedBuffer::new({ b }), &mut _payload_sizes)
+                test_write_codecvt_33(UserManagedBuffer::new({ b }), &mut _payload_sizes)
             });
         }
     }
 }
-pub unsafe fn test_2_writes_46() {
+pub unsafe fn test_2_writes_40() {
     'loop_: for a in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut a: () = (*unimplemented!());
         'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
             let mut b: () = (*unimplemented!());
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_write_25(LibraryDefaultBuffer::new(), &mut _payload_sizes)
+                test_write_20(LibraryDefaultBuffer::new(), &mut _payload_sizes)
             });
             (unsafe {
                 let mut _payload_sizes: () = unimplemented!();
-                test_write_codecvt_35(LibraryDefaultBuffer::new(), &mut _payload_sizes)
+                test_write_codecvt_29(LibraryDefaultBuffer::new(), &mut _payload_sizes)
             });
         }
     }
@@ -1213,11 +1145,11 @@ pub unsafe fn test_2_writes_46() {
                 let mut b: () = (*unimplemented!());
                 (unsafe {
                     let mut _payload_sizes: () = unimplemented!();
-                    test_write_27(LibraryManagedBuffer::new({ buf }), &mut _payload_sizes)
+                    test_write_21(LibraryManagedBuffer::new({ buf }), &mut _payload_sizes)
                 });
                 (unsafe {
                     let mut _payload_sizes: () = unimplemented!();
-                    test_write_codecvt_36(LibraryManagedBuffer::new({ buf }), &mut _payload_sizes)
+                    test_write_codecvt_30(LibraryManagedBuffer::new({ buf }), &mut _payload_sizes)
                 });
             }
         }
@@ -1230,11 +1162,11 @@ pub unsafe fn test_2_writes_46() {
                 let mut b: () = (*unimplemented!());
                 (unsafe {
                     let mut _payload_sizes: () = unimplemented!();
-                    test_write_31(UserManagedBuffer::new({ buf }), &mut _payload_sizes)
+                    test_write_25(UserManagedBuffer::new({ buf }), &mut _payload_sizes)
                 });
                 (unsafe {
                     let mut _payload_sizes: () = unimplemented!();
-                    test_write_codecvt_39(UserManagedBuffer::new({ buf }), &mut _payload_sizes)
+                    test_write_codecvt_33(UserManagedBuffer::new({ buf }), &mut _payload_sizes)
                 });
             }
         }
@@ -1256,12 +1188,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_1_write_45() });
-    (unsafe { test_2_writes_46() });
+    (unsafe { test_1_write_39() });
+    (unsafe { test_2_writes_40() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const buffer_sizes_42);
-    std::cell::LazyCell::force(&*&raw const io_sizes_43);
-    std::cell::LazyCell::force(&*&raw const io_sizes_default_44);
+    std::cell::LazyCell::force(&*&raw const buffer_sizes_36);
+    std::cell::LazyCell::force(&*&raw const io_sizes_37);
+    std::cell::LazyCell::force(&*&raw const io_sizes_default_38);
 }

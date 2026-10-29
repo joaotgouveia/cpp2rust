@@ -125,21 +125,33 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
     }
 }
 pub unsafe fn test_0(mut c: ()) -> () {
-    let mut i: () = unimplemented!();
+    let mut i: () = (unsafe {
+        let ___x: *mut () = &mut c;
+        let ___i: () = unimplemented!();
+        inserter_1(___x, ___i)
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub unsafe fn test_1(mut c: nasty_vector_int_) -> () {
-    let mut i: () = unimplemented!();
+pub unsafe fn test_2(mut c: nasty_vector_int_) -> () {
+    let mut i: () = (unsafe {
+        let ___x: *mut nasty_vector_int_ = &mut c;
+        let ___i: () = (unsafe { nasty_vector_int_::end_14(&mut c) });
+        inserter_3(___x, ___i)
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub unsafe fn test_2(mut c: ConstexprFixedCapacityDeque_int__10_) -> () {
-    let mut i: () = unimplemented!();
+pub unsafe fn test_4(mut c: ConstexprFixedCapacityDeque_int__10_) -> () {
+    let mut i: () = (unsafe {
+        let ___x: *mut ConstexprFixedCapacityDeque_int__10_ = &mut c;
+        let ___i: *mut () = (unsafe { ConstexprFixedCapacityDeque_int__10_::end_3(&mut c) });
+        inserter_5(___x, ___i)
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -162,8 +174,8 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_0(unimplemented!()) });
-    (unsafe { test_1(nasty_vector_int_::new_1()) });
-    (unsafe { test_2(<ConstexprFixedCapacityDeque_int__10_>::default()) });
+    (unsafe { test_2(nasty_vector_int_::new_1()) });
+    (unsafe { test_4(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
     return 0_();
 }

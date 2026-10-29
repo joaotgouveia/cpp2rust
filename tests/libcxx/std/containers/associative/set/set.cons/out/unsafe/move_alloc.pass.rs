@@ -390,7 +390,7 @@ pub unsafe fn operator_eq_19(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_MoveOnly__rebind_MoveOnly_ {}
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_MoveOnly_ {
     data_: (),
     id_: (),
@@ -403,6 +403,19 @@ impl test_allocator_MoveOnly_ {
             id_: 0_(),
             stats_: std::ptr::null_mut(),
         };
+        this
+    }
+    pub unsafe fn copy_from(a: *const test_allocator_MoveOnly_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -426,6 +439,11 @@ impl std::cmp::PartialEq for test_allocator_MoveOnly_ {
     }
 }
 impl std::cmp::Eq for test_allocator_MoveOnly_ {}
+impl Clone for test_allocator_MoveOnly_ {
+    fn clone(&self) -> Self {
+        unsafe { test_allocator_MoveOnly_::copy_from(self as *const test_allocator_MoveOnly_) }
+    }
+}
 impl Default for test_allocator_MoveOnly_ {
     fn default() -> Self {
         unsafe {
@@ -437,17 +455,11 @@ impl Default for test_allocator_MoveOnly_ {
         }
     }
 }
-pub unsafe fn operator_eq_20(
-    x: *const test_allocator_Counter_int__,
-    y: *const test_allocator_Counter_int__,
-) -> () {
-    return (((*x).data_) == ((*y).data_));
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_Counter_int___rebind_Counter_int__ {}
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_Counter_int__ {
     data_: (),
     id_: (),
@@ -462,6 +474,19 @@ impl test_allocator_Counter_int__ {
         };
         this
     }
+    pub unsafe fn copy_from(a: *const test_allocator_Counter_int__) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        unimplemented!();
+        if !((this.stats_).is_null()) {
+            (*this.stats_).count.prefix_inc();
+            (*this.stats_).copied.prefix_inc();
+        }
+        this
+    }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
         unimplemented!();
@@ -472,17 +497,13 @@ impl test_allocator_Counter_int__ {
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_15));
     }
 }
-impl std::cmp::PartialEq for test_allocator_Counter_int__ {
-    fn eq(&self, other: &Self) -> bool {
+impl Clone for test_allocator_Counter_int__ {
+    fn clone(&self) -> Self {
         unsafe {
-            operator_eq_20(
-                self as *const test_allocator_Counter_int__,
-                other as *const test_allocator_Counter_int__,
-            )
+            test_allocator_Counter_int__::copy_from(self as *const test_allocator_Counter_int__)
         }
     }
 }
-impl std::cmp::Eq for test_allocator_Counter_int__ {}
 impl Default for test_allocator_Counter_int__ {
     fn default() -> Self {
         unsafe {
@@ -494,7 +515,7 @@ impl Default for test_allocator_Counter_int__ {
         }
     }
 }
-pub unsafe fn operator_eq_21(
+pub unsafe fn operator_eq_20(
     x: *const other_allocator_MoveOnly_,
     y: *const other_allocator_MoveOnly_,
 ) -> () {
@@ -514,7 +535,7 @@ impl other_allocator_MoveOnly_ {
 impl std::cmp::PartialEq for other_allocator_MoveOnly_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_21(
+            operator_eq_20(
                 self as *const other_allocator_MoveOnly_,
                 other as *const other_allocator_MoveOnly_,
             )
@@ -568,25 +589,18 @@ pub struct Counter_int_ {
 impl Counter_int_ {
     pub unsafe fn new_1(data: *const ()) -> Self {
         let mut this = Self { data_: (*data) };
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_22)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_21)).prefix_inc();
         this
     }
     pub unsafe fn copy_from(rhs: *const Counter_int_) -> Self {
         let mut this = Self {
             data_: (*rhs).data_,
         };
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_22)).prefix_inc();
-        this
-    }
-    pub unsafe fn move_from(rhs: *mut Counter_int_) -> Self {
-        let mut this = Self {
-            data_: (*rhs).data_,
-        };
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_22)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_21)).prefix_inc();
         this
     }
     pub unsafe fn destructor(&mut self) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_22)).prefix_dec();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_21)).prefix_dec();
     }
     pub unsafe fn operator_eq(&self, x: *const Counter_int_) -> () {
         return ((self.data_) == ((*x).data_));
@@ -624,9 +638,9 @@ impl Clone for Counter_int_ {
         unsafe { Counter_int_::copy_from(self as *const Counter_int_) }
     }
 }
-pub static mut gConstructed_22: std::cell::LazyCell<()> =
+pub static mut gConstructed_21: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn test_23() -> () {
+pub unsafe fn test_22() -> () {
     {
         let mut a1: [MoveOnly; 9] = [
             MoveOnly::new({ Some(1_()) }),
@@ -656,7 +670,7 @@ pub unsafe fn test_23() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut a1: [MoveOnly; 9] = [
@@ -687,7 +701,7 @@ pub unsafe fn test_23() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut a1: [MoveOnly; 9] = [
@@ -718,10 +732,10 @@ pub unsafe fn test_23() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_22)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_21)) = 0_();
         {
             let mut a1: [Counter_int_; 9] = [
                 {
@@ -771,7 +785,7 @@ pub unsafe fn test_23() -> () {
             unimplemented!();
             let mut m3: () = unimplemented!();
             unimplemented!();
-            unimplemented!();
+            const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
             {
@@ -779,7 +793,7 @@ pub unsafe fn test_23() -> () {
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                unimplemented!();
+                const _: () = assert!(true, "");;
             }
             unimplemented!();
             unimplemented!();
@@ -804,11 +818,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_23() });
+    (unsafe { test_22() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const destructed_value_15);
     std::cell::LazyCell::force(&*&raw const moved_value_16);
-    std::cell::LazyCell::force(&*&raw const gConstructed_22);
+    std::cell::LazyCell::force(&*&raw const gConstructed_21);
 }

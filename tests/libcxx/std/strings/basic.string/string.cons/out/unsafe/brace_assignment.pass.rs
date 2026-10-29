@@ -6,45 +6,42 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn is_string_asan_correct_0(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_1() -> () {
+pub unsafe fn test_0() -> () {
     {
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     {
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
     return true;
 }
@@ -64,7 +61,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_1() });
+    (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

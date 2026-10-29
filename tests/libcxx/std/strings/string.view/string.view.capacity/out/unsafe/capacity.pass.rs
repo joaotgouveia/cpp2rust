@@ -28,7 +28,7 @@ pub unsafe fn test1_0() {
     {
         let mut sv: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub unsafe fn test1_1() {
@@ -53,7 +53,7 @@ pub unsafe fn test1_1() {
     {
         let mut sv: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub unsafe fn test1_2() {
@@ -78,7 +78,7 @@ pub unsafe fn test1_2() {
     {
         let mut sv: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub unsafe fn test1_3() {
@@ -103,7 +103,7 @@ pub unsafe fn test1_3() {
     {
         let mut sv: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub unsafe fn test1_4() {
@@ -128,7 +128,7 @@ pub unsafe fn test1_4() {
     {
         let mut sv: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        const _: () = assert!(true, "");;
     }
 }
 pub unsafe fn test2_5(mut s: *const (), mut len: ()) {

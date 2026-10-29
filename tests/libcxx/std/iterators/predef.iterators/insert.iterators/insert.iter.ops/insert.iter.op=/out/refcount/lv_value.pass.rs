@@ -20,23 +20,11 @@ impl nasty_vector_int_ {
         }
     }
 }
-impl std::cmp::PartialEq for nasty_vector_int_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_0(
-                Rc::new(RefCell::new(nasty_vector_int_ {
-                    v_: self.v_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(nasty_vector_int_ {
-                    v_: other.v_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for nasty_vector_int_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for nasty_vector_int_ {}
 impl Default for nasty_vector_int_ {
     fn default() -> Self {
         { nasty_vector_int_::new_1() }
@@ -69,8 +57,13 @@ impl Default for nasty_mutex {
         { nasty_mutex::new() }
     }
 }
-pub fn test_1(mut c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: Ptr<()>) {
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_1(c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: Ptr<()>) {
+    let c1: Value<()> = Rc::new(RefCell::new(c1));
+    let q: Value<()> = Rc::new(RefCell::new(
+        std_insert_iterator_std_vector_int__std_allocator_int___::new({ c1.as_pointer() }, {
+            unimplemented!()
+        }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -85,7 +78,10 @@ pub fn test_2(
     c2: Ptr<nasty_vector_int_>,
 ) {
     let c1: Value<nasty_vector_int_> = Rc::new(RefCell::new(c1));
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let q: Value<()> = Rc::new(RefCell::new(std_insert_iterator_nasty_vector_int__::new(
+        { c1.as_pointer() },
+        { unimplemented!() },
+    )));
     unimplemented!();
     unimplemented!();
     unimplemented!();

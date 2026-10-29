@@ -48,21 +48,21 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "std::is_same<decltype( 3if   ), std::complex<float>>::value"
     );;
     {
-        let mut c1: () = (unsafe { operator_literal_il_0(3_f64) });
+        let mut c1: () = unimplemented!();
         unimplemented!();
-        let mut c2: () = (unsafe { operator_literal_il_1(3_()) });
-        unimplemented!();
-    }
-    {
-        let mut c1: () = (unsafe { operator_literal_i_2(3_f64) });
-        unimplemented!();
-        let mut c2: () = (unsafe { operator_literal_i_3(3_()) });
+        let mut c2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut c1: () = (unsafe { operator_literal_if_4(3_f64) });
+        let mut c1: () = unimplemented!();
         unimplemented!();
-        let mut c2: () = (unsafe { operator_literal_if_5(3_()) });
+        let mut c2: () = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut c1: () = unimplemented!();
+        unimplemented!();
+        let mut c2: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

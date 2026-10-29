@@ -42,33 +42,12 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_5(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_6(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_void__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_5(_x, y)
-    });
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_5(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
@@ -95,25 +74,25 @@ impl unary_counting_predicate_bool__ptr__int___int_ {
         return self.count_;
     }
 }
+pub unsafe fn do_remove_if_5(l: *mut (), mut pred: (), mut expected: ()) {
+    let mut old_size: () = unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn do_remove_if_6(l: *mut (), mut pred: (), mut expected: ()) {
+    let mut old_size: () = unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn do_remove_if_7(l: *mut (), mut pred: (), mut expected: ()) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn do_remove_if_8(l: *mut (), mut pred: (), mut expected: ()) {
-    let mut old_size: () = unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn do_remove_if_9(l: *mut (), mut pred: (), mut expected: ()) {
-    let mut old_size: () = unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn g_10(mut i: ()) -> () {
+pub unsafe fn g_8(mut i: ()) -> () {
     return ((i) < (3_()));
 }
 #[repr(C)]
@@ -136,19 +115,19 @@ impl PredLWG526 {
         return ((i) == (self.i_));
     }
 }
-pub unsafe fn test_11() -> () {
+pub unsafe fn test_9() -> () {
     {
         let t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let t2: [(); 3] = [5_(), 5_(), 5_()];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 4_()) });
+        (unsafe { do_remove_if_5(&mut c1, unimplemented!(), 4_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -157,12 +136,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 4_()) });
+        (unsafe { do_remove_if_5(&mut c1, unimplemented!(), 4_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -172,12 +151,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 0_()) });
+        (unsafe { do_remove_if_5(&mut c1, unimplemented!(), 0_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -185,12 +164,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 0_()) });
+        (unsafe { do_remove_if_5(&mut c1, unimplemented!(), 0_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -200,12 +179,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 1_()) });
+        (unsafe { do_remove_if_5(&mut c1, unimplemented!(), 1_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -216,7 +195,7 @@ pub unsafe fn test_11() -> () {
         (unsafe {
             let _l: *mut () = &mut c;
             let _pred: () = unimplemented!();
-            do_remove_if_8(_l, _pred, 2_())
+            do_remove_if_6(_l, _pred, 2_())
         });
         let mut i: () = 0_();
         'loop_: while ((i) < (5_())) {
@@ -233,12 +212,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_9(&mut c1, unimplemented!(), 4_()) });
+        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 4_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -247,12 +226,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_9(&mut c1, unimplemented!(), 4_()) });
+        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 4_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -262,12 +241,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_9(&mut c1, unimplemented!(), 0_()) });
+        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 0_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -275,12 +254,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_9(&mut c1, unimplemented!(), 0_()) });
+        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 0_()) });
         unimplemented!();
         unimplemented!();
     }
@@ -290,12 +269,12 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
-            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
+            unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_8) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
             &raw mut cp,
             unary_counting_predicate_bool__ptr__int___int_::destructor,
         );
-        (unsafe { do_remove_if_9(&mut c1, unimplemented!(), 1_()) });
+        (unsafe { do_remove_if_7(&mut c1, unimplemented!(), 1_()) });
         unimplemented!();
         unimplemented!();
     }

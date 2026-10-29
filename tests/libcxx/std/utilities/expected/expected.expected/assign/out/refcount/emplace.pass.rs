@@ -103,7 +103,7 @@ impl Default for TracedBase_false__false__state {
         }
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
 pub struct TracedBase_false__false_ {
     #[offset(0)]
@@ -130,6 +130,54 @@ impl TracedBase_false__false_ {
             movedFromTmp: false,
             data_: ii,
         }
+    }
+    pub fn copy_from(other: Ptr<TracedBase_false__false_>) -> Self {
+        let __this: Value<TracedBase_false__false_> = Rc::new(RefCell::new(Self {
+            state_: other.with(|__s| __s.state_.clone()),
+            copiedFromInt: false,
+            movedFromInt: false,
+            copiedFromTmp: false,
+            movedFromTmp: false,
+            data_: other.with(|__s| __s.data_),
+        }));
+        let this: Ptr<TracedBase_false__false_> = __this.as_pointer();
+        if !(this.with(|__s| __s.state_.clone())).is_null() {
+            field!(this.with(|__s| __s.state_.clone()), copyCtorCalled).write(true);
+        } else {
+            field!(this, copiedFromTmp).write(true);
+        }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+    pub fn move_from(other: Ptr<TracedBase_false__false_>) -> Self {
+        let __this: Value<TracedBase_false__false_> = Rc::new(RefCell::new(Self {
+            state_: other.with(|__s| __s.state_.clone()),
+            copiedFromInt: false,
+            movedFromInt: false,
+            copiedFromTmp: false,
+            movedFromTmp: false,
+            data_: other.with(|__s| __s.data_),
+        }));
+        let this: Ptr<TracedBase_false__false_> = __this.as_pointer();
+        if !(this.with(|__s| __s.state_.clone())).is_null() {
+            field!(this.with(|__s| __s.state_.clone()), moveCtorCalled).write(true);
+        } else {
+            field!(this, movedFromTmp).write(true);
+        }
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl Clone for TracedBase_false__false_ {
+    fn clone(&self) -> Self {
+        let __src: Value<TracedBase_false__false_> =
+            Rc::new(RefCell::new(TracedBase_false__false_ {
+                state_: self.state_.clone(),
+                copiedFromInt: self.copiedFromInt.clone(),
+                movedFromInt: self.movedFromInt.clone(),
+                copiedFromTmp: self.copiedFromTmp.clone(),
+                movedFromTmp: self.movedFromTmp.clone(),
+                data_: self.data_.clone(),
+            }));
+        TracedBase_false__false_::copy_from(__src.as_pointer())
     }
 }
 impl Default for TracedBase_false__false_ {
@@ -207,11 +255,7 @@ impl TailClobberer_0_ {
         }));
         let this: Ptr<TailClobberer_0_> = __this.as_pointer();
         {
-            ({
-                let ___s: () = (this).to_any();
-                let ___n: () = 2usize;
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         field!(this, b).write(false);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -222,17 +266,11 @@ impl TailClobberer_0_ {
         }
     }
 }
-impl std::cmp::PartialEq for TailClobberer_0_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_1(
-                Rc::new(RefCell::new(TailClobberer_0_ { b: self.b.clone() })).as_pointer(),
-                Rc::new(RefCell::new(TailClobberer_0_ { b: other.b.clone() })).as_pointer(),
-            )
-        }
+impl CppEq for TailClobberer_0_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for TailClobberer_0_ {}
 impl Default for TailClobberer_0_ {
     fn default() -> Self {
         { TailClobberer_0_::new_1() }
@@ -290,11 +328,7 @@ impl BoolWithPadding {
         }));
         let this: Ptr<BoolWithPadding> = __this.as_pointer();
         {
-            ({
-                let ___s: () = (this).to_any();
-                let ___n: () = 8usize;
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         field!(this, val_).write(val);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -337,11 +371,7 @@ impl IntWithoutPadding {
         }));
         let this: Ptr<IntWithoutPadding> = __this.as_pointer();
         {
-            ({
-                let ___s: () = (this).to_any();
-                let ___n: () = 4usize;
-                memset_2(___s, 0_(), ___n)
-            });
+            unimplemented!();
         }
         field!(this, val_).write(val);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -400,7 +430,7 @@ impl Default for CheckForInvalidWrites_true__false_ {
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(16)]
 pub struct CheckForInvalidWrites_false__false_ {
-    #[offset(8)]
+    #[offset(9)]
     #[byte_size(7)]
     pub please_dont_overwrite_me: Box<[()]>,
 }
@@ -439,7 +469,7 @@ const _: () = assert!(
     !(false),
     "!CanEmplace<std::expected<CtorFromInt<false>, int>, int, int>"
 );
-pub fn test_3() -> () {
+pub fn test_2() -> () {
     {
         let mut oldState: TracedBase_true__state = <TracedBase_true__state>::default();
         let mut newState: TracedBase_true__state = <TracedBase_true__state>::default();
@@ -504,7 +534,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_3() });
+    ({ test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

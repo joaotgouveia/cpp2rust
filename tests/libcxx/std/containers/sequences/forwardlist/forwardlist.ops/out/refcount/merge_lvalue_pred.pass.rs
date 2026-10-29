@@ -69,25 +69,11 @@ pub struct value {
     #[offset(4)]
     pub b: (),
 }
-impl std::cmp::PartialEq for value {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_5(
-                Rc::new(RefCell::new(value {
-                    a: self.a.clone(),
-                    b: self.b.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(value {
-                    a: other.a.clone(),
-                    b: other.b.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for value {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for value {}
 pub fn test_6() -> () {
     {
         let mut t1: [(); 6] = [13_(), 12_(), 7_(), 6_(), 5_(), 3_()];

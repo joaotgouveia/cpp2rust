@@ -27,8 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ at_quick_exit_1(FnPtr::<fn()>::new(f_0)) });
-    ({ quick_exit_2(0_()) });
+    unimplemented!();
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

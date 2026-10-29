@@ -7,7 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn where_0(_a0: *const ()) {}
-pub unsafe fn test1_1() {
+pub unsafe fn where_1(_a0: *const ()) {}
+pub unsafe fn test1_2() {
     const _: () = assert!(true, "(E::word_size == 24)");;
     const _: () = assert!(true, "(E::short_lag == 10)");;
     const _: () = assert!(true, "(E::long_lag == 24)");;
@@ -17,9 +18,9 @@ pub unsafe fn test1_1() {
     (unsafe { where_0(&unimplemented!()) });
     (unsafe { where_0(&unimplemented!()) });
     (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_1(&unimplemented!()) });
 }
-pub unsafe fn test2_2() {
+pub unsafe fn test2_3() {
     const _: () = assert!(true, "(E::word_size == 48)");;
     const _: () = assert!(true, "(E::short_lag == 5)");;
     const _: () = assert!(true, "(E::long_lag == 12)");;
@@ -29,7 +30,7 @@ pub unsafe fn test2_2() {
     (unsafe { where_0(&unimplemented!()) });
     (unsafe { where_0(&unimplemented!()) });
     (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_1(&unimplemented!()) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -47,8 +48,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test1_1() });
-    (unsafe { test2_2() });
+    (unsafe { test1_2() });
+    (unsafe { test2_3() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -128,11 +128,11 @@ thread_local!(
     static arrA_12: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
 );
 pub trait short_containerImpl {
-    fn size(&self) -> u16;
+    fn size(&self) -> ();
 }
 impl short_containerImpl for Ptr<short_container> {
-    fn size(&self) -> u16 {
-        return 60000_u16;
+    fn size(&self) -> () {
+        return 60000_();
     }
 }
 pub fn __cpp2rust_init_globals() {}

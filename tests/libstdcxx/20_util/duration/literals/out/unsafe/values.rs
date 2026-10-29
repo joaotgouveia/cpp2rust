@@ -82,7 +82,7 @@ impl __gnu_test_copy_constructor {
         if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__1))
             == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)))
         {
-            (unsafe { __throw_runtime_error_3(c"copy_constructor::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
@@ -98,22 +98,22 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)).postfix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__4))
-            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)).postfix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__3))
+            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)))
         {
-            (unsafe { __throw_runtime_error_3(c"assignment_operator::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
     }
     pub unsafe fn throw_on(mut count: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = count;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
 #[repr(C)]
@@ -121,13 +121,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)).postfix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
     }
 }
 #[repr(C)]
@@ -139,7 +139,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
         let mut id: () = id.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__7)).postfix_dec()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
@@ -193,12 +193,12 @@ impl __gnu_test_copy_tracker {
 impl std::cmp::Ord for __gnu_test_copy_tracker {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_8(
+            if operator_lt_7(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_8(
+            } else if operator_lt_7(
                 other as *const __gnu_test_copy_tracker,
                 self as *const __gnu_test_copy_tracker,
             ) {
@@ -217,7 +217,7 @@ impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
 impl std::cmp::PartialEq for __gnu_test_copy_tracker {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_9(
+            operator_eq_8(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             )
@@ -235,14 +235,14 @@ impl Default for __gnu_test_copy_tracker {
         unsafe { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub unsafe fn operator_eq_9(
+pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
-pub unsafe fn operator_lt_8(
+pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
@@ -253,195 +253,97 @@ pub unsafe fn operator_lt_8(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
     sem_set_: (),
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
-pub unsafe fn test03_10() {
-    let mut jiffy: () = (unsafe { operator_literal_ns_11() });
+pub unsafe fn test03_9() {
+    let mut jiffy: () = (unsafe { unimplemented!()() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (29_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"jiffy == std::chrono::nanoseconds(23)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut fjiffy: () = (unsafe { operator_literal_ns_13(23_f64) });
+    let mut fjiffy: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (31_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"(fjiffy == std::chrono::duration<long double, std::nano>(23.0L))"
-                            .as_ptr())
-                        .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut blip: () = (unsafe { operator_literal_us_14() });
+    let mut blip: () = (unsafe { unimplemented!()() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (33_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"blip == std::chrono::microseconds(14)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut fblip: () = (unsafe { operator_literal_us_15(14_f64) });
+    let mut fblip: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (35_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"(fblip == std::chrono::duration<long double, std::micro>(14.0L))"
-                            .as_ptr())
-                        .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut bit: () = (unsafe { operator_literal_ms_16() });
+    let mut bit: () = (unsafe { unimplemented!()() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (37_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"bit == std::chrono::milliseconds(77)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut fbit: () = (unsafe { operator_literal_ms_17(77_f64) });
+    let mut fbit: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (39_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"(fbit == std::chrono::duration<long double, std::milli>(77.0L))"
-                            .as_ptr())
-                        .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut warmup: () = (unsafe { operator_literal_s_18() });
+    let mut warmup: () = (unsafe { unimplemented!()() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (41_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"warmup == std::chrono::seconds(33)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut fwarmup: () = (unsafe { operator_literal_s_19(33_f64) });
+    let mut fwarmup: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"values.cc" .as_ptr() ) .into() , ( 43_() ) .into() , ( c"void test03()" .as_ptr() ) .into() , ( c"(fwarmup == std::chrono::duration<long double, std::ratio<1,1>>(33.0L))" .as_ptr() ) .into() , ] ) )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut classtime: () = (unsafe { operator_literal_min_20() });
+    let mut classtime: () = (unsafe { unimplemented!()() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (45_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"classtime == std::chrono::minutes(50)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut fclasstime: () = (unsafe { operator_literal_min_21(50_f64) });
+    let mut fclasstime: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"values.cc" .as_ptr() ) .into() , ( 47_() ) .into() , ( c"void test03()" .as_ptr() ) .into() , ( c"(fclasstime == std::chrono::duration<long double, std::ratio<60,1>>(50.0L))" .as_ptr() ) .into() , ] ) )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -450,18 +352,7 @@ pub unsafe fn test03_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (49_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"longtime == std::chrono::minutes(90)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -470,9 +361,7 @@ pub unsafe fn test03_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"values.cc" .as_ptr() ) .into() , ( 52_() ) .into() , ( c"void test03()" .as_ptr() ) .into() , ( c"(flongtime == std::chrono::duration<long double, std::ratio<3600,1>>(1.0L) + std::chrono::duration<long double, std::ratio<60,1>>(30.0L))" .as_ptr() ) .into() , ] ) )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -480,60 +369,34 @@ pub unsafe fn test03_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"values.cc" .as_ptr() ) .into() , ( 53_() ) .into() , ( c"void test03()" .as_ptr() ) .into() , ( c"(flongtime == std::chrono::duration<long double, std::ratio<60,1>>(90.0L))" .as_ptr() ) .into() , ] ) )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut workday: () = (unsafe { operator_literal_h_22() });
+    let mut workday: () = (unsafe { unimplemented!()() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (55_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"workday == std::chrono::hours(8)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut fworkday: () = (unsafe { operator_literal_h_23(8_f64) });
+    let mut fworkday: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"values.cc" .as_ptr() ) .into() , ( 57_() ) .into() , ( c"void test03()" .as_ptr() ) .into() , ( c"(fworkday == std::chrono::duration<long double, std::ratio<3600,1>>(8.0L))" .as_ptr() ) .into() , ] ) )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut immediate: () = (unsafe { operator_literal_s_24() });
+    let mut immediate: () = (unsafe { unimplemented!()() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (59_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"immediate == std::chrono::seconds(0)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -542,38 +405,16 @@ pub unsafe fn test03_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (61_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"minute_ago == std::chrono::minutes(-1)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
-    let mut separated: () = (unsafe { operator_literal_s_25() });
+    let mut separated: () = (unsafe { unimplemented!()() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unimplemented!()) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"values.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"void test03()".as_ptr()).into(),
-                        (c"separated == std::chrono::seconds(1\'000\'000)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -585,100 +426,56 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test03_10() });
+    (unsafe { test03_9() });
     0
 }
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         };
-        this.pid_ = ((unsafe { getpid_26() }) as ::libc::pid_t);
-        this.sem_set_ =
-            (unsafe { semget_27(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+        this.pid_ = unimplemented!();
+        this.sem_set_ = unimplemented!();
         if ((this.sem_set_) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
+            unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_28(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
-        {
-            (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_29(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_10(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
-    (unsafe {
-        getrlimit_30(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_31(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
-    (unsafe {
-        getrlimit_30(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_31(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_30((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_31(
-            (__rlimit_resource_RLIMIT_AS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn set_file_limit_32(mut size: ()) {
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+pub unsafe fn set_file_limit_11(mut size: ()) {
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
-    (unsafe {
-        getrlimit_30(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_31(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn verify_demangle_33(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_12(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_34(
-            mangled,
-            std::ptr::null_mut(),
-            std::ptr::null_mut(),
-            (&mut status as *mut ()),
-        )
-    });
+    let mut demangled: *mut () = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
@@ -705,12 +502,12 @@ pub unsafe fn verify_demangle_33(mut mangled: *const (), mut wanted: *const ()) 
         });
     }
     let mut w: () = unimplemented!();
-    if unimplemented!() {
-        (unsafe { __throw_runtime_error_3(s) });
+    if !(unimplemented!()) {
+        unimplemented!();
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_35(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_13(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -728,19 +525,17 @@ pub unsafe fn run_tests_wrapped_locale_35(mut name: *const (), l: *const __gnu_t
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                (unsafe {
-                    __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_36(
+pub unsafe fn run_tests_wrapped_env_14(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -761,21 +556,21 @@ pub unsafe fn run_tests_wrapped_env_36(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
     pub val: (),
-    pub buf: *mut semid_ds,
+    pub buf: *mut (),
     pub array: *mut (),
 }
 impl Default for __gnu_test_semun {
@@ -788,28 +583,28 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_26() })) {
-            (unsafe { semctl_28(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unimplemented!())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_37(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not signal semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_37(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not wait for semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
-pub unsafe fn test_tm_38(
+pub unsafe fn test_tm_15(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -819,26 +614,26 @@ pub unsafe fn test_tm_38(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_39));
+) -> () {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).clone();
 }
-static mut tmp_39: std::cell::LazyCell<::libc::tm> =
-    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
+static mut tmp_16: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);
     std::cell::LazyCell::force(&*&raw const count__1);
     std::cell::LazyCell::force(&*&raw const throw_on__2);
-    std::cell::LazyCell::force(&*&raw const count__4);
-    std::cell::LazyCell::force(&*&raw const throw_on__5);
-    std::cell::LazyCell::force(&*&raw const _M_count_6);
-    std::cell::LazyCell::force(&*&raw const next_id__7);
+    std::cell::LazyCell::force(&*&raw const count__3);
+    std::cell::LazyCell::force(&*&raw const throw_on__4);
+    std::cell::LazyCell::force(&*&raw const _M_count_5);
+    std::cell::LazyCell::force(&*&raw const next_id__6);
 }

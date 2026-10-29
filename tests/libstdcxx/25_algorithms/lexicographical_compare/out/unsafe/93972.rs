@@ -82,7 +82,7 @@ impl __gnu_test_copy_constructor {
         if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__1))
             == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)))
         {
-            (unsafe { __throw_runtime_error_3(c"copy_constructor::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
@@ -98,22 +98,22 @@ impl __gnu_test_copy_constructor {
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)).postfix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__4))
-            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)).postfix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut count__3))
+            == (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)))
         {
-            (unsafe { __throw_runtime_error_3(c"assignment_operator::mark_call".as_ptr()) });
+            unimplemented!();
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__4)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
     }
     pub unsafe fn throw_on(mut count: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__5)) = count;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
 #[repr(C)]
@@ -121,13 +121,13 @@ impl __gnu_test_assignment_operator {
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
     pub unsafe fn count() -> () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6));
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)).postfix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_6)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
     }
 }
 #[repr(C)]
@@ -139,7 +139,7 @@ pub struct __gnu_test_copy_tracker {
 impl __gnu_test_copy_tracker {
     pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
         let mut id: () = id.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__7)).postfix_dec()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
         let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
@@ -193,12 +193,12 @@ impl __gnu_test_copy_tracker {
 impl std::cmp::Ord for __gnu_test_copy_tracker {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_8(
+            if operator_lt_7(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_8(
+            } else if operator_lt_7(
                 other as *const __gnu_test_copy_tracker,
                 self as *const __gnu_test_copy_tracker,
             ) {
@@ -217,7 +217,7 @@ impl std::cmp::PartialOrd for __gnu_test_copy_tracker {
 impl std::cmp::PartialEq for __gnu_test_copy_tracker {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_9(
+            operator_eq_8(
                 self as *const __gnu_test_copy_tracker,
                 other as *const __gnu_test_copy_tracker,
             )
@@ -235,14 +235,14 @@ impl Default for __gnu_test_copy_tracker {
         unsafe { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub unsafe fn operator_eq_9(
+pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
-pub unsafe fn operator_lt_8(
+pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
 ) -> () {
@@ -253,32 +253,21 @@ pub unsafe fn operator_lt_8(
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
     sem_set_: (),
-    pid_: ::libc::pid_t,
+    pid_: (),
 }
 impl __gnu_test_semaphore {}
-pub unsafe fn test01_10() {
+pub unsafe fn test01_9() {
     let mut i: [(); 1] = [-1_()];
     let mut j: [(); 1] = [1_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (34_()).into(),
-                        (c"void test01() [T = signed char]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -286,7 +275,7 @@ pub unsafe fn test01_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -294,19 +283,7 @@ pub unsafe fn test01_10() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (35_()).into(),
-                        (c"void test01() [T = signed char]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -314,22 +291,11 @@ pub unsafe fn test01_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (37_()).into(),
-                        (c"void test01() [T = signed char]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -337,7 +303,7 @@ pub unsafe fn test01_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -345,46 +311,23 @@ pub unsafe fn test01_10() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (38_()).into(),
-                        (c"void test01() [T = signed char]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test01_13() {
+pub unsafe fn test01_11() {
     let mut i: [(); 1] = [-1_()];
     let mut j: [(); 1] = [1_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (34_()).into(),
-                        (c"void test01() [T = int]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -392,7 +335,7 @@ pub unsafe fn test01_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -400,19 +343,7 @@ pub unsafe fn test01_13() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (35_()).into(),
-                        (c"void test01() [T = int]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -420,22 +351,11 @@ pub unsafe fn test01_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (37_()).into(),
-                        (c"void test01() [T = int]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -443,7 +363,7 @@ pub unsafe fn test01_13() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -451,46 +371,23 @@ pub unsafe fn test01_13() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (38_()).into(),
-                        (c"void test01() [T = int]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test02_14() {
+pub unsafe fn test02_12() {
     let mut i: [(); 1] = [-5_()];
     let mut j: [(); 2] = [-5_(), 3_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (48_()).into(),
-                        (c"void test02() [T = signed char]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -498,7 +395,7 @@ pub unsafe fn test02_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -506,19 +403,7 @@ pub unsafe fn test02_14() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (49_()).into(),
-                        (c"void test02() [T = signed char]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -526,22 +411,11 @@ pub unsafe fn test02_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (51_()).into(),
-                        (c"void test02() [T = signed char]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -549,7 +423,7 @@ pub unsafe fn test02_14() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -557,46 +431,23 @@ pub unsafe fn test02_14() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (52_()).into(),
-                        (c"void test02() [T = signed char]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test02_15() {
+pub unsafe fn test02_13() {
     let mut i: [(); 1] = [-5_()];
     let mut j: [(); 2] = [-5_(), 3_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (48_()).into(),
-                        (c"void test02() [T = int]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -604,7 +455,7 @@ pub unsafe fn test02_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -612,19 +463,7 @@ pub unsafe fn test02_15() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (49_()).into(),
-                        (c"void test02() [T = int]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -632,22 +471,11 @@ pub unsafe fn test02_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (51_()).into(),
-                        (c"void test02() [T = int]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -655,7 +483,7 @@ pub unsafe fn test02_15() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -663,46 +491,23 @@ pub unsafe fn test02_15() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (52_()).into(),
-                        (c"void test02() [T = int]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test03_16() {
+pub unsafe fn test03_14() {
     let mut i: [(); 1] = [-10_()];
     let mut j: [(); 2] = [-5_(), 3_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (62_()).into(),
-                        (c"void test03() [T = signed char]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -710,7 +515,7 @@ pub unsafe fn test03_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -718,19 +523,7 @@ pub unsafe fn test03_16() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"void test03() [T = signed char]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -738,22 +531,11 @@ pub unsafe fn test03_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (65_()).into(),
-                        (c"void test03() [T = signed char]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -761,7 +543,7 @@ pub unsafe fn test03_16() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -769,46 +551,23 @@ pub unsafe fn test03_16() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (66_()).into(),
-                        (c"void test03() [T = signed char]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test03_17() {
+pub unsafe fn test03_15() {
     let mut i: [(); 1] = [-10_()];
     let mut j: [(); 2] = [-5_(), 3_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (62_()).into(),
-                        (c"void test03() [T = int]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -816,7 +575,7 @@ pub unsafe fn test03_17() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -824,19 +583,7 @@ pub unsafe fn test03_17() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"void test03() [T = int]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -844,22 +591,11 @@ pub unsafe fn test03_17() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (65_()).into(),
-                        (c"void test03() [T = int]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -867,7 +603,7 @@ pub unsafe fn test03_17() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -875,46 +611,23 @@ pub unsafe fn test03_17() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (66_()).into(),
-                        (c"void test03() [T = int]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test04_18() {
+pub unsafe fn test04_16() {
     let mut i: [(); 1] = [-2_()];
     let mut j: [(); 2] = [-5_(), 3_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (76_()).into(),
-                        (c"void test04() [T = signed char]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -922,7 +635,7 @@ pub unsafe fn test04_18() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -930,19 +643,7 @@ pub unsafe fn test04_18() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (77_()).into(),
-                        (c"void test04() [T = signed char]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -950,22 +651,11 @@ pub unsafe fn test04_18() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (79_()).into(),
-                        (c"void test04() [T = signed char]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -973,7 +663,7 @@ pub unsafe fn test04_18() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -981,46 +671,23 @@ pub unsafe fn test04_18() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (80_()).into(),
-                        (c"void test04() [T = signed char]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test04_19() {
+pub unsafe fn test04_17() {
     let mut i: [(); 1] = [-2_()];
     let mut j: [(); 2] = [-5_(), 3_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (76_()).into(),
-                        (c"void test04() [T = int]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1028,7 +695,7 @@ pub unsafe fn test04_19() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -1036,19 +703,7 @@ pub unsafe fn test04_19() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (77_()).into(),
-                        (c"void test04() [T = int]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1056,22 +711,11 @@ pub unsafe fn test04_19() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (79_()).into(),
-                        (c"void test04() [T = int]".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1079,7 +723,7 @@ pub unsafe fn test04_19() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -1087,46 +731,23 @@ pub unsafe fn test04_19() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (80_()).into(),
-                        (c"void test04() [T = int]".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test05_20() {
+pub unsafe fn test05_18() {
     let mut i: [(); 1] = [1_()];
     let mut j: [(); 1] = [256_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (89_()).into(),
-                        (c"void test05()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1134,7 +755,7 @@ pub unsafe fn test05_20() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -1142,19 +763,7 @@ pub unsafe fn test05_20() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (90_()).into(),
-                        (c"void test05()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1162,22 +771,11 @@ pub unsafe fn test05_20() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (92_()).into(),
-                        (c"void test05()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1185,7 +783,7 @@ pub unsafe fn test05_20() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -1193,46 +791,23 @@ pub unsafe fn test05_20() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (93_()).into(),
-                        (c"void test05()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test06_21() {
+pub unsafe fn test06_19() {
     let mut i: [(); 2] = [100_(), 1_()];
     let mut j: [(); 1] = [100_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (102_()).into(),
-                        (c"void test06()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1240,7 +815,7 @@ pub unsafe fn test06_21() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -1248,19 +823,7 @@ pub unsafe fn test06_21() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (103_()).into(),
-                        (c"void test06()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1268,22 +831,11 @@ pub unsafe fn test06_21() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (105_()).into(),
-                        (c"void test06()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1291,7 +843,7 @@ pub unsafe fn test06_21() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -1299,46 +851,23 @@ pub unsafe fn test06_21() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (106_()).into(),
-                        (c"void test06()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test07_22() {
+pub unsafe fn test07_20() {
     let mut i: [(); 2] = [95_(), 1_()];
     let mut j: [(); 1] = [100_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (115_()).into(),
-                        (c"void test07()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1346,7 +875,7 @@ pub unsafe fn test07_22() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -1354,19 +883,7 @@ pub unsafe fn test07_22() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (116_()).into(),
-                        (c"void test07()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1374,22 +891,11 @@ pub unsafe fn test07_22() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (118_()).into(),
-                        (c"void test07()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1397,7 +903,7 @@ pub unsafe fn test07_22() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -1405,46 +911,23 @@ pub unsafe fn test07_22() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (119_()).into(),
-                        (c"void test07()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test08_23() {
+pub unsafe fn test08_21() {
     let mut i: [(); 2] = [112_(), 1_()];
     let mut j: [(); 1] = [87_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (128_()).into(),
-                        (c"void test08()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1452,7 +935,7 @@ pub unsafe fn test08_23() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -1460,19 +943,7 @@ pub unsafe fn test08_23() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (129_()).into(),
-                        (c"void test08()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1480,22 +951,11 @@ pub unsafe fn test08_23() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (131_()).into(),
-                        (c"void test08()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1503,7 +963,7 @@ pub unsafe fn test08_23() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -1511,46 +971,23 @@ pub unsafe fn test08_23() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (132_()).into(),
-                        (c"void test08()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test09_24() {
+pub unsafe fn test09_22() {
     let mut i: [(); 1] = [1_()];
     let mut j: [(); 1] = [100_()];
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i, &mut j, None, None, None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (141_()).into(),
-                        (c"void test09()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(i, j)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1558,7 +995,7 @@ pub unsafe fn test09_24() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut i,
                 &mut j,
                 unimplemented!(),
@@ -1566,19 +1003,7 @@ pub unsafe fn test09_24() {
                 None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (142_()).into(),
-                        (c"void test09()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(i, j, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1586,22 +1011,11 @@ pub unsafe fn test09_24() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j, &mut i, None, None, None,
             )
         })) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (144_()).into(),
-                        (c"void test09()".as_ptr()).into(),
-                        (c"!ranges::lexicographical_compare(j, i)".as_ptr()).into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1609,7 +1023,7 @@ pub unsafe fn test09_24() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_11))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut lexicographical_compare_10))(
                 &mut j,
                 &mut i,
                 unimplemented!(),
@@ -1617,19 +1031,7 @@ pub unsafe fn test09_24() {
                 None,
             )
         }) {
-            (unsafe {
-                __builtin_fprintf_12(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"93972.cc".as_ptr()).into(),
-                        (145_()).into(),
-                        (c"void test09()".as_ptr()).into(),
-                        (c"ranges::lexicographical_compare(j, i, ranges::greater{})".as_ptr())
-                            .into(),
-                    ]),
-                )
-            });
+            unimplemented!();
             unimplemented!();
         }
     }
@@ -1641,112 +1043,68 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test01_10() });
-    (unsafe { test01_13() });
-    (unsafe { test02_14() });
-    (unsafe { test02_15() });
-    (unsafe { test03_16() });
-    (unsafe { test03_17() });
-    (unsafe { test04_18() });
-    (unsafe { test04_19() });
-    (unsafe { test05_20() });
-    (unsafe { test06_21() });
-    (unsafe { test07_22() });
-    (unsafe { test08_23() });
-    (unsafe { test09_24() });
+    (unsafe { test01_9() });
+    (unsafe { test01_11() });
+    (unsafe { test02_12() });
+    (unsafe { test02_13() });
+    (unsafe { test03_14() });
+    (unsafe { test03_15() });
+    (unsafe { test04_16() });
+    (unsafe { test04_17() });
+    (unsafe { test05_18() });
+    (unsafe { test06_19() });
+    (unsafe { test07_20() });
+    (unsafe { test08_21() });
+    (unsafe { test09_22() });
     0
 }
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             sem_set_: unimplemented!(),
-            pid_: 0 as ::libc::pid_t,
+            pid_: unimplemented!(),
         };
-        this.pid_ = ((unsafe { getpid_25() }) as ::libc::pid_t);
-        this.sem_set_ =
-            (unsafe { semget_26(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+        this.pid_ = unimplemented!();
+        this.sem_set_ = unimplemented!();
         if ((this.sem_set_) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
+            unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_27(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
-        {
-            (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_28(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_23(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
-    (unsafe {
-        getrlimit_29(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_30(
-            (__rlimit_resource_RLIMIT_DATA as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
-    (unsafe {
-        getrlimit_29(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_30(
-            (__rlimit_resource___RLIMIT_RSS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_29((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_30(
-            (__rlimit_resource_RLIMIT_AS as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn set_file_limit_31(mut size: ()) {
-    let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
+pub unsafe fn set_file_limit_24(mut size: ()) {
+    let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
-    (unsafe {
-        getrlimit_29(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit),
-        )
-    });
+    unimplemented!();
     r.rlim_cur = limit;
-    (unsafe {
-        setrlimit_30(
-            (__rlimit_resource_RLIMIT_FSIZE as ()),
-            (&mut r as *mut rlimit).cast_const(),
-        )
-    });
+    unimplemented!();
 }
-pub unsafe fn verify_demangle_32(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_25(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_33(
-            mangled,
-            std::ptr::null_mut(),
-            std::ptr::null_mut(),
-            (&mut status as *mut ()),
-        )
-    });
+    let mut demangled: *mut () = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
@@ -1774,11 +1132,11 @@ pub unsafe fn verify_demangle_32(mut mangled: *const (), mut wanted: *const ()) 
     }
     let mut w: () = unimplemented!();
     if !(unimplemented!()) {
-        (unsafe { __throw_runtime_error_3(s) });
+        unimplemented!();
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_34(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_26(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -1796,19 +1154,17 @@ pub unsafe fn run_tests_wrapped_locale_34(mut name: *const (), l: *const __gnu_t
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
-                (unsafe {
-                    __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
-                });
+                unimplemented!();
                 unimplemented!();
             }
         }
     } else {
         let mut s: () = unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_35(
+pub unsafe fn run_tests_wrapped_env_27(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -1829,21 +1185,21 @@ pub unsafe fn run_tests_wrapped_env_35(
         let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { __throw_runtime_error_3(unimplemented!()) });
+        unimplemented!();
     }
 }
 pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
     pub val: (),
-    pub buf: *mut semid_ds,
+    pub buf: *mut (),
     pub array: *mut (),
 }
 impl Default for __gnu_test_semun {
@@ -1856,28 +1212,28 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_25() })) {
-            (unsafe { semctl_27(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unimplemented!())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_36(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not signal semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
-        let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_36(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
-            (unsafe { __throw_runtime_error_3(c"could not wait for semaphore".as_ptr()) });
+        let mut op: [(); 1] = [unimplemented!()];
+        if ((unimplemented!()) == (-1_())) {
+            unimplemented!();
         }
     }
 }
-pub unsafe fn test_tm_37(
+pub unsafe fn test_tm_28(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1887,26 +1243,26 @@ pub unsafe fn test_tm_37(
     mut wday: (),
     mut yday: (),
     mut isdst: (),
-) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_38));
+) -> () {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_29)).clone();
 }
-static mut tmp_38: std::cell::LazyCell<::libc::tm> =
-    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
+static mut tmp_29: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);
     std::cell::LazyCell::force(&*&raw const count__1);
     std::cell::LazyCell::force(&*&raw const throw_on__2);
-    std::cell::LazyCell::force(&*&raw const count__4);
-    std::cell::LazyCell::force(&*&raw const throw_on__5);
-    std::cell::LazyCell::force(&*&raw const _M_count_6);
-    std::cell::LazyCell::force(&*&raw const next_id__7);
+    std::cell::LazyCell::force(&*&raw const count__3);
+    std::cell::LazyCell::force(&*&raw const throw_on__4);
+    std::cell::LazyCell::force(&*&raw const _M_count_5);
+    std::cell::LazyCell::force(&*&raw const next_id__6);
 }

@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_constexpr_0() -> () {
     let mut io: () = unimplemented!();
-    let mut i: () = io.clone();
+    let mut i: () = unimplemented!();
     return true;
 }
 #[repr(C)]
@@ -58,7 +58,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut io: () = unimplemented!();
-        let mut i: () = io.clone();
+        let mut i: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(
             true,
@@ -67,7 +67,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut io: () = unimplemented!();
-        let mut i: () = io.clone();
+        let mut i: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(
             true,
@@ -77,7 +77,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut inf: () = unimplemented!();
         let mut io: () = unimplemented!();
-        let mut i: () = io.clone();
+        let mut i: () = unimplemented!();
         unimplemented!();
         let mut j: () = 0_();
         j = (*unimplemented!());

@@ -349,72 +349,6 @@ impl Default for test_allocator_void_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_MoveOnly__rebind_MoveOnly_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_MoveOnly__rebind_MoveOnly_ptr_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_MoveOnly__rebind_const_MoveOnly_ptr_ {}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_MoveOnly_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_MoveOnly_ {}
-impl Default for test_allocator_MoveOnly_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_MoveOnly_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_MoveOnly_ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_MoveOnly_ptr_ {}
-impl Default for test_allocator_MoveOnly_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_MoveOnly_ptr_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_const_MoveOnly_ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_const_MoveOnly_ptr_ {}
-impl Default for test_allocator_const_MoveOnly_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_const_MoveOnly_ptr_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct other_allocator_MoveOnly_ {
     data_: (),
@@ -439,21 +373,6 @@ impl Default for other_allocator_MoveOnly_ptr_ {
     fn default() -> Self {
         unsafe {
             other_allocator_MoveOnly_ptr_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_const_MoveOnly_ptr_ {
-    data_: (),
-}
-impl other_allocator_const_MoveOnly_ptr_ {}
-impl Default for other_allocator_const_MoveOnly_ptr_ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_const_MoveOnly_ptr_ {
                 data_: unimplemented!(),
             }
         }
@@ -493,10 +412,6 @@ impl some_alloc_MoveOnly_ {}
 #[derive(FnPtrArg, Default)]
 pub struct some_alloc_MoveOnly_ptr_ {}
 impl some_alloc_MoveOnly_ptr_ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc_const_MoveOnly_ptr_ {}
-impl some_alloc_const_MoveOnly_ptr_ {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -513,12 +428,6 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    {
-        const _: () = assert!(true, "std::is_nothrow_default_constructible<C>::value");;
-    }
-    {
-        const _: () = assert!(true, "std::is_nothrow_default_constructible<C>::value");;
-    }
     {
         const _: () = assert!(true, "!std::is_nothrow_default_constructible<C>::value");;
     }

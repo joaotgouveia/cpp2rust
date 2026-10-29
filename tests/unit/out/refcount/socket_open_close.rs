@@ -10,36 +10,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut s: i32 = {
-        let __family = match libc::AF_INET {
-            ::libc::AF_INET => nix::sys::socket::AddressFamily::Inet,
-            ::libc::AF_INET6 => nix::sys::socket::AddressFamily::Inet6,
-            ::libc::AF_UNIX => nix::sys::socket::AddressFamily::Unix,
-            __d => panic!("socket: unsupported domain {__d}"),
-        };
-        let __flags = nix::sys::socket::SockFlag::from_bits_truncate(libc::SOCK_STREAM);
-        let __ty = match libc::SOCK_STREAM & !nix::sys::socket::SockFlag::all().bits() {
-            ::libc::SOCK_STREAM => nix::sys::socket::SockType::Stream,
-            ::libc::SOCK_DGRAM => nix::sys::socket::SockType::Datagram,
-            __t => panic!("socket: unsupported type {__t}"),
-        };
-        let __proto = match 0 {
-            0 => None,
-            ::libc::IPPROTO_TCP => Some(nix::sys::socket::SockProtocol::Tcp),
-            ::libc::IPPROTO_UDP => Some(nix::sys::socket::SockProtocol::Udp),
-            __p => panic!("socket: unsupported protocol {__p}"),
-        };
-        match nix::sys::socket::socket(__family, __ty, __flags, __proto) {
-            Ok(__ofd) => FdRegistry::register(__ofd),
-            Err(__e) => {
-                libcc2rs::cpp2rust_errno().write(__e as i32);
-                -1
-            }
-        }
-    };
-    assert!((((s >= 0) as i32) != 0));
-    assert!((((FdRegistry::close(s) == 0) as i32) != 0));
-    return 0;
+fn main_0() -> () {
+    let mut s: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

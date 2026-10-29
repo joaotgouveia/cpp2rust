@@ -30,6 +30,8 @@ pub fn test01_0() {
         true,
         "std::is_same<CIterTraits::reference, const double&>::value"
     );;
+    const _: () = assert!(true, "std::contiguous_iterator<Iter>");;
+    const _: () = assert!(true, "std::contiguous_iterator<CIter>");;
 }
 pub fn test02_1() {
     let va: Value<()> = Rc::new(RefCell::new(unimplemented!()));

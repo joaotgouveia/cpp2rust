@@ -43,21 +43,6 @@ pub struct min_pointer_long__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<()>,
 }
 impl min_pointer_long__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_4(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
-pub fn operator_ne_5(
-    mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !({
-        let _x: min_pointer_void__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_4(_x, y)
-    });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -66,17 +51,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    fn eq(&self, other: &Self) -> bool {
-        { operator_eq_4(self.clone(), other.clone()) }
-    }
-}
-impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_long_ {}
 thread_local!(
-    pub static t1_6: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    pub static t1_4: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
         1_(),
         2_(),
@@ -88,7 +67,7 @@ thread_local!(
     ])));
 );
 thread_local!(
-    pub static t2_7: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    pub static t2_5: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         10_(),
         11_(),
         12_(),
@@ -98,16 +77,16 @@ thread_local!(
     ])));
 );
 thread_local!(
-    pub static size_t1_8: Value<()> = Rc::new(RefCell::new(
+    pub static size_t1_6: Value<()> = Rc::new(RefCell::new(
         ((unimplemented!() - unimplemented!()) as () as ()),
     ));
 );
 thread_local!(
-    pub static size_t2_9: Value<()> = Rc::new(RefCell::new(
+    pub static size_t2_7: Value<()> = Rc::new(RefCell::new(
         ((unimplemented!() - unimplemented!()) as () as ()),
     ));
 );
-pub fn testd_10(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
+pub fn testd_8(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n1: () = 0_();
     'loop_: while (n1 < p) {
@@ -125,7 +104,7 @@ pub fn testd_10(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             unimplemented!()
         };
     }
-    'loop_: while (n1 < size_t1_8.with(|rc| *rc.borrow())) {
+    'loop_: while (n1 < size_t1_6.with(|rc| *rc.borrow())) {
         unimplemented!();
         {
             n1.prefix_inc();
@@ -134,7 +113,7 @@ pub fn testd_10(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     }
     unimplemented!();
 }
-pub fn testd_11(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
+pub fn testd_9(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n1: () = 0_();
     'loop_: while (n1 < p) {
@@ -152,7 +131,7 @@ pub fn testd_11(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             unimplemented!()
         };
     }
-    'loop_: while (n1 < size_t1_8.with(|rc| *rc.borrow())) {
+    'loop_: while (n1 < size_t1_6.with(|rc| *rc.borrow())) {
         unimplemented!();
         {
             n1.prefix_inc();
@@ -161,7 +140,7 @@ pub fn testd_11(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     }
     unimplemented!();
 }
-pub fn tests_12(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
+pub fn tests_10(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n: () = 0_();
     let mut d: () = if (l > (f + 1_())) {
@@ -171,7 +150,7 @@ pub fn tests_12(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     };
     if (d == 0_()) || (p == f) {
         n = 0_();
-        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_6.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -204,7 +183,7 @@ pub fn tests_12(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             };
         }
         n = (l - 1_());
-        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_6.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -237,7 +216,7 @@ pub fn tests_12(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             };
         }
         n = p;
-        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_6.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -247,7 +226,7 @@ pub fn tests_12(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     }
     unimplemented!();
 }
-pub fn tests_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
+pub fn tests_11(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n: () = 0_();
     let mut d: () = if (l > (f + 1_())) {
@@ -257,7 +236,7 @@ pub fn tests_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     };
     if (d == 0_()) || (p == f) {
         n = 0_();
-        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_6.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -290,7 +269,7 @@ pub fn tests_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             };
         }
         n = (l - 1_());
-        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_6.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -323,7 +302,7 @@ pub fn tests_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             };
         }
         n = p;
-        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_6.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -333,18 +312,18 @@ pub fn tests_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     }
     unimplemented!();
 }
-pub fn test_14() -> () {
+pub fn test_12() -> () {
     {
         let mut f: () = 0_();
-        'loop_: while (f <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
+        'loop_: while (f <= (size_t2_7.with(|rc| *rc.borrow()) + 1_())) {
             let mut l: () = f;
-            'loop_: while (l <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
+            'loop_: while (l <= (size_t2_7.with(|rc| *rc.borrow()) + 1_())) {
                 let mut p: () = 0_();
-                'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
+                'loop_: while (p <= size_t1_6.with(|rc| *rc.borrow())) {
                     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
-                    ({ testd_10(c1.as_pointer(), p, f, l) });
+                    ({ testd_8(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 l.prefix_inc();
@@ -352,21 +331,21 @@ pub fn test_14() -> () {
             f.prefix_inc();
         }
         let mut f: () = 0_();
-        'loop_: while (f <= (size_t1_8.with(|rc| *rc.borrow()) + 1_())) {
+        'loop_: while (f <= (size_t1_6.with(|rc| *rc.borrow()) + 1_())) {
             let mut l: () = f;
-            'loop_: while (l <= size_t1_8.with(|rc| *rc.borrow())) {
+            'loop_: while (l <= size_t1_6.with(|rc| *rc.borrow())) {
                 let mut p: () = 0_();
                 'loop_: while (p <= f) {
                     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
-                    ({ tests_12(c1.as_pointer(), p, f, l) });
+                    ({ tests_10(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 let mut p: () = l;
-                'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
+                'loop_: while (p <= size_t1_6.with(|rc| *rc.borrow())) {
                     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
-                    ({ tests_12(c1.as_pointer(), p, f, l) });
+                    ({ tests_10(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 l.prefix_inc();
@@ -376,15 +355,15 @@ pub fn test_14() -> () {
     }
     {
         let mut f: () = 0_();
-        'loop_: while (f <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
+        'loop_: while (f <= (size_t2_7.with(|rc| *rc.borrow()) + 1_())) {
             let mut l: () = f;
-            'loop_: while (l <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
+            'loop_: while (l <= (size_t2_7.with(|rc| *rc.borrow()) + 1_())) {
                 let mut p: () = 0_();
-                'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
+                'loop_: while (p <= size_t1_6.with(|rc| *rc.borrow())) {
                     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
-                    ({ testd_11(c1.as_pointer(), p, f, l) });
+                    ({ testd_9(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 l.prefix_inc();
@@ -392,21 +371,21 @@ pub fn test_14() -> () {
             f.prefix_inc();
         }
         let mut f: () = 0_();
-        'loop_: while (f <= (size_t1_8.with(|rc| *rc.borrow()) + 1_())) {
+        'loop_: while (f <= (size_t1_6.with(|rc| *rc.borrow()) + 1_())) {
             let mut l: () = f;
-            'loop_: while (l <= size_t1_8.with(|rc| *rc.borrow())) {
+            'loop_: while (l <= size_t1_6.with(|rc| *rc.borrow())) {
                 let mut p: () = 0_();
                 'loop_: while (p <= f) {
                     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
-                    ({ tests_13(c1.as_pointer(), p, f, l) });
+                    ({ tests_11(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 let mut p: () = l;
-                'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
+                'loop_: while (p <= size_t1_6.with(|rc| *rc.borrow())) {
                     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
-                    ({ tests_13(c1.as_pointer(), p, f, l) });
+                    ({ tests_11(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 l.prefix_inc();
@@ -526,8 +505,8 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_1.with(|_| ());
     let _ = dealloc_count_2.with(|_| ());
     let _ = disable_default_constructor_3.with(|_| ());
-    let _ = t1_6.with(|_| ());
-    let _ = t2_7.with(|_| ());
-    let _ = size_t1_8.with(|_| ());
-    let _ = size_t2_9.with(|_| ());
+    let _ = t1_4.with(|_| ());
+    let _ = t2_5.with(|_| ());
+    let _ = size_t1_6.with(|_| ());
+    let _ = size_t2_7.with(|_| ());
 }

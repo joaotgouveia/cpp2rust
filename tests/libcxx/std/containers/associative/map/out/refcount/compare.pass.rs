@@ -14,44 +14,17 @@ impl Key {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Key {}
-impl std::cmp::Ord for Key {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            if KeyImpl::operator_lt(
-                &Rc::new(RefCell::new(Key {})).as_pointer(),
-                Rc::new(RefCell::new(Key {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Less
-            } else if KeyImpl::operator_lt(
-                &Rc::new(RefCell::new(Key {})).as_pointer(),
-                Rc::new(RefCell::new(Key {})).as_pointer(),
-            ) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        }
+impl CppLess for Key {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        KeyImpl::operator_lt(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::PartialOrd for Key {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for Key {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        !(KeyImpl::operator_lt(__lhs, __rhs.clone()))
+            && !(KeyImpl::operator_lt(__rhs, __lhs.clone()))
     }
 }
-impl std::cmp::PartialEq for Key {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            !(KeyImpl::operator_lt(
-                &Rc::new(RefCell::new(Key {})).as_pointer(),
-                Rc::new(RefCell::new(Key {})).as_pointer(),
-            )) && !(KeyImpl::operator_lt(
-                &Rc::new(RefCell::new(Key {})).as_pointer(),
-                Rc::new(RefCell::new(Key {})).as_pointer(),
-            ))
-        }
-    }
-}
-impl std::cmp::Eq for Key {}
 pub fn test_0() -> () {
     {
         let m_empty: Value<()> = Rc::new(RefCell::new(unimplemented!()));

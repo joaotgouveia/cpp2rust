@@ -7,12 +7,30 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct A {
     pub data: (),
     pub m: (),
     pub it: (),
     pub cit: (),
+}
+impl A {
+    pub unsafe fn move_from(_a0: *mut A) -> Self {
+        let mut this = Self {
+            data: (*_a0).data,
+            m: unimplemented!(),
+            it: (*_a0).it,
+            cit: (*_a0).cit,
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut A) -> *mut A {
+        self.data = (*_a0).data;
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        return &mut (*(self as *mut A));
+    }
 }
 impl std::cmp::Ord for A {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {

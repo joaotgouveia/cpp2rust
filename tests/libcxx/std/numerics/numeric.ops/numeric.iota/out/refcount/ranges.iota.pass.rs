@@ -97,7 +97,7 @@ pub fn swallow_1(mut _a0: (), mut _a1: (), mut _a2: (), mut _a3: (), mut _a4: ()
 pub fn base_2(i: Ptr<cpp17_output_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
@@ -110,7 +110,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub fn new(mut it: Ptr<()>) -> Self {
         Self {
-            it_: (unimplemented!().read()),
+            it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -128,7 +128,7 @@ const _: () = assert!(
 pub fn base_3(i: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
@@ -156,7 +156,7 @@ const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn base_4(i: Ptr<forward_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct forward_iterator_int_ptr_ {
     #[offset(0)]
@@ -183,7 +183,7 @@ impl forward_iterator_int_ptr_ {
 pub fn base_5(i: Ptr<bidirectional_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct bidirectional_iterator_int_ptr_ {
     #[offset(0)]
@@ -210,7 +210,7 @@ impl bidirectional_iterator_int_ptr_ {
 pub fn base_6(i: Ptr<random_access_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -234,7 +234,7 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
@@ -244,7 +244,14 @@ pub struct cpp20_random_access_iterator_int_ptr_ {
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
-impl cpp20_random_access_iterator_int_ptr_ {}
+impl cpp20_random_access_iterator_int_ptr_ {
+    pub fn move_from(_a0: Ptr<cpp20_random_access_iterator_int_ptr_>) -> Self {
+        Self {
+            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
+        }
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
@@ -252,7 +259,7 @@ const _: () = assert!(
 pub fn base_7(i: Ptr<contiguous_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_int_ptr_ {
     #[offset(0)]
@@ -540,23 +547,11 @@ pub struct forward_sized_iterator_int_ptr_ {
     pub it_: Ptr<()>,
 }
 impl forward_sized_iterator_int_ptr_ {}
-impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_12(
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for forward_sized_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_12(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::Eq for forward_sized_iterator_int_ptr_ {}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -595,7 +590,7 @@ pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return unimplemented!();
+    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
 pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
@@ -643,52 +638,16 @@ impl adl_Iterator {
         });
     }
 }
-impl std::cmp::Ord for adl_Iterator {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            operator_cmp_18(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for adl_Iterator {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_cmp_18(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for adl_Iterator {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for adl_Iterator {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        operator_eq_17(__lhs.clone(), __rhs.clone())
     }
 }
-impl std::cmp::PartialEq for adl_Iterator {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            operator_eq_17(
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: self.ptr_.clone(),
-                    iter_moves_: self.iter_moves_.clone(),
-                    iter_swaps_: self.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(adl_Iterator {
-                    ptr_: other.ptr_.clone(),
-                    iter_moves_: other.iter_moves_.clone(),
-                    iter_swaps_: other.iter_swaps_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
-    }
-}
-impl std::cmp::Eq for adl_Iterator {}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -708,44 +667,17 @@ pub struct rvalue_iterator_int_ptr_ {
     it_: Ptr<Ptr<()>>,
 }
 impl rvalue_iterator_int_ptr_ {}
-impl std::cmp::Ord for rvalue_iterator_int_ptr_ {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppLess for rvalue_iterator_int_ptr_ {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for rvalue_iterator_int_ptr_ {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for rvalue_iterator_int_ptr_ {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        rvalue_iterator_int_ptr_Impl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            rvalue_iterator_int_ptr_Impl::operator_cmp(
-                &Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: self.it_.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(rvalue_iterator_int_ptr_ {
-                    it_: other.it_.clone(),
-                }))
-                .as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -902,17 +834,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardIteratorNotDerivedFrom {}
-impl std::cmp::PartialEq for ForwardIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            ForwardIteratorNotDerivedFromImpl::operator_eq(
-                &Rc::new(RefCell::new(ForwardIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(ForwardIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppEq for ForwardIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        ForwardIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for ForwardIteratorNotDerivedFrom {}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(true, "std::incrementable<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(
@@ -926,17 +852,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardIteratorNotIncrementable {}
-impl std::cmp::PartialEq for ForwardIteratorNotIncrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            ForwardIteratorNotIncrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(ForwardIteratorNotIncrementable {})).as_pointer(),
-                Rc::new(RefCell::new(ForwardIteratorNotIncrementable {})).as_pointer(),
-            )
-        }
+impl CppEq for ForwardIteratorNotIncrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        ForwardIteratorNotIncrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for ForwardIteratorNotIncrementable {}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotIncrementable>");
 const _: () = assert!(
     !(false),
@@ -953,17 +873,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BidirectionalIteratorNotDerivedFrom {}
-impl std::cmp::PartialEq for BidirectionalIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            BidirectionalIteratorNotDerivedFromImpl::operator_eq(
-                &Rc::new(RefCell::new(BidirectionalIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(BidirectionalIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppEq for BidirectionalIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        BidirectionalIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for BidirectionalIteratorNotDerivedFrom {}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDerivedFrom>"
@@ -979,17 +893,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BidirectionalIteratorNotDecrementable {}
-impl std::cmp::PartialEq for BidirectionalIteratorNotDecrementable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            BidirectionalIteratorNotDecrementableImpl::operator_eq(
-                &Rc::new(RefCell::new(BidirectionalIteratorNotDecrementable {})).as_pointer(),
-                Rc::new(RefCell::new(BidirectionalIteratorNotDecrementable {})).as_pointer(),
-            )
-        }
+impl CppEq for BidirectionalIteratorNotDecrementable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        BidirectionalIteratorNotDecrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for BidirectionalIteratorNotDecrementable {}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDecrementable>"
@@ -1017,17 +925,11 @@ pub struct PermutableNotSwappable_NotSwappable {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PermutableNotSwappable {}
-impl std::cmp::PartialEq for PermutableNotSwappable {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            PermutableNotSwappableImpl::operator_eq(
-                &Rc::new(RefCell::new(PermutableNotSwappable {})).as_pointer(),
-                Rc::new(RefCell::new(PermutableNotSwappable {})).as_pointer(),
-            )
-        }
+impl CppEq for PermutableNotSwappable {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        PermutableNotSwappableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for PermutableNotSwappable {}
 const _: () = assert!(true, "std::input_iterator<PermutableNotSwappable>");
 const _: () = assert!(true, "std::forward_iterator<PermutableNotSwappable>");
 const _: () = assert!(!(false), "!std::permutable<PermutableNotSwappable>");
@@ -1083,32 +985,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorNotDerivedFrom {}
-impl std::cmp::Ord for RandomAccessIteratorNotDerivedFrom {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorNotDerivedFromImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorNotDerivedFrom {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorNotDerivedFrom {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorNotDerivedFrom {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorNotDerivedFrom {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorNotDerivedFromImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorNotDerivedFrom {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorNotDerivedFrom {}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorNotDerivedFrom>"
@@ -1120,32 +1008,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorBadIndex {}
-impl std::cmp::Ord for RandomAccessIteratorBadIndex {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorBadIndexImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorBadIndex {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadIndexImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorBadIndex {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorBadIndex {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadIndexImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorBadIndex {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorBadIndexImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadIndex {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorBadIndex {}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorBadIndex>"
@@ -1157,32 +1031,18 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RandomAccessIteratorBadDifferenceType {}
-impl std::cmp::Ord for RandomAccessIteratorBadDifferenceType {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        {
-            RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-            )
-        }
+impl CppLess for RandomAccessIteratorBadDifferenceType {
+    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Less
     }
 }
-impl std::cmp::PartialOrd for RandomAccessIteratorBadDifferenceType {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.cmp(other))
+impl CppEq for RandomAccessIteratorBadDifferenceType {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(__lhs, __rhs.clone())
+            == std::cmp::Ordering::Equal
     }
 }
-impl std::cmp::PartialEq for RandomAccessIteratorBadDifferenceType {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            RandomAccessIteratorBadDifferenceTypeImpl::operator_cmp(
-                &Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-                Rc::new(RefCell::new(RandomAccessIteratorBadDifferenceType {})).as_pointer(),
-            ) == std::cmp::Ordering::Equal
-        }
-    }
-}
-impl std::cmp::Eq for RandomAccessIteratorBadDifferenceType {}
 const _: () = assert!(true, "std::regular<RandomAccessIteratorBadDifferenceType>");
 const _: () = assert!(
     !(false),
@@ -1238,23 +1098,11 @@ impl DangerousCopyAssign {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl std::cmp::PartialEq for DangerousCopyAssign {
-    fn eq(&self, other: &Self) -> bool {
-        {
-            DangerousCopyAssignImpl::operator_eq(
-                &Rc::new(RefCell::new(DangerousCopyAssign {
-                    val: self.val.clone(),
-                }))
-                .as_pointer(),
-                Rc::new(RefCell::new(DangerousCopyAssign {
-                    val: other.val.clone(),
-                }))
-                .as_pointer(),
-            )
-        }
+impl CppEq for DangerousCopyAssign {
+    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
+        DangerousCopyAssignImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
-impl std::cmp::Eq for DangerousCopyAssign {}
 impl Clone for DangerousCopyAssign {
     fn clone(&self) -> Self {
         let __src: Value<DangerousCopyAssign> = Rc::new(RefCell::new(DangerousCopyAssign {
@@ -1276,11 +1124,11 @@ pub fn test_result_19(input: (), mut starting_value: (), expected: ()) {
         }));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: Ptr<()> = (unimplemented!().read());
+                let ___first: Ptr<()> = (in_begin).clone();
                 let ___value: () = starting_value;
                 (*iota_20.with(Value::clone).borrow_mut())(
                     ___first,
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    (*in_end.borrow()).clone(),
                     ___value,
                 )
             }),
@@ -1319,11 +1167,11 @@ pub fn test_result_21(input: (), mut starting_value: (), expected: ()) {
         }));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: Ptr<()> = (unimplemented!().read());
+                let ___first: Ptr<()> = (in_begin).clone();
                 let ___value: () = starting_value;
                 (*iota_20.with(Value::clone).borrow_mut())(
                     ___first,
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    (*in_end.borrow()).clone(),
                     ___value,
                 )
             }),
@@ -1362,11 +1210,11 @@ pub fn test_result_22(input: (), mut starting_value: (), expected: ()) {
         }));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: Ptr<()> = (unimplemented!().read());
+                let ___first: Ptr<()> = (in_begin).clone();
                 let ___value: () = starting_value;
                 (*iota_20.with(Value::clone).borrow_mut())(
                     ___first,
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    (*in_end.borrow()).clone(),
                     ___value,
                 )
             }),
@@ -1396,8 +1244,10 @@ pub fn test_result_23(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<contiguous_iterator_int_ptr_> =
+            Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_contiguous_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_6: Value<contiguous_iterator_int_ptr_> =
@@ -1409,8 +1259,8 @@ pub fn test_result_23(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    contiguous_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    contiguous_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1420,8 +1270,10 @@ pub fn test_result_23(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<contiguous_iterator_int_ptr_> =
+            Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_contiguous_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_7: Value<contiguous_iterator_int_ptr_> =
@@ -1443,8 +1295,10 @@ pub fn test_result_24(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<contiguous_iterator_int_ptr_> =
+            Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_contiguous_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_8: Value<contiguous_iterator_int_ptr_> =
@@ -1456,8 +1310,8 @@ pub fn test_result_24(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    contiguous_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    contiguous_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1467,8 +1321,10 @@ pub fn test_result_24(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<contiguous_iterator_int_ptr_> =
+            Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_contiguous_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_9: Value<contiguous_iterator_int_ptr_> =
@@ -1490,8 +1346,10 @@ pub fn test_result_25(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<contiguous_iterator_int_ptr_> =
+            Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_contiguous_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_10: Value<contiguous_iterator_int_ptr_> =
@@ -1503,8 +1361,8 @@ pub fn test_result_25(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    contiguous_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    contiguous_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1514,8 +1372,10 @@ pub fn test_result_25(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: contiguous_iterator_int_ptr_ =
-            contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<contiguous_iterator_int_ptr_> =
+            Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_contiguous_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_11: Value<contiguous_iterator_int_ptr_> =
@@ -1537,8 +1397,10 @@ pub fn test_result_26(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<random_access_iterator_int_ptr_> =
+            Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_random_access_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_12: Value<random_access_iterator_int_ptr_> =
@@ -1550,8 +1412,8 @@ pub fn test_result_26(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    random_access_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    random_access_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1561,8 +1423,10 @@ pub fn test_result_26(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<random_access_iterator_int_ptr_> =
+            Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_random_access_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_13: Value<random_access_iterator_int_ptr_> =
@@ -1584,8 +1448,10 @@ pub fn test_result_27(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<random_access_iterator_int_ptr_> =
+            Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_random_access_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_14: Value<random_access_iterator_int_ptr_> =
@@ -1597,8 +1463,8 @@ pub fn test_result_27(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    random_access_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    random_access_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1608,8 +1474,10 @@ pub fn test_result_27(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<random_access_iterator_int_ptr_> =
+            Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_random_access_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_15: Value<random_access_iterator_int_ptr_> =
@@ -1631,8 +1499,10 @@ pub fn test_result_28(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<random_access_iterator_int_ptr_> =
+            Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_random_access_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_16: Value<random_access_iterator_int_ptr_> =
@@ -1644,8 +1514,8 @@ pub fn test_result_28(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    random_access_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    random_access_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1655,8 +1525,10 @@ pub fn test_result_28(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<random_access_iterator_int_ptr_> =
+            Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_random_access_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_17: Value<random_access_iterator_int_ptr_> =
@@ -1678,8 +1550,10 @@ pub fn test_result_29(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<bidirectional_iterator_int_ptr_> =
+            Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_bidirectional_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_18: Value<bidirectional_iterator_int_ptr_> =
@@ -1691,8 +1565,8 @@ pub fn test_result_29(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    bidirectional_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    bidirectional_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1702,8 +1576,10 @@ pub fn test_result_29(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<bidirectional_iterator_int_ptr_> =
+            Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_bidirectional_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_19: Value<bidirectional_iterator_int_ptr_> =
@@ -1725,8 +1601,10 @@ pub fn test_result_30(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<bidirectional_iterator_int_ptr_> =
+            Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_bidirectional_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_20: Value<bidirectional_iterator_int_ptr_> =
@@ -1738,8 +1616,8 @@ pub fn test_result_30(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    bidirectional_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    bidirectional_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1749,8 +1627,10 @@ pub fn test_result_30(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<bidirectional_iterator_int_ptr_> =
+            Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_bidirectional_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_21: Value<bidirectional_iterator_int_ptr_> =
@@ -1772,8 +1652,10 @@ pub fn test_result_31(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<bidirectional_iterator_int_ptr_> =
+            Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_bidirectional_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_22: Value<bidirectional_iterator_int_ptr_> =
@@ -1785,8 +1667,8 @@ pub fn test_result_31(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    bidirectional_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    bidirectional_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1796,8 +1678,10 @@ pub fn test_result_31(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<bidirectional_iterator_int_ptr_> =
+            Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_bidirectional_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_23: Value<bidirectional_iterator_int_ptr_> =
@@ -1819,8 +1703,10 @@ pub fn test_result_32(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<forward_iterator_int_ptr_> =
+            Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_forward_iterator_int_ptr__> = Rc::new(RefCell::new({
             let __tmp_24: Value<forward_iterator_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
@@ -1831,8 +1717,8 @@ pub fn test_result_32(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    forward_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    forward_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1842,8 +1728,10 @@ pub fn test_result_32(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<forward_iterator_int_ptr_> =
+            Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_forward_iterator_int_ptr__> = Rc::new(RefCell::new({
             let __tmp_25: Value<forward_iterator_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
@@ -1864,8 +1752,10 @@ pub fn test_result_33(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<forward_iterator_int_ptr_> =
+            Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_forward_iterator_int_ptr__> = Rc::new(RefCell::new({
             let __tmp_26: Value<forward_iterator_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
@@ -1876,8 +1766,8 @@ pub fn test_result_33(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    forward_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    forward_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1887,8 +1777,10 @@ pub fn test_result_33(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<forward_iterator_int_ptr_> =
+            Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_forward_iterator_int_ptr__> = Rc::new(RefCell::new({
             let __tmp_27: Value<forward_iterator_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
@@ -1909,8 +1801,10 @@ pub fn test_result_34(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<forward_iterator_int_ptr_> =
+            Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_forward_iterator_int_ptr__> = Rc::new(RefCell::new({
             let __tmp_28: Value<forward_iterator_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
@@ -1921,8 +1815,8 @@ pub fn test_result_34(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    forward_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    forward_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1932,8 +1826,10 @@ pub fn test_result_34(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ unimplemented!() });
+        let in_begin: Value<forward_iterator_int_ptr_> =
+            Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_forward_iterator_int_ptr__> = Rc::new(RefCell::new({
             let __tmp_29: Value<forward_iterator_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
@@ -1954,8 +1850,10 @@ pub fn test_result_35(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+            Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_30: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -1969,8 +1867,8 @@ pub fn test_result_35(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp17_input_iterator_int_ptr__int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -1980,8 +1878,10 @@ pub fn test_result_35(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+            Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_31: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -2005,8 +1905,10 @@ pub fn test_result_36(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+            Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_32: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -2020,8 +1922,8 @@ pub fn test_result_36(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp17_input_iterator_int_ptr__int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -2031,8 +1933,10 @@ pub fn test_result_36(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+            Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_33: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -2056,8 +1960,10 @@ pub fn test_result_37(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+            Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_34: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -2071,8 +1977,8 @@ pub fn test_result_37(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp17_input_iterator_int_ptr__int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp17_input_iterator_int_ptr__int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -2082,8 +1988,10 @@ pub fn test_result_37(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp17_input_iterator_int_ptr__int_ptr_ =
-            cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+            Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_35: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -2107,8 +2015,10 @@ pub fn test_result_38(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp17_output_iterator_int_ptr_ =
-            cpp17_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_36: Value<cpp17_output_iterator_int_ptr_> =
@@ -2120,8 +2030,8 @@ pub fn test_result_38(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp17_output_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp17_output_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -2131,8 +2041,10 @@ pub fn test_result_38(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp17_output_iterator_int_ptr_ =
-            cpp17_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_37: Value<cpp17_output_iterator_int_ptr_> =
@@ -2154,8 +2066,10 @@ pub fn test_result_39(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp17_output_iterator_int_ptr_ =
-            cpp17_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_38: Value<cpp17_output_iterator_int_ptr_> =
@@ -2167,8 +2081,8 @@ pub fn test_result_39(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp17_output_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp17_output_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -2178,8 +2092,10 @@ pub fn test_result_39(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp17_output_iterator_int_ptr_ =
-            cpp17_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_39: Value<cpp17_output_iterator_int_ptr_> =
@@ -2201,8 +2117,10 @@ pub fn test_result_40(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp17_output_iterator_int_ptr_ =
-            cpp17_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_40: Value<cpp17_output_iterator_int_ptr_> =
@@ -2214,8 +2132,8 @@ pub fn test_result_40(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp17_output_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp17_output_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -2225,8 +2143,10 @@ pub fn test_result_40(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp17_output_iterator_int_ptr_ =
-            cpp17_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp17_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp17_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_41: Value<cpp17_output_iterator_int_ptr_> =
@@ -2248,8 +2168,10 @@ pub fn test_result_41(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp20_output_iterator_int_ptr_ =
-            cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp20_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp20_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_42: Value<cpp20_output_iterator_int_ptr_> =
@@ -2261,8 +2183,8 @@ pub fn test_result_41(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp20_output_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp20_output_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -2272,8 +2194,10 @@ pub fn test_result_41(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp20_output_iterator_int_ptr_ =
-            cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp20_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp20_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_43: Value<cpp20_output_iterator_int_ptr_> =
@@ -2295,8 +2219,10 @@ pub fn test_result_42(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp20_output_iterator_int_ptr_ =
-            cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp20_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp20_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_44: Value<cpp20_output_iterator_int_ptr_> =
@@ -2308,8 +2234,8 @@ pub fn test_result_42(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp20_output_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp20_output_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -2319,8 +2245,10 @@ pub fn test_result_42(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp20_output_iterator_int_ptr_ =
-            cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp20_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp20_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_45: Value<cpp20_output_iterator_int_ptr_> =
@@ -2342,8 +2270,10 @@ pub fn test_result_43(input: (), mut starting_value: (), expected: ()) {
     let input: Value<()> = Rc::new(RefCell::new(input));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     {
-        let mut in_begin: cpp20_output_iterator_int_ptr_ =
-            cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp20_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp20_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_46: Value<cpp20_output_iterator_int_ptr_> =
@@ -2355,8 +2285,8 @@ pub fn test_result_43(input: (), mut starting_value: (), expected: ()) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*iota_20.with(Value::clone).borrow_mut())(
-                    cpp20_output_iterator_int_ptr_::move_from({ unimplemented!() }),
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    cpp20_output_iterator_int_ptr_::move_from({ in_begin.as_pointer() }),
+                    (*in_end.borrow()).clone(),
                     starting_value,
                 )
             }),
@@ -2366,8 +2296,10 @@ pub fn test_result_43(input: (), mut starting_value: (), expected: ()) {
         unimplemented!();
     }
     {
-        let mut in_begin: cpp20_output_iterator_int_ptr_ =
-            cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
+        let in_begin: Value<cpp20_output_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_::new({
+                unimplemented!()
+            })));
         let in_end: Value<sentinel_wrapper_cpp20_output_iterator_int_ptr__> =
             Rc::new(RefCell::new({
                 let __tmp_47: Value<cpp20_output_iterator_int_ptr_> =
@@ -2398,11 +2330,11 @@ pub fn test_result_44(input: (), mut starting_value: (), expected: ()) {
         }));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: Ptr<()> = (unimplemented!().read());
+                let ___first: Ptr<()> = (in_begin).clone();
                 let ___value: () = starting_value;
                 (*iota_20.with(Value::clone).borrow_mut())(
                     ___first,
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    (*in_end.borrow()).clone(),
                     ___value,
                 )
             }),
@@ -2441,11 +2373,11 @@ pub fn test_result_45(input: (), mut starting_value: (), expected: ()) {
         }));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: Ptr<()> = (unimplemented!().read());
+                let ___first: Ptr<()> = (in_begin).clone();
                 let ___value: () = starting_value;
                 (*iota_20.with(Value::clone).borrow_mut())(
                     ___first,
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    (*in_end.borrow()).clone(),
                     ___value,
                 )
             }),
@@ -2484,11 +2416,11 @@ pub fn test_result_46(input: (), mut starting_value: (), expected: ()) {
         }));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: Ptr<()> = (unimplemented!().read());
+                let ___first: Ptr<()> = (in_begin).clone();
                 let ___value: () = starting_value;
                 (*iota_20.with(Value::clone).borrow_mut())(
                     ___first,
-                    (*unimplemented!().upgrade().deref()).clone(),
+                    (*in_end.borrow()).clone(),
                     ___value,
                 )
             }),
@@ -3211,6 +3143,10 @@ pub trait bidirectional_iterator_int_ptr_Impl {
     fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_>;
 }
 impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3218,6 +3154,17 @@ impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<bidirectional_iterator_int_ptr_>,
+    ) -> Ptr<bidirectional_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3248,6 +3195,10 @@ pub trait contiguous_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_>;
 }
 impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3257,6 +3208,17 @@ impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<contiguous_iterator_int_ptr_>,
+    ) -> Ptr<contiguous_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -3264,6 +3226,10 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_>;
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3273,6 +3239,17 @@ impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
+    ) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -3280,6 +3257,10 @@ pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_>;
 }
 impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3287,6 +3268,17 @@ impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> 
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_output_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp17_output_iterator_int_ptr_>,
+    ) -> Ptr<cpp17_output_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3371,6 +3363,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> Ptr<()> {
@@ -3379,6 +3375,17 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<cpp20_random_access_iterator_int_ptr_>,
+    ) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
+        return (*self).clone();
+    }
 }
 pub trait forward_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> ();
@@ -3386,6 +3393,7 @@ pub trait forward_iterator_int_ptr_Impl {
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_int_ptr_ {
         unimplemented!()
     }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_>;
 }
 impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3393,6 +3401,14 @@ impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }
@@ -3429,6 +3445,10 @@ pub trait random_access_iterator_int_ptr_Impl {
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_int_ptr_> {
         unimplemented!()
     }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_>;
 }
 impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
@@ -3436,6 +3456,17 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn move_assign(
+        &self,
+        _a0: Ptr<random_access_iterator_int_ptr_>,
+    ) -> Ptr<random_access_iterator_int_ptr_> {
+        field!((*self), it_).write({ { (*_a0.upgrade().deref()).it_.clone() } });
+        ({
+            let _other: Ptr<support_double_move_tracker> = field_ptr!(_a0, tracker_);
+            support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
+        });
         return (*self).clone();
     }
 }

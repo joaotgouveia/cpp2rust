@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn f1_0() {
-    (unsafe { exit_1(0_()) });
+    unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

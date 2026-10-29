@@ -10,19 +10,19 @@ pub type anon_0 = ();
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem__FilesystemClock__std_chrono_duration_long_long__std_ratio_1__1000000000_____std_chrono_time_point_std_filesystem__FilesystemClock__std_chrono_duration_long_long__std_ratio_1__1000000000____
+pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_1__1000000000_____std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_1__1000000000____
 {}
 pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem__FilesystemClock__std_chrono_duration_long__std_ratio_60__1_____std_chrono_time_point_std_filesystem__FilesystemClock__std_chrono_duration_long__std_ratio_60__1____
+pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_60__1_____std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_60__1____
 {}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem__FilesystemClock__std_chrono_duration_long__std_ratio_3600__1_____std_chrono_time_point_std_filesystem__FilesystemClock__std_chrono_duration_long__std_ratio_3600__1____
+pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_3600__1_____std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_3600__1____
 {}
 pub fn test_3() {
     const _: () = assert!(true, "");;
