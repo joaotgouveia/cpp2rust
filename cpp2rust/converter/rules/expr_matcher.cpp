@@ -515,12 +515,12 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
   return explicit_args;
 }
 
-void checkCallable(clang::Sema &sema, const clang::Expr *use,
-                   clang::FunctionDecl *rule,
-                   llvm::ArrayRef<clang::Expr *> operands) {
+bool isCallable(clang::Sema &sema, const clang::Expr *use,
+                clang::FunctionDecl *rule,
+                llvm::ArrayRef<clang::Expr *> operands) {
   auto ref = llvm::dyn_cast<clang::DeclRefExpr>(RuleDecls::SkipImplicit(use));
   if (ref && llvm::isa<clang::FunctionDecl>(ref->getDecl())) {
-    return;
+    return true;
   }
   RuleDecls::Trial trial(sema);
   auto loc = use->getBeginLoc();
@@ -535,7 +535,13 @@ void checkCallable(clang::Sema &sema, const clang::Expr *use,
     sema.AddOverloadCandidate(rule, found, operands, set);
   }
   clang::OverloadCandidateSet::iterator best;
-  if (set.BestViableFunction(sema, loc, best) != clang::OR_Success) {
+  return set.BestViableFunction(sema, loc, best) == clang::OR_Success;
+}
+
+void checkCallable(clang::Sema &sema, const clang::Expr *use,
+                   clang::FunctionDecl *rule,
+                   llvm::ArrayRef<clang::Expr *> operands) {
+  if (!isCallable(sema, use, rule, operands)) {
     use->dump(llvm::errs(), sema.Context);
     rule->dump(llvm::errs());
     llvm::report_fatal_error("matched rule is not callable with the use");
@@ -618,8 +624,10 @@ MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
       !sameNamingClass(ctx, use, returned)) {
     return std::nullopt;
   }
-  checkCallable(sema, use, rule,
-                getOperands(ctx, use, rule->getNumParams()));
+  if (!isCallable(sema, use, rule,
+                  getOperands(ctx, use, rule->getNumParams()))) {
+    return std::nullopt;
+  }
   return llvm::ArrayRef<clang::TemplateArgument>();
 }
 
