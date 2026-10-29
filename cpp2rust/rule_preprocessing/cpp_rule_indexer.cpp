@@ -386,6 +386,11 @@ std::string DependentExprKey(const clang::Expr *expr) {
           (*lookup->decls_begin())->getUnderlyingDecl());
     }
   }
+  // a variable template (std::chrono::is_clock_v<T1>)
+  if (auto lookup = llvm::dyn_cast<clang::UnresolvedLookupExpr>(expr);
+      lookup && lookup->decls_begin() != lookup->decls_end()) {
+    return RulesLoader::DeclKey((*lookup->decls_begin())->getUnderlyingDecl());
+  }
   if (member && !member->isArrow() &&
       member->getBaseType()
           .getNonReferenceType()
