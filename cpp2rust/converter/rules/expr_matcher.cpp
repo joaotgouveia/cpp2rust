@@ -433,9 +433,33 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
                                    sema.Context.getCanonicalTagType(record));
 }
 
+// The rule's parameters from the types of the parameters its body passes to
+// the callee (T1 &a0, T2 &&a1 of std::exchange(a0, std::forward<T2>(a1)))
+// against those of the specialization the use calls (int &, short && of
+// exchange<int, short>).
+std::optional<std::vector<clang::TemplateArgument>>
+deduceFromParameters(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
+                     const clang::FunctionDecl *callee) {
+  auto &ctx = sema.Context;
+  llvm::SmallVector<clang::QualType, 4> pattern;
+  llvm::SmallVector<clang::QualType, 4> actual;
+  for (auto param : rule->getTemplatedDecl()->parameters()) {
+    pattern.push_back(param->getType());
+  }
+  for (auto param : callee->parameters()) {
+    actual.push_back(param->getType());
+  }
+  clang::FunctionProtoType::ExtProtoInfo info;
+  return RuleDecls::DeduceFromType(
+      sema, rule->getTemplateParameters(),
+      ctx.getFunctionType(ctx.VoidTy, pattern, info),
+      ctx.getFunctionType(ctx.VoidTy, actual, info));
+}
+
 // The rule's parameters from the arguments its body passes to the callee
 // (std::use_facet<T1>(a0)) against those of the specialization the use calls
-// (use_facet<collate<char>>).
+// (use_facet<collate<char>>), or, where the body writes none, from the
+// parameters it passes.
 std::optional<std::vector<clang::TemplateArgument>>
 deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
                  const clang::Expr *use) {
@@ -448,12 +472,15 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
     returned = call->getCallee()->IgnoreParenImpCasts();
   }
   llvm::ArrayRef<clang::TemplateArgumentLoc> written;
-  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned);
-      overload && overload->hasExplicitTemplateArgs()) {
-    written = overload->template_arguments();
-  } else if (auto ref = llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned);
-             ref && ref->hasExplicitTemplateArgs()) {
-    written = ref->template_arguments();
+  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned)) {
+    if (overload->hasExplicitTemplateArgs()) {
+      written = overload->template_arguments();
+    }
+  } else if (auto ref =
+                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned)) {
+    if (ref->hasExplicitTemplateArgs()) {
+      written = ref->template_arguments();
+    }
   } else {
     return std::nullopt;
   }
@@ -467,10 +494,14 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   llvm::ArrayRef<clang::TemplateArgument> actual;
   if (auto function = llvm::dyn_cast_or_null<clang::FunctionDecl>(used);
       function && function->getTemplateSpecializationArgs()) {
+    if (written.empty()) {
+      return deduceFromParameters(sema, rule, function);
+    }
     actual = function->getTemplateSpecializationArgs()->asArray();
   } else if (auto var =
                  llvm::dyn_cast_or_null<clang::VarTemplateSpecializationDecl>(
-                     used)) {
+                     used);
+             var && !written.empty()) {
     // a variable template (std::is_same_v<T1, T2> of is_same_v<int, int>)
     actual = var->getTemplateArgs().asArray();
   } else {

@@ -1251,7 +1251,7 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
 
   if (isAddrOf() && !ty->isReferenceType() && !IsPointerType(ctx_, ty)) {
     PushConversionKind push(*this, ConversionKind::FullRefCount);
-    StrCat(BoxValue(wrap(std::move(str))), AsPointerMethod(ty));
+    EmitFresh(BoxValue(wrap(std::move(str))) + AsPointerMethod(ty));
     return;
   }
 
