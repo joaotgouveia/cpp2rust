@@ -146,9 +146,13 @@ class TestContext:
         extra_cxxflags = list(getattr(test.config, "extra_cxxflags", []))
         if default_std := getattr(test.config, "dg_default_std", None):
             extra_cxxflags.append(f"-std=gnu++{dg_std(source_text, default_std)}")
-        extra_cxxflags += parse_additional_compile_flags(
+        test_cxxflags = parse_additional_compile_flags(
             source_text, test.config.available_features
         )
+        if force_std := getattr(test.config, "force_std", None):
+            test_cxxflags = [f for f in test_cxxflags if not f.startswith("-std=")]
+            test_cxxflags.append(f"-std=gnu++{force_std}")
+        extra_cxxflags += test_cxxflags
 
         return cls(
             cc_input=cc_input,
