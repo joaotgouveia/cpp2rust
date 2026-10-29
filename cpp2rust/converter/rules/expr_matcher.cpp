@@ -683,6 +683,14 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
     checkCallable(sema, use, rule->getTemplatedDecl(), operands);
     return specialization->getTemplateSpecializationArgs()->asArray();
   }
+  // a list constructing the return type matches its constructions only, not
+  // the conversion function sharing their key (atomic<T1>{std::move(a0)} and
+  // atomic<bool>::operator bool)
+  if (auto list =
+          llvm::dyn_cast<clang::InitListExpr>(RuleDecls::SkipImplicit(returned));
+      list && !list->getType()->isRecordType()) {
+    return std::nullopt;
+  }
   if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl ||
       !sameNamingClass(ctx, use, returned)) {
     return std::nullopt;
