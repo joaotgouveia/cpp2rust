@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -19,7 +19,7 @@ pub fn test1_0() {
 }
 pub fn test2_1() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

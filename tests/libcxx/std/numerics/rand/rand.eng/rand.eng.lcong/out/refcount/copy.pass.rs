@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -16,7 +16,7 @@ pub fn test1_0() {
 }
 pub fn test1_1() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -24,7 +24,7 @@ pub fn test1_1() {
 }
 pub fn test1_2() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -32,7 +32,7 @@ pub fn test1_2() {
 }
 pub fn test1_3() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -40,7 +40,7 @@ pub fn test1_3() {
 }
 pub fn test1_4() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -48,7 +48,7 @@ pub fn test1_4() {
 }
 pub fn test1_5() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -56,7 +56,7 @@ pub fn test1_5() {
 }
 pub fn test1_6() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -64,7 +64,7 @@ pub fn test1_6() {
 }
 pub fn test1_7() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -72,7 +72,7 @@ pub fn test1_7() {
 }
 pub fn test1_8() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -80,7 +80,7 @@ pub fn test1_8() {
 }
 pub fn test1_9() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -88,7 +88,7 @@ pub fn test1_9() {
 }
 pub fn test1_10() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -96,7 +96,7 @@ pub fn test1_10() {
 }
 pub fn test1_11() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -104,7 +104,7 @@ pub fn test1_11() {
 }
 pub fn test1_12() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -112,7 +112,7 @@ pub fn test1_12() {
 }
 pub fn test1_13() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -120,7 +120,7 @@ pub fn test1_13() {
 }
 pub fn test1_14() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -128,7 +128,7 @@ pub fn test1_14() {
 }
 pub fn test1_15() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -136,7 +136,7 @@ pub fn test1_15() {
 }
 pub fn test1_16() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -144,7 +144,7 @@ pub fn test1_16() {
 }
 pub fn test1_17() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -152,7 +152,7 @@ pub fn test1_17() {
 }
 pub fn test1_18() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -160,7 +160,7 @@ pub fn test1_18() {
 }
 pub fn test1_19() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -168,7 +168,7 @@ pub fn test1_19() {
 }
 pub fn test1_20() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -176,7 +176,7 @@ pub fn test1_20() {
 }
 pub fn test1_21() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -184,7 +184,7 @@ pub fn test1_21() {
 }
 pub fn test1_22() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -192,7 +192,7 @@ pub fn test1_22() {
 }
 pub fn test1_23() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -200,7 +200,7 @@ pub fn test1_23() {
 }
 pub fn test1_24() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -208,7 +208,7 @@ pub fn test1_24() {
 }
 pub fn test1_25() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -216,7 +216,7 @@ pub fn test1_25() {
 }
 pub fn test1_26() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -224,7 +224,7 @@ pub fn test1_26() {
 }
 pub fn test1_27() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -232,7 +232,7 @@ pub fn test1_27() {
 }
 pub fn test1_28() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -240,7 +240,7 @@ pub fn test1_28() {
 }
 pub fn test1_29() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -248,7 +248,7 @@ pub fn test1_29() {
 }
 pub fn test1_30() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -256,7 +256,7 @@ pub fn test1_30() {
 }
 pub fn test1_31() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -264,7 +264,7 @@ pub fn test1_31() {
 }
 pub fn test1_32() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -272,7 +272,7 @@ pub fn test1_32() {
 }
 pub fn test1_33() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -280,7 +280,7 @@ pub fn test1_33() {
 }
 pub fn test1_34() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -288,7 +288,7 @@ pub fn test1_34() {
 }
 pub fn test1_35() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -296,7 +296,7 @@ pub fn test1_35() {
 }
 pub fn test1_36() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -304,7 +304,7 @@ pub fn test1_36() {
 }
 pub fn test1_37() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -312,7 +312,7 @@ pub fn test1_37() {
 }
 pub fn test1_38() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -320,7 +320,7 @@ pub fn test1_38() {
 }
 pub fn test1_39() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -328,7 +328,7 @@ pub fn test1_39() {
 }
 pub fn test1_40() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -336,7 +336,7 @@ pub fn test1_40() {
 }
 pub fn test1_41() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -344,7 +344,7 @@ pub fn test1_41() {
 }
 pub fn test1_42() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -352,7 +352,7 @@ pub fn test1_42() {
 }
 pub fn test1_43() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -360,7 +360,7 @@ pub fn test1_43() {
 }
 pub fn test1_44() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -368,7 +368,7 @@ pub fn test1_44() {
 }
 pub fn test1_45() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -376,7 +376,7 @@ pub fn test1_45() {
 }
 pub fn test1_46() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -384,7 +384,7 @@ pub fn test1_46() {
 }
 pub fn test1_47() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -392,7 +392,7 @@ pub fn test1_47() {
 }
 pub fn test1_48() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -400,7 +400,7 @@ pub fn test1_48() {
 }
 pub fn test1_49() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -408,7 +408,7 @@ pub fn test1_49() {
 }
 pub fn test1_50() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -416,7 +416,7 @@ pub fn test1_50() {
 }
 pub fn test1_51() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -424,7 +424,7 @@ pub fn test1_51() {
 }
 pub fn test1_52() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -432,7 +432,7 @@ pub fn test1_52() {
 }
 pub fn test1_53() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -440,7 +440,7 @@ pub fn test1_53() {
 }
 pub fn test1_54() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -448,7 +448,7 @@ pub fn test1_54() {
 }
 pub fn test1_55() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -456,7 +456,7 @@ pub fn test1_55() {
 }
 pub fn test1_56() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -464,7 +464,7 @@ pub fn test1_56() {
 }
 pub fn test1_57() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -472,7 +472,7 @@ pub fn test1_57() {
 }
 pub fn test1_58() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -480,7 +480,7 @@ pub fn test1_58() {
 }
 pub fn test1_59() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -488,7 +488,7 @@ pub fn test1_59() {
 }
 pub fn test1_60() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -496,7 +496,7 @@ pub fn test1_60() {
 }
 pub fn test1_61() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -504,7 +504,7 @@ pub fn test1_61() {
 }
 pub fn test1_62() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -512,7 +512,7 @@ pub fn test1_62() {
 }
 pub fn test1_63() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -520,7 +520,7 @@ pub fn test1_63() {
 }
 pub fn test1_64() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -528,7 +528,7 @@ pub fn test1_64() {
 }
 pub fn test1_65() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -536,7 +536,7 @@ pub fn test1_65() {
 }
 pub fn test1_66() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -544,7 +544,7 @@ pub fn test1_66() {
 }
 pub fn test1_67() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -552,7 +552,7 @@ pub fn test1_67() {
 }
 pub fn test1_68() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -560,7 +560,7 @@ pub fn test1_68() {
 }
 pub fn test1_69() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -568,7 +568,7 @@ pub fn test1_69() {
 }
 pub fn test1_70() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -576,7 +576,7 @@ pub fn test1_70() {
 }
 pub fn test1_71() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -584,7 +584,7 @@ pub fn test1_71() {
 }
 pub fn test1_72() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -592,7 +592,7 @@ pub fn test1_72() {
 }
 pub fn test1_73() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -600,7 +600,7 @@ pub fn test1_73() {
 }
 pub fn test1_74() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -608,7 +608,7 @@ pub fn test1_74() {
 }
 pub fn test1_75() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -616,7 +616,7 @@ pub fn test1_75() {
 }
 pub fn test1_76() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -624,7 +624,7 @@ pub fn test1_76() {
 }
 pub fn test1_77() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -632,7 +632,7 @@ pub fn test1_77() {
 }
 pub fn test1_78() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -640,7 +640,7 @@ pub fn test1_78() {
 }
 pub fn test1_79() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e2: Value<()> = Rc::new(RefCell::new((*e1.borrow()).clone()));
     unimplemented!();
     &(unimplemented!());
     &(unimplemented!());

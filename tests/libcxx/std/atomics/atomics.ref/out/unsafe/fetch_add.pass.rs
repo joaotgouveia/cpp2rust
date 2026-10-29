@@ -879,17 +879,13 @@ impl TestFetchAdd_float_ {
             let mut x: () = 1_();
             let a: () = unimplemented!();
             {
-                let mut y: () =
-                    (unsafe { (a as std___atomic_ref_float__false__true_).fetch_add(2_(), None) });
+                let mut y: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
                 const _: () = assert!(true, "");;
             }
             {
-                let mut y: () = (unsafe {
-                    (a as std___atomic_ref_float__false__true_)
-                        .fetch_add(4_(), Some(unimplemented!()))
-                });
+                let mut y: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
                 const _: () = assert!(true, "");;
@@ -898,19 +894,13 @@ impl TestFetchAdd_float_ {
         {
             let mut fetch_add: FnPtr<fn(*const (), (), ())> = FnPtr::<fn(*const (), (), ())>::new(
                 |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        ((*x) as std___atomic_ref_float__false__true_)
-                            .fetch_add(((new_val) - (old_val)), Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             );
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_float__false__true_)
-                                .load(Some(unimplemented!()))
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_acquire_release_67(fetch_add.copy_from(), load.copy_from()) });
@@ -919,27 +909,19 @@ impl TestFetchAdd_float_ {
             let mut fetch_add_no_arg: FnPtr<fn(*const (), (), ())> =
                 FnPtr::<fn(*const (), (), ())>::new(
                     |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                        (unsafe {
-                            ((*x) as std___atomic_ref_float__false__true_)
-                                .fetch_add(((new_val) - (old_val)), None)
-                        });
+                        unimplemented!();
                     },
                 );
             let mut fetch_add_with_order: FnPtr<fn(*const (), (), ())> =
                 FnPtr::<fn(*const (), (), ())>::new(
                     |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                        (unsafe {
-                            ((*x) as std___atomic_ref_float__false__true_)
-                                .fetch_add(((new_val) - (old_val)), Some(unimplemented!()))
-                        });
+                        unimplemented!();
                     },
                 );
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_float__false__true_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_44(fetch_add_no_arg.copy_from(), load.copy_from()) });
@@ -956,17 +938,13 @@ impl TestFetchAdd_double_ {
             let mut x: () = 1_();
             let a: () = unimplemented!();
             {
-                let mut y: () =
-                    (unsafe { (a as std___atomic_ref_double__false__true_).fetch_add(2_(), None) });
+                let mut y: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
                 const _: () = assert!(true, "");;
             }
             {
-                let mut y: () = (unsafe {
-                    (a as std___atomic_ref_double__false__true_)
-                        .fetch_add(4_(), Some(unimplemented!()))
-                });
+                let mut y: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
                 const _: () = assert!(true, "");;
@@ -975,19 +953,13 @@ impl TestFetchAdd_double_ {
         {
             let mut fetch_add: FnPtr<fn(*const (), (), ())> = FnPtr::<fn(*const (), (), ())>::new(
                 |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        ((*x) as std___atomic_ref_double__false__true_)
-                            .fetch_add(((new_val) - (old_val)), Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             );
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_double__false__true_)
-                                .load(Some(unimplemented!()))
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_acquire_release_68(fetch_add.copy_from(), load.copy_from()) });
@@ -996,27 +968,19 @@ impl TestFetchAdd_double_ {
             let mut fetch_add_no_arg: FnPtr<fn(*const (), (), ())> =
                 FnPtr::<fn(*const (), (), ())>::new(
                     |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                        (unsafe {
-                            ((*x) as std___atomic_ref_double__false__true_)
-                                .fetch_add(((new_val) - (old_val)), None)
-                        });
+                        unimplemented!();
                     },
                 );
             let mut fetch_add_with_order: FnPtr<fn(*const (), (), ())> =
                 FnPtr::<fn(*const (), (), ())>::new(
                     |x: *const (), mut old_val: (), mut new_val: ()| unsafe {
-                        (unsafe {
-                            ((*x) as std___atomic_ref_double__false__true_)
-                                .fetch_add(((new_val) - (old_val)), Some(unimplemented!()))
-                        });
+                        unimplemented!();
                     },
                 );
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_double__false__true_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_46(fetch_add_no_arg.copy_from(), load.copy_from()) });
@@ -1965,10 +1929,7 @@ impl TestFetchAdd_int_ptr_ {
             let mut load: FnPtr<fn(*const ()) -> *mut ()> =
                 FnPtr::<fn(*const ()) -> *mut ()>::new(|x: *const ()| -> *mut () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_int_ptr__false__false_)
-                                .load(Some(unimplemented!()))
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_acquire_release_69(fetch_add.copy_from(), load.copy_from()) });
@@ -2003,9 +1964,7 @@ impl TestFetchAdd_int_ptr_ {
             let mut load: FnPtr<fn(*const ()) -> *mut ()> =
                 FnPtr::<fn(*const ()) -> *mut ()>::new(|x: *const ()| -> *mut () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_int_ptr__false__false_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_48(fetch_add_no_arg.copy_from(), load.copy_from()) });
@@ -2069,10 +2028,7 @@ impl TestFetchAdd_const_int_ptr_ {
             let mut load: FnPtr<fn(*const ()) -> *const ()> =
                 FnPtr::<fn(*const ()) -> *const ()>::new(|x: *const ()| -> *const () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_const_int_ptr__false__false_)
-                                .load(Some(unimplemented!()))
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_acquire_release_70(fetch_add.copy_from(), load.copy_from()) });
@@ -2107,9 +2063,7 @@ impl TestFetchAdd_const_int_ptr_ {
             let mut load: FnPtr<fn(*const ()) -> *const ()> =
                 FnPtr::<fn(*const ()) -> *const ()>::new(|x: *const ()| -> *const () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_const_int_ptr__false__false_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_50(fetch_add_no_arg.copy_from(), load.copy_from()) });

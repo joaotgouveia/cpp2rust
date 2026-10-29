@@ -936,8 +936,7 @@ pub fn check_always_lock_free_45(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () =
-            ({ ((*a.upgrade().deref()) as std___atomic_ref_float__false__true_).is_lock_free() });
+        let mut is_lock_free: () = unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -952,9 +951,7 @@ pub fn check_always_lock_free_47(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = ({
-            ((*a.upgrade().deref()) as std___atomic_ref_int_ptr__false__false_).is_lock_free()
-        });
+        let mut is_lock_free: () = unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -969,8 +966,7 @@ pub fn check_always_lock_free_49(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () =
-            ({ ((*a.upgrade().deref()) as std___atomic_ref_Empty__false__false_).is_lock_free() });
+        let mut is_lock_free: () = unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -985,8 +981,7 @@ pub fn check_always_lock_free_51(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () =
-            ({ ((*a.upgrade().deref()) as std___atomic_ref_OneInt__false__false_).is_lock_free() });
+        let mut is_lock_free: () = unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -995,9 +990,7 @@ pub fn check_always_lock_free_53(a: Ptr<()>) {
     let mut is_always_lock_free: () = is_always_lock_free_54.with(|rc| *rc.borrow());
     {}
     {
-        let mut is_lock_free: () = ({
-            ((*a.upgrade().deref()) as std___atomic_ref_IntArr2__false__false_).is_lock_free()
-        });
+        let mut is_lock_free: () = unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1048,9 +1041,7 @@ pub fn check_always_lock_free_67(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = ({
-            ((*a.upgrade().deref()) as std___atomic_ref_IntFloat__false__false_).is_lock_free()
-        });
+        let mut is_lock_free: () = unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "");;
@@ -1065,9 +1056,7 @@ pub fn check_always_lock_free_69(a: Ptr<()>) {
         }
     }
     {
-        let mut is_lock_free: () = ({
-            ((*a.upgrade().deref()) as std___atomic_ref_CharEnumClass__false__false_).is_lock_free()
-        });
+        let mut is_lock_free: () = unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "");;
