@@ -619,68 +619,6 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t23 = typename std::multimap<T1, T2, T3, T4>::iterator::difference_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::iterator f81() {
-  return typename std::multimap<T1, T2, T3, T4>::iterator();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::iterator
-f82(const typename std::multimap<T1, T2, T3, T4>::iterator &a0) {
-  return typename std::multimap<T1, T2, T3, T4>::iterator(a0);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::iterator &
-f83(typename std::multimap<T1, T2, T3, T4>::iterator &a0,
-    const typename std::multimap<T1, T2, T3, T4>::iterator &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::pointer_traits<
-    typename std::allocator_traits<T1>::pointer>::element_type &
-f84(const typename std::multimap<T1, T2, T3, T4>::iterator &a0) {
-  return a0.operator*();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::pointer_traits<
-    typename std::allocator_traits<T1>::pointer>::element_type *
-f85(const typename std::multimap<T1, T2, T3, T4>::iterator &a0) {
-  return a0.operator->();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::iterator &
-f86(typename std::multimap<T1, T2, T3, T4>::iterator &a0) {
-  return a0.operator++();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::iterator
-f87(typename std::multimap<T1, T2, T3, T4>::iterator &a0, int a1) {
-  return a0.operator++(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::iterator &
-f88(typename std::multimap<T1, T2, T3, T4>::iterator &a0) {
-  return a0.operator--();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::iterator
-f89(typename std::multimap<T1, T2, T3, T4>::iterator &a0, int a1) {
-  return a0.operator--(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-bool f90(const typename std::multimap<T1, T2, T3, T4>::iterator &a0,
-         const typename std::multimap<T1, T2, T3, T4>::iterator &a1) {
-  return operator==(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
 using t24 = typename std::multimap<T1, T2, T3, T4>::const_iterator::value_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -698,133 +636,13 @@ using t28 =
     typename std::multimap<T1, T2, T3, T4>::const_iterator::difference_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::const_iterator f91() {
-  return typename std::multimap<T1, T2, T3, T4>::const_iterator();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::const_iterator
-f92(const typename std::multimap<T1, T2, T3, T4>::const_iterator &a0) {
-  return typename std::multimap<T1, T2, T3, T4>::const_iterator(a0);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::const_iterator &
-f93(typename std::multimap<T1, T2, T3, T4>::const_iterator &a0,
-    const typename std::multimap<T1, T2, T3, T4>::const_iterator &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-const typename std::pointer_traits<
-    typename std::allocator_traits<T1>::pointer>::element_type &
-f94(const typename std::multimap<T1, T2, T3, T4>::const_iterator &a0) {
-  return a0.operator*();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-const typename std::pointer_traits<
-    typename std::allocator_traits<T1>::pointer>::element_type *
-f95(const typename std::multimap<T1, T2, T3, T4>::const_iterator &a0) {
-  return a0.operator->();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::const_iterator &
-f96(typename std::multimap<T1, T2, T3, T4>::const_iterator &a0) {
-  return a0.operator++();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::const_iterator
-f97(typename std::multimap<T1, T2, T3, T4>::const_iterator &a0, int a1) {
-  return a0.operator++(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::const_iterator &
-f98(typename std::multimap<T1, T2, T3, T4>::const_iterator &a0) {
-  return a0.operator--();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::const_iterator
-f99(typename std::multimap<T1, T2, T3, T4>::const_iterator &a0, int a1) {
-  return a0.operator--(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-bool f100(const typename std::multimap<T1, T2, T3, T4>::const_iterator &a0,
-          const typename std::multimap<T1, T2, T3, T4>::const_iterator &a1) {
-  return operator==(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
 using t29 = typename std::multimap<T1, T2, T3, T4>::node_type::key_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
 using t30 = typename std::multimap<T1, T2, T3, T4>::node_type::mapped_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::node_type f101() {
-  return typename std::multimap<T1, T2, T3, T4>::node_type();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::node_type
-f102(typename std::multimap<T1, T2, T3, T4>::node_type &&a0) {
-  return typename std::multimap<T1, T2, T3, T4>::node_type(std::move(a0));
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::node_type &
-f103(typename std::multimap<T1, T2, T3, T4>::node_type &a0,
-     typename std::multimap<T1, T2, T3, T4>::node_type &&a1) {
-  return a0.operator=(std::move(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-T1 &f104(const typename std::multimap<T1, T2, T3, T4>::node_type &a0) {
-  return a0.key();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::node_type::mapped_type &
-f105(const typename std::multimap<T1, T2, T3, T4>::node_type &a0) {
-  return a0.mapped();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-void f106(typename std::multimap<T1, T2, T3, T4>::node_type &a0,
-          typename std::multimap<T1, T2, T3, T4>::node_type &a1) {
-  return a0.swap(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-void f107(typename std::multimap<T1, T2, T3, T4>::node_type &a0,
-          typename std::multimap<T1, T2, T3, T4>::node_type &a1) {
-  return swap(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::multimap<T1, T2, T3, T4>::node_type::allocator_type
-f108(const typename std::multimap<T1, T2, T3, T4>::node_type &a0) {
-  return a0.get_allocator();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-bool f109(const typename std::multimap<T1, T2, T3, T4>::node_type &a0) {
-  return static_cast<bool>(a0);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-bool f110(const typename std::multimap<T1, T2, T3, T4>::node_type &a0) {
-  return a0.empty();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-bool f111(const typename std::multimap<T1, T2, T3, T4>::value_compare &a0,
-          const std::pair<const T1, T2> &a1,
-          const std::pair<const T1, T2> &a2) {
+bool f81(const typename std::multimap<T1, T2, T3, T4>::value_compare &a0,
+         const std::pair<const T1, T2> &a1, const std::pair<const T1, T2> &a2) {
   return a0.operator()(a1, a2);
 }

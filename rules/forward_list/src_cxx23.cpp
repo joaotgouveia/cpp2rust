@@ -489,56 +489,6 @@ template <typename T1, typename T2>
 using t16 = typename std::forward_list<T1, T2>::iterator::reference;
 
 template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::iterator f70() {
-  return typename std::forward_list<T1, T2>::iterator();
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::iterator
-f71(const typename std::forward_list<T1, T2>::iterator &a0) {
-  return typename std::forward_list<T1, T2>::iterator(a0);
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::iterator &
-f72(typename std::forward_list<T1, T2>::iterator &a0,
-    const typename std::forward_list<T1, T2>::iterator &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1, typename T2>
-typename std::pointer_traits<typename std::pointer_traits<
-    std::allocator_traits<T2>::pointer>::template rebind<T1>>::element_type &
-f73(const typename std::forward_list<T1, T2>::iterator &a0) {
-  return a0.operator*();
-}
-
-template <typename T1, typename T2>
-typename std::pointer_traits<typename std::pointer_traits<
-    std::allocator_traits<T2>::pointer>::template rebind<T1>>::element_type *
-f74(const typename std::forward_list<T1, T2>::iterator &a0) {
-  return a0.operator->();
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::iterator &
-f75(typename std::forward_list<T1, T2>::iterator &a0) {
-  return a0.operator++();
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::iterator
-f76(typename std::forward_list<T1, T2>::iterator &a0, int a1) {
-  return a0.operator++(a1);
-}
-
-template <typename T1, typename T2>
-bool f77(const typename std::forward_list<T1, T2>::iterator &a0,
-         const typename std::forward_list<T1, T2>::iterator &a1) {
-  return operator==(a0, a1);
-}
-
-template <typename T1, typename T2>
 using t17 = typename std::forward_list<T1, T2>::const_iterator::value_type;
 
 template <typename T1, typename T2>
@@ -555,63 +505,13 @@ template <typename T1, typename T2>
 using t21 = typename std::forward_list<T1, T2>::const_iterator::reference;
 
 template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::const_iterator f78() {
-  return typename std::forward_list<T1, T2>::const_iterator();
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::const_iterator
-f79(const typename std::forward_list<T1, T2>::const_iterator &a0) {
-  return typename std::forward_list<T1, T2>::const_iterator(a0);
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::const_iterator &
-f80(typename std::forward_list<T1, T2>::const_iterator &a0,
-    const typename std::forward_list<T1, T2>::const_iterator &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1, typename T2>
-const typename std::pointer_traits<typename std::pointer_traits<
-    std::allocator_traits<T2>::pointer>::template rebind<T1>>::element_type &
-f81(const typename std::forward_list<T1, T2>::const_iterator &a0) {
-  return a0.operator*();
-}
-
-template <typename T1, typename T2>
-const typename std::pointer_traits<typename std::pointer_traits<
-    std::allocator_traits<T2>::pointer>::template rebind<T1>>::element_type *
-f82(const typename std::forward_list<T1, T2>::const_iterator &a0) {
-  return a0.operator->();
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::const_iterator &
-f83(typename std::forward_list<T1, T2>::const_iterator &a0) {
-  return a0.operator++();
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::const_iterator
-f84(typename std::forward_list<T1, T2>::const_iterator &a0, int a1) {
-  return a0.operator++(a1);
-}
-
-template <typename T1, typename T2>
-bool f85(const typename std::forward_list<T1, T2>::const_iterator &a0,
-         const typename std::forward_list<T1, T2>::const_iterator &a1) {
-  return operator==(a0, a1);
-}
-
-template <typename T1, typename T2>
-auto f86(const std::forward_list<T1, T2> &a0,
+auto f70(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f87(const std::forward_list<T1, T2> &a0,
+bool f71(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return std::operator==(a0, a1);
 }
@@ -619,6 +519,6 @@ bool f87(const std::forward_list<T1, T2> &a0,
 template <typename T1> using t22 = std::pmr::forward_list<T1>;
 
 template <typename T1, typename T2>
-void f88(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1) {
+void f72(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1) {
   return std::swap(a0, a1);
 }
