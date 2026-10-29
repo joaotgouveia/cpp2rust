@@ -521,3 +521,128 @@ using t24 = typename std::set<T1, T2, T3>::iterator::iterator_category;
 
 template <typename T1, typename T2, typename T3>
 using t25 = typename std::set<T1, T2, T3>::iterator::difference_type;
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::iterator f76() {
+  return typename std::set<T1, T2, T3>::iterator();
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::iterator
+f77(const typename std::set<T1, T2, T3>::iterator &a0) {
+  return typename std::set<T1, T2, T3>::iterator(a0);
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::iterator &
+f78(typename std::set<T1, T2, T3>::iterator &a0,
+    const typename std::set<T1, T2, T3>::iterator &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+const typename std::pointer_traits<
+    typename std::allocator_traits<T1>::pointer>::element_type &
+f79(const typename std::set<T1, T2, T3>::iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3>
+const typename std::pointer_traits<
+    typename std::allocator_traits<T1>::pointer>::element_type *
+f80(const typename std::set<T1, T2, T3>::iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::iterator &
+f81(typename std::set<T1, T2, T3>::iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::iterator
+f82(typename std::set<T1, T2, T3>::iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::iterator &
+f83(typename std::set<T1, T2, T3>::iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::iterator
+f84(typename std::set<T1, T2, T3>::iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f85(const typename std::set<T1, T2, T3>::iterator &a0,
+         const typename std::set<T1, T2, T3>::iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+using t26 = typename std::set<T1, T2, T3>::node_type::key_type;
+
+template <typename T1, typename T2, typename T3>
+using t27 = typename std::set<T1, T2, T3>::node_type::mapped_type;
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::node_type f86() {
+  return typename std::set<T1, T2, T3>::node_type();
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::node_type
+f87(typename std::set<T1, T2, T3>::node_type &&a0) {
+  return typename std::set<T1, T2, T3>::node_type(std::move(a0));
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::node_type &
+f88(typename std::set<T1, T2, T3>::node_type &a0,
+    typename std::set<T1, T2, T3>::node_type &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3>
+T1 &f89(const typename std::set<T1, T2, T3>::node_type &a0) {
+  return a0.key();
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::node_type::mapped_type &
+f90(const typename std::set<T1, T2, T3>::node_type &a0) {
+  return a0.mapped();
+}
+
+template <typename T1, typename T2, typename T3>
+void f91(typename std::set<T1, T2, T3>::node_type &a0,
+         typename std::set<T1, T2, T3>::node_type &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+void f92(typename std::set<T1, T2, T3>::node_type &a0,
+         typename std::set<T1, T2, T3>::node_type &a1) {
+  return swap(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::set<T1, T2, T3>::node_type::allocator_type
+f93(const typename std::set<T1, T2, T3>::node_type &a0) {
+  return a0.get_allocator();
+}
+
+template <typename T1, typename T2, typename T3>
+bool f94(const typename std::set<T1, T2, T3>::node_type &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f95(const typename std::set<T1, T2, T3>::node_type &a0) {
+  return a0.empty();
+}

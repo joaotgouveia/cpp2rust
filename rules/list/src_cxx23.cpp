@@ -498,4 +498,149 @@ void f80(std::list<T1, T2> &a0, T3 a1) {
   return a0.template sort<T3>(std::move(a1));
 }
 
-template <typename T1> using t14 = std::pmr::list<T1>;
+template <typename T1, typename T2>
+using t14 = typename std::list<T1, T2>::iterator::value_type;
+
+template <typename T1, typename T2>
+using t15 = typename std::list<T1, T2>::iterator::difference_type;
+
+template <typename T1, typename T2>
+using t16 = typename std::list<T1, T2>::iterator::iterator_category;
+
+template <typename T1, typename T2>
+using t17 = typename std::list<T1, T2>::iterator::pointer;
+
+template <typename T1, typename T2>
+using t18 = typename std::list<T1, T2>::iterator::reference;
+
+template <typename T1, typename T2> typename std::list<T1, T2>::iterator f81() {
+  return typename std::list<T1, T2>::iterator();
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::iterator
+f82(const typename std::list<T1, T2>::iterator &a0) {
+  return typename std::list<T1, T2>::iterator(a0);
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::iterator &
+f83(typename std::list<T1, T2>::iterator &a0,
+    const typename std::list<T1, T2>::iterator &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1, typename T2>
+auto f84(const typename std::list<T1, T2>::iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2>
+auto f85(const typename std::list<T1, T2>::iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::iterator &
+f86(typename std::list<T1, T2>::iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::iterator
+f87(typename std::list<T1, T2>::iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::iterator &
+f88(typename std::list<T1, T2>::iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::iterator
+f89(typename std::list<T1, T2>::iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2>
+bool f90(const typename std::list<T1, T2>::iterator &a0,
+         const typename std::list<T1, T2>::iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2>
+using t19 = typename std::list<T1, T2>::const_iterator::value_type;
+
+template <typename T1, typename T2>
+using t20 = typename std::list<T1, T2>::const_iterator::difference_type;
+
+template <typename T1, typename T2>
+using t21 = typename std::list<T1, T2>::const_iterator::iterator_category;
+
+template <typename T1, typename T2>
+using t22 = typename std::list<T1, T2>::const_iterator::pointer;
+
+template <typename T1, typename T2>
+using t23 = typename std::list<T1, T2>::const_iterator::reference;
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::const_iterator f91() {
+  return typename std::list<T1, T2>::const_iterator();
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::const_iterator
+f92(const typename std::list<T1, T2>::const_iterator &a0) {
+  return typename std::list<T1, T2>::const_iterator(a0);
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::const_iterator &
+f93(typename std::list<T1, T2>::const_iterator &a0,
+    const typename std::list<T1, T2>::const_iterator &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1, typename T2>
+auto f94(const typename std::list<T1, T2>::const_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2>
+auto f95(const typename std::list<T1, T2>::const_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::const_iterator &
+f96(typename std::list<T1, T2>::const_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::const_iterator
+f97(typename std::list<T1, T2>::const_iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::const_iterator &
+f98(typename std::list<T1, T2>::const_iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::const_iterator
+f99(typename std::list<T1, T2>::const_iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2>
+bool f100(const typename std::list<T1, T2>::const_iterator &a0,
+          const typename std::list<T1, T2>::const_iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1> using t24 = std::pmr::list<T1>;

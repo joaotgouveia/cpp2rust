@@ -777,6 +777,41 @@ using t22 =
     typename std::unordered_multiset<T1, T2, T3, T4>::iterator::reference;
 
 template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::iterator f85() {
+  return typename std::unordered_multiset<T1, T2, T3, T4>::iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::iterator::reference
+f86(const typename std::unordered_multiset<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::iterator::pointer
+f87(const typename std::unordered_multiset<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::iterator &
+f88(typename std::unordered_multiset<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::iterator
+f89(typename std::unordered_multiset<T1, T2, T3, T4>::iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f90(const typename std::unordered_multiset<T1, T2, T3, T4>::iterator &a0,
+         const typename std::unordered_multiset<T1, T2, T3, T4>::iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
 using t23 = typename std::unordered_multiset<T1, T2, T3,
                                              T4>::const_iterator::value_type;
 
@@ -797,6 +832,44 @@ using t26 =
 template <typename T1, typename T2, typename T3, typename T4>
 using t27 =
     typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator::reference;
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator f91() {
+  return typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 const &f92(const typename std::unordered_multiset<T1, T2, T3,
+                                                     T4>::const_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 const *f93(const typename std::unordered_multiset<T1, T2, T3,
+                                                     T4>::const_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator &
+f94(typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator
+f95(typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator &a0,
+    int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f96(
+    const typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator &a0,
+    const typename std::unordered_multiset<T1, T2, T3, T4>::const_iterator
+        &a1) {
+  return operator==(a0, a1);
+}
 
 template <typename T1, typename T2, typename T3, typename T4>
 using t28 = typename std::unordered_multiset<T1, T2, T3,
@@ -821,6 +894,38 @@ using t32 =
                                      T4>::local_iterator::iterator_category;
 
 template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator f97() {
+  return typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator::reference
+f98(const typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator
+        &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator::pointer
+f99(const typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator
+        &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator &
+f100(typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator
+f101(typename std::unordered_multiset<T1, T2, T3, T4>::local_iterator &a0,
+     int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
 using t33 =
     typename std::unordered_multiset<T1, T2, T3,
                                      T4>::const_local_iterator::value_type;
@@ -842,3 +947,106 @@ using t36 =
 template <typename T1, typename T2, typename T3, typename T4>
 using t37 = typename std::unordered_multiset<
     T1, T2, T3, T4>::const_local_iterator::iterator_category;
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::const_local_iterator f102() {
+  return
+      typename std::unordered_multiset<T1, T2, T3, T4>::const_local_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 const &
+f103(const typename std::unordered_multiset<T1, T2, T3,
+                                            T4>::const_local_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 const *
+f104(const typename std::unordered_multiset<T1, T2, T3,
+                                            T4>::const_local_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::const_local_iterator &
+f105(typename std::unordered_multiset<T1, T2, T3, T4>::const_local_iterator
+         &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::const_local_iterator
+f106(typename std::unordered_multiset<T1, T2, T3, T4>::const_local_iterator &a0,
+     int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t38 =
+    typename std::unordered_multiset<T1, T2, T3, T4>::node_type::key_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t39 =
+    typename std::unordered_multiset<T1, T2, T3, T4>::node_type::mapped_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::node_type f107() {
+  return typename std::unordered_multiset<T1, T2, T3, T4>::node_type();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::node_type
+f108(typename std::unordered_multiset<T1, T2, T3, T4>::node_type &&a0) {
+  return typename std::unordered_multiset<T1, T2, T3, T4>::node_type(
+      std::move(a0));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::node_type &
+f109(typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a0,
+     typename std::unordered_multiset<T1, T2, T3, T4>::node_type &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 &f110(
+    const typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a0) {
+  return a0.key();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::node_type::mapped_type &
+f111(const typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a0) {
+  return a0.mapped();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f112(typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a0,
+          typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f113(typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a0,
+          typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a1) {
+  return swap(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_multiset<T1, T2, T3, T4>::node_type::allocator_type
+f114(const typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a0) {
+  return a0.get_allocator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f115(
+    const typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f116(
+    const typename std::unordered_multiset<T1, T2, T3, T4>::node_type &a0) {
+  return a0.empty();
+}

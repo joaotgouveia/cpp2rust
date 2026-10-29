@@ -779,6 +779,41 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t25 = typename std::unordered_set<T1, T2, T3, T4>::iterator::reference;
 
 template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::iterator f91() {
+  return typename std::unordered_set<T1, T2, T3, T4>::iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::iterator::reference
+f92(const typename std::unordered_set<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::iterator::pointer
+f93(const typename std::unordered_set<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::iterator &
+f94(typename std::unordered_set<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::iterator
+f95(typename std::unordered_set<T1, T2, T3, T4>::iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f96(const typename std::unordered_set<T1, T2, T3, T4>::iterator &a0,
+         const typename std::unordered_set<T1, T2, T3, T4>::iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
 using t26 =
     typename std::unordered_set<T1, T2, T3, T4>::const_iterator::value_type;
 
@@ -797,6 +832,42 @@ using t29 =
 template <typename T1, typename T2, typename T3, typename T4>
 using t30 =
     typename std::unordered_set<T1, T2, T3, T4>::const_iterator::reference;
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::const_iterator f97() {
+  return typename std::unordered_set<T1, T2, T3, T4>::const_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 const &
+f98(const typename std::unordered_set<T1, T2, T3, T4>::const_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 const *
+f99(const typename std::unordered_set<T1, T2, T3, T4>::const_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::const_iterator &
+f100(typename std::unordered_set<T1, T2, T3, T4>::const_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::const_iterator
+f101(typename std::unordered_set<T1, T2, T3, T4>::const_iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f102(
+    const typename std::unordered_set<T1, T2, T3, T4>::const_iterator &a0,
+    const typename std::unordered_set<T1, T2, T3, T4>::const_iterator &a1) {
+  return operator==(a0, a1);
+}
 
 template <typename T1, typename T2, typename T3, typename T4>
 using t31 =
@@ -819,6 +890,35 @@ using t35 = typename std::unordered_set<T1, T2, T3,
                                         T4>::local_iterator::iterator_category;
 
 template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::local_iterator f103() {
+  return typename std::unordered_set<T1, T2, T3, T4>::local_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::local_iterator::reference
+f104(const typename std::unordered_set<T1, T2, T3, T4>::local_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::local_iterator::pointer
+f105(const typename std::unordered_set<T1, T2, T3, T4>::local_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::local_iterator &
+f106(typename std::unordered_set<T1, T2, T3, T4>::local_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::local_iterator
+f107(typename std::unordered_set<T1, T2, T3, T4>::local_iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
 using t36 = typename std::unordered_set<T1, T2, T3,
                                         T4>::const_local_iterator::value_type;
 
@@ -839,3 +939,98 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t40 =
     typename std::unordered_set<T1, T2, T3,
                                 T4>::const_local_iterator::iterator_category;
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator f108() {
+  return typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 const &
+f109(const typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator
+         &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 const *
+f110(const typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator
+         &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator &
+f111(typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator
+f112(typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator &a0,
+     int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t41 = typename std::unordered_set<T1, T2, T3, T4>::node_type::key_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t42 = typename std::unordered_set<T1, T2, T3, T4>::node_type::mapped_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::node_type f113() {
+  return typename std::unordered_set<T1, T2, T3, T4>::node_type();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::node_type
+f114(typename std::unordered_set<T1, T2, T3, T4>::node_type &&a0) {
+  return typename std::unordered_set<T1, T2, T3, T4>::node_type(std::move(a0));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::node_type &
+f115(typename std::unordered_set<T1, T2, T3, T4>::node_type &a0,
+     typename std::unordered_set<T1, T2, T3, T4>::node_type &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 &f116(const typename std::unordered_set<T1, T2, T3, T4>::node_type &a0) {
+  return a0.key();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::node_type::mapped_type &
+f117(const typename std::unordered_set<T1, T2, T3, T4>::node_type &a0) {
+  return a0.mapped();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f118(typename std::unordered_set<T1, T2, T3, T4>::node_type &a0,
+          typename std::unordered_set<T1, T2, T3, T4>::node_type &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f119(typename std::unordered_set<T1, T2, T3, T4>::node_type &a0,
+          typename std::unordered_set<T1, T2, T3, T4>::node_type &a1) {
+  return swap(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::unordered_set<T1, T2, T3, T4>::node_type::allocator_type
+f120(const typename std::unordered_set<T1, T2, T3, T4>::node_type &a0) {
+  return a0.get_allocator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f121(const typename std::unordered_set<T1, T2, T3, T4>::node_type &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f122(const typename std::unordered_set<T1, T2, T3, T4>::node_type &a0) {
+  return a0.empty();
+}

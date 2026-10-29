@@ -230,3 +230,136 @@ using t17 = typename std::match_results<T1, T2>::const_iterator::pointer;
 template <typename T1, typename T2>
 using t18 =
     typename std::match_results<T1, T2>::const_iterator::iterator_concept;
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator f29() {
+  return typename std::match_results<T1, T2>::const_iterator();
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator
+f30(const typename std::allocator_traits<T1>::const_pointer &a0) {
+  return typename std::match_results<T1, T2>::const_iterator(a0);
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator::reference
+f31(const typename std::match_results<T1, T2>::const_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator::pointer
+f32(const typename std::match_results<T1, T2>::const_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator &
+f33(typename std::match_results<T1, T2>::const_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator
+f34(typename std::match_results<T1, T2>::const_iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator &
+f35(typename std::match_results<T1, T2>::const_iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator
+f36(typename std::match_results<T1, T2>::const_iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator::reference
+f37(const typename std::match_results<T1, T2>::const_iterator &a0,
+    typename std::match_results<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator[](
+      std::forward<
+          typename std::match_results<T1, T2>::const_iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator &
+f38(typename std::match_results<T1, T2>::const_iterator &a0,
+    typename std::match_results<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator+=(
+      std::forward<
+          typename std::match_results<T1, T2>::const_iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator
+f39(const typename std::match_results<T1, T2>::const_iterator &a0,
+    typename std::match_results<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator+(
+      std::forward<
+          typename std::match_results<T1, T2>::const_iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator &
+f40(typename std::match_results<T1, T2>::const_iterator &a0,
+    typename std::match_results<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator-=(
+      std::forward<
+          typename std::match_results<T1, T2>::const_iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator
+f41(const typename std::match_results<T1, T2>::const_iterator &a0,
+    typename std::match_results<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator-(
+      std::forward<
+          typename std::match_results<T1, T2>::const_iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+const typename std::allocator_traits<T1>::const_pointer &
+f42(const typename std::match_results<T1, T2>::const_iterator &a0) {
+  return a0.base();
+}
+
+template <typename T1, typename T2>
+bool f43(const typename std::match_results<T1, T2>::const_iterator &a0,
+         const typename std::match_results<T1, T2>::const_iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2>
+auto f44(const typename std::match_results<T1, T2>::const_iterator &a0,
+         const typename std::match_results<T1, T2>::const_iterator &a1) {
+  return operator<=>(a0, a1);
+}
+
+template <typename T1, typename T2>
+auto f45(const typename std::match_results<T1, T2>::const_iterator &a0,
+         const typename std::match_results<T1, T2>::const_iterator &a1) {
+  return operator-(a0, a1);
+}
+
+template <typename T1, typename T2>
+typename std::match_results<T1, T2>::const_iterator
+f46(typename std::iterator_traits<
+        typename std::allocator_traits<T1>::const_pointer>::difference_type a0,
+    const typename std::match_results<T1, T2>::const_iterator &a1) {
+  return operator+(
+      std::forward<typename std::iterator_traits<
+          typename std::allocator_traits<T1>::const_pointer>::difference_type>(
+          a0),
+      a1);
+}

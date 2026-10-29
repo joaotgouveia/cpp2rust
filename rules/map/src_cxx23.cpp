@@ -709,6 +709,68 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t24 = typename std::map<T1, T2, T3, T4>::iterator::difference_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::iterator f95() {
+  return typename std::map<T1, T2, T3, T4>::iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::iterator
+f96(const typename std::map<T1, T2, T3, T4>::iterator &a0) {
+  return typename std::map<T1, T2, T3, T4>::iterator(a0);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::iterator &
+f97(typename std::map<T1, T2, T3, T4>::iterator &a0,
+    const typename std::map<T1, T2, T3, T4>::iterator &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::pointer_traits<
+    typename std::allocator_traits<T1>::pointer>::element_type &
+f98(const typename std::map<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::pointer_traits<
+    typename std::allocator_traits<T1>::pointer>::element_type *
+f99(const typename std::map<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::iterator &
+f100(typename std::map<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::iterator
+f101(typename std::map<T1, T2, T3, T4>::iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::iterator &
+f102(typename std::map<T1, T2, T3, T4>::iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::iterator
+f103(typename std::map<T1, T2, T3, T4>::iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f104(const typename std::map<T1, T2, T3, T4>::iterator &a0,
+          const typename std::map<T1, T2, T3, T4>::iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
 using t25 = typename std::map<T1, T2, T3, T4>::const_iterator::value_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -725,13 +787,139 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t29 = typename std::map<T1, T2, T3, T4>::const_iterator::difference_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f95(const typename std::map<T1, T2, T3, T4>::value_compare &a0,
-         const std::pair<const T1, T2> &a1, const std::pair<const T1, T2> &a2) {
+typename std::map<T1, T2, T3, T4>::const_iterator f105() {
+  return typename std::map<T1, T2, T3, T4>::const_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::const_iterator
+f106(const typename std::map<T1, T2, T3, T4>::const_iterator &a0) {
+  return typename std::map<T1, T2, T3, T4>::const_iterator(a0);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::const_iterator &
+f107(typename std::map<T1, T2, T3, T4>::const_iterator &a0,
+     const typename std::map<T1, T2, T3, T4>::const_iterator &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+const typename std::pointer_traits<
+    typename std::allocator_traits<T1>::pointer>::element_type &
+f108(const typename std::map<T1, T2, T3, T4>::const_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+const typename std::pointer_traits<
+    typename std::allocator_traits<T1>::pointer>::element_type *
+f109(const typename std::map<T1, T2, T3, T4>::const_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::const_iterator &
+f110(typename std::map<T1, T2, T3, T4>::const_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::const_iterator
+f111(typename std::map<T1, T2, T3, T4>::const_iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::const_iterator &
+f112(typename std::map<T1, T2, T3, T4>::const_iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::const_iterator
+f113(typename std::map<T1, T2, T3, T4>::const_iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f114(const typename std::map<T1, T2, T3, T4>::const_iterator &a0,
+          const typename std::map<T1, T2, T3, T4>::const_iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t30 = typename std::map<T1, T2, T3, T4>::node_type::key_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t31 = typename std::map<T1, T2, T3, T4>::node_type::mapped_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::node_type f115() {
+  return typename std::map<T1, T2, T3, T4>::node_type();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::node_type
+f116(typename std::map<T1, T2, T3, T4>::node_type &&a0) {
+  return typename std::map<T1, T2, T3, T4>::node_type(std::move(a0));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::node_type &
+f117(typename std::map<T1, T2, T3, T4>::node_type &a0,
+     typename std::map<T1, T2, T3, T4>::node_type &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+T1 &f118(const typename std::map<T1, T2, T3, T4>::node_type &a0) {
+  return a0.key();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::node_type::mapped_type &
+f119(const typename std::map<T1, T2, T3, T4>::node_type &a0) {
+  return a0.mapped();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f120(typename std::map<T1, T2, T3, T4>::node_type &a0,
+          typename std::map<T1, T2, T3, T4>::node_type &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f121(typename std::map<T1, T2, T3, T4>::node_type &a0,
+          typename std::map<T1, T2, T3, T4>::node_type &a1) {
+  return swap(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::map<T1, T2, T3, T4>::node_type::allocator_type
+f122(const typename std::map<T1, T2, T3, T4>::node_type &a0) {
+  return a0.get_allocator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f123(const typename std::map<T1, T2, T3, T4>::node_type &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f124(const typename std::map<T1, T2, T3, T4>::node_type &a0) {
+  return a0.empty();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f125(const typename std::map<T1, T2, T3, T4>::value_compare &a0,
+          const std::pair<const T1, T2> &a1,
+          const std::pair<const T1, T2> &a2) {
   return a0.operator()(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-using t30 = std::pmr::map<T1, T2, T3>;
+using t32 = std::pmr::map<T1, T2, T3>;
 
 template <typename T1, typename T2, typename T3>
-using t31 = std::pmr::multimap<T1, T2, T3>;
+using t33 = std::pmr::multimap<T1, T2, T3>;

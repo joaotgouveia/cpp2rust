@@ -1035,6 +1035,133 @@ template <typename T1, typename T2>
 using t41 = typename std::vector<T1, T2>::iterator::iterator_concept;
 
 template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator f159() {
+  return typename std::vector<T1, T2>::iterator();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f160(const typename std::vector<T1, T2>::pointer &a0) {
+  return typename std::vector<T1, T2>::iterator(a0);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator::reference
+f161(const typename std::vector<T1, T2>::iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator::pointer
+f162(const typename std::vector<T1, T2>::iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator &
+f163(typename std::vector<T1, T2>::iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f164(typename std::vector<T1, T2>::iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator &
+f165(typename std::vector<T1, T2>::iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f166(typename std::vector<T1, T2>::iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator::reference
+f167(const typename std::vector<T1, T2>::iterator &a0,
+     typename std::vector<T1, T2>::iterator::difference_type a1) {
+  return a0.operator[](
+      std::forward<typename std::vector<T1, T2>::iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator &
+f168(typename std::vector<T1, T2>::iterator &a0,
+     typename std::vector<T1, T2>::iterator::difference_type a1) {
+  return a0.operator+=(
+      std::forward<typename std::vector<T1, T2>::iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f169(const typename std::vector<T1, T2>::iterator &a0,
+     typename std::vector<T1, T2>::iterator::difference_type a1) {
+  return a0.operator+(
+      std::forward<typename std::vector<T1, T2>::iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator &
+f170(typename std::vector<T1, T2>::iterator &a0,
+     typename std::vector<T1, T2>::iterator::difference_type a1) {
+  return a0.operator-=(
+      std::forward<typename std::vector<T1, T2>::iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f171(const typename std::vector<T1, T2>::iterator &a0,
+     typename std::vector<T1, T2>::iterator::difference_type a1) {
+  return a0.operator-(
+      std::forward<typename std::vector<T1, T2>::iterator::difference_type>(
+          a1));
+}
+
+template <typename T1, typename T2>
+const typename std::vector<T1, T2>::pointer &
+f172(const typename std::vector<T1, T2>::iterator &a0) {
+  return a0.base();
+}
+
+template <typename T1, typename T2>
+bool f173(const typename std::vector<T1, T2>::iterator &a0,
+          const typename std::vector<T1, T2>::iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2>
+auto f174(const typename std::vector<T1, T2>::iterator &a0,
+          const typename std::vector<T1, T2>::iterator &a1) {
+  return operator<=>(a0, a1);
+}
+
+template <typename T1, typename T2>
+auto f175(const typename std::vector<T1, T2>::iterator &a0,
+          const typename std::vector<T1, T2>::iterator &a1) {
+  return operator-(a0, a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f176(typename std::iterator_traits<
+         typename std::vector<T1, T2>::pointer>::difference_type a0,
+     const typename std::vector<T1, T2>::iterator &a1) {
+  return operator+(
+      std::forward<typename std::iterator_traits<
+          typename std::vector<T1, T2>::pointer>::difference_type>(a0),
+      a1);
+}
+
+template <typename T1, typename T2>
 using t42 = typename std::vector<T1, T2>::const_iterator::iterator_type;
 
 template <typename T1, typename T2>
@@ -1054,3 +1181,130 @@ using t47 = typename std::vector<T1, T2>::const_iterator::pointer;
 
 template <typename T1, typename T2>
 using t48 = typename std::vector<T1, T2>::const_iterator::iterator_concept;
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator f177() {
+  return typename std::vector<T1, T2>::const_iterator();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f178(const typename std::vector<T1, T2>::const_pointer &a0) {
+  return typename std::vector<T1, T2>::const_iterator(a0);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator::reference
+f179(const typename std::vector<T1, T2>::const_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator::pointer
+f180(const typename std::vector<T1, T2>::const_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator &
+f181(typename std::vector<T1, T2>::const_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f182(typename std::vector<T1, T2>::const_iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator &
+f183(typename std::vector<T1, T2>::const_iterator &a0) {
+  return a0.operator--();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f184(typename std::vector<T1, T2>::const_iterator &a0, int a1) {
+  return a0.operator--(a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator::reference
+f185(const typename std::vector<T1, T2>::const_iterator &a0,
+     typename std::vector<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator[](
+      std::forward<
+          typename std::vector<T1, T2>::const_iterator::difference_type>(a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator &
+f186(typename std::vector<T1, T2>::const_iterator &a0,
+     typename std::vector<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator+=(
+      std::forward<
+          typename std::vector<T1, T2>::const_iterator::difference_type>(a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f187(const typename std::vector<T1, T2>::const_iterator &a0,
+     typename std::vector<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator+(
+      std::forward<
+          typename std::vector<T1, T2>::const_iterator::difference_type>(a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator &
+f188(typename std::vector<T1, T2>::const_iterator &a0,
+     typename std::vector<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator-=(
+      std::forward<
+          typename std::vector<T1, T2>::const_iterator::difference_type>(a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f189(const typename std::vector<T1, T2>::const_iterator &a0,
+     typename std::vector<T1, T2>::const_iterator::difference_type a1) {
+  return a0.operator-(
+      std::forward<
+          typename std::vector<T1, T2>::const_iterator::difference_type>(a1));
+}
+
+template <typename T1, typename T2>
+const typename std::vector<T1, T2>::const_pointer &
+f190(const typename std::vector<T1, T2>::const_iterator &a0) {
+  return a0.base();
+}
+
+template <typename T1, typename T2>
+bool f191(const typename std::vector<T1, T2>::const_iterator &a0,
+          const typename std::vector<T1, T2>::const_iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2>
+auto f192(const typename std::vector<T1, T2>::const_iterator &a0,
+          const typename std::vector<T1, T2>::const_iterator &a1) {
+  return operator<=>(a0, a1);
+}
+
+template <typename T1, typename T2>
+auto f193(const typename std::vector<T1, T2>::const_iterator &a0,
+          const typename std::vector<T1, T2>::const_iterator &a1) {
+  return operator-(a0, a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f194(typename std::iterator_traits<
+         typename std::vector<T1, T2>::const_pointer>::difference_type a0,
+     const typename std::vector<T1, T2>::const_iterator &a1) {
+  return operator+(
+      std::forward<typename std::iterator_traits<
+          typename std::vector<T1, T2>::const_pointer>::difference_type>(a0),
+      a1);
+}

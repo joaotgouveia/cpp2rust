@@ -856,6 +856,43 @@ using t23 =
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator::reference;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator f87() {
+  return typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator::reference
+f88(const typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator::pointer
+f89(const typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator &
+f90(typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator
+f91(typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator &a0,
+    int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+bool f92(
+    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator &a0,
+    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
 using t24 = typename std::unordered_multimap<T1, T2, T3, T4,
                                              T5>::const_iterator::value_type;
 
@@ -876,6 +913,46 @@ using t27 = typename std::unordered_multimap<T1, T2, T3, T4,
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 using t28 = typename std::unordered_multimap<T1, T2, T3, T4,
                                              T5>::const_iterator::reference;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator f93() {
+  return typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+const std::pair<const T1, T2> &
+f94(const typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator
+        &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+const std::pair<const T1, T2> *
+f95(const typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator
+        &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator &
+f96(typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator
+f97(typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator &a0,
+    int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+bool f98(const typename std::unordered_multimap<T1, T2, T3, T4,
+                                                T5>::const_iterator &a0,
+         const typename std::unordered_multimap<T1, T2, T3, T4,
+                                                T5>::const_iterator &a1) {
+  return operator==(a0, a1);
+}
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 using t29 = typename std::unordered_multimap<T1, T2, T3, T4,
@@ -900,6 +977,38 @@ using t33 =
                                      T5>::local_iterator::iterator_category;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator f99() {
+  return typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator::reference
+f100(const typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator
+         &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator::pointer
+f101(const typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator
+         &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator &
+f102(typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator
+f103(typename std::unordered_multimap<T1, T2, T3, T4, T5>::local_iterator &a0,
+     int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
 using t34 =
     typename std::unordered_multimap<T1, T2, T3, T4,
                                      T5>::const_local_iterator::value_type;
@@ -921,3 +1030,110 @@ using t37 =
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 using t38 = typename std::unordered_multimap<
     T1, T2, T3, T4, T5>::const_local_iterator::iterator_category;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator
+f104() {
+  return typename std::unordered_multimap<T1, T2, T3, T4,
+                                          T5>::const_local_iterator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+const std::pair<const T1, T2> &
+f105(const typename std::unordered_multimap<T1, T2, T3, T4,
+                                            T5>::const_local_iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+const std::pair<const T1, T2> *
+f106(const typename std::unordered_multimap<T1, T2, T3, T4,
+                                            T5>::const_local_iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator &
+f107(typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator
+         &a0) {
+  return a0.operator++();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator
+f108(typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_local_iterator
+         &a0,
+     int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t39 =
+    typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type::key_type;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t40 = typename std::unordered_multimap<T1, T2, T3, T4,
+                                             T5>::node_type::mapped_type;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type f109() {
+  return typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type
+f110(typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &&a0) {
+  return typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type(
+      std::move(a0));
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &
+f111(typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a0,
+     typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+T1 &f112(
+    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a0) {
+  return a0.key();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type::mapped_type &
+f113(
+    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a0) {
+  return a0.mapped();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+void f114(typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a0,
+          typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+void f115(typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a0,
+          typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a1) {
+  return swap(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type::allocator_type
+f116(
+    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a0) {
+  return a0.get_allocator();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+bool f117(
+    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+bool f118(
+    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type &a0) {
+  return a0.empty();
+}
