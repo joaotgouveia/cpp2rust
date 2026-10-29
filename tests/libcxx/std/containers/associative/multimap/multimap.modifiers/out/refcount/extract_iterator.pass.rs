@@ -135,10 +135,10 @@ thread_local!(
 );
 pub fn test_6(c: Ptr<()>) {
     let mut sz: () = unimplemented!();
-    let mut some_key: () = { unimplemented!().first };
+    let mut some_key: () = { (unimplemented!().read()).first };
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while !(unimplemented!()) {
-        let mut key_value: () = { unimplemented!().first };
+        let mut key_value: () = { ((*first.borrow()).read()).first };
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         sz.prefix_dec();
         {
@@ -154,13 +154,13 @@ pub fn test_6(c: Ptr<()>) {
 pub fn test_7(c: Ptr<()>) {
     let mut sz: () = unimplemented!();
     let some_key: Value<Counter_int_> = Rc::new(RefCell::new(Counter_int_::copy_from({
-        field_ptr!(unimplemented!(), first)
+        field_ptr!(Rc::new(RefCell::new(unimplemented!())).as_pointer(), first)
     })));
     let _dtor_some_key = ScopedDestructor::new(&some_key, |__p| __p.destructor());
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while !(unimplemented!()) {
         let key_value: Value<Counter_int_> = Rc::new(RefCell::new(Counter_int_::copy_from({
-            field_ptr!(unimplemented!(), first)
+            field_ptr!(first.as_pointer(), first)
         })));
         let _dtor_key_value = ScopedDestructor::new(&key_value, |__p| __p.destructor());
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -177,10 +177,10 @@ pub fn test_7(c: Ptr<()>) {
 }
 pub fn test_8(c: Ptr<()>) {
     let mut sz: () = unimplemented!();
-    let mut some_key: () = { unimplemented!().first };
+    let mut some_key: () = { (unimplemented!().read()).first };
     let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while !(unimplemented!()) {
-        let mut key_value: () = { unimplemented!().first };
+        let mut key_value: () = { ((*first.borrow()).read()).first };
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         sz.prefix_dec();
         {

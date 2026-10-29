@@ -15,19 +15,37 @@ pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_bool__bool_ {}
+pub struct test_macros_detail_is_same_std__Flat_map_impl_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____true__value_compare__std__Flat_map_impl_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____true__value_compare_
+{}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_function_bool__int__int____std_function_bool__int__int___
-{}
+pub struct test_macros_detail_is_same_bool__bool_ {}
 pub type anon_3 = ();
 pub const anon_3_value: anon_3 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_macros_detail_is_same_std_function_bool__int__int____std_function_bool__int__int___
+{}
+pub type anon_4 = ();
+pub const anon_4_value: anon_4 = 1;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_macros_detail_is_same_std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare__std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare_
+{}
+pub type anon_5 = ();
+pub const anon_5_value: anon_5 = 1;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_less_void___std_less_void__ {}
-pub unsafe fn test_4() -> () {
+pub type anon_6 = ();
+pub const anon_6_value: anon_6 = 1;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_macros_detail_is_same_std__Flat_map_impl_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare__std__Flat_map_impl_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare_
+{}
+pub unsafe fn test_7() -> () {
     {
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -37,7 +55,7 @@ pub unsafe fn test_4() -> () {
         let mut kc: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut vc : std__Flat_map_impl_int__char__std_less_int___std_vector_int___std_vector_char___true__value_compare = unimplemented!()  ;
+        let mut vc: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -51,7 +69,7 @@ pub unsafe fn test_4() -> () {
         let mut kc: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut vc : std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int___std_vector_int___true__value_compare = unimplemented!()  ;
+        let mut vc: () = unimplemented!();
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "!noexcept(vc(a, a))");;
@@ -66,7 +84,7 @@ pub unsafe fn test_4() -> () {
         let mut kc: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut vc : std__Flat_map_impl_int__int__std_less_void___std_vector_int___std_vector_int___true__value_compare = unimplemented!()  ;
+        let mut vc: () = unimplemented!();
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -75,8 +93,11 @@ pub unsafe fn test_4() -> () {
     {
         let mut comp: () = unimplemented!();
         let mut m : () = std_flat_multimap_std_vector_int__std_allocator_int____int__std_function_bool__const_std_vector_int__std_allocator_int___ref__const_std_vector_int__std_allocator_int___ref____std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int______std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & comp } , )  ;
-        let mut vc : std__Flat_map_impl_std_vector_int___int__std_function_bool__const_std_vector_int__ref__const_std_vector_int__ref____std_vector_std_vector_int____std_vector_int___true__value_compare = unimplemented!()  ;
-        const _: () = assert!(( ( ::std::mem::size_of::<std__Flat_map_impl_std_vector_int___int__std_function_bool__const_std_vector_int__ref__const_std_vector_int__ref____std_vector_std_vector_int____std_vector_int___true__value_compare>() ) >= ( ::std::mem::size_of::<()>() ) ) , "sizeof(vc) >= sizeof(Comp)");;
+        let mut vc: () = unimplemented!();
+        const _: () = assert!(
+            ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
+            "sizeof(vc) >= sizeof(Comp)"
+        );;
         unimplemented!();
         m = {
             let mut __tmp_0: () = unimplemented!();
@@ -109,7 +130,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_4() });
+    (unsafe { test_7() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}
