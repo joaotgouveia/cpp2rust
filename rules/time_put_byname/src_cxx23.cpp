@@ -33,3 +33,7 @@ T2 f4(const std::time_put_byname<T1, T2> &a0, T2 a1, std::ios_base &a2, T1 a3,
       const std::tm *a4, char a5, char a6) {
   return a0.put(std::move(a1), a2, std::move(a3), a4, a5, a6);
 }
+
+template <typename T1, typename T2> const std::locale::id &f5() {
+  return std::time_put_byname<T1, T2>::id;
+}

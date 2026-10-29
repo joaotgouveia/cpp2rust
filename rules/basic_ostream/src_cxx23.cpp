@@ -373,12 +373,172 @@ void *&f61(std::basic_ostream<T1, T2> &a0, int a1) {
 }
 
 template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f62() {
+  return std::basic_ostream<T1, T2>::boolalpha;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f63() {
+  return std::basic_ostream<T1, T2>::dec;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f64() {
+  return std::basic_ostream<T1, T2>::fixed;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f65() {
+  return std::basic_ostream<T1, T2>::hex;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f66() {
+  return std::basic_ostream<T1, T2>::internal;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f67() {
+  return std::basic_ostream<T1, T2>::left;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f68() {
+  return std::basic_ostream<T1, T2>::oct;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f69() {
+  return std::basic_ostream<T1, T2>::right;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f70() {
+  return std::basic_ostream<T1, T2>::scientific;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f71() {
+  return std::basic_ostream<T1, T2>::showbase;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f72() {
+  return std::basic_ostream<T1, T2>::showpoint;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f73() {
+  return std::basic_ostream<T1, T2>::showpos;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f74() {
+  return std::basic_ostream<T1, T2>::skipws;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f75() {
+  return std::basic_ostream<T1, T2>::unitbuf;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f76() {
+  return std::basic_ostream<T1, T2>::uppercase;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f77() {
+  return std::basic_ostream<T1, T2>::adjustfield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f78() {
+  return std::basic_ostream<T1, T2>::basefield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::fmtflags f79() {
+  return std::basic_ostream<T1, T2>::floatfield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::iostate f80() {
+  return std::basic_ostream<T1, T2>::badbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::iostate f81() {
+  return std::basic_ostream<T1, T2>::eofbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::iostate f82() {
+  return std::basic_ostream<T1, T2>::failbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::iostate f83() {
+  return std::basic_ostream<T1, T2>::goodbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::openmode f84() {
+  return std::basic_ostream<T1, T2>::app;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::openmode f85() {
+  return std::basic_ostream<T1, T2>::ate;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::openmode f86() {
+  return std::basic_ostream<T1, T2>::binary;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::openmode f87() {
+  return std::basic_ostream<T1, T2>::in;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::openmode f88() {
+  return std::basic_ostream<T1, T2>::out;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::openmode f89() {
+  return std::basic_ostream<T1, T2>::trunc;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::openmode f90() {
+  return std::basic_ostream<T1, T2>::noreplace;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::seekdir f91() {
+  return std::basic_ostream<T1, T2>::beg;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::seekdir f92() {
+  return std::basic_ostream<T1, T2>::cur;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ostream<T1, T2>::seekdir f93() {
+  return std::basic_ostream<T1, T2>::end;
+}
+
+template <typename T1, typename T2>
 typename std::basic_ostream<T1, T2>::sentry
-f62(std::basic_ostream<T1, T2> &a0) {
+f94(std::basic_ostream<T1, T2> &a0) {
   return typename std::basic_ostream<T1, T2>::sentry(a0);
 }
 
 template <typename T1, typename T2>
-bool f63(const typename std::basic_ostream<T1, T2>::sentry &a0) {
+bool f95(const typename std::basic_ostream<T1, T2>::sentry &a0) {
   return static_cast<bool>(a0);
 }

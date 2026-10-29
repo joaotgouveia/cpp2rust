@@ -184,13 +184,13 @@ bool f23(const std::__fwdlist::_Iterator<T1, T2> &a0,
 template <typename T1, typename T2, typename T3>
 typename std::forward_list<T1, T2>::size_type f24(std::forward_list<T1, T2> &a0,
                                                   const T3 &a1) {
-  return std::erase<T1, T2, T3>(a0, a1);
+  return std::erase(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::forward_list<T1, T2>::size_type f25(std::forward_list<T1, T2> &a0,
                                                   T3 a1) {
-  return std::erase_if<T1, T2, T3>(a0, std::move(a1));
+  return std::erase_if(a0, std::move(a1));
 }
 
 template <typename T1, typename T2> using t20 = std::forward_list<T1, T2>;
@@ -656,18 +656,18 @@ void f92(std::forward_list<T1, T2> &a0, T3 a1) {
 template <typename T1, typename T2>
 auto f93(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
-  return std::operator<=> <T1, T2>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f94(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1> using t31 = std::pmr::forward_list<T1>;
 
 template <typename T1, typename T2>
 void f95(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+  return std::swap(a0, a1);
 }

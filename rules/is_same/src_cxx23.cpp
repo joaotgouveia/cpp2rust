@@ -10,3 +10,7 @@ template <typename T1, typename T2> bool f1(const std::is_same<T1, T2> &a0) {
 template <typename T1, typename T2> bool f2(const std::is_same<T1, T2> &a0) {
   return a0.operator()();
 }
+
+template <typename T1, typename T2> bool f3() {
+  return std::is_same<T1, T2>::value;
+}

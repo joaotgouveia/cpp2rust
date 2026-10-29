@@ -17,3 +17,7 @@ template <typename T1, unsigned int T2>
 unsigned long f2(const std::extent<T1, T2> &a0) {
   return a0.operator()();
 }
+
+template <typename T1, unsigned int T2> unsigned long f3() {
+  return std::extent<T1, T2>::value;
+}

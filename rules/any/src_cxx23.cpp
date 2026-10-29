@@ -141,7 +141,7 @@ std::enable_if_t<
     std::is_constructible_v<std::any, std::in_place_type_t<T1>, T2...>,
     std::any>
 f27(T2 &&...a0) {
-  return std::make_any<T1, T2...>(std::forward<T2>(a0)...);
+  return std::make_any<T1>(std::forward<T2>(a0)...);
 }
 
 template <typename T1, typename T2, typename... T3>
@@ -149,8 +149,8 @@ std::enable_if_t<std::is_constructible_v<std::any, std::in_place_type_t<T1>,
                                          std::initializer_list<T2> &, T3...>,
                  std::any>
 f28(std::initializer_list<T2> a0, T3 &&...a1) {
-  return std::make_any<T1, T2, T3...>(
-      std::forward<std::initializer_list<T2>>(a0), std::forward<T3>(a1)...);
+  return std::make_any<T1>(std::forward<std::initializer_list<T2>>(a0),
+                           std::forward<T3>(a1)...);
 }
 
 void f29(std::any &a0, std::any &a1) { return std::swap(a0, a1); }

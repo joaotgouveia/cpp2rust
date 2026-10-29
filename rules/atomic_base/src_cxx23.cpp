@@ -42,7 +42,7 @@ void f12(std::memory_order a0) { return std::atomic_signal_fence(a0); }
 void f13(std::memory_order a0) { return std::atomic_thread_fence(a0); }
 
 template <typename T1> T1 f14(T1 a0) {
-  return std::kill_dependency<T1>(std::move(a0));
+  return std::kill_dependency(std::move(a0));
 }
 
 using t2 = std::memory_order;

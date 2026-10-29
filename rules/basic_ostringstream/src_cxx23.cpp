@@ -519,3 +519,163 @@ template <typename T1, typename T2, typename T3>
 void *&f77(std::basic_ostringstream<T1, T2, T3> &a0, int a1) {
   return a0.pword(a1);
 }
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f78() {
+  return std::basic_ostringstream<T1, T2, T3>::boolalpha;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f79() {
+  return std::basic_ostringstream<T1, T2, T3>::dec;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f80() {
+  return std::basic_ostringstream<T1, T2, T3>::fixed;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f81() {
+  return std::basic_ostringstream<T1, T2, T3>::hex;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f82() {
+  return std::basic_ostringstream<T1, T2, T3>::internal;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f83() {
+  return std::basic_ostringstream<T1, T2, T3>::left;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f84() {
+  return std::basic_ostringstream<T1, T2, T3>::oct;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f85() {
+  return std::basic_ostringstream<T1, T2, T3>::right;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f86() {
+  return std::basic_ostringstream<T1, T2, T3>::scientific;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f87() {
+  return std::basic_ostringstream<T1, T2, T3>::showbase;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f88() {
+  return std::basic_ostringstream<T1, T2, T3>::showpoint;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f89() {
+  return std::basic_ostringstream<T1, T2, T3>::showpos;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f90() {
+  return std::basic_ostringstream<T1, T2, T3>::skipws;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f91() {
+  return std::basic_ostringstream<T1, T2, T3>::unitbuf;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f92() {
+  return std::basic_ostringstream<T1, T2, T3>::uppercase;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f93() {
+  return std::basic_ostringstream<T1, T2, T3>::adjustfield;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f94() {
+  return std::basic_ostringstream<T1, T2, T3>::basefield;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::fmtflags f95() {
+  return std::basic_ostringstream<T1, T2, T3>::floatfield;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::iostate f96() {
+  return std::basic_ostringstream<T1, T2, T3>::badbit;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::iostate f97() {
+  return std::basic_ostringstream<T1, T2, T3>::eofbit;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::iostate f98() {
+  return std::basic_ostringstream<T1, T2, T3>::failbit;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::iostate f99() {
+  return std::basic_ostringstream<T1, T2, T3>::goodbit;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::openmode f100() {
+  return std::basic_ostringstream<T1, T2, T3>::app;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::openmode f101() {
+  return std::basic_ostringstream<T1, T2, T3>::ate;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::openmode f102() {
+  return std::basic_ostringstream<T1, T2, T3>::binary;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::openmode f103() {
+  return std::basic_ostringstream<T1, T2, T3>::in;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::openmode f104() {
+  return std::basic_ostringstream<T1, T2, T3>::out;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::openmode f105() {
+  return std::basic_ostringstream<T1, T2, T3>::trunc;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::openmode f106() {
+  return std::basic_ostringstream<T1, T2, T3>::noreplace;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::seekdir f107() {
+  return std::basic_ostringstream<T1, T2, T3>::beg;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::seekdir f108() {
+  return std::basic_ostringstream<T1, T2, T3>::cur;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_ostringstream<T1, T2, T3>::seekdir f109() {
+  return std::basic_ostringstream<T1, T2, T3>::end;
+}

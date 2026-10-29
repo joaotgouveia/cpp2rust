@@ -12,3 +12,7 @@ template <typename T1>
 bool f2(const __pstl::execution::is_execution_policy<T1> &a0) {
   return a0.operator()();
 }
+
+template <typename T1> bool f3() {
+  return __pstl::execution::is_execution_policy<T1>::value;
+}

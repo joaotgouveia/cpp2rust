@@ -163,15 +163,15 @@ bool f22(const std::_Deque_iterator<T1, T2, T3> &a0,
 
 template <typename T1, typename T2>
 auto f23(const std::deque<T1, T2> &a0, const std::deque<T1, T2> &a1) {
-  return std::operator<=> <T1, T2>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f24(const std::deque<T1, T2> &a0, const std::deque<T1, T2> &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2>
 void f25(std::deque<T1, T2> &a0, std::deque<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+  return std::swap(a0, a1);
 }

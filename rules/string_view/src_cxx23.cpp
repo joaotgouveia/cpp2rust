@@ -26,8 +26,7 @@ std::basic_string_view<char32_t> f5(const char32_t *a0, std::size_t a1) {
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f6(std::basic_ostream<T1, T2> &a0,
                                std::basic_string_view<T1, T2> a1) {
-  return std::operator<< <T1, T2>(
-      a0, std::forward<std::basic_string_view<T1, T2>>(a1));
+  return std::operator<<(a0, std::forward<std::basic_string_view<T1, T2>>(a1));
 }
 
 template <typename T1, typename T2, typename T3>

@@ -73,40 +73,36 @@ auto f11(const std::_Not_fn<T1> &&a0, T2 &&...a1) {
 template <int T1> using t7 = std::_Placeholder<T1>;
 
 template <typename T1, typename... T2> auto f12(T1 &&a0, T2 &&...a1) {
-  return std::bind<T1, T2...>(std::forward<T1>(a0), std::forward<T2>(a1)...);
+  return std::bind(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
 template <typename T1, typename T2, typename... T3>
 auto f13(T2 &&a0, T3 &&...a1) {
-  return std::bind<T1, T2, T3...>(std::forward<T2>(a0),
-                                  std::forward<T3>(a1)...);
+  return std::bind<T1>(std::forward<T2>(a0), std::forward<T3>(a1)...);
 }
 
 template <typename T1, typename... T2>
 std::_Bind_back<std::decay_t<T1>, std::decay_t<T2>...> f14(T1 &&a0,
                                                            T2 &&...a1) {
-  return std::bind_back<T1, T2...>(std::forward<T1>(a0),
-                                   std::forward<T2>(a1)...);
+  return std::bind_back(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
 template <typename T1, typename... T2>
 std::_Bind_front<std::decay_t<T1>, std::decay_t<T2>...> f15(T1 &&a0,
                                                             T2 &&...a1) {
-  return std::bind_front<T1, T2...>(std::forward<T1>(a0),
-                                    std::forward<T2>(a1)...);
+  return std::bind_front(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
 template <typename T1, typename... T2>
 std::invoke_result_t<T1, T2...> f16(T1 &&a0, T2 &&...a1) {
-  return std::invoke<T1, T2...>(std::forward<T1>(a0), std::forward<T2>(a1)...);
+  return std::invoke(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
 template <typename T1, typename T2, typename... T3>
 T1 f17(T2 &&a0, T3 &&...a1)
   requires(std::is_invocable_r_v<T1, T2, T3...>)
 {
-  return std::invoke_r<T1, T2, T3...>(std::forward<T2>(a0),
-                                      std::forward<T3>(a1)...);
+  return std::invoke_r<T1>(std::forward<T2>(a0), std::forward<T3>(a1)...);
 }
 
 template <typename T1> bool f18() { return std::is_bind_expression_v<T1>; }
@@ -114,11 +110,11 @@ template <typename T1> bool f18() { return std::is_bind_expression_v<T1>; }
 template <typename T1> int f19() { return std::is_placeholder_v<T1>; }
 
 template <typename T1, typename T2> std::_Mem_fn<T1 T2::*> f20(T1 T2::*a0) {
-  return std::mem_fn<T1, T2>(std::forward<T1 T2::*>(a0));
+  return std::mem_fn(std::forward<T1 T2::*>(a0));
 }
 
 template <typename T1> auto f21(T1 &&a0) {
-  return std::not_fn<T1>(std::forward<T1>(a0));
+  return std::not_fn(std::forward<T1>(a0));
 }
 
 const std::_Placeholder<1> &f22() { return std::placeholders::_1; }

@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <ios>
 #include <iosfwd>
 #include <locale>
 #include <string>
@@ -69,6 +70,10 @@ f11(const std::moneypunct_byname<T1, T2> &a0) {
   return a0.neg_format();
 }
 
-template <typename T1, bool T2> bool f12() {
+template <typename T1, bool T2> const std::locale::id &f12() {
+  return std::moneypunct_byname<T1, T2>::id;
+}
+
+template <typename T1, bool T2> bool f13() {
   return std::moneypunct_byname<T1, T2>::intl;
 }

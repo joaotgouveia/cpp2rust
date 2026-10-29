@@ -41,3 +41,7 @@ template <typename T1>
 std::basic_string<T1> f7(const std::numpunct_byname<T1> &a0) {
   return a0.falsename();
 }
+
+template <typename T1> const std::locale::id &f8() {
+  return std::numpunct_byname<T1>::id;
+}

@@ -121,5 +121,5 @@ bool f17(const std::allocator<T1> &a0, const std::allocator<T1> &a1) {
 
 template <typename T1, typename T2>
 bool f18(const std::allocator<T1> &a0, const std::allocator<T2> &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }

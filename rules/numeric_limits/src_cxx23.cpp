@@ -2116,106 +2116,464 @@ template <typename T1> T1 f823() {
   return std::numeric_limits<const T1>::denorm_min();
 }
 
+template <typename T1> bool f824() {
+  return std::numeric_limits<const T1>::is_specialized;
+}
+
+template <typename T1> int f825() {
+  return std::numeric_limits<const T1>::digits;
+}
+
+template <typename T1> int f826() {
+  return std::numeric_limits<const T1>::digits10;
+}
+
+template <typename T1> int f827() {
+  return std::numeric_limits<const T1>::max_digits10;
+}
+
+template <typename T1> bool f828() {
+  return std::numeric_limits<const T1>::is_signed;
+}
+
+template <typename T1> bool f829() {
+  return std::numeric_limits<const T1>::is_integer;
+}
+
+template <typename T1> bool f830() {
+  return std::numeric_limits<const T1>::is_exact;
+}
+
+template <typename T1> int f831() {
+  return std::numeric_limits<const T1>::radix;
+}
+
+template <typename T1> int f832() {
+  return std::numeric_limits<const T1>::min_exponent;
+}
+
+template <typename T1> int f833() {
+  return std::numeric_limits<const T1>::min_exponent10;
+}
+
+template <typename T1> int f834() {
+  return std::numeric_limits<const T1>::max_exponent;
+}
+
+template <typename T1> int f835() {
+  return std::numeric_limits<const T1>::max_exponent10;
+}
+
+template <typename T1> bool f836() {
+  return std::numeric_limits<const T1>::has_infinity;
+}
+
+template <typename T1> bool f837() {
+  return std::numeric_limits<const T1>::has_quiet_NaN;
+}
+
+template <typename T1> bool f838() {
+  return std::numeric_limits<const T1>::has_signaling_NaN;
+}
+
+template <typename T1> std::float_denorm_style f839() {
+  return std::numeric_limits<const T1>::has_denorm;
+}
+
+template <typename T1> bool f840() {
+  return std::numeric_limits<const T1>::has_denorm_loss;
+}
+
+template <typename T1> bool f841() {
+  return std::numeric_limits<const T1>::is_iec559;
+}
+
+template <typename T1> bool f842() {
+  return std::numeric_limits<const T1>::is_bounded;
+}
+
+template <typename T1> bool f843() {
+  return std::numeric_limits<const T1>::is_modulo;
+}
+
+template <typename T1> bool f844() {
+  return std::numeric_limits<const T1>::traps;
+}
+
+template <typename T1> bool f845() {
+  return std::numeric_limits<const T1>::tinyness_before;
+}
+
+template <typename T1> std::float_round_style f846() {
+  return std::numeric_limits<const T1>::round_style;
+}
+
 template <typename T1> using t24 = std::numeric_limits<volatile T1>;
 
-template <typename T1> T1 f824() {
+template <typename T1> T1 f847() {
   return std::numeric_limits<volatile T1>::min();
 }
 
-template <typename T1> T1 f825() {
+template <typename T1> T1 f848() {
   return std::numeric_limits<volatile T1>::max();
 }
 
-template <typename T1> T1 f826() {
+template <typename T1> T1 f849() {
   return std::numeric_limits<volatile T1>::lowest();
 }
 
-template <typename T1> T1 f827() {
+template <typename T1> T1 f850() {
   return std::numeric_limits<volatile T1>::epsilon();
 }
 
-template <typename T1> T1 f828() {
+template <typename T1> T1 f851() {
   return std::numeric_limits<volatile T1>::round_error();
 }
 
-template <typename T1> T1 f829() {
+template <typename T1> T1 f852() {
   return std::numeric_limits<volatile T1>::infinity();
 }
 
-template <typename T1> T1 f830() {
+template <typename T1> T1 f853() {
   return std::numeric_limits<volatile T1>::quiet_NaN();
 }
 
-template <typename T1> T1 f831() {
+template <typename T1> T1 f854() {
   return std::numeric_limits<volatile T1>::signaling_NaN();
 }
 
-template <typename T1> T1 f832() {
+template <typename T1> T1 f855() {
   return std::numeric_limits<volatile T1>::denorm_min();
+}
+
+template <typename T1> bool f856() {
+  return std::numeric_limits<volatile T1>::is_specialized;
+}
+
+template <typename T1> int f857() {
+  return std::numeric_limits<volatile T1>::digits;
+}
+
+template <typename T1> int f858() {
+  return std::numeric_limits<volatile T1>::digits10;
+}
+
+template <typename T1> int f859() {
+  return std::numeric_limits<volatile T1>::max_digits10;
+}
+
+template <typename T1> bool f860() {
+  return std::numeric_limits<volatile T1>::is_signed;
+}
+
+template <typename T1> bool f861() {
+  return std::numeric_limits<volatile T1>::is_integer;
+}
+
+template <typename T1> bool f862() {
+  return std::numeric_limits<volatile T1>::is_exact;
+}
+
+template <typename T1> int f863() {
+  return std::numeric_limits<volatile T1>::radix;
+}
+
+template <typename T1> int f864() {
+  return std::numeric_limits<volatile T1>::min_exponent;
+}
+
+template <typename T1> int f865() {
+  return std::numeric_limits<volatile T1>::min_exponent10;
+}
+
+template <typename T1> int f866() {
+  return std::numeric_limits<volatile T1>::max_exponent;
+}
+
+template <typename T1> int f867() {
+  return std::numeric_limits<volatile T1>::max_exponent10;
+}
+
+template <typename T1> bool f868() {
+  return std::numeric_limits<volatile T1>::has_infinity;
+}
+
+template <typename T1> bool f869() {
+  return std::numeric_limits<volatile T1>::has_quiet_NaN;
+}
+
+template <typename T1> bool f870() {
+  return std::numeric_limits<volatile T1>::has_signaling_NaN;
+}
+
+template <typename T1> std::float_denorm_style f871() {
+  return std::numeric_limits<volatile T1>::has_denorm;
+}
+
+template <typename T1> bool f872() {
+  return std::numeric_limits<volatile T1>::has_denorm_loss;
+}
+
+template <typename T1> bool f873() {
+  return std::numeric_limits<volatile T1>::is_iec559;
+}
+
+template <typename T1> bool f874() {
+  return std::numeric_limits<volatile T1>::is_bounded;
+}
+
+template <typename T1> bool f875() {
+  return std::numeric_limits<volatile T1>::is_modulo;
+}
+
+template <typename T1> bool f876() {
+  return std::numeric_limits<volatile T1>::traps;
+}
+
+template <typename T1> bool f877() {
+  return std::numeric_limits<volatile T1>::tinyness_before;
+}
+
+template <typename T1> std::float_round_style f878() {
+  return std::numeric_limits<volatile T1>::round_style;
 }
 
 template <typename T1> using t25 = std::numeric_limits<const volatile T1>;
 
-template <typename T1> T1 f833() {
+template <typename T1> T1 f879() {
   return std::numeric_limits<const volatile T1>::min();
 }
 
-template <typename T1> T1 f834() {
+template <typename T1> T1 f880() {
   return std::numeric_limits<const volatile T1>::max();
 }
 
-template <typename T1> T1 f835() {
+template <typename T1> T1 f881() {
   return std::numeric_limits<const volatile T1>::lowest();
 }
 
-template <typename T1> T1 f836() {
+template <typename T1> T1 f882() {
   return std::numeric_limits<const volatile T1>::epsilon();
 }
 
-template <typename T1> T1 f837() {
+template <typename T1> T1 f883() {
   return std::numeric_limits<const volatile T1>::round_error();
 }
 
-template <typename T1> T1 f838() {
+template <typename T1> T1 f884() {
   return std::numeric_limits<const volatile T1>::infinity();
 }
 
-template <typename T1> T1 f839() {
+template <typename T1> T1 f885() {
   return std::numeric_limits<const volatile T1>::quiet_NaN();
 }
 
-template <typename T1> T1 f840() {
+template <typename T1> T1 f886() {
   return std::numeric_limits<const volatile T1>::signaling_NaN();
 }
 
-template <typename T1> T1 f841() {
+template <typename T1> T1 f887() {
   return std::numeric_limits<const volatile T1>::denorm_min();
+}
+
+template <typename T1> bool f888() {
+  return std::numeric_limits<const volatile T1>::is_specialized;
+}
+
+template <typename T1> int f889() {
+  return std::numeric_limits<const volatile T1>::digits;
+}
+
+template <typename T1> int f890() {
+  return std::numeric_limits<const volatile T1>::digits10;
+}
+
+template <typename T1> int f891() {
+  return std::numeric_limits<const volatile T1>::max_digits10;
+}
+
+template <typename T1> bool f892() {
+  return std::numeric_limits<const volatile T1>::is_signed;
+}
+
+template <typename T1> bool f893() {
+  return std::numeric_limits<const volatile T1>::is_integer;
+}
+
+template <typename T1> bool f894() {
+  return std::numeric_limits<const volatile T1>::is_exact;
+}
+
+template <typename T1> int f895() {
+  return std::numeric_limits<const volatile T1>::radix;
+}
+
+template <typename T1> int f896() {
+  return std::numeric_limits<const volatile T1>::min_exponent;
+}
+
+template <typename T1> int f897() {
+  return std::numeric_limits<const volatile T1>::min_exponent10;
+}
+
+template <typename T1> int f898() {
+  return std::numeric_limits<const volatile T1>::max_exponent;
+}
+
+template <typename T1> int f899() {
+  return std::numeric_limits<const volatile T1>::max_exponent10;
+}
+
+template <typename T1> bool f900() {
+  return std::numeric_limits<const volatile T1>::has_infinity;
+}
+
+template <typename T1> bool f901() {
+  return std::numeric_limits<const volatile T1>::has_quiet_NaN;
+}
+
+template <typename T1> bool f902() {
+  return std::numeric_limits<const volatile T1>::has_signaling_NaN;
+}
+
+template <typename T1> std::float_denorm_style f903() {
+  return std::numeric_limits<const volatile T1>::has_denorm;
+}
+
+template <typename T1> bool f904() {
+  return std::numeric_limits<const volatile T1>::has_denorm_loss;
+}
+
+template <typename T1> bool f905() {
+  return std::numeric_limits<const volatile T1>::is_iec559;
+}
+
+template <typename T1> bool f906() {
+  return std::numeric_limits<const volatile T1>::is_bounded;
+}
+
+template <typename T1> bool f907() {
+  return std::numeric_limits<const volatile T1>::is_modulo;
+}
+
+template <typename T1> bool f908() {
+  return std::numeric_limits<const volatile T1>::traps;
+}
+
+template <typename T1> bool f909() {
+  return std::numeric_limits<const volatile T1>::tinyness_before;
+}
+
+template <typename T1> std::float_round_style f910() {
+  return std::numeric_limits<const volatile T1>::round_style;
 }
 
 template <typename T1> using t26 = std::numeric_limits<T1>;
 
-template <typename T1> T1 f842() { return std::numeric_limits<T1>::min(); }
+template <typename T1> T1 f911() { return std::numeric_limits<T1>::min(); }
 
-template <typename T1> T1 f843() { return std::numeric_limits<T1>::max(); }
+template <typename T1> T1 f912() { return std::numeric_limits<T1>::max(); }
 
-template <typename T1> T1 f844() { return std::numeric_limits<T1>::lowest(); }
+template <typename T1> T1 f913() { return std::numeric_limits<T1>::lowest(); }
 
-template <typename T1> T1 f845() { return std::numeric_limits<T1>::epsilon(); }
+template <typename T1> T1 f914() { return std::numeric_limits<T1>::epsilon(); }
 
-template <typename T1> T1 f846() {
+template <typename T1> T1 f915() {
   return std::numeric_limits<T1>::round_error();
 }
 
-template <typename T1> T1 f847() { return std::numeric_limits<T1>::infinity(); }
+template <typename T1> T1 f916() { return std::numeric_limits<T1>::infinity(); }
 
-template <typename T1> T1 f848() {
+template <typename T1> T1 f917() {
   return std::numeric_limits<T1>::quiet_NaN();
 }
 
-template <typename T1> T1 f849() {
+template <typename T1> T1 f918() {
   return std::numeric_limits<T1>::signaling_NaN();
 }
 
-template <typename T1> T1 f850() {
+template <typename T1> T1 f919() {
   return std::numeric_limits<T1>::denorm_min();
+}
+
+template <typename T1> bool f920() {
+  return std::numeric_limits<T1>::is_specialized;
+}
+
+template <typename T1> int f921() { return std::numeric_limits<T1>::digits; }
+
+template <typename T1> int f922() { return std::numeric_limits<T1>::digits10; }
+
+template <typename T1> int f923() {
+  return std::numeric_limits<T1>::max_digits10;
+}
+
+template <typename T1> bool f924() {
+  return std::numeric_limits<T1>::is_signed;
+}
+
+template <typename T1> bool f925() {
+  return std::numeric_limits<T1>::is_integer;
+}
+
+template <typename T1> bool f926() { return std::numeric_limits<T1>::is_exact; }
+
+template <typename T1> int f927() { return std::numeric_limits<T1>::radix; }
+
+template <typename T1> int f928() {
+  return std::numeric_limits<T1>::min_exponent;
+}
+
+template <typename T1> int f929() {
+  return std::numeric_limits<T1>::min_exponent10;
+}
+
+template <typename T1> int f930() {
+  return std::numeric_limits<T1>::max_exponent;
+}
+
+template <typename T1> int f931() {
+  return std::numeric_limits<T1>::max_exponent10;
+}
+
+template <typename T1> bool f932() {
+  return std::numeric_limits<T1>::has_infinity;
+}
+
+template <typename T1> bool f933() {
+  return std::numeric_limits<T1>::has_quiet_NaN;
+}
+
+template <typename T1> bool f934() {
+  return std::numeric_limits<T1>::has_signaling_NaN;
+}
+
+template <typename T1> std::float_denorm_style f935() {
+  return std::numeric_limits<T1>::has_denorm;
+}
+
+template <typename T1> bool f936() {
+  return std::numeric_limits<T1>::has_denorm_loss;
+}
+
+template <typename T1> bool f937() {
+  return std::numeric_limits<T1>::is_iec559;
+}
+
+template <typename T1> bool f938() {
+  return std::numeric_limits<T1>::is_bounded;
+}
+
+template <typename T1> bool f939() {
+  return std::numeric_limits<T1>::is_modulo;
+}
+
+template <typename T1> bool f940() { return std::numeric_limits<T1>::traps; }
+
+template <typename T1> bool f941() {
+  return std::numeric_limits<T1>::tinyness_before;
+}
+
+template <typename T1> std::float_round_style f942() {
+  return std::numeric_limits<T1>::round_style;
 }

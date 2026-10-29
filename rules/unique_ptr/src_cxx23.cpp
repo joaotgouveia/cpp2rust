@@ -7,7 +7,7 @@ template <typename T1> auto f1(std::size_t a0) {
 }
 
 template <typename T1, typename... T2> std::unique_ptr<T1> f2(T2 &&...a0) {
-  return std::make_unique<T1, T2...>(std::forward<T2>(a0)...);
+  return std::make_unique<T1>(std::forward<T2>(a0)...);
 }
 
 template <typename T1> std::unique_ptr<T1> f3() {
@@ -20,38 +20,38 @@ template <typename T1> auto f4(std::size_t a0) {
 
 template <typename T1, typename T2>
 bool f5(const std::unique_ptr<T1, T2> &a0, std::nullptr_t a1) {
-  return std::operator< <T1, T2>(a0, a1);
+  return std::operator<(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f6(std::nullptr_t a0, const std::unique_ptr<T1, T2> &a1) {
-  return std::operator< <T1, T2>(a0, a1);
+  return std::operator<(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f7(const std::unique_ptr<T1, T2> &a0, const std::unique_ptr<T3, T4> &a1) {
-  return std::operator< <T1, T2, T3, T4>(a0, a1);
+  return std::operator<(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_ostream<T1, T2> &f8(std::basic_ostream<T1, T2> &a0,
                                const std::unique_ptr<T3, T4> &a1) {
-  return std::operator<< <T1, T2, T3, T4>(a0, a1);
+  return std::operator<<(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f9(const std::unique_ptr<T1, T2> &a0, std::nullptr_t a1) {
-  return std::operator<= <T1, T2>(a0, a1);
+  return std::operator<=(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f10(std::nullptr_t a0, const std::unique_ptr<T1, T2> &a1) {
-  return std::operator<= <T1, T2>(a0, a1);
+  return std::operator<=(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f11(const std::unique_ptr<T1, T2> &a0, const std::unique_ptr<T3, T4> &a1) {
-  return std::operator<= <T1, T2, T3, T4>(a0, a1);
+  return std::operator<=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -59,7 +59,7 @@ std::compare_three_way_result_t<typename std::unique_ptr<T1, T2>::pointer>
 f12(const std::unique_ptr<T1, T2> &a0, std::nullptr_t a1)
   requires(std::three_way_comparable<typename std::unique_ptr<T1, T2>::pointer>)
 {
-  return std::operator<=> <T1, T2>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -70,53 +70,53 @@ f13(const std::unique_ptr<T1, T2> &a0, const std::unique_ptr<T3, T4> &a1)
       std::three_way_comparable_with<typename std::unique_ptr<T1, T2>::pointer,
                                      typename std::unique_ptr<T3, T4>::pointer>)
 {
-  return std::operator<=> <T1, T2, T3, T4>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f14(const std::unique_ptr<T1, T2> &a0, std::nullptr_t a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f15(const std::unique_ptr<T1, T2> &a0, const std::unique_ptr<T3, T4> &a1) {
-  return std::operator== <T1, T2, T3, T4>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f16(const std::unique_ptr<T1, T2> &a0, std::nullptr_t a1) {
-  return std::operator><T1, T2>(a0, a1);
+  return std::operator>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f17(std::nullptr_t a0, const std::unique_ptr<T1, T2> &a1) {
-  return std::operator><T1, T2>(a0, a1);
+  return std::operator>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f18(const std::unique_ptr<T1, T2> &a0, const std::unique_ptr<T3, T4> &a1) {
-  return std::operator><T1, T2, T3, T4>(a0, a1);
+  return std::operator>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f19(const std::unique_ptr<T1, T2> &a0, std::nullptr_t a1) {
-  return std::operator>= <T1, T2>(a0, a1);
+  return std::operator>=(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f20(std::nullptr_t a0, const std::unique_ptr<T1, T2> &a1) {
-  return std::operator>= <T1, T2>(a0, a1);
+  return std::operator>=(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f21(const std::unique_ptr<T1, T2> &a0, const std::unique_ptr<T3, T4> &a1) {
-  return std::operator>= <T1, T2, T3, T4>(a0, a1);
+  return std::operator>=(a0, a1);
 }
 
 template <typename T1, typename T2>
 typename std::enable_if<std::is_swappable_v<T2>>::type
 f22(std::unique_ptr<T1, T2> &a0, std::unique_ptr<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename T1, typename T2> using t1 = std::unique_ptr<T1[], T2>;

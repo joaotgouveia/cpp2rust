@@ -3,37 +3,37 @@
 #include <utility>
 
 template <typename T1> T1 f1(const std::complex<T1> &a0) {
-  return std::abs<T1>(a0);
+  return std::abs(a0);
 }
 
 template <typename T1> std::complex<T1> f2(const std::complex<T1> &a0) {
-  return std::acos<T1>(a0);
+  return std::acos(a0);
 }
 
 template <typename T1> std::complex<T1> f3(const std::complex<T1> &a0) {
-  return std::acosh<T1>(a0);
+  return std::acosh(a0);
 }
 
 template <typename T1> T1 f4(const std::complex<T1> &a0) {
-  return std::arg<T1>(a0);
+  return std::arg(a0);
 }
 
-template <typename T1> double f5(T1 a0) { return std::arg<T1>(std::move(a0)); }
+template <typename T1> double f5(T1 a0) { return std::arg(std::move(a0)); }
 
 template <typename T1> std::complex<T1> f6(const std::complex<T1> &a0) {
-  return std::asin<T1>(a0);
+  return std::asin(a0);
 }
 
 template <typename T1> std::complex<T1> f7(const std::complex<T1> &a0) {
-  return std::asinh<T1>(a0);
+  return std::asinh(a0);
 }
 
 template <typename T1> std::complex<T1> f8(const std::complex<T1> &a0) {
-  return std::atan<T1>(a0);
+  return std::atan(a0);
 }
 
 template <typename T1> std::complex<T1> f9(const std::complex<T1> &a0) {
-  return std::atanh<T1>(a0);
+  return std::atanh(a0);
 }
 
 using t1 = std::complex<long double>;
@@ -381,50 +381,46 @@ std::complex<T1> &f84(std::complex<T1> &a0, const std::complex<T2> &a1) {
 }
 
 template <typename T1> std::complex<T1> f85(const std::complex<T1> &a0) {
-  return std::conj<T1>(a0);
+  return std::conj(a0);
 }
 
-template <typename T1> auto f86(T1 a0) { return std::conj<T1>(std::move(a0)); }
+template <typename T1> auto f86(T1 a0) { return std::conj(std::move(a0)); }
 
 template <typename T1> std::complex<T1> f87(const std::complex<T1> &a0) {
-  return std::cos<T1>(a0);
+  return std::cos(a0);
 }
 
 template <typename T1> std::complex<T1> f88(const std::complex<T1> &a0) {
-  return std::cosh<T1>(a0);
+  return std::cosh(a0);
 }
 
 template <typename T1> std::complex<T1> f89(const std::complex<T1> &a0) {
-  return std::exp<T1>(a0);
+  return std::exp(a0);
 }
 
 template <typename T1> T1 f90(const std::complex<T1> &a0) {
-  return std::fabs<T1>(a0);
+  return std::fabs(a0);
 }
 
 template <typename T1> T1 f91(const std::complex<T1> &a0) {
-  return std::imag<T1>(a0);
+  return std::imag(a0);
 }
 
-template <typename T1> double f92(T1 a0) {
-  return std::imag<T1>(std::move(a0));
-}
+template <typename T1> double f92(T1 a0) { return std::imag(std::move(a0)); }
 
 template <typename T1> std::complex<T1> f93(const std::complex<T1> &a0) {
-  return std::log<T1>(a0);
+  return std::log(a0);
 }
 
 template <typename T1> std::complex<T1> f94(const std::complex<T1> &a0) {
-  return std::log10<T1>(a0);
+  return std::log10(a0);
 }
 
 template <typename T1> T1 f95(const std::complex<T1> &a0) {
-  return std::norm<T1>(a0);
+  return std::norm(a0);
 }
 
-template <typename T1> double f96(T1 a0) {
-  return std::norm<T1>(std::move(a0));
-}
+template <typename T1> double f96(T1 a0) { return std::norm(std::move(a0)); }
 
 std::complex<double> f97(long double a0) { return std::operator""i(a0); }
 
@@ -444,162 +440,160 @@ std::complex<long double> f102(unsigned long long a0) {
 
 template <typename T1>
 std::complex<T1> f103(const std::complex<T1> &a0, const T1 &a1) {
-  return std::operator* <T1>(a0, a1);
+  return std::operator*(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f104(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return std::operator* <T1>(a0, a1);
+  return std::operator*(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f105(const T1 &a0, const std::complex<T1> &a1) {
-  return std::operator* <T1>(a0, a1);
+  return std::operator*(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f106(const std::complex<T1> &a0, const T1 &a1) {
-  return std::operator+ <T1>(a0, a1);
+  return std::operator+(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f107(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return std::operator+ <T1>(a0, a1);
+  return std::operator+(a0, a1);
 }
 
 template <typename T1> std::complex<T1> f108(const std::complex<T1> &a0) {
-  return std::operator+ <T1>(a0);
+  return std::operator+(a0);
 }
 
 template <typename T1>
 std::complex<T1> f109(const T1 &a0, const std::complex<T1> &a1) {
-  return std::operator+ <T1>(a0, a1);
+  return std::operator+(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f110(const std::complex<T1> &a0, const T1 &a1) {
-  return std::operator- <T1>(a0, a1);
+  return std::operator-(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f111(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return std::operator- <T1>(a0, a1);
+  return std::operator-(a0, a1);
 }
 
 template <typename T1> std::complex<T1> f112(const std::complex<T1> &a0) {
-  return std::operator- <T1>(a0);
+  return std::operator-(a0);
 }
 
 template <typename T1>
 std::complex<T1> f113(const T1 &a0, const std::complex<T1> &a1) {
-  return std::operator- <T1>(a0, a1);
+  return std::operator-(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f114(const std::complex<T1> &a0, const T1 &a1) {
-  return std::operator/ <T1>(a0, a1);
+  return std::operator/(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f115(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return std::operator/ <T1>(a0, a1);
+  return std::operator/(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f116(const T1 &a0, const std::complex<T1> &a1) {
-  return std::operator/ <T1>(a0, a1);
+  return std::operator/(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T2, T3> &f117(std::basic_ostream<T2, T3> &a0,
                                  const std::complex<T1> &a1) {
-  return std::operator<< <T1, T2, T3>(a0, a1);
+  return std::operator<<(a0, a1);
 }
 
 template <typename T1> bool f118(const std::complex<T1> &a0, const T1 &a1) {
-  return std::operator== <T1>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1>
 bool f119(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return std::operator== <T1>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T2, T3> &f120(std::basic_istream<T2, T3> &a0,
                                  std::complex<T1> &a1) {
-  return std::operator>> <T1, T2, T3>(a0, a1);
+  return std::operator>>(a0, a1);
 }
 
 template <typename T1> std::complex<T1> f121(const T1 &a0, const T1 &a1) {
-  return std::polar<T1>(a0, a1);
+  return std::polar(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f122(const std::complex<T1> &a0, const T1 &a1) {
-  return std::pow<T1>(a0, a1);
+  return std::pow(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f123(const std::complex<T1> &a0, int a1) {
-  return std::pow<T1>(a0, a1);
+  return std::pow(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f124(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return std::pow<T1>(a0, a1);
+  return std::pow(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f125(const T1 &a0, const std::complex<T1> &a1) {
-  return std::pow<T1>(a0, a1);
+  return std::pow(a0, a1);
 }
 
 template <typename T1, typename T2>
 auto f126(const std::complex<T1> &a0, const std::complex<T2> &a1) {
-  return std::pow<T1, T2>(a0, a1);
+  return std::pow(a0, a1);
 }
 
 template <typename T1, typename T2>
 auto f127(const std::complex<T1> &a0, const T2 &a1) {
-  return std::pow<T1, T2>(a0, a1);
+  return std::pow(a0, a1);
 }
 
 template <typename T1, typename T2>
 auto f128(const T1 &a0, const std::complex<T2> &a1) {
-  return std::pow<T1, T2>(a0, a1);
+  return std::pow(a0, a1);
 }
 
 template <typename T1> std::complex<T1> f129(const std::complex<T1> &a0) {
-  return std::proj<T1>(a0);
+  return std::proj(a0);
 }
 
-template <typename T1> auto f130(T1 a0) { return std::proj<T1>(std::move(a0)); }
+template <typename T1> auto f130(T1 a0) { return std::proj(std::move(a0)); }
 
 template <typename T1> T1 f131(const std::complex<T1> &a0) {
-  return std::real<T1>(a0);
+  return std::real(a0);
 }
 
-template <typename T1> double f132(T1 a0) {
-  return std::real<T1>(std::move(a0));
-}
+template <typename T1> double f132(T1 a0) { return std::real(std::move(a0)); }
 
 template <typename T1> std::complex<T1> f133(const std::complex<T1> &a0) {
-  return std::sin<T1>(a0);
+  return std::sin(a0);
 }
 
 template <typename T1> std::complex<T1> f134(const std::complex<T1> &a0) {
-  return std::sinh<T1>(a0);
+  return std::sinh(a0);
 }
 
 template <typename T1> std::complex<T1> f135(const std::complex<T1> &a0) {
-  return std::sqrt<T1>(a0);
+  return std::sqrt(a0);
 }
 
 template <typename T1> std::complex<T1> f136(const std::complex<T1> &a0) {
-  return std::tan<T1>(a0);
+  return std::tan(a0);
 }
 
 template <typename T1> std::complex<T1> f137(const std::complex<T1> &a0) {
-  return std::tanh<T1>(a0);
+  return std::tanh(a0);
 }

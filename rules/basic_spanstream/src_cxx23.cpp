@@ -480,143 +480,305 @@ void *&f78(std::basic_spanstream<T1, T2> &a0, int a1) {
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &
-f79(std::basic_spanstream<T1, T2> &a0,
-    std::basic_spanstream<T1, T2> &(*a1)(std::basic_spanstream<T1, T2> &)) {
-  return a0.operator<<(a1);
+typename std::basic_spanstream<T1, T2>::fmtflags f79() {
+  return std::basic_spanstream<T1, T2>::boolalpha;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f80() {
+  return std::basic_spanstream<T1, T2>::dec;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f81() {
+  return std::basic_spanstream<T1, T2>::fixed;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f82() {
+  return std::basic_spanstream<T1, T2>::hex;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f83() {
+  return std::basic_spanstream<T1, T2>::internal;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f84() {
+  return std::basic_spanstream<T1, T2>::left;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f85() {
+  return std::basic_spanstream<T1, T2>::oct;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f86() {
+  return std::basic_spanstream<T1, T2>::right;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f87() {
+  return std::basic_spanstream<T1, T2>::scientific;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f88() {
+  return std::basic_spanstream<T1, T2>::showbase;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f89() {
+  return std::basic_spanstream<T1, T2>::showpoint;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f90() {
+  return std::basic_spanstream<T1, T2>::showpos;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f91() {
+  return std::basic_spanstream<T1, T2>::skipws;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f92() {
+  return std::basic_spanstream<T1, T2>::unitbuf;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f93() {
+  return std::basic_spanstream<T1, T2>::uppercase;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f94() {
+  return std::basic_spanstream<T1, T2>::adjustfield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f95() {
+  return std::basic_spanstream<T1, T2>::basefield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::fmtflags f96() {
+  return std::basic_spanstream<T1, T2>::floatfield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::iostate f97() {
+  return std::basic_spanstream<T1, T2>::badbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::iostate f98() {
+  return std::basic_spanstream<T1, T2>::eofbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::iostate f99() {
+  return std::basic_spanstream<T1, T2>::failbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::iostate f100() {
+  return std::basic_spanstream<T1, T2>::goodbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::openmode f101() {
+  return std::basic_spanstream<T1, T2>::app;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::openmode f102() {
+  return std::basic_spanstream<T1, T2>::ate;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::openmode f103() {
+  return std::basic_spanstream<T1, T2>::binary;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::openmode f104() {
+  return std::basic_spanstream<T1, T2>::in;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::openmode f105() {
+  return std::basic_spanstream<T1, T2>::out;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::openmode f106() {
+  return std::basic_spanstream<T1, T2>::trunc;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::openmode f107() {
+  return std::basic_spanstream<T1, T2>::noreplace;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::seekdir f108() {
+  return std::basic_spanstream<T1, T2>::beg;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::seekdir f109() {
+  return std::basic_spanstream<T1, T2>::cur;
+}
+
+template <typename T1, typename T2>
+typename std::basic_spanstream<T1, T2>::seekdir f110() {
+  return std::basic_spanstream<T1, T2>::end;
 }
 
 template <typename T1, typename T2>
 std::basic_spanstream<T1, T2> &
-f80(std::basic_spanstream<T1, T2> &a0,
-    std::basic_ios<T1, T2> &(*a1)(std::basic_ios<T1, T2> &)) {
+f111(std::basic_spanstream<T1, T2> &a0,
+     std::basic_spanstream<T1, T2> &(*a1)(std::basic_spanstream<T1, T2> &)) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f81(std::basic_spanstream<T1, T2> &a0,
-                                   std::ios_base &(*a1)(std::ios_base &)) {
+std::basic_spanstream<T1, T2> &
+f112(std::basic_spanstream<T1, T2> &a0,
+     std::basic_ios<T1, T2> &(*a1)(std::basic_ios<T1, T2> &)) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f82(std::basic_spanstream<T1, T2> &a0, long a1) {
+std::basic_spanstream<T1, T2> &f113(std::basic_spanstream<T1, T2> &a0,
+                                    std::ios_base &(*a1)(std::ios_base &)) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f83(std::basic_spanstream<T1, T2> &a0,
-                                   unsigned long a1) {
+std::basic_spanstream<T1, T2> &f114(std::basic_spanstream<T1, T2> &a0,
+                                    long a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f84(std::basic_spanstream<T1, T2> &a0, bool a1) {
+std::basic_spanstream<T1, T2> &f115(std::basic_spanstream<T1, T2> &a0,
+                                    unsigned long a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f85(std::basic_spanstream<T1, T2> &a0,
-                                   short a1) {
+std::basic_spanstream<T1, T2> &f116(std::basic_spanstream<T1, T2> &a0,
+                                    bool a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f86(std::basic_spanstream<T1, T2> &a0,
-                                   unsigned short a1) {
+std::basic_spanstream<T1, T2> &f117(std::basic_spanstream<T1, T2> &a0,
+                                    short a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f87(std::basic_spanstream<T1, T2> &a0, int a1) {
+std::basic_spanstream<T1, T2> &f118(std::basic_spanstream<T1, T2> &a0,
+                                    unsigned short a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f88(std::basic_spanstream<T1, T2> &a0,
-                                   unsigned int a1) {
+std::basic_spanstream<T1, T2> &f119(std::basic_spanstream<T1, T2> &a0, int a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f89(std::basic_spanstream<T1, T2> &a0,
-                                   long long a1) {
+std::basic_spanstream<T1, T2> &f120(std::basic_spanstream<T1, T2> &a0,
+                                    unsigned int a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f90(std::basic_spanstream<T1, T2> &a0,
-                                   unsigned long long a1) {
+std::basic_spanstream<T1, T2> &f121(std::basic_spanstream<T1, T2> &a0,
+                                    long long a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f91(std::basic_spanstream<T1, T2> &a0,
-                                   double a1) {
+std::basic_spanstream<T1, T2> &f122(std::basic_spanstream<T1, T2> &a0,
+                                    unsigned long long a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f92(std::basic_spanstream<T1, T2> &a0,
-                                   float a1) {
+std::basic_spanstream<T1, T2> &f123(std::basic_spanstream<T1, T2> &a0,
+                                    double a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f93(std::basic_spanstream<T1, T2> &a0,
-                                   long double a1) {
+std::basic_spanstream<T1, T2> &f124(std::basic_spanstream<T1, T2> &a0,
+                                    float a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f94(std::basic_spanstream<T1, T2> &a0,
-                                   const void *a1) {
+std::basic_spanstream<T1, T2> &f125(std::basic_spanstream<T1, T2> &a0,
+                                    long double a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f95(std::basic_spanstream<T1, T2> &a0,
-                                   std::nullptr_t a1) {
+std::basic_spanstream<T1, T2> &f126(std::basic_spanstream<T1, T2> &a0,
+                                    const void *a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f96(std::basic_spanstream<T1, T2> &a0,
-                                   const volatile void *a1) {
+std::basic_spanstream<T1, T2> &f127(std::basic_spanstream<T1, T2> &a0,
+                                    std::nullptr_t a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f97(std::basic_spanstream<T1, T2> &a0,
-                                   std::basic_streambuf<T1, T2> *a1) {
+std::basic_spanstream<T1, T2> &f128(std::basic_spanstream<T1, T2> &a0,
+                                    const volatile void *a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f98(std::basic_spanstream<T1, T2> &a0, T1 a1) {
+std::basic_spanstream<T1, T2> &f129(std::basic_spanstream<T1, T2> &a0,
+                                    std::basic_streambuf<T1, T2> *a1) {
+  return a0.operator<<(a1);
+}
+
+template <typename T1, typename T2>
+std::basic_spanstream<T1, T2> &f130(std::basic_spanstream<T1, T2> &a0, T1 a1) {
   return a0.put(std::move(a1));
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f99(std::basic_spanstream<T1, T2> &a0,
-                                   T1 const *a1, std::streamsize a2) {
+std::basic_spanstream<T1, T2> &f131(std::basic_spanstream<T1, T2> &a0,
+                                    T1 const *a1, std::streamsize a2) {
   return a0.write(a1, a2);
 }
 
 template <typename T1, typename T2>
-std::basic_spanstream<T1, T2> &f100(std::basic_spanstream<T1, T2> &a0) {
+std::basic_spanstream<T1, T2> &f132(std::basic_spanstream<T1, T2> &a0) {
   return a0.flush();
 }
 
 template <typename T1, typename T2>
 typename std::basic_spanstream<T1, T2>::pos_type
-f101(std::basic_spanstream<T1, T2> &a0) {
+f133(std::basic_spanstream<T1, T2> &a0) {
   return a0.tellp();
 }
 
 template <typename T1, typename T2>
 std::basic_spanstream<T1, T2> &
-f102(std::basic_spanstream<T1, T2> &a0,
+f134(std::basic_spanstream<T1, T2> &a0,
      typename std::basic_spanstream<T1, T2>::pos_type a1) {
   return a0.seekp(
       std::forward<typename std::basic_spanstream<T1, T2>::pos_type>(a1));
@@ -624,7 +786,7 @@ f102(std::basic_spanstream<T1, T2> &a0,
 
 template <typename T1, typename T2>
 std::basic_spanstream<T1, T2> &
-f103(std::basic_spanstream<T1, T2> &a0,
+f135(std::basic_spanstream<T1, T2> &a0,
      typename std::basic_spanstream<T1, T2>::off_type a1,
      typename std::basic_spanstream<T1, T2>::seekdir a2) {
   return a0.seekp(

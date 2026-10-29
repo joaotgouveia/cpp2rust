@@ -10,3 +10,5 @@ template <typename T1> int f1(const std::is_placeholder<T1> &a0) {
 template <typename T1> int f2(const std::is_placeholder<T1> &a0) {
   return a0.operator()();
 }
+
+template <typename T1> int f3() { return std::is_placeholder<T1>::value; }

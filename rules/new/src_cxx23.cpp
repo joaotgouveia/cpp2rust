@@ -99,7 +99,7 @@ std::size_t f28() { return std::hardware_constructive_interference_size; }
 
 std::size_t f29() { return std::hardware_destructive_interference_size; }
 
-template <typename T1> T1 *f30(T1 *a0) { return std::launder<T1>(a0); }
+template <typename T1> T1 *f30(T1 *a0) { return std::launder(a0); }
 
 using t5 = std::new_handler;
 

@@ -61,7 +61,7 @@ template <
         int>
         T2 = 0>
 std::from_chars_result f8(const char *a0, const char *a1, T1 &a2, int a3) {
-  return std::from_chars<T1>(a0, a1, a2, a3);
+  return std::from_chars(a0, a1, a2, a3);
 }
 
 using t2 = std::from_chars_result;

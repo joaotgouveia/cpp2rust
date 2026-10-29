@@ -5,12 +5,11 @@
 
 template <typename T1, typename... T2>
 auto f1(std::launch a0, T1 &&a1, T2 &&...a2) {
-  return std::async<T1, T2...>(a0, std::forward<T1>(a1),
-                               std::forward<T2>(a2)...);
+  return std::async(a0, std::forward<T1>(a1), std::forward<T2>(a2)...);
 }
 
 template <typename T1, typename... T2> auto f2(T1 &&a0, T2 &&...a1) {
-  return std::async<T1, T2...>(std::forward<T1>(a0), std::forward<T2>(a1)...);
+  return std::async(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
 template <typename T1> using t1 = std::future<T1>;
@@ -123,10 +122,10 @@ std::launch &f34(std::launch &a0, std::launch a1) {
 std::launch f35(std::launch a0) { return std::operator~(a0); }
 
 template <typename T1> void f36(std::promise<T1> &a0, std::promise<T1> &a1) {
-  return std::swap<T1>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename T1, typename... T2>
 void f37(std::packaged_task<T1(T2...)> &a0, std::packaged_task<T1(T2...)> &a1) {
-  return std::swap<T1, T2...>(a0, a1);
+  return std::swap(a0, a1);
 }

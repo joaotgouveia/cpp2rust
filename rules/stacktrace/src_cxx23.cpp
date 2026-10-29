@@ -9,7 +9,7 @@ std::ostream &f1(std::ostream &a0, const std::stacktrace_entry &a1) {
 
 template <typename T1>
 std::ostream &f2(std::ostream &a0, const std::basic_stacktrace<T1> &a1) {
-  return std::operator<< <T1>(a0, a1);
+  return std::operator<<(a0, a1);
 }
 
 using t1 = std::pmr::stacktrace;
@@ -54,11 +54,11 @@ bool f12(const std::stacktrace_entry &a0, const std::stacktrace_entry &a1) {
 
 template <typename T1>
 void f13(std::basic_stacktrace<T1> &a0, std::basic_stacktrace<T1> &a1) {
-  return std::swap<T1>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 std::string f14(const std::stacktrace_entry &a0) { return std::to_string(a0); }
 
 template <typename T1> std::string f15(const std::basic_stacktrace<T1> &a0) {
-  return std::to_string<T1>(a0);
+  return std::to_string(a0);
 }

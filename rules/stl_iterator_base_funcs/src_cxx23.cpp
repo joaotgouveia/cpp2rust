@@ -2,24 +2,24 @@
 #include <utility>
 
 template <typename T1, typename T2> void f1(T1 &a0, T2 a1) {
-  return std::advance<T1, T2>(a0, std::move(a1));
+  return std::advance(a0, std::move(a1));
 }
 
 template <typename T1>
 typename std::iterator_traits<T1>::difference_type f2(T1 a0, T1 a1) {
-  return std::distance<T1>(std::move(a0), std::move(a1));
+  return std::distance(std::move(a0), std::move(a1));
 }
 
 template <typename T1>
 T1 f3(T1 a0, typename std::iterator_traits<T1>::difference_type a1) {
-  return std::next<T1>(
+  return std::next(
       std::move(a0),
       std::forward<typename std::iterator_traits<T1>::difference_type>(a1));
 }
 
 template <typename T1>
 T1 f4(T1 a0, typename std::iterator_traits<T1>::difference_type a1) {
-  return std::prev<T1>(
+  return std::prev(
       std::move(a0),
       std::forward<typename std::iterator_traits<T1>::difference_type>(a1));
 }

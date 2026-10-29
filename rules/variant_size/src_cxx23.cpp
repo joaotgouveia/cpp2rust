@@ -19,3 +19,7 @@ template <typename... T1>
 std::size_t f2(const std::variant_size<std::variant<T1...>> &a0) {
   return a0.operator()();
 }
+
+template <typename... T1> std::size_t f3() {
+  return std::variant_size<std::variant<T1...>>::value;
+}

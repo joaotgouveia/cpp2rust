@@ -1688,129 +1688,129 @@ typename std::basic_string<T1, T2, T3>::size_type f183() {
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f184(std::basic_istream<T1, T2> &&a0,
                                  std::basic_string<T1, T2, T3> &a1) {
-  return std::getline<T1, T2, T3>(std::move(a0), a1);
+  return std::getline(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f185(std::basic_istream<T1, T2> &&a0,
                                  std::basic_string<T1, T2, T3> &a1, T1 a2) {
-  return std::getline<T1, T2, T3>(std::move(a0), a1, std::move(a2));
+  return std::getline(std::move(a0), a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f186(std::basic_istream<T1, T2> &a0,
                                  std::basic_string<T1, T2, T3> &a1) {
-  return std::getline<T1, T2, T3>(a0, a1);
+  return std::getline(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f187(std::basic_istream<T1, T2> &a0,
                                  std::basic_string<T1, T2, T3> &a1, T1 a2) {
-  return std::getline<T1, T2, T3>(a0, a1, std::move(a2));
+  return std::getline(a0, a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f188(std::basic_string<T1, T2, T3> &&a0,
                                    const std::basic_string<T1, T2, T3> &a1) {
-  return std::operator+ <T1, T2, T3>(std::move(a0), a1);
+  return std::operator+(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f189(std::basic_string<T1, T2, T3> &&a0,
                                    const T1 *a1) {
-  return std::operator+ <T1, T2, T3>(std::move(a0), a1);
+  return std::operator+(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f190(std::basic_string<T1, T2, T3> &&a0,
                                    std::basic_string<T1, T2, T3> &&a1) {
-  return std::operator+ <T1, T2, T3>(std::move(a0), std::move(a1));
+  return std::operator+(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f191(std::basic_string<T1, T2, T3> &&a0, T1 a1) {
-  return std::operator+ <T1, T2, T3>(std::move(a0), std::move(a1));
+  return std::operator+(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f192(const std::basic_string<T1, T2, T3> &a0,
                                    std::basic_string<T1, T2, T3> &&a1) {
-  return std::operator+ <T1, T2, T3>(a0, std::move(a1));
+  return std::operator+(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f193(const std::basic_string<T1, T2, T3> &a0,
                                    const T1 *a1) {
-  return std::operator+ <T1, T2, T3>(a0, a1);
+  return std::operator+(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f194(const std::basic_string<T1, T2, T3> &a0,
                                    const std::basic_string<T1, T2, T3> &a1) {
-  return std::operator+ <T1, T2, T3>(a0, a1);
+  return std::operator+(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f195(const std::basic_string<T1, T2, T3> &a0,
                                    T1 a1) {
-  return std::operator+ <T1, T2, T3>(a0, std::move(a1));
+  return std::operator+(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f196(const T1 *a0,
                                    std::basic_string<T1, T2, T3> &&a1) {
-  return std::operator+ <T1, T2, T3>(a0, std::move(a1));
+  return std::operator+(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f197(const T1 *a0,
                                    const std::basic_string<T1, T2, T3> &a1) {
-  return std::operator+ <T1, T2, T3>(a0, a1);
+  return std::operator+(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f198(T1 a0, std::basic_string<T1, T2, T3> &&a1) {
-  return std::operator+ <T1, T2, T3>(std::move(a0), std::move(a1));
+  return std::operator+(std::move(a0), std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f199(T1 a0,
                                    const std::basic_string<T1, T2, T3> &a1) {
-  return std::operator+ <T1, T2, T3>(std::move(a0), a1);
+  return std::operator+(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f200(std::basic_ostream<T1, T2> &a0,
                                  const std::basic_string<T1, T2, T3> &a1) {
-  return std::operator<< <T1, T2, T3>(a0, a1);
+  return std::operator<<(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 auto f201(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
-  return std::operator<=> <T1, T2, T3>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 auto f202(const std::basic_string<T1, T2, T3> &a0,
           const std::basic_string<T1, T2, T3> &a1) {
-  return std::operator<=> <T1, T2, T3>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f203(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
-  return std::operator== <T1, T2, T3>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f204(const std::basic_string<T1, T2, T3> &a0,
           const std::basic_string<T1, T2, T3> &a1) {
-  return std::operator== <T1, T2, T3>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f205(std::basic_istream<T1, T2> &a0,
                                  std::basic_string<T1, T2, T3> &a1) {
-  return std::operator>> <T1, T2, T3>(a0, a1);
+  return std::operator>>(a0, a1);
 }
 
 double f206(const std::string &a0, std::size_t *a1) {
@@ -1898,7 +1898,7 @@ std::basic_string<char32_t> f226(const char32_t *a0, std::size_t a1) {
 template <typename T1, typename T2, typename T3>
 void f227(std::basic_string<T1, T2, T3> &a0,
           std::basic_string<T1, T2, T3> &a1) {
-  return std::swap<T1, T2, T3>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 std::wstring f228(long double a0) { return std::to_wstring(a0); }

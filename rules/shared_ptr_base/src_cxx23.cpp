@@ -350,53 +350,53 @@ std::bad_weak_ptr &f59(std::bad_weak_ptr &a0, const std::bad_weak_ptr &a1) {
 
 template <typename T1, typename T2, std::_Lock_policy T3>
 std::__shared_ptr<T1, T3> f60(const std::__shared_ptr<T2, T3> &a0) {
-  return std::const_pointer_cast<T1, T2, T3>(a0);
+  return std::const_pointer_cast<T1>(a0);
 }
 
 template <typename T1, typename T2, std::_Lock_policy T3>
 std::__shared_ptr<T1, T3> f61(const std::__shared_ptr<T2, T3> &a0) {
-  return std::dynamic_pointer_cast<T1, T2, T3>(a0);
+  return std::dynamic_pointer_cast<T1>(a0);
 }
 
 template <typename T1, std::_Lock_policy T2>
 std::strong_ordering f62(const std::__shared_ptr<T1, T2> &a0,
                          std::nullptr_t a1) {
-  return std::operator<=> <T1, T2>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2, std::_Lock_policy T3>
 std::strong_ordering f63(const std::__shared_ptr<T1, T3> &a0,
                          const std::__shared_ptr<T2, T3> &a1) {
-  return std::operator<=> <T1, T2, T3>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, std::_Lock_policy T2>
 bool f64(const std::__shared_ptr<T1, T2> &a0, std::nullptr_t a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, std::_Lock_policy T3>
 bool f65(const std::__shared_ptr<T1, T3> &a0,
          const std::__shared_ptr<T2, T3> &a1) {
-  return std::operator== <T1, T2, T3>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, std::_Lock_policy T3>
 std::__shared_ptr<T1, T3> f66(const std::__shared_ptr<T2, T3> &a0) {
-  return std::reinterpret_pointer_cast<T1, T2, T3>(a0);
+  return std::reinterpret_pointer_cast<T1>(a0);
 }
 
 template <typename T1, typename T2, std::_Lock_policy T3>
 std::__shared_ptr<T1, T3> f67(const std::__shared_ptr<T2, T3> &a0) {
-  return std::static_pointer_cast<T1, T2, T3>(a0);
+  return std::static_pointer_cast<T1>(a0);
 }
 
 template <typename T1, std::_Lock_policy T2>
 void f68(std::__shared_ptr<T1, T2> &a0, std::__shared_ptr<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename T1, std::_Lock_policy T2>
 void f69(std::__weak_ptr<T1, T2> &a0, std::__weak_ptr<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+  return std::swap(a0, a1);
 }

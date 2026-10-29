@@ -5,12 +5,12 @@
 template <typename T1, typename T2, typename T3>
 typename std::vector<T1, T2>::size_type f1(std::vector<T1, T2> &a0,
                                            const T3 &a1) {
-  return std::erase<T1, T2, T3>(a0, a1);
+  return std::erase(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::vector<T1, T2>::size_type f2(std::vector<T1, T2> &a0, T3 a1) {
-  return std::erase_if<T1, T2, T3>(a0, std::move(a1));
+  return std::erase_if(a0, std::move(a1));
 }
 
 template <typename T1> using t1 = std::pmr::vector<T1>;

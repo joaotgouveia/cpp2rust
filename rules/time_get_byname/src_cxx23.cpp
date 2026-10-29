@@ -69,3 +69,7 @@ T2 f10(const std::time_get_byname<T1, T2> &a0, T2 a1, T2 a2, std::ios_base &a3,
        std::ios_base::iostate &a4, std::tm *a5, T1 const *a6, T1 const *a7) {
   return a0.get(std::move(a1), std::move(a2), a3, a4, a5, a6, a7);
 }
+
+template <typename T1, typename T2> const std::locale::id &f11() {
+  return std::time_get_byname<T1, T2>::id;
+}

@@ -21,9 +21,9 @@ std::exception_ptr f5(const std::nested_exception &a0) {
 }
 
 template <typename T1> void f6(const T1 &a0) {
-  return std::rethrow_if_nested<T1>(a0);
+  return std::rethrow_if_nested(a0);
 }
 
 template <typename T1> void f7(T1 &&a0) {
-  return std::throw_with_nested<T1>(std::forward<T1>(a0));
+  return std::throw_with_nested(std::forward<T1>(a0));
 }

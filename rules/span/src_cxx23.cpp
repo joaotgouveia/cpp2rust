@@ -8,7 +8,7 @@ template <typename T1, std::size_t T2>
 std::span<const std::byte,
           T2 == std::dynamic_extent ? std::dynamic_extent : T2 * sizeof(T1)>
 f1(std::span<T1, T2> a0) {
-  return std::as_bytes<T1, T2>(std::forward<std::span<T1, T2>>(a0));
+  return std::as_bytes(std::forward<std::span<T1, T2>>(a0));
 }
 
 template <typename T1, std::size_t T2>
@@ -17,7 +17,7 @@ std::span<std::byte,
 f2(std::span<T1, T2> a0)
   requires((!std::is_const_v<T1>))
 {
-  return std::as_writable_bytes<T1, T2>(std::forward<std::span<T1, T2>>(a0));
+  return std::as_writable_bytes(std::forward<std::span<T1, T2>>(a0));
 }
 
 std::size_t f3() { return std::dynamic_extent; }

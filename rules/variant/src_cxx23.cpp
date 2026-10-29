@@ -31,84 +31,84 @@ std::bad_variant_access &f6(std::bad_variant_access &a0,
 template <std::size_t T1, typename... T2>
 const std::variant_alternative_t<T1, std::variant<T2...>> &&
 f7(const std::variant<T2...> &&a0) {
-  return std::get<T1, T2...>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <std::size_t T1, typename... T2>
 std::variant_alternative_t<T1, std::variant<T2...>> &&
 f8(std::variant<T2...> &&a0) {
-  return std::get<T1, T2...>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <std::size_t T1, typename... T2>
 const std::variant_alternative_t<T1, std::variant<T2...>> &
 f9(const std::variant<T2...> &a0) {
-  return std::get<T1, T2...>(a0);
+  return std::get<T1>(a0);
 }
 
 template <std::size_t T1, typename... T2>
 std::variant_alternative_t<T1, std::variant<T2...>> &
 f10(std::variant<T2...> &a0) {
-  return std::get<T1, T2...>(a0);
+  return std::get<T1>(a0);
 }
 
 template <typename T1, typename... T2>
 const T1 &&f11(const std::variant<T2...> &&a0) {
-  return std::get<T1, T2...>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <typename T1, typename... T2> T1 &&f12(std::variant<T2...> &&a0) {
-  return std::get<T1, T2...>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <typename T1, typename... T2>
 const T1 &f13(const std::variant<T2...> &a0) {
-  return std::get<T1, T2...>(a0);
+  return std::get<T1>(a0);
 }
 
 template <typename T1, typename... T2> T1 &f14(std::variant<T2...> &a0) {
-  return std::get<T1, T2...>(a0);
+  return std::get<T1>(a0);
 }
 
 template <std::size_t T1, typename... T2>
 std::add_pointer_t<const std::variant_alternative_t<T1, std::variant<T2...>>>
 f15(const std::variant<T2...> *a0) {
-  return std::get_if<T1, T2...>(a0);
+  return std::get_if<T1>(a0);
 }
 
 template <std::size_t T1, typename... T2>
 std::add_pointer_t<std::variant_alternative_t<T1, std::variant<T2...>>>
 f16(std::variant<T2...> *a0) {
-  return std::get_if<T1, T2...>(a0);
+  return std::get_if<T1>(a0);
 }
 
 template <typename T1, typename... T2>
 std::add_pointer_t<const T1> f17(const std::variant<T2...> *a0) {
-  return std::get_if<T1, T2...>(a0);
+  return std::get_if<T1>(a0);
 }
 
 template <typename T1, typename... T2>
 std::add_pointer_t<T1> f18(std::variant<T2...> *a0) {
-  return std::get_if<T1, T2...>(a0);
+  return std::get_if<T1>(a0);
 }
 
 template <typename T1, typename... T2> bool f19(const std::variant<T2...> &a0) {
-  return std::holds_alternative<T1, T2...>(a0);
+  return std::holds_alternative<T1>(a0);
 }
 
 template <typename... T1>
 bool f20(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return std::operator!= <T1...>(a0, a1);
+  return std::operator!=(a0, a1);
 }
 
 template <typename... T1>
 bool f21(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return std::operator< <T1...>(a0, a1);
+  return std::operator<(a0, a1);
 }
 
 template <typename... T1>
 bool f22(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return std::operator<= <T1...>(a0, a1);
+  return std::operator<=(a0, a1);
 }
 
 template <typename... T1>
@@ -116,29 +116,29 @@ std::common_comparison_category_t<std::compare_three_way_result_t<T1>...>
 f23(const std::variant<T1...> &a0, const std::variant<T1...> &a1)
   requires((std::three_way_comparable<T1> && ...))
 {
-  return std::operator<=> <T1...>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename... T1>
 bool f24(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return std::operator== <T1...>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename... T1>
 bool f25(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return std::operator><T1...>(a0, a1);
+  return std::operator>(a0, a1);
 }
 
 template <typename... T1>
 bool f26(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return std::operator>= <T1...>(a0, a1);
+  return std::operator>=(a0, a1);
 }
 
 template <typename... T1>
 std::enable_if_t<(std::is_move_constructible_v<T1> && ...) &&
                  (std::is_swappable_v<T1> && ...)>
 f27(std::variant<T1...> &a0, std::variant<T1...> &a1) {
-  return std::swap<T1...>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename... T1> using t2 = std::variant<T1...>;
@@ -257,11 +257,10 @@ std::size_t f46() { return std::variant_npos; }
 template <typename T1> std::size_t f47() { return std::variant_size_v<T1>; }
 
 template <typename T1, typename... T2> auto f48(T1 &&a0, T2 &&...a1) {
-  return std::visit<T1, T2...>(std::forward<T1>(a0), std::forward<T2>(a1)...);
+  return std::visit(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
 template <typename T1, typename T2, typename... T3>
 T1 f49(T2 &&a0, T3 &&...a1) {
-  return std::visit<T1, T2, T3...>(std::forward<T2>(a0),
-                                   std::forward<T3>(a1)...);
+  return std::visit<T1>(std::forward<T2>(a0), std::forward<T3>(a1)...);
 }

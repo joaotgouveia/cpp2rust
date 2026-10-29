@@ -4,17 +4,17 @@
 
 template <typename T1, typename T2>
 bool f1(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return std::operator!= <T1, T2>(a0, a1);
+  return std::operator!=(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f2(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return std::operator< <T1, T2>(a0, a1);
+  return std::operator<(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f3(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return std::operator<= <T1, T2>(a0, a1);
+  return std::operator<=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -22,28 +22,28 @@ std::compare_three_way_result_t<T2> f4(const std::queue<T1, T2> &a0,
                                        const std::queue<T1, T2> &a1)
   requires(std::three_way_comparable<T2>)
 {
-  return std::operator<=> <T1, T2>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f5(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f6(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return std::operator><T1, T2>(a0, a1);
+  return std::operator>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f7(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return std::operator>= <T1, T2>(a0, a1);
+  return std::operator>=(a0, a1);
 }
 
 template <typename T1, typename T2>
 typename std::enable_if<std::is_swappable_v<T2>>::type
 f8(std::queue<T1, T2> &a0, std::queue<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -51,5 +51,5 @@ typename std::enable_if<
     std::integral_constant<bool, std::is_swappable<T2>::value &&
                                      std::is_swappable<T3>::value>::value>::type
 f9(std::priority_queue<T1, T2, T3> &a0, std::priority_queue<T1, T2, T3> &a1) {
-  return std::swap<T1, T2, T3>(a0, a1);
+  return std::swap(a0, a1);
 }

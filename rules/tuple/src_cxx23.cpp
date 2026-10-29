@@ -3,88 +3,88 @@
 #include <utility>
 
 template <typename T1, typename T2> decltype(auto) f1(T1 &&a0, T2 &&a1) {
-  return std::apply<T1, T2>(std::forward<T1>(a0), std::forward<T2>(a1));
+  return std::apply(std::forward<T1>(a0), std::forward<T2>(a1));
 }
 
 template <typename... T1> std::tuple<T1 &&...> f2(T1 &&...a0) {
-  return std::forward_as_tuple<T1...>(std::forward<T1>(a0)...);
+  return std::forward_as_tuple(std::forward<T1>(a0)...);
 }
 
 template <std::size_t T1, typename... T2>
 const typename std::tuple_element<T1, std::tuple<T2...>>::type &&
 f3(const std::tuple<T2...> &&a0) {
-  return std::get<T1, T2...>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <std::size_t T1, typename... T2>
 typename std::tuple_element<T1, std::tuple<T2...>>::type &&
 f4(std::tuple<T2...> &&a0) {
-  return std::get<T1, T2...>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <std::size_t T1, typename... T2>
 const typename std::tuple_element<T1, std::tuple<T2...>>::type &
 f5(const std::tuple<T2...> &a0) {
-  return std::get<T1, T2...>(a0);
+  return std::get<T1>(a0);
 }
 
 template <std::size_t T1, typename... T2>
 typename std::tuple_element<T1, std::tuple<T2...>>::type &
 f6(std::tuple<T2...> &a0) {
-  return std::get<T1, T2...>(a0);
+  return std::get<T1>(a0);
 }
 
 template <typename T1, typename... T2>
 const T1 &&f7(const std::tuple<T2...> &&a0) {
-  return std::get<T1, T2...>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <typename T1, typename... T2> T1 &&f8(std::tuple<T2...> &&a0) {
-  return std::get<T1, T2...>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <typename T1, typename... T2>
 const T1 &f9(const std::tuple<T2...> &a0) {
-  return std::get<T1, T2...>(a0);
+  return std::get<T1>(a0);
 }
 
 template <typename T1, typename... T2> T1 &f10(std::tuple<T2...> &a0) {
-  return std::get<T1, T2...>(a0);
+  return std::get<T1>(a0);
 }
 
 template <typename T1, typename T2> T1 f11(T2 &&a0) {
-  return std::make_from_tuple<T1, T2>(std::forward<T2>(a0));
+  return std::make_from_tuple<T1>(std::forward<T2>(a0));
 }
 
 template <typename... T1> auto f12(T1 &&...a0) {
-  return std::make_tuple<T1...>(std::forward<T1>(a0)...);
+  return std::make_tuple(std::forward<T1>(a0)...);
 }
 
 template <typename... T1, typename... T2>
 auto f13(const std::tuple<T1...> &a0, const std::tuple<T2...> &a1) {
-  return std::operator<=> <T1...>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename... T1, typename... T2>
 bool f14(const std::tuple<T1...> &a0, const std::tuple<T2...> &a1) {
-  return std::operator== <T1...>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename... T1>
 void f15(const std::tuple<T1...> &a0, const std::tuple<T1...> &a1)
   requires((std::is_swappable_v<const T1> && ...))
 {
-  return std::swap<T1...>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename... T1>
 typename std::enable_if<std::conjunction<std::is_swappable<T1>...>::value>::type
 f16(std::tuple<T1...> &a0, std::tuple<T1...> &a1) {
-  return std::swap<T1...>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename... T1> std::tuple<T1 &...> f17(T1 &...a0) {
-  return std::tie<T1...>(a0...);
+  return std::tie(a0...);
 }
 
 using t1 = std::tuple<>;
@@ -389,5 +389,5 @@ bool f71(const std::tuple<T1...> &a0, const T2 &a1) {
 }
 
 template <typename... T1> auto f72(T1 &&...a0) {
-  return std::tuple_cat<T1...>(std::forward<T1>(a0)...);
+  return std::tuple_cat(std::forward<T1>(a0)...);
 }

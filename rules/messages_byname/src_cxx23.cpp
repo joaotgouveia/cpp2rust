@@ -43,3 +43,7 @@ std::basic_string<T1> f5(const std::messages_byname<T1> &a0, int a1, int a2,
 template <typename T1> void f6(const std::messages_byname<T1> &a0, int a1) {
   return a0.close(a1);
 }
+
+template <typename T1> const std::locale::id &f7() {
+  return std::messages_byname<T1>::id;
+}

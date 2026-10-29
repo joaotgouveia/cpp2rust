@@ -31,4 +31,6 @@ f7(const std::disjunction<> &a0) {
   return a0.operator()();
 }
 
+bool f8() { return std::disjunction<>::value; }
+
 template <typename... T1> using t2 = std::disjunction<T1...>;

@@ -1,17 +1,17 @@
 #include <utility>
 
 template <typename T1> bool f1(const T1 &a0, const T1 &a1) {
-  return std::rel_ops::operator!= <T1>(a0, a1);
+  return std::rel_ops::operator!=(a0, a1);
 }
 
 template <typename T1> bool f2(const T1 &a0, const T1 &a1) {
-  return std::rel_ops::operator<= <T1>(a0, a1);
+  return std::rel_ops::operator<=(a0, a1);
 }
 
 template <typename T1> bool f3(const T1 &a0, const T1 &a1) {
-  return std::rel_ops::operator><T1>(a0, a1);
+  return std::rel_ops::operator>(a0, a1);
 }
 
 template <typename T1> bool f4(const T1 &a0, const T1 &a1) {
-  return std::rel_ops::operator>= <T1>(a0, a1);
+  return std::rel_ops::operator>=(a0, a1);
 }

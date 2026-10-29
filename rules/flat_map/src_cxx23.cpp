@@ -6,14 +6,14 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::size_type
 f1(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 a1) {
-  return std::erase_if<T1, T2, T3, T4, T5, T6>(a0, std::move(a1));
+  return std::erase_if(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::size_type
 f2(std::flat_multimap<T1, T2, T3, T4, T5> &a0, T6 a1) {
-  return std::erase_if<T1, T2, T3, T4, T5, T6>(a0, std::move(a1));
+  return std::erase_if(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -704,4 +704,16 @@ std::pair<typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator,
           typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator>
 f82(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template equal_range<T6>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+void f83(std::flat_map<T1, T2, T3, T4, T5> &a0,
+         std::flat_map<T1, T2, T3, T4, T5> &a1) {
+  return swap(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+bool f84(const std::flat_map<T1, T2, T3, T4, T5> &a0,
+         const std::flat_map<T1, T2, T3, T4, T5> &a1) {
+  return operator==(a0, a1);
 }

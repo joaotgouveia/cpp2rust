@@ -24,13 +24,13 @@ template <typename T1>
 std::enable_if_t<std::is_constructible_v<std::decay_t<T1>, T1>,
                  std::optional<std::decay_t<T1>>>
 f5(T1 &&a0) {
-  return std::make_optional<T1>(std::forward<T1>(a0));
+  return std::make_optional(std::forward<T1>(a0));
 }
 
 template <typename T1, typename... T2>
 std::enable_if_t<std::is_constructible_v<T1, T2...>, std::optional<T1>>
 f6(T2 &&...a0) {
-  return std::make_optional<T1, T2...>(std::forward<T2>(a0)...);
+  return std::make_optional<T1>(std::forward<T2>(a0)...);
 }
 
 template <typename T1, typename T2, typename... T3>
@@ -38,8 +38,8 @@ std::enable_if_t<
     std::is_constructible_v<T1, std::initializer_list<T2> &, T3...>,
     std::optional<T1>>
 f7(std::initializer_list<T2> a0, T3 &&...a1) {
-  return std::make_optional<T1, T2, T3...>(
-      std::forward<std::initializer_list<T2>>(a0), std::forward<T3>(a1)...);
+  return std::make_optional<T1>(std::forward<std::initializer_list<T2>>(a0),
+                                std::forward<T3>(a1)...);
 }
 
 const std::nullopt_t &f8() { return std::nullopt; }
@@ -68,7 +68,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() !=
                                        bool>,
                  bool>
 f14(const std::optional<T1> &a0, const std::optional<T2> &a1) {
-  return std::operator!= <T1, T2>(a0, a1);
+  return std::operator!=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -77,7 +77,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() !=
                                        bool>,
                  bool>
 f15(const std::optional<T1> &a0, const T2 &a1) {
-  return std::operator!= <T1, T2>(a0, a1);
+  return std::operator!=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -86,7 +86,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() !=
                                        bool>,
                  bool>
 f16(const T1 &a0, const std::optional<T2> &a1) {
-  return std::operator!= <T1, T2>(a0, a1);
+  return std::operator!=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -95,7 +95,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <
                                        bool>,
                  bool>
 f17(const std::optional<T1> &a0, const std::optional<T2> &a1) {
-  return std::operator< <T1, T2>(a0, a1);
+  return std::operator<(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -104,7 +104,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <
                                        bool>,
                  bool>
 f18(const std::optional<T1> &a0, const T2 &a1) {
-  return std::operator< <T1, T2>(a0, a1);
+  return std::operator<(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -113,7 +113,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <
                                        bool>,
                  bool>
 f19(const T1 &a0, const std::optional<T2> &a1) {
-  return std::operator< <T1, T2>(a0, a1);
+  return std::operator<(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -122,7 +122,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <=
                                        bool>,
                  bool>
 f20(const std::optional<T1> &a0, const std::optional<T2> &a1) {
-  return std::operator<= <T1, T2>(a0, a1);
+  return std::operator<=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -131,7 +131,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <=
                                        bool>,
                  bool>
 f21(const std::optional<T1> &a0, const T2 &a1) {
-  return std::operator<= <T1, T2>(a0, a1);
+  return std::operator<=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -140,12 +140,12 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <=
                                        bool>,
                  bool>
 f22(const T1 &a0, const std::optional<T2> &a1) {
-  return std::operator<= <T1, T2>(a0, a1);
+  return std::operator<=(a0, a1);
 }
 
 template <typename T1>
 std::strong_ordering f23(const std::optional<T1> &a0, std::nullopt_t a1) {
-  return std::operator<=> <T1>(a0, std::move(a1));
+  return std::operator<=>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -153,18 +153,18 @@ std::compare_three_way_result_t<T1, T2> f24(const std::optional<T1> &a0,
                                             const std::optional<T2> &a1)
   requires(std::three_way_comparable_with<T2, T1>)
 {
-  return std::operator<=> <T1, T2>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2>
 std::compare_three_way_result_t<T1, T2> f25(const std::optional<T1> &a0,
                                             const T2 &a1) {
-  return std::operator<=> <T1, T2>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1>
 bool f26(const std::optional<T1> &a0, std::nullopt_t a1) {
-  return std::operator== <T1>(a0, std::move(a1));
+  return std::operator==(a0, std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -173,7 +173,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() ==
                                        bool>,
                  bool>
 f27(const std::optional<T1> &a0, const std::optional<T2> &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -182,7 +182,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() ==
                                        bool>,
                  bool>
 f28(const std::optional<T1> &a0, const T2 &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -191,7 +191,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() ==
                                        bool>,
                  bool>
 f29(const T1 &a0, const std::optional<T2> &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -200,7 +200,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >
                                        bool>,
                  bool>
 f30(const std::optional<T1> &a0, const std::optional<T2> &a1) {
-  return std::operator><T1, T2>(a0, a1);
+  return std::operator>(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -209,7 +209,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >
                                        bool>,
                  bool>
 f31(const std::optional<T1> &a0, const T2 &a1) {
-  return std::operator><T1, T2>(a0, a1);
+  return std::operator>(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -218,7 +218,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >
                                        bool>,
                  bool>
 f32(const T1 &a0, const std::optional<T2> &a1) {
-  return std::operator><T1, T2>(a0, a1);
+  return std::operator>(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -227,7 +227,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >=
                                        bool>,
                  bool>
 f33(const std::optional<T1> &a0, const std::optional<T2> &a1) {
-  return std::operator>= <T1, T2>(a0, a1);
+  return std::operator>=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -236,7 +236,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >=
                                        bool>,
                  bool>
 f34(const std::optional<T1> &a0, const T2 &a1) {
-  return std::operator>= <T1, T2>(a0, a1);
+  return std::operator>=(a0, a1);
 }
 
 template <typename T1, typename T2>
@@ -245,7 +245,7 @@ std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >=
                                        bool>,
                  bool>
 f35(const T1 &a0, const std::optional<T2> &a1) {
-  return std::operator>= <T1, T2>(a0, a1);
+  return std::operator>=(a0, a1);
 }
 
 template <typename T1> using t3 = std::optional<T1>;
@@ -458,5 +458,5 @@ std::optional<T1> f74(std::optional<T1> &&a0, T2 &&a1)
 template <typename T1>
 std::enable_if_t<std::is_move_constructible_v<T1> && std::is_swappable_v<T1>>
 f75(std::optional<T1> &a0, std::optional<T1> &a1) {
-  return std::swap<T1>(a0, a1);
+  return std::swap(a0, a1);
 }

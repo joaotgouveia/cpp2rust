@@ -86,5 +86,5 @@ bool f23(std::shared_timed_mutex &a0,
 
 template <typename T1>
 void f24(std::shared_lock<T1> &a0, std::shared_lock<T1> &a1) {
-  return std::swap<T1>(a0, a1);
+  return std::swap(a0, a1);
 }

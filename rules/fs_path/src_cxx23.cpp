@@ -9,7 +9,7 @@
 #include <utility>
 
 template <typename T1> void f1(std::filesystem::path::iterator &a0, T1 a1) {
-  return std::advance<T1>(a0, std::move(a1));
+  return std::advance(a0, std::move(a1));
 }
 
 std::ptrdiff_t f2(std::filesystem::path::iterator a0,
@@ -459,9 +459,9 @@ void f99(std::filesystem::path &a0, std::filesystem::path &a1) {
 }
 
 template <typename T1> std::filesystem::path f100(const T1 &a0) {
-  return std::filesystem::u8path<T1>(a0);
+  return std::filesystem::u8path(a0);
 }
 
 template <typename T1> std::filesystem::path f101(T1 a0, T1 a1) {
-  return std::filesystem::u8path<T1>(std::move(a0), std::move(a1));
+  return std::filesystem::u8path(std::move(a0), std::move(a1));
 }

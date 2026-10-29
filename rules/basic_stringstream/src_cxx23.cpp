@@ -593,152 +593,312 @@ void *&f90(std::basic_stringstream<T1, T2, T3> &a0, int a1) {
 }
 
 template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f91() {
+  return std::basic_stringstream<T1, T2, T3>::boolalpha;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f92() {
+  return std::basic_stringstream<T1, T2, T3>::dec;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f93() {
+  return std::basic_stringstream<T1, T2, T3>::fixed;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f94() {
+  return std::basic_stringstream<T1, T2, T3>::hex;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f95() {
+  return std::basic_stringstream<T1, T2, T3>::internal;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f96() {
+  return std::basic_stringstream<T1, T2, T3>::left;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f97() {
+  return std::basic_stringstream<T1, T2, T3>::oct;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f98() {
+  return std::basic_stringstream<T1, T2, T3>::right;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f99() {
+  return std::basic_stringstream<T1, T2, T3>::scientific;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f100() {
+  return std::basic_stringstream<T1, T2, T3>::showbase;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f101() {
+  return std::basic_stringstream<T1, T2, T3>::showpoint;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f102() {
+  return std::basic_stringstream<T1, T2, T3>::showpos;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f103() {
+  return std::basic_stringstream<T1, T2, T3>::skipws;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f104() {
+  return std::basic_stringstream<T1, T2, T3>::unitbuf;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f105() {
+  return std::basic_stringstream<T1, T2, T3>::uppercase;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f106() {
+  return std::basic_stringstream<T1, T2, T3>::adjustfield;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f107() {
+  return std::basic_stringstream<T1, T2, T3>::basefield;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::fmtflags f108() {
+  return std::basic_stringstream<T1, T2, T3>::floatfield;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::iostate f109() {
+  return std::basic_stringstream<T1, T2, T3>::badbit;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::iostate f110() {
+  return std::basic_stringstream<T1, T2, T3>::eofbit;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::iostate f111() {
+  return std::basic_stringstream<T1, T2, T3>::failbit;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::iostate f112() {
+  return std::basic_stringstream<T1, T2, T3>::goodbit;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::openmode f113() {
+  return std::basic_stringstream<T1, T2, T3>::app;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::openmode f114() {
+  return std::basic_stringstream<T1, T2, T3>::ate;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::openmode f115() {
+  return std::basic_stringstream<T1, T2, T3>::binary;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::openmode f116() {
+  return std::basic_stringstream<T1, T2, T3>::in;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::openmode f117() {
+  return std::basic_stringstream<T1, T2, T3>::out;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::openmode f118() {
+  return std::basic_stringstream<T1, T2, T3>::trunc;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::openmode f119() {
+  return std::basic_stringstream<T1, T2, T3>::noreplace;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::seekdir f120() {
+  return std::basic_stringstream<T1, T2, T3>::beg;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::seekdir f121() {
+  return std::basic_stringstream<T1, T2, T3>::cur;
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::basic_stringstream<T1, T2, T3>::seekdir f122() {
+  return std::basic_stringstream<T1, T2, T3>::end;
+}
+
+template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f91(std::basic_stringstream<T1, T2, T3> &a0,
-    std::basic_stringstream<T1, T2, T3> &(*a1)(
-        std::basic_stringstream<T1, T2, T3> &)) {
+f123(std::basic_stringstream<T1, T2, T3> &a0,
+     std::basic_stringstream<T1, T2, T3> &(*a1)(
+         std::basic_stringstream<T1, T2, T3> &)) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f92(std::basic_stringstream<T1, T2, T3> &a0,
-    std::basic_ios<T1, T2> &(*a1)(std::basic_ios<T1, T2> &)) {
+f124(std::basic_stringstream<T1, T2, T3> &a0,
+     std::basic_ios<T1, T2> &(*a1)(std::basic_ios<T1, T2> &)) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f93(std::basic_stringstream<T1, T2, T3> &a0,
-    std::ios_base &(*a1)(std::ios_base &)) {
+f125(std::basic_stringstream<T1, T2, T3> &a0,
+     std::ios_base &(*a1)(std::ios_base &)) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f94(std::basic_stringstream<T1, T2, T3> &a0, long a1) {
+f126(std::basic_stringstream<T1, T2, T3> &a0, long a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f95(std::basic_stringstream<T1, T2, T3> &a0, unsigned long a1) {
+f127(std::basic_stringstream<T1, T2, T3> &a0, unsigned long a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f96(std::basic_stringstream<T1, T2, T3> &a0, bool a1) {
+f128(std::basic_stringstream<T1, T2, T3> &a0, bool a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f97(std::basic_stringstream<T1, T2, T3> &a0, short a1) {
+f129(std::basic_stringstream<T1, T2, T3> &a0, short a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f98(std::basic_stringstream<T1, T2, T3> &a0, unsigned short a1) {
+f130(std::basic_stringstream<T1, T2, T3> &a0, unsigned short a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f99(std::basic_stringstream<T1, T2, T3> &a0, int a1) {
+f131(std::basic_stringstream<T1, T2, T3> &a0, int a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f100(std::basic_stringstream<T1, T2, T3> &a0, unsigned int a1) {
+f132(std::basic_stringstream<T1, T2, T3> &a0, unsigned int a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f101(std::basic_stringstream<T1, T2, T3> &a0, long long a1) {
+f133(std::basic_stringstream<T1, T2, T3> &a0, long long a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f102(std::basic_stringstream<T1, T2, T3> &a0, unsigned long long a1) {
+f134(std::basic_stringstream<T1, T2, T3> &a0, unsigned long long a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f103(std::basic_stringstream<T1, T2, T3> &a0, double a1) {
+f135(std::basic_stringstream<T1, T2, T3> &a0, double a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f104(std::basic_stringstream<T1, T2, T3> &a0, float a1) {
+f136(std::basic_stringstream<T1, T2, T3> &a0, float a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f105(std::basic_stringstream<T1, T2, T3> &a0, long double a1) {
+f137(std::basic_stringstream<T1, T2, T3> &a0, long double a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f106(std::basic_stringstream<T1, T2, T3> &a0, const void *a1) {
+f138(std::basic_stringstream<T1, T2, T3> &a0, const void *a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f107(std::basic_stringstream<T1, T2, T3> &a0, std::nullptr_t a1) {
+f139(std::basic_stringstream<T1, T2, T3> &a0, std::nullptr_t a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f108(std::basic_stringstream<T1, T2, T3> &a0, const volatile void *a1) {
+f140(std::basic_stringstream<T1, T2, T3> &a0, const volatile void *a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f109(std::basic_stringstream<T1, T2, T3> &a0,
+f141(std::basic_stringstream<T1, T2, T3> &a0,
      std::basic_streambuf<T1, T2> *a1) {
   return a0.operator<<(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f110(std::basic_stringstream<T1, T2, T3> &a0, T1 a1) {
+f142(std::basic_stringstream<T1, T2, T3> &a0, T1 a1) {
   return a0.put(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f111(std::basic_stringstream<T1, T2, T3> &a0, T1 const *a1,
+f143(std::basic_stringstream<T1, T2, T3> &a0, T1 const *a1,
      std::streamsize a2) {
   return a0.write(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f112(std::basic_stringstream<T1, T2, T3> &a0) {
+f144(std::basic_stringstream<T1, T2, T3> &a0) {
   return a0.flush();
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_stringstream<T1, T2, T3>::pos_type
-f113(std::basic_stringstream<T1, T2, T3> &a0) {
+f145(std::basic_stringstream<T1, T2, T3> &a0) {
   return a0.tellp();
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f114(std::basic_stringstream<T1, T2, T3> &a0,
+f146(std::basic_stringstream<T1, T2, T3> &a0,
      typename std::basic_stringstream<T1, T2, T3>::pos_type a1) {
   return a0.seekp(
       std::forward<typename std::basic_stringstream<T1, T2, T3>::pos_type>(a1));
@@ -746,7 +906,7 @@ f114(std::basic_stringstream<T1, T2, T3> &a0,
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
-f115(std::basic_stringstream<T1, T2, T3> &a0,
+f147(std::basic_stringstream<T1, T2, T3> &a0,
      typename std::basic_stringstream<T1, T2, T3>::off_type a1,
      typename std::basic_stringstream<T1, T2, T3>::seekdir a2) {
   return a0.seekp(

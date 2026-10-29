@@ -52,7 +52,7 @@ void f15(std::jthread &a0, std::jthread &a1) { return swap(a0, a1); }
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f16(std::basic_ostream<T1, T2> &a0,
                                 std::thread::id a1) {
-  return std::operator<< <T1, T2>(a0, std::move(a1));
+  return std::operator<<(a0, std::move(a1));
 }
 
 std::strong_ordering f17(std::thread::id a0, std::thread::id a1) {

@@ -126,7 +126,7 @@ std::error_condition f35(std::errc a0) { return std::make_error_condition(a0); }
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f36(std::basic_ostream<T1, T2> &a0,
                                 const std::error_code &a1) {
-  return std::operator<< <T1, T2>(a0, a1);
+  return std::operator<<(a0, a1);
 }
 
 std::strong_ordering f37(const std::error_code &a0, const std::error_code &a1) {

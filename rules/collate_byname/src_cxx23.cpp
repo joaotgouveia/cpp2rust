@@ -35,3 +35,7 @@ template <typename T1>
 long f5(const std::collate_byname<T1> &a0, T1 const *a1, T1 const *a2) {
   return a0.hash(a1, a2);
 }
+
+template <typename T1> const std::locale::id &f6() {
+  return std::collate_byname<T1>::id;
+}

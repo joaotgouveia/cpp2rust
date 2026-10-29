@@ -418,12 +418,12 @@ void f66(std::deque<T1, T2> &a0, T3 &&a1) {
 template <typename T1, typename T2, typename T3>
 typename std::deque<T1, T2>::size_type f67(std::deque<T1, T2> &a0,
                                            const T3 &a1) {
-  return std::erase<T1, T2, T3>(a0, a1);
+  return std::erase(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::deque<T1, T2>::size_type f68(std::deque<T1, T2> &a0, T3 a1) {
-  return std::erase_if<T1, T2, T3>(a0, std::move(a1));
+  return std::erase_if(a0, std::move(a1));
 }
 
 template <typename T1> using t14 = std::pmr::deque<T1>;

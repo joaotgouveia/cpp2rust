@@ -3,11 +3,11 @@
 #include <utility>
 
 template <typename T1> const T1 *f1(std::initializer_list<T1> a0) {
-  return std::begin<T1>(std::forward<std::initializer_list<T1>>(a0));
+  return std::begin(std::forward<std::initializer_list<T1>>(a0));
 }
 
 template <typename T1> const T1 *f2(std::initializer_list<T1> a0) {
-  return std::end<T1>(std::forward<std::initializer_list<T1>>(a0));
+  return std::end(std::forward<std::initializer_list<T1>>(a0));
 }
 
 template <typename T1> using t1 = std::initializer_list<T1>;

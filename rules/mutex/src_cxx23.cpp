@@ -5,13 +5,12 @@
 
 template <typename T1, typename... T2>
 void f1(std::once_flag &a0, T1 &&a1, T2 &&...a2) {
-  return std::call_once<T1, T2...>(a0, std::forward<T1>(a1),
-                                   std::forward<T2>(a2)...);
+  return std::call_once(a0, std::forward<T1>(a1), std::forward<T2>(a2)...);
 }
 
 template <typename T1, typename T2, typename... T3>
 void f2(T1 &a0, T2 &a1, T3 &...a2) {
-  return std::lock<T1, T2, T3...>(a0, a1, a2...);
+  return std::lock(a0, a1, a2...);
 }
 
 using t1 = std::once_flag;
@@ -86,5 +85,5 @@ bool f22(std::timed_mutex &a0, const std::chrono::time_point<T1, T2> &a1) {
 
 template <typename T1, typename T2, typename... T3>
 int f23(T1 &a0, T2 &a1, T3 &...a2) {
-  return std::try_lock<T1, T2, T3...>(a0, a1, a2...);
+  return std::try_lock(a0, a1, a2...);
 }

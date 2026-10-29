@@ -168,45 +168,45 @@ const T1 *f27(const std::array<T1, T2> &a0) {
 
 template <std::size_t T1, typename T2, std::size_t T3>
 const T2 &&f28(const std::array<T2, T3> &&a0) {
-  return std::get<T1, T2, T3>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <std::size_t T1, typename T2, std::size_t T3>
 T2 &&f29(std::array<T2, T3> &&a0) {
-  return std::get<T1, T2, T3>(std::move(a0));
+  return std::get<T1>(std::move(a0));
 }
 
 template <std::size_t T1, typename T2, std::size_t T3>
 const T2 &f30(const std::array<T2, T3> &a0) {
-  return std::get<T1, T2, T3>(a0);
+  return std::get<T1>(a0);
 }
 
 template <std::size_t T1, typename T2, std::size_t T3>
 T2 &f31(std::array<T2, T3> &a0) {
-  return std::get<T1, T2, T3>(a0);
+  return std::get<T1>(a0);
 }
 
 template <typename T1, std::size_t T2>
 auto f32(const std::array<T1, T2> &a0, const std::array<T1, T2> &a1) {
-  return std::operator<=> <T1, T2>(a0, a1);
+  return std::operator<=>(a0, a1);
 }
 
 template <typename T1, std::size_t T2>
 bool f33(const std::array<T1, T2> &a0, const std::array<T1, T2> &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator==(a0, a1);
 }
 
 template <typename T1, std::size_t T2>
 void f34(std::array<T1, T2> &a0, std::array<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename T1, std::size_t T2>
 std::array<std::remove_cv_t<T1>, T2> f35(T1 (&&a0)[T2]) {
-  return std::to_array<T1, T2>(std::move(a0));
+  return std::to_array(std::move(a0));
 }
 
 template <typename T1, std::size_t T2>
 std::array<std::remove_cv_t<T1>, T2> f36(T1 (&a0)[T2]) {
-  return std::to_array<T1, T2>(a0);
+  return std::to_array(a0);
 }

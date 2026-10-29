@@ -522,3 +522,163 @@ template <typename T1, typename T2>
 void *&f85(std::basic_ifstream<T1, T2> &a0, int a1) {
   return a0.pword(a1);
 }
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f86() {
+  return std::basic_ifstream<T1, T2>::boolalpha;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f87() {
+  return std::basic_ifstream<T1, T2>::dec;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f88() {
+  return std::basic_ifstream<T1, T2>::fixed;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f89() {
+  return std::basic_ifstream<T1, T2>::hex;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f90() {
+  return std::basic_ifstream<T1, T2>::internal;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f91() {
+  return std::basic_ifstream<T1, T2>::left;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f92() {
+  return std::basic_ifstream<T1, T2>::oct;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f93() {
+  return std::basic_ifstream<T1, T2>::right;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f94() {
+  return std::basic_ifstream<T1, T2>::scientific;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f95() {
+  return std::basic_ifstream<T1, T2>::showbase;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f96() {
+  return std::basic_ifstream<T1, T2>::showpoint;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f97() {
+  return std::basic_ifstream<T1, T2>::showpos;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f98() {
+  return std::basic_ifstream<T1, T2>::skipws;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f99() {
+  return std::basic_ifstream<T1, T2>::unitbuf;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f100() {
+  return std::basic_ifstream<T1, T2>::uppercase;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f101() {
+  return std::basic_ifstream<T1, T2>::adjustfield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f102() {
+  return std::basic_ifstream<T1, T2>::basefield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::fmtflags f103() {
+  return std::basic_ifstream<T1, T2>::floatfield;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::iostate f104() {
+  return std::basic_ifstream<T1, T2>::badbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::iostate f105() {
+  return std::basic_ifstream<T1, T2>::eofbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::iostate f106() {
+  return std::basic_ifstream<T1, T2>::failbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::iostate f107() {
+  return std::basic_ifstream<T1, T2>::goodbit;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::openmode f108() {
+  return std::basic_ifstream<T1, T2>::app;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::openmode f109() {
+  return std::basic_ifstream<T1, T2>::ate;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::openmode f110() {
+  return std::basic_ifstream<T1, T2>::binary;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::openmode f111() {
+  return std::basic_ifstream<T1, T2>::in;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::openmode f112() {
+  return std::basic_ifstream<T1, T2>::out;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::openmode f113() {
+  return std::basic_ifstream<T1, T2>::trunc;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::openmode f114() {
+  return std::basic_ifstream<T1, T2>::noreplace;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::seekdir f115() {
+  return std::basic_ifstream<T1, T2>::beg;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::seekdir f116() {
+  return std::basic_ifstream<T1, T2>::cur;
+}
+
+template <typename T1, typename T2>
+typename std::basic_ifstream<T1, T2>::seekdir f117() {
+  return std::basic_ifstream<T1, T2>::end;
+}

@@ -48,8 +48,7 @@ template <typename T1, typename T2>
 std::enable_if_t<std::numeric_limits<T1>::is_signed,
                  std::chrono::duration<T1, T2>>
 f20(std::chrono::duration<T1, T2> a0) {
-  return std::chrono::abs<T1, T2>(
-      std::forward<std::chrono::duration<T1, T2>>(a0));
+  return std::chrono::abs(std::forward<std::chrono::duration<T1, T2>>(a0));
 }
 
 using t1 = std::chrono::ambiguous_local_time;
@@ -86,12 +85,12 @@ const char *f26(const std::chrono::ambiguous_local_time &a0) {
 
 template <typename T1, typename T2, typename T3>
 T1 f27(const std::chrono::duration<T2, T3> &a0) {
-  return std::chrono::ceil<T1, T2, T3>(a0);
+  return std::chrono::ceil<T1>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
 std::chrono::time_point<T2, T1> f28(const std::chrono::time_point<T2, T3> &a0) {
-  return std::chrono::ceil<T1, T2, T3>(a0);
+  return std::chrono::ceil<T1>(a0);
 }
 
 using t2 = std::chrono::choose;
@@ -102,7 +101,7 @@ std::chrono::choose f30() { return std::chrono::choose::latest; }
 
 template <typename T1, typename T2, typename T3>
 auto f31(const std::chrono::time_point<T2, T3> &a0) {
-  return std::chrono::clock_cast<T1, T2, T3>(a0);
+  return std::chrono::clock_cast<T1>(a0);
 }
 
 const std::chrono::time_zone *f32() { return std::chrono::current_zone(); }
@@ -180,7 +179,7 @@ using t4 = std::chrono::days;
 
 template <typename T1, typename T2, typename T3>
 T1 f53(const std::chrono::duration<T2, T3> &a0) {
-  return std::chrono::duration_cast<T1, T2, T3>(a0);
+  return std::chrono::duration_cast<T1>(a0);
 }
 
 using t5 = std::chrono::file_clock;
@@ -189,17 +188,17 @@ template <typename T1> using t6 = std::chrono::file_time<T1>;
 
 template <typename T1, typename T2, typename T3>
 T1 f54(const std::chrono::duration<T2, T3> &a0) {
-  return std::chrono::floor<T1, T2, T3>(a0);
+  return std::chrono::floor<T1>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
 std::chrono::time_point<T2, T1> f55(const std::chrono::time_point<T2, T3> &a0) {
-  return std::chrono::floor<T1, T2, T3>(a0);
+  return std::chrono::floor<T1>(a0);
 }
 
 template <typename T1>
 std::chrono::leap_second_info f56(const std::chrono::utc_time<T1> &a0) {
-  return std::chrono::get_leap_second_info<T1>(a0);
+  return std::chrono::get_leap_second_info(a0);
 }
 
 using t7 = std::chrono::gps_clock;
@@ -841,7 +840,7 @@ std::chrono::duration<
     std::chrono::__common_rep_t<T1, std::chrono::__disable_if_is_duration<T3>>,
     T2>
 f193(const std::chrono::duration<T1, T2> &a0, const T3 &a1) {
-  return std::chrono::operator% <T1, T2, T3>(a0, a1);
+  return std::chrono::operator%(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -849,7 +848,7 @@ typename std::common_type<std::chrono::duration<T1, T2>,
                           std::chrono::duration<T3, T4>>::type
 f194(const std::chrono::duration<T1, T2> &a0,
      const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator% <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator%(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -860,7 +859,7 @@ std::chrono::duration<
         typename std::common_type<T1, T3>::type>::type,
     T2>
 f195(const std::chrono::duration<T1, T2> &a0, const T3 &a1) {
-  return std::chrono::operator* <T1, T2, T3>(a0, a1);
+  return std::chrono::operator*(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -871,7 +870,7 @@ std::chrono::duration<
         typename std::common_type<T2, T1>::type>::type,
     T3>
 f196(const T1 &a0, const std::chrono::duration<T2, T3> &a1) {
-  return std::chrono::operator* <T1, T2, T3>(a0, a1);
+  return std::chrono::operator*(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -879,7 +878,7 @@ typename std::common_type<std::chrono::duration<T1, T2>,
                           std::chrono::duration<T3, T4>>::type
 f197(const std::chrono::duration<T1, T2> &a0,
      const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator+ <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator+(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -887,7 +886,7 @@ std::chrono::time_point<
     T3, typename std::common_type<std::chrono::duration<T1, T2>, T4>::type>
 f198(const std::chrono::duration<T1, T2> &a0,
      const std::chrono::time_point<T3, T4> &a1) {
-  return std::chrono::operator+ <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator+(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -895,14 +894,14 @@ std::chrono::time_point<
     T1, typename std::common_type<T2, std::chrono::duration<T3, T4>>::type>
 f199(const std::chrono::time_point<T1, T2> &a0,
      const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator+ <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator+(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::common_type<T2, T3>::type
 f200(const std::chrono::time_point<T1, T2> &a0,
      const std::chrono::time_point<T1, T3> &a1) {
-  return std::chrono::operator- <T1, T2, T3>(a0, a1);
+  return std::chrono::operator-(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -910,7 +909,7 @@ typename std::common_type<std::chrono::duration<T1, T2>,
                           std::chrono::duration<T3, T4>>::type
 f201(const std::chrono::duration<T1, T2> &a0,
      const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator- <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator-(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -918,7 +917,7 @@ std::chrono::time_point<
     T1, typename std::common_type<T2, std::chrono::duration<T3, T4>>::type>
 f202(const std::chrono::time_point<T1, T2> &a0,
      const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator- <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator-(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -926,38 +925,38 @@ std::chrono::duration<
     std::chrono::__common_rep_t<T1, std::chrono::__disable_if_is_duration<T3>>,
     T2>
 f203(const std::chrono::duration<T1, T2> &a0, const T3 &a1) {
-  return std::chrono::operator/ <T1, T2, T3>(a0, a1);
+  return std::chrono::operator/(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::common_type<T1, T3>::type
 f204(const std::chrono::duration<T1, T2> &a0,
      const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator/ <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator/(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f205(const std::chrono::time_point<T1, T2> &a0,
           const std::chrono::time_point<T1, T3> &a1) {
-  return std::chrono::operator< <T1, T2, T3>(a0, a1);
+  return std::chrono::operator<(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f206(const std::chrono::duration<T1, T2> &a0,
           const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator< <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator<(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f207(const std::chrono::time_point<T1, T2> &a0,
           const std::chrono::time_point<T1, T3> &a1) {
-  return std::chrono::operator<= <T1, T2, T3>(a0, a1);
+  return std::chrono::operator<=(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f208(const std::chrono::duration<T1, T2> &a0,
           const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator<= <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator<=(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -965,7 +964,7 @@ auto f209(const std::chrono::time_point<T1, T2> &a0,
           const std::chrono::time_point<T1, T3> &a1)
   requires(std::three_way_comparable_with<T3, T2>)
 {
-  return std::chrono::operator<=> <T1, T2, T3>(a0, a1);
+  return std::chrono::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -973,62 +972,62 @@ auto f210(const std::chrono::duration<T1, T2> &a0,
           const std::chrono::duration<T3, T4> &a1)
   requires(std::three_way_comparable<std::common_type_t<T1, T3>>)
 {
-  return std::chrono::operator<=> <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f211(const std::chrono::time_point<T1, T2> &a0,
           const std::chrono::time_point<T1, T3> &a1) {
-  return std::chrono::operator== <T1, T2, T3>(a0, a1);
+  return std::chrono::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f212(const std::chrono::duration<T1, T2> &a0,
           const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator== <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f213(const std::chrono::zoned_time<T1, T2> &a0,
           const std::chrono::zoned_time<T3, T4> &a1) {
-  return std::chrono::operator== <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f214(const std::chrono::time_point<T1, T2> &a0,
           const std::chrono::time_point<T1, T3> &a1) {
-  return std::chrono::operator><T1, T2, T3>(a0, a1);
+  return std::chrono::operator>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f215(const std::chrono::duration<T1, T2> &a0,
           const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator><T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f216(const std::chrono::time_point<T1, T2> &a0,
           const std::chrono::time_point<T1, T3> &a1) {
-  return std::chrono::operator>= <T1, T2, T3>(a0, a1);
+  return std::chrono::operator>=(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f217(const std::chrono::duration<T1, T2> &a0,
           const std::chrono::duration<T3, T4> &a1) {
-  return std::chrono::operator>= <T1, T2, T3, T4>(a0, a1);
+  return std::chrono::operator>=(a0, a1);
 }
 
 std::string f218() { return std::chrono::remote_version(); }
 
 template <typename T1, typename T2, typename T3>
 T1 f219(const std::chrono::duration<T2, T3> &a0) {
-  return std::chrono::round<T1, T2, T3>(a0);
+  return std::chrono::round<T1>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
 std::chrono::time_point<T2, T1>
 f220(const std::chrono::time_point<T2, T3> &a0) {
-  return std::chrono::round<T1, T2, T3>(a0);
+  return std::chrono::round<T1>(a0);
 }
 
 using t35 = std::chrono::seconds;
@@ -1196,7 +1195,7 @@ template <typename T1> using t56 = std::chrono::tai_time<T1>;
 template <typename T1, typename T2, typename T3>
 std::chrono::time_point<T2, T1>
 f251(const std::chrono::time_point<T2, T3> &a0) {
-  return std::chrono::time_point_cast<T1, T2, T3>(a0);
+  return std::chrono::time_point_cast<T1>(a0);
 }
 
 using t57 = std::chrono::time_zone;

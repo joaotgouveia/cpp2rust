@@ -10,3 +10,5 @@ template <typename T1> bool f1(const std::is_enum<T1> &a0) {
 template <typename T1> bool f2(const std::is_enum<T1> &a0) {
   return a0.operator()();
 }
+
+template <typename T1> bool f3() { return std::is_enum<T1>::value; }

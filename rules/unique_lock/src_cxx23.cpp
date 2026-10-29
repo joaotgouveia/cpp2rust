@@ -5,7 +5,7 @@
 
 template <typename T1>
 void f1(std::unique_lock<T1> &a0, std::unique_lock<T1> &a1) {
-  return std::swap<T1>(a0, a1);
+  return std::swap(a0, a1);
 }
 
 template <typename T1> using t1 = std::unique_lock<T1>;

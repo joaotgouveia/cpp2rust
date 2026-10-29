@@ -11,3 +11,5 @@ template <typename T1> std::size_t f1(const std::alignment_of<T1> &a0) {
 template <typename T1> std::size_t f2(const std::alignment_of<T1> &a0) {
   return a0.operator()();
 }
+
+template <typename T1> std::size_t f3() { return std::alignment_of<T1>::value; }

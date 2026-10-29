@@ -29,8 +29,3 @@ template <typename T1>
 T1 f3(typename std::pointer_traits<T1>::element_type &a0) {
   return std::pointer_traits<T1>::pointer_to(a0);
 }
-
-template <typename T1>
-auto f4(typename std::pointer_traits<T1>::element_type &a0) {
-  return std::pointer_traits<T1>::pointer_to(a0);
-}

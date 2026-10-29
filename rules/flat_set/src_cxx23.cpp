@@ -1,18 +1,17 @@
 #include <algorithm>
 #include <flat_set>
-#include <initializer_list>
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::size_type
 f1(std::flat_multiset<T1, T2, T3> &a0, T4 a1) {
-  return std::erase_if<T1, T2, T3, T4>(a0, std::move(a1));
+  return std::erase_if(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_set<T1, T2, T3>::size_type f2(std::flat_set<T1, T2, T3> &a0,
                                                  T4 a1) {
-  return std::erase_if<T1, T2, T3, T4>(a0, std::move(a1));
+  return std::erase_if(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
@@ -123,12 +122,14 @@ f13(const std::flat_set<T1, T2, T3> &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-auto f14(std::flat_set<T1, T2, T3> &a0, T1 const &a1) {
+std::pair<typename T3::const_iterator, bool> f14(std::flat_set<T1, T2, T3> &a0,
+                                                 T1 const &a1) {
   return a0.insert(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-auto f15(std::flat_set<T1, T2, T3> &a0, T1 &&a1) {
+std::pair<typename T3::const_iterator, bool> f15(std::flat_set<T1, T2, T3> &a0,
+                                                 T1 &&a1) {
   return a0.insert(std::move(a1));
 }
 
@@ -276,7 +277,8 @@ f38(const std::flat_set<T1, T2, T3> &a0, T1 const &a1) {
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
-auto f39(std::flat_set<T1, T2, T3> &a0, T4 &&...a1) {
+std::pair<typename T3::const_iterator, bool> f39(std::flat_set<T1, T2, T3> &a0,
+                                                 T4 &&...a1) {
   return a0.template emplace<T4...>(std::forward<T4>(a1)...);
 }
 
@@ -290,7 +292,8 @@ f40(std::flat_set<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-auto f41(std::flat_set<T1, T2, T3> &a0, T4 &&a1) {
+std::pair<typename T3::const_iterator, bool> f41(std::flat_set<T1, T2, T3> &a0,
+                                                 T4 &&a1) {
   return a0.template insert<T4>(std::forward<T4>(a1));
 }
 
@@ -383,4 +386,15 @@ std::pair<typename std::flat_set<T1, T2, T3>::const_iterator,
           typename std::flat_set<T1, T2, T3>::const_iterator>
 f56(const std::flat_set<T1, T2, T3> &a0, const T4 &a1) {
   return a0.template equal_range<T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+void f57(std::flat_set<T1, T2, T3> &a0, std::flat_set<T1, T2, T3> &a1) {
+  return swap(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f58(const std::flat_set<T1, T2, T3> &a0,
+         const std::flat_set<T1, T2, T3> &a1) {
+  return operator==(a0, a1);
 }
