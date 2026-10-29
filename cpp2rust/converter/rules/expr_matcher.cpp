@@ -111,16 +111,20 @@ ResolvedDecl getResolvedDecl(clang::ASTContext &ctx, const clang::Expr *expr,
 }
 
 // Receivers are references in the rules, dereference the pointer to get a
-// reference.
-clang::Expr *getObject(clang::ASTContext &ctx, clang::Expr *object) {
+// reference: the xvalue a &&-qualified member takes
+// (std::move(set).extract() of flat_set<T1, T2, T3> &&), an lvalue otherwise.
+clang::Expr *getObject(clang::ASTContext &ctx, clang::Expr *object,
+                       const clang::CXXMethodDecl *method) {
   auto type = object->getType();
+  bool xvalue = method && method->getRefQualifier() == clang::RQ_RValue;
   if (type->isPointerType()) {
     type = type->getPointeeType();
-  } else if (object->isLValue()) {
+  } else if (object->isLValue() && !xvalue) {
     return object;
   }
-  return new (ctx)
-      clang::OpaqueValueExpr(object->getBeginLoc(), type, clang::VK_LValue);
+  return new (ctx) clang::OpaqueValueExpr(
+      object->getBeginLoc(), type,
+      xvalue ? clang::VK_XValue : clang::VK_LValue);
 }
 
 std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
@@ -141,7 +145,9 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
     operands.assign(op->arg_begin(), op->arg_end());
     if (!operands.empty() &&
         llvm::isa_and_nonnull<clang::CXXMethodDecl>(op->getDirectCallee())) {
-      operands[0] = getObject(ctx, operands[0]->IgnoreParenImpCasts());
+      operands[0] =
+          getObject(ctx, operands[0]->IgnoreParenImpCasts(),
+                    llvm::cast<clang::CXXMethodDecl>(op->getDirectCallee()));
     }
     // A rule written as a0++ has no parameter for the dummy int of a postfix
     // operator.
@@ -153,7 +159,8 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
     }
   } else if (auto call = llvm::dyn_cast<clang::CXXMemberCallExpr>(expr)) {
     operands.push_back(getObject(
-        ctx, call->getImplicitObjectArgument()->IgnoreParenImpCasts()));
+        ctx, call->getImplicitObjectArgument()->IgnoreParenImpCasts(),
+        call->getMethodDecl()));
     operands.insert(operands.end(), call->arg_begin(), call->arg_end());
   } else if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
     operands.insert(operands.end(), call->arg_begin(), call->arg_end());
@@ -172,7 +179,7 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
     auto base =
         const_cast<clang::Expr *>(macro_base ? macro_base : member->getBase())
             ->IgnoreParenImpCasts();
-    operands.push_back(getObject(ctx, base));
+    operands.push_back(getObject(ctx, base, nullptr));
   }
   while (operands.size() > arity &&
          llvm::isa<clang::CXXDefaultArgExpr>(operands.back())) {
