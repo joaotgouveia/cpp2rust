@@ -436,6 +436,9 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
   }
   auto rules = index.getObject("rules");
   std::unordered_map<std::string, bool> declared_names;
+  // a rule filed under several keys (std::pow of <complex>, under pow and
+  // std/pow) is written once
+  std::unordered_set<std::string> written;
   std::vector<std::string> candidates(keys.begin(), keys.end());
   candidates.push_back(kAnyClassKey);
   for (const auto &key : candidates) {
@@ -472,6 +475,12 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
             }
             return it->second;
           })) {
+        continue;
+      }
+      if (!written
+               .insert(rule->getString("dir")->str() + '/' +
+                       rule->getString("name")->str())
+               .second) {
         continue;
       }
       out += WrapRule(*rule, is_cxx);
