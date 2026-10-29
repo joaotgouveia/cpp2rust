@@ -355,7 +355,7 @@ private:
   // more than once, e.g., in a loop or in a closure.
   bool IsExcluded(clang::Stmt *stmt) const {
     if (auto *call = clang::dyn_cast<clang::CallExpr>(stmt)) {
-      return Mapper::Contains(ctx_, call->getCallee());
+      return Mapper::Contains(ctx_, call);
     }
     if (auto *construct = clang::dyn_cast<clang::CXXConstructExpr>(stmt)) {
       return !GetTrivialCopySource(construct);
