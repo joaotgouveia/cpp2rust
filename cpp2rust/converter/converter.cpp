@@ -3889,6 +3889,10 @@ bool Converter::VisitLambdaExpr(clang::LambdaExpr *expr) {
     }
   }
   ForEachLambdaCallOperator(decl, [&](clang::CXXMethodDecl *call_operator) {
+    // A specialization that is never called is not defined.
+    if (!call_operator->hasBody()) {
+      return;
+    }
     StrCat(token::kComma);
     ConvertLambdaClosure(decl, call_operator);
   });
