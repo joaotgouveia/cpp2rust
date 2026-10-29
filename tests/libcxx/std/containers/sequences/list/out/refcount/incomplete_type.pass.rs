@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(72)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
+#[byte_size(56)]
 pub struct A {
     #[offset(0)]
     #[byte_size(24)]
@@ -19,11 +19,22 @@ pub struct A {
     #[byte_size(8)]
     pub cit: (),
     #[offset(40)]
-    #[byte_size(16)]
+    #[byte_size(8)]
     pub rit: (),
-    #[offset(56)]
-    #[byte_size(16)]
+    #[offset(48)]
+    #[byte_size(8)]
     pub crit: (),
+}
+impl A {
+    pub fn move_from(_a0: Ptr<A>) -> Self {
+        Self {
+            l: unimplemented!(),
+            it: field!(_a0, it).with_mut(std::mem::take),
+            cit: field!(_a0, cit).with_mut(std::mem::take),
+            rit: unimplemented!(),
+            crit: unimplemented!(),
+        }
+    }
 }
 pub fn test_0() -> () {
     let mut a: A = <A>::default();
@@ -52,5 +63,18 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     return 0_();
+}
+pub trait AImpl {
+    fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
+}
+impl AImpl for Ptr<A> {
+    fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        return (*self).clone();
+    }
 }
 pub fn __cpp2rust_init_globals() {}

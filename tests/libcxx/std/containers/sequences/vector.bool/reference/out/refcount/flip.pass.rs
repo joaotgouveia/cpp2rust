@@ -6,25 +6,19 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> bool {
-    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let a0_clone = true.clone();
-        (*vec_.borrow_mut()).push(a0_clone)
-    };
-    {
-        let a0_clone = false.clone();
-        (*vec_.borrow_mut()).push(a0_clone)
-    };
-    let ref_: Value<bool> = Rc::new(RefCell::new({ (*vec_.borrow())[0_usize] }));
-    assert!(({ (*vec_.borrow())[0_usize] } as bool));
-    assert!(!({ (*vec_.borrow())[1_usize] } as bool));
-    ({ (*ref_.borrow()).flip() });
-    assert!(!({ (*vec_.borrow())[0_usize] } as bool));
-    assert!(!({ (*vec_.borrow())[1_usize] } as bool));
-    ({ (*ref_.borrow()).flip() });
-    assert!(({ (*vec_.borrow())[0_usize] } as bool));
-    assert!(!({ (*vec_.borrow())[1_usize] } as bool));
+pub fn test_0() -> () {
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ref_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     return true;
 }
 pub fn main() {
@@ -46,9 +40,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0;
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

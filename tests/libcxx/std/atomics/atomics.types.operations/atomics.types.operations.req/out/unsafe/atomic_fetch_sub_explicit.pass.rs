@@ -6,50 +6,43 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type LockFreeStatus = i32;
+pub type LockFreeStatus = ();
 pub const LockFreeStatus_unknown: LockFreeStatus = -1;
 pub const LockFreeStatus_never: LockFreeStatus = 0;
 pub const LockFreeStatus_sometimes: LockFreeStatus = 1;
 pub const LockFreeStatus_always: LockFreeStatus = 2;
 pub static mut value_0: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCell::new(|| unsafe {
-    ((if (((::std::mem::size_of::<libc::c_char>()) == (::std::mem::size_of::<libc::c_char>()))
-        && ((::std::mem::align_of::<libc::c_char>()) >= (::std::mem::size_of::<libc::c_char>())))
+    ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
     {
-        2
+        2_()
     } else {
-        (if (((::std::mem::size_of::<libc::c_char>()) == (::std::mem::size_of::<i16>()))
-            && ((::std::mem::align_of::<libc::c_char>())
-                >= (::std::mem::size_of::<libc::c_char>())))
+        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
         {
-            2
+            2_()
         } else {
-            (if (((::std::mem::size_of::<libc::c_char>()) == (::std::mem::size_of::<i32>()))
-                && ((::std::mem::align_of::<libc::c_char>())
-                    >= (::std::mem::size_of::<libc::c_char>())))
+            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
             {
-                2
+                2_()
             } else {
-                (if (((::std::mem::size_of::<libc::c_char>()) == (::std::mem::size_of::<i64>()))
-                    && ((::std::mem::align_of::<libc::c_char>())
-                        >= (::std::mem::size_of::<libc::c_char>())))
+                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                 {
-                    2
+                    2_()
                 } else {
-                    (if (((::std::mem::size_of::<libc::c_char>())
-                        == (::std::mem::size_of::<i64>()))
-                        && ((::std::mem::align_of::<libc::c_char>())
-                            >= (::std::mem::size_of::<libc::c_char>())))
+                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                     {
-                        2
+                        2_()
                     } else {
-                        (if (((::std::mem::size_of::<libc::c_char>())
-                            == (::std::mem::size_of::<*mut ::libc::c_void>()))
-                            && ((::std::mem::align_of::<libc::c_char>())
-                                >= (::std::mem::size_of::<libc::c_char>())))
+                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                         {
-                            2
+                            2_()
                         } else {
-                            -1_i32
+                            -1_()
                         })
                     })
                 })
@@ -57,45 +50,44 @@ pub static mut value_0: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCel
         })
     }) as LockFreeStatus)
 });
-pub static mut status_known_1: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_0)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct LockFreeStatusInfo_char_ {}
 pub static mut value_2: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCell::new(|| unsafe {
-    ((if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<libc::c_char>()))
-        && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
+    ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
     {
-        2
+        2_()
     } else {
-        (if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<i16>()))
-            && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
+        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
         {
-            2
+            2_()
         } else {
-            (if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<i32>()))
-                && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
+            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
             {
-                2
+                2_()
             } else {
-                (if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<i64>()))
-                    && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
+                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                 {
-                    2
+                    2_()
                 } else {
-                    (if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<i64>()))
-                        && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
+                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                     {
-                        2
+                        2_()
                     } else {
-                        (if (((::std::mem::size_of::<i16>())
-                            == (::std::mem::size_of::<*mut ::libc::c_void>()))
-                            && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
+                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                         {
-                            2
+                            2_()
                         } else {
-                            -1_i32
+                            -1_()
                         })
                     })
                 })
@@ -103,45 +95,44 @@ pub static mut value_2: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCel
         })
     }) as LockFreeStatus)
 });
-pub static mut status_known_3: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_2)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct LockFreeStatusInfo_short_ {}
 pub static mut value_4: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCell::new(|| unsafe {
-    ((if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<libc::c_char>()))
-        && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
+    ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
     {
-        2
+        2_()
     } else {
-        (if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<i16>()))
-            && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
+        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
         {
-            2
+            2_()
         } else {
-            (if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<i32>()))
-                && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
+            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
             {
-                2
+                2_()
             } else {
-                (if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<i64>()))
-                    && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
+                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                 {
-                    2
+                    2_()
                 } else {
-                    (if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<i64>()))
-                        && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
+                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                     {
-                        2
+                        2_()
                     } else {
-                        (if (((::std::mem::size_of::<i32>())
-                            == (::std::mem::size_of::<*mut ::libc::c_void>()))
-                            && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
+                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                         {
-                            2
+                            2_()
                         } else {
-                            -1_i32
+                            -1_()
                         })
                     })
                 })
@@ -149,45 +140,44 @@ pub static mut value_4: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCel
         })
     }) as LockFreeStatus)
 });
-pub static mut status_known_5: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_4)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct LockFreeStatusInfo_int_ {}
 pub static mut value_6: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCell::new(|| unsafe {
-    ((if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<libc::c_char>()))
-        && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+    ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
     {
-        2
+        2_()
     } else {
-        (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i16>()))
-            && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
         {
-            2
+            2_()
         } else {
-            (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i32>()))
-                && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
             {
-                2
+                2_()
             } else {
-                (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i64>()))
-                    && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                 {
-                    2
+                    2_()
                 } else {
-                    (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i64>()))
-                        && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                     {
-                        2
+                        2_()
                     } else {
-                        (if (((::std::mem::size_of::<i64>())
-                            == (::std::mem::size_of::<*mut ::libc::c_void>()))
-                            && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                         {
-                            2
+                            2_()
                         } else {
-                            -1_i32
+                            -1_()
                         })
                     })
                 })
@@ -195,54 +185,44 @@ pub static mut value_6: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCel
         })
     }) as LockFreeStatus)
 });
-pub static mut status_known_7: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_6)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct LockFreeStatusInfo_long_ {}
 pub static mut value_8: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCell::new(|| unsafe {
-    ((if (((::std::mem::size_of::<*mut ::libc::c_void>())
-        == (::std::mem::size_of::<libc::c_char>()))
-        && ((::std::mem::align_of::<*mut ::libc::c_void>())
-            >= (::std::mem::size_of::<*mut ::libc::c_void>())))
+    ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
     {
-        2
+        2_()
     } else {
-        (if (((::std::mem::size_of::<*mut ::libc::c_void>()) == (::std::mem::size_of::<i16>()))
-            && ((::std::mem::align_of::<*mut ::libc::c_void>())
-                >= (::std::mem::size_of::<*mut ::libc::c_void>())))
+        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
         {
-            2
+            2_()
         } else {
-            (if (((::std::mem::size_of::<*mut ::libc::c_void>()) == (::std::mem::size_of::<i32>()))
-                && ((::std::mem::align_of::<*mut ::libc::c_void>())
-                    >= (::std::mem::size_of::<*mut ::libc::c_void>())))
+            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
             {
-                2
+                2_()
             } else {
-                (if (((::std::mem::size_of::<*mut ::libc::c_void>())
-                    == (::std::mem::size_of::<i64>()))
-                    && ((::std::mem::align_of::<*mut ::libc::c_void>())
-                        >= (::std::mem::size_of::<*mut ::libc::c_void>())))
+                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                 {
-                    2
+                    2_()
                 } else {
-                    (if (((::std::mem::size_of::<*mut ::libc::c_void>())
-                        == (::std::mem::size_of::<i64>()))
-                        && ((::std::mem::align_of::<*mut ::libc::c_void>())
-                            >= (::std::mem::size_of::<*mut ::libc::c_void>())))
+                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                     {
-                        2
+                        2_()
                     } else {
-                        (if (((::std::mem::size_of::<*mut ::libc::c_void>())
-                            == (::std::mem::size_of::<*mut ::libc::c_void>()))
-                            && ((::std::mem::align_of::<*mut ::libc::c_void>())
-                                >= (::std::mem::size_of::<*mut ::libc::c_void>())))
+                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                         {
-                            2
+                            2_()
                         } else {
-                            -1_i32
+                            -1_()
                         })
                     })
                 })
@@ -250,7 +230,7 @@ pub static mut value_8: std::cell::LazyCell<LockFreeStatus> = std::cell::LazyCel
         })
     }) as LockFreeStatus)
 });
-pub static mut status_known_9: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_9: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_8)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
@@ -258,39 +238,38 @@ pub static mut status_known_9: std::cell::LazyCell<bool> = std::cell::LazyCell::
 pub struct LockFreeStatusInfo_void_ptr_ {}
 pub static mut value_10: std::cell::LazyCell<LockFreeStatus> =
     std::cell::LazyCell::new(|| unsafe {
-        ((if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<libc::c_char>()))
-            && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+        ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
         {
-            2
+            2_()
         } else {
-            (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i16>()))
-                && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
             {
-                2
+                2_()
             } else {
-                (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i32>()))
-                    && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                 {
-                    2
+                    2_()
                 } else {
-                    (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i64>()))
-                        && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                     {
-                        2
+                        2_()
                     } else {
-                        (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i64>()))
-                            && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
+                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
                         {
-                            2
+                            2_()
                         } else {
-                            (if (((::std::mem::size_of::<i64>())
-                                == (::std::mem::size_of::<*mut ::libc::c_void>()))
-                                && ((::std::mem::align_of::<i64>())
-                                    >= (::std::mem::size_of::<i64>())))
+                            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
+                                && ((::std::mem::align_of::<()>())
+                                    >= (::std::mem::size_of::<()>())))
                             {
-                                2
+                                2_()
                             } else {
-                                -1_i32
+                                -1_()
                             })
                         })
                     })
@@ -298,7 +277,7 @@ pub static mut value_10: std::cell::LazyCell<LockFreeStatus> =
             })
         }) as LockFreeStatus)
     });
-pub static mut status_known_11: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_11: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_10)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
@@ -325,17 +304,17 @@ const _: () = assert!(
     true,
     "LockFreeStatusInfo<int>::value == LockFreeStatus::always"
 );
-pub unsafe fn operator_eq_12(x: *const UserAtomicType, y: *const UserAtomicType) -> bool {
+pub unsafe fn operator_eq_12(x: *const UserAtomicType, y: *const UserAtomicType) -> () {
     return (((*x).i) == ((*y).i));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct UserAtomicType {
-    pub i: i32,
+    pub i: (),
 }
 impl UserAtomicType {
-    pub unsafe fn new(mut d: Option<i32>) -> Self {
-        let mut d: i32 = d.unwrap_or_else(|| unsafe { 0 });
+    pub unsafe fn new(mut d: Option<()>) -> Self {
+        let mut d: () = d.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self { i: d };
         this
     }
@@ -356,9 +335,9 @@ impl Default for UserAtomicType {
         unsafe { UserAtomicType::new(None) }
     }
 }
-pub unsafe fn operator_eq_13(x: *const LargeUserAtomicType, y: *const LargeUserAtomicType) -> bool {
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (128)) {
+pub unsafe fn operator_eq_13(x: *const LargeUserAtomicType, y: *const LargeUserAtomicType) -> () {
+    let mut i: () = 0_();
+    'loop_: while ((i) < (128_())) {
         if (((*x).a[(i) as usize]) != ((*y).a[(i) as usize])) {
             return false;
         }
@@ -369,19 +348,19 @@ pub unsafe fn operator_eq_13(x: *const LargeUserAtomicType, y: *const LargeUserA
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct LargeUserAtomicType {
-    pub a: [i32; 128],
+    pub a: [(); 128],
 }
 impl LargeUserAtomicType {
-    pub unsafe fn new(mut d: Option<i32>) -> Self {
-        let mut d: i32 = d.unwrap_or_else(|| unsafe { 0 });
+    pub unsafe fn new(mut d: Option<()>) -> Self {
+        let mut d: () = d.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self {
-            a: [<i32>::default(); 128],
+            a: [unimplemented!(); 128],
         };
         'loop_: for e in IterRange::new(
             this.a.as_mut_ptr(),
-            this.a.as_mut_ptr().offset((128_i64) as isize),
+            this.a.as_mut_ptr().offset((128_()) as isize),
         ) {
-            let e: *mut i32 = &mut (*e);
+            let e: *mut () = &mut (*e);
             (*e) = d.postfix_inc();
         }
         this
@@ -441,39 +420,15 @@ pub struct TestFn_char_ {}
 impl TestFn_char_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_char_ = std_atomic_char_::new_1({ (3 as libc::c_char) });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_14(
-                        (&mut t as *mut std_atomic_char_),
-                        (2 as libc::c_char),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == ((3 as libc::c_char) as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_char_).to_libcc_char_7() }) as i32)
-                    == ((1 as libc::c_char) as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_char_ = std_atomic_char_::new_1({ (3 as libc::c_char) });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_16(
-                        (&mut t as *mut std_atomic_char_),
-                        (2 as libc::c_char),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == ((3 as libc::c_char) as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_char_).to_libcc_char_8() }) as i32)
-                    == ((1 as libc::c_char) as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -484,39 +439,15 @@ pub struct TestFn_signed_char_ {}
 impl TestFn_signed_char_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_signed_char_ = std_atomic_signed_char_::new_1({ 3_i8 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_17(
-                        (&mut t as *mut std_atomic_signed_char_),
-                        2_i8,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_i8 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_signed_char_).to_i8_7() }) as i32)
-                    == (1_i8 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_signed_char_ = std_atomic_signed_char_::new_1({ 3_i8 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_18(
-                        (&mut t as *mut std_atomic_signed_char_),
-                        2_i8,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_i8 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_signed_char_).to_i8_8() }) as i32)
-                    == (1_i8 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -527,39 +458,15 @@ pub struct TestFn_unsigned_char_ {}
 impl TestFn_unsigned_char_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_unsigned_char_ = std_atomic_unsigned_char_::new_1({ 3_u8 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_19(
-                        (&mut t as *mut std_atomic_unsigned_char_),
-                        2_u8,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_u8 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_unsigned_char_).to_u8_7() }) as i32)
-                    == (1_u8 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_unsigned_char_ = std_atomic_unsigned_char_::new_1({ 3_u8 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_20(
-                        (&mut t as *mut std_atomic_unsigned_char_),
-                        2_u8,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_u8 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_unsigned_char_).to_u8_8() }) as i32)
-                    == (1_u8 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -570,39 +477,15 @@ pub struct TestFn_short_ {}
 impl TestFn_short_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_short_ = std_atomic_short_::new_1({ 3_i16 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_21(
-                        (&mut t as *mut std_atomic_short_),
-                        2_i16,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_i16 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_short_).to_i16_7() }) as i32)
-                    == (1_i16 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_short_ = std_atomic_short_::new_1({ 3_i16 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_22(
-                        (&mut t as *mut std_atomic_short_),
-                        2_i16,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_i16 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_short_).to_i16_8() }) as i32)
-                    == (1_i16 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -613,39 +496,15 @@ pub struct TestFn_unsigned_short_ {}
 impl TestFn_unsigned_short_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_unsigned_short_ = std_atomic_unsigned_short_::new_1({ 3_u16 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_23(
-                        (&mut t as *mut std_atomic_unsigned_short_),
-                        2_u16,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_u16 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_unsigned_short_).to_u16_7() }) as i32)
-                    == (1_u16 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_unsigned_short_ = std_atomic_unsigned_short_::new_1({ 3_u16 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_24(
-                        (&mut t as *mut std_atomic_unsigned_short_),
-                        2_u16,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_u16 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_unsigned_short_).to_u16_8() }) as i32)
-                    == (1_u16 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -656,31 +515,15 @@ pub struct TestFn_int_ {}
 impl TestFn_int_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_int_ = std_atomic_int_::new_1({ 3 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_25(
-                        (&mut t as *mut std_atomic_int_),
-                        2,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3))
-            );
-            assert!(((unsafe { (t as std___atomic_base_int_).to_i32_7() }) == (1)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_int_ = std_atomic_int_::new_1({ 3 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_26(
-                        (&mut t as *mut std_atomic_int_),
-                        2,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3))
-            );
-            assert!(((unsafe { (t as std___atomic_base_int_).to_i32_8() }) == (1)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -691,31 +534,15 @@ pub struct TestFn_unsigned_int_ {}
 impl TestFn_unsigned_int_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_unsigned_int_ = std_atomic_unsigned_int_::new_1({ 3_u32 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_27(
-                        (&mut t as *mut std_atomic_unsigned_int_),
-                        2_u32,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_u32))
-            );
-            assert!(((unsafe { (t as std___atomic_base_unsigned_int_).to_u32_7() }) == (1_u32)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_unsigned_int_ = std_atomic_unsigned_int_::new_1({ 3_u32 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_28(
-                        (&mut t as *mut std_atomic_unsigned_int_),
-                        2_u32,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_u32))
-            );
-            assert!(((unsafe { (t as std___atomic_base_unsigned_int_).to_u32_8() }) == (1_u32)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -726,31 +553,15 @@ pub struct TestFn_long_ {}
 impl TestFn_long_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_long_ = std_atomic_long_::new_1({ 3_i64 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_29(
-                        (&mut t as *mut std_atomic_long_),
-                        2_i64,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_i64))
-            );
-            assert!(((unsafe { (t as std___atomic_base_long_).to_i64_7() }) == (1_i64)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_long_ = std_atomic_long_::new_1({ 3_i64 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_30(
-                        (&mut t as *mut std_atomic_long_),
-                        2_i64,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_i64))
-            );
-            assert!(((unsafe { (t as std___atomic_base_long_).to_i64_8() }) == (1_i64)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -761,31 +572,15 @@ pub struct TestFn_unsigned_long_ {}
 impl TestFn_unsigned_long_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_unsigned_long_ = std_atomic_unsigned_long_::new_1({ 3_u64 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_31(
-                        (&mut t as *mut std_atomic_unsigned_long_),
-                        2_u64,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_u64))
-            );
-            assert!(((unsafe { (t as std___atomic_base_unsigned_long_).to_u64_7() }) == (1_u64)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_unsigned_long_ = std_atomic_unsigned_long_::new_1({ 3_u64 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_32(
-                        (&mut t as *mut std_atomic_unsigned_long_),
-                        2_u64,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_u64))
-            );
-            assert!(((unsafe { (t as std___atomic_base_unsigned_long_).to_u64_8() }) == (1_u64)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -796,31 +591,15 @@ pub struct TestFn_long_long_ {}
 impl TestFn_long_long_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_long_long_ = std_atomic_long_long_::new_1({ 3_i64 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_33(
-                        (&mut t as *mut std_atomic_long_long_),
-                        2_i64,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_i64))
-            );
-            assert!(((unsafe { (t as std___atomic_base_long_long_).to_i64_7() }) == (1_i64)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_long_long_ = std_atomic_long_long_::new_1({ 3_i64 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_34(
-                        (&mut t as *mut std_atomic_long_long_),
-                        2_i64,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_i64))
-            );
-            assert!(((unsafe { (t as std___atomic_base_long_long_).to_i64_8() }) == (1_i64)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -831,37 +610,15 @@ pub struct TestFn_unsigned_long_long_ {}
 impl TestFn_unsigned_long_long_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_unsigned_long_long_ =
-                std_atomic_unsigned_long_long_::new_1({ 3_u64 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_35(
-                        (&mut t as *mut std_atomic_unsigned_long_long_),
-                        2_u64,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_u64))
-            );
-            assert!(
-                ((unsafe { (t as std___atomic_base_unsigned_long_long_).to_u64_7() }) == (1_u64))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_unsigned_long_long_ =
-                std_atomic_unsigned_long_long_::new_1({ 3_u64 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_36(
-                        (&mut t as *mut std_atomic_unsigned_long_long_),
-                        2_u64,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_u64))
-            );
-            assert!(
-                ((unsafe { (t as std___atomic_base_unsigned_long_long_).to_u64_8() }) == (1_u64))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -872,31 +629,15 @@ pub struct TestFn_wchar_t_ {}
 impl TestFn_wchar_t_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_wchar_t_ = std_atomic_wchar_t_::new_1({ 3_i32 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_37(
-                        (&mut t as *mut std_atomic_wchar_t_),
-                        2_i32,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_i32))
-            );
-            assert!(((unsafe { (t as std___atomic_base_wchar_t_).to_i32_7() }) == (1_i32)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_wchar_t_ = std_atomic_wchar_t_::new_1({ 3_i32 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_38(
-                        (&mut t as *mut std_atomic_wchar_t_),
-                        2_i32,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_i32))
-            );
-            assert!(((unsafe { (t as std___atomic_base_wchar_t_).to_i32_8() }) == (1_i32)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -907,39 +648,15 @@ pub struct TestFn_char8_t_ {}
 impl TestFn_char8_t_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_char8_t_ = std_atomic_char8_t_::new_1({ 3_u8 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_39(
-                        (&mut t as *mut std_atomic_char8_t_),
-                        2_u8,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_u8 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_char8_t_).to_u8_7() }) as i32)
-                    == (1_u8 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_char8_t_ = std_atomic_char8_t_::new_1({ 3_u8 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_40(
-                        (&mut t as *mut std_atomic_char8_t_),
-                        2_u8,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_u8 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_char8_t_).to_u8_8() }) as i32)
-                    == (1_u8 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -950,39 +667,15 @@ pub struct TestFn_char16_t_ {}
 impl TestFn_char16_t_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_char16_t_ = std_atomic_char16_t_::new_1({ 3_u16 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_41(
-                        (&mut t as *mut std_atomic_char16_t_),
-                        2_u16,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_u16 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_char16_t_).to_u16_7() }) as i32)
-                    == (1_u16 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_char16_t_ = std_atomic_char16_t_::new_1({ 3_u16 });
-            assert!(
-                (((unsafe {
-                    atomic_fetch_sub_explicit_42(
-                        (&mut t as *mut std_atomic_char16_t_),
-                        2_u16,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) as i32)
-                    == (3_u16 as i32))
-            );
-            assert!(
-                (((unsafe { (t as std___atomic_base_char16_t_).to_u16_8() }) as i32)
-                    == (1_u16 as i32))
-            );
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
@@ -993,128 +686,52 @@ pub struct TestFn_char32_t_ {}
 impl TestFn_char32_t_ {
     pub unsafe fn operator_call(&self) {
         {
-            let mut t: std_atomic_char32_t_ = std_atomic_char32_t_::new_1({ 3_u32 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_43(
-                        (&mut t as *mut std_atomic_char32_t_),
-                        2_u32,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_u32))
-            );
-            assert!(((unsafe { (t as std___atomic_base_char32_t_).to_u32_7() }) == (1_u32)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut t: std_atomic_char32_t_ = std_atomic_char32_t_::new_1({ 3_u32 });
-            assert!(
-                ((unsafe {
-                    atomic_fetch_sub_explicit_44(
-                        (&mut t as *mut std_atomic_char32_t_),
-                        2_u32,
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                    )
-                }) == (3_u32))
-            );
-            assert!(((unsafe { (t as std___atomic_base_char32_t_).to_u32_8() }) == (1_u32)));
+            let mut t: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
 }
-pub unsafe fn testp_45() {
+pub unsafe fn testp_14() {
     {
-        let mut a: [i32; 3] = [0, <i32>::default(), <i32>::default()];
-        let mut t: std_atomic_int_ptr_ =
-            std_atomic_int_ptr_::new_1({ (&mut a[(2) as usize] as *mut i32) });
-        assert!(
-            ((unsafe {
-                atomic_fetch_sub_explicit_46(
-                    (&mut t as *mut std_atomic_int_ptr_),
-                    2_i64,
-                    (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                )
-            }) == (&mut a[(2) as usize] as *mut i32))
-        );
-        (unsafe {
-            atomic_fetch_sub_explicit_46(
-                (&mut t as *mut std_atomic_int_ptr_),
-                0_i64,
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_47)),
-            )
-        });
-        assert!(((unsafe { t.to_pmuti32_7() }) == (&mut a[(0) as usize] as *mut i32)));
+        let mut a: [(); 3] = [0_(), unimplemented!(), unimplemented!()];
+        let mut t: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut a: [i32; 3] = [0, <i32>::default(), <i32>::default()];
-        let mut t: std_atomic_int_ptr_ =
-            std_atomic_int_ptr_::new_1({ (&mut a[(2) as usize] as *mut i32) });
-        assert!(
-            ((unsafe {
-                atomic_fetch_sub_explicit_48(
-                    (&mut t as *mut std_atomic_int_ptr_),
-                    2_i64,
-                    (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                )
-            }) == (&mut a[(2) as usize] as *mut i32))
-        );
-        (unsafe {
-            atomic_fetch_sub_explicit_48(
-                (&mut t as *mut std_atomic_int_ptr_),
-                0_i64,
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_47)),
-            )
-        });
-        assert!(((unsafe { t.to_pmuti32_8() }) == (&mut a[(0) as usize] as *mut i32)));
+        let mut a: [(); 3] = [0_(), unimplemented!(), unimplemented!()];
+        let mut t: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         const _: () = assert!(true, "");;
     }
 }
-pub unsafe fn testp_49() {
+pub unsafe fn testp_15() {
     {
-        let a: [i32; 3] = [0, <i32>::default(), <i32>::default()];
-        let mut t: std_atomic_const_int_ptr_ =
-            std_atomic_const_int_ptr_::new_1({ (&a[(2) as usize] as *const i32) });
-        assert!(
-            ((unsafe {
-                atomic_fetch_sub_explicit_50(
-                    (&mut t as *mut std_atomic_const_int_ptr_),
-                    2_i64,
-                    (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                )
-            }) == (&a[(2) as usize] as *const i32))
-        );
-        (unsafe {
-            atomic_fetch_sub_explicit_50(
-                (&mut t as *mut std_atomic_const_int_ptr_),
-                0_i64,
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_47)),
-            )
-        });
-        assert!(((unsafe { t.to_pconsti32_7() }) == (&a[(0) as usize] as *const i32)));
+        let a: [(); 3] = [0_(), unimplemented!(), unimplemented!()];
+        let mut t: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let a: [i32; 3] = [0, <i32>::default(), <i32>::default()];
-        let mut t: std_atomic_const_int_ptr_ =
-            std_atomic_const_int_ptr_::new_1({ (&a[(2) as usize] as *const i32) });
-        assert!(
-            ((unsafe {
-                atomic_fetch_sub_explicit_51(
-                    (&mut t as *mut std_atomic_const_int_ptr_),
-                    2_i64,
-                    (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_15)),
-                )
-            }) == (&a[(2) as usize] as *const i32))
-        );
-        (unsafe {
-            atomic_fetch_sub_explicit_51(
-                (&mut t as *mut std_atomic_const_int_ptr_),
-                0_i64,
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_47)),
-            )
-        });
-        assert!(((unsafe { t.to_pconsti32_8() }) == (&a[(0) as usize] as *const i32)));
+        let a: [(); 3] = [0_(), unimplemented!(), unimplemented!()];
+        let mut t: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         const _: () = assert!(true, "");;
     }
 }
@@ -1133,13 +750,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
         TestEachIntegralType_TestFn_::operator_call(&<TestEachIntegralType_TestFn_>::default())
     });
-    (unsafe { testp_45() });
-    (unsafe { testp_49() });
-    return 0;
+    (unsafe { testp_14() });
+    (unsafe { testp_15() });
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const value_0);

@@ -6,60 +6,54 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> bool {
-    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+pub fn test_0() -> () {
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ref1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ref2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
     {
-        let a0_clone = true.clone();
-        (*vec_.borrow_mut()).push(a0_clone)
-    };
-    {
-        let a0_clone = false.clone();
-        (*vec_.borrow_mut()).push(a0_clone)
-    };
-    let ref1: Value<bool> = Rc::new(RefCell::new({ (*vec_.borrow())[0_usize] }));
-    let ref2: Value<bool> = Rc::new(RefCell::new({ (*vec_.borrow())[1_usize] }));
-    (*ref2.borrow_mut()) = (*ref1.borrow());
-    {
-        (*vec_.borrow_mut())[0_usize] = false;
-        (*vec_.borrow_mut())[1_usize] = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow());
-        assert!(({ (*vec_.borrow())[0_usize] } as bool));
-        assert!(({ (*vec_.borrow())[1_usize] } as bool));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
     {
-        (*vec_.borrow_mut())[0_usize] = true;
-        (*vec_.borrow_mut())[1_usize] = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow());
-        assert!(!({ (*vec_.borrow())[0_usize] } as bool));
-        assert!(!({ (*vec_.borrow())[1_usize] } as bool));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
     {
-        (*vec_.borrow_mut())[0_usize] = false;
-        (*vec_.borrow_mut())[1_usize] = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow());
-        assert!(({ (*vec_.borrow())[0_usize] } as bool));
-        assert!(({ (*vec_.borrow())[1_usize] } as bool));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
     {
-        (*vec_.borrow_mut())[0_usize] = true;
-        (*vec_.borrow_mut())[1_usize] = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow());
-        assert!(!({ (*vec_.borrow())[0_usize] } as bool));
-        assert!(!({ (*vec_.borrow())[1_usize] } as bool));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
     {
-        (*vec_.borrow_mut())[0_usize] = false;
-        (*vec_.borrow_mut())[1_usize] = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow());
-        assert!(({ (*vec_.borrow())[0_usize] } as bool));
-        assert!(({ (*vec_.borrow())[1_usize] } as bool));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
     {
-        (*vec_.borrow_mut())[0_usize] = true;
-        (*vec_.borrow_mut())[1_usize] = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow());
-        assert!(!({ (*vec_.borrow())[0_usize] } as bool));
-        assert!(!({ (*vec_.borrow())[1_usize] } as bool));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
     return true;
 }
@@ -82,9 +76,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0;
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

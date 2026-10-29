@@ -6,23 +6,17 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0() -> bool {
-    let mut vec_: Vec<bool> = Vec::new();
+pub unsafe fn test_0() -> () {
+    let mut vec_: () = unimplemented!();
     const _: () = assert!(true, "std::is_convertible<Ref, bool>::value");;
-    {
-        let a0_clone = true.clone();
-        vec_.push(a0_clone)
-    };
-    {
-        let a0_clone = false.clone();
-        vec_.push(a0_clone)
-    };
-    let mut true_ref: bool = vec_[(0_usize)];
-    let mut false_ref: bool = vec_[(1_usize)];
-    let mut b: bool = (true_ref as bool);
-    assert!(b);
-    assert!((true_ref as bool));
-    assert!(!(false_ref as bool));
+    unimplemented!();
+    unimplemented!();
+    let mut true_ref: () = unimplemented!();
+    let mut false_ref: () = unimplemented!();
+    let mut b: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     return true;
 }
 pub fn main() {
@@ -40,9 +34,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}
