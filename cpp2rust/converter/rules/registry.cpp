@@ -151,7 +151,8 @@ void checkGenerics(const std::string &dir, const std::string &name,
 
 TranslationRule::TypeRule placeholderTypeRule() {
   TranslationRule::TypeRule rule;
-  rule.initializer = "unimplemented!()";
+  rule.initializer.emplace_back(
+      TranslationRule::TextFragment{"unimplemented!()"});
   rule.type_info.type = "()";
   return rule;
 }
@@ -188,12 +189,12 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
     }
   }
   if (!name.starts_with('f')) {
-    auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
-                          : placeholderTypeRule();
     auto keys = RuleKeys::GetTypeKeys(decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
-      types_.emplace(key, TypeRuleDecl{decl, type_rule});
+      auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                            : placeholderTypeRule();
+      types_.emplace(key, TypeRuleDecl{decl, std::move(type_rule)});
     }
     return;
   }
