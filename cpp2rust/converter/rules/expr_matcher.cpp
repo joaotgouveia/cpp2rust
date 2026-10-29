@@ -853,6 +853,45 @@ bool namesClass(const clang::FunctionDecl *rule) {
   });
 }
 
+// The rule naming the more specialized class before :: (numeric_limits<const
+// T1>::is_specialized over numeric_limits<T1>'s), ordered as C++ orders the
+// partial specializations of the class template: the class of the more general
+// rule deduces from the other's, not the reverse.
+clang::FunctionTemplateDecl *
+moreSpecializedQualifier(clang::Sema &sema, const clang::Expr *use,
+                         clang::FunctionTemplateDecl *a,
+                         clang::FunctionTemplateDecl *b) {
+  if (namingClass(use).isNull()) {
+    return nullptr;
+  }
+  auto a_class = namingClass(RuleDecls::GetReturned(a->getTemplatedDecl()));
+  auto b_class = namingClass(RuleDecls::GetReturned(b->getTemplatedDecl()));
+  if (a_class.isNull() || b_class.isNull()) {
+    return nullptr;
+  }
+  auto a_spec = a_class->getAs<clang::TemplateSpecializationType>();
+  auto b_spec = b_class->getAs<clang::TemplateSpecializationType>();
+  if (!a_spec || !b_spec) {
+    return nullptr;
+  }
+  auto a_template = a_spec->getTemplateName().getAsTemplateDecl();
+  auto b_template = b_spec->getTemplateName().getAsTemplateDecl();
+  if (!a_template || !b_template ||
+      a_template->getCanonicalDecl() != b_template->getCanonicalDecl()) {
+    return nullptr;
+  }
+  bool a_general = RuleDecls::DeduceFromType(sema, a->getTemplateParameters(),
+                                             a_class, b_class)
+                       .has_value();
+  bool b_general = RuleDecls::DeduceFromType(sema, b->getTemplateParameters(),
+                                             b_class, a_class)
+                       .has_value();
+  if (a_general == b_general) {
+    return nullptr;
+  }
+  return a_general ? b : a;
+}
+
 // The more constrained of two rules that differ only in their constraints.
 const clang::NamedDecl *moreConstrained(clang::Sema &sema,
                                         const clang::NamedDecl *a,
@@ -1077,6 +1116,13 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
   }
   if (by_class == b_tmpl) {
     return b;
+  }
+  // A static member named through a partial specialization of the class
+  // (numeric_limits<const other>::is_specialized of __numeric_limits_base)
+  // binds the rule written for that specialization and the primary's alike:
+  // as C++ picks the partial specialization, so does its rule.
+  if (auto by_qualifier = moreSpecializedQualifier(sema, use, a_tmpl, b_tmpl)) {
+    return by_qualifier == a_tmpl ? a : b;
   }
   if (auto constrained = moreConstrained(sema, a, a_tmpl, b, b_tmpl)) {
     return constrained;
