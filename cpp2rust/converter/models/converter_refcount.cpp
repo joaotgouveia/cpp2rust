@@ -2071,7 +2071,14 @@ bool ConverterRefCount::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
 
   if (IsRValueConvertingConstructor(ctor) ||
       (ctor->isMoveConstructor() && !IsUserDefinedDecl(ctor->getParent()))) {
-    StrCat(ConvertLValue(expr->getArg(0)));
+    auto lvalue = ConvertLValue(expr->getArg(0));
+    // An object reached through a pointer is moved out through it.
+    if (!pending_deref_.empty()) {
+      StrCat(pending_deref_.take(), ".with_mut(std::mem::take)");
+      MarkFresh();
+      return false;
+    }
+    StrCat(lvalue);
     return false;
   }
 
