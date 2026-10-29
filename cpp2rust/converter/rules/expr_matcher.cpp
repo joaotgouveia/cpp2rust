@@ -436,13 +436,33 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   } else if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(use)) {
     used = ref->getDecl();
   }
-  auto specialization = llvm::dyn_cast_or_null<clang::FunctionDecl>(used);
-  if (!specialization || !specialization->getTemplateSpecializationArgs()) {
+  llvm::ArrayRef<clang::TemplateArgument> actual;
+  if (auto function = llvm::dyn_cast_or_null<clang::FunctionDecl>(used);
+      function && function->getTemplateSpecializationArgs()) {
+    actual = function->getTemplateSpecializationArgs()->asArray();
+  } else if (auto var =
+                 llvm::dyn_cast_or_null<clang::VarTemplateSpecializationDecl>(
+                     used)) {
+    // a variable template (std::is_same_v<T1, T2> of is_same_v<int, int>)
+    actual = var->getTemplateArgs().asArray();
+  } else {
     return std::nullopt;
   }
-  return RuleDecls::DeduceFromArguments(
-      sema, rule->getTemplateParameters(), written,
-      specialization->getTemplateSpecializationArgs()->asArray());
+  return RuleDecls::DeduceFromArguments(sema, rule->getTemplateParameters(),
+                                        written, actual);
+}
+
+// Whether the use's callee was written with explicit template arguments
+// (std::exchange<int, short>(v, {})).
+bool hasExplicitArgs(const clang::Expr *use) {
+  use = RuleDecls::SkipImplicit(use);
+  if (auto call = llvm::dyn_cast<clang::CallExpr>(use)) {
+    use = call->getCallee()->IgnoreParenImpCasts();
+  }
+  if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(use)) {
+    return ref->hasExplicitTemplateArgs();
+  }
+  return false;
 }
 
 // The rule's parameters that the use's class binds, null for those deduced
@@ -463,12 +483,6 @@ getClassArgs(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
     return {};
   }
   auto params = rule->getTemplateParameters();
-  auto deduced = RuleDecls::DeduceFromType(
-      sema, params, rule->getTemplatedDecl()->getReturnType(),
-      RuleDecls::SkipImplicit(use)
-          ->getType()
-          .getCanonicalType()
-          .getUnqualifiedType());
   // a construction binds every argument of the class
   auto last = construction ? params->size() - 1
                            : static_cast<unsigned>(deducible.find_last_unset());
@@ -494,11 +508,17 @@ getClassArgs(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
     }
     return true;
   };
+  // the arguments the callee was instantiated with come first: the use's
+  // type drops what they keep (any_cast<int &> is of type int, visit<const
+  // void> of type void, make_format_args<Context> over the default T1)
+  auto deduced = deduceFromCallee(sema, rule, use);
   if (!deduced || !bound(*deduced)) {
-    if (auto from_callee = deduceFromCallee(sema, rule, use);
-        from_callee && bound(*from_callee)) {
-      deduced = std::move(from_callee);
-    }
+    deduced = RuleDecls::DeduceFromType(
+        sema, params, rule->getTemplatedDecl()->getReturnType(),
+        RuleDecls::SkipImplicit(use)
+            ->getType()
+            .getCanonicalType()
+            .getUnqualifiedType());
   }
   if (!deduced || !bound(*deduced)) {
     if (auto qualified = deduceFromQualifier(sema, rule, use);
@@ -531,6 +551,13 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
   clang::TemplateArgumentListInfo explicit_args(loc, loc);
   auto params = rule->getTemplateParameters();
   auto args = getClassArgs(sema, rule, use);
+  // a use written with explicit template arguments instantiates what its
+  // operands do not deduce (std::exchange<int, short>(v, {}))
+  if (args.empty() && hasExplicitArgs(use)) {
+    if (auto from_callee = deduceFromCallee(sema, rule, use)) {
+      args = *std::move(from_callee);
+    }
+  }
   for (unsigned i = 0; i < args.size(); ++i) {
     auto param = params->getParam(i);
     if (args[i].isNull()) {
