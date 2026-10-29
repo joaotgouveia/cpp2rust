@@ -185,9 +185,8 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
                                     clang::DeclarationName());
     // unless the ones left out are defaulted (map<T1, T2> of
     // map<int, int, less<int>, allocator<pair<const int, int>>>)
-    auto defaulted = [](const clang::ClassTemplateSpecializationDecl *spec,
-                        unsigned from) {
-      auto params = spec->getSpecializedTemplate()->getTemplateParameters();
+    auto defaulted = [](const clang::ClassTemplateDecl *tmpl, unsigned from) {
+      auto params = tmpl->getTemplateParameters();
       if (params->hasParameterPack()) {
         return false;
       }
@@ -217,9 +216,19 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
       return std::nullopt;
     }
     if (spec && written) {
+      auto named = llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
+          written->getTemplateName().getAsTemplateDecl());
+      // the owner is a base of the class the qualifier names when their
+      // templates differ (_Flat_map_impl<..., false> of flat_map<T1, T2, T3,
+      // T4, T5>), and the arguments count against the qualifier's own
+      bool base =
+          named && named->getCanonicalDecl() !=
+                       spec->getSpecializedTemplate()->getCanonicalDecl();
       auto n = count(written->template_arguments());
-      if (n != count(spec->getTemplateArgs().asArray()) &&
-          !defaulted(spec, n)) {
+      auto expected = base ? named->getTemplateParameters()->size()
+                           : count(spec->getTemplateArgs().asArray());
+      if (n != expected &&
+          !defaulted(base ? named : spec->getSpecializedTemplate(), n)) {
         return std::nullopt;
       }
     }

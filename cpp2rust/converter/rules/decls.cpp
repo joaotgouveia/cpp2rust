@@ -190,10 +190,44 @@ bool deduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
                /*NumberOfArgumentsMustMatch=*/true) ==
                clang::TemplateDeductionResult::Success;
   }
-  return sema.DeduceTemplateArguments(
-             params, clang::TemplateArgument(pattern),
-             clang::TemplateArgument(sema.Context.getCanonicalTagType(record)),
-             info, deduced, /*NumberOfArgumentsMustMatch=*/true) ==
+  auto actual =
+      clang::TemplateArgument(sema.Context.getCanonicalTagType(record));
+  auto tmpl = spec ? llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
+                         spec->getTemplateName().getAsTemplateDecl())
+                   : nullptr;
+  auto specialization =
+      llvm::dyn_cast<clang::ClassTemplateSpecializationDecl>(record);
+  // the record is a base of the class the pattern names, deduced through the
+  // base its class template writes (_Flat_map_impl<T1, T2, T3, T4, T5, false>
+  // of flat_map<T1, T2, T3, T4, T5> against _Flat_map_impl<int, char, ...>)
+  if (tmpl && specialization &&
+      specialization->getSpecializedTemplate()->getCanonicalDecl() !=
+          tmpl->getCanonicalDecl()) {
+    auto definition = tmpl->getTemplatedDecl()->getDefinition();
+    if (!definition) {
+      return false;
+    }
+    clang::MultiLevelTemplateArgumentList args(tmpl, spec->template_arguments(),
+                                               /*Final=*/true);
+    for (const auto &base : definition->bases()) {
+      auto substituted = sema.SubstType(
+          base.getType(), args, tmpl->getLocation(), clang::DeclarationName());
+      llvm::SmallVector<clang::DeducedTemplateArgument, 4> attempt(
+          deduced.begin(), deduced.end());
+      if (!substituted.isNull() &&
+          sema.DeduceTemplateArguments(
+              params, clang::TemplateArgument(substituted), actual, info,
+              attempt, /*NumberOfArgumentsMustMatch=*/true) ==
+              clang::TemplateDeductionResult::Success) {
+        deduced.assign(attempt.begin(), attempt.end());
+        return true;
+      }
+    }
+    return false;
+  }
+  return sema.DeduceTemplateArguments(params, clang::TemplateArgument(pattern),
+                                      actual, info, deduced,
+                                      /*NumberOfArgumentsMustMatch=*/true) ==
          clang::TemplateDeductionResult::Success;
 }
 

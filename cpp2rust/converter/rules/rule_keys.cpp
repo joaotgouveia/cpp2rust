@@ -172,6 +172,17 @@ std::vector<clang::QualType> resolveMemberType(clang::Sema &sema,
         } else if (auto nested = llvm::dyn_cast<clang::CXXRecordDecl>(decl)) {
           // a class nested in the class template (basic_ostream::sentry)
           resolved.push_back(sema.Context.getCanonicalTagType(nested));
+        } else if (auto using_decl =
+                       llvm::dyn_cast<clang::UnresolvedUsingTypenameDecl>(
+                           decl)) {
+          // a member type taken from a base with a using-declaration
+          // (using typename _Impl::value_compare of flat_map)
+          auto types = resolveMemberType(
+              sema,
+              sema.Context.getDependentNameType(
+                  clang::ElaboratedTypeKeyword::Typename,
+                  using_decl->getQualifier(), using_decl->getIdentifier()));
+          resolved.insert(resolved.end(), types.begin(), types.end());
         }
       }
     }
