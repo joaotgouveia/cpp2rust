@@ -667,6 +667,16 @@ clang::QualType namingClass(const clang::Expr *expr) {
       auto base = member->getBase()->getType();
       return member->isArrow() ? base->getPointeeType() : base;
     }
+    // a rule's member, named through its dependent class
+    // (std::numeric_limits<const T1>::is_specialized)
+    if (auto dependent =
+            llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(expr)) {
+      if (dependent->getQualifier().getKind() !=
+          clang::NestedNameSpecifier::Kind::Type) {
+        return {};
+      }
+      return clang::QualType(dependent->getQualifier().getAsType(), 0);
+    }
     auto ref = llvm::dyn_cast<clang::DeclRefExpr>(expr);
     if (!ref ||
         ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
