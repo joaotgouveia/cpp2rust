@@ -886,21 +886,41 @@ pub fn test_vector_bool_28(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut in_: () = unimplemented!();
-            let mut expected: () = unimplemented!();
-            unimplemented!();
+            let __rhs = {
+                unimplemented!() = false;
+                unimplemented!()
+            };
+            unimplemented!() = __rhs;
             unimplemented!();
             unimplemented!();
         }
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
+            let __rhs = {
+                unimplemented!() = false;
+                unimplemented!()
+            };
+            unimplemented!() = __rhs;
             unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut in_: () = unimplemented!();
+            let mut expected: () = unimplemented!();
+            let __rhs = {
+                let __rhs = {
+                    let __rhs = {
+                        unimplemented!() = false;
+                        unimplemented!()
+                    };
+                    unimplemented!() = __rhs;
+                    unimplemented!()
+                };
+                unimplemented!() = __rhs;
+                unimplemented!()
+            };
+            unimplemented!() = __rhs;
             unimplemented!();
             unimplemented!();
         }

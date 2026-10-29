@@ -1228,9 +1228,7 @@ pub unsafe fn test_compare_alloc_27() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe {
-            ( m as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____false_ ) . extract   ( )
-        });
+        let mut keys: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -1245,9 +1243,7 @@ pub unsafe fn test_compare_alloc_27() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe {
-            ( m as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____false_ ) . extract   ( )
-        });
+        let mut keys: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -1264,9 +1260,7 @@ pub unsafe fn test_compare_alloc_28() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe {
-            ( m as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____false_ ) . extract   ( )
-        });
+        let mut keys: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -1281,9 +1275,7 @@ pub unsafe fn test_compare_alloc_28() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut keys: () = (unsafe {
-            ( m as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____false_ ) . extract   ( )
-        });
+        let mut keys: () = unimplemented!();
         unimplemented!();
     }
 }

@@ -3366,7 +3366,7 @@ pub unsafe fn test_vector_bool_48() -> () {
         let mut mid: () = ((8_() as ()).wrapping_div(2_()) as ()).wrapping_add(offset);
         let mut i: () = mid;
         'loop_: while ((i) < (8_())) {
-            unimplemented!();
+            unimplemented!() = true;
             i.prefix_inc();
         }
         unimplemented!();
@@ -3386,7 +3386,7 @@ pub unsafe fn test_vector_bool_49() -> () {
         let mut mid: () = ((19_() as ()).wrapping_div(2_()) as ()).wrapping_add(offset);
         let mut i: () = mid;
         'loop_: while ((i) < (19_())) {
-            unimplemented!();
+            unimplemented!() = true;
             i.prefix_inc();
         }
         unimplemented!();
@@ -3406,7 +3406,7 @@ pub unsafe fn test_vector_bool_50() -> () {
         let mut mid: () = ((32_() as ()).wrapping_div(2_()) as ()).wrapping_add(offset);
         let mut i: () = mid;
         'loop_: while ((i) < (32_())) {
-            unimplemented!();
+            unimplemented!() = true;
             i.prefix_inc();
         }
         unimplemented!();
@@ -3426,7 +3426,7 @@ pub unsafe fn test_vector_bool_51() -> () {
         let mut mid: () = ((49_() as ()).wrapping_div(2_()) as ()).wrapping_add(offset);
         let mut i: () = mid;
         'loop_: while ((i) < (49_())) {
-            unimplemented!();
+            unimplemented!() = true;
             i.prefix_inc();
         }
         unimplemented!();
@@ -3446,7 +3446,7 @@ pub unsafe fn test_vector_bool_52() -> () {
         let mut mid: () = ((64_() as ()).wrapping_div(2_()) as ()).wrapping_add(offset);
         let mut i: () = mid;
         'loop_: while ((i) < (64_())) {
-            unimplemented!();
+            unimplemented!() = true;
             i.prefix_inc();
         }
         unimplemented!();
@@ -3466,7 +3466,7 @@ pub unsafe fn test_vector_bool_53() -> () {
         let mut mid: () = ((199_() as ()).wrapping_div(2_()) as ()).wrapping_add(offset);
         let mut i: () = mid;
         'loop_: while ((i) < (199_())) {
-            unimplemented!();
+            unimplemented!() = true;
             i.prefix_inc();
         }
         unimplemented!();
@@ -3486,7 +3486,7 @@ pub unsafe fn test_vector_bool_54() -> () {
         let mut mid: () = ((256_() as ()).wrapping_div(2_()) as ()).wrapping_add(offset);
         let mut i: () = mid;
         'loop_: while ((i) < (256_())) {
-            unimplemented!();
+            unimplemented!() = true;
             i.prefix_inc();
         }
         unimplemented!();

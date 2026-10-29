@@ -10,7 +10,7 @@ pub unsafe fn test_0() {
     const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
     const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
     {
-        let r: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_1));
+        let r: () = unimplemented!();
     }
     {
         let a: () = unimplemented!();
@@ -27,11 +27,11 @@ pub unsafe fn test_0() {
         }
     }
 }
-pub unsafe fn test_2() {
+pub unsafe fn test_1() {
     const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
     const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
     {
-        let r: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_3));
+        let r: () = unimplemented!();
     }
     {
         let a: () = unimplemented!();
@@ -65,7 +65,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_0() });
-    (unsafe { test_2() });
+    (unsafe { test_1() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

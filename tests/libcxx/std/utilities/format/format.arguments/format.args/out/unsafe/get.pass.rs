@@ -94,7 +94,88 @@ impl MultiStringType {
     }
 }
 pub unsafe fn test_0(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_1(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_1(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -175,7 +256,88 @@ pub unsafe fn test_0(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_2(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_3(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_3(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -256,7 +418,7 @@ pub unsafe fn test_2(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_4(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_3(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -337,7 +499,7 @@ pub unsafe fn test_4(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_5(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_3(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -418,7 +580,7 @@ pub unsafe fn test_5(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_6(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_3(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -499,7 +661,88 @@ pub unsafe fn test_6(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_7(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_8(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_8(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -580,7 +823,88 @@ pub unsafe fn test_7(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_9(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_10(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_10(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -661,7 +985,88 @@ pub unsafe fn test_9(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_11(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_12(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_12(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -742,7 +1147,88 @@ pub unsafe fn test_11(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_13(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_14(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_14(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -823,7 +1309,88 @@ pub unsafe fn test_13(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_15(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_16(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_16(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -904,12 +1471,93 @@ pub unsafe fn test_15(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_17(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_18(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
             let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_18(mut value: *const ()) {
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: *const () = value;
         },
         |mut a: ()| {
             {
@@ -985,12 +1633,93 @@ pub unsafe fn test_17(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_19(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_20(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let v: () = value;
+            let v: () = unimplemented!();
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_20(mut value: ()) {
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = unimplemented!();
         },
         |mut a: ()| {
             {
@@ -1066,7 +1795,88 @@ pub unsafe fn test_19(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_21(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_22(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = unimplemented!();
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_22(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -1147,7 +1957,88 @@ pub unsafe fn test_21(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_23(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_24(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_24(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -1228,7 +2119,88 @@ pub unsafe fn test_23(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_25(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_26(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_26(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -1309,7 +2281,88 @@ pub unsafe fn test_25(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_27(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_28(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_28(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -1390,7 +2443,88 @@ pub unsafe fn test_27(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_29(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_30(&mut value) });
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_30(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -1471,7 +2605,7 @@ pub unsafe fn test_29(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_31(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_32(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -1551,13 +2685,175 @@ pub unsafe fn test_31(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_33(mut value: *const ()) {
-    let mut store: () = (unsafe { make_format_args_34(&mut value) });
+pub unsafe fn test_32(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let v: *const () = value;
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_33(mut value: ()) {
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_34(mut value: ()) {
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
         },
         |mut a: ()| {
             {
@@ -1633,12 +2929,93 @@ pub unsafe fn test_33(mut value: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_35(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_36(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let v: () = unimplemented!();
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_36(mut value: ()) {
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
         },
         |mut a: ()| {
             {
@@ -1714,12 +3091,93 @@ pub unsafe fn test_35(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_37(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_38(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let v: () = unimplemented!();
+            let v: () = value;
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: *const ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        },
+        |mut a: ()| {
+            {
+                unimplemented!();
+            }
+        }
+    );
+    unimplemented!();
+}
+pub unsafe fn test_38(mut value: ()) {
+    let mut store: () = unimplemented!();
+    let format_args: () = unimplemented!();
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let v: () = value;
         },
         |mut a: ()| {
             {
@@ -1795,88 +3253,7 @@ pub unsafe fn test_37(mut value: ()) {
     unimplemented!();
 }
 pub unsafe fn test_39(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_40(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = unimplemented!();
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_41(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_42(&mut value) });
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -1956,1385 +3333,8 @@ pub unsafe fn test_41(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_43(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_44(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_45(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_46(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_47(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_46(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_48(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_46(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_49(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_50(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_51(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_52(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_53(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_54(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_55(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_56(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_57(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_58(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_59(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_60(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_61(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_62(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_63(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_64(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_65(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_66(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_67(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_68(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_69(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_70(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_71(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_72(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_73(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_74(&mut value) });
-    let format_args: () = unimplemented!();
-    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {
-            let v: () = value;
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: *const ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        },
-        |mut a: ()| {
-            {
-                unimplemented!();
-            }
-        }
-    );
-    unimplemented!();
-}
-pub unsafe fn test_75(mut value: *const ()) {
-    let mut store: () = (unsafe { make_format_args_76(&mut value) });
+pub unsafe fn test_40(mut value: *const ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -3414,8 +3414,8 @@ pub unsafe fn test_75(mut value: *const ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_77(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_78(&mut value) });
+pub unsafe fn test_41(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -3495,8 +3495,8 @@ pub unsafe fn test_77(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_79(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_80(&mut value) });
+pub unsafe fn test_42(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -3576,8 +3576,8 @@ pub unsafe fn test_79(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_81(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_82(&mut value) });
+pub unsafe fn test_43(mut value: ()) {
+    let mut store: () = unimplemented!();
     let format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -3657,8 +3657,8 @@ pub unsafe fn test_81(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_handle_83(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_84(&mut value) });
+pub unsafe fn test_handle_44(mut value: ()) {
+    let mut store: () = unimplemented!();
     let mut format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -3708,8 +3708,8 @@ pub unsafe fn test_handle_83(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_handle_85(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_86(&mut value) });
+pub unsafe fn test_handle_45(mut value: ()) {
+    let mut store: () = unimplemented!();
     let mut format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -3759,8 +3759,8 @@ pub unsafe fn test_handle_85(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_handle_87(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_88(&mut value) });
+pub unsafe fn test_handle_46(mut value: ()) {
+    let mut store: () = unimplemented!();
     let mut format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -3810,8 +3810,8 @@ pub unsafe fn test_handle_87(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_handle_89(mut value: ()) {
-    let mut store: () = (unsafe { make_format_args_90(&mut value) });
+pub unsafe fn test_handle_47(mut value: ()) {
+    let mut store: () = unimplemented!();
     let mut format_args: () = unimplemented!();
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -3861,211 +3861,211 @@ pub unsafe fn test_handle_89(mut value: ()) {
     );
     unimplemented!();
 }
-pub unsafe fn test_91() {
+pub unsafe fn test_48() {
     let mut empty: () = unimplemented!();
     let mut str: () = unimplemented!();
     (unsafe { test_0(true) });
     (unsafe { test_0(false) });
-    (unsafe { test_2(('a' as ())) });
-    (unsafe { test_2(('z' as ())) });
-    (unsafe { test_2(('0' as ())) });
-    (unsafe { test_2(('9' as ())) });
+    (unsafe { test_1(('a' as ())) });
+    (unsafe { test_1(('z' as ())) });
+    (unsafe { test_1(('0' as ())) });
+    (unsafe { test_1(('9' as ())) });
     {
-        (unsafe { test_2(('a' as ())) });
-        (unsafe { test_2(('z' as ())) });
-        (unsafe { test_2(('0' as ())) });
-        (unsafe { test_2(('9' as ())) });
+        (unsafe { test_1(('a' as ())) });
+        (unsafe { test_1(('z' as ())) });
+        (unsafe { test_1(('0' as ())) });
+        (unsafe { test_1(('9' as ())) });
     }
+    (unsafe { test_5(unimplemented!()) });
+    (unsafe { test_5(0_()) });
+    (unsafe { test_5(unimplemented!()) });
+    (unsafe { test_6(unimplemented!()) });
+    (unsafe { test_6(unimplemented!()) });
+    (unsafe { test_6(0_()) });
+    (unsafe { test_6(unimplemented!()) });
+    (unsafe { test_6(unimplemented!()) });
+    (unsafe { test_7(unimplemented!()) });
+    (unsafe { test_7(unimplemented!()) });
     (unsafe { test_7(unimplemented!()) });
     (unsafe { test_7(0_()) });
     (unsafe { test_7(unimplemented!()) });
+    (unsafe { test_7(unimplemented!()) });
+    (unsafe { test_7(unimplemented!()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_8(0_()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_9(unimplemented!()) });
+    (unsafe { test_9(unimplemented!()) });
+    (unsafe { test_9(unimplemented!()) });
     (unsafe { test_9(unimplemented!()) });
     (unsafe { test_9(unimplemented!()) });
     (unsafe { test_9(0_()) });
     (unsafe { test_9(unimplemented!()) });
     (unsafe { test_9(unimplemented!()) });
-    (unsafe { test_11(unimplemented!()) });
-    (unsafe { test_11(unimplemented!()) });
-    (unsafe { test_11(unimplemented!()) });
+    (unsafe { test_9(unimplemented!()) });
+    (unsafe { test_9(unimplemented!()) });
+    (unsafe { test_9(unimplemented!()) });
+    (unsafe { test_handle_44(0_()) });
+    (unsafe { test_10(0_()) });
+    (unsafe { test_10(unimplemented!()) });
     (unsafe { test_11(0_()) });
     (unsafe { test_11(unimplemented!()) });
     (unsafe { test_11(unimplemented!()) });
-    (unsafe { test_11(unimplemented!()) });
-    (unsafe { test_13(unimplemented!()) });
-    (unsafe { test_13(unimplemented!()) });
-    (unsafe { test_13(unimplemented!()) });
-    (unsafe { test_13(unimplemented!()) });
+    (unsafe { test_12(0_()) });
+    (unsafe { test_12(unimplemented!()) });
+    (unsafe { test_12(unimplemented!()) });
+    (unsafe { test_12(unimplemented!()) });
     (unsafe { test_13(0_()) });
     (unsafe { test_13(unimplemented!()) });
     (unsafe { test_13(unimplemented!()) });
     (unsafe { test_13(unimplemented!()) });
     (unsafe { test_13(unimplemented!()) });
+    (unsafe { test_14(0_()) });
+    (unsafe { test_14(unimplemented!()) });
+    (unsafe { test_14(unimplemented!()) });
+    (unsafe { test_14(unimplemented!()) });
+    (unsafe { test_14(unimplemented!()) });
+    (unsafe { test_14(unimplemented!()) });
+    (unsafe { test_handle_45(0_()) });
+    (unsafe { test_15(-unimplemented!()) });
+    (unsafe { test_15(-unimplemented!()) });
+    (unsafe { test_15(-0_f64) });
+    (unsafe { test_15(0_f64) });
     (unsafe { test_15(unimplemented!()) });
     (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(0_()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_handle_83(0_()) });
-    (unsafe { test_17(0_()) });
+    (unsafe { test_16(-unimplemented!()) });
+    (unsafe { test_16(-unimplemented!()) });
+    (unsafe { test_16(-0_f64) });
+    (unsafe { test_16(0_f64) });
+    (unsafe { test_16(unimplemented!()) });
+    (unsafe { test_16(unimplemented!()) });
+    (unsafe { test_17(-unimplemented!()) });
+    (unsafe { test_17(-unimplemented!()) });
+    (unsafe { test_17(-0_f64) });
+    (unsafe { test_17(0_f64) });
     (unsafe { test_17(unimplemented!()) });
-    (unsafe { test_19(0_()) });
+    (unsafe { test_17(unimplemented!()) });
+    (unsafe { test_18(unimplemented!()) });
+    (unsafe { test_18(unimplemented!()) });
     (unsafe { test_19(unimplemented!()) });
     (unsafe { test_19(unimplemented!()) });
-    (unsafe { test_21(0_()) });
-    (unsafe { test_21(unimplemented!()) });
-    (unsafe { test_21(unimplemented!()) });
-    (unsafe { test_21(unimplemented!()) });
-    (unsafe { test_23(0_()) });
-    (unsafe { test_23(unimplemented!()) });
-    (unsafe { test_23(unimplemented!()) });
-    (unsafe { test_23(unimplemented!()) });
-    (unsafe { test_23(unimplemented!()) });
-    (unsafe { test_25(0_()) });
-    (unsafe { test_25(unimplemented!()) });
-    (unsafe { test_25(unimplemented!()) });
-    (unsafe { test_25(unimplemented!()) });
-    (unsafe { test_25(unimplemented!()) });
-    (unsafe { test_25(unimplemented!()) });
-    (unsafe { test_handle_85(0_()) });
-    (unsafe { test_27(-unimplemented!()) });
-    (unsafe { test_27(-unimplemented!()) });
-    (unsafe { test_27(-0_f64) });
-    (unsafe { test_27(0_f64) });
-    (unsafe { test_27(unimplemented!()) });
-    (unsafe { test_27(unimplemented!()) });
-    (unsafe { test_29(-unimplemented!()) });
-    (unsafe { test_29(-unimplemented!()) });
-    (unsafe { test_29(-0_f64) });
-    (unsafe { test_29(0_f64) });
-    (unsafe { test_29(unimplemented!()) });
-    (unsafe { test_29(unimplemented!()) });
-    (unsafe { test_31(-unimplemented!()) });
-    (unsafe { test_31(-unimplemented!()) });
-    (unsafe { test_31(-0_f64) });
-    (unsafe { test_31(0_f64) });
-    (unsafe { test_31(unimplemented!()) });
-    (unsafe { test_31(unimplemented!()) });
-    (unsafe { test_33(unimplemented!()) });
-    (unsafe { test_33(unimplemented!()) });
-    (unsafe { test_35(unimplemented!()) });
-    (unsafe { test_35(unimplemented!()) });
-    (unsafe { test_35(unimplemented!()) });
-    (unsafe { test_37(unimplemented!()) });
-    (unsafe { test_37(unimplemented!()) });
-    (unsafe { test_37(unimplemented!()) });
-    (unsafe { test_39(Default::default()) });
+    (unsafe { test_19(unimplemented!()) });
+    (unsafe { test_20(unimplemented!()) });
+    (unsafe { test_20(unimplemented!()) });
+    (unsafe { test_20(unimplemented!()) });
+    (unsafe { test_21(Default::default()) });
 }
-pub unsafe fn test_92() {
+pub unsafe fn test_49() {
     let mut empty: () = unimplemented!();
     let mut str: () = unimplemented!();
-    (unsafe { test_41(true) });
-    (unsafe { test_41(false) });
-    (unsafe { test_43(('a' as ())) });
-    (unsafe { test_43(('z' as ())) });
-    (unsafe { test_43(('0' as ())) });
-    (unsafe { test_43(('9' as ())) });
+    (unsafe { test_22(true) });
+    (unsafe { test_22(false) });
+    (unsafe { test_23(('a' as ())) });
+    (unsafe { test_23(('z' as ())) });
+    (unsafe { test_23(('0' as ())) });
+    (unsafe { test_23(('9' as ())) });
     {
         {
-            (unsafe { test_45(('a' as ())) });
-            (unsafe { test_45(('z' as ())) });
-            (unsafe { test_45(('0' as ())) });
-            (unsafe { test_45(('9' as ())) });
+            (unsafe { test_24(('a' as ())) });
+            (unsafe { test_24(('z' as ())) });
+            (unsafe { test_24(('0' as ())) });
+            (unsafe { test_24(('9' as ())) });
         }
     }
-    (unsafe { test_49(unimplemented!()) });
-    (unsafe { test_49(0_()) });
-    (unsafe { test_49(unimplemented!()) });
-    (unsafe { test_51(unimplemented!()) });
-    (unsafe { test_51(unimplemented!()) });
-    (unsafe { test_51(0_()) });
-    (unsafe { test_51(unimplemented!()) });
-    (unsafe { test_51(unimplemented!()) });
-    (unsafe { test_53(unimplemented!()) });
-    (unsafe { test_53(unimplemented!()) });
-    (unsafe { test_53(unimplemented!()) });
-    (unsafe { test_53(0_()) });
-    (unsafe { test_53(unimplemented!()) });
-    (unsafe { test_53(unimplemented!()) });
-    (unsafe { test_53(unimplemented!()) });
-    (unsafe { test_55(unimplemented!()) });
-    (unsafe { test_55(unimplemented!()) });
-    (unsafe { test_55(unimplemented!()) });
-    (unsafe { test_55(unimplemented!()) });
-    (unsafe { test_55(0_()) });
-    (unsafe { test_55(unimplemented!()) });
-    (unsafe { test_55(unimplemented!()) });
-    (unsafe { test_55(unimplemented!()) });
-    (unsafe { test_55(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(0_()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_57(unimplemented!()) });
-    (unsafe { test_handle_87(0_()) });
-    (unsafe { test_59(0_()) });
-    (unsafe { test_59(unimplemented!()) });
-    (unsafe { test_61(0_()) });
-    (unsafe { test_61(unimplemented!()) });
-    (unsafe { test_61(unimplemented!()) });
-    (unsafe { test_63(0_()) });
-    (unsafe { test_63(unimplemented!()) });
-    (unsafe { test_63(unimplemented!()) });
-    (unsafe { test_63(unimplemented!()) });
-    (unsafe { test_65(0_()) });
-    (unsafe { test_65(unimplemented!()) });
-    (unsafe { test_65(unimplemented!()) });
-    (unsafe { test_65(unimplemented!()) });
-    (unsafe { test_65(unimplemented!()) });
-    (unsafe { test_67(0_()) });
-    (unsafe { test_67(unimplemented!()) });
-    (unsafe { test_67(unimplemented!()) });
-    (unsafe { test_67(unimplemented!()) });
-    (unsafe { test_67(unimplemented!()) });
-    (unsafe { test_67(unimplemented!()) });
-    (unsafe { test_handle_89(0_()) });
-    (unsafe { test_69(-unimplemented!()) });
-    (unsafe { test_69(-unimplemented!()) });
-    (unsafe { test_69(-0_f64) });
-    (unsafe { test_69(0_f64) });
-    (unsafe { test_69(unimplemented!()) });
-    (unsafe { test_69(unimplemented!()) });
-    (unsafe { test_71(-unimplemented!()) });
-    (unsafe { test_71(-unimplemented!()) });
-    (unsafe { test_71(-0_f64) });
-    (unsafe { test_71(0_f64) });
-    (unsafe { test_71(unimplemented!()) });
-    (unsafe { test_71(unimplemented!()) });
-    (unsafe { test_73(-unimplemented!()) });
-    (unsafe { test_73(-unimplemented!()) });
-    (unsafe { test_73(-0_f64) });
-    (unsafe { test_73(0_f64) });
-    (unsafe { test_73(unimplemented!()) });
-    (unsafe { test_73(unimplemented!()) });
-    (unsafe { test_75(unimplemented!()) });
-    (unsafe { test_75(unimplemented!()) });
-    (unsafe { test_77(unimplemented!()) });
-    (unsafe { test_77(unimplemented!()) });
-    (unsafe { test_77(unimplemented!()) });
-    (unsafe { test_79(unimplemented!()) });
-    (unsafe { test_79(unimplemented!()) });
-    (unsafe { test_79(unimplemented!()) });
-    (unsafe { test_81(Default::default()) });
+    (unsafe { test_27(unimplemented!()) });
+    (unsafe { test_27(0_()) });
+    (unsafe { test_27(unimplemented!()) });
+    (unsafe { test_28(unimplemented!()) });
+    (unsafe { test_28(unimplemented!()) });
+    (unsafe { test_28(0_()) });
+    (unsafe { test_28(unimplemented!()) });
+    (unsafe { test_28(unimplemented!()) });
+    (unsafe { test_29(unimplemented!()) });
+    (unsafe { test_29(unimplemented!()) });
+    (unsafe { test_29(unimplemented!()) });
+    (unsafe { test_29(0_()) });
+    (unsafe { test_29(unimplemented!()) });
+    (unsafe { test_29(unimplemented!()) });
+    (unsafe { test_29(unimplemented!()) });
+    (unsafe { test_30(unimplemented!()) });
+    (unsafe { test_30(unimplemented!()) });
+    (unsafe { test_30(unimplemented!()) });
+    (unsafe { test_30(unimplemented!()) });
+    (unsafe { test_30(0_()) });
+    (unsafe { test_30(unimplemented!()) });
+    (unsafe { test_30(unimplemented!()) });
+    (unsafe { test_30(unimplemented!()) });
+    (unsafe { test_30(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(0_()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_31(unimplemented!()) });
+    (unsafe { test_handle_46(0_()) });
+    (unsafe { test_32(0_()) });
+    (unsafe { test_32(unimplemented!()) });
+    (unsafe { test_33(0_()) });
+    (unsafe { test_33(unimplemented!()) });
+    (unsafe { test_33(unimplemented!()) });
+    (unsafe { test_34(0_()) });
+    (unsafe { test_34(unimplemented!()) });
+    (unsafe { test_34(unimplemented!()) });
+    (unsafe { test_34(unimplemented!()) });
+    (unsafe { test_35(0_()) });
+    (unsafe { test_35(unimplemented!()) });
+    (unsafe { test_35(unimplemented!()) });
+    (unsafe { test_35(unimplemented!()) });
+    (unsafe { test_35(unimplemented!()) });
+    (unsafe { test_36(0_()) });
+    (unsafe { test_36(unimplemented!()) });
+    (unsafe { test_36(unimplemented!()) });
+    (unsafe { test_36(unimplemented!()) });
+    (unsafe { test_36(unimplemented!()) });
+    (unsafe { test_36(unimplemented!()) });
+    (unsafe { test_handle_47(0_()) });
+    (unsafe { test_37(-unimplemented!()) });
+    (unsafe { test_37(-unimplemented!()) });
+    (unsafe { test_37(-0_f64) });
+    (unsafe { test_37(0_f64) });
+    (unsafe { test_37(unimplemented!()) });
+    (unsafe { test_37(unimplemented!()) });
+    (unsafe { test_38(-unimplemented!()) });
+    (unsafe { test_38(-unimplemented!()) });
+    (unsafe { test_38(-0_f64) });
+    (unsafe { test_38(0_f64) });
+    (unsafe { test_38(unimplemented!()) });
+    (unsafe { test_38(unimplemented!()) });
+    (unsafe { test_39(-unimplemented!()) });
+    (unsafe { test_39(-unimplemented!()) });
+    (unsafe { test_39(-0_f64) });
+    (unsafe { test_39(0_f64) });
+    (unsafe { test_39(unimplemented!()) });
+    (unsafe { test_39(unimplemented!()) });
+    (unsafe { test_40(unimplemented!()) });
+    (unsafe { test_40(unimplemented!()) });
+    (unsafe { test_41(unimplemented!()) });
+    (unsafe { test_41(unimplemented!()) });
+    (unsafe { test_41(unimplemented!()) });
+    (unsafe { test_42(unimplemented!()) });
+    (unsafe { test_42(unimplemented!()) });
+    (unsafe { test_42(unimplemented!()) });
+    (unsafe { test_43(Default::default()) });
 }
-pub unsafe fn test_93() {
-    (unsafe { test_91() });
-    (unsafe { test_92() });
+pub unsafe fn test_50() {
+    (unsafe { test_48() });
+    (unsafe { test_49() });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -4083,7 +4083,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_93() });
+    (unsafe { test_50() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

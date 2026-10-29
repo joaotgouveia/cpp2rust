@@ -92,10 +92,7 @@ pub fn test_0() -> () {
                         return Ptr::<()>::null();
                     }
                 )));
-                ({
-                    let ___args: Value<()> = Rc::new(RefCell::new(3_()));
-                    invoke_r_2(f.as_pointer(), ___args.as_pointer())
-                });
+                unimplemented!();
                 unimplemented!();
                 const _: () = assert!(
                     true,
@@ -109,11 +106,11 @@ pub fn test_0() -> () {
     {
         {
             let was_called: Value<()> = Rc::new(RefCell::new(false));
-            let f: Value<FnPtr<fn(NonCopyable_3)>> = Rc::new(RefCell::new(lambda!(
+            let f: Value<FnPtr<fn(NonCopyable_2)>> = Rc::new(RefCell::new(lambda!(
                 {
                     let was_called: Ptr<()> = was_called.as_pointer();
                 },
-                |mut _a0: NonCopyable_3| {
+                |mut _a0: NonCopyable_2| {
                     was_called.write(true);
                 }
             )));
@@ -122,11 +119,11 @@ pub fn test_0() -> () {
         }
         {
             let was_called: Value<()> = Rc::new(RefCell::new(false));
-            let f: Value<FnPtr<fn(NonCopyable_3) -> ()>> = Rc::new(RefCell::new(lambda!(
+            let f: Value<FnPtr<fn(NonCopyable_2) -> ()>> = Rc::new(RefCell::new(lambda!(
                 {
                     let was_called: Ptr<()> = was_called.as_pointer();
                 },
-                |mut _a0: NonCopyable_3| -> () {
+                |mut _a0: NonCopyable_2| -> () {
                     was_called.write(true);
                     return 0_();
                 }
@@ -146,11 +143,11 @@ pub fn test_0() -> () {
         }
     }
     {
-        let f: Value<FnPtr<fn() -> Convertible_6>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> Convertible_6>::new(
-                || -> Convertible_6 {
+        let f: Value<FnPtr<fn() -> Convertible_5>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> Convertible_5>::new(
+                || -> Convertible_5 {
                     {
-                        return <Convertible_6>::default();
+                        return <Convertible_5>::default();
                     }
                 },
             )));
@@ -169,29 +166,29 @@ impl ConversionNotNoexcept_1 {
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
 #[byte_size(1)]
-pub struct NonCopyable_3 {}
-impl NonCopyable_3 {
-    pub fn move_from(_a0: Ptr<NonCopyable_3>) -> Self {
+pub struct NonCopyable_2 {}
+impl NonCopyable_2 {
+    pub fn move_from(_a0: Ptr<NonCopyable_2>) -> Self {
         Self {}
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct MoveOnlyVoidFunction_4 {
+pub struct MoveOnlyVoidFunction_3 {
     #[offset(0)]
     #[byte_size(8)]
     pub was_called: Ptr<()>,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct MoveOnlyIntFunction_5 {
+pub struct MoveOnlyIntFunction_4 {
     #[offset(0)]
     #[byte_size(8)]
     pub was_called: Ptr<()>,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct Convertible_6 {}
+pub struct Convertible_5 {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -216,27 +213,27 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test()");;
     return 0_();
 }
-pub trait Convertible_6Impl {
+pub trait Convertible_5Impl {
     fn to_(&self) -> ();
 }
-impl Convertible_6Impl for Ptr<Convertible_6> {
+impl Convertible_5Impl for Ptr<Convertible_5> {
     fn to_(&self) -> () {
         return 42_();
     }
 }
-pub trait MoveOnlyIntFunction_5Impl {
+pub trait MoveOnlyIntFunction_4Impl {
     fn operator_call(&self) -> ();
 }
-impl MoveOnlyIntFunction_5Impl for Ptr<MoveOnlyIntFunction_5> {
+impl MoveOnlyIntFunction_4Impl for Ptr<MoveOnlyIntFunction_4> {
     fn operator_call(&self) -> () {
         (*self).with(|__s| __s.was_called.clone()).write(true);
         return 0_();
     }
 }
-pub trait MoveOnlyVoidFunction_4Impl {
+pub trait MoveOnlyVoidFunction_3Impl {
     fn operator_call(&self);
 }
-impl MoveOnlyVoidFunction_4Impl for Ptr<MoveOnlyVoidFunction_4> {
+impl MoveOnlyVoidFunction_3Impl for Ptr<MoveOnlyVoidFunction_3> {
     fn operator_call(&self) {
         (*self).with(|__s| __s.was_called.clone()).write(true);
     }

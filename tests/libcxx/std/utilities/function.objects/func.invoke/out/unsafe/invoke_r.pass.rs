@@ -87,10 +87,7 @@ pub unsafe fn test_0() -> () {
                         return std::ptr::null_mut();
                     }
                 );
-                (unsafe {
-                    let mut ___args: () = 3_();
-                    invoke_r_2(&mut f, &mut ___args)
-                });
+                unimplemented!();
                 unimplemented!();
                 const _: () = assert!(
                     true,
@@ -104,11 +101,11 @@ pub unsafe fn test_0() -> () {
     {
         {
             let mut was_called: () = false;
-            let mut f: FnPtr<fn(NonCopyable_3)> = lambda_unsafe!(
+            let mut f: FnPtr<fn(NonCopyable_2)> = lambda_unsafe!(
                 {
                     let was_called: *mut () = &mut was_called;
                 },
-                |mut _a0: NonCopyable_3| {
+                |mut _a0: NonCopyable_2| {
                     (*was_called) = true;
                 }
             );
@@ -117,11 +114,11 @@ pub unsafe fn test_0() -> () {
         }
         {
             let mut was_called: () = false;
-            let mut f: FnPtr<fn(NonCopyable_3) -> ()> = lambda_unsafe!(
+            let mut f: FnPtr<fn(NonCopyable_2) -> ()> = lambda_unsafe!(
                 {
                     let was_called: *mut () = &mut was_called;
                 },
-                |mut _a0: NonCopyable_3| -> () {
+                |mut _a0: NonCopyable_2| -> () {
                     (*was_called) = true;
                     return 0_();
                 }
@@ -141,10 +138,10 @@ pub unsafe fn test_0() -> () {
         }
     }
     {
-        let mut f: FnPtr<fn() -> Convertible_6> =
-            FnPtr::<fn() -> Convertible_6>::new(|| -> Convertible_6 {
+        let mut f: FnPtr<fn() -> Convertible_5> =
+            FnPtr::<fn() -> Convertible_5>::new(|| -> Convertible_5 {
                 unsafe {
-                    return <Convertible_6>::default();
+                    return <Convertible_5>::default();
                 }
             });
         let mut result: () = unimplemented!();
@@ -163,29 +160,29 @@ impl ConversionNotNoexcept_1 {
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, Default)]
-pub struct NonCopyable_3 {}
-impl NonCopyable_3 {
-    pub unsafe fn move_from(_a0: *mut NonCopyable_3) -> Self {
+pub struct NonCopyable_2 {}
+impl NonCopyable_2 {
+    pub unsafe fn move_from(_a0: *mut NonCopyable_2) -> Self {
         let mut this = Self {};
         this
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct MoveOnlyVoidFunction_4 {
+pub struct MoveOnlyVoidFunction_3 {
     pub was_called: *mut (),
 }
-impl MoveOnlyVoidFunction_4 {
+impl MoveOnlyVoidFunction_3 {
     pub unsafe fn operator_call(&mut self) {
         (*self.was_called) = true;
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct MoveOnlyIntFunction_5 {
+pub struct MoveOnlyIntFunction_4 {
     pub was_called: *mut (),
 }
-impl MoveOnlyIntFunction_5 {
+impl MoveOnlyIntFunction_4 {
     pub unsafe fn operator_call(&mut self) -> () {
         (*self.was_called) = true;
         return 0_();
@@ -193,8 +190,8 @@ impl MoveOnlyIntFunction_5 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Convertible_6 {}
-impl Convertible_6 {
+pub struct Convertible_5 {}
+impl Convertible_5 {
     pub unsafe fn to_(&self) -> () {
         return 42_();
     }

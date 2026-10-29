@@ -221,15 +221,12 @@ pub struct Visitor_10 {}
 pub fn test02_11() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({
-        let ___visitor: Value<Visitor_12> = Rc::new(RefCell::new(<Visitor_12>::default()));
-        visit_13(___visitor.as_pointer(), v.as_pointer())
-    });
+    unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Visitor_12 {}
-pub fn test03_14() {
+pub fn test03_13() {
     let visitor: Value<FnPtr<fn() -> ()>> =
         Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
             {
@@ -246,7 +243,7 @@ pub fn main() {
 fn main_0() -> () {
     ({ test01_9() });
     ({ test02_11() });
-    ({ test03_14() });
+    ({ test03_13() });
     0
 }
 impl __gnu_test_semaphore {
@@ -269,7 +266,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_15(size: Option<()>) {
+pub fn set_memory_limits_14(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -286,14 +283,14 @@ pub fn set_memory_limits_15(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_16(mut size: ()) {
+pub fn set_file_limit_15(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_17(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_16(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -328,7 +325,7 @@ pub fn verify_demangle_17(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_18(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_17(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -355,7 +352,7 @@ pub fn run_tests_wrapped_locale_18(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_19(
+pub fn run_tests_wrapped_env_18(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -425,7 +422,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_20(
+pub fn test_tm_19(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -436,19 +433,19 @@ pub fn test_tm_20(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_21.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_21.with(Value::clone).borrow()).clone();
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_20.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_20.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_21: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait Visitor_10Impl {
     fn operator_call_1(&self, _a0: (), _a1: ()) -> ();

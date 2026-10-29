@@ -10,10 +10,10 @@ use std::rc::{Rc, Weak};
 #[byte_size(32)]
 pub struct S {
     #[offset(0)]
-    pub tag: i32,
+    pub tag: (),
     #[offset(8)]
     #[byte_size(24)]
-    pub v: Vec<i32>,
+    pub v: std_vector_int__std_allocator_int__,
 }
 impl S {
     pub fn move_from(_a0: Ptr<S>) -> Self {
@@ -23,42 +23,37 @@ impl S {
         }
     }
 }
-pub fn add_0(mut v: Ptr<Vec<i32>>, mut k: i32) {
-    {
-        let a0_clone = k.clone();
-        v.with_mut(|__v: &mut Vec<i32>| __v.push(a0_clone))
-    };
+pub fn add_0(mut v: Ptr<std_vector_int__std_allocator_int__>, k: ()) {
+    let k: Value<()> = Rc::new(RefCell::new(k));
+    ({ (*v.upgrade().deref()).push_back_57(k.as_pointer()) });
 }
 pub fn run_1(mut h: Ptr<S>) {
     ({
-        let _v: Ptr<Vec<i32>> = (field_ref!(h, v).as_pointer());
-        let _k: i32 = h.with(|__s| __s.tag);
+        let _v: Ptr<std_vector_int__std_allocator_int__> = (field_ptr!(h, v));
+        let _k: () = h.with(|__s| __s.tag);
         add_0(_v, _k)
     });
-    let mut pv: Ptr<Vec<i32>> = (field_ref!(h, v).as_pointer());
-    {
-        let __a1 = ((*pv.upgrade().deref()).len() as i32);
-        pv.with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
-    };
-    assert!(
-        (((*h.upgrade().deref()).v.len() == 2_usize) && ((vec_elem!(h, v, 0_usize).read()) == 7))
-            && ((vec_elem!(h, v, 1_usize).read()) == 1)
-    );
-    assert!((h.with(|__s| __s.tag) == 7));
+    let mut pv: Ptr<std_vector_int__std_allocator_int__> = (field_ptr!(h, v));
+    ({
+        let ___x: Value<()> = Rc::new(RefCell::new(({ (*pv.upgrade().deref()).size() })));
+        (*pv.upgrade().deref()).push_back_58(___x.as_pointer())
+    });
+    unimplemented!();
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let local: Value<S> = Rc::new(RefCell::new(<S>::default()));
-    (*local.borrow_mut()).tag = 7;
+    (*local.borrow_mut()).tag = 7_();
     ({ run_1((local.as_pointer())) });
     let mut heap: Ptr<S> = Ptr::alloc(<S>::default());
-    field!(heap, tag).write(7);
+    field!(heap, tag).write(7_());
     ({ run_1((heap).clone()) });
     heap.delete();
-    return 0;
+    return 0_();
 }
 pub trait SImpl {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S>;
@@ -66,9 +61,7 @@ pub trait SImpl {
 impl SImpl for Ptr<S> {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
         field!((*self), tag).write({ { (*_a0.upgrade().deref()).tag } });
-        field_ref!((*self), v)
-            .as_pointer()
-            .write(field!(_a0, v).with_mut(std::mem::take));
+        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
         return (*self).clone();
     }
 }

@@ -322,7 +322,7 @@ pub fn nonexistent_path_12(file: Option<()>) -> () {
         unimplemented!();
     }
     let mut pos: () = unimplemented!();
-    if (pos != npos_13.with(|rc| *rc.borrow())) {
+    if (pos != unimplemented!()) {
         unimplemented!();
     }
     unimplemented!();
@@ -384,7 +384,7 @@ impl Default for __gnu_test_scoped_file {
         { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub fn permissions_are_testable_15(print_msg: Option<()>) -> () {
+pub fn permissions_are_testable_14(print_msg: Option<()>) -> () {
     let mut print_msg: () = print_msg.unwrap_or_else(|| true);
     let testable: Value<()> = Rc::new(RefCell::new(false));
     if (unimplemented!() != 0_()) {
@@ -396,9 +396,9 @@ pub fn permissions_are_testable_15(print_msg: Option<()>) -> () {
     return (*testable.borrow());
 }
 thread_local!(
-    static counter_14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static counter_13: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
-pub fn test01_16() {
+pub fn test01_15() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -419,7 +419,7 @@ pub fn test01_16() {
         compare_paths_9(q.as_pointer(), _p2.as_pointer())
     });
 }
-pub fn test02_17() {
+pub fn test02_16() {
     'loop_: for p in IterRange::new(
         (test_paths_10.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_10.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
@@ -440,7 +440,7 @@ pub fn test02_17() {
         ({ compare_paths_9(copy.as_pointer(), p.as_pointer()) });
     }
 }
-pub fn test03_18() {
+pub fn test03_17() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     ({
@@ -448,7 +448,7 @@ pub fn test03_18() {
         compare_paths_9(p.as_pointer(), _p2.as_pointer())
     });
 }
-pub fn test04_19() {
+pub fn test04_18() {
     'loop_: for p in IterRange::new(
         (test_paths_10.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_10.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
@@ -479,10 +479,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_16() });
-    ({ test02_17() });
-    ({ test03_18() });
-    ({ test04_19() });
+    ({ test01_15() });
+    ({ test02_16() });
+    ({ test03_17() });
+    ({ test04_18() });
     0
 }
 impl __gnu_test_semaphore {
@@ -505,7 +505,7 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_20(size: Option<()>) {
+pub fn set_memory_limits_19(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = (size * 1048576_());
@@ -522,14 +522,14 @@ pub fn set_memory_limits_20(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_21(mut size: ()) {
+pub fn set_file_limit_20(mut size: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_22(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_21(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = unimplemented!();
@@ -564,7 +564,7 @@ pub fn verify_demangle_22(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_23(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_22(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
@@ -591,7 +591,7 @@ pub fn run_tests_wrapped_locale_23(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
         unimplemented!();
     }
 }
-pub fn run_tests_wrapped_env_24(
+pub fn run_tests_wrapped_env_23(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -661,7 +661,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_25(
+pub fn test_tm_24(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -672,19 +672,19 @@ pub fn test_tm_25(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_26.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return (*tmp_26.with(Value::clone).borrow()).clone();
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_25.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return (*tmp_25.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_26: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_25: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;

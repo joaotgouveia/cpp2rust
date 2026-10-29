@@ -1229,21 +1229,36 @@ pub unsafe fn test_vector_bool_28(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut in_: () = unimplemented!();
-            let mut expected: () = unimplemented!();
-            unimplemented!();
+            unimplemented!() = {
+                unimplemented!() = false;
+                unimplemented!()
+            };
             unimplemented!();
             unimplemented!();
         }
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
+            unimplemented!() = {
+                unimplemented!() = false;
+                unimplemented!()
+            };
             unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut in_: () = unimplemented!();
+            let mut expected: () = unimplemented!();
+            unimplemented!() = {
+                unimplemented!() = {
+                    unimplemented!() = {
+                        unimplemented!() = false;
+                        unimplemented!()
+                    };
+                    unimplemented!()
+                };
+                unimplemented!()
+            };
             unimplemented!();
             unimplemented!();
         }

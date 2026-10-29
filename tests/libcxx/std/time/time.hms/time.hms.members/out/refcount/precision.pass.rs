@@ -31,52 +31,52 @@ thread_local!(
     ])));
 );
 pub fn check_precision_1() -> () {
-    return is_same_v_2.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn check_precision_2() -> () {
+    return unimplemented!();
 }
 pub fn check_precision_3() -> () {
-    return is_same_v_2.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn check_precision_4() -> () {
-    return is_same_v_2.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn check_precision_5() -> () {
-    return is_same_v_6.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn check_precision_6() -> () {
+    return unimplemented!();
 }
 pub fn check_precision_7() -> () {
-    return is_same_v_8.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn check_precision_8() -> () {
+    return unimplemented!();
 }
 pub fn check_precision_9() -> () {
-    return is_same_v_10.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn check_precision_10() -> () {
+    return unimplemented!();
 }
 pub fn check_precision_11() -> () {
-    return is_same_v_12.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn check_precision_12() -> () {
+    return unimplemented!();
 }
 pub fn check_precision_13() -> () {
-    return is_same_v_8.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn check_precision_14() -> () {
-    return is_same_v_15.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn check_precision_15() -> () {
+    return unimplemented!();
 }
 pub fn check_precision_16() -> () {
-    return is_same_v_12.with(|rc| *rc.borrow());
-}
-pub fn check_precision_17() -> () {
-    return is_same_v_8.with(|rc| *rc.borrow());
-}
-pub fn check_precision_18() -> () {
-    return is_same_v_8.with(|rc| *rc.borrow());
-}
-pub fn check_precision_19() -> () {
-    return is_same_v_6.with(|rc| *rc.borrow());
-}
-pub fn check_precision_20() -> () {
-    return is_same_v_8.with(|rc| *rc.borrow());
-}
-pub fn check_precision_21() -> () {
-    return is_same_v_12.with(|rc| *rc.borrow());
-}
-pub fn check_precision_22() -> () {
-    return is_same_v_23.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

@@ -729,11 +729,7 @@ pub fn test_11() {
         }));
         unimplemented!();
         unimplemented!();
-        let v: Value<()> = Rc::new(RefCell::new(
-            ({
-                ( (*m.borrow()) as std__Flat_set_impl_int__std_less_int___std_vector_int__test_allocator_int____false_ ) . extract  ( )
-            }),
-        ));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
@@ -760,11 +756,7 @@ pub fn test_12() {
         }));
         unimplemented!();
         unimplemented!();
-        let v: Value<()> = Rc::new(RefCell::new(
-            ({
-                ( (*m.borrow()) as std__Flat_set_impl_int__std_less_int___std_deque_int__test_allocator_int____false_ ) . extract  ( )
-            }),
-        ));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }

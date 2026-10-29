@@ -10,16 +10,16 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Outer_RunInfo {
     #[offset(0)]
-    pub block_idx: i32,
+    pub block_idx: (),
     #[offset(4)]
-    pub num_extra_zero_runs: i32,
+    pub num_extra_zero_runs: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(24)]
 pub struct Outer {
     #[offset(0)]
     #[byte_size(24)]
-    pub runs: Vec<Outer_RunInfo>,
+    pub runs: std_vector_Outer_RunInfo__std_allocator_Outer_RunInfo__,
 }
 impl Outer {
     pub fn move_from(_a0: Ptr<Outer>) -> Self {
@@ -32,28 +32,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut o: Outer = <Outer>::default();
-    let mut info: Outer_RunInfo = <Outer_RunInfo>::default();
-    info.block_idx = 1;
-    info.num_extra_zero_runs = 2;
-    {
-        let a0_clone = info.clone();
-        o.runs.push(a0_clone)
-    };
-    assert!((o.runs.len() == 1_usize));
-    assert!((o.runs[0_usize].block_idx == 1));
-    assert!((o.runs[0_usize].num_extra_zero_runs == 2));
-    return 0;
+fn main_0() -> () {
+    let o: Value<Outer> = Rc::new(RefCell::new(<Outer>::default()));
+    let info: Value<Outer_RunInfo> = Rc::new(RefCell::new(<Outer_RunInfo>::default()));
+    (*info.borrow_mut()).block_idx = 1_();
+    (*info.borrow_mut()).num_extra_zero_runs = 2_();
+    ({ (*o.borrow()).runs.push_back_57(info.as_pointer()) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub trait OuterImpl {
     fn move_assign(&self, _a0: Ptr<Outer>) -> Ptr<Outer>;
 }
 impl OuterImpl for Ptr<Outer> {
     fn move_assign(&self, _a0: Ptr<Outer>) -> Ptr<Outer> {
-        field_ref!((*self), runs)
-            .as_pointer()
-            .write(field!(_a0, runs).with_mut(std::mem::take));
+        field!((*self), runs).write({ { (*_a0.upgrade().deref()).runs.clone() } });
         return (*self).clone();
     }
 }

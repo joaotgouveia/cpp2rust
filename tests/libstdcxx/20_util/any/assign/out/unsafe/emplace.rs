@@ -304,7 +304,7 @@ unsafe fn main_0() -> () {
     let i: () = 42_();
     let mut o: () = unimplemented!();
     unimplemented!();
-    let i2: *mut () = (unsafe { any_cast_9(&mut o) });
+    let i2: *mut () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -323,7 +323,7 @@ unsafe fn main_0() -> () {
     }
     let mut o2: () = unimplemented!();
     unimplemented!();
-    let t: *mut () = (unsafe { any_cast_10(&mut o2) });
+    let t: *mut () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -334,7 +334,7 @@ unsafe fn main_0() -> () {
     }
     let mut o3: () = unimplemented!();
     unimplemented!();
-    let v: *mut () = (unsafe { any_cast_11(&mut o3) });
+    let v: *mut () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -345,7 +345,7 @@ unsafe fn main_0() -> () {
     }
     let mut o4: () = unimplemented!();
     unimplemented!();
-    let c: *mut combined = (unsafe { any_cast_12(&mut o4) });
+    let c: *mut combined = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -359,7 +359,7 @@ unsafe fn main_0() -> () {
     }
     let mut o5: () = unimplemented!();
     unimplemented!();
-    let c2: *mut combined = (unsafe { any_cast_12(&mut o5) });
+    let c2: *mut combined = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -409,7 +409,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (unsafe { any_cast_9(&mut o11) })) {
+        if !((unimplemented!()) == (unimplemented!())) {
             unimplemented!();
             unimplemented!();
         }
@@ -417,7 +417,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (unsafe { any_cast_11(&mut o11) })) {
+        if !((unimplemented!()) == (unimplemented!())) {
             unimplemented!();
             unimplemented!();
         }
@@ -443,7 +443,7 @@ impl __gnu_test_semaphore {
         this
     }
 }
-pub unsafe fn set_memory_limits_13(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_9(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) * (1048576_()));
@@ -460,14 +460,14 @@ pub unsafe fn set_memory_limits_13(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_14(mut size: ()) {
+pub unsafe fn set_file_limit_10(mut size: ()) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_15(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_11(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = unimplemented!();
@@ -502,7 +502,7 @@ pub unsafe fn verify_demangle_15(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_16(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_12(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -530,7 +530,7 @@ pub unsafe fn run_tests_wrapped_locale_16(mut name: *const (), l: *const __gnu_t
         unimplemented!();
     }
 }
-pub unsafe fn run_tests_wrapped_env_17(
+pub unsafe fn run_tests_wrapped_env_13(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -599,7 +599,7 @@ impl __gnu_test_semaphore {
         }
     }
 }
-pub unsafe fn test_tm_18(
+pub unsafe fn test_tm_14(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -610,18 +610,18 @@ pub unsafe fn test_tm_18(
     mut yday: (),
     mut isdst: (),
 ) -> () {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_19)).clone();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_15)).clone();
 }
-static mut tmp_19: std::cell::LazyCell<()> =
+static mut tmp_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);
