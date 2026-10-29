@@ -35,14 +35,27 @@ std::any f10(T1 &&a0)
   return std::any(std::forward<T1>(a0));
 }
 
-template <typename T1, typename... T2, typename T3 = std::decay_t<T1>>
+template <typename T1, typename... T2, typename T3 = std::decay_t<T1>,
+          typename std::enable_if<
+              std::integral_constant<
+                  bool, std::is_copy_constructible<std::decay_t<T1>>::value &&
+                            std::is_constructible<std::decay_t<T1>,
+                                                  T2 &&...>::value>::value,
+              bool>::type T5 = false>
 std::any f11(std::in_place_type_t<T1> a0, T2 &&...a1) {
   return std::any(std::forward<std::in_place_type_t<T1>>(a0),
                   std::forward<T2>(a1)...);
 }
 
 template <typename T1, typename T2, typename... T3,
-          typename T4 = std::decay_t<T1>>
+          typename T4 = std::decay_t<T1>,
+          typename std::enable_if<
+              std::integral_constant<
+                  bool, std::is_copy_constructible<std::decay_t<T1>>::value &&
+                            std::is_constructible<std::decay_t<T1>,
+                                                  std::initializer_list<T2> &,
+                                                  T3 &&...>::value>::value,
+              bool>::type T6 = false>
 std::any f12(std::in_place_type_t<T1> a0, std::initializer_list<T2> a1,
              T3 &&...a2) {
   return std::any(std::forward<std::in_place_type_t<T1>>(a0),
@@ -63,12 +76,24 @@ f13(std::any &a0, T1 &&a1)
 }
 
 template <typename T1, typename... T2>
-std::decay_t<T1> &f14(std::any &a0, T2 &&...a1) {
+typename std::enable_if<
+    std::integral_constant<
+        bool, std::is_copy_constructible<std::decay_t<T1>>::value &&
+                  std::is_constructible<std::decay_t<T1>, T2...>::value>::value,
+    std::decay_t<T1> &>::type
+f14(std::any &a0, T2 &&...a1) {
   return a0.template emplace<T1, T2...>(std::forward<T2>(a1)...);
 }
 
 template <typename T1, typename T2, typename... T3>
-std::decay_t<T1> &f15(std::any &a0, std::initializer_list<T2> a1, T3 &&...a2) {
+typename std::enable_if<
+    std::integral_constant<
+        bool,
+        std::is_copy_constructible<std::decay_t<T1>>::value &&
+            std::is_constructible<std::decay_t<T1>, std::initializer_list<T2> &,
+                                  T3 &&...>::value>::value,
+    std::decay_t<T1> &>::type
+f15(std::any &a0, std::initializer_list<T2> a1, T3 &&...a2) {
   return a0.template emplace<T1, T2, T3...>(
       std::forward<std::initializer_list<T2>>(a1), std::forward<T3>(a2)...);
 }

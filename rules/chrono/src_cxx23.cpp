@@ -853,13 +853,23 @@ f194(const std::chrono::duration<T1, T2> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-std::chrono::duration<std::chrono::__common_rep_t<T1, T3>, T2>
+std::chrono::duration<
+    typename std::enable_if<
+        std::is_convertible<T3 const &,
+                            typename std::common_type<T1, T3>::type>::value,
+        typename std::common_type<T1, T3>::type>::type,
+    T2>
 f195(const std::chrono::duration<T1, T2> &a0, const T3 &a1) {
   return std::chrono::operator* <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::chrono::duration<std::chrono::__common_rep_t<T2, T1>, T3>
+std::chrono::duration<
+    typename std::enable_if<
+        std::is_convertible<T1 const &,
+                            typename std::common_type<T2, T1>::type>::value,
+        typename std::common_type<T2, T1>::type>::type,
+    T3>
 f196(const T1 &a0, const std::chrono::duration<T2, T3> &a1) {
   return std::chrono::operator* <T1, T2, T3>(a0, a1);
 }

@@ -211,8 +211,8 @@ T1 *f35(const std::__shared_ptr<T1, T2> &a0) {
 
 template <typename T1, std::_Lock_policy T2>
 T1 *f36(const std::__shared_ptr<T1, T2> &a0)
-  requires(T2 == T2) && (std::is_array<T1>::value == false) &&
-          (std::is_void<T1>::value == true)
+  requires((T2) == T2) && ((std::is_array<T1>::value) == false) &&
+          ((std::is_void<T1>::value) == true)
 {
   return a0.operator->();
 }
@@ -220,8 +220,8 @@ T1 *f36(const std::__shared_ptr<T1, T2> &a0)
 template <typename T1, std::_Lock_policy T2>
 typename std::__shared_ptr<T1, T2>::element_type &
 f37(const std::__shared_ptr<T1, T2> &a0, std::ptrdiff_t a1)
-  requires(T2 == T2) && (std::is_array<T1>::value == true) &&
-          (std::is_void<T1>::value == false)
+  requires((T2) == T2) && ((std::is_array<T1>::value) == true) &&
+          ((std::is_void<T1>::value) == false)
 {
   return a0.operator[](a1);
 }

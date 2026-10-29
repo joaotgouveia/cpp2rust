@@ -317,8 +317,8 @@ template <typename T1> T1 *f62(const std::shared_ptr<T1> &a0) {
 
 template <typename T1>
 T1 *f63(const std::shared_ptr<T1> &a0)
-  requires((std::is_array<T1>::value == false) &&
-           (std::is_void<T1>::value == true))
+  requires(((std::is_array<T1>::value) == false) &&
+           ((std::is_void<T1>::value) == true))
 {
   return a0.operator->();
 }
@@ -326,8 +326,8 @@ T1 *f63(const std::shared_ptr<T1> &a0)
 template <typename T1>
 typename std::shared_ptr<T1>::element_type &f64(const std::shared_ptr<T1> &a0,
                                                 std::ptrdiff_t a1)
-  requires((std::is_array<T1>::value == true) &&
-           (std::is_void<T1>::value == false))
+  requires(((std::is_array<T1>::value) == true) &&
+           ((std::is_void<T1>::value) == false))
 {
   return a0.operator[](a1);
 }

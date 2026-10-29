@@ -305,7 +305,12 @@ template <typename T1> void f56(std::vector<bool, T1> &a0) {
   return a0.clear();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename T3 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T2>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::vector<bool, T1> f57(T2 a0, T2 a1, const T1 &a2) {
   return std::vector<bool, T1>(std::move(a0), std::move(a1), a2);
 }
@@ -315,7 +320,12 @@ std::vector<bool, T1> f58(std::from_range_t a0, T2 &&a1, const T1 &a2) {
   return std::vector<bool, T1>(std::move(a0), std::forward<T2>(a1), a2);
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename T3 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T2>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 void f59(std::vector<bool, T1> &a0, T2 a1, T2 a2) {
   return a0.template assign<T2>(std::move(a1), std::move(a2));
 }
@@ -325,7 +335,12 @@ void f60(std::vector<bool, T1> &a0, T2 &&a1) {
   return a0.template assign_range<T2>(std::forward<T2>(a1));
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename T3 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T2>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::_Bit_iterator f61(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1,
                        T2 a2, T2 a3) {
   return a0.template insert<T2>(std::move(a1), std::move(a2), std::move(a3));
@@ -695,7 +710,12 @@ template <typename T1, typename T2> void f120(std::vector<T1, T2> &a0) {
   return a0.clear();
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2, typename T3,
+          typename T4 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T3>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::vector<T1, T2> f121(T3 a0, T3 a1, const T2 &a2) {
   return std::vector<T1, T2>(std::move(a0), std::move(a1), a2);
 }
@@ -705,7 +725,12 @@ std::vector<T1, T2> f122(std::from_range_t a0, T3 &&a1, const T2 &a2) {
   return std::vector<T1, T2>(std::move(a0), std::forward<T3>(a1), a2);
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2, typename T3,
+          typename T4 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T3>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 void f123(std::vector<T1, T2> &a0, T3 a1, T3 a2) {
   return a0.template assign<T3>(std::move(a1), std::move(a2));
 }
@@ -730,7 +755,12 @@ f126(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
       std::forward<T3>(a2)...);
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2, typename T3,
+          typename T4 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T3>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 typename std::vector<T1, T2>::iterator
 f127(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
      T3 a2, T3 a3) {

@@ -23,6 +23,8 @@ template <typename T1> auto f6(T1 &a0) { return std::move_if_noexcept<T1>(a0); }
 
 template <typename T1> void f7(T1 &a0, T1 &a1) { return std::swap<T1>(a0, a1); }
 
-template <typename T1, std::size_t T2> void f8(T1 (&a0)[T2], T1 (&a1)[T2]) {
+template <typename T1, std::size_t T2>
+typename std::enable_if<std::is_swappable_v<T1>>::type f8(T1 (&a0)[T2],
+                                                          T1 (&a1)[T2]) {
   return std::swap<T1, T2>(a0, a1);
 }

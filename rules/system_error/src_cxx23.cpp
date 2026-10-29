@@ -64,7 +64,8 @@ std::string f17(const std::error_code &a0) { return a0.message(); }
 
 bool f18(const std::error_code &a0) { return static_cast<bool>(a0); }
 
-template <typename T1>
+template <typename T1, typename T2 = typename std::enable_if<
+                           std::is_error_code_enum<T1>::value, void>::type>
 std::error_code f19(T1 a0)
   requires(!(std::is_same<T1, const std::error_code &>::value))
 {
@@ -104,7 +105,8 @@ std::string f28(const std::error_condition &a0) { return a0.message(); }
 
 bool f29(const std::error_condition &a0) { return static_cast<bool>(a0); }
 
-template <typename T1>
+template <typename T1, typename T2 = typename std::enable_if<
+                           std::is_error_condition_enum<T1>::value, void>::type>
 std::error_condition f30(T1 a0)
   requires(!(std::is_same<T1, const std::error_condition &>::value))
 {

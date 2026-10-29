@@ -41,6 +41,7 @@ bool f7(const std::stack<T1, T2> &a0, const std::stack<T1, T2> &a1) {
 }
 
 template <typename T1, typename T2>
-void f8(std::stack<T1, T2> &a0, std::stack<T1, T2> &a1) {
+typename std::enable_if<std::is_swappable_v<T2>>::type
+f8(std::stack<T1, T2> &a0, std::stack<T1, T2> &a1) {
   return std::swap<T1, T2>(a0, a1);
 }

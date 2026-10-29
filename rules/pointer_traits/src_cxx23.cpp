@@ -18,7 +18,7 @@ template <typename T1> T1 *f1(T1 &a0) {
 template <typename T1>
 T1 *f2(T1 &a0)
   requires(std::is_same<T1 *, T1 *>::value) &&
-          (std::is_void<T1>::value == false)
+          ((std::is_void<T1>::value) == false)
 {
   return std::pointer_traits<T1 *>::pointer_to(a0);
 }

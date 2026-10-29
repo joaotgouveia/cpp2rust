@@ -41,12 +41,15 @@ bool f7(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
 }
 
 template <typename T1, typename T2>
-void f8(std::queue<T1, T2> &a0, std::queue<T1, T2> &a1) {
+typename std::enable_if<std::is_swappable_v<T2>>::type
+f8(std::queue<T1, T2> &a0, std::queue<T1, T2> &a1) {
   return std::swap<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f9(std::priority_queue<T1, T2, T3> &a0,
-        std::priority_queue<T1, T2, T3> &a1) {
+typename std::enable_if<
+    std::integral_constant<bool, std::is_swappable<T2>::value &&
+                                     std::is_swappable<T3>::value>::value>::type
+f9(std::priority_queue<T1, T2, T3> &a0, std::priority_queue<T1, T2, T3> &a1) {
   return std::swap<T1, T2, T3>(a0, a1);
 }

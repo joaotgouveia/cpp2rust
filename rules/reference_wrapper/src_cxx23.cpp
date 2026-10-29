@@ -24,7 +24,11 @@ template <typename T1> T1 &f4(const std::reference_wrapper<T1> &a0) {
   return a0.get();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename T3 = typename std::enable_if<!std::is_same<
+              std::reference_wrapper<T1>,
+              typename std::remove_cv<typename std::remove_reference<
+                  T2>::type>::type>::value>::type>
 std::reference_wrapper<T1> f5(T2 &&a0)
   requires(!(std::is_same<T2, const std::reference_wrapper<T1> &>::value))
 {

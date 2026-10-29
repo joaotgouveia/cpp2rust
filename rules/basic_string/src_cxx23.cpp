@@ -1165,7 +1165,12 @@ std::basic_string<T1, T2, T3> f150(std::from_range_t a0, T4 &&a1,
   return std::basic_string<T1, T2, T3>(std::move(a0), std::forward<T4>(a1), a2);
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::basic_string<T1, T2, T3> f151(T4 a0, T4 a1, const T3 &a2) {
   return std::basic_string<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }
@@ -1183,7 +1188,21 @@ f152(const T4 &a0, typename std::basic_string<T1, T2, T3>::size_type a1,
       std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a2), a3);
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <
+    typename T1, typename T2, typename T3, typename T4,
+    typename T5 = std::enable_if_t<
+        std::integral_constant<
+            bool,
+            std::is_convertible<T4 const &,
+                                std::basic_string_view<T1, T2>>::value &&
+                std::integral_constant<
+                    bool, !std::is_convertible<
+                              T4 const *, const std::basic_string<T1, T2, T3>
+                                              *>::value>::value &&
+                std::integral_constant<
+                    bool, !std::is_convertible<T4 const &, const T1 *>::value>::
+                    value>::value,
+        void>>
 std::basic_string<T1, T2, T3> f153(const T4 &a0, const T3 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
@@ -1191,8 +1210,19 @@ std::basic_string<T1, T2, T3> f153(const T4 &a0, const T3 &a1)
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &f154(std::basic_string<T1, T2, T3> &a0,
-                                    const T4 &a1)
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
+f154(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template operator= <T4>(a1);
@@ -1207,8 +1237,19 @@ void f155(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &f156(std::basic_string<T1, T2, T3> &a0,
-                                    const T4 &a1)
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
+f156(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template operator+= <T4>(a1);
@@ -1220,22 +1261,49 @@ std::basic_string<T1, T2, T3> &f157(std::basic_string<T1, T2, T3> &a0,
   return a0.template append_range<T4>(std::forward<T4>(a1));
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::basic_string<T1, T2, T3> &f158(std::basic_string<T1, T2, T3> &a0, T4 a1,
                                     T4 a2) {
   return a0.template append<T4>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &f159(std::basic_string<T1, T2, T3> &a0,
-                                    const T4 &a1)
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
+f159(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template append<T4>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
 f160(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2,
      typename std::basic_string<T1, T2, T3>::size_type a3)
@@ -1246,7 +1314,12 @@ f160(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
       std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a3));
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::basic_string<T1, T2, T3> &f161(std::basic_string<T1, T2, T3> &a0, T4 a1,
                                     T4 a2) {
   return a0.template assign<T4>(std::move(a1), std::move(a2));
@@ -1259,15 +1332,37 @@ std::basic_string<T1, T2, T3> &f162(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &f163(std::basic_string<T1, T2, T3> &a0,
-                                    const T4 &a1)
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
+f163(std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template assign<T4>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
 f164(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
      typename std::basic_string<T1, T2, T3>::size_type a2,
      typename std::basic_string<T1, T2, T3>::size_type a3)
@@ -1278,7 +1373,12 @@ f164(std::basic_string<T1, T2, T3> &a0, const T4 &a1,
       std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a3));
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 typename std::basic_string<T1, T2, T3>::iterator
 f165(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1, T4 a2, T4 a3) {
@@ -1297,7 +1397,18 @@ f166(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
 f167(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1, const T4 &a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
@@ -1307,7 +1418,18 @@ f167(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
 f168(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1, const T4 &a2,
      typename std::basic_string<T1, T2, T3>::size_type a3,
@@ -1320,7 +1442,12 @@ f168(std::basic_string<T1, T2, T3> &a0,
       std::forward<typename std::basic_string<T1, T2, T3>::size_type>(a4));
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::basic_string<T1, T2, T3> &
 f169(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1,
@@ -1351,7 +1478,18 @@ f170(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
 f171(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
@@ -1363,7 +1501,18 @@ f171(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
 f172(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::size_type a1,
      typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3,
@@ -1379,7 +1528,18 @@ f172(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T3> &
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    std::basic_string<T1, T2, T3> &>
 f173(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1,
      typename std::basic_string<T1, T2, T3>::const_iterator a2, const T4 &a3)
@@ -1452,16 +1612,40 @@ f179(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-int f180(const std::basic_string<T1, T2, T3> &a0, const T4 &a1)
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    int>
+f180(const std::basic_string<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template compare<T4>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-int f181(const std::basic_string<T1, T2, T3> &a0,
-         typename std::basic_string<T1, T2, T3>::size_type a1,
-         typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    int>
+f181(const std::basic_string<T1, T2, T3> &a0,
+     typename std::basic_string<T1, T2, T3>::size_type a1,
+     typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template compare<T4>(
@@ -1470,11 +1654,23 @@ int f181(const std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-int f182(const std::basic_string<T1, T2, T3> &a0,
-         typename std::basic_string<T1, T2, T3>::size_type a1,
-         typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3,
-         typename std::basic_string<T1, T2, T3>::size_type a4,
-         typename std::basic_string<T1, T2, T3>::size_type a5)
+std::enable_if_t<
+    std::integral_constant<
+        bool, std::is_convertible<T4 const &,
+                                  std::basic_string_view<T1, T2>>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const *, const std::basic_string<T1, T2, T3>
+                                                *>::value>::value &&
+                  std::integral_constant<
+                      bool, !std::is_convertible<
+                                T4 const &, const T1 *>::value>::value>::value,
+    int>
+f182(const std::basic_string<T1, T2, T3> &a0,
+     typename std::basic_string<T1, T2, T3>::size_type a1,
+     typename std::basic_string<T1, T2, T3>::size_type a2, const T4 &a3,
+     typename std::basic_string<T1, T2, T3>::size_type a4,
+     typename std::basic_string<T1, T2, T3>::size_type a5)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template compare<T4>(

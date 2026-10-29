@@ -63,47 +63,83 @@ std::nullopt_t &f12(std::nullopt_t &a0, std::nullopt_t &&a1) {
 std::nullopt_t::_Construct f13() { return std::nullopt_t::_Construct::_Token; }
 
 template <typename T1, typename T2>
-bool f14(const std::optional<T1> &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() !=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f14(const std::optional<T1> &a0, const std::optional<T2> &a1) {
   return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f15(const std::optional<T1> &a0, const T2 &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() !=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f15(const std::optional<T1> &a0, const T2 &a1) {
   return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f16(const T1 &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() !=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f16(const T1 &a0, const std::optional<T2> &a1) {
   return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f17(const std::optional<T1> &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f17(const std::optional<T1> &a0, const std::optional<T2> &a1) {
   return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f18(const std::optional<T1> &a0, const T2 &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f18(const std::optional<T1> &a0, const T2 &a1) {
   return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f19(const T1 &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f19(const T1 &a0, const std::optional<T2> &a1) {
   return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f20(const std::optional<T1> &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f20(const std::optional<T1> &a0, const std::optional<T2> &a1) {
   return std::operator<= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f21(const std::optional<T1> &a0, const T2 &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f21(const std::optional<T1> &a0, const T2 &a1) {
   return std::operator<= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f22(const T1 &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() <=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f22(const T1 &a0, const std::optional<T2> &a1) {
   return std::operator<= <T1, T2>(a0, a1);
 }
 
@@ -132,47 +168,83 @@ bool f26(const std::optional<T1> &a0, std::nullopt_t a1) {
 }
 
 template <typename T1, typename T2>
-bool f27(const std::optional<T1> &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() ==
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f27(const std::optional<T1> &a0, const std::optional<T2> &a1) {
   return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f28(const std::optional<T1> &a0, const T2 &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() ==
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f28(const std::optional<T1> &a0, const T2 &a1) {
   return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f29(const T1 &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() ==
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f29(const T1 &a0, const std::optional<T2> &a1) {
   return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f30(const std::optional<T1> &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f30(const std::optional<T1> &a0, const std::optional<T2> &a1) {
   return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f31(const std::optional<T1> &a0, const T2 &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f31(const std::optional<T1> &a0, const T2 &a1) {
   return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f32(const T1 &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f32(const T1 &a0, const std::optional<T2> &a1) {
   return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f33(const std::optional<T1> &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f33(const std::optional<T1> &a0, const std::optional<T2> &a1) {
   return std::operator>= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f34(const std::optional<T1> &a0, const T2 &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f34(const std::optional<T1> &a0, const T2 &a1) {
   return std::operator>= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f35(const T1 &a0, const std::optional<T2> &a1) {
+std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() >=
+                                                std::declval<T2 const &>()),
+                                       bool>,
+                 bool>
+f35(const T1 &a0, const std::optional<T2> &a1) {
   return std::operator>= <T1, T2>(a0, a1);
 }
 

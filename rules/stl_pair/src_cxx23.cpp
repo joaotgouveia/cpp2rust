@@ -105,6 +105,9 @@ void f22(const std::pair<T1, T2> &a0, const std::pair<T1, T2> &a1)
 }
 
 template <typename T1, typename T2>
-void f23(std::pair<T1, T2> &a0, std::pair<T1, T2> &a1) {
+typename std::enable_if<
+    std::integral_constant<bool, std::is_swappable<T1>::value &&
+                                     std::is_swappable<T2>::value>::value>::type
+f23(std::pair<T1, T2> &a0, std::pair<T1, T2> &a1) {
   return std::swap<T1, T2>(a0, a1);
 }

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <ios>
 #include <iosfwd>
+#include <type_traits>
 #include <utility>
 
 template <typename T1, typename T2> using t1 = std::basic_fstream<T1, T2>;
@@ -87,7 +88,12 @@ template <typename T1, typename T2> void f12(std::basic_fstream<T1, T2> &a0) {
   return a0.close();
 }
 
-template <typename T1, typename T2, typename T3>
+template <
+    typename T1, typename T2, typename T3,
+    typename T4 = std::enable_if_t<
+        std::is_same_v<
+            T3, decltype(std::declval<T3 &>().make_preferred().filename())>,
+        T3>>
 std::basic_fstream<T1, T2> f13(const T3 &a0,
                                typename std::basic_fstream<T1, T2>::openmode a1)
   requires(!(std::is_same<T3, std::string>::value))
@@ -97,8 +103,12 @@ std::basic_fstream<T1, T2> f13(const T3 &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-void f14(std::basic_fstream<T1, T2> &a0, const T3 &a1,
-         typename std::basic_fstream<T1, T2>::openmode a2)
+std::enable_if_t<
+    std::is_same_v<T3,
+                   decltype(std::declval<T3 &>().make_preferred().filename())>,
+    void>
+f14(std::basic_fstream<T1, T2> &a0, const T3 &a1,
+    typename std::basic_fstream<T1, T2>::openmode a2)
   requires(!(std::is_same<T3, std::string>::value))
 {
   return a0.template open<T3>(

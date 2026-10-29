@@ -26,7 +26,40 @@ std::from_chars_result f7(const char *a0, const char *a1, float &a2,
   return std::from_chars(a0, a1, a2, a3);
 }
 
-template <typename T1>
+template <
+    typename T1,
+    std::enable_if_t<
+        std::integral_constant<
+            bool,
+            std::integral_constant<
+                bool,
+                std::integral_constant<
+                    bool, std::is_same<typename std::remove_cv<T1>::type,
+                                       signed char>::value ||
+                              std::is_same<typename std::remove_cv<T1>::type,
+                                           short>::value ||
+                              std::is_same<typename std::remove_cv<T1>::type,
+                                           int>::value ||
+                              std::is_same<typename std::remove_cv<T1>::type,
+                                           long>::value ||
+                              std::is_same<typename std::remove_cv<T1>::type,
+                                           long long>::value>::value ||
+                    std::integral_constant<
+                        bool,
+                        std::is_same<typename std::remove_cv<T1>::type,
+                                     unsigned char>::value ||
+                            std::is_same<typename std::remove_cv<T1>::type,
+                                         unsigned short>::value ||
+                            std::is_same<typename std::remove_cv<T1>::type,
+                                         unsigned int>::value ||
+                            std::is_same<typename std::remove_cv<T1>::type,
+                                         unsigned long>::value ||
+                            std::is_same<typename std::remove_cv<T1>::type,
+                                         unsigned long long>::value>::value>::
+                    value ||
+                std::is_same<char, std::remove_cv_t<T1>>::value>::value,
+        int>
+        T2 = 0>
 std::from_chars_result f8(const char *a0, const char *a1, T1 &a2, int a3) {
   return std::from_chars<T1>(a0, a1, a2, a3);
 }

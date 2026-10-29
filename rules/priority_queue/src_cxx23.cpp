@@ -95,7 +95,10 @@ void f13(std::priority_queue<T1, T2, T3> &a0,
   return a0.swap(a1);
 }
 
-template <typename T1, typename T2, typename T3, typename T4 = T2>
+template <typename T1, typename T2, typename T3, typename T4 = T2,
+          typename T5 = typename std::enable_if<std::integral_constant<
+              bool, std::is_default_constructible<T3>::value &&
+                        std::is_default_constructible<T2>::value>::value>::type>
 std::priority_queue<T1, T2, T3> f14() {
   return std::priority_queue<T1, T2, T3>();
 }
@@ -148,23 +151,43 @@ std::priority_queue<T1, T2, T3> f20(std::priority_queue<T1, T2, T3> &&a0,
   return std::priority_queue<T1, T2, T3>(std::move(a0), a1);
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::priority_queue<T1, T2, T3> f21(T4 a0, T4 a1, const T3 &a2) {
   return std::priority_queue<T1, T2, T3>(std::move(a0), std::move(a1), a2);
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::priority_queue<T1, T2, T3> f22(T4 a0, T4 a1, const T3 &a2, const T2 &a3) {
   return std::priority_queue<T1, T2, T3>(std::move(a0), std::move(a1), a2, a3);
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::priority_queue<T1, T2, T3> f23(T4 a0, T4 a1, const T3 &a2, T2 &&a3) {
   return std::priority_queue<T1, T2, T3>(std::move(a0), std::move(a1), a2,
                                          std::move(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type,
           typename T7 =
               typename std::enable_if<std::uses_allocator<T2, T5>::value>::type>
 std::priority_queue<T1, T2, T3> f24(T4 a0, T4 a1, const T5 &a2) {
@@ -172,6 +195,11 @@ std::priority_queue<T1, T2, T3> f24(T4 a0, T4 a1, const T5 &a2) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type,
           typename T7 =
               typename std::enable_if<std::uses_allocator<T2, T5>::value>::type>
 std::priority_queue<T1, T2, T3> f25(T4 a0, T4 a1, const T3 &a2, const T5 &a3) {
@@ -179,6 +207,11 @@ std::priority_queue<T1, T2, T3> f25(T4 a0, T4 a1, const T3 &a2, const T5 &a3) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T4>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type,
           typename T7 =
               typename std::enable_if<std::uses_allocator<T2, T5>::value>::type>
 std::priority_queue<T1, T2, T3> f26(T4 a0, T4 a1, const T3 &a2, const T2 &a3,

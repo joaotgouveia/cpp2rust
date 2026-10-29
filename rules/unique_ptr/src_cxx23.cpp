@@ -114,7 +114,8 @@ bool f21(const std::unique_ptr<T1, T2> &a0, const std::unique_ptr<T3, T4> &a1) {
 }
 
 template <typename T1, typename T2>
-void f22(std::unique_ptr<T1, T2> &a0, std::unique_ptr<T1, T2> &a1) {
+typename std::enable_if<std::is_swappable_v<T2>>::type
+f22(std::unique_ptr<T1, T2> &a0, std::unique_ptr<T1, T2> &a1) {
   return std::swap<T1, T2>(a0, a1);
 }
 
@@ -341,12 +342,20 @@ std::unique_ptr<T1, T2> f55(T1 *a0) {
   return std::unique_ptr<T1, T2>(a0);
 }
 
-template <typename T1, typename T2, typename T3 = T2>
+template <typename T1, typename T2, typename T3 = T2,
+          typename T4 = typename std::enable_if<
+              std::integral_constant<
+                  bool, std::is_copy_constructible<T2>::value>::value,
+              void>::type>
 std::unique_ptr<T1, T2> f56(T1 *a0, const T2 &a1) {
   return std::unique_ptr<T1, T2>(a0, a1);
 }
 
-template <typename T1, typename T2, typename T3 = T2>
+template <typename T1, typename T2, typename T3 = T2,
+          typename T4 = typename std::enable_if<
+              std::integral_constant<
+                  bool, std::is_move_constructible<T3>::value>::value,
+              void>::type>
 std::unique_ptr<T1, T2>
 f57(T1 *a0,
     typename std::enable_if<!std::is_lvalue_reference<T3>::value, T3 &&>::type

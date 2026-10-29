@@ -78,7 +78,8 @@ void f15(const std::tuple<T1...> &a0, const std::tuple<T1...> &a1)
 }
 
 template <typename... T1>
-void f16(std::tuple<T1...> &a0, std::tuple<T1...> &a1) {
+typename std::enable_if<std::conjunction<std::is_swappable<T1>...>::value>::type
+f16(std::tuple<T1...> &a0, std::tuple<T1...> &a1) {
   return std::swap<T1...>(a0, a1);
 }
 

@@ -73,7 +73,12 @@ std::stack<T1, T2> f11() {
   return std::stack<T1, T2>();
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2, typename T3,
+          typename T4 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T3>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type>
 std::stack<T1, T2> f12(T3 a0, T3 a1) {
   return std::stack<T1, T2>(std::move(a0), std::move(a1));
 }
@@ -126,6 +131,11 @@ std::stack<T1, T2> f19(std::stack<T1, T2> &&a0, const T3 &a1) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
+          typename T5 = typename std::enable_if<
+              std::is_convertible<
+                  typename std::iterator_traits<T3>::iterator_category,
+                  std::input_iterator_tag>::value,
+              void>::type,
           typename T6 =
               typename std::enable_if<std::uses_allocator<T2, T4>::value>::type>
 std::stack<T1, T2> f20(T3 a0, T3 a1, const T4 &a2) {
