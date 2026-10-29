@@ -3,9 +3,9 @@
 
 #include <cstddef>
 
-typedef std::nullptr_t t0;
 
 typedef bool t10;
 typedef char16_t t80;
 typedef wchar_t t110;
 typedef char32_t t120;
+typedef decltype(nullptr) t1;

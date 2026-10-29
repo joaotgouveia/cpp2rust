@@ -1,10 +1,9 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
-bool f9(long a, long b, long *r) { return __builtin_mul_overflow(a, b, r); }
+#include <cstdio>
 
-bool f10(long long a, long long b, long long *r) {
-  return __builtin_mul_overflow(a, b, r);
+template <typename... Args>
+int f100(FILE *a0, const char *a1, Args... va) {
+  return __builtin_fprintf(a0, a1, va...);
 }
-
-bool f19() { return __builtin_is_constant_evaluated(); }

@@ -42,3 +42,11 @@ int f16(unsigned long x) { return __builtin_clzl(x); }
 float f17(void) { return __builtin_inff(); }
 
 float f18(const char *tagp) { return __builtin_nanf(tagp); }
+
+long double f19(const char *a0) { return __builtin_nanl(a0); }
+
+long double f20(void) { return __builtin_huge_vall(); }
+
+#if defined(__x86_64__)
+int f21(__float128 a0) { return __builtin_signbit(a0); }
+#endif

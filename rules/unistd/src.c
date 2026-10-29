@@ -28,3 +28,19 @@ ssize_t f10(int fd, const void *buf, size_t count) {
 }
 
 int f11(const char *pathname) { return rmdir(pathname); }
+
+size_t f12(int name, char *buf, size_t len) { return confstr(name, buf, len); }
+
+int f13(const char *target, const char *linkpath) {
+  return symlink(target, linkpath);
+}
+
+int f14(const char *oldpath, const char *newpath) {
+  return link(oldpath, newpath);
+}
+
+char *f15(char *buf, size_t size) { return getcwd(buf, size); }
+
+int f16(const char *path) { return chdir(path); }
+
+pid_t f17(void) { return getpid(); }

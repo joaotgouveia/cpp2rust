@@ -23,3 +23,9 @@ typedef off_t t2;
 typedef __uid_t t3;
 typedef __off_t t4;
 #endif
+
+typedef pid_t t5;
+
+#ifdef __GLIBC__
+typedef __pid_t t6;
+#endif

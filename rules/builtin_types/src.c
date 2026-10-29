@@ -25,3 +25,7 @@ typedef void *t221;
 typedef const void *t222;
 typedef volatile void *t223;
 typedef const volatile void *t224;
+
+#if defined(__x86_64__)
+typedef __float128 t230;
+#endif

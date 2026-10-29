@@ -1,0 +1,758 @@
+#include <algorithm>
+#include <utility>
+#include <vector>
+
+template <typename T1, typename T2, typename T3>
+typename std::vector<T1, T2>::size_type f1(std::vector<T1, T2> &a0,
+                                           const T3 &a1) {
+  return std::erase<T1, T2, T3>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::vector<T1, T2>::size_type f2(std::vector<T1, T2> &a0, T3 a1) {
+  return std::erase_if<T1, T2, T3>(a0, std::move(a1));
+}
+
+template <typename T1> using t1 = std::pmr::vector<T1>;
+
+template <typename T1> using t2 = std::vector<bool, T1>;
+
+template <typename T1> using t3 = typename std::vector<bool, T1>::value_type;
+
+template <typename T1> using t4 = typename std::vector<bool, T1>::size_type;
+
+template <typename T1>
+using t5 = typename std::vector<bool, T1>::difference_type;
+
+template <typename T1> using t6 = typename std::vector<bool, T1>::reference;
+
+template <typename T1>
+using t7 = typename std::vector<bool, T1>::const_reference;
+
+template <typename T1> using t8 = typename std::vector<bool, T1>::pointer;
+
+template <typename T1> using t9 = typename std::vector<bool, T1>::const_pointer;
+
+template <typename T1> using t10 = typename std::vector<bool, T1>::iterator;
+
+template <typename T1>
+using t11 = typename std::vector<bool, T1>::const_iterator;
+
+template <typename T1>
+using t12 = typename std::vector<bool, T1>::const_reverse_iterator;
+
+template <typename T1>
+using t13 = typename std::vector<bool, T1>::reverse_iterator;
+
+template <typename T1>
+using t14 = typename std::vector<bool, T1>::allocator_type;
+
+template <typename T1> T1 f3(const std::vector<bool, T1> &a0) {
+  return a0.get_allocator();
+}
+
+template <typename T1> std::vector<bool, T1> f4() {
+  return std::vector<bool, T1>();
+}
+
+template <typename T1> std::vector<bool, T1> f5(const T1 &a0) {
+  return std::vector<bool, T1>(a0);
+}
+
+template <typename T1> std::vector<bool, T1> f6(std::size_t a0, const T1 &a1) {
+  return std::vector<bool, T1>(a0, a1);
+}
+
+template <typename T1>
+std::vector<bool, T1> f7(std::size_t a0, const bool &a1, const T1 &a2) {
+  return std::vector<bool, T1>(a0, a1, a2);
+}
+
+template <typename T1>
+std::vector<bool, T1> f8(const std::vector<bool, T1> &a0) {
+  return std::vector<bool, T1>(a0);
+}
+
+template <typename T1> std::vector<bool, T1> f9(std::vector<bool, T1> &&a0) {
+  return std::vector<bool, T1>(std::move(a0));
+}
+
+template <typename T1>
+std::vector<bool, T1> f10(std::vector<bool, T1> &&a0, const T1 &a1) {
+  return std::vector<bool, T1>(std::move(a0), a1);
+}
+
+template <typename T1>
+std::vector<bool, T1> f11(const std::vector<bool, T1> &a0, const T1 &a1) {
+  return std::vector<bool, T1>(a0, a1);
+}
+
+template <typename T1>
+std::vector<bool, T1> f12(std::initializer_list<bool> a0, const T1 &a1) {
+  return std::vector<bool, T1>(std::move(a0), a1);
+}
+
+template <typename T1>
+std::vector<bool, T1> &f13(std::vector<bool, T1> &a0,
+                           const std::vector<bool, T1> &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1>
+std::vector<bool, T1> &f14(std::vector<bool, T1> &a0,
+                           std::vector<bool, T1> &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1>
+std::vector<bool, T1> &f15(std::vector<bool, T1> &a0,
+                           std::initializer_list<bool> a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1>
+void f16(std::vector<bool, T1> &a0, std::size_t a1, const bool &a2) {
+  return a0.assign(a1, a2);
+}
+
+template <typename T1>
+void f17(std::vector<bool, T1> &a0, std::initializer_list<bool> a1) {
+  return a0.assign(std::move(a1));
+}
+
+template <typename T1> std::_Bit_iterator f18(std::vector<bool, T1> &a0) {
+  return a0.begin();
+}
+
+template <typename T1>
+std::_Bit_const_iterator f19(const std::vector<bool, T1> &a0) {
+  return a0.begin();
+}
+
+template <typename T1> std::_Bit_iterator f20(std::vector<bool, T1> &a0) {
+  return a0.end();
+}
+
+template <typename T1>
+std::_Bit_const_iterator f21(const std::vector<bool, T1> &a0) {
+  return a0.end();
+}
+
+template <typename T1>
+std::reverse_iterator<std::_Bit_iterator> f22(std::vector<bool, T1> &a0) {
+  return a0.rbegin();
+}
+
+template <typename T1>
+std::reverse_iterator<std::_Bit_const_iterator>
+f23(const std::vector<bool, T1> &a0) {
+  return a0.rbegin();
+}
+
+template <typename T1>
+std::reverse_iterator<std::_Bit_iterator> f24(std::vector<bool, T1> &a0) {
+  return a0.rend();
+}
+
+template <typename T1>
+std::reverse_iterator<std::_Bit_const_iterator>
+f25(const std::vector<bool, T1> &a0) {
+  return a0.rend();
+}
+
+template <typename T1>
+std::_Bit_const_iterator f26(const std::vector<bool, T1> &a0) {
+  return a0.cbegin();
+}
+
+template <typename T1>
+std::_Bit_const_iterator f27(const std::vector<bool, T1> &a0) {
+  return a0.cend();
+}
+
+template <typename T1>
+std::reverse_iterator<std::_Bit_const_iterator>
+f28(const std::vector<bool, T1> &a0) {
+  return a0.crbegin();
+}
+
+template <typename T1>
+std::reverse_iterator<std::_Bit_const_iterator>
+f29(const std::vector<bool, T1> &a0) {
+  return a0.crend();
+}
+
+template <typename T1> std::size_t f30(const std::vector<bool, T1> &a0) {
+  return a0.size();
+}
+
+template <typename T1> std::size_t f31(const std::vector<bool, T1> &a0) {
+  return a0.max_size();
+}
+
+template <typename T1> std::size_t f32(const std::vector<bool, T1> &a0) {
+  return a0.capacity();
+}
+
+template <typename T1> bool f33(const std::vector<bool, T1> &a0) {
+  return a0.empty();
+}
+
+template <typename T1>
+std::_Bit_reference f34(std::vector<bool, T1> &a0, std::size_t a1) {
+  return a0.operator[](a1);
+}
+
+template <typename T1>
+bool f35(const std::vector<bool, T1> &a0, std::size_t a1) {
+  return a0.operator[](a1);
+}
+
+template <typename T1>
+std::_Bit_reference f36(std::vector<bool, T1> &a0, std::size_t a1) {
+  return a0.at(a1);
+}
+
+template <typename T1>
+bool f37(const std::vector<bool, T1> &a0, std::size_t a1) {
+  return a0.at(a1);
+}
+
+template <typename T1> void f38(std::vector<bool, T1> &a0, std::size_t a1) {
+  return a0.reserve(a1);
+}
+
+template <typename T1> std::_Bit_reference f39(std::vector<bool, T1> &a0) {
+  return a0.front();
+}
+
+template <typename T1> bool f40(const std::vector<bool, T1> &a0) {
+  return a0.front();
+}
+
+template <typename T1> std::_Bit_reference f41(std::vector<bool, T1> &a0) {
+  return a0.back();
+}
+
+template <typename T1> bool f42(const std::vector<bool, T1> &a0) {
+  return a0.back();
+}
+
+template <typename T1> void f43(std::vector<bool, T1> &a0, bool a1) {
+  return a0.push_back(a1);
+}
+
+template <typename T1>
+void f44(std::vector<bool, T1> &a0, std::vector<bool, T1> &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1>
+void f45(std::_Bit_reference a0, std::_Bit_reference a1) {
+  return std::vector<bool, T1>::swap(std::move(a0), std::move(a1));
+}
+
+template <typename T1>
+std::_Bit_iterator f46(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1,
+                       const bool &a2) {
+  return a0.insert(std::move(a1), a2);
+}
+
+template <typename T1>
+std::_Bit_iterator f47(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1) {
+  return a0.insert(std::move(a1));
+}
+
+template <typename T1>
+std::_Bit_iterator f48(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1,
+                       std::size_t a2, const bool &a3) {
+  return a0.insert(std::move(a1), a2, a3);
+}
+
+template <typename T1>
+std::_Bit_iterator f49(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1,
+                       std::initializer_list<bool> a2) {
+  return a0.insert(std::move(a1), std::move(a2));
+}
+
+template <typename T1> void f50(std::vector<bool, T1> &a0) {
+  return a0.pop_back();
+}
+
+template <typename T1>
+std::_Bit_iterator f51(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1) {
+  return a0.erase(std::move(a1));
+}
+
+template <typename T1>
+std::_Bit_iterator f52(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1,
+                       std::_Bit_const_iterator a2) {
+  return a0.erase(std::move(a1), std::move(a2));
+}
+
+template <typename T1>
+void f53(std::vector<bool, T1> &a0, std::size_t a1, bool a2) {
+  return a0.resize(a1, a2);
+}
+
+template <typename T1> void f54(std::vector<bool, T1> &a0) {
+  return a0.shrink_to_fit();
+}
+
+template <typename T1> void f55(std::vector<bool, T1> &a0) { return a0.flip(); }
+
+template <typename T1> void f56(std::vector<bool, T1> &a0) {
+  return a0.clear();
+}
+
+template <typename T1, typename T2>
+std::vector<bool, T1> f57(T2 a0, T2 a1, const T1 &a2) {
+  return std::vector<bool, T1>(std::move(a0), std::move(a1), a2);
+}
+
+template <typename T1, typename T2>
+std::vector<bool, T1> f58(std::from_range_t a0, T2 &&a1, const T1 &a2) {
+  return std::vector<bool, T1>(std::move(a0), std::forward<T2>(a1), a2);
+}
+
+template <typename T1, typename T2>
+void f59(std::vector<bool, T1> &a0, T2 a1, T2 a2) {
+  return a0.template assign<T2>(std::move(a1), std::move(a2));
+}
+
+template <typename T1, typename T2>
+void f60(std::vector<bool, T1> &a0, T2 &&a1) {
+  return a0.template assign_range<T2>(std::forward<T2>(a1));
+}
+
+template <typename T1, typename T2>
+std::_Bit_iterator f61(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1,
+                       T2 a2, T2 a3) {
+  return a0.template insert<T2>(std::move(a1), std::move(a2), std::move(a3));
+}
+
+template <typename T1, typename T2>
+std::_Bit_iterator f62(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1,
+                       T2 &&a2) {
+  return a0.template insert_range<T2>(std::move(a1), std::forward<T2>(a2));
+}
+
+template <typename T1, typename T2>
+void f63(std::vector<bool, T1> &a0, T2 &&a1) {
+  return a0.template append_range<T2>(std::forward<T2>(a1));
+}
+
+template <typename T1, typename... T2>
+std::_Bit_reference f64(std::vector<bool, T1> &a0, T2 &&...a1) {
+  return a0.template emplace_back<T2...>(std::forward<T2>(a1)...);
+}
+
+template <typename T1, typename... T2>
+std::_Bit_iterator f65(std::vector<bool, T1> &a0, std::_Bit_const_iterator a1,
+                       T2 &&...a2) {
+  return a0.template emplace<T2...>(std::move(a1), std::forward<T2>(a2)...);
+}
+
+template <typename T1, typename T2> using t15 = std::vector<T1, T2>;
+
+template <typename T1, typename T2>
+using t16 = typename std::vector<T1, T2>::value_type;
+
+template <typename T1, typename T2>
+using t17 = typename std::vector<T1, T2>::pointer;
+
+template <typename T1, typename T2>
+using t18 = typename std::vector<T1, T2>::const_pointer;
+
+template <typename T1, typename T2>
+using t19 = typename std::vector<T1, T2>::reference;
+
+template <typename T1, typename T2>
+using t20 = typename std::vector<T1, T2>::const_reference;
+
+template <typename T1, typename T2>
+using t21 = typename std::vector<T1, T2>::iterator;
+
+template <typename T1, typename T2>
+using t22 = typename std::vector<T1, T2>::const_iterator;
+
+template <typename T1, typename T2>
+using t23 = typename std::vector<T1, T2>::const_reverse_iterator;
+
+template <typename T1, typename T2>
+using t24 = typename std::vector<T1, T2>::reverse_iterator;
+
+template <typename T1, typename T2>
+using t25 = typename std::vector<T1, T2>::size_type;
+
+template <typename T1, typename T2>
+using t26 = typename std::vector<T1, T2>::difference_type;
+
+template <typename T1, typename T2>
+using t27 = typename std::vector<T1, T2>::allocator_type;
+
+template <typename T1, typename T2> std::vector<T1, T2> f66() {
+  return std::vector<T1, T2>();
+}
+
+template <typename T1, typename T2> std::vector<T1, T2> f67(const T2 &a0) {
+  return std::vector<T1, T2>(a0);
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> f68(std::size_t a0, const T2 &a1) {
+  return std::vector<T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> f69(std::size_t a0, const T1 &a1, const T2 &a2) {
+  return std::vector<T1, T2>(a0, a1, a2);
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> f70(const std::vector<T1, T2> &a0) {
+  return std::vector<T1, T2>(a0);
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> f71(std::vector<T1, T2> &&a0) {
+  return std::vector<T1, T2>(std::move(a0));
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> f72(const std::vector<T1, T2> &a0, const T2 &a1) {
+  return std::vector<T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> f73(std::vector<T1, T2> &&a0, const T2 &a1) {
+  return std::vector<T1, T2>(std::move(a0), a1);
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> f74(std::initializer_list<T1> a0, const T2 &a1) {
+  return std::vector<T1, T2>(std::forward<std::initializer_list<T1>>(a0), a1);
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> &f75(std::vector<T1, T2> &a0,
+                         const std::vector<T1, T2> &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> &f76(std::vector<T1, T2> &a0, std::vector<T1, T2> &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1, typename T2>
+std::vector<T1, T2> &f77(std::vector<T1, T2> &a0,
+                         std::initializer_list<T1> a1) {
+  return a0.operator=(std::forward<std::initializer_list<T1>>(a1));
+}
+
+template <typename T1, typename T2>
+void f78(std::vector<T1, T2> &a0, std::size_t a1, const T1 &a2) {
+  return a0.assign(a1, a2);
+}
+
+template <typename T1, typename T2>
+void f79(std::vector<T1, T2> &a0, std::initializer_list<T1> a1) {
+  return a0.assign(std::forward<std::initializer_list<T1>>(a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator f80(std::vector<T1, T2> &a0) {
+  return a0.begin();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f81(const std::vector<T1, T2> &a0) {
+  return a0.begin();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator f82(std::vector<T1, T2> &a0) {
+  return a0.end();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f83(const std::vector<T1, T2> &a0) {
+  return a0.end();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::reverse_iterator f84(std::vector<T1, T2> &a0) {
+  return a0.rbegin();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_reverse_iterator
+f85(const std::vector<T1, T2> &a0) {
+  return a0.rbegin();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::reverse_iterator f86(std::vector<T1, T2> &a0) {
+  return a0.rend();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_reverse_iterator
+f87(const std::vector<T1, T2> &a0) {
+  return a0.rend();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f88(const std::vector<T1, T2> &a0) {
+  return a0.cbegin();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_iterator
+f89(const std::vector<T1, T2> &a0) {
+  return a0.cend();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_reverse_iterator
+f90(const std::vector<T1, T2> &a0) {
+  return a0.crbegin();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_reverse_iterator
+f91(const std::vector<T1, T2> &a0) {
+  return a0.crend();
+}
+
+template <typename T1, typename T2>
+std::size_t f92(const std::vector<T1, T2> &a0) {
+  return a0.size();
+}
+
+template <typename T1, typename T2>
+std::size_t f93(const std::vector<T1, T2> &a0) {
+  return a0.max_size();
+}
+
+template <typename T1, typename T2>
+void f94(std::vector<T1, T2> &a0, std::size_t a1) {
+  return a0.resize(a1);
+}
+
+template <typename T1, typename T2>
+void f95(std::vector<T1, T2> &a0, std::size_t a1, const T1 &a2) {
+  return a0.resize(a1, a2);
+}
+
+template <typename T1, typename T2> void f96(std::vector<T1, T2> &a0) {
+  return a0.shrink_to_fit();
+}
+
+template <typename T1, typename T2>
+std::size_t f97(const std::vector<T1, T2> &a0) {
+  return a0.capacity();
+}
+
+template <typename T1, typename T2> bool f98(const std::vector<T1, T2> &a0) {
+  return a0.empty();
+}
+
+template <typename T1, typename T2>
+void f99(std::vector<T1, T2> &a0, std::size_t a1) {
+  return a0.reserve(a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::reference f100(std::vector<T1, T2> &a0,
+                                             std::size_t a1) {
+  return a0.operator[](a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_reference
+f101(const std::vector<T1, T2> &a0, std::size_t a1) {
+  return a0.operator[](a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::reference f102(std::vector<T1, T2> &a0,
+                                             std::size_t a1) {
+  return a0.at(a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_reference
+f103(const std::vector<T1, T2> &a0, std::size_t a1) {
+  return a0.at(a1);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::reference f104(std::vector<T1, T2> &a0) {
+  return a0.front();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_reference
+f105(const std::vector<T1, T2> &a0) {
+  return a0.front();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::reference f106(std::vector<T1, T2> &a0) {
+  return a0.back();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::const_reference
+f107(const std::vector<T1, T2> &a0) {
+  return a0.back();
+}
+
+template <typename T1, typename T2> T1 *f108(std::vector<T1, T2> &a0) {
+  return a0.data();
+}
+
+template <typename T1, typename T2>
+const T1 *f109(const std::vector<T1, T2> &a0) {
+  return a0.data();
+}
+
+template <typename T1, typename T2>
+void f110(std::vector<T1, T2> &a0, const T1 &a1) {
+  return a0.push_back(a1);
+}
+
+template <typename T1, typename T2>
+void f111(std::vector<T1, T2> &a0, T1 &&a1) {
+  return a0.push_back(std::move(a1));
+}
+
+template <typename T1, typename T2> void f112(std::vector<T1, T2> &a0) {
+  return a0.pop_back();
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f113(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+     const T1 &a2) {
+  return a0.insert(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1), a2);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f114(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+     T1 &&a2) {
+  return a0.insert(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::move(a2));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f115(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+     std::initializer_list<T1> a2) {
+  return a0.insert(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::forward<std::initializer_list<T1>>(a2));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f116(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+     std::size_t a2, const T1 &a3) {
+  return a0.insert(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1), a2, a3);
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f117(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1) {
+  return a0.erase(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1));
+}
+
+template <typename T1, typename T2>
+typename std::vector<T1, T2>::iterator
+f118(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+     typename std::vector<T1, T2>::const_iterator a2) {
+  return a0.erase(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a2));
+}
+
+template <typename T1, typename T2>
+void f119(std::vector<T1, T2> &a0, std::vector<T1, T2> &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1, typename T2> void f120(std::vector<T1, T2> &a0) {
+  return a0.clear();
+}
+
+template <typename T1, typename T2, typename T3>
+std::vector<T1, T2> f121(T3 a0, T3 a1, const T2 &a2) {
+  return std::vector<T1, T2>(std::move(a0), std::move(a1), a2);
+}
+
+template <typename T1, typename T2, typename T3>
+std::vector<T1, T2> f122(std::from_range_t a0, T3 &&a1, const T2 &a2) {
+  return std::vector<T1, T2>(std::move(a0), std::forward<T3>(a1), a2);
+}
+
+template <typename T1, typename T2, typename T3>
+void f123(std::vector<T1, T2> &a0, T3 a1, T3 a2) {
+  return a0.template assign<T3>(std::move(a1), std::move(a2));
+}
+
+template <typename T1, typename T2, typename T3>
+void f124(std::vector<T1, T2> &a0, T3 &&a1) {
+  return a0.template assign_range<T3>(std::forward<T3>(a1));
+}
+
+template <typename T1, typename T2, typename... T3>
+typename std::vector<T1, T2>::reference f125(std::vector<T1, T2> &a0,
+                                             T3 &&...a1) {
+  return a0.template emplace_back<T3...>(std::forward<T3>(a1)...);
+}
+
+template <typename T1, typename T2, typename... T3>
+typename std::vector<T1, T2>::iterator
+f126(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+     T3 &&...a2) {
+  return a0.template emplace<T3...>(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::forward<T3>(a2)...);
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::vector<T1, T2>::iterator
+f127(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+     T3 a2, T3 a3) {
+  return a0.template insert<T3>(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::move(a2), std::move(a3));
+}
+
+template <typename T1, typename T2, typename T3>
+typename std::vector<T1, T2>::iterator
+f128(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+     T3 &&a2) {
+  return a0.template insert_range<T3>(
+      std::forward<typename std::vector<T1, T2>::const_iterator>(a1),
+      std::forward<T3>(a2));
+}
+
+template <typename T1, typename T2, typename T3>
+void f129(std::vector<T1, T2> &a0, T3 &&a1) {
+  return a0.template append_range<T3>(std::forward<T3>(a1));
+}
+
+template <typename T1, typename T2> T2 f130(const std::vector<T1, T2> &a0) {
+  return a0.get_allocator();
+}

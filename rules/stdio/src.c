@@ -3,6 +3,7 @@
 
 #undef _GNU_SOURCE
 #define _GNU_SOURCE
+#include <stdarg.h>
 #include <stdio.h>
 
 typedef FILE *t1;
@@ -79,3 +80,22 @@ int f27(void) { return SEEK_END; }
 int (*f28)(FILE *, const char *, ...) = fprintf;
 
 int (*f29)(const char *, ...) = printf;
+typedef fpos_t t3;
+
+int f100(const char *a0) { return remove(a0); }
+
+void f101(const char *s) { return perror(s); }
+
+int f102(char *str, size_t size, const char *format, va_list ap) {
+  return vsnprintf(str, size, format, ap);
+}
+
+FILE *f103(void *buf, size_t size, const char *mode) {
+  return fmemopen(buf, size, mode);
+}
+
+int f104(FILE *stream) { return fgetc(stream); }
+
+int (*f105)(char *, const char *, ...) = sprintf;
+
+int f106(int c, FILE *stream) { return ungetc(c, stream); }
