@@ -182,6 +182,10 @@ public:
   }
 
   bool VisitCallExpr(clang::CallExpr *expr) {
+    // std::move and the like are their operand, whatever rule they have.
+    if (IsTransparentStdCall(expr)) {
+      return true;
+    }
     AddRuleArgs(expr, expr->getArgs(), expr->getNumArgs());
     return true;
   }
@@ -247,7 +251,7 @@ private:
   // An element of an array or vector, or a field of a struct, is accessed
   // without making a pointer to it.
   void AddValueUse(const clang::Expr *expr, bool write = false) {
-    expr = expr->IgnoreParens();
+    expr = IgnoreTransparentStdCall(expr)->IgnoreParens();
     // The value of a conditional lvalue is the value of either operand; it is
     // written through a pointer to the operand.
     if (auto *cond = clang::dyn_cast<clang::ConditionalOperator>(expr)) {
