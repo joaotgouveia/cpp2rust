@@ -29,7 +29,8 @@ pub fn identity_hash_6(v: bool) -> usize {
     let v: Value<bool> = Rc::new(RefCell::new(v));
     return ((*v.borrow()) as usize);
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(FnPtr<fn(bool  ,) -> u64  >  , new, ptr)]
 #[byte_size(8)]
 pub struct HashHolder_unsigned_long__ptr__bool__ {
     #[offset(0)]
