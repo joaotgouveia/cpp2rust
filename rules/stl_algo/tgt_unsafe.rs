@@ -77,7 +77,7 @@ unsafe fn f16<T1: UnsafeCppInputIterator<T3>, T2, T3: PartialEq<T2>>(a0: T1, a1:
 
 unsafe fn f101<T1: UnsafeCppRandomAccessIterator<T3>, T2, T3>(a0: T1, a1: T1, a2: T2)
 where
-    T2: Callable2<*const T3, *const T3, bool>,
+    T2: UnsafeComparator<T3>,
 {
     let __first = a0;
     let __n = a1.iter_distance(&__first);
@@ -86,9 +86,9 @@ where
     __order.sort_by(|&__x, &__y| {
         let __a = __first.iter_at(__x) as *const _;
         let __b = __first.iter_at(__y) as *const _;
-        if __cmp.call(__a, __b) {
+        if __cmp.unsafe_less(__a, __b) {
             std::cmp::Ordering::Less
-        } else if __cmp.call(__b, __a) {
+        } else if __cmp.unsafe_less(__b, __a) {
             std::cmp::Ordering::Greater
         } else {
             std::cmp::Ordering::Equal

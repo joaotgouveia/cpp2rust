@@ -74,7 +74,7 @@ fn f16<T1: CppInputIterator<T3>, T2, T3: CppEq<T2>>(a0: T1, a1: T1, a2: Ptr<T2>)
 
 fn f101<T1: CppRandomAccessIterator<T3>, T2, T3: Clone + ByteRepr>(a0: T1, a1: T1, a2: T2)
 where
-    T2: Callable2<Ptr<T3>, Ptr<T3>, bool>,
+    T2: Comparator<T3>,
 {
     let __first = a0;
     let __n = a1.iter_distance(&__first);
@@ -83,9 +83,9 @@ where
     __order.sort_by(|&__x, &__y| {
         let __a = __first.iter_at(__x);
         let __b = __first.iter_at(__y);
-        if __cmp.call(__a.clone(), __b.clone()) {
+        if __cmp.less(__a.clone(), __b.clone()) {
             std::cmp::Ordering::Less
-        } else if __cmp.call(__b, __a) {
+        } else if __cmp.less(__b, __a) {
             std::cmp::Ordering::Greater
         } else {
             std::cmp::Ordering::Equal

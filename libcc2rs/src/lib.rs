@@ -89,6 +89,9 @@ pub use alloc::*;
 mod iterators;
 pub use iterators::*;
 
+mod ostream_iterator;
+pub use ostream_iterator::*;
+
 mod compat;
 pub use compat::*;
 

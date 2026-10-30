@@ -43,9 +43,9 @@ fn main_0() -> i32 {
         __order.sort_by(|&__x, &__y| {
             let __a = __first.iter_at(__x);
             let __b = __first.iter_at(__y);
-            if __cmp.call(__a.clone(), __b.clone()) {
+            if __cmp.less(__a.clone(), __b.clone()) {
                 std::cmp::Ordering::Less
-            } else if __cmp.call(__b, __a) {
+            } else if __cmp.less(__b, __a) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal

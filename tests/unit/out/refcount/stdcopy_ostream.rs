@@ -27,7 +27,7 @@ fn main_0() -> i32 {
         {
             let mut __first = RandomAccessIterator::Vec(str.decay());
             let __last = RandomAccessIterator::Vec(str.decay().to_last());
-            let mut __out = (*ofs.borrow_mut()).clone();
+            let mut __out = OstreamIterator::new(ofs.as_pointer(), Ptr::null());
             while __first != __last {
                 __out.iter_deref().write((__first.iter_deref().read()));
                 __first.iter_inc();

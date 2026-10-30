@@ -43,9 +43,9 @@ unsafe fn main_0() -> i32 {
         __order.sort_by(|&__x, &__y| {
             let __a = __first.iter_at(__x) as *const _;
             let __b = __first.iter_at(__y) as *const _;
-            if __cmp.call(__a, __b) {
+            if __cmp.unsafe_less(__a, __b) {
                 std::cmp::Ordering::Less
-            } else if __cmp.call(__b, __a) {
+            } else if __cmp.unsafe_less(__b, __a) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal

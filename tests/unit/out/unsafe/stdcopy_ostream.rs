@@ -26,7 +26,10 @@ unsafe fn main_0() -> i32 {
         {
             let mut __first = UnsafeRandomAccessIterator::Vec(str.as_mut_ptr());
             let __last = UnsafeRandomAccessIterator::Vec(str.as_mut_ptr().add(str.len() - 1));
-            let mut __out = (ofs).clone();
+            let mut __out = {
+                let __r: &mut ::std::fs::File = &mut ofs;
+                UnsafeOstreamIterator::new(__r, ::std::ptr::null())
+            };
             while __first != __last {
                 *__out.iter_deref() = (*__first.iter_deref());
                 __first.iter_inc();
