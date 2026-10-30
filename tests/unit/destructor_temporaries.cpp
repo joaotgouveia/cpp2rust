@@ -1,4 +1,3 @@
-// XFAIL: refcount, unsafe
 #include <cassert>
 
 int destroyed = 0;
