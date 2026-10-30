@@ -135,7 +135,8 @@ unsigned iteratorOverGeneric(
     unsigned n) {
   for (unsigned i = 0; i < generics.size(); ++i) {
     for (const auto &bound : generics[i]) {
-      if (llvm::StringRef(bound.trait_name).ends_with("Iterator") &&
+      llvm::StringRef trait = bound.trait_name;
+      if ((trait.ends_with("Iterator") || trait == "CppAllocator") &&
           llvm::is_contained(bound.args, n)) {
         return i + 1;
       }
@@ -596,16 +597,16 @@ Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
     return {};
   }
   auto bindings = getBindings(match.rule_decl->decl, match.match.args);
-  if (auto generic = match.rule_decl->rule.generic) {
-    return Search(ctx, bindings.at(generic - 1).getAsType());
-  }
   const auto &generics = match.rule_decl->rule.generics;
   for (unsigned n = bindings.size() + 1; n <= generics.size(); ++n) {
-    auto iterator = iteratorOverGeneric(generics, n);
-    assert(iterator && iterator < n &&
-           "unbound type rule generic is not the element of an iterator");
-    bindings.emplace_back(
-        iteratorValueType(bindings[iterator - 1].getAsType()));
+    auto owner = iteratorOverGeneric(generics, n);
+    assert(owner && owner < n &&
+           "unbound type rule generic is not the element of an iterator "
+           "or allocator");
+    bindings.emplace_back(iteratorValueType(bindings[owner - 1].getAsType()));
+  }
+  if (auto generic = match.rule_decl->rule.generic) {
+    return Search(ctx, bindings.at(generic - 1).getAsType());
   }
   return {&match.rule_decl->rule, std::move(bindings)};
 }
