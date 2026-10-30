@@ -5076,26 +5076,17 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
 
   // The rule takes the argument by value from an rvalue reference parameter,
   // e.g., push_back(T &&), and so C++ moves it.
-  auto param_type = GetParamType(expr, ph_ctx.arg_idx);
-  bool moved = ph_ctx.access == TranslationRule::Access::kTake ||
-               (ph_ctx.access == TranslationRule::Access::kMove && param_type &&
-                (*param_type)->isRValueReferenceType());
-  if (moved && !clang::isa<clang::MaterializeTemporaryExpr>(arg)) {
-    if (auto *record = arg->getType()->getAsCXXRecordDecl();
-        record && IsUserDefinedDecl(record)) {
-      for (auto *ctor : record->ctors()) {
-        if (!IsConvertibleMoveConstructor(ctor)) {
-          continue;
-        }
-        Buffer buf(*this);
-        Convert(MakeConstructExpr(ctx_, arg->getType(), ctor, arg));
-        return std::move(buf).str();
-      }
-      if (TypeIsCopyable(arg->getType())) {
-        return ConvertRValue(arg);
-      }
-      return ConvertFreshRValue(arg);
+  if (auto *init = BuildMoveConstruction(ctx_, expr, ph_ctx.arg_idx, arg,
+                                         ph_ctx.access)) {
+    Buffer buf(*this);
+    Convert(init);
+    return std::move(buf).str();
+  }
+  if (MovesRuleArg(expr, ph_ctx.arg_idx, arg, ph_ctx.access)) {
+    if (TypeIsCopyable(arg->getType())) {
+      return ConvertRValue(arg);
     }
+    return ConvertFreshRValue(arg);
   }
 
   if (ph_ctx.access == TranslationRule::Access::kTake) {

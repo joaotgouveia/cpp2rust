@@ -255,6 +255,23 @@ private:
         TraverseStmt(init);
         continue;
       }
+      bool moved_by_ctor = false;
+      TranslationRule::AnyFragment(
+          rule->body, [&](const TranslationRule::BodyFragment &fragment) {
+            auto *ph =
+                std::get_if<TranslationRule::PlaceholderFragment>(&fragment);
+            if (ph && ph->n == i) {
+              if (auto *init = BuildMoveConstruction(ctx_, expr, i, all_args[i],
+                                                     ph->access)) {
+                TraverseStmt(init);
+                moved_by_ctor = true;
+              }
+            }
+            return false;
+          });
+      if (moved_by_ctor) {
+        continue;
+      }
       if (!rule->params[i].is_pointer() || arg->getType()->isPointerType() ||
           RuleRegistry::MapsToPointer(ctx_, arg->getType())) {
         AddValueUse(arg);
