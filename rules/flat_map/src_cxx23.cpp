@@ -309,105 +309,143 @@ f21(std::flat_map<T1, T2, T3, T4, T5> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::flat_map<T1, T2, T3, T4, T5> f22() {
+  return std::flat_map<T1, T2, T3, T4, T5>();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::flat_map<T1, T2, T3, T4, T5> f23(T3 const &a0) {
+  return std::flat_map<T1, T2, T3, T4, T5>(a0);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::flat_map<T1, T2, T3, T4, T5> f24(T4 a0, T5 a1, T3 const &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::move(a1), a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::flat_map<T1, T2, T3, T4, T5> f25(std::sorted_unique_t a0, T4 a1, T5 a2,
+                                      T3 const &a3) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::move(a1),
+                                           std::move(a2), a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::flat_map<T1, T2, T3, T4, T5>
+f26(std::initializer_list<std::pair<T1, T2>> a0, T3 const &a1) {
+  return std::flat_map<T1, T2, T3, T4, T5>(
+      std::forward<std::initializer_list<std::pair<T1, T2>>>(a0), a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::flat_map<T1, T2, T3, T4, T5>
+f27(std::sorted_unique_t a0, std::initializer_list<std::pair<T1, T2>> a1,
+    T3 const &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(
+      std::move(a0), std::forward<std::initializer_list<std::pair<T1, T2>>>(a1),
+      a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f22(std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.begin();
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
-f23(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.begin();
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f24(std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.end();
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
-f25(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.end();
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::reverse_iterator
-f26(std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.rbegin();
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::const_reverse_iterator
-f27(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.rbegin();
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::reverse_iterator
 f28(std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.rend();
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::const_reverse_iterator
-f29(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.rend();
+  return a0.begin();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
-f30(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.cbegin();
+f29(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.begin();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::iterator
+f30(std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.end();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
 f31(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.cend();
+  return a0.end();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::const_reverse_iterator
-f32(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
-  return a0.crbegin();
+typename std::flat_map<T1, T2, T3, T4, T5>::reverse_iterator
+f32(std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.rbegin();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::const_reverse_iterator
 f33(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.rbegin();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::reverse_iterator
+f34(std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.rend();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::const_reverse_iterator
+f35(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.rend();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
+f36(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.cbegin();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
+f37(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.cend();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::const_reverse_iterator
+f38(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+  return a0.crbegin();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::const_reverse_iterator
+f39(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.crend();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-bool f34(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+bool f40(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.empty();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::size_t f35(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+std::size_t f41(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.size();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::size_t f36(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+std::size_t f42(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.max_size();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-auto f37(std::flat_map<T1, T2, T3, T4, T5> &a0, const std::pair<T1, T2> &a1) {
+auto f43(std::flat_map<T1, T2, T3, T4, T5> &a0, const std::pair<T1, T2> &a1) {
   return a0.insert(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-auto f38(std::flat_map<T1, T2, T3, T4, T5> &a0, std::pair<T1, T2> &&a1) {
+auto f44(std::flat_map<T1, T2, T3, T4, T5> &a0, std::pair<T1, T2> &&a1) {
   return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f39(std::flat_map<T1, T2, T3, T4, T5> &a0,
+f45(std::flat_map<T1, T2, T3, T4, T5> &a0,
     typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a1,
     const std::pair<T1, T2> &a2) {
   return a0.insert(
@@ -418,7 +456,7 @@ f39(std::flat_map<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f40(std::flat_map<T1, T2, T3, T4, T5> &a0,
+f46(std::flat_map<T1, T2, T3, T4, T5> &a0,
     typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a1,
     std::pair<T1, T2> &&a2) {
   return a0.insert(
@@ -428,13 +466,13 @@ f40(std::flat_map<T1, T2, T3, T4, T5> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f41(std::flat_map<T1, T2, T3, T4, T5> &a0,
+void f47(std::flat_map<T1, T2, T3, T4, T5> &a0,
          std::initializer_list<std::pair<T1, T2>> a1) {
   return a0.insert(std::forward<std::initializer_list<std::pair<T1, T2>>>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f42(std::flat_map<T1, T2, T3, T4, T5> &a0, std::sorted_unique_t a1,
+void f48(std::flat_map<T1, T2, T3, T4, T5> &a0, std::sorted_unique_t a1,
          std::initializer_list<std::pair<T1, T2>> a2) {
   return a0.insert(std::move(a1),
                    std::forward<std::initializer_list<std::pair<T1, T2>>>(a2));
@@ -442,18 +480,18 @@ void f42(std::flat_map<T1, T2, T3, T4, T5> &a0, std::sorted_unique_t a1,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::containers
-f43(std::flat_map<T1, T2, T3, T4, T5> &&a0) {
+f49(std::flat_map<T1, T2, T3, T4, T5> &&a0) {
   return std::move(a0).extract();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f44(std::flat_map<T1, T2, T3, T4, T5> &a0, T4 &&a1, T5 &&a2) {
+void f50(std::flat_map<T1, T2, T3, T4, T5> &a0, T4 &&a1, T5 &&a2) {
   return a0.replace(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f45(std::flat_map<T1, T2, T3, T4, T5> &a0,
+f51(std::flat_map<T1, T2, T3, T4, T5> &a0,
     typename std::flat_map<T1, T2, T3, T4, T5>::iterator a1) {
   return a0.erase(
       std::forward<typename std::flat_map<T1, T2, T3, T4, T5>::iterator>(a1));
@@ -461,7 +499,7 @@ f45(std::flat_map<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f46(std::flat_map<T1, T2, T3, T4, T5> &a0,
+f52(std::flat_map<T1, T2, T3, T4, T5> &a0,
     typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a1) {
   return a0.erase(
       std::forward<typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator>(
@@ -469,13 +507,13 @@ f46(std::flat_map<T1, T2, T3, T4, T5> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::size_t f47(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+std::size_t f53(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
   return a0.erase(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f48(std::flat_map<T1, T2, T3, T4, T5> &a0,
+f54(std::flat_map<T1, T2, T3, T4, T5> &a0,
     typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a1,
     typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a2) {
   return a0.erase(
@@ -486,107 +524,272 @@ f48(std::flat_map<T1, T2, T3, T4, T5> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f49(std::flat_map<T1, T2, T3, T4, T5> &a0,
+void f55(std::flat_map<T1, T2, T3, T4, T5> &a0,
          std::flat_map<T1, T2, T3, T4, T5> &a1) {
   return a0.swap(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f50(std::flat_map<T1, T2, T3, T4, T5> &a0) {
+void f56(std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.clear();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-T3 f51(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+T3 f57(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.key_comp();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::value_compare
-f52(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+f58(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.value_comp();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-T4 const &f53(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+T4 const &f59(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.keys();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-T5 const &f54(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
+T5 const &f60(const std::flat_map<T1, T2, T3, T4, T5> &a0) {
   return a0.values();
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f55(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
-  return a0.find(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
-f56(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
-  return a0.find(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::size_t f57(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
-  return a0.count(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-bool f58(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
-  return a0.contains(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f59(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
-  return a0.lower_bound(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
-f60(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
-  return a0.lower_bound(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::flat_map<T1, T2, T3, T4, T5>::iterator
 f61(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
-  return a0.upper_bound(a1);
+  return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
 f62(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+  return a0.find(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::size_t f63(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+  return a0.count(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+bool f64(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+  return a0.contains(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::iterator
+f65(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+  return a0.lower_bound(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
+f66(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+  return a0.lower_bound(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::iterator
+f67(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+  return a0.upper_bound(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
+f68(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
   return a0.upper_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::pair<typename std::flat_map<T1, T2, T3, T4, T5>::iterator,
           typename std::flat_map<T1, T2, T3, T4, T5>::iterator>
-f63(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+f69(std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
   return a0.equal_range(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::pair<typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator,
           typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator>
-f64(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
+f70(const std::flat_map<T1, T2, T3, T4, T5> &a0, T1 const &a1) {
   return a0.equal_range(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f71(T6 a0, T6 a1, T3 const &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::move(a1), a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f72(std::sorted_unique_t a0, T6 a1, T6 a2,
+                                      T3 const &a3) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::move(a1),
+                                           std::move(a2), a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f73(std::from_range_t a0, T6 &&a1) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::forward<T6>(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f74(std::from_range_t a0, T6 &&a1,
+                                      T3 const &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::forward<T6>(a1),
+                                           a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f75(const T6 &a0) {
+  return std::flat_map<T1, T2, T3, T4, T5>(a0);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f76(T3 const &a0, const T6 &a1) {
+  return std::flat_map<T1, T2, T3, T4, T5>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f77(T4 const &a0, T5 const &a1,
+                                      const T6 &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(a0, a1, a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f78(T4 const &a0, T5 const &a1, T3 const &a2,
+                                      const T6 &a3) {
+  return std::flat_map<T1, T2, T3, T4, T5>(a0, a1, a2, a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f79(std::sorted_unique_t a0, T4 const &a1,
+                                      T5 const &a2, const T6 &a3) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), a1, a2, a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f80(std::sorted_unique_t a0, T4 const &a1,
+                                      T5 const &a2, T3 const &a3,
+                                      const T6 &a4) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), a1, a2, a3, a4);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5>
+f81(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+  return std::flat_map<T1, T2, T3, T4, T5>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5> f82(std::flat_map<T1, T2, T3, T4, T5> &&a0,
+                                      const T6 &a1) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6, typename T7>
+std::flat_map<T1, T2, T3, T4, T5> f83(T6 a0, T6 a1, const T7 &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::move(a1), a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6, typename T7>
+std::flat_map<T1, T2, T3, T4, T5> f84(T6 a0, T6 a1, T3 const &a2,
+                                      const T7 &a3) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::move(a1), a2,
+                                           a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6, typename T7>
+std::flat_map<T1, T2, T3, T4, T5> f85(std::sorted_unique_t a0, T6 a1, T6 a2,
+                                      const T7 &a3) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::move(a1),
+                                           std::move(a2), a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6, typename T7>
+std::flat_map<T1, T2, T3, T4, T5> f86(std::sorted_unique_t a0, T6 a1, T6 a2,
+                                      T3 const &a3, const T7 &a4) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::move(a1),
+                                           std::move(a2), a3, a4);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6, typename T7>
+std::flat_map<T1, T2, T3, T4, T5> f87(std::from_range_t a0, T6 &&a1,
+                                      const T7 &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::forward<T6>(a1),
+                                           a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6, typename T7>
+std::flat_map<T1, T2, T3, T4, T5> f88(std::from_range_t a0, T6 &&a1,
+                                      T3 const &a2, const T7 &a3) {
+  return std::flat_map<T1, T2, T3, T4, T5>(std::move(a0), std::forward<T6>(a1),
+                                           a2, a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5>
+f89(std::initializer_list<std::pair<T1, T2>> a0, const T6 &a1) {
+  return std::flat_map<T1, T2, T3, T4, T5>(
+      std::forward<std::initializer_list<std::pair<T1, T2>>>(a0), a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5>
+f90(std::initializer_list<std::pair<T1, T2>> a0, T3 const &a1, const T6 &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(
+      std::forward<std::initializer_list<std::pair<T1, T2>>>(a0), a1, a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5>
+f91(std::sorted_unique_t a0, std::initializer_list<std::pair<T1, T2>> a1,
+    const T6 &a2) {
+  return std::flat_map<T1, T2, T3, T4, T5>(
+      std::move(a0), std::forward<std::initializer_list<std::pair<T1, T2>>>(a1),
+      a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+std::flat_map<T1, T2, T3, T4, T5>
+f92(std::sorted_unique_t a0, std::initializer_list<std::pair<T1, T2>> a1,
+    T3 const &a2, const T6 &a3) {
+  return std::flat_map<T1, T2, T3, T4, T5>(
+      std::move(a0), std::forward<std::initializer_list<std::pair<T1, T2>>>(a1),
+      a2, a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename... T6>
-auto f65(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&...a1) {
+auto f93(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&...a1) {
   return a0.template emplace<T6...>(std::forward<T6>(a1)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename... T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f66(std::flat_map<T1, T2, T3, T4, T5> &a0,
+f94(std::flat_map<T1, T2, T3, T4, T5> &a0,
     typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a1, T6 &&...a2) {
   return a0.template emplace_hint<T6...>(
       std::forward<typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator>(
@@ -596,14 +799,14 @@ f66(std::flat_map<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-auto f67(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
+auto f95(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
   return a0.template insert<T6>(std::forward<T6>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f68(std::flat_map<T1, T2, T3, T4, T5> &a0,
+f96(std::flat_map<T1, T2, T3, T4, T5> &a0,
     typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a1, T6 &&a2) {
   return a0.template insert<T6>(
       std::forward<typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator>(
@@ -613,80 +816,80 @@ f68(std::flat_map<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-void f69(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 a1, T6 a2) {
+void f97(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 a1, T6 a2) {
   return a0.template insert<T6>(std::move(a1), std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-void f70(std::flat_map<T1, T2, T3, T4, T5> &a0, std::sorted_unique_t a1, T6 a2,
+void f98(std::flat_map<T1, T2, T3, T4, T5> &a0, std::sorted_unique_t a1, T6 a2,
          T6 a3) {
   return a0.template insert<T6>(std::move(a1), std::move(a2), std::move(a3));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-void f71(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
+void f99(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
   return a0.template insert_range<T6>(std::forward<T6>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-std::size_t f72(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
+std::size_t f100(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
   return a0.template erase<T6>(std::forward<T6>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f73(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+f101(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template find<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
-f74(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+f102(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template find<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-std::size_t f75(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+std::size_t f103(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template count<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-bool f76(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+bool f104(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template contains<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f77(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+f105(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template lower_bound<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
-f78(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+f106(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template lower_bound<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f79(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+f107(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template upper_bound<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator
-f80(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+f108(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template upper_bound<T6>(a1);
 }
 
@@ -694,7 +897,7 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::pair<typename std::flat_map<T1, T2, T3, T4, T5>::iterator,
           typename std::flat_map<T1, T2, T3, T4, T5>::iterator>
-f81(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+f109(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template equal_range<T6>(a1);
 }
 
@@ -702,18 +905,18 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::pair<typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator,
           typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator>
-f82(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
+f110(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1) {
   return a0.template equal_range<T6>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f83(std::flat_map<T1, T2, T3, T4, T5> &a0,
-         std::flat_map<T1, T2, T3, T4, T5> &a1) {
+void f111(std::flat_map<T1, T2, T3, T4, T5> &a0,
+          std::flat_map<T1, T2, T3, T4, T5> &a1) {
   return swap(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-bool f84(const std::flat_map<T1, T2, T3, T4, T5> &a0,
-         const std::flat_map<T1, T2, T3, T4, T5> &a1) {
+bool f112(const std::flat_map<T1, T2, T3, T4, T5> &a0,
+          const std::flat_map<T1, T2, T3, T4, T5> &a1) {
   return operator==(a0, a1);
 }
