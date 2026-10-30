@@ -36,7 +36,7 @@ fn main_0() -> i32 {
     {
         let __s = {
             let __s = libcc2rs::cout();
-            let _ = write!(__s, "{}", (*i1.borrow()));
+            write_int_refcount(&__s, (*i1.borrow()));
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);
@@ -53,13 +53,13 @@ fn main_0() -> i32 {
             let __s = {
                 let __s = {
                     let __s = libcc2rs::cout();
-                    let _ = write!(__s, "{}", (*i3.borrow()));
+                    write_int_refcount(&__s, (*i3.borrow()));
                     __s
                 };
                 let _ = __s.write_all(&[(' ' as i8) as u8]);
                 __s
             };
-            let _ = write!(__s, "{}", (*i4.borrow()));
+            write_int_refcount(&__s, (*i4.borrow()));
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);
@@ -71,13 +71,13 @@ fn main_0() -> i32 {
             let __s = {
                 let __s = {
                     let __s = libcc2rs::cout();
-                    let _ = write!(__s, "{}", (*i1.borrow()));
+                    write_int_refcount(&__s, (*i1.borrow()));
                     __s
                 };
                 let _ = __s.write_all(&[(' ' as i8) as u8]);
                 __s
             };
-            let _ = write!(__s, "{}", ({ read_1((ref_1).clone(),) }));
+            write_int_refcount(&__s, ({ read_1((ref_1).clone()) }));
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);
@@ -92,13 +92,13 @@ fn main_0() -> i32 {
             let __s = {
                 let __s = {
                     let __s = libcc2rs::cout();
-                    let _ = write!(__s, "{}", { (*point.borrow()).x });
+                    write_int_refcount(&__s, { (*point.borrow()).x });
                     __s
                 };
                 let _ = __s.write_all(&[(' ' as i8) as u8]);
                 __s
             };
-            let _ = write!(__s, "{}", { (*point.borrow()).y });
+            write_int_refcount(&__s, { (*point.borrow()).y });
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);

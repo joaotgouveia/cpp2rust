@@ -27,13 +27,43 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     let mut x: i32 = 0;
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, x);
+            __s
+        });
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(&[('\n' as libc::c_char) as u8]);
+        __s
+    };
     let mut a: i32 = 1;
     let mut b: i32 = (unsafe { identity_0(a) });
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, b);
+            __s
+        });
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(&[('\n' as libc::c_char) as u8]);
+        __s
+    };
     let mut c: i32 = 2;
     let mut p: *mut i32 = (&mut c as *mut i32);
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, (*p));
+            __s
+        });
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(&[('\n' as libc::c_char) as u8]);
+        __s
+    };
     let mut d: i32 = 3;
     let mut e: i32 = 4;
     (unsafe { swap_by_ptr_1((&mut d as *mut i32), (&mut e as *mut i32)) });
@@ -41,7 +71,17 @@ unsafe fn main_0() -> i32 {
     let mut g: i32 = 5;
     (unsafe { swap_by_ref_2(&mut f, &mut g) });
     let mut h: *mut i32 = (Box::leak(Box::new(6)) as *mut i32);
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, (*h));
+            __s
+        });
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(&[('\n' as libc::c_char) as u8]);
+        __s
+    };
     {
         let __p = h;
         if !__p.is_null() {
@@ -49,7 +89,27 @@ unsafe fn main_0() -> i32 {
         }
     };
     let mut i: *mut i32 = Box::leak(Box::new([7, 8, 0_i32])).as_mut_ptr();
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*{
+                let __r: &mut ::std::fs::File = &mut (*{
+                    let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+                    let __s: *mut ::std::fs::File = __r;
+                    libcc2rs::write_int(&mut *__s, (*i.offset((0) as isize)));
+                    __s
+                });
+                let __s: *mut ::std::fs::File = __r;
+                let _ = (*__s).write_all(&[(' ' as libc::c_char) as u8]);
+                __s
+            });
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, (*i.offset((1) as isize)));
+            __s
+        });
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(&[('\n' as libc::c_char) as u8]);
+        __s
+    };
     {
         let __p = i;
         if !__p.is_null() {
@@ -88,12 +148,32 @@ unsafe fn main_0() -> i32 {
     let mut k: *mut i32 = j
         .as_deref_mut()
         .map_or(::std::ptr::null_mut(), |v| v as *mut i32);
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, (*k));
+            __s
+        });
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(&[('\n' as libc::c_char) as u8]);
+        __s
+    };
     let mut l: Option<Box<i32>> = Some(Box::new(11));
     let mut m: *mut i32 = l
         .as_deref_mut()
         .map_or(::std::ptr::null_mut(), |v| v as *mut i32);
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, (*m));
+            __s
+        });
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(&[('\n' as libc::c_char) as u8]);
+        __s
+    };
     assert!(((c) == (2)));
     return 0;
 }

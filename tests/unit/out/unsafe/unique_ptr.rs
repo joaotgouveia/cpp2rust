@@ -120,7 +120,7 @@ pub unsafe fn DoStuffWithSafePointer_0(safe_ptr: *mut Option<Box<SafePointer>>) 
             .y));
 }
 pub unsafe fn Consume_1(mut safe_ptr: Option<Box<SafePointer>>) -> i32 {
-    let mut x: () = safe_ptr.take();
+    let mut x: std_unique_ptr_SafePointer__std_default_delete_SafePointer__ = safe_ptr.take();
     let mut p: Option<Box<Pair>> = Some(Box::from_raw(
         (Box::leak(Box::new(<Pair>::default())) as *mut Pair),
     ));
@@ -138,7 +138,7 @@ pub unsafe fn Consume_1(mut safe_ptr: Option<Box<SafePointer>>) -> i32 {
 pub unsafe fn RndStuff_2() {
     let mut x1: Option<Box<[i32]>> = None;
     let mut x2: Option<Box<[i32]>> = Some(Box::from_raw(Box::leak(
-        (0..100_()).map(|_| 0_i32).collect::<Box<[i32]>>(),
+        (0..100_usize).map(|_| 0_i32).collect::<Box<[i32]>>(),
     )));
     let mut i: i32 = 0;
     'loop_: while ((i) < (100)) {
@@ -148,7 +148,7 @@ pub unsafe fn RndStuff_2() {
         i.prefix_inc();
     }
     x2 = Some(Box::from_raw(Box::leak(
-        (0..200_()).map(|_| 0_i32).collect::<Box<[i32]>>(),
+        (0..200_usize).map(|_| 0_i32).collect::<Box<[i32]>>(),
     )));
     let mut i: i32 = 0;
     'loop_: while ((i) < (200)) {
@@ -194,7 +194,7 @@ pub unsafe fn RndStuff_2() {
         i.prefix_inc();
     }
     x3 = Some(Box::from_raw(Box::leak(
-        (0..50_())
+        (0..50_usize)
             .map(|_| <Pair>::default())
             .collect::<Box<[Pair]>>(),
     )));
@@ -286,7 +286,7 @@ unsafe fn main_0() -> i32 {
             Some(Box::from_raw(_a0))
         }
     };
-    assert!(unimplemented!());
+    assert!(p.is_none());
     (unsafe { unique_ptr_that_wraps_container_3() });
     return 0;
 }

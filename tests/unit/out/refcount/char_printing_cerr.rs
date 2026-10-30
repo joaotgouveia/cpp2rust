@@ -18,7 +18,98 @@ fn main_0() -> i32 {
         __bytes.push(0);
         __bytes
     };
-    unimplemented!();
+    {
+        let __s = {
+            let __s = {
+                let __s = {
+                    let __s = {
+                        let __s = {
+                            let __s = {
+                                let __s = {
+                                    let __s = {
+                                        let __s = {
+                                            let __s = {
+                                                let __s = {
+                                                    let __s = {
+                                                        let __s = {
+                                                            let __s = {
+                                                                let __s = {
+                                                                    let __s = {
+                                                                        let __s = libcc2rs::cerr();
+                                                                        write_int_refcount(&__s, i);
+                                                                        __s
+                                                                    };
+                                                                    let _ = Ptr::<i8 >::from_string_literal(b" a" ) .with_c_str(|__cs| __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>()));
+                                                                    __s
+                                                                };
+                                                                let _ = __s.write_all(&[(vec_
+                                                                    .decay()
+                                                                    .offset(0_usize as isize)
+                                                                    .read())]);
+                                                                __s
+                                                            };
+                                                            let _ = __s.write_all(&[(vec_
+                                                                .decay()
+                                                                .offset(1_usize as isize)
+                                                                .read())]);
+                                                            __s
+                                                        };
+                                                        let _ = __s.write_all(&[('o' as i8) as u8]);
+                                                        __s
+                                                    };
+                                                    let _ = __s.write_all(
+                                                        &str[..str.len().saturating_sub(1)]
+                                                            .iter()
+                                                            .map(|&__c| __c as u8)
+                                                            .collect::<Vec<u8>>(),
+                                                    );
+                                                    __s
+                                                };
+                                                libcc2rs::endl_refcount.call(__s)
+                                            };
+                                            libcc2rs::hex_refcount.call(__s)
+                                        };
+                                        let _ = Ptr::<i8>::from_string_literal(b"0x").with_c_str(
+                                            |__cs| {
+                                                __s.write_all(
+                                                    &__cs
+                                                        .iter()
+                                                        .map(|&__c| __c as u8)
+                                                        .collect::<Vec<u8>>(),
+                                                )
+                                            },
+                                        );
+                                        __s
+                                    };
+                                    write_int_refcount(&__s, 27);
+                                    __s
+                                };
+                                let _ = Ptr::<i8>::from_string_literal(b" a\xc3\xa7ordas?")
+                                    .with_c_str(|__cs| {
+                                        __s.write_all(
+                                            &__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>(),
+                                        )
+                                    });
+                                __s
+                            };
+                            let _ = __s.write_all(&[('\n' as i8) as u8]);
+                            __s
+                        };
+                        let _ = Ptr::<i8>::from_string_literal(b"Sim, 0x").with_c_str(|__cs| {
+                            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+                        });
+                        __s
+                    };
+                    write_int_refcount(&__s, i);
+                    __s
+                };
+                let _ = __s.write_all(&[('.' as i8) as u8]);
+                __s
+            };
+            libcc2rs::endl_refcount.call(__s)
+        };
+        libcc2rs::dec_refcount.call(__s)
+    };
     {
         let __s = {
             let __s = {

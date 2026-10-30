@@ -68,7 +68,7 @@ pub fn DoStuffWithSafePointer_0(safe_ptr: Ptr<Option<Value<SafePointer>>>) {
         .write(__rhs);
 }
 pub fn Consume_1(mut safe_ptr: Option<Value<SafePointer>>) -> i32 {
-    let mut x: () = safe_ptr.take();
+    let mut x: Option<Value<SafePointer>> = safe_ptr.take();
     let mut p: Option<Value<Pair>> = Ptr::alloc(<Pair>::default()).to_owned_opt();
     return ((x
         .as_pointer()
@@ -80,7 +80,7 @@ pub fn Consume_1(mut safe_ptr: Option<Value<SafePointer>>) -> i32 {
 pub fn RndStuff_2() {
     let mut x1: Option<Value<Box<[i32]>>> = None;
     let x2: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(
-        Ptr::alloc_array((0..100_()).map(|_| 0_i32).collect::<Box<[i32]>>()).to_owned_opt(),
+        Ptr::alloc_array((0..100_usize).map(|_| 0_i32).collect::<Box<[i32]>>()).to_owned_opt(),
     ));
     let mut i: i32 = 0;
     'loop_: while (i < 100) {
@@ -89,8 +89,9 @@ pub fn RndStuff_2() {
             .write(1);
         i.prefix_inc();
     }
-    x2.as_pointer()
-        .write(Ptr::alloc_array((0..200_()).map(|_| 0_i32).collect::<Box<[i32]>>()).to_owned_opt());
+    x2.as_pointer().write(
+        Ptr::alloc_array((0..200_usize).map(|_| 0_i32).collect::<Box<[i32]>>()).to_owned_opt(),
+    );
     let mut i: i32 = 0;
     'loop_: while (i < 200) {
         ((*x2.borrow()).as_pointer() as Ptr<i32>)
@@ -129,7 +130,7 @@ pub fn RndStuff_2() {
     }
     x3.as_pointer().write(
         Ptr::alloc_array(
-            (0..50_())
+            (0..50_usize)
                 .map(|_| <Pair>::default())
                 .collect::<Box<[Pair]>>(),
         )
@@ -205,7 +206,7 @@ fn main_0() -> i32 {
         let _p: Ptr<_> = Ptr::null();
         p.as_pointer().write(_p.to_owned_opt())
     };
-    assert!(unimplemented!());
+    assert!((*p.borrow()).is_none());
     ({ unique_ptr_that_wraps_container_3() });
     return 0;
 }

@@ -16,8 +16,10 @@ pub fn main() {
 fn main_0() -> i32 {
     let __decomp_1: Value<(Value<i32>, Value<bool>)> =
         Rc::new(RefCell::new(({ make_std_pair_0(5) })));
-    let value: Ptr<i32> = unimplemented!();
-    let positive: Ptr<bool> = unimplemented!();
+    let value: Ptr<i32> =
+        <(Value<i32>, Value<bool>) as PairGetRef<0>>::pair_get(&(*__decomp_1.borrow()));
+    let positive: Ptr<bool> =
+        <(Value<i32>, Value<bool>) as PairGetRef<1>>::pair_get(&(*__decomp_1.borrow()));
     assert!(((value.read()) == 5));
     assert!(((positive.read()) as bool));
     let p: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new((
@@ -31,15 +33,19 @@ fn main_0() -> i32 {
             Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
         )
     }));
-    let a: Ptr<i32> = unimplemented!();
-    let b: Ptr<i32> = unimplemented!();
+    let a: Ptr<i32> =
+        <(Value<i32>, Value<i32>) as PairGetRef<0>>::pair_get(&(*__decomp_2.borrow()));
+    let b: Ptr<i32> =
+        <(Value<i32>, Value<i32>) as PairGetRef<1>>::pair_get(&(*__decomp_2.borrow()));
     a.write(10);
     assert!(((a.read()) == 10));
     assert!(((b.read()) == 2));
     assert!(((*(*p.borrow()).0.borrow()) == 1));
     let __decomp_3: Ptr<(Value<i32>, Value<i32>)> = p.as_pointer();
-    let x: Ptr<i32> = unimplemented!();
-    let y: Ptr<i32> = unimplemented!();
+    let x: Ptr<i32> =
+        <(Value<i32>, Value<i32>) as PairGetRef<0>>::pair_get(&(*__decomp_3.upgrade().deref()));
+    let y: Ptr<i32> =
+        <(Value<i32>, Value<i32>) as PairGetRef<1>>::pair_get(&(*__decomp_3.upgrade().deref()));
     x.write(3);
     {
         y.with_mut(|__v| *__v = *__v + 4)

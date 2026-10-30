@@ -20,7 +20,122 @@ unsafe fn main_0() -> i32 {
         std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
             .to_vec()
     };
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*{
+                let __r: &mut ::std::fs::File = &mut (*{
+                    let __r: &mut ::std::fs::File = &mut (*{
+                        let __r: &mut ::std::fs::File = &mut (*{
+                            let __r: &mut ::std::fs::File = &mut (*{
+                                let __r: &mut ::std::fs::File = &mut (*{
+                                    let __r: &mut ::std::fs::File = &mut (*{
+                                        let __r: &mut ::std::fs::File = &mut (*{
+                                            let __r: &mut ::std::fs::File = &mut (*{
+                                                let __r: &mut ::std::fs::File = &mut (*{
+                                                    let __r: &mut ::std::fs::File = &mut (*{
+                                                        let __r: &mut ::std::fs::File = &mut (*{
+                                                            let __r: &mut ::std::fs::File =
+                                                                &mut (*{
+                                                                    let __r: &mut ::std::fs::File =
+                                                                        &mut (*{
+                                                                            let __r: &mut ::std::fs::File = &mut ( * {let __r: &mut ::std::fs::File = &mut (*libcc2rs::cerr_unsafe()) ;
+    let __s: *mut ::std::fs::File = __r;
+    libcc2rs::write_int(&mut *__s, i );
+    __s}  )  ;
+                                                                            let __s: *mut ::std::fs::File = __r;
+                                                                            let _ = (*__s).write_all(::std::ffi::CStr::from_ptr(c" a" .as_ptr() ).to_bytes());
+                                                                            __s
+                                                                        });
+                                                                    let __s: *mut ::std::fs::File =
+                                                                        __r;
+                                                                    let _ = (*__s).write_all(&[
+                                                                        (*(&mut vec_)
+                                                                            .as_mut_ptr()
+                                                                            .add(0_usize as usize)),
+                                                                    ]);
+                                                                    __s
+                                                                });
+                                                            let __s: *mut ::std::fs::File = __r;
+                                                            let _ =
+                                                                (*__s).write_all(&[(*(&mut vec_)
+                                                                    .as_mut_ptr()
+                                                                    .add(1_usize as usize))]);
+                                                            __s
+                                                        });
+                                                        let __s: *mut ::std::fs::File = __r;
+                                                        let _ = (*__s).write_all(&[('o'
+                                                            as libc::c_char)
+                                                            as u8]);
+                                                        __s
+                                                    });
+                                                    let __s: *mut ::std::fs::File = __r;
+                                                    let _ = ::std::io::Write::write_all(
+                                                        &mut *__s,
+                                                        &str[..str.len().saturating_sub(1)]
+                                                            .iter()
+                                                            .map(|&__c| __c as u8)
+                                                            .collect::<Vec<u8>>(),
+                                                    );
+                                                    __s
+                                                });
+                                                let __s: *mut ::std::fs::File = __r;
+                                                (libcc2rs::endl_unsafe
+                                                    as unsafe fn(
+                                                        *mut ::std::fs::File,
+                                                    )
+                                                        -> *mut ::std::fs::File)(
+                                                    __s
+                                                )
+                                            });
+                                            let __s: *mut ::std::fs::File = __r;
+                                            (libcc2rs::hex_unsafe
+                                                as unsafe fn(
+                                                    *mut ::std::fs::File,
+                                                )
+                                                    -> *mut ::std::fs::File)(
+                                                __s
+                                            )
+                                        });
+                                        let __s: *mut ::std::fs::File = __r;
+                                        let _ = (*__s).write_all(
+                                            ::std::ffi::CStr::from_ptr(c"0x".as_ptr()).to_bytes(),
+                                        );
+                                        __s
+                                    });
+                                    let __s: *mut ::std::fs::File = __r;
+                                    libcc2rs::write_int(&mut *__s, 27);
+                                    __s
+                                });
+                                let __s: *mut ::std::fs::File = __r;
+                                let _ = (*__s).write_all(
+                                    ::std::ffi::CStr::from_ptr(c" a\xc3\xa7ordas?".as_ptr())
+                                        .to_bytes(),
+                                );
+                                __s
+                            });
+                            let __s: *mut ::std::fs::File = __r;
+                            let _ = (*__s).write_all(&[('\n' as libc::c_char) as u8]);
+                            __s
+                        });
+                        let __s: *mut ::std::fs::File = __r;
+                        let _ = (*__s)
+                            .write_all(::std::ffi::CStr::from_ptr(c"Sim, 0x".as_ptr()).to_bytes());
+                        __s
+                    });
+                    let __s: *mut ::std::fs::File = __r;
+                    libcc2rs::write_int(&mut *__s, i);
+                    __s
+                });
+                let __s: *mut ::std::fs::File = __r;
+                let _ = (*__s).write_all(&[('.' as libc::c_char) as u8]);
+                __s
+            });
+            let __s: *mut ::std::fs::File = __r;
+            (libcc2rs::endl_unsafe as unsafe fn(*mut ::std::fs::File) -> *mut ::std::fs::File)(__s)
+        });
+        let __s: *mut ::std::fs::File = __r;
+        (libcc2rs::dec_unsafe as unsafe fn(*mut ::std::fs::File) -> *mut ::std::fs::File)(__s)
+    };
     {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*{

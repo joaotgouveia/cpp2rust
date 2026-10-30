@@ -35,7 +35,7 @@ unsafe fn main_0() -> i32 {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", i1);
+            libcc2rs::write_int(&mut *__s, i1);
             __s
         });
         let __s: *mut ::std::fs::File = __r;
@@ -53,7 +53,7 @@ unsafe fn main_0() -> i32 {
                 let __r: &mut ::std::fs::File = &mut (*{
                     let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
                     let __s: *mut ::std::fs::File = __r;
-                    let _ = write!(*__s, "{}", i3);
+                    libcc2rs::write_int(&mut *__s, i3);
                     __s
                 });
                 let __s: *mut ::std::fs::File = __r;
@@ -61,7 +61,7 @@ unsafe fn main_0() -> i32 {
                 __s
             });
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", i4);
+            libcc2rs::write_int(&mut *__s, i4);
             __s
         });
         let __s: *mut ::std::fs::File = __r;
@@ -75,7 +75,7 @@ unsafe fn main_0() -> i32 {
                 let __r: &mut ::std::fs::File = &mut (*{
                     let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
                     let __s: *mut ::std::fs::File = __r;
-                    let _ = write!(*__s, "{}", i1);
+                    libcc2rs::write_int(&mut *__s, i1);
                     __s
                 });
                 let __s: *mut ::std::fs::File = __r;
@@ -83,7 +83,7 @@ unsafe fn main_0() -> i32 {
                 __s
             });
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", (unsafe { read_1(ref_1,) }));
+            libcc2rs::write_int(&mut *__s, (unsafe { read_1(ref_1) }));
             __s
         });
         let __s: *mut ::std::fs::File = __r;
@@ -100,7 +100,7 @@ unsafe fn main_0() -> i32 {
                 let __r: &mut ::std::fs::File = &mut (*{
                     let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
                     let __s: *mut ::std::fs::File = __r;
-                    let _ = write!(*__s, "{}", point.x);
+                    libcc2rs::write_int(&mut *__s, point.x);
                     __s
                 });
                 let __s: *mut ::std::fs::File = __r;
@@ -108,7 +108,7 @@ unsafe fn main_0() -> i32 {
                 __s
             });
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", point.y);
+            libcc2rs::write_int(&mut *__s, point.y);
             __s
         });
         let __s: *mut ::std::fs::File = __r;

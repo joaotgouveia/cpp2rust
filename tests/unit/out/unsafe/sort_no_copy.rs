@@ -203,21 +203,104 @@ unsafe fn main_0() -> i32 {
         }
     };
     assert!(
-        (((((*unimplemented!()).v) == (1)) && (((*unimplemented!()).v) == (2)))
-            && (((*unimplemented!()).v) == (7)))
-            && (((*unimplemented!()).v) == (8))
+        (((((*(&mut vec_).as_mut_ptr().add(0_usize as usize)).v) == (1))
+            && (((*(&mut vec_).as_mut_ptr().add(1_usize as usize)).v) == (2)))
+            && (((*(&mut vec_).as_mut_ptr().add(2_usize as usize)).v) == (7)))
+            && (((*(&mut vec_).as_mut_ptr().add(3_usize as usize)).v) == (8))
     );
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
-    unimplemented!();
-    assert!((((*unimplemented!()).v) == (8)) && (((*unimplemented!()).v) == (1)));
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
-    unimplemented!();
-    assert!((((*unimplemented!()).v) == (1)) && (((*unimplemented!()).v) == (8)));
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
-    unimplemented!();
+    {
+        let __first = vec_.begin();
+        let __n = vec_.end().iter_distance(&__first);
+        let __cmp = (greater_2 as unsafe fn(*const Tracked, *const Tracked) -> bool);
+        let mut __order: Vec<isize> = (0..__n).collect();
+        __order.sort_by(|&__x, &__y| {
+            let __a = __first.iter_at(__x) as *const _;
+            let __b = __first.iter_at(__y) as *const _;
+            if __cmp.unsafe_less(__a, __b) {
+                std::cmp::Ordering::Less
+            } else if __cmp.unsafe_less(__b, __a) {
+                std::cmp::Ordering::Greater
+            } else {
+                std::cmp::Ordering::Equal
+            }
+        });
+        let __values: Vec<_> = __order
+            .iter()
+            .map(|&__i| std::ptr::read(__first.iter_at(__i)))
+            .collect();
+        for (__i, __v) in (0..__n).zip(__values) {
+            std::ptr::write(__first.iter_at(__i), __v);
+        }
+    };
     assert!(
-        ((((*unimplemented!()).v) == (1)) && (((*unimplemented!()).v) == (8)))
-            && (((*unimplemented!()).v) == (2))
+        (((*(&mut vec_).as_mut_ptr().add(0_usize as usize)).v) == (8))
+            && (((*(&mut vec_).as_mut_ptr().add(3_usize as usize)).v) == (1))
+    );
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
+    {
+        let __first = vec_.begin();
+        let __n = vec_.end().iter_distance(&__first);
+        let __cmp = FnPtr::<fn(*const Tracked, *const Tracked) -> bool>::new(
+            |a: *const Tracked, b: *const Tracked| -> bool {
+                unsafe {
+                    return (((*a).v) < ((*b).v));
+                }
+            },
+        );
+        let mut __order: Vec<isize> = (0..__n).collect();
+        __order.sort_by(|&__x, &__y| {
+            let __a = __first.iter_at(__x) as *const _;
+            let __b = __first.iter_at(__y) as *const _;
+            if __cmp.unsafe_less(__a, __b) {
+                std::cmp::Ordering::Less
+            } else if __cmp.unsafe_less(__b, __a) {
+                std::cmp::Ordering::Greater
+            } else {
+                std::cmp::Ordering::Equal
+            }
+        });
+        let __values: Vec<_> = __order
+            .iter()
+            .map(|&__i| std::ptr::read(__first.iter_at(__i)))
+            .collect();
+        for (__i, __v) in (0..__n).zip(__values) {
+            std::ptr::write(__first.iter_at(__i), __v);
+        }
+    };
+    assert!(
+        (((*(&mut vec_).as_mut_ptr().add(0_usize as usize)).v) == (1))
+            && (((*(&mut vec_).as_mut_ptr().add(3_usize as usize)).v) == (8))
+    );
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
+    {
+        let __first = vec_.begin().iter_add(1_isize);
+        let __n = vec_.end().iter_distance(&__first);
+        let __cmp = (greater_2 as unsafe fn(*const Tracked, *const Tracked) -> bool);
+        let mut __order: Vec<isize> = (0..__n).collect();
+        __order.sort_by(|&__x, &__y| {
+            let __a = __first.iter_at(__x) as *const _;
+            let __b = __first.iter_at(__y) as *const _;
+            if __cmp.unsafe_less(__a, __b) {
+                std::cmp::Ordering::Less
+            } else if __cmp.unsafe_less(__b, __a) {
+                std::cmp::Ordering::Greater
+            } else {
+                std::cmp::Ordering::Equal
+            }
+        });
+        let __values: Vec<_> = __order
+            .iter()
+            .map(|&__i| std::ptr::read(__first.iter_at(__i)))
+            .collect();
+        for (__i, __v) in (0..__n).zip(__values) {
+            std::ptr::write(__first.iter_at(__i), __v);
+        }
+    };
+    assert!(
+        ((((*(&mut vec_).as_mut_ptr().add(0_usize as usize)).v) == (1))
+            && (((*(&mut vec_).as_mut_ptr().add(1_usize as usize)).v) == (8)))
+            && (((*(&mut vec_).as_mut_ptr().add(3_usize as usize)).v) == (2))
     );
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
     let mut bags: [Bag; 3] = std::array::from_fn::<_, 3, _>(|_| <Bag>::default());
@@ -254,18 +337,26 @@ unsafe fn main_0() -> i32 {
             && ((bags[(2) as usize].items.len()) == (2_usize))
     );
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
-    let mut bag_vec: Vec<Bag> = unimplemented!();
+    let mut bag_vec: Vec<Bag> = (0..(3_usize) as usize)
+        .map(|_| <Bag>::default())
+        .collect::<Vec<_>>();
     {
         let __init = Tracked::new_1({ 4 });
-        (*unimplemented!()).items.push(__init)
+        (*(&mut bag_vec).as_mut_ptr().add(1_usize as usize))
+            .items
+            .push(__init)
     };
     {
         let __init = Tracked::new_1({ 5 });
-        (*unimplemented!()).items.push(__init)
+        (*(&mut bag_vec).as_mut_ptr().add(1_usize as usize))
+            .items
+            .push(__init)
     };
     {
         let __init = Tracked::new_1({ 6 });
-        (*unimplemented!()).items.push(__init)
+        (*(&mut bag_vec).as_mut_ptr().add(2_usize as usize))
+            .items
+            .push(__init)
     };
     {
         let __first = bag_vec.begin();
@@ -281,13 +372,48 @@ unsafe fn main_0() -> i32 {
         }
     };
     assert!(
-        (((*unimplemented!()).items.is_empty())
-            && (((*unimplemented!()).items.len()) == (1_usize)))
-            && (((*unimplemented!()).v) == (5))
+        (((*(&mut bag_vec).as_mut_ptr().add(0_usize as usize))
+            .items
+            .is_empty())
+            && (((*(&mut bag_vec).as_mut_ptr().add(1_usize as usize))
+                .items
+                .len())
+                == (1_usize)))
+            && (((*(&mut (*(&mut bag_vec).as_mut_ptr().add(2_usize as usize)).items)
+                .as_mut_ptr()
+                .add(1_usize as usize))
+            .v) == (5))
     );
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
+    assert!(
+        {
+            let mut __it = bag_vec.begin();
+            let __last = bag_vec.end();
+            let __value = &bags[(1) as usize];
+            while __it != __last && *__it.iter_deref() != *__value {
+                __it.iter_inc();
+            }
+            __it
+        } == bag_vec.begin().iter_add(1_isize)
+    );
+    assert!(
+        {
+            let __first = bag_vec.begin();
+            let __last = bag_vec.end();
+            let mut __best = __first.clone();
+            if __first != __last {
+                let mut __it = __first;
+                __it.iter_inc();
+                while __it != __last {
+                    if *__best.iter_deref() < *__it.iter_deref() {
+                        __best = __it.clone();
+                    }
+                    __it.iter_inc();
+                }
+            }
+            __best
+        } == bag_vec.begin().iter_add(2_isize)
+    );
     assert!(
         (({
             let __a: *const _ = &mut bags[(0) as usize];
@@ -304,10 +430,14 @@ unsafe fn main_0() -> i32 {
     );
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
     let mut bag_map: UnsafeMap<Bag, (Bag, i32)> = UnsafeMap::new();
-    (*bag_map.subscript_move(unimplemented!(), |__k| cpp_move_unsafe!(__k))) = 2;
-    (*bag_map.subscript_move(unimplemented!(), |__k| cpp_move_unsafe!(__k))) = 0;
-    assert!((((*bag_map.find(&bags[(2) as usize])).second) == (2)));
-    assert!(unimplemented!());
+    (*bag_map.subscript_move((&mut bag_vec).as_mut_ptr().add(2_usize as usize), |__k| {
+        cpp_move_unsafe!(__k)
+    })) = 2;
+    (*bag_map.subscript_move((&mut bag_vec).as_mut_ptr().add(0_usize as usize), |__k| {
+        cpp_move_unsafe!(__k)
+    })) = 0;
+    assert!((((*bag_map.find(&bags[(2) as usize]).iter_deref()).1) == (2)));
+    assert!(bag_map.find(&bags[(1) as usize]) == bag_map.end());
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (0)));
     return (*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0));
 }

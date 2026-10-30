@@ -104,8 +104,8 @@ unsafe fn main_0() -> i32 {
             <Elem as CppFromUnsafe<Elem>>::cpp_from(&__a0.1),
         )
     };
-    let x: *mut Elem = unimplemented!();
-    let y: *mut Elem = unimplemented!();
+    let x: *mut Elem = <(Elem, Elem) as PairGet<0>>::pair_get_mut(&mut __decomp_7);
+    let y: *mut Elem = <(Elem, Elem) as PairGet<1>>::pair_get_mut(&mut __decomp_7);
     assert!(
         ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == ((before_copies) + (2)))
     );

@@ -117,8 +117,10 @@ fn main_0() -> i32 {
             ))),
         )
     }));
-    let x: Ptr<Elem> = unimplemented!();
-    let y: Ptr<Elem> = unimplemented!();
+    let x: Ptr<Elem> =
+        <(Value<Elem>, Value<Elem>) as PairGetRef<0>>::pair_get(&(*__decomp_7.borrow()));
+    let y: Ptr<Elem> =
+        <(Value<Elem>, Value<Elem>) as PairGetRef<1>>::pair_get(&(*__decomp_7.borrow()));
     assert!((copies_0.with(|rc| *rc.borrow()) == (before_copies + 2)));
     assert!(({ (*x.upgrade().deref()).v } == ({ (*(*p.borrow()).0.borrow()).v } + 100)));
     assert!(({ (*y.upgrade().deref()).v } == ({ (*(*p.borrow()).1.borrow()).v } + 100)));

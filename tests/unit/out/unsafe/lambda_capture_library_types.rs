@@ -13,7 +13,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut v: Vec<i32> = unimplemented!();
+    let mut v: Vec<i32> = Vec::from([1, 2]);
     let mut f: FnPtr<fn() -> i32> = lambda_unsafe!(
         {
             let v: Vec<i32> = v.clone();
@@ -23,7 +23,7 @@ unsafe fn main_0() -> i32 {
         }
     );
     let mut g: FnPtr<fn() -> i32> = f.copy_from();
-    let mut h: () = f.move_from();
+    let mut h: FnPtr<fn() -> i32> = f.move_from();
     assert!(((unsafe { g.call() }) == (2)));
     assert!(((unsafe { h.call() }) == (2)));
     assert!(((unsafe { f.call() }) == (0)));
@@ -44,7 +44,7 @@ unsafe fn main_0() -> i32 {
             };
         }
     );
-    let mut q: () = p.move_from();
+    let mut q: FnPtr<fn() -> i32> = p.move_from();
     assert!(((unsafe { q.call() }) == (5)));
     assert!(((unsafe { p.call() }) == (0)));
     let mut n: i32 = 0;
@@ -68,7 +68,7 @@ unsafe fn main_0() -> i32 {
     let mut outer2: FnPtr<fn() -> i32> = outer.copy_from();
     assert!(((unsafe { outer2.call() }) == (2)));
     assert!(((unsafe { outer.call() }) == (2)));
-    let mut outer3: () = outer.move_from();
+    let mut outer3: FnPtr<fn() -> i32> = outer.move_from();
     assert!(((unsafe { outer3.call() }) == (3)));
     return 0;
 }

@@ -24,26 +24,43 @@ unsafe fn main_0() -> i32 {
     };
     let mut row: Vec<Vec<libc::c_char>> = Vec::new();
     {
-        let __a1 = unimplemented!();
+        let __a1 = {
+            let __s = c"a".as_ptr();
+            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
+                .to_vec()
+        };
         row.push(__a1)
-    };
-    {
-        let __a1 = unimplemented!();
-        row.push(__a1)
-    };
-    (*unimplemented!()).push((row).clone());
-    {
-        let __a1 = unimplemented!();
-        row.push(__a1)
-    };
-    (*unimplemented!()).push((row).clone());
-    {
-        let __init = Vec::new();
-        (*unimplemented!()).push(__init)
     };
     {
         let __a1 = {
-            let mut __tmp2 = (*unimplemented!()).clone();
+            let __s = c"bc".as_ptr();
+            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
+                .to_vec()
+        };
+        row.push(__a1)
+    };
+    (*(&mut v).as_mut_ptr().add(0_usize as usize)).push((row).clone());
+    {
+        let __a1 = {
+            let __s = c"def".as_ptr();
+            std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
+                .to_vec()
+        };
+        row.push(__a1)
+    };
+    (*(&mut v).as_mut_ptr().add(1_usize as usize)).push((row).clone());
+    {
+        let __init = Vec::new();
+        (*(&mut v).as_mut_ptr().add(1_usize as usize)).push(__init)
+    };
+    {
+        let __a1 = {
+            let mut __tmp2 = (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+                .first_mut()
+                .unwrap())))
+                .as_mut_ptr()
+                .add(1_usize as usize))
+            .clone();
             __tmp2.pop();
             let __from = c"x".as_ptr();
             __tmp2.extend_from_slice(::std::slice::from_raw_parts(
@@ -53,25 +70,159 @@ unsafe fn main_0() -> i32 {
             __tmp2.push(0);
             __tmp2
         };
-        (*((*unimplemented!()).last_mut().unwrap())).push(__a1)
+        (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+            .last_mut()
+            .unwrap()))
+        .push(__a1)
     };
-    assert!((((*((*unimplemented!()).first_mut().unwrap())).len()) == (2_usize)));
     assert!(
-        (((*((*unimplemented!()).first_mut().unwrap())).len()) == (3_usize)) && (unimplemented!())
+        (((*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+            .first_mut()
+            .unwrap()))
+        .len())
+            == (2_usize))
     );
-    assert!(unimplemented!());
+    assert!(
+        (((*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+            .first_mut()
+            .unwrap()))
+        .len())
+            == (3_usize))
+            && ((*(&mut (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+                .first_mut()
+                .unwrap())))
+                .as_mut_ptr()
+                .add(2_usize as usize))
+                == {
+                    let __s = c"def".as_ptr();
+                    std::slice::from_raw_parts(
+                        __s,
+                        (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
+                    )
+                    .to_vec()
+                })
+    );
+    assert!(
+        (*(&mut (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+            .last_mut()
+            .unwrap())))
+            .as_mut_ptr()
+            .add(0_usize as usize))
+            == {
+                let __s = c"bcx".as_ptr();
+                std::slice::from_raw_parts(
+                    __s,
+                    (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
+                )
+                .to_vec()
+            }
+    );
     let mut copy: Vec<Vec<Vec<Vec<libc::c_char>>>> = v.clone();
-    (*unimplemented!()) = unimplemented!();
-    (*if 0_usize as usize >= (*unimplemented!()).len() - 1 {
+    (*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
+        .first_mut()
+        .unwrap())))
+        .as_mut_ptr()
+        .add(0_usize as usize)) = {
+        let __s = c"z".as_ptr();
+        std::slice::from_raw_parts(__s, (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1)
+            .to_vec()
+    };
+    (*if 0_usize as usize
+        >= (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+            .first_mut()
+            .unwrap())))
+            .as_mut_ptr()
+            .add(1_usize as usize))
+        .len()
+            - 1
+    {
         panic!("out of bounds access")
     } else {
-        (&mut (*unimplemented!())[0_usize as usize] as *mut libc::c_char)
-    }) = (('B' as libc::c_char) as ());
-    assert!((unimplemented!()) && (unimplemented!()));
-    assert!((unimplemented!()) && (unimplemented!()));
-    (*unimplemented!()).remove(0);
-    assert!(unimplemented!());
-    assert!((((*((*unimplemented!()).first_mut().unwrap())).len()) == (3_usize)));
+        (&mut (*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+            .first_mut()
+            .unwrap())))
+            .as_mut_ptr()
+            .add(1_usize as usize))[0_usize as usize] as *mut libc::c_char)
+    }) = ('B' as libc::c_char);
+    assert!(
+        ((*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+            .first_mut()
+            .unwrap())))
+            .as_mut_ptr()
+            .add(0_usize as usize))
+            == {
+                let __s = c"a".as_ptr();
+                std::slice::from_raw_parts(
+                    __s,
+                    (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
+                )
+                .to_vec()
+            })
+            && ((*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
+                .first_mut()
+                .unwrap())))
+                .as_mut_ptr()
+                .add(0_usize as usize))
+                == {
+                    let __s = c"z".as_ptr();
+                    std::slice::from_raw_parts(
+                        __s,
+                        (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
+                    )
+                    .to_vec()
+                })
+    );
+    assert!(
+        ((*(&mut (*((*(&mut v).as_mut_ptr().add(0_usize as usize))
+            .first_mut()
+            .unwrap())))
+            .as_mut_ptr()
+            .add(1_usize as usize))
+            == {
+                let __s = c"Bc".as_ptr();
+                std::slice::from_raw_parts(
+                    __s,
+                    (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
+                )
+                .to_vec()
+            })
+            && ((*(&mut (*((*(&mut copy).as_mut_ptr().add(0_usize as usize))
+                .first_mut()
+                .unwrap())))
+                .as_mut_ptr()
+                .add(1_usize as usize))
+                == {
+                    let __s = c"bc".as_ptr();
+                    std::slice::from_raw_parts(
+                        __s,
+                        (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
+                    )
+                    .to_vec()
+                })
+    );
+    (*(&mut v).as_mut_ptr().add(1_usize as usize)).remove(0);
+    assert!(
+        (*(&mut (*((*(&mut v).as_mut_ptr().add(1_usize as usize))
+            .first_mut()
+            .unwrap())))
+            .as_mut_ptr()
+            .add(0_usize as usize))
+            == {
+                let __s = c"bcx".as_ptr();
+                std::slice::from_raw_parts(
+                    __s,
+                    (0..).take_while(|&__i| *__s.add(__i) != 0).count() + 1,
+                )
+                .to_vec()
+            }
+    );
+    assert!(
+        (((*((*(&mut copy).as_mut_ptr().add(1_usize as usize))
+            .first_mut()
+            .unwrap()))
+        .len())
+            == (3_usize))
+    );
     assert!(((row.len()) == (3_usize)));
     return 0;
 }

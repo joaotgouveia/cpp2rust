@@ -25,8 +25,8 @@ unsafe fn main_0() -> i32 {
             == (20))
     );
     let mut empty: Option<Box<i32>> = None;
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
+    assert!(empty.is_none());
+    assert!(!(n.is_none()));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}
