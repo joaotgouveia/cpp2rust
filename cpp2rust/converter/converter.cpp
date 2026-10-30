@@ -2737,11 +2737,11 @@ void Converter::ConvertBinaryOperator(clang::BinaryOperator *expr) {
     }
   } else if (IsUnsignedArithOp(expr)) {
     if (expr->isCompoundAssignmentOp()) {
-      Convert(lhs);
-      StrCat(token::kAssign);
+      StrCat(ConvertLValue(lhs), token::kAssign);
     }
     {
       PushParen paren(*this);
+      PushExprKind rvalue(*this, ExprKind::RValue);
       ConvertUnsignedArithOperand(lhs, type);
     }
     ConvertUnsignedArithBinaryOperator(expr, rhs);
